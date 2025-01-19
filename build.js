@@ -71,15 +71,13 @@ async function build() {
     // Generate city pages
     for (const [state, cities] of Object.entries(citiesByState)) {
         for (const city of cities) {
-            const citySlug = city.toLowerCase().replace(/ /g, '-');
-            const cityDir = path.join('dist', citySlug);
+            const citySlug = city.toLowerCase().replace(/ /g, '-')
+                                            .replace(/\//g, '-')
+                                            .replace(/\s+/g, '-');
             
-            // Create city directory
-            await fs.mkdir(cityDir, { recursive: true });
-            
-            // Generate city page
+            // Write directly to the dist directory with .html extension
             const html = await template(city, state, initiatives);
-            await fs.writeFile(path.join(cityDir, 'index.html'), html);
+            await fs.writeFile(path.join('dist', `${citySlug}.html`), html);
         }
     }
 

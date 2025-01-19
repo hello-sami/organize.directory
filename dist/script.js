@@ -149,9 +149,11 @@ function showCityPage(cityName, stateName) {
 
 // Update city link click handlers
 function createCityLink(city, state) {
-    const citySlug = city.toLowerCase().replace(/ /g, '-');
-    // Create a regular link that navigates to the static page
-    return `<a href="/${citySlug}/" class="city-link">${city}</a>`;
+    const citySlug = city.toLowerCase()
+        .replace(/ /g, '-')
+        .replace(/\//g, '-')
+        .replace(/\s+/g, '-');
+    return `<a href="/${citySlug}" class="city-link">${city}</a>`;
 }
 
 // Update showAllCities function
