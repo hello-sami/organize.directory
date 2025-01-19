@@ -27,15 +27,12 @@ const template = async (city, state, initiatives) => {
         `).join('')
         : `<p>No mutual aid initiatives found in ${city} yet. Want to add one? Contact us!</p>`;
 
-    // Find the content area between the search-container div
-    const searchContainerRegex = /<div class="search-container">[\s\S]*?<\/div>/;
-    
     // Fix paths to be relative to root and update the content
     let modifiedTemplate = baseTemplate
         .replace(/href="styles\.css"/g, 'href="/styles.css"')
         .replace(/src="script\.js"/g, 'src="/script.js"')
         .replace(/src="data\.js"/g, 'src="/data.js"')
-        .replace(searchContainerRegex, 
+        .replace(/<div class="search-container">[\s\S]*?<\/div>/, 
             `<div class="search-container">
                 <div class="city-page">
                     <div class="breadcrumb">
@@ -58,30 +55,49 @@ const template = async (city, state, initiatives) => {
 };
 
 async function build() {
+    console.log('Starting build process...');
+    
     // Create dist directory
+    console.log('Creating dist directory...');
     await fs.mkdir('dist', { recursive: true });
     
     // Copy static assets
-    await fs.copyFile('styles.css', 'dist/styles.css');
-    await fs.copyFile('script.js', 'dist/script.js');
-    await fs.copyFile('data.js', 'dist/data.js');
-    await fs.copyFile('index.html', 'dist/index.html');
-    await fs.copyFile('serve.json', 'dist/serve.json');
+    console.log('Copying static assets...');
+    await Promise.all([
+        fs.copyFile('styles.css', 'dist/styles.css'),
+        fs.copyFile('script.js', 'dist/script.js'),
+        fs.copyFile('data.js', 'dist/data.js'),
+        fs.copyFile('index.html', 'dist/index.html'),
+        fs.copyFile('serve.json', 'dist/serve.json')
+    ]);
 
     // Generate city pages
+    console.log('Generating city pages...');
+    let count = 0;
+    const total = Object.values(citiesByState).flat().length;
+
     for (const [state, cities] of Object.entries(citiesByState)) {
-        for (const city of cities) {
-            const citySlug = city.toLowerCase().replace(/ /g, '-')
-                                            .replace(/\//g, '-')
-                                            .replace(/\s+/g, '-');
+        // Process cities in parallel for each state
+        await Promise.all(cities.map(async city => {
+            const citySlug = city.toLowerCase()
+                .replace(/ /g, '-')
+                .replace(/\//g, '-')
+                .replace(/\s+/g, '-');
             
-            // Write directly to the dist directory with .html extension
             const html = await template(city, state, initiatives);
             await fs.writeFile(path.join('dist', `${citySlug}.html`), html);
-        }
+            
+            count++;
+            if (count % 50 === 0 || count === total) {
+                console.log(`Progress: ${count}/${total} cities processed`);
+            }
+        }));
     }
 
     console.log('Build completed successfully!');
 }
 
-build().catch(console.error); 
+build().catch(error => {
+    console.error('Build failed:', error);
+    process.exit(1);
+}); 
