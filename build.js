@@ -27,16 +27,16 @@ const template = async (city, state, initiatives) => {
         `).join('')
         : `<p>No mutual aid initiatives found in ${city} yet. Want to add one? Contact us!</p>`;
 
-    // Only replace the content within the results container
-    const contentRegex = /<div id="resultsContainer"[^>]*>[\s\S]*?<\/div>/;
+    // Find the content area between the search-container div
+    const searchContainerRegex = /<div class="search-container">[\s\S]*?<\/div>/;
     
     // Fix paths to be relative to root and update the content
     let modifiedTemplate = baseTemplate
         .replace(/href="styles\.css"/g, 'href="/styles.css"')
         .replace(/src="script\.js"/g, 'src="/script.js"')
         .replace(/src="data\.js"/g, 'src="/data.js"')
-        .replace(contentRegex, 
-            `<div id="resultsContainer" class="results">
+        .replace(searchContainerRegex, 
+            `<div class="search-container">
                 <div class="city-page">
                     <div class="breadcrumb">
                         <a href="/" class="back-link">← Back to Cities</a>
@@ -47,6 +47,12 @@ const template = async (city, state, initiatives) => {
                     </div>
                 </div>
             </div>`);
+
+    // Hide the about content
+    modifiedTemplate = modifiedTemplate.replace(
+        /<div id="aboutContent".*?style=".*?"/,
+        '<div id="aboutContent" style="display: none;"'
+    );
 
     return modifiedTemplate;
 };
