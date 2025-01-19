@@ -27,11 +27,17 @@ const template = async (city, state, initiatives) => {
         `).join('')
         : `<p>No mutual aid initiatives found in ${city} yet. Want to add one? Contact us!</p>`;
 
-    // Fix paths to be relative to root and update the content
+    // Add base tag for proper path resolution
+    const baseTag = '<base href="/">';
+    
+    // Fix paths and add base tag
     let modifiedTemplate = baseTemplate
-        .replace(/<link rel="stylesheet" href="styles\.css">/, '<link rel="stylesheet" href="/styles.css">')
-        .replace(/<script type="module" src="script\.js">/, '<script type="module" src="/script.js">')
-        .replace(/<script type="module" src="data\.js">/, '<script type="module" src="/data.js">')
+        // Add base tag after head opening
+        .replace('<head>', '<head>' + baseTag)
+        // Update asset paths to be relative
+        .replace(/<link rel="stylesheet" href="styles\.css">/, '<link rel="stylesheet" href="styles.css">')
+        .replace(/<script type="module" src="script\.js">/, '<script type="module" src="script.js">')
+        .replace(/<script type="module" src="data\.js">/, '<script type="module" src="data.js">')
         .replace(/<div class="search-container">[\s\S]*?<\/div>/, 
             `<div class="search-container">
                 <div class="city-page">
@@ -51,10 +57,15 @@ const template = async (city, state, initiatives) => {
         '<div id="aboutContent" style="display: none;"'
     );
 
-    // Update title
+    // Update title and add meta tags
     modifiedTemplate = modifiedTemplate.replace(
         /<title>.*?<\/title>/,
-        `<title>Mutual Aid Directory - ${city}, ${state}</title>`
+        `<title>Mutual Aid Directory - ${city}, ${state}</title>
+        <meta name="description" content="Find mutual aid initiatives and community support in ${city}, ${state}">
+        <meta property="og:title" content="Mutual Aid Directory - ${city}, ${state}">
+        <meta property="og:description" content="Find mutual aid initiatives and community support in ${city}, ${state}">
+        <meta property="og:type" content="website">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">`
     );
 
     return modifiedTemplate;
