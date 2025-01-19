@@ -29,9 +29,9 @@ const template = async (city, state, initiatives) => {
 
     // Fix paths to be relative to root and update the content
     let modifiedTemplate = baseTemplate
-        .replace(/href="styles\.css"/g, 'href="/styles.css"')
-        .replace(/src="script\.js"/g, 'src="/script.js"')
-        .replace(/src="data\.js"/g, 'src="/data.js"')
+        .replace(/<link rel="stylesheet" href="styles\.css">/, '<link rel="stylesheet" href="/styles.css">')
+        .replace(/<script type="module" src="script\.js">/, '<script type="module" src="/script.js">')
+        .replace(/<script type="module" src="data\.js">/, '<script type="module" src="/data.js">')
         .replace(/<div class="search-container">[\s\S]*?<\/div>/, 
             `<div class="search-container">
                 <div class="city-page">
@@ -49,6 +49,12 @@ const template = async (city, state, initiatives) => {
     modifiedTemplate = modifiedTemplate.replace(
         /<div id="aboutContent".*?style=".*?"/,
         '<div id="aboutContent" style="display: none;"'
+    );
+
+    // Update title
+    modifiedTemplate = modifiedTemplate.replace(
+        /<title>.*?<\/title>/,
+        `<title>Mutual Aid Directory - ${city}, ${state}</title>`
     );
 
     return modifiedTemplate;

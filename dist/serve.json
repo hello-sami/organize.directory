@@ -1,4 +1,5 @@
 {
+  "public": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
@@ -7,7 +8,6 @@
   "redirects": [
     { "source": "/index.html", "destination": "/" }
   ],
-  "public": "dist",
   "headers": [
     {
       "source": "**/*.@(jpg|jpeg|gif|png|svg|webp)",
@@ -18,5 +18,6 @@
         }
       ]
     }
-  ]
+  ],
+  "directoryListing": false
 } 
