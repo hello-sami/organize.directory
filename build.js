@@ -27,14 +27,20 @@ const template = async (city, state, initiatives) => {
         `).join('')
         : `<p>No mutual aid initiatives found in ${city} yet. Want to add one? Contact us!</p>`;
 
-    // Fix paths to be relative to root
+    // Only replace the content within the results container
+    const contentRegex = /<div id="resultsContainer"[^>]*>[\s\S]*?<\/div>/;
+    
+    // Fix paths to be relative to root and update the content
     let modifiedTemplate = baseTemplate
         .replace(/href="styles\.css"/g, 'href="/styles.css"')
         .replace(/src="script\.js"/g, 'src="/script.js"')
         .replace(/src="data\.js"/g, 'src="/data.js"')
-        .replace('<div id="resultsContainer" class="results"></div>', 
+        .replace(contentRegex, 
             `<div id="resultsContainer" class="results">
                 <div class="city-page">
+                    <div class="breadcrumb">
+                        <a href="/" class="back-link">← Back to Cities</a>
+                    </div>
                     <h2>${city}, ${state}</h2>
                     <div class="city-initiatives">
                         ${initiativesHtml}
