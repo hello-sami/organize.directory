@@ -1,18 +1,18 @@
-# Handle static files
-/*.css          /:splat.css     200
-/*.js           /:splat.js      200
+# Static files
+/*.css    /:splat.css    200
+/*.js     /:splat.js     200
 
-# Main pages - clean URLs
-/cities/*       /cities/:splat   200
-/cities         /cities.html     200
-/issues         /issues.html     200
-/about          /about.html      200
+# HTML files - serve directly
+/*.html   /:splat.html   200
 
-# Direct city URLs
-/:city          /cities/:city.html   200
+# Main pages
+/cities   /cities.html   200
+/issues   /issues.html   200
+/about    /about.html    200
+
+# City pages
+/cities/:city   /cities/:city.html   200
+/:city         /cities/:city.html   200
 
 # Homepage
-/               /index.html      200
-
-# Catch all
-/*             /index.html      200 
+/              /index.html   200 
