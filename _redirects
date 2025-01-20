@@ -1,28 +1,18 @@
-# Handle static files first
-/styles.css     /styles.css     200
-/theme.js       /theme.js       200
-/theme-init.js  /theme-init.js  200
-/script.js      /script.js      200
-/cities.js      /cities.js      200
-/*.js           /:splat.js      200
+# Handle static files
 /*.css          /:splat.css     200
+/*.js           /:splat.js      200
 
-# Handle main pages explicitly
-/cities.html    /cities.html    200
-/cities/        /cities.html    200
-/cities         /cities.html    200
-/issues.html    /issues.html    200
-/issues         /issues.html    200
-/about.html     /about.html    200
-/about          /about.html    200
+# Main pages - clean URLs
+/cities/*       /cities/:splat   200
+/cities         /cities.html     200
+/issues         /issues.html     200
+/about          /about.html      200
 
-# Handle city pages - both direct and prefixed URLs
-/cities/:city.html    /cities/:city.html    200
-/cities/:city         /cities/:city.html    200
-/:city               /cities/:city.html    200
+# Direct city URLs
+/:city          /cities/:city.html   200
 
 # Homepage
-/    /index.html    200
+/               /index.html      200
 
-# Catch remaining URLs
-/*    /index.html    200 
+# Catch all
+/*             /index.html      200 
