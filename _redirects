@@ -1,14 +1,12 @@
-# Static assets only
-/*.css    /:splat.css    200
-/*.js     /:splat.js     200
+# Static assets
+/*.css     /:splat.css     200
+/*.js      /:splat.js      200
 
-# Main pages
-/cities   /cities.html   200
-/issues   /issues.html   200
-/about    /about.html    200
+# Main pages - explicit rules
+/          /index.html     200
+/cities    /cities.html    200!
+/issues    /issues.html    200!
+/about     /about.html     200!
 
-# City pages
-/cities/*   /cities/:splat.html   200
-
-# Homepage
-/           /index.html   200 
+# City pages - explicit rule
+/cities/*  /cities/:splat  200! 
