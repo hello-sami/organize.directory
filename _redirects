@@ -12,11 +12,10 @@
 /issues    /issues.html    200
 /about     /about.html     200
 
-# Handle direct city URLs (without /cities/ prefix)
-/:city    /cities/:city.html    200
-
-# Handle city pages with /cities/ prefix - redirect to clean URL
-/cities/:city    /:city    301
+# Handle city pages - both direct and prefixed URLs
+/cities/:city.html    /cities/:city.html    200
+/cities/:city         /cities/:city.html    200
+/:city               /cities/:city.html    200
 
 # Homepage
 /    /index.html    200
