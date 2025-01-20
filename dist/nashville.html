@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><base href="/">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mutual Aid Directory - Nashville, Tennessee</title>
-        <meta name="description" content="Find mutual aid initiatives and community support in Nashville, Tennessee">
+        <meta name="description" content="Find mutual aid initiatives and community support in Nashville, Tennessee. 0 local initiatives available.">
         <meta property="og:title" content="Mutual Aid Directory - Nashville, Tennessee">
-        <meta property="og:description" content="Find mutual aid initiatives and community support in Nashville, Tennessee">
+        <meta property="og:description" content="Find mutual aid initiatives and community support in Nashville, Tennessee. 0 local initiatives available.">
         <meta property="og:type" content="website">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -27,12 +27,19 @@
             <div class="search-container">
                 <div class="city-page">
                     <div class="breadcrumb">
-                        <a href="/" class="back-link">← Back to Cities</a>
+                        <a href="./index.html" class="back-link">← Back to Cities</a>
                     </div>
-                    <h2>Nashville, Tennessee</h2>
-                    <div class="city-initiatives">
-                        <p>No mutual aid initiatives found in Nashville yet. Want to add one? Contact us!</p>
-                    </div>
+                    <header class="city-header">
+                        <h2>Nashville, Tennessee</h2>
+                        <p class="initiative-count">
+                            0 initiatives found
+                        </p>
+                    </header>
+                    <div class="no-initiatives">
+            <p>No mutual aid initiatives found in Nashville yet.</p>
+            <p class="help-text">Know of an initiative that should be listed here? 
+               <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+           </div>
                 </div>
             </div>
                 <div class="results" id="resultsContainer">
@@ -59,6 +66,6 @@
             </div>
         </main>
     </div>
-    <script type="module" src="script.js"></script>
+    <script src="./script.js" type="module" defer></script>
 </body>
 </html>

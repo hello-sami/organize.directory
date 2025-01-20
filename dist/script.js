@@ -59,6 +59,8 @@ function updateNavigation() {
 function showSearchInterface() {
     searchContainer.style.display = 'block';
     aboutContent.style.display = 'none';
+    searchInput.value = '';
+    searchInput.placeholder = `Search ${searchType}...`;
 }
 
 function showAboutPage() {
@@ -118,59 +120,97 @@ function showCityPage(cityName, stateName) {
         initiative.location.toLowerCase().includes(cityName.toLowerCase())
     );
 
+    // Hide search interface and about content
+    searchContainer.style.display = 'block';
+    aboutContent.style.display = 'none';
+
+    // Create city page content
     resultsContainer.innerHTML = `
         <div class="city-page">
-            <h2>${cityName}, ${stateName}</h2>
-            <div class="city-initiatives">
-                ${cityInitiatives.length > 0 ? 
-                    cityInitiatives.map(initiative => `
+            <div class="breadcrumb">
+                <a href="/" class="back-link" onclick="event.preventDefault(); showAllCities(); return false;">← Back to Cities</a>
+            </div>
+            <header class="city-header">
+                <h2>${cityName}, ${stateName}</h2>
+                <p class="initiative-count">
+                    ${cityInitiatives.length} initiative${cityInitiatives.length !== 1 ? 's' : ''} found
+                </p>
+            </header>
+            ${cityInitiatives.length > 0 ? 
+                `<div class="initiatives-grid">
+                    ${cityInitiatives.map(initiative => `
                         <div class="initiative-card">
                             <h3>${initiative.name}</h3>
-                            <p>${initiative.description}</p>
-                            <div class="initiative-links">
-                                ${initiative.website ? `<a href="${initiative.website}" target="_blank">Website</a>` : ''}
-                                ${initiative.contact ? `<a href="mailto:${initiative.contact}">Contact</a>` : ''}
+                            <p class="initiative-description">${initiative.description}</p>
+                            <div class="initiative-meta">
+                                <div class="initiative-location">
+                                    <span class="meta-label">📍 Location:</span>
+                                    <span>${initiative.location}</span>
+                                </div>
+                                ${initiative.scope ? `
+                                    <div class="initiative-scope">
+                                        <span class="meta-label">🌐 Scope:</span>
+                                        <span>${initiative.scope}</span>
+                                    </div>
+                                ` : ''}
                             </div>
-                            <div class="initiative-topics">
-                                ${initiative.topics.map(topic => `<span class="topic-tag">${topic}</span>`).join('')}
+                            <div class="initiative-links">
+                                ${initiative.website ? 
+                                    `<a href="${initiative.website}" target="_blank" class="website-link">
+                                        <span>Visit Website</span>
+                                    </a>` : ''
+                                }
+                                ${initiative.contact ? 
+                                    `<a href="mailto:${initiative.contact}" class="contact-link">
+                                        <span>Contact</span>
+                                    </a>` : ''
+                                }
                             </div>
                         </div>
-                    `).join('') :
-                    `<p>No mutual aid initiatives found in ${cityName} yet. Want to add one? Contact us!</p>`
-                }
-            </div>
+                    `).join('')}
+                </div>`
+                : `<div class="no-initiatives">
+                    <p>No mutual aid initiatives found in ${cityName} yet.</p>
+                    <p class="help-text">Know of an initiative that should be listed here? 
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+                    </div>`
+            }
         </div>
     `;
-
-    // Hide search interface
-    searchContainer.style.display = 'none';
-    resultsContainer.style.display = 'block';
 }
 
-// Update city link click handlers
+// Function to create city link
 function createCityLink(city, state) {
     const citySlug = city.toLowerCase()
         .replace(/ /g, '-')
         .replace(/\//g, '-')
         .replace(/\s+/g, '-');
-    return `<a href="/${citySlug}" class="city-link">${city}</a>`;
+    
+    return `<a href="/${citySlug}" class="city-link" onclick="
+        event.preventDefault(); 
+        window.showCityPage('${city.replace(/'/g, "\\'")}', '${state.replace(/'/g, "\\'")}'); 
+        history.pushState({}, '', '/${citySlug}'); 
+        return false;">${city}</a>`;
 }
 
-// Update showAllCities function
+// Function to show all cities
 function showAllCities() {
+    searchType = 'city';
+    updateNavigation();
+    showSearchInterface();
+    
     let citiesHtml = '';
-    Object.entries(citiesByState).forEach(([state, cities]) => {
+    for (const [state, cities] of Object.entries(citiesByState)) {
         citiesHtml += `
             <div class="state-section">
-                <h3>${state}</h3>
+                <h2>${state}</h2>
                 <div class="cities-grid">
                     ${cities.map(city => createCityLink(city, state)).join('')}
                 </div>
             </div>
         `;
-    });
+    }
     resultsContainer.innerHTML = citiesHtml;
-    resultsContainer.style.display = 'block';
 }
 
 // Search input handler
@@ -252,5 +292,43 @@ function clearResults() {
     resultsContainer.innerHTML = '';
 }
 
+// Route handling for direct URL navigation
+function handleRoute() {
+    const path = window.location.pathname;
+    if (path === '/' || path === '') {
+        showAllCities();
+    } else if (path === '/about') {
+        searchType = 'about';
+        updateNavigation();
+        showAboutPage();
+    } else {
+        // Remove leading slash
+        const citySlug = path.slice(1);
+        for (const [state, cities] of Object.entries(citiesByState)) {
+            const city = cities.find(c => {
+                const slug = c.toLowerCase()
+                    .replace(/ /g, '-')
+                    .replace(/\//g, '-')
+                    .replace(/\s+/g, '-');
+                return slug === citySlug;
+            });
+            
+            if (city) {
+                showCityPage(city, state);
+                return;
+            }
+        }
+        // If no match found, show all cities
+        showAllCities();
+    }
+}
+
+// Listen for popstate events (back/forward navigation)
+window.addEventListener('popstate', handleRoute);
+
 // Initialize
-updateNavigation();
+handleRoute();
+
+// Make functions available globally
+window.showCityPage = showCityPage;
+window.showAllCities = showAllCities;

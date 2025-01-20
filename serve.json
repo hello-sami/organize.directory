@@ -1,23 +1,11 @@
 {
-  "public": "dist",
+  "public": ".",
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/**", "destination": "/index.html" }
-  ],
-  "redirects": [
-    { "source": "/index.html", "destination": "/" }
-  ],
-  "headers": [
-    {
-      "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|css|js)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ],
-  "directoryListing": false
-} 
+    { "source": "/cities", "destination": "/cities.html" },
+    { "source": "/issues", "destination": "/issues.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/**", "destination": "/cities.html" }
+  ]
+}

@@ -57,89 +57,73 @@ export const citiesByState = {
 // Existing initiatives data
 export const initiatives = [
     {
-        id: 1,
         name: "Food Not Bombs",
-        description: "Recovering and sharing free vegan meals with the public",
-        topics: ["food security", "community support"],
-        scope: "local",
-        location: "San Francisco, CA",
-        website: "https://foodnotbombs.net/",
-        contact: "info@foodnotbombs.net",
-        social: {
-            twitter: "foodnotbombs",
-            instagram: "foodnotbombssf",
-            facebook: "FoodNotBombsSF"
-        }
-    },
-    {
-        id: 2,
-        name: "Mutual Aid Housing Network",
-        description: "Connecting people with housing resources and support",
-        topics: ["housing", "advocacy"],
-        scope: "local",
-        location: "New York, NY",
-        website: "https://example.com",
-        contact: "housing@mutualaid.org",
-        social: {
-            instagram: "mutualaidhousing",
-            twitter: "mutualaidhouse",
-            facebook: "MutualAidHousing"
-        }
-    },
-    {
-        id: 3,
-        name: "Digital Justice Network",
-        description: "Providing online tech support and digital literacy resources to communities",
-        topics: ["digital literacy", "technology access"],
+        description: "Community food sharing and mutual aid network",
         scope: "nationwide",
-        location: "Online",
-        website: "https://example.com",
-        contact: "help@digitaljustice.org",
-        social: {
-            twitter: "digitaljustice",
-            instagram: "digitaljusticenetwork"
-        }
+        topics: ["Food Security", "Community Kitchen", "Food Distribution"],
+        website: "https://foodnotbombs.net",
+        contact: "info@foodnotbombs.net"
     },
     {
-        id: 4,
-        name: "Mutual Aid Wiki",
-        description: "Open-source platform for sharing mutual aid resources and knowledge",
-        topics: ["education", "resource sharing", "documentation"],
+        name: "Housing Justice Network",
+        description: "Fighting evictions and supporting housing rights",
+        scope: "nationwide",
+        topics: ["Housing Rights", "Eviction Defense", "Tenant Organizing"],
+        website: "https://example.com/housing",
+        contact: "housing@example.com"
+    },
+    {
+        name: "Mutual Aid Disaster Relief",
+        description: "Grassroots disaster response network",
+        scope: "nationwide",
+        topics: ["Disaster Relief", "Emergency Response", "Community Resilience"],
+        website: "https://example.com/disaster-relief",
+        contact: "relief@example.com"
+    },
+    {
+        name: "Community Health Initiative",
+        description: "Free health services and medical supply distribution",
         scope: "online",
-        location: "Online",
-        website: "https://example.com",
-        contact: "wiki@mutualaid.org",
-        social: {
-            twitter: "mutualaidwiki",
-            github: "mutualaidwiki"
-        }
+        topics: ["Healthcare", "Medical Supplies", "Mental Health"],
+        website: "https://example.com/health",
+        contact: "health@example.com"
     },
     {
-        id: 5,
-        name: "Community Health Alliance",
-        description: "Providing free health services and medical supplies",
-        topics: ["healthcare", "community support"],
+        name: "Tech Support Collective",
+        description: "Free tech support and digital literacy training",
+        scope: "online",
+        topics: ["Digital Access", "Education", "Technology"],
+        website: "https://example.com/tech",
+        contact: "tech@example.com"
+    },
+    // New York City Organizations
+    {
+        name: "NYC Mutual Aid Network",
+        description: "Connecting New Yorkers to share resources and support",
+        location: "New York City",
         scope: "local",
-        location: "Chicago, IL",
-        website: "https://example.com",
-        contact: "health@mutualaid.org",
-        social: {
-            instagram: "healthalliance",
-            facebook: "CommunityHealthAlliance"
-        }
+        topics: ["Food Security", "Housing", "Healthcare"],
+        website: "https://example.com/nyc-mutual-aid",
+        contact: "nyc@example.com"
     },
     {
-        id: 6,
-        name: "National Mutual Aid Fund",
-        description: "Coordinating nationwide mutual aid funding and resource distribution",
-        topics: ["funding", "resource distribution"],
-        scope: "nationwide",
-        location: "Nationwide",
-        website: "https://example.com",
-        contact: "fund@mutualaid.org",
-        social: {
-            twitter: "mutualaidfund",
-            instagram: "nationalmutualaid"
-        }
+        name: "Brooklyn Food Justice",
+        description: "Community-driven food distribution in Brooklyn",
+        location: "New York City",
+        scope: "local",
+        topics: ["Food Security", "Community Kitchen"],
+        website: "https://example.com/brooklyn-food",
+        contact: "brooklyn@example.com"
+    },
+
+    // San Francisco Organizations
+    {
+        name: "SF Community Support",
+        description: "Neighborhood-based mutual aid in San Francisco",
+        location: "San Francisco",
+        scope: "local",
+        topics: ["Housing", "Food Security", "Elder Care"],
+        website: "https://example.com/sf-support",
+        contact: "sf@example.com"
     }
 ]; 

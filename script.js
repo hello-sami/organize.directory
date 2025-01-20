@@ -9,80 +9,107 @@ const socialIcons = {
 
 // DOM elements
 const searchInput = document.getElementById('searchInput');
+const homeLink = document.getElementById('homeLink');
 const cityLink = document.getElementById('cityLink');
 const issuesLink = document.getElementById('issuesLink');
 const aboutLink = document.getElementById('aboutLink');
 const resultsContainer = document.getElementById('resultsContainer');
-const searchContainer = document.querySelector('.search-container');
+const homePage = document.getElementById('homePage');
+const mainContent = document.getElementById('mainContent');
 const aboutContent = document.getElementById('aboutContent');
+const headlinesContent = document.getElementById('headlinesContent');
 
 // Search type state
-let searchType = 'city'; // 'city' or 'issues' or 'about'
+let currentView = 'home'; // 'home', 'cities', 'issues', or 'about'
 
 // Event listeners for navigation
+homeLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    currentView = 'home';
+    updateNavigation();
+    showHomePage();
+});
+
 cityLink.addEventListener('click', (e) => {
     e.preventDefault();
-    searchType = 'city';
+    currentView = 'cities';
     updateNavigation();
-    showSearchInterface();
-    searchInput.placeholder = 'Search cities...';
-    searchInput.value = '';
-    showAllCities();
+    showCitiesPage();
 });
 
 issuesLink.addEventListener('click', (e) => {
     e.preventDefault();
-    searchType = 'issues';
+    currentView = 'issues';
     updateNavigation();
-    showSearchInterface();
-    searchInput.placeholder = 'Search issues...';
-    searchInput.value = '';
-    clearResults();
-    showAllIssues();
+    showIssuesPage();
 });
 
 aboutLink.addEventListener('click', (e) => {
     e.preventDefault();
-    searchType = 'about';
+    currentView = 'about';
     updateNavigation();
     showAboutPage();
 });
 
 // Update navigation styles
 function updateNavigation() {
-    cityLink.classList.toggle('active', searchType === 'city');
-    issuesLink.classList.toggle('active', searchType === 'issues');
-    aboutLink.classList.toggle('active', searchType === 'about');
+    homeLink.classList.toggle('active', currentView === 'home');
+    cityLink.classList.toggle('active', currentView === 'cities');
+    issuesLink.classList.toggle('active', currentView === 'issues');
+    aboutLink.classList.toggle('active', currentView === 'about');
 }
 
-// Toggle between search interface and about page
-function showSearchInterface() {
-    searchContainer.style.display = 'block';
+// Show different pages
+function showHomePage() {
+    homePage.style.display = 'block';
+    mainContent.style.display = 'none';
     aboutContent.style.display = 'none';
+    updateUrlParams({ page: 'home' });
+}
+
+function showCitiesPage() {
+    homePage.style.display = 'none';
+    mainContent.style.display = 'block';
+    aboutContent.style.display = 'none';
+    searchInput.placeholder = 'Search cities...';
+    showAllCities();
+    updateUrlParams({ page: 'cities' });
+}
+
+function showIssuesPage() {
+    homePage.style.display = 'none';
+    mainContent.style.display = 'block';
+    aboutContent.style.display = 'none';
+    searchInput.placeholder = 'Search issues...';
+    showAllIssues();
+    updateUrlParams({ page: 'issues' });
 }
 
 function showAboutPage() {
-    searchContainer.style.display = 'none';
+    homePage.style.display = 'none';
+    mainContent.style.display = 'none';
     aboutContent.style.display = 'block';
+    updateUrlParams({ page: 'about' });
 }
 
 // Show all available issues
 function showAllIssues() {
-    const issues = new Set();
-    initiatives
-        .filter(initiative => initiative.scope === 'nationwide' || initiative.scope === 'online')
-        .forEach(initiative => {
-            initiative.topics.forEach(topic => issues.add(topic));
-        });
+    if (!resultsContainer) return;
     
-    const sortedIssues = Array.from(issues).sort();
+    // Get unique topics from all initiatives
+    const topics = new Set();
+    initiatives.forEach(initiative => {
+        initiative.topics.forEach(topic => topics.add(topic));
+    });
+    
+    const sortedTopics = Array.from(topics).sort();
     
     resultsContainer.innerHTML = `
-        <div class="result-item">
-            ${sortedIssues.map(issue => `
-                <div class="issue-link" style="margin-bottom: 0.75rem;">
-                    <a href="#" onclick="event.preventDefault(); document.getElementById('searchInput').value = '${issue}'; performSearch('${issue}');">
-                        ${issue}
+        <div class="issues-grid">
+            ${sortedTopics.map(topic => `
+                <div class="issue-link">
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('searchInput').value = '${topic}'; window.performSearch('${topic}', 'issues');">
+                        ${topic}
                     </a>
                 </div>
             `).join('')}
@@ -118,59 +145,97 @@ function showCityPage(cityName, stateName) {
         initiative.location.toLowerCase().includes(cityName.toLowerCase())
     );
 
+    // Hide search interface and about content
+    searchContainer.style.display = 'block';
+    aboutContent.style.display = 'none';
+
+    // Create city page content
     resultsContainer.innerHTML = `
         <div class="city-page">
-            <h2>${cityName}, ${stateName}</h2>
-            <div class="city-initiatives">
-                ${cityInitiatives.length > 0 ? 
-                    cityInitiatives.map(initiative => `
+            <div class="breadcrumb">
+                <a href="/" class="back-link" onclick="event.preventDefault(); showAllCities(); return false;">← Back to Cities</a>
+            </div>
+            <header class="city-header">
+                <h2>${cityName}, ${stateName}</h2>
+                <p class="initiative-count">
+                    ${cityInitiatives.length} initiative${cityInitiatives.length !== 1 ? 's' : ''} found
+                </p>
+            </header>
+            ${cityInitiatives.length > 0 ? 
+                `<div class="initiatives-grid">
+                    ${cityInitiatives.map(initiative => `
                         <div class="initiative-card">
                             <h3>${initiative.name}</h3>
-                            <p>${initiative.description}</p>
-                            <div class="initiative-links">
-                                ${initiative.website ? `<a href="${initiative.website}" target="_blank">Website</a>` : ''}
-                                ${initiative.contact ? `<a href="mailto:${initiative.contact}">Contact</a>` : ''}
+                            <p class="initiative-description">${initiative.description}</p>
+                            <div class="initiative-meta">
+                                <div class="initiative-location">
+                                    <span class="meta-label">📍 Location:</span>
+                                    <span>${initiative.location}</span>
+                                </div>
+                                ${initiative.scope ? `
+                                    <div class="initiative-scope">
+                                        <span class="meta-label">🌐 Scope:</span>
+                                        <span>${initiative.scope}</span>
+                                    </div>
+                                ` : ''}
                             </div>
-                            <div class="initiative-topics">
-                                ${initiative.topics.map(topic => `<span class="topic-tag">${topic}</span>`).join('')}
+                            <div class="initiative-links">
+                                ${initiative.website ? 
+                                    `<a href="${initiative.website}" target="_blank" class="website-link">
+                                        <span>Visit Website</span>
+                                    </a>` : ''
+                                }
+                                ${initiative.contact ? 
+                                    `<a href="mailto:${initiative.contact}" class="contact-link">
+                                        <span>Contact</span>
+                                    </a>` : ''
+                                }
                             </div>
                         </div>
-                    `).join('') :
-                    `<p>No mutual aid initiatives found in ${cityName} yet. Want to add one? Contact us!</p>`
-                }
-            </div>
+                    `).join('')}
+                </div>`
+                : `<div class="no-initiatives">
+                    <p>No mutual aid initiatives found in ${cityName} yet.</p>
+                    <p class="help-text">Know of an initiative that should be listed here? 
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+                    </div>`
+            }
         </div>
     `;
-
-    // Hide search interface
-    searchContainer.style.display = 'none';
-    resultsContainer.style.display = 'block';
 }
 
-// Update city link click handlers
+// Function to create city link
 function createCityLink(city, state) {
     const citySlug = city.toLowerCase()
         .replace(/ /g, '-')
         .replace(/\//g, '-')
         .replace(/\s+/g, '-');
-    return `<a href="/${citySlug}" class="city-link">${city}</a>`;
+    
+    return `<a href="/${citySlug}" class="city-link" onclick="
+        event.preventDefault(); 
+        window.showCityPage('${city.replace(/'/g, "\\'")}', '${state.replace(/'/g, "\\'")}'); 
+        history.pushState({}, '', '/${citySlug}'); 
+        return false;">${city}</a>`;
 }
 
-// Update showAllCities function
+// Function to show all cities
 function showAllCities() {
+    searchType = 'city';
+    updateNavigation();
+    showSearchInterface();
+    
     let citiesHtml = '';
-    Object.entries(citiesByState).forEach(([state, cities]) => {
+    for (const [state, cities] of Object.entries(citiesByState)) {
         citiesHtml += `
             <div class="state-section">
-                <h3>${state}</h3>
+                <h2>${state}</h2>
                 <div class="cities-grid">
                     ${cities.map(city => createCityLink(city, state)).join('')}
                 </div>
             </div>
         `;
-    });
+    }
     resultsContainer.innerHTML = citiesHtml;
-    resultsContainer.style.display = 'block';
 }
 
 // Search input handler
@@ -200,25 +265,25 @@ function debounce(func, wait) {
     };
 }
 
-function performSearch(query) {
+function performSearch(query, type) {
+    if (!resultsContainer) return;
+    
     const results = initiatives.filter(initiative => {
-        if (searchType === 'city') {
-            // Only show local initiatives when searching by city
+        if (type === 'city') {
             return initiative.scope === 'local' && 
-                   initiative.location.toLowerCase().includes(query.toLowerCase());
+                   initiative.location?.toLowerCase().includes(query.toLowerCase());
         } else {
-            // Only show nationwide/online initiatives when searching by topic
-            return (initiative.scope === 'nationwide' || initiative.scope === 'online') && 
-                   initiative.topics.some(topic => 
-                       topic.toLowerCase().includes(query.toLowerCase())
-                   );
+            return initiative.topics.some(topic => 
+                topic.toLowerCase().includes(query.toLowerCase())
+            );
         }
     });
+    
     displayResults(results);
 }
 
 function displayResults(results) {
-    clearResults();
+    if (!resultsContainer) return;
     
     if (results.length === 0) {
         resultsContainer.innerHTML = `
@@ -229,28 +294,221 @@ function displayResults(results) {
         return;
     }
 
-    results.forEach(initiative => {
-        const resultElement = document.createElement('div');
-        resultElement.className = 'result-item';
-        resultElement.innerHTML = `
+    resultsContainer.innerHTML = results.map(initiative => `
+        <div class="result-item">
             <h3>${initiative.name}</h3>
             <p>${initiative.description}</p>
             <div class="meta">
-                ${initiative.scope === 'local' ? 
-                    `<span>📍 ${initiative.location}</span>` :
-                    `<span>🌐 ${initiative.scope === 'nationwide' ? 'Nationwide' : 'Online'}</span>`
-                }
+                <span>🌐 ${initiative.scope.charAt(0).toUpperCase() + initiative.scope.slice(1)}</span>
                 <a href="${initiative.website}" target="_blank">Website</a>
                 <a href="mailto:${initiative.contact}">Contact</a>
             </div>
-        `;
-        resultsContainer.appendChild(resultElement);
-    });
+            <div class="topics">
+                ${initiative.topics.map(topic => 
+                    `<span class="topic-tag">${topic}</span>`
+                ).join('')}
+            </div>
+        </div>
+    `).join('');
 }
 
 function clearResults() {
     resultsContainer.innerHTML = '';
 }
 
+// Route handling for direct URL navigation
+function handleRoute() {
+    const path = window.location.pathname;
+    const params = new URLSearchParams(window.location.search);
+    const page = params.get('page') || 'home';
+
+    if (path === '/' || path === '') {
+        currentView = page;
+        updateNavigation();
+        
+        switch (page) {
+            case 'home':
+                showHomePage();
+                // Add example headlines if none exist
+                if (breakingNews.headlines.length === 0) {
+                    breakingNews.addHeadline(
+                        "Urgent: Hurricane Relief in Wilmington",
+                        "Local mutual aid networks are coordinating emergency supplies and shelter. Volunteers and donations needed.",
+                        "/wilmington.html"
+                    );
+                    breakingNews.addHeadline(
+                        "Northwest CT Mutual Aid Network Launches Winter Drive",
+                        "Collection centers are now open for winter clothing and supplies to support community members.",
+                        "/northwest-ct.html"
+                    );
+                }
+                break;
+            case 'cities':
+                showCitiesPage();
+                break;
+            case 'issues':
+                showIssuesPage();
+                break;
+            case 'about':
+                showAboutPage();
+                break;
+            default:
+                showHomePage();
+        }
+    } else {
+        // Handle city-specific pages
+        const citySlug = path.slice(1);
+        for (const [state, cities] of Object.entries(citiesByState)) {
+            const city = cities.find(c => {
+                const slug = c.toLowerCase()
+                    .replace(/ /g, '-')
+                    .replace(/\//g, '-')
+                    .replace(/\s+/g, '-');
+                return slug === citySlug;
+            });
+            
+            if (city) {
+                currentView = 'cities';
+                updateNavigation();
+                showCityPage(city, state);
+                return;
+            }
+        }
+        // If no match found, show home page
+        showHomePage();
+    }
+}
+
+// Listen for popstate events (back/forward navigation)
+window.addEventListener('popstate', handleRoute);
+
 // Initialize
-updateNavigation();
+handleRoute();
+
+// Make functions available globally
+window.showCityPage = showCityPage;
+window.showAllCities = showAllCities;
+
+// Breaking News Headlines Management
+const breakingNews = {
+    headlines: [],
+    
+    addHeadline(title, description, link) {
+        this.headlines.unshift({ 
+            title, 
+            description, 
+            link, 
+            timestamp: new Date() 
+        });
+        this.displayHeadlines();
+        this.saveHeadlines();
+    },
+    
+    removeHeadline(index) {
+        this.headlines.splice(index, 1);
+        this.displayHeadlines();
+        this.saveHeadlines();
+    },
+    
+    displayHeadlines() {
+        if (!headlinesContent) return;
+        
+        if (this.headlines.length === 0) {
+            headlinesContent.innerHTML = '<p>No current updates</p>';
+            return;
+        }
+        
+        headlinesContent.innerHTML = this.headlines.map((item, index) => `
+            <div class="news-headline">
+                <h3>${item.title}</h3>
+                <p>${item.description}</p>
+                <div class="timestamp">
+                    ${this.formatDate(item.timestamp)}
+                    ${item.link ? `· <a href="${item.link}">Learn more</a>` : ''}
+                </div>
+            </div>
+        `).join('');
+    },
+
+    formatDate(date) {
+        const options = { 
+            month: 'short', 
+            day: 'numeric', 
+            year: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit'
+        };
+        return new Date(date).toLocaleDateString('en-US', options);
+    },
+
+    saveHeadlines() {
+        localStorage.setItem('breakingHeadlines', JSON.stringify(this.headlines));
+    },
+
+    loadHeadlines() {
+        const saved = localStorage.getItem('breakingHeadlines');
+        if (saved) {
+            this.headlines = JSON.parse(saved);
+            this.headlines.forEach(headline => {
+                headline.timestamp = new Date(headline.timestamp);
+            });
+            this.displayHeadlines();
+        }
+    }
+};
+
+// Initialize based on current page
+function initializePage() {
+    const currentPath = window.location.pathname;
+    
+    if (currentPath.endsWith('issues.html')) {
+        showAllIssues();
+        initializeSearch('issues');
+    } else if (currentPath.endsWith('cities.html')) {
+        showAllCities();
+        initializeSearch('city');
+    } else if (currentPath === '/' || currentPath === '' || currentPath.endsWith('index.html')) {
+        initializeHomePage();
+    }
+}
+
+function initializeHomePage() {
+    if (headlinesContent) {
+        breakingNews.loadHeadlines();
+        // Add example headlines if none exist
+        if (breakingNews.headlines.length === 0) {
+            breakingNews.addHeadline(
+                "Urgent: Hurricane Relief in Wilmington",
+                "Local mutual aid networks are coordinating emergency supplies and shelter. Volunteers and donations needed.",
+                "/wilmington.html"
+            );
+            breakingNews.addHeadline(
+                "Northwest CT Mutual Aid Network Launches Winter Drive",
+                "Collection centers are now open for winter clothing and supplies to support community members.",
+                "/northwest-ct.html"
+            );
+        }
+    }
+}
+
+function initializeSearch(type) {
+    if (!searchInput) return;
+    
+    searchInput.addEventListener('input', debounce(() => {
+        const query = searchInput.value.trim();
+        if (query) {
+            performSearch(query, type);
+        } else if (type === 'issues') {
+            showAllIssues();
+        } else {
+            showAllCities();
+        }
+    }, 300));
+}
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', initializePage);
+
+// Make necessary functions available globally
+window.breakingNews = breakingNews;
+window.performSearch = performSearch;

@@ -294,78 +294,185 @@ input[type="text"]::placeholder {
     padding: 2rem;
 }
 
-.city-page h2 {
-    color: var(--primary-color);
+.city-header {
     margin-bottom: 2rem;
-    font-size: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
 }
 
-.city-initiatives {
+.city-header h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.initiative-count {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.initiatives-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2rem;
 }
 
 .initiative-card {
-    background: var(--background-light);
+    background: white;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .initiative-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transform: translateY(-2px);
 }
 
 .initiative-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
+    font-size: 1.25rem;
 }
 
-.initiative-links {
+.initiative-description {
+    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.initiative-meta {
     margin: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--text-color);
 }
 
-.initiative-links a {
-    display: inline-block;
-    margin-right: 1rem;
-    color: var(--primary-color);
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    background: var(--background-dark);
-    transition: background-color 0.2s ease;
+.initiative-meta > div {
+    margin-bottom: 0.5rem;
 }
 
-.initiative-links a:hover {
-    background: var(--primary-color);
-    color: var(--background-light);
+.meta-label {
+    font-weight: 500;
+    margin-right: 0.5rem;
 }
 
 .initiative-topics {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-top: 1rem;
+    margin: 1rem 0;
 }
 
 .topic-tag {
-    background: var(--primary-color);
-    color: var(--background-light);
+    background: var(--light-gray);
+    color: var(--primary-color);
     padding: 0.25rem 0.75rem;
     border-radius: 16px;
     font-size: 0.875rem;
 }
 
-/* Responsive adjustments */
+.initiative-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.initiative-links a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.website-link {
+    background: var(--primary-color);
+    color: white;
+}
+
+.website-link:hover {
+    opacity: 0.9;
+}
+
+.contact-link {
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.contact-link:hover {
+    background: var(--light-gray);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.social-link {
+    color: var(--text-color);
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.social-link:hover {
+    opacity: 1;
+}
+
+.social-link svg {
+    width: 20px;
+    height: 20px;
+}
+
+.no-initiatives {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: var(--light-gray);
+    border-radius: 8px;
+}
+
+.no-initiatives p {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.help-text {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.help-text a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.help-text a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
-    .city-initiatives {
-        grid-template-columns: 1fr;
-    }
-    
     .city-page {
         padding: 1rem;
+    }
+
+    .initiatives-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .initiative-links {
+        flex-direction: column;
+    }
+
+    .initiative-links a {
+        width: 100%;
+        justify-content: center;
     }
 }
 
