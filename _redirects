@@ -1,4 +1,13 @@
-# Handle main pages first
+# Handle static files first
+/styles.css     /styles.css     200
+/theme.js       /theme.js       200
+/theme-init.js  /theme-init.js  200
+/script.js      /script.js      200
+/cities.js      /cities.js      200
+/*.js           /:splat.js      200
+/*.css          /:splat.css     200
+
+# Handle main pages
 /cities    /cities.html    200
 /issues    /issues.html    200
 /about     /about.html     200
