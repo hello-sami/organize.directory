@@ -1,11 +1,11 @@
+# Main pages first - use 302 temporary redirects
+/cities    /cities.html    302
+/issues    /issues.html    302
+/about     /about.html     302
+
 # Static assets
 /*.css     /:splat.css     200
 /*.js      /:splat.js      200
 
-# Main pages - use 301 for clean URLs
-/cities    /cities.html    301
-/issues    /issues.html    301
-/about     /about.html     301
-
-# City pages - permanent redirect
-/cities/*  /cities/:splat.html  301 
+# City pages - temporary redirect
+/cities/*  /cities/:splat.html  302 
