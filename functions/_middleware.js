@@ -20,10 +20,14 @@ export async function onRequest({ request, next }) {
     return next();
   }
 
-  // Handle city pages
-  if (url.pathname.startsWith('/cities/') && !url.pathname.endsWith('.html')) {
-    url.pathname = `${url.pathname}.html`;
-    return next();
+  // Handle city pages - check if it's a valid city slug
+  const citySlug = url.pathname.slice(1); // Remove leading slash
+  if (citySlug && !citySlug.includes('/') && !citySlug.endsWith('.html')) {
+    // Try to serve from cities directory
+    const response = await fetch(new URL(`/cities/${citySlug}.html`, url.origin));
+    if (response.ok) {
+      return response;
+    }
   }
 
   // Handle root
