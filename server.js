@@ -1,35 +1,47 @@
-import express from 'express';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import os from 'os';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
+const express = require('express');
+const path = require('path');
 const app = express();
 const port = 3001;
 
-// Serve static files from the dist directory
-app.use(express.static('dist'));
+// Serve static files from root directory
+app.use(express.static('.'));
 
-// Handle city pages
-app.get('/:city', (req, res, next) => {
-    const citySlug = req.params.city;
-    // Try to serve the city's HTML file
-    res.sendFile(path.join(__dirname, 'dist', `${citySlug}.html`), err => {
+// Handle favicon.ico requests
+app.get('/favicon.ico', (req, res) => {
+    res.status(204).end(); // No content response for favicon
+});
+
+// Routes for main pages
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.get('/cities', (req, res) => {
+    res.sendFile(path.join(__dirname, 'cities.html'));
+});
+
+app.get('/issues', (req, res) => {
+    res.sendFile(path.join(__dirname, 'issues.html'));
+});
+
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'about.html'));
+});
+
+// Route for individual city pages - serve the HTML file directly from cities directory
+app.get('/:city', (req, res) => {
+    // Skip if requesting favicon
+    if (req.params.city === 'favicon.ico') return;
+    
+    const cityPath = path.join(__dirname, 'cities', `${req.params.city}.html`);
+    res.sendFile(cityPath, (err) => {
         if (err) {
-            // If file doesn't exist, fall back to index.html for client-side routing
-            res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+            console.error(`Error serving ${cityPath}:`, err);
+            res.status(404).send('City page not found');
         }
     });
 });
 
-// Handle all other routes
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
-
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
-    console.log(`Network: http://${os.networkInterfaces()['en0']?.[1]?.address || 'localhost'}:${port}`);
 }); 

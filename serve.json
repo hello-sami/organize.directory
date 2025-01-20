@@ -1,11 +1,8 @@
 {
   "public": ".",
-  "cleanUrls": true,
-  "trailingSlash": false,
+  "cleanUrls": false,
   "rewrites": [
-    { "source": "/cities", "destination": "/cities.html" },
-    { "source": "/issues", "destination": "/issues.html" },
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/cities/:city", "destination": "/cities/:city.html" }
-  ]
+    { "source": "/:city([^/]+)", "destination": "/cities/:city.html" }
+  ],
+  "directoryListing": false
 }

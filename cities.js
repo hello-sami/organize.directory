@@ -71,7 +71,7 @@ function showAllCities() {
                 <div class="cities-grid">
                     ${cities.map(city => `
                         <div class="city-link">
-                            <a href="javascript:void(0)" onclick="showCityPage('${city.replace(/'/g, "\\'")}', '${state.replace(/'/g, "\\'")}'); history.pushState(null, '', '/${createSlug(city)}');">${city}</a>
+                            <a href="/${createSlug(city)}">${city}</a>
                         </div>
                     `).join('')}
                 </div>
@@ -124,7 +124,7 @@ function displaySearchResults(results) {
             <div class="cities-grid">
                 ${cities.map(city => `
                     <div class="city-link">
-                        <a href="javascript:void(0)" onclick="showCityPage('${city.replace(/'/g, "\\'")}', '${state.replace(/'/g, "\\'")}'); history.pushState(null, '', '/${createSlug(city)}');">${city}</a>
+                        <a href="/${createSlug(city)}">${city}</a>
                     </div>
                 `).join('')}
             </div>

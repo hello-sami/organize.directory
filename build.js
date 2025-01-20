@@ -1,141 +1,64 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { initiatives, citiesByState } from './data.js';
+import { citiesByState } from './data.js';
 
-// Social media icons as SVG
-const socialIcons = {
-    twitter: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>`,
-    instagram: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>`,
-    facebook: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>`
-};
-
-const template = async (city, state, initiatives) => {
-    // Read the base template
-    const baseTemplate = await fs.readFile('index.html', 'utf-8');
+const template = async (city, state) => {
+    const citySlug = createSlug(city);
     
-    // Find initiatives for this city - using more flexible matching
-    const cityInitiatives = initiatives.filter(initiative => {
-        const locationLower = initiative.location.toLowerCase();
-        const cityLower = city.toLowerCase();
-        const stateLower = state.toLowerCase();
-        
-        return initiative.scope === "local" && (
-            locationLower.includes(cityLower) ||
-            locationLower.includes(`${cityLower}, ${stateLower}`) ||
-            locationLower.includes(`${state}, ${city}`)
-        );
-    });
+    return `<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Aid in ${city} - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid initiatives and community support networks in ${city}, ${state}. Connect with local organizations and community resources.">
+    <meta property="og:title" content="Mutual Aid in ${city} - Local Support Networks">
+    <meta property="og:description" content="Find mutual aid initiatives and community support networks in ${city}, ${state}. Connect with local organizations providing community-based support.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/${citySlug}">
+    <meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <h1><a href="/" class="home-link">Mutual Aid Directory</a></h1>
+            <nav>
+                <a href="/cities" class="nav-link active">Cities</a>
+                <a href="/issues" class="nav-link">Issues</a>
+                <a href="/about" class="nav-link">About</a>
+            </nav>
+        </aside>
 
-    // Generate initiative cards with more details
-    const initiativesHtml = cityInitiatives.length > 0 
-        ? `<div class="initiatives-grid">
-            ${cityInitiatives.map(initiative => `
-                <div class="initiative-card">
-                    <h3>${initiative.name}</h3>
-                    <p class="initiative-description">${initiative.description}</p>
-                    
-                    <div class="initiative-topics">
-                        ${initiative.topics.map(topic => 
-                            `<span class="topic-tag">${topic}</span>`
-                        ).join('')}
-                    </div>
-                    
-                    <div class="initiative-meta">
-                        <div class="initiative-location">
-                            <span class="meta-label">📍 Location:</span>
-                            <span>${initiative.location}</span>
-                        </div>
-                        ${initiative.scope ? `
-                            <div class="initiative-scope">
-                                <span class="meta-label">🌐 Scope:</span>
-                                <span>${initiative.scope}</span>
-                            </div>
-                        ` : ''}
-                    </div>
-
-                    <div class="initiative-links">
-                        ${initiative.website ? 
-                            `<a href="${initiative.website}" target="_blank" class="website-link">
-                                <span>Visit Website</span>
-                            </a>` : ''
-                        }
-                        ${initiative.contact ? 
-                            `<a href="mailto:${initiative.contact}" class="contact-link">
-                                <span>Contact</span>
-                            </a>` : ''
-                        }
-                    </div>
-
-                    ${initiative.social ? `
-                        <div class="social-links">
-                            ${initiative.social.twitter ? 
-                                `<a href="https://twitter.com/${initiative.social.twitter}" target="_blank" class="social-link twitter">
-                                    ${socialIcons.twitter}
-                                </a>` : ''
-                            }
-                            ${initiative.social.instagram ? 
-                                `<a href="https://instagram.com/${initiative.social.instagram}" target="_blank" class="social-link instagram">
-                                    ${socialIcons.instagram}
-                                </a>` : ''
-                            }
-                            ${initiative.social.facebook ? 
-                                `<a href="https://facebook.com/${initiative.social.facebook}" target="_blank" class="social-link facebook">
-                                    ${socialIcons.facebook}
-                                </a>` : ''
-                            }
-                        </div>
-                    ` : ''}
+        <main class="content">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/cities" class="back-link">← Back to Cities</a>
                 </div>
-            `).join('')}
-        </div>`
-        : `<div class="no-initiatives">
-            <p>No mutual aid initiatives found in ${city} yet.</p>
-            <p class="help-text">Know of an initiative that should be listed here? 
-               <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-           </div>`;
-
-    // Fix paths and remove base tag
-    let modifiedTemplate = baseTemplate
-        .replace('<head><base href="/">', '<head>')
-        .replace(/<link rel="stylesheet" href="styles\.css">/, '<link rel="stylesheet" href="./styles.css">')
-        .replace(/<script type="module" src="script\.js">/, '<script type="module" src="./script.js">')
-        .replace(/<script type="module" src="data\.js">/, '<script type="module" src="./data.js">')
-        .replace(/<a href="\/" class="back-link">/, '<a href="./index.html" class="back-link">')
-        .replace(/<div class="search-container">[\s\S]*?<\/div>/, 
-            `<div class="search-container">
-                <div class="city-page">
-                    <div class="breadcrumb">
-                        <a href="./index.html" class="back-link">← Back to Cities</a>
-                    </div>
-                    <header class="city-header">
-                        <h2>${city}, ${state}</h2>
-                        <p class="initiative-count">
-                            ${cityInitiatives.length} initiative${cityInitiatives.length !== 1 ? 's' : ''} found
-                        </p>
-                    </header>
-                    ${initiativesHtml}
+                <header class="city-header">
+                    <h2>${city}, ${state}</h2>
+                </header>
+                <div class="initiatives-list">
+                    <h3>Local Mutual Aid Initiatives</h3>
+                    <p class="help-text">Know of a mutual aid initiative in ${city}? 
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
                 </div>
-            </div>`);
-
-    // Hide the about content
-    modifiedTemplate = modifiedTemplate.replace(
-        /<div id="aboutContent".*?style=".*?"/,
-        '<div id="aboutContent" style="display: none;"'
-    );
-
-    // Update title and add meta tags
-    modifiedTemplate = modifiedTemplate.replace(
-        /<title>.*?<\/title>/,
-        `<title>Mutual Aid Directory - ${city}, ${state}</title>
-        <meta name="description" content="Find mutual aid initiatives and community support in ${city}, ${state}. ${cityInitiatives.length} local initiatives available.">
-        <meta property="og:title" content="Mutual Aid Directory - ${city}, ${state}">
-        <meta property="og:description" content="Find mutual aid initiatives and community support in ${city}, ${state}. ${cityInitiatives.length} local initiatives available.">
-        <meta property="og:type" content="website">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">`
-    );
-
-    return modifiedTemplate;
+            </div>
+        </main>
+    </div>
+</body>
+</html>`;
 };
+
+function createSlug(text) {
+    return text.toLowerCase()
+        .replace(/ /g, '-')
+        .replace(/\//g, '-')
+        .replace(/[^a-z0-9-]/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+}
 
 async function cleanDirectory(dir) {
     try {
@@ -149,37 +72,21 @@ async function cleanDirectory(dir) {
 async function build() {
     console.log('Starting build process...');
     
-    // Clean dist directory completely
-    console.log('Cleaning dist directory...');
-    await cleanDirectory('dist');
+    // Clean and recreate cities directory
+    console.log('Cleaning cities directory...');
+    await cleanDirectory('cities');
+    await fs.mkdir('cities', { recursive: true });
     
-    // Create fresh dist directory
-    console.log('Creating dist directory...');
-    await fs.mkdir('dist', { recursive: true });
-    
-    // Copy only specific static assets
-    console.log('Copying static assets...');
-    await fs.copyFile('styles.css', path.join('dist', 'styles.css'));
-    await fs.copyFile('script.js', path.join('dist', 'script.js'));
-    await fs.copyFile('data.js', path.join('dist', 'data.js'));
-    await fs.copyFile('index.html', path.join('dist', 'index.html'));
-
-    // Generate city pages with flat structure
+    // Generate city pages
     console.log('Generating city pages...');
     let count = 0;
     const total = Object.values(citiesByState).flat().length;
 
     for (const [state, cities] of Object.entries(citiesByState)) {
         await Promise.all(cities.map(async city => {
-            // Create a clean slug for the filename
-            const citySlug = city.toLowerCase()
-                .replace(/ /g, '-')
-                .replace(/\//g, '-')
-                .replace(/\s+/g, '-');
-            
-            // Generate HTML and write directly to dist/[slug].html
-            const html = await template(city, state, initiatives);
-            await fs.writeFile(path.join('dist', `${citySlug}.html`), html);
+            const citySlug = createSlug(city);
+            const html = await template(city, state);
+            await fs.writeFile(path.join('cities', `${citySlug}.html`), html);
             
             count++;
             if (count % 50 === 0 || count === total) {

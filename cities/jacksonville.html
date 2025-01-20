@@ -1,71 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mutual Aid Directory - Jacksonville, North Carolina</title>
-        <meta name="description" content="Find mutual aid initiatives and community support in Jacksonville, North Carolina. 0 local initiatives available.">
-        <meta property="og:title" content="Mutual Aid Directory - Jacksonville, North Carolina">
-        <meta property="og:description" content="Find mutual aid initiatives and community support in Jacksonville, North Carolina. 0 local initiatives available.">
-        <meta property="og:type" content="website">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css">
+    <title>Mutual Aid in Jacksonville - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid initiatives and community support networks in Jacksonville, North Carolina. Connect with local organizations and community resources.">
+    <meta property="og:title" content="Mutual Aid in Jacksonville - Local Support Networks">
+    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Jacksonville, North Carolina. Connect with local organizations providing community-based support.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/jacksonville">
+    <meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="layout">
         <aside class="sidebar">
-            <h1>Mutual Aid Directory</h1>
+            <h1><a href="/" class="home-link">Mutual Aid Directory</a></h1>
             <nav>
-                <a href="#" id="cityLink" class="nav-link active">Cities</a>
-                <a href="#" id="issuesLink" class="nav-link">Issues</a>
-                <a href="#" id="aboutLink" class="nav-link">About</a>
+                <a href="/cities" class="nav-link active">Cities</a>
+                <a href="/issues" class="nav-link">Issues</a>
+                <a href="/about" class="nav-link">About</a>
             </nav>
         </aside>
 
         <main class="content">
-            <div class="search-container">
-                <div class="city-page">
-                    <div class="breadcrumb">
-                        <a href="./index.html" class="back-link">← Back to Cities</a>
-                    </div>
-                    <header class="city-header">
-                        <h2>Jacksonville, North Carolina</h2>
-                        <p class="initiative-count">
-                            0 initiatives found
-                        </p>
-                    </header>
-                    <div class="no-initiatives">
-            <p>No mutual aid initiatives found in Jacksonville yet.</p>
-            <p class="help-text">Know of an initiative that should be listed here? 
-               <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-           </div>
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/cities" class="back-link">← Back to Cities</a>
                 </div>
-            </div>
-                <div class="results" id="resultsContainer">
-                    <!-- Results will be dynamically populated here -->
+                <header class="city-header">
+                    <h2>Jacksonville, North Carolina</h2>
+                </header>
+                <div class="initiatives-list">
+                    <h3>Local Mutual Aid Initiatives</h3>
+                    <p class="help-text">Know of a mutual aid initiative in Jacksonville? 
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
                 </div>
-            </div>
-
-            <div id="aboutContent" style="display: none;">
-                <h2>About This Directory</h2>
-                <p>This directory is a resource for finding and connecting with mutual aid networks and grassroots initiatives across different cities and focus areas.</p>
-                
-                <h3>What is Mutual Aid?</h3>
-                <p>Mutual aid is a form of community support where people work together to meet each other's needs, based on the principles of solidarity and reciprocity rather than charity.</p>
-                
-                <h3>How to Use This Directory</h3>
-                <ul>
-                    <li>Search by city to find initiatives in your area</li>
-                    <li>Browse by issues to find organizations working on specific causes</li>
-                    <li>Connect directly with organizations through their provided contact information</li>
-                </ul>
-
-                <h3>Contributing</h3>
-                <p>This is an open directory. If you're part of a mutual aid network or know of one that should be listed here, please contact us to have it added.</p>
             </div>
         </main>
     </div>
-    <script src="./script.js" type="module" defer></script>
 </body>
 </html>
