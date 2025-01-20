@@ -8,9 +8,9 @@
     <meta property="og:title" content="Cities - Mutual Aid Network Directory">
     <meta property="og:description" content="Find mutual aid networks and community support initiatives in cities across the United States.">
     <meta property="og:type" content="website">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <script src="theme-init.js"></script>
+    <script src="/theme-init.js"></script>
 </head>
 <body>
     <div class="layout">
@@ -30,13 +30,12 @@
     </div>
 
     <script type="module">
-        import { createSidebar, adjustPaths } from './components/sidebar.js';
+        import { createSidebar } from '/components/sidebar.js';
         const sidebarContainer = document.getElementById('sidebar-container');
         const sidebar = createSidebar('cities');
-        adjustPaths(sidebar);
         sidebarContainer.replaceWith(sidebar);
     </script>
-    <script src="theme.js" type="module"></script>
-    <script src="cities.js" type="module" defer></script>
+    <script src="/theme.js" type="module"></script>
+    <script src="/cities.js" type="module" defer></script>
 </body>
 </html> 

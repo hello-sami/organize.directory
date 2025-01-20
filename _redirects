@@ -1,16 +1,16 @@
-# Serve HTML files directly
-/*.html     /:splat.html     200
+# Handle direct city URLs (without /cities/ prefix)
+/:city    /cities/:city.html    200
 
-# Clean URLs for main pages
-/cities     /cities.html     200
-/issues     /issues.html     200
-/about      /about.html      200
+# Handle main pages
+/cities    /cities.html    200
+/issues    /issues.html    200
+/about     /about.html     200
 
-# City pages without .html
-/cities/*   /cities/:splat.html   200
+# Handle city pages with /cities/ prefix
+/cities/*    /cities/:splat.html    200
 
 # Homepage
-/           /index.html      200
+/    /index.html    200
 
 # Catch remaining URLs
-/*          /index.html      200 
+/*    /index.html    200 
