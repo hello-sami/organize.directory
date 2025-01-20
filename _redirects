@@ -2,11 +2,10 @@
 /*.css     /:splat.css     200
 /*.js      /:splat.js      200
 
-# Main pages - explicit rules
-/          /index.html     200
-/cities    /cities.html    200!
-/issues    /issues.html    200!
-/about     /about.html     200!
+# Main pages - use 301 for clean URLs
+/cities    /cities.html    301
+/issues    /issues.html    301
+/about     /about.html     301
 
-# City pages - explicit rule
-/cities/*  /cities/:splat  200! 
+# City pages - permanent redirect
+/cities/*  /cities/:splat.html  301 
