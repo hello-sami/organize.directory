@@ -20,13 +20,20 @@ export async function onRequest({ request, next }) {
     return next();
   }
 
-  // Handle city pages - check if it's a valid city slug
+  // Handle city pages with clean URLs
   const citySlug = url.pathname.slice(1); // Remove leading slash
   if (citySlug && !citySlug.includes('/') && !citySlug.endsWith('.html')) {
-    // Try to serve from cities directory
-    const response = await fetch(new URL(`/cities/${citySlug}.html`, url.origin));
-    if (response.ok) {
-      return response;
+    try {
+      // Attempt to fetch the city page from the cities directory
+      const cityResponse = await fetch(new URL(`/cities/${citySlug}.html`, url.origin));
+      if (cityResponse.ok) {
+        // Create a new response with the same body but the clean URL
+        const newResponse = new Response(cityResponse.body, cityResponse);
+        return newResponse;
+      }
+    } catch (error) {
+      // If fetch fails, continue to next middleware
+      console.error('Error fetching city page:', error);
     }
   }
 
