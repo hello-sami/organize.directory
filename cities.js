@@ -71,7 +71,7 @@ function showAllCities() {
                 <div class="cities-grid">
                     ${cities.map(city => `
                         <div class="city-link">
-                            <a href="/${createSlug(city)}">${city}</a>
+                            <a href="/cities/${createSlug(city)}">${city}</a>
                         </div>
                     `).join('')}
                 </div>
