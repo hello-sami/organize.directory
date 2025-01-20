@@ -7,10 +7,14 @@
 /*.js           /:splat.js      200
 /*.css          /:splat.css     200
 
-# Handle main pages
-/cities    /cities.html    200
-/issues    /issues.html    200
-/about     /about.html     200
+# Handle main pages explicitly
+/cities.html    /cities.html    200
+/cities/        /cities.html    200
+/cities         /cities.html    200
+/issues.html    /issues.html    200
+/issues         /issues.html    200
+/about.html     /about.html    200
+/about          /about.html    200
 
 # Handle city pages - both direct and prefixed URLs
 /cities/:city.html    /cities/:city.html    200
