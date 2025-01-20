@@ -1,9 +1,10 @@
-# Handle direct city URLs
-/new-york-city  /cities/new-york-city.html  200
+# Handle all pages without .html extension
+/:city  /cities/:city.html  200
 
 # Handle directory and other pages
-/cities/    /cities.html    200
-/cities/*   /cities/:splat.html  200
-/issues     /issues.html    200
-/about      /about.html     200
-/*          /index.html     200 
+/cities    /cities.html    200
+/issues    /issues.html    200
+/about     /about.html     200
+
+# Catch-all must be last
+/*        /index.html     200 
