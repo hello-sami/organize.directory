@@ -13,20 +13,26 @@ function initializePage() {
 function showAllIssues() {
     if (!resultsContainer) return;
     
-    // Get unique topics from all initiatives
-    const topics = new Set();
+    // Get unique topics and their initiative counts
+    const topicCounts = new Map();
     initiatives.forEach(initiative => {
-        initiative.topics.forEach(topic => topics.add(topic));
+        initiative.topics.forEach(topic => {
+            topicCounts.set(topic, (topicCounts.get(topic) || 0) + 1);
+        });
     });
     
-    const sortedTopics = Array.from(topics).sort();
+    const sortedTopics = Array.from(topicCounts.entries())
+        .sort((a, b) => a[0].localeCompare(b[0]));
     
     resultsContainer.innerHTML = `
         <div class="issues-grid">
-            ${sortedTopics.map(topic => `
+            ${sortedTopics.map(([topic, count]) => `
                 <div class="issue-link">
                     <a href="#" onclick="event.preventDefault(); searchByTopic('${topic}');">
                         ${topic}
+                        <div class="topics">
+                            <span class="topic-tag">${count} initiative${count !== 1 ? 's' : ''}</span>
+                        </div>
                     </a>
                 </div>
             `).join('')}
@@ -76,15 +82,15 @@ function displaySearchResults(results) {
         <div class="result-item">
             <h3>${initiative.name}</h3>
             <p>${initiative.description}</p>
-            <div class="meta">
-                <span>🌐 ${initiative.scope.charAt(0).toUpperCase() + initiative.scope.slice(1)}</span>
-                <a href="${initiative.website}" target="_blank">Website</a>
-                <a href="mailto:${initiative.contact}">Contact</a>
-            </div>
             <div class="topics">
                 ${initiative.topics.map(topic => 
                     `<span class="topic-tag">${topic}</span>`
                 ).join('')}
+            </div>
+            <div class="meta">
+                <span>${initiative.scope.charAt(0).toUpperCase() + initiative.scope.slice(1)}</span>
+                ${initiative.website ? `<a href="${initiative.website}" target="_blank">Website</a>` : ''}
+                ${initiative.contact ? `<a href="mailto:${initiative.contact}">Contact</a>` : ''}
             </div>
         </div>
     `).join('');
