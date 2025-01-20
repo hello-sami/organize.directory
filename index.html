@@ -4,20 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mutual Aid Network Directory</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="/theme-init.js"></script>
 </head>
 <body>
     <div class="layout">
-        <aside class="sidebar">
-            <h1><a href="/" class="home-link">Mutual Aid Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link active">Home</a>
-                <a href="cities.html" class="nav-link">Cities</a>
-                <a href="issues.html" class="nav-link">Issues</a>
-                <a href="about.html" class="nav-link">About</a>
-            </nav>
-        </aside>
+        <div id="sidebar-container"></div>
 
         <main class="content">
             <div class="welcome-section">
@@ -56,7 +49,13 @@
         </main>
     </div>
 
-    <script src="./theme.js" type="module"></script>
-    <script src="./script.js" type="module" defer></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        const sidebarContainer = document.getElementById('sidebar-container');
+        const sidebar = createSidebar('home');
+        sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
+    <script src="/script.js" type="module" defer></script>
 </body>
 </html>

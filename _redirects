@@ -1,10 +1,15 @@
-# Handle all pages without .html extension
-/:city  /cities/:city.html  200
+# Handle main pages
+/cities.html    /cities.html    200
+/issues.html    /issues.html    200
+/about.html     /about.html     200
 
-# Handle directory and other pages
+# Handle clean URLs for main pages
 /cities    /cities.html    200
 /issues    /issues.html    200
 /about     /about.html     200
 
+# Handle city pages
+/cities/:city    /cities/:city.html    200
+
 # Catch-all must be last
-/*        /index.html     200 
+/*    /index.html    200 
