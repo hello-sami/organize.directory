@@ -96,34 +96,5 @@ export const initiatives = [
         website: "https://example.com/tech",
         contact: "tech@example.com"
     },
-    // New York City Organizations
-    {
-        name: "NYC Mutual Aid Network",
-        description: "Connecting New Yorkers to share resources and support",
-        location: "New York City",
-        scope: "local",
-        topics: ["Food Security", "Housing", "Healthcare"],
-        website: "https://example.com/nyc-mutual-aid",
-        contact: "nyc@example.com"
-    },
-    {
-        name: "Brooklyn Food Justice",
-        description: "Community-driven food distribution in Brooklyn",
-        location: "New York City",
-        scope: "local",
-        topics: ["Food Security", "Community Kitchen"],
-        website: "https://example.com/brooklyn-food",
-        contact: "brooklyn@example.com"
-    },
 
-    // San Francisco Organizations
-    {
-        name: "SF Community Support",
-        description: "Neighborhood-based mutual aid in San Francisco",
-        location: "San Francisco",
-        scope: "local",
-        topics: ["Housing", "Food Security", "Elder Care"],
-        website: "https://example.com/sf-support",
-        contact: "sf@example.com"
-    }
 ]; 

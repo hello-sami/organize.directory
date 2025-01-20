@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisoner Solidarity - Mutual Aid Network Directory</title>
+    <meta name="description" content="Organizations working on prisoner solidarity, advocacy, and support.">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <div id="sidebar-container"></div>
+
+        <main class="content">
+            <a href="/issues" class="back-link">← Back to Issues</a>
+            
+            <div class="initiatives-list">
+                <h2>Prisoner Solidarity</h2>
+                <ul class="detailed-initiatives">
+                    <li>
+                        <h3><a href="https://criticalresistance.org">Critical Resistance</a></h3>
+                        <p>Building an international movement to end the prison industrial complex through organizing, advocacy, and education.</p>
+                    </li>
+                    <li>
+                        <h3><a href="https://www.blackandpink.org">Black and Pink</a></h3>
+                        <p>Supporting LGBTQ+ and HIV+ prisoners through advocacy, education, direct service, and organizing.</p>
+                    </li>
+                    <li>
+                        <h3><a href="https://www.prisonpolicy.org">Prison Policy Initiative</a></h3>
+                        <p>Research and advocacy organization working to expose the broader harm of mass criminalization.</p>
+                    </li>
+                </ul>
+
+                <p class="help-text">
+                    Know of other prisoner solidarity organizations we should list? 
+                    <a href="mailto:contact@organize.directory">Let us know</a>.
+                </p>
+            </div>
+        </main>
+    </div>
+
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        const sidebarContainer = document.getElementById('sidebar-container');
+        const sidebar = createSidebar('issues');
+        sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 

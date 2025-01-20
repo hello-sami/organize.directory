@@ -20,21 +20,37 @@ export async function onRequest({ request, next }) {
     return next();
   }
 
-  // Handle city pages with clean URLs
-  const citySlug = url.pathname.slice(1); // Remove leading slash
-  if (citySlug && !citySlug.includes('/') && !citySlug.endsWith('.html')) {
-    try {
-      // Attempt to fetch the city page from the cities directory
-      const cityResponse = await fetch(new URL(`/cities/${citySlug}.html`, url.origin));
-      if (cityResponse.ok) {
-        // Create a new response with the same body but the clean URL
-        const newResponse = new Response(cityResponse.body, cityResponse);
-        return newResponse;
+  // List of known issue slugs
+  const issuesSlugs = [
+    'housing-rights',
+    'food-security',
+    'healthcare',
+    'environmental-justice',
+    'workers-rights'
+  ];
+
+  // Handle clean URLs
+  const slug = url.pathname.slice(1); // Remove leading slash
+  if (slug && !slug.includes('/') && !slug.endsWith('.html')) {
+    // Check if it's an issue page first
+    if (issuesSlugs.includes(slug)) {
+      const issueResponse = await fetch(new URL(`/issues/${slug}.html`, url.origin));
+      if (issueResponse.ok) {
+        return issueResponse;
       }
-    } catch (error) {
-      // If fetch fails, continue to next middleware
-      console.error('Error fetching city page:', error);
     }
+    
+    // If not an issue, try city page
+    const cityResponse = await fetch(new URL(`/cities/${slug}.html`, url.origin));
+    if (cityResponse.ok) {
+      return cityResponse;
+    }
+  }
+
+  // Handle direct access to HTML files in subdirectories
+  if ((url.pathname.startsWith('/cities/') || url.pathname.startsWith('/issues/')) && 
+      url.pathname.endsWith('.html')) {
+    return next();
   }
 
   // Handle root

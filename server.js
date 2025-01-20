@@ -1,67 +1,46 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = 3001;
 
-// Serve static files from root directory first
+// Serve static files
 app.use(express.static('.'));
 
-// Handle favicon.ico requests
-app.get('/favicon.ico', (req, res) => {
-    res.status(204).end();
-});
+// Handle clean URLs
+app.get('*', (req, res, next) => {
+  // Remove trailing slash for matching
+  const path_without_slash = req.path.endsWith('/') ? req.path.slice(0, -1) : req.path;
+  const slug = path_without_slash.substring(1); // Remove leading slash
+  
+  // Skip if it's a file request
+  if (slug.includes('.')) {
+    return next();
+  }
 
-// Routes for main pages - handle both with and without .html
-app.get(['/cities', '/cities.html'], (req, res) => {
-    res.sendFile(path.join(__dirname, 'cities.html'));
-});
+  // Handle main pages
+  if (['cities', 'issues', 'about'].includes(slug)) {
+    res.sendFile(path.join(__dirname, `${slug}.html`));
+    return;
+  }
 
-app.get(['/issues', '/issues.html'], (req, res) => {
-    res.sendFile(path.join(__dirname, 'issues.html'));
-});
-
-app.get(['/about', '/about.html'], (req, res) => {
-    res.sendFile(path.join(__dirname, 'about.html'));
-});
-
-// Handle direct city URLs (without /cities/ prefix)
-app.get('/:city', (req, res, next) => {
-    // Skip if it's a known route or static file
-    if (['cities', 'issues', 'about'].includes(req.params.city) || 
-        req.params.city.includes('.')) {
-        return next();
-    }
-    
-    const cityPath = path.join(__dirname, 'cities', `${req.params.city}.html`);
-    res.sendFile(cityPath, (err) => {
+  // Try to serve from cities directory
+  res.sendFile(path.join(__dirname, 'cities', `${slug}.html`), err => {
+    if (err) {
+      // If not found in cities, try issues directory
+      res.sendFile(path.join(__dirname, 'issues', `${slug}.html`), err => {
         if (err) {
-            // If city page doesn't exist, continue to next route
-            return next();
+          next();
         }
-    });
-});
-
-// Route for city pages with /cities/ prefix
-app.get('/cities/:city', (req, res, next) => {
-    // Skip if the request is for a static file
-    if (req.params.city.includes('.')) {
-        return next();
+      });
     }
-    
-    const cityPath = path.join(__dirname, 'cities', `${req.params.city}.html`);
-    res.sendFile(cityPath, (err) => {
-        if (err) {
-            console.error(`Error serving ${cityPath}:`, err);
-            res.status(404).send('City page not found');
-        }
-    });
+  });
 });
 
-// Catch-all route for the homepage
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+// Serve index for root
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+const PORT = process.env.PORT || 5500;
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 }); 
