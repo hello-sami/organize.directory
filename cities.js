@@ -160,7 +160,7 @@ function showAllCities() {
                 <div class="cities-grid">
                     ${cities.map(city => `
                         <div class="city-link">
-                            <a href="/${getCitySlug(city, state)}">${city}, ${state}</a>
+                            <a href="/${getCitySlug(city, state)}">${city}</a>
                         </div>
                     `).join('')}
                 </div>
@@ -213,7 +213,7 @@ function displaySearchResults(results) {
             <div class="cities-grid">
                 ${cities.map(city => `
                     <div class="city-link">
-                        <a href="/${getCitySlug(city, state)}">${city}, ${state}</a>
+                        <a href="/${getCitySlug(city, state)}">${city}</a>
                     </div>
                 `).join('')}
             </div>
