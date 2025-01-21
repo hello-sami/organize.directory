@@ -1,43 +1,51 @@
 {
   "version": 1,
   "include": ["/*"],
-  "exclude": [],
+  "exclude": ["/_*"],
   "routes": [
     {
       "src": "/location",
-      "dest": "/location.html"
+      "dest": "/location.html",
+      "headers": {
+        "Cache-Control": "no-cache"
+      }
     },
     {
       "src": "/issues",
-      "dest": "/issues.html"
+      "dest": "/issues.html",
+      "headers": {
+        "Cache-Control": "no-cache"
+      }
     },
     {
       "src": "/about",
-      "dest": "/about.html"
+      "dest": "/about.html",
+      "headers": {
+        "Cache-Control": "no-cache"
+      }
     },
     {
       "src": "/resources",
-      "dest": "/resources.html"
+      "dest": "/resources.html",
+      "headers": {
+        "Cache-Control": "no-cache"
+      }
     },
     {
-      "src": "/posts/:path*",
-      "dest": "/posts/:path*.html"
+      "src": "/posts/:slug",
+      "dest": "/posts/:slug.html"
     },
     {
-      "src": "/cities/:path*",
-      "dest": "/cities/:path*.html"
+      "src": "/cities/:name",
+      "dest": "/cities/:name.html"
     },
     {
-      "src": "/states/:path*",
-      "dest": "/states/:path*.html"
+      "src": "/states/:name",
+      "dest": "/states/:name.html"
     },
     {
-      "src": "/issues/:path*",
-      "dest": "/issues/:path*.html"
-    },
-    {
-      "src": "/:path*",
-      "dest": "/index.html"
+      "src": "/issues/:name",
+      "dest": "/issues/:name.html"
     }
   ]
 } 
