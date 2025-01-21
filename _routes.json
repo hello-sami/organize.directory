@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "include": ["/"],
+  "exclude": [],
+  "routes": [
+    {
+      "src": "/location",
+      "dest": "/location.html"
+    },
+    {
+      "src": "/issues",
+      "dest": "/issues.html"
+    },
+    {
+      "src": "/about",
+      "dest": "/about.html"
+    },
+    {
+      "src": "/resources",
+      "dest": "/resources.html"
+    },
+    {
+      "src": "/posts/:slug",
+      "dest": "/posts/:slug.html"
+    },
+    {
+      "src": "/cities/:city",
+      "dest": "/cities/:city.html"
+    },
+    {
+      "src": "/states/:state",
+      "dest": "/states/:state.html"
+    },
+    {
+      "src": "/issues/:issue",
+      "dest": "/issues/:issue.html"
+    },
+    {
+      "src": "/*",
+      "status": 200,
+      "dest": "/index.html"
+    }
+  ]
+} 

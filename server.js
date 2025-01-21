@@ -89,7 +89,7 @@ app.get('*', (req, res, next) => {
   // Handle main pages
   if (segments.length === 1) {
     const page = segments[0];
-    if (['cities', 'issues', 'about'].includes(page)) {
+    if (['cities', 'issues', 'about', 'location', 'resources'].includes(page)) {
       res.sendFile(path.join(__dirname, `${page}.html`));
       return;
     }
