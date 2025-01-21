@@ -4,40 +4,39 @@
   "exclude": [],
   "routes": [
     {
-      "src": "/location",
+      "src": "/location/?",
       "dest": "/location.html"
     },
     {
-      "src": "/issues",
+      "src": "/issues/?",
       "dest": "/issues.html"
     },
     {
-      "src": "/about",
+      "src": "/about/?",
       "dest": "/about.html"
     },
     {
-      "src": "/resources",
+      "src": "/resources/?",
       "dest": "/resources.html"
     },
     {
-      "src": "/posts/:slug",
+      "src": "/posts/:slug/?",
       "dest": "/posts/:slug.html"
     },
     {
-      "src": "/cities/:city",
+      "src": "/cities/:city/?",
       "dest": "/cities/:city.html"
     },
     {
-      "src": "/states/:state",
+      "src": "/states/:state/?",
       "dest": "/states/:state.html"
     },
     {
-      "src": "/issues/:issue",
+      "src": "/issues/:issue/?",
       "dest": "/issues/:issue.html"
     },
     {
-      "src": "/*",
-      "status": 200,
+      "src": "^(?!.*\\..*$).*$",
       "dest": "/index.html"
     }
   ]

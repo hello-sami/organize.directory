@@ -7,7 +7,7 @@ export function createSidebar(activePage) {
         <h1><a href="/" class="home-link">organize.directory</a></h1>
         <nav>
             <a href="/" id="homeLink" class="nav-link ${activePage === 'home' ? 'active' : ''}">Home</a>
-            <a href="/location" id="locationLink" class="nav-link ${activePage === 'location' ? 'active' : ''}">Location</a>
+            <a href="/location" id="locationLink" class="nav-link ${activePage === 'location' ? 'active' : ''}">Locations</a>
             <a href="/issues" id="issuesLink" class="nav-link ${activePage === 'issues' ? 'active' : ''}">Issues</a>
             <a href="/resources" id="resourcesLink" class="nav-link ${activePage === 'resources' ? 'active' : ''}">Resources</a>
             <a href="/about" id="aboutLink" class="nav-link ${activePage === 'about' ? 'active' : ''}">About</a>
@@ -35,19 +35,15 @@ export function createSidebar(activePage) {
 
 // Function to handle navigation
 function navigateToPage(path) {
-    // Remove any trailing slashes
+    // Remove trailing slashes and .html extension
     path = path.endsWith('/') ? path.slice(0, -1) : path;
+    path = path.endsWith('.html') ? path.slice(0, -5) : path;
     
     // Handle root path
-    if (path === '' || path === '/') {
-        path = '/index.html';
-    } else {
-        // Add .html extension for the server
-        path = path + '.html';
-    }
+    const fetchPath = path === '' || path === '/' ? '/index.html' : `${path}.html`;
 
     // Fetch the page content
-    fetch(path)
+    fetch(fetchPath)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Page not found');
