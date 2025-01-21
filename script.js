@@ -121,7 +121,7 @@ function initializeApp() {
     // Initialize the page based on current path
     initializePage();
 
-    // Add event listeners only if elements exist
+    // Add search input event listener
     if (searchInput) {
         searchInput.addEventListener('input', debounce(() => {
             const query = searchInput.value.trim().toLowerCase();
@@ -367,20 +367,6 @@ function showAllCities() {
     }
     resultsContainer.innerHTML = citiesHtml;
 }
-
-// Search input handler
-searchInput.addEventListener('input', debounce(() => {
-    const query = searchInput.value.trim().toLowerCase();
-    if (query) {
-        performSearch(query);
-    } else if (searchType === 'issues') {
-        showAllIssues();
-    } else if (searchType === 'city') {
-        showAllCities();
-    } else {
-        clearResults();
-    }
-}, 300));
 
 // Debounce function
 function debounce(func, wait) {
