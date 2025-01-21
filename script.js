@@ -274,15 +274,20 @@ function showCityPage(cityName, stateName) {
         initiative.location.toLowerCase().includes(cityName.toLowerCase())
     );
 
-    // Hide search interface and about content
-    searchContainer.style.display = 'block';
-    aboutContent.style.display = 'none';
+    const stateSlug = stateName.toLowerCase()
+        .replace(/ /g, '-')
+        .replace(/\//g, '-')
+        .replace(/\s+/g, '-');
 
     // Create city page content
     resultsContainer.innerHTML = `
         <div class="city-page">
             <div class="breadcrumb">
-                <a href="/" class="back-link" onclick="event.preventDefault(); showAllStates(); return false;">← Back to Cities</a>
+                <a href="/location" class="breadcrumb-link">Location</a>
+                <span class="breadcrumb-separator">›</span>
+                <a href="/states/${stateSlug}" class="breadcrumb-link">${stateName}</a>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">${cityName}</span>
             </div>
             <header class="city-header">
                 <h2>${cityName}, ${stateName}</h2>
@@ -381,7 +386,9 @@ function showStatePage(stateName) {
     resultsContainer.innerHTML = `
         <div class="state-page">
             <div class="breadcrumb">
-                <a href="/location" class="back-link">← Back to States</a>
+                <a href="/location" class="breadcrumb-link">Location</a>
+                <span class="breadcrumb-separator">›</span>
+                <span class="breadcrumb-current">${stateName}</span>
             </div>
             <header class="state-header">
                 <h2>${stateName}</h2>
