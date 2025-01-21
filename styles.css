@@ -17,6 +17,8 @@
     --card-bg: white;
     --link-color: #0000EE;
     --link-hover: #0000EE;
+    --heading-color: #2D3748;
+    --accent-color: #4A5568;
 }
 
 [data-theme="dark"] {
@@ -29,6 +31,8 @@
     --card-bg: #2D3748;
     --link-color: #63B3ED;
     --link-hover: #63B3ED;
+    --heading-color: #90CDF4;
+    --accent-color: #63B3ED;
 }
 
 /* Typography */
@@ -338,4 +342,34 @@ aside nav {
     .resource-card, .resource-item, .support-container {
         padding: 1.25rem;
     }
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    transition: all 0.2s ease;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-sm);
+}
+
+.theme-toggle svg {
+    width: 100%;
+    height: 100%;
 }
