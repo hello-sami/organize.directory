@@ -4,39 +4,39 @@
   "exclude": ["/_*"],
   "routes": [
     {
-      "src": "/location",
+      "src": "^/location$",
       "dest": "/location.html"
     },
     {
-      "src": "/issues",
+      "src": "^/issues$",
       "dest": "/issues.html"
     },
     {
-      "src": "/about",
+      "src": "^/about$",
       "dest": "/about.html"
     },
     {
-      "src": "/resources",
+      "src": "^/resources$",
       "dest": "/resources.html"
     },
     {
-      "src": "/posts/:slug",
-      "dest": "/posts/:slug.html"
+      "src": "^/posts/([^/]+)$",
+      "dest": "/posts/$1.html"
     },
     {
-      "src": "/cities/:name",
-      "dest": "/cities/:name.html"
+      "src": "^/cities/([^/]+)$",
+      "dest": "/cities/$1.html"
     },
     {
-      "src": "/states/:name",
-      "dest": "/states/:name.html"
+      "src": "^/states/([^/]+)$",
+      "dest": "/states/$1.html"
     },
     {
-      "src": "/issues/:name",
-      "dest": "/issues/:name.html"
+      "src": "^/issues/([^/]+)$",
+      "dest": "/issues/$1.html"
     },
     {
-      "src": "/*",
+      "src": "^/([^.]+)$",
       "dest": "/index.html"
     }
   ]
