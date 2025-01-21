@@ -10,48 +10,75 @@ const socialIcons = {
 // Search type state
 let currentView = 'home'; // 'home', 'cities', 'issues', or 'about'
 
+// Initialize variables
+let searchInput, homeLink, cityLink, issuesLink, aboutLink, resultsContainer, homePage, mainContent, aboutContent, headlinesContent;
+
 // Move all DOM element queries and event listeners inside DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
     // DOM elements
-    const searchInput = document.getElementById('searchInput');
-    const homeLink = document.getElementById('homeLink');
-    const cityLink = document.getElementById('cityLink');
-    const issuesLink = document.getElementById('issuesLink');
-    const aboutLink = document.getElementById('aboutLink');
-    const resultsContainer = document.getElementById('resultsContainer');
-    const homePage = document.getElementById('homePage');
-    const mainContent = document.getElementById('mainContent');
-    const aboutContent = document.getElementById('aboutContent');
-    const headlinesContent = document.getElementById('headlinesContent');
+    searchInput = document.getElementById('searchInput');
+    homeLink = document.getElementById('homeLink');
+    cityLink = document.getElementById('cityLink');
+    issuesLink = document.getElementById('issuesLink');
+    aboutLink = document.getElementById('aboutLink');
+    resultsContainer = document.getElementById('resultsContainer');
+    homePage = document.getElementById('homePage');
+    mainContent = document.getElementById('mainContent');
+    aboutContent = document.getElementById('aboutContent');
+    headlinesContent = document.getElementById('headlinesContent');
 
     // Event listeners for navigation
-    homeLink?.addEventListener('click', (e) => {
-        e.preventDefault();
-        currentView = 'home';
-        updateNavigation();
-        showHomePage();
-    });
+    if (homeLink) {
+        homeLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentView = 'home';
+            updateNavigation();
+            showHomePage();
+        });
+    }
 
-    cityLink?.addEventListener('click', (e) => {
-        e.preventDefault();
-        currentView = 'cities';
-        updateNavigation();
-        showCitiesPage();
-    });
+    if (cityLink) {
+        cityLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentView = 'cities';
+            updateNavigation();
+            showCitiesPage();
+        });
+    }
 
-    issuesLink?.addEventListener('click', (e) => {
-        e.preventDefault();
-        currentView = 'issues';
-        updateNavigation();
-        showIssuesPage();
-    });
+    if (issuesLink) {
+        issuesLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentView = 'issues';
+            updateNavigation();
+            showIssuesPage();
+        });
+    }
 
-    aboutLink?.addEventListener('click', (e) => {
-        e.preventDefault();
-        currentView = 'about';
-        updateNavigation();
-        showAboutPage();
-    });
+    if (aboutLink) {
+        aboutLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentView = 'about';
+            updateNavigation();
+            showAboutPage();
+        });
+    }
+
+    // Initialize search if search input exists
+    if (searchInput) {
+        searchInput.addEventListener('input', debounce(() => {
+            const query = searchInput.value.trim().toLowerCase();
+            if (query) {
+                performSearch(query);
+            } else if (searchType === 'issues') {
+                showAllIssues();
+            } else if (searchType === 'city') {
+                showAllCities();
+            } else {
+                clearResults();
+            }
+        }, 300));
+    }
 
     // Initialize the page
     initializePage();
