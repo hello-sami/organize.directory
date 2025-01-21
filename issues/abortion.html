@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+</script>
+<script src="/theme-init.js"></script> 
+<title>Abortion Access Organizations - Mutual Aid Network Directory</title>
+<meta name="description" content="Find organizations working to expand abortion access and ensure reproductive rights.">
+
+
+</head>
+<body>
+    <div class="layout">
+        <!-- Sidebar will be inserted here -->
+        <div id="sidebar-container"></div>
+
+        <main class="content">
+            <div class="initiatives-list">
+                <div class="breadcrumb">
+                    <a href="/issues" class="back-link">← Back to Issues</a>
+                </div>
+                <header class="city-header">
+                    <h2>Abortion Access</h2>
+                </header>
+                
+                <ul class="simple-initiatives">
+                    <li>
+                        <a href="https://abortionfunds.org/">National Network of Abortion Funds</a>
+                        <p>Network of organizations that help people access and pay for abortions, providing financial assistance and practical support.</p>
+                    </li>
+                    <li>
+                        <a href="https://www.plancpills.org/">Plan C</a>
+                        <p>Information about how to access at-home abortion pill options online.</p>
+                    </li>
+                    <li>
+                        <a href="https://www.ineedana.com/">I Need an A</a>
+                        <p>Directory of verified abortion clinics, information about financial assistance, and logistical support.</p>
+                    </li>
+                    <li>
+                        <a href="https://www.reprocare.com/">Repro Care</a>
+                        <p>Connects people seeking abortions with community support for practical needs like transportation, lodging, childcare, and emotional support.</p>
+                    </li>
+                </ul>
+
+                <p class="help-text">Know of an organization working on abortion access? 
+                    <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        const sidebarContainer = document.getElementById('sidebar-container');
+        const sidebar = createSidebar('issues');
+        sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
+
+ </body></html>

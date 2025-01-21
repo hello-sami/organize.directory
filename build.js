@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { citiesByState } from './data.js';
+import * as cheerio from 'cheerio';
 
 const template = async (city, state) => {
     const citySlug = createSlug(city);
@@ -69,6 +70,56 @@ async function cleanDirectory(dir) {
     }
 }
 
+async function readTemplate(templatePath) {
+    return await fs.readFile(templatePath, 'utf-8');
+}
+
+async function processHtmlFiles(directory) {
+    const headContent = await readTemplate('./templates/head.html');
+    
+    // Get all HTML files recursively
+    async function getHtmlFiles(dir) {
+        const files = await fs.readdir(dir, { withFileTypes: true });
+        const htmlFiles = [];
+        
+        for (const file of files) {
+            const fullPath = path.join(dir, file.name);
+            if (file.isDirectory()) {
+                htmlFiles.push(...(await getHtmlFiles(fullPath)));
+            } else if (file.name.endsWith('.html')) {
+                htmlFiles.push(fullPath);
+            }
+        }
+        
+        return htmlFiles;
+    }
+    
+    // Process each HTML file
+    const htmlFiles = await getHtmlFiles(directory);
+    for (const filePath of htmlFiles) {
+        const content = await fs.readFile(filePath, 'utf-8');
+        const $ = cheerio.load(content);
+        
+        // Replace head content while preserving title and meta description/og
+        const title = $('title').toString();
+        const description = $('meta[name="description"]').toString();
+        const ogTitle = $('meta[property="og:title"]').toString();
+        const ogDescription = $('meta[property="og:description"]').toString();
+        const ogUrl = $('meta[property="og:url"]').toString();
+        
+        $('head').html(headContent + '\n' + 
+            title + '\n' +
+            description + '\n' +
+            ogTitle + '\n' +
+            ogDescription + '\n' +
+            ogUrl
+        );
+        
+        await fs.writeFile(filePath, $.html());
+        console.log(`Processed ${filePath}`);
+    }
+}
+
 async function build() {
     console.log('Starting build process...');
     
@@ -95,6 +146,8 @@ async function build() {
         }));
     }
 
+    await processHtmlFiles('./cities');
+    await processHtmlFiles('./issues');
     console.log('Build completed successfully!');
 }
 
