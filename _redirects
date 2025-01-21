@@ -1,14 +1,14 @@
-# Redirect all routes to their HTML files
-/location    /location.html   200
-/issues      /issues.html     200
-/about       /about.html      200
-/resources   /resources.html   200
+# Main pages
+/location /location.html 200!
+/issues /issues.html 200!
+/about /about.html 200!
+/resources /resources.html 200!
 
-# Handle all other routes
-/*    /index.html   200 
+# Dynamic routes
+/posts/* /posts/:splat.html 200!
+/cities/* /cities/:splat.html 200!
+/states/* /states/:splat.html 200!
+/issues/* /issues/:splat.html 200!
 
-# Redirect Cloudflare Pages routes
-/posts/*    /posts/:splat.html    200
-/cities/*   /cities/:splat.html   200
-/states/*   /states/:splat.html   200
-/issues/*   /issues/:splat.html   200 
+# SPA fallback
+/* /index.html 200 
