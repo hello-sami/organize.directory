@@ -7,48 +7,54 @@ const socialIcons = {
     facebook: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>`
 };
 
-// DOM elements
-const searchInput = document.getElementById('searchInput');
-const homeLink = document.getElementById('homeLink');
-const cityLink = document.getElementById('cityLink');
-const issuesLink = document.getElementById('issuesLink');
-const aboutLink = document.getElementById('aboutLink');
-const resultsContainer = document.getElementById('resultsContainer');
-const homePage = document.getElementById('homePage');
-const mainContent = document.getElementById('mainContent');
-const aboutContent = document.getElementById('aboutContent');
-const headlinesContent = document.getElementById('headlinesContent');
-
 // Search type state
 let currentView = 'home'; // 'home', 'cities', 'issues', or 'about'
 
-// Event listeners for navigation
-homeLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    currentView = 'home';
-    updateNavigation();
-    showHomePage();
-});
+// Move all DOM element queries and event listeners inside DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    // DOM elements
+    const searchInput = document.getElementById('searchInput');
+    const homeLink = document.getElementById('homeLink');
+    const cityLink = document.getElementById('cityLink');
+    const issuesLink = document.getElementById('issuesLink');
+    const aboutLink = document.getElementById('aboutLink');
+    const resultsContainer = document.getElementById('resultsContainer');
+    const homePage = document.getElementById('homePage');
+    const mainContent = document.getElementById('mainContent');
+    const aboutContent = document.getElementById('aboutContent');
+    const headlinesContent = document.getElementById('headlinesContent');
 
-cityLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    currentView = 'cities';
-    updateNavigation();
-    showCitiesPage();
-});
+    // Event listeners for navigation
+    homeLink?.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentView = 'home';
+        updateNavigation();
+        showHomePage();
+    });
 
-issuesLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    currentView = 'issues';
-    updateNavigation();
-    showIssuesPage();
-});
+    cityLink?.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentView = 'cities';
+        updateNavigation();
+        showCitiesPage();
+    });
 
-aboutLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    currentView = 'about';
-    updateNavigation();
-    showAboutPage();
+    issuesLink?.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentView = 'issues';
+        updateNavigation();
+        showIssuesPage();
+    });
+
+    aboutLink?.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentView = 'about';
+        updateNavigation();
+        showAboutPage();
+    });
+
+    // Initialize the page
+    initializePage();
 });
 
 // Update navigation styles
