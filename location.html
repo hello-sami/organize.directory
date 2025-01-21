@@ -13,7 +13,8 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
@@ -38,19 +39,11 @@
             </header>
 
             <div class="search-container">
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Search locations...">
-                </div>
-                <div class="results" id="resultsContainer">
-                    <!-- Results will be dynamically populated here -->
-                </div>
+                <input type="text" id="searchInput" placeholder="Search locations..." class="search-input">
             </div>
-            
-            <div class="states-list">
-                <h2>Browse by State</h2>
-                <div class="states-grid">
-                    <!-- States will be dynamically populated here -->
-                </div>
+
+            <div id="resultsContainer">
+                <!-- Results will be dynamically populated here -->
             </div>
         </main>
     </div>
@@ -61,9 +54,6 @@
         document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
-    <script type="module">
-        import { initializePage } from '/states.js';
-        document.addEventListener('DOMContentLoaded', initializePage);
-    </script>
+    <script type="module" src="/script.js"></script>
 </body>
 </html> 

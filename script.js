@@ -341,11 +341,7 @@ function createCityLink(city, state) {
         .replace(/\//g, '-')
         .replace(/\s+/g, '-');
     
-    return `<a href="/${citySlug}" class="city-link" onclick="
-        event.preventDefault(); 
-        window.showCityPage('${city.replace(/'/g, "\\'")}', '${state.replace(/'/g, "\\'")}'); 
-        history.pushState({}, '', '/${citySlug}'); 
-        return false;">${city}</a>`;
+    return `<a href="/${citySlug}" class="city-link">${city}</a>`;
 }
 
 // Function to show all cities
@@ -354,17 +350,18 @@ function showAllCities() {
     updateNavigation();
     showSearchInterface();
     
-    let citiesHtml = '';
-    for (const [state, cities] of Object.entries(citiesByState)) {
-        citiesHtml += `
-            <div class="state-section">
-                <h2>${state}</h2>
-                <div class="cities-grid">
-                    ${cities.map(city => createCityLink(city, state)).join('')}
+    let citiesHtml = `
+        <div class="states-grid">
+            ${Object.entries(citiesByState).map(([state, cities]) => `
+                <div class="state-section">
+                    <h2>${state}</h2>
+                    <div class="cities-list">
+                        ${cities.map(city => createCityLink(city, state)).join(' · ')}
+                    </div>
                 </div>
-            </div>
-        `;
-    }
+            `).join('')}
+        </div>
+    `;
     resultsContainer.innerHTML = citiesHtml;
 }
 
