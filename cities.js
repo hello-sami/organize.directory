@@ -1,5 +1,59 @@
 import { citiesByState, debounce } from './utils.js';
 
+// State abbreviations mapping
+const stateAbbreviations = {
+    'Alabama': 'al',
+    'Alaska': 'ak',
+    'Arizona': 'az',
+    'Arkansas': 'ar',
+    'California': 'ca',
+    'Colorado': 'co',
+    'Connecticut': 'ct',
+    'Delaware': 'de',
+    'Florida': 'fl',
+    'Georgia': 'ga',
+    'Hawaii': 'hi',
+    'Idaho': 'id',
+    'Illinois': 'il',
+    'Indiana': 'in',
+    'Iowa': 'ia',
+    'Kansas': 'ks',
+    'Kentucky': 'ky',
+    'Louisiana': 'la',
+    'Maine': 'me',
+    'Maryland': 'md',
+    'Massachusetts': 'ma',
+    'Michigan': 'mi',
+    'Minnesota': 'mn',
+    'Mississippi': 'ms',
+    'Missouri': 'mo',
+    'Montana': 'mt',
+    'Nebraska': 'ne',
+    'Nevada': 'nv',
+    'New Hampshire': 'nh',
+    'New Jersey': 'nj',
+    'New Mexico': 'nm',
+    'New York': 'ny',
+    'North Carolina': 'nc',
+    'North Dakota': 'nd',
+    'Ohio': 'oh',
+    'Oklahoma': 'ok',
+    'Oregon': 'or',
+    'Pennsylvania': 'pa',
+    'Rhode Island': 'ri',
+    'South Carolina': 'sc',
+    'South Dakota': 'sd',
+    'Tennessee': 'tn',
+    'Texas': 'tx',
+    'Utah': 'ut',
+    'Vermont': 'vt',
+    'Virginia': 'va',
+    'Washington': 'wa',
+    'West Virginia': 'wv',
+    'Wisconsin': 'wi',
+    'Wyoming': 'wy'
+};
+
 // DOM elements
 const searchInput = document.getElementById('searchInput');
 const resultsContainer = document.getElementById('resultsContainer');
@@ -23,10 +77,27 @@ function initializePage() {
 }
 
 function getCityFromSlug(slug) {
-    for (const [state, cities] of Object.entries(citiesByState)) {
-        const city = cities.find(city => 
-            createSlug(city) === slug
+    // Check if slug contains state abbreviation
+    const parts = slug.split('-');
+    const stateAbbr = parts[parts.length - 1];
+    const citySlug = parts.slice(0, -1).join('-');
+
+    // Find state from abbreviation
+    const state = Object.keys(stateAbbreviations).find(
+        state => stateAbbreviations[state] === stateAbbr
+    );
+
+    if (state) {
+        // Look for city in specific state
+        const city = citiesByState[state]?.find(
+            city => createSlug(city) === citySlug
         );
+        if (city) return { city, state };
+    }
+
+    // If no state abbreviation found or no match, try as a regular city slug
+    for (const [state, cities] of Object.entries(citiesByState)) {
+        const city = cities.find(city => createSlug(city) === slug);
         if (city) {
             return { city, state };
         }
@@ -34,13 +105,31 @@ function getCityFromSlug(slug) {
     return null;
 }
 
-function createSlug(city) {
-    return city.toLowerCase()
+function createSlug(text) {
+    return text.toLowerCase()
         .replace(/ /g, '-')
         .replace(/\//g, '-')
         .replace(/[^a-z0-9-]/g, '-')
         .replace(/-+/g, '-')
         .replace(/^-|-$/g, '');
+}
+
+function getCitySlug(city, state) {
+    // Check if this city name exists in other states
+    let isDuplicate = false;
+    for (const [otherState, cities] of Object.entries(citiesByState)) {
+        if (otherState !== state && cities.includes(city)) {
+            isDuplicate = true;
+            break;
+        }
+    }
+    
+    // If it's a duplicate, include the state abbreviation
+    if (isDuplicate) {
+        return `${createSlug(city)}-${stateAbbreviations[state]}`;
+    }
+    
+    return createSlug(city);
 }
 
 function showCityPage(cityName, stateName) {
@@ -71,7 +160,7 @@ function showAllCities() {
                 <div class="cities-grid">
                     ${cities.map(city => `
                         <div class="city-link">
-                            <a href="/${createSlug(city)}">${city}</a>
+                            <a href="/${getCitySlug(city, state)}">${city}, ${state}</a>
                         </div>
                     `).join('')}
                 </div>
@@ -124,7 +213,7 @@ function displaySearchResults(results) {
             <div class="cities-grid">
                 ${cities.map(city => `
                     <div class="city-link">
-                        <a href="/${createSlug(city)}">${city}</a>
+                        <a href="/${getCitySlug(city, state)}">${city}, ${state}</a>
                     </div>
                 `).join('')}
             </div>
