@@ -85,24 +85,21 @@ let searchInput, homeLink, cityLink, issuesLink, aboutLink, resultsContainer, ho
 
 // Wait for both DOM and sidebar to be ready
 document.addEventListener('DOMContentLoaded', () => {
-    // First try to initialize immediately
     if (document.querySelector('aside.sidebar')) {
         initializeApp();
-        return;
+    } else {
+        const observer = new MutationObserver((mutations, obs) => {
+            if (document.querySelector('aside.sidebar')) {
+                obs.disconnect();
+                initializeApp();
+            }
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
     }
-
-    // If sidebar isn't ready, wait for it
-    const observer = new MutationObserver((mutations, obs) => {
-        if (document.querySelector('aside.sidebar')) {
-            obs.disconnect();
-            initializeApp();
-        }
-    });
-
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
 });
 
 function initializeApp() {
@@ -120,6 +117,7 @@ function initializeApp() {
 
     // Initialize the page based on current path
     initializePage();
+    initializeSearch('state');
 
     // Add search input event listener
     if (searchInput) {
@@ -129,10 +127,8 @@ function initializeApp() {
                 performSearch(query);
             } else if (searchType === 'issues') {
                 showAllIssues();
-            } else if (searchType === 'city') {
-                showAllStates();
             } else {
-                clearResults();
+                showAllStates();
             }
         }, 300));
     }
@@ -152,7 +148,7 @@ function initializeApp() {
             e.preventDefault();
             currentView = 'cities';
             updateNavigation();
-            showCitiesPage();
+            showAllStates();
         });
     }
 
@@ -173,6 +169,9 @@ function initializeApp() {
             showAboutPage();
         });
     }
+
+    // Handle initial route
+    handleRoute();
 }
 
 // Update navigation styles
@@ -572,13 +571,12 @@ function initializePage() {
     const currentPath = window.location.pathname;
     
     if (currentPath === '/location' || currentPath === '/location/') {
+        currentView = 'states';
+        updateNavigation();
         showAllStates();
     } else if (currentPath.endsWith('issues.html')) {
         showAllIssues();
         initializeSearch('issues');
-    } else if (currentPath.endsWith('cities.html')) {
-        showAllStates();
-        initializeSearch('city');
     } else if (currentPath === '/' || currentPath === '' || currentPath.endsWith('index.html')) {
         initializeHomePage();
     }
