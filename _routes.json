@@ -8,36 +8,49 @@
       "dest": "/index.html"
     },
     {
-      "src": "^/location(\\.html)?$",
-      "dest": "/location.html"
+      "src": "^/location/?$",
+      "dest": "/location.html",
+      "status": 200
     },
     {
-      "src": "^/issues(\\.html)?$",
-      "dest": "/issues.html"
+      "src": "^/issues/?$",
+      "dest": "/issues.html",
+      "status": 200
     },
     {
-      "src": "^/about(\\.html)?$",
-      "dest": "/about.html"
+      "src": "^/about/?$",
+      "dest": "/about.html",
+      "status": 200
     },
     {
-      "src": "^/resources(\\.html)?$",
-      "dest": "/resources.html"
+      "src": "^/resources/?$",
+      "dest": "/resources.html",
+      "status": 200
     },
     {
-      "src": "^/posts/([^/]+)(\\.html)?$",
-      "dest": "/posts/$1.html"
+      "src": "^/posts/([^/]+)/?$",
+      "dest": "/posts/$1.html",
+      "status": 200
     },
     {
-      "src": "^/cities/([^/]+)(\\.html)?$",
-      "dest": "/cities/$1.html"
+      "src": "^/cities/([^/]+)/?$",
+      "dest": "/cities/$1.html",
+      "status": 200
     },
     {
-      "src": "^/states/([^/]+)(\\.html)?$",
-      "dest": "/states/$1.html"
+      "src": "^/states/([^/]+)/?$",
+      "dest": "/states/$1.html",
+      "status": 200
     },
     {
-      "src": "^/issues/([^/]+)(\\.html)?$",
-      "dest": "/issues/$1.html"
+      "src": "^/issues/([^/]+)/?$",
+      "dest": "/issues/$1.html",
+      "status": 200
+    },
+    {
+      "src": ".*",
+      "dest": "/404.html",
+      "status": 404
     }
   ]
 } 
