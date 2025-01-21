@@ -1,14 +1,79 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import fs from 'fs/promises';
+import MarkdownIt from 'markdown-it';
+import frontMatter from 'front-matter';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const md = new MarkdownIt();
 
 const app = express();
 
 // Serve static files
 app.use(express.static('.'));
+
+// Handle blog posts
+app.get('/posts/:slug.html', async (req, res, next) => {
+  try {
+    // Load posts.json
+    const postsData = await fs.readFile(path.join(__dirname, 'posts', 'posts.json'), 'utf-8');
+    const { posts } = JSON.parse(postsData);
+    
+    // Find the post metadata
+    const post = posts.find(p => p.slug === req.params.slug);
+    if (!post) {
+      return next();
+    }
+    
+    // Read and convert markdown file
+    const mdContent = await fs.readFile(path.join(__dirname, 'posts', `${post.date}.md`), 'utf-8');
+    const { body } = frontMatter(mdContent);
+    const htmlContent = md.render(body);
+    
+    // Send rendered HTML
+    res.send(`
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>${post.title}</title>
+          <link rel="stylesheet" href="/styles.css">
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+          <script src="/theme-init.js"></script>
+      </head>
+      <body>
+          <div class="layout">
+              <aside id="sidebar" aria-label="Main navigation"></aside>
+              <main class="content" role="main">
+                  <article class="post">
+                      <header class="page-header">
+                          <h1>${post.title}</h1>
+                          <time datetime="${post.date}">${new Date(post.date).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                          })}</time>
+                      </header>
+                      ${htmlContent}
+                  </article>
+              </main>
+          </div>
+          <script type="module">
+              import { createSidebar } from '/components/sidebar.js';
+              document.getElementById('sidebar').replaceWith(createSidebar('home'));
+          </script>
+          <script src="/theme.js" type="module"></script>
+      </body>
+      </html>
+    `);
+  } catch (error) {
+    console.error('Error handling post:', error);
+    next(error);
+  }
+});
 
 // Handle clean URLs
 app.get('*', (req, res, next) => {
