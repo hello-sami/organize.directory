@@ -5,31 +5,19 @@
   "routes": [
     {
       "src": "/location",
-      "dest": "/location.html",
-      "headers": {
-        "Cache-Control": "no-cache"
-      }
+      "dest": "/location.html"
     },
     {
       "src": "/issues",
-      "dest": "/issues.html",
-      "headers": {
-        "Cache-Control": "no-cache"
-      }
+      "dest": "/issues.html"
     },
     {
       "src": "/about",
-      "dest": "/about.html",
-      "headers": {
-        "Cache-Control": "no-cache"
-      }
+      "dest": "/about.html"
     },
     {
       "src": "/resources",
-      "dest": "/resources.html",
-      "headers": {
-        "Cache-Control": "no-cache"
-      }
+      "dest": "/resources.html"
     },
     {
       "src": "/posts/:slug",
@@ -46,6 +34,10 @@
     {
       "src": "/issues/:name",
       "dest": "/issues/:name.html"
+    },
+    {
+      "src": "/*",
+      "dest": "/index.html"
     }
   ]
 } 

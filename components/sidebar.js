@@ -7,10 +7,10 @@ export function createSidebar(activePage) {
         <h1><a href="/" class="home-link">organize.directory</a></h1>
         <nav>
             <a href="/" class="nav-link ${activePage === 'home' ? 'active' : ''}">Home</a>
-            <a href="/location.html" class="nav-link ${activePage === 'location' ? 'active' : ''}">Locations</a>
-            <a href="/issues.html" class="nav-link ${activePage === 'issues' ? 'active' : ''}">Issues</a>
-            <a href="/resources.html" class="nav-link ${activePage === 'resources' ? 'active' : ''}">Resources</a>
-            <a href="/about.html" class="nav-link ${activePage === 'about' ? 'active' : ''}">About</a>
+            <a href="/location" class="nav-link ${activePage === 'location' ? 'active' : ''}">Locations</a>
+            <a href="/issues" class="nav-link ${activePage === 'issues' ? 'active' : ''}">Issues</a>
+            <a href="/resources" class="nav-link ${activePage === 'resources' ? 'active' : ''}">Resources</a>
+            <a href="/about" class="nav-link ${activePage === 'about' ? 'active' : ''}">About</a>
         </nav>
     `;
     
