@@ -1,34 +1,30 @@
-<!DOCTYPE html><html lang="en" data-theme="dark"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> 
-<title>Mutual Aid in Washington - Local Support Networks &amp; Community Resources</title>
-<meta name="description" content="Find mutual aid initiatives and community support networks in Washington, District of Columbia. Connect with local organizations and community resources.">
-<meta property="og:title" content="Mutual Aid in Washington - Local Support Networks">
-<meta property="og:description" content="Find mutual aid initiatives and community support networks in Washington, District of Columbia. Connect with local organizations providing community-based support.">
-<meta property="og:url" content="https://organize.directory/washington"></head>
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Washington, DC - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Washington, District of Columbia.">
+    <meta property="og:title" content="Washington, DC - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Washington, District of Columbia.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
-        <aside class="sidebar">
-            <h1><a href="/" class="home-link">Mutual Aid Directory</a></h1>
-            <nav>
-                <a href="/cities" class="nav-link active">Cities</a>
-                <a href="/issues" class="nav-link">Issues</a>
-                <a href="/about" class="nav-link">About</a>
-            </nav>
-        </aside>
+        <!-- Sidebar will be inserted here -->
+        <div id="sidebar-container"></div>
 
         <main class="content">
             <div class="city-page">
@@ -39,7 +35,15 @@
                     <h2>Washington, District of Columbia</h2>
                 </header>
                 <div class="initiatives-list">
-                    <h3>Local Mutual Aid Initiatives</h3>
+                    <ul class="simple-initiatives">
+                        <h3>Racial Justice</h3>
+                            <li>
+                                <a href="https://www.instagram.com/thepalmcollectivedc/">The Palm Collective</a>
+                                <p>a Black, Queer-led org that seeks to build a coalition of grassroots social justice entrepreneurial orgs, centering climate & environmental justice</p>
+                            </li>
+
+
+                    </ul>
                     <p class="help-text">Know of a mutual aid initiative in Washington? 
                         <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
                 </div>
@@ -47,4 +51,12 @@
         </main>
     </div>
 
-</body></html>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        const sidebarContainer = document.getElementById('sidebar-container');
+        const sidebar = createSidebar('cities');
+        sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html>
