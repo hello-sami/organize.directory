@@ -390,24 +390,23 @@ function showStatePage(stateName) {
                 <span class="breadcrumb-separator">›</span>
                 <span class="breadcrumb-current">${stateName}</span>
             </div>
-            <header class="state-header">
-                <h2>${stateName}</h2>
-            </header>
-            
+
+            <h1 class="state-title">${stateName}</h1>
+
             <section class="cities-section">
-                <h3>Cities</h3>
+                <h2>Cities in ${stateName}</h2>
                 <div class="cities-list">
-                    ${cities.map(city => createCityLink(city, stateName)).join(' · ')}
+                    ${cities.map(city => createCityLink(city, stateName)).join('')}
                 </div>
             </section>
 
             <section class="initiatives-section">
-                <h3>Statewide Initiatives</h3>
+                <h2>Statewide Mutual Aid Networks</h2>
                 ${stateInitiatives.length > 0 ? `
                     <div class="initiatives-grid">
                         ${stateInitiatives.map(initiative => `
                             <div class="initiative-card">
-                                <h4>${initiative.name}</h4>
+                                <h3>${initiative.name}</h3>
                                 <p class="initiative-description">${initiative.description}</p>
                                 <div class="initiative-links">
                                     ${initiative.website ? 
@@ -421,7 +420,7 @@ function showStatePage(stateName) {
                         `).join('')}
                     </div>
                 ` : `
-                    <p class="no-initiatives">No statewide initiatives found.</p>
+                    <p class="no-initiatives">Know of a statewide mutual aid initiative in ${stateName}? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
                 `}
             </section>
         </div>
