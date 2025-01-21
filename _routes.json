@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [],
+  "routes": [
+    {
+      "src": "/location",
+      "dest": "/location.html"
+    },
+    {
+      "src": "/issues",
+      "dest": "/issues.html"
+    },
+    {
+      "src": "/about",
+      "dest": "/about.html"
+    },
+    {
+      "src": "/resources",
+      "dest": "/resources.html"
+    },
+    {
+      "src": "/posts/:path*",
+      "dest": "/posts/:path*.html"
+    },
+    {
+      "src": "/cities/:path*",
+      "dest": "/cities/:path*.html"
+    },
+    {
+      "src": "/states/:path*",
+      "dest": "/states/:path*.html"
+    },
+    {
+      "src": "/issues/:path*",
+      "dest": "/issues/:path*.html"
+    },
+    {
+      "src": "/:path*",
+      "dest": "/index.html"
+    }
+  ]
+} 
