@@ -1,7 +1,7 @@
 // Cities data organized by state
 export const citiesByState = {
     "Alabama": ["Auburn", "Birmingham", "Dothan", "Florence / Muscle Shoals", "Gadsden-Anniston", "Huntsville / Decatur", "Mobile", "Montgomery", "Tuscaloosa"],
-    "Alaska": ["Anchorage / Mat-su", "Fairbanks", "Kenai Peninsula", "Southeast Alaska"],
+    "Alaska": ["Anchorage", "Fairbanks", "Kenai Peninsula", "Southeast Alaska"],
     "Arizona": ["Flagstaff / Sedona", "Mohave County", "Phoenix", "Prescott", "Show Low", "Sierra Vista", "Tucson", "Yuma"],
     "Arkansas": ["Fayetteville", "Fort Smith", "Jonesboro", "Little Rock", "Texarkana"],
     "California": ["Bakersfield", "Chico", "Fresno / Madera", "Gold Country", "Hanford-Corcoran", "Humboldt County", "Imperial County", "Inland Empire", "Los Angeles", "Mendocino County", "Merced", "Modesto", "Monterey Bay", "Orange County", "Palm Springs", "Redding", "Sacramento", "San Diego", "San Francisco", "San Luis Obispo", "Santa Barbara", "Santa Maria", "Siskiyou County", "Stockton", "Susanville", "Ventura County", "Visalia-Tulare", "Yuba-Sutter"],

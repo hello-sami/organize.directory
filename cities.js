@@ -59,7 +59,7 @@ const searchInput = document.getElementById('searchInput');
 const resultsContainer = document.getElementById('resultsContainer');
 
 // Initialize page
-function initializePage() {
+export function initializePage() {
     // Check if we're on a specific city page from the pathname
     const pathSegments = window.location.pathname.split('/');
     const citySlug = pathSegments[pathSegments.length - 1];
@@ -74,6 +74,7 @@ function initializePage() {
     
     showAllCities();
     initializeSearch();
+    populateStates();
 }
 
 function getCityFromSlug(slug) {
@@ -152,31 +153,53 @@ function showCityPage(cityName, stateName) {
 function showAllCities() {
     if (!resultsContainer) return;
     
-    let citiesHtml = '';
+    // First, create the states grid
+    let html = `
+        <div class="states-section">
+            <div class="cities-grid">
+                ${Object.keys(citiesByState).sort().map(state => {
+                    const stateSlug = state.toLowerCase().replace(/\s+/g, '-');
+                    return `
+                        <div class="city-link">
+                            <a href="/states/${stateSlug}">${state}</a>
+                        </div>
+                    `;
+                }).join('')}
+            </div>
+        </div>
+    `;
+    
+    // Then add the cities list below
+    html += '<div class="cities-section">';
     for (const [state, cities] of Object.entries(citiesByState)) {
-        citiesHtml += `
+        html += `
             <div class="state-section">
                 <h2>${state}</h2>
                 <div class="cities-grid">
                     ${cities.map(city => `
                         <div class="city-link">
-                            <a href="/${getCitySlug(city, state)}">${city}</a>
+                            <a href="/cities/${getCitySlug(city, state)}">${city}</a>
                         </div>
                     `).join('')}
                 </div>
             </div>
         `;
     }
-    resultsContainer.innerHTML = citiesHtml;
+    html += '</div>';
+    
+    resultsContainer.innerHTML = html;
 }
 
-function initializeSearch() {
+// Export search initialization
+export function initializeSearch() {
+    const searchInput = document.getElementById('searchInput');
     if (!searchInput) return;
     
     searchInput.addEventListener('input', debounce(() => {
         const query = searchInput.value.trim().toLowerCase();
         if (query) {
-            searchCities(query);
+            const results = searchCities(query);
+            displaySearchResults(results);
         } else {
             showAllCities();
         }
@@ -184,41 +207,72 @@ function initializeSearch() {
 }
 
 function searchCities(query) {
+    query = query.toLowerCase();
     const results = [];
-    for (const [state, cities] of Object.entries(citiesByState)) {
-        const matchingCities = cities.filter(city => 
-            city.toLowerCase().includes(query)
-        );
-        if (matchingCities.length > 0) {
-            results.push({ state, cities: matchingCities });
-        }
-    }
     
-    displaySearchResults(results);
+    // Search states
+    Object.keys(citiesByState).forEach(state => {
+        if (state.toLowerCase().includes(query)) {
+            const stateSlug = state.toLowerCase().replace(/\s+/g, '-');
+            results.push({
+                name: state,
+                url: `/states/${stateSlug}`,
+                type: 'state'
+            });
+        }
+    });
+
+    // Search cities
+    Object.entries(citiesByState).forEach(([state, cities]) => {
+        cities.forEach(city => {
+            if (city.toLowerCase().includes(query)) {
+                const citySlug = getCitySlug(city, state);
+                results.push({
+                    name: `${city}, ${state}`,
+                    url: `/cities/${citySlug}.html`,
+                    type: 'city'
+                });
+            }
+        });
+    });
+
+    return results;
 }
 
 function displaySearchResults(results) {
-    if (results.length === 0) {
-        resultsContainer.innerHTML = `
-            <div class="no-results">
-                <p>No cities found matching your search.</p>
-            </div>
-        `;
+    const container = document.getElementById('resultsContainer');
+    if (!results.length) {
+        container.innerHTML = '<p class="no-results">No cities or states found</p>';
         return;
     }
+
+    const stateResults = results.filter(r => r.type === 'state');
+    const cityResults = results.filter(r => r.type === 'city');
+
+    let html = '';
     
-    resultsContainer.innerHTML = results.map(({ state, cities }) => `
-        <div class="state-section">
-            <h2>${state}</h2>
-            <div class="cities-grid">
-                ${cities.map(city => `
-                    <div class="city-link">
-                        <a href="/${getCitySlug(city, state)}">${city}</a>
-                    </div>
-                `).join('')}
-            </div>
-        </div>
-    `).join('');
+    if (stateResults.length) {
+        html += '<div class="result-section"><h3>States</h3>';
+        stateResults.forEach(result => {
+            html += `<a href="${result.url}" class="result-item">${result.name}</a>`;
+        });
+        html += '</div>';
+    }
+
+    if (cityResults.length) {
+        html += '<div class="result-section"><h3>Cities</h3>';
+        cityResults.forEach(result => {
+            html += `<a href="${result.url}" class="result-item">${result.name}</a>`;
+        });
+        html += '</div>';
+    }
+
+    container.innerHTML = html;
+}
+
+// Export states population
+export function populateStates() {
+    // This function is now empty as we're handling states in showAllCities
 }
 
 // Make functions available globally

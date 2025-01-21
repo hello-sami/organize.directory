@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" data-theme="dark"><head><!-- Common head content -->
+<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="website">
@@ -13,22 +13,10 @@
     gtag('js', new Date());
     gtag('config', 'G-QJ03RCM35H');
 </script>
-<script src="/theme-init.js"></script> 
-<title>Mutual Aid in Imperial County - Local Support Networks &amp; Community Resources</title>
-<meta name="description" content="Find mutual aid initiatives and community support networks in Imperial County, California. Connect with local organizations and community resources.">
-<meta property="og:title" content="Mutual Aid in Imperial County - Local Support Networks">
-<meta property="og:description" content="Find mutual aid initiatives and community support networks in Imperial County, California. Connect with local organizations providing community-based support.">
-<meta property="og:url" content="https://organize.directory/imperial-county"></head>
+<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid initiatives and community support networks in Imperial County, California. Connect with local organizations and community resources."><meta property="og:title" content="Mutual Aid in Imperial County - Local Support Networks"><meta property="og:description" content="Find mutual aid initiatives and community support networks in Imperial County, California. Connect with local organizations providing community-based support."><meta property="og:url" content="https://organize.directory/imperial-county"><title>Mutual Aid in Imperial County - Local Support Networks &amp; Community Resources</title></head>
 <body>
     <div class="layout">
-        <aside class="sidebar">
-            <h1><a href="/" class="home-link">Mutual Aid Directory</a></h1>
-            <nav>
-                <a href="/cities" class="nav-link active">Cities</a>
-                <a href="/issues" class="nav-link">Issues</a>
-                <a href="/about" class="nav-link">About</a>
-            </nav>
-        </aside>
+        <div id="sidebar-container"></div>
 
         <main class="content">
             <div class="city-page">
@@ -47,4 +35,28 @@
         </main>
     </div>
 
-</body></html>
+
+                        <script type="module">
+                            import { createSidebar } from '/components/sidebar.js';
+                            const sidebarContainer = document.getElementById('sidebar-container');
+                            const sidebar = createSidebar('cities');
+                            sidebarContainer.replaceWith(sidebar);
+                        </script>
+                        <script src="/theme.js" type="module"></script>
+                    
+                        <script type="module">
+                            import { createSidebar } from '/components/sidebar.js';
+                            const sidebarContainer = document.getElementById('sidebar-container');
+                            const sidebar = createSidebar('cities');
+                            sidebarContainer.replaceWith(sidebar);
+                        </script>
+                        <script src="/theme.js" type="module"></script>
+                    
+                        <script type="module">
+                            import { createSidebar } from '/components/sidebar.js';
+                            const sidebarContainer = document.getElementById('sidebar-container');
+                            const sidebar = createSidebar('cities');
+                            sidebarContainer.replaceWith(sidebar);
+                        </script>
+                        <script src="/theme.js" type="module"></script>
+                    </body></html>

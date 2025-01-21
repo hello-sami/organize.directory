@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texas Statewide Initiatives - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find statewide mutual aid networks and community support initiatives in Texas.">
+    <meta property="og:title" content="Texas Statewide Initiatives - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in Texas.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <!-- Sidebar will be inserted here -->
+        <div id="sidebar-container"></div>
+
+        <main class="content">
+            <div class="state-page">
+                <div class="breadcrumb">
+                    <a href="/cities" class="back-link">← Back to Cities</a>
+                </div>
+                <header class="state-header">
+                    <h2>Statewide Initiatives in Texas</h2>
+                </header>
+                <div class="initiatives-list">
+                    <ul class="simple-initiatives">
+                        <h3>Statewide Mutual Aid Networks</h3>
+                        <li>
+                            <!-- Add statewide organizations here -->
+                        </li>
+                    </ul>
+                    <div class="city-links">
+                        <h3>Cities in Alaska</h3>
+                        <ul>
+                            <li><a href="/cities/abilene.html">Abilene</a></li>
+                            <li><a href="/cities/amarillo.html">Amarillo</a></li>
+                            <li><a href="/cities/austin.html">Austin</a></li>
+                            <li><a href="/cities/beaumont-port-arthur.html">Beaumont / Port Arthur</a></li>
+                            <li><a href="/cities/brownsville.html">Brownsville</a></li>
+                            <li><a href="/cities/college-station.html">College Station</a></li>
+                            <li><a href="/cities/corpus-christi.html">Corpus Christi</a></li>
+                            <li><a href="/cities/dallas-fort-worth.html">Dallas / Fort Worth</a></li>
+                            <li><a href="/cities/deep-east-texas.html">Deep East Texas</a></li>
+                            <li><a href="/cities/del-rio-eagle-pass.html">Del Rio / Eagle Pass</a></li>
+                            <li><a href="/cities/el-paso.html">El Paso</a></li>
+                            <li><a href="/cities/galveston.html">Galveston</a></li>
+                            <li><a href="/cities/houston.html">Houston</a></li>
+                            <li><a href="/cities/killeen-temple-ft-hood.html">Killeen / Temple / Ft Hood</a></li>
+                            <li><a href="/cities/laredo.html">Laredo</a></li>
+                            <li><a href="/cities/lubbock.html">Lubbock</a></li>
+                            <li><a href="/cities/mcallen-edinburg.html">McAllen / Edinburg</a></li>
+                            <li><a href="/cities/odessa-midland.html">Odessa / Midland</a></li>
+                            <li><a href="/cities/san-angelo.html">San Angelo</a></li>
+                            <li><a href="/cities/san-antonio.html">San Antonio</a></li>
+                            <li><a href="/cities/san-marcos.html">San Marcos</a></li>
+                            <li><a href="/cities/southwest-tx.html">Southwest TX</a></li>
+                            <li><a href="/cities/texoma.html">Texoma</a></li>
+                            <li><a href="/cities/tyler-east-tx.html">Tyler / East TX</a></li>
+                            <li><a href="/cities/victoria.html">Victoria</a></li>
+                            <li><a href="/cities/waco.html">Waco</a></li>
+                            <li><a href="/cities/wichita-falls.html">Wichita Falls</a></li>
+                        </ul>
+                    </div>
+                    <p class="help-text">Know of a statewide mutual aid initiative in Texas? 
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        const sidebarContainer = document.getElementById('sidebar-container');
+        const sidebar = createSidebar('cities');
+        sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York Statewide Initiatives - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find statewide mutual aid networks and community support initiatives in New York.">
+    <meta property="og:title" content="New York Statewide Initiatives - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in New York.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <!-- Sidebar will be inserted here -->
+        <div id="sidebar-container"></div>
+
+        <main class="content">
+            <div class="state-page">
+                <div class="breadcrumb">
+                    <a href="/cities" class="back-link">← Back to Cities</a>
+                </div>
+                <header class="state-header">
+                    <h2>Statewide Initiatives in New York</h2>
+                </header>
+                <div class="initiatives-list">
+                    <ul class="simple-initiatives">
+                        <h3>Statewide Mutual Aid Networks</h3>
+                        <li>
+                            <!-- Add statewide organizations here -->
+                        </li>
+                    </ul>
+                    <div class="city-links">
+                        <h3>Cities in Alaska</h3>
+                        <ul>
+                            <li><a href="/cities/albany.html">Albany</a></li>
+                            <li><a href="/cities/binghamton.html">Binghamton</a></li>
+                            <li><a href="/cities/buffalo.html">Buffalo</a></li>
+                            <li><a href="/cities/catskills.html">Catskills</a></li>
+                            <li><a href="/cities/chautauqua.html">Chautauqua</a></li>
+                            <li><a href="/cities/elmira-corning.html">Elmira-Corning</a></li>
+                            <li><a href="/cities/finger-lakes.html">Finger Lakes</a></li>
+                            <li><a href="/cities/glens-falls.html">Glens Falls</a></li>
+                            <li><a href="/cities/hudson-valley.html">Hudson Valley</a></li>
+                            <li><a href="/cities/ithaca.html">Ithaca</a></li>
+                            <li><a href="/cities/long-island.html">Long Island</a></li>
+                            <li><a href="/cities/new-york-city.html">New York City</a></li>
+                            <li><a href="/cities/oneonta.html">Oneonta</a></li>
+                            <li><a href="/cities/plattsburgh-adirondacks.html">Plattsburgh-Adirondacks</a></li>
+                            <li><a href="/cities/potsdam-canton-massena.html">Potsdam-Canton-Massena</a></li>
+                            <li><a href="/cities/rochester.html">Rochester</a></li>
+                            <li><a href="/cities/syracuse.html">Syracuse</a></li>
+                            <li><a href="/cities/twin-tiers-ny-pa.html">Twin Tiers NY/PA</a></li>
+                            <li><a href="/cities/utica-rome-oneida.html">Utica-Rome-Oneida</a></li>
+                            <li><a href="/cities/watertown.html">Watertown</a></li>
+                        </ul>
+                    </div>
+                    <p class="help-text">Know of a statewide mutual aid initiative in New York? 
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        const sidebarContainer = document.getElementById('sidebar-container');
+        const sidebar = createSidebar('cities');
+        sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html>

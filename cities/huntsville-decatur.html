@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" data-theme="dark"><head><!-- Common head content -->
+<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="website">
@@ -13,22 +13,11 @@
     gtag('js', new Date());
     gtag('config', 'G-QJ03RCM35H');
 </script>
-<script src="/theme-init.js"></script> 
-<title>Mutual Aid in Huntsville / Decatur - Local Support Networks &amp; Community Resources</title>
-<meta name="description" content="Find mutual aid initiatives and community support networks in Huntsville / Decatur, Alabama. Connect with local organizations and community resources.">
-<meta property="og:title" content="Mutual Aid in Huntsville / Decatur - Local Support Networks">
-<meta property="og:description" content="Find mutual aid initiatives and community support networks in Huntsville / Decatur, Alabama. Connect with local organizations providing community-based support.">
-<meta property="og:url" content="https://organize.directory/huntsville-decatur"></head>
+<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid networks and community support initiatives in Huntsville/Decatur, Alabama."><meta property="og:title" content="Huntsville/Decatur - Mutual Aid Network Directory"><meta property="og:description" content="Find mutual aid networks and community support initiatives in Huntsville/Decatur, Alabama."><meta property="og:type" content="website"><title>Huntsville/Decatur - Mutual Aid Network Directory</title></head>
 <body>
     <div class="layout">
-        <aside class="sidebar">
-            <h1><a href="/" class="home-link">Mutual Aid Directory</a></h1>
-            <nav>
-                <a href="/cities" class="nav-link active">Cities</a>
-                <a href="/issues" class="nav-link">Issues</a>
-                <a href="/about" class="nav-link">About</a>
-            </nav>
-        </aside>
+        <!-- Sidebar will be inserted here -->
+        <div id="sidebar-container"></div>
 
         <main class="content">
             <div class="city-page">
@@ -36,15 +25,53 @@
                     <a href="/cities" class="back-link">← Back to Cities</a>
                 </div>
                 <header class="city-header">
-                    <h2>Huntsville / Decatur, Alabama</h2>
+                    <h2>Huntsville/Decatur, Alabama</h2>
                 </header>
                 <div class="initiatives-list">
-                    <h3>Local Mutual Aid Initiatives</h3>
-                    <p class="help-text">Know of a mutual aid initiative in Huntsville / Decatur? 
+                    <ul class="simple-initiatives">
+                        <h3>Reproductive Health</h3>
+                            <li>
+                                <a href="https://www.alabamacohosh.org/">Alabama Cohosh Collaborative</a>
+                            </li>
+
+                    </ul>
+                    <p class="help-text">Know of a mutual aid initiative in Huntsville/Decatur? 
                         <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
                 </div>
             </div>
         </main>
     </div>
 
-</body></html>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        const sidebarContainer = document.getElementById('sidebar-container');
+        const sidebar = createSidebar('cities');
+        sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
+
+
+                        <script type="module">
+                            import { createSidebar } from '/components/sidebar.js';
+                            const sidebarContainer = document.getElementById('sidebar-container');
+                            const sidebar = createSidebar('cities');
+                            sidebarContainer.replaceWith(sidebar);
+                        </script>
+                        <script src="/theme.js" type="module"></script>
+                    
+                        <script type="module">
+                            import { createSidebar } from '/components/sidebar.js';
+                            const sidebarContainer = document.getElementById('sidebar-container');
+                            const sidebar = createSidebar('cities');
+                            sidebarContainer.replaceWith(sidebar);
+                        </script>
+                        <script src="/theme.js" type="module"></script>
+                    
+                        <script type="module">
+                            import { createSidebar } from '/components/sidebar.js';
+                            const sidebarContainer = document.getElementById('sidebar-container');
+                            const sidebar = createSidebar('cities');
+                            sidebarContainer.replaceWith(sidebar);
+                        </script>
+                        <script src="/theme.js" type="module"></script>
+                    </body></html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find mutual aid initiatives and community support networks in Anchorage, Alaska. Connect with local organizations and community resources.">
+    <meta property="og:title" content="Mutual Aid in Anchorage - Local Support Networks">
+    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Anchorage, Alaska. Connect with local organizations providing community-based support.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/anchorage">
+    <meta name="twitter:card" content="summary">
+    
+    <title>Mutual Aid in Anchorage - Local Support Networks & Community Resources</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarContainer = document.getElementById('sidebar-container');
+            const sidebar = createSidebar('cities');
+            sidebarContainer.replaceWith(sidebar);
+        });
+    </script>
+    <script src="/theme.js" type="module"></script>
+</head>
+<body>
+    <div class="layout">
+        <div id="sidebar-container"></div>
+
+        <main class="content">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/states/alaska.html" class="back-link">← Alaska</a>
+                </div>
+                
+                <header class="city-header">
+                    <h2>Anchorage, Alaska</h2>
+                </header>
+                
+                <div class="initiatives-list">
+                    <ul class="simple-initiatives">
+                        <h3>Mutual Aid in Anchorage</h3>
+                        <li>
+                            <a href="https://www.wearemana.org/">Mutual Aid Network of Anchorage</a>
+                        </li>
+                    </ul>
+                    <p class="help-text">
+                        <br><br>
+                        Know of a mutual aid initiative in Anchorage? 
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html> 

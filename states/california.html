@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>California Statewide Initiatives - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find statewide mutual aid networks and community support initiatives in California.">
+    <meta property="og:title" content="California Statewide Initiatives - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in California.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <!-- Sidebar will be inserted here -->
+        <div id="sidebar-container"></div>
+
+        <main class="content">
+            <div class="state-page">
+                <div class="breadcrumb">
+                    <a href="/cities" class="back-link">← Back to Cities</a>
+                </div>
+                <header class="state-header">
+                    <h2>Statewide Initiatives in California</h2>
+                </header>
+                <div class="initiatives-list">
+                    <ul class="simple-initiatives">
+                        <h3>Statewide Mutual Aid Networks</h3>
+                        <li>
+                            <!-- Add statewide organizations here -->
+                        </li>
+                    </ul>
+                    <div class="city-links">
+                        <h3>Cities in Alaska</h3>
+                        <ul>
+                            <li><a href="/cities/bakersfield.html">Bakersfield</a></li>
+                            <li><a href="/cities/chico.html">Chico</a></li>
+                            <li><a href="/cities/fresno-madera.html">Fresno / Madera</a></li>
+                            <li><a href="/cities/gold-country.html">Gold Country</a></li>
+                            <li><a href="/cities/hanford-corcoran.html">Hanford-Corcoran</a></li>
+                            <li><a href="/cities/humboldt-county.html">Humboldt County</a></li>
+                            <li><a href="/cities/imperial-county.html">Imperial County</a></li>
+                            <li><a href="/cities/inland-empire.html">Inland Empire</a></li>
+                            <li><a href="/cities/los-angeles.html">Los Angeles</a></li>
+                            <li><a href="/cities/mendocino-county.html">Mendocino County</a></li>
+                            <li><a href="/cities/merced.html">Merced</a></li>
+                            <li><a href="/cities/modesto.html">Modesto</a></li>
+                            <li><a href="/cities/monterey-bay.html">Monterey Bay</a></li>
+                            <li><a href="/cities/orange-county.html">Orange County</a></li>
+                            <li><a href="/cities/palm-springs.html">Palm Springs</a></li>
+                            <li><a href="/cities/redding.html">Redding</a></li>
+                            <li><a href="/cities/sacramento.html">Sacramento</a></li>
+                            <li><a href="/cities/san-diego.html">San Diego</a></li>
+                            <li><a href="/cities/san-francisco.html">San Francisco</a></li>
+                            <li><a href="/cities/san-luis-obispo.html">San Luis Obispo</a></li>
+                            <li><a href="/cities/santa-barbara.html">Santa Barbara</a></li>
+                            <li><a href="/cities/santa-maria.html">Santa Maria</a></li>
+                            <li><a href="/cities/siskiyou-county.html">Siskiyou County</a></li>
+                            <li><a href="/cities/stockton.html">Stockton</a></li>
+                            <li><a href="/cities/susanville.html">Susanville</a></li>
+                            <li><a href="/cities/ventura-county.html">Ventura County</a></li>
+                            <li><a href="/cities/visalia-tulare.html">Visalia-Tulare</a></li>
+                            <li><a href="/cities/yuba-sutter.html">Yuba-Sutter</a></li>
+                        </ul>
+                    </div>
+                    <p class="help-text">Know of a statewide mutual aid initiative in California? 
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        const sidebarContainer = document.getElementById('sidebar-container');
+        const sidebar = createSidebar('cities');
+        sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html>

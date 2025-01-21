@@ -12,10 +12,10 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cities - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives in cities across the United States.">
-    <meta property="og:title" content="Cities - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find mutual aid networks and community support initiatives in cities across the United States.">
+    <title>Cities & States - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in cities and states across the United States.">
+    <meta property="og:title" content="Cities & States - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in cities and states across the United States.">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -29,10 +29,17 @@
         <main class="content">
             <div class="search-container">
                 <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Search cities...">
+                    <input type="text" id="searchInput" placeholder="Search cities or states...">
                 </div>
                 <div class="results" id="resultsContainer">
                     <!-- Results will be dynamically populated here -->
+                </div>
+            </div>
+            
+            <div class="states-list">
+                <h2>Browse by State</h2>
+                <div class="states-grid">
+                    <!-- States will be dynamically populated here -->
                 </div>
             </div>
         </main>
