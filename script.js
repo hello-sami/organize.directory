@@ -492,26 +492,55 @@ function handleRoute() {
     const params = new URLSearchParams(window.location.search);
     const page = params.get('page') || 'home';
 
-    if (path === '/' || path === '') {
+    // Handle state pages
+    const stateMatch = path.match(/^\/states\/([^/]+)$/);
+    if (stateMatch) {
+        const stateSlug = stateMatch[1];
+        const state = Object.keys(citiesByState).find(s => {
+            const slug = s.toLowerCase()
+                .replace(/ /g, '-')
+                .replace(/\//g, '-')
+                .replace(/\s+/g, '-');
+            return slug === stateSlug;
+        });
+        
+        if (state) {
+            currentView = 'states';
+            updateNavigation();
+            showStatePage(state);
+            return;
+        }
+    }
+
+    // Handle city pages
+    const citySlug = path.slice(1);
+    for (const [state, cities] of Object.entries(citiesByState)) {
+        const city = cities.find(c => {
+            const slug = c.toLowerCase()
+                .replace(/ /g, '-')
+                .replace(/\//g, '-')
+                .replace(/\s+/g, '-');
+            return slug === citySlug;
+        });
+        
+        if (city) {
+            currentView = 'cities';
+            updateNavigation();
+            showCityPage(city, state);
+            return;
+        }
+    }
+
+    // Handle main pages
+    if (path === '/location' || path === '/location/') {
+        showAllStates();
+    } else if (path === '/' || path === '') {
         currentView = page;
         updateNavigation();
         
         switch (page) {
             case 'home':
                 showHomePage();
-                // Add example headlines if none exist
-                if (breakingNews.headlines.length === 0) {
-                    breakingNews.addHeadline(
-                        "Urgent: Hurricane Relief in Wilmington",
-                        "Local mutual aid networks are coordinating emergency supplies and shelter. Volunteers and donations needed.",
-                        "/wilmington.html"
-                    );
-                    breakingNews.addHeadline(
-                        "Northwest CT Mutual Aid Network Launches Winter Drive",
-                        "Collection centers are now open for winter clothing and supplies to support community members.",
-                        "/northwest-ct.html"
-                    );
-                }
                 break;
             case 'cities':
                 showCitiesPage();
@@ -525,27 +554,6 @@ function handleRoute() {
             default:
                 showHomePage();
         }
-    } else {
-        // Handle city-specific pages
-        const citySlug = path.slice(1);
-        for (const [state, cities] of Object.entries(citiesByState)) {
-            const city = cities.find(c => {
-                const slug = c.toLowerCase()
-                    .replace(/ /g, '-')
-                    .replace(/\//g, '-')
-                    .replace(/\s+/g, '-');
-                return slug === citySlug;
-            });
-            
-            if (city) {
-                currentView = 'cities';
-                updateNavigation();
-                showCityPage(city, state);
-                return;
-            }
-        }
-        // If no match found, show home page
-        showHomePage();
     }
 }
 

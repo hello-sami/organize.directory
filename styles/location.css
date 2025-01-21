@@ -45,37 +45,86 @@
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
-/* Location page styles */
+/* States list */
 .states-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.state-section {
+    text-align: left;
+}
+
+.state-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 1.125rem;
+    transition: color 0.2s ease;
+    display: inline-block;
+    padding: 0.5rem 0;
+}
+
+.state-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+/* State page */
+.state-page {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
-.state-section {
-    margin-bottom: 2.5rem;
+.breadcrumb {
+    margin-bottom: 2rem;
 }
 
-.state-section h2 {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 1.5rem;
+.back-link {
+    color: #666;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: #2563eb;
+}
+
+.state-header {
+    margin-bottom: 3rem;
+}
+
+.state-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.cities-section {
+    margin-bottom: 3rem;
+}
+
+.cities-section h3 {
+    font-size: 1.25rem;
     font-weight: 500;
     color: #1a1a1a;
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #eee;
+    margin-bottom: 1rem;
 }
 
 .cities-list {
     line-height: 1.8;
-    color: #666;
 }
 
 .city-link {
     color: #2563eb;
     text-decoration: none;
     transition: color 0.2s ease;
-    font-size: 1rem;
 }
 
 .city-link:hover {
@@ -83,9 +132,64 @@
     text-decoration: underline;
 }
 
-/* Style the dots between cities */
 .cities-list a + a::before {
     content: "·";
     margin: 0 0.5rem;
     color: #999;
+}
+
+.initiatives-section {
+    margin-top: 3rem;
+}
+
+.initiatives-section h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+}
+
+.initiatives-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.initiative-card {
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    background: white;
+}
+
+.initiative-card h4 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.initiative-description {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.initiative-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.initiative-links a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.initiative-links a:hover {
+    text-decoration: underline;
+}
+
+.no-initiatives {
+    color: #666;
+    font-style: italic;
 } 
