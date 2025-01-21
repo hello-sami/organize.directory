@@ -9,6 +9,7 @@ const socialIcons = {
 
 // Search type state
 let currentView = 'home'; // 'home', 'cities', 'issues', or 'about'
+let searchType = 'city'; // Initialize searchType
 
 // Initialize variables
 let searchInput, homeLink, cityLink, issuesLink, aboutLink, resultsContainer, homePage, mainContent, aboutContent, headlinesContent;
@@ -94,6 +95,7 @@ function updateNavigation() {
 
 // Show different pages
 function showHomePage() {
+    if (!homePage || !mainContent || !aboutContent) return;
     homePage.style.display = 'block';
     mainContent.style.display = 'none';
     aboutContent.style.display = 'none';
@@ -101,24 +103,29 @@ function showHomePage() {
 }
 
 function showCitiesPage() {
+    if (!homePage || !mainContent || !aboutContent || !searchInput) return;
     homePage.style.display = 'none';
     mainContent.style.display = 'block';
     aboutContent.style.display = 'none';
     searchInput.placeholder = 'Search cities...';
+    searchType = 'city';
     showAllCities();
     updateUrlParams({ page: 'cities' });
 }
 
 function showIssuesPage() {
+    if (!homePage || !mainContent || !aboutContent || !searchInput) return;
     homePage.style.display = 'none';
     mainContent.style.display = 'block';
     aboutContent.style.display = 'none';
     searchInput.placeholder = 'Search issues...';
+    searchType = 'issues';
     showAllIssues();
     updateUrlParams({ page: 'issues' });
 }
 
 function showAboutPage() {
+    if (!homePage || !mainContent || !aboutContent) return;
     homePage.style.display = 'none';
     mainContent.style.display = 'none';
     aboutContent.style.display = 'block';
