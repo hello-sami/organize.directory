@@ -61,91 +61,81 @@ function createSlug(text) {
         .replace(/^-|-$/g, '');
 }
 
-async function cleanDirectory(dir) {
-    try {
-        await fs.rm(dir, { recursive: true, force: true });
-        console.log(`Cleaned ${dir} directory`);
-    } catch (error) {
-        console.log(`No existing ${dir} directory to clean`);
-    }
-}
-
 async function readTemplate(templatePath) {
-    return await fs.readFile(templatePath, 'utf-8');
+    try {
+        const template = await fs.readFile(templatePath, 'utf-8');
+        return template;
+    } catch (error) {
+        console.error(`Error reading template: ${error}`);
+        return null;
+    }
 }
 
 async function processHtmlFiles(directory) {
-    const headContent = await readTemplate('./templates/head.html');
-    
-    // Get all HTML files recursively
-    async function getHtmlFiles(dir) {
-        const files = await fs.readdir(dir, { withFileTypes: true });
-        const htmlFiles = [];
+    try {
+        const files = await fs.readdir(directory);
+        const headTemplate = await readTemplate('./templates/head.html');
         
         for (const file of files) {
-            const fullPath = path.join(dir, file.name);
-            if (file.isDirectory()) {
-                htmlFiles.push(...(await getHtmlFiles(fullPath)));
-            } else if (file.name.endsWith('.html')) {
-                htmlFiles.push(fullPath);
+            if (file.endsWith('.html')) {
+                const filePath = path.join(directory, file);
+                const content = await fs.readFile(filePath, 'utf-8');
+                const $ = cheerio.load(content);
+                
+                // Store existing title and meta tags
+                const title = $('title').text();
+                const metaTags = $('meta').toArray().map(el => $.html(el));
+                const mainContent = $('.initiatives-list').html(); // Preserve main content
+                
+                // Replace head content with template while preserving title and meta
+                $('head').html(headTemplate);
+                
+                // Restore title and meta tags
+                metaTags.forEach(tag => {
+                    if (!tag.includes('charset') && !tag.includes('viewport')) {
+                        $('head').append(tag);
+                    }
+                });
+                $('head').append(`<title>${title}</title>`);
+                
+                // Update sidebar structure if needed
+                if (!$('#sidebar-container').length) {
+                    $('.sidebar').replaceWith('<div id="sidebar-container"></div>');
+                }
+                
+                // Restore main content
+                if (mainContent) {
+                    $('.initiatives-list').html(mainContent);
+                }
+                
+                // Add sidebar scripts if missing
+                if (!$('script[src="/components/sidebar.js"]').length) {
+                    $('body').append(`
+                        <script type="module">
+                            import { createSidebar } from '/components/sidebar.js';
+                            const sidebarContainer = document.getElementById('sidebar-container');
+                            const sidebar = createSidebar('cities');
+                            sidebarContainer.replaceWith(sidebar);
+                        </script>
+                        <script src="/theme.js" type="module"></script>
+                    `);
+                }
+                
+                // Remove data-theme attribute from html tag
+                $('html').removeAttr('data-theme');
+                
+                // Write the updated content back to file
+                await fs.writeFile(filePath, $.html());
+                console.log(`Processed ${file}`);
             }
         }
-        
-        return htmlFiles;
-    }
-    
-    // Process each HTML file
-    const htmlFiles = await getHtmlFiles(directory);
-    for (const filePath of htmlFiles) {
-        const content = await fs.readFile(filePath, 'utf-8');
-        const $ = cheerio.load(content);
-        
-        // Replace head content while preserving title and meta description/og
-        const title = $('title').toString();
-        const description = $('meta[name="description"]').toString();
-        const ogTitle = $('meta[property="og:title"]').toString();
-        const ogDescription = $('meta[property="og:description"]').toString();
-        const ogUrl = $('meta[property="og:url"]').toString();
-        
-        $('head').html(headContent + '\n' + 
-            title + '\n' +
-            description + '\n' +
-            ogTitle + '\n' +
-            ogDescription + '\n' +
-            ogUrl
-        );
-        
-        await fs.writeFile(filePath, $.html());
-        console.log(`Processed ${filePath}`);
+    } catch (error) {
+        console.error(`Error processing directory: ${error}`);
     }
 }
 
 async function build() {
     console.log('Starting build process...');
-    
-    // Clean and recreate cities directory
-    console.log('Cleaning cities directory...');
-    await cleanDirectory('cities');
-    await fs.mkdir('cities', { recursive: true });
-    
-    // Generate city pages
-    console.log('Generating city pages...');
-    let count = 0;
-    const total = Object.values(citiesByState).flat().length;
-
-    for (const [state, cities] of Object.entries(citiesByState)) {
-        await Promise.all(cities.map(async city => {
-            const citySlug = createSlug(city);
-            const html = await template(city, state);
-            await fs.writeFile(path.join('cities', `${citySlug}.html`), html);
-            
-            count++;
-            if (count % 50 === 0 || count === total) {
-                console.log(`Progress: ${count}/${total} cities processed`);
-            }
-        }));
-    }
-
     await processHtmlFiles('./cities');
     await processHtmlFiles('./issues');
     console.log('Build completed successfully!');
