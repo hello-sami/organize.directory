@@ -4,6 +4,10 @@
   "exclude": ["/_*"],
   "routes": [
     {
+      "src": "^/$",
+      "dest": "/index.html"
+    },
+    {
       "src": "^/location$",
       "dest": "/location.html"
     },
@@ -34,10 +38,6 @@
     {
       "src": "^/issues/([^/]+)$",
       "dest": "/issues/$1.html"
-    },
-    {
-      "src": "^/([^.]+)$",
-      "dest": "/index.html"
     }
   ]
 } 
