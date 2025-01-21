@@ -1,39 +1,56 @@
 {
   "version": 1,
-  "include": ["/"],
-  "exclude": [],
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/_*",
+    "/api/*"
+  ],
   "routes": [
-    {
-      "src": "^/location$",
-      "dest": "/location.html"
+    { 
+      "src": "/location", 
+      "dest": "/location.html",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate"
+      }
+    },
+    { 
+      "src": "/issues", 
+      "dest": "/issues.html",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate"
+      }
+    },
+    { 
+      "src": "/about", 
+      "dest": "/about.html",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate"
+      }
+    },
+    { 
+      "src": "/resources", 
+      "dest": "/resources.html",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate"
+      }
     },
     {
-      "src": "^/issues$",
-      "dest": "/issues.html"
+      "src": "/posts/:path*",
+      "dest": "/posts/:path*.html"
     },
     {
-      "src": "^/about$",
-      "dest": "/about.html"
+      "src": "/cities/:path*",
+      "dest": "/cities/:path*.html"
     },
     {
-      "src": "^/resources$",
-      "dest": "/resources.html"
+      "src": "/states/:path*",
+      "dest": "/states/:path*.html"
     },
     {
-      "src": "^/posts/([^/]+)$",
-      "dest": "/posts/$1.html"
-    },
-    {
-      "src": "^/cities/([^/]+)$",
-      "dest": "/cities/$1.html"
-    },
-    {
-      "src": "^/states/([^/]+)$",
-      "dest": "/states/$1.html"
-    },
-    {
-      "src": "^/issues/([^/]+)$",
-      "dest": "/issues/$1.html"
+      "src": "/issues/:path*",
+      "dest": "/issues/:path*.html"
     }
   ]
 } 
