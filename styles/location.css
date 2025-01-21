@@ -80,6 +80,102 @@
     padding: 0 2rem;
 }
 
+.state-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 2rem 0 3rem;
+}
+
+.cities-section,
+.initiatives-section {
+    margin-bottom: 4rem;
+}
+
+.cities-section h2,
+.initiatives-section h2 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+}
+
+.cities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.city-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 1.125rem;
+    transition: color 0.2s ease;
+    display: block;
+}
+
+.city-link:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
+}
+
+.initiatives-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.initiative-card {
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    background: white;
+}
+
+.initiative-card h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+}
+
+.initiative-description {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.initiative-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.initiative-links a {
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.initiative-links a:hover {
+    text-decoration: underline;
+}
+
+.no-initiatives {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.no-initiatives a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.no-initiatives a:hover {
+    text-decoration: underline;
+}
+
 /* Breadcrumb navigation */
 .breadcrumb {
     margin-bottom: 2rem;
@@ -130,30 +226,11 @@
     color: #1a1a1a;
 }
 
-.cities-section {
-    margin-bottom: 3rem;
-}
-
 .cities-section h3 {
     font-size: 1.25rem;
     font-weight: 500;
     color: #1a1a1a;
     margin-bottom: 1rem;
-}
-
-.cities-list {
-    line-height: 1.8;
-}
-
-.city-link {
-    color: #2563eb;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.city-link:hover {
-    color: #1d4ed8;
-    text-decoration: underline;
 }
 
 .cities-list a + a::before {
@@ -162,58 +239,9 @@
     color: #999;
 }
 
-.initiatives-section {
-    margin-top: 3rem;
-}
-
 .initiatives-section h3 {
     font-size: 1.25rem;
     font-weight: 500;
     color: #1a1a1a;
     margin-bottom: 1.5rem;
-}
-
-.initiatives-grid {
-    display: grid;
-    gap: 1.5rem;
-}
-
-.initiative-card {
-    padding: 1.5rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 0.5rem;
-    background: white;
-}
-
-.initiative-card h4 {
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: #1a1a1a;
-    margin-bottom: 0.5rem;
-}
-
-.initiative-description {
-    color: #666;
-    margin-bottom: 1rem;
-    line-height: 1.5;
-}
-
-.initiative-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.initiative-links a {
-    color: #2563eb;
-    text-decoration: none;
-    font-size: 0.875rem;
-}
-
-.initiative-links a:hover {
-    text-decoration: underline;
-}
-
-.no-initiatives {
-    color: #666;
-    font-style: italic;
 } 
