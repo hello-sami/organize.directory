@@ -86,10 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Update navigation styles
 function updateNavigation() {
-    homeLink.classList.toggle('active', currentView === 'home');
-    cityLink.classList.toggle('active', currentView === 'cities');
-    issuesLink.classList.toggle('active', currentView === 'issues');
-    aboutLink.classList.toggle('active', currentView === 'about');
+    if (homeLink) homeLink.classList.toggle('active', currentView === 'home');
+    if (cityLink) cityLink.classList.toggle('active', currentView === 'cities');
+    if (issuesLink) issuesLink.classList.toggle('active', currentView === 'issues');
+    if (aboutLink) aboutLink.classList.toggle('active', currentView === 'about');
 }
 
 // Show different pages
