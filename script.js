@@ -130,7 +130,7 @@ function initializeApp() {
             } else if (searchType === 'issues') {
                 showAllIssues();
             } else if (searchType === 'city') {
-                showAllCities();
+                showAllStates();
             } else {
                 clearResults();
             }
@@ -199,7 +199,7 @@ function showCitiesPage() {
     aboutContent.style.display = 'none';
     searchInput.placeholder = 'Search cities...';
     searchType = 'city';
-    showAllCities();
+    showAllStates();
     updateUrlParams({ page: 'cities' });
 }
 
@@ -283,7 +283,7 @@ function showCityPage(cityName, stateName) {
     resultsContainer.innerHTML = `
         <div class="city-page">
             <div class="breadcrumb">
-                <a href="/" class="back-link" onclick="event.preventDefault(); showAllCities(); return false;">← Back to Cities</a>
+                <a href="/" class="back-link" onclick="event.preventDefault(); showAllStates(); return false;">← Back to Cities</a>
             </div>
             <header class="city-header">
                 <h2>${cityName}, ${stateName}</h2>
@@ -344,11 +344,10 @@ function createCityLink(city, state) {
     return `<a href="/${citySlug}" class="city-link">${city}</a>`;
 }
 
-// Function to show all cities
-function showAllCities() {
+// Function to show all states and their cities
+function showAllStates() {
     searchType = 'city';
     updateNavigation();
-    showSearchInterface();
     
     let citiesHtml = `
         <div class="states-grid">
@@ -500,17 +499,19 @@ handleRoute();
 
 // Make functions available globally
 window.showCityPage = showCityPage;
-window.showAllCities = showAllCities;
+window.showAllStates = showAllStates;
 
 // Initialize based on current page
 function initializePage() {
     const currentPath = window.location.pathname;
     
-    if (currentPath.endsWith('issues.html')) {
+    if (currentPath === '/location' || currentPath === '/location/') {
+        showAllStates();
+    } else if (currentPath.endsWith('issues.html')) {
         showAllIssues();
         initializeSearch('issues');
     } else if (currentPath.endsWith('cities.html')) {
-        showAllCities();
+        showAllStates();
         initializeSearch('city');
     } else if (currentPath === '/' || currentPath === '' || currentPath.endsWith('index.html')) {
         initializeHomePage();
@@ -546,7 +547,7 @@ function initializeSearch(type) {
         } else if (type === 'issues') {
             showAllIssues();
         } else {
-            showAllCities();
+            showAllStates();
         }
     }, 300);
 
@@ -554,7 +555,10 @@ function initializeSearch(type) {
 }
 
 // Initialize the page
-document.addEventListener('DOMContentLoaded', initializePage);
+document.addEventListener('DOMContentLoaded', () => {
+    initializePage();
+    initializeSearch('city');
+});
 
 // Make necessary functions available globally
 window.breakingNews = breakingNews;
