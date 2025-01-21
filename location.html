@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Locations - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives by browsing locations across the United States.">
+    <meta property="og:title" content="Browse Locations - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives by browsing locations across the United States.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/location">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarContainer = document.getElementById('sidebar-container');
+            const sidebar = createSidebar('location');
+            sidebarContainer.replaceWith(sidebar);
+        });
+    </script>
+    <script src="/theme.js" type="module"></script>
+</head>
+<body>
+    <div class="layout">
+        <div id="sidebar-container"></div>
+
+        <main class="content">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search locations...">
+                </div>
+                <div class="results" id="resultsContainer">
+                    <!-- Results will be dynamically populated here -->
+                </div>
+            </div>
+            
+            <div class="states-list">
+                <h2>Browse by State</h2>
+                <div class="states-grid">
+                    <!-- States will be dynamically populated here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/states.js" type="module"></script>
+</body>
+</html> 
