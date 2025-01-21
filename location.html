@@ -26,21 +26,17 @@
     
     <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
-    <script type="module">
-        import { createSidebar } from '/components/sidebar.js';
-        document.addEventListener('DOMContentLoaded', () => {
-            const sidebarContainer = document.getElementById('sidebar-container');
-            const sidebar = createSidebar('location');
-            sidebarContainer.replaceWith(sidebar);
-        });
-    </script>
-    <script src="/theme.js" type="module"></script>
 </head>
 <body>
     <div class="layout">
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content">
+            <header class="page-header">
+                <h1>Find Mutual Aid Networks Near You</h1>
+                <p class="subtitle">Browse or search for mutual aid initiatives in your area</p>
+            </header>
+
             <div class="search-container">
                 <div class="search-box">
                     <input type="text" id="searchInput" placeholder="Search locations...">
@@ -59,6 +55,15 @@
         </main>
     </div>
 
-    <script src="/states.js" type="module"></script>
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+    <script type="module">
+        import { initializePage } from '/states.js';
+        document.addEventListener('DOMContentLoaded', initializePage);
+    </script>
 </body>
 </html> 
