@@ -6,10 +6,10 @@ export function createSidebar(activePage) {
     sidebar.innerHTML = `
         <h1><a href="/" class="home-link">Mutual Aid Directory</a></h1>
         <nav>
-            <a href="/" class="nav-link ${activePage === 'home' ? 'active' : ''}">Home</a>
-            <a href="/cities" class="nav-link ${activePage === 'cities' ? 'active' : ''}">Cities</a>
-            <a href="/issues" class="nav-link ${activePage === 'issues' ? 'active' : ''}">Issues</a>
-            <a href="/about" class="nav-link ${activePage === 'about' ? 'active' : ''}">About</a>
+            <a href="/" id="homeLink" class="nav-link ${activePage === 'home' ? 'active' : ''}">Home</a>
+            <a href="/cities" id="cityLink" class="nav-link ${activePage === 'cities' ? 'active' : ''}">Cities</a>
+            <a href="/issues" id="issuesLink" class="nav-link ${activePage === 'issues' ? 'active' : ''}">Issues</a>
+            <a href="/about" id="aboutLink" class="nav-link ${activePage === 'about' ? 'active' : ''}">About</a>
         </nav>
     `;
     

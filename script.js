@@ -14,8 +14,15 @@ let searchType = 'city'; // Initialize searchType
 // Initialize variables
 let searchInput, homeLink, cityLink, issuesLink, aboutLink, resultsContainer, homePage, mainContent, aboutContent, headlinesContent;
 
-// Move all DOM element queries and event listeners inside DOMContentLoaded
+// Wait for both DOM and sidebar to be ready
 document.addEventListener('DOMContentLoaded', () => {
+    // Wait a short moment for the sidebar to be created
+    setTimeout(() => {
+        initializeApp();
+    }, 100);
+});
+
+function initializeApp() {
     // DOM elements
     searchInput = document.getElementById('searchInput');
     homeLink = document.getElementById('homeLink');
@@ -83,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize the page
     initializePage();
-});
+}
 
 // Update navigation styles
 function updateNavigation() {
