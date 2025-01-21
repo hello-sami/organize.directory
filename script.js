@@ -85,31 +85,28 @@ let searchInput, homeLink, cityLink, issuesLink, aboutLink, resultsContainer, ho
 
 // Wait for both DOM and sidebar to be ready
 document.addEventListener('DOMContentLoaded', () => {
-    // Create an observer instance
+    // First try to initialize immediately
+    if (document.querySelector('aside.sidebar')) {
+        initializeApp();
+        return;
+    }
+
+    // If sidebar isn't ready, wait for it
     const observer = new MutationObserver((mutations, obs) => {
-        const sidebar = document.querySelector('aside.sidebar');
-        if (sidebar) {
-            obs.disconnect(); // Stop observing once we find the sidebar
+        if (document.querySelector('aside.sidebar')) {
+            obs.disconnect();
             initializeApp();
         }
     });
 
-    // Start observing the document with the configured parameters
     observer.observe(document.body, {
         childList: true,
         subtree: true
     });
-
-    // Also try to initialize immediately in case the sidebar is already there
-    const sidebar = document.querySelector('aside.sidebar');
-    if (sidebar) {
-        observer.disconnect();
-        initializeApp();
-    }
 });
 
 function initializeApp() {
-    // DOM elements
+    // Get DOM elements
     searchInput = document.getElementById('searchInput');
     homeLink = document.getElementById('homeLink');
     cityLink = document.getElementById('cityLink');
@@ -121,7 +118,26 @@ function initializeApp() {
     aboutContent = document.getElementById('aboutContent');
     headlinesContent = document.getElementById('headlinesContent');
 
-    // Event listeners for navigation
+    // Initialize the page based on current path
+    initializePage();
+
+    // Add event listeners only if elements exist
+    if (searchInput) {
+        searchInput.addEventListener('input', debounce(() => {
+            const query = searchInput.value.trim().toLowerCase();
+            if (query) {
+                performSearch(query);
+            } else if (searchType === 'issues') {
+                showAllIssues();
+            } else if (searchType === 'city') {
+                showAllCities();
+            } else {
+                clearResults();
+            }
+        }, 300));
+    }
+
+    // Add navigation event listeners
     if (homeLink) {
         homeLink.addEventListener('click', (e) => {
             e.preventDefault();
@@ -157,25 +173,6 @@ function initializeApp() {
             showAboutPage();
         });
     }
-
-    // Initialize search if search input exists
-    if (searchInput) {
-        searchInput.addEventListener('input', debounce(() => {
-            const query = searchInput.value.trim().toLowerCase();
-            if (query) {
-                performSearch(query);
-            } else if (searchType === 'issues') {
-                showAllIssues();
-            } else if (searchType === 'city') {
-                showAllCities();
-            } else {
-                clearResults();
-            }
-        }, 300));
-    }
-
-    // Initialize the page
-    initializePage();
 }
 
 // Update navigation styles
