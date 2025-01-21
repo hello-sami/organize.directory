@@ -344,24 +344,82 @@ function createCityLink(city, state) {
     return `<a href="/${citySlug}" class="city-link">${city}</a>`;
 }
 
-// Function to show all states and their cities
+// Function to create state link
+function createStateLink(state) {
+    const stateSlug = state.toLowerCase()
+        .replace(/ /g, '-')
+        .replace(/\//g, '-')
+        .replace(/\s+/g, '-');
+    
+    return `<a href="/states/${stateSlug}" class="state-link">${state}</a>`;
+}
+
+// Function to show all states
 function showAllStates() {
-    searchType = 'city';
+    searchType = 'state';
     updateNavigation();
     
-    let citiesHtml = `
+    let statesHtml = `
         <div class="states-grid">
-            ${Object.entries(citiesByState).map(([state, cities]) => `
+            ${Object.keys(citiesByState).map(state => `
                 <div class="state-section">
-                    <h2>${state}</h2>
-                    <div class="cities-list">
-                        ${cities.map(city => createCityLink(city, state)).join(' · ')}
-                    </div>
+                    ${createStateLink(state)}
                 </div>
             `).join('')}
         </div>
     `;
-    resultsContainer.innerHTML = citiesHtml;
+    resultsContainer.innerHTML = statesHtml;
+}
+
+// Function to show state page
+function showStatePage(stateName) {
+    const cities = citiesByState[stateName] || [];
+    const stateInitiatives = initiatives.filter(initiative => 
+        initiative.scope === "state" && 
+        initiative.location?.toLowerCase().includes(stateName.toLowerCase())
+    );
+
+    resultsContainer.innerHTML = `
+        <div class="state-page">
+            <div class="breadcrumb">
+                <a href="/location" class="back-link">← Back to States</a>
+            </div>
+            <header class="state-header">
+                <h2>${stateName}</h2>
+            </header>
+            
+            <section class="cities-section">
+                <h3>Cities</h3>
+                <div class="cities-list">
+                    ${cities.map(city => createCityLink(city, stateName)).join(' · ')}
+                </div>
+            </section>
+
+            <section class="initiatives-section">
+                <h3>Statewide Initiatives</h3>
+                ${stateInitiatives.length > 0 ? `
+                    <div class="initiatives-grid">
+                        ${stateInitiatives.map(initiative => `
+                            <div class="initiative-card">
+                                <h4>${initiative.name}</h4>
+                                <p class="initiative-description">${initiative.description}</p>
+                                <div class="initiative-links">
+                                    ${initiative.website ? 
+                                        `<a href="${initiative.website}" target="_blank" class="website-link">Visit Website</a>` : ''
+                                    }
+                                    ${initiative.contact ? 
+                                        `<a href="mailto:${initiative.contact}" class="contact-link">Contact</a>` : ''
+                                    }
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : `
+                    <p class="no-initiatives">No statewide initiatives found.</p>
+                `}
+            </section>
+        </div>
+    `;
 }
 
 // Debounce function
