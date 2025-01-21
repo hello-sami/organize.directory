@@ -16,10 +16,27 @@ let searchInput, homeLink, cityLink, issuesLink, aboutLink, resultsContainer, ho
 
 // Wait for both DOM and sidebar to be ready
 document.addEventListener('DOMContentLoaded', () => {
-    // Wait a short moment for the sidebar to be created
-    setTimeout(() => {
+    // Create an observer instance
+    const observer = new MutationObserver((mutations, obs) => {
+        const sidebar = document.querySelector('aside.sidebar');
+        if (sidebar) {
+            obs.disconnect(); // Stop observing once we find the sidebar
+            initializeApp();
+        }
+    });
+
+    // Start observing the document with the configured parameters
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+
+    // Also try to initialize immediately in case the sidebar is already there
+    const sidebar = document.querySelector('aside.sidebar');
+    if (sidebar) {
+        observer.disconnect();
         initializeApp();
-    }, 100);
+    }
 });
 
 function initializeApp() {
