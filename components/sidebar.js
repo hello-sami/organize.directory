@@ -7,8 +7,9 @@ export function createSidebar(activePage) {
         <h1><a href="/" class="home-link">Mutual Aid Directory</a></h1>
         <nav>
             <a href="/" id="homeLink" class="nav-link ${activePage === 'home' ? 'active' : ''}">Home</a>
-            <a href="/cities" id="cityLink" class="nav-link ${activePage === 'cities' ? 'active' : ''}">Cities</a>
+            <a href="/location" id="locationLink" class="nav-link ${activePage === 'location' ? 'active' : ''}">Location</a>
             <a href="/issues" id="issuesLink" class="nav-link ${activePage === 'issues' ? 'active' : ''}">Issues</a>
+            <a href="/resources" id="resourcesLink" class="nav-link ${activePage === 'resources' ? 'active' : ''}">Resources</a>
             <a href="/about" id="aboutLink" class="nav-link ${activePage === 'about' ? 'active' : ''}">About</a>
         </nav>
     `;
@@ -83,17 +84,17 @@ function navigateToPage(path) {
 
 // Function to initialize page-specific JavaScript
 function initializePage(path) {
-    // Initialize cities page
-    if (path.includes('/cities')) {
-        // Import and initialize cities.js functionality
-        import('/cities.js').then(module => {
+    // Initialize location page
+    if (path.includes('/location')) {
+        // Import and initialize location.js functionality
+        import('/location.js').then(module => {
             if (typeof module.initializePage === 'function') {
                 module.initializePage();
             }
             if (typeof module.initializeSearch === 'function') {
                 module.initializeSearch();
             }
-        }).catch(err => console.error('Error loading cities.js:', err));
+        }).catch(err => console.error('Error loading location.js:', err));
     }
     // Add other page initializations as needed
 }
