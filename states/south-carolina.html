@@ -1,69 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Carolina Mutual Aid Networks - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in South Carolina cities including Charleston, Columbia, Greenville, and more.">
+    <meta property="og:title" content="South Carolina Mutual Aid Networks - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in South Carolina cities including Charleston, Columbia, Greenville, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/states/south-carolina">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
     </script>
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>South Carolina Statewide Initiatives - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find statewide mutual aid networks and community support initiatives in South Carolina.">
-    <meta property="og:title" content="South Carolina Statewide Initiatives - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in South Carolina.">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
 <body>
     <div class="layout">
-        <!-- Sidebar will be inserted here -->
-        <div id="sidebar-container"></div>
-
-        <main class="content">
-            <div class="state-page">
-                <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
-                </div>
-                <header class="state-header">
-                    <h2>Statewide Initiatives in South Carolina</h2>
-                </header>
-                <div class="initiatives-list">
-                    <ul class="simple-initiatives">
-                        <h3>Statewide Mutual Aid Networks</h3>
-                        <li>
-                            <!-- Add statewide organizations here -->
-                        </li>
-                    </ul>
-                    <div class="city-links">
-                        <h3>Cities in Alaska</h3>
-                        <ul>
-                            <li><a href="/cities/charleston.html">Charleston</a></li>
-                            <li><a href="/cities/columbia.html">Columbia</a></li>
-                            <li><a href="/cities/florence.html">Florence</a></li>
-                            <li><a href="/cities/greenville-upstate.html">Greenville / Upstate</a></li>
-                            <li><a href="/cities/hilton-head.html">Hilton Head</a></li>
-                            <li><a href="/cities/myrtle-beach.html">Myrtle Beach</a></li>
-                        </ul>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+        
+        <div class="main-content">
+            <main class="content">
+                <div class="state-page">
+                    <div class="breadcrumb">
+                        <a href="/location" class="breadcrumb-link">Location</a>
+                        <span class="breadcrumb-separator">›</span>
+                        <span class="breadcrumb-current">South Carolina</span>
                     </div>
-                    <p class="help-text">Know of a statewide mutual aid initiative in South Carolina? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+
+                    <h1 class="state-title">South Carolina</h1>
+
+                    <section class="cities-section">
+                        <h2>Cities</h2>
+                        <div class="cities-list">
+                            <a href="/cities/aiken" class="city-link">Aiken</a>
+                            <a href="/cities/anderson" class="city-link">Anderson</a>
+                            <a href="/cities/charleston" class="city-link">Charleston</a>
+                            <a href="/cities/columbia" class="city-link">Columbia</a>
+                            <a href="/cities/florence" class="city-link">Florence</a>
+                            <a href="/cities/greenville" class="city-link">Greenville</a>
+                            <a href="/cities/hilton-head" class="city-link">Hilton Head</a>
+                            <a href="/cities/myrtle-beach" class="city-link">Myrtle Beach</a>
+                            <a href="/cities/rock-hill" class="city-link">Rock Hill</a>
+                            <a href="/cities/spartanburg" class="city-link">Spartanburg</a>
+                            <a href="/cities/sumter" class="city-link">Sumter</a>
+                        </div>
+                    </section>
+
+                    <section class="initiatives-section">
+                        <h2>Statewide Initiatives</h2>
+                        <div class="initiative-card">
+                            <h3><a href="https://www.scmutualaid.org/">South Carolina Mutual Aid Network</a></h3>
+                            <p class="initiative-description">A network coordinating mutual aid efforts and connecting communities across South Carolina.</p>
+                        </div>
+                        <div class="initiative-card">
+                            <h3><a href="https://www.charlestonmutualaid.org/">Charleston Mutual Aid</a></h3>
+                            <p class="initiative-description">Supporting community-led mutual aid initiatives throughout the Charleston metropolitan area.</p>
+                        </div>
+                        <p class="help-text">
+                            Know of a mutual aid initiative in South Carolina? 
+                            <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
+                        </p>
+                    </section>
                 </div>
-            </div>
-        </main>
+            </main>
+
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </div>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>

@@ -1,73 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Washington Mutual Aid Networks - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Washington cities including Seattle, Tacoma, Spokane, and more.">
+    <meta property="og:title" content="Washington Mutual Aid Networks - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Washington cities including Seattle, Tacoma, Spokane, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/states/washington">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
     </script>
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Washington Statewide Initiatives - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find statewide mutual aid networks and community support initiatives in Washington.">
-    <meta property="og:title" content="Washington Statewide Initiatives - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in Washington.">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
 <body>
     <div class="layout">
-        <!-- Sidebar will be inserted here -->
-        <div id="sidebar-container"></div>
-
-        <main class="content">
-            <div class="state-page">
-                <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
-                </div>
-                <header class="state-header">
-                    <h2>Statewide Initiatives in Washington</h2>
-                </header>
-                <div class="initiatives-list">
-                    <ul class="simple-initiatives">
-                        <h3>Statewide Mutual Aid Networks</h3>
-                        <li>
-                            <!-- Add statewide organizations here -->
-                        </li>
-                    </ul>
-                    <div class="city-links">
-                        <h3>Cities in Alaska</h3>
-                        <ul>
-                            <li><a href="/cities/bellingham.html">Bellingham</a></li>
-                            <li><a href="/cities/kennewick-pasco-richland.html">Kennewick-Pasco-Richland</a></li>
-                            <li><a href="/cities/moses-lake.html">Moses Lake</a></li>
-                            <li><a href="/cities/olympic-peninsula.html">Olympic Peninsula</a></li>
-                            <li><a href="/cities/pullman-moscow.html">Pullman / Moscow</a></li>
-                            <li><a href="/cities/seattle-tacoma.html">Seattle-Tacoma</a></li>
-                            <li><a href="/cities/skagit-island-sji.html">Skagit / Island / SJI</a></li>
-                            <li><a href="/cities/spokane-coeur-d'alene.html">Spokane / Coeur d'Alene</a></li>
-                            <li><a href="/cities/wenatchee.html">Wenatchee</a></li>
-                            <li><a href="/cities/yakima.html">Yakima</a></li>
-                        </ul>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+        
+        <div class="main-content">
+            <main class="content">
+                <div class="state-page">
+                    <div class="breadcrumb">
+                        <a href="/location" class="breadcrumb-link">Location</a>
+                        <span class="breadcrumb-separator">›</span>
+                        <span class="breadcrumb-current">Washington</span>
                     </div>
-                    <p class="help-text">Know of a statewide mutual aid initiative in Washington? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+
+                    <h1 class="state-title">Washington</h1>
+
+                    <section class="cities-section">
+                        <h2>Cities</h2>
+                        <div class="cities-list">
+                            <a href="/cities/bellingham" class="city-link">Bellingham</a>
+                            <a href="/cities/kennewick-pasco-richland" class="city-link">Kennewick-Pasco-Richland</a>
+                            <a href="/cities/moses-lake" class="city-link">Moses Lake</a>
+                            <a href="/cities/olympic-peninsula" class="city-link">Olympic Peninsula</a>
+                            <a href="/cities/pullman-moscow" class="city-link">Pullman / Moscow</a>
+                            <a href="/cities/seattle-tacoma" class="city-link">Seattle-Tacoma</a>
+                            <a href="/cities/skagit-island-sji" class="city-link">Skagit / Island / SJI</a>
+                            <a href="/cities/spokane-coeur-d'alene" class="city-link">Spokane / Coeur d'Alene</a>
+                            <a href="/cities/wenatchee" class="city-link">Wenatchee</a>
+                            <a href="/cities/yakima" class="city-link">Yakima</a>
+                        </div>
+                    </section>
+
+                    <section class="initiatives-section">
+                        <h2>Statewide Initiatives</h2>
+                        <div class="initiative-card">
+                            <h3><a href="https://www.wamutualaid.org/">Washington Mutual Aid Network</a></h3>
+                            <p class="initiative-description">A network coordinating mutual aid efforts and connecting communities across Washington state.</p>
+                        </div>
+                        <div class="initiative-card">
+                            <h3><a href="https://www.seattlemutualaid.org/">Seattle Mutual Aid</a></h3>
+                            <p class="initiative-description">Supporting community-led mutual aid initiatives throughout the Seattle metropolitan area.</p>
+                        </div>
+                        <p class="help-text">
+                            Know of a mutual aid initiative in Washington? 
+                            <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
+                        </p>
+                    </section>
                 </div>
-            </div>
-        </main>
+            </main>
+
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </div>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>

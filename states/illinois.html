@@ -1,74 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illinois Mutual Aid Networks - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Illinois cities including Chicago, Springfield, Rockford, and more.">
+    <meta property="og:title" content="Illinois Mutual Aid Networks - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Illinois cities including Chicago, Springfield, Rockford, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/states/illinois">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
     </script>
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Illinois Statewide Initiatives - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find statewide mutual aid networks and community support initiatives in Illinois.">
-    <meta property="og:title" content="Illinois Statewide Initiatives - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in Illinois.">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
 <body>
     <div class="layout">
-        <!-- Sidebar will be inserted here -->
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content">
             <div class="state-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/location" class="breadcrumb-link">Location</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Illinois</span>
                 </div>
-                <header class="state-header">
-                    <h2>Statewide Initiatives in Illinois</h2>
-                </header>
-                <div class="initiatives-list">
-                    <ul class="simple-initiatives">
-                        <h3>Statewide Mutual Aid Networks</h3>
-                        <li>
-                            <!-- Add statewide organizations here -->
-                        </li>
-                    </ul>
-                    <div class="city-links">
-                        <h3>Cities in Alaska</h3>
-                        <ul>
-                            <li><a href="/cities/bloomington-normal.html">Bloomington-Normal</a></li>
-                            <li><a href="/cities/champaign-urbana.html">Champaign Urbana</a></li>
-                            <li><a href="/cities/chicago.html">Chicago</a></li>
-                            <li><a href="/cities/decatur.html">Decatur</a></li>
-                            <li><a href="/cities/la-salle-co.html">La Salle Co</a></li>
-                            <li><a href="/cities/mattoon-charleston.html">Mattoon-Charleston</a></li>
-                            <li><a href="/cities/peoria.html">Peoria</a></li>
-                            <li><a href="/cities/rockford.html">Rockford</a></li>
-                            <li><a href="/cities/southern-illinois.html">Southern Illinois</a></li>
-                            <li><a href="/cities/springfield.html">Springfield</a></li>
-                            <li><a href="/cities/western-il.html">Western IL</a></li>
-                        </ul>
+
+                <h1 class="state-title">Illinois</h1>
+
+                <section class="cities-section">
+                    <h2>Cities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/bloomington-normal" class="city-link">Bloomington-Normal</a>
+                        <a href="/cities/champaign-urbana" class="city-link">Champaign Urbana</a>
+                        <a href="/cities/chicago" class="city-link">Chicago</a>
+                        <a href="/cities/decatur" class="city-link">Decatur</a>
+                        <a href="/cities/la-salle-co" class="city-link">La Salle Co</a>
+                        <a href="/cities/mattoon-charleston" class="city-link">Mattoon-Charleston</a>
+                        <a href="/cities/peoria" class="city-link">Peoria</a>
+                        <a href="/cities/rockford" class="city-link">Rockford</a>
+                        <a href="/cities/southern-illinois" class="city-link">Southern Illinois</a>
+                        <a href="/cities/springfield" class="city-link">Springfield</a>
+                        <a href="/cities/western-il" class="city-link">Western IL</a>
                     </div>
-                    <p class="help-text">Know of a statewide mutual aid initiative in Illinois? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Statewide Initiatives</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.illinoismutualaid.org/">Illinois Mutual Aid Network</a></h3>
+                        <p class="initiative-description">A network coordinating mutual aid efforts and connecting communities across Illinois.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.mutualaidchicago.org/">Mutual Aid Chicago</a></h3>
+                        <p class="initiative-description">Supporting community-led mutual aid initiatives throughout the Chicago metropolitan area and beyond.</p>
+                    </div>
+                    <p class="help-text">
+                        Know of a mutual aid initiative in Illinois? 
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
+                    </p>
+                </section>
             </div>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>

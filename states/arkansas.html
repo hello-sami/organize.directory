@@ -1,68 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arkansas Mutual Aid Networks - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Arkansas cities including Little Rock, Fayetteville, and more.">
+    <meta property="og:title" content="Arkansas Mutual Aid Networks - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Arkansas cities including Little Rock, Fayetteville, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/states/arkansas">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
     </script>
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arkansas Statewide Initiatives - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find statewide mutual aid networks and community support initiatives in Arkansas.">
-    <meta property="og:title" content="Arkansas Statewide Initiatives - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in Arkansas.">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
 <body>
     <div class="layout">
-        <!-- Sidebar will be inserted here -->
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content">
             <div class="state-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/location" class="breadcrumb-link">Location</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Arkansas</span>
                 </div>
-                <header class="state-header">
-                    <h2>Statewide Initiatives in Arkansas</h2>
-                </header>
-                <div class="initiatives-list">
-                    <ul class="simple-initiatives">
-                        <h3>Statewide Mutual Aid Networks</h3>
-                        <li>
-                            <!-- Add statewide organizations here -->
-                        </li>
-                    </ul>
-                    <div class="city-links">
-                        <h3>Cities in Alaska</h3>
-                        <ul>
-                            <li><a href="/cities/fayetteville.html">Fayetteville</a></li>
-                            <li><a href="/cities/fort-smith.html">Fort Smith</a></li>
-                            <li><a href="/cities/jonesboro.html">Jonesboro</a></li>
-                            <li><a href="/cities/little-rock.html">Little Rock</a></li>
-                            <li><a href="/cities/texarkana.html">Texarkana</a></li>
-                        </ul>
+
+                <h1 class="state-title">Arkansas</h1>
+
+                <section class="cities-section">
+                    <h2>Cities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/bentonville" class="city-link">Bentonville</a>
+                        <a href="/cities/conway" class="city-link">Conway</a>
+                        <a href="/cities/fayetteville" class="city-link">Fayetteville</a>
+                        <a href="/cities/fort-smith" class="city-link">Fort Smith</a>
+                        <a href="/cities/hot-springs" class="city-link">Hot Springs</a>
+                        <a href="/cities/jonesboro" class="city-link">Jonesboro</a>
+                        <a href="/cities/little-rock" class="city-link">Little Rock</a>
+                        <a href="/cities/pine-bluff" class="city-link">Pine Bluff</a>
+                        <a href="/cities/rogers" class="city-link">Rogers</a>
+                        <a href="/cities/springdale" class="city-link">Springdale</a>
+                        <a href="/cities/texarkana" class="city-link">Texarkana</a>
                     </div>
-                    <p class="help-text">Know of a statewide mutual aid initiative in Arkansas? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Statewide Initiatives</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://arkansasmutualaid.org/">Arkansas Mutual Aid</a></h3>
+                        <p class="initiative-description">A statewide network coordinating mutual aid efforts and connecting communities across Arkansas.</p>
+                    </div>
+                    <p class="help-text">
+                        Know of a mutual aid initiative in Arkansas? 
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
+                    </p>
+                </section>
             </div>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>

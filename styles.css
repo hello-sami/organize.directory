@@ -50,11 +50,19 @@ body {
     min-height: 100vh;
 }
 
-.content {
+.main-content {
     flex: 1;
     margin-left: 250px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
     padding: 2rem;
     max-width: 800px;
+    min-height: 0;
 }
 
 /* Sidebar */
@@ -65,6 +73,9 @@ aside {
     height: 100vh;
     position: fixed;
     background: var(--card-bg);
+    overflow-y: auto;
+    top: 0;
+    left: 0;
 }
 
 aside h1 {
@@ -302,19 +313,39 @@ aside nav {
     color: var(--accent-color);
 }
 
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+
+.site-footer p {
+    margin: 0;
+    font-style: italic;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
-    .layout {
-        flex-direction: column;
+    .main-content {
+        margin-left: 0;
+        min-height: 100vh;
     }
-
+    
+    .content {
+        padding: 1rem;
+    }
+    
     aside {
+        position: static;
         width: 100%;
         height: auto;
-        position: relative;
         border-right: none;
         border-bottom: 1px solid var(--border-color);
-        padding: 1rem;
     }
 
     aside h1 {
@@ -324,11 +355,6 @@ aside nav {
     aside nav {
         flex-direction: row;
         flex-wrap: wrap;
-    }
-
-    .content {
-        margin-left: 0;
-        padding: 1rem;
     }
 
     .post-entry {

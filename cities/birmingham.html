@@ -1,19 +1,30 @@
-<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid initiatives and community support networks in Birmingham, Alabama. Connect with local organizations and community resources."><meta property="og:title" content="Mutual Aid in Birmingham - Local Support Networks"><meta property="og:description" content="Find mutual aid initiatives and community support networks in Birmingham, Alabama. Connect with local organizations providing community-based support."><meta property="og:type" content="website"><meta property="og:url" content="https://organize.directory/birmingham"><meta name="twitter:card" content="summary"><title>Mutual Aid in Birmingham - Local Support Networks &amp; Community Resources</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Aid in Birmingham - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid initiatives and community support networks in Birmingham, Alabama. Connect with local organizations and community resources.">
+    <meta property="og:title" content="Mutual Aid in Birmingham - Local Support Networks">
+    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Birmingham, Alabama. Connect with local organizations providing community-based support.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/birmingham">
+    <meta name="twitter:card" content="summary">
+    
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
         <!-- Sidebar will be inserted here -->
@@ -22,42 +33,44 @@
         <main class="content">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/location" class="breadcrumb-link">Location</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <a href="/states/alabama" class="breadcrumb-link">Alabama</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Birmingham</span>
                 </div>
-                <header class="city-header">
-                    <h2>Birmingham, Alabama</h2>
-                </header>
-                <div class="initiatives-list">
-                    <ul class="simple-initiatives">
-                        <h3>Food Insecurity</h3>
-                            <li>
-                                <a href="https://www.instagram.com/birminghammutualaid/">Birmingham Mutual Aid</a>
-                                <p>Leftist food distribution, pantry, and garden</p>
-                            </li>
 
-                        <h3>General Info</h3>
-                            <li>
-                                <a href="https://www.bhamwiki.com/w/List_of_Birmingham_Mutual_Aid_and_Liberation_Organizations">BHAMWiki's list of mutual aid organizations</a>
-                            </li>
+                <h1 class="city-title">Birmingham, Alabama</h1>
 
-                        <h3>LGBT</h3>
-                            <li>
-                                <a href="https://www.magiccityacceptancecenter.org/">Magic City Acceptance Center</a>
-                            </li>
+                <section class="initiatives-section">
+                    <h2>Food Insecurity</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.instagram.com/birminghammutualaid/">Birmingham Mutual Aid</a></h3>
+                        <p class="initiative-description">Leftist food distribution, pantry, and garden</p>
+                    </div>
 
-                            <li>
-                                <a href="https://www.birminghamaidsoutreach.org/">Birmingham AIDS Outreach</a>
-                            </li>
+                    <h2>General Info</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.bhamwiki.com/w/List_of_Birmingham_Mutual_Aid_and_Liberation_Organizations">BHAMWiki's list of mutual aid organizations</a></h3>
+                    </div>
 
-                            <li>
-                                <a href="https://www.takebhm.org/">TAKE Birmingham</a>
-                                <p>Stands for Transgender Advocates Knowledgeable Empowerment</p>
-                            </li>
-                    </ul>
+                    <h2>LGBT</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.magiccityacceptancecenter.org/">Magic City Acceptance Center</a></h3>
+                    </div>
+
+                    <div class="initiative-card">
+                        <h3><a href="https://www.birminghamaidsoutreach.org/">Birmingham AIDS Outreach</a></h3>
+                    </div>
+
+                    <div class="initiative-card">
+                        <h3><a href="https://www.takebhm.org/">TAKE Birmingham</a></h3>
+                        <p class="initiative-description">Stands for Transgender Advocates Knowledgeable Empowerment</p>
+                    </div>
 
                     <p class="help-text">Know of a mutual aid initiative in Birmingham? 
                         <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+                </section>
             </div>
         </main>
     </div>
@@ -69,37 +82,5 @@
         sidebarContainer.replaceWith(sidebar);
     </script>
     <script src="/theme.js" type="module"></script>
-
-
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    </body></html>
+</body>
+</html>

@@ -1,71 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montana Mutual Aid Networks - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Montana cities including Billings, Missoula, Bozeman, and more.">
+    <meta property="og:title" content="Montana Mutual Aid Networks - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Montana cities including Billings, Missoula, Bozeman, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/states/montana">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
     </script>
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Montana Statewide Initiatives - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find statewide mutual aid networks and community support initiatives in Montana.">
-    <meta property="og:title" content="Montana Statewide Initiatives - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in Montana.">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
 <body>
     <div class="layout">
-        <!-- Sidebar will be inserted here -->
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content">
             <div class="state-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/location" class="breadcrumb-link">Location</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Montana</span>
                 </div>
-                <header class="state-header">
-                    <h2>Statewide Initiatives in Montana</h2>
-                </header>
-                <div class="initiatives-list">
-                    <ul class="simple-initiatives">
-                        <h3>Statewide Mutual Aid Networks</h3>
-                        <li>
-                            <!-- Add statewide organizations here -->
-                        </li>
-                    </ul>
-                    <div class="city-links">
-                        <h3>Cities in Alaska</h3>
-                        <ul>
-                            <li><a href="/cities/billings.html">Billings</a></li>
-                            <li><a href="/cities/bozeman.html">Bozeman</a></li>
-                            <li><a href="/cities/butte.html">Butte</a></li>
-                            <li><a href="/cities/great-falls.html">Great Falls</a></li>
-                            <li><a href="/cities/helena.html">Helena</a></li>
-                            <li><a href="/cities/kalispell.html">Kalispell</a></li>
-                            <li><a href="/cities/missoula.html">Missoula</a></li>
-                            <li><a href="/cities/eastern-montana.html">Eastern Montana</a></li>
-                        </ul>
+
+                <h1 class="state-title">Montana</h1>
+
+                <section class="cities-section">
+                    <h2>Cities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/billings" class="city-link">Billings</a>
+                        <a href="/cities/bozeman" class="city-link">Bozeman</a>
+                        <a href="/cities/butte" class="city-link">Butte</a>
+                        <a href="/cities/eastern-montana" class="city-link">Eastern Montana</a>
+                        <a href="/cities/great-falls" class="city-link">Great Falls</a>
+                        <a href="/cities/helena" class="city-link">Helena</a>
+                        <a href="/cities/kalispell" class="city-link">Kalispell</a>
+                        <a href="/cities/missoula" class="city-link">Missoula</a>
+                        <a href="/cities/western-montana" class="city-link">Western Montana</a>
                     </div>
-                    <p class="help-text">Know of a statewide mutual aid initiative in Montana? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Statewide Initiatives</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.mtmutualaid.org/">Montana Mutual Aid Network</a></h3>
+                        <p class="initiative-description">A network coordinating mutual aid efforts and connecting communities across Montana.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.missoulamutualaid.org/">Missoula Mutual Aid</a></h3>
+                        <p class="initiative-description">Supporting community-led mutual aid initiatives throughout the Missoula area and beyond.</p>
+                    </div>
+                    <p class="help-text">
+                        Know of a mutual aid initiative in Montana? 
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
+                    </p>
+                </section>
             </div>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>

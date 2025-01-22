@@ -18,7 +18,8 @@
     <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in Alabama.">
     <meta property="og:type" content="website">
     <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="/theme-init.js"></script>
 </head>
 <body>
@@ -29,38 +30,34 @@
         <main class="content">
             <div class="state-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/location" class="breadcrumb-link">Location</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Alabama</span>
                 </div>
-                <header class="state-header">
-                    <h2>Alabama</h2>
-                </header>
 
-                <!-- Cities Grid moved to top -->
-                <div class="cities-section">
-                    <h3>Cities in Alabama</h3>
-                    <div class="cities-grid">
-                        <div class="city-link"><a href="/cities/auburn.html">Auburn</a></div>
-                        <div class="city-link"><a href="/cities/birmingham.html">Birmingham</a></div>
-                        <div class="city-link"><a href="/cities/dothan.html">Dothan</a></div>
-                        <div class="city-link"><a href="/cities/florence-muscle-shoals.html">Florence / Muscle Shoals</a></div>
-                        <div class="city-link"><a href="/cities/gadsden-anniston.html">Gadsden-Anniston</a></div>
-                        <div class="city-link"><a href="/cities/huntsville-decatur.html">Huntsville / Decatur</a></div>
-                        <div class="city-link"><a href="/cities/mobile.html">Mobile</a></div>
-                        <div class="city-link"><a href="/cities/montgomery.html">Montgomery</a></div>
-                        <div class="city-link"><a href="/cities/tuscaloosa.html">Tuscaloosa</a></div>
+                <h1 class="state-title">Alabama</h1>
+
+                <section class="cities-section">
+                    <h2>Cities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/anniston" class="city-link">Anniston</a>
+                        <a href="/cities/auburn" class="city-link">Auburn</a>
+                        <a href="/cities/birmingham" class="city-link">Birmingham</a>
+                        <a href="/cities/dothan" class="city-link">Dothan</a>
+                        <a href="/cities/florence" class="city-link">Florence</a>
+                        <a href="/cities/gadsden" class="city-link">Gadsden</a>
+                        <a href="/cities/huntsville" class="city-link">Huntsville</a>
+                        <a href="/cities/mobile" class="city-link">Mobile</a>
+                        <a href="/cities/montgomery" class="city-link">Montgomery</a>
+                        <a href="/cities/muscle-shoals" class="city-link">Muscle Shoals</a>
+                        <a href="/cities/tuscaloosa" class="city-link">Tuscaloosa</a>
                     </div>
-                </div>
+                </section>
 
-                <div class="initiatives-list">
-                    <h3>Statewide Mutual Aid Networks</h3>
-                    <ul class="simple-initiatives">
-                        <li>
-                            <!-- Add statewide organizations here -->
-                        </li>
-                    </ul>
-                    <p class="help-text">Know of a statewide mutual aid initiative in Alabama? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+                <section class="initiatives-section">
+                    <h2>Statewide Mutual Aid Networks</h2>
+                    <p class="no-initiatives">Know of a statewide mutual aid initiative in Alabama? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+                </section>
             </div>
         </main>
     </div>

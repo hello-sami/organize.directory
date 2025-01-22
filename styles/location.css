@@ -1,7 +1,6 @@
 /* Page header */
 .page-header {
     max-width: 800px;
-    margin: 0 auto;
     padding: 3rem 2rem 2rem;
     text-align: center;
 }
@@ -20,29 +19,6 @@
     color: #666;
     max-width: 600px;
     margin: 0 auto;
-}
-
-/* Search container */
-.search-container {
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    padding: 0 2rem;
-}
-
-.search-input {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 0.375rem;
-    background-color: white;
-    transition: border-color 0.2s ease;
-}
-
-.search-input:focus {
-    outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 /* States list */
@@ -73,14 +49,16 @@
     text-decoration: underline;
 }
 
-/* State page */
-.state-page {
+/* State and City pages */
+.state-page,
+.city-page {
     max-width: 800px;
-    margin: 0 auto;
     padding: 0 2rem;
+    flex: 1;
 }
 
-.state-title {
+.state-title,
+.city-title {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 2.5rem;
     font-weight: 600;
@@ -90,7 +68,7 @@
 
 .cities-section,
 .initiatives-section {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .cities-section h2,
@@ -99,7 +77,7 @@
     font-size: 1.5rem;
     font-weight: 500;
     color: #1a1a1a;
-    margin-bottom: 1.5rem;
+    margin: 2rem 0 1rem;
 }
 
 .cities-list {
@@ -121,23 +99,26 @@
     text-decoration: underline;
 }
 
-.initiatives-grid {
-    display: grid;
-    gap: 1.5rem;
-}
-
+/* Initiative styles */
 .initiative-card {
-    padding: 1.5rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 0.5rem;
-    background: white;
+    margin-bottom: 1.5rem;
 }
 
 .initiative-card h3 {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 500;
-    color: #1a1a1a;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.initiative-card h3 a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.initiative-card h3 a:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
 }
 
 .initiative-description {
@@ -146,33 +127,20 @@
     line-height: 1.5;
 }
 
-.initiative-links {
-    display: flex;
-    gap: 1rem;
-}
-
-.initiative-links a {
-    color: #2563eb;
-    text-decoration: none;
-    font-size: 0.875rem;
-}
-
-.initiative-links a:hover {
-    text-decoration: underline;
-}
-
-.no-initiatives {
+.help-text {
     color: #666;
     font-size: 1rem;
     line-height: 1.5;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
-.no-initiatives a {
+.help-text a {
     color: #2563eb;
     text-decoration: none;
 }
 
-.no-initiatives a:hover {
+.help-text a:hover {
     text-decoration: underline;
 }
 
@@ -204,18 +172,6 @@
     font-weight: 500;
 }
 
-.back-link {
-    color: #666;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    transition: color 0.2s ease;
-}
-
-.back-link:hover {
-    color: #2563eb;
-}
-
 .state-header {
     margin-bottom: 3rem;
 }
@@ -244,4 +200,11 @@
     font-weight: 500;
     color: #1a1a1a;
     margin-bottom: 1.5rem;
+}
+
+/* Ensure content fills space */
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 } 

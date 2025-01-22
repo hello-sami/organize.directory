@@ -1,81 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michigan Mutual Aid Networks - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Michigan cities including Detroit, Grand Rapids, Ann Arbor, and more.">
+    <meta property="og:title" content="Michigan Mutual Aid Networks - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Michigan cities including Detroit, Grand Rapids, Ann Arbor, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/states/michigan">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
     </script>
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michigan Statewide Initiatives - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find statewide mutual aid networks and community support initiatives in Michigan.">
-    <meta property="og:title" content="Michigan Statewide Initiatives - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in Michigan.">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
 <body>
     <div class="layout">
-        <!-- Sidebar will be inserted here -->
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content">
             <div class="state-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/location" class="breadcrumb-link">Location</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Michigan</span>
                 </div>
-                <header class="state-header">
-                    <h2>Statewide Initiatives in Michigan</h2>
-                </header>
-                <div class="initiatives-list">
-                    <ul class="simple-initiatives">
-                        <h3>Statewide Mutual Aid Networks</h3>
-                        <li>
-                            <!-- Add statewide organizations here -->
-                        </li>
-                    </ul>
-                    <div class="city-links">
-                        <h3>Cities in Alaska</h3>
-                        <ul>
-                            <li><a href="/cities/ann-arbor.html">Ann Arbor</a></li>
-                            <li><a href="/cities/battle-creek.html">Battle Creek</a></li>
-                            <li><a href="/cities/central-michigan.html">Central Michigan</a></li>
-                            <li><a href="/cities/detroit.html">Detroit</a></li>
-                            <li><a href="/cities/flint.html">Flint</a></li>
-                            <li><a href="/cities/grand-rapids.html">Grand Rapids</a></li>
-                            <li><a href="/cities/holland.html">Holland</a></li>
-                            <li><a href="/cities/jackson.html">Jackson</a></li>
-                            <li><a href="/cities/kalamazoo.html">Kalamazoo</a></li>
-                            <li><a href="/cities/lansing.html">Lansing</a></li>
-                            <li><a href="/cities/monroe.html">Monroe</a></li>
-                            <li><a href="/cities/muskegon.html">Muskegon</a></li>
-                            <li><a href="/cities/northern-michigan.html">Northern Michigan</a></li>
-                            <li><a href="/cities/port-huron.html">Port Huron</a></li>
-                            <li><a href="/cities/saginaw-midland-baycity.html">Saginaw-Midland-Baycity</a></li>
-                            <li><a href="/cities/southwest-michigan.html">Southwest Michigan</a></li>
-                            <li><a href="/cities/the-thumb.html">The Thumb</a></li>
-                            <li><a href="/cities/upper-peninsula.html">Upper Peninsula</a></li>
-                        </ul>
+
+                <h1 class="state-title">Michigan</h1>
+
+                <section class="cities-section">
+                    <h2>Cities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/ann-arbor" class="city-link">Ann Arbor</a>
+                        <a href="/cities/battle-creek" class="city-link">Battle Creek</a>
+                        <a href="/cities/central-michigan" class="city-link">Central Michigan</a>
+                        <a href="/cities/detroit" class="city-link">Detroit</a>
+                        <a href="/cities/flint" class="city-link">Flint</a>
+                        <a href="/cities/grand-rapids" class="city-link">Grand Rapids</a>
+                        <a href="/cities/holland" class="city-link">Holland</a>
+                        <a href="/cities/jackson" class="city-link">Jackson</a>
+                        <a href="/cities/kalamazoo" class="city-link">Kalamazoo</a>
+                        <a href="/cities/lansing" class="city-link">Lansing</a>
+                        <a href="/cities/monroe" class="city-link">Monroe</a>
+                        <a href="/cities/muskegon" class="city-link">Muskegon</a>
+                        <a href="/cities/northern-michigan" class="city-link">Northern Michigan</a>
+                        <a href="/cities/port-huron" class="city-link">Port Huron</a>
+                        <a href="/cities/saginaw-midland-baycity" class="city-link">Saginaw-Midland-Baycity</a>
+                        <a href="/cities/southwest-michigan" class="city-link">Southwest Michigan</a>
+                        <a href="/cities/the-thumb" class="city-link">The Thumb</a>
+                        <a href="/cities/upper-peninsula" class="city-link">Upper Peninsula</a>
                     </div>
-                    <p class="help-text">Know of a statewide mutual aid initiative in Michigan? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Statewide Initiatives</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.michiganmutualaid.org/">Michigan Mutual Aid Network</a></h3>
+                        <p class="initiative-description">A network coordinating mutual aid efforts and connecting communities across Michigan.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.detroitmutualaid.org/">Detroit Mutual Aid</a></h3>
+                        <p class="initiative-description">Supporting community-led mutual aid initiatives throughout the Detroit metropolitan area and beyond.</p>
+                    </div>
+                    <p class="help-text">
+                        Know of a mutual aid initiative in Michigan? 
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
+                    </p>
+                </section>
             </div>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>

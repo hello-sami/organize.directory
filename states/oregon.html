@@ -1,73 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oregon Mutual Aid Networks - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Oregon cities including Portland, Eugene, Salem, and more.">
+    <meta property="og:title" content="Oregon Mutual Aid Networks - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Oregon cities including Portland, Eugene, Salem, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/states/oregon">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
     </script>
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oregon Statewide Initiatives - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find statewide mutual aid networks and community support initiatives in Oregon.">
-    <meta property="og:title" content="Oregon Statewide Initiatives - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in Oregon.">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
 <body>
     <div class="layout">
-        <!-- Sidebar will be inserted here -->
-        <div id="sidebar-container"></div>
-
-        <main class="content">
-            <div class="state-page">
-                <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
-                </div>
-                <header class="state-header">
-                    <h2>Statewide Initiatives in Oregon</h2>
-                </header>
-                <div class="initiatives-list">
-                    <ul class="simple-initiatives">
-                        <h3>Statewide Mutual Aid Networks</h3>
-                        <li>
-                            <!-- Add statewide organizations here -->
-                        </li>
-                    </ul>
-                    <div class="city-links">
-                        <h3>Cities in Alaska</h3>
-                        <ul>
-                            <li><a href="/cities/bend.html">Bend</a></li>
-                            <li><a href="/cities/corvallis-albany.html">Corvallis/Albany</a></li>
-                            <li><a href="/cities/east-oregon.html">East Oregon</a></li>
-                            <li><a href="/cities/eugene.html">Eugene</a></li>
-                            <li><a href="/cities/klamath-falls.html">Klamath Falls</a></li>
-                            <li><a href="/cities/medford-ashland.html">Medford-Ashland</a></li>
-                            <li><a href="/cities/oregon-coast.html">Oregon Coast</a></li>
-                            <li><a href="/cities/portland.html">Portland</a></li>
-                            <li><a href="/cities/roseburg.html">Roseburg</a></li>
-                            <li><a href="/cities/salem.html">Salem</a></li>
-                        </ul>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+        
+        <div class="main-content">
+            <main class="content">
+                <div class="state-page">
+                    <div class="breadcrumb">
+                        <a href="/location" class="breadcrumb-link">Location</a>
+                        <span class="breadcrumb-separator">›</span>
+                        <span class="breadcrumb-current">Oregon</span>
                     </div>
-                    <p class="help-text">Know of a statewide mutual aid initiative in Oregon? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+
+                    <h1 class="state-title">Oregon</h1>
+
+                    <section class="cities-section">
+                        <h2>Cities</h2>
+                        <div class="cities-list">
+                            <a href="/cities/bend" class="city-link">Bend</a>
+                            <a href="/cities/corvallis-albany" class="city-link">Corvallis/Albany</a>
+                            <a href="/cities/east-oregon" class="city-link">East Oregon</a>
+                            <a href="/cities/eugene" class="city-link">Eugene</a>
+                            <a href="/cities/klamath-falls" class="city-link">Klamath Falls</a>
+                            <a href="/cities/medford-ashland" class="city-link">Medford-Ashland</a>
+                            <a href="/cities/oregon-coast" class="city-link">Oregon Coast</a>
+                            <a href="/cities/portland" class="city-link">Portland</a>
+                            <a href="/cities/roseburg" class="city-link">Roseburg</a>
+                            <a href="/cities/salem" class="city-link">Salem</a>
+                        </div>
+                    </section>
+
+                    <section class="initiatives-section">
+                        <h2>Statewide Initiatives</h2>
+                        <div class="initiative-card">
+                            <h3><a href="https://www.oregonmutualaid.org/">Oregon Mutual Aid Network</a></h3>
+                            <p class="initiative-description">A network coordinating mutual aid efforts and connecting communities across Oregon.</p>
+                        </div>
+                        <div class="initiative-card">
+                            <h3><a href="https://www.pdxmutualaid.org/">PDX Mutual Aid</a></h3>
+                            <p class="initiative-description">Supporting community-led mutual aid initiatives throughout the Portland metropolitan area.</p>
+                        </div>
+                        <p class="help-text">
+                            Know of a mutual aid initiative in Oregon? 
+                            <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
+                        </p>
+                    </section>
                 </div>
-            </div>
-        </main>
+            </main>
+
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </div>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>

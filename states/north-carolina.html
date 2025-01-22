@@ -1,75 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>North Carolina Mutual Aid Networks - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in North Carolina cities including Charlotte, Raleigh, Durham, Asheville, and more.">
+    <meta property="og:title" content="North Carolina Mutual Aid Networks - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in North Carolina cities including Charlotte, Raleigh, Durham, Asheville, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/states/north-carolina">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
     </script>
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>North Carolina Statewide Initiatives - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find statewide mutual aid networks and community support initiatives in North Carolina.">
-    <meta property="og:title" content="North Carolina Statewide Initiatives - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in North Carolina.">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
 <body>
     <div class="layout">
-        <!-- Sidebar will be inserted here -->
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content">
             <div class="state-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/location" class="breadcrumb-link">Location</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">North Carolina</span>
                 </div>
-                <header class="state-header">
-                    <h2>Statewide Initiatives in North Carolina</h2>
-                </header>
-                <div class="initiatives-list">
-                    <ul class="simple-initiatives">
-                        <h3>Statewide Mutual Aid Networks</h3>
-                        <li>
-                            <!-- Add statewide organizations here -->
-                        </li>
-                    </ul>
-                    <div class="city-links">
-                        <h3>Cities in Alaska</h3>
-                        <ul>
-                            <li><a href="/cities/asheville.html">Asheville</a></li>
-                            <li><a href="/cities/boone.html">Boone</a></li>
-                            <li><a href="/cities/charlotte.html">Charlotte</a></li>
-                            <li><a href="/cities/eastern-nc.html">Eastern NC</a></li>
-                            <li><a href="/cities/fayetteville.html">Fayetteville</a></li>
-                            <li><a href="/cities/greensboro.html">Greensboro</a></li>
-                            <li><a href="/cities/hickory-lenoir.html">Hickory / Lenoir</a></li>
-                            <li><a href="/cities/jacksonville.html">Jacksonville</a></li>
-                            <li><a href="/cities/outer-banks.html">Outer Banks</a></li>
-                            <li><a href="/cities/raleigh-durham-ch.html">Raleigh / Durham / CH</a></li>
-                            <li><a href="/cities/wilmington.html">Wilmington</a></li>
-                            <li><a href="/cities/winston-salem.html">Winston-Salem</a></li>
-                        </ul>
+
+                <h1 class="state-title">North Carolina</h1>
+
+                <section class="cities-section">
+                    <h2>Cities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/asheville" class="city-link">Asheville</a>
+                        <a href="/cities/boone" class="city-link">Boone</a>
+                        <a href="/cities/charlotte" class="city-link">Charlotte</a>
+                        <a href="/cities/eastern-nc" class="city-link">Eastern NC</a>
+                        <a href="/cities/fayetteville" class="city-link">Fayetteville</a>
+                        <a href="/cities/greensboro" class="city-link">Greensboro</a>
+                        <a href="/cities/hickory-lenoir" class="city-link">Hickory / Lenoir</a>
+                        <a href="/cities/jacksonville" class="city-link">Jacksonville</a>
+                        <a href="/cities/outer-banks" class="city-link">Outer Banks</a>
+                        <a href="/cities/raleigh-durham-ch" class="city-link">Raleigh / Durham / CH</a>
+                        <a href="/cities/wilmington" class="city-link">Wilmington</a>
+                        <a href="/cities/winston-salem" class="city-link">Winston-Salem</a>
                     </div>
-                    <p class="help-text">Know of a statewide mutual aid initiative in North Carolina? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Statewide Initiatives</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.ncmutualaid.org/">North Carolina Mutual Aid Network</a></h3>
+                        <p class="initiative-description">A network coordinating mutual aid efforts and connecting communities across North Carolina.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.trianglemutualaid.org/">Triangle Mutual Aid</a></h3>
+                        <p class="initiative-description">Supporting community-led mutual aid initiatives throughout the Raleigh-Durham-Chapel Hill area.</p>
+                    </div>
+                    <p class="help-text">
+                        Know of a mutual aid initiative in North Carolina? 
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
+                    </p>
+                </section>
             </div>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>

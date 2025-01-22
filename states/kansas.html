@@ -1,71 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kansas Mutual Aid Networks - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Kansas cities including Wichita, Kansas City, Topeka, and more.">
+    <meta property="og:title" content="Kansas Mutual Aid Networks - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Kansas cities including Wichita, Kansas City, Topeka, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/states/kansas">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
     </script>
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kansas Statewide Initiatives - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find statewide mutual aid networks and community support initiatives in Kansas.">
-    <meta property="og:title" content="Kansas Statewide Initiatives - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in Kansas.">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
 <body>
     <div class="layout">
-        <!-- Sidebar will be inserted here -->
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content">
             <div class="state-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/location" class="breadcrumb-link">Location</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Kansas</span>
                 </div>
-                <header class="state-header">
-                    <h2>Statewide Initiatives in Kansas</h2>
-                </header>
-                <div class="initiatives-list">
-                    <ul class="simple-initiatives">
-                        <h3>Statewide Mutual Aid Networks</h3>
-                        <li>
-                            <!-- Add statewide organizations here -->
-                        </li>
-                    </ul>
-                    <div class="city-links">
-                        <h3>Cities in Alaska</h3>
-                        <ul>
-                            <li><a href="/cities/lawrence.html">Lawrence</a></li>
-                            <li><a href="/cities/manhattan.html">Manhattan</a></li>
-                            <li><a href="/cities/northwest-ks.html">Northwest KS</a></li>
-                            <li><a href="/cities/salina.html">Salina</a></li>
-                            <li><a href="/cities/southeast-ks.html">Southeast KS</a></li>
-                            <li><a href="/cities/southwest-ks.html">Southwest KS</a></li>
-                            <li><a href="/cities/topeka.html">Topeka</a></li>
-                            <li><a href="/cities/wichita.html">Wichita</a></li>
-                        </ul>
+
+                <h1 class="state-title">Kansas</h1>
+
+                <section class="cities-section">
+                    <h2>Cities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/lawrence" class="city-link">Lawrence</a>
+                        <a href="/cities/manhattan" class="city-link">Manhattan</a>
+                        <a href="/cities/northwest-ks" class="city-link">Northwest KS</a>
+                        <a href="/cities/salina" class="city-link">Salina</a>
+                        <a href="/cities/southeast-ks" class="city-link">Southeast KS</a>
+                        <a href="/cities/southwest-ks" class="city-link">Southwest KS</a>
+                        <a href="/cities/topeka" class="city-link">Topeka</a>
+                        <a href="/cities/wichita" class="city-link">Wichita</a>
                     </div>
-                    <p class="help-text">Know of a statewide mutual aid initiative in Kansas? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Statewide Initiatives</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.kansasmutualaid.org/">Kansas Mutual Aid Network</a></h3>
+                        <p class="initiative-description">A network coordinating mutual aid efforts and connecting communities across Kansas.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.wichitamutualaid.org/">Wichita Mutual Aid</a></h3>
+                        <p class="initiative-description">Supporting community-led mutual aid initiatives throughout the Wichita metropolitan area and beyond.</p>
+                    </div>
+                    <p class="help-text">
+                        Know of a mutual aid initiative in Kansas? 
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
+                    </p>
+                </section>
             </div>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>

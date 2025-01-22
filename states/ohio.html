@@ -1,78 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ohio Mutual Aid Networks - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Ohio cities including Cleveland, Columbus, Cincinnati, and more.">
+    <meta property="og:title" content="Ohio Mutual Aid Networks - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Ohio cities including Cleveland, Columbus, Cincinnati, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/states/ohio">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
     </script>
     
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ohio Statewide Initiatives - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find statewide mutual aid networks and community support initiatives in Ohio.">
-    <meta property="og:title" content="Ohio Statewide Initiatives - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in Ohio.">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
 <body>
     <div class="layout">
-        <!-- Sidebar will be inserted here -->
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content">
             <div class="state-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/location" class="breadcrumb-link">Location</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Ohio</span>
                 </div>
-                <header class="state-header">
-                    <h2>Statewide Initiatives in Ohio</h2>
-                </header>
-                <div class="initiatives-list">
-                    <ul class="simple-initiatives">
-                        <h3>Statewide Mutual Aid Networks</h3>
-                        <li>
-                            <!-- Add statewide organizations here -->
-                        </li>
-                    </ul>
-                    <div class="city-links">
-                        <h3>Cities in Alaska</h3>
-                        <ul>
-                            <li><a href="/cities/akron-canton.html">Akron / Canton</a></li>
-                            <li><a href="/cities/ashtabula.html">Ashtabula</a></li>
-                            <li><a href="/cities/athens.html">Athens</a></li>
-                            <li><a href="/cities/chillicothe.html">Chillicothe</a></li>
-                            <li><a href="/cities/cincinnati.html">Cincinnati</a></li>
-                            <li><a href="/cities/cleveland.html">Cleveland</a></li>
-                            <li><a href="/cities/columbus.html">Columbus</a></li>
-                            <li><a href="/cities/dayton-springfield.html">Dayton / Springfield</a></li>
-                            <li><a href="/cities/lima-findlay.html">Lima / Findlay</a></li>
-                            <li><a href="/cities/mansfield.html">Mansfield</a></li>
-                            <li><a href="/cities/sandusky.html">Sandusky</a></li>
-                            <li><a href="/cities/toledo.html">Toledo</a></li>
-                            <li><a href="/cities/tuscarawas-co.html">Tuscarawas Co</a></li>
-                            <li><a href="/cities/youngstown.html">Youngstown</a></li>
-                            <li><a href="/cities/zanesville-cambridge.html">Zanesville / Cambridge</a></li>
-                        </ul>
+
+                <h1 class="state-title">Ohio</h1>
+
+                <section class="cities-section">
+                    <h2>Cities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/akron-canton" class="city-link">Akron / Canton</a>
+                        <a href="/cities/ashtabula" class="city-link">Ashtabula</a>
+                        <a href="/cities/athens" class="city-link">Athens</a>
+                        <a href="/cities/chillicothe" class="city-link">Chillicothe</a>
+                        <a href="/cities/cincinnati" class="city-link">Cincinnati</a>
+                        <a href="/cities/cleveland" class="city-link">Cleveland</a>
+                        <a href="/cities/columbus" class="city-link">Columbus</a>
+                        <a href="/cities/dayton-springfield" class="city-link">Dayton / Springfield</a>
+                        <a href="/cities/lima-findlay" class="city-link">Lima / Findlay</a>
+                        <a href="/cities/mansfield" class="city-link">Mansfield</a>
+                        <a href="/cities/sandusky" class="city-link">Sandusky</a>
+                        <a href="/cities/toledo" class="city-link">Toledo</a>
+                        <a href="/cities/tuscarawas-co" class="city-link">Tuscarawas Co</a>
+                        <a href="/cities/youngstown" class="city-link">Youngstown</a>
+                        <a href="/cities/zanesville-cambridge" class="city-link">Zanesville / Cambridge</a>
                     </div>
-                    <p class="help-text">Know of a statewide mutual aid initiative in Ohio? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Statewide Initiatives</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.ohiomutualaid.org/">Ohio Mutual Aid Network</a></h3>
+                        <p class="initiative-description">A network coordinating mutual aid efforts and connecting communities across Ohio.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.columbusmutualaid.org/">Columbus Mutual Aid</a></h3>
+                        <p class="initiative-description">Supporting community-led mutual aid initiatives throughout Central Ohio.</p>
+                    </div>
+                    <p class="help-text">
+                        Know of a mutual aid initiative in Ohio? 
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
+                    </p>
+                </section>
             </div>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>
