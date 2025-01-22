@@ -52,9 +52,7 @@
 /* State and City pages */
 .state-page,
 .city-page {
-    max-width: 800px;
-    padding: 0 2rem;
-    flex: 1;
+    padding: 2rem 1rem;
 }
 
 .state-title,
@@ -202,9 +200,16 @@
     margin-bottom: 1.5rem;
 }
 
-/* Ensure content fills space */
+/* Remove content styles that conflict with styles.css */
 .content {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .state-page,
+    .city-page {
+        padding: 1rem;
+    }
 } 
