@@ -3,27 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browse Locations - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives by browsing locations across the United States.">
-    <meta property="og:title" content="Browse Locations - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find mutual aid networks and community support initiatives by browsing locations across the United States.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/location">
-    <meta name="twitter:card" content="summary">
+    <title>Find Mutual Aid Networks Near You</title>
+    <meta name="description" content="Browse or search for mutual aid initiatives in your area">
     
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/styles/location.css">
+    <link rel="stylesheet" href="/styles/states-list.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
     
     <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
@@ -32,14 +19,64 @@
     <div class="layout">
         <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
+        <main class="content" role="main">
             <header class="page-header">
                 <h1>Find Mutual Aid Networks Near You</h1>
-                <p class="subtitle">Browse or search for mutual aid initiatives in your area</p>
+                <p>Browse or search for mutual aid initiatives in your area</p>
             </header>
 
-            <div id="resultsContainer">
-                <!-- Results will be dynamically populated here -->
+            <div class="states-list">
+                <a href="/states/alabama" class="state-link">Alabama</a>
+                <a href="/states/alaska" class="state-link">Alaska</a>
+                <a href="/states/arizona" class="state-link">Arizona</a>
+                <a href="/states/arkansas" class="state-link">Arkansas</a>
+                <a href="/states/california" class="state-link">California</a>
+                <a href="/states/colorado" class="state-link">Colorado</a>
+                <a href="/states/connecticut" class="state-link">Connecticut</a>
+                <a href="/states/delaware" class="state-link">Delaware</a>
+                <a href="/states/district-of-columbia" class="state-link">District of Columbia</a>
+                <a href="/states/florida" class="state-link">Florida</a>
+                <a href="/states/georgia" class="state-link">Georgia</a>
+                <a href="/states/hawaii" class="state-link">Hawaii</a>
+                <a href="/states/idaho" class="state-link">Idaho</a>
+                <a href="/states/illinois" class="state-link">Illinois</a>
+                <a href="/states/indiana" class="state-link">Indiana</a>
+                <a href="/states/iowa" class="state-link">Iowa</a>
+                <a href="/states/kansas" class="state-link">Kansas</a>
+                <a href="/states/kentucky" class="state-link">Kentucky</a>
+                <a href="/states/louisiana" class="state-link">Louisiana</a>
+                <a href="/states/maine" class="state-link">Maine</a>
+                <a href="/states/maryland" class="state-link">Maryland</a>
+                <a href="/states/massachusetts" class="state-link">Massachusetts</a>
+                <a href="/states/michigan" class="state-link">Michigan</a>
+                <a href="/states/minnesota" class="state-link">Minnesota</a>
+                <a href="/states/mississippi" class="state-link">Mississippi</a>
+                <a href="/states/missouri" class="state-link">Missouri</a>
+                <a href="/states/montana" class="state-link">Montana</a>
+                <a href="/states/nebraska" class="state-link">Nebraska</a>
+                <a href="/states/nevada" class="state-link">Nevada</a>
+                <a href="/states/new-hampshire" class="state-link">New Hampshire</a>
+                <a href="/states/new-jersey" class="state-link">New Jersey</a>
+                <a href="/states/new-mexico" class="state-link">New Mexico</a>
+                <a href="/states/new-york" class="state-link">New York</a>
+                <a href="/states/north-carolina" class="state-link">North Carolina</a>
+                <a href="/states/north-dakota" class="state-link">North Dakota</a>
+                <a href="/states/ohio" class="state-link">Ohio</a>
+                <a href="/states/oklahoma" class="state-link">Oklahoma</a>
+                <a href="/states/oregon" class="state-link">Oregon</a>
+                <a href="/states/pennsylvania" class="state-link">Pennsylvania</a>
+                <a href="/states/rhode-island" class="state-link">Rhode Island</a>
+                <a href="/states/south-carolina" class="state-link">South Carolina</a>
+                <a href="/states/south-dakota" class="state-link">South Dakota</a>
+                <a href="/states/tennessee" class="state-link">Tennessee</a>
+                <a href="/states/texas" class="state-link">Texas</a>
+                <a href="/states/utah" class="state-link">Utah</a>
+                <a href="/states/vermont" class="state-link">Vermont</a>
+                <a href="/states/virginia" class="state-link">Virginia</a>
+                <a href="/states/washington" class="state-link">Washington</a>
+                <a href="/states/west-virginia" class="state-link">West Virginia</a>
+                <a href="/states/wisconsin" class="state-link">Wisconsin</a>
+                <a href="/states/wyoming" class="state-link">Wyoming</a>
             </div>
         </main>
     </div>
@@ -50,6 +87,5 @@
         document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
-    <script type="module" src="/script.js"></script>
 </body>
 </html> 
