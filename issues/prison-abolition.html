@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prison Abolition Networks - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find mutual aid networks and community initiatives working towards prison abolition and alternatives to the prison industrial complex.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/issues.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="issues-page">
+                <div class="breadcrumb">
+                    <a href="/">Home</a>
+                    <span>›</span>
+                    <a href="/issues">Issues</a>
+                    <span>›</span>
+                    <span>Prison Abolition</span>
+                </div>
+
+                <h1 class="state-title">Prison Abolition</h1>
+                <hr>
+
+                <section class="initiatives-section">
+                    <h2>National Organizations</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://criticalresistance.org/">Critical Resistance</a></h3>
+                        <p class="initiative-description">Building an international movement to abolish the prison industrial complex through grassroots organizing, coalition building, political education, and direct action. Their work includes prisoner solidarity programs, The Abolitionist newspaper, fighting imprisonment, resisting policing, and developing alternatives to punishment and control.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://deathpenalty.org/">Death Penalty Focus</a></h3>
+                        <p class="initiative-description">Organization working to abolish capital punishment through advocacy, education, and grassroots organizing. Building mutual aid networks to support death row prisoners and their families while advancing policy changes and public awareness campaigns for alternatives to the death penalty.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://solitarywatch.org/">Solitary Watch</a></h3>
+                        <p class="initiative-description">Independent watchdog organization shining light into the darkest corners of the U.S. punishment system through investigative journalism, advocacy, and solidarity with incarcerated people. Their work includes exposing human rights violations in solitary confinement, amplifying voices from solitary, and building public awareness to end this form of torture.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a prison abolition initiative? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 

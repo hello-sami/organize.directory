@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skagit / Island / SJI Mutual Aid Networks - Local Support & Community Resources</title>
@@ -21,15 +30,25 @@
         <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/location">Location</a>
+                    <a href="/">Home</a>
+                    <span>›</span>
+                    <a href="/locations">Locations</a>
                     <span>›</span>
                     <a href="/states/washington">Washington</a>
                     <span>›</span>
                     <span>Skagit / Island / SJI</span>
                 </div>
 
-                <h1>Skagit / Island / SJI, Washington</h1>
+                <h1>Skagit / Island / SJI</h1>
                 <hr>
+
+                <section>
+                    <h2>Food Justice</h2>
+                    <div class="initiative">
+                        <a href="https://www.foodjustice.org/">Community to Community Development (C2C)</a>
+                        <p>Women-led grassroots organization building food sovereignty and farmworker power through mutual aid, agroecology, and solidarity organizing in Bellingham and Skagit Valley.</p>
+                    </div>
+                </section>
 
                 <section>
                     <h2>General Support</h2>
@@ -47,7 +66,7 @@
     <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+        document.getElementById('sidebar').replaceWith(createSidebar('locations'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>

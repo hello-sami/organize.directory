@@ -1,88 +1,89 @@
-<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid networks and community support initiatives in San Francisco, California."><meta property="og:title" content="San Francisco - Mutual Aid Network Directory"><meta property="og:description" content="Find mutual aid networks and community support initiatives in San Francisco, California."><meta property="og:type" content="website"><title>San Francisco - Mutual Aid Network Directory</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Francisco Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in San Francisco, California.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
-        <!-- Sidebar will be inserted here -->
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/">Home</a>
+                    <span>›</span>
+                    <a href="/locations">Locations</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <span>San Francisco</span>
                 </div>
-                <header class="city-header">
-                    <h2>San Francisco, California</h2>
-                </header>
-                <div class="initiatives-list">
-                    <ul class="simple-initiatives">
-                        <h3>Protests</h3>
-                            <li>
-                                <a href="https://www.instagram.com/resistancesf/">Resistance SF</a>
-                                <p>General protest calendar</p>
-                            </li>
 
-                            <li>
-                                <a href="https://www.instagram.com/antirepression_bayarea/">Anti-Repression Bay Area</a>
-                                <p>Protest support and bail funds for protestors</p>
-                            </li>
+                <h1>San Francisco</h1>
+                <hr>
 
-                        <h3>Tenant's Rights</h3>
-                            <li>
-                                <a href="https://sftu.org/">San Francisco Tenants Union</a>
-                            </li>
+                <section>
+                    <h2>Community Organizing</h2>
+                    <div class="initiative">
+                        <a href="https://cpasf.org/">Chinese Progressive Association</a>
+                        <p>Grassroots organization building collective power with working-class Chinese immigrants through mutual aid, worker and tenant organizing, youth leadership development, and environmental justice initiatives.</p>
+                    </div>
+                </section>
 
-                    </ul>
-                    <p class="help-text">Know of a mutual aid initiative in San Francisco? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+                <section>
+                    <h2>Housing Justice</h2>
+                    <div class="initiative">
+                        <a href="https://cjjc.org/">Causa Justa :: Just Cause (CJJC)</a>
+                        <p>Multi-racial, grassroots organization building community power through tenant rights advocacy, mutual aid, and organizing against gentrification and displacement in San Francisco and Oakland.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://sftu.org/">San Francisco Tenants Union</a>
+                        <p>Member-supported organization fighting for tenants' rights and housing justice through direct support, education, and collective organizing.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Direct Action Support</h2>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/resistancesf/">Resistance SF</a>
+                        <p>General protest calendar and community organizing resource.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/antirepression_bayarea/">Anti-Repression Bay Area</a>
+                        <p>Providing protest support and bail funds for demonstrators through mutual aid networks.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in San Francisco? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('locations'));
     </script>
     <script src="/theme.js" type="module"></script>
-
- 
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    </body></html>
+</body>
+</html>

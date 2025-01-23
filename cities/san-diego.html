@@ -1,62 +1,65 @@
-<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid initiatives and community support networks in San Diego, California. Connect with local organizations and community resources."><meta property="og:title" content="Mutual Aid in San Diego - Local Support Networks"><meta property="og:description" content="Find mutual aid initiatives and community support networks in San Diego, California. Connect with local organizations providing community-based support."><meta property="og:url" content="https://organize.directory/san-diego"><title>Mutual Aid in San Diego - Local Support Networks &amp; Community Resources</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Diego Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in San Diego, California.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/">Home</a>
+                    <span>›</span>
+                    <a href="/locations">Locations</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <span>San Diego</span>
                 </div>
-                <header class="city-header">
-                    <h2>San Diego, California</h2>
-                </header>
-                <div class="initiatives-list">
-                    <h3>Local Mutual Aid Initiatives</h3>
-                    <p class="help-text">Know of a mutual aid initiative in San Diego? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+
+                <h1>San Diego</h1>
+                <hr>
+
+                <section>
+                    <h2>Community Organizing</h2>
+                    <div class="initiative">
+                        <a href="https://www.activistsandiego.org/">Activist San Diego</a>
+                        <p>Progressive community organization building networks of solidarity through grassroots organizing, mutual aid, and movement building to advance social, economic, and environmental justice.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in San Diego? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
         </main>
     </div>
 
-
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    </body></html>
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('locations'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html>

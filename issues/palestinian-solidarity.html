@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palestinian Solidarity Networks - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find Palestinian solidarity networks, mutual aid initiatives, and community support organizations across the United States.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content">
+            <div class="state-page">
+                <div class="breadcrumb">
+                    <a href="/" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <a href="/issues" class="breadcrumb-link">Issues</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Palestinian Solidarity</span>
+                </div>
+
+                <h1 class="state-title">Palestinian Solidarity</h1>
+
+                <section class="initiatives-section">
+                    <h2>National Initiatives</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.instagram.com/palestinianyouthmovement/">Palestinian Youth Movement</a></h3>
+                        <p class="initiative-description">Transnational, independent, grassroots movement of young Palestinians organizing for the liberation of Palestine and the return of all Palestinian refugees.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a Palestinian solidarity initiative we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 

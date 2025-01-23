@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SF Bay Area Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in the San Francisco Bay Area, California.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/">Home</a>
+                    <span>›</span>
+                    <a href="/locations">Locations</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <span>SF Bay Area</span>
+                </div>
+
+                <h1>SF Bay Area</h1>
+                <hr>
+
+                <section>
+                    <h2>International Solidarity</h2>
+                    <div class="initiative">
+                        <a href="https://www.araborganizing.org/">Arab Resource & Organizing Center (AROC)</a>
+                        <p>Grassroots organization empowering the Arab and Muslim community through direct services, community organizing, and mutual aid initiatives while building solidarity across movements for social justice and liberation.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Environmental Justice</h2>
+                    <div class="initiative">
+                        <a href="https://apen4ej.org/">Asian Pacific Environmental Network (APEN)</a>
+                        <p>Building power in Asian immigrant and refugee communities for environmental, social, and economic justice through grassroots organizing, mutual aid, and policy advocacy in Oakland and Richmond.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Re-Entry Support</h2>
+                    <div class="initiative">
+                        <a href="https://communityworkswest.org/">Community Works West</a>
+                        <p>Transforming justice through restorative practices, reentry support, and youth empowerment programs across the Bay Area, with a focus on healing and community-led solutions to incarceration.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Media & Journalism</h2>
+                    <div class="initiative">
+                        <a href="https://sfbayview.com/">San Francisco Bay View National Black Newspaper</a>
+                        <p>Independent Black newspaper founded in 1976, serving thought-provoking stories and commentary on the full range of Black trials and triumphs, with a focus on prison abolition, mutual aid, and community empowerment through grassroots journalism.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in the SF Bay Area? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('locations'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 
