@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Joaquin Valley Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in California's San Joaquin Valley.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <span>San Joaquin Valley</span>
+                </div>
+
+                <h1>San Joaquin Valley, California</h1>
+                <hr>
+
+                <section>
+                    <h2>Environmental Justice</h2>
+                    <div class="initiative">
+                        <a href="https://valleyimprovementprojects.org/">Valley Improvement Projects (VIP)</a>
+                        <p>A grassroots organization advocating for social and environmental justice in Stanislaus County and the Central Valley. Through mutual aid and community organizing, VIP works on clean air, pesticide reduction, clean drinking water, climate justice, zero waste initiatives, and tenant rights while focusing on supporting underrepresented and marginalized residents.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in the San Joaquin Valley? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 

@@ -12,8 +12,8 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alabama Statewide Initiatives - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find statewide mutual aid networks and community support initiatives in Alabama.">
+    <title>Alabama Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Alabama cities including Birmingham, Montgomery, Mobile, and more.">
     <meta property="og:title" content="Alabama Statewide Initiatives - Mutual Aid Network Directory">
     <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in Alabama.">
     <meta property="og:type" content="website">
@@ -24,18 +24,18 @@
 </head>
 <body>
     <div class="layout">
-        <!-- Sidebar will be inserted here -->
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="state-page">
                 <div class="breadcrumb">
-                    <a href="/location" class="breadcrumb-link">Location</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <span class="breadcrumb-current">Alabama</span>
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <span>Alabama</span>
                 </div>
 
-                <h1 class="state-title">Alabama</h1>
+                <h1>Alabama</h1>
+                <hr>
 
                 <section class="cities-section">
                     <h2>Cities</h2>
@@ -55,8 +55,15 @@
                 </section>
 
                 <section class="initiatives-section">
-                    <h2>Statewide Mutual Aid Networks</h2>
-                    <p class="no-initiatives">Know of a statewide mutual aid initiative in Alabama? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+                    <h2>Statewide Initiatives</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://alajustice.org/">Alabama Justice Initiative</a></h3>
+                        <p class="initiative-description">A grassroots organization working to end mass incarceration in Alabama through mutual aid, community organizing, and advocacy. They provide direct support to incarcerated individuals and their families while building community power for systemic change.</p>
+                    </div>
+                    <p class="help-text">
+                        Know of a mutual aid initiative in Alabama? 
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
+                    </p>
                 </section>
             </div>
         </main>
@@ -64,9 +71,7 @@
 
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>
