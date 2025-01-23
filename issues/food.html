@@ -12,8 +12,8 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salem Mutual Aid Networks - Local Support & Community Resources</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives in Salem, Oregon.">
+    <title>Food Insecurity Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find food banks, community fridges, meal programs, and other food security initiatives across the United States.">
     
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
@@ -28,28 +28,26 @@
         <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content">
-            <div class="city-page">
+            <div class="state-page">
                 <div class="breadcrumb">
                     <a href="/" class="breadcrumb-link">Home</a>
                     <span class="breadcrumb-separator">›</span>
-                    <a href="/locations" class="breadcrumb-link">Locations</a>
+                    <a href="/issues" class="breadcrumb-link">Issues</a>
                     <span class="breadcrumb-separator">›</span>
-                    <a href="/states/oregon" class="breadcrumb-link">Oregon</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <span class="breadcrumb-current">Salem</span>
+                    <span class="breadcrumb-current">Food Insecurity</span>
                 </div>
 
-                <h1>Salem</h1>
+                <h1 class="state-title">Food Insecurity</h1>
 
                 <section class="initiatives-section">
-                    <h2>Health & Healing</h2>
+                    <h2>National Initiatives</h2>
                     <div class="initiative-card">
-                        <h3><a href="https://www.radicalrest.org/">Radical Rest</a></h3>
-                        <p class="initiative-description">A healing justice collective of practitioners and educators centering the holistic wellness needs of BIPOC communities through culturally responsive health justice events and anti-oppressive education. Provides free wellness services and support through mutual aid initiatives.</p>
+                        <h3><a href="https://foodnotbombs.net/">Food Not Bombs</a></h3>
+                        <p class="initiative-description">Global network of collectives serving free vegan and vegetarian meals and organizing food distribution.</p>
                     </div>
                 </section>
 
-                <p class="help-text">Know of a mutual aid initiative in Salem we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+                <p class="help-text">Know of a food security initiative we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
 
             <footer class="site-footer">
@@ -61,8 +59,8 @@
     <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('locations'));
+        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>
-</html>
+</html> 

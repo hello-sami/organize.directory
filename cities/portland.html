@@ -1,62 +1,84 @@
-<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid initiatives and community support networks in Portland, Oregon. Connect with local organizations and community resources."><meta property="og:title" content="Mutual Aid in Portland - Local Support Networks"><meta property="og:description" content="Find mutual aid initiatives and community support networks in Portland, Oregon. Connect with local organizations providing community-based support."><meta property="og:url" content="https://organize.directory/portland"><title>Mutual Aid in Portland - Local Support Networks &amp; Community Resources</title></head>
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portland Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Portland, Oregon.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <a href="/locations" class="breadcrumb-link">Locations</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <a href="/states/oregon" class="breadcrumb-link">Oregon</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Portland</span>
                 </div>
-                <header class="city-header">
-                    <h2>Portland, Oregon</h2>
-                </header>
-                <div class="initiatives-list">
-                    <h3>Local Mutual Aid Initiatives</h3>
-                    <p class="help-text">Know of a mutual aid initiative in Portland? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+
+                <h1>Portland</h1>
+
+                <section class="initiatives-section">
+                    <h2>Racial Justice</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.dontshootpdx.org/">Don't Shoot PDX</a></h3>
+                        <p class="initiative-description">Black-led social justice organization focused on art, education, and mutual aid initiatives. Provides community resources through their Black Culture Library, art exhibitions, and direct action programs while advocating for civil rights and racial justice.</p>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Food Justice</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://blackfoodnw.org/">Black Food Sovereignty Coalition</a></h3>
+                        <p class="initiative-description">Coalition igniting Black and Brown communities to build food sovereignty, community wealth, and leadership within food systems. Operates programs including Come Thru Market, Grandma's Hands, and Back To The Root while supporting Black-owned farms and food initiatives.</p>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>LGBTQ+ Support</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.blackbeyondthebinarycollective.org/">Black & Beyond the Binary Collective</a></h3>
+                        <p class="initiative-description">Organization building leadership, healing, and safety for Black-African transgender, queer, nonbinary, two-spirit, and intersex (TQN2SI+) Oregonians through community support and mutual aid initiatives.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Portland we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
+
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
         </main>
     </div>
 
-
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    </body></html>
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('locations'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html>

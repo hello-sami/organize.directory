@@ -1,81 +1,82 @@
-<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Organizations working on prisoner solidarity, advocacy, and support."><title>Prisoner Solidarity - Mutual Aid Network Directory</title></head>
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisoner Solidarity Networks - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find prisoner support networks, books to prisoners programs, and solidarity initiatives across the United States.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content">
-            <a href="/issues" class="back-link">← Back to Issues</a>
-            
-            <div class="initiatives-list">
-                <h2>Prisoner Solidarity</h2>
-                <ul class="detailed-initiatives">
-                    <li>
-                        <h3><a href="https://criticalresistance.org">Critical Resistance</a></h3>
-                        <p>Building an international movement to end the prison industrial complex through organizing, advocacy, and education.</p>
-                    </li>
-                    <li>
-                        <h3><a href="https://www.blackandpink.org">Black and Pink</a></h3>
-                        <p>Supporting LGBTQ+ and HIV+ prisoners through advocacy, education, direct service, and organizing.</p>
-                    </li>
-                    <li>
-                        <h3><a href="https://www.prisonpolicy.org">Prison Policy Initiative</a></h3>
-                        <p>Research and advocacy organization working to expose the broader harm of mass criminalization.</p>
-                    </li>
-                </ul>
+            <div class="state-page">
+                <div class="breadcrumb">
+                    <a href="/" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <a href="/issues" class="breadcrumb-link">Issues</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Prisoner Solidarity</span>
+                </div>
 
-                <p class="help-text">
-                    Know of other prisoner solidarity organizations we should list? 
-                    <a href="mailto:contact@organize.directory">Let us know</a>.
-                </p>
+                <h1 class="state-title">Prisoner Solidarity</h1>
+
+                <section class="initiatives-section">
+                    <h2>National Initiatives</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://abolitionistlawcenter.org/">Abolitionist Law Center</a></h3>
+                        <p class="initiative-description">Public interest law firm and grassroots organization fighting for the rights of people in prison through litigation and community organizing.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://booksthroughbars.org/">Books Through Bars</a></h3>
+                        <p class="initiative-description">Volunteer organization that sends free books and educational materials to people in prison.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.blackandpink.org/">Black and Pink National</a></h3>
+                        <p class="initiative-description">Prison abolition organization supporting LGBTQ+ and HIV+ prisoners through advocacy, education, and direct service.</p>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Updates from Inside</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.kitelineradio.org/">Kite Line Radio</a></h3>
+                        <p class="initiative-description">Radio program and podcast focused on amplifying voices and stories from inside prison walls, connecting prisoners with outside support.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a prisoner solidarity initiative we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
+
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('issues');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
     </script>
     <script src="/theme.js" type="module"></script>
-
- 
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    </body></html>
+</body>
+</html>

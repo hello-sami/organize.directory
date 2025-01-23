@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Justice & International Solidarity - Mutual Aid Networks</title>
+    <meta name="description" content="Find mutual aid networks and initiatives focused on global justice, anti-imperialism, and international solidarity.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/">Home</a>
+                    <span>›</span>
+                    <a href="/issues">Issues</a>
+                    <span>›</span>
+                    <span>Global Justice</span>
+                </div>
+
+                <h1>Global Justice & International Solidarity</h1>
+                <p class="subtitle">Mutual aid networks and initiatives focused on global justice, anti-imperialism, and international solidarity.</p>
+                <hr>
+
+                <section>
+                    <h2>International Networks</h2>
+                    <div class="initiative">
+                        <a href="https://peoplesstruggle.org/en/">International League of Peoples' Struggle (ILPS)</a>
+                        <p>Global anti-imperialist alliance building international solidarity and supporting democratic struggles worldwide through mutual aid and collective action.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a global justice initiative? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 

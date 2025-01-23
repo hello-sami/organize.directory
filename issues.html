@@ -13,67 +13,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Issues - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives organized by issue area.">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
 <body>
     <div class="layout">
-        <!-- Sidebar will be inserted here -->
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content">
-            <div class="initiatives-list">
-                <h2>Issues</h2>
-                <ul class="simple-initiatives">
-                    <li>
-                        <a href="/housing-rights">Housing Rights</a>
-                        <p>Organizations working on housing justice, tenant rights, and community-controlled housing.</p>
-                    </li>
+            <div class="state-page">
+                <div class="breadcrumb">
+                    <a href="/" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Issues</span>
+                </div>
 
-                    <li>
-                        <a href="/food-security">Food Security</a>
-                        <p>Groups focused on food access, redistribution, and sustainable food systems.</p>
-                    </li>
+                <h1 class="state-title">Issues</h1>
 
-                    <li>
-                        <a href="/healthcare">Healthcare Access</a>
-                        <p>Organizations advocating for universal healthcare and providing direct medical support.</p>
-                    </li>
-                    <li>
-                        <a href="/environmental-justice">Environmental Justice</a>
-                        <p>Groups working on climate justice, environmental protection, and community resilience.</p>
-                    </li>
-                    <li>
-                        <a href="/workers-rights">Workers Rights</a>
-                        <p>Labor organizations and worker advocacy groups.</p>
-                    </li>
+                <section class="cities-section">
+                    <h2>Issues</h2>
+                    <div class="issues-list">
+                        <a href="/issues/food" class="city-link">Food Insecurity</a>
+                        <a href="/issues/housing" class="city-link">Housing</a>
+                        <a href="/issues/healthcare" class="city-link">Healthcare</a>
+                        <a href="/issues/lgbtq" class="city-link">Trans & LGBTQ+ Support</a>
+                        <a href="/issues/reproductive-justice" class="city-link">Reproductive Justice</a>
+                        <a href="/issues/disability" class="city-link">Disability Support</a>
+                        <a href="/issues/sex-worker-support" class="city-link">Sex Worker Support</a>
+                        <a href="/issues/global-justice" class="city-link">Global Justice</a>
+                        <a href="/issues/anti-war" class="city-link">Anti-War</a>
+                        <a href="/issues/labor" class="city-link">Labor Rights</a>
+                    </div>
+                </section>
 
-                    <li>
-                        <a href="/prisoner-solidarity">Prisoner Solidarity</a>
-                        <p>Solidarity and advocacy for incarcerated people.</p>
-                    </li>
-
-                    <li>
-                        <a href="/drug-harm-reduction">Drug Harm Reduction</a>
-                        <p>Decriminalizing drug use and reducing stigma in those afflicted by substance use disorders.</p>
-                    </li>
-
-                    <li>
-                        <a href="/abortion">Abortion</a>
-                        <p>Groups that are working to expand abortion access and ensure the right to an abortion</p>
-                    </li>
-                </ul>
+                <p class="help-text">Know of an issue area we should add? <a href="mailto:contact@organize.directory">Contact us</a> with suggestions.</p>
             </div>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('issues');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
     </script>
-    <script src="theme.js" type="module"></script>
+    <script src="/theme.js" type="module"></script>
 </body>
 </html> 

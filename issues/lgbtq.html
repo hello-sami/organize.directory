@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGBTQ+ Support Networks - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find LGBTQ+ support networks, legal resources, and community initiatives across the United States.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content">
+            <div class="state-page">
+                <div class="breadcrumb">
+                    <a href="/" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <a href="/issues" class="breadcrumb-link">Issues</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">LGBTQ+ Support</span>
+                </div>
+
+                <h1 class="state-title">LGBTQ+ Support</h1>
+
+                <section class="initiatives-section">
+                    <h2>Legal Support</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://lambdalegal.org/">Lambda Legal</a></h3>
+                        <p class="initiative-description">National organization fighting for civil rights of LGBTQ+ people and everyone living with HIV through litigation, education, and public policy work.</p>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Prisoner Support & Art</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.abocomix.com/">A.B.O. Comix</a></h3>
+                        <p class="initiative-description">Organization supporting LGBTQ+ prisoners through art publications, direct financial assistance, and pen pal programs. Provides essential items, legal support, and resources while amplifying prisoner voices through comics and art.</p>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Trans Support</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.twocc.us/">Trans Women of Color Collective (TWOCC)</a></h3>
+                        <p class="initiative-description">Organization providing mutual aid, community support, and advocacy for trans women of color.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.transgenderlawcenter.org/">Transgender Law Center</a></h3>
+                        <p class="initiative-description">Organization providing legal aid, advocacy, and mutual support for transgender and gender nonconforming communities.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.translifeline.org/">Trans Lifeline</a></h3>
+                        <p class="initiative-description">Trans-led organization providing direct emotional and financial support to trans people in crisis.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of an LGBTQ+ support initiative we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 

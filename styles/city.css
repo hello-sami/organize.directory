@@ -1,5 +1,4 @@
 .city-page {
-    width: 100%;
     padding: 2rem;
 }
 
@@ -8,42 +7,68 @@
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 2rem;
-    color: var(--text-color);
     font-size: 0.9rem;
+    opacity: 0.8;
 }
 
-.breadcrumb-link {
+.breadcrumb a {
     color: var(--text-color);
     text-decoration: none;
-    opacity: 0.8;
-    transition: opacity 0.2s ease;
 }
 
-.breadcrumb-link:hover {
-    opacity: 1;
+.breadcrumb a:hover {
     color: var(--primary-color);
-}
-
-.breadcrumb-separator {
-    opacity: 0.5;
-}
-
-.breadcrumb-current {
-    color: var(--primary-color);
-    font-weight: 500;
 }
 
 h1 {
     font-size: 2rem;
-    color: var(--heading-color);
     margin-bottom: 1rem;
-    font-weight: 500;
 }
 
-h1 + hr {
+hr {
     border: none;
     border-top: 1px solid var(--border-color);
     margin: 2rem 0;
+}
+
+section {
+    margin-top: 2rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.initiative {
+    margin-bottom: 0.5rem;
+}
+
+.initiative a {
+    font-weight: 600;
+    color: var(--heading-color);
+    text-decoration: none;
+}
+
+.initiative a:hover {
+    opacity: 0.8;
+}
+
+.initiative p {
+    margin-top: 0.25rem;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.help-text {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.help-text a {
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
 .initiatives-section {
@@ -67,17 +92,25 @@ h1 + hr {
     color: var(--text-color);
 }
 
-.initiative-card h3 {
+.initiative-name {
+    margin-bottom: 0.25rem;
+}
+
+.initiative-name a {
     color: var(--heading-color);
     font-size: 1rem;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.initiative-name a:hover {
+    opacity: 0.8;
 }
 
 .initiative-description {
     color: var(--text-color);
     font-size: 0.95rem;
-    margin-bottom: 0.5rem;
     line-height: 1.5;
     opacity: 0.8;
 }

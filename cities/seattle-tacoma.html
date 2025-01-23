@@ -1,84 +1,102 @@
-<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid initiatives and community support networks in Seattle-Tacoma, Washington. Connect with local organizations and community resources."><meta property="og:title" content="Mutual Aid in Seattle-Tacoma - Local Support Networks"><meta property="og:description" content="Find mutual aid initiatives and community support networks in Seattle-Tacoma, Washington. Connect with local organizations providing community-based support."><meta property="og:type" content="website"><meta property="og:url" content="https://organize.directory/seattle-tacoma"><meta name="twitter:card" content="summary"><title>Mutual Aid in Seattle-Tacoma - Local Support Networks &amp; Community Resources</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seattle-Tacoma Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Seattle-Tacoma, Washington.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
-        <!-- Sidebar will be inserted here -->
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/washington">Washington</a>
+                    <span>›</span>
+                    <span>Seattle-Tacoma</span>
                 </div>
-                <header class="city-header">
-                    <h2>Seattle-Tacoma, Washington</h2>
-                </header>
-                <div class="initiatives-list">
-                    <ul class="simple-initiatives">
-                        <h3>Auburn</h3>
-                            <li>
-                                <a href="https://www.instagram.com/auburnmutualaid/">Auburn Mutual Aid</a>
-                                <p>Food distribution in Auburn, WA</p>
-                            </li>
 
-                        <h3>Seattle</h3>
-                            <li>
-                                <a href="https://www.instagram.com/emeraldseafoodnotbombs/">Emerald Sea Food Not Bombs</a>
-                            </li>
+                <h1>Seattle-Tacoma, Washington</h1>
+                <hr>
 
-                    </ul>
+                <section>
+                    <h2>Undocumented & Immigrant Support</h2>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/superfamilia_kc/">Superfamilia KC</a>
+                        <p>Mutual aid group providing support and resources for undocumented communities.</p>
+                    </div>
+                </section>
 
-                    <p class="help-text">Know of a mutual aid initiative in Seattle-Tacoma? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+                <section>
+                    <h2>Food Insecurity</h2>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/emeraldseafoodnotbombs/">Emerald Sea Food Not Bombs</a>
+                        <p>Local chapter providing free vegan meals and mutual aid in Seattle.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>International Solidarity</h2>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/kaibigan_ffps/">Kaibigan FFPS</a>
+                        <p>Filipino Food Pantry Seattle building international solidarity through mutual aid and community support for the Filipino diaspora.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.song2sea.com/">Sông2Sea</a>
+                        <p>Vietnamese solidarity organization fostering political education and community building through study groups, cultural projects, and mutual aid.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/capybaracolectiva/">Capybara Colectiva</a>
+                        <p>A militant, grassroots org of Latin American diaspora fighting and exposing the u.s. imperialism that forces migrants to leave their homelands.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>LGBTQ+ Support</h2>
+                    <div class="initiative">
+                        <a href="https://www.lifewerqproject.org/">Lifewerq Project</a>
+                        <p>LGBTQ+ and BIPOC-led organization providing mutual aid, community support, and resources for queer and trans communities in Seattle.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Youth & Student Support</h2>
+                    <div class="initiative">
+                        <a href="https://www.seattlestudentunion.org/">Seattle Student Union</a>
+                        <p>Student-led organization uniting Seattle schools through collective action, winning resources for mental healthcare, COVID safety, and other community needs.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Auburn</h2>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/auburnmutualaid/">Auburn Mutual Aid</a>
+                        <p>Food distribution in Auburn, WA.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Seattle-Tacoma? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
-
-
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    </body></html>
+</body>
+</html>
