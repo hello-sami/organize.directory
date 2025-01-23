@@ -1,19 +1,29 @@
-<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid initiatives and community support networks in Auburn, Alabama. Connect with local organizations and community resources."><meta property="og:title" content="Mutual Aid in Auburn - Local Support Networks"><meta property="og:description" content="Find mutual aid initiatives and community support networks in Auburn, Alabama. Connect with local organizations providing community-based support."><meta property="og:url" content="https://organize.directory/auburn"><title>Mutual Aid in Auburn - Local Support Networks &amp; Community Resources</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find mutual aid initiatives and community support networks in Auburn, Alabama. Connect with local organizations and community resources.">
+    <meta property="og:title" content="Mutual Aid in Auburn - Local Support Networks">
+    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Auburn, Alabama. Connect with local organizations providing community-based support.">
+    <meta property="og:url" content="https://organize.directory/auburn">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <title>Mutual Aid in Auburn - Local Support Networks & Community Resources</title>
+    
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
         <div id="sidebar-container"></div>
@@ -31,40 +41,34 @@
                     <p class="help-text">Know of a mutual aid initiative in Auburn? 
                         <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
                 </div>
+                <section class="initiatives">
+                    <div class="initiative-card">
+                        <h3><a href="https://www.instagram.com/auburnstudents4palestine/">Auburn Students for Palestine</a></h3>
+                        <p class="initiative-description">A student-led mutual aid and solidarity collective organizing support and resources for Palestine, while building community awareness and engagement at Auburn University.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://linktr.ee/AuburnDSA">Auburn DSA</a></h3>
+                        <p class="initiative-description">A local chapter of the Democratic Socialists of America organizing mutual aid initiatives and community support networks in the Auburn area. They coordinate various mutual aid projects through their social media channels and community partnerships.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.leecountyremembrance.org/">Lee County Remembrance Project</a></h3>
+                        <p class="initiative-description">A community coalition working to memorialize documented victims of racial terror lynchings in Lee County through research, education, and community organizing. They coordinate mutual aid and community support initiatives focused on racial justice and historical truth-telling.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.leecountyliteracy.org/">Lee County Literacy Coalition</a></h3>
+                        <p class="initiative-description">A community organization providing free literacy services through mutual aid and volunteer networks. They offer one-to-one tutoring, family literacy programs, ESL services, and digital, workplace, financial, and health literacy education to empower individuals in the Lee County community.</p>
+                    </div>
+                </section>
             </div>
         </main>
     </div>
 
-
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    </body></html>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        const sidebarContainer = document.getElementById('sidebar-container');
+        const sidebar = createSidebar('cities');
+        sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html>
