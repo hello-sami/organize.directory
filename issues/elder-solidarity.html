@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elder Solidarity Organizations & Resources - Mutual Aid Networks</title>
+    <meta name="description" content="Directory of elder solidarity organizations, mutual aid networks, and resources working towards intergenerational justice and elder empowerment.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/">Home</a>
+                    <span>›</span>
+                    <a href="/issues">Issues</a>
+                    <span>›</span>
+                    <span>Elder Solidarity</span>
+                </div>
+
+                <h1>Elder Solidarity Organizations & Resources</h1>
+                <hr>
+
+                <section class="initiatives-section">
+                    <h2>Elder Activism & Support</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://radicalelders.net/">Radical Elders</a></h3>
+                        <p class="initiative-description">A network of elder activists fostering mutual aid and intergenerational solidarity through direct action and community organizing. They coordinate elder support initiatives, political education, and solidarity networks while building power through elder wisdom, movement history preservation, and creating spaces for intergenerational learning and collective resistance.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of an elder solidarity organization or resource we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 

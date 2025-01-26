@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa Rosa Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Santa Rosa, California.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <a href="/locations" class="breadcrumb-link">Locations</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <a href="/states/california" class="breadcrumb-link">California</a>
+                    <span class="breadcrumb-separator">›</span>
+                    <span class="breadcrumb-current">Santa Rosa</span>
+                </div>
+
+                <h1>Santa Rosa</h1>
+
+                <section class="initiatives-section">
+                    <h2>Community Spaces</h2>
+                    <div class="initiative-card">
+                        <h3><a href="http://www.subrosaproject.org/">SubRosa</a></h3>
+                        <p class="initiative-description">An anarchist community space and infoshop fostering mutual aid, radical literature, and collective organizing in Santa Rosa. They coordinate a lending library, host political education events, and provide space for community gatherings while building networks of solidarity through direct action and autonomous organizing.</p>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>LGBTQIA+ Support</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.posimages.org/">Positive Images</a></h3>
+                        <p class="initiative-description">An LGBTQIA+ community center fostering mutual aid and support through direct services, education, and community building in Sonoma County. They coordinate support groups, therapy resources, art programs, and leadership development while creating spaces for collective care, cultural events, and building power through queer youth organizing and solidarity networks.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Santa Rosa we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('locations'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 
