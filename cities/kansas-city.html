@@ -1,62 +1,93 @@
-<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid initiatives and community support networks in Kansas City, Missouri. Connect with local organizations and community resources."><meta property="og:title" content="Mutual Aid in Kansas City - Local Support Networks"><meta property="og:description" content="Find mutual aid initiatives and community support networks in Kansas City, Missouri. Connect with local organizations providing community-based support."><meta property="og:url" content="https://organize.directory/kansas-city"><title>Mutual Aid in Kansas City - Local Support Networks &amp; Community Resources</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kansas City Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid initiatives and community support networks in Kansas City, Missouri. Connect with local organizations and community resources.">
+    <meta property="og:title" content="Kansas City Mutual Aid Networks - Local Support & Community Resources">
+    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Kansas City, Missouri. Connect with local organizations providing community-based support.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/kansas-city">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/missouri">Missouri</a>
+                    <span>›</span>
+                    <span>Kansas City</span>
                 </div>
-                <header class="city-header">
-                    <h2>Kansas City, Missouri</h2>
-                </header>
-                <div class="initiatives-list">
-                    <h3>Local Mutual Aid Initiatives</h3>
-                    <p class="help-text">Know of a mutual aid initiative in Kansas City? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+
+                <h1>Kansas City</h1>
+                <hr>
+
+                <section>
+                    <h2>General Support</h2>
+                    <div class="initiative">
+                        <a href="https://www.facebook.com/kcmutualaid">KC Mutual Aid</a>
+                        <p>A grassroots network coordinating mutual aid and community support initiatives in Kansas City. They organize direct assistance, resource sharing, and neighborhood solidarity while building sustainable networks of care and support through community organizing and collective action.</p>
+                    </div>
+
+                    <div class="initiative">
+                        <a href="https://www.facebook.com/groups/1596299170524391/">Kansas City Mutual Aid Network</a>
+                        <p>A community-driven network coordinating mutual aid and direct support initiatives throughout Kansas City. They facilitate resource sharing, neighborhood solidarity, and community care through their online network, connecting neighbors to help meet immediate needs while building sustainable networks of support.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Food Security</h2>
+                    <div class="initiative">
+                        <a href="https://fnbkc.org/home">Food Not Bombs KC</a>
+                        <p>A volunteer-run mutual aid collective sharing free vegan meals and community support in Kansas City for over a decade. They coordinate weekly food distribution every Sunday at Independence & Monroe Avenue, recover food that would otherwise be discarded, and provide supplies to support strikes, marches, and demonstrations. Operating under the principle of "solidarity, not charity," they work to address food insecurity while protesting war, poverty, and environmental destruction.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Trans Support</h2>
+                    <div class="initiative">
+                        <a href="https://www.transjoykc.com/">Trans Joy KC</a>
+                        <p>A grassroots collective organizing mutual aid and community support initiatives focused on cultivating joy and connection in Kansas City's trans community. They coordinate regular events, resource sharing, and solidarity networks while building community power through all-ages gatherings, direct support, and celebration of trans experiences. Their work emphasizes that finding joy together is an act of resistance.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://transformationskc.org/">Transformations KC</a>
+                        <p>A mutual aid collective providing direct support and community care for trans and gender non-conforming people in Kansas City. They coordinate resource sharing, peer support, and solidarity networks while building community power through clothing distribution, healthcare access assistance, and creating affirming spaces for trans joy and connection.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Kansas City? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
         </main>
     </div>
 
-
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    </body></html>
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html>

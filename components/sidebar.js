@@ -4,7 +4,7 @@ export function createSidebar(activePage) {
     sidebar.className = 'sidebar';
     
     sidebar.innerHTML = `
-        <h1><a href="/" class="home-link">organize.directory</a></h1>
+        <h1><a href="/" class="home-link">The Organize Directory</a></h1>
         <nav>
             <a href="/" class="nav-link ${activePage === 'home' ? 'active' : ''}">Home</a>
             <a href="/location" class="nav-link ${activePage === 'location' ? 'active' : ''}">Locations</a>
