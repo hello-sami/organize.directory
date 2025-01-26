@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lowell Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Lowell, Massachusetts.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/massachusetts">Massachusetts</a>
+                    <span>›</span>
+                    <span>Lowell</span>
+                </div>
+
+                <h1>Lowell, Massachusetts</h1>
+                <hr>
+
+                <section>
+                    <h2>Community Support</h2>
+                    <div class="initiative">
+                        <a href="https://www.facebook.com/LowellMutualAid/">Lowell Mutual Aid</a>
+                        <p>A grassroots network coordinating mutual aid and community support initiatives in Lowell. They organize direct assistance, resource sharing, and solidarity networks while building sustainable systems of community care through neighborhood organizing and collective action.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://x.com/lowellabc">Lowell ABC</a>
+                        <p>A mutual aid collective organizing community support and solidarity initiatives in Lowell. They coordinate direct assistance, resource sharing, and community defense while building networks of mutual aid through local organizing and collective action.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Lowell? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 
