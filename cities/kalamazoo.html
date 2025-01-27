@@ -1,19 +1,28 @@
-<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid initiatives and community support networks in Kalamazoo, Michigan. Connect with local organizations and community resources."><meta property="og:title" content="Mutual Aid in Kalamazoo - Local Support Networks"><meta property="og:description" content="Find mutual aid initiatives and community support networks in Kalamazoo, Michigan. Connect with local organizations providing community-based support."><meta property="og:url" content="https://organize.directory/kalamazoo"><title>Mutual Aid in Kalamazoo - Local Support Networks &amp; Community Resources</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Aid in Kalamazoo - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid initiatives and community support networks in Kalamazoo, Michigan. Connect with local organizations and community resources.">
+    <meta property="og:title" content="Mutual Aid in Kalamazoo - Local Support Networks">
+    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Kalamazoo, Michigan. Connect with local organizations providing community-based support.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/kalamazoo">
+    <meta name="twitter:card" content="summary">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
         <div id="sidebar-container"></div>
@@ -27,7 +36,14 @@
                     <h2>Kalamazoo, Michigan</h2>
                 </header>
                 <div class="initiatives-list">
-                    <h3>Local Mutual Aid Initiatives</h3>
+                    <section>
+                        <h2>Social Justice</h2>
+                        <div class="initiative">
+                            <a href="https://arcuscenter.kzoo.edu/">Arcus Center for Social Justice Leadership</a>
+                            <p>A community center fostering mutual aid and social justice through education, organizing, and movement building in Kalamazoo. They coordinate leadership development, resource sharing, and solidarity networks while building power through intersectional justice work, community partnerships, and creating spaces for transformative change.</p>
+                        </div>
+                    </section>
+
                     <p class="help-text">Know of a mutual aid initiative in Kalamazoo? 
                         <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
                 </div>
@@ -35,28 +51,12 @@
         </main>
     </div>
 
-
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    </body></html>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        const sidebarContainer = document.getElementById('sidebar-container');
+        const sidebar = createSidebar('cities');
+        sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html>

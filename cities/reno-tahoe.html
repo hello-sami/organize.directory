@@ -27,7 +27,20 @@
                     <h2>Reno / Tahoe, Nevada</h2>
                 </header>
                 <div class="initiatives-list">
-                    <h3>Local Mutual Aid Initiatives</h3>
+                    <section class="initiatives-section">
+                        <h2>Cultural Centers</h2>
+                        <div class="initiative-card">
+                            <h3><a href="https://theradicalcat.square.site/">The Radical Cat</a></h3>
+                            <p class="initiative-description">A radical bookstore and community space fostering mutual aid and cultural resistance through literature, art, and organizing in Reno. They coordinate book distribution, events, and solidarity networks while building power through accessible knowledge sharing, community gathering, and creating spaces for radical education and movement building.</p>
+                        </div>
+                    </section>
+                    <section class="initiatives-section">
+                        <h2>LGBTQ+ Support</h2>
+                        <div class="initiative-card">
+                            <h3><a href="https://ourcenterreno.org/">Our Center</a></h3>
+                            <p class="initiative-description">A grassroots organization fostering mutual aid and community support through LGBTQ+ advocacy and services in Northern Nevada. They coordinate support groups, resource sharing, and solidarity networks while building power through community organizing, health services, and creating spaces for queer and trans people to thrive.</p>
+                        </div>
+                    </section>
                     <p class="help-text">Know of a mutual aid initiative in Reno / Tahoe? 
                         <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
                 </div>
@@ -35,28 +48,12 @@
         </main>
     </div>
 
-
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    </body></html>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        const sidebarContainer = document.getElementById('sidebar-container');
+        const sidebar = createSidebar('cities');
+        sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html>

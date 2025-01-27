@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Aid in Phoenix - Local Support Networks & Community Resources</title>
     <meta name="description" content="Find mutual aid initiatives and community support networks in Phoenix, Arizona. Connect with local organizations and community resources.">
     <meta property="og:title" content="Mutual Aid in Phoenix - Local Support Networks">
     <meta property="og:description" content="Find mutual aid initiatives and community support networks in Phoenix, Arizona. Connect with local organizations providing community-based support.">
@@ -10,11 +11,10 @@
     <meta property="og:url" content="https://organize.directory/phoenix">
     <meta name="twitter:card" content="summary">
     
-    <title>Mutual Aid in Phoenix - Local Support Networks & Community Resources</title>
-    
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
@@ -25,56 +25,68 @@
         gtag('config', 'G-QJ03RCM35H');
     </script>
     
-    <!-- Theme Initialization -->
+    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
-    <script src="/theme.js" type="module"></script>
 </head>
 <body>
     <div class="layout">
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/arizona">Arizona</a>
+                    <span>›</span>
+                    <span>Phoenix</span>
                 </div>
-                
-                <header class="city-header">
-                    <h2>Phoenix, Arizona</h2>
-                </header>
-                
-                <section>
-                    <h2>Local Mutual Aid Initiatives</h2>
-                    <div class="initiative">
-                        <a href="https://mutualaidphx.com/">Mutual Aid Phoenix</a>
-                        <p>A community network providing direct support and resources to Phoenix residents through mutual aid initiatives.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://azpach.org/">AZPACH</a>
-                        <p>Arizona Palestine Community Health provides mutual aid and healthcare support to Palestinians and other marginalized communities in Arizona through direct assistance, resource sharing, and community solidarity.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://palabrasbookstore.com/">Palabras Bookstore</a>
-                        <p>A bilingual bookstore and community space fostering mutual aid, cultural exchange, and solidarity through literature, events, and organizing. They provide a hub for community building, resource sharing, and collective care in Phoenix.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://onenten.org/">one-n-ten</a>
-                        <p>A nonprofit organization providing mutual aid and support services for LGBTQ+ youth and young adults ages 11-24 across Arizona. They coordinate direct assistance, housing support, health resources, and community care while building safe spaces for queer youth to thrive through peer support networks, educational programs, and identity-affirming initiatives.</p>
+
+                <h1>Phoenix</h1>
+                <hr>
+
+                <section class="initiatives-section">
+                    <h2>General Support</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://mutualaidphx.com/">Mutual Aid Phoenix</a></h3>
+                        <p class="initiative-description">A community network providing direct support and resources to Phoenix residents through mutual aid initiatives.</p>
                     </div>
                 </section>
 
-                <section>
+                <section class="initiatives-section">
+                    <h2>Healthcare Access</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://azpach.org/">AZPACH</a></h3>
+                        <p class="initiative-description">Arizona Palestine Community Health provides mutual aid and healthcare support to Palestinians and other marginalized communities in Arizona through direct assistance, resource sharing, and community solidarity.</p>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Cultural Centers</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://palabrasbookstore.com/">Palabras Bookstore</a></h3>
+                        <p class="initiative-description">A bilingual bookstore and community space fostering mutual aid, cultural exchange, and solidarity through literature, events, and organizing. They provide a hub for community building, resource sharing, and collective care in Phoenix.</p>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>LGBTQ+ Support</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://onenten.org/">one-n-ten</a></h3>
+                        <p class="initiative-description">A nonprofit organization providing mutual aid and support services for LGBTQ+ youth and young adults ages 11-24 across Arizona. They coordinate direct assistance, housing support, health resources, and community care while building safe spaces for queer youth to thrive through peer support networks, educational programs, and identity-affirming initiatives.</p>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
                     <h2>Indigenous Solidarity</h2>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/oodhamsolidarity/">O'odham Solidarity</a>
-                        <p>A grassroots collective fostering mutual aid and solidarity with O'odham communities through direct support and Indigenous sovereignty initiatives. They coordinate resource sharing, land defense actions, and solidarity networks while building power through traditional knowledge, cultural preservation, and creating spaces for Indigenous resistance and community care.</p>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.instagram.com/oodhamsolidarity/">O'odham Solidarity</a></h3>
+                        <p class="initiative-description">A grassroots collective fostering mutual aid and solidarity with O'odham communities through direct support and Indigenous sovereignty initiatives. They coordinate resource sharing, land defense actions, and solidarity networks while building power through traditional knowledge, cultural preservation, and creating spaces for Indigenous resistance and community care.</p>
                     </div>
                 </section>
 
-                <p class="help-text">
-                    Know of a mutual aid initiative in Phoenix? 
-                    <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
-                </p>
+                <p class="help-text">Know of a mutual aid initiative in Phoenix? 
+                    <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
         </main>
     </div>
@@ -82,9 +94,7 @@
     <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>
