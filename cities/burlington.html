@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burlington Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Burlington, Vermont.">
+    <meta property="og:title" content="Burlington Mutual Aid Networks - Local Support & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Burlington, Vermont.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/burlington">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/vermont">Vermont</a>
+                    <span>›</span>
+                    <span>Burlington</span>
+                </div>
+
+                <h1>Burlington</h1>
+                <hr>
+
+                <section>
+                    <h2>Food Security</h2>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/foodnotbombsbvt/">Food Not Bombs Burlington</a>
+                        <p>A mutual aid collective fostering food security and community solidarity through direct action in Burlington. They coordinate free food distribution, resource sharing, and solidarity networks while building power through food justice, anti-militarism, and creating spaces for sustainable food access and community care.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Peace & Justice</h2>
+                    <div class="initiative">
+                        <a href="https://www.pjcvt.org/">Peace & Justice Center</a>
+                        <p>A grassroots organization fostering mutual aid and community solidarity through education, advocacy, and activism in Burlington. They coordinate political education, direct action support, and solidarity networks while building power through human rights advocacy, economic justice, and environmental justice initiatives. Their work emphasizes creating spaces for movement building and meaningful peace within and beyond Vermont.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Burlington? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 

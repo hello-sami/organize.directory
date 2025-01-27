@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Long Beach Mutual Aid Networks - Local Support & Community Resources</title>
     <meta name="description" content="Find mutual aid networks and community support initiatives in Long Beach, California.">
+    <meta property="og:title" content="Long Beach Mutual Aid Networks - Local Support & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Long Beach, California.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/long-beach">
+    <meta name="twitter:card" content="summary">
     
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/styles/location.css">
+    <link rel="stylesheet" href="/styles/city.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Theme and Components -->
@@ -18,41 +32,44 @@
     <div class="layout">
         <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/" class="breadcrumb-link">Home</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <a href="/locations" class="breadcrumb-link">Locations</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <a href="/states/california" class="breadcrumb-link">California</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <span class="breadcrumb-current">Long Beach</span>
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <span>Long Beach</span>
                 </div>
 
                 <h1>Long Beach</h1>
+                <hr>
 
-                <section class="initiatives-section">
-                    <h2>Community Support</h2>
-                    <div class="initiative-card">
-                        <h3><a href="https://www.instagram.com/glb_mutual_aid/">GLB Mutual Aid</a></h3>
-                        <p class="initiative-description">A grassroots mutual aid network coordinating community support and solidarity initiatives in Long Beach. They organize direct assistance, resource sharing, and community care while building sustainable networks of support through collective action and neighborhood organizing.</p>
+                <section>
+                    <h2>Community History & Culture</h2>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/oralelb/">Oral History and Popular Memory Project</a>
+                        <p>A grassroots organization fostering mutual aid and community power through oral history and cultural preservation in Long Beach. They coordinate storytelling initiatives, community archives, and solidarity networks while building power through collective memory, cultural organizing, and creating spaces for community narratives and historical justice.</p>
                     </div>
                 </section>
 
-                <p class="help-text">Know of a mutual aid initiative in Long Beach we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-            </div>
+                <section>
+                    <h2>Racial Justice</h2>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/surjlongbeach/">SURJ Long Beach</a>
+                        <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in Long Beach. They coordinate community organizing, mobilizing, and education initiatives while building power through political education, direct action support, and creating spaces for accountable organizing in partnership with BIPOC-led organizations.</p>
+                    </div>
+                </section>
 
-            <footer class="site-footer">
-                <p>Awareness into action. Solidarity not charity.</p>
-            </footer>
+                <p class="help-text">Know of a mutual aid initiative in Long Beach? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
         </main>
     </div>
 
     <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('locations'));
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>

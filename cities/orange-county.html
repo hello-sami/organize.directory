@@ -1,62 +1,84 @@
-<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid initiatives and community support networks in Orange County, California. Connect with local organizations and community resources."><meta property="og:title" content="Mutual Aid in Orange County - Local Support Networks"><meta property="og:description" content="Find mutual aid initiatives and community support networks in Orange County, California. Connect with local organizations providing community-based support."><meta property="og:url" content="https://organize.directory/orange-county"><title>Mutual Aid in Orange County - Local Support Networks &amp; Community Resources</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange County Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Orange County, California.">
+    <meta property="og:title" content="Orange County Mutual Aid Networks - Local Support & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Orange County, California.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/orange-county">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <span>Orange County</span>
                 </div>
-                <header class="city-header">
-                    <h2>Orange County, California</h2>
-                </header>
-                <div class="initiatives-list">
-                    <h3>Local Mutual Aid Initiatives</h3>
-                    <p class="help-text">Know of a mutual aid initiative in Orange County? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+
+                <h1>Orange County</h1>
+                <hr>
+
+                <section>
+                    <h2>Direct Action Support</h2>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/ocprotests/">OC Protests</a>
+                        <p>A grassroots organization fostering mutual aid and community power through direct action and protest support in Orange County. They coordinate protest resources, community education, and solidarity networks while building power through collective action, political education, and creating spaces for community resistance.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Immigrant Rights</h2>
+                    <div class="initiative">
+                        <a href="https://ocrapidresponse.org/">OC Rapid Response Network</a>
+                        <p>A community-led network providing rapid response support and resources for immigrants facing detention or deportation in Orange County. They operate a 24/7 hotline (714-881-1558), coordinate family preparedness planning, offer legal consultations, and build community power through mutual aid and solidarity networks.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Racial Justice</h2>
+                    <div class="initiative">
+                        <a href="https://www.ocracialjustice.org/">Orange County Racial Justice Initiative</a>
+                        <p>A grassroots organization fostering mutual aid and community solidarity through racial justice organizing in Orange County. They coordinate political education, direct action support, and solidarity networks while building power through racial justice education, community organizing, and creating spaces for collective liberation.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Orange County? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
         </main>
     </div>
 
-
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    </body></html>
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html>

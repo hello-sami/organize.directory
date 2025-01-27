@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Racine Mutual Aid Networks - Local Support & Community Resources</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives in Racine, Wisconsin.">
-    <meta property="og:title" content="Mutual Aid in Racine - Local Support Networks">
-    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Racine, Wisconsin. Connect with local organizations providing community-based support.">
-    <meta property="og:url" content="https://organize.directory/racine">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary">
-    
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
@@ -22,39 +9,59 @@
         gtag('js', new Date());
         gtag('config', 'G-QJ03RCM35H');
     </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racine Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Racine, Wisconsin.">
+    <meta property="og:title" content="Racine Mutual Aid Networks - Local Support & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Racine, Wisconsin.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/racine">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
 <body>
     <div class="layout">
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/wisconsin">Wisconsin</a>
+                    <span>›</span>
+                    <span>Racine</span>
                 </div>
-                <header class="city-header">
-                    <h2>Racine, Wisconsin</h2>
-                </header>
-                <div class="initiatives-list">
-                    <h3>Local Mutual Aid Initiatives</h3>
-                    <div class="initiative-card">
-                        <h3><a href="https://lgbtsewi.org/">LGBT Center of SE Wisconsin</a></h3>
-                        <p class="initiative-description">A community center providing mutual aid and support services for LGBTQ+ individuals in Southeast Wisconsin. They offer support groups, educational resources, advocacy services, and direct assistance while building connections between LGBTQ+ community members and allies. Their comprehensive resource network includes healthcare referrals, crisis services, and community programming.</p>
+
+                <h1>Racine</h1>
+                <hr>
+
+                <section>
+                    <h2>General Support</h2>
+                    <div class="initiative">
+                        <a href="https://www.facebook.com/RacineMutualAid">Racine Mutual Aid</a>
+                        <p>A grassroots network coordinating mutual aid and community support initiatives in Racine. They organize direct assistance, resource sharing, and neighborhood solidarity while building sustainable networks of care and support through community organizing and collective action.</p>
                     </div>
-                    
-                    <p class="help-text">Know of a mutual aid initiative in Racine? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Racine? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>
