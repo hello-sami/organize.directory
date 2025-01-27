@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gary Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Gary, Indiana.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/">Home</a>
+                    <span>›</span>
+                    <a href="/locations">Locations</a>
+                    <span>›</span>
+                    <a href="/states/indiana">Indiana</a>
+                    <span>›</span>
+                    <span>Gary</span>
+                </div>
+
+                <h1>Gary, Indiana</h1>
+                <hr>
+
+                <section>
+                    <h2>Community Spaces</h2>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/joybombsocialcenter">Joy Bomb Social Center</a>
+                        <p>A radical community space fostering mutual aid and collective liberation through art, education, and organizing in Gary. They coordinate resource sharing, political education, and solidarity networks while building power through community gatherings, skill-sharing workshops, and creating accessible spaces for movement building and cultural resistance.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Gary? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('locations'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 
