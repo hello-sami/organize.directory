@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGBTQ Support Networks - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find mutual aid networks and initiatives focused on supporting LGBTQ communities through solidarity, direct support, and community organizing.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/">Home</a>
+                    <span>›</span>
+                    <a href="/issues">Issues</a>
+                    <span>›</span>
+                    <span>LGBTQ Support</span>
+                </div>
+
+                <h1>LGBTQ Support Networks</h1>
+                <p class="subtitle">Mutual aid networks and initiatives focused on supporting LGBTQ communities through solidarity, direct support, and community organizing.</p>
+                <hr>
+
+                <section>
+                    <h2>Legal Advocacy</h2>
+                    <div class="initiative">
+                        <a href="https://www.nclrights.org/">National Center for Lesbian Rights (NCLR)</a>
+                        <p>A feminist-founded legal organization fostering mutual aid and solidarity through LGBTQ civil rights advocacy and impact litigation. They coordinate legal support, policy advocacy, and solidarity networks while building power through racial and economic justice initiatives, creating systemic change for LGBTQ individuals and their families.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Black LGBTQ Support</h2>
+                    <div class="initiative">
+                        <a href="https://www.thecounternarrative.org/">The Counter Narrative Project</a>
+                        <p>A Black gay men's advocacy organization building power through storytelling, mutual aid, and community organizing. They coordinate narrative change, political education, and solidarity networks while centering Black gay men's voices in the fight for racial, economic, and health justice.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of an LGBTQ support initiative? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 

@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seattle-Tacoma Mutual Aid Networks - Local Support & Community Resources</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives in Seattle-Tacoma, Washington.">
+    <meta name="description" content="Find mutual aid networks and community support initiatives in the Seattle-Tacoma area of Washington.">
     
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
@@ -21,15 +30,25 @@
         <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/location">Location</a>
+                    <a href="/">Home</a>
+                    <span>›</span>
+                    <a href="/locations">Locations</a>
                     <span>›</span>
                     <a href="/states/washington">Washington</a>
                     <span>›</span>
                     <span>Seattle-Tacoma</span>
                 </div>
 
-                <h1>Seattle-Tacoma, Washington</h1>
+                <h1>Seattle-Tacoma</h1>
                 <hr>
+
+                <section>
+                    <h2>Prison Abolition</h2>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/blackandpinkseatac/">Black and Pink SeaTac</a>
+                        <p>A queer/trans prison abolition collective fostering mutual aid and solidarity through prisoner support and advocacy. They coordinate letter writing, resource sharing, and solidarity networks while building power through LGBTQ+ prisoner organizing, abolition education, and creating spaces for connection and support across prison walls.</p>
+                    </div>
+                </section>
 
                 <section>
                     <h2>Racial & Social Justice</h2>
@@ -99,6 +118,14 @@
                     </div>
                 </section>
 
+                <section>
+                    <h2>Prison Support</h2>
+                    <div class="initiative">
+                        <a href="https://www.bookstoprisoners.net/">Books to Prisoners</a>
+                        <p>A Seattle-based nonprofit fostering mutual aid through free book distribution to people in prison nationwide. They coordinate book donations, letter writing, and solidarity networks while building connections through literature and education across prison walls.</p>
+                    </div>
+                </section>
+
                 <p class="help-text">Know of a mutual aid initiative in Seattle-Tacoma? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
         </main>
@@ -107,7 +134,7 @@
     <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+        document.getElementById('sidebar').replaceWith(createSidebar('locations'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>
