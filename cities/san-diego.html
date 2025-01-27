@@ -14,6 +14,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>San Diego Mutual Aid Networks - Local Support & Community Resources</title>
     <meta name="description" content="Find mutual aid networks and community support initiatives in San Diego, California.">
+    <meta property="og:title" content="San Diego Mutual Aid Networks - Local Support & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in San Diego, California.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/san-diego">
+    <meta name="twitter:card" content="summary">
     
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
@@ -30,9 +35,7 @@
         <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/">Home</a>
-                    <span>›</span>
-                    <a href="/locations">Locations</a>
+                    <a href="/location">Location</a>
                     <span>›</span>
                     <a href="/states/california">California</a>
                     <span>›</span>
@@ -43,34 +46,10 @@
                 <hr>
 
                 <section>
-                    <h2>Community Organizing</h2>
+                    <h2>Racial Justice</h2>
                     <div class="initiative">
-                        <a href="https://www.activistsandiego.org/">Activist San Diego</a>
-                        <p>Progressive community organization building networks of solidarity through grassroots organizing, mutual aid, and movement building to advance social, economic, and environmental justice.</p>
-                    </div>
-                </section>
-
-                <section>
-                    <h2>General Support</h2>
-                    <div class="initiative">
-                        <a href="https://www.weallwegotsd.com/">We All We Got SD</a>
-                        <p>A mutual aid collective providing direct support and resources to the San Diego community through grassroots organizing and solidarity networks.</p>
-                    </div>
-                </section>
-
-                <section class="initiatives-section">
-                    <h2>LGBTQ+ Support</h2>
-                    <div class="initiative-card">
-                        <h3><a href="https://thecentersd.org/">The Center</a></h3>
-                        <p class="initiative-description">A community center providing mutual aid and direct support to San Diego's LGBTQ+ community. They coordinate health services, youth programs, senior services, and community resources while building power through advocacy, education, and creating spaces for collective care and solidarity.</p>
-                    </div>
-                </section>
-
-                <section class="initiatives-section">
-                    <h2>Cultural Centers</h2>
-                    <div class="initiative-card">
-                        <h3><a href="https://www.instagram.com/thechecafe">The Che Cafe</a></h3>
-                        <p class="initiative-description">A worker-owned cooperative and cultural space fostering mutual aid and community power through music, art, and radical organizing. They coordinate shows, workshops, food distribution, and solidarity networks while building power through collective organizing, DIY culture, and creating accessible spaces for art and resistance.</p>
+                        <a href="https://rjcsd.org/">Racial Justice Coalition of San Diego</a>
+                        <p>A grassroots coalition fostering mutual aid and community power through racial justice organizing in San Diego. They coordinate direct support, advocacy, and solidarity networks while building power through community education, policy reform, and creating spaces for racial equity and systemic change.</p>
                     </div>
                 </section>
 
@@ -82,7 +61,7 @@
     <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('locations'));
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>

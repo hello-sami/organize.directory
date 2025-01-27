@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Police Brutality Resources & Support Networks - Mutual Aid Directory</title>
+    <meta name="description" content="Find organizations and resources focused on addressing police brutality, supporting victims, and building community safety alternatives.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/">Home</a>
+                    <span>›</span>
+                    <a href="/issues">Issues</a>
+                    <span>›</span>
+                    <span>Police Brutality</span>
+                </div>
+
+                <h1>Police Brutality Resources & Support</h1>
+                <hr>
+
+                <section>
+                    <h2>Legal Support & Documentation</h2>
+                    <div class="initiative">
+                        <a href="http://www.michaelnida.com/">Michael Nida II</a>
+                        <p>A resource dedicated to documenting cases of police brutality and supporting families affected by police violence. Through mutual aid and advocacy, they work to expose police misconduct, provide support for victims' families, and build networks of solidarity for those impacted by state violence.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Community Support & Action</h2>
+                    <div class="initiative">
+                        <a href="https://fu4jgroup.website/index.html#/">Families United 4 Justice Group</a>
+                        <p>A grassroots network of families and communities affected by police violence, coordinating mutual aid and support initiatives. They organize direct support, advocacy, and solidarity networks while building power through collective healing, family support, and creating spaces for justice and accountability.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a police brutality support initiative? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 
