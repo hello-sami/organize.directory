@@ -1,62 +1,77 @@
-<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid initiatives and community support networks in Boulder, Colorado. Connect with local organizations and community resources."><meta property="og:title" content="Mutual Aid in Boulder - Local Support Networks"><meta property="og:description" content="Find mutual aid initiatives and community support networks in Boulder, Colorado. Connect with local organizations providing community-based support."><meta property="og:url" content="https://organize.directory/boulder"><title>Mutual Aid in Boulder - Local Support Networks &amp; Community Resources</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boulder Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Boulder, Colorado.">
+    <meta property="og:title" content="Boulder Mutual Aid Networks - Local Support & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Boulder, Colorado.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/boulder">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/">Home</a>
+                    <span>›</span>
+                    <a href="/locations">Locations</a>
+                    <span>›</span>
+                    <a href="/states/colorado">Colorado</a>
+                    <span>›</span>
+                    <span>Boulder</span>
                 </div>
-                <header class="city-header">
-                    <h2>Boulder, Colorado</h2>
-                </header>
-                <div class="initiatives-list">
-                    <h3>Local Mutual Aid Initiatives</h3>
-                    
-                    <section>
-                        <h2>Food Security</h2>
-                        <div class="initiative">
-                            <a href="https://www.boulderfoodrescue.org/">Boulder Food Rescue</a>
-                            <p>A grassroots organization fostering mutual aid and food justice through just-in-time food rescue and redistribution in Boulder County. They coordinate food recovery by bike, no-cost grocery programs, and community-led food access initiatives while building power through participatory research, leadership development, and creating spaces for food system transformation.</p>
-                        </div>
-                    </section>
 
-                    <section>
-                        <h2>Peace & Justice</h2>
-                        <div class="initiative">
-                            <a href="https://www.rmpjc.org/">Rocky Mountain Peace and Justice Center</a>
-                            <p>A grassroots organization fostering mutual aid and community power through nonviolent action and education in Boulder. They coordinate peace initiatives, environmental justice campaigns, and solidarity networks while building power through community organizing, political education, and creating spaces for movement building and social change.</p>
-                        </div>
-                    </section>
+                <h1>Boulder</h1>
+                <hr>
 
-                    <p class="help-text">Know of a mutual aid initiative in Boulder? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+                <section>
+                    <h2>Food Security</h2>
+                    <div class="initiative">
+                        <a href="https://www.boulderfoodrescue.org/">Boulder Food Rescue</a>
+                        <p>A grassroots organization fostering mutual aid and food justice through just-in-time food rescue and redistribution in Boulder County. They coordinate food recovery by bike, no-cost grocery programs, and community-led food access initiatives while building power through participatory research, leadership development, and creating spaces for food system transformation.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Peace & Justice</h2>
+                    <div class="initiative">
+                        <a href="https://www.rmpjc.org/">Rocky Mountain Peace and Justice Center</a>
+                        <p>A grassroots organization fostering mutual aid and community power through nonviolent action and education in Boulder. They coordinate peace initiatives, environmental justice campaigns, and solidarity networks while building power through community organizing, political education, and creating spaces for movement building and social change.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Boulder? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('locations'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>
