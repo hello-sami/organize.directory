@@ -31,32 +31,22 @@
                     <p class="help-text">Know of a mutual aid initiative in Ventura County? 
                         <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
                 </div>
+                <section>
+                    <h2>Racial Justice</h2>
+                    <div class="initiative">
+                        <a href="https://www.facebook.com/surjvc/">SURJ Ventura County</a>
+                        <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in Ventura County. They coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with BIPOC-led organizations.</p>
+                    </div>
+                </section>
             </div>
         </main>
     </div>
 
-
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    </body></html>
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html>
