@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poverty & Economic Justice Resources - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find poverty and economic justice resources, debt resistance initiatives, and mutual aid networks addressing economic inequality.">
+    <meta property="og:title" content="Poverty & Economic Justice Resources - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find poverty and economic justice resources, debt resistance initiatives, and mutual aid networks addressing economic inequality.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/issues/poverty">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/issues.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="issues-page">
+                <div class="breadcrumb">
+                    <a href="/issues">Issues</a>
+                    <span>›</span>
+                    <span>Poverty & Economic Justice</span>
+                </div>
+
+                <h1>Poverty & Economic Justice Resources</h1>
+                <hr>
+
+                <section>
+                    <h2>Debt Resistance</h2>
+                    <div class="initiative">
+                        <a href="https://debtcollective.org/">Debt Collective</a>
+                        <p>A debtors' union fostering mutual aid and economic justice through collective organizing and direct action. They coordinate debt strikes, financial education, and solidarity networks while building power through collective bargaining, policy advocacy, and creating spaces for debtors to fight predatory financial practices and build economic alternatives.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a poverty or economic justice resource? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 
