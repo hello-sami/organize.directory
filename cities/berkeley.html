@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berkeley Mutual Aid Networks - Local Support & Community Resources</title>
     <meta name="description" content="Find mutual aid networks and community support initiatives in Berkeley, California.">
+    <meta property="og:title" content="Berkeley Mutual Aid Networks - Local Support & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Berkeley, California.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/berkeley">
+    <meta name="twitter:card" content="summary">
     
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/styles/location.css">
+    <link rel="stylesheet" href="/styles/city.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
     
     <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
@@ -18,21 +32,26 @@
     <div class="layout">
         <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/" class="breadcrumb-link">Home</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <a href="/locations" class="breadcrumb-link">Locations</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <a href="/states/california" class="breadcrumb-link">California</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <a href="/cities/sf-bay-area" class="breadcrumb-link">SF Bay Area</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <span class="breadcrumb-current">Berkeley</span>
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <span>Berkeley</span>
                 </div>
 
                 <h1>Berkeley</h1>
+                <hr>
+
+                <section>
+                    <h2>Media & Publishing Collectives</h2>
+                    <div class="initiative">
+                        <a href="https://slingshotcollective.org/">Slingshot Collective</a>
+                        <p>A radical publishing collective producing independent media and mutual aid resources since 1988. Through their quarterly newspaper, radical organizer, and community space at Long Haul Infoshop, they foster alternative media creation, political education, and direct action organizing while building networks of solidarity and resistance in Berkeley and beyond.</p>
+                    </div>
+                </section>
 
                 <section class="initiatives-section">
                     <h2>International Solidarity</h2>
@@ -86,19 +105,15 @@
                     </div>
                 </section>
 
-                <p class="help-text">Know of a mutual aid initiative in Berkeley we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+                <p class="help-text">Know of a mutual aid initiative in Berkeley? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
-
-            <footer class="site-footer">
-                <p>Awareness into action. Solidarity not charity.</p>
-            </footer>
         </main>
     </div>
 
     <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('locations'));
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>

@@ -13,7 +13,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salt Lake City Mutual Aid Networks - Local Support & Community Resources</title>
-    <meta name="description" content="Find mutual aid initiatives and community support networks in Salt Lake City, Utah. Connect with local organizations and community resources.">
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Salt Lake City, Utah.">
+    <meta property="og:title" content="Salt Lake City Mutual Aid Networks - Local Support & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Salt Lake City, Utah.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/salt-lake-city">
+    <meta name="twitter:card" content="summary">
     
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
@@ -30,9 +35,7 @@
         <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/">Home</a>
-                    <span>›</span>
-                    <a href="/locations">Locations</a>
+                    <a href="/location">Location</a>
                     <span>›</span>
                     <a href="/states/utah">Utah</a>
                     <span>›</span>
@@ -43,10 +46,10 @@
                 <hr>
 
                 <section>
-                    <h2>Community Organizations</h2>
+                    <h2>Community Spaces & Resources</h2>
                     <div class="initiative">
-                        <a href="https://www.instagram.com/armedqueersslc/">Armed Queers SLC</a>
-                        <p>A community defense and mutual aid organization focused on LGBTQ+ empowerment and protection in Salt Lake City. They work to build solidarity, provide resources, and create safe spaces for queer and trans community members.</p>
+                        <a href="https://www.undertheumbrellabookstore.com/">Under the Umbrella</a>
+                        <p>A queer-owned and operated bookstore providing a safe community space and mutual aid resources for the LGBTQ+ community in Salt Lake City. They offer a carefully curated selection of books centering queer voices and experiences, while fostering community connections and support through events, book clubs, and accessible pricing options.</p>
                     </div>
                 </section>
 
@@ -58,7 +61,7 @@
     <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('locations'));
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>
