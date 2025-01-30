@@ -1,91 +1,87 @@
-<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find organizations working to expand abortion access and ensure reproductive rights."><title>Abortion Access Organizations - Mutual Aid Network Directory</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abortion Access Organizations - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find organizations working to expand abortion access and ensure reproductive rights.">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Abortion Access Organizations - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find organizations working to expand abortion access and ensure reproductive rights.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/issues/abortion">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme -->
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
-        <!-- Sidebar will be inserted here -->
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
-            <div class="initiatives-list">
+        <main class="content" role="main">
+            <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/issues" class="back-link">← Back to Issues</a>
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/issues">Issues</a>
+                    <span>›</span>
+                    <span>Abortion Access</span>
                 </div>
-                <header class="city-header">
-                    <h2>Abortion Access</h2>
-                </header>
-                
-                <ul class="simple-initiatives">
-                    <li>
+
+                <h1>Abortion Access</h1>
+                <hr>
+
+                <section>
+                    <h2>National Organizations</h2>
+                    <div class="initiative">
                         <a href="https://abortionfunds.org/">National Network of Abortion Funds</a>
                         <p>Network of organizations that help people access and pay for abortions, providing financial assistance and practical support.</p>
-                    </li>
-                    <li>
+                    </div>
+                    <div class="initiative">
                         <a href="https://www.plancpills.org/">Plan C</a>
                         <p>Information about how to access at-home abortion pill options online.</p>
-                    </li>
-                    <li>
+                    </div>
+                    <div class="initiative">
                         <a href="https://www.ineedana.com/">I Need an A</a>
                         <p>Directory of verified abortion clinics, information about financial assistance, and logistical support.</p>
-                    </li>
-                    <li>
+                    </div>
+                    <div class="initiative">
                         <a href="https://www.reprocare.com/">Repro Care</a>
                         <p>Connects people seeking abortions with community support for practical needs like transportation, lodging, childcare, and emotional support.</p>
-                    </li>
-                    <li>
+                    </div>
+                    <div class="initiative">
                         <a href="https://reprolegaldefensefund.org/">Repro Legal Defense Fund</a>
-                    </li>
-                </ul>
+                        <p>Provides legal support and defense funds for people facing criminalization for self-managed abortion.</p>
+                    </div>
+                </section>
 
-                <p class="help-text">Know of an organization working on abortion access? 
-                    <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+                <section>
+                    <h2>Regional Organizations</h2>
+                    <div class="initiative">
+                        <a href="https://www.yellowhammerfund.org/">Yellowhammer Fund</a>
+                        <p>A reproductive justice organization fostering mutual aid and healthcare access through abortion funding and support in Alabama and Mississippi. They coordinate financial assistance, practical support, and solidarity networks while building power through reproductive justice education, policy advocacy, and creating spaces for bodily autonomy and community care. Their work includes funding abortion care, providing emergency contraception, and supporting people across the Deep South in accessing reproductive healthcare.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of an organization working on abortion access? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('issues');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
     </script>
     <script src="/theme.js" type="module"></script>
-
- 
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    </body></html>
+</body>
+</html>

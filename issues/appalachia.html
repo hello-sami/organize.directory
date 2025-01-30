@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appalachian Support Organizations - Mutual Aid Network Directory</title>
+    <meta name="description" content="Find organizations working to support communities in Appalachia through mutual aid and community care.">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Appalachian Support Organizations - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find organizations working to support communities in Appalachia through mutual aid and community care.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/issues/appalachia">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/issues">Issues</a>
+                    <span>›</span>
+                    <span>Appalachian Support</span>
+                </div>
+
+                <h1>Appalachian Support</h1>
+                <hr>
+
+                <section>
+                    <h2>Regional Support</h2>
+                    <div class="initiative">
+                        <a href="https://appalachiancommunityfund.org/">Appalachian Community Fund</a>
+                        <p>A community foundation fostering mutual aid and social justice through grassroots grantmaking in Central Appalachia. They coordinate funding support for organizations working on anti-racism, environmental justice, health equity, and youth leadership while building power through community-led change, social enterprise development, and creating spaces for lasting social transformation. Their approach emphasizes "Change, Not Charity," supporting initiatives that address the root causes of poverty and injustice.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of an organization working on Appalachian support? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 
