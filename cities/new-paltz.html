@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Paltz Mutual Aid - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid initiatives and community support networks in New Paltz, New York.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/new-york">New York</a>
+                    <span>›</span>
+                    <span>New Paltz</span>
+                </div>
+
+                <h1>New Paltz</h1>
+                <hr>
+
+                <section class="initiatives-section">
+                    <h2>Local Mutual Aid Initiatives</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.millionsofbutterflies.org/">Millions of Butterflies</a></h3>
+                        <p class="initiative-description">A grassroots mutual aid collective fostering community support and solidarity in New Paltz. They coordinate direct assistance, resource sharing, and community care initiatives while building power through collective action and creating spaces for community resilience.</p>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Food Security</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.instagram.com/newpaltzfreefoodfridge/">New Paltz Free Food Fridge</a></h3>
+                        <p class="initiative-description">A community mutual aid initiative providing free food access at the Village Hall (25 Plattekill Ave). The fridge offers a space for neighbors to share food resources, operating on the principle that food is a human right and should be freely accessible to all community members.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in New Paltz? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 

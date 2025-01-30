@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Northern California Mutual Aid - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid initiatives and community support networks in Northern California including San Francisco Bay Area, Sacramento, and North Coast regions.">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <span>Northern California</span>
+                </div>
+
+                <h1>Northern California</h1>
+                <p class="subtitle">San Francisco Bay Area, Sacramento Valley, North Coast, Sierra Nevada</p>
+                <hr>
+
+                <section class="cities-section">
+                    <h2>Regions</h2>
+                    <div class="cities-list">
+                        <a href="/cities/bay-area" class="city-link">Bay Area</a>
+                        <a href="/cities/sacramento-valley" class="city-link">Sacramento Valley</a>
+                        <a href="/cities/north-coast" class="city-link">North Coast</a>
+                        <a href="/cities/sierra-nevada" class="city-link">Sierra Nevada</a>
+                    </div>
+                </section>
+
+                <section class="cities-section">
+                    <h2>Major Cities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/san-francisco" class="city-link">San Francisco</a>
+                        <a href="/cities/oakland" class="city-link">Oakland</a>
+                        <a href="/cities/san-jose" class="city-link">San Jose</a>
+                        <a href="/cities/sacramento" class="city-link">Sacramento</a>
+                        <a href="/cities/santa-rosa" class="city-link">Santa Rosa</a>
+                        <a href="/cities/berkeley" class="city-link">Berkeley</a>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Northern California? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 
