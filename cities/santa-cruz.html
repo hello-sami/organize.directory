@@ -12,12 +12,17 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santa Cruz Mutual Aid Networks - Local Support & Community Resources</title>
+    <title>Mutual Aid in Santa Cruz - Local Support Networks & Community Resources</title>
     <meta name="description" content="Find mutual aid networks and community support initiatives in Santa Cruz, California.">
+    <meta property="og:title" content="Mutual Aid in Santa Cruz - Local Support Networks & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Santa Cruz, California.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/santa-cruz">
+    <meta name="twitter:card" content="summary">
     
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/styles/location.css">
+    <link rel="stylesheet" href="/styles/city.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Theme and Components -->
@@ -27,17 +32,26 @@
     <div class="layout">
         <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/location" class="breadcrumb-link">Location</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <a href="/states/california" class="breadcrumb-link">California</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <span class="breadcrumb-current">Santa Cruz</span>
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <span>Santa Cruz</span>
                 </div>
 
                 <h1>Santa Cruz</h1>
+                <hr>
+
+                <section>
+                    <h2>Community Support</h2>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/rrfm_sc/">Really Really Free Market Santa Cruz</a>
+                        <p>A grassroots organization fostering mutual aid and community support through free markets and resource sharing in Santa Cruz. They coordinate direct assistance, free item distribution, and solidarity networks while building power through community organizing and creating spaces for gift economy and collective care.</p>
+                    </div>
+                </section>
 
                 <section class="initiatives-section">
                     <h2>Community Spaces</h2>
@@ -95,7 +109,7 @@
     <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('locations'));
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>

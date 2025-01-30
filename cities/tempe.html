@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Find mutual aid initiatives and community support networks in Tempe, Arizona. Connect with local organizations and community resources.">
-    <meta property="og:title" content="Mutual Aid in Tempe - Local Support Networks">
-    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Tempe, Arizona. Connect with local organizations providing community-based support.">
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Tempe, Arizona.">
+    <meta property="og:title" content="Mutual Aid in Tempe - Local Support Networks & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Tempe, Arizona.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/tempe">
+    <meta property="og:url" content="https://organize.directory/cities/tempe">
     <meta name="twitter:card" content="summary">
     
     <title>Mutual Aid in Tempe - Local Support Networks & Community Resources</title>
     
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
@@ -31,30 +32,34 @@
 </head>
 <body>
     <div class="layout">
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/arizona">Arizona</a>
+                    <span>›</span>
+                    <span>Tempe</span>
                 </div>
-                
-                <header class="city-header">
-                    <h2>Tempe, Arizona</h2>
-                </header>
-                
+
+                <h1>Tempe</h1>
+                <hr>
+
                 <section>
-                    <h2>Local Mutual Aid Initiatives</h2>
+                    <h2>Community Support</h2>
                     <div class="initiative">
+                        <a href="https://www.instagram.com/temperrfm/">Really Really Free Market Tempe</a>
+                        <p>A grassroots organization fostering mutual aid and community support through free markets and resource sharing in Tempe. They coordinate direct assistance, free item distribution, and solidarity networks while building power through community organizing and creating spaces for gift economy and collective care.</p>
+                    </div>
+                    <div class="initiative"></div>
                         <a href="https://mutualaidtempe.com/">Mutual Aid Tempe</a>
                         <p>A grassroots community network providing direct support and resources to Tempe residents through mutual aid initiatives.</p>
-                    </div>
+                </div>
                 </section>
 
-                <p class="help-text">
-                    Know of a mutual aid initiative in Tempe? 
-                    <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
-                </p>
+                <p class="help-text">Know of a mutual aid initiative in Tempe? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
             <footer class="site-footer">
                 <p>Awareness into action. Solidarity not charity.</p>
@@ -65,9 +70,7 @@
     <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 </body>
