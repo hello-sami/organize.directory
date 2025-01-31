@@ -1,0 +1,86 @@
+<header class="site-header">
+    <nav class="main-nav">
+        <a href="/" class="logo">Mutual Aid Network Directory</a>
+        <div id="searchContainer"></div>
+        <div class="nav-links">
+            <a href="/location.html">Find Networks</a>
+            <a href="/issues.html">Browse Issues</a>
+            <a href="/resources.html">Resources</a>
+        </div>
+    </nav>
+</header>
+
+<!-- Search Dependencies -->
+<script src="/search-index.js"></script>
+<script type="module">
+    import { initSearchBar } from '/components/search-bar.js';
+    window.addEventListener('load', () => initSearchBar());
+</script>
+
+<style>
+    .site-header {
+        background: var(--bg-color);
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .main-nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .logo {
+        font-weight: 600;
+        color: var(--text-primary);
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        margin-left: auto;
+    }
+
+    .nav-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .nav-links a:hover {
+        color: var(--text-primary);
+    }
+
+    #searchContainer {
+        flex: 1;
+        max-width: 600px;
+    }
+
+    #searchContainer .search-container {
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .main-nav {
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        #searchContainer {
+            width: 100%;
+        }
+
+        .nav-links {
+            width: 100%;
+            justify-content: space-around;
+            margin: 0;
+        }
+    }
+</style> 

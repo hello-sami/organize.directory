@@ -17,6 +17,9 @@
     <script src="/theme-init.js"></script>
     <script src="/theme.js" type="module"></script>
     
+    <!-- Search Index -->
+    <script src="/search-index.js"></script>
+    
     <!-- Analytics -->
     <script async src="/js/analytics.js"></script>
 </head>
@@ -26,6 +29,20 @@
 
         <main class="content" role="main">
             <header class="page-header">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            class="search-input" 
+                            placeholder="Search mutual aid resources..."
+                            aria-label="Search mutual aid resources"
+                        >
+                        <div id="searchResults" class="search-results" role="listbox"></div>
+                    </div>
+                </div>
+
                 <h1>Want to get organized but don't know where to start?</h1>
                 <p>Community organizing brings people together to create meaningful 
                     change from the ground up. Through mutual support and collective action, 
@@ -39,7 +56,6 @@
                     <!-- Posts will be dynamically loaded here -->
                 </div>
             </section>
-
         </main>
     </div>
 
@@ -50,5 +66,11 @@
     </script>
     <script src="/script.js" type="module"></script>
     <script src="/js/posts.js" type="module"></script>
+
+    <!-- Initialize Search -->
+    <script type="module">
+        import { Search } from './search.js';
+        new Search();
+    </script>
 </body>
 </html>
