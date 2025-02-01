@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nevada County Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Nevada County, California.">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Nevada County Mutual Aid Networks - Local Support & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Nevada County, California.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/nevada-county">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <a href="/cities/norcal">Norcal</a>
+                    <span>›</span>
+                    <a href="/cities/sierra">Sierra</a>
+                    <span>›</span>
+                    <span>Nevada County</span>
+                </div>
+
+                <h1>Nevada County</h1>
+                <hr>
+
+                <section>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/nevadacountyiww/">Nevada County IWW</a>
+                        <p>A grassroots labor union advocating for workers' rights, solidarity, and community organizing through direct action and local events</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/ncmutualaid/">Nevada County Mutual Aid</a>
+                        <p>Rural Organizing Solidarity and mutual aid distributions, meets every first Friday.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Nevada County? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html>

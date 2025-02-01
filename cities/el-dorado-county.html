@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Dorado County Mutual Aid - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in El Dorado County, California including Placerville, South Lake Tahoe, and surrounding communities.">
+    <meta property="og:title" content="El Dorado County Mutual Aid - Local Support Networks & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in El Dorado County, California including Placerville, South Lake Tahoe, and surrounding communities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/el-dorado-county">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <a href="/cities/norcal">Northern California</a>
+                    <span>›</span>
+                    <span>El Dorado County</span>
+                </div>
+
+                <h1>El Dorado County</h1>
+                <p class="subtitle">Placerville, South Lake Tahoe, Cameron Park, and surrounding communities</p>
+                <hr>
+
+                <section>
+                    <h2>Communities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/placerville" class="city-link">Placerville</a>
+                        <a href="/cities/south-lake-tahoe" class="city-link">South Lake Tahoe</a>
+                        <a href="/cities/cameron-park" class="city-link">Cameron Park</a>
+                        <a href="/cities/el-dorado-hills" class="city-link">El Dorado Hills</a>
+                        <a href="/cities/diamond-springs" class="city-link">Diamond Springs</a>
+                        <a href="/cities/pollock-pines" class="city-link">Pollock Pines</a>
+                        <a href="/cities/shingle-springs" class="city-link">Shingle Springs</a>
+                        <a href="/cities/georgetown" class="city-link">Georgetown</a>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Community Support</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.edcgov.us/Government/hhsa">El Dorado County Health and Human Services</a></h3>
+                        <p class="initiative-description">Provides essential services and community support to El Dorado County residents, including emergency assistance, food security programs, and resource connections.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.tahoelexington.org/">Tahoe Mutual Aid</a></h3>
+                        <p class="initiative-description">A community network providing direct support and resource sharing throughout the Lake Tahoe region.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in El Dorado County? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 

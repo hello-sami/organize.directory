@@ -272,19 +272,8 @@ export class Search {
                             const snippet = this.getContextSnippet(result.description || result.content, query);
                             return `
                                 <a href="${result.url}" class="search-result-item" data-index="${idx}" role="option" tabindex="-1">
-                                    <div class="search-result-icon">
-                                        ${category === 'Resources' ? 
-                                            '<svg viewBox="0 0 16 16"><path fill="currentColor" d="M2 2.5A2.5 2.5 0 014.5 0h7A2.5 2.5 0 0114 2.5v11a2.5 2.5 0 01-2.5 2.5h-7A2.5 2.5 0 012 13.5v-11z"/></svg>' :
-                                            '<svg viewBox="0 0 16 16"><path fill="currentColor" d="M8 0a8 8 0 100 16A8 8 0 008 0zM4 8a4 4 0 118 0 4 4 0 01-8 0z"/></svg>'
-                                        }
-                                    </div>
                                     <div class="search-result-content">
                                         <div class="search-result-title">${this.highlightText(result.title, query)}</div>
-                                        ${result.breadcrumb ? `
-                                            <div class="search-result-breadcrumb">
-                                                ${result.breadcrumb.join(' › ')}
-                                            </div>
-                                        ` : ''}
                                         ${snippet ? `
                                             <div class="search-result-description">
                                                 ${this.highlightText(snippet, query)}

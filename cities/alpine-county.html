@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine County Mutual Aid - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Alpine County, California including Markleeville, Bear Valley, and surrounding communities.">
+    <meta property="og:title" content="Alpine County Mutual Aid - Local Support Networks & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Alpine County, California including Markleeville, Bear Valley, and surrounding communities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/alpine-county">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <a href="/cities/norcal">Northern California</a>
+                    <span>›</span>
+                    <span>Alpine County</span>
+                </div>
+
+                <h1>Alpine County</h1>
+                <p class="subtitle">Markleeville, Bear Valley, Kirkwood, and surrounding communities</p>
+                <hr>
+
+                <section>
+                    <h2>Communities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/markleeville" class="city-link">Markleeville</a>
+                        <a href="/cities/bear-valley" class="city-link">Bear Valley</a>
+                        <a href="/cities/kirkwood" class="city-link">Kirkwood</a>
+                        <a href="/cities/alpine-village" class="city-link">Alpine Village</a>
+                        <a href="/cities/woodfords" class="city-link">Woodfords</a>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Community Support</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.alpinecountyca.gov/178/Social-Services">Alpine County Social Services</a></h3>
+                        <p class="initiative-description">Provides essential services and community support to Alpine County residents, including emergency assistance, food security programs, and resource connections.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Alpine County? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 

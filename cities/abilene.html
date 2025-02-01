@@ -23,27 +23,12 @@
     <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
     
-    <!-- Search Dependencies -->
-    <script src="/search-index.js"></script>
 </head>
 <body>
     <div class="layout">
         <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content" role="main">
-            <!-- Search Bar -->
-            <div class="search-container">
-                <div class="search-input-wrapper">
-                    <input 
-                        type="text" 
-                        id="searchInput" 
-                        class="search-input" 
-                        placeholder="Search"
-                        aria-label="Search"
-                    >
-                    <div id="searchResults" class="search-results" role="listbox"></div>
-                </div>
-            </div>
 
             <div class="city-page">
                 <div class="breadcrumb">
@@ -90,11 +75,5 @@
         document.getElementById('sidebar').replaceWith(createSidebar('locations'));
     </script>
     <script src="/theme.js" type="module"></script>
-
-    <!-- Initialize Search -->
-    <script type="module">
-        import { Search } from '/search.js';
-        new Search();
-    </script>
 </body>
 </html>

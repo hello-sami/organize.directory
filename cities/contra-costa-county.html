@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contra Costa County Mutual Aid - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Contra Costa County, California including Richmond, Concord, Walnut Creek, and surrounding communities.">
+    <meta property="og:title" content="Contra Costa County Mutual Aid - Local Support Networks & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Contra Costa County, California including Richmond, Concord, Walnut Creek, and surrounding communities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/contra-costa-county">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <a href="/cities/norcal">Northern California</a>
+                    <span>›</span>
+                    <span>Contra Costa County</span>
+                </div>
+
+                <h1>Contra Costa County</h1>
+                <p class="subtitle">Richmond, Concord, Walnut Creek, and surrounding communities</p>
+                <hr>
+
+                <section>
+                    <h2>Communities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/richmond" class="city-link">Richmond</a>
+                        <a href="/cities/concord" class="city-link">Concord</a>
+                        <a href="/cities/walnut-creek" class="city-link">Walnut Creek</a>
+                        <a href="/cities/antioch" class="city-link">Antioch</a>
+                        <a href="/cities/san-ramon" class="city-link">San Ramon</a>
+                        <a href="/cities/pittsburg" class="city-link">Pittsburg</a>
+                        <a href="/cities/martinez" class="city-link">Martinez</a>
+                        <a href="/cities/el-cerrito" class="city-link">El Cerrito</a>
+                        <a href="/cities/danville" class="city-link">Danville</a>
+                        <a href="/cities/san-pablo" class="city-link">San Pablo</a>
+                        <a href="/cities/pleasant-hill" class="city-link">Pleasant Hill</a>
+                        <a href="/cities/lafayette" class="city-link">Lafayette</a>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Community Support</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.contracosta.ca.gov/597/Health-Services">Contra Costa Health Services</a></h3>
+                        <p class="initiative-description">Provides essential services and community support to Contra Costa County residents, including emergency assistance, food security programs, and resource connections.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.richmondmutualaid.org/">Richmond Mutual Aid</a></h3>
+                        <p class="initiative-description">A grassroots network providing direct support, resource sharing, and community care throughout Richmond and surrounding areas.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Contra Costa County? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 
