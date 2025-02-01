@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plumas County Mutual Aid - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Plumas County, California including Quincy, Portola, and surrounding communities.">
+    <meta property="og:title" content="Plumas County Mutual Aid - Local Support Networks & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Plumas County, California including Quincy, Portola, and surrounding communities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/plumas-county">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <a href="/cities/norcal">Northern California</a>
+                    <span>›</span>
+                    <span>Plumas County</span>
+                </div>
+
+                <h1>Plumas County</h1>
+                <p class="subtitle">Quincy, Portola, Chester, and surrounding communities</p>
+                <hr>
+
+                <section>
+                    <h2>Communities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/quincy" class="city-link">Quincy</a>
+                        <a href="/cities/portola" class="city-link">Portola</a>
+                        <a href="/cities/chester" class="city-link">Chester</a>
+                        <a href="/cities/greenville" class="city-link">Greenville</a>
+                        <a href="/cities/graeagle" class="city-link">Graeagle</a>
+                        <a href="/cities/blairsden" class="city-link">Blairsden</a>
+                        <a href="/cities/taylorsville" class="city-link">Taylorsville</a>
+                        <a href="/cities/lake-almanor" class="city-link">Lake Almanor</a>
+                        <a href="/cities/beckwourth" class="city-link">Beckwourth</a>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Community Support</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.plumascounty.us/2157/Social-Services">Plumas County Social Services</a></h3>
+                        <p class="initiative-description">Provides essential services and community support to Plumas County residents, including emergency assistance, food security programs, and resource connections.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.plumasruralservices.org/">Plumas Rural Services</a></h3>
+                        <p class="initiative-description">Community organization providing various support services including food assistance, housing support, and emergency aid throughout Plumas County.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.plumascf.org/">Plumas Crisis Intervention & Resource Center</a></h3>
+                        <p class="initiative-description">Local nonprofit offering crisis intervention, emergency services, and community resources to Plumas County residents.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Plumas County? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 
