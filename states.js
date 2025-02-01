@@ -141,7 +141,7 @@ function displaySearchResults(results) {
 
     const html = results.map(result => `
         <div class="search-result">
-            <h3><a href="${result.url}">${result.name}</a></h3>
+            <a href="${result.url}">${result.name}<a>
             ${result.cities.length ? `
                 <div class="matching-cities">
                     ${result.cities.map(city => `

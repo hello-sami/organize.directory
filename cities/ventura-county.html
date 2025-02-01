@@ -1,43 +1,79 @@
-<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid initiatives and community support networks in Ventura County, California. Connect with local organizations and community resources."><meta property="og:title" content="Mutual Aid in Ventura County - Local Support Networks"><meta property="og:description" content="Find mutual aid initiatives and community support networks in Ventura County, California. Connect with local organizations providing community-based support."><meta property="og:url" content="https://organize.directory/ventura-county"><title>Mutual Aid in Ventura County - Local Support Networks &amp; Community Resources</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventura County Mutual Aid - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Ventura County, California including Oxnard, Thousand Oaks, and surrounding communities.">
+    <meta property="og:title" content="Ventura County Mutual Aid - Local Support Networks & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Ventura County, California including Oxnard, Thousand Oaks, and surrounding communities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/ventura-county">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <a href="/cities/southern-california">Southern California</a>
+                    <span>›</span>
+                    <span>Ventura County</span>
                 </div>
-                <header class="city-header">
-                    <h2>Ventura County, California</h2>
-                </header>
-                <div class="initiatives-list">
-                    <h3>Local Mutual Aid Initiatives</h3>
-                    <p class="help-text">Know of a mutual aid initiative in Ventura County? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+
+                <h1>Ventura County</h1>
+                <p class="subtitle">Oxnard, Thousand Oaks, Simi Valley, and surrounding communities</p>
+                <hr>
+
                 <section>
-                    <h2>Racial Justice</h2>
-                    <div class="initiative">
-                        <a href="https://www.facebook.com/surjvc/">SURJ Ventura County</a>
-                        <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in Ventura County. They coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with BIPOC-led organizations.</p>
+                    <h2>Communities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/oxnard" class="city-link">Oxnard</a>
+                        <a href="/cities/thousand-oaks" class="city-link">Thousand Oaks</a>
+                        <a href="/cities/simi-valley" class="city-link">Simi Valley</a>
+                        <a href="/cities/ventura" class="city-link">Ventura</a>
+                        <a href="/cities/camarillo" class="city-link">Camarillo</a>
+                        <a href="/cities/moorpark" class="city-link">Moorpark</a>
+                        <a href="/cities/santa-paula" class="city-link">Santa Paula</a>
+                        <a href="/cities/port-hueneme" class="city-link">Port Hueneme</a>
+                        <a href="/cities/fillmore" class="city-link">Fillmore</a>
+                        <a href="/cities/ojai" class="city-link">Ojai</a>
+                        <a href="/cities/oak-park" class="city-link">Oak Park</a>
+                        <a href="/cities/piru" class="city-link">Piru</a>
                     </div>
                 </section>
+
+                <section class="initiatives-section">
+                    <h2>Community Support</h2>
+                    <div class="initiative-card">
+                        <div class="initiative">
+                            <a href="https://www.facebook.com/surjvc/">SURJ Ventura County</a>
+                            <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in Ventura County.</p>
+                        </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Ventura County? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
             <footer class="site-footer">
                 <p>Awareness into action. Solidarity not charity.</p>
