@@ -1,36 +1,87 @@
-<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid initiatives and community support networks in Siskiyou County, California. Connect with local organizations and community resources."><meta property="og:title" content="Mutual Aid in Siskiyou County - Local Support Networks"><meta property="og:description" content="Find mutual aid initiatives and community support networks in Siskiyou County, California. Connect with local organizations providing community-based support."><meta property="og:url" content="https://organize.directory/siskiyou-county"><title>Mutual Aid in Siskiyou County - Local Support Networks &amp; Community Resources</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siskiyou County Mutual Aid - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Siskiyou County, California including Yreka, Mount Shasta, Weed, and surrounding communities.">
+    <meta property="og:title" content="Siskiyou County Mutual Aid - Local Support Networks & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Siskiyou County, California including Yreka, Mount Shasta, Weed, and surrounding communities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/siskiyou-county">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <a href="/cities/northern-california">Northern California</a>
+                    <span>›</span>
+                    <span>Siskiyou County</span>
                 </div>
-                <header class="city-header">
-                    <h2>Siskiyou County, California</h2>
-                </header>
-                <div class="initiatives-list">
-                    <h3>Local Mutual Aid Initiatives</h3>
-                    <p class="help-text">Know of a mutual aid initiative in Siskiyou County? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
+
+                <h1>Siskiyou County</h1>
+                <p class="subtitle">Yreka, Mount Shasta, Weed, and surrounding communities</p>
+                <hr>
+
+                <section>
+                    <h2>Communities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/yreka" class="city-link">Yreka</a>
+                        <a href="/cities/mount-shasta" class="city-link">Mount Shasta</a>
+                        <a href="/cities/weed" class="city-link">Weed</a>
+                        <a href="/cities/dunsmuir" class="city-link">Dunsmuir</a>
+                        <a href="/cities/fort-jones" class="city-link">Fort Jones</a>
+                        <a href="/cities/montague" class="city-link">Montague</a>
+                        <a href="/cities/tulelake" class="city-link">Tulelake</a>
+                        <a href="/cities/dorris" class="city-link">Dorris</a>
+                        <a href="/cities/etna" class="city-link">Etna</a>
+                        <a href="/cities/mccloud" class="city-link">McCloud</a>
+                        <a href="/cities/happy-camp" class="city-link">Happy Camp</a>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Community Support</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.co.siskiyou.ca.us/publichealth">Siskiyou County Public Health</a></h3>
+                        <p class="initiative-description">Provides essential health services and community support to Siskiyou County residents, including emergency assistance, health programs, and resource connections.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.gnrfoodbank.org/">Great Northern Services Food Bank</a></h3>
+                        <p class="initiative-description">Provides food assistance and nutrition resources to residents throughout Siskiyou County, working to address food insecurity in the region.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.co.siskiyou.ca.us/hhs">Siskiyou County Health & Human Services</a></h3>
+                        <p class="initiative-description">Local agency providing various community support programs including emergency assistance, social services, and resource coordination across the county.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Siskiyou County? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
             <footer class="site-footer">
                 <p>Awareness into action. Solidarity not charity.</p>
@@ -38,28 +89,11 @@
         </main>
     </div>
 
-
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    </body></html>
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html>
