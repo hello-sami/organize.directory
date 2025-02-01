@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>California Mutual Aid Networks - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives in California cities including Los Angeles, San Francisco, and more.">
-    <meta property="og:title" content="California Mutual Aid Networks - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find mutual aid networks and community support initiatives in California cities including Los Angeles, San Francisco, and more.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/states/california">
-    <meta name="twitter:card" content="summary">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/styles/location.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
@@ -25,6 +10,22 @@
         gtag('config', 'G-QJ03RCM35H');
     </script>
     
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>California Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in California cities including Los Angeles, San Francisco, and more.">
+    <meta property="og:title" content="California Statewide Initiatives - Mutual Aid Network Directory">
+    <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in California.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/states/california">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
@@ -32,17 +33,18 @@
     <div class="layout">
         <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
-            <div class="state-page">
+        <main class="content" role="main">
+            <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/location" class="breadcrumb-link">States</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <span class="breadcrumb-current">California</span>
+                    <a href="/location">States</a>
+                    <span>›</span>
+                    <span>California</span>
                 </div>
 
-                <h1 class="state-title">California</h1>
+                <h1>California</h1>
+                <hr>
 
-                <section class="cities-section">
+                <section>
                     <h2>Regions</h2>
                     <div class="cities-list">
                         <a href="/cities/norcal" class="city-link">Northern California</a>
@@ -53,7 +55,7 @@
                     </div>
                 </section>
 
-                <section class="cities-section">
+                <section>
                     <h2>Sub-Regions</h2>
                     <div class="cities-list">
                         <a href="/cities/sf-bay-area" class="city-link">Bay Area</a>
@@ -69,7 +71,7 @@
                     </div>
                 </section>
 
-                <section class="cities-section">
+                <section>
                     <h2>Cities</h2>
                     <div class="cities-list">
                         <a href="/cities/bakersfield" class="city-link">Bakersfield</a>
@@ -98,44 +100,39 @@
                     </div>
                 </section>
 
-                <section class="initiatives-section">
-                    <h2>Rural Organizing</h2>
-
-                </section>
-
-                <section class="initiatives-section">
+                <section>
                     <h2>Indigenous Solidarity</h2>
-                    <div class="initiative-card">
+                    <div class="initiative">
                         <a href="https://www.tongva.land/">Tongva Land</a>
-                        <p class="initiative-description">A mutual aid initiative fostering solidarity and support for Tongva people, the original inhabitants of the Los Angeles Basin and Southern Channel Islands. They coordinate land tax contributions, cultural preservation, and solidarity networks while building power through Indigenous sovereignty, land stewardship, and creating spaces for Tongva cultural revitalization.</p>
+                        <p>A mutual aid initiative fostering solidarity and support for Tongva people, the original inhabitants of the Los Angeles Basin and Southern Channel Islands. They coordinate land tax contributions, cultural preservation, and solidarity networks while building power through Indigenous sovereignty, land stewardship, and creating spaces for Tongva cultural revitalization.</p>
                     </div>
                 </section>
 
-                <section class="initiatives-section">
+                <section>
                     <h2>Statewide Initiatives</h2>
-                    <div class="initiative-card">
+                    <div class="initiative">
                         <a href="https://liderescampesinas.org/">Líderes Campesinas</a>
-                        <p class="initiative-description">A grassroots organization led by and for farmworker women, providing mutual aid, leadership development, and organizing support while advocating for workers' rights, gender justice, and environmental health in agricultural communities across California.</p>
+                        <p>A grassroots organization led by and for farmworker women, providing mutual aid, leadership development, and organizing support while advocating for workers' rights, gender justice, and environmental health in agricultural communities across California.</p>
                     </div>
-                   <div class="initiative-card">
+                    <div class="initiative">
                         <a href="https://www.cbecal.org/">Communities for a Better Environment (CBE)</a>
-                        <p class="initiative-description">Environmental justice organization building power in working-class communities of color through grassroots organizing, mutual aid, and community-led solutions to environmental racism in Northern and Southern California.</p>
+                        <p>Environmental justice organization building power in working-class communities of color through grassroots organizing, mutual aid, and community-led solutions to environmental racism in Northern and Southern California.</p>
                     </div>
-                    <div class="initiative-card">
+                    <div class="initiative">
                         <a href="https://www.thetpw.org/">Transformative Programming Works</a>
-                        <p class="initiative-description">Building mutual aid networks and support systems for formerly incarcerated people through community organizing, education, and solidarity initiatives.</p>
+                        <p>Building mutual aid networks and support systems for formerly incarcerated people through community organizing, education, and solidarity initiatives.</p>
                     </div>
-                    <div class="initiative-card">
+                    <div class="initiative">
                         <a href="https://www.asianprisonersupport.com/roots-and-correspondence-programs">Asian Prisoner Support Committee - ROOTS Program</a>
-                        <p class="initiative-description">Supporting incarcerated Asian, Pacific Islander, and ally communities through ethnic studies education, book programs, correspondence initiatives, and reentry planning across California prisons.</p>
+                        <p>Supporting incarcerated Asian, Pacific Islander, and ally communities through ethnic studies education, book programs, correspondence initiatives, and reentry planning across California prisons.</p>
                     </div>
-                    <div class="initiative-card">
+                    <div class="initiative">
                         <a href="https://justiceteams.org/">Justice Teams Network</a>
-                        <p class="initiative-description">A statewide network coordinating rapid response, mutual aid, and community support for survivors of state violence. They organize direct support through crisis response teams, healing justice programs, and solidarity networks while building community-based alternatives to policing across California.</p>
+                        <p>A statewide network coordinating rapid response, mutual aid, and community support for survivors of state violence. They organize direct support through crisis response teams, healing justice programs, and solidarity networks while building community-based alternatives to policing across California.</p>
                     </div>
-                    <div class="initiative-card">
+                    <div class="initiative">
                         <a href="https://www.powerblossoms.org/">Power Blossoms</a>
-                        <p class="initiative-description">A mutual aid collective fostering solidarity and support for LGBTQ+ people in prison across California. They coordinate letter writing, resource sharing, and care packages while building connections through pen pal programs and advocacy for queer and trans prisoners.</p>
+                        <p>A mutual aid collective fostering solidarity and support for LGBTQ+ people in prison across California. They coordinate letter writing, resource sharing, and care packages while building connections through pen pal programs and advocacy for queer and trans prisoners.</p>
                     </div>
                     <div class="initiative">
                         <a href="https://www.instagram.com/daretostruggle.ca/">Dare to Struggle</a>
@@ -145,19 +142,17 @@
                         <a href="https://caimmigrant.org/">California Immigrant Policy Center</a>
                         <p>The California Immigrant Policy Center (CIPC) is a constituent-based statewide immigrant rights organization with offices in Los Angeles, Sacramento and Oakland. It is a leading immigrant rights institution in the state.</p>
                     </div>
-                    
-                    <section class="initiatives-section">
-                        <h2>Housing Justice</h2>
-                        <div class="initiative">
-                            <a href="https://www.tenantstogether.org/">Tenants Together</a>
-                            <p>A statewide coalition fostering mutual aid and housing justice through tenant organizing and advocacy across California. They coordinate tenant rights education, organizing support, and solidarity networks while building power through collective action, policy advocacy, and creating spaces for tenants to fight displacement and win stronger protections.</p>
-                        </div>
-                    </section>
-                    <p class="help-text">
-                        Know of a mutual aid initiative in California? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
-                    </p>
                 </section>
+
+                <section>
+                    <h2>Housing Justice</h2>
+                    <div class="initiative">
+                        <a href="https://www.tenantstogether.org/">Tenants Together</a>
+                        <p>A statewide coalition fostering mutual aid and housing justice through tenant organizing and advocacy across California. They coordinate tenant rights education, organizing support, and solidarity networks while building power through collective action, policy advocacy, and creating spaces for tenants to fight displacement and win stronger protections.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in California? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
             <footer class="site-footer">
                 <p>Awareness into action. Solidarity not charity.</p>
