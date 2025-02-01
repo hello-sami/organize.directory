@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glenn County Mutual Aid - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Glenn County, California including Willows, Orland, and surrounding communities.">
+    <meta property="og:title" content="Glenn County Mutual Aid - Local Support Networks & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Glenn County, California including Willows, Orland, and surrounding communities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/glenn-county">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <a href="/cities/norcal">Northern California</a>
+                    <span>›</span>
+                    <span>Glenn County</span>
+                </div>
+
+                <h1>Glenn County</h1>
+                <p class="subtitle">Willows, Orland, Hamilton City, and surrounding communities</p>
+                <hr>
+
+                <section>
+                    <h2>Communities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/willows" class="city-link">Willows</a>
+                        <a href="/cities/orland" class="city-link">Orland</a>
+                        <a href="/cities/hamilton-city" class="city-link">Hamilton City</a>
+                        <a href="/cities/artois" class="city-link">Artois</a>
+                        <a href="/cities/elk-creek" class="city-link">Elk Creek</a>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Community Support</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.countyofglenn.net/dept/health-human-services/welcome">Glenn County Health & Human Services</a></h3>
+                        <p class="initiative-description">Provides essential services and community support to Glenn County residents, including emergency assistance, food security programs, and resource connections.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Glenn County? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 

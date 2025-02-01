@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresno County Mutual Aid - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Fresno County, California including Fresno, Clovis, Selma, and surrounding communities.">
+    <meta property="og:title" content="Fresno County Mutual Aid - Local Support Networks & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Fresno County, California including Fresno, Clovis, Selma, and surrounding communities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/fresno-county">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <a href="/cities/norcal">Northern California</a>
+                    <span>›</span>
+                    <span>Fresno County</span>
+                </div>
+
+                <h1>Fresno County</h1>
+                <p class="subtitle">Fresno, Clovis, Selma, and surrounding communities</p>
+                <hr>
+
+                <section>
+                    <h2>Communities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/fresno" class="city-link">Fresno</a>
+                        <a href="/cities/clovis" class="city-link">Clovis</a>
+                        <a href="/cities/selma" class="city-link">Selma</a>
+                        <a href="/cities/sanger" class="city-link">Sanger</a>
+                        <a href="/cities/reedley" class="city-link">Reedley</a>
+                        <a href="/cities/parlier" class="city-link">Parlier</a>
+                        <a href="/cities/coalinga" class="city-link">Coalinga</a>
+                        <a href="/cities/kerman" class="city-link">Kerman</a>
+                        <a href="/cities/kingsburg" class="city-link">Kingsburg</a>
+                        <a href="/cities/firebaugh" class="city-link">Firebaugh</a>
+                        <a href="/cities/mendota" class="city-link">Mendota</a>
+                        <a href="/cities/fowler" class="city-link">Fowler</a>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Community Support</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.co.fresno.ca.us/departments/social-services">Fresno County Department of Social Services</a></h3>
+                        <p class="initiative-description">Provides essential services and community support to Fresno County residents, including emergency assistance, food security programs, and resource connections.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.fresnomutualaid.org/">Fresno Mutual Aid Network</a></h3>
+                        <p class="initiative-description">A grassroots network providing direct support, resource sharing, and community care throughout Fresno County.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.feedingfresno.org/">Feeding Fresno</a></h3>
+                        <p class="initiative-description">Community organization focused on food security and distribution throughout Fresno County communities.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Fresno County? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 

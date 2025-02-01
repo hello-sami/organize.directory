@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lake County Mutual Aid - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Lake County, California including Clearlake, Lakeport, and surrounding communities.">
+    <meta property="og:title" content="Lake County Mutual Aid - Local Support Networks & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Lake County, California including Clearlake, Lakeport, and surrounding communities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/cities/lake-county">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+</head>
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">Location</a>
+                    <span>›</span>
+                    <a href="/states/california">California</a>
+                    <span>›</span>
+                    <a href="/cities/norcal">Northern California</a>
+                    <span>›</span>
+                    <span>Lake County</span>
+                </div>
+
+                <h1>Lake County</h1>
+                <p class="subtitle">Clearlake, Lakeport, Kelseyville, and surrounding communities</p>
+                <hr>
+
+                <section>
+                    <h2>Communities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/clearlake" class="city-link">Clearlake</a>
+                        <a href="/cities/lakeport" class="city-link">Lakeport</a>
+                        <a href="/cities/kelseyville" class="city-link">Kelseyville</a>
+                        <a href="/cities/clearlake-oaks" class="city-link">Clearlake Oaks</a>
+                        <a href="/cities/hidden-valley-lake" class="city-link">Hidden Valley Lake</a>
+                        <a href="/cities/middletown" class="city-link">Middletown</a>
+                        <a href="/cities/nice" class="city-link">Nice</a>
+                        <a href="/cities/lucerne" class="city-link">Lucerne</a>
+                        <a href="/cities/upper-lake" class="city-link">Upper Lake</a>
+                        <a href="/cities/lower-lake" class="city-link">Lower Lake</a>
+                    </div>
+                </section>
+
+                <section class="initiatives-section">
+                    <h2>Community Support</h2>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.lakecountyca.gov/2264/Health-Services">Lake County Health Services</a></h3>
+                        <p class="initiative-description">Provides essential services and community support to Lake County residents, including emergency assistance, food security programs, and resource connections.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.lakefrc.org/">Lake Family Resource Center</a></h3>
+                        <p class="initiative-description">Community organization providing direct support, crisis intervention, and resource connections for Lake County families.</p>
+                    </div>
+                    <div class="initiative-card">
+                        <h3><a href="https://www.ncoinc.org/lake-county">North Coast Opportunities - Lake County</a></h3>
+                        <p class="initiative-description">Regional nonprofit providing disaster response, food security, and community development programs throughout Lake County.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Lake County? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+</body>
+</html> 
