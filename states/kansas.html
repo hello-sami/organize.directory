@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kansas Mutual Aid Networks - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives in Kansas cities including Wichita, Kansas City, Topeka, and more.">
-    <meta property="og:title" content="Kansas Mutual Aid Networks - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Kansas cities including Wichita, Kansas City, Topeka, and more.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/states/kansas">
-    <meta name="twitter:card" content="summary">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/styles/location.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
@@ -25,6 +10,22 @@
         gtag('config', 'G-QJ03RCM35H');
     </script>
     
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kansas Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Kansas cities including Wichita, Kansas City, Topeka, and more.">
+    <meta property="og:title" content="Kansas Mutual Aid Networks - Local Support & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Kansas cities including Wichita, Kansas City, Topeka, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/states/kansas">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
@@ -32,17 +33,18 @@
     <div class="layout">
         <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
-            <div class="state-page">
+        <main class="content" role="main">
+            <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/location" class="breadcrumb-link">States</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <span class="breadcrumb-current">Kansas</span>
+                    <a href="/location">States</a>
+                    <span>›</span>
+                    <span>Kansas</span>
                 </div>
 
-                <h1 class="state-title">Kansas</h1>
+                <h1>Kansas</h1>
+                <hr>
 
-                <section class="cities-section">
+                <section>
                     <h2>Cities</h2>
                     <div class="cities-list">
                         <a href="/cities/lawrence" class="city-link">Lawrence</a>
@@ -56,14 +58,11 @@
                     </div>
                 </section>
 
-                <section class="initiatives-section">
+                <section>
                     <h2>Statewide Initiatives</h2>
-
-                    <p class="help-text">
-                        Know of a mutual aid initiative in Kansas? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
-                    </p>
                 </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Kansas? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
             <footer class="site-footer">
                 <p>Awareness into action. Solidarity not charity.</p>

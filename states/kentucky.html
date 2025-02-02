@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kentucky Mutual Aid Networks - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives in Kentucky cities including Louisville, Lexington, Bowling Green, and more.">
-    <meta property="og:title" content="Kentucky Mutual Aid Networks - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Kentucky cities including Louisville, Lexington, Bowling Green, and more.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/states/kentucky">
-    <meta name="twitter:card" content="summary">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/styles/location.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
@@ -25,6 +10,22 @@
         gtag('config', 'G-QJ03RCM35H');
     </script>
     
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kentucky Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Kentucky cities including Louisville, Lexington, Bowling Green, and more.">
+    <meta property="og:title" content="Kentucky Mutual Aid Networks - Local Support & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Kentucky cities including Louisville, Lexington, Bowling Green, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/states/kentucky">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
@@ -32,17 +33,18 @@
     <div class="layout">
         <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
-            <div class="state-page">
+        <main class="content" role="main">
+            <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/location" class="breadcrumb-link">States</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <span class="breadcrumb-current">Kentucky</span>
+                    <a href="/location">States</a>
+                    <span>›</span>
+                    <span>Kentucky</span>
                 </div>
 
-                <h1 class="state-title">Kentucky</h1>
+                <h1>Kentucky</h1>
+                <hr>
 
-                <section class="cities-section">
+                <section>
                     <h2>Cities</h2>
                     <div class="cities-list">
                         <a href="/cities/bowling-green" class="city-link">Bowling Green</a>
@@ -54,26 +56,23 @@
                     </div>
                 </section>
 
-                <section class="initiatives-section">
+                <section>
                     <h2>Statewide Initiatives</h2>
-
-                    <div class="initiative-card">
-                        <a href="https://www.thestayproject.net/">The STAY Project<a>
-                        <p class="initiative-description">A youth-led organization building power through mutual aid, leadership development, and organizing across Central Appalachia. STAY works to create sustainable and inclusive communities while supporting young people fighting for social, economic, and environmental justice.</p>
+                    <div class="initiative">
+                        <a href="https://www.thestayproject.net/">The STAY Project</a>
+                        <p>A youth-led organization building power through mutual aid, leadership development, and organizing across Central Appalachia. STAY works to create sustainable and inclusive communities while supporting young people fighting for social, economic, and environmental justice.</p>
                     </div>
-                    <div class="initiative-card">
+                    <div class="initiative">
                         <a href="https://kftc.org/">Kentuckians For The Commonwealth (KFTC)</a>
-                        <p class="initiative-description">A grassroots organization fostering mutual aid and community power through statewide organizing and advocacy in Kentucky. They coordinate direct action, political education, and solidarity networks while building power through environmental justice, economic justice, and creating spaces for democratic participation and social change.</p>
+                        <p>A grassroots organization fostering mutual aid and community power through statewide organizing and advocacy in Kentucky. They coordinate direct action, political education, and solidarity networks while building power through environmental justice, economic justice, and creating spaces for democratic participation and social change.</p>
                     </div>
-                    <div class="initiative-card">
+                    <div class="initiative">
                         <a href="https://www.instagram.com/hillbillieshelpinghillbillies/">Hillbillies Helping Hillbillies</a>
-                        <p class="initiative-description">A rural mutual aid network fostering community solidarity through direct support and resource sharing across Kentucky. They coordinate emergency assistance, material aid distribution, and solidarity networks while building power through Appalachian community care, rural organizing, and creating spaces for neighbor-to-neighbor support.</p>
+                        <p>A rural mutual aid network fostering community solidarity through direct support and resource sharing across Kentucky. They coordinate emergency assistance, material aid distribution, and solidarity networks while building power through Appalachian community care, rural organizing, and creating spaces for neighbor-to-neighbor support.</p>
                     </div>
-                    <p class="help-text">
-                        Know of a mutual aid initiative in Kentucky? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
-                    </p>
                 </section>
+
+                <p class="help-text">Know of a mutual aid initiative in Kentucky? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
             <footer class="site-footer">
                 <p>Awareness into action. Solidarity not charity.</p>

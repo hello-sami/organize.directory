@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Florida Mutual Aid Networks - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives in Florida cities including Miami, Orlando, Tampa, and more.">
-    <meta property="og:title" content="Florida Mutual Aid Networks - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Florida cities including Miami, Orlando, Tampa, and more.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/states/florida">
-    <meta name="twitter:card" content="summary">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/styles/location.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
@@ -25,6 +10,22 @@
         gtag('config', 'G-QJ03RCM35H');
     </script>
     
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florida Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Florida cities including Miami, Orlando, Tampa, and more.">
+    <meta property="og:title" content="Florida Mutual Aid Networks - Local Support & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Florida cities including Miami, Orlando, Tampa, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/states/florida">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
@@ -32,17 +33,18 @@
     <div class="layout">
         <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
-            <div class="state-page">
+        <main class="content" role="main">
+            <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/location" class="breadcrumb-link">States</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <span class="breadcrumb-current">Florida</span>
+                    <a href="/location">States</a>
+                    <span>›</span>
+                    <span>Florida</span>
                 </div>
 
-                <h1 class="state-title">Florida</h1>
+                <h1>Florida</h1>
+                <hr>
 
-                <section class="cities-section">
+                <section>
                     <h2>Cities</h2>
                     <div class="cities-list">
                         <a href="/cities/broward-county" class="city-link">Broward County</a>
@@ -72,40 +74,39 @@
                     </div>
                 </section>
 
-                <section class="initiatives-section">
+                <section>
                     <h2>Immigrant Rights</h2>
-                    <div class="initiative-card">
-                        <a href="https://floridaimmigrant.org/">Florida Immigrant Coalition (FLIC)<a>
-                        <p class="initiative-description">A statewide alliance of immigrant rights organizations providing mutual aid, legal support, and community organizing. Through their network of grassroots groups, they offer direct assistance to immigrant families while building power for systemic change through advocacy and collective action.</p>
+                    <div class="initiative">
+                        <a href="https://floridaimmigrant.org/">Florida Immigrant Coalition (FLIC)</a>
+                        <p>A statewide alliance of immigrant rights organizations providing mutual aid, legal support, and community organizing. Through their network of grassroots groups, they offer direct assistance to immigrant families while building power for systemic change through advocacy and collective action.</p>
                     </div>
                 </section>
 
-                <section class="initiatives-section">
+                <section>
                     <h2>Statewide Initiatives</h2>
-                    <div class="initiative-card">
+                    <div class="initiative">
                         <a href="https://www.instagram.com/solidaritysfl/">Solidarity SFL</a>
-                        <p class="initiative-description">A grassroots organization building mutual aid networks and community power through direct action and solidarity initiatives across South Florida.</p>
+                        <p>A grassroots organization building mutual aid networks and community power through direct action and solidarity initiatives across South Florida.</p>
                     </div>
                 </section>
 
-                <section class="initiatives-section">
+                <section>
                     <h2>Prison Abolition</h2>
-                    <div class="initiative-card">
+                    <div class="initiative">
                         <a href="https://changecomesnowfl.org/">Change Comes Now</a>
-                        <p class="initiative-description">Grassroots organization building mutual aid networks and support systems for individuals and families impacted by the criminal legal system in Florida through advocacy, education, and direct assistance.</p>
+                        <p>Grassroots organization building mutual aid networks and support systems for individuals and families impacted by the criminal legal system in Florida through advocacy, education, and direct assistance.</p>
                     </div>
-
                 </section>
 
-                <section class="initiatives-section">
+                <section>
                     <h2>Racial Justice</h2>
-                    <div class="initiative-card">
+                    <div class="initiative">
                         <a href="https://www.instagram.com/surjflorida/">SURJ Florida</a>
-                        <p class="initiative-description">A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing across Florida. They coordinate community organizing, mobilizing, and education initiatives while building power through political education, direct action support, and creating spaces for accountable organizing in partnership with BIPOC-led organizations.</p>
+                        <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing across Florida. They coordinate community organizing, mobilizing, and education initiatives while building power through political education, direct action support, and creating spaces for accountable organizing in partnership with BIPOC-led organizations.</p>
                     </div>
                 </section>
 
-                <section class="initiatives-section">
+                <section>
                     <h2>Harm Reduction</h2>
                     <div class="initiative">
                         <a href="https://www.flharmredux.com/">FL Harm Redux</a>
@@ -113,10 +114,7 @@
                     </div>
                 </section>
 
-                <p class="help-text">
-                    Know of a mutual aid initiative in Florida? 
-                    <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
-                </p>
+                <p class="help-text">Know of a mutual aid initiative in Florida? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
             <footer class="site-footer">
                 <p>Awareness into action. Solidarity not charity.</p>
