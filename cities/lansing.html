@@ -1,55 +1,70 @@
-<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid initiatives and community support networks in Lansing, Michigan. Connect with local organizations and community resources."><meta property="og:title" content="Mutual Aid in Lansing - Local Support Networks"><meta property="og:description" content="Find mutual aid initiatives and community support networks in Lansing, Michigan. Connect with local organizations providing community-based support."><meta property="og:url" content="https://organize.directory/lansing"><title>Mutual Aid in Lansing - Local Support Networks &amp; Community Resources</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find mutual aid initiatives and community support networks in Lansing, Michigan. Connect with local organizations and community resources.">
+    
+    <!-- Open Graph / Twitter Cards -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mutual Aid in Lansing - Local Support Networks">
+    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Lansing, Michigan. Connect with local organizations providing community-based support.">
+    <meta property="og:url" content="https://organize.directory/lansing">
+    <meta name="twitter:card" content="summary">
+    
+    <title>Mutual Aid in Lansing - Local Support Networks & Community Resources</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
         <div id="sidebar-container"></div>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/states/michigan">Michigan</a>
+                    <span>›</span>
+                    <span>Lansing</span>
                 </div>
-                <header class="city-header">
-                    <h2>Lansing, Michigan</h2>
-                </header>
-                <div class="initiatives-list">
-                    <section>
-                        <h2>Cultural Centers</h2>
-                        <div class="initiative">
-                            <a href="https://www.everybodyreadsbooks.com/">Everybody Reads Books</a>
-                            <p>A radical bookstore fostering mutual aid and community power through accessible literature and cultural programming in Lansing. They coordinate book access, educational resources, and solidarity networks while building power through community events, political education, and creating spaces for learning and movement building.</p>
-                        </div>
-                    </section>
+                    
+                <h1>Lansing, Michigan</h1>
+                </hr>
 
-                    <section>
-                        <h2>Peace & Justice</h2>
-                        <div class="initiative">
-                            <a href="https://www.peaceedcenter.org/">Peace Education Center</a>
-                            <p>A grassroots organization fostering mutual aid and community power through peace education and nonviolent action in Lansing. They coordinate educational programs, direct action, and solidarity networks while building power through anti-war organizing, youth outreach, and creating spaces for peace and justice movement building.</p>
-                        </div>
-                    </section>
+                <section>
+                    <div class="initiative">
+                        <a href="https://www.everybodyreadsbooks.com/">Everybody Reads Books</a>
+                        <p>A radical bookstore fostering mutual aid and community power through accessible literature and cultural programming in Lansing. They coordinate book access, educational resources, and solidarity networks while building power through community events, political education, and creating spaces for learning and movement building.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.peaceedcenter.org/">Peace Education Center</a>
+                        <p>A grassroots organization fostering mutual aid and community power through peace education and nonviolent action in Lansing. They coordinate educational programs, direct action, and solidarity networks while building power through anti-war organizing, youth outreach, and creating spaces for peace and justice movement building.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.saluscenter.org/">Salus Center</a>
+                        <p>Lansing's 2SLGBTQIA+ Community Center</p>
+                    </div>
+                </section>
 
-                    <p class="help-text">Know of a mutual aid initiative in Lansing? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
                 </div>
             </div>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
         const sidebarContainer = document.getElementById('sidebar-container');
@@ -57,4 +72,5 @@
         sidebarContainer.replaceWith(sidebar);
     </script>
     <script src="/theme.js" type="module"></script>
-</body></html>
+</body>
+</html>
