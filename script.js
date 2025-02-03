@@ -298,9 +298,9 @@ function showCityPage(cityName, stateName) {
             ${cityInitiatives.length > 0 ? 
                 `<div class="initiatives-grid">
                     ${cityInitiatives.map(initiative => `
-                        <div class="initiative-card">
+                        <div class="initiative">
                             <h3>${initiative.name}</h3>
-                            <p class="initiative-description">${initiative.description}</p>
+                            <p>${initiative.description}</p>
                             <div class="initiative-meta">
                                 <div class="initiative-location">
                                     <span class="meta-label">📍 Location:</span>
@@ -405,9 +405,9 @@ function showStatePage(stateName) {
                 ${stateInitiatives.length > 0 ? `
                     <div class="initiatives-grid">
                         ${stateInitiatives.map(initiative => `
-                            <div class="initiative-card">
+                            <div class="initiative">
                                 <h3>${initiative.name}</h3>
-                                <p class="initiative-description">${initiative.description}</p>
+                                <p>${initiative.description}</p>
                                 <div class="initiative-links">
                                     ${initiative.website ? 
                                         `<a href="${initiative.website}" target="_blank" class="website-link">Visit Website</a>` : ''
