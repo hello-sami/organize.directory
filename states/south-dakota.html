@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>South Dakota Mutual Aid Networks - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives in South Dakota cities including Sioux Falls, Rapid City, Aberdeen, and more.">
-    <meta property="og:title" content="South Dakota Mutual Aid Networks - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find mutual aid networks and community support initiatives in South Dakota cities including Sioux Falls, Rapid City, Aberdeen, and more.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/states/south-dakota">
-    <meta name="twitter:card" content="summary">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/styles/location.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
@@ -25,51 +10,62 @@
         gtag('config', 'G-QJ03RCM35H');
     </script>
     
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Dakota Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in South Dakota cities including Sioux Falls, Rapid City, Aberdeen, and more.">
+    <meta property="og:title" content="South Dakota Mutual Aid Networks - Local Support & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in South Dakota cities including Sioux Falls, Rapid City, Aberdeen, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/states/south-dakota">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/location.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
 </head>
 <body>
     <div class="layout">
         <aside id="sidebar" aria-label="Main navigation"></aside>
-        
-        <div class="main-content">
-            <main class="content">
-                <div class="state-page">
-                    <div class="breadcrumb">
-                        <a href="/location" class="breadcrumb-link">States</a>
-                        <span class="breadcrumb-separator">›</span>
-                        <span class="breadcrumb-current">South Dakota</span>
-                    </div>
 
-                    <h1 class="state-title">South Dakota</h1>
-
-                    <section class="cities-section">
-                        <h2>Cities</h2>
-                        <div class="cities-list">
-                            <a href="/cities/aberdeen" class="city-link">Aberdeen</a>
-                            <a href="/cities/brookings" class="city-link">Brookings</a>
-                            <a href="/cities/mitchell" class="city-link">Mitchell</a>
-                            <a href="/cities/pierre" class="city-link">Pierre</a>
-                            <a href="/cities/rapid-city" class="city-link">Rapid City</a>
-                            <a href="/cities/sioux-falls" class="city-link">Sioux Falls</a>
-                            <a href="/cities/watertown" class="city-link">Watertown</a>
-                        </div>
-                    </section>
-
-                    <section class="initiatives-section">
-                        <h2>Statewide Initiatives</h2>
-
-                        <p class="help-text">
-                            Know of a mutual aid initiative in South Dakota? 
-                            <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
-                        </p>
-                    </section>
+        <main class="content" role="main">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">States</a>
+                    <span>›</span>
+                    <span>South Dakota</span>
                 </div>
-                <footer class="site-footer">
-                    <p>Awareness into action. Solidarity not charity.</p>
-                </footer>
-            </main>
-        </div>
+
+                <h1>South Dakota</h1>
+                <hr>
+
+                <section>
+                    <h2>Cities</h2>
+                    <div class="cities-list">
+                        <a href="/cities/aberdeen" class="city-link">Aberdeen</a>
+                        <a href="/cities/brookings" class="city-link">Brookings</a>
+                        <a href="/cities/mitchell" class="city-link">Mitchell</a>
+                        <a href="/cities/pierre" class="city-link">Pierre</a>
+                        <a href="/cities/rapid-city" class="city-link">Rapid City</a>
+                        <a href="/cities/sioux-falls" class="city-link">Sioux Falls</a>
+                        <a href="/cities/watertown" class="city-link">Watertown</a>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Statewide Initiatives</h2>
+                    <p class="help-text">Know of a mutual aid initiative in South Dakota? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+                </section>
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
     </div>
 
     <!-- Scripts -->
