@@ -40,7 +40,7 @@ const template = async (city, state) => {
                 <header class="city-header">
                     <h2>${city}, ${state}</h2>
                 </header>
-                <div class="initiatives-list">
+                <div class="initiative">
                     <h3>Local Mutual Aid Initiatives</h3>
                     <p class="help-text">Know of a mutual aid initiative in ${city}? 
                         <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
@@ -85,7 +85,7 @@ async function processHtmlFiles(directory) {
                 // Store existing title and meta tags
                 const title = $('title').text();
                 const metaTags = $('meta').toArray().map(el => $.html(el));
-                const mainContent = $('.initiatives-list').html(); // Preserve main content
+                const mainContent = $('.initiative').html(); // Preserve main content
                 
                 // Replace head content with template while preserving title and meta
                 $('head').html(headTemplate);
@@ -105,7 +105,7 @@ async function processHtmlFiles(directory) {
                 
                 // Restore main content
                 if (mainContent) {
-                    $('.initiatives-list').html(mainContent);
+                    $('.initiative').html(mainContent);
                 }
                 
                 // Add sidebar scripts if missing

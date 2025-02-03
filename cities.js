@@ -142,7 +142,7 @@ function showCityPage(cityName, stateName) {
             <header class="city-header">
                 <h2>${cityName}, ${stateName}</h2>
             </header>
-            <div class="initiatives-list">
+            <div class="initiative">
                 <p class="help-text">Know of a mutual aid initiative in ${cityName}? 
                     <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
