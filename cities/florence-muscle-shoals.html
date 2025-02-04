@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Common head content -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary">
+    <meta name="description" content="Find mutual aid initiatives and community support networks in Florence / Muscle Shoals, Alabama. Connect with local organizations and community resources.">
+    <meta property="og:title" content="Mutual Aid in Florence / Muscle Shoals - Local Support Networks">
+    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Florence / Muscle Shoals, Alabama. Connect with local organizations providing community-based support.">
+    <meta property="og:url" content="https://organize.directory/florence-muscle-shoals">
+    
+    <title>Mutual Aid in Florence / Muscle Shoals - Local Support Networks & Community Resources</title>
+    
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- Google Analytics -->
@@ -18,29 +25,21 @@
         gtag('config', 'G-QJ03RCM35H');
     </script>
     <script src="/theme-init.js"></script>
-    
-    <!-- Meta tags - removed duplicates -->
-    <meta name="description" content="Find mutual aid initiatives and community support networks in Florence / Muscle Shoals, Alabama. Connect with local organizations and community resources.">
-    <meta property="og:title" content="Mutual Aid in Florence / Muscle Shoals - Local Support Networks">
-    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Florence / Muscle Shoals, Alabama. Connect with local organizations providing community-based support.">
-    <meta property="og:url" content="https://organize.directory/florence-muscle-shoals">
-    <title>Mutual Aid in Florence / Muscle Shoals - Local Support Networks & Community Resources</title>
 </head>
 <body>
     <div class="layout">
         <div id="sidebar-container"></div>
 
-        
-        <main class="content" role="main">
+        <main class="content">
             <div class="city-page">
                 <div class="breadcrumb">
                     <a href="/states/alabama">Alabama</a>
                     <span>›</span>
                     <span>Florence/Muscle Shoals</span>
                 </div>
-
-                <h1>Florence / Muscle Shoals, Alabama</h1>
-                <hr>
+                <header class="city-header">
+                    <h2>Florence / Muscle Shoals, Alabama</h2>
+                </header>
 
                 <section>
                     <div class="initiative">
@@ -48,18 +47,13 @@
                         <p>Mental health support & resources for the LGBTQIA+ Shoals community</p>
                     </div>
                 </section>
-        
-                    <p class="help-text">Know of a mutual aid initiative in Florence / Muscle Shoals? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-                </div>
-                <footer class="site-footer">
-                    <p>Awareness into action. Solidarity not charity.</p>
-                </footer>
+
+                <p class="help-text">Know of a mutual aid initiative in Florence / Muscle Shoals? 
+                    <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
         </main>
     </div>
 
-    <!-- Single instance of scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
         const sidebarContainer = document.getElementById('sidebar-container');
