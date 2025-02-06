@@ -35,6 +35,20 @@
         <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content" role="main">
+            <header class="page-header">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            class="search-input" 
+                            placeholder="Search mutual aid resources..."
+                            aria-label="Search mutual aid resources"
+                        >
+                        <div id="searchResults" class="search-results" role="listbox"></div>
+                    </div>
+                </div>
+            </header>
             <div class="city-page">
                 <div class="breadcrumb">
                     <a href="/states/oregon">Oregon</a>
@@ -83,5 +97,11 @@
         document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
+
+    <!-- Initialize Search -->
+    <script type="module">
+        import { initializeSearch } from '/components/search-header.js';
+        initializeSearch();
+    </script>
 </body>
 </html> 

@@ -43,6 +43,20 @@
         <div id="sidebar-container"></div>
 
         <main class="content">
+            <header class="page-header">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            class="search-input" 
+                            placeholder="Search mutual aid resources..."
+                            aria-label="Search mutual aid resources"
+                        >
+                        <div id="searchResults" class="search-results" role="listbox"></div>
+                    </div>
+                </div>
+            </header>
             <h1>Resources for Starting a Mutual Aid Network</h1>
             
             <section class="resource-section">
@@ -134,5 +148,11 @@
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
     </button>
+
+    <!-- Initialize Search -->
+    <script type="module">
+        import { initializeSearch } from '/components/search-header.js';
+        initializeSearch();
+    </script>
 </body>
 </html> 
