@@ -1,48 +1,64 @@
-<!DOCTYPE html><html lang="en"><head><!-- Common head content -->
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="/styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
-<!-- Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
-</script>
-<script src="/theme-init.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid initiatives and community support networks in Long Island, New York. Connect with local organizations and community resources."><meta property="og:title" content="Mutual Aid in Long Island - Local Support Networks"><meta property="og:description" content="Find mutual aid initiatives and community support networks in Long Island, New York. Connect with local organizations providing community-based support."><meta property="og:type" content="website"><meta property="og:url" content="https://organize.directory/long-island"><meta name="twitter:card" content="summary"><title>Mutual Aid in Long Island - Local Support Networks &amp; Community Resources</title></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Common head content -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find mutual aid initiatives and community support networks in Long Island, New York. Connect with local organizations and community resources.">
+    
+    <!-- OpenGraph and Twitter Tags -->
+    <meta property="og:title" content="Mutual Aid in Long Island - Local Support Networks">
+    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Long Island, New York. Connect with local organizations providing community-based support.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/long-island">
+    <meta name="twitter:card" content="summary">
+    
+    <title>Mutual Aid in Long Island - Local Support Networks & Community Resources</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+    <script src="/theme-init.js"></script>
+</head>
 <body>
     <div class="layout">
-        <!-- Sidebar will be inserted here -->
         <div id="sidebar-container"></div>
 
-        <main class="content">
+        <main class="content" role="main">
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
+                    <a href="/states/new-york.html">New York</a>
+                    <span>›</span>
+                    <span>Long Island</span>
                 </div>
-                <header class="city-header">
-                    <h2>Long Island, New York</h2>
-                </header>
-                <div class="initiative">
-                    <ul class="simple-initiatives">
-                        <h3>Food Insecurity</h3>
-                            <li>
-                                <a href="https://communitysolidarity.org/">Community Solidarity</a>
-                                <p>Formerly Long Island Food Not Bombs, food distribution.</p>
-                            </li>
-                    </ul>
 
-                    <p class="help-text">Know of a mutual aid initiative in Long Island? 
-                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+
+                <h1>Long Island, New York</h1>
+                <hr>
+
+                <section>
+                    <div class="initiative">
+                        <a href="https://communitysolidarity.org/">Community Solidarity</a>
+                        <p>Formerly Long Island Food Not Bombs, food distribution.</p>
+                    </div>
+                </section>
+
+
                 </div>
             </div>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
         const sidebarContainer = document.getElementById('sidebar-container');
@@ -50,29 +66,5 @@
         sidebarContainer.replaceWith(sidebar);
     </script>
     <script src="/theme.js" type="module"></script>
-
-
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    
-                        <script type="module">
-                            import { createSidebar } from '/components/sidebar.js';
-                            const sidebarContainer = document.getElementById('sidebar-container');
-                            const sidebar = createSidebar('cities');
-                            sidebarContainer.replaceWith(sidebar);
-                        </script>
-                        <script src="/theme.js" type="module"></script>
-                    </body></html>
+</body>
+</html>
