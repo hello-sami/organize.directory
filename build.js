@@ -2,6 +2,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { citiesByState } from './data.js';
 import * as cheerio from 'cheerio';
+import { promisify } from 'util';
 
 const template = async (city, state) => {
     const citySlug = createSlug(city);
@@ -144,4 +145,71 @@ async function build() {
 build().catch(error => {
     console.error('Build failed:', error);
     process.exit(1);
-}); 
+});
+
+// Get all HTML files recursively
+function getAllHtmlFiles(dir) {
+    let results = [];
+    const list = fs.readdirSync(dir);
+    
+    list.forEach(file => {
+        const filePath = path.join(dir, file);
+        const stat = fs.statSync(filePath);
+        
+        if (stat && stat.isDirectory()) {
+            results = results.concat(getAllHtmlFiles(filePath));
+        } else if (path.extname(file) === '.html') {
+            results.push(filePath);
+        }
+    });
+    
+    return results;
+}
+
+// Add mobile menu script to HTML files
+async function addMobileMenu(filePath) {
+    try {
+        let content = await fs.readFile(filePath, 'utf8');
+        
+        // Check if mobile menu is already added
+        if (content.includes('mobile-menu.js')) {
+            console.log(`Mobile menu already present in ${filePath}`);
+            return;
+        }
+
+        // Add search-index.js and mobile-menu.js before closing head tag
+        content = content.replace(
+            /<\/head>/i,
+            '    <script src="/search-index.js"></script>\n    <script src="/mobile-menu.js"></script>\n</head>'
+        );
+
+        await fs.writeFile(filePath, content, 'utf8');
+        console.log(`Added mobile menu to ${filePath}`);
+    } catch (error) {
+        console.error(`Error processing ${filePath}:`, error);
+    }
+}
+
+// Main function
+async function main() {
+    try {
+        console.log('Starting build process...');
+        
+        // Get all HTML files
+        const htmlFiles = getAllHtmlFiles('.');
+        console.log(`Found ${htmlFiles.length} HTML files`);
+        
+        // Process each file
+        for (const file of htmlFiles) {
+            await addMobileMenu(file);
+        }
+        
+        console.log('Build process completed successfully');
+    } catch (error) {
+        console.error('Build failed:', error);
+        process.exit(1);
+    }
+}
+
+// Run the script
+main(); 
