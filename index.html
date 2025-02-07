@@ -29,35 +29,42 @@
     <div class="layout">
         <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content" role="main">
-            <header class="page-header">
-                <!-- Search Bar -->
-                <div class="search-container">
-                    <div class="search-input-wrapper">
-                        <input 
-                            type="text" 
-                            id="searchInput" 
-                            class="search-input" 
-                            placeholder="Search mutual aid resources..."
-                            aria-label="Search mutual aid resources"
-                        >
-                        <div id="searchResults" class="search-results" role="listbox"></div>
+        <main class="main-content" role="main">
+            <div class="content">
+                <header class="page-header">
+                    <!-- Search Bar -->
+                    <div class="search-container">
+                        <div class="search-input-wrapper">
+                            <input 
+                                type="text" 
+                                id="searchInput" 
+                                class="search-input" 
+                                placeholder="Search mutual aid resources..."
+                                aria-label="Search mutual aid resources"
+                            >
+                            <div id="searchResults" class="search-results" role="listbox"></div>
+                        </div>
                     </div>
-                </div>
 
-                <h1>Want to get organized but don't know where to start?</h1>
-                <p>Community organizing brings people together to create meaningful 
-                    change from the ground up. Through mutual support and collective action, 
-                    we build stronger, more resilient neighborhoods where everyone's needs matter. 
-                    When we organize together, we transform individual challenges into shared solutions.</p>
-            </header>
+                    <h1>Want to get organized but don't know where to start?</h1>
+                    <p>Community organizing brings people together to create meaningful 
+                        change from the ground up. Through mutual support and collective action, 
+                        we build stronger, more resilient neighborhoods where everyone's needs matter. 
+                        When we organize together, we transform individual challenges into shared solutions.</p>
+                </header>
+                <hr>
 
-            <section class="daily-log" aria-labelledby="log-heading">
-                <h2 id="log-heading">Updates and priority needs</h2>
-                <div id="posts-list" class="posts-list">
-                    <!-- Posts will be dynamically loaded here -->
-                </div>
-            </section>
+                <section class="daily-log" aria-labelledby="log-heading">
+                    <h2 id="log-heading">Updates and priority needs</h2>
+                    <div id="posts-list" class="posts-list">
+                        <!-- Posts will be dynamically loaded here -->
+                    </div>
+                </section>
+
+                <footer class="site-footer">
+                    <p>Awareness into action. Solidarity not charity.</p>
+                </footer>
+            </div>
         </main>
     </div>
 
