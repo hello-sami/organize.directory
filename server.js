@@ -93,9 +93,17 @@ app.get('*', (req, res, next) => {
       res.sendFile(path.join(__dirname, `${page}.html`));
       return;
     }
+    
+    // Handle clean state URLs (e.g., /alabama)
+    res.sendFile(path.join(__dirname, 'states', `${page}.html`), err => {
+      if (err) {
+        next();
+      }
+    });
+    return;
   }
 
-  // Handle state pages
+  // Handle state pages with /states/ prefix
   if (segments.length === 2 && segments[0] === 'states') {
     const stateSlug = segments[1];
     res.sendFile(path.join(__dirname, 'states', `${stateSlug}.html`), err => {
