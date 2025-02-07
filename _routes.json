@@ -9,49 +9,43 @@
     },
     {
       "src": "^/location/?$",
-      "dest": "/location.html",
-      "status": 200
+      "dest": "/location.html"
     },
     {
       "src": "^/issues/?$",
-      "dest": "/issues.html",
-      "status": 200
+      "dest": "/issues.html"
     },
     {
       "src": "^/about/?$",
-      "dest": "/about.html",
-      "status": 200
+      "dest": "/about.html"
     },
     {
       "src": "^/resources/?$",
-      "dest": "/resources.html",
-      "status": 200
+      "dest": "/resources.html"
     },
     {
       "src": "^/posts/([^/]+)/?$",
-      "dest": "/posts/$1.html",
-      "status": 200
+      "dest": "/posts/$1.html"
     },
     {
       "src": "^/cities/([^/]+)/?$",
-      "dest": "/cities/$1.html",
-      "status": 200
+      "dest": "/cities/$1.html"
     },
     {
       "src": "^/issues/([^/]+)/?$",
-      "dest": "/issues/$1.html",
-      "status": 200
+      "dest": "/issues/$1.html"
     },
     {
-      "src": "^/([^/.]+)/?$",
+      "src": "^/([^/]+)/?$",
       "dest": "/states/$1.html",
-      "status": 200,
-      "check": true
+      "headers": {
+        "Cache-Control": "public, max-age=3600"
+      }
     },
     {
       "src": ".*",
-      "dest": "/404.html",
-      "status": 404
+      "status": 404,
+      "dest": "/404.html"
     }
   ]
 } 

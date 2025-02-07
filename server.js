@@ -94,46 +94,35 @@ app.get('*', (req, res, next) => {
       return;
     }
     
-    // Handle clean state URLs (e.g., /alabama)
-    res.sendFile(path.join(__dirname, 'states', `${page}.html`), err => {
-      if (err) {
-        next();
-      }
-    });
+    // First try to serve as a state page (states take precedence)
+    const statePath = path.join(__dirname, 'states', `${page}.html`);
+    fs.access(statePath)
+      .then(() => {
+        res.sendFile(statePath);
+      })
+      .catch(() => {
+        // If not a state, try to serve as a city page
+        const cityPath = path.join(__dirname, 'cities', `${page}.html`);
+        res.sendFile(cityPath, err => {
+          if (err) {
+            next();
+          }
+        });
+      });
     return;
   }
 
-  // Handle state pages with /states/ prefix
-  if (segments.length === 2 && segments[0] === 'states') {
-    const stateSlug = segments[1];
-    res.sendFile(path.join(__dirname, 'states', `${stateSlug}.html`), err => {
-      if (err) {
-        next();
-      }
-    });
-    return;
-  }
-
-  // Handle city pages
-  if (segments.length === 2 && segments[0] === 'cities') {
-    const citySlug = segments[1];
-    res.sendFile(path.join(__dirname, 'cities', `${citySlug}.html`), err => {
-      if (err) {
-        next();
-      }
-    });
-    return;
-  }
-
-  // Handle issue pages
-  if (segments.length === 2 && segments[0] === 'issues') {
-    const issueSlug = segments[1];
-    res.sendFile(path.join(__dirname, 'issues', `${issueSlug}.html`), err => {
-      if (err) {
-        next();
-      }
-    });
-    return;
+  // Handle pages with directory prefixes for backward compatibility
+  if (segments.length === 2) {
+    const [dir, slug] = segments;
+    if (['states', 'cities', 'issues'].includes(dir)) {
+      res.sendFile(path.join(__dirname, dir, `${slug}.html`), err => {
+        if (err) {
+          next();
+        }
+      });
+      return;
+    }
   }
 
   // If no matches, try next middleware

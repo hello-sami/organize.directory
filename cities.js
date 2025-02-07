@@ -176,11 +176,14 @@ function showAllCities() {
             <div class="state-section">
                 <h2>${state}</h2>
                 <div class="cities-grid">
-                    ${cities.map(city => `
-                        <div class="city-link">
-                            <a href="/cities/${getCitySlug(city, state)}">${city}</a>
-                        </div>
-                    `).join('')}
+                    ${cities.map(city => {
+                        const citySlug = getCitySlug(city, state);
+                        return `
+                            <div class="city-link">
+                                <a href="/${citySlug}">${city}</a>
+                            </div>
+                        `;
+                    }).join('')}
                 </div>
             </div>
         `;
@@ -229,7 +232,7 @@ function searchCities(query) {
                 const citySlug = getCitySlug(city, state);
                 results.push({
                     name: `${city}, ${state}`,
-                    url: `/cities/${citySlug}.html`,
+                    url: `/${citySlug}`,
                     type: 'city'
                 });
             }
