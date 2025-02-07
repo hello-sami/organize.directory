@@ -161,7 +161,7 @@ function showAllCities() {
                     const stateSlug = state.toLowerCase().replace(/\s+/g, '-');
                     return `
                         <div class="city-link">
-                            <a href="/states/${stateSlug}">${state}</a>
+                            <a href="/${stateSlug}">${state}</a>
                         </div>
                     `;
                 }).join('')}
@@ -216,7 +216,7 @@ function searchCities(query) {
             const stateSlug = state.toLowerCase().replace(/\s+/g, '-');
             results.push({
                 name: state,
-                url: `/states/${stateSlug}`,
+                url: `/${stateSlug}`,
                 type: 'state'
             });
         }
