@@ -5,73 +5,11 @@
   "routes": [
     {
       "src": "^/$",
-      "dest": "/index.html",
-      "headers": {
-        "Cache-Control": "public, max-age=0, must-revalidate",
-        "Content-Type": "text/html; charset=utf-8"
-      }
-    },
-    {
-      "src": "^/location/?$",
-      "dest": "/location.html",
-      "headers": {
-        "Content-Type": "text/html; charset=utf-8"
-      }
-    },
-    {
-      "src": "^/issues/?$",
-      "dest": "/issues.html",
-      "headers": {
-        "Content-Type": "text/html; charset=utf-8"
-      }
-    },
-    {
-      "src": "^/about/?$",
-      "dest": "/about.html",
-      "headers": {
-        "Content-Type": "text/html; charset=utf-8"
-      }
-    },
-    {
-      "src": "^/resources/?$",
-      "dest": "/resources.html",
-      "headers": {
-        "Content-Type": "text/html; charset=utf-8"
-      }
-    },
-    {
-      "src": "^/posts/([^/]+)/?$",
-      "dest": "/posts/$1.html",
-      "headers": {
-        "Content-Type": "text/html; charset=utf-8"
-      }
-    },
-    {
-      "src": "^/cities/([^/]+)/?$",
-      "dest": "/cities/$1.html",
-      "headers": {
-        "Content-Type": "text/html; charset=utf-8"
-      }
-    },
-    {
-      "src": "^/issues/([^/]+)/?$",
-      "dest": "/issues/$1.html",
-      "headers": {
-        "Content-Type": "text/html; charset=utf-8"
-      }
+      "dest": "/index.html"
     },
     {
       "src": "^/([^/]+)/?$",
-      "dest": "/states/$1.html",
-      "headers": {
-        "Cache-Control": "public, max-age=3600",
-        "Content-Type": "text/html; charset=utf-8"
-      }
-    },
-    {
-      "src": ".*",
-      "status": 404,
-      "dest": "/404.html"
+      "dest": "/states/$1.html"
     }
   ]
 } 
