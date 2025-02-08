@@ -5,7 +5,10 @@
   "routes": [
     {
       "src": "^/$",
-      "dest": "/index.html"
+      "dest": "/index.html",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate"
+      }
     },
     {
       "src": "^/location/?$",
@@ -39,7 +42,8 @@
       "src": "^/([^/]+)/?$",
       "dest": "/states/$1.html",
       "headers": {
-        "Cache-Control": "public, max-age=3600"
+        "Cache-Control": "public, max-age=3600",
+        "Content-Type": "text/html"
       }
     },
     {
