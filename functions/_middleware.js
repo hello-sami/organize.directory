@@ -1,64 +1,45 @@
 export async function onRequest({ request, next }) {
   const url = new URL(request.url);
-  
-  // Handle static assets directly
-  if (url.pathname.endsWith('.css') || url.pathname.endsWith('.js')) {
+  const path = url.pathname;
+
+  // Handle root path
+  if (path === '/') {
     return next();
   }
 
-  // Handle main pages
-  if (url.pathname === '/cities') {
-    url.pathname = '/cities.html';
-    return next();
-  }
-  if (url.pathname === '/issues') {
-    url.pathname = '/issues.html';
-    return next();
-  }
-  if (url.pathname === '/about') {
-    url.pathname = '/about.html';
-    return next();
+  // Handle static pages
+  const staticPages = ['about', 'location', 'issues', 'resources'];
+  if (staticPages.includes(path.slice(1))) {
+    const response = await fetch(new URL(path + '.html', url.origin));
+    return new Response(response.body, response);
   }
 
-  // List of known issue slugs
-  const issuesSlugs = [
-    'housing-rights',
-    'food-security',
-    'healthcare',
-    'environmental-justice',
-    'workers-rights'
+  // Handle dynamic routes (posts, cities)
+  if (path.startsWith('/posts/') || path.startsWith('/cities/')) {
+    const response = await fetch(new URL(path + '.html', url.origin));
+    return new Response(response.body, response);
+  }
+
+  // Handle state pages (clean URLs)
+  const stateNames = [
+    'alabama', 'alaska', 'arizona', 'arkansas', 'california', 'colorado',
+    'connecticut', 'delaware', 'florida', 'georgia', 'hawaii', 'idaho',
+    'illinois', 'indiana', 'iowa', 'kansas', 'kentucky', 'louisiana',
+    'maine', 'maryland', 'massachusetts', 'michigan', 'minnesota',
+    'mississippi', 'missouri', 'montana', 'nebraska', 'nevada',
+    'new-hampshire', 'new-jersey', 'new-mexico', 'new-york',
+    'north-carolina', 'north-dakota', 'ohio', 'oklahoma', 'oregon',
+    'pennsylvania', 'rhode-island', 'south-carolina', 'south-dakota',
+    'tennessee', 'texas', 'utah', 'vermont', 'virginia', 'washington',
+    'west-virginia', 'wisconsin', 'wyoming'
   ];
 
-  // Handle clean URLs
-  const slug = url.pathname.slice(1); // Remove leading slash
-  if (slug && !slug.includes('/') && !slug.endsWith('.html')) {
-    // Check if it's an issue page first
-    if (issuesSlugs.includes(slug)) {
-      const issueResponse = await fetch(new URL(`/issues/${slug}.html`, url.origin));
-      if (issueResponse.ok) {
-        return issueResponse;
-      }
-    }
-    
-    // If not an issue, try city page
-    const cityResponse = await fetch(new URL(`/cities/${slug}.html`, url.origin));
-    if (cityResponse.ok) {
-      return cityResponse;
-    }
+  const statePath = path.slice(1); // Remove leading slash
+  if (stateNames.includes(statePath)) {
+    const response = await fetch(new URL(`/states/${statePath}.html`, url.origin));
+    return new Response(response.body, response);
   }
 
-  // Handle direct access to HTML files in subdirectories
-  if ((url.pathname.startsWith('/cities/') || url.pathname.startsWith('/issues/')) && 
-      url.pathname.endsWith('.html')) {
-    return next();
-  }
-
-  // Handle root
-  if (url.pathname === '/') {
-    url.pathname = '/index.html';
-    return next();
-  }
-
-  // Pass through all other requests
+  // If no matches, continue to next middleware/static file handling
   return next();
 } 
