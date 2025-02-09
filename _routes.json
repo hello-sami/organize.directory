@@ -32,9 +32,13 @@
       "dest": "/cities/$1.html"
     },
     {
+      "src": "^/states/([^/]+)/?$",
+      "dest": "/states/$1.html"
+    },
+    {
       "src": "^/([^/]+)/?$",
       "dest": "/states/$1.html",
-      "override": true
+      "status": 200
     }
   ]
 } 
