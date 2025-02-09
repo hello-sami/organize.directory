@@ -5,20 +5,36 @@
   "routes": [
     {
       "src": "^/$",
-      "dest": "/index.html",
-      "headers": {
-        "X-Content-Type-Options": "nosniff",
-        "Content-Type": "text/html; charset=utf-8"
-      }
+      "dest": "/index.html"
+    },
+    {
+      "src": "^/about/?$",
+      "dest": "/about.html"
+    },
+    {
+      "src": "^/location/?$",
+      "dest": "/location.html"
+    },
+    {
+      "src": "^/issues/?$",
+      "dest": "/issues.html"
+    },
+    {
+      "src": "^/resources/?$",
+      "dest": "/resources.html"
+    },
+    {
+      "src": "^/posts/([^/]+)/?$",
+      "dest": "/posts/$1.html"
+    },
+    {
+      "src": "^/cities/([^/]+)/?$",
+      "dest": "/cities/$1.html"
     },
     {
       "src": "^/([^/]+)/?$",
       "dest": "/states/$1.html",
-      "headers": {
-        "X-Content-Type-Options": "nosniff",
-        "Content-Type": "text/html; charset=utf-8",
-        "Cache-Control": "no-transform"
-      }
+      "override": true
     }
   ]
 } 
