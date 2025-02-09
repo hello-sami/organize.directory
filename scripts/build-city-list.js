@@ -46,7 +46,7 @@ async function buildCityList() {
   // Handle city pages with clean URLs
   const cityPath = path.slice(1); // Remove leading slash
   if (cityNames.includes(cityPath)) {
-    const response = await fetch(new URL(\`/cities/\${cityPath}.html\`, url.origin));
+    const response = await fetch(new URL(\`/\${cityPath}.html\`, url.origin));
     if (!response.ok) return next();
     return new Response(response.body, response);
   }
@@ -67,7 +67,7 @@ async function buildCityList() {
 
   const statePath = path.slice(1);
   if (stateNames.includes(statePath)) {
-    const response = await fetch(new URL(\`/states/\${statePath}.html\`, url.origin));
+    const response = await fetch(new URL(\`/\${statePath}.html\`, url.origin));
     if (!response.ok) return next();
     return new Response(response.body, response);
   }
