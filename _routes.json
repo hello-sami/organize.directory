@@ -5,11 +5,17 @@
   "routes": [
     {
       "src": "^/$",
-      "dest": "/index.html"
+      "dest": "/index.html",
+      "headers": {
+        "X-Content-Type-Options": "nosniff"
+      }
     },
     {
       "src": "^/([^/]+)/?$",
-      "dest": "/states/$1.html"
+      "dest": "/states/$1.html",
+      "headers": {
+        "X-Content-Type-Options": "nosniff"
+      }
     }
   ]
 } 
