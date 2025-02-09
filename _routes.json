@@ -7,14 +7,17 @@
       "src": "^/$",
       "dest": "/index.html",
       "headers": {
-        "X-Content-Type-Options": "nosniff"
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "text/html; charset=utf-8"
       }
     },
     {
       "src": "^/([^/]+)/?$",
       "dest": "/states/$1.html",
       "headers": {
-        "X-Content-Type-Options": "nosniff"
+        "X-Content-Type-Options": "nosniff",
+        "Content-Type": "text/html; charset=utf-8",
+        "Cache-Control": "no-transform"
       }
     }
   ]
