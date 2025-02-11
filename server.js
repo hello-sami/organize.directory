@@ -11,8 +11,22 @@ const md = new MarkdownIt();
 
 const app = express();
 
-// Serve static files
-app.use(express.static('.'));
+// Configure proper MIME types
+express.static.mime.define({
+  'text/css': ['css'],
+  'application/javascript': ['js', 'mjs'],
+  'text/javascript': ['js', 'mjs']
+});
+
+// Serve static files with proper MIME types
+app.use(express.static('.', {
+  setHeaders: (res, path) => {
+    // Set proper Content-Type for JavaScript modules
+    if (path.endsWith('.js') && res.get('Content-Type')?.includes('javascript')) {
+      res.set('Content-Type', 'application/javascript; charset=utf-8');
+    }
+  }
+}));
 
 // Handle blog posts
 app.get('/posts/:slug.html', async (req, res, next) => {
