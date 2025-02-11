@@ -2,26 +2,63 @@ export async function onRequest({ request, next }) {
   const url = new URL(request.url);
   const path = url.pathname;
 
+  // Define MIME types
+  const mimeTypes = {
+    '.html': 'text/html',
+    '.css': 'text/css',
+    '.js': 'application/javascript',
+    '.mjs': 'application/javascript',
+    '.json': 'application/json',
+    '.png': 'image/png',
+    '.jpg': 'image/jpeg',
+    '.jpeg': 'image/jpeg',
+    '.gif': 'image/gif',
+    '.svg': 'image/svg+xml',
+    '.ico': 'image/x-icon'
+  };
+
+  // Function to get MIME type from file extension
+  const getMimeType = (path) => {
+    const ext = path.substring(path.lastIndexOf('.'));
+    return mimeTypes[ext] || 'text/plain';
+  };
+
+  // Function to create response with proper MIME type
+  const createResponse = async (url, originalResponse) => {
+    if (!originalResponse.ok) return next();
+    const headers = new Headers(originalResponse.headers);
+    headers.set('Content-Type', getMimeType(url.pathname));
+    return new Response(originalResponse.body, {
+      status: originalResponse.status,
+      headers
+    });
+  };
+
   // Handle root path
   if (path === '/') {
     const response = await fetch(new URL('/index.html', url.origin));
-    if (!response.ok) return next();
-    return new Response(response.body, response);
+    return createResponse(new URL('/index.html', url.origin), response);
+  }
+
+  // Handle static files directly
+  if (path.includes('.')) {
+    const response = await fetch(url);
+    return createResponse(url, response);
   }
 
   // Handle static pages
   const staticPages = ['about', 'location', 'issues', 'resources', 'contact'];
   if (staticPages.includes(path.slice(1))) {
-    const response = await fetch(new URL(`${path}.html`, url.origin));
-    if (!response.ok) return next();
-    return new Response(response.body, response);
+    const newUrl = new URL(`${path}.html`, url.origin);
+    const response = await fetch(newUrl);
+    return createResponse(newUrl, response);
   }
 
   // Handle posts with clean URLs
   if (path.startsWith('/posts/')) {
-    const response = await fetch(new URL(`${path}.html`, url.origin));
-    if (!response.ok) return next();
-    return new Response(response.body, response);
+    const newUrl = new URL(`${path}.html`, url.origin);
+    const response = await fetch(newUrl);
+    return createResponse(newUrl, response);
   }
 
   // List of cities (auto-generated)
@@ -605,9 +642,9 @@ export async function onRequest({ request, next }) {
   // Handle city pages with clean URLs
   const cityPath = path.slice(1); // Remove leading slash
   if (cityNames.includes(cityPath)) {
-    const response = await fetch(new URL(`/cities/${cityPath}.html`, url.origin));
-    if (!response.ok) return next();
-    return new Response(response.body, response);
+    const newUrl = new URL(`/cities/${cityPath}.html`, url.origin);
+    const response = await fetch(newUrl);
+    return createResponse(newUrl, response);
   }
 
   // Handle state pages with clean URLs
@@ -626,9 +663,9 @@ export async function onRequest({ request, next }) {
 
   const statePath = path.slice(1);
   if (stateNames.includes(statePath)) {
-    const response = await fetch(new URL(`/states/${statePath}.html`, url.origin));
-    if (!response.ok) return next();
-    return new Response(response.body, response);
+    const newUrl = new URL(`/states/${statePath}.html`, url.origin);
+    const response = await fetch(newUrl);
+    return createResponse(newUrl, response);
   }
 
   // If no matches, continue to next middleware/static file handling
