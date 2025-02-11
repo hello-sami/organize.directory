@@ -10,7 +10,7 @@ export async function onRequest({ request, next }) {
   }
 
   // Handle static pages
-  const staticPages = ['about', 'location', 'issues', 'resources'];
+  const staticPages = ['about', 'location', 'issues', 'resources', 'contact'];
   if (staticPages.includes(path.slice(1))) {
     const response = await fetch(new URL(`${path}.html`, url.origin));
     if (!response.ok) return next();
@@ -40,7 +40,7 @@ export async function onRequest({ request, next }) {
   "anchorage",
   "ann-arbor",
   "annapolis",
-  "appleton-oshkosh-fdl",
+  "fox-cities",
   "arcata",
   "arlington-ma",
   "asbury-park",
@@ -52,6 +52,7 @@ export async function onRequest({ request, next }) {
   "auburn",
   "augusta",
   "aurora",
+  "aurora-il",
   "austin",
   "bakersfield",
   "baltimore",
@@ -96,6 +97,7 @@ export async function onRequest({ request, next }) {
   "central-louisiana",
   "central-michigan",
   "central-nj",
+  "central-valley",
   "champaign-urbana",
   "charleston",
   "charlotte",
@@ -420,6 +422,8 @@ export async function onRequest({ request, next }) {
   "rapid-city-west-sd",
   "reading",
   "redding",
+  "redlands",
+  "redmond",
   "reno-tahoe",
   "richmond",
   "richmond-in",
@@ -501,6 +505,7 @@ export async function onRequest({ request, next }) {
   "southern-illinois",
   "southern-maryland",
   "southern-wv",
+  "southern-oregon",
   "southwest-alaska",
   "southwest-ks",
   "southwest-michigan",

@@ -11,6 +11,7 @@ export function createSidebar(activePage) {
             <a href="/issues" class="nav-link ${activePage === 'issues' ? 'active' : ''}">Issues</a>
             <a href="/resources" class="nav-link ${activePage === 'resources' ? 'active' : ''}">Resources</a>
             <a href="/about" class="nav-link ${activePage === 'about' ? 'active' : ''}">About</a>
+            <a href="/contact" class="nav-link ${activePage === 'contact' ? 'active' : ''}">Contact</a>
         </nav>
     `;
     
