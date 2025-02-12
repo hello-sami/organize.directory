@@ -367,7 +367,6 @@ const styles = `
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px var(--primary-color-alpha);
     outline: none;
-    border-radius: 8px 8px 0 0;
 }
 
 .search-shortcut-hint {
@@ -392,15 +391,14 @@ const styles = `
 
 .search-results {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 4px);
     left: 0;
     right: 0;
     max-height: 400px;
     overflow-y: auto;
     background: var(--bg-color);
     border: 2px solid var(--primary-color);
-    border-top: none;
-    border-radius: 0 0 8px 8px;
+    border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     display: none;

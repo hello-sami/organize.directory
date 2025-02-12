@@ -324,6 +324,7 @@ export async function onRequest({ request, next }) {
   "lincoln",
   "little-rock",
   "logan",
+  "longmont",
   "long-beach",
   "long-island",
   "los-angeles",
