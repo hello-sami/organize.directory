@@ -51,6 +51,10 @@ export async function onRequest({ request, next }) {
   if (staticPages.includes(path.slice(1))) {
     const newUrl = new URL(`${path}.html`, url.origin);
     const response = await fetch(newUrl);
+    if (!response.ok) {
+      console.error(`Failed to fetch ${newUrl.toString()}`);
+      return next();
+    }
     return createResponse(newUrl, response);
   }
 
