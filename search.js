@@ -15,16 +15,45 @@ export class Search {
         this.isOpen = false;
         this.selectedIndex = -1;
         this.results = [];
+        this.searchIndex = null;
         
         this.init();
     }
 
+    async loadSearchIndex() {
+        if (this.searchIndex) return;
+        
+        try {
+            // Show loading state
+            this.searchInput.classList.add('loading');
+            
+            // Dynamically import the search index
+            const module = await import('./search-index.js');
+            this.searchIndex = module.default;
+            
+            // Remove loading state
+            this.searchInput.classList.remove('loading');
+        } catch (error) {
+            console.error('Failed to load search index:', error);
+            this.searchInput.classList.remove('loading');
+        }
+    }
+
     init() {
+        // Load search index on focus
+        this.searchInput.addEventListener('focus', () => {
+            this.loadSearchIndex();
+        });
+
         // Initialize search input listeners
-        this.searchInput.addEventListener('input', this.debounce(() => {
+        this.searchInput.addEventListener('input', this.debounce(async () => {
             const query = this.searchInput.value.trim();
             if (query) {
-                this.performSearch(query);
+                // Ensure search index is loaded
+                await this.loadSearchIndex();
+                if (this.searchIndex) {
+                    this.performSearch(query);
+                }
             } else {
                 this.closeResults();
             }
@@ -48,7 +77,6 @@ export class Search {
                 case 'Escape':
                     e.preventDefault();
                     this.closeResults();
-                    this.searchInput.blur();
                     break;
             }
         });

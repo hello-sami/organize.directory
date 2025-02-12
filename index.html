@@ -7,20 +7,21 @@
     <meta name="theme-color" content="#ffffff">
     <title>Mutual Aid Network Directory</title>
     
+    <!-- Resource Hints -->
+    <link rel="preload" href="/styles.css" as="style">
+    
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     
-    <!-- Initialize theme before rendering -->
+    <!-- Critical Scripts -->
     <script src="/theme-init.js"></script>
-    <script src="/search-index.js"></script>
-    <script src="/mobile-menu.js"></script>
-    <script src="/theme.js" type="module"></script>
     
-    <!-- Search Index -->
-    <script src="/search-index.js"></script>
+    <!-- Deferred Scripts -->
+    <script src="/mobile-menu.js" defer></script>
+    <script src="/theme.js" type="module" defer></script>
     
     <!-- Analytics -->
     <script async src="/js/analytics.js"></script>

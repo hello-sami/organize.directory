@@ -4,16 +4,30 @@
   Referrer-Policy: no-referrer-when-downgrade
   Content-Security-Policy: script-src 'self' 'unsafe-inline' https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://*.google-analytics.com https://*.googletagmanager.com data:; default-src 'self';
   Strict-Transport-Security: max-age=31536000; includeSubDomains
-  Cache-Control: public, max-age=0, must-revalidate
 
 /*.css
   Content-Type: text/css; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Encoding: gzip
+  Vary: Accept-Encoding
 
 /*.js
   Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Encoding: gzip
+  Vary: Accept-Encoding
 
 /*.html
   Content-Type: text/html; charset=utf-8
+  Cache-Control: public, max-age=0, must-revalidate
+  Content-Encoding: gzip
+  Vary: Accept-Encoding
+
+/search-index.js
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=3600
+  Content-Encoding: br
+  Vary: Accept-Encoding
 
 /components/sidebar.js
   Content-Type: application/javascript; charset=utf-8
