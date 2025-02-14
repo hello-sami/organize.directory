@@ -524,6 +524,7 @@ export async function onRequest({ request, next }) {
   "shreveport",
   "sierra",
   "sierra-vista",
+  "silver-spring",
   "sioux-city",
   "sioux-falls",
   "sioux-falls-se-sd",
