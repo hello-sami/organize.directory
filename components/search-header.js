@@ -1,3 +1,19 @@
+// Create and initialize the search header component
+export function initSearchBar(containerId = 'searchContainer') {
+    const header = createSearchHeader();
+    
+    // Insert the header into the specified container
+    const container = document.getElementById(containerId);
+    if (!container) {
+        console.error(`Container with id "${containerId}" not found`);
+        return;
+    }
+    container.appendChild(header);
+    
+    // Initialize the search functionality
+    initializeSearch();
+}
+
 // Create and return the search header component
 export function createSearchHeader() {
     const header = document.createElement('header');

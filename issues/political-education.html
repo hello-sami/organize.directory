@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oahu Mutual Aid Networks - Local Support & Community Resources</title>
-    <meta name="description" content="Find mutual aid initiatives and community support networks in Oahu, Hawaii. Connect with local organizations and community resources.">
+    <title>Political Education Networks - Mutual Aid Directory</title>
+    <meta name="description" content="Find politcal education initiatives focused on radical leftist issues.">
     
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/styles/city.css">
+    <link rel="stylesheet" href="/styles/issues.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
-    
 </head>
 <body>
     <div class="layout">
@@ -45,40 +35,34 @@
                     </div>
                 </div>
             </header>
-
-            <div class="city-page">
+            <div class="issues-page">
                 <div class="breadcrumb">
-                    <a href="/hawaii">Hawaii</a>
+                    <a href="/issues">Issues</a>
                     <span>›</span>
-                    <span>Oahu</span>
+                    <span>Political Education</span>
                 </div>
 
-                <h1>Oahu</h1>
+                <h1>Political Education</h1>
                 <hr>
 
                 <section>
+                    
                     <div class="initiative">
-                        <a href="https://www.facebook.com/FoodNotBombsOahu/">Food Not Bombs O'ahu</a>
-                        <p></p>
+                        <a href="https://www.radicalinprogress.org/">Radical in Progress</a>
+                        <p>Your one-stop-shop for social justice study guides.</p>
                     </div>
-                    <div class="initiative">
-                        <a href="https://oahuwaterprotectors.org/">Oʻahu Water Protectors</a>
-                        <p>an organization fighting for safe, clean water.</p>
-                    </div>
+   
                 </section>
 
             </div>
-            <footer class="site-footer">
-                <p>Awareness into action. Solidarity not charity.</p>
-            </footer>
         </main>
-        
     </div>
 
-    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('locations'));
+        const sidebarContainer = document.getElementById('sidebar');
+        const sidebar = createSidebar('issues');
+        sidebarContainer.replaceWith(sidebar);
     </script>
     <script src="/theme.js" type="module"></script>
 
@@ -88,4 +72,4 @@
         initializeSearch();
     </script>
 </body>
-</html>
+</html> 

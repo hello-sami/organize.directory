@@ -3,37 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Find mutual aid initiatives and community support networks in Eastern Kentucky, Kentucky. Connect with local organizations and community resources.">
-    
-    <!-- Open Graph / Twitter Cards -->
+    <title>Plymouth Mutual Aid - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid networks and community support initiatives in Plymouth, Massachusetts - America's Hometown.">
+    <meta property="og:title" content="Plymouth Mutual Aid - Local Support Networks & Community Resources">
+    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Plymouth, Massachusetts - America's Hometown.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Mutual Aid in Eastern Kentucky - Local Support Networks">
-    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Eastern Kentucky, Kentucky. Connect with local organizations providing community-based support.">
-    <meta property="og:url" content="https://organize.directory/eastern-kentucky">
+    <meta property="og:url" content="https://organize.directory/plymouth">
     <meta name="twitter:card" content="summary">
-    
-    <title>Mutual Aid in Eastern Kentucky - Local Support Networks & Community Resources</title>
     
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/styles/city.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
+    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
 </head>
 <body>
     <div class="layout">
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content" role="main">
             <header class="page-header">
@@ -52,31 +42,34 @@
             </header>
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/kentucky">Kentucky</a>
+                    <a href="/location">States</a>
                     <span>›</span>
-                    <span>Eastern Kentucky</span>
+                    <a href="/massachusetts">Massachusetts</a>
+                    <span>›</span>
+                    <span>Plymouth</span>
                 </div>
 
-                <h1>Eastern Kentucky</h1>
+                <h1>Plymouth</h1>
                 <hr>
-                
+
                 <section>
                     <div class="initiative">
-                        <a href="https://www.instagram.com/hillbillieshelpinghillbillies/">Hillbillies Helping Hillbillies</a>
-                        <p>an Appalachian community coming together to care for itself. we’re all we’ve got!</p>
+                        <a href="https://www.instagram.com/plymouth.anarchist.collective/">Plymouth Anarchist Collective</a>
+                        <p>Anarchist group holding workshops and mutual aid drives.</p>
                     </div>
                 </section>
 
             </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
         </main>
     </div>
 
     <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 
@@ -86,4 +79,4 @@
         initializeSearch();
     </script>
 </body>
-</html>
+</html> 

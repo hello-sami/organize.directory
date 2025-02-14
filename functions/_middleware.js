@@ -248,8 +248,6 @@ export async function onRequest({ request, next }) {
   "harrisonburg",
   "hartford",
   "hattiesburg",
-  "hawaii-island",
-  "heartland-florida",
   "helena",
   "hickory-lenoir",
   "high-rockies",
@@ -642,7 +640,10 @@ export async function onRequest({ request, next }) {
   "yuba-county",
   "yuba-sutter",
   "yuma",
-  "zanesville-cambridge"
+  "zanesville-cambridge",
+  "plymouth",
+  "pocatello",
+  "port-angeles"
 ];
 
   // Handle city pages with clean URLs
