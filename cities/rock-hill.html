@@ -3,34 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Aid in Rock Hill - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid initiatives and community support networks in Rock Hill, South Carolina. Connect with local organizations providing community-based support.">
+    <meta property="og:title" content="Mutual Aid in Rock Hill - Local Support Networks">
+    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Rock Hill, South Carolina. Connect with local organizations providing community-based support.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/rock-hill">
     <meta name="twitter:card" content="summary">
-    <meta name="description" content="Find mutual aid initiatives and community support networks in Brunswick, Georgia. Connect with local organizations and community resources.">
-    <meta property="og:title" content="Mutual Aid in Brunswick - Local Support Networks">
-    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Brunswick, Georgia. Connect with local organizations providing community-based support.">
-    <meta property="og:url" content="https://organize.directory/brunswick">
     
-    <title>Mutual Aid in Brunswick - Local Support Networks & Community Resources</title>
-    
+    <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/styles/city.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
+    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
 </head>
 <body>
     <div class="layout">
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content" role="main">
             <header class="page-header">
@@ -49,30 +42,32 @@
             </header>
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/georgia">Georgia</a>
+                    <a href="/south-carolina">South Carolina</a>
                     <span>›</span>
-                    <span>Brunswick</span>
+                    <span>Rock Hill</span>
                 </div>
 
-                <header class="city-header">
-                    <h1>Brunswick, Georgia</h1>
-                </header>
-                
-                <div class="initiative">
-                </div>
+                <h1>Rock Hill</h1>
+                <hr>
+
+                <section>
+                    <div class="initiative">
+                        <a href="https://cdmercantile.com/giving-back/the-rock-hill-community-fridge/">The Rock Hill Community Fridge at The Mercantile</a>
+                        <p>The Rock Hill Community Fridge is a fridge full of free food for our community</p>
+                    </div>
+                </section>
+
             </div>
-            
             <footer class="site-footer">
                 <p>Awareness into action. Solidarity not charity.</p>
             </footer>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 
@@ -82,4 +77,4 @@
         initializeSearch();
     </script>
 </body>
-</html>
+</html> 

@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary">
-    <meta name="description" content="Find mutual aid initiatives and community support networks in Cape Cod / Islands, Massachusetts. Connect with local organizations and community resources.">
-    <meta property="og:title" content="Mutual Aid in Cape Cod / Islands - Local Support Networks">
-    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Cape Cod / Islands, Massachusetts. Connect with local organizations providing community-based support.">
-    <meta property="og:url" content="https://organize.directory/cape-cod-islands">
-    
-    <title>Mutual Aid in Cape Cod / Islands - Local Support Networks & Community Resources</title>
-    
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/styles/city.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
@@ -24,13 +9,30 @@
         gtag('js', new Date());
         gtag('config', 'G-QJ03RCM35H');
     </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Aid in Kitsap County - Local Support Networks & Community Resources</title>
+    <meta name="description" content="Find mutual aid initiatives and community support networks in Kitsap County, Washington, including Bremerton, Port Orchard, Poulsbo, Bainbridge Island, and surrounding communities.">
+    <meta property="og:title" content="Mutual Aid in Kitsap County - Local Support Networks">
+    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Kitsap County, Washington, including Bremerton, Port Orchard, Poulsbo, Bainbridge Island, and surrounding communities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/kitsap-county">
+    <meta name="twitter:card" content="summary">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/city.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
 </head>
 <body>
     <div class="layout">
-        <div id="sidebar-container"></div>
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content" role="main">
             <header class="page-header">
@@ -49,34 +51,32 @@
             </header>
             <div class="city-page">
                 <div class="breadcrumb">
-                    <a href="/massachusetts">Massachusetts</a>
+                    <a href="/washington">Washington</a>
                     <span>›</span>
-                    <span>Cape Cod / Islands</span>
+                    <span>Kitsap County</span>
                 </div>
 
-                <h1>Cape Cod / Islands, Massachusetts</h1>
+                <h1>Kitsap County</h1>
                 <hr>
-                
+
                 <section>
                     <div class="initiative">
-                        <a href="https://foodnotbombscc.mmm.page/">Food Not Bombs Cape Cod</a>
-                        <p>Join us for free vegan meals, community, mutual aid, and direct action on Cape Cod.</p>
+                        <a href="https://www.instagram.com/peoples_exchange/">The People's Exchange</a>
+                        <p>PEX is a small community space in West #Bremerton to gather, play, work and resource share.</p>
                     </div>
                 </section>
-                
+
             </div>
-            
             <footer class="site-footer">
                 <p>Awareness into action. Solidarity not charity.</p>
             </footer>
         </main>
     </div>
 
+    <!-- Scripts -->
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
     <script src="/theme.js" type="module"></script>
 
@@ -86,4 +86,4 @@
         initializeSearch();
     </script>
 </body>
-</html>
+</html> 
