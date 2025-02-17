@@ -35,11 +35,11 @@
         }
     </style>
     
-    <!-- Preload critical fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    </noscript>
+    <!-- Preload fonts -->
+    <link rel="preload" href="/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter-semibold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/fonts.css" as="style">
+    <link rel="stylesheet" href="/fonts/fonts.css">
     
     <!-- Defer non-critical CSS -->
     <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
