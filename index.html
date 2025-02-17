@@ -11,7 +11,7 @@
     <!-- Preload critical assets -->
     <link rel="preload" href="/fonts/inter-regular.woff2" as="font" crossorigin>
     <link rel="preload" href="/fonts/inter-semibold.woff2" as="font" crossorigin>
-    <link rel="preload" href="/components/sidebar.js" as="script" crossorigin>
+    <link rel="preload" href="/components/sidebar.js" as="script" crossorigin="use-credentials">
     <link rel="preconnect" href="https://organize.directory">
     
     <!-- Critical CSS -->
@@ -105,9 +105,11 @@
     </div>
 
     <!-- Core Scripts -->
-    <script type="module">
+    <script type="module" crossorigin="use-credentials">
         import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('home'));
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('sidebar').replaceWith(createSidebar('home'));
+        });
     </script>
     <script src="/script.js" type="module"></script>
     <script src="/js/posts.js" type="module"></script>

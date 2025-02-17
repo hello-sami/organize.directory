@@ -7,63 +7,45 @@ const Analytics = {
 
     init() {
         if (this.initialized) return;
-        
-        // Only initialize when user interacts or after 3 seconds
-        const initAnalytics = () => {
-            if (this.initialized) return;
-            this.initialized = true;
-            this.setupAnalytics()
-                .then(() => this.processQueue())
-                .catch(error => {
-                    console.error('Failed to initialize analytics:', error);
-                    this.initialized = false;
-                    // Retry initialization after timeout
-                    setTimeout(() => this.init(), this.retryTimeout);
-                });
-        };
-
-        // Initialize on user interaction
-        const userEvents = ['click', 'scroll', 'keydown'];
-        const handleUserInteraction = () => {
-            if (!this.initialized) {
-                initAnalytics();
-                // Remove event listeners after initialization
-                userEvents.forEach(event => 
-                    window.removeEventListener(event, handleUserInteraction)
-                );
-            }
-        };
-
-        userEvents.forEach(event => 
-            window.addEventListener(event, handleUserInteraction, { passive: true })
-        );
-
-        // Fallback initialization after 3 seconds
-        setTimeout(() => {
-            if (!this.initialized) initAnalytics();
-        }, 3000);
+        this.setupAnalytics()
+            .then(() => {
+                this.initialized = true;
+                this.processQueue();
+            })
+            .catch(error => {
+                console.warn('Analytics initialization warning:', error);
+                // Still mark as initialized to prevent retries
+                this.initialized = true;
+            });
     },
 
     async setupAnalytics() {
         try {
-            // Initialize analytics with a GET request instead of POST
-            const response = await fetch('/analytics/init', {
+            const params = new URLSearchParams({
+                path: window.location.pathname,
+                referrer: document.referrer,
+                timestamp: new Date().toISOString()
+            });
+
+            const response = await fetch(`/analytics/init?${params}`, {
                 method: 'GET',
-                credentials: 'same-origin'
+                credentials: 'same-origin',
+                headers: {
+                    'Accept': 'application/json'
+                }
             });
             
             if (!response.ok) {
-                // If the server doesn't support GET, fall back to client-side only tracking
-                console.warn('Analytics initialization endpoint not available, falling back to client-side tracking');
+                // Log warning but don't throw error
+                console.warn('Analytics endpoint not available, falling back to client-side tracking');
                 return true;
             }
             
             console.log('Analytics initialized');
             return true;
         } catch (error) {
-            // Log error but don't fail initialization
-            console.warn('Analytics setup encountered an error:', error);
-            return true;
+            console.warn('Analytics setup warning:', error);
+            return true; // Don't fail initialization
         }
     },
 
