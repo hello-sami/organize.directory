@@ -46,13 +46,24 @@ const Analytics = {
 
     async setupAnalytics() {
         try {
-            // Add your actual analytics setup code here
-            // This is where you would initialize your analytics service
-            await this.sendBeacon('/analytics/init');
+            // Initialize analytics with a GET request instead of POST
+            const response = await fetch('/analytics/init', {
+                method: 'GET',
+                credentials: 'same-origin'
+            });
+            
+            if (!response.ok) {
+                // If the server doesn't support GET, fall back to client-side only tracking
+                console.warn('Analytics initialization endpoint not available, falling back to client-side tracking');
+                return true;
+            }
+            
             console.log('Analytics initialized');
+            return true;
         } catch (error) {
-            console.error('Analytics setup failed:', error);
-            throw error;
+            // Log error but don't fail initialization
+            console.warn('Analytics setup encountered an error:', error);
+            return true;
         }
     },
 
