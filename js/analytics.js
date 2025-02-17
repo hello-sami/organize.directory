@@ -131,26 +131,29 @@ const Analytics = {
     },
 
     async sendBeacon(url, data = {}) {
-        if ('sendBeacon' in navigator && !data.retry) {
-            const blob = new Blob([JSON.stringify(data)], { type: 'application/json' });
-            return navigator.sendBeacon(url, blob);
+        // Convert data to URL parameters for GET request
+        const params = new URLSearchParams(data).toString();
+        const getUrl = `${url}?${params}`;
+        
+        try {
+            const response = await fetch(getUrl, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json'
+                },
+                credentials: 'same-origin'
+            });
+            
+            if (!response.ok) {
+                console.warn(`Analytics request warning: ${response.status}`);
+                return true; // Don't fail analytics
+            }
+            
+            return true;
+        } catch (error) {
+            console.warn('Analytics request failed:', error);
+            return true; // Don't fail analytics
         }
-        
-        // Fallback to fetch if sendBeacon is not available or for retries
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data),
-            keepalive: true
-        });
-        
-        if (!response.ok) {
-            throw new Error(`Analytics request failed: ${response.status}`);
-        }
-        
-        return true;
     }
 };
 
