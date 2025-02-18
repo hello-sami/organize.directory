@@ -63,14 +63,20 @@ a:hover {
     position: relative;
 }
 
-.content {
+/* Main Content Area */
+.main-content, .content {
     flex: 1;
-    display: flex;
-    flex-direction: column;
+    margin-left: 250px;
     min-height: 100vh;
+    width: calc(100% - 250px);
+    position: relative;
+    background: var(--bg-color);
     padding: 2rem;
+}
+
+.main-content .content, .content > * {
     max-width: 800px;
-    margin: 0 2rem;
+    margin: 0 auto;
     width: 100%;
 }
 
@@ -181,20 +187,6 @@ aside nav {
     background: var(--light-gray);
 }
 
-/* Main Content Area */
-.main-content {
-    flex: 1;
-    margin-left: 250px;
-    min-height: 100vh;
-    width: calc(100% - 250px);
-    position: relative;
-    background: var(--bg-color);
-}
-
-.main-content .content {
-    margin: 0 2rem;
-}
-
 /* Page Components */
 .page-header {
     margin-bottom: 2rem;
@@ -204,25 +196,49 @@ aside nav {
     margin: 0 auto 2rem;
 }
 
-/* States List Component */
+/* Location Page Specific */
 .states-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
-    margin: 2rem 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    width: 100%;
 }
 
 .state-link {
     color: var(--text-color);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 1rem;
     opacity: 0.85;
     transition: opacity 0.2s ease, color 0.2s ease;
+    display: block;
+    padding: 0.5rem 0;
 }
 
 .state-link:hover {
     opacity: 1;
     color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Location Page Header */
+.location-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.location-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.location-header p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.8;
 }
 
 /* Cities Section */
@@ -495,6 +511,11 @@ aside nav {
     .search-container:not(.mobile-search) {
         display: none;
     }
+
+    .states-list {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 1rem;
+    }
 }
 
 @media (max-width: 900px) {
@@ -509,7 +530,12 @@ aside nav {
 
 @media (max-width: 768px) {
     .states-list {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .location-header h1 {
+        font-size: 2.5rem;
     }
 
     .state-page {
@@ -579,5 +605,18 @@ aside nav {
 
     aside {
         width: 100%;
+    }
+
+    .states-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .location-header h1 {
+        font-size: 2rem;
+    }
+    
+    .location-header p {
+        font-size: 1rem;
+        padding: 0 1rem;
     }
 }
