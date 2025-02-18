@@ -5,11 +5,16 @@
   Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self'
   X-XSS-Protection: 1; mode=block
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+  Pragma: no-cache
+  Expires: 0
+  Surrogate-Control: no-store
   Strict-Transport-Security: max-age=31536000; includeSubDomains
 
 /*.css
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+  Pragma: no-cache
+  Expires: 0
   Content-Type: text/css
   X-Content-Type-Options: nosniff
   Vary: Accept-Encoding
@@ -24,7 +29,9 @@
   Cache-Control: public, max-age=31536000, immutable
 
 /*.html
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+  Pragma: no-cache
+  Expires: 0
   X-Frame-Options: DENY
 
 /*.json
@@ -60,6 +67,9 @@
   Link: </styles/states-list.css>; rel=preload; as=style
 
 /location
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+  Pragma: no-cache
+  Expires: 0
   Content-Type: text/html; charset=utf-8
   Link: </components/sidebar.js>; rel=preload; as=script
   Link: </components/search-header.js>; rel=preload; as=script
