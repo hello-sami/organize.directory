@@ -9,20 +9,17 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <title>Mutual Aid Network Directory</title>
     
-    <!-- Preload critical assets -->
-    <link rel="preload" href="/styles.css" as="style" crossorigin="anonymous">
-    <link rel="preload" href="/components/sidebar.js" as="script" crossorigin="anonymous">
-    <link rel="preload" href="/components/search-header.js" as="script" crossorigin="anonymous">
-    <link rel="preload" href="/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/inter-semibold.woff2" as="font" type="font/woff2" crossorigin>
-    
     <!-- DNS Prefetch -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     
     <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     
     <!-- Critical CSS -->
     <style>
@@ -52,7 +49,6 @@
             flex: 1;
             margin-left: 250px;
         }
-        /* Add more critical styles here */
     </style>
     
     <!-- Load CSS -->
@@ -62,11 +58,6 @@
     
     <!-- Critical Scripts -->
     <script src="/theme-init.js"></script>
-    
-    <!-- Deferred Scripts -->
-    <script src="/mobile-menu.js" defer></script>
-    <script src="/theme.js" type="module" defer></script>
-    <script async type="module" src="/js/analytics.js"></script>
 </head>
 <body>
     <div class="layout">
@@ -120,7 +111,10 @@
     </script>
     <script src="/script.js" type="module"></script>
     <script src="/search-index.js" type="module"></script>
+    <script src="/mobile-menu.js" defer></script>
+    <script src="/theme.js" type="module"></script>
     <script src="/js/posts.js" type="module"></script>
     <script src="/js/search-init.js" defer></script>
+    <script src="/js/analytics.js" type="module"></script>
 </body>
 </html>
