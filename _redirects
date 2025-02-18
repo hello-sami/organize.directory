@@ -1,5 +1,6 @@
-# Let the Cloudflare Worker handle all routing
-/* /:splat 200 
-/* /.netlify/functions/:splat 200
+# Handle clean URLs and SPA routing
 /location / 200
-/* /index.html 200 
+/* /index.html 200
+
+# Fallback for functions if needed
+/.netlify/functions/* /.netlify/functions/:splat 200 
