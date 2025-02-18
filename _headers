@@ -25,42 +25,40 @@
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+  Vary: Accept-Encoding
 
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
   X-Frame-Options: DENY
+  Content-Type: text/html; charset=utf-8
 
 /*.json
   Cache-Control: public, max-age=3600
   Content-Type: application/json
   X-Content-Type-Options: nosniff
+  Vary: Accept-Encoding
 
 /*.woff2
-  Cache-Control: public, max-age=31536000
+  Cache-Control: public, max-age=31536000, immutable
   Content-Type: font/woff2
   Access-Control-Allow-Origin: *
+  Vary: Accept-Encoding
 
 /search-index.js
-  Content-Type: application/javascript; charset=utf-8
   Cache-Control: public, max-age=3600
+  Content-Type: application/javascript; charset=utf-8
   Content-Encoding: br
   Vary: Accept-Encoding
 
-/components/sidebar.js
+/components/*
+  Cache-Control: public, max-age=31536000, immutable
   Content-Type: application/javascript; charset=utf-8
-  Link: </components/sidebar.js>; rel=preload; as=script
+  Vary: Accept-Encoding
 
-/components/search-header.js
-  Content-Type: application/javascript; charset=utf-8
-  Link: </components/search-header.js>; rel=preload; as=script
-
-/styles/location.css
+/styles/*
+  Cache-Control: public, max-age=31536000, immutable
   Content-Type: text/css; charset=utf-8
-  Link: </styles/location.css>; rel=preload; as=style
-
-/styles/states-list.css
-  Content-Type: text/css; charset=utf-8
-  Link: </styles/states-list.css>; rel=preload; as=style
+  Vary: Accept-Encoding
 
 /location
   Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate

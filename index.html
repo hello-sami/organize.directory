@@ -10,10 +10,19 @@
     <title>Mutual Aid Network Directory</title>
     
     <!-- Preload critical assets -->
-    <link rel="preload" href="/fonts/inter-regular.woff2" as="font" crossorigin>
-    <link rel="preload" href="/fonts/inter-semibold.woff2" as="font" crossorigin>
-    <link rel="preload" href="/components/sidebar.js" as="script" crossorigin="use-credentials">
-    <link rel="preconnect" href="https://organize.directory">
+    <link rel="preload" href="/styles.css" as="style" crossorigin="anonymous">
+    <link rel="preload" href="/components/sidebar.js" as="script" crossorigin="anonymous">
+    <link rel="preload" href="/components/search-header.js" as="script" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter-semibold.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Critical CSS -->
     <style>
@@ -46,9 +55,10 @@
         /* Add more critical styles here */
     </style>
     
-    <!-- Load CSS immediately -->
-    <link rel="stylesheet" href="/fonts/fonts.css?t=202403191">
-    <link rel="stylesheet" href="/styles.css?t=202403191">
+    <!-- Load CSS -->
+    <link rel="stylesheet" href="/fonts/fonts.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Critical Scripts -->
     <script src="/theme-init.js"></script>
@@ -102,13 +112,14 @@
     </div>
 
     <!-- Core Scripts -->
-    <script type="module" crossorigin="use-credentials">
+    <script type="module">
         import { createSidebar } from '/components/sidebar.js';
         document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('sidebar').replaceWith(createSidebar('home'));
         });
     </script>
     <script src="/script.js" type="module"></script>
+    <script src="/search-index.js" type="module"></script>
     <script src="/js/posts.js" type="module"></script>
     <script src="/js/search-init.js" defer></script>
 </body>
