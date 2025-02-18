@@ -16,6 +16,7 @@ function initTheme() {
     if (!document.querySelector('.theme-toggle')) {
         const themeToggle = document.createElement('button');
         themeToggle.className = 'theme-toggle';
+        themeToggle.setAttribute('aria-label', 'Toggle theme');
         themeToggle.innerHTML = `
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="5"></circle>
@@ -29,6 +30,28 @@ function initTheme() {
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
         `;
+        
+        // Add styles to position the button
+        themeToggle.style.cssText = `
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            z-index: 1000;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        `;
+
         themeToggle.addEventListener('click', toggleTheme);
         document.body.appendChild(themeToggle);
     }
@@ -41,7 +64,7 @@ function setTheme(theme) {
 }
 
 function toggleTheme() {
-    const currentTheme = localStorage.getItem('theme') || 'dark';
+    const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
 }
@@ -73,4 +96,8 @@ function updateThemeIcon(theme) {
 document.addEventListener('DOMContentLoaded', initTheme);
 
 // Export functions for use in other files
-export { initTheme, setTheme, toggleTheme }; 
+export { initTheme, setTheme, toggleTheme };
+
+// Force light theme on initial load
+document.documentElement.setAttribute('data-theme', 'light');
+localStorage.setItem('theme', 'light'); 
