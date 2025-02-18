@@ -1,6 +1,6 @@
-# Handle clean URLs and SPA routing
+# Handle SPA routing
 /location / 200
-/* /index.html 200
+/* /:splat 200
 
-# Fallback for functions if needed
+# Handle function calls
 /.netlify/functions/* /.netlify/functions/:splat 200 
