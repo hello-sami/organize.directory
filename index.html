@@ -46,13 +46,9 @@
         /* Add more critical styles here */
     </style>
     
-    <!-- Defer non-critical CSS -->
-    <link rel="stylesheet" href="/fonts/fonts.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="/fonts/fonts.css">
-        <link rel="stylesheet" href="/styles.css">
-    </noscript>
+    <!-- Load CSS immediately instead of deferring -->
+    <link rel="stylesheet" href="/fonts/fonts.css">
+    <link rel="stylesheet" href="/styles.css">
     
     <!-- Critical Scripts -->
     <script src="/theme-init.js"></script>
