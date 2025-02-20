@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -89,6 +99,10 @@
                     <div class="initiative">
                         <a href="https://www.norfolkareapride.org/">Norfolk Area Pride</a>
                         <p>A grassroots organization fostering mutual aid and community support through LGBTQ+ advocacy and services in Northeast Nebraska. They coordinate community education, support networks, and solidarity initiatives while building power through LGBTQ+ visibility, safety awareness, and creating spaces for queer and trans people to thrive in rural Nebraska.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.neabortionresources.org/">Nebraska Abortion Resources</a>
+                        <p>Together with our allies and partners, we meet people right where they are and work to remove barriers on every level for Nebraskans seeking abortion access. We provide financial and practical support for those seeking abortion care.</p>
                     </div>
                 </section>
 

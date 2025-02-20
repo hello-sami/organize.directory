@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -72,7 +82,7 @@
                         <a href="/portland" class="city-link">Portland</a>
                         <a href="/redmond" class="city-link">Redmond</a>
                         <a href="/rogue-valley" class="city-link">Rogue Valley</a>
-                        <a href="/roseburg" class="city-link">Roseburg</a>
+                        <!-- <a href="/roseburg" class="city-link">Roseburg</a> -->
                         <a href="/salem" class="city-link">Salem</a>
                         <a href="/southern-oregon" class="city-link">Southern Oregon</a>
                         <a href="/willamette-valley" class="city-link">Willamette Valley</a>

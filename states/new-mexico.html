@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -90,6 +100,10 @@
                     <div class="initiative">
                         <a href="https://www.instagram.com/millionsforprisoners/">Millions for Prisoners</a>
                         <p>We seek to unite activists, advocates, prisoners, ex-prisoners, their family and friends. Abolish Slavery!</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/nm_dreamteam/">NM Dream Team</a>
+                        <p>Largest immigrant youth-led organization in NM| Committed to transforming #NMPol & #NMLeg| Fighting for #EducationNotDeportation #CloseTheCamps</p>
                     </div>
                 </section>
 

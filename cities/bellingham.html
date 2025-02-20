@@ -23,6 +23,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -69,6 +79,10 @@
                     <div class="initiative">
                         <a href="https://www.instagram.com/sunnylandfreepantry/">Sunnyland Free Pantry</a>
                         <p>Mutual aid free pantry in Sunnyland.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://unchainwhatcom.com/">Unchain Whatcom</a>
+                        <p>We are a group of abolitionists working to abolish the Prison Industrial Complex (PIC) in Whatcom County through our pen-pal program, working to stop the construction of a new mega jail in Whatcom County, and fighting to improve the material conditions of people inside the Whatcom County Jail and Interim Work Center.</p>
                     </div>
                 </section>
 

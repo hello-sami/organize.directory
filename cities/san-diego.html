@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -120,6 +130,10 @@
                     <div class="initiative">
                         <a href="https://www.instagram.com/pymsandiego/">Palestinian Youth Movement San Diego</a>
                         <p>A movement of Palestinian & Arab youth struggling for the liberation of our homeland.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/freeshitcollective/">Free Shit Collective</a>
+                        <p>Redistributing supplies to the unhoused</p>
                     </div>
                 </section>
 

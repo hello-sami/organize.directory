@@ -20,6 +20,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -74,6 +84,10 @@
                     <div class="initiative">
                         <a href="https://seedsofpinehills.org/">Seeds of Pine Hills</a>
                         <p>Las Semillas Time Bank and Mutual Aid Network is a community based mutual aid cooperative generating power through community action and collaboration.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.swanoforlando.org/">SWAN (Stand With Abortion Now)</a>
+                        <p>As clinic escorts, we volunteer to protect patients from the harassment of nasty, misogynistic, and sometimes violent protestors as they seek family planning services with the support of their doctor.</p>
                     </div>
                 </section>
 

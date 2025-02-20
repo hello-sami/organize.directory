@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -59,7 +69,10 @@
                 <hr>
 
                 <section>
-
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/disaster.collective/">The Disaster Collective</a>
+                        <p></p>
+                    </div>
                 </section>
             </div>
             <footer class="site-footer">

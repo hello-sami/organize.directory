@@ -23,6 +23,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -56,6 +66,14 @@
                     <div class="initiative">
                         <a href="https://www.radicalrest.org/">Radical Rest</a>
                         <p>A healing justice collective of practitioners and educators centering the holistic wellness needs of BIPOC communities through culturally responsive health justice events and anti-oppressive education. Provides free wellness services and support through mutual aid initiatives.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/salemsoupsquad/">Salem Soup Squad</a>
+                        <p>Food. No strings. Everybody eats.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://freefridgesalem.org/">Free Fridge Salem</a>
+                        <p>We are a local mutual aid project started to help our neighbors with food insecurity and basic human needs like personal hygiene products, harm reduction supplies and seasonal aid offerings.</p>
                     </div>
                 </section>
 

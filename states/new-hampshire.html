@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -68,10 +78,9 @@
                         <a href="/seacoast" class="city-link">Seacoast</a>
                         <a href="/upper-valley" class="city-link">Upper Valley</a>
                         <a href="/white-mountains" class="city-link">White Mountains</a>
+                        <a href="/keene" class="city-link">Keene</a>
                     </div>
                 </section>
-
-
 
                 <section>
                     <div class="initiative">
@@ -81,6 +90,18 @@
                     <div class="initiative">
                         <a href="https://www.instagram.com/insubordination_station_/">Insubordination Station</a>
                         <p>registered Syringe Service Program providing harm reduction supplies and community education in New Hampshire.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://603equality.org/">603 Equality</a>
+                        <p>603 Equality is a community driven, statewide organization that works to connect, educate, and advocate for LGBTQ+ people across NH.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.nhmarf.org/">NH Mutual Aid Relief Fund</a>
+                        <p>The NH Mutual Aid Relief Fund is a grassroots effort of working-class people who believe that direct action and solidarity are the best ways to meet the material and social needs of our community.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/nhtransaction/">NH Trans Action</a>
+                        <p>Building a movement to fight for trans rights in New Hampshire.</p>
                     </div>
                 </section>
             </div>

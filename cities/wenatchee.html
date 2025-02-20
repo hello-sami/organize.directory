@@ -26,6 +26,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -53,6 +63,25 @@
 
                 <h1>Wenatchee, Washington</h1>
                 <hr>
+
+                <section>
+                    <div class="initiative">
+                        <a href="https://www.wenatcheepride.org/">Wenatchee Pride</a>
+                        <p>Wenatchee Pride’s mission is to empower and connect the NCW LGBTQIA2S+ community and its allies toward creating and maintaining a safe, anti-racist, inclusive and equitable environment for all.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/wenatchee_for_palestine/">Wenatchee for Palestine</a>
+                        <p>Organizing for Palestinian liberation on Šnp̍əšqʷáw̉šəxʷi land (Wenatchee, WA)</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/wenatcheeforimmigrantjustice/">Wenatchee for Immigrant Justice</a>
+                        <p>Equity, Opportunity, and Justice in Solidarity with the Immigrant Community.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/pflagwenatchee/">PFLAG Wenatchee</a>
+                        <p>Dedicated to supporting, educating, and advocating for LGBTQ+ people and those who love them.</p>
+                    </div>
+                </section>
 
             </div>
             <footer class="site-footer">

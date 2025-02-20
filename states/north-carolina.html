@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -131,6 +141,10 @@
                     <div class="initiative">
                         <a href="https://downhomenc.org/">Down Home NC</a>
                         <p>Down Home North Carolina is building power with poor and working-class people in North Carolina’s small towns and rural communities.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://carolinamigrantnetwork.org/">Carolina Migrant Network</a>
+                        <p>CMN offers free represent for people in NC/SC detention and removal proceedings.</p>
                     </div>
                 </section>
 

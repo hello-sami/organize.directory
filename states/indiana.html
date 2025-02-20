@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -68,7 +78,7 @@
                         <a href="/indianapolis" class="city-link">Indianapolis</a>
                         <a href="/kokomo" class="city-link">Kokomo</a>
                         <a href="/lafayette-west-lafayette" class="city-link">Lafayette / West Lafayette</a>
-                        <a href="/muncie-anderson" class="city-link">Muncie / Anderson</a>
+                        <!-- <a href="/muncie-anderson" class="city-link">Muncie / Anderson</a> -->
                         <a href="/richmond-in" class="city-link">Richmond</a>
                         <a href="/south-bend" class="city-link">South Bend</a>
                         <a href="/terre-haute" class="city-link">Terre Haute</a>

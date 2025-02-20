@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -59,6 +69,22 @@
                 <hr>
 
                 <section>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/hundredhandscollective.nh/">Hundred Hands Collective</a>
+                        <p>Grassroots collective in Manchester, NH. Building community & fostering skill sharing with our neighbors. Mutual aid & liberation.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/blmmanchesternh/">Black Lives Matter Manchester</a>
+                        <p>to dismantle anti-Blackness, eradicate systemic racism, champion racial equality, combat racial injustices, put an end to police brutality, and advocate for justice for all Black lives in New Hampshire. </p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/southern_nh4palestine/">Southern NH For Palestine</a>
+                        <p>Building the movement for Palestinian Freedom in So. NH.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://snh.dsachapters.org/">Southern New Hampshire DSA</a>
+                        <p>The Southern New Hampshire chapter of the Democratic Socialists of America (SNH DSA) is a multi-issue activist group working locally to expand the possibilities of democracy in New Hampshire and push for shared ownership of power and resources.</p>
+                    </div>
 
                 </section>
             </div>

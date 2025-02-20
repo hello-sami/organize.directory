@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -76,7 +86,7 @@
                         <a href="/long-island" class="city-link">Long Island</a>
                         <a href="/new-paltz" class="city-link">New Paltz</a>
                         <a href="/nyc" class="city-link">New York City</a>
-                        <a href="/oneonta" class="city-link">Oneonta</a>
+                        <!-- <a href="/oneonta" class="city-link">Oneonta</a> -->
                         <a href="/plattsburgh-adirondacks" class="city-link">Plattsburgh-Adirondacks</a>
                         <a href="/potsdam-canton-massena" class="city-link">Potsdam-Canton-Massena</a>
                         <a href="/rochester" class="city-link">Rochester</a>

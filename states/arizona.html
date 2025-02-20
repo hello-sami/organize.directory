@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -65,7 +75,7 @@
                         <!-- <a href="/mohave-county" class="city-link">Mohave County</a> -->
                         <a href="/phoenix" class="city-link">Phoenix Metro</a>
                         <a href="/prescott" class="city-link">Prescott</a>
-                        <a href="/show-low" class="city-link">Show Low</a>
+                        <!-- <a href="/show-low" class="city-link">Show Low</a> -->
                         <a href="/sierra-vista" class="city-link">Sierra Vista</a>
                         <a href="/tucson" class="city-link">Tucson</a>
                         <a href="/yuma" class="city-link">Yuma</a>
@@ -120,6 +130,14 @@
                     <div class="initiative">
                         <a href="https://www.instagram.com/keinfoshop">K'é Infoshop</a>
                         <p>Anti-colonial, anti-heteropatriarchy, and anti-capitalist with indigenous feminism as our guiding principles. We're a collective of Diné uniting to liberate nihi k'ei/our relatives.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://discord.gg/xUK6Qkeb">AZ Comm-Unity</a>
+                        <p> central hub for all people and groups within all of Arizona who are taking a stand against the rising wave of authoritarianism and fascism to come together to meet and coordinate with their local communities as well as communicate with the rest of the movement around the state.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://discord.gg/yEQTkC3Dmx">AZ50501 Discord Server</a>
+                        <p>Get the latest updates on the 50501 movement and connect with other Arizonans</p>
                     </div>
                 </section>
 

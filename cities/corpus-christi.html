@@ -26,6 +26,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -60,6 +70,18 @@
                     <div class="initiative">
                         <a href="https://www.facebook.com/groups/tacosnotbombs/">Tacos Not Bombs</a>
                         <p>Taco's not Bombs CC is a local non profit organization that is anti war and anti poverty. Our objective is to feed anyone who is hungry.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="http://www.corpuschristidsa.org/">Corpus Christi DSA</a>
+                        <p>The Corpus Christi DSA is our local chapter of the Democratic Socialists of America.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.freestorecc.com/">Free Store Corpus Christi</a>
+                        <p>We are a group of community members in C.C. Texas, who created a non-profit that provides resources for people experiencing extreme poverty.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/protectthecorpuschristibay/">Protect Corpus Christ Bay</a>
+                        <p>Currently a petition for better science on desalination in the Corpus Christi Bay.</p>
                     </div>
                 </section>
                 </div>

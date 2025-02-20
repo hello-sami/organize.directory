@@ -20,6 +20,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -54,6 +64,14 @@
                     <div class="initiative">
                         <a href="https://www.instagram.com/daytona_fnb/">Food Not Bombs Daytona</a>
                         <p>A mutual aid collective fostering food justice and community solidarity through free food sharing in Daytona Beach. They coordinate regular meal distributions, food recovery initiatives, and solidarity networks while building power through direct action, community care, and creating spaces for food sovereignty and collective nourishment.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/pflagdeland/">PFLAG DeLand/Volusia</a>
+                        <p>Offering support meetings every month to our LGBTQIAP+ community, their family members, & allies. </p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/volusiagivinggardens/">Volusia Giving Gardens</a>
+                        <p>Student-led food equity initiative creating access to fresh produce through community gardens</p>
                     </div>
                 </section>
 

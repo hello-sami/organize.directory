@@ -58,6 +58,14 @@
     
     <!-- Critical Scripts -->
     <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('home'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -103,18 +111,12 @@
     </div>
 
     <!-- Core Scripts -->
-    <script type="module">
-        import { createSidebar } from '/components/sidebar.js';
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('sidebar').replaceWith(createSidebar('home'));
-        });
-    </script>
-    <script src="/script.js" type="module"></script>
-    <script src="/search-index.js" type="module"></script>
+    <script src="/script.js" type="module" async></script>
+    <script src="/search-index.js" type="module" async></script>
     <script src="/mobile-menu.js" defer></script>
-    <script src="/theme.js" type="module"></script>
-    <script src="/js/posts.js" type="module"></script>
+    <script src="/theme.js" type="module" async></script>
+    <script src="/js/posts.js" type="module" async></script>
     <script src="/js/search-init.js" defer></script>
-    <script src="/js/analytics.js" type="module"></script>
+    <script src="/js/analytics.js" type="module" async></script>
 </body>
 </html>

@@ -15,7 +15,17 @@
 </script>
 <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
-    <script src="/mobile-menu.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid initiatives and community support networks in Southeast Alaska, Alaska. Connect with local organizations and community resources."><meta property="og:title" content="Mutual Aid in Southeast Alaska - Local Support Networks"><meta property="og:description" content="Find mutual aid initiatives and community support networks in Southeast Alaska, Alaska. Connect with local organizations providing community-based support."><meta property="og:url" content="https://organize.directory/southeast-alaska"><title>Mutual Aid in Southeast Alaska - Local Support Networks &amp; Community Resources</title></head>
+    <script src="/mobile-menu.js"></script> <meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><meta name="description" content="Find mutual aid initiatives and community support networks in Southeast Alaska, Alaska. Connect with local organizations and community resources."><meta property="og:title" content="Mutual Aid in Southeast Alaska - Local Support Networks"><meta property="og:description" content="Find mutual aid initiatives and community support networks in Southeast Alaska, Alaska. Connect with local organizations providing community-based support."><meta property="og:url" content="https://organize.directory/southeast-alaska"><title>Mutual Aid in Southeast Alaska - Local Support Networks &amp; Community Resources</title>    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
+</head>
 <body>
     <div class="layout">
         <div id="sidebar-container"></div>

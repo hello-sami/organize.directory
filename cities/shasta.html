@@ -24,6 +24,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -71,6 +81,10 @@
                     <div class="initiative">
                         <a href="https://www.instagram.com/shastaforpalestine/">Shasta for Palestine</a>
                         <p>Solidarity-driven, anti-colonial collective committed to the liberation of Palestine and all oppressed peoples.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/thenorcalunderground">The Norcal Underground</a>
+                        <p>We are an anti-fascist, solidarity-driven collective dedicated to fighting for the liberation of our communities, Palestine, & all oppressed peoples.</p>
                     </div>
                 </section>
 

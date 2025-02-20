@@ -20,7 +20,17 @@
 <meta name="description" content="Find mutual aid initiatives and community support networks in Jackson, Tennessee. Connect with local organizations and community resources.">
 <meta property="og:title" content="Mutual Aid in Jackson - Local Support Networks">
 <meta property="og:description" content="Find mutual aid initiatives and community support networks in Jackson, Tennessee. Connect with local organizations providing community-based support.">
-<meta property="og:url" content="https://organize.directory/jackson"></head>
+<meta property="og:url" content="https://organize.directory/jackson">    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
+</head>
 <body>
     <div class="layout">
         <aside class="sidebar">

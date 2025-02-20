@@ -27,6 +27,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -77,6 +87,14 @@
                     <div class="initiative">
                         <a href="https://www.facebook.com/everettfreegroceryprogram/">Everett Free Grocery Program</a>
                         <p>Free food and hygiene item distribution program in the Everett neighborhood of Lincoln, Nebraska.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.reddit.com/r/LincolnMutualAid/">/r/LincolnMutualAid</a>
+                        <p>A hub for mutual aid resources in the Lincoln, Nebraska community. Taking care of our neighbors in a time of rising fascism and oligarchy.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/lincolncommunitycare/">Lincoln Community Care</a>
+                        <p>Weekly distribution in solidarity with our unhoused neighbors in LNK</p>
                     </div>
                 </section>
             </div>

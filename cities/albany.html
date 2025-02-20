@@ -23,6 +23,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -105,6 +115,10 @@
                     <div class="initiative">
                         <a href="https://albanysjc.org/">Albany Social 'justice Center</a>
                         <p>The Albany Social Justice Center focuses on building collaborative partnerships with community organizations in the Capital District. Many of our partnerships have lasted for years.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/518freestore">518 Free Store</a>
+                        <p>Schenectady's 518 Free Store is a grassroots effort dedicated to bridging the gap between NEED and AID in local BIPOC communities.</p>
                     </div>
                 </section>
 

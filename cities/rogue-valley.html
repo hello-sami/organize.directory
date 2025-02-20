@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -100,6 +110,10 @@
                     <div class="initiative">
                         <a href="https://rvpeppershakers.com/">Rogue Valley Pepper Shakers</a>
                         <p>We focus on protecting abortion and LGBTQ+ events and spaces.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.roguefoodunites.org/">Rogue Food Unites</a>
+                        <p>RFU coordinates with locally-invested food businesses to provide fresh, nutritious, and shelf-stable ingredients, assembled and delivered to our communities.</p>
                     </div>
         
                 </section>

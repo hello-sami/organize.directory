@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -71,6 +81,7 @@
                         <a href="/dallas-fort-worth" class="city-link">Dallas / Fort Worth</a>
                         <a href="/deep-east-texas" class="city-link">Deep East Texas</a>
                         <a href="/del-rio-eagle-pass" class="city-link">Del Rio / Eagle Pass</a>
+                        <a href="/denton" class="city-link">Denton</a>
                         <a href="/el-paso" class="city-link">El Paso</a>
                         <a href="/galveston" class="city-link">Galveston</a>
                         <a href="/houston" class="city-link">Houston</a>
@@ -136,7 +147,7 @@
                     </div>
                     <div class="initiative">
                         <a href="https://faithintx.org/">Faith in TX</a>
-                        <p>Faith in TX organizes and builds power with “the people” so that we “the people” will have greater access to the power to govern our shared society.</p>
+                        <p>Faith in TX organizes and builds power with "the people" so that we "the people" will have greater access to the power to govern our shared society.</p>
                     </div>
                 </section>
                 

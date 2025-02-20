@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -65,10 +75,6 @@
                     </div>
                     <div class="initiative">
                         <a href="https://www.instagram.com/maroonmovement/">Maroon Movement</a>
-                        <p>New Afrikan Anarchism. Black TGNCNB Liberation+Queer Autonomy.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/maroonmovement/">Maroon Movement</a>
                         <p>Trans-led mutual aid collective providing support and resources for LGBTQ+ and trans community members.</p>
                     </div>
                     <div class="initiative">
@@ -90,6 +96,18 @@
                     <div class="initiative">
                         <a href="https://www.instagram.com/joys.free.store/">Joy's Free Store</a>
                         <p>all volunteer, all free, no cops. Pop ups and by appt for now. Collabs, mutual aid* and other referrals</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/charmcitydebt/">Charm City Debt Collective</a>
+                        <p>We are the Baltimore branch of @thedebtcollective building a debtors union in the greater Baltimore area.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://organizingblack.org/">Organizing Black</a>
+                        <p>Organizing Black is a grassroots, member-led organization dedicated to fighting for the liberation of all Black people.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/safetydrivefund/">Safety Drive Fund</a>
+                        <p>redistributing weekly funds & supplies to unhoused & no/low income neighbors from so-called baltimore since 2021</p>
                     </div>
                 </section>
 

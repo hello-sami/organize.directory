@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -61,7 +71,7 @@
                 <section>
                     <h2>Cities</h2>
                     <div class="cities-list">
-                        <a href="/elko" class="city-link">Elko</a>
+                        <!-- <a href="/elko" class="city-link">Elko</a> -->
                         <a href="/las-vegas" class="city-link">Las Vegas</a>
                         <a href="/reno-tahoe" class="city-link">Reno / Tahoe</a>
                     </div>

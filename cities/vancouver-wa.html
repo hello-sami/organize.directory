@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -59,6 +69,22 @@
                 <hr>
 
                 <section>
+                    <div class="initiative">
+                        <a href="https://bsky.app/profile/vancouverma.bsky.social">Vancouver Mutual Aid</a>
+                        <p>We are a libertarian socialist mutual aid group & network based in occupied Vancouver Wa. We are pro-indigenous liberation & sovereignty, pro-black liberation, pro-2SLGBTQIA+.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://vancouverfreefridgeproject.weebly.com/">Vancouver Free Fridge Project</a>
+                        <p>The Vancouver Free Fridge Project is a volunteer-run mutual aid network run BY the community FOR the community in Vancouver, Washington.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/vanwaforestkeepers/">Vancouver Forest Keepers</a>
+                        <p>Getting our hands dirty, boosting self efficacy, and taking direct climate ACTION!</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/synergy.society.sw.wa/">Synergy Society of SW WA</a>
+                        <p>Connecting, supporting, and uplifting local community-led mutual aid groups and community initiatives in the Southwest WA area.</p>
+                    </div>
 
                 </section>
 

@@ -33,6 +33,16 @@
     <script src="/mobile-menu.js"></script>
 
     <title>Mutual Aid in Omaha / Council Bluffs - Local Support Networks & Community Resources</title>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -95,6 +105,10 @@
                     <div class="initiative">
                         <a href="https://omaha.foodnotbombs.us/">Omaha Food Not Bombs</a>
                         <p>Since 1996 Food Not Bombs Omaha has been distributing food free of charge on the corner of 14th and Farnam at 2pm every Sunday.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.reddit.com/r/OmahaMutualAid/">/r/OmahaMutualAid</a>
+                        <p>A group to discuss mutual aid, community resources, and political activism in Omaha, NE.</p>
                     </div>
                 </section>
             </div>

@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -66,6 +76,10 @@
                     <div class="initiative">
                         <a href="https://www.borderlandrainbow.org/">Borderland Rainbow Center</a>
                         <p>A community space in which lesbian, gay, bisexual, transgender, queer/questioning, intersex (LGBTQI) people and their allies can heal, grow, and empower themselves and others.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://bnhr.org/">Border Network for Human Rights</a>
+                        <p>Fighting for justice, dignity & social change at our southern border</p>
                     </div>
                 </section>
 

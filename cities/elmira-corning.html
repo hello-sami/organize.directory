@@ -26,6 +26,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -56,6 +66,12 @@
                 <h1>Elmira-Corning, New York</h1>
                 <hr>
                 
+                <section>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/soflxunited/">South Finger Lakes United</a>
+                        <p>Connecting and Uniting the Southern Finger Lakes Through Resistance and Mutual Aid</p>
+                    </div>
+                </section>
 
             </div>
         </main>

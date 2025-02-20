@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -67,15 +77,15 @@
                         <a href="/cincinnati" class="city-link">Cincinnati</a>
                         <a href="/cleveland" class="city-link">Cleveland</a>
                         <a href="/columbus" class="city-link">Columbus</a>
-                        <a href="/dayton" class="city-link">Dayton</a>
+                        <a href="/dayton-springfield" class="city-link">Dayton-Springfield</a>
                         <a href="/lima-findlay" class="city-link">Lima / Findlay</a>
                         <a href="/mansfield" class="city-link">Mansfield</a>
-                        <a href="/sandusky" class="city-link">Sandusky</a>
+                        <!-- <a href="/sandusky" class="city-link">Sandusky</a> -->
                         <!-- <a href="/springfield" class="city-link">Springfield</a> -->
                         <a href="/toledo" class="city-link">Toledo</a>
                         <a href="/tuscarawas-co" class="city-link">Tuscarawas Co</a>
                         <a href="/youngstown" class="city-link">Youngstown</a>
-                        <a href="/zanesville-cambridge" class="city-link">Zanesville / Cambridge</a>
+                        <!-- <a href="/zanesville-cambridge" class="city-link">Zanesville / Cambridge</a> -->
                     </div>
                 </section>
 
@@ -107,6 +117,10 @@
                     <div class="initiative">
                         <a href="https://www.instagram.com/bqic.ohio/">Black Queer & Intersectional Collective</a>
                         <p>BQIC is a grassroots community organization in Central Ohio that works towards the liberation of Black LGBTQIA+ people from all walks of life through direct action, community organizing, education on our issues, and creating spaces to uplift our voices.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://transalliesohio.org/">Trans Allies Ohio</a>
+                        <p>We are a grassroots coalition of transgender youth, their families, and allies who advocate for equality for Ohio's trans and non-binary people.</p>
                     </div>
                 </section>
 

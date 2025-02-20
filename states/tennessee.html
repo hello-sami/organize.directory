@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -63,7 +73,7 @@
                     <div class="cities-list">
                         <a href="/chattanooga" class="city-link">Chattanooga</a>
                         <a href="/clarksville" class="city-link">Clarksville</a>
-                        <a href="/cookeville" class="city-link">Cookeville</a>
+                        <!-- <a href="/cookeville" class="city-link">Cookeville</a> -->
                         <a href="/jackson-tn" class="city-link">Jackson</a>
                         <a href="/knoxville" class="city-link">Knoxville</a>
                         <a href="/memphis" class="city-link">Memphis</a>

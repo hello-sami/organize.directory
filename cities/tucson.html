@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -113,6 +123,22 @@
                     <div class="initiative">
                         <a href="https://www.instagram.com/autonomytucson/">Autonomy Tucson</a>
                         <p>From the left not of the left. Southern AZ</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.reddit.com/r/OrganizeTucson/">Organize Tucson</a>
+                        <p>We're a hub to share protest and community building events in the Tucson area.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://tucsonpinkpistols.org/">Tucson Pink Pistols</a>
+                        <p>Tucson Chapter of Pink Pistols national LGBT firearms organization.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://linktr.ee/takeactiontucson">Take Action Tucson</a>
+                        <p>Find local events and connect with fellow Tucsonans working to save democracy.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://discord.gg/Q8pPdH9vMw">Mobilize Tucson</a>
+                        <p>We are devoted to uniting Tucson in the fight to end tyranny in our government, uphold our constitution and resist fascism through unifying Tucson's local organizations, communities and local organizers under one movement.</p>
                     </div>
                 </section>
 

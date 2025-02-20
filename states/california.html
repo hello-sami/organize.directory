@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -106,7 +116,7 @@
                         <a href="/santa-maria" class="city-link">Santa Maria</a>
                         <a href="/santa-rosa" class="city-link">Santa Rosa</a>
                         <a href="/stockton" class="city-link">Stockton</a>
-                        <a href="/susanville" class="city-link">Susanville</a>
+                        <!-- <a href="/susanville" class="city-link">Susanville</a> -->
                         <a href="/visalia-tulare" class="city-link">Visalia-Tulare</a>
                         <a href="/yuba-sutter" class="city-link">Yuba-Sutter</a>
                     </div>

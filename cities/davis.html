@@ -11,7 +11,7 @@
     <meta property="og:description" content="Find mutual aid initiatives and community support networks in Davis, California. Connect with local organizations providing community-based support.">
     <meta property="og:url" content="https://organize.directory/davis">
     
-    <title>Mutual Aid in York - Local Support Networks & Community Resources</title>
+    <title>Mutual Aid in Davis - Local Support Networks & Community Resources</title>
     
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -27,6 +27,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">

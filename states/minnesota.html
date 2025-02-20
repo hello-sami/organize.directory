@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -149,6 +159,10 @@
                     <div class="initiative">
                         <a href="https://www.instagram.com/mnuprising/">Minnesota Uprising Arrestee Support</a>
                         <p>MUAS is an ad-hoc grouping of arrestees, their friends and comrades, community members, activists, and legal workers.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://discord.gg/UC97DU7qTR">Minnesota Mutual Aid Events</a>
+                        <p>Discord server for mutual aid events in the state.</p>
                     </div>
                 </section>
 

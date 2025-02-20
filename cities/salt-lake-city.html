@@ -28,6 +28,16 @@
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -82,6 +92,14 @@
                     <div class="initiative">
                         <a href="https://www.slcbailfund.org/">Salt Lake Community Bail Fund</a>
                         <p>Posts bail for individuals in need in Salt lake County. We are committed to ending pre-trial detention in Utah.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.wasatchtenantsunited.org/">Wasatch Tenants United</a>
+                        <p>Wasatch Tenants United is an organization commited to the needs of working people and tenants living in Salt Lake City.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/armedqueersslc/">Armed Queers Salt Lake City</a>
+                        <p>The Armed Queers are a revolutionary LGBTQ organization dedicated to the defense, and success, of oppressed people’s movements.</p>
                     </div>
                 </section>
 
