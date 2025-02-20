@@ -6,14 +6,53 @@
     <title>Find Mutual Aid Networks Near You</title>
     <meta name="description" content="Browse or search for mutual aid initiatives in your area">
     
+    <!-- Critical CSS -->
+    <style>
+        /* Critical rendering path styles */
+        :root {
+            --primary-color: #2D3748;
+            --text-color: #4A5568;
+            --light-gray: #F7FAFC;
+            --border-color: #E2E8F0;
+            --bg-color: white;
+            --card-bg: white;
+        }
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+        .content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 2rem;
+        }
+    </style>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/search-index.js" as="script">
+    <link rel="preload" href="/components/sidebar.js" as="script">
+    
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Theme and Components -->
+    <!-- Critical Scripts -->
     <script src="/theme-init.js"></script>
-    <script src="/search-index.js"></script>
-    <script src="/mobile-menu.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
 <body>
     <div class="layout">
@@ -95,17 +134,13 @@
         </main>
     </div>
 
-    <!-- Scripts -->
-    <script type="module" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('location'));
-    </script>
-    <script src="/theme.js" type="module"></script>
-
-    <!-- Initialize Search -->
-    <script type="module">
-        import { initializeSearch } from '/components/search-header.js';
-        initializeSearch();
-    </script>
+    <!-- Core Scripts -->
+    <script src="/script.js" type="module" async></script>
+    <script src="/search-index.js" type="module" async></script>
+    <script src="/mobile-menu.js" defer></script>
+    <script src="/theme.js" type="module" async></script>
+    <script src="/js/posts.js" type="module" async></script>
+    <script src="/js/search-init.js" defer></script>
+    <script src="/js/analytics.js" type="module" async></script>
 </body>
 </html> 
