@@ -9,9 +9,6 @@ export function initSearchBar(containerId = 'searchContainer') {
         return;
     }
     container.appendChild(header);
-    
-    // Initialize the search functionality
-    initializeSearch();
 }
 
 // Create and return the search header component
@@ -19,9 +16,14 @@ export function createSearchHeader() {
     const header = document.createElement('header');
     header.className = 'page-header';
     
-    // Create search container
+    // Create search wrapper
+    const searchWrapper = document.createElement('div');
+    searchWrapper.className = 'search-wrapper';
+    
+    // Create search container first
     const searchContainer = document.createElement('div');
     searchContainer.className = 'search-container';
+    searchContainer.style.display = 'none';
     
     // Create search input wrapper
     const searchInputWrapper = document.createElement('div');
@@ -41,205 +43,164 @@ export function createSearchHeader() {
     searchResults.className = 'search-results';
     searchResults.setAttribute('role', 'listbox');
     
+    // Create search button
+    const searchButton = document.createElement('button');
+    searchButton.className = 'search-toggle-button';
+    searchButton.setAttribute('aria-label', 'Toggle search');
+    searchButton.innerHTML = `
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+    `;
+    
     // Assemble the components
     searchInputWrapper.appendChild(searchInput);
     searchInputWrapper.appendChild(searchResults);
     searchContainer.appendChild(searchInputWrapper);
-    header.appendChild(searchContainer);
+    
+    // Add components to wrapper in correct order (container first, then button)
+    searchWrapper.appendChild(searchContainer);
+    searchWrapper.appendChild(searchButton);
+    header.appendChild(searchWrapper);
+    
+    // Add click event to toggle search
+    searchButton.addEventListener('click', () => {
+        const isVisible = searchContainer.style.display === 'block';
+        searchContainer.style.display = isVisible ? 'none' : 'block';
+        if (!isVisible) {
+            searchInput.focus();
+            // Lazy load search functionality
+            import('/search.js').then(module => {
+                if (!window.searchInitialized) {
+                    new module.Search();
+                    window.searchInitialized = true;
+                }
+            });
+        }
+    });
+    
+    // Close search when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!searchButton.contains(e.target) && 
+            !searchContainer.contains(e.target) && 
+            searchContainer.style.display === 'block') {
+            searchContainer.style.display = 'none';
+        }
+    });
     
     return header;
 }
 
-// Initialize search functionality
-export function initializeSearch() {
-    const searchInput = document.getElementById('searchInput');
-    const searchResults = document.getElementById('searchResults');
-    let selectedResultIndex = -1;
-    let currentResults = [];
-    let searchTimeout;
-
-    function calculateRelevance(query, page) {
-        let score = 0;
-        const words = query.toLowerCase().split(/\s+/).filter(word => word.length > 0);
-        
-        // For multi-word queries, only look for exact matches
-        if (words.length > 1) {
-            const exactQuery = query.toLowerCase();
-            if (page.title.toLowerCase().includes(exactQuery)) score += 50;
-            if (page.description.toLowerCase().includes(exactQuery)) score += 25;
-            if (page.content.toLowerCase().includes(exactQuery)) score += 15;
-            if (page.keywords.toLowerCase().includes(exactQuery)) score += 20;
-            return score;
-        }
-        
-        // Single word queries can still do partial matches
-        const word = words[0];
-        if (word.length < 2) return 0;
-        
-        if (page.title.toLowerCase().includes(word)) score += 10;
-        if (page.description.toLowerCase().includes(word)) score += 5;
-        if (page.keywords.toLowerCase().includes(word)) score += 8;
-        if (page.content.toLowerCase().includes(word)) score += 3;
-        if (page.url.toLowerCase().includes(word)) score += 4;
-        
-        // Heading matches
-        for (const heading of page.headings) {
-            if (heading.toLowerCase().includes(word)) {
-                score += 6;
-                break;
-            }
-        }
-        
-        return score;
+// Add styles
+const style = document.createElement('style');
+style.textContent = `
+    .page-header {
+        position: relative;
     }
 
-    function highlightText(text, query) {
-        if (!text || !query) return text;
-        
-        const escapeRegExp = (string) => {
-            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        };
-        
-        const words = query.toLowerCase().split(/\s+/).filter(word => word.length > 0);
-        let highlighted = text;
-        
-        if (words.length > 1) {
-            const exactRegex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
-            highlighted = highlighted.replace(exactRegex, '<mark class="search-highlight">$1</mark>');
-            return highlighted;
-        }
-        
-        const word = words[0];
-        if (word.length < 2) return text;
-        
-        const regex = new RegExp(`(${escapeRegExp(word)})`, 'gi');
-        return highlighted.replace(regex, '<mark class="search-highlight">$1</mark>');
+    .search-wrapper {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1000;
+        height: 36px;
+        display: flex;
+        align-items: flex-start;
     }
 
-    function performSearch(query) {
-        if (!window.searchIndex) {
-            console.error('Search index not loaded');
-            return;
-        }
-
-        query = query.toLowerCase().trim();
-        if (query.length < 2) {
-            searchResults.style.display = 'none';
-            currentResults = [];
-            selectedResultIndex = -1;
-            return;
-        }
-
-        const results = [];
-        for (const page of window.searchIndex.pages) {
-            const score = calculateRelevance(query, page);
-            if (score > 0) {
-                results.push({
-                    title: page.title,
-                    description: page.description,
-                    url: page.url,
-                    breadcrumb: page.breadcrumb,
-                    score
-                });
-            }
-        }
-
-        results.sort((a, b) => b.score - a.score);
-        currentResults = results.slice(0, 5);
-        selectedResultIndex = -1;
-        
-        if (results.length === 0) {
-            searchResults.innerHTML = `
-                <div class="search-no-results">
-                    <div class="search-message">
-                        <p>No results found</p>
-                    </div>
-                </div>
-            `;
-        } else {
-            searchResults.innerHTML = `
-                <div class="search-results-list">
-                    ${currentResults.map((result, index) => `
-                        <a href="${result.url}" 
-                           class="search-result-item" 
-                           data-index="${index}"
-                           role="option"
-                           aria-selected="false">
-                            <div class="search-result-content">
-                                <div class="search-result-title">${highlightText(result.title, query)}</div>
-                                ${result.description ? `
-                                    <div class="search-result-description">
-                                        ${highlightText(result.description, query)}
-                                    </div>
-                                ` : ''}
-                            </div>
-                        </a>
-                    `).join('')}
-                </div>
-            `;
-        }
-        
-        searchResults.style.display = 'block';
+    .search-toggle-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 36px;
+        height: 36px;
+        padding: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text-color);
+        transition: color 0.2s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1001;
     }
-
-    // Handle keyboard navigation
-    searchInput.addEventListener('keydown', (e) => {
-        if (!currentResults.length) return;
-
-        switch(e.key) {
-            case 'ArrowDown':
-                e.preventDefault();
-                selectedResultIndex = Math.min(selectedResultIndex + 1, currentResults.length - 1);
-                updateSelectedResult();
-                break;
-            case 'ArrowUp':
-                e.preventDefault();
-                selectedResultIndex = Math.max(selectedResultIndex - 1, -1);
-                updateSelectedResult();
-                break;
-            case 'Enter':
-                e.preventDefault();
-                if (selectedResultIndex >= 0 && currentResults[selectedResultIndex]) {
-                    window.location.href = currentResults[selectedResultIndex].url;
-                } else if (currentResults.length > 0) {
-                    window.location.href = currentResults[0].url;
-                }
-                break;
-            case 'Escape':
-                e.preventDefault();
-                searchResults.style.display = 'none';
-                searchInput.blur();
-                break;
-        }
-    });
-
-    function updateSelectedResult() {
-        const items = searchResults.querySelectorAll('.search-result-item');
-        items.forEach((item, index) => {
-            if (index === selectedResultIndex) {
-                item.classList.add('selected');
-                item.setAttribute('aria-selected', 'true');
-                item.scrollIntoView({ block: 'nearest' });
-            } else {
-                item.classList.remove('selected');
-                item.setAttribute('aria-selected', 'false');
-            }
-        });
+    
+    .search-toggle-button:hover {
+        color: var(--primary-color);
     }
-
-    // Debounce search input
-    searchInput.addEventListener('input', () => {
-        clearTimeout(searchTimeout);
-        searchTimeout = setTimeout(() => {
-            performSearch(searchInput.value);
-        }, 150);
-    });
-
-    // Close search results when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-            searchResults.style.display = 'none';
-            selectedResultIndex = -1;
+    
+    .search-toggle-button svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .search-container {
+        position: absolute;
+        top: 0;
+        right: 44px; /* button width + gap */
+        width: 300px;
+        z-index: 1000;
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .search-input-wrapper {
+        width: 100%;
+        line-height: 0;
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .search-input {
+        width: 100%;
+        height: 36px;
+        padding: 0 12px;
+        font-size: 16px;
+        border: 2px solid var(--border-color);
+        border-radius: 6px;
+        background: var(--bg-color);
+        color: var(--text-color);
+        transition: all 0.2s ease;
+        display: block;
+        margin: 0;
+    }
+    
+    .search-input:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px var(--primary-color-alpha);
+        outline: none;
+    }
+    
+    .search-results {
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        right: 0;
+        max-height: 400px;
+        overflow-y: auto;
+        background: var(--bg-color);
+        border: 2px solid var(--primary-color);
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        display: none;
+    }
+    
+    @media (max-width: 768px) {
+        .search-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            padding: 8px;
+            background: var(--bg-color);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1002;
         }
-    });
-} 
+    }
+`;
+
+document.head.appendChild(style); 

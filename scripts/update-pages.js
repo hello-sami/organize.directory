@@ -70,7 +70,7 @@ async function updateFile(filePath) {
 }
 
 async function main() {
-    const directories = ['cities', 'states'];
+    const directories = ['cities', 'states', 'issues'];
     
     for (const dir of directories) {
         const htmlFiles = await getAllHtmlFiles(dir);

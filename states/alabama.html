@@ -20,8 +20,6 @@
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="/theme-init.js"></script>
-    <script src="/search-index.js"></script>
-    <script src="/mobile-menu.js"></script>
     <!-- Critical Scripts -->
     <script src="/theme-init.js"></script>
     <script type="module">
@@ -38,20 +36,7 @@
         <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content" role="main">
-            <header class="page-header">
-                <div class="search-container">
-                    <div class="search-input-wrapper">
-                        <input 
-                            type="text" 
-                            id="searchInput" 
-                            class="search-input" 
-                            placeholder="Search mutual aid resources..."
-                            aria-label="Search mutual aid resources"
-                        >
-                        <div id="searchResults" class="search-results" role="listbox"></div>
-                    </div>
-                </div>
-            </header>
+            <header id="header" class="page-header"></header>
             <div class="city-page">
                 <div class="breadcrumb">
                     <a href="/location">States</a>
@@ -63,17 +48,11 @@
                 <hr>
 
                 <section>
-                    <h2>Regions</h2>
+                    <h2>Regions and Cities</h2>
                     <div class="cities-list">
                         <a href="/central-al" class="city-link">Central Alabama</a>
                         <a href="/north-al" class="city-link">North Alabama</a>
                         <a href="/south-al" class="city-link">South Alabama</a>
-                    </div>
-                </section>
-                
-                <section>
-                    <h2>Communities</h2>
-                    <div class="cities-list">
                         <a href="/auburn" class="city-link">Auburn</a>
                         <a href="/birmingham" class="city-link">Birmingham</a>
                         <!-- <a href="/dothan" class="city-link">Dothan</a> -->
@@ -86,6 +65,8 @@
                         <!-- <a href="/tuscaloosa" class="city-link">Tuscaloosa</a> -->
                     </div>
                 </section>
+
+                <hr>
 
                 <section>
                     <div class="initiative">
@@ -158,23 +139,25 @@
                     </div>
                 </section>
 
+                <hr>
+
+                <footer class="site-footer">
+                    <p>Awareness into action. Solidarity not charity.</p>
+                </footer>
+
             </div>
-            <footer class="site-footer">
-                <p>Awareness into action. Solidarity not charity.</p>
-            </footer>
+
         </main>
+        
     </div>
 
-    <script type="module" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('location'));
-    </script>
-    <script src="/theme.js" type="module"></script>
-
-    <!-- Initialize Search -->
+    <!-- Initialize components -->
     <script type="module">
-        import { initializeSearch } from '/components/search-header.js';
-        initializeSearch();
+        import { initializeComponents } from '/init.js';
+        initializeComponents({
+            sidebarType: 'location',
+            searchHeaderId: 'header'
+        });
     </script>
 </body>
 </html>
