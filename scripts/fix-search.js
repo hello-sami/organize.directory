@@ -6,9 +6,9 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// The correct initialization script
+// The correct initialization script with crossorigin attributes
 const correctInitScript = `    <!-- Initialize components -->
-    <script type="module">
+    <script type="module" crossorigin="use-credentials">
         import { initializeComponents } from '/init.js';
         initializeComponents({
             sidebarType: 'SIDEBAR_TYPE',
@@ -16,6 +16,19 @@ const correctInitScript = `    <!-- Initialize components -->
         });
     </script>
 </body>`;
+
+// The correct head scripts
+const correctHeadScripts = `    <script src="/theme-init.js" crossorigin="use-credentials"></script>
+    <!-- Critical Scripts -->
+    <script type="module" crossorigin="use-credentials">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('SIDEBAR_TYPE'));
+        }
+    </script>
+</head>`;
 
 async function getAllHtmlFiles(dir) {
     const files = await fs.promises.readdir(dir);
@@ -50,9 +63,13 @@ function getSidebarType(filePath) {
 async function fixFile(filePath) {
     try {
         let content = await fs.promises.readFile(filePath, 'utf8');
+        const sidebarType = getSidebarType(filePath);
         
-        // Remove any duplicate theme-init.js scripts
-        content = content.replace(/([\s\n]*<script src="\/theme-init\.js"><\/script>[\s\n]*)+/g, '\n    <script src="/theme-init.js"></script>\n');
+        // Fix head scripts
+        content = content.replace(
+            /(<script src="\/theme-init\.js"[^>]*><\/script>[\s\S]*?<\/head>)/g,
+            correctHeadScripts.replace('SIDEBAR_TYPE', sidebarType)
+        );
         
         // Remove old search initialization scripts
         content = content.replace(/\s*<script type="module">\s*import { initializeSearch } from '\/components\/search-header\.js';\s*initializeSearch\(\);\s*<\/script>/g, '');
@@ -64,7 +81,6 @@ async function fixFile(filePath) {
         content = content.replace(/\s*<!-- Core Scripts -->[\s\S]*?(?=<\/body>)/, '');
         
         // Add single correct initialization script
-        const sidebarType = getSidebarType(filePath);
         const initScript = correctInitScript.replace('SIDEBAR_TYPE', sidebarType);
         content = content.replace(/<\/body>/, initScript);
         
@@ -72,6 +88,18 @@ async function fixFile(filePath) {
         content = content.replace(/<header[^>]*>.*?<\/header>/gs, ''); // Remove any existing headers
         content = content.replace(/<main[^>]*>/, match => 
             match + '\n            <header id="header" class="page-header"></header>'
+        );
+        
+        // Add crossorigin attributes to all module scripts
+        content = content.replace(
+            /<script type="module"([^>]*)>/g,
+            '<script type="module" crossorigin="use-credentials"$1>'
+        );
+        
+        // Ensure proper script loading order
+        content = content.replace(
+            /<script src="\/script\.js"([^>]*)>/g,
+            '<script src="/script.js" defer$1>'
         );
         
         await fs.promises.writeFile(filePath, content);

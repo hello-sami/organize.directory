@@ -64,19 +64,20 @@ export function createSearchHeader() {
     searchWrapper.appendChild(searchButton);
     header.appendChild(searchWrapper);
     
+    // Preload search functionality
+    import('/search.js').then(module => {
+        if (!window.searchInitialized) {
+            new module.Search();
+            window.searchInitialized = true;
+        }
+    });
+    
     // Add click event to toggle search
     searchButton.addEventListener('click', () => {
         const isVisible = searchContainer.style.display === 'block';
         searchContainer.style.display = isVisible ? 'none' : 'block';
         if (!isVisible) {
             searchInput.focus();
-            // Lazy load search functionality
-            import('/search.js').then(module => {
-                if (!window.searchInitialized) {
-                    new module.Search();
-                    window.searchInitialized = true;
-                }
-            });
         }
     });
     
@@ -120,7 +121,6 @@ style.textContent = `
         border: none;
         cursor: pointer;
         color: var(--text-color);
-        transition: color 0.2s ease;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -139,11 +139,12 @@ style.textContent = `
     .search-container {
         position: absolute;
         top: 0;
-        right: 44px; /* button width + gap */
+        right: 44px;
         width: 300px;
         z-index: 1000;
         display: flex;
         align-items: flex-start;
+        transition: none;
     }
     
     .search-input-wrapper {
@@ -162,7 +163,6 @@ style.textContent = `
         border-radius: 6px;
         background: var(--bg-color);
         color: var(--text-color);
-        transition: all 0.2s ease;
         display: block;
         margin: 0;
     }

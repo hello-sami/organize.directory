@@ -22,20 +22,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Critical Scripts -->
-    <script src="/theme-init.js"></script>
-<!-- Critical Scripts -->
-    <script src="/theme-init.js"></script>
-<script type="module">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
-    </script>
+        <script src="/theme-init.js" crossorigin="use-credentials"></script>
     <!-- Critical Scripts -->
-    <script src="/theme-init.js"></script>
-<script type="module">
+    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
         import { createSidebar } from '/components/sidebar.js';
         // Initialize sidebar as soon as possible
         const sidebarElement = document.getElementById('sidebar');
@@ -50,6 +39,7 @@
 
         <main class="main-content" role="main">
             <header id="header" class="page-header"></header>
+            
             
             <div class="content">
                 <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -83,7 +73,7 @@
         </main>
     </div>
     <!-- Initialize components -->
-    <script type="module">
+    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
         import { initializeComponents } from '/init.js';
         initializeComponents({
             sidebarType: 'location',

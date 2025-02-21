@@ -19,31 +19,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- Scripts -->
-    <script src="/theme-init.js"></script>
-<script src="/search-index.js"></script>
-    <script src="/mobile-menu.js"></script>
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
+        <script src="/theme-init.js" crossorigin="use-credentials"></script>
     <!-- Critical Scripts -->
-    <script src="/theme-init.js"></script>
-<script type="module">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
-    </script>
-    <!-- Critical Scripts -->
-    <script src="/theme-init.js"></script>
-<script type="module">
+    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
         import { createSidebar } from '/components/sidebar.js';
         // Initialize sidebar as soon as possible
         const sidebarElement = document.getElementById('sidebar');
@@ -58,6 +36,7 @@
 
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
+            
             
             
             <div class="city-page">
@@ -94,7 +73,7 @@
         </main>
     </div>
 
-    <script type="module" crossorigin="use-credentials">
+    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
         import { createSidebar } from '/components/sidebar.js';
         const sidebarContainer = document.getElementById('sidebar-container');
         const sidebar = createSidebar('cities');
@@ -104,7 +83,7 @@
 
     <!-- Initialize Search -->
     <!-- Initialize components -->
-    <script type="module">
+    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
         import { initializeComponents } from '/init.js';
         initializeComponents({
             sidebarType: 'location',

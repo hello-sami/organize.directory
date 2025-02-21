@@ -76,12 +76,11 @@ const socialIcons = {
     facebook: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>`
 };
 
-// Search type state
-let currentView = 'home'; // 'home', 'cities', 'issues', or 'about'
-let searchType = 'city'; // Initialize searchType
-
-// Initialize variables
-let searchInput, homeLink, cityLink, issuesLink, aboutLink, resultsContainer, homePage, mainContent, aboutContent, headlinesContent;
+// Global variables
+let currentView = 'home';
+let resultsContainer;
+let searchInput;
+let searchType = 'city';
 
 // Wait for both DOM and sidebar to be ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -358,15 +357,26 @@ function createStateLink(state) {
     return `<a href="/states/${stateSlug}" class="state-link">${state}</a>`;
 }
 
+// Initialize DOM elements
+function initializeElements() {
+    resultsContainer = document.getElementById('searchResults') || document.createElement('div');
+    if (!resultsContainer.id) {
+        resultsContainer.id = 'searchResults';
+        document.body.appendChild(resultsContainer);
+    }
+    searchInput = document.getElementById('searchInput');
+}
+
 // Function to show all states
 function showAllStates() {
-    searchType = 'state';
-    updateNavigation();
+    if (!resultsContainer) {
+        initializeElements();
+    }
     
-    let statesHtml = `
+    const statesHtml = `
         <div class="states-grid">
             ${Object.keys(citiesByState).map(state => `
-                <div class="state-section">
+                <div class="state-card">
                     ${createStateLink(state)}
                 </div>
             `).join('')}
