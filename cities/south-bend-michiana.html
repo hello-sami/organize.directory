@@ -1,84 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Find mutual aid initiatives and community support networks in South Bend, Indiana. Connect with local organizations and community resources.">
-    
-    <!-- Open Graph / Twitter Cards -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Mutual Aid in South Bend - Local Support Networks">
-    <meta property="og:description" content="Find mutual aid initiatives and community support networks in South Bend, Indiana. Connect with local organizations providing community-based support.">
-    <meta property="og:url" content="https://organize.directory/south-bend">
-    <meta name="twitter:card" content="summary">
-    
-    <title>Mutual Aid in South Bend / Michiana - Local Support Networks & Community Resources</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="Find mutual aid initiatives and community support networks in South Bend, Indiana. Connect with local organizations and community resources.">
+ 
+ <!-- Open Graph / Twitter Cards -->
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Mutual Aid in South Bend - Local Support Networks">
+ <meta property="og:description" content="Find mutual aid initiatives and community support networks in South Bend, Indiana. Connect with local organizations providing community-based support.">
+ <meta property="og:url" content="https://organize.directory/south-bend">
+ <meta name="twitter:card" content="summary">
+ 
+ <title>Mutual Aid in South Bend / Michiana - Local Support Networks & Community Resources</title>
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Scripts -->
-        <script src="/theme-init.js" crossorigin="use-credentials"></script>
-    <!-- Critical Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
-    </script>
+ <!-- Stylesheets -->
+ <link rel="stylesheet" href="/styles.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+ 
+ <!-- Scripts -->
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
 </head>
 <body>
-    <div class="layout">
-        <div id="sidebar-container"></div>
+ <div class="layout">
+ <div id="sidebar-container"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
-            
-            
-            
-            <div class="city-page">
-                <div class="breadcrumb">
-                    <a href="/indiana">Indiana</a>
-                    <span>›</span>
-                    <span>South Bend</span>
-                </div>
+ <main class="content" role="main">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="city-page">
+ <div class="breadcrumb">
+ <a href="/indiana">Indiana</a>
+ <span>›</span>
+ <span>South Bend</span>
+ </div>
 
-                <h1>South Bend</h1>
-                <hr>
+ <h1>South Bend</h1>
+ <hr>
 
-                <section>
-                    <div class="initiative">
-                        <a href="https://www.thelgbtqcenter.org/">The LGBTQ Center</a>
-                        <p>A grassroots organization fostering mutual aid and community power through LGBTQ+ support and advocacy in South Bend. They coordinate direct services, resource sharing, and solidarity networks while building power through community organizing, cultural programming, and creating safe spaces for LGBTQ+ people to thrive.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.facebook.com/FoodnotBombsSBN/">Food Not Bombs South Bend</a>
-                        <p>Food not Bombs is a community activist group based around mutual aid to assist food insecure people.</p>
-                    </div>
-                </section>
-            </div>
-        </main>
-    </div>
+ <section>
+ <div class="initiative">
+ <a href="https://www.thelgbtqcenter.org/">The LGBTQ Center</a>
+ <p>A grassroots organization fostering mutual aid and community power through LGBTQ+ support and advocacy in South Bend. They coordinate direct services, resource sharing, and solidarity networks while building power through community organizing, cultural programming, and creating safe spaces for LGBTQ+ people to thrive.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.facebook.com/FoodnotBombsSBN/">Food Not Bombs South Bend</a>
+ <p>Food not Bombs is a community activist group based around mutual aid to assist food insecure people.</p>
+ </div>
+ </section>
+ </div>
+ </main>
+ </div>
 
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
-    </script>
-    <script src="/theme.js" type="module"></script>
+ <script type="module">
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { initializeComponents } from '/init.js';
-        initializeComponents({
-            sidebarType: 'location',
-            searchHeaderId: 'header'
-        });
-    </script>
+ import { createSidebar } from '/components/sidebar.js';
+ const sidebarContainer = document.getElementById('sidebar-container');
+ const sidebar = createSidebar('cities');
+ sidebarContainer.replaceWith(sidebar);
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'location',
+ searchHeaderId: 'header'
+ });
+ </script>
 </body>
 </html>

@@ -1,84 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Housing Justice Resources - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find housing justice resources, research, and support initiatives addressing displacement, tenant rights, and housing access.">
-    <meta property="og:title" content="Housing Justice Resources - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find housing justice resources, research, and support initiatives addressing displacement, tenant rights, and housing access.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/issues/housing-justice">
-    <meta name="twitter:card" content="summary">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/styles/issues.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Theme and Components -->
-        <script src="/theme-init.js" crossorigin="use-credentials"></script>
-    <!-- Critical Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
-    </script>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Housing Justice Resources - Mutual Aid Network Directory</title>
+ <meta name="description" content="Find housing justice resources, research, and support initiatives addressing displacement, tenant rights, and housing access.">
+ <meta property="og:title" content="Housing Justice Resources - Mutual Aid Network Directory">
+ <meta property="og:description" content="Find housing justice resources, research, and support initiatives addressing displacement, tenant rights, and housing access.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://organize.directory/issues/housing-justice">
+ <meta name="twitter:card" content="summary">
+ 
+ <!-- Styles -->
+ <link rel="stylesheet" href="/styles.css">
+ <link rel="stylesheet" href="/styles/issues.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+ <!-- Theme and Components -->
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
 </head>
 <body>
-    <div class="layout">
-        <aside id="sidebar" aria-label="Main navigation"></aside>
+ <div class="layout">
+ <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
-            
-            
-            
-            <div class="issues-page">
-                <div class="breadcrumb">
-                    <a href="/issues">Issues</a>
-                    <span>›</span>
-                    <span>Housing Justice</span>
-                </div>
+ <main class="content" role="main">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="issues-page">
+ <div class="breadcrumb">
+ <a href="/issues">Issues</a>
+ <span>›</span>
+ <span>Housing Justice</span>
+ </div>
 
-                <h1>Housing Justice Resources</h1>
-                <hr>
+ <h1>Housing Justice Resources</h1>
+ <hr>
 
-                <section>
-                    <h2>Research & Resources</h2>
-                    <div class="initiative">
-                        <a href="https://www.urbandisplacement.org/">Urban Displacement Project</a>
-                        <p>A research initiative fostering mutual aid and housing justice through critical research and community partnerships. They coordinate research on gentrification and displacement, develop policy tools, and build solidarity networks while creating accessible resources for communities fighting displacement and advocating for housing justice.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.renters-rising.org/">Renters Rising</a>
-                        <p>Renters Rising is a national alliance of renters working to shift the balance of power between renters and corporate landlords to guarantee that renters are able to live with dignity.</p>
-                    </div>
-                </section>
+ <section>
+ <h2>Research & Resources</h2>
+ <div class="initiative">
+ <a href="https://www.urbandisplacement.org/">Urban Displacement Project</a>
+ <p>A research initiative fostering mutual aid and housing justice through critical research and community partnerships. They coordinate research on gentrification and displacement, develop policy tools, and build solidarity networks while creating accessible resources for communities fighting displacement and advocating for housing justice.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.renters-rising.org/">Renters Rising</a>
+ <p>Renters Rising is a national alliance of renters working to shift the balance of power between renters and corporate landlords to guarantee that renters are able to live with dignity.</p>
+ </div>
+ </section>
 
-                <p class="help-text">Know of a housing justice resource or initiative? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-            </div>
-        </main>
-    </div>
+ <p class="help-text">Know of a housing justice resource or initiative? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+ </div>
+ </main>
+ </div>
 
-    <!-- Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
-    </script>
-    <script src="/theme.js" type="module"></script>
+ <!-- Scripts -->
+ <script type="module">
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { initializeComponents } from '/init.js';
-        initializeComponents({
-            sidebarType: 'location',
-            searchHeaderId: 'header'
-        });
-    </script>
+ import { createSidebar } from '/components/sidebar.js';
+ document.getElementById('sidebar').replaceWith(createSidebar('issues'));
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'location',
+ searchHeaderId: 'header'
+ });
+ </script>
 </body>
 </html> 

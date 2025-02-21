@@ -1,93 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opioid Crisis Response Networks - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find harm reduction networks, addiction support initiatives, and organizations fighting the opioid crisis through mutual aid and direct action.">
-    <meta property="og:title" content="Opioid Crisis Response Networks - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find harm reduction networks, addiction support initiatives, and organizations fighting the opioid crisis through mutual aid and direct action.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/issues/opioid-crisis">
-    <meta name="twitter:card" content="summary">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
-    
-    <!-- Theme and Components -->
-        <script src="/theme-init.js" crossorigin="use-credentials"></script>
-    <!-- Critical Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
-    </script>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Opioid Crisis Response Networks - Mutual Aid Network Directory</title>
+ <meta name="description" content="Find harm reduction networks, addiction support initiatives, and organizations fighting the opioid crisis through mutual aid and direct action.">
+ <meta property="og:title" content="Opioid Crisis Response Networks - Mutual Aid Network Directory">
+ <meta property="og:description" content="Find harm reduction networks, addiction support initiatives, and organizations fighting the opioid crisis through mutual aid and direct action.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://organize.directory/issues/opioid-crisis">
+ <meta name="twitter:card" content="summary">
+ 
+ <!-- Styles -->
+ <link rel="stylesheet" href="/styles.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+ <!-- Google Analytics -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+ <script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-QJ03RCM35H');
+ </script>
+ 
+ <!-- Theme and Components -->
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
 </head>
 <body>
-    <div class="layout">
-        <aside id="sidebar" aria-label="Main navigation"></aside>
+ <div class="layout">
+ <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
-            <header id="header" class="page-header"></header>
-            
-            
-            
-            <div class="state-page">
-                <div class="breadcrumb">
-                    <a href="/" class="breadcrumb-link">Home</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <a href="/issues" class="breadcrumb-link">Issues</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <span class="breadcrumb-current">Opioid Crisis</span>
-                </div>
+ <main class="content">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="state-page">
+ <div class="breadcrumb">
+ <a href="/" class="breadcrumb-link">Home</a>
+ <span class="breadcrumb-separator">›</span>
+ <a href="/issues" class="breadcrumb-link">Issues</a>
+ <span class="breadcrumb-separator">›</span>
+ <span class="breadcrumb-current">Opioid Crisis</span>
+ </div>
 
-                <h1 class="state-title">Opioid Crisis</h1>
+ <h1 class="state-title">Opioid Crisis</h1>
 
-                <section class="initiatives-section">
-                    <h2>Direct Action</h2>
-                    <div class="initiative">
-                        <a href="https://www.sacklerpain.org/">P.A.I.N. (Prescription Addiction Intervention Now)<a>
-                        <p>Artist-led direct action group targeting the Sackler family and institutions that carry their name, while advocating for harm reduction approaches and fighting stigma around drug use. Founded by Nan Goldin to address the overdose crisis through mutual aid and solidarity.</p>
-                    </div>
-                </section>
+ <section class="initiatives-section">
+ <h2>Direct Action</h2>
+ <div class="initiative">
+ <a href="https://www.sacklerpain.org/">P.A.I.N. (Prescription Addiction Intervention Now)<a>
+ <p>Artist-led direct action group targeting the Sackler family and institutions that carry their name, while advocating for harm reduction approaches and fighting stigma around drug use. Founded by Nan Goldin to address the overdose crisis through mutual aid and solidarity.</p>
+ </div>
+ </section>
 
-                <p class="help-text">Know of an opioid crisis response initiative we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-            </div>
+ <p class="help-text">Know of an opioid crisis response initiative we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+ </div>
 
-            <footer class="site-footer">
-                <p>Awareness into action. Solidarity not charity.</p>
-            </footer>
-        </main>
-    </div>
+ <footer class="site-footer">
+ <p>Awareness into action. Solidarity not charity.</p>
+ </footer>
+ </main>
+ </div>
 
-    <!-- Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
-    </script>
-    <script src="/theme.js" type="module"></script>
+ <!-- Scripts -->
+ <script type="module">
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { initializeComponents } from '/init.js';
-        initializeComponents({
-            sidebarType: 'location',
-            searchHeaderId: 'header'
-        });
-    </script>
+ import { createSidebar } from '/components/sidebar.js';
+ document.getElementById('sidebar').replaceWith(createSidebar('issues'));
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'location',
+ searchHeaderId: 'header'
+ });
+ </script>
 </body>
 </html> 

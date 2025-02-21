@@ -1,129 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Illinois Mutual Aid Networks - Local Support & Community Resources</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives in Illinois cities including Chicago, Springfield, Rockford, and more.">
-    <meta property="og:title" content="Illinois Mutual Aid Networks - Local Support & Community Resources">
-    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Illinois cities including Chicago, Springfield, Rockford, and more.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/illinois">
-    <meta name="twitter:card" content="summary">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Theme and Components -->
-        <script src="/theme-init.js" crossorigin="use-credentials"></script>
-    <!-- Critical Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
-    </script>
+ <!-- Google Analytics -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+ <script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-QJ03RCM35H');
+ </script>
+ 
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Illinois Mutual Aid Networks - Local Support & Community Resources</title>
+ <meta name="description" content="Find mutual aid networks and community support initiatives in Illinois cities including Chicago, Springfield, Rockford, and more.">
+ <meta property="og:title" content="Illinois Mutual Aid Networks - Local Support & Community Resources">
+ <meta property="og:description" content="Find mutual aid networks and community support initiatives in Illinois cities including Chicago, Springfield, Rockford, and more.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://organize.directory/illinois">
+ <meta name="twitter:card" content="summary">
+ 
+ <!-- Styles -->
+ <link rel="stylesheet" href="/styles.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+ <!-- Theme and Components -->
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
 </head>
 <body>
-    <div class="layout">
-        <aside id="sidebar" aria-label="Main navigation"></aside>
+ <div class="layout">
+ <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
-            
-            
-            
-            <div class="city-page">
-                <div class="breadcrumb">
-                    <a href="/location">States</a>
-                    <span>›</span>
-                    <span>Illinois</span>
-                </div>
+ <main class="content" role="main">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="city-page">
+ <div class="breadcrumb">
+ <a href="/location">States</a>
+ <span>›</span>
+ <span>Illinois</span>
+ </div>
 
-                <h1>Illinois</h1>
-                <hr>
+ <h1>Illinois</h1>
+ <hr>
 
-                <section>
-                    <h2>Cities</h2>
-                    <div class="cities-list">
-                        <a href="/aurora-il" class="city-link">Aurora</a>
-                        <a href="/bloomington" class="city-link">Bloomington</a>
-                        <a href="/champaign-urbana" class="city-link">Champaign Urbana</a>
-                        <a href="/chicago" class="city-link">Chicago</a>
-                        <!-- <a href="/decatur" class="city-link">Decatur</a> -->
-                        <a href="/la-salle-co" class="city-link">La Salle Co</a>
-                        <a href="/mattoon-charleston" class="city-link">Mattoon-Charleston</a>
-                        <a href="/peoria" class="city-link">Peoria</a>
-                        <a href="/rockford" class="city-link">Rockford</a>
-                        <a href="/southern-illinois" class="city-link">Southern Illinois</a>
-                        <a href="/springfield-il" class="city-link">Springfield</a>
-                        <a href="/western-il" class="city-link">Western IL</a>
-                    </div>
-                </section>
+ <section>
+ <h2>Cities</h2>
+ <div class="cities-list">
+ <a href="/aurora-il" class="city-link">Aurora</a>
+ <a href="/bloomington" class="city-link">Bloomington</a>
+ <a href="/champaign-urbana" class="city-link">Champaign Urbana</a>
+ <a href="/chicago" class="city-link">Chicago</a>
+ <!-- <a href="/decatur" class="city-link">Decatur</a> -->
+ <a href="/la-salle-co" class="city-link">La Salle Co</a>
+ <a href="/mattoon-charleston" class="city-link">Mattoon-Charleston</a>
+ <a href="/peoria" class="city-link">Peoria</a>
+ <a href="/rockford" class="city-link">Rockford</a>
+ <a href="/southern-illinois" class="city-link">Southern Illinois</a>
+ <a href="/springfield-il" class="city-link">Springfield</a>
+ <a href="/western-il" class="city-link">Western IL</a>
+ </div>
+ </section>
 
-                <section>
-                    <div class="initiative">
-                        <a href="https://www.endpermanentpunishments.org/">Illinois Coalition to End Permanent Punishments</a>
-                        <p>A coalition working to end permanent punishments and support formerly incarcerated individuals through advocacy, mutual aid, and community organizing. They focus on policy reform, community education, and direct support for impacted individuals and families across Illinois.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.ilcadv.org/">Illinois Coalition Against Domestic Violence</a>
-                        <p>A statewide network fostering mutual aid and community power through domestic violence prevention and survivor support across Illinois. They coordinate direct assistance, shelter networks, and solidarity initiatives while building power through survivor-centered advocacy, community education, and creating pathways for safety and healing.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.ilsinglepayer.org/">Illinois Single Payer Coalition</a>
-                        <p>A grassroots coalition fostering mutual aid and community power through healthcare justice organizing across Illinois. They coordinate advocacy campaigns, resource sharing, and solidarity networks while building power through community education, policy change, and creating pathways for universal healthcare access.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.tjlp.org/">Transgender Justice Law Project</a>
-                        <p>We provide free, life and gender-affirming legal services to everyone on the gender spectrum regardless of financial status.</p>
-                    </div>
+ <section>
+ <div class="initiative">
+ <a href="https://www.endpermanentpunishments.org/">Illinois Coalition to End Permanent Punishments</a>
+ <p>A coalition working to end permanent punishments and support formerly incarcerated individuals through advocacy, mutual aid, and community organizing. They focus on policy reform, community education, and direct support for impacted individuals and families across Illinois.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.ilcadv.org/">Illinois Coalition Against Domestic Violence</a>
+ <p>A statewide network fostering mutual aid and community power through domestic violence prevention and survivor support across Illinois. They coordinate direct assistance, shelter networks, and solidarity initiatives while building power through survivor-centered advocacy, community education, and creating pathways for safety and healing.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.ilsinglepayer.org/">Illinois Single Payer Coalition</a>
+ <p>A grassroots coalition fostering mutual aid and community power through healthcare justice organizing across Illinois. They coordinate advocacy campaigns, resource sharing, and solidarity networks while building power through community education, policy change, and creating pathways for universal healthcare access.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.tjlp.org/">Transgender Justice Law Project</a>
+ <p>We provide free, life and gender-affirming legal services to everyone on the gender spectrum regardless of financial status.</p>
+ </div>
 
-                    <div class="initiative">
-                        <a href="https://ltbcoalition.org/">Lift the Ban Coalition</a>
-                        <p>A grassroots coalition fostering mutual aid and housing justice through organizing to end the state ban on rent control. They coordinate tenant organizing, policy advocacy, and solidarity networks while building power through community education, direct action, and creating spaces for housing justice organizing across Illinois.</p>
-                    </div>
+ <div class="initiative">
+ <a href="https://ltbcoalition.org/">Lift the Ban Coalition</a>
+ <p>A grassroots coalition fostering mutual aid and housing justice through organizing to end the state ban on rent control. They coordinate tenant organizing, policy advocacy, and solidarity networks while building power through community education, direct action, and creating spaces for housing justice organizing across Illinois.</p>
+ </div>
 
-                    <div class="initiative">
-                        <a href="https://ww4j.org/">Warehouse Workers For Justice</a>
-                        <p>Building power with warehouse workers to win safe, secure, high-paying jobs in Illinois’ logistics industry.</p>
-                    </div>
-                </section>
+ <div class="initiative">
+ <a href="https://ww4j.org/">Warehouse Workers For Justice</a>
+ <p>Building power with warehouse workers to win safe, secure, high-paying jobs in Illinois’ logistics industry.</p>
+ </div>
+ </section>
 
-            </div>
-            <footer class="site-footer">
-                <p>Awareness into action. Solidarity not charity.</p>
-            </footer>
-        </main>
-    </div>
+ </div>
+ <footer class="site-footer">
+ <p>Awareness into action. Solidarity not charity.</p>
+ </footer>
+ </main>
+ </div>
 
-    <!-- Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('location'));
-    </script>
-    <script src="/theme.js" type="module"></script>
+ <!-- Scripts -->
+ <script type="module">
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { initializeComponents } from '/init.js';
-        initializeComponents({
-            sidebarType: 'location',
-            searchHeaderId: 'header'
-        });
-    </script>
+ import { createSidebar } from '/components/sidebar.js';
+ document.getElementById('sidebar').replaceWith(createSidebar('location'));
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'location',
+ searchHeaderId: 'header'
+ });
+ </script>
 </body>
 </html>

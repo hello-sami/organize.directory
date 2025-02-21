@@ -1,80 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmer Solidarity & Land Justice Resources - Mutual Aid Networks</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives focused on farmer solidarity, land justice, and agricultural equity.">
-    
-    <!-- Open Graph tags -->
-    <meta property="og:title" content="Farmer Solidarity & Land Justice Resources - Mutual Aid Networks">
-    <meta property="og:description" content="Find mutual aid networks and community support initiatives focused on farmer solidarity, land justice, and agricultural equity.">
-    <meta property="og:type" content="website">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/styles/issues.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Theme -->
-        <script src="/theme-init.js" crossorigin="use-credentials"></script>
-    <!-- Critical Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
-    </script>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Farmer Solidarity & Land Justice Resources - Mutual Aid Networks</title>
+ <meta name="description" content="Find mutual aid networks and community support initiatives focused on farmer solidarity, land justice, and agricultural equity.">
+ 
+ <!-- Open Graph tags -->
+ <meta property="og:title" content="Farmer Solidarity & Land Justice Resources - Mutual Aid Networks">
+ <meta property="og:description" content="Find mutual aid networks and community support initiatives focused on farmer solidarity, land justice, and agricultural equity.">
+ <meta property="og:type" content="website">
+ 
+ <!-- Styles -->
+ <link rel="stylesheet" href="/styles.css">
+ <link rel="stylesheet" href="/styles/issues.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+ <!-- Theme -->
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
 </head>
 <body>
-    <div class="layout">
-        <aside id="sidebar" aria-label="Main navigation"></aside>
+ <div class="layout">
+ <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
-            
-            
-            
-            <div class="issues-page">
-                <div class="breadcrumb">
-                    <a href="/issues">Issues</a>
-                    <span>›</span>
-                    <span>Farmer Solidarity</span>
-                </div>
+ <main class="content" role="main">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="issues-page">
+ <div class="breadcrumb">
+ <a href="/issues">Issues</a>
+ <span>›</span>
+ <span>Farmer Solidarity</span>
+ </div>
 
-                <h1>Farmer Solidarity & Land Justice</h1>
-                <hr>
+ <h1>Farmer Solidarity & Land Justice</h1>
+ <hr>
 
-                <section>
-                    <h2>National Organizations</h2>
-                    <div class="initiative">
-                        <a href="https://www.agrariantrust.org/">Agrarian Trust</a>
-                        <p>A national land trust fostering mutual aid and land justice through community land ownership and stewardship opportunities. They coordinate land access initiatives, support next-generation farmers, and build solidarity networks while working towards equitable access, cultural reconnection, and regenerative agriculture through their Agrarian Commons model and community-based land ownership programs.</p>
-                    </div>
-                </section>
+ <section>
+ <h2>National Organizations</h2>
+ <div class="initiative">
+ <a href="https://www.agrariantrust.org/">Agrarian Trust</a>
+ <p>A national land trust fostering mutual aid and land justice through community land ownership and stewardship opportunities. They coordinate land access initiatives, support next-generation farmers, and build solidarity networks while working towards equitable access, cultural reconnection, and regenerative agriculture through their Agrarian Commons model and community-based land ownership programs.</p>
+ </div>
+ </section>
 
-                <p class="help-text">Know of a farmer solidarity or land justice initiative? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-            </div>
-        </main>
-    </div>
+ <p class="help-text">Know of a farmer solidarity or land justice initiative? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+ </div>
+ </main>
+ </div>
 
-    <!-- Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
-    </script>
-    <script src="/theme.js" type="module"></script>
+ <!-- Scripts -->
+ <script type="module">
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { initializeComponents } from '/init.js';
-        initializeComponents({
-            sidebarType: 'location',
-            searchHeaderId: 'header'
-        });
-    </script>
+ import { createSidebar } from '/components/sidebar.js';
+ document.getElementById('sidebar').replaceWith(createSidebar('issues'));
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'location',
+ searchHeaderId: 'header'
+ });
+ </script>
 </body>
 </html> 

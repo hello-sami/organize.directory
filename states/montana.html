@@ -1,126 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Montana Mutual Aid Networks - Local Support & Community Resources</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives in Montana cities including Missoula, Bozeman, Billings, and more.">
-    <meta property="og:title" content="Montana Mutual Aid Networks - Local Support & Community Resources">
-    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Montana cities including Missoula, Bozeman, Billings, and more.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/montana">
-    <meta name="twitter:card" content="summary">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Theme and Components -->
-        <script src="/theme-init.js" crossorigin="use-credentials"></script>
-    <!-- Critical Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
-    </script>
+ <!-- Google Analytics -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+ <script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-QJ03RCM35H');
+ </script>
+ 
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Montana Mutual Aid Networks - Local Support & Community Resources</title>
+ <meta name="description" content="Find mutual aid networks and community support initiatives in Montana cities including Missoula, Bozeman, Billings, and more.">
+ <meta property="og:title" content="Montana Mutual Aid Networks - Local Support & Community Resources">
+ <meta property="og:description" content="Find mutual aid networks and community support initiatives in Montana cities including Missoula, Bozeman, Billings, and more.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://organize.directory/montana">
+ <meta name="twitter:card" content="summary">
+ 
+ <!-- Styles -->
+ <link rel="stylesheet" href="/styles.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+ <!-- Theme and Components -->
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
 </head>
 <body>
-    <div class="layout">
-        <aside id="sidebar" aria-label="Main navigation"></aside>
+ <div class="layout">
+ <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
-            
-            
-            
-            <div class="city-page">
-                <div class="breadcrumb">
-                    <a href="/location">States</a>
-                    <span>›</span>
-                    <span>Montana</span>
-                </div>
+ <main class="content" role="main">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="city-page">
+ <div class="breadcrumb">
+ <a href="/location">States</a>
+ <span>›</span>
+ <span>Montana</span>
+ </div>
 
-                <h1>Montana</h1>
-                <hr>
+ <h1>Montana</h1>
+ <hr>
 
-                <section>
-                    <h2>Cities</h2>
-                    <div class="cities-list">
-                        <a href="/billings" class="city-link">Billings</a>
-                        <a href="/bozeman" class="city-link">Bozeman</a>
-                        <a href="/butte" class="city-link">Butte</a>
-                        <a href="/eastern-montana" class="city-link">Eastern Montana</a>
-                        <a href="/great-falls" class="city-link">Great Falls</a>
-                        <a href="/helena" class="city-link">Helena</a>
-                        <!-- <a href="/kalispell" class="city-link">Kalispell</a> -->
-                        <a href="/missoula" class="city-link">Missoula</a>
-                        <!-- <a href="/western-montana" class="city-link">Western Montana</a> -->
-                    </div>
-                </section>
+ <section>
+ <h2>Cities</h2>
+ <div class="cities-list">
+ <a href="/billings" class="city-link">Billings</a>
+ <a href="/bozeman" class="city-link">Bozeman</a>
+ <a href="/butte" class="city-link">Butte</a>
+ <a href="/eastern-montana" class="city-link">Eastern Montana</a>
+ <a href="/great-falls" class="city-link">Great Falls</a>
+ <a href="/helena" class="city-link">Helena</a>
+ <!-- <a href="/kalispell" class="city-link">Kalispell</a> -->
+ <a href="/missoula" class="city-link">Missoula</a>
+ <!-- <a href="/western-montana" class="city-link">Western Montana</a> -->
+ </div>
+ </section>
 
-                <section>
-                    <div class="initiative">
-                        <a href="https://www.mttwospirit.org/">Montana Two Spirit Society</a>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.glacierqueeralliance.org/">Glacier Queer Alliance</a>
-                        <p>Providing positive, safe, community resources, events, and spaces for people of all gender identities and sexual orientations in the Flathead Valley.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://transvisiblemontana.wordpress.com/">Transvisible Montana</a>
-                        <p>A coalition of transgender, non-binary, and two spirit individuals and organizations throughout the state of Montana. We provide workshops, leadership opportunities, education, and more to the people of Montana.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://mtchoice.org/">Montanans for Choice</a>
-                        <p>Montanans for Choice works to advance gender equity, sexual health, and reproductive freedom through public education, communications, and advocacy.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/mt4palestine/">Montana For Palestine</a>
-                        <p>We are Montanans proud to stand in solidarity with the Palestinian people in their quest for justice </p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.mtsrhc.org/">Montana Sexual and Reproductive Health Collective</a>
-                        <p>We are a group of organizations and individuals committed to protecting and progressing sexual and reproductive health care in Montana.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://mtabortion.org/">Montana Abortion Access Program</a>
-                        <p>Montana’s statewide abortion fund exists to bridge the gap between our fundamental right to access abortion care and our actual ability to access this care.</p>
-                    </div>
-                </section>
-            </div>
-            <footer class="site-footer">
-                <p>Awareness into action. Solidarity not charity.</p>
-            </footer>
-        </main>
-    </div>
+ <section>
+ <div class="initiative">
+ <a href="https://www.mttwospirit.org/">Montana Two Spirit Society</a>
+ </div>
+ <div class="initiative">
+ <a href="https://www.glacierqueeralliance.org/">Glacier Queer Alliance</a>
+ <p>Providing positive, safe, community resources, events, and spaces for people of all gender identities and sexual orientations in the Flathead Valley.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://transvisiblemontana.wordpress.com/">Transvisible Montana</a>
+ <p>A coalition of transgender, non-binary, and two spirit individuals and organizations throughout the state of Montana. We provide workshops, leadership opportunities, education, and more to the people of Montana.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://mtchoice.org/">Montanans for Choice</a>
+ <p>Montanans for Choice works to advance gender equity, sexual health, and reproductive freedom through public education, communications, and advocacy.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.instagram.com/mt4palestine/">Montana For Palestine</a>
+ <p>We are Montanans proud to stand in solidarity with the Palestinian people in their quest for justice </p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.mtsrhc.org/">Montana Sexual and Reproductive Health Collective</a>
+ <p>We are a group of organizations and individuals committed to protecting and progressing sexual and reproductive health care in Montana.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://mtabortion.org/">Montana Abortion Access Program</a>
+ <p>Montana’s statewide abortion fund exists to bridge the gap between our fundamental right to access abortion care and our actual ability to access this care.</p>
+ </div>
+ </section>
+ </div>
+ <footer class="site-footer">
+ <p>Awareness into action. Solidarity not charity.</p>
+ </footer>
+ </main>
+ </div>
 
-    <!-- Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('location'));
-    </script>
-    <script src="/theme.js" type="module"></script>
+ <!-- Scripts -->
+ <script type="module">
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { initializeComponents } from '/init.js';
-        initializeComponents({
-            sidebarType: 'location',
-            searchHeaderId: 'header'
-        });
-    </script>
+ import { createSidebar } from '/components/sidebar.js';
+ document.getElementById('sidebar').replaceWith(createSidebar('location'));
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'location',
+ searchHeaderId: 'header'
+ });
+ </script>
 </body>
 </html>

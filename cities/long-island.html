@@ -1,93 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Common head content -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Find mutual aid initiatives and community support networks in Long Island, New York. Connect with local organizations and community resources.">
-    
-    <!-- OpenGraph and Twitter Tags -->
-    <meta property="og:title" content="Mutual Aid in Long Island - Local Support Networks">
-    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Long Island, New York. Connect with local organizations providing community-based support.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/long-island">
-    <meta name="twitter:card" content="summary">
-    
-    <title>Mutual Aid in Long Island - Local Support Networks & Community Resources</title>
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
-        <script src="/theme-init.js" crossorigin="use-credentials"></script>
-    <!-- Critical Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
-    </script>
+ <!-- Common head content -->
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="Find mutual aid initiatives and community support networks in Long Island, New York. Connect with local organizations and community resources.">
+ 
+ <!-- OpenGraph and Twitter Tags -->
+ <meta property="og:title" content="Mutual Aid in Long Island - Local Support Networks">
+ <meta property="og:description" content="Find mutual aid initiatives and community support networks in Long Island, New York. Connect with local organizations providing community-based support.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://organize.directory/long-island">
+ <meta name="twitter:card" content="summary">
+ 
+ <title>Mutual Aid in Long Island - Local Support Networks & Community Resources</title>
+ 
+ <!-- Styles -->
+ <link rel="stylesheet" href="/styles.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+ 
+ <!-- Google Analytics -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+ <script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-QJ03RCM35H');
+ </script>
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
 </head>
 <body>
-    <div class="layout">
-        <div id="sidebar-container"></div>
+ <div class="layout">
+ <div id="sidebar-container"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
-            
-            
-            
-            <div class="city-page">
-                <div class="breadcrumb">
-                    <a href="/new-york.html">New York</a>
-                    <span>›</span>
-                    <span>Long Island</span>
-                </div>
-
-
-                <h1>Long Island, New York</h1>
-                <hr>
-
-                <section>
-                    <div class="initiative">
-                        <a href="https://communitysolidarity.org/">Community Solidarity</a>
-                        <p>Formerly Long Island Food Not Bombs, food distribution.</p>
-                    </div>
-                </section>
+ <main class="content" role="main">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="city-page">
+ <div class="breadcrumb">
+ <a href="/new-york.html">New York</a>
+ <span>›</span>
+ <span>Long Island</span>
+ </div>
 
 
-                </div>
-            </div>
-        </main>
-    </div>
+ <h1>Long Island, New York</h1>
+ <hr>
 
-    <!-- Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
-    </script>
-    <script src="/theme.js" type="module"></script>
+ <section>
+ <div class="initiative">
+ <a href="https://communitysolidarity.org/">Community Solidarity</a>
+ <p>Formerly Long Island Food Not Bombs, food distribution.</p>
+ </div>
+ </section>
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { initializeComponents } from '/init.js';
-        initializeComponents({
-            sidebarType: 'location',
-            searchHeaderId: 'header'
-        });
-    </script>
+
+ </div>
+ </div>
+ </main>
+ </div>
+
+ <!-- Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ const sidebarContainer = document.getElementById('sidebar-container');
+ const sidebar = createSidebar('cities');
+ sidebarContainer.replaceWith(sidebar);
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'location',
+ searchHeaderId: 'header'
+ });
+ </script>
 </body>
 </html>

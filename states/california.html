@@ -1,187 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>California Mutual Aid Networks - Local Support & Community Resources</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives in California cities including Los Angeles, San Francisco, and more.">
-    <meta property="og:title" content="California Statewide Initiatives - Mutual Aid Network Directory">
-    <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in California.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/california">
-    <meta name="twitter:card" content="summary">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Theme and Components -->
-        <script src="/theme-init.js" crossorigin="use-credentials"></script>
-    <!-- Critical Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
-    </script>
+ <!-- Google Analytics -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+ <script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-QJ03RCM35H');
+ </script>
+ 
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>California Mutual Aid Networks - Local Support & Community Resources</title>
+ <meta name="description" content="Find mutual aid networks and community support initiatives in California cities including Los Angeles, San Francisco, and more.">
+ <meta property="og:title" content="California Statewide Initiatives - Mutual Aid Network Directory">
+ <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in California.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://organize.directory/california">
+ <meta name="twitter:card" content="summary">
+ 
+ <!-- Styles -->
+ <link rel="stylesheet" href="/styles.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+ <!-- Theme and Components -->
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
 </head>
 <body>
-    <div class="layout">
-        <aside id="sidebar" aria-label="Main navigation"></aside>
+ <div class="layout">
+ <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
-            
-            
-            
-            <div class="city-page">
-                <div class="breadcrumb">
-                    <a href="/location">States</a>
-                    <span>›</span>
-                    <span>California</span>
-                </div>
+ <main class="content" role="main">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="city-page">
+ <div class="breadcrumb">
+ <a href="/location">States</a>
+ <span>›</span>
+ <span>California</span>
+ </div>
 
-                <h1>California</h1>
-                <hr>
+ <h1>California</h1>
+ <hr>
 
-                <section>
-                    <h2>Regions</h2>
-                    <div class="cities-list">
-                        <a href="/norcal" class="city-link">Northern California</a>
-                        <a href="/socal" class="city-link">Southern California</a>
-                        <a href="/central-valley" class="city-link">Central Valley</a>
-                        <a href="/central-coast" class="city-link">Central Coast</a>
-                        <a href="/sierra" class="city-link">Sierra</a>
-                    </div>
-                </section>
+ <section>
+ <h2>Regions</h2>
+ <div class="cities-list">
+ <a href="/norcal" class="city-link">Northern California</a>
+ <a href="/socal" class="city-link">Southern California</a>
+ <a href="/central-valley" class="city-link">Central Valley</a>
+ <a href="/central-coast" class="city-link">Central Coast</a>
+ <a href="/sierra" class="city-link">Sierra</a>
+ </div>
+ </section>
 
-                <section>
-                    <h2>Sub-Regions</h2>
-                    <div class="cities-list">
-                        <a href="/sf-bay-area" class="city-link">Bay Area</a>
-                        <a href="/inland-empire" class="city-link">Inland Empire</a>
-                        <a href="/orange-county" class="city-link">Orange County</a>
-                        <a href="/monterey-bay" class="city-link">Monterey Bay</a>
-                        <a href="/san-joaquin-valley" class="city-link">San Joaquin Valley</a>
-                        <a href="/gold-country" class="city-link">Gold Country</a>
-                        <a href="/humboldt-county" class="city-link">Humboldt County</a>
-                        <a href="/imperial-county" class="city-link">Imperial County</a>
-                        <a href="/shasta" class="city-link">Shasta</a>
-                        <a href="/sonoma-county" class="city-link">Sonoma County</a>
-                    </div>
-                </section>
+ <section>
+ <h2>Sub-Regions</h2>
+ <div class="cities-list">
+ <a href="/sf-bay-area" class="city-link">Bay Area</a>
+ <a href="/inland-empire" class="city-link">Inland Empire</a>
+ <a href="/orange-county" class="city-link">Orange County</a>
+ <a href="/monterey-bay" class="city-link">Monterey Bay</a>
+ <a href="/san-joaquin-valley" class="city-link">San Joaquin Valley</a>
+ <a href="/gold-country" class="city-link">Gold Country</a>
+ <a href="/humboldt-county" class="city-link">Humboldt County</a>
+ <a href="/imperial-county" class="city-link">Imperial County</a>
+ <a href="/shasta" class="city-link">Shasta</a>
+ <a href="/sonoma-county" class="city-link">Sonoma County</a>
+ </div>
+ </section>
 
-                <section>
-                    <h2>Cities</h2>
-                    <div class="cities-list">
-                        <a href="/bakersfield" class="city-link">Bakersfield</a>
-                        <a href="/chico" class="city-link">Chico</a>
-                        <a href="/fresno-madera" class="city-link">Fresno / Madera</a>
-                        <a href="/hanford-corcoran" class="city-link">Hanford-Corcoran</a>
-                        <a href="/long-beach" class="city-link">Long Beach</a>
-                        <a href="/los-angeles" class="city-link">Los Angeles</a>
-                        <a href="/merced" class="city-link">Merced</a>
-                        <a href="/modesto" class="city-link">Modesto</a>
-                        <a href="/palm-springs" class="city-link">Palm Springs</a>
-                        <a href="/redding" class="city-link">Redding</a>
-                        <a href="/sacramento" class="city-link">Sacramento</a>
-                        <a href="/san-diego" class="city-link">San Diego</a>
-                        <a href="/san-luis-obispo" class="city-link">San Luis Obispo</a>
-                        <a href="/santa-barbara" class="city-link">Santa Barbara</a>
-                        <a href="/santa-cruz" class="city-link">Santa Cruz</a>
-                        <a href="/santa-maria" class="city-link">Santa Maria</a>
-                        <a href="/santa-rosa" class="city-link">Santa Rosa</a>
-                        <a href="/stockton" class="city-link">Stockton</a>
-                        <!-- <a href="/susanville" class="city-link">Susanville</a> -->
-                        <a href="/visalia-tulare" class="city-link">Visalia-Tulare</a>
-                        <a href="/yuba-sutter" class="city-link">Yuba-Sutter</a>
-                    </div>
-                </section>
+ <section>
+ <h2>Cities</h2>
+ <div class="cities-list">
+ <a href="/bakersfield" class="city-link">Bakersfield</a>
+ <a href="/chico" class="city-link">Chico</a>
+ <a href="/fresno-madera" class="city-link">Fresno / Madera</a>
+ <a href="/hanford-corcoran" class="city-link">Hanford-Corcoran</a>
+ <a href="/long-beach" class="city-link">Long Beach</a>
+ <a href="/los-angeles" class="city-link">Los Angeles</a>
+ <a href="/merced" class="city-link">Merced</a>
+ <a href="/modesto" class="city-link">Modesto</a>
+ <a href="/palm-springs" class="city-link">Palm Springs</a>
+ <a href="/redding" class="city-link">Redding</a>
+ <a href="/sacramento" class="city-link">Sacramento</a>
+ <a href="/san-diego" class="city-link">San Diego</a>
+ <a href="/san-luis-obispo" class="city-link">San Luis Obispo</a>
+ <a href="/santa-barbara" class="city-link">Santa Barbara</a>
+ <a href="/santa-cruz" class="city-link">Santa Cruz</a>
+ <a href="/santa-maria" class="city-link">Santa Maria</a>
+ <a href="/santa-rosa" class="city-link">Santa Rosa</a>
+ <a href="/stockton" class="city-link">Stockton</a>
+ <!-- <a href="/susanville" class="city-link">Susanville</a> -->
+ <a href="/visalia-tulare" class="city-link">Visalia-Tulare</a>
+ <a href="/yuba-sutter" class="city-link">Yuba-Sutter</a>
+ </div>
+ </section>
 
-                <section>
-                    <div class="initiative">
-                        <a href="https://www.tongva.land/">Tongva Land</a>
-                        <p>A mutual aid initiative fostering solidarity and support for Tongva people, the original inhabitants of the Los Angeles Basin and Southern Channel Islands. They coordinate land tax contributions, cultural preservation, and solidarity networks while building power through Indigenous sovereignty, land stewardship, and creating spaces for Tongva cultural revitalization.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://liderescampesinas.org/">Líderes Campesinas</a>
-                        <p>A grassroots organization led by and for farmworker women, providing mutual aid, leadership development, and organizing support while advocating for workers' rights, gender justice, and environmental health in agricultural communities across California.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.cbecal.org/">Communities for a Better Environment (CBE)</a>
-                        <p>Environmental justice organization building power in working-class communities of color through grassroots organizing, mutual aid, and community-led solutions to environmental racism in Northern and Southern California.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.thetpw.org/">Transformative Programming Works</a>
-                        <p>Building mutual aid networks and support systems for formerly incarcerated people through community organizing, education, and solidarity initiatives.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.asianprisonersupport.com/roots-and-correspondence-programs">Asian Prisoner Support Committee - ROOTS Program</a>
-                        <p>Supporting incarcerated Asian, Pacific Islander, and ally communities through ethnic studies education, book programs, correspondence initiatives, and reentry planning across California prisons.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://justiceteams.org/">Justice Teams Network</a>
-                        <p>A statewide network coordinating rapid response, mutual aid, and community support for survivors of state violence. They organize direct support through crisis response teams, healing justice programs, and solidarity networks while building community-based alternatives to policing across California.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.powerblossoms.org/">Power Blossoms</a>
-                        <p>A mutual aid collective fostering solidarity and support for LGBTQ+ people in prison across California. They coordinate letter writing, resource sharing, and care packages while building connections through pen pal programs and advocacy for queer and trans prisoners.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://womenprisoners.org/">California Coalition for Women Prisoners</a>
-                        <p>We monitor and challenge the abusive conditions inside California women’s prisons. We fight for the release of women and trans prisoners. We support women and trans people in their process of re-entering the community.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/daretostruggle.ca/">Dare to Struggle</a>
-                        <p>A revolutionary organization building power through mutual aid, political education, and direct action to advance the struggle for liberation and social justice.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/ca_iwoc/">California IWOC</a>
-                        <p>A union for the incarcerated, supporting their efforts to organize to abolish prisons.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://caimmigrant.org/">California Immigrant Policy Center</a>
-                        <p>The California Immigrant Policy Center (CIPC) is a constituent-based statewide immigrant rights organization with offices in Los Angeles, Sacramento and Oakland. It is a leading immigrant rights institution in the state.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.tenantstogether.org/">Tenants Together</a>
-                        <p>A statewide coalition fostering mutual aid and housing justice through tenant organizing and advocacy across California. They coordinate tenant rights education, organizing support, and solidarity networks while building power through collective action, policy advocacy, and creating spaces for tenants to fight displacement and win stronger protections.</p>
-                    </div>
-                </section>
+ <section>
+ <div class="initiative">
+ <a href="https://www.tongva.land/">Tongva Land</a>
+ <p>A mutual aid initiative fostering solidarity and support for Tongva people, the original inhabitants of the Los Angeles Basin and Southern Channel Islands. They coordinate land tax contributions, cultural preservation, and solidarity networks while building power through Indigenous sovereignty, land stewardship, and creating spaces for Tongva cultural revitalization.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://liderescampesinas.org/">Líderes Campesinas</a>
+ <p>A grassroots organization led by and for farmworker women, providing mutual aid, leadership development, and organizing support while advocating for workers' rights, gender justice, and environmental health in agricultural communities across California.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.cbecal.org/">Communities for a Better Environment (CBE)</a>
+ <p>Environmental justice organization building power in working-class communities of color through grassroots organizing, mutual aid, and community-led solutions to environmental racism in Northern and Southern California.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.thetpw.org/">Transformative Programming Works</a>
+ <p>Building mutual aid networks and support systems for formerly incarcerated people through community organizing, education, and solidarity initiatives.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.asianprisonersupport.com/roots-and-correspondence-programs">Asian Prisoner Support Committee - ROOTS Program</a>
+ <p>Supporting incarcerated Asian, Pacific Islander, and ally communities through ethnic studies education, book programs, correspondence initiatives, and reentry planning across California prisons.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://justiceteams.org/">Justice Teams Network</a>
+ <p>A statewide network coordinating rapid response, mutual aid, and community support for survivors of state violence. They organize direct support through crisis response teams, healing justice programs, and solidarity networks while building community-based alternatives to policing across California.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.powerblossoms.org/">Power Blossoms</a>
+ <p>A mutual aid collective fostering solidarity and support for LGBTQ+ people in prison across California. They coordinate letter writing, resource sharing, and care packages while building connections through pen pal programs and advocacy for queer and trans prisoners.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://womenprisoners.org/">California Coalition for Women Prisoners</a>
+ <p>We monitor and challenge the abusive conditions inside California women’s prisons. We fight for the release of women and trans prisoners. We support women and trans people in their process of re-entering the community.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.instagram.com/daretostruggle.ca/">Dare to Struggle</a>
+ <p>A revolutionary organization building power through mutual aid, political education, and direct action to advance the struggle for liberation and social justice.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.instagram.com/ca_iwoc/">California IWOC</a>
+ <p>A union for the incarcerated, supporting their efforts to organize to abolish prisons.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://caimmigrant.org/">California Immigrant Policy Center</a>
+ <p>The California Immigrant Policy Center (CIPC) is a constituent-based statewide immigrant rights organization with offices in Los Angeles, Sacramento and Oakland. It is a leading immigrant rights institution in the state.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.tenantstogether.org/">Tenants Together</a>
+ <p>A statewide coalition fostering mutual aid and housing justice through tenant organizing and advocacy across California. They coordinate tenant rights education, organizing support, and solidarity networks while building power through collective action, policy advocacy, and creating spaces for tenants to fight displacement and win stronger protections.</p>
+ </div>
+ </section>
 
-            </div>
-            <footer class="site-footer">
-                <p>Awareness into action. Solidarity not charity.</p>
-            </footer>
-        </main>
-    </div>
+ </div>
+ <footer class="site-footer">
+ <p>Awareness into action. Solidarity not charity.</p>
+ </footer>
+ </main>
+ </div>
 
-    <!-- Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('location'));
-    </script>
-    <script src="/theme.js" type="module"></script>
+ <!-- Scripts -->
+ <script type="module">
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { initializeComponents } from '/init.js';
-        initializeComponents({
-            sidebarType: 'location',
-            searchHeaderId: 'header'
-        });
-    </script>
+ import { createSidebar } from '/components/sidebar.js';
+ document.getElementById('sidebar').replaceWith(createSidebar('location'));
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'location',
+ searchHeaderId: 'header'
+ });
+ </script>
 </body>
 </html>

@@ -1,165 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Texas Mutual Aid Networks - Local Support & Community Resources</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives in Texas cities including Austin, Dallas, Houston, San Antonio, and more.">
-    <meta property="og:title" content="Texas Mutual Aid Networks - Local Support & Community Resources">
-    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Texas cities including Austin, Dallas, Houston, San Antonio, and more.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/texas">
-    <meta name="twitter:card" content="summary">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Theme and Components -->
-        <script src="/theme-init.js" crossorigin="use-credentials"></script>
-    <!-- Critical Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
-    </script>
+ <!-- Google Analytics -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+ <script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-QJ03RCM35H');
+ </script>
+ 
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Texas Mutual Aid Networks - Local Support & Community Resources</title>
+ <meta name="description" content="Find mutual aid networks and community support initiatives in Texas cities including Austin, Dallas, Houston, San Antonio, and more.">
+ <meta property="og:title" content="Texas Mutual Aid Networks - Local Support & Community Resources">
+ <meta property="og:description" content="Find mutual aid networks and community support initiatives in Texas cities including Austin, Dallas, Houston, San Antonio, and more.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://organize.directory/texas">
+ <meta name="twitter:card" content="summary">
+ 
+ <!-- Styles -->
+ <link rel="stylesheet" href="/styles.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+ <!-- Theme and Components -->
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
 </head>
 <body>
-    <div class="layout">
-        <aside id="sidebar" aria-label="Main navigation"></aside>
+ <div class="layout">
+ <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
-            
-            
-            
-            <div class="city-page">
-                <div class="breadcrumb">
-                    <a href="/location">States</a>
-                    <span>›</span>
-                    <span>Texas</span>
-                </div>
+ <main class="content" role="main">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="city-page">
+ <div class="breadcrumb">
+ <a href="/location">States</a>
+ <span>›</span>
+ <span>Texas</span>
+ </div>
 
-                <h1>Texas</h1>
-                <hr>
+ <h1>Texas</h1>
+ <hr>
 
-                <section>
-                    <h2>Cities</h2>
-                    <div class="cities-list">
-                        <a href="/abilene" class="city-link">Abilene</a>
-                        <a href="/amarillo" class="city-link">Amarillo</a>
-                        <a href="/austin" class="city-link">Austin</a>
-                        <!-- <a href="/beaumont-port-arthur" class="city-link">Beaumont / Port Arthur</a> -->
-                        <!-- <a href="/brownsville" class="city-link">Brownsville</a> -->
-                        <a href="/college-station" class="city-link">College Station</a>
-                        <a href="/corpus-christi" class="city-link">Corpus Christi</a>
-                        <a href="/dallas-fort-worth" class="city-link">Dallas / Fort Worth</a>
-                        <a href="/deep-east-texas" class="city-link">Deep East Texas</a>
-                        <a href="/del-rio-eagle-pass" class="city-link">Del Rio / Eagle Pass</a>
-                        <a href="/denton" class="city-link">Denton</a>
-                        <a href="/el-paso" class="city-link">El Paso</a>
-                        <a href="/galveston" class="city-link">Galveston</a>
-                        <a href="/houston" class="city-link">Houston</a>
-                        <a href="/killeen-temple-ft-hood" class="city-link">Killeen / Temple / Ft Hood</a>
-                        <a href="/laredo" class="city-link">Laredo</a>
-                        <a href="/lubbock" class="city-link">Lubbock</a>
-                        <a href="/mcallen-edinburg" class="city-link">McAllen / Edinburg</a>
-                        <a href="/odessa-midland" class="city-link">Odessa / Midland</a>
-                        <a href="/plano" class="city-link">Plano</a>
-                        <a href="/rio-grande-valley" class="city-link">Rio Grande Valley</a>
-                        <a href="/san-angelo" class="city-link">San Angelo</a>
-                        <a href="/san-antonio" class="city-link">San Antonio</a>
-                        <a href="/san-marcos" class="city-link">San Marcos</a>
-                        <a href="/southwest-tx" class="city-link">Southwest TX</a>
-                        <a href="/texoma" class="city-link">Texoma</a>
-                        <a href="/tyler-east-tx" class="city-link">Tyler / East TX</a>
-                        <a href="/victoria" class="city-link">Victoria</a>
-                        <a href="/waco" class="city-link">Waco</a>
-                        <a href="/wichita-falls" class="city-link">Wichita Falls</a>
-                    </div>
-                </section>
+ <section>
+ <h2>Cities</h2>
+ <div class="cities-list">
+ <a href="/abilene" class="city-link">Abilene</a>
+ <a href="/amarillo" class="city-link">Amarillo</a>
+ <a href="/austin" class="city-link">Austin</a>
+ <!-- <a href="/beaumont-port-arthur" class="city-link">Beaumont / Port Arthur</a> -->
+ <!-- <a href="/brownsville" class="city-link">Brownsville</a> -->
+ <a href="/college-station" class="city-link">College Station</a>
+ <a href="/corpus-christi" class="city-link">Corpus Christi</a>
+ <a href="/dallas-fort-worth" class="city-link">Dallas / Fort Worth</a>
+ <a href="/deep-east-texas" class="city-link">Deep East Texas</a>
+ <a href="/del-rio-eagle-pass" class="city-link">Del Rio / Eagle Pass</a>
+ <a href="/denton" class="city-link">Denton</a>
+ <a href="/el-paso" class="city-link">El Paso</a>
+ <a href="/galveston" class="city-link">Galveston</a>
+ <a href="/houston" class="city-link">Houston</a>
+ <a href="/killeen-temple-ft-hood" class="city-link">Killeen / Temple / Ft Hood</a>
+ <a href="/laredo" class="city-link">Laredo</a>
+ <a href="/lubbock" class="city-link">Lubbock</a>
+ <a href="/mcallen-edinburg" class="city-link">McAllen / Edinburg</a>
+ <a href="/odessa-midland" class="city-link">Odessa / Midland</a>
+ <a href="/plano" class="city-link">Plano</a>
+ <a href="/rio-grande-valley" class="city-link">Rio Grande Valley</a>
+ <a href="/san-angelo" class="city-link">San Angelo</a>
+ <a href="/san-antonio" class="city-link">San Antonio</a>
+ <a href="/san-marcos" class="city-link">San Marcos</a>
+ <a href="/southwest-tx" class="city-link">Southwest TX</a>
+ <a href="/texoma" class="city-link">Texoma</a>
+ <a href="/tyler-east-tx" class="city-link">Tyler / East TX</a>
+ <a href="/victoria" class="city-link">Victoria</a>
+ <a href="/waco" class="city-link">Waco</a>
+ <a href="/wichita-falls" class="city-link">Wichita Falls</a>
+ </div>
+ </section>
 
-                <section>
-                    <div class="initiative">
-                        <a href="https://www.txcivilrights.org/">Texas Civil Rights Project</a>
-                        <p>A legal advocacy organization fostering mutual aid and solidarity through civil rights litigation and community organizing across Texas. They coordinate legal support, advocacy campaigns, and solidarity networks while building power through constitutional rights defense and creating systemic change.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://lupenet.org/">La Union del Pueblo Entero (LUPE)</a>
-                        <p>A grassroots organization fostering mutual aid and solidarity through immigrant and worker community organizing across Texas. They coordinate direct support, advocacy campaigns, and solidarity networks while building power through community leadership development and creating spaces for collective action.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/txabolitionists/">TX Abolitionists</a>
-                        <p>A grassroots collective fostering mutual aid and solidarity through prison abolition organizing across Texas. They coordinate direct support, advocacy campaigns, and solidarity networks while building power through community education, direct action, and creating spaces for abolition movement building.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.texasharmreduction.org/">Harm Reduction TX</a>
-                        <p>A grassroots collective providing harm reduction services and mutual aid support across Texas. They coordinate direct support, supply distribution, and community care while building power through harm reduction education, peer outreach, and creating spaces for health justice and community wellbeing.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/transtexas/">Trans Texas</a>
-                        <p>A trans-led mutual aid network providing direct support and solidarity for transgender and gender non-conforming communities across Texas. They coordinate emergency assistance, resource distribution, and community care initiatives while building power through trans liberation organizing and collective action.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/estok_gna_somisek/">Estok' Gna</a>
-                        <p>An Indigenous-led collective fostering mutual aid and solidarity through cultural preservation and land defense in Texas. They coordinate community support, traditional knowledge sharing, and solidarity networks while building power through Indigenous sovereignty and creating pathways for cultural resurgence and land reclamation.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/texasforsudan/">Texas for Sudan</a>
-                        <p>Texas for Sudan, dedicated to amplifying Sudanese voices and participation in events centered around Sudanese liberation efforts in Texas.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.teafund.org/">Texas Equal Access Fund</a>
-                        <p>We're here to help Texans access abortion care by helping them pay for it. </p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://janesdueprocess.org/">Jane's Due Process</a>
-                        <p>We help TX teens get abortions & birth control.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://woorijuntos.org/">Woori Juntos</a>
-                        <p>Grassroots-based organization empowering impacted Asian and immigrant Texans through culturally competent service, organizing, & advocacy</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://faithintx.org/">Faith in TX</a>
-                        <p>Faith in TX organizes and builds power with "the people" so that we "the people" will have greater access to the power to govern our shared society.</p>
-                    </div>
-                </section>
-                
-            </div>
-            <footer class="site-footer">
-                <p>Awareness into action. Solidarity not charity.</p>
-            </footer>
-        </main>
-    </div>
+ <section>
+ <div class="initiative">
+ <a href="https://www.txcivilrights.org/">Texas Civil Rights Project</a>
+ <p>A legal advocacy organization fostering mutual aid and solidarity through civil rights litigation and community organizing across Texas. They coordinate legal support, advocacy campaigns, and solidarity networks while building power through constitutional rights defense and creating systemic change.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://lupenet.org/">La Union del Pueblo Entero (LUPE)</a>
+ <p>A grassroots organization fostering mutual aid and solidarity through immigrant and worker community organizing across Texas. They coordinate direct support, advocacy campaigns, and solidarity networks while building power through community leadership development and creating spaces for collective action.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.instagram.com/txabolitionists/">TX Abolitionists</a>
+ <p>A grassroots collective fostering mutual aid and solidarity through prison abolition organizing across Texas. They coordinate direct support, advocacy campaigns, and solidarity networks while building power through community education, direct action, and creating spaces for abolition movement building.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.texasharmreduction.org/">Harm Reduction TX</a>
+ <p>A grassroots collective providing harm reduction services and mutual aid support across Texas. They coordinate direct support, supply distribution, and community care while building power through harm reduction education, peer outreach, and creating spaces for health justice and community wellbeing.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.instagram.com/transtexas/">Trans Texas</a>
+ <p>A trans-led mutual aid network providing direct support and solidarity for transgender and gender non-conforming communities across Texas. They coordinate emergency assistance, resource distribution, and community care initiatives while building power through trans liberation organizing and collective action.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.instagram.com/estok_gna_somisek/">Estok' Gna</a>
+ <p>An Indigenous-led collective fostering mutual aid and solidarity through cultural preservation and land defense in Texas. They coordinate community support, traditional knowledge sharing, and solidarity networks while building power through Indigenous sovereignty and creating pathways for cultural resurgence and land reclamation.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.instagram.com/texasforsudan/">Texas for Sudan</a>
+ <p>Texas for Sudan, dedicated to amplifying Sudanese voices and participation in events centered around Sudanese liberation efforts in Texas.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.teafund.org/">Texas Equal Access Fund</a>
+ <p>We're here to help Texans access abortion care by helping them pay for it. </p>
+ </div>
+ <div class="initiative">
+ <a href="https://janesdueprocess.org/">Jane's Due Process</a>
+ <p>We help TX teens get abortions & birth control.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://woorijuntos.org/">Woori Juntos</a>
+ <p>Grassroots-based organization empowering impacted Asian and immigrant Texans through culturally competent service, organizing, & advocacy</p>
+ </div>
+ <div class="initiative">
+ <a href="https://faithintx.org/">Faith in TX</a>
+ <p>Faith in TX organizes and builds power with "the people" so that we "the people" will have greater access to the power to govern our shared society.</p>
+ </div>
+ </section>
+ 
+ </div>
+ <footer class="site-footer">
+ <p>Awareness into action. Solidarity not charity.</p>
+ </footer>
+ </main>
+ </div>
 
-    <!-- Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('location'));
-    </script>
-    <script src="/theme.js" type="module"></script>
+ <!-- Scripts -->
+ <script type="module">
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { initializeComponents } from '/init.js';
-        initializeComponents({
-            sidebarType: 'location',
-            searchHeaderId: 'header'
-        });
-    </script>
+ import { createSidebar } from '/components/sidebar.js';
+ document.getElementById('sidebar').replaceWith(createSidebar('location'));
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'location',
+ searchHeaderId: 'header'
+ });
+ </script>
 </body>
 </html>

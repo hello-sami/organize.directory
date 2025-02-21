@@ -1,96 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marin County Mutual Aid - Local Support Networks & Community Resources</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives in Marin County, California including San Rafael, Novato, and surrounding communities.">
-    <meta property="og:title" content="Marin County Mutual Aid - Local Support Networks & Community Resources">
-    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Marin County, California including San Rafael, Novato, and surrounding communities.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/marin-county">
-    <meta name="twitter:card" content="summary">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Theme and Components -->
-        <script src="/theme-init.js" crossorigin="use-credentials"></script>
-    <!-- Critical Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
-    </script>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Marin County Mutual Aid - Local Support Networks & Community Resources</title>
+ <meta name="description" content="Find mutual aid networks and community support initiatives in Marin County, California including San Rafael, Novato, and surrounding communities.">
+ <meta property="og:title" content="Marin County Mutual Aid - Local Support Networks & Community Resources">
+ <meta property="og:description" content="Find mutual aid networks and community support initiatives in Marin County, California including San Rafael, Novato, and surrounding communities.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://organize.directory/marin-county">
+ <meta name="twitter:card" content="summary">
+ 
+ <!-- Styles -->
+ <link rel="stylesheet" href="/styles.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+ <!-- Theme and Components -->
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
 </head>
 <body>
-    <div class="layout">
-        <aside id="sidebar" aria-label="Main navigation"></aside>
+ <div class="layout">
+ <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
-            
-            
-            
-            <div class="city-page">
-                <div class="breadcrumb">
-                    <a href="/california">California</a>
-                    <span>›</span>
-                    <a href="/bay-area">Bay Area</a>
-                    <span>›</span>
-                    <span>Marin County</span>
-                </div>
+ <main class="content" role="main">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="city-page">
+ <div class="breadcrumb">
+ <a href="/california">California</a>
+ <span>›</span>
+ <a href="/bay-area">Bay Area</a>
+ <span>›</span>
+ <span>Marin County</span>
+ </div>
 
-                <h1>Marin County</h1>
-                <p class="subtitle">San Rafael, Novato, Mill Valley, and surrounding communities</p>
-                <hr>
+ <h1>Marin County</h1>
+ <p class="subtitle">San Rafael, Novato, Mill Valley, and surrounding communities</p>
+ <hr>
 
-                <section>
-                    <h2>Communities</h2>
-                    <div class="cities-list">
-                        <a href="/san-rafael" class="city-link">San Rafael</a>
-                        <a href="/novato" class="city-link">Novato</a>
-                        <a href="/mill-valley" class="city-link">Mill Valley</a>
-                        <a href="/san-anselmo" class="city-link">San Anselmo</a>
-                        <a href="/larkspur" class="city-link">Larkspur</a>
-                        <a href="/corte-madera" class="city-link">Corte Madera</a>
-                        <a href="/tiburon" class="city-link">Tiburon</a>
-                        <a href="/fairfax" class="city-link">Fairfax</a>
-                        <a href="/sausalito" class="city-link">Sausalito</a>
-                        <a href="/belvedere" class="city-link">Belvedere</a>
-                    </div>
-                </section>
+ <section>
+ <h2>Communities</h2>
+ <div class="cities-list">
+ <a href="/san-rafael" class="city-link">San Rafael</a>
+ <a href="/novato" class="city-link">Novato</a>
+ <a href="/mill-valley" class="city-link">Mill Valley</a>
+ <a href="/san-anselmo" class="city-link">San Anselmo</a>
+ <a href="/larkspur" class="city-link">Larkspur</a>
+ <a href="/corte-madera" class="city-link">Corte Madera</a>
+ <a href="/tiburon" class="city-link">Tiburon</a>
+ <a href="/fairfax" class="city-link">Fairfax</a>
+ <a href="/sausalito" class="city-link">Sausalito</a>
+ <a href="/belvedere" class="city-link">Belvedere</a>
+ </div>
+ </section>
 
-                <section class="initiatives-section">
+ <section class="initiatives-section">
 
-                </section>
+ </section>
 
-            </div>
-            <footer class="site-footer">
-                <p>Awareness into action. Solidarity not charity.</p>
-            </footer>
-        </main>
-    </div>
+ </div>
+ <footer class="site-footer">
+ <p>Awareness into action. Solidarity not charity.</p>
+ </footer>
+ </main>
+ </div>
 
-    <!-- Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('location'));
-    </script>
-    <script src="/theme.js" type="module"></script>
+ <!-- Scripts -->
+ <script type="module">
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { initializeComponents } from '/init.js';
-        initializeComponents({
-            sidebarType: 'location',
-            searchHeaderId: 'header'
-        });
-    </script>
+ import { createSidebar } from '/components/sidebar.js';
+ document.getElementById('sidebar').replaceWith(createSidebar('location'));
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'location',
+ searchHeaderId: 'header'
+ });
+ </script>
 </body>
 </html> 

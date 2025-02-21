@@ -1,125 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Georgia Mutual Aid Networks - Local Support & Community Resources</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives in Georgia cities including Atlanta, Augusta, Savannah, and more.">
-    <meta property="og:title" content="Georgia Mutual Aid Networks - Local Support & Community Resources">
-    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Georgia cities including Atlanta, Augusta, Savannah, and more.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/georgia">
-    <meta name="twitter:card" content="summary">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Theme and Components -->
-        <script src="/theme-init.js" crossorigin="use-credentials"></script>
-    <!-- Critical Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
-    </script>
+ <!-- Google Analytics -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+ <script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-QJ03RCM35H');
+ </script>
+ 
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Georgia Mutual Aid Networks - Local Support & Community Resources</title>
+ <meta name="description" content="Find mutual aid networks and community support initiatives in Georgia cities including Atlanta, Augusta, Savannah, and more.">
+ <meta property="og:title" content="Georgia Mutual Aid Networks - Local Support & Community Resources">
+ <meta property="og:description" content="Find mutual aid networks and community support initiatives in Georgia cities including Atlanta, Augusta, Savannah, and more.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://organize.directory/georgia">
+ <meta name="twitter:card" content="summary">
+ 
+ <!-- Styles -->
+ <link rel="stylesheet" href="/styles.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+ <!-- Theme and Components -->
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
 </head>
 <body>
-    <div class="layout">
-        <aside id="sidebar" aria-label="Main navigation"></aside>
+ <div class="layout">
+ <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
-            
-            
-            
-            <div class="city-page">
-                <div class="breadcrumb">
-                    <a href="/location">States</a>
-                    <span>›</span>
-                    <span>Georgia</span>
-                </div>
+ <main class="content" role="main">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="city-page">
+ <div class="breadcrumb">
+ <a href="/location">States</a>
+ <span>›</span>
+ <span>Georgia</span>
+ </div>
 
-                <h1>Georgia</h1>
-                <hr>
+ <h1>Georgia</h1>
+ <hr>
 
-                <section>
-                    <h2>Cities</h2>
-                    <div class="cities-list">
-                        <!-- <a href="/albany" class="city-link">Albany</a>  -->
-                        <a href="/athens" class="city-link">Athens</a>
-                        <a href="/atlanta" class="city-link">Atlanta</a>
-                        <a href="/augusta" class="city-link">Augusta</a>
-                        <a href="/columbus-ga" class="city-link">Columbus</a>
-                        <a href="/macon-warner-robins" class="city-link">Macon / Warner Robins</a>
-                        <a href="/northwest-ga" class="city-link">Northwest GA</a>
-                        <a href="/savannah-hinesville" class="city-link">Savannah / Hinesville</a>
-                        <a href="/statesboro" class="city-link">Statesboro</a>
-                        <a href="/valdosta" class="city-link">Valdosta</a>
-                    </div>
-                </section>
+ <section>
+ <h2>Cities</h2>
+ <div class="cities-list">
+ <!-- <a href="/albany" class="city-link">Albany</a> -->
+ <a href="/athens" class="city-link">Athens</a>
+ <a href="/atlanta" class="city-link">Atlanta</a>
+ <a href="/augusta" class="city-link">Augusta</a>
+ <a href="/columbus-ga" class="city-link">Columbus</a>
+ <a href="/macon-warner-robins" class="city-link">Macon / Warner Robins</a>
+ <a href="/northwest-ga" class="city-link">Northwest GA</a>
+ <a href="/savannah-hinesville" class="city-link">Savannah / Hinesville</a>
+ <a href="/statesboro" class="city-link">Statesboro</a>
+ <a href="/valdosta" class="city-link">Valdosta</a>
+ </div>
+ </section>
 
-                <section>
-                    <div class="initiative">
-                        <a href="https://amplify-ga.org/">Amplify GA Collaborative</a>
-                        <p>Coalition of reproductive health, rights, and justice organizations working to protect and expand abortion access across Georgia.</p>
-                    </div>
+ <section>
+ <div class="initiative">
+ <a href="https://amplify-ga.org/">Amplify GA Collaborative</a>
+ <p>Coalition of reproductive health, rights, and justice organizations working to protect and expand abortion access across Georgia.</p>
+ </div>
 
-                    <div class="initiative">
-                        <a href="https://newgeorgiaproject.org/">New Georgia Project</a>
-                        <p>A grassroots organization building community power through civic engagement, mutual aid, and leadership development across Georgia. They coordinate voter registration, political education, and solidarity networks while centering Black, Brown, and young voters in the fight for a more equitable Georgia.</p>
-                    </div>
+ <div class="initiative">
+ <a href="https://newgeorgiaproject.org/">New Georgia Project</a>
+ <p>A grassroots organization building community power through civic engagement, mutual aid, and leadership development across Georgia. They coordinate voter registration, political education, and solidarity networks while centering Black, Brown, and young voters in the fight for a more equitable Georgia.</p>
+ </div>
 
-                    <div class="initiative">
-                        <a href="https://asianamericanadvocacyfund.org/">Asian American Advocacy Fund</a>
-                        <p>A grassroots organization building power with Asian American communities through mutual aid, civic engagement, and community organizing across Georgia. They coordinate voter education, political advocacy, and solidarity networks while centering AAPI voices in the fight for progressive change.</p>
-                    </div>
+ <div class="initiative">
+ <a href="https://asianamericanadvocacyfund.org/">Asian American Advocacy Fund</a>
+ <p>A grassroots organization building power with Asian American communities through mutual aid, civic engagement, and community organizing across Georgia. They coordinate voter education, political advocacy, and solidarity networks while centering AAPI voices in the fight for progressive change.</p>
+ </div>
 
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/poderunides/">Poder Unides</a>
-                        <p>A grassroots organization fostering mutual aid and community support for immigrant and Latinx communities across Georgia. They coordinate direct assistance, resource sharing, and solidarity networks while building power through community organizing and creating spaces for cultural connection and collective empowerment.</p>
-                    </div>
+ <div class="initiative">
+ <a href="https://www.instagram.com/poderunides/">Poder Unides</a>
+ <p>A grassroots organization fostering mutual aid and community support for immigrant and Latinx communities across Georgia. They coordinate direct assistance, resource sharing, and solidarity networks while building power through community organizing and creating spaces for cultural connection and collective empowerment.</p>
+ </div>
 
-                    <div class="initiative">
-                        <a href="https://glahr.org/">Georgia Latino Alliance for Human Rights (GLAHR)</a>
-                        <p>educates, organizes and trains the Latino community in Georgia to defend and promote their civil and human rights.</p>
-                    </div>
-                </section>
+ <div class="initiative">
+ <a href="https://glahr.org/">Georgia Latino Alliance for Human Rights (GLAHR)</a>
+ <p>educates, organizes and trains the Latino community in Georgia to defend and promote their civil and human rights.</p>
+ </div>
+ </section>
 
-            </div>
-            <footer class="site-footer">
-                <p>Awareness into action. Solidarity not charity.</p>
-            </footer>
-        </main>
-    </div>
+ </div>
+ <footer class="site-footer">
+ <p>Awareness into action. Solidarity not charity.</p>
+ </footer>
+ </main>
+ </div>
 
-    <!-- Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('location'));
-    </script>
-    <script src="/theme.js" type="module"></script>
+ <!-- Scripts -->
+ <script type="module">
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { initializeComponents } from '/init.js';
-        initializeComponents({
-            sidebarType: 'location',
-            searchHeaderId: 'header'
-        });
-    </script>
+ import { createSidebar } from '/components/sidebar.js';
+ document.getElementById('sidebar').replaceWith(createSidebar('location'));
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'location',
+ searchHeaderId: 'header'
+ });
+ </script>
 </body>
 </html>

@@ -1,94 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Environmental Justice Networks - Mutual Aid Network Directory</title>
-    <meta name="description" content="Find environmental justice networks, mutual aid initiatives, and community support organizations working towards climate and environmental justice.">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Theme and Components -->
-        <script src="/theme-init.js" crossorigin="use-credentials"></script>
-    <!-- Critical Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
-    </script>
+ <!-- Google Analytics -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+ <script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-QJ03RCM35H');
+ </script>
+ 
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Environmental Justice Networks - Mutual Aid Network Directory</title>
+ <meta name="description" content="Find environmental justice networks, mutual aid initiatives, and community support organizations working towards climate and environmental justice.">
+ 
+ <!-- Styles -->
+ <link rel="stylesheet" href="/styles.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+ <!-- Theme and Components -->
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
 </head>
 <body>
-    <div class="layout">
-        <aside id="sidebar" aria-label="Main navigation"></aside>
+ <div class="layout">
+ <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content">
-            <header id="header" class="page-header"></header>
-            
-            
-            
-            <div class="state-page">
-                <div class="breadcrumb">
-                    <a href="/issues" class="breadcrumb-link">Issues</a>
-                    <span class="breadcrumb-separator">›</span>
-                    <span class="breadcrumb-current">Environmental Justice</span>
-                </div>
+ <main class="content">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="state-page">
+ <div class="breadcrumb">
+ <a href="/issues" class="breadcrumb-link">Issues</a>
+ <span class="breadcrumb-separator">›</span>
+ <span class="breadcrumb-current">Environmental Justice</span>
+ </div>
 
-                <h1 class="state-title">Environmental Justice</h1>
+ <h1 class="state-title">Environmental Justice</h1>
 
-                <section class="initiatives-section">
-                    <h2>Global Networks</h2>
-                    <div class="initiative">
-                        <a href="https://www.oilwatch.org/">Oilwatch<a>
-                        <p>A global South network fostering mutual aid and solidarity through resistance to fossil fuel extraction. They coordinate grassroots initiatives, environmental monitoring, and solidarity networks while building power through Indigenous and community-led resistance to oil and gas industry impacts on peoples and their environments.</p>
-                    </div>
-                </section>
+ <section class="initiatives-section">
+ <h2>Global Networks</h2>
+ <div class="initiative">
+ <a href="https://www.oilwatch.org/">Oilwatch<a>
+ <p>A global South network fostering mutual aid and solidarity through resistance to fossil fuel extraction. They coordinate grassroots initiatives, environmental monitoring, and solidarity networks while building power through Indigenous and community-led resistance to oil and gas industry impacts on peoples and their environments.</p>
+ </div>
+ </section>
 
-                <section class="initiatives-section">
-                    <h2>Research & Education</h2>
-                    <div class="initiative">
-                        <a href="http://www.the-ciej.org/">Center for Interdisciplinary Environmental Justice (CIEJ)<a>
-                        <p>A collective of activists, academics, scientists, and artists fostering mutual aid and solidarity through decolonial environmental justice efforts. They coordinate research, educational resources, and solidarity networks while building power through Indigenous land sovereignty, anti-extractivist organizing, and creating spaces for decolonial approaches to climate solutions.</p>
-                    </div>
-                </section>
+ <section class="initiatives-section">
+ <h2>Research & Education</h2>
+ <div class="initiative">
+ <a href="http://www.the-ciej.org/">Center for Interdisciplinary Environmental Justice (CIEJ)<a>
+ <p>A collective of activists, academics, scientists, and artists fostering mutual aid and solidarity through decolonial environmental justice efforts. They coordinate research, educational resources, and solidarity networks while building power through Indigenous land sovereignty, anti-extractivist organizing, and creating spaces for decolonial approaches to climate solutions.</p>
+ </div>
+ </section>
 
-                <p class="help-text">Know of an environmental justice initiative we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-            </div>
+ <p class="help-text">Know of an environmental justice initiative we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+ </div>
 
-            <footer class="site-footer">
-                <p>Awareness into action. Solidarity not charity.</p>
-            </footer>
-        </main>
-    </div>
+ <footer class="site-footer">
+ <p>Awareness into action. Solidarity not charity.</p>
+ </footer>
+ </main>
+ </div>
 
-    <!-- Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
-    </script>
-    <script src="/theme.js" type="module"></script>
+ <!-- Scripts -->
+ <script type="module">
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { initializeComponents } from '/init.js';
-        initializeComponents({
-            sidebarType: 'location',
-            searchHeaderId: 'header'
-        });
-    </script>
+ import { createSidebar } from '/components/sidebar.js';
+ document.getElementById('sidebar').replaceWith(createSidebar('issues'));
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'location',
+ searchHeaderId: 'header'
+ });
+ </script>
 </body>
 </html> 

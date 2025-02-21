@@ -8,65 +8,68 @@
 <!-- Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-QJ03RCM35H');
 </script>
-        <script src="/theme-init.js" crossorigin="use-credentials"></script>
-    <!-- Critical Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
-    </script>
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
 </head>
 <body>
-    <div class="layout">
-        <div id="sidebar-container"></div>
+ <div class="layout">
+ <div id="sidebar-container"></div>
 
-        <main class="content">
-            <header id="header" class="page-header"></header>
-            
-            
-            
-            <div class="city-page">
-                <div class="breadcrumb">
-                    <a href="/cities" class="back-link">← Back to Cities</a>
-                </div>
+ <main class="content">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="city-page">
+ <div class="breadcrumb">
+ <a href="/cities" class="back-link">← Back to Cities</a>
+ </div>
 
-                <h1>Puerto Rico, Territories</h1>
-                <hr>
+ <h1>Puerto Rico, Territories</h1>
+ <hr>
 
-                <div class="initiative">
-                    <div class="initiative">
-                        <a href="https://www.colectivafeminista.org/">Colectiva Feminista</a>
-                        <p>A feminist collective organizing mutual aid networks and community support initiatives across Puerto Rico. Through direct action, solidarity networks, and grassroots organizing, they work to build community power and provide essential resources while advocating for gender justice and social transformation.</p>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
+ <div class="initiative">
+ <div class="initiative">
+ <a href="https://www.colectivafeminista.org/">Colectiva Feminista</a>
+ <p>A feminist collective organizing mutual aid networks and community support initiatives across Puerto Rico. Through direct action, solidarity networks, and grassroots organizing, they work to build community power and provide essential resources while advocating for gender justice and social transformation.</p>
+ </div>
+ </div>
+ </div>
+ </main>
+ </div>
 
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        const sidebarContainer = document.getElementById('sidebar-container');
-        const sidebar = createSidebar('cities');
-        sidebarContainer.replaceWith(sidebar);
-    </script>
-    <script src="/theme.js" type="module"></script>
+ <script type="module">
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { initializeComponents } from '/init.js';
-        initializeComponents({
-            sidebarType: 'location',
-            searchHeaderId: 'header'
-        });
-    </script>
+ import { createSidebar } from '/components/sidebar.js';
+ const sidebarContainer = document.getElementById('sidebar-container');
+ const sidebar = createSidebar('cities');
+ sidebarContainer.replaceWith(sidebar);
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'location',
+ searchHeaderId: 'header'
+ });
+ </script>
 </body>
 </html>

@@ -18,9 +18,9 @@ const correctInitScript = `    <!-- Initialize components -->
 </body>`;
 
 // The correct head scripts
-const correctHeadScripts = `    <script src="/theme-init.js" crossorigin="use-credentials"></script>
+const correctHeadScripts = `    <script src="/theme-init.js"></script>
     <!-- Critical Scripts -->
-    <script type="module" crossorigin="use-credentials">
+    <script type="module">
         import { createSidebar } from '/components/sidebar.js';
         // Initialize sidebar as soon as possible
         const sidebarElement = document.getElementById('sidebar');
@@ -29,6 +29,9 @@ const correctHeadScripts = `    <script src="/theme-init.js" crossorigin="use-cr
         }
     </script>
 </head>`;
+
+const scriptRegex = /<script type="module"([^>]*)>/g;
+const correctScriptTag = '<script type="module"$1>';
 
 async function getAllHtmlFiles(dir) {
     const files = await fs.promises.readdir(dir);
@@ -92,8 +95,8 @@ async function fixFile(filePath) {
         
         // Add crossorigin attributes to all module scripts
         content = content.replace(
-            /<script type="module"([^>]*)>/g,
-            '<script type="module" crossorigin="use-credentials"$1>'
+            scriptRegex,
+            correctScriptTag
         );
         
         // Ensure proper script loading order

@@ -1,180 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minnesota Mutual Aid Networks - Local Support & Community Resources</title>
-    <meta name="description" content="Find mutual aid networks and community support initiatives in Minnesota cities including Minneapolis, St. Paul, Duluth, and more.">
-    <meta property="og:title" content="Minnesota Mutual Aid Networks - Local Support & Community Resources">
-    <meta property="og:description" content="Find mutual aid initiatives and community support networks in Minnesota cities including Minneapolis, St. Paul, Duluth, and more.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/minnesota">
-    <meta name="twitter:card" content="summary">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Theme and Components -->
-        <script src="/theme-init.js" crossorigin="use-credentials"></script>
-    <!-- Critical Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
-    </script>
+ <!-- Google Analytics -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+ <script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'G-QJ03RCM35H');
+ </script>
+ 
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Minnesota Mutual Aid Networks - Local Support & Community Resources</title>
+ <meta name="description" content="Find mutual aid networks and community support initiatives in Minnesota cities including Minneapolis, St. Paul, Duluth, and more.">
+ <meta property="og:title" content="Minnesota Mutual Aid Networks - Local Support & Community Resources">
+ <meta property="og:description" content="Find mutual aid initiatives and community support networks in Minnesota cities including Minneapolis, St. Paul, Duluth, and more.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://organize.directory/minnesota">
+ <meta name="twitter:card" content="summary">
+ 
+ <!-- Styles -->
+ <link rel="stylesheet" href="/styles.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+ <!-- Theme and Components -->
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
 </head>
 <body>
-    <div class="layout">
-        <aside id="sidebar" aria-label="Main navigation"></aside>
+ <div class="layout">
+ <aside id="sidebar" aria-label="Main navigation"></aside>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
-            
-            
-            
-            <div class="city-page">
-                <div class="breadcrumb">
-                    <a href="/location">States</a>
-                    <span>›</span>
-                    <span>Minnesota</span>
-                </div>
+ <main class="content" role="main">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="city-page">
+ <div class="breadcrumb">
+ <a href="/location">States</a>
+ <span>›</span>
+ <span>Minnesota</span>
+ </div>
 
-                <h1>Minnesota</h1>
-                <hr>
+ <h1>Minnesota</h1>
+ <hr>
 
-                <section>
-                    <h2>Cities</h2>
-                    <div class="cities-list">
-                        <!-- <a href="/bemidji" class="city-link">Bemidji</a> -->
-                        <!-- <a href="/brainerd" class="city-link">Brainerd</a> -->
-                        <a href="/duluth-superior" class="city-link">Duluth / Superior</a>
-                        <a href="/mankato" class="city-link">Mankato</a>
-                        <a href="/minneapolis-st-paul" class="city-link">Minneapolis / St. Paul</a>
-                        <a href="/rochester" class="city-link">Rochester</a>
-                        <a href="/southwest-mn" class="city-link">Southwest MN</a>
-                        <a href="/st-cloud" class="city-link">St Cloud</a>
-                        <a href="/winona" class="city-link">Winona</a>
-                    </div>
-                </section>
+ <section>
+ <h2>Cities</h2>
+ <div class="cities-list">
+ <!-- <a href="/bemidji" class="city-link">Bemidji</a> -->
+ <!-- <a href="/brainerd" class="city-link">Brainerd</a> -->
+ <a href="/duluth-superior" class="city-link">Duluth / Superior</a>
+ <a href="/mankato" class="city-link">Mankato</a>
+ <a href="/minneapolis-st-paul" class="city-link">Minneapolis / St. Paul</a>
+ <a href="/rochester" class="city-link">Rochester</a>
+ <a href="/southwest-mn" class="city-link">Southwest MN</a>
+ <a href="/st-cloud" class="city-link">St Cloud</a>
+ <a href="/winona" class="city-link">Winona</a>
+ </div>
+ </section>
 
-                <section>
-                    <div class="initiative">
-                        <a href="https://antiwarcommittee.org/">Anti-War Committee</a>
-                        <p>A grassroots organization coordinating mutual aid and solidarity initiatives while organizing for peace and justice. They build community power through direct action, resource sharing, and solidarity networks while connecting various social movements and providing material support to communities in need.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://divestmn.com/">DivestMN</a>
-                        <p>A mutual aid and solidarity initiative organizing to divest Minnesota state funds from apartheid and occupation. They coordinate community resources, direct action campaigns, and solidarity networks while building grassroots power for economic justice and human rights.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/mnworkersunited/">Minnesota Workers United</a>
-                        <p>A worker-led organization building solidarity and mutual aid networks across Minnesota.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://rtmn.org/">Rebuilding Together Minnesota</a>
-                        <p>A mutual aid organization coordinating home repair and community revitalization initiatives across Minnesota since 1997. They organize direct support through their Safe at Home Program, Home Repair Program, and Community Revitalization Program while building networks of solidarity through volunteer mobilization and neighborhood preservation to ensure people can live independently and safely in their homes.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/edjustice_mn/">Education Justice Minnesota</a>
-                        <p>A grassroots collective organizing mutual aid and solidarity initiatives focused on educational equity across Minnesota. They coordinate community resources, direct support, and advocacy while building networks of solidarity through student organizing, teacher support, and community education to ensure accessible and just education for all.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://x.com/documentingmn">Documenting MN</a>
-                        <p>A grassroots media collective documenting mutual aid and community organizing initiatives across Minnesota. They coordinate information sharing and documentation while building networks of solidarity through independent journalism, movement coverage, and community storytelling to amplify voices of resistance and social justice.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/mniwoc/">MN IWOC (Incarcerated Workers Organizing Committee)</a>
-                        <p>The Incarcerated Workers Organizing Committee seeks to re-imagine a world where punishment and prisons aren't the only means of "justice" for society.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://sahanjournal.com/">Sahan Journal</a>
-                        <p>A nonprofit newsroom coordinating mutual aid through independent journalism focused on Minnesota's immigrants and communities of color. They organize information sharing and community storytelling while building networks of solidarity through in-depth reporting, community engagement, and amplifying voices often excluded from mainstream media.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.mntoollibrary.org/">Minnesota Tool Library</a>
-                        <p>A mutual aid collective providing affordable access to tools and workshops across Minnesota. They coordinate resource sharing, skill building, and community education while building networks of solidarity through tool lending, DIY classes, and maker spaces to ensure everyone has access to the tools they need.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://minnesotareformer.com/">Minnesota Reformer</a>
-                        <p>An independent nonprofit newsroom coordinating mutual aid through investigative journalism and community reporting. They organize information sharing and accountability while building networks of solidarity through in-depth coverage of power, policy, and their impacts on Minnesota communities.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.blckpress.com/">BLCK Press</a>
-                        <p>A social enterprise coordinating mutual aid through independent journalism focused on reconnecting news to Black culture in Minnesota. They organize community storytelling and media production while building networks of solidarity through Emmy-winning reporting, cultural preservation, and amplifying Black voices and experiences to foster trust and engagement across communities.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/freedomstreethealth/">Freedom Street Health</a>
-                        <p>A grassroots mutual aid collective providing community-based healthcare and harm reduction services across Minnesota. They coordinate direct health support, resource distribution, and solidarity networks while building power through accessible healthcare initiatives and creating pathways for community wellness.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://repformn.org/">Revolutionary Emergency Partners (REP)</a>
-                        <p>A mutual aid collective coordinating emergency response and community support initiatives across Minnesota. They organize direct assistance through street medic services, harm reduction supplies, and crisis response while building networks of solidarity through community health education, resource sharing, and collective care.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/blackvisions/">Black Visions</a>
-                        <p>A Black-led organization coordinating mutual aid and community power building initiatives across Minnesota. They organize direct support, resource sharing, and solidarity networks while building transformative justice through Black liberation organizing, political education, and healing justice practices.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.newjusticeprojectmn.org/">New Justice Project</a>
-                        <p>A Black-led organization coordinating mutual aid and community power building initiatives across Minnesota. They organize direct support through housing advocacy, climate justice programs, and community safety initiatives while building networks of solidarity through political education, leadership development, and organizing for structural equality for Black Minnesotans.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.endyouthprisonsmn.org/">End Youth Prisons MN</a>
-                        <p>A grassroots coalition coordinating mutual aid and community support initiatives focused on ending youth incarceration in Minnesota. They organize direct support through advocacy, resource sharing, and community education while building networks of solidarity to create alternatives to youth detention and promote transformative justice approaches for young people.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://bdotememorymap.org/">Bdote Memory Map</a>
-                        <p>A community-led initiative documenting and preserving Dakota sacred sites and cultural memory in Minnesota. They coordinate knowledge sharing and cultural preservation while building networks of solidarity through Indigenous storytelling, place-based education, and community-centered mapping to honor Dakota relationships with the land and water.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://makoceikikcupi.com/">Makoce Ikikcupi (Land Recovery)</a>
-                        <p>A Dakota land recovery and reparative justice project in Minisota Makoce (Minnesota). They coordinate the reestablishment of Dakota relationships with ancestral homeland through two community villages - Zani Otunwe (Village of Wellness) and Hohwoju Otunwe (Village of Vibrant Growth) - while building networks of solidarity through cultural revitalization, sustainable living practices, and Indigenous land stewardship.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/mnuprising/">Minnesota Uprising Arrestee Support</a>
-                        <p>MUAS is an ad-hoc grouping of arrestees, their friends and comrades, community members, activists, and legal workers.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://discord.gg/UC97DU7qTR">Minnesota Mutual Aid Events</a>
-                        <p>Discord server for mutual aid events in the state.</p>
-                    </div>
-                </section>
+ <section>
+ <div class="initiative">
+ <a href="https://antiwarcommittee.org/">Anti-War Committee</a>
+ <p>A grassroots organization coordinating mutual aid and solidarity initiatives while organizing for peace and justice. They build community power through direct action, resource sharing, and solidarity networks while connecting various social movements and providing material support to communities in need.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://divestmn.com/">DivestMN</a>
+ <p>A mutual aid and solidarity initiative organizing to divest Minnesota state funds from apartheid and occupation. They coordinate community resources, direct action campaigns, and solidarity networks while building grassroots power for economic justice and human rights.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.instagram.com/mnworkersunited/">Minnesota Workers United</a>
+ <p>A worker-led organization building solidarity and mutual aid networks across Minnesota.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://rtmn.org/">Rebuilding Together Minnesota</a>
+ <p>A mutual aid organization coordinating home repair and community revitalization initiatives across Minnesota since 1997. They organize direct support through their Safe at Home Program, Home Repair Program, and Community Revitalization Program while building networks of solidarity through volunteer mobilization and neighborhood preservation to ensure people can live independently and safely in their homes.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.instagram.com/edjustice_mn/">Education Justice Minnesota</a>
+ <p>A grassroots collective organizing mutual aid and solidarity initiatives focused on educational equity across Minnesota. They coordinate community resources, direct support, and advocacy while building networks of solidarity through student organizing, teacher support, and community education to ensure accessible and just education for all.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://x.com/documentingmn">Documenting MN</a>
+ <p>A grassroots media collective documenting mutual aid and community organizing initiatives across Minnesota. They coordinate information sharing and documentation while building networks of solidarity through independent journalism, movement coverage, and community storytelling to amplify voices of resistance and social justice.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.instagram.com/mniwoc/">MN IWOC (Incarcerated Workers Organizing Committee)</a>
+ <p>The Incarcerated Workers Organizing Committee seeks to re-imagine a world where punishment and prisons aren't the only means of "justice" for society.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://sahanjournal.com/">Sahan Journal</a>
+ <p>A nonprofit newsroom coordinating mutual aid through independent journalism focused on Minnesota's immigrants and communities of color. They organize information sharing and community storytelling while building networks of solidarity through in-depth reporting, community engagement, and amplifying voices often excluded from mainstream media.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.mntoollibrary.org/">Minnesota Tool Library</a>
+ <p>A mutual aid collective providing affordable access to tools and workshops across Minnesota. They coordinate resource sharing, skill building, and community education while building networks of solidarity through tool lending, DIY classes, and maker spaces to ensure everyone has access to the tools they need.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://minnesotareformer.com/">Minnesota Reformer</a>
+ <p>An independent nonprofit newsroom coordinating mutual aid through investigative journalism and community reporting. They organize information sharing and accountability while building networks of solidarity through in-depth coverage of power, policy, and their impacts on Minnesota communities.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.blckpress.com/">BLCK Press</a>
+ <p>A social enterprise coordinating mutual aid through independent journalism focused on reconnecting news to Black culture in Minnesota. They organize community storytelling and media production while building networks of solidarity through Emmy-winning reporting, cultural preservation, and amplifying Black voices and experiences to foster trust and engagement across communities.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.instagram.com/freedomstreethealth/">Freedom Street Health</a>
+ <p>A grassroots mutual aid collective providing community-based healthcare and harm reduction services across Minnesota. They coordinate direct health support, resource distribution, and solidarity networks while building power through accessible healthcare initiatives and creating pathways for community wellness.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://repformn.org/">Revolutionary Emergency Partners (REP)</a>
+ <p>A mutual aid collective coordinating emergency response and community support initiatives across Minnesota. They organize direct assistance through street medic services, harm reduction supplies, and crisis response while building networks of solidarity through community health education, resource sharing, and collective care.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.instagram.com/blackvisions/">Black Visions</a>
+ <p>A Black-led organization coordinating mutual aid and community power building initiatives across Minnesota. They organize direct support, resource sharing, and solidarity networks while building transformative justice through Black liberation organizing, political education, and healing justice practices.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.newjusticeprojectmn.org/">New Justice Project</a>
+ <p>A Black-led organization coordinating mutual aid and community power building initiatives across Minnesota. They organize direct support through housing advocacy, climate justice programs, and community safety initiatives while building networks of solidarity through political education, leadership development, and organizing for structural equality for Black Minnesotans.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.endyouthprisonsmn.org/">End Youth Prisons MN</a>
+ <p>A grassroots coalition coordinating mutual aid and community support initiatives focused on ending youth incarceration in Minnesota. They organize direct support through advocacy, resource sharing, and community education while building networks of solidarity to create alternatives to youth detention and promote transformative justice approaches for young people.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://bdotememorymap.org/">Bdote Memory Map</a>
+ <p>A community-led initiative documenting and preserving Dakota sacred sites and cultural memory in Minnesota. They coordinate knowledge sharing and cultural preservation while building networks of solidarity through Indigenous storytelling, place-based education, and community-centered mapping to honor Dakota relationships with the land and water.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://makoceikikcupi.com/">Makoce Ikikcupi (Land Recovery)</a>
+ <p>A Dakota land recovery and reparative justice project in Minisota Makoce (Minnesota). They coordinate the reestablishment of Dakota relationships with ancestral homeland through two community villages - Zani Otunwe (Village of Wellness) and Hohwoju Otunwe (Village of Vibrant Growth) - while building networks of solidarity through cultural revitalization, sustainable living practices, and Indigenous land stewardship.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.instagram.com/mnuprising/">Minnesota Uprising Arrestee Support</a>
+ <p>MUAS is an ad-hoc grouping of arrestees, their friends and comrades, community members, activists, and legal workers.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://discord.gg/UC97DU7qTR">Minnesota Mutual Aid Events</a>
+ <p>Discord server for mutual aid events in the state.</p>
+ </div>
+ </section>
 
-            </div>
-            <footer class="site-footer">
-                <p>Awareness into action. Solidarity not charity.</p>
-            </footer>
-        </main>
-    </div>
+ </div>
+ <footer class="site-footer">
+ <p>Awareness into action. Solidarity not charity.</p>
+ </footer>
+ </main>
+ </div>
 
-    <!-- Scripts -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { createSidebar } from '/components/sidebar.js';
-        document.getElementById('sidebar').replaceWith(createSidebar('location'));
-    </script>
-    <script src="/theme.js" type="module"></script>
+ <!-- Scripts -->
+ <script type="module">
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module" crossorigin="use-credentials" crossorigin="use-credentials">
-        import { initializeComponents } from '/init.js';
-        initializeComponents({
-            sidebarType: 'location',
-            searchHeaderId: 'header'
-        });
-    </script>
+ import { createSidebar } from '/components/sidebar.js';
+ document.getElementById('sidebar').replaceWith(createSidebar('location'));
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'location',
+ searchHeaderId: 'header'
+ });
+ </script>
 </body>
 </html>
