@@ -29,13 +29,12 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
-    
     <script src="/theme-init.js"></script>
-    <script src="/search-index.js"></script>
+<script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
     <!-- Critical Scripts -->
     <script src="/theme-init.js"></script>
-    <script type="module">
+<script type="module">
         import { createSidebar } from '/components/sidebar.js';
         // Initialize sidebar as soon as possible
         const sidebarElement = document.getElementById('sidebar');
@@ -45,7 +44,7 @@
     </script>
     <!-- Critical Scripts -->
     <script src="/theme-init.js"></script>
-    <script type="module">
+<script type="module">
         import { createSidebar } from '/components/sidebar.js';
         // Initialize sidebar as soon as possible
         const sidebarElement = document.getElementById('sidebar');
@@ -59,20 +58,9 @@
         <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content">
-            <header class="page-header">
-                <div class="search-container">
-                    <div class="search-input-wrapper">
-                        <input 
-                            type="text" 
-                            id="searchInput" 
-                            class="search-input" 
-                            placeholder="Search mutual aid resources..."
-                            aria-label="Search mutual aid resources"
-                        >
-                        <div id="searchResults" class="search-results" role="listbox"></div>
-                    </div>
-                </div>
-            </header>
+            <header id="header" class="page-header"></header>
+            
+            
             <article class="city-page">
                 <nav class="breadcrumb" aria-label="Breadcrumb">
                     <a href="/norcal">Northern California</a>
@@ -142,9 +130,13 @@
     <script src="/theme.js" type="module"></script>
 
     <!-- Initialize Search -->
+    <!-- Initialize components -->
     <script type="module">
-        import { initializeSearch } from '/components/search-header.js';
-        initializeSearch();
+        import { initializeComponents } from '/init.js';
+        initializeComponents({
+            sidebarType: 'location',
+            searchHeaderId: 'header'
+        });
     </script>
 </body>
 </html>

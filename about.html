@@ -29,20 +29,9 @@
         </aside>
 
         <main class="content">
-            <header class="page-header">
-                <div class="search-container">
-                    <div class="search-input-wrapper">
-                        <input 
-                            type="text" 
-                            id="searchInput" 
-                            class="search-input" 
-                            placeholder="Search mutual aid resources..."
-                            aria-label="Search mutual aid resources"
-                        >
-                        <div id="searchResults" class="search-results" role="listbox"></div>
-                    </div>
-                </div>
-            </header>
+            <header id="header" class="page-header"></header>
+            
+            
             <div class="about-content">
                 <h2>About This Directory</h2>
                 <p>This directory is a resource for finding and connecting with mutual aid networks and grassroots initiatives across different cities and focus areas.</p>
@@ -100,9 +89,13 @@
     </script>
 
     <!-- Initialize Search -->
+    <!-- Initialize components -->
     <script type="module">
-        import { initializeSearch } from '/components/search-header.js';
-        initializeSearch();
+        import { initializeComponents } from '/init.js';
+        initializeComponents({
+            sidebarType: 'location',
+            searchHeaderId: 'header'
+        });
     </script>
 </body>
 </html> 

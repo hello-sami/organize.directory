@@ -58,7 +58,7 @@
     
     <!-- Critical Scripts -->
     <script src="/theme-init.js"></script>
-    <script type="module">
+<script type="module">
         import { createSidebar } from '/components/sidebar.js';
         // Initialize sidebar as soon as possible
         const sidebarElement = document.getElementById('sidebar');
@@ -72,28 +72,10 @@
         <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="main-content" role="main">
+            <header id="header" class="page-header"></header>
+            
             <div class="content">
-                <header class="page-header">
-                    <!-- Search Bar -->
-                    <div class="search-container">
-                        <div class="search-input-wrapper">
-                            <input 
-                                type="text" 
-                                id="searchInput" 
-                                class="search-input" 
-                                placeholder="Search mutual aid resources..."
-                                aria-label="Search mutual aid resources"
-                            >
-                            <div id="searchResults" class="search-results" role="listbox"></div>
-                        </div>
-                    </div>
-
-                    <h1>The Organize Directory</h1>
-                    <p>Community organizing brings people together to create meaningful 
-                        change from the ground up. Through mutual support and collective action, 
-                        we build stronger, more resilient neighborhoods where everyone's needs matter. 
-                        When we organize together, we transform individual challenges into shared solutions.</p>
-                </header>
+                
                 <hr>
 
                 <section class="daily-log" aria-labelledby="log-heading">
@@ -109,14 +91,13 @@
             </div>
         </main>
     </div>
-
-    <!-- Core Scripts -->
-    <script src="/script.js" type="module" async></script>
-    <script src="/search-index.js" type="module" async></script>
-    <script src="/mobile-menu.js" defer></script>
-    <script src="/theme.js" type="module" async></script>
-    <script src="/js/posts.js" type="module" async></script>
-    <script src="/js/search-init.js" defer></script>
-    <script src="/js/analytics.js" type="module" async></script>
+    <!-- Initialize components -->
+    <script type="module">
+        import { initializeComponents } from '/init.js';
+        initializeComponents({
+            sidebarType: 'home',
+            searchHeaderId: 'header'
+        });
+    </script>
 </body>
 </html>

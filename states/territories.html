@@ -20,11 +20,11 @@
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <script src="/theme-init.js"></script>
-    <script src="/search-index.js"></script>
+<script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
     <!-- Critical Scripts -->
     <script src="/theme-init.js"></script>
-    <script type="module">
+<script type="module">
         import { createSidebar } from '/components/sidebar.js';
         // Initialize sidebar as soon as possible
         const sidebarElement = document.getElementById('sidebar');
@@ -34,7 +34,7 @@
     </script>
     <!-- Critical Scripts -->
     <script src="/theme-init.js"></script>
-    <script type="module">
+<script type="module">
         import { createSidebar } from '/components/sidebar.js';
         // Initialize sidebar as soon as possible
         const sidebarElement = document.getElementById('sidebar');
@@ -49,27 +49,14 @@
         <div id="sidebar-container"></div>
 
         <main class="content">
-            <header class="page-header">
-                <div class="search-container">
-                    <div class="search-input-wrapper">
-                        <input 
-                            type="text" 
-                            id="searchInput" 
-                            class="search-input" 
-                            placeholder="Search mutual aid resources..."
-                            aria-label="Search mutual aid resources"
-                        >
-                        <div id="searchResults" class="search-results" role="listbox"></div>
-                    </div>
-                </div>
-            </header>
+            <header id="header" class="page-header"></header>
+            
+            
             <div class="state-page">
                 <div class="breadcrumb">
                     <a href="/cities" class="back-link">← Back to Cities</a>
                 </div>
-                <header class="state-header">
-                    <h2>Statewide Initiatives in Territories</h2>
-                </header>
+                
                 <div class="initiative">
                     <ul class="simple-initiatives">
                         <h3>Statewide Mutual Aid Networks</h3>
@@ -104,9 +91,13 @@
     <script src="/theme.js" type="module"></script>
 
     <!-- Initialize Search -->
+    <!-- Initialize components -->
     <script type="module">
-        import { initializeSearch } from '/components/search-header.js';
-        initializeSearch();
+        import { initializeComponents } from '/init.js';
+        initializeComponents({
+            sidebarType: 'location',
+            searchHeaderId: 'header'
+        });
     </script>
 </body>
 </html>
