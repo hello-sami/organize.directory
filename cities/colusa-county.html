@@ -1,109 +1,99 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Colusa County Mutual Aid - Local Support Networks & Community Resources
-    </title>
-    <meta
-      name="description"
-      content="Find mutual aid networks and community support initiatives in Colusa County, California including Colusa, Williams, and surrounding communities."
-    />
-    <meta
-      property="og:title"
-      content="Colusa County Mutual Aid - Local Support Networks & Community Resources"
-    />
-    <meta
-      property="og:description"
-      content="Find mutual aid networks and community support initiatives in Colusa County, California including Colusa, Williams, and surrounding communities."
-    />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://organize.directory/colusa-county"
-    />
-    <meta name="twitter:card" content="summary" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Colusa County Mutual Aid - Local Support Networks & Community Resources
+  </title>
+  <meta name="description"
+    content="Find mutual aid networks and community support initiatives in Colusa County, California including Colusa, Williams, and surrounding communities." />
+  <meta property="og:title" content="Colusa County Mutual Aid - Local Support Networks & Community Resources" />
+  <meta property="og:description"
+    content="Find mutual aid networks and community support initiatives in Colusa County, California including Colusa, Williams, and surrounding communities." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://organize.directory/colusa-county" />
+  <meta name="twitter:card" content="summary" />
 
-    <!-- Theme and Components -->
-    <script src="/theme-init.js"></script>
-    <!-- Critical Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      // Initialize sidebar as soon as possible
-      const sidebarElement = document.getElementById("sidebar");
-      if (sidebarElement) {
-        sidebarElement.replaceWith(createSidebar("location"));
-      }
-    </script>
-  </head>
-  <body>
-    <div class="layout">
-      <aside id="sidebar" aria-label="Main navigation"></aside>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" />
 
-      <main class="content" role="main">
-        <header id="header" class="page-header"></header>
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-        <div class="city-page">
-          <div class="breadcrumb">
-            <a href="/california">California</a>
-            <span>›</span>
-            <a href="/norcal">Northern California</a>
-            <span>›</span>
-            <span>Colusa County</span>
-          </div>
 
-          <h1>Colusa County</h1>
-          <p class="subtitle">
-            Colusa, Williams, Arbuckle, and surrounding communities
-          </p>
-          <hr />
+  <!-- Theme and Components -->
+  <script src="/theme-init.js"></script>
 
-          <section>
-            <h2>Communities</h2>
-            <div class="cities-list">
-              <a href="/colusa" class="city-link">Colusa</a>
-              <a href="/williams" class="city-link">Williams</a>
-              <a href="/arbuckle" class="city-link">Arbuckle</a>
-              <a href="/maxwell" class="city-link">Maxwell</a>
-              <a href="/princeton" class="city-link">Princeton</a>
-              <a href="/grimes" class="city-link">Grimes</a>
-            </div>
-          </section>
+</head>
 
-          <section class="initiatives-section">
-            <h2>Community Support</h2>
-            <div class="initiative"></div>
-          </section>
+<body>
+  <div class="layout">
+    <aside id="sidebar" aria-label="Main navigation"></aside>
+
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
+
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/california">California</a>
+          <span>›</span>
+          <a href="/norcal">Northern California</a>
+          <span>›</span>
+          <span>Colusa County</span>
         </div>
-        <footer class="site-footer">
-          <p>Awareness into action. Solidarity not charity.</p>
-        </footer>
-      </main>
-    </div>
 
-    <!-- Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
+        <h1>Colusa County</h1>
+        <p class="subtitle">
+          Colusa, Williams, Arbuckle, and surrounding communities
+        </p>
+        <hr>
+
+        <section>
+          <h2>Communities</h2>
+          <div class="cities-list">
+            <a href="/colusa" class="city-link">Colusa</a>
+            <a href="/williams" class="city-link">Williams</a>
+            <a href="/arbuckle" class="city-link">Arbuckle</a>
+            <a href="/maxwell" class="city-link">Maxwell</a>
+            <a href="/princeton" class="city-link">Princeton</a>
+            <a href="/grimes" class="city-link">Grimes</a>
+          </div>
+        </section>
+
+        <section class="initiatives-section">
+          <h2>Community Support</h2>
+          <div class="initiative"></div>
+        </section>
+      </div>
+      <footer class="site-footer">
+        <p>Awareness into action. Solidarity not charity.</p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+
+  <!-- Initialize Search -->
+
+  <!-- Initialize components -->
+  <script type="module">
+    import { createSidebar } from "/components/sidebar.js";
+    import { initializeComponents } from "/init.js";
+
+    document.addEventListener('DOMContentLoaded', () => {
       document.getElementById("sidebar").replaceWith(createSidebar("location"));
-    </script>
-    <script src="/theme.js" type="module"></script>
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module">
-      import { initializeComponents } from "/init.js";
       initializeComponents({
         sidebarType: "location",
         searchHeaderId: "header",
       });
-    </script>
-  </body>
+    });
+  </script>
+  <script src="/theme.js" type="module"></script>
+</body>
+
 </html>

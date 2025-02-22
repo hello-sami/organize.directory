@@ -1,117 +1,103 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Find mutual aid initiatives and community support networks in Green Bay, Wisconsin. Connect with local organizations and community resources."
-    />
-    <meta
-      property="og:title"
-      content="Mutual Aid in Green Bay - Local Support Networks"
-    />
-    <meta
-      property="og:description"
-      content="Find mutual aid initiatives and community support networks in Green Bay, Wisconsin. Connect with local organizations providing community-based support."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://organize.directory/greenbay" />
-    <meta name="twitter:card" content="summary" />
 
-    <title>
-      Mutual Aid in Green Bay - Local Support Networks & Community Resources
-    </title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Find mutual aid initiatives and community support networks in Green Bay, Wisconsin. Connect with local organizations and community resources." />
+  <meta property="og:title" content="Mutual Aid in Green Bay - Local Support Networks" />
+  <meta property="og:description"
+    content="Find mutual aid initiatives and community support networks in Green Bay, Wisconsin. Connect with local organizations providing community-based support." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://organize.directory/greenbay" />
+  <meta name="twitter:card" content="summary" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+  <title>
+    Mutual Aid in Green Bay - Local Support Networks & Community Resources
+  </title>
 
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-QJ03RCM35H");
-    </script>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" />
 
-    <!-- Theme Initialization -->
-    <script src="/theme-init.js"></script>
-    <!-- Critical Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      // Initialize sidebar as soon as possible
-      const sidebarElement = document.getElementById("sidebar");
-      if (sidebarElement) {
-        sidebarElement.replaceWith(createSidebar("location"));
-      }
-    </script>
-  </head>
-  <body>
-    <div class="layout">
-      <aside id="sidebar" aria-label="Main navigation"></aside>
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-      <main class="content" role="main">
-        <header id="header" class="page-header"></header>
 
-        <div class="city-page">
-          <div class="breadcrumb">
-            <a href="/wisconsin">Wisconsin</a>
-            <span>›</span>
-            <span>Green Bay</span>
-          </div>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-QJ03RCM35H");
+  </script>
 
-          <h1>Green Bay, Wisconsin</h1>
-          <hr />
+  <!-- Theme Initialization -->
+  <script src="/theme-init.js"></script>
 
-          <section>
-            <div class="initiative">
-              <a href="https://www.instagram.com/gbantiwar/"
-                >Green Bay Anti-War Committee</a
-              >
-              <p>
-                A group of locals organizing locally, regionally and nationally
-                against imperialist war and destruction
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.facebook.com/VocesdelaFronteraGreenBay"
-                >Voces de la Frontera Green Bay</a
-              >
-              <p>
-                Voces de la Frontera is Wisconsin's leading immigrant rights &
-                low-wage workers center.
-              </p>
-            </div>
-          </section>
+</head>
+
+<body>
+  <div class="layout">
+    <aside id="sidebar" aria-label="Main navigation"></aside>
+
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
+
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/wisconsin">Wisconsin</a>
+          <span>›</span>
+          <span>Green Bay</span>
         </div>
-      </main>
-    </div>
 
-    <!-- Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
+        <h1>Green Bay, Wisconsin</h1>
+        <hr>
+
+        <section>
+          <div class="initiative">
+            <a href="https://www.instagram.com/gbantiwar/">Green Bay Anti-War Committee</a>
+            <p>
+              A group of locals organizing locally, regionally and nationally
+              against imperialist war and destruction
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.facebook.com/VocesdelaFronteraGreenBay">Voces de la Frontera Green Bay</a>
+            <p>
+              Voces de la Frontera is Wisconsin's leading immigrant rights &
+              low-wage workers center.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+
+  <!-- Initialize Search -->
+
+  <!-- Initialize components -->
+  <script type="module">
+    import { createSidebar } from "/components/sidebar.js";
+    import { initializeComponents } from "/init.js";
+
+    document.addEventListener('DOMContentLoaded', () => {
       document.getElementById("sidebar").replaceWith(createSidebar("location"));
-    </script>
-    <script src="/theme.js" type="module"></script>
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module">
-      import { initializeComponents } from "/init.js";
       initializeComponents({
         sidebarType: "location",
         searchHeaderId: "header",
       });
-    </script>
-  </body>
+    });
+  </script>
+  <script src="/theme.js" type="module"></script>
+</body>
+
 </html>

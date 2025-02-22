@@ -1,119 +1,105 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Find mutual aid initiatives and community support networks in Myrtle Beach, South Carolina. Connect with local organizations and community resources."
-    />
 
-    <!-- Open Graph / Twitter Cards -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Mutual Aid in Myrtle Beach - Local Support Networks"
-    />
-    <meta
-      property="og:description"
-      content="Find mutual aid initiatives and community support networks in Myrtle Beach, South Carolina. Connect with local organizations providing community-based support."
-    />
-    <meta property="og:url" content="https://organize.directory/myrtle-beach" />
-    <meta name="twitter:card" content="summary" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Find mutual aid initiatives and community support networks in Myrtle Beach, South Carolina. Connect with local organizations and community resources." />
 
-    <title>
-      Mutual Aid in Myrtle Beach - Local Support Networks & Community Resources
-    </title>
+  <!-- Open Graph / Twitter Cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mutual Aid in Myrtle Beach - Local Support Networks" />
+  <meta property="og:description"
+    content="Find mutual aid initiatives and community support networks in Myrtle Beach, South Carolina. Connect with local organizations providing community-based support." />
+  <meta property="og:url" content="https://organize.directory/myrtle-beach" />
+  <meta name="twitter:card" content="summary" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+  <title>
+    Mutual Aid in Myrtle Beach - Local Support Networks & Community Resources
+  </title>
 
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-QJ03RCM35H");
-    </script>
-    <script src="/theme-init.js"></script>
-    <!-- Critical Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      // Initialize sidebar as soon as possible
-      const sidebarElement = document.getElementById("sidebar");
-      if (sidebarElement) {
-        sidebarElement.replaceWith(createSidebar("location"));
-      }
-    </script>
-  </head>
-  <body>
-    <div class="layout">
-      <div id="sidebar-container"></div>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" />
 
-      <main class="content" role="main">
-        <header id="header" class="page-header"></header>
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-        <div class="city-page">
-          <div class="breadcrumb">
-            <a href="/south-carolina">South Carolina</a>
-            <span>›</span>
-            <a href="/myrtle-beach">Myrtle Beach</a>
-          </div>
 
-          <h1>Myrtle Beach</h1>
-          <hr />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-QJ03RCM35H");
+  </script>
+  <script src="/theme-init.js"></script>
 
-          <section>
-            <div class="initiative">
-              <a href="https://www.t-timetgsupport.org/"
-                >T-Time Transgender Support</a
-              >
-              <p>
-                Support and Camaraderie for transgender, intersex, non-binary
-                and gender diverse individuals
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://fyrebirdrecovery.org/">Fyrebird Recovery</a>
-              <p>
-                Fyrebird Recovery is a harm reduction program in Horry County.
-                Through harm reduction efforts we focus addressing social
-                determinants of health, drug user health, and support to high
-                risk communities.
-              </p>
-            </div>
-          </section>
+</head>
+
+<body>
+  <div class="layout">
+    <div id="sidebar-container"></div>
+
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
+
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/south-carolina">South Carolina</a>
+          <span>›</span>
+          <a href="/myrtle-beach">Myrtle Beach</a>
         </div>
-      </main>
-    </div>
 
-    <!-- Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      const sidebarContainer = document.getElementById("sidebar-container");
-      const sidebar = createSidebar("cities");
-      sidebarContainer.replaceWith(sidebar);
-    </script>
-    <script src="/theme.js" type="module"></script>
+        <h1>Myrtle Beach</h1>
+        <hr>
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module">
-      import { initializeComponents } from "/init.js";
+        <section>
+          <div class="initiative">
+            <a href="https://www.t-timetgsupport.org/">T-Time Transgender Support</a>
+            <p>
+              Support and Camaraderie for transgender, intersex, non-binary
+              and gender diverse individuals
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://fyrebirdrecovery.org/">Fyrebird Recovery</a>
+            <p>
+              Fyrebird Recovery is a harm reduction program in Horry County.
+              Through harm reduction efforts we focus addressing social
+              determinants of health, drug user health, and support to high
+              risk communities.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+
+  <!-- Initialize Search -->
+
+  <!-- Initialize components -->
+  <script type="module">
+    import { createSidebar } from "/components/sidebar.js";
+    import { initializeComponents } from "/init.js";
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+
       initializeComponents({
         sidebarType: "location",
         searchHeaderId: "header",
       });
-    </script>
-  </body>
+    });
+  </script>
+  <script src="/theme.js" type="module"></script>
+</body>
+
 </html>

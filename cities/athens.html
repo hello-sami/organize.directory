@@ -1,117 +1,103 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Athens Mutual Aid Networks - Local Support & Community Resources
-    </title>
-    <meta
-      name="description"
-      content="Find mutual aid networks and community support initiatives in Athens, Ohio."
-    />
 
-    <!-- Open Graph tags -->
-    <meta
-      property="og:title"
-      content="Athens Mutual Aid Networks - Local Support & Community Resources"
-    />
-    <meta
-      property="og:description"
-      content="Find mutual aid networks and community support initiatives in Athens, Ohio."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://organize.directory/athens" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Athens Mutual Aid Networks - Local Support & Community Resources
+  </title>
+  <meta name="description" content="Find mutual aid networks and community support initiatives in Athens, Ohio." />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="Athens Mutual Aid Networks - Local Support & Community Resources" />
+  <meta property="og:description"
+    content="Find mutual aid networks and community support initiatives in Athens, Ohio." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://organize.directory/athens" />
 
-    <!-- Theme -->
-    <script src="/theme-init.js"></script>
-    <!-- Critical Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      // Initialize sidebar as soon as possible
-      const sidebarElement = document.getElementById("sidebar");
-      if (sidebarElement) {
-        sidebarElement.replaceWith(createSidebar("location"));
-      }
-    </script>
-  </head>
-  <body>
-    <div class="layout">
-      <aside id="sidebar" aria-label="Main navigation"></aside>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" />
 
-      <main class="content" role="main">
-        <header id="header" class="page-header"></header>
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-        <div class="city-page">
-          <div class="breadcrumb">
-            <a href="/ohio">Ohio</a>
-            <span>›</span>
-            <span>Athens</span>
-          </div>
 
-          <h1>Athens</h1>
-          <hr />
+  <!-- Theme -->
+  <script src="/theme-init.js"></script>
 
-          <section>
-            <div class="initiative">
-              <a href="https://www.instagram.com/fnbathens/"
-                >Food Not Bombs Athens</a
-              >
-              <p>Free Soup for the Revolution</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.athensfoodrescue.com/">Athens Food Rescue</a>
-              <p>
-                Athens Food Rescue fights food insecurity in the Athens
-                community while diverting food from landfills.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/arthouseathens/"
-                >Arthouse Athens</a
-              >
-              <p>Artist & Community gathering place in Athens, Ohio</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/sundaycreeksanctuary/"
-                >Sunday Creek Sanctuary</a
-              >
-              <p>
-                6 acre farm in SE Ohio dedicated to offering land access and
-                creative respite to QTBIPOC+ folx & those otherwise marginalized
-                manifold.
-              </p>
-            </div>
-          </section>
+</head>
+
+<body>
+  <div class="layout">
+    <aside id="sidebar" aria-label="Main navigation"></aside>
+
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
+
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/ohio">Ohio</a>
+          <span>›</span>
+          <span>Athens</span>
         </div>
-        <footer class="site-footer">
-          <p>Awareness into action. Solidarity not charity.</p>
-        </footer>
-      </main>
-    </div>
 
-    <!-- Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
+        <h1>Athens</h1>
+        <hr>
+
+        <section>
+          <div class="initiative">
+            <a href="https://www.instagram.com/fnbathens/">Food Not Bombs Athens</a>
+            <p>Free Soup for the Revolution</p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.athensfoodrescue.com/">Athens Food Rescue</a>
+            <p>
+              Athens Food Rescue fights food insecurity in the Athens
+              community while diverting food from landfills.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/arthouseathens/">Arthouse Athens</a>
+            <p>Artist & Community gathering place in Athens, Ohio</p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/sundaycreeksanctuary/">Sunday Creek Sanctuary</a>
+            <p>
+              6 acre farm in SE Ohio dedicated to offering land access and
+              creative respite to QTBIPOC+ folx & those otherwise marginalized
+              manifold.
+            </p>
+          </div>
+        </section>
+      </div>
+      <footer class="site-footer">
+        <p>Awareness into action. Solidarity not charity.</p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+
+  <!-- Initialize Search -->
+
+  <!-- Initialize components -->
+  <script type="module">
+    import { createSidebar } from "/components/sidebar.js";
+    import { initializeComponents } from "/init.js";
+
+    document.addEventListener('DOMContentLoaded', () => {
       document.getElementById("sidebar").replaceWith(createSidebar("location"));
-    </script>
-    <script src="/theme.js" type="module"></script>
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module">
-      import { initializeComponents } from "/init.js";
       initializeComponents({
         sidebarType: "location",
         searchHeaderId: "header",
       });
-    </script>
-  </body>
+    });
+  </script>
+  <script src="/theme.js" type="module"></script>
+</body>
+
 </html>

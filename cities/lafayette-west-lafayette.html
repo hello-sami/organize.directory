@@ -1,114 +1,102 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-QJ03RCM35H");
-    </script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Lafayette/West Lafayette Mutual Aid Networks - Local Support & Community
-      Resources
-    </title>
-    <meta
-      name="description"
-      content="Find mutual aid networks and community support initiatives in Lafayette and West Lafayette, Indiana."
-    />
-    <meta
-      property="og:title"
-      content="Lafayette/West Lafayette Mutual Aid Networks - Local Support & Community Resources"
-    />
-    <meta
-      property="og:description"
-      content="Find mutual aid networks and community support initiatives in Lafayette and West Lafayette, Indiana."
-    />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://organize.directory/lafayette-west-lafayette"
-    />
-    <meta name="twitter:card" content="summary" />
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-QJ03RCM35H");
+  </script>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Lafayette/West Lafayette Mutual Aid Networks - Local Support & Community
+    Resources
+  </title>
+  <meta name="description"
+    content="Find mutual aid networks and community support initiatives in Lafayette and West Lafayette, Indiana." />
+  <meta property="og:title"
+    content="Lafayette/West Lafayette Mutual Aid Networks - Local Support & Community Resources" />
+  <meta property="og:description"
+    content="Find mutual aid networks and community support initiatives in Lafayette and West Lafayette, Indiana." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://organize.directory/lafayette-west-lafayette" />
+  <meta name="twitter:card" content="summary" />
 
-    <!-- Theme and Components -->
-    <script src="/theme-init.js"></script>
-    <!-- Critical Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      // Initialize sidebar as soon as possible
-      const sidebarElement = document.getElementById("sidebar");
-      if (sidebarElement) {
-        sidebarElement.replaceWith(createSidebar("location"));
-      }
-    </script>
-  </head>
-  <body>
-    <div class="layout">
-      <aside id="sidebar" aria-label="Main navigation"></aside>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" />
 
-      <main class="content" role="main">
-        <header id="header" class="page-header"></header>
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-        <div class="city-page">
-          <div class="breadcrumb">
-            <a href="/indiana">Indiana</a>
-            <span>›</span>
-            <span>Lafayette/West Lafayette</span>
-          </div>
 
-          <h1>Lafayette/West Lafayette</h1>
-          <hr />
+  <!-- Theme and Components -->
+  <script src="/theme-init.js"></script>
 
-          <section>
-            <div class="initiative">
-              <a href="https://www.instagram.com/surj_lala">SURJ Lafayette</a>
-              <p>
-                A chapter of Showing Up for Racial Justice fostering mutual aid
-                and community solidarity through white anti-racist organizing in
-                Lafayette and West Lafayette. They coordinate community
-                organizing, mobilizing, and education initiatives while building
-                power through political education, direct action support, and
-                creating spaces for accountable organizing in partnership with
-                BIPOC-led organizations.
-              </p>
-            </div>
-          </section>
+</head>
+
+<body>
+  <div class="layout">
+    <aside id="sidebar" aria-label="Main navigation"></aside>
+
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
+
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/indiana">Indiana</a>
+          <span>›</span>
+          <span>Lafayette/West Lafayette</span>
         </div>
-      </main>
-    </div>
 
-    <!-- Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
+        <h1>Lafayette/West Lafayette</h1>
+        <hr>
+
+        <section>
+          <div class="initiative">
+            <a href="https://www.instagram.com/surj_lala">SURJ Lafayette</a>
+            <p>
+              A chapter of Showing Up for Racial Justice fostering mutual aid
+              and community solidarity through white anti-racist organizing in
+              Lafayette and West Lafayette. They coordinate community
+              organizing, mobilizing, and education initiatives while building
+              power through political education, direct action support, and
+              creating spaces for accountable organizing in partnership with
+              BIPOC-led organizations.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+
+  <!-- Initialize Search -->
+
+  <!-- Initialize components -->
+  <script type="module">
+    import { createSidebar } from "/components/sidebar.js";
+    import { initializeComponents } from "/init.js";
+
+    document.addEventListener('DOMContentLoaded', () => {
       document.getElementById("sidebar").replaceWith(createSidebar("location"));
-    </script>
-    <script src="/theme.js" type="module"></script>
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module">
-      import { initializeComponents } from "/init.js";
       initializeComponents({
         sidebarType: "location",
         searchHeaderId: "header",
       });
-    </script>
-  </body>
+    });
+  </script>
+  <script src="/theme.js" type="module"></script>
+</body>
+
 </html>

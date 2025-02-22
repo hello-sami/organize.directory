@@ -1,149 +1,129 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Find mutual aid initiatives and community support networks in Morgantown, West Virginia. Connect with local organizations and community resources."
-    />
 
-    <!-- Open Graph and Twitter Cards -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Mutual Aid in Morgantown - Local Support Networks"
-    />
-    <meta
-      property="og:description"
-      content="Find mutual aid initiatives and community support networks in Morgantown, West Virginia. Connect with local organizations providing community-based support."
-    />
-    <meta property="og:url" content="https://organize.directory/morgantown" />
-    <meta name="twitter:card" content="summary" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Find mutual aid initiatives and community support networks in Morgantown, West Virginia. Connect with local organizations and community resources." />
 
-    <title>
-      Mutual Aid in Morgantown - Local Support Networks & Community Resources
-    </title>
+  <!-- Open Graph and Twitter Cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mutual Aid in Morgantown - Local Support Networks" />
+  <meta property="og:description"
+    content="Find mutual aid initiatives and community support networks in Morgantown, West Virginia. Connect with local organizations providing community-based support." />
+  <meta property="og:url" content="https://organize.directory/morgantown" />
+  <meta name="twitter:card" content="summary" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+  <title>
+    Mutual Aid in Morgantown - Local Support Networks & Community Resources
+  </title>
 
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-QJ03RCM35H");
-    </script>
-    <script src="/theme-init.js"></script>
-    <!-- Critical Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      // Initialize sidebar as soon as possible
-      const sidebarElement = document.getElementById("sidebar");
-      if (sidebarElement) {
-        sidebarElement.replaceWith(createSidebar("location"));
-      }
-    </script>
-  </head>
-  <body>
-    <div class="layout">
-      <div id="sidebar-container"></div>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" />
 
-      <main class="content">
-        <header id="header" class="page-header"></header>
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-        <div class="city-page">
-          <div class="breadcrumb">
-            <a href="/west-virginia">West Virginia</a>
-            <span>›</span>
-            <span>Morgantown</span>
-          </div>
 
-          <h1>Morgantown, West Virginia</h1>
-          <hr />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-QJ03RCM35H");
+  </script>
+  <script src="/theme-init.js"></script>
 
-          <section>
-            <div class="initiative">
-              <a href="https://appalachianprisonbookproject.org/"
-                >Appalachian Prison Book Project</a
-              >
-              <p>
-                APBP sends free books to people imprisoned in six Appalachian
-                states (West Virginia, Virginia, Tennessee, Kentucky, Ohio, and
-                Maryland), hosts book clubs inside prisons in our region, and is
-                leading an effort to bring for-credit college courses into
-                prison.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/morgantown_wv_mutual_aid/"
-                >Morgantown Mutual Aid</a
-              >
-              <p>
-                We are citizens of Morgantown working together to care for one
-                another. We distribute supplies and connect community members
-                with local resources.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/morgantownfnb/"
-                >Morgantown Food Not Bombs</a
-              >
-              <p>
-                Morgantown WV’s Food Not Bombs chapter. Free soup for the
-                revolution.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/wvmocha/"
-                >Morgantown Coalition for Housing Action (MoCHA)</a
-              >
-              <p>
-                Working to bridge gaps in resources & advocacy for our
-                unsheltered neighbors in Morgantown, WV
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.projectrainbowwv.com/">Project Rainbow WV</a>
-              <p>
-                Runs a a low-barrier 24-bed emergency shelter focused on housing
-                while maintaining safety for unhoused members of the LGBTQ+
-                community.
-              </p>
-            </div>
-          </section>
+</head>
+
+<body>
+  <div class="layout">
+    <div id="sidebar-container"></div>
+
+    <main class="content">
+      <header id="header" class="page-header"></header>
+
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/west-virginia">West Virginia</a>
+          <span>›</span>
+          <span>Morgantown</span>
         </div>
-      </main>
-    </div>
 
-    <!-- Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      const sidebarContainer = document.getElementById("sidebar-container");
-      const sidebar = createSidebar("cities");
-      sidebarContainer.replaceWith(sidebar);
-    </script>
-    <script src="/theme.js" type="module"></script>
+        <h1>Morgantown, West Virginia</h1>
+        <hr>
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module">
-      import { initializeComponents } from "/init.js";
+        <section>
+          <div class="initiative">
+            <a href="https://appalachianprisonbookproject.org/">Appalachian Prison Book Project</a>
+            <p>
+              APBP sends free books to people imprisoned in six Appalachian
+              states (West Virginia, Virginia, Tennessee, Kentucky, Ohio, and
+              Maryland), hosts book clubs inside prisons in our region, and is
+              leading an effort to bring for-credit college courses into
+              prison.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/morgantown_wv_mutual_aid/">Morgantown Mutual Aid</a>
+            <p>
+              We are citizens of Morgantown working together to care for one
+              another. We distribute supplies and connect community members
+              with local resources.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/morgantownfnb/">Morgantown Food Not Bombs</a>
+            <p>
+              Morgantown WV’s Food Not Bombs chapter. Free soup for the
+              revolution.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/wvmocha/">Morgantown Coalition for Housing Action (MoCHA)</a>
+            <p>
+              Working to bridge gaps in resources & advocacy for our
+              unsheltered neighbors in Morgantown, WV
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.projectrainbowwv.com/">Project Rainbow WV</a>
+            <p>
+              Runs a a low-barrier 24-bed emergency shelter focused on housing
+              while maintaining safety for unhoused members of the LGBTQ+
+              community.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+
+  <!-- Initialize Search -->
+
+  <!-- Initialize components -->
+  <script type="module">
+    import { createSidebar } from "/components/sidebar.js";
+    import { initializeComponents } from "/init.js";
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+
       initializeComponents({
         sidebarType: "location",
         searchHeaderId: "header",
       });
-    </script>
-  </body>
+    });
+  </script>
+  <script src="/theme.js" type="module"></script>
+</body>
+
 </html>

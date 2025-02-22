@@ -1,140 +1,127 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-QJ03RCM35H");
-    </script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Providence Mutual Aid Networks - Local Support & Community Resources
-    </title>
-    <meta
-      name="description"
-      content="Find mutual aid networks and community support initiatives in Providence, Rhode Island."
-    />
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-QJ03RCM35H");
+  </script>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Providence Mutual Aid Networks - Local Support & Community Resources
+  </title>
+  <meta name="description"
+    content="Find mutual aid networks and community support initiatives in Providence, Rhode Island." />
 
-    <!-- Theme and Components -->
-    <script src="/theme-init.js"></script>
-    <!-- Critical Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      // Initialize sidebar as soon as possible
-      const sidebarElement = document.getElementById("sidebar");
-      if (sidebarElement) {
-        sidebarElement.replaceWith(createSidebar("location"));
-      }
-    </script>
-  </head>
-  <body>
-    <div class="layout">
-      <aside id="sidebar" aria-label="Main navigation"></aside>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" />
 
-      <main class="content" role="main">
-        <header id="header" class="page-header"></header>
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-        <div class="city-page">
-          <div class="breadcrumb">
-            <a href="/rhode-island">Rhode Island</a>
-            <span>›</span>
-            <span>Providence</span>
-          </div>
 
-          <h1>Providence</h1>
-          <hr />
+  <!-- Theme and Components -->
+  <script src="/theme-init.js"></script>
 
-          <section>
-            <div class="initiative">
-              <a href="https://amoshouse.com/">Amos House</a>
-              <p>
-                A comprehensive social service organization providing mutual aid
-                and direct support through their soup kitchen, food pantry, and
-                housing programs. They combine immediate assistance with
-                long-term support through job training, recovery services, and
-                financial literacy programs to help build community resilience.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/food.not.bombs.providence"
-                >Food Not Bombs Providence</a
-              >
-              <p>
-                A grassroots mutual aid collective dedicated to recovering and
-                sharing free vegan meals in Providence. They coordinate food
-                recovery, community meals, and resource distribution while
-                building solidarity through direct action against hunger and
-                food waste.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://daretowin.org/"
-                >Direct Action for Rights and Equality (DARE)</a
-              >
-              <p>
-                Member-led organization building power in low-income communities
-                of color through mutual aid, direct action, and grassroots
-                organizing for housing justice, police accountability, and
-                workers' rights.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.redinkri.org/">Red Ink Community Library</a>
-              <p>
-                A radical community library and mutual aid space providing free
-                access to books, zines, and educational resources. Red Ink
-                fosters community learning and solidarity through their lending
-                library, workshops, and organizing space.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/blackandpinkpvd/"
-                >Black and Pink Providence</a
-              >
-              <p>
-                RI chapter of @blackandpinkorg fighting alongside #LGBTQI2+
-                prisoners.
-              </p>
-            </div>
-          </section>
+</head>
+
+<body>
+  <div class="layout">
+    <aside id="sidebar" aria-label="Main navigation"></aside>
+
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
+
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/rhode-island">Rhode Island</a>
+          <span>›</span>
+          <span>Providence</span>
         </div>
-      </main>
-    </div>
 
-    <!-- Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      document
-        .getElementById("sidebar")
-        .replaceWith(createSidebar("locations"));
-    </script>
-    <script src="/theme.js" type="module"></script>
+        <h1>Providence</h1>
+        <hr>
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module">
-      import { initializeComponents } from "/init.js";
+        <section>
+          <div class="initiative">
+            <a href="https://amoshouse.com/">Amos House</a>
+            <p>
+              A comprehensive social service organization providing mutual aid
+              and direct support through their soup kitchen, food pantry, and
+              housing programs. They combine immediate assistance with
+              long-term support through job training, recovery services, and
+              financial literacy programs to help build community resilience.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/food.not.bombs.providence">Food Not Bombs Providence</a>
+            <p>
+              A grassroots mutual aid collective dedicated to recovering and
+              sharing free vegan meals in Providence. They coordinate food
+              recovery, community meals, and resource distribution while
+              building solidarity through direct action against hunger and
+              food waste.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://daretowin.org/">Direct Action for Rights and Equality (DARE)</a>
+            <p>
+              Member-led organization building power in low-income communities
+              of color through mutual aid, direct action, and grassroots
+              organizing for housing justice, police accountability, and
+              workers' rights.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.redinkri.org/">Red Ink Community Library</a>
+            <p>
+              A radical community library and mutual aid space providing free
+              access to books, zines, and educational resources. Red Ink
+              fosters community learning and solidarity through their lending
+              library, workshops, and organizing space.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/blackandpinkpvd/">Black and Pink Providence</a>
+            <p>
+              RI chapter of @blackandpinkorg fighting alongside #LGBTQI2+
+              prisoners.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+
+  <!-- Initialize Search -->
+
+  <!-- Initialize components -->
+  <script type="module">
+    import { createSidebar } from "/components/sidebar.js";
+    import { initializeComponents } from "/init.js";
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+
       initializeComponents({
         sidebarType: "location",
         searchHeaderId: "header",
       });
-    </script>
-  </body>
+    });
+  </script>
+  <script src="/theme.js" type="module"></script>
+</body>
+
 </html>

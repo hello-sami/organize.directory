@@ -1,89 +1,81 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Common head content -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap"
-      rel="stylesheet"
-    />
-    <!-- Google Analytics -->
-    <script
-      async=""
-      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-QJ03RCM35H");
-    </script>
-    <script src="/theme-init.js"></script>
-    <!-- Critical Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      // Initialize sidebar as soon as possible
-      const sidebarElement = document.getElementById("sidebar");
-      if (sidebarElement) {
-        sidebarElement.replaceWith(createSidebar("location"));
-      }
-    </script>
-  </head>
-  <body>
-    <div class="layout">
-      <div id="sidebar-container"></div>
 
-      <main class="content">
-        <header id="header" class="page-header"></header>
+<head>
+  <!-- Common head content -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="/styles.css" />
 
-        <div class="city-page">
-          <div class="breadcrumb">
-            <a href="/cities" class="back-link">← Back to Cities</a>
-          </div>
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
 
-          <h1>Puerto Rico, Territories</h1>
-          <hr />
+  <!-- Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-QJ03RCM35H");
+  </script>
+  <script src="/theme-init.js"></script>
 
+</head>
+
+<body>
+  <div class="layout">
+    <div id="sidebar-container"></div>
+
+    <main class="content">
+      <header id="header" class="page-header"></header>
+
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/cities" class="back-link">← Back to Cities</a>
+        </div>
+
+        <h1>Puerto Rico, Territories</h1>
+        <hr>
+
+        <div class="initiative">
           <div class="initiative">
-            <div class="initiative">
-              <a href="https://www.colectivafeminista.org/"
-                >Colectiva Feminista</a
-              >
-              <p>
-                A feminist collective organizing mutual aid networks and
-                community support initiatives across Puerto Rico. Through direct
-                action, solidarity networks, and grassroots organizing, they
-                work to build community power and provide essential resources
-                while advocating for gender justice and social transformation.
-              </p>
-            </div>
+            <a href="https://www.colectivafeminista.org/">Colectiva Feminista</a>
+            <p>
+              A feminist collective organizing mutual aid networks and
+              community support initiatives across Puerto Rico. Through direct
+              action, solidarity networks, and grassroots organizing, they
+              work to build community power and provide essential resources
+              while advocating for gender justice and social transformation.
+            </p>
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
+  </div>
 
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      const sidebarContainer = document.getElementById("sidebar-container");
-      const sidebar = createSidebar("cities");
-      sidebarContainer.replaceWith(sidebar);
-    </script>
-    <script src="/theme.js" type="module"></script>
+  <!-- Initialize Search -->
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module">
-      import { initializeComponents } from "/init.js";
+  <!-- Initialize components -->
+  <script type="module">
+    import { createSidebar } from "/components/sidebar.js";
+    import { initializeComponents } from "/init.js";
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+
       initializeComponents({
         sidebarType: "location",
         searchHeaderId: "header",
       });
-    </script>
-  </body>
+    });
+  </script>
+  <script src="/theme.js" type="module"></script>
+</body>
+
 </html>

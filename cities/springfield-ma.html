@@ -1,113 +1,98 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Find mutual aid networks and community support initiatives in Springfield, Massachusetts."
-    />
 
-    <!-- Open Graph / Twitter Cards -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Springfield, Massachusetts - Mutual Aid Network Directory"
-    />
-    <meta
-      property="og:description"
-      content="Find mutual aid networks and community support initiatives in Springfield, Massachusetts."
-    />
-    <meta
-      property="og:url"
-      content="https://organize.directory/springfield-ma"
-    />
-    <meta name="twitter:card" content="summary" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Find mutual aid networks and community support initiatives in Springfield, Massachusetts." />
 
-    <title>Springfield, Massachusetts - Mutual Aid Network Directory</title>
+  <!-- Open Graph / Twitter Cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Springfield, Massachusetts - Mutual Aid Network Directory" />
+  <meta property="og:description"
+    content="Find mutual aid networks and community support initiatives in Springfield, Massachusetts." />
+  <meta property="og:url" content="https://organize.directory/springfield-ma" />
+  <meta name="twitter:card" content="summary" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="styles/city.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+  <title>Springfield, Massachusetts - Mutual Aid Network Directory</title>
 
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-QJ03RCM35H");
-    </script>
-    <script src="/theme-init.js"></script>
-    <!-- Critical Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      // Initialize sidebar as soon as possible
-      const sidebarElement = document.getElementById("sidebar");
-      if (sidebarElement) {
-        sidebarElement.replaceWith(createSidebar("location"));
-      }
-    </script>
-  </head>
-  <body>
-    <div class="layout">
-      <div id="sidebar-container"></div>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="styles/city.css" />
 
-      <main class="content" role="main">
-        <header id="header" class="page-header"></header>
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-        <div class="city-page">
-          <div class="breadcrumb">
-            <a href="/massachusetts">Massachussetts</a>
-            <span>›</span>
-            <span>Springfield</span>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-QJ03RCM35H");
+  </script>
+  <script src="/theme-init.js"></script>
+
+</head>
+
+<body>
+  <div class="layout">
+    <div id="sidebar-container"></div>
+
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
+
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/massachusetts">Massachussetts</a>
+          <span>›</span>
+          <span>Springfield</span>
+        </div>
+
+        <h1>Springfield, MA</h1>
+        <hr>
+
+        <section>
+          <div class="initiative">
+            <a href="https://www.outnowyouth.org/">Out Now Youth</a>
+            <p>
+              The only queer youth organization in Springfield MA, Out Now
+              provides a safe space for queer youth & allies who are 22 yrs
+              and under to learn about themselves, develop lasting friendships
+              and leadership skills, explore LGBTQ+ history, and so much more.
+            </p>
           </div>
 
-          <h1>Springfield, MA</h1>
-          <hr />
+          <!-- Scripts -->
 
-          <section>
-            <div class="initiative">
-              <a href="https://www.outnowyouth.org/">Out Now Youth</a>
-              <p>
-                The only queer youth organization in Springfield MA, Out Now
-                provides a safe space for queer youth & allies who are 22 yrs
-                and under to learn about themselves, develop lasting friendships
-                and leadership skills, explore LGBTQ+ history, and so much more.
-              </p>
-            </div>
+          <!-- Initialize Search -->
 
-            <!-- Scripts -->
-            <script type="module">
-              import { createSidebar } from "/components/sidebar.js";
-              const sidebarContainer =
-                document.getElementById("sidebar-container");
-              const sidebar = createSidebar("cities");
-              sidebarContainer.replaceWith(sidebar);
-            </script>
-            <script src="/theme.js" type="module"></script>
+        </section>
+      </div>
+    </main>
+  </div>
 
-            <!-- Initialize Search -->
-            <!-- Initialize components -->
-            <script type="module">
-              import { initializeComponents } from "/init.js";
-              initializeComponents({
-                sidebarType: "location",
-                searchHeaderId: "header",
-              });
-            </script>
-          </section>
-        </div>
-      </main>
-    </div>
-  </body>
+  <!-- Initialize components -->
+  <script type="module">
+    import { createSidebar } from "/components/sidebar.js";
+    import { initializeComponents } from "/init.js";
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    });
+  </script>
+  <script src="/theme.js" type="module"></script>
+</body>
+
 </html>

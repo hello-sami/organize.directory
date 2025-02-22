@@ -1,88 +1,84 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      San Joaquin Valley Mutual Aid Networks - Local Support & Community
-      Resources
-    </title>
-    <meta
-      name="description"
-      content="Find mutual aid networks and community support initiatives in California's San Joaquin Valley."
-    />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    San Joaquin Valley Mutual Aid Networks - Local Support & Community
+    Resources
+  </title>
+  <meta name="description"
+    content="Find mutual aid networks and community support initiatives in California's San Joaquin Valley." />
 
-    <!-- Theme and Components -->
-    <script src="/theme-init.js"></script>
-    <!-- Critical Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      // Initialize sidebar as soon as possible
-      const sidebarElement = document.getElementById("sidebar");
-      if (sidebarElement) {
-        sidebarElement.replaceWith(createSidebar("location"));
-      }
-    </script>
-  </head>
-  <body>
-    <div class="layout">
-      <aside id="sidebar" aria-label="Main navigation"></aside>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" />
 
-      <main class="content" role="main">
-        <header id="header" class="page-header"></header>
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-        <div class="city-page">
-          <div class="breadcrumb">
-            <a href="/california">California</a>
-            <span>›</span>
-            <span>San Joaquin Valley</span>
-          </div>
 
-          <h1>San Joaquin Valley, California</h1>
-          <hr />
+  <!-- Theme and Components -->
+  <script src="/theme-init.js"></script>
 
-          <section>
-            <div class="initiative">
-              <a href="https://valleyimprovementprojects.org/"
-                >Valley Improvement Projects (VIP)</a
-              >
-              <p>
-                A grassroots organization advocating for social and
-                environmental justice in Stanislaus County and the Central
-                Valley. Through mutual aid and community organizing, VIP works
-                on clean air, pesticide reduction, clean drinking water, climate
-                justice, zero waste initiatives, and tenant rights while
-                focusing on supporting underrepresented and marginalized
-                residents.
-              </p>
-            </div>
-          </section>
+</head>
+
+<body>
+  <div class="layout">
+    <aside id="sidebar" aria-label="Main navigation"></aside>
+
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
+
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/california">California</a>
+          <span>›</span>
+          <span>San Joaquin Valley</span>
         </div>
-      </main>
-    </div>
 
-    <!-- Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
+        <h1>San Joaquin Valley, California</h1>
+        <hr>
+
+        <section>
+          <div class="initiative">
+            <a href="https://valleyimprovementprojects.org/">Valley Improvement Projects (VIP)</a>
+            <p>
+              A grassroots organization advocating for social and
+              environmental justice in Stanislaus County and the Central
+              Valley. Through mutual aid and community organizing, VIP works
+              on clean air, pesticide reduction, clean drinking water, climate
+              justice, zero waste initiatives, and tenant rights while
+              focusing on supporting underrepresented and marginalized
+              residents.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+
+  <!-- Initialize Search -->
+
+  <!-- Initialize components -->
+  <script type="module">
+    import { createSidebar } from "/components/sidebar.js";
+    import { initializeComponents } from "/init.js";
+
+    document.addEventListener('DOMContentLoaded', () => {
       document.getElementById("sidebar").replaceWith(createSidebar("location"));
-    </script>
-    <script src="/theme.js" type="module"></script>
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module">
-      import { initializeComponents } from "/init.js";
       initializeComponents({
         sidebarType: "location",
         searchHeaderId: "header",
       });
-    </script>
-  </body>
+    });
+  </script>
+  <script src="/theme.js" type="module"></script>
+</body>
+
 </html>

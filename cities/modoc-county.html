@@ -1,120 +1,110 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-QJ03RCM35H");
-    </script>
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Modoc County Mutual Aid - Local Support Networks & Community Resources
-    </title>
-    <meta
-      name="description"
-      content="Find mutual aid networks and community support initiatives in Modoc County, California including Alturas, Cedarville, and surrounding communities."
-    />
-    <meta
-      property="og:title"
-      content="Modoc County Mutual Aid - Local Support Networks & Community Resources"
-    />
-    <meta
-      property="og:description"
-      content="Find mutual aid networks and community support initiatives in Modoc County, California including Alturas, Cedarville, and surrounding communities."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://organize.directory/modoc-county" />
-    <meta name="twitter:card" content="summary" />
+<head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-QJ03RCM35H");
+  </script>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Modoc County Mutual Aid - Local Support Networks & Community Resources
+  </title>
+  <meta name="description"
+    content="Find mutual aid networks and community support initiatives in Modoc County, California including Alturas, Cedarville, and surrounding communities." />
+  <meta property="og:title" content="Modoc County Mutual Aid - Local Support Networks & Community Resources" />
+  <meta property="og:description"
+    content="Find mutual aid networks and community support initiatives in Modoc County, California including Alturas, Cedarville, and surrounding communities." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://organize.directory/modoc-county" />
+  <meta name="twitter:card" content="summary" />
 
-    <!-- Theme and Components -->
-    <script src="/theme-init.js"></script>
-    <!-- Critical Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      // Initialize sidebar as soon as possible
-      const sidebarElement = document.getElementById("sidebar");
-      if (sidebarElement) {
-        sidebarElement.replaceWith(createSidebar("location"));
-      }
-    </script>
-  </head>
-  <body>
-    <div class="layout">
-      <aside id="sidebar" aria-label="Main navigation"></aside>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" />
 
-      <main class="content" role="main">
-        <header id="header" class="page-header"></header>
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-        <div class="city-page">
-          <div class="breadcrumb">
-            <a href="/california">California</a>
-            <span>›</span>
-            <a href="/norcal">Northern California</a>
-            <span>›</span>
-            <span>Modoc County</span>
-          </div>
 
-          <h1>Modoc County</h1>
-          <p class="subtitle">
-            Alturas, Cedarville, Likely, and surrounding communities
-          </p>
-          <hr />
+  <!-- Theme and Components -->
+  <script src="/theme-init.js"></script>
 
-          <section>
-            <h2>Communities</h2>
-            <div class="cities-list">
-              <a href="/alturas" class="city-link">Alturas</a>
-              <a href="/cedarville" class="city-link">Cedarville</a>
-              <a href="/likely" class="city-link">Likely</a>
-              <a href="/canby" class="city-link">Canby</a>
-              <a href="/davis-creek" class="city-link">Davis Creek</a>
-              <a href="/fort-bidwell" class="city-link">Fort Bidwell</a>
-              <a href="/lake-city" class="city-link">Lake City</a>
-              <a href="/lookout" class="city-link">Lookout</a>
-              <a href="/newell" class="city-link">Newell</a>
-            </div>
-          </section>
+</head>
 
-          <section class="initiatives-section"></section>
+<body>
+  <div class="layout">
+    <aside id="sidebar" aria-label="Main navigation"></aside>
+
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
+
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/california">California</a>
+          <span>›</span>
+          <a href="/norcal">Northern California</a>
+          <span>›</span>
+          <span>Modoc County</span>
         </div>
-        <footer class="site-footer">
-          <p>Awareness into action. Solidarity not charity.</p>
-        </footer>
-      </main>
-    </div>
 
-    <!-- Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
+        <h1>Modoc County</h1>
+        <p class="subtitle">
+          Alturas, Cedarville, Likely, and surrounding communities
+        </p>
+        <hr>
+
+        <section>
+          <h2>Communities</h2>
+          <div class="cities-list">
+            <a href="/alturas" class="city-link">Alturas</a>
+            <a href="/cedarville" class="city-link">Cedarville</a>
+            <a href="/likely" class="city-link">Likely</a>
+            <a href="/canby" class="city-link">Canby</a>
+            <a href="/davis-creek" class="city-link">Davis Creek</a>
+            <a href="/fort-bidwell" class="city-link">Fort Bidwell</a>
+            <a href="/lake-city" class="city-link">Lake City</a>
+            <a href="/lookout" class="city-link">Lookout</a>
+            <a href="/newell" class="city-link">Newell</a>
+          </div>
+        </section>
+
+        <section class="initiatives-section"></section>
+      </div>
+      <footer class="site-footer">
+        <p>Awareness into action. Solidarity not charity.</p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+
+  <!-- Initialize Search -->
+
+  <!-- Initialize components -->
+  <script type="module">
+    import { createSidebar } from "/components/sidebar.js";
+    import { initializeComponents } from "/init.js";
+
+    document.addEventListener('DOMContentLoaded', () => {
       document.getElementById("sidebar").replaceWith(createSidebar("location"));
-    </script>
-    <script src="/theme.js" type="module"></script>
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module">
-      import { initializeComponents } from "/init.js";
       initializeComponents({
         sidebarType: "location",
         searchHeaderId: "header",
       });
-    </script>
-  </body>
+    });
+  </script>
+  <script src="/theme.js" type="module"></script>
+</body>
+
 </html>

@@ -24,10 +24,14 @@
     </title>
 
     <link rel="stylesheet" href="/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
       rel="stylesheet"
-    />
+    >
+
 
     <!-- Google Analytics -->
     <script
@@ -43,15 +47,7 @@
       gtag("config", "G-QJ03RCM35H");
     </script>
     <script src="/theme-init.js"></script>
-    <!-- Critical Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      // Initialize sidebar as soon as possible
-      const sidebarElement = document.getElementById("sidebar");
-      if (sidebarElement) {
-        sidebarElement.replaceWith(createSidebar("location"));
-      }
-    </script>
+    
   </head>
   <body>
     <div class="layout">
@@ -66,7 +62,7 @@
           </div>
 
           <h1>Sioux City, Iowa</h1>
-          <hr />
+          <hr>
         </div>
         <footer class="site-footer">
           <p>Awareness into action. Solidarity not charity.</p>
@@ -74,22 +70,22 @@
       </main>
     </div>
 
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      const sidebarContainer = document.getElementById("sidebar-container");
-      const sidebar = createSidebar("cities");
-      sidebarContainer.replaceWith(sidebar);
-    </script>
-    <script src="/theme.js" type="module"></script>
-
     <!-- Initialize Search -->
+
     <!-- Initialize components -->
     <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
       import { initializeComponents } from "/init.js";
-      initializeComponents({
-        sidebarType: "location",
-        searchHeaderId: "header",
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById("sidebar").replaceWith(createSidebar("location"));
+
+        initializeComponents({
+          sidebarType: "location",
+          searchHeaderId: "header",
+        });
       });
     </script>
+    <script src="/theme.js" type="module"></script>
   </body>
 </html>

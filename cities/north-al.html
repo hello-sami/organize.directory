@@ -1,141 +1,126 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      North Alabama Mutual Aid Networks - Local Support & Community Resources
-    </title>
-    <meta
-      name="description"
-      content="Find mutual aid networks and community support initiatives in North Alabama."
-    />
 
-    <!-- Open Graph tags -->
-    <meta
-      property="og:title"
-      content="North Alabama Mutual Aid Networks - Local Support & Community Resources"
-    />
-    <meta
-      property="og:description"
-      content="Find mutual aid networks and community support initiatives in North Alabama."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://organize.directory/north-al" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    North Alabama Mutual Aid Networks - Local Support & Community Resources
+  </title>
+  <meta name="description" content="Find mutual aid networks and community support initiatives in North Alabama." />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="North Alabama Mutual Aid Networks - Local Support & Community Resources" />
+  <meta property="og:description"
+    content="Find mutual aid networks and community support initiatives in North Alabama." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://organize.directory/north-al" />
 
-    <!-- Theme -->
-    <script src="/theme-init.js"></script>
-    <!-- Critical Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      // Initialize sidebar as soon as possible
-      const sidebarElement = document.getElementById("sidebar");
-      if (sidebarElement) {
-        sidebarElement.replaceWith(createSidebar("location"));
-      }
-    </script>
-  </head>
-  <body>
-    <div class="layout">
-      <aside id="sidebar" aria-label="Main navigation"></aside>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" />
 
-      <main class="content" role="main">
-        <header id="header" class="page-header"></header>
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-        <div class="city-page">
-          <div class="breadcrumb">
-            <a href="/alabama">Alabama</a>
-            <span>›</span>
-            <span>North Alabama</span>
+
+  <!-- Theme -->
+  <script src="/theme-init.js"></script>
+
+</head>
+
+<body>
+  <div class="layout">
+    <aside id="sidebar" aria-label="Main navigation"></aside>
+
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
+
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/alabama">Alabama</a>
+          <span>›</span>
+          <span>North Alabama</span>
+        </div>
+
+        <h1>North Alabama</h1>
+        <hr>
+
+        <section class="cities-section">
+          <div class="cities-list">
+            <a href="/huntsville" class="city-link">Huntsville</a>
+            <!-- <a href="/florence" class="city-link">Florence</a> -->
+            <!-- <a href="/athens" class="city-link">Athens</a> -->
+            <!-- <a href="/madison" class="city-link">Madison</a> -->
+            <!-- <a href="/muscle-shoals" class="city-link">Muscle Shoals</a> -->
+          </div>
+        </section>
+
+        <section>
+          <div class="initiative">
+            <a href="https://www.alabamacohosh.org/">Alabama Cohosh</a>
+            <p>
+              We identify the immediate reproductive care needs of people in
+              our community in Madison County, connecting people to
+              appropriate resources within the community when possible, and
+              filling the gaps when resources are unavailable.
+            </p>
           </div>
 
-          <h1>North Alabama</h1>
-          <hr />
+          <div class="initiative">
+            <a href="https://landtrustnal.org/">Land Trust of North Alabama</a>
+            <p>
+              Environmental stewardship through land conservation and public
+              access. They coordinate preservation of natural areas and
+              maintain 80+ miles of public trails.
+            </p>
+          </div>
 
-          <section class="cities-section">
-            <div class="cities-list">
-              <a href="/huntsville" class="city-link">Huntsville</a>
-              <!-- <a href="/florence" class="city-link">Florence</a> -->
-              <!-- <a href="/athens" class="city-link">Athens</a> -->
-              <!-- <a href="/madison" class="city-link">Madison</a> -->
-              <!-- <a href="/muscle-shoals" class="city-link">Muscle Shoals</a> -->
-            </div>
-          </section>
+          <div class="initiative">
+            <a href="https://www.instagram.com/dsanorthal/">DSA North Alabama</a>
+            <p>
+              The North Alabama chapter of the Democratic Socialists of
+              America
+            </p>
+          </div>
 
-          <section>
-            <div class="initiative">
-              <a href="https://www.alabamacohosh.org/">Alabama Cohosh</a>
-              <p>
-                We identify the immediate reproductive care needs of people in
-                our community in Madison County, connecting people to
-                appropriate resources within the community when possible, and
-                filling the gaps when resources are unavailable.
-              </p>
-            </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/attherootcollective/">At The Root Collective</a>
+            <p>
+              Building resource distribution, solidarity initiatives, and
+              community care networks.
+            </p>
+          </div>
 
-            <div class="initiative">
-              <a href="https://landtrustnal.org/"
-                >Land Trust of North Alabama</a
-              >
-              <p>
-                Environmental stewardship through land conservation and public
-                access. They coordinate preservation of natural areas and
-                maintain 80+ miles of public trails.
-              </p>
-            </div>
+          <footer class="site-footer">
+            <p>Awareness into action. Solidarity not charity.</p>
+          </footer>
 
-            <div class="initiative">
-              <a href="https://www.instagram.com/dsanorthal/"
-                >DSA North Alabama</a
-              >
-              <p>
-                The North Alabama chapter of the Democratic Socialists of
-                America
-              </p>
-            </div>
+          <!-- Scripts -->
 
-            <div class="initiative">
-              <a href="https://www.instagram.com/attherootcollective/"
-                >At The Root Collective</a
-              >
-              <p>
-                Building resource distribution, solidarity initiatives, and
-                community care networks.
-              </p>
-            </div>
+          <!-- Initialize Search -->
 
-            <footer class="site-footer">
-              <p>Awareness into action. Solidarity not charity.</p>
-            </footer>
+        </section>
+      </div>
+    </main>
+  </div>
 
-            <!-- Scripts -->
-            <script type="module">
-              import { createSidebar } from "/components/sidebar.js";
-              document
-                .getElementById("sidebar")
-                .replaceWith(createSidebar("location"));
-            </script>
-            <script src="/theme.js" type="module"></script>
+  <!-- Initialize components -->
+  <script type="module">
+    import { createSidebar } from "/components/sidebar.js";
+    import { initializeComponents } from "/init.js";
 
-            <!-- Initialize Search -->
-            <!-- Initialize components -->
-            <script type="module">
-              import { initializeComponents } from "/init.js";
-              initializeComponents({
-                sidebarType: "location",
-                searchHeaderId: "header",
-              });
-            </script>
-          </section>
-        </div>
-      </main>
-    </div>
-  </body>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    });
+  </script>
+  <script src="/theme.js" type="module"></script>
+</body>
+
 </html>

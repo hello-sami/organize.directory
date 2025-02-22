@@ -1,100 +1,95 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Gary Mutual Aid Networks - Local Support & Community Resources
-    </title>
-    <meta
-      name="description"
-      content="Find mutual aid networks and community support initiatives in Gary, Indiana."
-    />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Gary Mutual Aid Networks - Local Support & Community Resources
+  </title>
+  <meta name="description" content="Find mutual aid networks and community support initiatives in Gary, Indiana." />
 
-    <!-- Theme and Components -->
-    <script src="/theme-init.js"></script>
-    <!-- Critical Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      // Initialize sidebar as soon as possible
-      const sidebarElement = document.getElementById("sidebar");
-      if (sidebarElement) {
-        sidebarElement.replaceWith(createSidebar("location"));
-      }
-    </script>
-  </head>
-  <body>
-    <div class="layout">
-      <aside id="sidebar" aria-label="Main navigation"></aside>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css" />
 
-      <main class="content" role="main">
-        <header id="header" class="page-header"></header>
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-        <div class="city-page">
-          <div class="breadcrumb">
-            <a href="/indiana">Indiana</a>
-            <span>›</span>
-            <span>Gary</span>
-          </div>
 
-          <h1>Gary, Indiana</h1>
-          <hr />
+  <!-- Theme and Components -->
+  <script src="/theme-init.js"></script>
 
-          <section>
-            <div class="initiative">
-              <a href="https://www.joybomb.org/">Joy Bomb Social Center</a>
-              <p>
-                A radical community space fostering mutual aid and collective
-                liberation through art, education, and organizing in Gary. They
-                coordinate resource sharing, political education, and solidarity
-                networks while building power through community gatherings,
-                skill-sharing workshops, and creating accessible spaces for
-                movement building and cultural resistance.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.cooperationnwi.org/">Cooperation NWI</a>
-              <p>
-                The mission of Cooperation Northwest Indiana is building a
-                brighter future in the ruins of the rust belt.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/blmgary/">BLM Gary</a>
-              <p>
-                Since 2014. Black-led, multiracial, inter-generational
-                organization rooted in Gary, active in Northwest Indiana region.
-              </p>
-            </div>
-          </section>
+</head>
+
+<body>
+  <div class="layout">
+    <aside id="sidebar" aria-label="Main navigation"></aside>
+
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
+
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/indiana">Indiana</a>
+          <span>›</span>
+          <span>Gary</span>
         </div>
-      </main>
-    </div>
 
-    <!-- Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      document
-        .getElementById("sidebar")
-        .replaceWith(createSidebar("locations"));
-    </script>
-    <script src="/theme.js" type="module"></script>
+        <h1>Gary, Indiana</h1>
+        <hr>
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module">
-      import { initializeComponents } from "/init.js";
+        <section>
+          <div class="initiative">
+            <a href="https://www.joybomb.org/">Joy Bomb Social Center</a>
+            <p>
+              A radical community space fostering mutual aid and collective
+              liberation through art, education, and organizing in Gary. They
+              coordinate resource sharing, political education, and solidarity
+              networks while building power through community gatherings,
+              skill-sharing workshops, and creating accessible spaces for
+              movement building and cultural resistance.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.cooperationnwi.org/">Cooperation NWI</a>
+            <p>
+              The mission of Cooperation Northwest Indiana is building a
+              brighter future in the ruins of the rust belt.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/blmgary/">BLM Gary</a>
+            <p>
+              Since 2014. Black-led, multiracial, inter-generational
+              organization rooted in Gary, active in Northwest Indiana region.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+
+  <!-- Initialize Search -->
+
+  <!-- Initialize components -->
+  <script type="module">
+    import { createSidebar } from "/components/sidebar.js";
+    import { initializeComponents } from "/init.js";
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+
       initializeComponents({
         sidebarType: "location",
         searchHeaderId: "header",
       });
-    </script>
-  </body>
+    });
+  </script>
+  <script src="/theme.js" type="module"></script>
+</body>
+
 </html>

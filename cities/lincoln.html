@@ -1,169 +1,150 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Common head content -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
-    <meta
-      name="description"
-      content="Find mutual aid initiatives and community support networks in Lincoln, Nebraska. Connect with local organizations and community resources."
-    />
-    <meta
-      property="og:title"
-      content="Mutual Aid in Lincoln - Local Support Networks"
-    />
-    <meta
-      property="og:description"
-      content="Find mutual aid initiatives and community support networks in Lincoln, Nebraska. Connect with local organizations providing community-based support."
-    />
-    <meta property="og:url" content="https://organize.directory/lincoln" />
 
-    <title>
-      Mutual Aid in Lincoln - Local Support Networks & Community Resources
-    </title>
+<head>
+  <!-- Common head content -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="description"
+    content="Find mutual aid initiatives and community support networks in Lincoln, Nebraska. Connect with local organizations and community resources." />
+  <meta property="og:title" content="Mutual Aid in Lincoln - Local Support Networks" />
+  <meta property="og:description"
+    content="Find mutual aid initiatives and community support networks in Lincoln, Nebraska. Connect with local organizations providing community-based support." />
+  <meta property="og:url" content="https://organize.directory/lincoln" />
 
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+  <title>
+    Mutual Aid in Lincoln - Local Support Networks & Community Resources
+  </title>
 
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-QJ03RCM35H");
-    </script>
-    <script src="/theme-init.js"></script>
-    <!-- Critical Scripts -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      // Initialize sidebar as soon as possible
-      const sidebarElement = document.getElementById("sidebar");
-      if (sidebarElement) {
-        sidebarElement.replaceWith(createSidebar("location"));
-      }
-    </script>
-  </head>
-  <body>
-    <div class="layout">
-      <div id="sidebar-container"></div>
+  <link rel="stylesheet" href="/styles.css" />
 
-      <main class="content" role="main">
-        <header id="header" class="page-header"></header>
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-        <div class="city-page">
-          <div class="breadcrumb">
-            <a href="/nebraska">Nebraska</a>
-            <span>›</span>
-            <span>Lincoln</span>
-          </div>
 
-          <h1>Lincoln, Nebraska</h1>
-          <hr />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-QJ03RCM35H");
+  </script>
+  <script src="/theme-init.js"></script>
 
-          <section>
-            <div class="initiative">
-              <a href="https://starcityprideevents.org/">Star City Pride</a>
-              <p>
-                A grassroots organization fostering mutual aid and community
-                power through LGBTQ+ celebration and advocacy in Lincoln. They
-                coordinate pride events, community gatherings, and solidarity
-                networks while building power through queer visibility, cultural
-                programming, and creating spaces for LGBTQ+ people to connect
-                and thrive.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://commonroot.org/">Common Root</a>
-              <p>
-                A mutual aid community center fostering solidarity and
-                collective power through accessible space, education, and
-                organizing in Lincoln. They coordinate workshops, resource
-                sharing, and solidarity networks while building power through
-                community gatherings, skill-sharing, and creating spaces for
-                movement building and social change.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://theblackcathouse.org/">The Black Cat House</a>
-              <p>
-                A radical community space fostering mutual aid and cultural
-                resistance through art, music, and DIY organizing in Lincoln.
-                They coordinate shows, workshops, zine distribution, and
-                solidarity networks while building power through alternative
-                media, collective organizing, and creating accessible spaces for
-                community gathering and creative expression.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://dsanebraska.org/">DSA Nebraska</a>
-              <p>
-                A grassroots organization fostering mutual aid and community
-                solidarity through democratic socialist organizing in Lincoln.
-                They coordinate direct support, resource sharing, and solidarity
-                networks while building power through collective organizing and
-                community care.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.facebook.com/everettfreegroceryprogram/"
-                >Everett Free Grocery Program</a
-              >
-              <p>
-                Free food and hygiene item distribution program in the Everett
-                neighborhood of Lincoln, Nebraska.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.reddit.com/r/LincolnMutualAid/"
-                >/r/LincolnMutualAid</a
-              >
-              <p>
-                A hub for mutual aid resources in the Lincoln, Nebraska
-                community. Taking care of our neighbors in a time of rising
-                fascism and oligarchy.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/lincolncommunitycare/"
-                >Lincoln Community Care</a
-              >
-              <p>
-                Weekly distribution in solidarity with our unhoused neighbors in
-                LNK
-              </p>
-            </div>
-          </section>
+</head>
+
+<body>
+  <div class="layout">
+    <div id="sidebar-container"></div>
+
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
+
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/nebraska">Nebraska</a>
+          <span>›</span>
+          <span>Lincoln</span>
         </div>
-      </main>
-    </div>
 
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      const sidebarContainer = document.getElementById("sidebar-container");
-      const sidebar = createSidebar("cities");
-      sidebarContainer.replaceWith(sidebar);
-    </script>
-    <script src="/theme.js" type="module"></script>
+        <h1>Lincoln, Nebraska</h1>
+        <hr>
 
-    <!-- Initialize Search -->
-    <!-- Initialize components -->
-    <script type="module">
-      import { initializeComponents } from "/init.js";
+        <section>
+          <div class="initiative">
+            <a href="https://starcityprideevents.org/">Star City Pride</a>
+            <p>
+              A grassroots organization fostering mutual aid and community
+              power through LGBTQ+ celebration and advocacy in Lincoln. They
+              coordinate pride events, community gatherings, and solidarity
+              networks while building power through queer visibility, cultural
+              programming, and creating spaces for LGBTQ+ people to connect
+              and thrive.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://commonroot.org/">Common Root</a>
+            <p>
+              A mutual aid community center fostering solidarity and
+              collective power through accessible space, education, and
+              organizing in Lincoln. They coordinate workshops, resource
+              sharing, and solidarity networks while building power through
+              community gatherings, skill-sharing, and creating spaces for
+              movement building and social change.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://theblackcathouse.org/">The Black Cat House</a>
+            <p>
+              A radical community space fostering mutual aid and cultural
+              resistance through art, music, and DIY organizing in Lincoln.
+              They coordinate shows, workshops, zine distribution, and
+              solidarity networks while building power through alternative
+              media, collective organizing, and creating accessible spaces for
+              community gathering and creative expression.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://dsanebraska.org/">DSA Nebraska</a>
+            <p>
+              A grassroots organization fostering mutual aid and community
+              solidarity through democratic socialist organizing in Lincoln.
+              They coordinate direct support, resource sharing, and solidarity
+              networks while building power through collective organizing and
+              community care.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.facebook.com/everettfreegroceryprogram/">Everett Free Grocery Program</a>
+            <p>
+              Free food and hygiene item distribution program in the Everett
+              neighborhood of Lincoln, Nebraska.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.reddit.com/r/LincolnMutualAid/">/r/LincolnMutualAid</a>
+            <p>
+              A hub for mutual aid resources in the Lincoln, Nebraska
+              community. Taking care of our neighbors in a time of rising
+              fascism and oligarchy.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/lincolncommunitycare/">Lincoln Community Care</a>
+            <p>
+              Weekly distribution in solidarity with our unhoused neighbors in
+              LNK
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Initialize Search -->
+
+  <!-- Initialize components -->
+  <script type="module">
+    import { createSidebar } from "/components/sidebar.js";
+    import { initializeComponents } from "/init.js";
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+
       initializeComponents({
         sidebarType: "location",
         searchHeaderId: "header",
       });
-    </script>
-  </body>
+    });
+  </script>
+  <script src="/theme.js" type="module"></script>
+</body>
+
 </html>
