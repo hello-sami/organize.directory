@@ -1,107 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="description" content="Daily updates and resources for mutual aid networks and grassroots initiatives across different cities.">
- <meta name="theme-color" content="#ffffff">
- <meta name="color-scheme" content="light">
- <link rel="icon" type="image/x-icon" href="/favicon.ico">
- <title>Mutual Aid Network Directory</title>
- 
- <!-- DNS Prefetch -->
- <link rel="dns-prefetch" href="https://fonts.googleapis.com">
- <link rel="dns-prefetch" href="https://fonts.gstatic.com">
- <link rel="dns-prefetch" href="https://www.google-analytics.com">
- <link rel="dns-prefetch" href="https://www.googletagmanager.com">
- 
- <!-- Preconnect -->
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link rel="preconnect" href="https://www.google-analytics.com">
- <link rel="preconnect" href="https://www.googletagmanager.com">
- 
- <!-- Critical CSS -->
- <style>
- /* Critical rendering path styles */
- :root {
- --primary-color: #2D3748;
- --text-color: #4A5568;
- --light-gray: #F7FAFC;
- --border-color: #E2E8F0;
- --bg-color: white;
- --card-bg: white;
- }
- body {
- margin: 0;
- font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
- line-height: 1.6;
- color: var(--text-color);
- background-color: var(--bg-color);
- text-rendering: optimizeLegibility;
- -webkit-font-smoothing: antialiased;
- }
- .layout {
- display: flex;
- min-height: 100vh;
- }
- .main-content {
- flex: 1;
- margin-left: 250px;
- }
- </style>
- 
- <!-- Load CSS -->
- <link rel="stylesheet" href="/fonts/fonts.css">
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Critical Scripts -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Daily updates and resources for mutual aid networks and grassroots initiatives across different cities.">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="color-scheme" content="light">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Mutual Aid Network Directory</title>
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('home'));
- }
- </script>
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <!-- Critical CSS -->
+    <style>
+        /* Critical rendering path styles */
+        :root {
+            --primary-color: #2D3748;
+            --text-color: #4A5568;
+            --light-gray: #F7FAFC;
+            --border-color: #E2E8F0;
+            --bg-color: white;
+            --card-bg: white;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+        }
+    </style>
+
+    <!-- Load CSS -->
+    <link rel="stylesheet" href="/fonts/fonts.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('home'));
+        }
+    </script>
 </head>
+
 <body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <main class="main-content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- <div class="content">
- 
- <hr>
+        <main class="main-content" role="main">
+            <header id="header" class="page-header"></header>
 
- <section class="daily-log" aria-labelledby="log-heading">
- <h2 id="log-heading">Updates and priority needs</h2>
- <div id="posts-list" class="posts-list">
- <!-- Posts will be dynamically loaded here -->
- </div>
- </section>
 
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </div>
- </main>
- </div>
- <!-- Initialize components -->
- <script type="module">
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'home',
- searchHeaderId: 'header'
- });
- </script>
+            <div class="content">
+
+                <h1>The Organize Directory</h1>
+                <p>Community organizing brings people together to create meaningful
+                    change from the ground up. Through mutual support and collective action,
+                    we build stronger, more resilient neighborhoods where everyone's needs matter.
+                    When we organize together, we transform individual challenges into shared solutions.</p>
+
+                <hr>
+
+                <section class="daily-log" aria-labelledby="log-heading">
+                    <h2 id="log-heading">Updates and priority needs</h2>
+                    <div id="posts-list" class="posts-list">
+                        <!-- Posts will be dynamically loaded here -->
+                    </div>
+                </section>
+
+                <footer class="site-footer">
+                    <p>Awareness into action. Solidarity not charity.</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+    <!-- Initialize components -->
+    <script type="module">
+
+        import { initializeComponents } from '/init.js';
+        initializeComponents({
+            sidebarType: 'home',
+            searchHeaderId: 'header'
+        });
+    </script>
 </body>
+
 </html>
