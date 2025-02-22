@@ -1,146 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- 
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Pennsylvania Mutual Aid Networks - Local Support & Community Resources</title>
- <meta name="description" content="Find mutual aid networks and community support initiatives in Pennsylvania cities including Philadelphia, Pittsburgh, Harrisburg, and more.">
- <meta property="og:title" content="Pennsylvania Mutual Aid Networks - Local Support & Community Resources">
- <meta property="og:description" content="Find mutual aid networks and community support initiatives in Pennsylvania cities including Philadelphia, Pittsburgh, Harrisburg, and more.">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://organize.directory/pennsylvania">
- <meta name="twitter:card" content="summary">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pennsylvania Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description"
+        content="Find mutual aid networks and community support initiatives in Pennsylvania cities including Philadelphia, Pittsburgh, Harrisburg, and more.">
+    <meta property="og:title" content="Pennsylvania Mutual Aid Networks - Local Support & Community Resources">
+    <meta property="og:description"
+        content="Find mutual aid networks and community support initiatives in Pennsylvania cities including Philadelphia, Pittsburgh, Harrisburg, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/pennsylvania">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
+
 <body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/location">States</a>
- <span>›</span>
- <span>Pennsylvania</span>
- </div>
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
 
- <h1>Pennsylvania</h1>
- <hr>
 
- <section>
- <h2>Cities</h2>
- <div class="cities-list">
- <a href="/altoona-johnstown" class="city-link">Altoona-Johnstown</a>
- <a href="/cumberland-valley" class="city-link">Cumberland Valley</a>
- <a href="/erie" class="city-link">Erie</a>
- <a href="/harrisburg" class="city-link">Harrisburg</a>
- <a href="/homer-city" class="city-link">Homer City</a>
- <a href="/lancaster" class="city-link">Lancaster</a>
- <a href="/lehigh-valley" class="city-link">Lehigh Valley</a>
- <a href="/meadville" class="city-link">Meadville</a>
- <a href="/philadelphia" class="city-link">Philadelphia</a>
- <a href="/pittsburgh" class="city-link">Pittsburgh</a>
- <a href="/poconos" class="city-link">Poconos</a>
- <a href="/reading" class="city-link">Reading</a>
- <a href="/scranton-wilkes-barre" class="city-link">Scranton / Wilkes-Barre</a>
- <a href="/state-college" class="city-link">State College</a>
- <!-- <a href="/williamsport" class="city-link">Williamsport</a> -->
- <a href="/york" class="city-link">York</a>
- </div>
- </section>
 
- <section>
- <div class="initiative">
- <a href="https://www.heartsonawire.org/">Hearts on a Wire</a>
- <p>A grassroots inside/outside collective fostering mutual aid and solidarity through transgender prisoner support across Pennsylvania. They coordinate advocacy, resource sharing, and solidarity networks while building power through gender self-determination and prison abolition organizing.</p>
- </div>
- <div class="initiative">
- <a href="https://letsgetfree.info/">Let's Get Free</a>
- <p>A mutual aid organization fostering solidarity and support for women and trans people in Pennsylvania prisons. They coordinate advocacy, resource sharing, and solidarity networks while building power through prison abolition organizing and creating spaces for incarcerated voices.</p>
- </div>
- <div class="initiative">
- <a href="https://pilp.org/">Pennsylvania Institutional Law Project (PILP)</a>
- <p>A legal advocacy organization fostering mutual aid and solidarity through civil rights litigation for incarcerated people across Pennsylvania. They coordinate legal support, advocacy campaigns, and solidarity networks while building power through constitutional rights defense and creating systemic change in prisons and jails.</p>
- </div>
- <div class="initiative">
- <a href="https://commutationnow.com/">Commutation Now</a>
- <p>A grassroots organization fostering mutual aid and solidarity through advocacy for commutation and clemency in Pennsylvania. They coordinate support for incarcerated individuals seeking commutation, provide resources for families navigating the process, and build networks of solidarity while working towards transformative justice.</p>
- </div>
- <div class="initiative">
- <a href="https://landlordwatchpa.org/">Landlord Watchlist Project</a>
- <p>A community-driven initiative fostering mutual aid and housing justice through data transparency and tenant organizing in Pennsylvania. They coordinate documentation of landlord misconduct, maintain public databases, and build solidarity networks while empowering tenants with information and resources to fight housing exploitation.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/montcofnb/">Food Not Bombs Montgomery County</a>
- <p>A mutual aid collective fostering food justice and community solidarity through free food sharing in Montgomery County. They coordinate food recovery, community meals, and solidarity networks while building power through direct action and creating spaces for food sovereignty.</p>
- </div>
- <div class="initiative">
- <a href="https://www.patransequity.org/">Eastern PA Trans Equity Project</a>
- <p>EPTEP provides direct services to transgender and gender-diverse Pennsylvanians in a thirty-three county region in Eastern PA.</p>
- </div>
- <div class="initiative">
- <a href="https://transminorsrights.org/">Trans Minors Rights</a>
- <p>Our goal is to empower transgender youth by educating our communities on issues facing young transgender people and providing youth with the knowledge and tools they need to combat gender dysphoria. Operating out of Lancaster.</p>
- </div>
- <div class="initiative">
- <a href="https://transfamilynwpa.org/">TransFamily of NW Pennsylvania</a>
- <p>TransFamily of NWPA is an organization created to serve the transgender community of Northwestern Pennsylvania serving Erie, Crawford, and Warren counties.</p>
- </div>
- </section>
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">States</a>
+                    <span>›</span>
+                    <span>Pennsylvania</span>
+                </div>
 
- </div>
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+                <h1>Pennsylvania</h1>
+                <hr>
 
- <!-- Scripts -->
- <script type="module">
+                <section>
+                    <h2>Cities</h2>
+                    <div class="cities-list">
+                        <a href="/altoona-johnstown" class="city-link">Altoona-Johnstown</a>
+                        <a href="/cumberland-valley" class="city-link">Cumberland Valley</a>
+                        <a href="/erie" class="city-link">Erie</a>
+                        <a href="/harrisburg" class="city-link">Harrisburg</a>
+                        <a href="/homer-city" class="city-link">Homer City</a>
+                        <a href="/lancaster" class="city-link">Lancaster</a>
+                        <a href="/lehigh-valley" class="city-link">Lehigh Valley</a>
+                        <a href="/meadville" class="city-link">Meadville</a>
+                        <a href="/philadelphia" class="city-link">Philadelphia</a>
+                        <a href="/pittsburgh" class="city-link">Pittsburgh</a>
+                        <a href="/poconos" class="city-link">Poconos</a>
+                        <a href="/reading" class="city-link">Reading</a>
+                        <a href="/scranton-wilkes-barre" class="city-link">Scranton / Wilkes-Barre</a>
+                        <a href="/state-college" class="city-link">State College</a>
+                        <!-- <a href="/williamsport" class="city-link">Williamsport</a> -->
+                        <a href="/york" class="city-link">York</a>
+                    </div>
+                </section>
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('location'));
- </script>
- <script src="/theme.js" type="module"></script>
+                <section>
+                    <div class="initiative">
+                        <a href="https://www.heartsonawire.org/">Hearts on a Wire</a>
+                        <p>A grassroots inside/outside collective fostering mutual aid and solidarity through
+                            transgender prisoner support across Pennsylvania. They coordinate advocacy, resource
+                            sharing, and solidarity networks while building power through gender self-determination and
+                            prison abolition organizing.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://letsgetfree.info/">Let's Get Free</a>
+                        <p>A mutual aid organization fostering solidarity and support for women and trans people in
+                            Pennsylvania prisons. They coordinate advocacy, resource sharing, and solidarity networks
+                            while building power through prison abolition organizing and creating spaces for
+                            incarcerated voices.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://pilp.org/">Pennsylvania Institutional Law Project (PILP)</a>
+                        <p>A legal advocacy organization fostering mutual aid and solidarity through civil rights
+                            litigation for incarcerated people across Pennsylvania. They coordinate legal support,
+                            advocacy campaigns, and solidarity networks while building power through constitutional
+                            rights defense and creating systemic change in prisons and jails.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://commutationnow.com/">Commutation Now</a>
+                        <p>A grassroots organization fostering mutual aid and solidarity through advocacy for
+                            commutation and clemency in Pennsylvania. They coordinate support for incarcerated
+                            individuals seeking commutation, provide resources for families navigating the process, and
+                            build networks of solidarity while working towards transformative justice.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://landlordwatchpa.org/">Landlord Watchlist Project</a>
+                        <p>A community-driven initiative fostering mutual aid and housing justice through data
+                            transparency and tenant organizing in Pennsylvania. They coordinate documentation of
+                            landlord misconduct, maintain public databases, and build solidarity networks while
+                            empowering tenants with information and resources to fight housing exploitation.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/montcofnb/">Food Not Bombs Montgomery County</a>
+                        <p>A mutual aid collective fostering food justice and community solidarity through free food
+                            sharing in Montgomery County. They coordinate food recovery, community meals, and solidarity
+                            networks while building power through direct action and creating spaces for food
+                            sovereignty.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.patransequity.org/">Eastern PA Trans Equity Project</a>
+                        <p>EPTEP provides direct services to transgender and gender-diverse Pennsylvanians in a
+                            thirty-three county region in Eastern PA.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://transminorsrights.org/">Trans Minors Rights</a>
+                        <p>Our goal is to empower transgender youth by educating our communities on issues facing young
+                            transgender people and providing youth with the knowledge and tools they need to combat
+                            gender dysphoria. Operating out of Lancaster.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://transfamilynwpa.org/">TransFamily of NW Pennsylvania</a>
+                        <p>TransFamily of NWPA is an organization created to serve the transgender community of
+                            Northwestern Pennsylvania serving Erie, Crawford, and Warren counties.</p>
+                    </div>
+                </section>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
+    <!-- Scripts -->
+    <script type="module">
+
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+
+        import { initializeComponents } from '/init.js';
+        initializeComponents({
+            sidebarType: 'location',
+            searchHeaderId: 'header'
+        });
+    </script>
 </body>
+
 </html>

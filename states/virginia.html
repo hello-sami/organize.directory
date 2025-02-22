@@ -1,149 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Virginia Mutual Aid Networks - Local Support & Community Resources</title>
- <meta name="description" content="Find mutual aid networks and community support initiatives in Virginia cities including Richmond, Norfolk, Virginia Beach, and more.">
- <meta property="og:title" content="Virginia Mutual Aid Networks - Mutual Aid Network Directory">
- <meta property="og:description" content="Find mutual aid networks and community support initiatives in Virginia cities including Richmond, Norfolk, Virginia Beach, and more.">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://organize.directory/virginia">
- <meta name="twitter:card" content="summary">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virginia Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description"
+        content="Find mutual aid networks and community support initiatives in Virginia cities including Richmond, Norfolk, Virginia Beach, and more.">
+    <meta property="og:title" content="Virginia Mutual Aid Networks - Mutual Aid Network Directory">
+    <meta property="og:description"
+        content="Find mutual aid networks and community support initiatives in Virginia cities including Richmond, Norfolk, Virginia Beach, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/virginia">
+    <meta name="twitter:card" content="summary">
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
+
 <body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
- 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/location">States</a>
- <span>›</span>
- <span>Virginia</span>
- </div>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <h1>Virginia</h1>
- <hr>
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
 
- <section>
- <h2>Cities</h2>
- <div class="cities-list">
- <a href="/charlottesville" class="city-link">Charlottesville</a>
- <!-- <a href="/danville" class="city-link">Danville</a> -->
- <a href="/fredericksburg" class="city-link">Fredericksburg</a>
- <a href="/hampton-roads" class="city-link">Hampton Roads</a>
- <a href="/harrisonburg" class="city-link">Harrisonburg</a>
- <a href="/lynchburg" class="city-link">Lynchburg</a>
- <a href="/new-river-valley" class="city-link">New River Valley</a>
- <a href="/richmond" class="city-link">Richmond</a>
- <a href="/roanoke" class="city-link">Roanoke</a>
- <a href="/southwest-va" class="city-link">Southwest VA</a>
- <!-- <a href="/winchester" class="city-link">Winchester</a> -->
- <a href="/virginia-beach" class="city-link">Virginia Beach</a>
- </div>
- </section>
 
- <section>
- <div class="initiative">
- <a href="https://blueridgebailfund.org/">Blue Ridge Community Bail Fund</a>
- <p>A volunteer-run mutual aid organization providing bail assistance to people held pre-trial in the Shenandoah Valley region, including Staunton, Harrisonburg, Page County, and Charlottesville. Through their revolving bail fund, they work to ensure that people do not remain incarcerated simply due to inability to pay, while addressing the disproportionate impact of cash bail on communities of color and low-income individuals.</p>
- </div>
- <div class="initiative">
- <a href="https://powersafeplace.org/">Power Safe Place Resource Center of Virginia</a>
- <p>Power Safe Place Resource Center currently operates in Rural Virginia. We have been providing financial support, job readiness training, transportation, clothes, food, shoes, condoms and more for the LGBTQIA community in Virginia.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/tapvirginia">Transgender Assistance Program of Virginia</a>
- <p>A 501(c)3 non-profit organization by trans people, for trans people. Dedicated to ending trans homelessness across the Commonwealth of VA.</p>
- </div>
- <div class="initiative">
- <a href="https://surj-ht.wixsite.com/">SURJ Harrisonburg-Timberville</a>
- <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in the Harrisonburg-Timberville area. They coordinate community organizing, mobilizing, and education initiatives while building power through political education, direct action support, and creating spaces for accountable organizing in partnership with BIPOC-led organizations.</p>
- </div>
- <div class="initiative">
- <a href="https://www.surjnova.org/">SURJ Northern Virginia</a>
- <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in Northern Virginia. They coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with BIPOC-led organizations.</p>
- </div>
- <div class="initiative">
- <a href="https://the40strong.com/">The 40 Strong</a>
- <p>Collective of incarcerated and formerly incarcerated people organizing for prison abolition and supporting families affected by incarceration in Virginia.</p>
- </div>
- <div class="initiative">
- <a href="https://blueridgeabortionfund.org/">Blue Ridge Abortion Fund</a>
- <p>A community-based mutual aid organization providing financial support, transportation, and lodging assistance for abortion care since 1989. Through their funding network and support services, they work to reduce barriers to access while building community care networks and offering comprehensive support for those seeking abortion care across Virginia.</p>
- </div>
- <div class="initiative">
- <a href="https://www.belovedcommunityincubator.org/">Beloved Community Incubator</a>
- <p>A community-based organization fostering mutual aid and economic justice through cooperative development in the DMV region. They coordinate worker-owned business incubation, solidarity economy initiatives, and community wealth building while creating spaces for economic democracy, racial equity, and collective liberation through their various programs and support networks.</p>
- </div>
- <div class="initiative">
- <a href="https://carecollectiveofswva.wordpress.com/">Care Collective of SWVA</a>
- <p>A grassroots organization fostering mutual aid and community support in Southwest Virginia. They coordinate direct assistance, resource sharing, and solidarity networks while building power through community organizing and creating spaces for collective care and support in the region.</p>
- </div>
- <div class="initiative">
- <a href="https://www.thegreencab.org/">The Green Cab</a>
- <p>A community-driven transportation initiative providing accessible and affordable rides across Virginia. They work to address transportation barriers through mutual aid and solidarity, ensuring community members can access essential services and appointments.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/rainydayfund_us/">Rainy Day Fund</a>
- <p>A mutual aid network providing direct financial assistance and support to people in need across South Carolina and Virginia. They coordinate emergency financial aid, resource sharing, and solidarity networks while building power through community care and creating pathways for collective support.</p>
- </div>
- </section>
- </div>
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
 
- <!-- Scripts -->
- <script type="module">
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">States</a>
+                    <span>›</span>
+                    <span>Virginia</span>
+                </div>
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('location'));
- </script>
- <script src="/theme.js" type="module"></script>
+                <h1>Virginia</h1>
+                <hr>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+                <section>
+                    <h2>Cities</h2>
+                    <div class="cities-list">
+                        <a href="/charlottesville" class="city-link">Charlottesville</a>
+                        <!-- <a href="/danville" class="city-link">Danville</a> -->
+                        <a href="/fredericksburg" class="city-link">Fredericksburg</a>
+                        <a href="/hampton-roads" class="city-link">Hampton Roads</a>
+                        <a href="/harrisonburg" class="city-link">Harrisonburg</a>
+                        <a href="/lynchburg" class="city-link">Lynchburg</a>
+                        <a href="/new-river-valley" class="city-link">New River Valley</a>
+                        <a href="/richmond" class="city-link">Richmond</a>
+                        <a href="/roanoke" class="city-link">Roanoke</a>
+                        <a href="/southwest-va" class="city-link">Southwest VA</a>
+                        <!-- <a href="/winchester" class="city-link">Winchester</a> -->
+                        <a href="/virginia-beach" class="city-link">Virginia Beach</a>
+                    </div>
+                </section>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
+                <section>
+                    <div class="initiative">
+                        <a href="https://blueridgebailfund.org/">Blue Ridge Community Bail Fund</a>
+                        <p>A volunteer-run mutual aid organization providing bail assistance to people held pre-trial in
+                            the Shenandoah Valley region, including Staunton, Harrisonburg, Page County, and
+                            Charlottesville. Through their revolving bail fund, they work to ensure that people do not
+                            remain incarcerated simply due to inability to pay, while addressing the disproportionate
+                            impact of cash bail on communities of color and low-income individuals.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://powersafeplace.org/">Power Safe Place Resource Center of Virginia</a>
+                        <p>Power Safe Place Resource Center currently operates in Rural Virginia. We have been providing
+                            financial support, job readiness training, transportation, clothes, food, shoes, condoms and
+                            more for the LGBTQIA community in Virginia.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/tapvirginia">Transgender Assistance Program of Virginia</a>
+                        <p>A 501(c)3 non-profit organization by trans people, for trans people. Dedicated to ending
+                            trans homelessness across the Commonwealth of VA.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://surj-ht.wixsite.com/">SURJ Harrisonburg-Timberville</a>
+                        <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity
+                            through white anti-racist organizing in the Harrisonburg-Timberville area. They coordinate
+                            community organizing, mobilizing, and education initiatives while building power through
+                            political education, direct action support, and creating spaces for accountable organizing
+                            in partnership with BIPOC-led organizations.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.surjnova.org/">SURJ Northern Virginia</a>
+                        <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity
+                            through white anti-racist organizing in Northern Virginia. They coordinate political
+                            education, direct action support, and solidarity networks while building power through
+                            racial justice education and accountable organizing in partnership with BIPOC-led
+                            organizations.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://the40strong.com/">The 40 Strong</a>
+                        <p>Collective of incarcerated and formerly incarcerated people organizing for prison abolition
+                            and supporting families affected by incarceration in Virginia.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://blueridgeabortionfund.org/">Blue Ridge Abortion Fund</a>
+                        <p>A community-based mutual aid organization providing financial support, transportation, and
+                            lodging assistance for abortion care since 1989. Through their funding network and support
+                            services, they work to reduce barriers to access while building community care networks and
+                            offering comprehensive support for those seeking abortion care across Virginia.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.belovedcommunityincubator.org/">Beloved Community Incubator</a>
+                        <p>A community-based organization fostering mutual aid and economic justice through cooperative
+                            development in the DMV region. They coordinate worker-owned business incubation, solidarity
+                            economy initiatives, and community wealth building while creating spaces for economic
+                            democracy, racial equity, and collective liberation through their various programs and
+                            support networks.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://carecollectiveofswva.wordpress.com/">Care Collective of SWVA</a>
+                        <p>A grassroots organization fostering mutual aid and community support in Southwest Virginia.
+                            They coordinate direct assistance, resource sharing, and solidarity networks while building
+                            power through community organizing and creating spaces for collective care and support in
+                            the region.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.thegreencab.org/">The Green Cab</a>
+                        <p>A community-driven transportation initiative providing accessible and affordable rides across
+                            Virginia. They work to address transportation barriers through mutual aid and solidarity,
+                            ensuring community members can access essential services and appointments.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/rainydayfund_us/">Rainy Day Fund</a>
+                        <p>A mutual aid network providing direct financial assistance and support to people in need
+                            across South Carolina and Virginia. They coordinate emergency financial aid, resource
+                            sharing, and solidarity networks while building power through community care and creating
+                            pathways for collective support.</p>
+                    </div>
+                </section>
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+
+        import { initializeComponents } from '/init.js';
+        initializeComponents({
+            sidebarType: 'location',
+            searchHeaderId: 'header'
+        });
+    </script>
 </body>
+
 </html>

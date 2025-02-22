@@ -80,7 +80,7 @@
     import { initializeComponents } from "/init.js";
 
     document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+      document.getElementById("sidebar-container").replaceWith(createSidebar("location"));
 
       initializeComponents({
         sidebarType: "location",

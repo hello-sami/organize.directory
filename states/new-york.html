@@ -1,146 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- 
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>New York Mutual Aid Networks - Local Support & Community Resources</title>
- <meta name="description" content="Find mutual aid networks and community support initiatives in New York cities including New York City, Buffalo, Albany, and more.">
- <meta property="og:title" content="New York Mutual Aid Networks - Local Support & Community Resources">
- <meta property="og:description" content="Find mutual aid networks and community support initiatives in New York cities including New York City, Buffalo, Albany, and more.">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://organize.directory/new-york">
- <meta name="twitter:card" content="summary">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description"
+        content="Find mutual aid networks and community support initiatives in New York cities including New York City, Buffalo, Albany, and more.">
+    <meta property="og:title" content="New York Mutual Aid Networks - Local Support & Community Resources">
+    <meta property="og:description"
+        content="Find mutual aid networks and community support initiatives in New York cities including New York City, Buffalo, Albany, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/new-york">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
+
 <body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/location">States</a>
- <span>›</span>
- <span>New York</span>
- </div>
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
 
- <h1>New York</h1>
- <hr>
 
- <section>
- <h2>Cities</h2>
- <div class="cities-list">
- <a href="/albany" class="city-link">Albany</a>
- <a href="/binghamton" class="city-link">Binghamton</a>
- <a href="/buffalo" class="city-link">Buffalo</a>
- <a href="/catskills" class="city-link">Catskills</a>
- <!-- <a href="/chautauqua" class="city-link">Chautauqua</a> -->
- <a href="/elmira-corning" class="city-link">Elmira-Corning</a>
- <a href="/finger-lakes" class="city-link">Finger Lakes</a>
- <a href="/glens-falls" class="city-link">Glens Falls</a>
- <a href="/hudson" class="city-link">Hudson</a>
- <a href="/hudson-valley" class="city-link">Hudson Valley</a>
- <a href="/ithaca" class="city-link">Ithaca</a>
- <a href="/kingston" class="city-link">Kingston</a>
- <a href="/long-island" class="city-link">Long Island</a>
- <a href="/new-paltz" class="city-link">New Paltz</a>
- <a href="/nyc" class="city-link">New York City</a>
- <!-- <a href="/oneonta" class="city-link">Oneonta</a> -->
- <a href="/plattsburgh-adirondacks" class="city-link">Plattsburgh-Adirondacks</a>
- <a href="/potsdam-canton-massena" class="city-link">Potsdam-Canton-Massena</a>
- <a href="/rochester" class="city-link">Rochester</a>
- <a href="/syracuse" class="city-link">Syracuse</a>
- <a href="/twin-tiers-ny-pa" class="city-link">Twin Tiers NY/PA</a>
- <a href="/utica-rome-oneida" class="city-link">Utica-Rome-Oneida</a>
- <a href="/watertown" class="city-link">Watertown</a>
- <a href="/westchester" class="city-link">Westchester</a>
- </div>
- </section>
 
- <section>
- <div class="initiative">
- <a href="https://plsny.org/">Prisoners' Legal Services of New York</a>
- <p>A legal advocacy organization building power through mutual aid and solidarity with incarcerated people across New York State. They coordinate legal support, resource sharing, and advocacy networks while fighting for the rights and dignity of people in prison through direct representation and systemic change.</p>
- </div>
- <div class="initiative">
- <a href="https://www.f2lrelieffund.org/">F2L Network</a>
- <p>A mutual aid network providing direct support and resources to people facing state repression and incarceration across New York. They coordinate emergency financial assistance, commissary support, and solidarity networks while building power through prisoner advocacy and community care.</p>
- </div>
- <div class="initiative">
- <a href="https://www.cvhaction.org/">Community Voices Heard (CVH)</a>
- <p>Member-led organization building power with low-income communities through grassroots organizing, mutual aid, and leadership development to advance racial, social, and economic justice across New York State.</p>
- </div>
- <div class="initiative">
- <a href="https://www.nyclu.org/">New York Civil Liberties Union</a>
- <p>A statewide organization fostering mutual aid and community power through civil rights advocacy and support across New York. They coordinate legal resources, community organizing, and solidarity networks while building power through policy advocacy, education, and creating spaces for civil liberties and justice.</p>
- </div>
- <div class="initiative">
- <a href="https://www.nyic.org/">New York Immigration Coalition</a>
- <p>A statewide alliance fostering mutual aid and community power through immigrant rights advocacy and support across New York. They coordinate policy initiatives, community organizing, and solidarity networks while building power through immigrant justice, education access, and creating spaces for immigrant leadership.</p>
- </div>
- <div class="initiative">
- <a href="https://www.nyfarmersproject.org/">New York Farmers Project</a>
- <p>A grassroots organization fostering mutual aid and community power through sustainable agriculture and food justice across New York. They coordinate resource sharing, farmer support, and solidarity networks while building power through food sovereignty, land access, and creating pathways for sustainable farming.</p>
- </div>
- <div class="initiative">
- <a href="https://linktr.ee/unysra">Upstate NY Socialist Rifle Association</a>
- <p>We are the Upstate NY chapter of the Socialist Rifle Association.</p>
- </div>
- </section>
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">States</a>
+                    <span>›</span>
+                    <span>New York</span>
+                </div>
 
- </div>
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+                <h1>New York</h1>
+                <hr>
 
- <!-- Scripts -->
- <script type="module">
+                <section>
+                    <h2>Cities</h2>
+                    <div class="cities-list">
+                        <a href="/albany" class="city-link">Albany</a>
+                        <a href="/binghamton" class="city-link">Binghamton</a>
+                        <a href="/buffalo" class="city-link">Buffalo</a>
+                        <a href="/catskills" class="city-link">Catskills</a>
+                        <!-- <a href="/chautauqua" class="city-link">Chautauqua</a> -->
+                        <a href="/elmira-corning" class="city-link">Elmira-Corning</a>
+                        <a href="/finger-lakes" class="city-link">Finger Lakes</a>
+                        <a href="/glens-falls" class="city-link">Glens Falls</a>
+                        <a href="/hudson" class="city-link">Hudson</a>
+                        <a href="/hudson-valley" class="city-link">Hudson Valley</a>
+                        <a href="/ithaca" class="city-link">Ithaca</a>
+                        <a href="/kingston" class="city-link">Kingston</a>
+                        <a href="/long-island" class="city-link">Long Island</a>
+                        <a href="/new-paltz" class="city-link">New Paltz</a>
+                        <a href="/nyc" class="city-link">New York City</a>
+                        <!-- <a href="/oneonta" class="city-link">Oneonta</a> -->
+                        <a href="/plattsburgh-adirondacks" class="city-link">Plattsburgh-Adirondacks</a>
+                        <a href="/potsdam-canton-massena" class="city-link">Potsdam-Canton-Massena</a>
+                        <a href="/rochester" class="city-link">Rochester</a>
+                        <a href="/syracuse" class="city-link">Syracuse</a>
+                        <a href="/twin-tiers-ny-pa" class="city-link">Twin Tiers NY/PA</a>
+                        <a href="/utica-rome-oneida" class="city-link">Utica-Rome-Oneida</a>
+                        <a href="/watertown" class="city-link">Watertown</a>
+                        <a href="/westchester" class="city-link">Westchester</a>
+                    </div>
+                </section>
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('location'));
- </script>
- <script src="/theme.js" type="module"></script>
+                <section>
+                    <div class="initiative">
+                        <a href="https://plsny.org/">Prisoners' Legal Services of New York</a>
+                        <p>A legal advocacy organization building power through mutual aid and solidarity with
+                            incarcerated people across New York State. They coordinate legal support, resource sharing,
+                            and advocacy networks while fighting for the rights and dignity of people in prison through
+                            direct representation and systemic change.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.f2lrelieffund.org/">F2L Network</a>
+                        <p>A mutual aid network providing direct support and resources to people facing state repression
+                            and incarceration across New York. They coordinate emergency financial assistance,
+                            commissary support, and solidarity networks while building power through prisoner advocacy
+                            and community care.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.cvhaction.org/">Community Voices Heard (CVH)</a>
+                        <p>Member-led organization building power with low-income communities through grassroots
+                            organizing, mutual aid, and leadership development to advance racial, social, and economic
+                            justice across New York State.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.nyclu.org/">New York Civil Liberties Union</a>
+                        <p>A statewide organization fostering mutual aid and community power through civil rights
+                            advocacy and support across New York. They coordinate legal resources, community organizing,
+                            and solidarity networks while building power through policy advocacy, education, and
+                            creating spaces for civil liberties and justice.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.nyic.org/">New York Immigration Coalition</a>
+                        <p>A statewide alliance fostering mutual aid and community power through immigrant rights
+                            advocacy and support across New York. They coordinate policy initiatives, community
+                            organizing, and solidarity networks while building power through immigrant justice,
+                            education access, and creating spaces for immigrant leadership.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.nyfarmersproject.org/">New York Farmers Project</a>
+                        <p>A grassroots organization fostering mutual aid and community power through sustainable
+                            agriculture and food justice across New York. They coordinate resource sharing, farmer
+                            support, and solidarity networks while building power through food sovereignty, land access,
+                            and creating pathways for sustainable farming.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://linktr.ee/unysra">Upstate NY Socialist Rifle Association</a>
+                        <p>We are the Upstate NY chapter of the Socialist Rifle Association.</p>
+                    </div>
+                </section>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
+    <!-- Scripts -->
+    <script type="module">
+
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+
+        import { initializeComponents } from '/init.js';
+        initializeComponents({
+            sidebarType: 'location',
+            searchHeaderId: 'header'
+        });
+    </script>
 </body>
+
 </html>

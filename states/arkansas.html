@@ -1,158 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- 
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Arkansas Mutual Aid Networks - Local Support & Community Resources</title>
- <meta name="description" content="Find mutual aid networks and community support initiatives in Arkansas cities including Little Rock, Fayetteville, and more.">
- <meta property="og:title" content="Arkansas Statewide Initiatives - Mutual Aid Network Directory">
- <meta property="og:description" content="Find statewide mutual aid networks and community support initiatives in Arkansas.">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://organize.directory/arkansas">
- <meta name="twitter:card" content="summary">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arkansas Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description"
+        content="Find mutual aid networks and community support initiatives in Arkansas cities including Little Rock, Fayetteville, and more.">
+    <meta property="og:title" content="Arkansas Statewide Initiatives - Mutual Aid Network Directory">
+    <meta property="og:description"
+        content="Find statewide mutual aid networks and community support initiatives in Arkansas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/arkansas">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
+
 <body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/location">States</a>
- <span>›</span>
- <span>Arkansas</span>
- </div>
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
 
- <h1>Arkansas</h1>
- <hr>
 
- <section>
- <h2>Regions</h2>
- <div class="cities-list">
- <a href="/ne-ar" class="city-link">Northeast Arkansas</a>
- <a href="/central-ar" class="city-link">Central Arkansas</a>
- <a href="/nw-ar" class="city-link">Northwest Arkansas</a>
- </div>
- </section>
 
- <section>
- <h2>Communities</h2>
- <div class="cities-list">
- <!-- <a href="/bentonville" class="city-link">Bentonville</a> -->
- <!-- <a href="/conway" class="city-link">Conway</a> -->
- <a href="/fayetteville" class="city-link">Fayetteville</a>
- <a href="/fort-smith" class="city-link">Fort Smith</a>
- <!-- <a href="/hot-springs" class="city-link">Hot Springs</a> -->
- <!-- <a href="/jonesboro" class="city-link">Jonesboro</a> -->
- <a href="/little-rock" class="city-link">Little Rock</a>
- <!-- <a href="/pine-bluff" class="city-link">Pine Bluff</a> -->
- <!-- <a href="/rogers" class="city-link">Rogers</a> -->
- <!-- <a href="/springdale" class="city-link">Springdale</a> -->
- <!-- <a href="/texarkana" class="city-link">Texarkana</a> -->
- </div>
- </section>
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">States</a>
+                    <span>›</span>
+                    <span>Arkansas</span>
+                </div>
 
- <section>
- <div class="initiative">
- <a href="https://www.instagram.com/arkansascommunityadvocates">Arkansas Community Advocates</a>
- <p>A grassroots collective building mutual aid networks and community power across Arkansas. They coordinate direct support, resource sharing, and solidarity initiatives while advocating for social justice and community care.</p>
- </div>
- <div class="initiative">
- <a href="https://www.arjusticereform.org/">Arkansas Justice Reform Coalition</a>
- <p>A statewide organization fostering mutual aid and community support while working towards criminal justice reform. They coordinate advocacy initiatives, resource sharing, and solidarity networks while building power through community organizing and systemic change.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/tasteofolamhaba">Taste of Olamhaba</a>
- <p>A community initiative fostering mutual aid and cultural solidarity through food justice and community support across Arkansas. They coordinate food distribution, resource sharing, and solidarity networks while building power through community care and cultural preservation.</p>
- </div>
- <div class="initiative">
- <a href="https://www.arkansascommunity.org/">Arkansas Community Organization</a>
- <p>A grassroots organization building mutual aid networks and community power across Arkansas. They coordinate direct support, advocacy initiatives, and solidarity networks while working for social and economic justice through community organizing and collective action.</p>
- </div>
- <div class="initiative">
- <a href="https://ardisabilitycoalition.org/">Arkansas Disability Coalition</a>
- <p>A statewide organization fostering mutual aid and community support for families and individuals with disabilities across Arkansas. They coordinate resource sharing, healthcare navigation assistance, and solidarity networks while building power through disability justice organizing, family support, and creating inclusive spaces for people with disabilities to thrive.</p>
- </div>
- <div class="initiative">
- <a href="https://www.arabortionsupport.org/">Arkansas Abortion Support Network</a>
- <p>A mutual aid network providing direct support, resources, and solidarity to ensure reproductive healthcare access. They coordinate practical support, funding assistance, and community care while building power through reproductive justice organizing.</p>
- </div>
- <div class="initiative">
- <a href="https://www.arrapps.org/">Arkansas RAPPS</a>
- <p>A statewide organization fostering mutual aid and community care through HIV prevention and healthcare access. They coordinate direct support, healthcare navigation, and solidarity networks while building power through health justice organizing and creating accessible pathways to PrEP and HIV care services.</p>
- </div>
- <div class="initiative">
- <a href="https://www.intransitive.org/">Intransitive</a>
- <p>A trans-led organization fostering mutual aid and community support for transgender and gender non-conforming people across Arkansas. They coordinate direct assistance, resource sharing, and solidarity networks while building power through trans justice organizing and community care.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/queercollectivear">Queer Collective AR</a>
- <p>A grassroots mutual aid network providing support and solidarity for LGBTQ+ communities across Arkansas. They coordinate direct assistance, resource distribution, and community care initiatives while building power through queer liberation organizing and collective action.</p>
- </div>
- <div class="initiative">
- <a href="https://arlegalaid.org/">Arkansas Legal Aid</a>
- <p>A non-profit organization providing free legal services to low-income Arkansans. They offer legal assistance in civil matters including housing, family law, consumer protection, and public benefits, while working to ensure equal access to justice through advocacy and community education.</p>
- </div>
- <div class="initiative">
- <a href="https://www.decarceratear.org/">DecARcerate</a>
- <p>Working to affirm human dignity by confronting unjust systems.</p>
- </div>
- </section>
+                <h1>Arkansas</h1>
+                <hr>
 
- </div>
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+                <section>
+                    <h2>Regions and Cities</h2>
+                    <div class="cities-list">
+                        <a href="/ne-ar" class="city-link">Northeast Arkansas</a>
+                        <a href="/central-ar" class="city-link">Central Arkansas</a>
+                        <a href="/nw-ar" class="city-link">Northwest Arkansas</a>
+                        <!-- <a href="/bentonville" class="city-link">Bentonville</a> -->
+                        <!-- <a href="/conway" class="city-link">Conway</a> -->
+                        <a href="/fayetteville" class="city-link">Fayetteville</a>
+                        <a href="/fort-smith" class="city-link">Fort Smith</a>
+                        <!-- <a href="/hot-springs" class="city-link">Hot Springs</a> -->
+                        <!-- <a href="/jonesboro" class="city-link">Jonesboro</a> -->
+                        <a href="/little-rock" class="city-link">Little Rock</a>
+                        <!-- <a href="/pine-bluff" class="city-link">Pine Bluff</a> -->
+                        <!-- <a href="/rogers" class="city-link">Rogers</a> -->
+                        <!-- <a href="/springdale" class="city-link">Springdale</a> -->
+                        <!-- <a href="/texarkana" class="city-link">Texarkana</a> -->
+                    </div>
+                </section>
 
- <!-- Scripts -->
- <script type="module">
+                <section>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/arkansascommunityadvocates">Arkansas Community Advocates</a>
+                        <p>A grassroots collective building mutual aid networks and community power across Arkansas.
+                            They coordinate direct support, resource sharing, and solidarity initiatives while
+                            advocating for social justice and community care.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.arjusticereform.org/">Arkansas Justice Reform Coalition</a>
+                        <p>A statewide organization fostering mutual aid and community support while working towards
+                            criminal justice reform. They coordinate advocacy initiatives, resource sharing, and
+                            solidarity networks while building power through community organizing and systemic change.
+                        </p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/tasteofolamhaba">Taste of Olamhaba</a>
+                        <p>A community initiative fostering mutual aid and cultural solidarity through food justice and
+                            community support across Arkansas. They coordinate food distribution, resource sharing, and
+                            solidarity networks while building power through community care and cultural preservation.
+                        </p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.arkansascommunity.org/">Arkansas Community Organization</a>
+                        <p>A grassroots organization building mutual aid networks and community power across Arkansas.
+                            They coordinate direct support, advocacy initiatives, and solidarity networks while working
+                            for social and economic justice through community organizing and collective action.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://ardisabilitycoalition.org/">Arkansas Disability Coalition</a>
+                        <p>A statewide organization fostering mutual aid and community support for families and
+                            individuals with disabilities across Arkansas. They coordinate resource sharing, healthcare
+                            navigation assistance, and solidarity networks while building power through disability
+                            justice organizing, family support, and creating inclusive spaces for people with
+                            disabilities to thrive.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.arabortionsupport.org/">Arkansas Abortion Support Network</a>
+                        <p>A mutual aid network providing direct support, resources, and solidarity to ensure
+                            reproductive healthcare access. They coordinate practical support, funding assistance, and
+                            community care while building power through reproductive justice organizing.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.arrapps.org/">Arkansas RAPPS</a>
+                        <p>A statewide organization fostering mutual aid and community care through HIV prevention and
+                            healthcare access. They coordinate direct support, healthcare navigation, and solidarity
+                            networks while building power through health justice organizing and creating accessible
+                            pathways to PrEP and HIV care services.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.intransitive.org/">Intransitive</a>
+                        <p>A trans-led organization fostering mutual aid and community support for transgender and
+                            gender non-conforming people across Arkansas. They coordinate direct assistance, resource
+                            sharing, and solidarity networks while building power through trans justice organizing and
+                            community care.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/queercollectivear">Queer Collective AR</a>
+                        <p>A grassroots mutual aid network providing support and solidarity for LGBTQ+ communities
+                            across Arkansas. They coordinate direct assistance, resource distribution, and community
+                            care initiatives while building power through queer liberation organizing and collective
+                            action.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://arlegalaid.org/">Arkansas Legal Aid</a>
+                        <p>A non-profit organization providing free legal services to low-income Arkansans. They offer
+                            legal assistance in civil matters including housing, family law, consumer protection, and
+                            public benefits, while working to ensure equal access to justice through advocacy and
+                            community education.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.decarceratear.org/">DecARcerate</a>
+                        <p>Working to affirm human dignity by confronting unjust systems.</p>
+                    </div>
+                </section>
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('location'));
- </script>
- <script src="/theme.js" type="module"></script>
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+    <!-- Scripts -->
+    <script type="module">
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('location'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+
+        import { initializeComponents } from '/init.js';
+        initializeComponents({
+            sidebarType: 'location',
+            searchHeaderId: 'header'
+        });
+    </script>
 </body>
+
 </html>
