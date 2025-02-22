@@ -1,95 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- 
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Santa Rosa Mutual Aid Networks - Local Support & Community Resources</title>
- <meta name="description" content="Find mutual aid networks and community support initiatives in Santa Rosa, California.">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QJ03RCM35H");
+    </script>
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Santa Rosa Mutual Aid Networks - Local Support & Community Resources
+    </title>
+    <meta
+      name="description"
+      content="Find mutual aid networks and community support initiatives in Santa Rosa, California."
+    />
 
- <main class="content">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/sf-bay-area.html" class="breadcrumb-link">Bay Area</a>
- <span>›</span>
- <a href="/sonoma-county.html">Sonoma County</a>
- <span>›</span>
- <span>Santa Rosa</span>
- </div>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
- <h1>Santa Rosa</h1>
- <hr>
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside id="sidebar" aria-label="Main navigation"></aside>
 
+      <main class="content">
+        <header id="header" class="page-header"></header>
 
- <section>
- <div class="initiative">
- <a href="http://www.subrosaproject.org/">SubRosa</a>
- <p>An anarchist community space and infoshop fostering mutual aid, radical literature, and collective organizing in Santa Rosa. They coordinate a lending library, host political education events, and provide space for community gatherings while building networks of solidarity through direct action and autonomous organizing.</p>
- </div>
- <div class="initiative">
- <a href="https://www.posimages.org/">Positive Images</a>
- <p>An LGBTQIA+ community center fostering mutual aid and support through direct services, education, and community building in Sonoma County. They coordinate support groups, therapy resources, art programs, and leadership development while creating spaces for collective care, cultural events, and building power through queer youth organizing and solidarity networks.</p>
- </div>
- </section>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/sf-bay-area.html" class="breadcrumb-link">Bay Area</a>
+            <span>›</span>
+            <a href="/sonoma-county.html">Sonoma County</a>
+            <span>›</span>
+            <span>Santa Rosa</span>
+          </div>
 
- </div>
+          <h1>Santa Rosa</h1>
+          <hr />
 
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+          <section>
+            <div class="initiative">
+              <a href="http://www.subrosaproject.org/">SubRosa</a>
+              <p>
+                An anarchist community space and infoshop fostering mutual aid,
+                radical literature, and collective organizing in Santa Rosa.
+                They coordinate a lending library, host political education
+                events, and provide space for community gatherings while
+                building networks of solidarity through direct action and
+                autonomous organizing.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.posimages.org/">Positive Images</a>
+              <p>
+                An LGBTQIA+ community center fostering mutual aid and support
+                through direct services, education, and community building in
+                Sonoma County. They coordinate support groups, therapy
+                resources, art programs, and leadership development while
+                creating spaces for collective care, cultural events, and
+                building power through queer youth organizing and solidarity
+                networks.
+              </p>
+            </div>
+          </section>
+        </div>
 
- <!-- Scripts -->
- <script type="module">
+        <footer class="site-footer">
+          <p>Awareness into action. Solidarity not charity.</p>
+        </footer>
+      </main>
+    </div>
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('locations'));
- </script>
- <script src="/theme.js" type="module"></script>
+    <!-- Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      document
+        .getElementById("sidebar")
+        .replaceWith(createSidebar("locations"));
+    </script>
+    <script src="/theme.js" type="module"></script>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
-
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
-</html> 
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
+</html>

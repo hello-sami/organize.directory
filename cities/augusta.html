@@ -1,92 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Augusta Mutual Aid Networks - Local Support & Community Resources</title>
- <meta name="description" content="Find mutual aid networks and community support initiatives in Augusta, Georgia.">
- 
- <!-- Open Graph tags -->
- <meta property="og:title" content="Augusta Mutual Aid Networks - Local Support & Community Resources">
- <meta property="og:description" content="Find mutual aid networks and community support initiatives in Augusta, Georgia.">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://organize.directory/augusta">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Augusta Mutual Aid Networks - Local Support & Community Resources
+    </title>
+    <meta
+      name="description"
+      content="Find mutual aid networks and community support initiatives in Augusta, Georgia."
+    />
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <!-- Open Graph tags -->
+    <meta
+      property="og:title"
+      content="Augusta Mutual Aid Networks - Local Support & Community Resources"
+    />
+    <meta
+      property="og:description"
+      content="Find mutual aid networks and community support initiatives in Augusta, Georgia."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://organize.directory/augusta" />
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/georgia">Georgia</a>
- <span>›</span>
- <span>Augusta</span>
- </div>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
- <h1>Augusta</h1>
- <hr>
+    <!-- Theme -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <section>
- <div class="initiative">
- <a href="https://carolinapeace.wordpress.com/csra-peace-alliance/">CSRA Peace Alliance</a>
- <p>The Central Savannah River Area (CSRA) Peace Alliance was formed in July 2008 in Augusta, Georgia to organize the efforts of diverse groups of people in the Central Savannah River Area working for peace.</p>
- </div>
- <div class="initiative">
- <a href="https://csracir.wordpress.com/">CSRA Coalition for Immigrant Rights</a>
- <p>CSRA Coalition for Immigrant Rights promotes just immigration policies and welcoming cultural conversations which prioritize understanding & the dignity inherent in all human beings, regardless of immigration status.</p>
- </div>
- <div class="initiative">
- <a href="https://www.facebook.com/groups/355466346564844/">People Protesting for A Cause</a>
- <p>This is a safe space for women, LBGTQIA+, BIPOC, and minority groups to safely come together for organizing protest & connecting with like-minded people around Augusta, GA</p>
- </div>
- </section>
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
 
- </div>
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/georgia">Georgia</a>
+            <span>›</span>
+            <span>Augusta</span>
+          </div>
 
- <!-- Scripts -->
- <script type="module">
+          <h1>Augusta</h1>
+          <hr />
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('location'));
- </script>
- <script src="/theme.js" type="module"></script>
+          <section>
+            <div class="initiative">
+              <a href="https://carolinapeace.wordpress.com/csra-peace-alliance/"
+                >CSRA Peace Alliance</a
+              >
+              <p>
+                The Central Savannah River Area (CSRA) Peace Alliance was formed
+                in July 2008 in Augusta, Georgia to organize the efforts of
+                diverse groups of people in the Central Savannah River Area
+                working for peace.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://csracir.wordpress.com/"
+                >CSRA Coalition for Immigrant Rights</a
+              >
+              <p>
+                CSRA Coalition for Immigrant Rights promotes just immigration
+                policies and welcoming cultural conversations which prioritize
+                understanding & the dignity inherent in all human beings,
+                regardless of immigration status.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.facebook.com/groups/355466346564844/"
+                >People Protesting for A Cause</a
+              >
+              <p>
+                This is a safe space for women, LBGTQIA+, BIPOC, and minority
+                groups to safely come together for organizing protest &
+                connecting with like-minded people around Augusta, GA
+              </p>
+            </div>
+          </section>
+        </div>
+        <footer class="site-footer">
+          <p>Awareness into action. Solidarity not charity.</p>
+        </footer>
+      </main>
+    </div>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+    <!-- Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+    </script>
+    <script src="/theme.js" type="module"></script>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
 </html>

@@ -1,88 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- 
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Rochester Mutual Aid Networks - Local Support & Community Resources</title>
- <meta name="description" content="Find mutual aid initiatives and community support networks in Rochester, New York. Connect with local organizations and community resources.">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QJ03RCM35H");
+    </script>
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Rochester Mutual Aid Networks - Local Support & Community Resources
+    </title>
+    <meta
+      name="description"
+      content="Find mutual aid initiatives and community support networks in Rochester, New York. Connect with local organizations and community resources."
+    />
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/new-york">New York</a>
- <span>›</span>
- <span>Rochester</span>
- </div>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
- <h1>Rochester</h1>
- <hr>
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <section>
- <div class="initiative">
- <a href="https://www.thesquirrel.org/">Flying Squirrel Community Space</a>
- <p>A collectively-run community space fostering mutual aid, education, and grassroots organizing in Rochester. They provide a hub for community events, political education, art exhibitions, and resource sharing while building networks of solidarity through participatory democracy and direct action.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/RocFNB">Roc Food Not Bombs</a>
- <p>Rochester Food Not Bombs recovers resources to create free vegetarian and vegan meals in our local community.</p>
- </div>
- </section>
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
 
- </div>
- </main>
- </div>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/new-york">New York</a>
+            <span>›</span>
+            <span>Rochester</span>
+          </div>
 
- <!-- Scripts -->
- <script type="module">
+          <h1>Rochester</h1>
+          <hr />
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('locations'));
- </script>
- <script src="/theme.js" type="module"></script>
+          <section>
+            <div class="initiative">
+              <a href="https://www.thesquirrel.org/"
+                >Flying Squirrel Community Space</a
+              >
+              <p>
+                A collectively-run community space fostering mutual aid,
+                education, and grassroots organizing in Rochester. They provide
+                a hub for community events, political education, art
+                exhibitions, and resource sharing while building networks of
+                solidarity through participatory democracy and direct action.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.instagram.com/RocFNB">Roc Food Not Bombs</a>
+              <p>
+                Rochester Food Not Bombs recovers resources to create free
+                vegetarian and vegan meals in our local community.
+              </p>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+    <!-- Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      document
+        .getElementById("sidebar")
+        .replaceWith(createSidebar("locations"));
+    </script>
+    <script src="/theme.js" type="module"></script>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
 </html>

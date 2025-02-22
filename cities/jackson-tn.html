@@ -1,81 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <!-- Common head content -->
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta property="og:type" content="website">
- <meta name="twitter:card" content="summary">
- <meta name="description" content="Find mutual aid networks and community support initiatives in Jackson, Tennessee.">
- <meta property="og:title" content="Jackson, Tennessee - Mutual Aid Network Directory">
- <meta property="og:description" content="Find mutual aid networks and community support initiatives in Jackson, Tennessee.">
- 
- <title>Jackson, Tennessee - Mutual Aid Network Directory</title>
- 
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
- 
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <!-- Common head content -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="description"
+      content="Find mutual aid networks and community support initiatives in Jackson, Tennessee."
+    />
+    <meta
+      property="og:title"
+      content="Jackson, Tennessee - Mutual Aid Network Directory"
+    />
+    <meta
+      property="og:description"
+      content="Find mutual aid networks and community support initiatives in Jackson, Tennessee."
+    />
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <div id="sidebar-container"></div>
+    <title>Jackson, Tennessee - Mutual Aid Network Directory</title>
 
- <main class="content">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/tennessee">Tennessee</a>
- <span>›</span>
- <span>Jackson</span>
- </div>
- 
- <h1>Jackson, Tennessee</h1>
- <hr>
- 
- </div>
- </main>
- </div>
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
- <script type="module">
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QJ03RCM35H");
+    </script>
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <div id="sidebar-container"></div>
 
- import { createSidebar } from '/components/sidebar.js';
- const sidebarContainer = document.getElementById('sidebar-container');
- const sidebar = createSidebar('cities');
- sidebarContainer.replaceWith(sidebar);
- </script>
- <script src="/theme.js" type="module"></script>
+      <main class="content">
+        <header id="header" class="page-header"></header>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/tennessee">Tennessee</a>
+            <span>›</span>
+            <span>Jackson</span>
+          </div>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
+          <h1>Jackson, Tennessee</h1>
+          <hr />
+        </div>
+      </main>
+    </div>
+
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      const sidebarContainer = document.getElementById("sidebar-container");
+      const sidebar = createSidebar("cities");
+      sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
+
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
 </html>

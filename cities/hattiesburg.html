@@ -1,97 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="description" content="Find mutual aid initiatives and community support networks in Hattiesburg, Mississippi. Connect with local organizations and community resources.">
- 
- <!-- Open Graph / Twitter Cards -->
- <meta property="og:type" content="website">
- <meta property="og:title" content="Mutual Aid in Hattiesburg - Local Support Networks">
- <meta property="og:description" content="Find mutual aid initiatives and community support networks in Hattiesburg, Mississippi. Connect with local organizations providing community-based support.">
- <meta property="og:url" content="https://organize.directory/hattiesburg">
- <meta name="twitter:card" content="summary">
- 
- <title>Mutual Aid in Hattiesburg - Local Support Networks & Community Resources</title>
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
- 
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Find mutual aid initiatives and community support networks in Hattiesburg, Mississippi. Connect with local organizations and community resources."
+    />
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <div id="sidebar-container"></div>
+    <!-- Open Graph / Twitter Cards -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Mutual Aid in Hattiesburg - Local Support Networks"
+    />
+    <meta
+      property="og:description"
+      content="Find mutual aid initiatives and community support networks in Hattiesburg, Mississippi. Connect with local organizations providing community-based support."
+    />
+    <meta property="og:url" content="https://organize.directory/hattiesburg" />
+    <meta name="twitter:card" content="summary" />
 
- <main class="content">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/mississippi">Mississippi</a>
- <span>›</span>
- <span>Hattiesburg</span> 
- </div>
- 
- <h1>Hattiesburg</h1>
- </hr>
+    <title>
+      Mutual Aid in Hattiesburg - Local Support Networks & Community Resources
+    </title>
 
- <section>
- <div class="initiative">
- <a href="https://tschburg.org/">The Spectrum Center</a>
- <p>The Spectrum Center in Hattiesburg, MS fosters a supportive, educated, and active community that is open, safe, and inclusive to people of all sexualities and gender identities.</p>
- </div>
- </section>
- 
- </div>
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </div>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
- </main>
- </div>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QJ03RCM35H");
+    </script>
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <div id="sidebar-container"></div>
 
- <!-- Scripts -->
- <script type="module">
+      <main class="content">
+        <header id="header" class="page-header"></header>
 
- import { createSidebar } from '/components/sidebar.js';
- const sidebarContainer = document.getElementById('sidebar-container');
- const sidebar = createSidebar('cities');
- sidebarContainer.replaceWith(sidebar);
- </script>
- <script src="/theme.js" type="module"></script>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/mississippi">Mississippi</a>
+            <span>›</span>
+            <span>Hattiesburg</span>
+          </div>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+          <h1>Hattiesburg</h1>
+          <hr />
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
+          <section>
+            <div class="initiative">
+              <a href="https://tschburg.org/">The Spectrum Center</a>
+              <p>
+                The Spectrum Center in Hattiesburg, MS fosters a supportive,
+                educated, and active community that is open, safe, and inclusive
+                to people of all sexualities and gender identities.
+              </p>
+            </div>
+          </section>
+        </div>
+        <footer class="site-footer">
+          <p>Awareness into action. Solidarity not charity.</p>
+        </footer>
+      </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      const sidebarContainer = document.getElementById("sidebar-container");
+      const sidebar = createSidebar("cities");
+      sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
+
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
 </html>

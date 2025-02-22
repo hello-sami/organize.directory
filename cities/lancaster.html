@@ -1,94 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- 
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Lancaster Mutual Aid Networks - Local Support & Community Resources</title>
- <meta name="description" content="Find mutual aid initiatives and community support networks in Lancaster, Pennsylvania. Connect with local organizations and community resources.">
- <meta property="og:title" content="Mutual Aid in Lancaster - Local Support Networks">
- <meta property="og:description" content="Find mutual aid initiatives and community support networks in Lancaster, Pennsylvania. Connect with local organizations providing community-based support.">
- <meta property="og:url" content="https://organize.directory/lancaster">
- <meta property="og:type" content="website">
- <meta name="twitter:card" content="summary">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QJ03RCM35H");
+    </script>
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <div id="sidebar-container"></div>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Lancaster Mutual Aid Networks - Local Support & Community Resources
+    </title>
+    <meta
+      name="description"
+      content="Find mutual aid initiatives and community support networks in Lancaster, Pennsylvania. Connect with local organizations and community resources."
+    />
+    <meta
+      property="og:title"
+      content="Mutual Aid in Lancaster - Local Support Networks"
+    />
+    <meta
+      property="og:description"
+      content="Find mutual aid initiatives and community support networks in Lancaster, Pennsylvania. Connect with local organizations providing community-based support."
+    />
+    <meta property="og:url" content="https://organize.directory/lancaster" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/pennsylvania">Pennsylvania</a>
- <span>›</span>
- <span>Lancaster</span>
- </div>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
- <h1>Lancaster, Pennsylvania</h1>
- </hr>
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <div id="sidebar-container"></div>
 
- <section>
- <div class="initiative">
- <a href="https://www.instagram.com/mennoniteactionlancaster/" target="_blank">Mennonite Action Lancaster</a>
- <p>A mutual aid collective organizing community support and solidarity initiatives in Lancaster. They coordinate resource sharing, direct support actions, and community education while building networks of care through faith-based organizing and social justice advocacy.</p>
- </div>
- <div class="initiative">
- <a href="https://lancasterchooseslove.org/">Lancaster County Chooses Love</a>
- <p>Lancaster County Chooses Love is a grassroots organization that is committed to advocating for LGBTQ+ individuals within the community by creating safe social spaces, and connecting community members with local resources. Operating out of Lilitz.</p>
- </div>
- </section>
- </div>
- </div>
- </main>
- </div>
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
 
- <script type="module">
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/pennsylvania">Pennsylvania</a>
+            <span>›</span>
+            <span>Lancaster</span>
+          </div>
 
- import { createSidebar } from '/components/sidebar.js';
- const sidebarContainer = document.getElementById('sidebar-container');
- const sidebar = createSidebar('cities');
- sidebarContainer.replaceWith(sidebar);
- </script>
- <script src="/theme.js" type="module"></script>
+          <h1>Lancaster, Pennsylvania</h1>
+          <hr />
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+          <section>
+            <div class="initiative">
+              <a
+                href="https://www.instagram.com/mennoniteactionlancaster/"
+                target="_blank"
+                >Mennonite Action Lancaster</a
+              >
+              <p>
+                A mutual aid collective organizing community support and
+                solidarity initiatives in Lancaster. They coordinate resource
+                sharing, direct support actions, and community education while
+                building networks of care through faith-based organizing and
+                social justice advocacy.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://lancasterchooseslove.org/"
+                >Lancaster County Chooses Love</a
+              >
+              <p>
+                Lancaster County Chooses Love is a grassroots organization that
+                is committed to advocating for LGBTQ+ individuals within the
+                community by creating safe social spaces, and connecting
+                community members with local resources. Operating out of Lilitz.
+              </p>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      const sidebarContainer = document.getElementById("sidebar-container");
+      const sidebar = createSidebar("cities");
+      sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
+
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
 </html>

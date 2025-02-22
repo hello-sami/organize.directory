@@ -1,94 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Central Alabama Mutual Aid Networks - Local Support & Community Resources</title>
- <meta name="description" content="Find mutual aid networks and community support initiatives in Central Alabama.">
- 
- <!-- Open Graph tags -->
- <meta property="og:title" content="Central Alabama Mutual Aid Networks - Local Support & Community Resources">
- <meta property="og:description" content="Find mutual aid networks and community support initiatives in Central Alabama.">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://organize.directory/central-al">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Central Alabama Mutual Aid Networks - Local Support & Community Resources
+    </title>
+    <meta
+      name="description"
+      content="Find mutual aid networks and community support initiatives in Central Alabama."
+    />
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <!-- Open Graph tags -->
+    <meta
+      property="og:title"
+      content="Central Alabama Mutual Aid Networks - Local Support & Community Resources"
+    />
+    <meta
+      property="og:description"
+      content="Find mutual aid networks and community support initiatives in Central Alabama."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://organize.directory/central-al" />
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/alabama">Alabama</a>
- <span>›</span>
- <span>Central Alabama</span>
- </div>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
- <h1>Central Alabama</h1>
- <hr>
+    <!-- Theme -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <section class="cities-section"></section>
- <div class="cities-list">
- <a href="/birmingham" class="city-link">Birmingham</a>
- <a href="/auburn" class="city-link">Auburn</a>
- <a href="/montgomery" class="city-link">Montgomery</a>
- </div>
- </section>
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
 
- <section>
- <div class="initiative">
- <a href="https://www.instagram.com/jvp_centralalabama/">Jewish Voice for Peace Central Alabama</a>
- <p>A grassroots organization fostering mutual aid and solidarity through Palestine advocacy and Jewish organizing in Central Alabama. They coordinate solidarity initiatives, community education, and support networks while building power through collective action and creating spaces for Palestinian rights advocacy and mutual support.</p>
- </div>
- </section>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/alabama">Alabama</a>
+            <span>›</span>
+            <span>Central Alabama</span>
+          </div>
 
- <section>
- </section>
- </div>
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+          <h1>Central Alabama</h1>
+          <hr />
 
- <!-- Scripts -->
- <script type="module">
+          <section class="cities-section">
+            <div class="cities-list">
+              <a href="/birmingham" class="city-link">Birmingham</a>
+              <a href="/auburn" class="city-link">Auburn</a>
+              <a href="/montgomery" class="city-link">Montgomery</a>
+            </div>
+          </section>
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('location'));
- </script>
- <script src="/theme.js" type="module"></script>
+          <section>
+            <div class="initiative">
+              <a href="https://www.instagram.com/jvp_centralalabama/"
+                >Jewish Voice for Peace Central Alabama</a
+              >
+              <p>
+                A grassroots organization fostering mutual aid and solidarity
+                through Palestine advocacy and Jewish organizing in Central
+                Alabama. They coordinate solidarity initiatives, community
+                education, and support networks while building power through
+                collective action and creating spaces for Palestinian rights
+                advocacy and mutual support.
+              </p>
+            </div>
+          </section>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+          <section></section>
+        </div>
+        <footer class="site-footer">
+          <p>Awareness into action. Solidarity not charity.</p>
+        </footer>
+      </main>
+    </div>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
-</html> 
+    <!-- Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+    </script>
+    <script src="/theme.js" type="module"></script>
+
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
+</html>

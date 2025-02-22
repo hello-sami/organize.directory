@@ -1,93 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta property="og:type" content="website">
- <meta name="twitter:card" content="summary">
- <meta name="description" content="Find mutual aid initiatives and community support networks in Norman, Oklahoma. Connect with local organizations and community resources.">
- <meta property="og:title" content="Mutual Aid in Norman - Local Support Networks">
- <meta property="og:description" content="Find mutual aid initiatives and community support networks in Norman, Oklahoma. Connect with local organizations providing community-based support.">
- <meta property="og:url" content="https://organize.directory/norman">
- 
- <title>Mutual Aid in Norman - Local Support Networks & Community Resources</title>
- 
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
- 
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="description"
+      content="Find mutual aid initiatives and community support networks in Norman, Oklahoma. Connect with local organizations and community resources."
+    />
+    <meta
+      property="og:title"
+      content="Mutual Aid in Norman - Local Support Networks"
+    />
+    <meta
+      property="og:description"
+      content="Find mutual aid initiatives and community support networks in Norman, Oklahoma. Connect with local organizations providing community-based support."
+    />
+    <meta property="og:url" content="https://organize.directory/norman" />
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <div id="sidebar-container"></div>
+    <title>
+      Mutual Aid in Norman - Local Support Networks & Community Resources
+    </title>
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/oklahoma">Oklahoma</a>
- <span>›</span>
- <span>Norman</span>
- </div>
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
- <h1>Norman, Oklahoma</h1>
- <hr>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QJ03RCM35H");
+    </script>
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <div id="sidebar-container"></div>
 
- <section>
- <div class="initiative">
- <a href="https://www.instagram.com/_red_dirt_collective_/">Red Dirt Collective</a>
- <p>We're an organization working to empower the poor and working class of Norman through mutual aid, organizing & policy work.</p>
- </div>
- </section>
- 
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
 
- </div>
- 
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/oklahoma">Oklahoma</a>
+            <span>›</span>
+            <span>Norman</span>
+          </div>
 
- <script type="module">
+          <h1>Norman, Oklahoma</h1>
+          <hr />
 
- import { createSidebar } from '/components/sidebar.js';
- const sidebarContainer = document.getElementById('sidebar-container');
- const sidebar = createSidebar('cities');
- sidebarContainer.replaceWith(sidebar);
- </script>
- <script src="/theme.js" type="module"></script>
+          <section>
+            <div class="initiative">
+              <a href="https://www.instagram.com/_red_dirt_collective_/"
+                >Red Dirt Collective</a
+              >
+              <p>
+                We're an organization working to empower the poor and working
+                class of Norman through mutual aid, organizing & policy work.
+              </p>
+            </div>
+          </section>
+        </div>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+        <footer class="site-footer">
+          <p>Awareness into action. Solidarity not charity.</p>
+        </footer>
+      </main>
+    </div>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      const sidebarContainer = document.getElementById("sidebar-container");
+      const sidebar = createSidebar("cities");
+      sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
+
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
 </html>

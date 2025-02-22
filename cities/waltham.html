@@ -1,78 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Waltham Mutual Aid Networks - Local Support & Community Resources</title>
- <meta name="description" content="Find mutual aid networks and community support initiatives in Waltham, Massachusetts.">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Waltham Mutual Aid Networks - Local Support & Community Resources
+    </title>
+    <meta
+      name="description"
+      content="Find mutual aid networks and community support initiatives in Waltham, Massachusetts."
+    />
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/massachusetts">Massachusetts</a>
- <span>›</span>
- <span>Waltham</span>
- </div>
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <h1>Waltham, Massachusetts</h1>
- <hr>
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
 
- <section>
- <div class="initiative">
- <a href="https://mutualaidwaltham.org/">Mutual Aid Waltham</a>
- <p>A grassroots network coordinating mutual aid and community support initiatives in Waltham. They organize direct assistance, resource sharing, and solidarity networks while building sustainable systems of community care through neighborhood organizing and collective action.</p>
- </div>
- </section>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/massachusetts">Massachusetts</a>
+            <span>›</span>
+            <span>Waltham</span>
+          </div>
 
- </div>
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+          <h1>Waltham, Massachusetts</h1>
+          <hr />
 
- <!-- Scripts -->
- <script type="module">
+          <section>
+            <div class="initiative">
+              <a href="https://mutualaidwaltham.org/">Mutual Aid Waltham</a>
+              <p>
+                A grassroots network coordinating mutual aid and community
+                support initiatives in Waltham. They organize direct assistance,
+                resource sharing, and solidarity networks while building
+                sustainable systems of community care through neighborhood
+                organizing and collective action.
+              </p>
+            </div>
+          </section>
+        </div>
+        <footer class="site-footer">
+          <p>Awareness into action. Solidarity not charity.</p>
+        </footer>
+      </main>
+    </div>
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('location'));
- </script>
- <script src="/theme.js" type="module"></script>
+    <!-- Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+    </script>
+    <script src="/theme.js" type="module"></script>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
-
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
-</html> 
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
+</html>

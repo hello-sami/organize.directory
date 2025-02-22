@@ -1,97 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="description" content="Find mutual aid initiatives and community support networks in Wichita, Kansas. Connect with local organizations and community resources.">
- 
- <!-- Open Graph / Twitter Cards -->
- <meta property="og:type" content="website">
- <meta property="og:title" content="Mutual Aid in Wichita - Local Support Networks">
- <meta property="og:description" content="Find mutual aid initiatives and community support networks in Wichita, Kansas. Connect with local organizations providing community-based support.">
- <meta property="og:url" content="https://organize.directory/wichita">
- <meta name="twitter:card" content="summary">
- 
- <title>Mutual Aid in Wichita - Local Support Networks & Community Resources</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Find mutual aid initiatives and community support networks in Wichita, Kansas. Connect with local organizations and community resources."
+    />
 
- <!-- Stylesheets -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
- 
- <!-- Scripts -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+    <!-- Open Graph / Twitter Cards -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Mutual Aid in Wichita - Local Support Networks"
+    />
+    <meta
+      property="og:description"
+      content="Find mutual aid initiatives and community support networks in Wichita, Kansas. Connect with local organizations providing community-based support."
+    />
+    <meta property="og:url" content="https://organize.directory/wichita" />
+    <meta name="twitter:card" content="summary" />
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <div id="sidebar-container"></div>
+    <title>
+      Mutual Aid in Wichita - Local Support Networks & Community Resources
+    </title>
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/kansas">Kansas</a>
- <span>›</span>
- <span>Wichita</span>
- </div>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
- 
- <h1>Wichita, Kansas</h1>
- <hr>
+    <!-- Scripts -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <div id="sidebar-container"></div>
 
- <section>
- <div class="initiative">
- <a href="https://www.peaceconnections.org/">Peace Connections</a>
- <p>A grassroots organization fostering mutual aid and community power through peace education and conflict resolution in Wichita. They coordinate nonviolence training, restorative justice programs, and solidarity networks while building power through community dialogue, youth empowerment, and creating spaces for peaceful conflict transformation.</p>
- </div>
- <div class="initiative">
- <a href="https://www.safestreetswichita.org/">Safe Streets Wichita</a>
- <p>Safe Streets Wichita, Inc. advances public health prevention by expanding access to naloxone, emergency contraception (EC), linkages to care, substance misuse prevention, and other life-saving tools.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/sunflower.community.wichita">Sunflower Community Wichita</a>
- <p>Community collective organizing to support our unhoused neighbors in Wichita</p>
- </div>
- </section>
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
 
- 
- </div>
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/kansas">Kansas</a>
+            <span>›</span>
+            <span>Wichita</span>
+          </div>
 
- <script type="module">
+          <h1>Wichita, Kansas</h1>
+          <hr />
 
- import { createSidebar } from '/components/sidebar.js';
- const sidebarContainer = document.getElementById('sidebar-container');
- const sidebar = createSidebar('cities');
- sidebarContainer.replaceWith(sidebar);
- </script>
- <script src="/theme.js" type="module"></script>
+          <section>
+            <div class="initiative">
+              <a href="https://www.peaceconnections.org/">Peace Connections</a>
+              <p>
+                A grassroots organization fostering mutual aid and community
+                power through peace education and conflict resolution in
+                Wichita. They coordinate nonviolence training, restorative
+                justice programs, and solidarity networks while building power
+                through community dialogue, youth empowerment, and creating
+                spaces for peaceful conflict transformation.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.safestreetswichita.org/"
+                >Safe Streets Wichita</a
+              >
+              <p>
+                Safe Streets Wichita, Inc. advances public health prevention by
+                expanding access to naloxone, emergency contraception (EC),
+                linkages to care, substance misuse prevention, and other
+                life-saving tools.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.instagram.com/sunflower.community.wichita"
+                >Sunflower Community Wichita</a
+              >
+              <p>
+                Community collective organizing to support our unhoused
+                neighbors in Wichita
+              </p>
+            </div>
+          </section>
+        </div>
+        <footer class="site-footer">
+          <p>Awareness into action. Solidarity not charity.</p>
+        </footer>
+      </main>
+    </div>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      const sidebarContainer = document.getElementById("sidebar-container");
+      const sidebar = createSidebar("cities");
+      sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
 </html>

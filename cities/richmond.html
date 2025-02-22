@@ -1,120 +1,177 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- 
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Richmond Mutual Aid Networks - Local Support & Community Resources</title>
- <meta name="description" content="Find mutual aid networks and community support initiatives in Richmond, Virginia.">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QJ03RCM35H");
+    </script>
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Richmond Mutual Aid Networks - Local Support & Community Resources
+    </title>
+    <meta
+      name="description"
+      content="Find mutual aid networks and community support initiatives in Richmond, Virginia."
+    />
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/virginia">Virginia</a>
- <span>›</span>
- <span>Richmond</span>
- </div>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
- <h1>Richmond, Virginia</h1>
- <hr>
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <section>
- <div class="initiative">
- <a href="https://www.foodhelpline.org/directory/regions/richmond">Lemon Tree's Free Food Directory</a>
- <p>Map of food pantries and distributions in the Richmond area.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/fcrc_rva/">Food Coalition Resource Center (FCRC)</a>
- <p>A mutual aid collective coordinating food distribution and community support initiatives in Richmond. They organize direct assistance, resource sharing, and solidarity networks while building sustainable systems of community care through food justice and collective action.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/richmondfoodnotbombs">Food Not Bombs Richmond</a>
- <p>A mutual aid collective fostering food justice and community solidarity through free food sharing in Richmond. They coordinate regular meal distributions, food recovery initiatives, and solidarity networks while building power through direct action, community care, and creating spaces for food sovereignty and collective nourishment.</p>
- </div>
- <div class="initiative">
- <a href="https://www.richmondfoodjustice.org/">Richmond Food Justice Alliance</a>
- <p>food policy+health equity+community engagement+urban ag</p>
- </div>
- <div class="initiative">
- <a href="https://nationzfoundationrva.org/">Nationz Foundation</a>
- <p>Supporting the Greater Richmond LGBTQIA+ community with HIV and STI testing, linkage to care, and access to holistic wellness services. Operating out of Henrico</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/queerrva/">Queer RVA</a>
- <p>Black, Indig, Queer + Trans youth-led org providing resources to RVAs lgbtq+ neighbors</p>
- </div>
- <div class="initiative">
- <a href="https://www.madrva.org/">MADRVA</a>
- <p>MADRVA is a solidarity network of community members and organizations working together in Richmond, Virginia to help each other.</p>
- </div>
- <div class="initiative">
- <a href="https://www.rvacommunityfridges.com/">RVA Community Fridges</a>
- <p>RVA Community Fridges is about more than free food. It's neighbors helping neighbors.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/dstradicals">Dirty South Trans Radicals</a>
- <p>POC-led and founded. A multiracial collective of individuals standing in resistance in the face of systemic oppression, violence, and hatred.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/rvadissenters/">Richmond Dissenters</a>
- <p>A new wave of young people turning the tide against endless war at home and abroad</p>
- </div>
- </section>
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
 
- </div>
- </main>
- </div>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/virginia">Virginia</a>
+            <span>›</span>
+            <span>Richmond</span>
+          </div>
 
- <!-- Scripts -->
- <script type="module">
+          <h1>Richmond, Virginia</h1>
+          <hr />
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('location'));
- </script>
- <script src="/theme.js" type="module"></script>
+          <section>
+            <div class="initiative">
+              <a href="https://www.foodhelpline.org/directory/regions/richmond"
+                >Lemon Tree's Free Food Directory</a
+              >
+              <p>
+                Map of food pantries and distributions in the Richmond area.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.instagram.com/fcrc_rva/"
+                >Food Coalition Resource Center (FCRC)</a
+              >
+              <p>
+                A mutual aid collective coordinating food distribution and
+                community support initiatives in Richmond. They organize direct
+                assistance, resource sharing, and solidarity networks while
+                building sustainable systems of community care through food
+                justice and collective action.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.instagram.com/richmondfoodnotbombs"
+                >Food Not Bombs Richmond</a
+              >
+              <p>
+                A mutual aid collective fostering food justice and community
+                solidarity through free food sharing in Richmond. They
+                coordinate regular meal distributions, food recovery
+                initiatives, and solidarity networks while building power
+                through direct action, community care, and creating spaces for
+                food sovereignty and collective nourishment.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.richmondfoodjustice.org/"
+                >Richmond Food Justice Alliance</a
+              >
+              <p>food policy+health equity+community engagement+urban ag</p>
+            </div>
+            <div class="initiative">
+              <a href="https://nationzfoundationrva.org/">Nationz Foundation</a>
+              <p>
+                Supporting the Greater Richmond LGBTQIA+ community with HIV and
+                STI testing, linkage to care, and access to holistic wellness
+                services. Operating out of Henrico
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.instagram.com/queerrva/">Queer RVA</a>
+              <p>
+                Black, Indig, Queer + Trans youth-led org providing resources to
+                RVAs lgbtq+ neighbors
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.madrva.org/">MADRVA</a>
+              <p>
+                MADRVA is a solidarity network of community members and
+                organizations working together in Richmond, Virginia to help
+                each other.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.rvacommunityfridges.com/"
+                >RVA Community Fridges</a
+              >
+              <p>
+                RVA Community Fridges is about more than free food. It's
+                neighbors helping neighbors.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.instagram.com/dstradicals"
+                >Dirty South Trans Radicals</a
+              >
+              <p>
+                POC-led and founded. A multiracial collective of individuals
+                standing in resistance in the face of systemic oppression,
+                violence, and hatred.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.instagram.com/rvadissenters/"
+                >Richmond Dissenters</a
+              >
+              <p>
+                A new wave of young people turning the tide against endless war
+                at home and abroad
+              </p>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+    <!-- Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+    </script>
+    <script src="/theme.js" type="module"></script>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
 </html>

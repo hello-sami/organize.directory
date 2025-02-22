@@ -1,82 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta property="og:type" content="website">
- <meta name="twitter:card" content="summary">
- <meta name="description" content="Find mutual aid initiatives and community support networks in Deep East Texas, Texas. Connect with local organizations and community resources.">
- <meta property="og:title" content="Mutual Aid in Deep East Texas - Local Support Networks">
- <meta property="og:description" content="Find mutual aid initiatives and community support networks in Deep East Texas, Texas. Connect with local organizations providing community-based support.">
- <meta property="og:url" content="https://organize.directory/deep-east-texas">
- 
- <title>Mutual Aid in Deep East Texas - Local Support Networks & Community Resources</title>
- 
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
- 
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="description"
+      content="Find mutual aid initiatives and community support networks in Deep East Texas, Texas. Connect with local organizations and community resources."
+    />
+    <meta
+      property="og:title"
+      content="Mutual Aid in Deep East Texas - Local Support Networks"
+    />
+    <meta
+      property="og:description"
+      content="Find mutual aid initiatives and community support networks in Deep East Texas, Texas. Connect with local organizations providing community-based support."
+    />
+    <meta
+      property="og:url"
+      content="https://organize.directory/deep-east-texas"
+    />
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <div id="sidebar-container"></div>
+    <title>
+      Mutual Aid in Deep East Texas - Local Support Networks & Community
+      Resources
+    </title>
 
- <main class="content">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/texas">Texas</a>
- <span>›</span>
- <span>Deep East Texas</span>
- </div>
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QJ03RCM35H");
+    </script>
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <div id="sidebar-container"></div>
 
- <h1>Deep East Texas</h1>
- <hr>
- 
- </div>
- </main>
- </div>
+      <main class="content">
+        <header id="header" class="page-header"></header>
 
- <script type="module">
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/texas">Texas</a>
+            <span>›</span>
+            <span>Deep East Texas</span>
+          </div>
 
- import { createSidebar } from '/components/sidebar.js';
- const sidebarContainer = document.getElementById('sidebar-container');
- const sidebar = createSidebar('cities');
- sidebarContainer.replaceWith(sidebar);
- </script>
- <script src="/theme.js" type="module"></script>
+          <h1>Deep East Texas</h1>
+          <hr />
+        </div>
+      </main>
+    </div>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      const sidebarContainer = document.getElementById("sidebar-container");
+      const sidebar = createSidebar("cities");
+      sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
 </html>

@@ -1,91 +1,125 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Mutual Aid in Columbia - Local Support Networks & Community Resources</title>
- <meta name="description" content="Find mutual aid initiatives and community support networks in Columbia, South Carolina. Connect with local organizations and community resources.">
- <meta property="og:title" content="Mutual Aid in Columbia - Local Support Networks">
- <meta property="og:description" content="Find mutual aid initiatives and community support networks in Columbia, South Carolina. Connect with local organizations providing community-based support.">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://organize.directory/columbia">
- <meta name="twitter:card" content="summary">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Mutual Aid in Columbia - Local Support Networks & Community Resources
+    </title>
+    <meta
+      name="description"
+      content="Find mutual aid initiatives and community support networks in Columbia, South Carolina. Connect with local organizations and community resources."
+    />
+    <meta
+      property="og:title"
+      content="Mutual Aid in Columbia - Local Support Networks"
+    />
+    <meta
+      property="og:description"
+      content="Find mutual aid initiatives and community support networks in Columbia, South Carolina. Connect with local organizations providing community-based support."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://organize.directory/columbia" />
+    <meta name="twitter:card" content="summary" />
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/south-carolina">South Carolina</a>
- <span>›</span>
- <span>Columbia</span>
- </div>
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <h1>Columbia</h1>
- <hr>
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
 
- <section>
- <div class="initiative">
- <a href="https://www.instagram.com/scabortionaccesscollective">SC Abortion Access Collective</a>
- <p>A grassroots organization fostering mutual aid and community support for reproductive justice in Columbia and across South Carolina. They coordinate direct assistance, resource sharing, and solidarity networks while building power through community organizing and creating spaces for reproductive healthcare access and support.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/reallyfreecola/">Really Really Free Columbia</a>
- <p>A grassroots organization fostering mutual aid and community support through free markets and resource sharing in Columbia. They coordinate direct assistance, free item distribution, and solidarity networks while building power through community organizing and creating spaces for gift economy and collective care.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/columbia_medic_collective/">Columbia Medic Collective</a>
- <p>A grassroots organization providing mutual aid and healthcare support in Columbia. They coordinate street medic services, health resources, and solidarity networks while building power through community care and creating pathways for health justice and collective wellbeing.</p>
- </div>
- </section>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/south-carolina">South Carolina</a>
+            <span>›</span>
+            <span>Columbia</span>
+          </div>
 
- </div>
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+          <h1>Columbia</h1>
+          <hr />
 
- <!-- Scripts -->
- <script type="module">
+          <section>
+            <div class="initiative">
+              <a href="https://www.instagram.com/scabortionaccesscollective"
+                >SC Abortion Access Collective</a
+              >
+              <p>
+                A grassroots organization fostering mutual aid and community
+                support for reproductive justice in Columbia and across South
+                Carolina. They coordinate direct assistance, resource sharing,
+                and solidarity networks while building power through community
+                organizing and creating spaces for reproductive healthcare
+                access and support.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.instagram.com/reallyfreecola/"
+                >Really Really Free Columbia</a
+              >
+              <p>
+                A grassroots organization fostering mutual aid and community
+                support through free markets and resource sharing in Columbia.
+                They coordinate direct assistance, free item distribution, and
+                solidarity networks while building power through community
+                organizing and creating spaces for gift economy and collective
+                care.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.instagram.com/columbia_medic_collective/"
+                >Columbia Medic Collective</a
+              >
+              <p>
+                A grassroots organization providing mutual aid and healthcare
+                support in Columbia. They coordinate street medic services,
+                health resources, and solidarity networks while building power
+                through community care and creating pathways for health justice
+                and collective wellbeing.
+              </p>
+            </div>
+          </section>
+        </div>
+        <footer class="site-footer">
+          <p>Awareness into action. Solidarity not charity.</p>
+        </footer>
+      </main>
+    </div>
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('location'));
- </script>
- <script src="/theme.js" type="module"></script>
+    <!-- Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+    </script>
+    <script src="/theme.js" type="module"></script>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
-
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
 </html>

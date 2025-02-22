@@ -1,86 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="description" content="Mutual aid networks and community resources in Keene, New Hampshire">
- <meta name="theme-color" content="#ffffff">
- <meta name="color-scheme" content="light">
- <link rel="icon" type="image/x-icon" href="/favicon.ico">
- <title>Keene, NH - Mutual Aid Resources</title>
- 
- <!-- DNS Prefetch -->
- <link rel="dns-prefetch" href="https://fonts.googleapis.com">
- <link rel="dns-prefetch" href="https://fonts.gstatic.com">
- 
- <!-- Preconnect -->
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- 
- <!-- Load CSS -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Critical Scripts -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mutual aid networks and community resources in Keene, New Hampshire"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>Keene, NH - Mutual Aid Resources</title>
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
- <main class="main-content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- <div class="content">
- <nav class="breadcrumb" aria-label="Breadcrumb">
- <a href="/">Home</a>
- <span class="breadcrumb-separator">/</span>
- <a href="/states/new-hampshire">New Hampshire</a>
- <span class="breadcrumb-separator">/</span>
- <span class="breadcrumb-current">Keene</span>
- </nav>
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
- <h1>Keene, New Hampshire</h1>
- <hr>
+    <!-- Load CSS -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
- <section>
- <div class="initiative">
- <a href="https://www.instagram.com/keenemutualaid/">Keene Mutual Aid</a>
- <p>Dedicated to building community power and autonomy in the Monadnock region through resource sharing, skill sharing, and community care.</p>
- </div>
- <div class="initiative">
- <a href="https://www.keenepride.org/">Keene Pride</a>
- <p>The mission of Keene Pride is to promote the visibility of LGBTQ+ people in the Monadnock Region, create community-building programming, and develop a coalition of services, organizations and businesses that embrace and serve the LGBTQ+ population.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/keeneforpalestine/">Keene For Palestine</a>
- <p>Organizing in solidarity with Palestine in Keene, NH and across Cheshire County</p>
- </div>
- </section>
+    <!-- Critical Scripts -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside id="sidebar" aria-label="Main navigation"></aside>
 
- 
- </div>
- </main>
- </div>
- <!-- Initialize components -->
- <script type="module">
+      <main class="main-content" role="main">
+        <header id="header" class="page-header"></header>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
-</html> 
+        <div class="content">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="/states/new-hampshire">New Hampshire</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Keene</span>
+          </nav>
+
+          <h1>Keene, New Hampshire</h1>
+          <hr />
+
+          <section>
+            <div class="initiative">
+              <a href="https://www.instagram.com/keenemutualaid/"
+                >Keene Mutual Aid</a
+              >
+              <p>
+                Dedicated to building community power and autonomy in the
+                Monadnock region through resource sharing, skill sharing, and
+                community care.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.keenepride.org/">Keene Pride</a>
+              <p>
+                The mission of Keene Pride is to promote the visibility of
+                LGBTQ+ people in the Monadnock Region, create community-building
+                programming, and develop a coalition of services, organizations
+                and businesses that embrace and serve the LGBTQ+ population.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.instagram.com/keeneforpalestine/"
+                >Keene For Palestine</a
+              >
+              <p>
+                Organizing in solidarity with Palestine in Keene, NH and across
+                Cheshire County
+              </p>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
+</html>

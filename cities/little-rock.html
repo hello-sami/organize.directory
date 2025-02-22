@@ -1,110 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Mutual Aid in Little Rock - Local Support Networks & Community Resources</title>
- <meta name="description" content="Find mutual aid initiatives and community support networks in Little Rock, Arkansas. Connect with local organizations providing community-based support.">
- <meta property="og:title" content="Mutual Aid in Little Rock - Local Support Networks">
- <meta property="og:description" content="Find mutual aid initiatives and community support networks in Little Rock, Arkansas. Connect with local organizations providing community-based support.">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://organize.directory/little-rock">
- <meta name="twitter:card" content="summary">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Mutual Aid in Little Rock - Local Support Networks & Community Resources
+    </title>
+    <meta
+      name="description"
+      content="Find mutual aid initiatives and community support networks in Little Rock, Arkansas. Connect with local organizations providing community-based support."
+    />
+    <meta
+      property="og:title"
+      content="Mutual Aid in Little Rock - Local Support Networks"
+    />
+    <meta
+      property="og:description"
+      content="Find mutual aid initiatives and community support networks in Little Rock, Arkansas. Connect with local organizations providing community-based support."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://organize.directory/little-rock" />
+    <meta name="twitter:card" content="summary" />
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/arkansas">Arkansas</a>
- <span>›</span>
- <a href="/central-ar.html">Central Arkansas</a>
- <span>›</span>
- <span>Little Rock</span>
- </div>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QJ03RCM35H");
+    </script>
 
- <h1>Little Rock</h1>
- <hr>
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <section>
- <div class="initiative">
- <a href="https://www.beyouuu.org/">Be Youuu</a>
- <p>A grassroots organization fostering mutual aid and community support for LGBTQ+ youth in Little Rock. They coordinate direct assistance, resource sharing, and solidarity networks while building power through youth empowerment, mental health support, and creating affirming spaces for queer and trans youth to thrive.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/lrfreedomfund/">Little Rock Freedom Fund</a>
- <p>A mutual aid collective providing direct support and community care in Little Rock. They coordinate emergency assistance, resource distribution, and solidarity networks while building power through collective action and community resilience.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/rockcitydefense">Rock City Defense</a>
- <p>A community defense collective fostering mutual aid and solidarity through direct action and community support in Little Rock. They coordinate resource sharing, emergency assistance, and solidarity networks while building power through collective organizing and community care.</p>
- </div>
- <div class="initiative">
- <a href="https://itsthevan.org/">It's The Van</a>
- <p>A grassroots organization fostering mutual aid and community support in Little Rock. They coordinate direct assistance, resource distribution, and solidarity networks while building power through mobile outreach, providing essential supplies, and creating spaces for community care and support.</p>
- </div>
- <div class="initiative">
- <a href="https://foodjusticeunited.org/">Food Justice United of Arkansas</a>
- <p>Coordinates harm reduction programs, hosts and supports mutual aid Free Stores and resources-access programs through collaboration with food banks, community and governmental entities, extending the reach of their goals of community mutual aid and empowerment.</p>
- </div>
- </section>
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
 
- </div>
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/arkansas">Arkansas</a>
+            <span>›</span>
+            <a href="/central-ar.html">Central Arkansas</a>
+            <span>›</span>
+            <span>Little Rock</span>
+          </div>
 
- <!-- Scripts -->
- <script type="module">
+          <h1>Little Rock</h1>
+          <hr />
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('location'));
- </script>
- <script src="/theme.js" type="module"></script>
+          <section>
+            <div class="initiative">
+              <a href="https://www.beyouuu.org/">Be Youuu</a>
+              <p>
+                A grassroots organization fostering mutual aid and community
+                support for LGBTQ+ youth in Little Rock. They coordinate direct
+                assistance, resource sharing, and solidarity networks while
+                building power through youth empowerment, mental health support,
+                and creating affirming spaces for queer and trans youth to
+                thrive.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.instagram.com/lrfreedomfund/"
+                >Little Rock Freedom Fund</a
+              >
+              <p>
+                A mutual aid collective providing direct support and community
+                care in Little Rock. They coordinate emergency assistance,
+                resource distribution, and solidarity networks while building
+                power through collective action and community resilience.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.instagram.com/rockcitydefense"
+                >Rock City Defense</a
+              >
+              <p>
+                A community defense collective fostering mutual aid and
+                solidarity through direct action and community support in Little
+                Rock. They coordinate resource sharing, emergency assistance,
+                and solidarity networks while building power through collective
+                organizing and community care.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://itsthevan.org/">It's The Van</a>
+              <p>
+                A grassroots organization fostering mutual aid and community
+                support in Little Rock. They coordinate direct assistance,
+                resource distribution, and solidarity networks while building
+                power through mobile outreach, providing essential supplies, and
+                creating spaces for community care and support.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://foodjusticeunited.org/"
+                >Food Justice United of Arkansas</a
+              >
+              <p>
+                Coordinates harm reduction programs, hosts and supports mutual
+                aid Free Stores and resources-access programs through
+                collaboration with food banks, community and governmental
+                entities, extending the reach of their goals of community mutual
+                aid and empowerment.
+              </p>
+            </div>
+          </section>
+        </div>
+        <footer class="site-footer">
+          <p>Awareness into action. Solidarity not charity.</p>
+        </footer>
+      </main>
+    </div>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+    <!-- Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+    </script>
+    <script src="/theme.js" type="module"></script>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
 </html>

@@ -1,93 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="description" content="Find mutual aid initiatives and community support networks in Ames, Iowa. Connect with local organizations and community resources.">
- <meta property="og:title" content="Mutual Aid in Ames - Local Support Networks">
- <meta property="og:description" content="Find mutual aid initiatives and community support networks in Ames, Iowa. Connect with local organizations providing community-based support.">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://organize.directory/ames">
- <meta name="twitter:card" content="summary">
- 
- <title>Mutual Aid in Ames - Local Support Networks & Community Resources</title>
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
- 
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Find mutual aid initiatives and community support networks in Ames, Iowa. Connect with local organizations and community resources."
+    />
+    <meta
+      property="og:title"
+      content="Mutual Aid in Ames - Local Support Networks"
+    />
+    <meta
+      property="og:description"
+      content="Find mutual aid initiatives and community support networks in Ames, Iowa. Connect with local organizations providing community-based support."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://organize.directory/ames" />
+    <meta name="twitter:card" content="summary" />
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <div id="sidebar-container"></div>
+    <title>
+      Mutual Aid in Ames - Local Support Networks & Community Resources
+    </title>
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/iowa">Iowa</a>
- <span>›</span>
- <span>Ames</span>
- </div>
- 
- <h1>Ames, Iowa</h1>
- <hr>
- 
- <section>
- <div class="initiative">
- <a href="https://foodatfirst.com/">Food at First</a>
- <p>local non-profit organization consisting of a daily Free Meal program and perishable food distribution known to the community as the Food at First Free Market.</p>
- </div>
- <div class="initiative">
- <a href="https://www.amespride.org/">Ames Pride</a>
- <p>Creating opportunities for LGBTQIA+ community-building and education around gender and sexual diversity in Ames, IA.</p>
- </div>
- <div class="initiative">
- <a href="https://www.evolve-ames.org/">Evolve Ames</a>
- <p>Evolve Ames is committed to supporting the Trans* and Non-Binary community through meetings, information/resources, advocacy and education.</p>
- </div>
- </section>
- 
- </div>
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QJ03RCM35H");
+    </script>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <div id="sidebar-container"></div>
+
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
+
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/iowa">Iowa</a>
+            <span>›</span>
+            <span>Ames</span>
+          </div>
+
+          <h1>Ames, Iowa</h1>
+          <hr />
+
+          <section>
+            <div class="initiative">
+              <a href="https://foodatfirst.com/">Food at First</a>
+              <p>
+                local non-profit organization consisting of a daily Free Meal
+                program and perishable food distribution known to the community
+                as the Food at First Free Market.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.amespride.org/">Ames Pride</a>
+              <p>
+                Creating opportunities for LGBTQIA+ community-building and
+                education around gender and sexual diversity in Ames, IA.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.evolve-ames.org/">Evolve Ames</a>
+              <p>
+                Evolve Ames is committed to supporting the Trans* and Non-Binary
+                community through meetings, information/resources, advocacy and
+                education.
+              </p>
+            </div>
+          </section>
+        </div>
+        <footer class="site-footer">
+          <p>Awareness into action. Solidarity not charity.</p>
+        </footer>
+      </main>
+    </div>
+
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
 </html>

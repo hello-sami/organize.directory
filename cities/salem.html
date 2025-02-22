@@ -1,95 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- 
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Salem Mutual Aid Networks - Local Support & Community Resources</title>
- <meta name="description" content="Find mutual aid networks and community support initiatives in Salem, Oregon.">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QJ03RCM35H");
+    </script>
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Salem Mutual Aid Networks - Local Support & Community Resources
+    </title>
+    <meta
+      name="description"
+      content="Find mutual aid networks and community support initiatives in Salem, Oregon."
+    />
 
- <main class="content">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/oregon">Oregon</a>
- <span>›</span>
- <span>Salem</span>
- </div>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
- <h1>Salem</h1>
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <section>
- <div class="initiative">
- <a href="https://www.radicalrest.org/">Radical Rest</a>
- <p>A healing justice collective of practitioners and educators centering the holistic wellness needs of BIPOC communities through culturally responsive health justice events and anti-oppressive education. Provides free wellness services and support through mutual aid initiatives.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/salemsoupsquad/">Salem Soup Squad</a>
- <p>Food. No strings. Everybody eats.</p>
- </div>
- <div class="initiative">
- <a href="https://freefridgesalem.org/">Free Fridge Salem</a>
- <p>We are a local mutual aid project started to help our neighbors with food insecurity and basic human needs like personal hygiene products, harm reduction supplies and seasonal aid offerings.</p>
- </div>
- </section>
+      <main class="content">
+        <header id="header" class="page-header"></header>
 
- </div>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/oregon">Oregon</a>
+            <span>›</span>
+            <span>Salem</span>
+          </div>
 
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+          <h1>Salem</h1>
 
- <!-- Scripts -->
- <script type="module">
+          <section>
+            <div class="initiative">
+              <a href="https://www.radicalrest.org/">Radical Rest</a>
+              <p>
+                A healing justice collective of practitioners and educators
+                centering the holistic wellness needs of BIPOC communities
+                through culturally responsive health justice events and
+                anti-oppressive education. Provides free wellness services and
+                support through mutual aid initiatives.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.instagram.com/salemsoupsquad/"
+                >Salem Soup Squad</a
+              >
+              <p>Food. No strings. Everybody eats.</p>
+            </div>
+            <div class="initiative">
+              <a href="https://freefridgesalem.org/">Free Fridge Salem</a>
+              <p>
+                We are a local mutual aid project started to help our neighbors
+                with food insecurity and basic human needs like personal hygiene
+                products, harm reduction supplies and seasonal aid offerings.
+              </p>
+            </div>
+          </section>
+        </div>
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('locations'));
- </script>
- <script src="/theme.js" type="module"></script>
+        <footer class="site-footer">
+          <p>Awareness into action. Solidarity not charity.</p>
+        </footer>
+      </main>
+    </div>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+    <!-- Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      document
+        .getElementById("sidebar")
+        .replaceWith(createSidebar("locations"));
+    </script>
+    <script src="/theme.js" type="module"></script>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
 </html>

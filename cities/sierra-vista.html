@@ -1,92 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Mutual Aid in Sierra Vista - Local Support Networks & Community Resources</title>
- <meta name="description" content="Find mutual aid initiatives and community support networks in Sierra Vista, Arizona. Connect with local organizations providing community-based support.">
- <meta property="og:title" content="Mutual Aid in Sierra Vista - Local Support Networks">
- <meta property="og:description" content="Find mutual aid initiatives and community support networks in Sierra Vista, Arizona. Connect with local organizations providing community-based support.">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://organize.directory/sierra-vista">
- <meta name="twitter:card" content="summary">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Mutual Aid in Sierra Vista - Local Support Networks & Community Resources
+    </title>
+    <meta
+      name="description"
+      content="Find mutual aid initiatives and community support networks in Sierra Vista, Arizona. Connect with local organizations providing community-based support."
+    />
+    <meta
+      property="og:title"
+      content="Mutual Aid in Sierra Vista - Local Support Networks"
+    />
+    <meta
+      property="og:description"
+      content="Find mutual aid initiatives and community support networks in Sierra Vista, Arizona. Connect with local organizations providing community-based support."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://organize.directory/sierra-vista" />
+    <meta name="twitter:card" content="summary" />
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/arizona">Arizona</a>
- <span>›</span>
- <span>Sierra Vista</span>
- </div>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QJ03RCM35H");
+    </script>
 
- <h1>Sierra Vista</h1>
- <hr>
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <section>
- <div class="initiative">
- <a href="https://cochiseharmreduction.org/">Cochise Harm Reduction</a>
- <p>Cochise Harm Reduction is a local, grassroots mutual-aid based harm reduction organization that works to increase access to healthcare and social services for unhoused individuals + people who use drugs in Cochise County, Arizona.</p>
- </div>
- </section>
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
 
- </div>
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/arizona">Arizona</a>
+            <span>›</span>
+            <span>Sierra Vista</span>
+          </div>
 
- <!-- Scripts -->
- <script type="module">
+          <h1>Sierra Vista</h1>
+          <hr />
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('location'));
- </script>
- <script src="/theme.js" type="module"></script>
+          <section>
+            <div class="initiative">
+              <a href="https://cochiseharmreduction.org/"
+                >Cochise Harm Reduction</a
+              >
+              <p>
+                Cochise Harm Reduction is a local, grassroots mutual-aid based
+                harm reduction organization that works to increase access to
+                healthcare and social services for unhoused individuals + people
+                who use drugs in Cochise County, Arizona.
+              </p>
+            </div>
+          </section>
+        </div>
+        <footer class="site-footer">
+          <p>Awareness into action. Solidarity not charity.</p>
+        </footer>
+      </main>
+    </div>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+    <!-- Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+    </script>
+    <script src="/theme.js" type="module"></script>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
 </html>

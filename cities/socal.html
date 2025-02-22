@@ -1,101 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Southern California Mutual Aid - Local Support Networks & Community Resources</title>
- <meta name="description" content="Find mutual aid initiatives and community support networks in Southern California including Los Angeles, San Diego, and Inland Empire regions.">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Southern California Mutual Aid - Local Support Networks & Community
+      Resources
+    </title>
+    <meta
+      name="description"
+      content="Find mutual aid initiatives and community support networks in Southern California including Los Angeles, San Diego, and Inland Empire regions."
+    />
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/california">California</a>
- <span>›</span>
- <span>Southern California</span>
- </div>
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <h1>Southern California</h1>
- <p class="subtitle">Los Angeles, Orange County, San Diego, Inland Empire</p>
- <hr>
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
 
- <section class="cities-section">
- <h2>Sub-Regions</h2>
- <div class="cities-list">
- <a href="/los-angeles" class="city-link">Los Angeles County</a>
- <a href="/orange-county" class="city-link">Orange County</a>
- <a href="/inland-empire" class="city-link">Inland Empire</a>
- <a href="/san-diego" class="city-link">San Diego County</a>
- <a href="/central-coast" class="city-link">Central Coast</a>
- </div>
- </section>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/california">California</a>
+            <span>›</span>
+            <span>Southern California</span>
+          </div>
 
- <section class="cities-section">
- <h2>Cities</h2>
- <div class="cities-list">
- <a href="/los-angeles" class="city-link">Los Angeles</a>
- <a href="/san-diego" class="city-link">San Diego</a>
- <a href="/long-beach" class="city-link">Long Beach</a>
- <a href="/santa-ana" class="city-link">Santa Ana</a>
- <a href="/riverside" class="city-link">Riverside</a>
- <a href="/san-bernardino" class="city-link">San Bernardino</a>
- </div>
- </section>
+          <h1>Southern California</h1>
+          <p class="subtitle">
+            Los Angeles, Orange County, San Diego, Inland Empire
+          </p>
+          <hr />
 
- <section>
- <div class="initiative">
- <a href="https://www.instagram.com/socal.ftp">SoCal FTP</a>
- <p>A mutual aid collective organizing direct community support and solidarity networks across Southern California. Through their various initiatives, they coordinate resource distribution, community defense, and direct action while building networks of mutual aid and resistance.</p>
- </div>
+          <section class="cities-section">
+            <h2>Sub-Regions</h2>
+            <div class="cities-list">
+              <a href="/los-angeles" class="city-link">Los Angeles County</a>
+              <a href="/orange-county" class="city-link">Orange County</a>
+              <a href="/inland-empire" class="city-link">Inland Empire</a>
+              <a href="/san-diego" class="city-link">San Diego County</a>
+              <a href="/central-coast" class="city-link">Central Coast</a>
+            </div>
+          </section>
 
- </div>
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+          <section class="cities-section">
+            <h2>Cities</h2>
+            <div class="cities-list">
+              <a href="/los-angeles" class="city-link">Los Angeles</a>
+              <a href="/san-diego" class="city-link">San Diego</a>
+              <a href="/long-beach" class="city-link">Long Beach</a>
+              <a href="/santa-ana" class="city-link">Santa Ana</a>
+              <a href="/riverside" class="city-link">Riverside</a>
+              <a href="/san-bernardino" class="city-link">San Bernardino</a>
+            </div>
+          </section>
 
- <!-- Scripts -->
- <script type="module">
+          <section>
+            <div class="initiative">
+              <a href="https://www.instagram.com/socal.ftp">SoCal FTP</a>
+              <p>
+                A mutual aid collective organizing direct community support and
+                solidarity networks across Southern California. Through their
+                various initiatives, they coordinate resource distribution,
+                community defense, and direct action while building networks of
+                mutual aid and resistance.
+              </p>
+            </div>
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('location'));
- </script>
- <script src="/theme.js" type="module"></script>
+            <footer class="site-footer">
+              <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+            <!-- Scripts -->
+            <script type="module">
+              import { createSidebar } from "/components/sidebar.js";
+              document
+                .getElementById("sidebar")
+                .replaceWith(createSidebar("location"));
+            </script>
+            <script src="/theme.js" type="module"></script>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
-</html> 
+            <!-- Initialize Search -->
+            <!-- Initialize components -->
+            <script type="module">
+              import { initializeComponents } from "/init.js";
+              initializeComponents({
+                sidebarType: "location",
+                searchHeaderId: "header",
+              });
+            </script>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

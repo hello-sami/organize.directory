@@ -1,89 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- 
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Mendocino Mutual Aid Networks - Local Support & Community Resources</title>
- <meta name="description" content="Find mutual aid networks and community support initiatives in Mendocino County, California.">
- <meta property="og:title" content="Mendocino Mutual Aid Networks - Local Support & Community Resources">
- <meta property="og:description" content="Find mutual aid networks and community support initiatives in Mendocino County, California.">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://organize.directory/mendocino">
- <meta name="twitter:card" content="summary">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QJ03RCM35H");
+    </script>
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Mendocino Mutual Aid Networks - Local Support & Community Resources
+    </title>
+    <meta
+      name="description"
+      content="Find mutual aid networks and community support initiatives in Mendocino County, California."
+    />
+    <meta
+      property="og:title"
+      content="Mendocino Mutual Aid Networks - Local Support & Community Resources"
+    />
+    <meta
+      property="og:description"
+      content="Find mutual aid networks and community support initiatives in Mendocino County, California."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://organize.directory/mendocino" />
+    <meta name="twitter:card" content="summary" />
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/california">California</a>
- <span>›</span>
- <span>Mendocino</span>
- </div>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
- <h1>Mendocino</h1>
- <hr>
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <section>
- <div class="initiative">
- <a href="https://www.instagram.com/surj_mendo_coast/">SURJ Mendocino Coast</a>
- <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing on the Mendocino Coast. They coordinate community organizing, mobilizing, and education initiatives while building power through political education, direct action support, and creating spaces for accountable organizing in partnership with BIPOC-led organizations.</p>
- </div>
- </section>
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
 
- </div>
- </main>
- </div>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/california">California</a>
+            <span>›</span>
+            <span>Mendocino</span>
+          </div>
 
- <!-- Scripts -->
- <script type="module">
+          <h1>Mendocino</h1>
+          <hr />
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('location'));
- </script>
- <script src="/theme.js" type="module"></script>
+          <section>
+            <div class="initiative">
+              <a href="https://www.instagram.com/surj_mendo_coast/"
+                >SURJ Mendocino Coast</a
+              >
+              <p>
+                A chapter of Showing Up for Racial Justice fostering mutual aid
+                and community solidarity through white anti-racist organizing on
+                the Mendocino Coast. They coordinate community organizing,
+                mobilizing, and education initiatives while building power
+                through political education, direct action support, and creating
+                spaces for accountable organizing in partnership with BIPOC-led
+                organizations.
+              </p>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+    <!-- Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+    </script>
+    <script src="/theme.js" type="module"></script>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
-</html> 
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
+</html>

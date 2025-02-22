@@ -1,87 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="description" content="Find mutual aid initiatives and community support networks in Grand Island, Nebraska. Connect with local organizations and community resources.">
- 
- <!-- Open Graph / Twitter Cards -->
- <meta property="og:type" content="website">
- <meta property="og:title" content="Mutual Aid in Grand Island - Local Support Networks">
- <meta property="og:description" content="Find mutual aid initiatives and community support networks in Grand Island, Nebraska. Connect with local organizations providing community-based support.">
- <meta property="og:url" content="https://organize.directory/grand-island">
- <meta name="twitter:card" content="summary">
- 
- <title>Mutual Aid in Grand Island - Local Support Networks & Community Resources</title>
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
- 
- <!-- Scripts -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Find mutual aid initiatives and community support networks in Grand Island, Nebraska. Connect with local organizations and community resources."
+    />
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
+    <!-- Open Graph / Twitter Cards -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Mutual Aid in Grand Island - Local Support Networks"
+    />
+    <meta
+      property="og:description"
+      content="Find mutual aid initiatives and community support networks in Grand Island, Nebraska. Connect with local organizations providing community-based support."
+    />
+    <meta property="og:url" content="https://organize.directory/grand-island" />
+    <meta name="twitter:card" content="summary" />
 
-<body>
- <div class="layout">
- <div id="sidebar-container"></div>
+    <title>
+      Mutual Aid in Grand Island - Local Support Networks & Community Resources
+    </title>
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/nebraska">Nebraska</a>
- <span>›</span>
- <span>Grand Island</span>
- </div>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
- <h1>Grand Island, Nebraska</h1>
- <hr>
+    <!-- Scripts -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
 
- <section>
- <div class="initiative">
- <a href="https://grandislandpride.org/">Grand Island Pride</a>
- <p>A grassroots organization fostering mutual aid and community support through LGBTQ+ advocacy and celebration in Grand Island. They coordinate pride events, support groups, and solidarity networks while building power through community organizing, education, and creating spaces for queer and trans people to thrive in central Nebraska.</p>
- </div>
- </section>
- </div>
- </main>
- </div>
+  <body>
+    <div class="layout">
+      <div id="sidebar-container"></div>
 
- <script type="module">
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
 
- import { createSidebar } from '/components/sidebar.js';
- document.addEventListener('DOMContentLoaded', () => {
- const sidebarContainer = document.getElementById('sidebar-container');
- const sidebar = createSidebar('cities');
- sidebarContainer.replaceWith(sidebar);
- });
- </script>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/nebraska">Nebraska</a>
+            <span>›</span>
+            <span>Grand Island</span>
+          </div>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+          <h1>Grand Island, Nebraska</h1>
+          <hr />
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
+          <section>
+            <div class="initiative">
+              <a href="https://grandislandpride.org/">Grand Island Pride</a>
+              <p>
+                A grassroots organization fostering mutual aid and community
+                support through LGBTQ+ advocacy and celebration in Grand Island.
+                They coordinate pride events, support groups, and solidarity
+                networks while building power through community organizing,
+                education, and creating spaces for queer and trans people to
+                thrive in central Nebraska.
+              </p>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      document.addEventListener("DOMContentLoaded", () => {
+        const sidebarContainer = document.getElementById("sidebar-container");
+        const sidebar = createSidebar("cities");
+        sidebarContainer.replaceWith(sidebar);
+      });
+    </script>
+
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
 </html>

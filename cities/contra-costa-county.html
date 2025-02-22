@@ -1,101 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Contra Costa County Mutual Aid - Local Support Networks & Community Resources</title>
- <meta name="description" content="Find mutual aid networks and community support initiatives in Contra Costa County, California including Richmond, Concord, Walnut Creek, and surrounding communities.">
- <meta property="og:title" content="Contra Costa County Mutual Aid - Local Support Networks & Community Resources">
- <meta property="og:description" content="Find mutual aid networks and community support initiatives in Contra Costa County, California including Richmond, Concord, Walnut Creek, and surrounding communities.">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://organize.directory/contra-costa-county">
- <meta name="twitter:card" content="summary">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Contra Costa County Mutual Aid - Local Support Networks & Community
+      Resources
+    </title>
+    <meta
+      name="description"
+      content="Find mutual aid networks and community support initiatives in Contra Costa County, California including Richmond, Concord, Walnut Creek, and surrounding communities."
+    />
+    <meta
+      property="og:title"
+      content="Contra Costa County Mutual Aid - Local Support Networks & Community Resources"
+    />
+    <meta
+      property="og:description"
+      content="Find mutual aid networks and community support initiatives in Contra Costa County, California including Richmond, Concord, Walnut Creek, and surrounding communities."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://organize.directory/contra-costa-county"
+    />
+    <meta name="twitter:card" content="summary" />
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/california">California</a>
- <span>›</span>
- <a href="/norcal">Northern California</a>
- <span>›</span>
- <span>Contra Costa County</span>
- </div>
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <h1>Contra Costa County</h1>
- <p class="subtitle">Richmond, Concord, Walnut Creek, and surrounding communities</p>
- <hr>
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
 
- <section>
- <h2>Communities</h2>
- <div class="cities-list">
- <a href="/richmond" class="city-link">Richmond</a>
- <a href="/concord" class="city-link">Concord</a>
- <a href="/walnut-creek" class="city-link">Walnut Creek</a>
- <a href="/antioch" class="city-link">Antioch</a>
- <a href="/san-ramon" class="city-link">San Ramon</a>
- <a href="/pittsburg" class="city-link">Pittsburg</a>
- <a href="/martinez" class="city-link">Martinez</a>
- <a href="/el-cerrito" class="city-link">El Cerrito</a>
- <a href="/danville" class="city-link">Danville</a>
- <a href="/san-pablo" class="city-link">San Pablo</a>
- <a href="/pleasant-hill" class="city-link">Pleasant Hill</a>
- <a href="/lafayette" class="city-link">Lafayette</a>
- </div>
- </section>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/california">California</a>
+            <span>›</span>
+            <a href="/norcal">Northern California</a>
+            <span>›</span>
+            <span>Contra Costa County</span>
+          </div>
 
- <section>
- 
- </section>
+          <h1>Contra Costa County</h1>
+          <p class="subtitle">
+            Richmond, Concord, Walnut Creek, and surrounding communities
+          </p>
+          <hr />
 
- </div>
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+          <section>
+            <h2>Communities</h2>
+            <div class="cities-list">
+              <a href="/richmond" class="city-link">Richmond</a>
+              <a href="/concord" class="city-link">Concord</a>
+              <a href="/walnut-creek" class="city-link">Walnut Creek</a>
+              <a href="/antioch" class="city-link">Antioch</a>
+              <a href="/san-ramon" class="city-link">San Ramon</a>
+              <a href="/pittsburg" class="city-link">Pittsburg</a>
+              <a href="/martinez" class="city-link">Martinez</a>
+              <a href="/el-cerrito" class="city-link">El Cerrito</a>
+              <a href="/danville" class="city-link">Danville</a>
+              <a href="/san-pablo" class="city-link">San Pablo</a>
+              <a href="/pleasant-hill" class="city-link">Pleasant Hill</a>
+              <a href="/lafayette" class="city-link">Lafayette</a>
+            </div>
+          </section>
 
- <!-- Scripts -->
- <script type="module">
+          <section></section>
+        </div>
+        <footer class="site-footer">
+          <p>Awareness into action. Solidarity not charity.</p>
+        </footer>
+      </main>
+    </div>
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('location'));
- </script>
- <script src="/theme.js" type="module"></script>
+    <!-- Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+    </script>
+    <script src="/theme.js" type="module"></script>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
-
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body>
-</html> 
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
+</html>

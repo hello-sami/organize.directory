@@ -1,122 +1,199 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
- <!-- Basic Meta Tags -->
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="description" content="Find mutual aid initiatives and community support networks in Omaha / Council Bluffs, Nebraska. Connect with local organizations and community resources.">
+  <head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Find mutual aid initiatives and community support networks in Omaha / Council Bluffs, Nebraska. Connect with local organizations and community resources."
+    />
 
- <!-- Open Graph Meta Tags -->
- <meta property="og:type" content="website">
- <meta property="og:title" content="Mutual Aid in Omaha / Council Bluffs - Local Support Networks">
- <meta property="og:description" content="Find mutual aid initiatives and community support networks in Omaha / Council Bluffs, Nebraska. Connect with local organizations providing community-based support.">
- <meta property="og:url" content="https://organize.directory/omaha-council-bluffs">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Mutual Aid in Omaha / Council Bluffs - Local Support Networks"
+    />
+    <meta
+      property="og:description"
+      content="Find mutual aid initiatives and community support networks in Omaha / Council Bluffs, Nebraska. Connect with local organizations providing community-based support."
+    />
+    <meta
+      property="og:url"
+      content="https://organize.directory/omaha-council-bluffs"
+    />
 
- <!-- Twitter Card Meta Tags -->
- <meta name="twitter:card" content="summary">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary" />
 
- <!-- Stylesheets -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
- <!-- Google Analytics -->
- <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+    <!-- Google Analytics -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-QJ03RCM35H");
+    </script>
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      // Initialize sidebar as soon as possible
+      const sidebarElement = document.getElementById("sidebar");
+      if (sidebarElement) {
+        sidebarElement.replaceWith(createSidebar("location"));
+      }
+    </script>
+  </head>
+  <body>
+    <div class="layout">
+      <div id="sidebar-container"></div>
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
-</head>
-<body>
- <div class="layout">
- <div id="sidebar-container"></div>
+      <main class="content" role="main">
+        <header id="header" class="page-header"></header>
 
- <main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/nebraska">Nebraska</a>
- <span>›</span>
- <span>Omaha</span>
- </div>
+        <div class="city-page">
+          <div class="breadcrumb">
+            <a href="/nebraska">Nebraska</a>
+            <span>›</span>
+            <span>Omaha</span>
+          </div>
 
- <h1>Omaha / Council Bluffs, Nebraska</h1>
- <hr>
+          <h1>Omaha / Council Bluffs, Nebraska</h1>
+          <hr />
 
- <section>
- <div class="initiative">
- <a href="https://www.stronglywordedomaha.org/">Strongly Worded Letters</a>
- <p>A radical bookstore fostering mutual aid and community power through literature and cultural programming in Omaha. They coordinate book access, political education, and solidarity networks while building power through accessible information sharing, community organizing, and creating spaces for movement building and social change.</p>
- </div>
- <div class="initiative">
- <a href="https://www.theurbanabbey.org/">Urban Abbey</a>
- <p>A non-profit coffee shop, bookstore, and inclusive community space fostering mutual aid and solidarity through fair trade, literature, and community programming in downtown Omaha. They coordinate resource sharing, cultural events, and solidarity networks while building power through accessible gathering spaces, LGBTQ+ support, and creating spaces for community connection and social change.</p>
- </div>
- <div class="initiative">
- <a href="https://pflag-omaha.org/">PFLAG Omaha</a>
- <p>A grassroots organization fostering mutual aid and community support through LGBTQ+ advocacy and family acceptance in Omaha. They coordinate support groups, educational resources, and solidarity networks while building power through family advocacy, community organizing, and creating spaces for LGBTQ+ people and their families to thrive.</p>
- </div>
- <div class="initiative">
- <a href="https://togetheromaha.org/">Together Omaha</a>
- <p>A community organization fostering mutual aid and solidarity through direct support and housing advocacy in Omaha. They coordinate housing assistance, food access, and solidarity networks while building power through community organizing, resource sharing, and creating pathways to prevent and end homelessness.</p>
- </div>
- <div class="initiative">
- <a href="https://www.inclusive-communities.org/">Inclusive Communities</a>
- <p>A grassroots organization fostering mutual aid and community power through anti-racism education and social justice advocacy in Omaha. They coordinate dialogue programs, youth leadership development, and solidarity networks while building power through community education, cross-cultural understanding, and creating spaces for inclusive social change.</p>
- </div>
- <div class="initiative">
- <a href="https://www.instagram.com/omahadsa/">Omaha DSA</a>
- <p>A grassroots organization fostering mutual aid and community solidarity through democratic socialist organizing in Omaha. They coordinate direct support, resource sharing, and solidarity networks while building power through collective organizing and community care.</p>
- </div>
- <div class="initiative">
- <a href="https://www.ibeblackgirl.com/">I Be Black Girl</a>
- <p>A grassroots collective fostering mutual aid and community power through Black women and girls' leadership and reproductive justice in Omaha. They coordinate resource sharing, advocacy initiatives, and solidarity networks while building power through community organizing, policy change, and creating spaces for Black women and girls to thrive.</p>
- </div>
- <div class="initiative">
- <a href="https://omaha.foodnotbombs.us/">Omaha Food Not Bombs</a>
- <p>Since 1996 Food Not Bombs Omaha has been distributing food free of charge on the corner of 14th and Farnam at 2pm every Sunday.</p>
- </div>
- <div class="initiative">
- <a href="https://www.reddit.com/r/OmahaMutualAid/">/r/OmahaMutualAid</a>
- <p>A group to discuss mutual aid, community resources, and political activism in Omaha, NE.</p>
- </div>
- </section>
- </div>
- </main>
- </div>
+          <section>
+            <div class="initiative">
+              <a href="https://www.stronglywordedomaha.org/"
+                >Strongly Worded Letters</a
+              >
+              <p>
+                A radical bookstore fostering mutual aid and community power
+                through literature and cultural programming in Omaha. They
+                coordinate book access, political education, and solidarity
+                networks while building power through accessible information
+                sharing, community organizing, and creating spaces for movement
+                building and social change.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.theurbanabbey.org/">Urban Abbey</a>
+              <p>
+                A non-profit coffee shop, bookstore, and inclusive community
+                space fostering mutual aid and solidarity through fair trade,
+                literature, and community programming in downtown Omaha. They
+                coordinate resource sharing, cultural events, and solidarity
+                networks while building power through accessible gathering
+                spaces, LGBTQ+ support, and creating spaces for community
+                connection and social change.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://pflag-omaha.org/">PFLAG Omaha</a>
+              <p>
+                A grassroots organization fostering mutual aid and community
+                support through LGBTQ+ advocacy and family acceptance in Omaha.
+                They coordinate support groups, educational resources, and
+                solidarity networks while building power through family
+                advocacy, community organizing, and creating spaces for LGBTQ+
+                people and their families to thrive.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://togetheromaha.org/">Together Omaha</a>
+              <p>
+                A community organization fostering mutual aid and solidarity
+                through direct support and housing advocacy in Omaha. They
+                coordinate housing assistance, food access, and solidarity
+                networks while building power through community organizing,
+                resource sharing, and creating pathways to prevent and end
+                homelessness.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.inclusive-communities.org/"
+                >Inclusive Communities</a
+              >
+              <p>
+                A grassroots organization fostering mutual aid and community
+                power through anti-racism education and social justice advocacy
+                in Omaha. They coordinate dialogue programs, youth leadership
+                development, and solidarity networks while building power
+                through community education, cross-cultural understanding, and
+                creating spaces for inclusive social change.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.instagram.com/omahadsa/">Omaha DSA</a>
+              <p>
+                A grassroots organization fostering mutual aid and community
+                solidarity through democratic socialist organizing in Omaha.
+                They coordinate direct support, resource sharing, and solidarity
+                networks while building power through collective organizing and
+                community care.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.ibeblackgirl.com/">I Be Black Girl</a>
+              <p>
+                A grassroots collective fostering mutual aid and community power
+                through Black women and girls' leadership and reproductive
+                justice in Omaha. They coordinate resource sharing, advocacy
+                initiatives, and solidarity networks while building power
+                through community organizing, policy change, and creating spaces
+                for Black women and girls to thrive.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://omaha.foodnotbombs.us/">Omaha Food Not Bombs</a>
+              <p>
+                Since 1996 Food Not Bombs Omaha has been distributing food free
+                of charge on the corner of 14th and Farnam at 2pm every Sunday.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.reddit.com/r/OmahaMutualAid/"
+                >/r/OmahaMutualAid</a
+              >
+              <p>
+                A group to discuss mutual aid, community resources, and
+                political activism in Omaha, NE.
+              </p>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
 
- <script type="module">
+    <script type="module">
+      import { createSidebar } from "/components/sidebar.js";
+      const sidebarContainer = document.getElementById("sidebar-container");
+      const sidebar = createSidebar("cities");
+      sidebarContainer.replaceWith(sidebar);
+    </script>
+    <script src="/theme.js" type="module"></script>
 
- import { createSidebar } from '/components/sidebar.js';
- const sidebarContainer = document.getElementById('sidebar-container');
- const sidebar = createSidebar('cities');
- sidebarContainer.replaceWith(sidebar);
- </script>
- <script src="/theme.js" type="module"></script>
-
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
-
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
-</body></html>
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+      import { initializeComponents } from "/init.js";
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
+      });
+    </script>
+  </body>
+</html>
