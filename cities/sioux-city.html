@@ -1,91 +1,82 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
-    <meta
-      name="description"
-      content="Find mutual aid initiatives and community support networks in Sioux City, Iowa. Connect with local organizations and community resources."
-    />
-    <meta
-      property="og:title"
-      content="Mutual Aid in Sioux City - Local Support Networks"
-    />
-    <meta
-      property="og:description"
-      content="Find mutual aid initiatives and community support networks in Sioux City, Iowa. Connect with local organizations providing community-based support."
-    />
-    <meta property="og:url" content="https://organize.directory/sioux-city" />
 
-    <title>
-      Mutual Aid in Sioux City - Local Support Networks & Community Resources
-    </title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="description"
+    content="Find mutual aid initiatives and community support networks in Sioux City, Iowa. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Mutual Aid in Sioux City - Local Support Networks">
+  <meta property="og:description"
+    content="Find mutual aid initiatives and community support networks in Sioux City, Iowa. Connect with local organizations providing community-based support.">
+  <meta property="og:url" content="https://organize.directory/sioux-city">
 
-    <link rel="stylesheet" href="/styles.css" />
-    
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-      rel="stylesheet"
-    >
+  <title>
+    Mutual Aid in Sioux City - Local Support Networks & Community Resources
+  </title>
+
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
 
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-QJ03RCM35H");
-    </script>
-    <script src="/theme-init.js"></script>
-    
-  </head>
-  <body>
-    <div class="layout">
-      <div id="sidebar-container"></div>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-QJ03RCM35H");
+  </script>
+  <script src="/theme-init.js"></script>
 
-      <main class="content">
-        <header id="header" class="page-header"></header>
+</head>
 
-        <div class="city-page">
-          <div class="breadcrumb">
-            <a href="/cities" class="back-link">← Back to Cities</a>
-          </div>
+<body>
+  <div class="layout">
+    <div id="sidebar-container"></div>
 
-          <h1>Sioux City, Iowa</h1>
-          <hr>
+    <main class="content">
+      <header id="header" class="page-header"></header>
+
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/cities" class="back-link">← Back to Cities</a>
         </div>
-        <footer class="site-footer">
-          <p>Awareness into action. Solidarity not charity.</p>
-        </footer>
-      </main>
-    </div>
 
-    <!-- Initialize Search -->
+        <h1>Sioux City, Iowa</h1>
+        <hr>
+      </div>
+      <footer class="site-footer">
+        <p>Awareness into action. Solidarity not charity.</p>
+      </footer>
+    </main>
+  </div>
 
-    <!-- Initialize components -->
-    <script type="module">
-      import { createSidebar } from "/components/sidebar.js";
-      import { initializeComponents } from "/init.js";
+  <!-- Initialize Search -->
 
-      document.addEventListener('DOMContentLoaded', () => {
-        document.getElementById("sidebar").replaceWith(createSidebar("location"));
+  <!-- Initialize components -->
+  <script type="module">
+    import { createSidebar } from "/components/sidebar.js";
+    import { initializeComponents } from "/init.js";
 
-        initializeComponents({
-          sidebarType: "location",
-          searchHeaderId: "header",
-        });
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById("sidebar").replaceWith(createSidebar("location"));
+
+      initializeComponents({
+        sidebarType: "location",
+        searchHeaderId: "header",
       });
-    </script>
-    <script src="/theme.js" type="module"></script>
-  </body>
+    });
+  </script>
+  <script src="/theme.js" type="module"></script>
+</body>
+
 </html>
