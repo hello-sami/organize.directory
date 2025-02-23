@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Radical News Networks - Independent Media & Community Journalism</title>
+ <meta name="description" content="Find independent media networks and radical news initiatives focused on movement journalism and grassroots perspectives.">
+ 
+ <!-- Styles -->
+ <link rel="stylesheet" href="/styles.css">
+ <link rel="stylesheet" href="/styles/topics.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+ <!-- Theme and Components -->
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
+</head>
+<body>
+ <div class="layout">
+ <aside id="sidebar" aria-label="Main navigation"></aside>
+
+ <main class="content" role="main">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="topics-page">
+ <div class="breadcrumb">
+ <a href="/topics">Issues</a>
+ <span>›</span>
+ <span>Radical News</span>
+ </div>
+
+ <h1>Radical News Networks</h1>
+ <hr>
+
+ <section class="initiatives-section">
+ <h2>Independent Media Networks</h2>
+ 
+ <div class="initiative">
+ <a href="https://crimethinc.com/">CrimethInc.<a>
+ <p>A decentralized network coordinating radical media and mutual aid initiatives through anonymous collective action. They organize resource sharing, political education, and solidarity networks while building revolutionary perspectives through books, podcasts, news analysis, and direct action reports. Their work includes publishing extensive guides, historical analysis, and movement journalism from an anarchist perspective.</p>
+ </div>
+
+ <div class="initiative">
+ <a href="https://itsgoingdown.org/">It's Going Down<a>
+ <p>A digital community platform coordinating radical news coverage and mutual aid initiatives across North America. They organize movement journalism, resource sharing, and solidarity networks while building connections between various struggles through news reporting, analysis, and publishing first-hand accounts of resistance and direct action.</p>
+ </div>
+
+ <div class="initiative">
+ <a href="https://towardfreedom.org/">Toward Freedom<a>
+ <p>An independent media platform fostering mutual aid and solidarity through movement journalism and radical analysis. They coordinate grassroots reporting, investigative journalism, and solidarity networks while building power through critical perspectives on social movements, human rights, and environmental justice from around the world.</p>
+ </div>
+
+ <div class="initiative">
+ <a href="https://iacenter.org/">International Action Center (IAC)<a>
+ <p>A grassroots network fostering mutual aid and solidarity through anti-war and anti-imperialist organizing and journalism. They coordinate movement reporting, direct action support, and solidarity networks while building power through resistance to militarism, war, and corporate greed, linking with struggles against racism and oppression within the United States.</p>
+ </div>
+ </section>
+
+ <p class="help-text">Know of a radical news initiative we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+ </div>
+ </main>
+ </div>
+
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ const sidebarContainer = document.getElementById('sidebar');
+ const sidebar = createSidebar('topics');
+ sidebarContainer.replaceWith(sidebar);
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'topics',
+ searchHeaderId: 'header'
+ });
+ </script>
+</body>
+</html> 

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Anarchist Networks - Mutual Aid & Community Resources</title>
+ <meta name="description" content="Find mutual aid networks and community support initiatives focused on anarchist organizing and solidarity.">
+ 
+ <!-- Styles -->
+ <link rel="stylesheet" href="/styles.css">
+ <link rel="stylesheet" href="/styles/topics.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+ <!-- Theme and Components -->
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
+</head>
+<body>
+ <div class="layout">
+ <aside id="sidebar" aria-label="Main navigation"></aside>
+
+ <main class="content" role="main">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="topics-page">
+ <div class="breadcrumb">
+ <a href="/topics">Issues</a>
+ <span>›</span>
+ <span>Anarchism</span>
+ </div>
+
+ <h1>Anarchist Networks</h1>
+ <hr>
+
+ <section>
+ <h2>National Organizations</h2>
+ <div class="initiative">
+ <a href="https://www.abcf.net/">Anarchist Black Cross Federation (ABCF)</a>
+ <p>A mutual aid network coordinating support for political prisoners and prisoners of war since 1994. They organize direct assistance through their Warchest program, resource sharing, and solidarity initiatives while building networks of support through local chapters, prisoner correspondence, and community defense.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://www.instagram.com/1312nau/">Northeast Anarchist Union</a>
+ <p>The Northeast Anarchist Union stands to build up our local communities and prefigure an anarchist future</p>
+ </div>
+ </section>
+
+ </div>
+ </main>
+ </div>
+
+ <!-- Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ document.getElementById('sidebar').replaceWith(createSidebar('topics'));
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'topics',
+ searchHeaderId: 'header'
+ });
+ </script>
+</body>
+</html> 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topics - Mutual Aid Network Directory</title>
+    <meta name="description"
+        content="Find mutual aid networks and community support initiatives organized by topic area.">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <script src="/search-index.js"></script>
+    <script src="/mobile-menu.js"></script>
+</head>
+
+<body>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
+
+        <main class="content">
+            <header class="page-header">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <input type="text" id="searchInput" class="search-input"
+                            placeholder="Search mutual aid resources..." aria-label="Search mutual aid resources">
+                        <div id="searchResults" class="search-results" role="listbox"></div>
+                    </div>
+                </div>
+            </header>
+            <div class="state-page">
+
+
+                <h1 class="state-title">Topics</h1>
+
+                <section class="cities-section">
+                    <h2>Topics</h2>
+                    <div class="issues-list">
+                        <a href="/issues/anti-war" class="city-link">Anti-War</a>
+                        <a href="/issues/disability" class="city-link">Disability Support</a>
+                        <a href="/issues/food" class="city-link">Food Insecurity</a>
+                        <a href="/issues/global-justice" class="city-link">Global Justice</a>
+                        <a href="/issues/housing" class="city-link">Housing</a>
+                        <a href="/issues/healthcare" class="city-link">Healthcare</a>
+                        <a href="/issues/indigenous-solidarity" class="city-link">Indigenous Solidarity</a>
+                        <a href="/issues/labor" class="city-link">Labor Rights</a>
+                        <a href="/issues/migrant-solidarity" class="city-link">Migrant Solidarity</a>
+                        <a href="/issues/lgbtq" class="city-link">Trans & LGBTQ+ Support</a>
+                        <a href="/issues/opioid-crisis" class="city-link">Opioid Crisis</a>
+                        <a href="/issues/palestinian-solidarity" class="city-link">Palestinian Solidarity</a>
+                        <a href="/issues/police-brutality" class="city-link">Police Brutality</a>
+                        <a href="/issues/reproductive-justice" class="city-link">Reproductive Justice</a>
+                        <a href="/issues/sex-worker-support" class="city-link">Sex Worker Support</a>
+                        <a href="/issues/socialism" class="city-link">Socialist Organizations</a>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a topic area we should add? <a
+                        href="mailto:contact@organize.directory">Contact us</a> with suggestions.</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('topics'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+
+    <!-- Initialize Search -->
+    <script type="module">
+        import { initializeSearch } from '/components/search-header.js';
+        initializeSearch();
+    </script>
+</body>
+
+</html>

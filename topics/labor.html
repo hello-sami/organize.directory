@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Labor Rights & Worker Support - Mutual Aid Network Directory</title>
+ <meta name="description" content="Find mutual aid networks and community support initiatives focused on labor rights and worker solidarity.">
+ 
+ <!-- Styles -->
+ <link rel="stylesheet" href="/styles.css">
+ <link rel="stylesheet" href="/styles/topics.css">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ 
+ <!-- Theme and Components -->
+ <script src="/theme-init.js" ></script>
+ <!-- Critical Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ // Initialize sidebar as soon as possible
+ const sidebarElement = document.getElementById('sidebar');
+ if (sidebarElement) {
+ sidebarElement.replaceWith(createSidebar('location'));
+ }
+ </script>
+</head>
+<body>
+ <div class="layout">
+ <aside id="sidebar" aria-label="Main navigation"></aside>
+
+ <main class="content" role="main">
+ <header id="header" class="page-header"></header>
+ 
+ 
+ 
+ <div class="topics-page">
+ <div class="breadcrumb">
+ <a href="/topics">Issues</a>
+ <span>›</span>
+ <span>Labor Rights & Worker Support</span>
+ </div>
+
+ <h1>Labor Rights & Worker Support</h1>
+ <hr>
+
+ <section>
+ <h2>International Organizations</h2>
+ <div class="initiative">
+ <a href="https://generalstrikeus.com/">General Strike US</a>
+ <p>A mutual aid network organizing worker solidarity and direct support initiatives across the United States. They coordinate resource sharing, strike support, and community organizing while building networks of solidarity through labor organizing and collective action to advance worker power and economic justice.</p>
+ </div>
+ <div class="initiative">
+ <a href="https://globalrec.org/">International Alliance of Waste Pickers</a>
+ <p>A global network supporting and strengthening waste picker organizations through mutual aid, solidarity, and advocacy. They work to improve working conditions, build collective power, and advance environmental justice while promoting waste pickers' crucial role in the recycling and zero waste economy.</p>
+ </div>
+ </section>
+
+ <p class="help-text">Know of a labor rights or worker support initiative? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+ </div>
+ </main>
+ </div>
+
+ <!-- Scripts -->
+ <script type="module">
+
+ import { createSidebar } from '/components/sidebar.js';
+ document.getElementById('sidebar').replaceWith(createSidebar('topics'));
+ </script>
+ <script src="/theme.js" type="module"></script>
+
+ <!-- Initialize Search -->
+ <!-- Initialize components -->
+ <script type="module">
+
+ import { initializeComponents } from '/init.js';
+ initializeComponents({
+ sidebarType: 'topics',
+ searchHeaderId: 'header'
+ });
+ </script>
+</body>
+</html> 
