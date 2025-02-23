@@ -73,16 +73,21 @@ a {
   position: relative;
   background: var(--bg-color);
   padding: 2rem;
-  max-width: 600px;
+  max-width: 750px;
   margin: 0 auto;
 }
 
-/* .main-content .content,
-.content > * {
-  max-width: 600px;
-  margin: 0 auto;
-  width: 100%;
-} */
+/* Content elements max-width for readability */
+.content p,
+.content h1,
+.content h2,
+.content .daily-log,
+.content .about-content,
+.content .initiative {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Common Elements */
 hr {
@@ -398,19 +403,21 @@ aside nav {
 /* Responsive Design */
 @media (max-width: 1400px) {
   .content {
+    max-width: 1000px;
     margin: 0 auto;
   }
 }
 
 @media (max-width: 1200px) {
   .content {
+    max-width: 900px;
     margin: 0 1rem;
   }
 }
 
 @media (max-width: 1135px) {
   .content {
-    max-width: 700px;
+    max-width: 800px;
   }
 
   .main-content .content {
