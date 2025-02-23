@@ -51,10 +51,16 @@
     <script src="/theme-init.js"></script>
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
+        // Add error handling for sidebar initialization
+        try {
+            const sidebarElement = document.getElementById('sidebar');
+            if (sidebarElement) {
+                sidebarElement.replaceWith(createSidebar('location'));
+            } else {
+                console.warn('Sidebar element not found');
+            }
+        } catch (error) {
+            console.error('Error initializing sidebar:', error);
         }
     </script>
 </head>
@@ -64,78 +70,82 @@
         <aside id="sidebar" aria-label="Main navigation"></aside>
 
         <main class="content" role="main">
-            <header class="page-header">
-                <div class="search-container">
-                    <div class="search-input-wrapper">
-                        <input type="text" id="searchInput" class="search-input"
-                            placeholder="Search mutual aid resources..." aria-label="Search mutual aid resources">
-                        <div id="searchResults" class="search-results" role="listbox"></div>
-                    </div>
-                </div>
-                <h1>Local organizations</h1>
-                <p>Browse or search for mutual aid initiatives by location</p>
-            </header>
+            <h2>Choose a state or search for a city.<h2>
+                    <header class="page-header">
+                        <div class="search-container">
+                            <div class="search-input-wrapper">
+                                <input type="text" id="searchInput" class="search-input" placeholder="Search..."
+                                    aria-label="Search mutual aid resources">
+                                <div id="searchResults" class="search-results" role="listbox"></div>
+                            </div>
+                        </div>
+                        <!-- <h1>Local organizations</h1> -->
 
-            <div class="states-list">
-                <a href="/alabama" class="state-link">Alabama</a>
-                <a href="/alaska" class="state-link">Alaska</a>
-                <a href="/arizona" class="state-link">Arizona</a>
-                <a href="/arkansas" class="state-link">Arkansas</a>
-                <a href="/california" class="state-link">California</a>
-                <a href="/colorado" class="state-link">Colorado</a>
-                <a href="/connecticut" class="state-link">Connecticut</a>
-                <a href="/delaware" class="state-link">Delaware</a>
-                <a href="/district-of-columbia" class="state-link">District of Columbia</a>
-                <a href="/florida" class="state-link">Florida</a>
-                <a href="/georgia" class="state-link">Georgia</a>
-                <a href="/hawaii" class="state-link">Hawaii</a>
-                <a href="/idaho" class="state-link">Idaho</a>
-                <a href="/illinois" class="state-link">Illinois</a>
-                <a href="/indiana" class="state-link">Indiana</a>
-                <a href="/iowa" class="state-link">Iowa</a>
-                <a href="/kansas" class="state-link">Kansas</a>
-                <a href="/kentucky" class="state-link">Kentucky</a>
-                <a href="/louisiana" class="state-link">Louisiana</a>
-                <a href="/maine" class="state-link">Maine</a>
-                <a href="/maryland" class="state-link">Maryland</a>
-                <a href="/massachusetts" class="state-link">Massachusetts</a>
-                <a href="/michigan" class="state-link">Michigan</a>
-                <a href="/minnesota" class="state-link">Minnesota</a>
-                <a href="/mississippi" class="state-link">Mississippi</a>
-                <a href="/missouri" class="state-link">Missouri</a>
-                <a href="/montana" class="state-link">Montana</a>
-                <a href="/nebraska" class="state-link">Nebraska</a>
-                <a href="/nevada" class="state-link">Nevada</a>
-                <a href="/new-hampshire" class="state-link">New Hampshire</a>
-                <a href="/new-jersey" class="state-link">New Jersey</a>
-                <a href="/new-mexico" class="state-link">New Mexico</a>
-                <a href="/new-york" class="state-link">New York</a>
-                <a href="/north-carolina" class="state-link">North Carolina</a>
-                <a href="/north-dakota" class="state-link">North Dakota</a>
-                <a href="/ohio" class="state-link">Ohio</a>
-                <a href="/oklahoma" class="state-link">Oklahoma</a>
-                <a href="/oregon" class="state-link">Oregon</a>
-                <a href="/pennsylvania" class="state-link">Pennsylvania</a>
-                <a href="/rhode-island" class="state-link">Rhode Island</a>
-                <a href="/south-carolina" class="state-link">South Carolina</a>
-                <a href="/south-dakota" class="state-link">South Dakota</a>
-                <a href="/tennessee" class="state-link">Tennessee</a>
-                <a href="/texas" class="state-link">Texas</a>
-                <a href="/utah" class="state-link">Utah</a>
-                <a href="/vermont" class="state-link">Vermont</a>
-                <a href="/virginia" class="state-link">Virginia</a>
-                <a href="/washington" class="state-link">Washington</a>
-                <a href="/west-virginia" class="state-link">West Virginia</a>
-                <a href="/wisconsin" class="state-link">Wisconsin</a>
-                <a href="/wyoming" class="state-link">Wyoming</a>
-            </div>
+                    </header>
+
+                    <div class="states-list">
+                        <a href="/alabama" class="state-link">Alabama</a>
+                        <a href="/alaska" class="state-link">Alaska</a>
+                        <a href="/arizona" class="state-link">Arizona</a>
+                        <a href="/arkansas" class="state-link">Arkansas</a>
+                        <a href="/california" class="state-link">California</a>
+                        <a href="/colorado" class="state-link">Colorado</a>
+                        <a href="/connecticut" class="state-link">Connecticut</a>
+                        <a href="/delaware" class="state-link">Delaware</a>
+                        <a href="/district-of-columbia" class="state-link">District of Columbia</a>
+                        <a href="/florida" class="state-link">Florida</a>
+                        <a href="/georgia" class="state-link">Georgia</a>
+                        <a href="/hawaii" class="state-link">Hawaii</a>
+                        <a href="/idaho" class="state-link">Idaho</a>
+                        <a href="/illinois" class="state-link">Illinois</a>
+                        <a href="/indiana" class="state-link">Indiana</a>
+                        <a href="/iowa" class="state-link">Iowa</a>
+                        <a href="/kansas" class="state-link">Kansas</a>
+                        <a href="/kentucky" class="state-link">Kentucky</a>
+                        <a href="/louisiana" class="state-link">Louisiana</a>
+                        <a href="/maine" class="state-link">Maine</a>
+                        <a href="/maryland" class="state-link">Maryland</a>
+                        <a href="/massachusetts" class="state-link">Massachusetts</a>
+                        <a href="/michigan" class="state-link">Michigan</a>
+                        <a href="/minnesota" class="state-link">Minnesota</a>
+                        <a href="/mississippi" class="state-link">Mississippi</a>
+                        <a href="/missouri" class="state-link">Missouri</a>
+                        <a href="/montana" class="state-link">Montana</a>
+                        <a href="/nebraska" class="state-link">Nebraska</a>
+                        <a href="/nevada" class="state-link">Nevada</a>
+                        <a href="/new-hampshire" class="state-link">New Hampshire</a>
+                        <a href="/new-jersey" class="state-link">New Jersey</a>
+                        <a href="/new-mexico" class="state-link">New Mexico</a>
+                        <a href="/new-york" class="state-link">New York</a>
+                        <a href="/north-carolina" class="state-link">North Carolina</a>
+                        <a href="/north-dakota" class="state-link">North Dakota</a>
+                        <a href="/ohio" class="state-link">Ohio</a>
+                        <a href="/oklahoma" class="state-link">Oklahoma</a>
+                        <a href="/oregon" class="state-link">Oregon</a>
+                        <a href="/pennsylvania" class="state-link">Pennsylvania</a>
+                        <a href="/rhode-island" class="state-link">Rhode Island</a>
+                        <a href="/south-carolina" class="state-link">South Carolina</a>
+                        <a href="/south-dakota" class="state-link">South Dakota</a>
+                        <a href="/tennessee" class="state-link">Tennessee</a>
+                        <a href="/texas" class="state-link">Texas</a>
+                        <a href="/utah" class="state-link">Utah</a>
+                        <a href="/vermont" class="state-link">Vermont</a>
+                        <a href="/virginia" class="state-link">Virginia</a>
+                        <a href="/washington" class="state-link">Washington</a>
+                        <a href="/west-virginia" class="state-link">West Virginia</a>
+                        <a href="/wisconsin" class="state-link">Wisconsin</a>
+                        <a href="/wyoming" class="state-link">Wyoming</a>
+                    </div>
         </main>
     </div>
 
     <!-- Core Scripts -->
-    <script src="/search-index.js" type="module" async></script>
+    <script type="module">
+        // Combine module imports
+        import '/search-index.js';
+        import '/theme.js';
+    </script>
     <script src="/mobile-menu.js" defer></script>
-    <script src="/theme.js" type="module" async></script>
 </body>
 
 </html>

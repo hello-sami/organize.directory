@@ -1,91 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Jewish Solidarity Mutual Aid Networks - Mutual Aid Network Directory</title>
- <meta name="description" content="Find mutual aid networks and community support initiatives focused on Jewish solidarity and anti-fascist organizing.">
- <meta property="og:title" content="Jewish Solidarity Mutual Aid Networks - Mutual Aid Network Directory">
- <meta property="og:description" content="Find mutual aid networks and community support initiatives focused on Jewish solidarity and anti-fascist organizing.">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://organize.directory/issues/jewish-solidarity">
- <meta name="twitter:card" content="summary">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewish Solidarity Mutual Aid Networks - Mutual Aid Network Directory</title>
+    <meta name="description"
+        content="Find mutual aid networks and community support initiatives focused on Jewish solidarity and anti-fascist organizing.">
+    <meta property="og:title" content="Jewish Solidarity Mutual Aid Networks - Mutual Aid Network Directory">
+    <meta property="og:description"
+        content="Find mutual aid networks and community support initiatives focused on Jewish solidarity and anti-fascist organizing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/issues/jewish-solidarity">
+    <meta name="twitter:card" content="summary">
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
+
 <body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <main class="content">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="issue-page">
- <div class="breadcrumb">
- <a href="/issues" class="breadcrumb-link">Issues</a>
- <span class="breadcrumb-separator">›</span>
- <span class="breadcrumb-current">Jewish Solidarity</span>
- </div>
+        <main class="content">
+            <header id="header" class="page-header"></header>
 
- <h1 class="issue-title">Jewish Solidarity</h1>
 
- <section class="initiatives-section">
- <h2>Resources & Archives</h2>
- <div class="initiative">
- <a href="https://jewishzinearchive.com/">Jewish Zine Archive<a>
- <p>A digital archive preserving and sharing radical Jewish zines, publications, and mutual aid resources. They build solidarity through documenting Jewish resistance, anti-fascist organizing, and community care while making historical and contemporary materials accessible for movement building.</p>
- </div>
- <p class="help-text">
- Know of a Jewish solidarity mutual aid initiative? 
- <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
- </p>
- </section>
 
- <section class="initiatives-section">
- <h2>Jewish Anti-Zionist Organizations</h2>
- <div class="initiative">
- <a href="https://ijan.org/">International Jewish Anti-Zionist Network (IJAN)<a>
- <p>A network of Jews fostering mutual aid and solidarity through anti-colonial and anti-imperialist organizing. They coordinate direct actions, political education, and solidarity networks while building power through Jewish participation in liberation struggles, confronting Zionist backlash, and creating spaces for collective resistance against oppression.</p>
- </div>
- </section>
- </div>
- </main>
- </div>
+            <div class="issue-page">
+                <div class="breadcrumb">
+                    <a href="/issues" class="breadcrumb-link">Issues</a>
+                    <span>›</span>
+                    <span>Jewish Solidarity</span>
+                </div>
 
- <!-- Scripts -->
- <script type="module">
+                <h1 class="issue-title">Jewish Solidarity</h1>
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('issues'));
- </script>
- <script src="/theme.js" type="module"></script>
+                <section class="initiatives-section">
+                    <h2>Resources & Archives</h2>
+                    <div class="initiative">
+                        <a href="https://jewishzinearchive.com/">Jewish Zine Archive<a>
+                                <p>A digital archive preserving and sharing radical Jewish zines, publications, and
+                                    mutual aid resources. They build solidarity through documenting Jewish resistance,
+                                    anti-fascist organizing, and community care while making historical and contemporary
+                                    materials accessible for movement building.</p>
+                    </div>
+                    <p class="help-text">
+                        Know of a Jewish solidarity mutual aid initiative?
+                        <a href="mailto:contact@organize.directory">Contact us</a> to have it added.
+                    </p>
+                </section>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+                <section class="initiatives-section">
+                    <h2>Jewish Anti-Zionist Organizations</h2>
+                    <div class="initiative">
+                        <a href="https://ijan.org/">International Jewish Anti-Zionist Network (IJAN)<a>
+                                <p>A network of Jews fostering mutual aid and solidarity through anti-colonial and
+                                    anti-imperialist organizing. They coordinate direct actions, political education,
+                                    and solidarity networks while building power through Jewish participation in
+                                    liberation struggles, confronting Zionist backlash, and creating spaces for
+                                    collective resistance against oppression.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
+    <!-- Scripts -->
+    <script type="module">
+
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+
+        import { initializeComponents } from '/init.js';
+        initializeComponents({
+            sidebarType: 'location',
+            searchHeaderId: 'header'
+        });
+    </script>
 </body>
-</html> 
+
+</html>

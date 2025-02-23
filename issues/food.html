@@ -1,89 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- 
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Food Insecurity Mutual Aid Networks - Local Support & Community Resources</title>
- <meta name="description" content="Find food banks, community fridges, meal programs, and other food security initiatives across the United States.">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme and Components -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- <script type="module">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
 
- import { createSidebar } from '/components/sidebar.js';
- // Initialize sidebar as soon as possible
- const sidebarElement = document.getElementById('sidebar');
- if (sidebarElement) {
- sidebarElement.replaceWith(createSidebar('location'));
- }
- </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Insecurity Mutual Aid Networks - Local Support & Community Resources</title>
+    <meta name="description"
+        content="Find food banks, community fridges, meal programs, and other food security initiatives across the United States.">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
+    <script type="module">
+
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        const sidebarElement = document.getElementById('sidebar');
+        if (sidebarElement) {
+            sidebarElement.replaceWith(createSidebar('location'));
+        }
+    </script>
 </head>
+
 <body>
- <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+    <div class="layout">
+        <aside id="sidebar" aria-label="Main navigation"></aside>
 
- <main class="content">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="state-page">
- <div class="breadcrumb">
- <a href="/issues" class="breadcrumb-link">Issues</a>
- <span class="breadcrumb-separator">›</span>
- <span class="breadcrumb-current">Food Insecurity</span>
- </div>
+        <main class="content">
+            <header id="header" class="page-header"></header>
 
- <h1 class="state-title">Food Insecurity</h1>
 
- <section class="initiatives-section">
- <h2>National Initiatives</h2>
- <div class="initiative">
- <a href="https://foodnotbombs.net/">Food Not Bombs<a>
- <p>Global network of collectives serving free vegan and vegetarian meals and organizing food distribution.</p>
- </div>
- </section>
 
- <p class="help-text">Know of a food security initiative we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
- </div>
+            <div class="state-page">
+                <div class="breadcrumb">
+                    <a href="/issues" class="breadcrumb-link">Issues</a>
+                    <span>›</span>
+                    <span>Food Insecurity</span>
+                </div>
 
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+                <h1 class="state-title">Food Insecurity</h1>
 
- <!-- Scripts -->
- <script type="module">
+                <section class="initiatives-section">
+                    <h2>National Initiatives</h2>
+                    <div class="initiative">
+                        <a href="https://foodnotbombs.net/">Food Not Bombs<a>
+                                <p>Global network of collectives serving free vegan and vegetarian meals and organizing
+                                    food distribution.</p>
+                    </div>
+                </section>
 
- import { createSidebar } from '/components/sidebar.js';
- document.getElementById('sidebar').replaceWith(createSidebar('issues'));
- </script>
- <script src="/theme.js" type="module"></script>
+                <p class="help-text">Know of a food security initiative we should add? <a
+                        href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
 
- <!-- Initialize Search -->
- <!-- Initialize components -->
- <script type="module">
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
 
- import { initializeComponents } from '/init.js';
- initializeComponents({
- sidebarType: 'location',
- searchHeaderId: 'header'
- });
- </script>
+    <!-- Scripts -->
+    <script type="module">
+
+        import { createSidebar } from '/components/sidebar.js';
+        document.getElementById('sidebar').replaceWith(createSidebar('issues'));
+    </script>
+    <script src="/theme.js" type="module"></script>
+
+    <!-- Initialize Search -->
+    <!-- Initialize components -->
+    <script type="module">
+
+        import { initializeComponents } from '/init.js';
+        initializeComponents({
+            sidebarType: 'location',
+            searchHeaderId: 'header'
+        });
+    </script>
 </body>
-</html> 
+
+</html>
