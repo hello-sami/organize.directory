@@ -15,6 +15,10 @@ export function createSidebar(activePage) {
             <a href="/guides" class="nav-link ${activePage === "guides" ? "active" : ""}">Guides</a>
             <a href="/contact" class="nav-link ${activePage === "contact" ? "active" : ""}">Contact</a>
         </nav>
+        <div class="sidebar-motto">
+            Solidarity not charity.<br>
+            Awareness into action.
+        </div>
     `;
 
      return sidebar;
