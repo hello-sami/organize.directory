@@ -7,32 +7,33 @@ import { dirname } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// The new sidebar styles to add
-const sidebarStyles = `
-    <style>
-        /* Hide sidebar until ready */
-        #sidebar:not(.ready) {
-            visibility: hidden;
-        }
-
-        #sidebar.ready {
-            visibility: visible;
-        }
-    </style>
+// The pre-rendered sidebar HTML
+const sidebarHTML = `
+        <aside id="sidebar" aria-label="Main navigation">
+            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+            <nav>
+                <a href="/" class="nav-link">Home</a>
+                <div class="nav-group">
+                    <span class="nav-group-title">Find a group</span>
+                    <a href="/location" class="nav-link nav-link-indented">by location</a>
+                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
+                </div>
+                <a href="/guides" class="nav-link">Guides</a>
+                <a href="/contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="sidebar-motto">
+                Solidarity not charity.<br>
+                Awareness into action.
+            </div>
+        </aside>
 `;
 
 // The new sidebar initialization script
 const sidebarScript = `
     <script type="module">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
+        import { initializeSidebar } from '/components/sidebar.js';
         window.addEventListener('DOMContentLoaded', () => {
-            const sidebarElement = document.getElementById('sidebar');
-            if (sidebarElement) {
-                const newSidebar = createSidebar('location');
-                newSidebar.classList.add('ready');
-                sidebarElement.replaceWith(newSidebar);
-            }
+            initializeSidebar('location');
         });
     </script>
 `;
@@ -53,14 +54,11 @@ async function updateFile(filePath) {
      try {
           let content = await fs.promises.readFile(filePath, "utf8");
 
-          // Check if the file already has the new styles
-          if (!content.includes("#sidebar:not(.ready)")) {
-               // Add styles before the first </head>
-               content = content.replace(
-                    "</head>",
-                    `${sidebarStyles}\n</head>`
-               );
-          }
+          // Remove any existing sidebar styles
+          content = content.replace(
+               /<style>[^<]*#sidebar:not\(\.ready\)[^<]*<\/style>/g,
+               ""
+          );
 
           // Remove any existing sidebar initialization scripts
           content = content.replace(
@@ -70,6 +68,12 @@ async function updateFile(filePath) {
 
           // Add the new initialization script before </head>
           content = content.replace("</head>", `${sidebarScript}\n</head>`);
+
+          // Replace empty sidebar with pre-rendered structure
+          content = content.replace(
+               /<aside id="sidebar"[^>]*>\s*<\/aside>/,
+               sidebarHTML
+          );
 
           // Update bottom scripts
           content = content.replace(

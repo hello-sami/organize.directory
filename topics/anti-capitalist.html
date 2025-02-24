@@ -24,16 +24,7 @@
  <!-- Critical Scripts -->
  
 
-    <style>
-        /* Hide sidebar until ready */
-        #sidebar:not(.ready) {
-            visibility: hidden;
-        }
-
-        #sidebar.ready {
-            visibility: visible;
-        }
-    </style>
+    
 
 
     <script type="module">
@@ -49,10 +40,36 @@
         });
     </script>
 
+
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeSidebar('location');
+        });
+    </script>
+
 </head>
 <body>
  <div class="layout">
- <aside id="sidebar" aria-label="Main navigation"></aside>
+ 
+        <aside id="sidebar" aria-label="Main navigation">
+            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+            <nav>
+                <a href="/" class="nav-link">Home</a>
+                <div class="nav-group">
+                    <span class="nav-group-title">Find a group</span>
+                    <a href="/location" class="nav-link nav-link-indented">by location</a>
+                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
+                </div>
+                <a href="/guides" class="nav-link">Guides</a>
+                <a href="/contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="sidebar-motto">
+                Solidarity not charity.<br>
+                Awareness into action.
+            </div>
+        </aside>
+
 
  <main class="content" role="main">
  <header id="header" class="page-header"></header>

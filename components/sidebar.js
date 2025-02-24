@@ -1,10 +1,6 @@
 // Sidebar component
 export function createSidebar(activePage) {
-     const sidebar = document.createElement("aside");
-     sidebar.className = "sidebar";
-
-     // Set the content synchronously to avoid flashing
-     sidebar.innerHTML = `
+     return `
         <h1><a href="/" class="home-link">The Organize Directory</a></h1>
         <nav>
             <a href="/" class="nav-link ${activePage === "home" ? "active" : ""}">Home</a>
@@ -21,13 +17,14 @@ export function createSidebar(activePage) {
             Awareness into action.
         </div>
     `;
+}
 
-     // Add ready class after a brief delay to trigger the fade in
-     requestAnimationFrame(() => {
-          sidebar.classList.add("ready");
-     });
-
-     return sidebar;
+// Function to initialize the sidebar
+export function initializeSidebar(activePage) {
+     const sidebarElement = document.getElementById("sidebar");
+     if (sidebarElement) {
+          sidebarElement.innerHTML = createSidebar(activePage);
+     }
 }
 
 // Function to handle relative paths in subdirectories

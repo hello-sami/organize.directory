@@ -39,16 +39,7 @@
  /* Add any other base styles here */
  </style>
 
-    <style>
-        /* Hide sidebar until ready */
-        #sidebar:not(.ready) {
-            visibility: hidden;
-        }
-
-        #sidebar.ready {
-            visibility: visible;
-        }
-    </style>
+    
 
 
     <script type="module">
@@ -61,6 +52,14 @@
                 newSidebar.classList.add('ready');
                 sidebarElement.replaceWith(newSidebar);
             }
+        });
+    </script>
+
+
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+        window.addEventListener('DOMContentLoaded', () => {
+            initializeSidebar('location');
         });
     </script>
 
