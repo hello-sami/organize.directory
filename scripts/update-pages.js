@@ -1,23 +1,41 @@
 import fs from "fs";
 import path from "path";
+import { glob } from "glob";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// The script block we want to move to the head
-const sidebarScript = `    <!-- Critical Scripts -->
-    <script src="/theme-init.js"></script>
+// The new sidebar styles to add
+const sidebarStyles = `
+    <style>
+        /* Hide sidebar until ready */
+        #sidebar:not(.ready) {
+            visibility: hidden;
+        }
+
+        #sidebar.ready {
+            visibility: visible;
+        }
+    </style>
+`;
+
+// The new sidebar initialization script
+const sidebarScript = `
     <script type="module">
         import { createSidebar } from '/components/sidebar.js';
         // Initialize sidebar as soon as possible
-        const sidebarElement = document.getElementById('sidebar');
-        if (sidebarElement) {
-            sidebarElement.replaceWith(createSidebar('location'));
-        }
+        window.addEventListener('DOMContentLoaded', () => {
+            const sidebarElement = document.getElementById('sidebar');
+            if (sidebarElement) {
+                const newSidebar = createSidebar('location');
+                newSidebar.classList.add('ready');
+                sidebarElement.replaceWith(newSidebar);
+            }
+        });
     </script>
-</head>`;
+`;
 
 // The updated script tags for the bottom of the file
 const updatedBottomScripts = `    <!-- Core Scripts -->
@@ -30,62 +48,57 @@ const updatedBottomScripts = `    <!-- Core Scripts -->
     <script src="/js/analytics.js" type="module" async></script>
 </body>`;
 
-async function getAllHtmlFiles(dir) {
-  const files = await fs.promises.readdir(dir);
-  const htmlFiles = [];
-
-  for (const file of files) {
-    const filePath = path.join(dir, file);
-    const stat = await fs.promises.stat(filePath);
-
-    if (stat.isDirectory()) {
-      const subDirFiles = await getAllHtmlFiles(filePath);
-      htmlFiles.push(...subDirFiles);
-    } else if (path.extname(file) === ".html") {
-      htmlFiles.push(filePath);
-    }
-  }
-
-  return htmlFiles;
-}
-
+// Function to update a single file
 async function updateFile(filePath) {
-  try {
-    let content = await fs.promises.readFile(filePath, "utf8");
+     try {
+          let content = await fs.promises.readFile(filePath, "utf8");
 
-    // Remove old sidebar script if it exists
-    content = content.replace(
-      /\s*<script type="module">\s*import { createSidebar } from '\/components\/sidebar\.js';\s*document\.addEventListener\('DOMContentLoaded', \(\) => {\s*document\.getElementById\('sidebar'\)\.replaceWith\(createSidebar\([^)]+\)\);\s*}\);\s*<\/script>/g,
-      "",
-    );
+          // Check if the file already has the new styles
+          if (!content.includes("#sidebar:not(.ready)")) {
+               // Add styles before the first </head>
+               content = content.replace(
+                    "</head>",
+                    `${sidebarStyles}\n</head>`
+               );
+          }
 
-    // Add new sidebar script to head
-    content = content.replace("</head>", sidebarScript);
+          // Remove any existing sidebar initialization scripts
+          content = content.replace(
+               /<script type="module">\s*import\s*{\s*createSidebar\s*}\s*from\s*['"]\/components\/sidebar\.js['"];\s*(?:\/\/[^\n]*\n)*\s*(?:const|let|var)?\s*sidebarElement[^<]*<\/script>/g,
+               ""
+          );
 
-    // Update bottom scripts
-    content = content.replace(
-      /\s*<!-- Core Scripts -->[\s\S]*?<\/body>/,
-      "\n" + updatedBottomScripts,
-    );
+          // Add the new initialization script before </head>
+          content = content.replace("</head>", `${sidebarScript}\n</head>`);
 
-    await fs.promises.writeFile(filePath, content);
-    console.log(`Updated ${filePath}`);
-  } catch (error) {
-    console.error(`Error updating ${filePath}:`, error);
-  }
+          // Update bottom scripts
+          content = content.replace(
+               /\s*<!-- Core Scripts -->[\s\S]*?<\/body>/,
+               "\n" + updatedBottomScripts
+          );
+
+          await fs.promises.writeFile(filePath, content);
+          console.log(`Updated ${filePath}`);
+     } catch (error) {
+          console.error(`Error updating ${filePath}:`, error);
+     }
 }
 
+// Main function to process all HTML files
 async function main() {
-  const directories = ["cities", "states", "issues"];
+     try {
+          // Find all HTML files in the project
+          const files = await glob("**/*.html", {
+               ignore: ["node_modules/**", "dist/**", "build/**"],
+          });
 
-  for (const dir of directories) {
-    const htmlFiles = await getAllHtmlFiles(dir);
-    console.log(`Found ${htmlFiles.length} HTML files in ${dir}/`);
+          // Update each file
+          await Promise.all(files.map(updateFile));
 
-    for (const file of htmlFiles) {
-      await updateFile(file);
-    }
-  }
+          console.log("All files updated successfully");
+     } catch (error) {
+          console.error("Error processing files:", error);
+     }
 }
 
-main().catch(console.error);
+main();

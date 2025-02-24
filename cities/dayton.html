@@ -37,6 +37,32 @@
   <!-- Theme and Components -->
   <script src="/theme-init.js"></script>
 
+
+    <style>
+        /* Hide sidebar until ready */
+        #sidebar:not(.ready) {
+            visibility: hidden;
+        }
+
+        #sidebar.ready {
+            visibility: visible;
+        }
+    </style>
+
+
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        // Initialize sidebar as soon as possible
+        window.addEventListener('DOMContentLoaded', () => {
+            const sidebarElement = document.getElementById('sidebar');
+            if (sidebarElement) {
+                const newSidebar = createSidebar('location');
+                newSidebar.classList.add('ready');
+                sidebarElement.replaceWith(newSidebar);
+            }
+        });
+    </script>
+
 </head>
 
 <body>

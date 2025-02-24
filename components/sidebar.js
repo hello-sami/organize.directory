@@ -3,6 +3,7 @@ export function createSidebar(activePage) {
      const sidebar = document.createElement("aside");
      sidebar.className = "sidebar";
 
+     // Set the content synchronously to avoid flashing
      sidebar.innerHTML = `
         <h1><a href="/" class="home-link">The Organize Directory</a></h1>
         <nav>
@@ -20,6 +21,11 @@ export function createSidebar(activePage) {
             Awareness into action.
         </div>
     `;
+
+     // Add ready class after a brief delay to trigger the fade in
+     requestAnimationFrame(() => {
+          sidebar.classList.add("ready");
+     });
 
      return sidebar;
 }
