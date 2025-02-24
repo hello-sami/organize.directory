@@ -27,49 +27,46 @@
         gtag('config', 'G-QJ03RCM35H');
     </script>
 
-    <!-- Theme and Components -->
     <script src="/theme-init.js"></script>
     <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
-    <script type="module">
-        import { createSidebar } from '/components/sidebar.js';
-        document.addEventListener('DOMContentLoaded', () => {
-            const sidebarContainer = document.getElementById('sidebar-container');
-            const sidebar = createSidebar('guides');
-            sidebarContainer.replaceWith(sidebar);
-        });
-    </script>
+    
     <script src="/theme.js" type="module"></script>
 
     
 
 
-    <script type="module">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        window.addEventListener('DOMContentLoaded', () => {
-            const sidebarElement = document.getElementById('sidebar');
-            if (sidebarElement) {
-                const newSidebar = createSidebar('location');
-                newSidebar.classList.add('ready');
-                sidebarElement.replaceWith(newSidebar);
-            }
-        });
-    </script>
+    
 
 
+    
+
+
+    
+    
+    
+    
+    <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
-        window.addEventListener('DOMContentLoaded', () => {
+        import { initializeComponents } from '/utils/init.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize sidebar first
             initializeSidebar('location');
+            
+            // Initialize other components
+            initializeComponents({
+                searchHeaderId: 'header'
+            });
         });
     </script>
-
 </head>
 
 <body>
     <div class="layout">
-        <div id="sidebar-container"></div>
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+<div id="sidebar-container"></div>
 
         <main class="content">
             <header class="page-header">
@@ -175,11 +172,9 @@
         </svg>
     </button>
 
-    <!-- Initialize Search -->
-    <script type="module">
-        import { initializeSearch } from '/components/search-header.js';
-        initializeSearch();
-    </script>
-</body>
+        
+        
+        
+    </body>
 
 </html>

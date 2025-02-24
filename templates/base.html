@@ -42,30 +42,36 @@
     
 
 
-    <script type="module">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        window.addEventListener('DOMContentLoaded', () => {
-            const sidebarElement = document.getElementById('sidebar');
-            if (sidebarElement) {
-                const newSidebar = createSidebar('location');
-                newSidebar.classList.add('ready');
-                sidebarElement.replaceWith(newSidebar);
-            }
-        });
-    </script>
+    
 
 
+    
+
+
+    
+    
+    
+    
+    <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
-        window.addEventListener('DOMContentLoaded', () => {
+        import { initializeComponents } from '/utils/init.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize sidebar first
             initializeSidebar('location');
+            
+            // Initialize other components
+            initializeComponents({
+                searchHeaderId: 'header'
+            });
         });
     </script>
-
 </head>
 <body>
- <!-- Include header with search -->
+    <div class="layout">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+<!-- Include header with search -->
  {% include "templates/header.html" %}
 
  <!-- Main content -->
@@ -79,5 +85,10 @@
  <p>&copy; 2024 Mutual Aid Network Directory. All rights reserved.</p>
  </div>
  </footer>
-</body>
+    </div>
+    
+        
+        
+        
+    </body>
 </html> 

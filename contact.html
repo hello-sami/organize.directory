@@ -14,7 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Contact us to add your mutual aid network or suggest improvements to the directory.">
+
     <meta name="theme-color" content="#ffffff">
     <meta name="color-scheme" content="light">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -110,51 +110,37 @@
     
 
 
-    <script type="module">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        window.addEventListener('DOMContentLoaded', () => {
-            const sidebarElement = document.getElementById('sidebar');
-            if (sidebarElement) {
-                const newSidebar = createSidebar('location');
-                newSidebar.classList.add('ready');
-                sidebarElement.replaceWith(newSidebar);
-            }
-        });
-    </script>
+    
 
 
+    
+
+
+    
+    
+    
+    
+    <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
-        window.addEventListener('DOMContentLoaded', () => {
+        import { initializeComponents } from '/utils/init.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize sidebar first
             initializeSidebar('location');
+            
+            // Initialize other components
+            initializeComponents({
+                searchHeaderId: 'header'
+            });
         });
     </script>
-
 </head>
 
 <body>
-    
-        <aside id="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
-        </aside>
-
-
-    <main class="content" role="main">
+    <div class="layout">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+<main class="content" role="main">
         <header id="header" class="page-header"></header>
 
         <div class="contact-content">
@@ -206,38 +192,11 @@
         </div>
     </main>
 
-    <!-- Initialize components -->
-    <script type="module">
-        import { initializeComponents } from '/utils/init.js';
-        initializeComponents({
-            sidebarType: 'contact',
-            searchHeaderId: 'header'
-        });
-
-        // Form submission handling
-        document.getElementById('contactForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const form = e.target;
-            const formData = new FormData(form);
-
-            try {
-                const response = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData
-                });
-
-                if (response.ok) {
-                    alert('Thank you for your message. We will get back to you soon!');
-                    form.reset();
-                } else {
-                    throw new Error('Failed to send message');
-                }
-            } catch (error) {
-                alert('Sorry, there was an error sending your message. Please try again later.');
-                console.error('Form submission error:', error);
-            }
-        });
-    </script>
-</body>
+    </div>
+    
+        
+        
+        
+    </body>
 
 </html>

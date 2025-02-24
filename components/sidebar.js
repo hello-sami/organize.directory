@@ -1,6 +1,7 @@
 // Sidebar component
 export function createSidebar(activePage) {
-     return `
+     // Create the content but don't return it directly
+     const content = `
         <h1><a href="/" class="home-link">The Organize Directory</a></h1>
         <nav>
             <a href="/" class="nav-link ${activePage === "home" ? "active" : ""}">Home</a>
@@ -16,14 +17,69 @@ export function createSidebar(activePage) {
             Solidarity not charity.<br>
             Awareness into action.
         </div>
-    `;
+    `.trim();
+
+     // Create a temporary container
+     const temp = document.createElement("div");
+     temp.innerHTML = content;
+     return temp;
 }
 
 // Function to initialize the sidebar
 export function initializeSidebar(activePage) {
-     const sidebarElement = document.getElementById("sidebar");
-     if (sidebarElement) {
-          sidebarElement.innerHTML = createSidebar(activePage);
+     // Get the sidebar element immediately
+     const sidebar = document.getElementById("sidebar");
+     if (!sidebar) {
+          console.error("Sidebar element not found");
+          return;
+     }
+
+     // Clear any existing content and ensure it's hidden
+     sidebar.innerHTML = "";
+     sidebar.style.visibility = "hidden";
+
+     // Create and initialize the content when the DOM is ready
+     const initContent = () => {
+          try {
+               const contentContainer = createSidebar(activePage);
+
+               // Wait a frame to ensure smooth transition
+               requestAnimationFrame(() => {
+                    sidebar.innerHTML = contentContainer.innerHTML;
+                    sidebar.style.visibility = "visible";
+                    sidebar.classList.add("ready");
+               });
+
+               // Add mobile menu button if it doesn't exist
+               if (!document.querySelector(".mobile-menu-button")) {
+                    const menuButton = document.createElement("button");
+                    menuButton.className = "mobile-menu-button";
+                    menuButton.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                `;
+                    document.body.insertBefore(
+                         menuButton,
+                         document.body.firstChild
+                    );
+
+                    // Add mobile menu functionality
+                    menuButton.addEventListener("click", () => {
+                         sidebar.classList.toggle("active");
+                         document.body.classList.toggle("menu-open");
+                    });
+               }
+          } catch (error) {
+               console.error("Error initializing sidebar:", error);
+          }
+     };
+
+     // Initialize when DOM is ready
+     if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", initContent);
+     } else {
+          initContent();
      }
 }
 

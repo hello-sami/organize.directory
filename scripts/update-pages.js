@@ -1,108 +1,101 @@
-import fs from "fs";
-import path from "path";
 import { glob } from "glob";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
+import { readFileSync, writeFileSync } from "fs";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const updateHtmlFile = (filePath) => {
+     let content = readFileSync(filePath, "utf8");
 
-// The pre-rendered sidebar HTML
-const sidebarHTML = `
-        <aside id="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
-        </aside>
-`;
+     // Remove any existing sidebar HTML structure and text content
+     content = content.replace(
+          /<h1><a[^>]*>The Organize Directory<\/a>[\s\S]*?<\/div>/g,
+          ""
+     );
+     content = content.replace(/<aside[^>]*>[\s\S]*?<\/aside>/g, "");
 
-// The new sidebar initialization script
-const sidebarScript = `
+     // Remove any plaintext sidebar content between layout and main content
+     content = content.replace(
+          /<div class="layout">\s*([^<]*(?:<(?!main|div)[^>]*>[^<]*)*)<(main|div)/g,
+          '<div class="layout">\n        <$2'
+     );
+
+     // Clean up any empty script tags and comments
+     content = content.replace(/<!--\s*Initialize Sidebar\s*-->\s*\n?\s*/g, "");
+     content = content.replace(
+          /<!--\s*Initialize other components\s*-->\s*\n?\s*/g,
+          ""
+     );
+     content = content.replace(
+          /<!--\s*Theme and Components\s*-->\s*\n?\s*/g,
+          ""
+     );
+     content = content.replace(
+          /<!--\s*Initialize components\s*-->\s*\n?\s*/g,
+          ""
+     );
+     content = content.replace(/<!--\s*Scripts\s*-->\s*\n?\s*/g, "");
+     content = content.replace(/<!--\s*Initialize Search\s*-->\s*\n?\s*/g, "");
+
+     // Remove all existing initialization scripts
+     content = content.replace(
+          /<script type="module">\s*import\s*{\s*[^}]*}\s*from\s*['"][^'"]*['"];\s*[^<]*<\/script>\s*\n?/g,
+          ""
+     );
+
+     // Add initialization scripts to head
+     const initScripts = `
+    <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
-        window.addEventListener('DOMContentLoaded', () => {
-            initializeSidebar('location');
+        import { initializeComponents } from '/utils/init.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize sidebar first
+            initializeSidebar('${filePath.includes("/topics/") ? "topic" : "location"}');
+            
+            // Initialize other components
+            initializeComponents({
+                searchHeaderId: 'header'
+            });
         });
-    </script>
-`;
+    </script>`;
 
-// The updated script tags for the bottom of the file
-const updatedBottomScripts = `    <!-- Core Scripts -->
-    <script src="/js/script.js" type="module" async></script>
-    <script src="/search-index.js" type="module" async></script>
-    <script src="/mobile-menu.js" defer></script>
-    <script src="/theme.js" type="module" async></script>
-    <script src="/js/posts.js" type="module" async></script>
-    <script src="/js/search-init.js" defer></script>
-    <script src="/js/analytics.js" type="module" async></script>
-</body>`;
+     // Add the init scripts before </head>
+     content = content.replace("</head>", `${initScripts}\n</head>`);
 
-// Function to update a single file
-async function updateFile(filePath) {
-     try {
-          let content = await fs.promises.readFile(filePath, "utf8");
-
-          // Remove any existing sidebar styles
+     // Ensure proper layout structure
+     if (!content.includes('<div class="layout">')) {
           content = content.replace(
-               /<style>[^<]*#sidebar:not\(\.ready\)[^<]*<\/style>/g,
-               ""
+               /<body[^>]*>/,
+               '$&\n    <div class="layout">'
           );
-
-          // Remove any existing sidebar initialization scripts
-          content = content.replace(
-               /<script type="module">\s*import\s*{\s*createSidebar\s*}\s*from\s*['"]\/components\/sidebar\.js['"];\s*(?:\/\/[^\n]*\n)*\s*(?:const|let|var)?\s*sidebarElement[^<]*<\/script>/g,
-               ""
-          );
-
-          // Add the new initialization script before </head>
-          content = content.replace("</head>", `${sidebarScript}\n</head>`);
-
-          // Replace empty sidebar with pre-rendered structure
-          content = content.replace(
-               /<aside id="sidebar"[^>]*>\s*<\/aside>/,
-               sidebarHTML
-          );
-
-          // Update bottom scripts
-          content = content.replace(
-               /\s*<!-- Core Scripts -->[\s\S]*?<\/body>/,
-               "\n" + updatedBottomScripts
-          );
-
-          await fs.promises.writeFile(filePath, content);
-          console.log(`Updated ${filePath}`);
-     } catch (error) {
-          console.error(`Error updating ${filePath}:`, error);
+          content = content.replace("</body>", "    </div>\n</body>");
      }
-}
 
-// Main function to process all HTML files
-async function main() {
+     // Add the empty sidebar div if it doesn't exist
+     if (!content.includes('id="sidebar"')) {
+          content = content.replace(
+               /<div class="layout">\s*/,
+               `<div class="layout">\n        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>\n`
+          );
+     }
+
+     writeFileSync(filePath, content, "utf8");
+     console.log(`Updated ${filePath}`);
+};
+
+const main = async () => {
      try {
-          // Find all HTML files in the project
-          const files = await glob("**/*.html", {
-               ignore: ["node_modules/**", "dist/**", "build/**"],
-          });
+          const files = await glob("**/*.html");
+          console.log(`Found ${files.length} HTML files to update`);
 
-          // Update each file
-          await Promise.all(files.map(updateFile));
+          for (const file of files) {
+               updateHtmlFile(file);
+          }
 
           console.log("All files updated successfully");
      } catch (error) {
-          console.error("Error processing files:", error);
+          console.error("Error updating files:", error);
+          process.exit(1);
      }
-}
+};
 
 main();

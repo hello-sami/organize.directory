@@ -39,32 +39,37 @@
     
 
 
-    <script type="module">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        window.addEventListener('DOMContentLoaded', () => {
-            const sidebarElement = document.getElementById('sidebar');
-            if (sidebarElement) {
-                const newSidebar = createSidebar('location');
-                newSidebar.classList.add('ready');
-                sidebarElement.replaceWith(newSidebar);
-            }
-        });
-    </script>
+    
 
 
+    
+
+
+    
+    
+    
+    
+    <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
-        window.addEventListener('DOMContentLoaded', () => {
+        import { initializeComponents } from '/utils/init.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize sidebar first
             initializeSidebar('location');
+            
+            // Initialize other components
+            initializeComponents({
+                searchHeaderId: 'header'
+            });
         });
     </script>
-
 </head>
 
 <body>
   <div class="layout">
-    <!-- Sidebar will be inserted here -->
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+<!-- Sidebar will be inserted here -->
     <div id="sidebar-container"></div>
 
     <main class="content">
@@ -101,22 +106,9 @@
 
   <!-- Single instance of scripts at the end of body -->
 
-  <!-- Initialize Search -->
-
-  <!-- Initialize components -->
-  <script type="module">
-    import { createSidebar } from "/components/sidebar.js";
-    import { initializeComponents } from "/utils/init.js";
-
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById("sidebar").replaceWith(createSidebar("location"));
-
-      initializeComponents({
-        sidebarType: "location",
-        searchHeaderId: "header",
-      });
-    });
-  </script>
-</body>
+      
+        
+        
+    </body>
 
 </html>

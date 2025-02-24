@@ -36,59 +36,43 @@
     gtag("config", "G-QJ03RCM35H");
   </script>
 
-  <!-- Theme and Components -->
   <script src="/theme-init.js"></script>
 
 
     
 
 
-    <script type="module">
-        import { createSidebar } from '/components/sidebar.js';
-        // Initialize sidebar as soon as possible
-        window.addEventListener('DOMContentLoaded', () => {
-            const sidebarElement = document.getElementById('sidebar');
-            if (sidebarElement) {
-                const newSidebar = createSidebar('location');
-                newSidebar.classList.add('ready');
-                sidebarElement.replaceWith(newSidebar);
-            }
-        });
-    </script>
+    
 
 
+    
+
+
+    
+    
+    
+    
+    <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
-        window.addEventListener('DOMContentLoaded', () => {
+        import { initializeComponents } from '/utils/init.js';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize sidebar first
             initializeSidebar('location');
+            
+            // Initialize other components
+            initializeComponents({
+                searchHeaderId: 'header'
+            });
         });
     </script>
-
 </head>
 
 <body>
   <div class="layout">
-    
-        <aside id="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
-        </aside>
-
-
-    <main class="content" role="main">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+<main class="content" role="main">
       <header id="header" class="page-header"></header>
 
       <div class="city-page">
@@ -181,24 +165,9 @@
     </main>
   </div>
 
-  <!-- Scripts -->
-
-  <!-- Initialize Search -->
-
-  <!-- Initialize components -->
-  <script type="module">
-    import { createSidebar } from "/components/sidebar.js";
-    import { initializeComponents } from "/utils/init.js";
-
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById("sidebar").replaceWith(createSidebar("location"));
-
-      initializeComponents({
-        sidebarType: "location",
-        searchHeaderId: "header",
-      });
-    });
-  </script>
-</body>
+      
+        
+        
+    </body>
 
 </html>
