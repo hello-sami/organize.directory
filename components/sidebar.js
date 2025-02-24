@@ -30,57 +30,44 @@ export function initializeSidebar(activePage) {
           return;
      }
 
-     const initContent = () => {
-          try {
-               // Only initialize content if sidebar is empty
-               if (!sidebar.querySelector("nav")) {
-                    sidebar.innerHTML = createSidebar(activePage);
-                    sidebar.classList.add("ready");
-               } else {
-                    // Just update the active states
-                    const links = sidebar.querySelectorAll(".nav-link");
-                    links.forEach((link) => {
-                         link.classList.remove("active");
-                         if (
-                              (link.getAttribute("href") === "/" &&
-                                   activePage === "home") ||
-                              link.getAttribute("href").slice(1) === activePage
-                         ) {
-                              link.classList.add("active");
-                         }
-                    });
-               }
-
-               // Add mobile menu button if it doesn't exist
-               if (!document.querySelector(".mobile-menu-button")) {
-                    const menuButton = document.createElement("button");
-                    menuButton.className = "mobile-menu-button";
-                    menuButton.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    `;
-                    document.body.insertBefore(
-                         menuButton,
-                         document.body.firstChild
-                    );
-
-                    // Add mobile menu functionality
-                    menuButton.addEventListener("click", () => {
-                         sidebar.classList.toggle("active");
-                         document.body.classList.toggle("menu-open");
-                    });
-               }
-          } catch (error) {
-               console.error("Error initializing sidebar:", error);
+     try {
+          // Only initialize content if sidebar is empty
+          if (!sidebar.querySelector("nav")) {
+               sidebar.innerHTML = createSidebar(activePage);
+          } else {
+               // Just update the active states
+               const links = sidebar.querySelectorAll(".nav-link");
+               links.forEach((link) => {
+                    link.classList.remove("active");
+                    if (
+                         (link.getAttribute("href") === "/" &&
+                              activePage === "home") ||
+                         link.getAttribute("href").slice(1) === activePage
+                    ) {
+                         link.classList.add("active");
+                    }
+               });
           }
-     };
 
-     // Initialize when DOM is ready
-     if (document.readyState === "loading") {
-          document.addEventListener("DOMContentLoaded", initContent);
-     } else {
-          initContent();
+          // Add mobile menu button if it doesn't exist
+          if (!document.querySelector(".mobile-menu-button")) {
+               const menuButton = document.createElement("button");
+               menuButton.className = "mobile-menu-button";
+               menuButton.innerHTML = `
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+               </svg>
+               `;
+               document.body.insertBefore(menuButton, document.body.firstChild);
+
+               // Add mobile menu functionality
+               menuButton.addEventListener("click", () => {
+                    sidebar.classList.toggle("active");
+                    document.body.classList.toggle("menu-open");
+               });
+          }
+     } catch (error) {
+          console.error("Error initializing sidebar:", error);
      }
 }
 
