@@ -16,13 +16,9 @@ export function createSidebar(activePage) {
         <div class="sidebar-motto">
             Solidarity not charity.<br>
             Awareness into action.
-        </div>
-    `.trim();
+        </div>`;
 
-     // Create a temporary container
-     const temp = document.createElement("div");
-     temp.innerHTML = content;
-     return temp;
+     return content;
 }
 
 // Function to initialize the sidebar
@@ -34,21 +30,26 @@ export function initializeSidebar(activePage) {
           return;
      }
 
-     // Clear any existing content and ensure it's hidden
-     sidebar.innerHTML = "";
-     sidebar.style.visibility = "hidden";
-
-     // Create and initialize the content when the DOM is ready
      const initContent = () => {
           try {
-               const contentContainer = createSidebar(activePage);
-
-               // Wait a frame to ensure smooth transition
-               requestAnimationFrame(() => {
-                    sidebar.innerHTML = contentContainer.innerHTML;
-                    sidebar.style.visibility = "visible";
+               // Only initialize content if sidebar is empty
+               if (!sidebar.querySelector("nav")) {
+                    sidebar.innerHTML = createSidebar(activePage);
                     sidebar.classList.add("ready");
-               });
+               } else {
+                    // Just update the active states
+                    const links = sidebar.querySelectorAll(".nav-link");
+                    links.forEach((link) => {
+                         link.classList.remove("active");
+                         if (
+                              (link.getAttribute("href") === "/" &&
+                                   activePage === "home") ||
+                              link.getAttribute("href").slice(1) === activePage
+                         ) {
+                              link.classList.add("active");
+                         }
+                    });
+               }
 
                // Add mobile menu button if it doesn't exist
                if (!document.querySelector(".mobile-menu-button")) {
@@ -58,7 +59,7 @@ export function initializeSidebar(activePage) {
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
-                `;
+                    `;
                     document.body.insertBefore(
                          menuButton,
                          document.body.firstChild
