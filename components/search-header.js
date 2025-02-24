@@ -1,100 +1,104 @@
 // Create and initialize the search header component
-export function initSearchBar(containerId = 'searchContainer') {
-    const header = createSearchHeader();
-    
-    // Insert the header into the specified container
-    const container = document.getElementById(containerId);
-    if (!container) {
-        console.error(`Container with id "${containerId}" not found`);
-        return;
-    }
-    container.appendChild(header);
+import { Search } from "../search/index.js";
+
+export function initSearchBar(containerId = "searchContainer") {
+  const header = createSearchHeader();
+
+  // Insert the header into the specified container
+  const container = document.getElementById(containerId);
+  if (!container) {
+    console.error(`Container with id "${containerId}" not found`);
+    return;
+  }
+  container.appendChild(header);
 }
 
 // Create and return the search header component
 export function createSearchHeader() {
-    const header = document.createElement('header');
-    header.className = 'page-header';
-    
-    // Create search wrapper
-    const searchWrapper = document.createElement('div');
-    searchWrapper.className = 'search-wrapper';
-    
-    // Create search container first
-    const searchContainer = document.createElement('div');
-    searchContainer.className = 'search-container';
-    searchContainer.style.display = 'none';
-    
-    // Create search input wrapper
-    const searchInputWrapper = document.createElement('div');
-    searchInputWrapper.className = 'search-input-wrapper';
-    
-    // Create search input
-    const searchInput = document.createElement('input');
-    searchInput.type = 'text';
-    searchInput.id = 'searchInput';
-    searchInput.className = 'search-input';
-    searchInput.placeholder = 'Search mutual aid resources...';
-    searchInput.setAttribute('aria-label', 'Search mutual aid resources');
-    
-    // Create search results container
-    const searchResults = document.createElement('div');
-    searchResults.id = 'searchResults';
-    searchResults.className = 'search-results';
-    searchResults.setAttribute('role', 'listbox');
-    
-    // Create search button
-    const searchButton = document.createElement('button');
-    searchButton.className = 'search-toggle-button';
-    searchButton.setAttribute('aria-label', 'Toggle search');
-    searchButton.innerHTML = `
+  const header = document.createElement("header");
+  header.className = "page-header";
+
+  // Create search wrapper
+  const searchWrapper = document.createElement("div");
+  searchWrapper.className = "search-wrapper";
+
+  // Create search container first
+  const searchContainer = document.createElement("div");
+  searchContainer.className = "search-container";
+  searchContainer.style.display = "none";
+
+  // Create search input wrapper
+  const searchInputWrapper = document.createElement("div");
+  searchInputWrapper.className = "search-input-wrapper";
+
+  // Create search input
+  const searchInput = document.createElement("input");
+  searchInput.type = "text";
+  searchInput.id = "searchInput";
+  searchInput.className = "search-input";
+  searchInput.placeholder = "Search mutual aid resources...";
+  searchInput.setAttribute("aria-label", "Search mutual aid resources");
+
+  // Create search results container
+  const searchResults = document.createElement("div");
+  searchResults.id = "searchResults";
+  searchResults.className = "search-results";
+  searchResults.setAttribute("role", "listbox");
+
+  // Create search button
+  const searchButton = document.createElement("button");
+  searchButton.className = "search-toggle-button";
+  searchButton.setAttribute("aria-label", "Toggle search");
+  searchButton.innerHTML = `
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
     `;
-    
-    // Assemble the components
-    searchInputWrapper.appendChild(searchInput);
-    searchInputWrapper.appendChild(searchResults);
-    searchContainer.appendChild(searchInputWrapper);
-    
-    // Add components to wrapper in correct order (container first, then button)
-    searchWrapper.appendChild(searchContainer);
-    searchWrapper.appendChild(searchButton);
-    header.appendChild(searchWrapper);
-    
-    // Preload search functionality
-    import('/search.js').then(module => {
-        if (!window.searchInitialized) {
-            new module.Search();
-            window.searchInitialized = true;
-        }
-    });
-    
-    // Add click event to toggle search
-    searchButton.addEventListener('click', () => {
-        const isVisible = searchContainer.style.display === 'block';
-        searchContainer.style.display = isVisible ? 'none' : 'block';
-        if (!isVisible) {
-            searchInput.focus();
-        }
-    });
-    
-    // Close search when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!searchButton.contains(e.target) && 
-            !searchContainer.contains(e.target) && 
-            searchContainer.style.display === 'block') {
-            searchContainer.style.display = 'none';
-        }
-    });
-    
-    return header;
+
+  // Assemble the components
+  searchInputWrapper.appendChild(searchInput);
+  searchInputWrapper.appendChild(searchResults);
+  searchContainer.appendChild(searchInputWrapper);
+
+  // Add components to wrapper in correct order (container first, then button)
+  searchWrapper.appendChild(searchContainer);
+  searchWrapper.appendChild(searchButton);
+  header.appendChild(searchWrapper);
+
+  // Initialize search when search is first shown
+  let searchInstance = null;
+
+  // Add click event to toggle search
+  searchButton.addEventListener("click", () => {
+    const isVisible = searchContainer.style.display === "block";
+    searchContainer.style.display = isVisible ? "none" : "block";
+    if (!isVisible) {
+      searchInput.focus();
+      if (!searchInstance) {
+        searchInstance = new Search({
+          type: "global",
+        });
+      }
+    }
+  });
+
+  // Close search when clicking outside
+  document.addEventListener("click", (e) => {
+    if (
+      !searchButton.contains(e.target) &&
+      !searchContainer.contains(e.target) &&
+      searchContainer.style.display === "block"
+    ) {
+      searchContainer.style.display = "none";
+    }
+  });
+
+  return header;
 }
 
 // Add styles
-const style = document.createElement('style');
+const style = document.createElement("style");
 style.textContent = `
     .page-header {
         position: relative;
@@ -203,4 +207,4 @@ style.textContent = `
     }
 `;
 
-document.head.appendChild(style); 
+document.head.appendChild(style);

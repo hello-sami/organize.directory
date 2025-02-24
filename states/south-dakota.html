@@ -91,13 +91,12 @@
         import { createSidebar } from '/components/sidebar.js';
         document.getElementById('sidebar').replaceWith(createSidebar('location'));
     </script>
-    <script src="/theme.js" type="module"></script>
 
     <!-- Initialize Search -->
     <!-- Initialize components -->
     <script type="module">
 
-        import { initializeComponents } from '/init.js';
+        import { initializeComponents } from '/utils/init.js';
         initializeComponents({
             sidebarType: 'location',
             searchHeaderId: 'header'

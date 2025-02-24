@@ -14,7 +14,7 @@ const desiredInitBlock = `
     <!-- Initialize components -->
     <script type="module">
       import { createSidebar } from "/components/sidebar.js";
-      import { initializeComponents } from "/init.js";
+      import { initializeComponents } from "/utils/init.js";
 
       document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("sidebar").replaceWith(createSidebar("location"));

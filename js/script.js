@@ -1,4 +1,4 @@
-import { initiatives, citiesByState } from "./data.js";
+import { initiatives, citiesByState } from "../data/data.js";
 
 // Breaking News Headlines Management
 const breakingNews = {
@@ -677,20 +677,28 @@ function initializeHomePage() {
 }
 
 function initializeSearch(type) {
-  if (!searchInput) return;
+  const searchInput = document.getElementById("searchInput");
+  const resultsContainer = document.getElementById("resultsContainer");
+  if (!searchInput || !resultsContainer) return;
 
-  const handler = debounce(() => {
-    const query = searchInput.value.trim();
-    if (query) {
-      performSearch(query, type);
-    } else if (type === "issues") {
-      showAllIssues();
-    } else {
-      showAllStates();
-    }
-  }, 300);
-
-  searchInput.addEventListener("input", handler);
+  // Initialize search instance
+  const search = new Search({
+    searchInputId: "searchInput",
+    resultsContainerId: "resultsContainer",
+    type: "initiatives",
+    subtype: type,
+    onResultsDisplay: (results) => {
+      if (results.length === 0) {
+        resultsContainer.innerHTML = `
+          <div class="no-results">
+            <p>No ${type === "city" ? "locations" : "initiatives"} found matching your search.</p>
+          </div>
+        `;
+      } else {
+        displayResults(results);
+      }
+    },
+  });
 }
 
 // Initialize the page

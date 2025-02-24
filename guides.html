@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guides - Start a Mutual Aid Network</title>
+    <meta name="description"
+        content="Learn how to start and organize your own mutual aid network with our comprehensive guides and resources.">
+    <meta property="og:title" content="Guides - Start a Mutual Aid Network">
+    <meta property="og:description"
+        content="Learn how to start and organize your own mutual aid network with our comprehensive guides and resources.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/guides">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+
+    <!-- Theme and Components -->
+    <script src="/theme-init.js"></script>
+    <script src="/search-index.js"></script>
+    <script src="/mobile-menu.js"></script>
+    <script type="module">
+        import { createSidebar } from '/components/sidebar.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarContainer = document.getElementById('sidebar-container');
+            const sidebar = createSidebar('guides');
+            sidebarContainer.replaceWith(sidebar);
+        });
+    </script>
+    <script src="/theme.js" type="module"></script>
+</head>
+
+<body>
+    <div class="layout">
+        <div id="sidebar-container"></div>
+
+        <main class="content">
+            <header class="page-header">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <input type="text" id="searchInput" class="search-input"
+                            placeholder="Search mutual aid guides..." aria-label="Search mutual aid guides">
+                        <div id="searchResults" class="search-results" role="listbox"></div>
+                    </div>
+                </div>
+            </header>
+            <h1>Guides for Starting a Mutual Aid Network</h1>
+
+            <section class="resource-section">
+                <h2>Getting Started Guide</h2>
+                <div class="resource-card">
+                    <h3>1. Assess Community Needs</h3>
+                    <ul>
+                        <li>Survey your community to identify gaps in support</li>
+                        <li>Connect with existing community organizations</li>
+                        <li>Document specific needs and resources available</li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <h3>2. Build Your Core Team</h3>
+                    <ul>
+                        <li>Recruit dedicated volunteers</li>
+                        <li>Define roles and responsibilities</li>
+                        <li>Establish communication channels</li>
+                        <li>Create decision-making processes</li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <h3>3. Set Up Infrastructure</h3>
+                    <ul>
+                        <li>Choose communication tools (Signal, WhatsApp, etc.)</li>
+                        <li>Set up resource tracking systems</li>
+                        <li>Create intake forms and processes</li>
+                        <li>Establish safety and security protocols</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="resource-section">
+                <h2>Essential Resources</h2>
+                <div class="resource-grid">
+                    <a href="#" class="resource-link">
+                        <div class="resource-item">
+                            <h3>Organizing Templates</h3>
+                            <p>Download customizable templates for intake forms, volunteer schedules, and resource
+                                tracking.</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-link">
+                        <div class="resource-item">
+                            <h3>Safety Guidelines</h3>
+                            <p>Best practices for maintaining safety and security in mutual aid work.</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-link">
+                        <div class="resource-item">
+                            <h3>Legal Considerations</h3>
+                            <p>Understanding legal frameworks and protecting your mutual aid network.</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-link">
+                        <div class="resource-item">
+                            <h3>Fundraising Guide</h3>
+                            <p>Strategies for sustainable fundraising and resource distribution.</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="resource-section">
+                <h2>Additional Support</h2>
+                <div class="support-container">
+                    <p>Need help getting started? Connect with experienced mutual aid organizers:</p>
+                    <ul>
+                        <li>Join our monthly virtual workshops</li>
+                        <li>Access our mentorship program</li>
+                        <li>Participate in regional networking events</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <button class="theme-toggle" aria-label="Toggle dark mode">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+    </button>
+
+    <!-- Initialize Search -->
+    <script type="module">
+        import { initializeSearch } from '/components/search-header.js';
+        initializeSearch();
+    </script>
+</body>
+
+</html>
