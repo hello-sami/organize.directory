@@ -49,30 +49,17 @@
 
     <!-- Critical Scripts -->
     <script src="/theme-init.js"></script>
-    
-
-    
 
 
-    
-
-
-    
-
-
-    
-    
-    
-    
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
             initializeSidebar('location');
-            
+
             // Initialize other components
             initializeComponents({
                 searchHeaderId: 'header'
@@ -84,7 +71,7 @@
 <body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
-<main class="content" role="main">
+        <main class="content" role="main">
             <h2>Choose a state or search for a city.<h2>
                     <header class="page-header">
                         <div class="search-container">
@@ -161,10 +148,10 @@
     <script src="/js/posts.js" type="module" async></script>
     <script src="/js/search-init.js" defer></script>
     <script src="/js/analytics.js" type="module" async></script>
-    
-        
-        
-        
-    </body>
+
+
+
+
+</body>
 
 </html>

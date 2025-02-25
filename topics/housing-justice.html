@@ -1,47 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Housing Justice Resources - Mutual Aid Network Directory</title>
- <meta name="description" content="Find housing justice resources, research, and support initiatives addressing displacement, tenant rights, and housing access.">
- <meta property="og:title" content="Housing Justice Resources - Mutual Aid Network Directory">
- <meta property="og:description" content="Find housing justice resources, research, and support initiatives addressing displacement, tenant rights, and housing access.">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://organize.directory/issues/housing-justice">
- <meta name="twitter:card" content="summary">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link rel="stylesheet" href="/styles/topics.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Justice Resources - Mutual Aid Network Directory</title>
+    <meta name="description"
+        content="Find housing justice resources, research, and support initiatives addressing displacement, tenant rights, and housing access.">
+    <meta property="og:title" content="Housing Justice Resources - Mutual Aid Network Directory">
+    <meta property="og:description"
+        content="Find housing justice resources, research, and support initiatives addressing displacement, tenant rights, and housing access.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/issues/housing-justice">
+    <meta name="twitter:card" content="summary">
 
-    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/topics.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-
-    
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
 
 
-    
-
-
-    
-    
-    
-    
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
             initializeSidebar('location');
-            
+
             // Initialize other components
             initializeComponents({
                 searchHeaderId: 'header'
@@ -49,45 +39,53 @@
         });
     </script>
 </head>
+
 <body>
- <div class="layout">
+    <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
-<main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="topics-page">
- <div class="breadcrumb">
- <a href="/topics">Issues</a>
- <span>›</span>
- <span>Housing Justice</span>
- </div>
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
 
- <h1>Housing Justice Resources</h1>
- <hr>
 
- <section>
- <h2>Research & Resources</h2>
- <div class="initiative">
- <a href="https://www.urbandisplacement.org/">Urban Displacement Project</a>
- <p>A research initiative fostering mutual aid and housing justice through critical research and community partnerships. They coordinate research on gentrification and displacement, develop policy tools, and build solidarity networks while creating accessible resources for communities fighting displacement and advocating for housing justice.</p>
- </div>
- <div class="initiative">
- <a href="https://www.renters-rising.org/">Renters Rising</a>
- <p>Renters Rising is a national alliance of renters working to shift the balance of power between renters and corporate landlords to guarantee that renters are able to live with dignity.</p>
- </div>
- </section>
 
- <p class="help-text">Know of a housing justice resource or initiative? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
- </div>
- </main>
- </div>
+            <div class="topics-page">
+                <div class="breadcrumb">
+                    <a href="/topics">Issues</a>
+                    <span>›</span>
+                    <span>Housing Justice</span>
+                </div>
 
- <script src="/theme.js" type="module"></script>
+                <h1>Housing Justice Resources</h1>
+                <hr>
 
-     
-        
-        
-    </body>
-</html> 
+                <section>
+                    <h2>Research & Resources</h2>
+                    <div class="initiative">
+                        <a href="https://www.urbandisplacement.org/">Urban Displacement Project</a>
+                        <p>A research initiative fostering mutual aid and housing justice through critical research and
+                            community partnerships. They coordinate research on gentrification and displacement, develop
+                            policy tools, and build solidarity networks while creating accessible resources for
+                            communities fighting displacement and advocating for housing justice.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.renters-rising.org/">Renters Rising</a>
+                        <p>Renters Rising is a national alliance of renters working to shift the balance of power
+                            between renters and corporate landlords to guarantee that renters are able to live with
+                            dignity.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a housing justice resource or initiative? <a
+                        href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="/theme.js" type="module"></script>
+
+
+
+
+</body>
+
+</html>

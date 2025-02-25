@@ -29,30 +29,17 @@
 
     <script src="/theme-init.js"></script>
     <!-- Critical Scripts -->
-    
-
-    
 
 
-    
-
-
-    
-
-
-    
-    
-    
-    
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
             initializeSidebar('location');
-            
+
             // Initialize other components
             initializeComponents({
                 searchHeaderId: 'header'
@@ -64,7 +51,7 @@
 <body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
-<main class="content" role="main">
+        <main class="content" role="main">
             <header id="header" class="page-header"></header>
 
 
@@ -146,9 +133,9 @@
         </main>
     </div>
 
-        
-        
-        
-    </body>
+
+
+
+</body>
 
 </html>

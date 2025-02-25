@@ -13,9 +13,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-
-    <meta name="theme-color" content="#ffffff">
+    <meta name="description" <meta name="theme-color" content="#ffffff">
     <meta name="color-scheme" content="light">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <title>Contact - Mutual Aid Network Directory</title>
@@ -105,30 +103,17 @@
 
     <!-- Critical Scripts -->
     <script src="/theme-init.js"></script>
-    
-
-    
 
 
-    
-
-
-    
-
-
-    
-    
-    
-    
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
             initializeSidebar('location');
-            
+
             // Initialize other components
             initializeComponents({
                 searchHeaderId: 'header'
@@ -140,63 +125,65 @@
 <body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
-<main class="content" role="main">
-        <header id="header" class="page-header"></header>
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
 
-        <div class="contact-content">
-            <h1>Contact Us</h1>
-            <p>Get in touch to add your mutual aid network, suggest improvements, or ask questions about the directory.
-            </p>
+            <div class="contact-content">
+                <h1>Contact Us</h1>
+                <p>Get in touch to add your mutual aid network, suggest improvements, or ask questions about the
+                    directory.
+                </p>
 
-            <form class="contact-form" id="contactForm" action="/form-handler/submit" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+                <form class="contact-form" id="contactForm" action="/form-handler/submit" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="add-network">Add a Mutual Aid Network</option>
+                            <option value="update-info">Update Existing Information</option>
+                            <option value="suggestion">Suggestion</option>
+                            <option value="question">General Question</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+
+                <div class="contact-info">
+                    <h3>About The Directory</h3>
+                    <p>The Organize Directory is a resource for finding and connecting with mutual aid networks and
+                        grassroots
+                        initiatives across different cities and focus areas. We believe in the power of community
+                        support
+                        and
+                        solidarity.</p>
+                    <p>Mutual aid is a form of community support where people work together to meet each other's needs,
+                        based on the principles of solidarity and reciprocity rather than charity.</p>
                 </div>
-
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <select id="subject" name="subject" required>
-                        <option value="">Select a subject</option>
-                        <option value="add-network">Add a Mutual Aid Network</option>
-                        <option value="update-info">Update Existing Information</option>
-                        <option value="suggestion">Suggestion</option>
-                        <option value="question">General Question</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-
-                <button type="submit" class="submit-button">Send Message</button>
-            </form>
-
-            <div class="contact-info">
-                <h3>About The Directory</h3>
-                <p>The Organize Directory is a resource for finding and connecting with mutual aid networks and
-                    grassroots
-                    initiatives across different cities and focus areas. We believe in the power of community support
-                    and
-                    solidarity.</p>
-                <p>Mutual aid is a form of community support where people work together to meet each other's needs,
-                    based on the principles of solidarity and reciprocity rather than charity.</p>
             </div>
-        </div>
-    </main>
+        </main>
 
     </div>
-    
-        
-        
-        
-    </body>
+
+
+
+
+</body>
 
 </html>

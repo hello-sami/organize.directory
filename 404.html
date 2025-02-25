@@ -1,102 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>404 - Page Not Found | Mutual Aid Network Directory</title>
- 
- <!-- Preload critical assets -->
- <link rel="preload" href="/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
- <link rel="preload" href="/fonts/inter-semibold.woff2" as="font" type="font/woff2" crossorigin>
- <link rel="preload" href="/components/sidebar.js" as="script" type="module">
- 
- <!-- Critical CSS -->
- <style>
- :root {
- --primary-color: #2D3748;
- --text-color: #4A5568;
- --light-gray: #F7FAFC;
- --border-color: #E2E8F0;
- --bg-color: white;
- --card-bg: white;
- }
- body {
- margin: 0;
- font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
- line-height: 1.6;
- color: var(--text-color);
- background-color: var(--bg-color);
- text-rendering: optimizeLegibility;
- -webkit-font-smoothing: antialiased;
- }
- .layout {
- display: flex;
- min-height: 100vh;
- }
- .main-content {
- flex: 1;
- margin-left: 250px;
- padding: 2rem;
- }
- .error-content {
- max-width: 600px;
- margin: 4rem auto;
- text-align: center;
- }
- .error-title {
- font-size: 3rem;
- color: var(--primary-color);
- margin-bottom: 1rem;
- }
- .error-message {
- font-size: 1.2rem;
- margin-bottom: 2rem;
- }
- .debug-info {
- background: var(--light-gray);
- padding: 1rem;
- border-radius: 4px;
- margin-top: 2rem;
- text-align: left;
- }
- #requestedPath {
- font-family: monospace;
- word-break: break-all;
- }
- </style>
- 
- <!-- Defer non-critical CSS -->
- <link rel="stylesheet" href="/fonts/fonts.css" media="print" onload="this.media='all'">
- <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
- <noscript>
- <link rel="stylesheet" href="/fonts/fonts.css">
- <link rel="stylesheet" href="/styles.css">
- </noscript>
- 
- <script src="/theme-init.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Mutual Aid Network Directory</title>
 
-    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter-semibold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/components/sidebar.js" as="script" type="module">
 
+    <!-- Critical CSS -->
+    <style>
+        :root {
+            --primary-color: #2D3748;
+            --text-color: #4A5568;
+            --light-gray: #F7FAFC;
+            --border-color: #E2E8F0;
+            --bg-color: white;
+            --card-bg: white;
+        }
 
-    
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
 
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
 
-    
+        .main-content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 2rem;
+        }
 
+        .error-content {
+            max-width: 600px;
+            margin: 4rem auto;
+            text-align: center;
+        }
 
-    
-    
-    
-    
+        .error-title {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .error-message {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .debug-info {
+            background: var(--light-gray);
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        #requestedPath {
+            font-family: monospace;
+            word-break: break-all;
+        }
+    </style>
+
+    <!-- Defer non-critical CSS -->
+    <link rel="stylesheet" href="/fonts/fonts.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="/fonts/fonts.css">
+        <link rel="stylesheet" href="/styles.css">
+    </noscript>
+
+    <script src="/theme-init.js"></script>
+
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
             initializeSidebar('location');
-            
+
             // Initialize other components
             initializeComponents({
                 searchHeaderId: 'header'
@@ -104,21 +100,22 @@
         });
     </script>
 </head>
+
 <body>
- <div class="layout">
+    <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
-<main class="main-content" role="main">
- <div class="error-content">
- <h1 class="error-title">404</h1>
- <p class="error-message">The page you're looking for doesn't exist.</p>
- <p>Try using the navigation menu or search to find what you're looking for.</p>
- <div class="debug-info">
- <h2>Debug Information</h2>
- <p>Requested Path: <span id="requestedPath"></span></p>
- </div>
- </div>
- </main>
- </div>
+        <main class="main-content" role="main">
+            <div class="error-content">
+                <h1 class="error-title">404</h1>
+                <p class="error-message">The page you're looking for doesn't exist.</p>
+                <p>Try using the navigation menu or search to find what you're looking for.</p>
+                <div class="debug-info">
+                    <h2>Debug Information</h2>
+                    <p>Requested Path: <span id="requestedPath"></span></p>
+                </div>
+            </div>
+        </main>
+    </div>
     <!-- Core Scripts -->
     <script src="/js/script.js" type="module" async></script>
     <script src="/search-index.js" type="module" async></script>
@@ -127,9 +124,10 @@
     <script src="/js/posts.js" type="module" async></script>
     <script src="/js/search-init.js" defer></script>
     <script src="/js/analytics.js" type="module" async></script>
-    
-        
-        
-        
-    </body>
-</html> 
+
+
+
+
+</body>
+
+</html>

@@ -1,50 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- 
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Elder Solidarity Organizations & Resources - Mutual Aid Networks</title>
- <meta name="description" content="Directory of elder solidarity organizations, mutual aid networks, and resources working towards intergenerational justice and elder empowerment.">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
 
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elder Solidarity Organizations & Resources - Mutual Aid Networks</title>
+    <meta name="description"
+        content="Directory of elder solidarity organizations, mutual aid networks, and resources working towards intergenerational justice and elder empowerment.">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
 
 
-    
-
-
-    
-
-
-    
-    
-    
-    
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
             initializeSidebar('location');
-            
+
             // Initialize other components
             initializeComponents({
                 searchHeaderId: 'header'
@@ -52,41 +41,48 @@
         });
     </script>
 </head>
+
 <body>
- <div class="layout">
+    <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
-<main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/topics">Issues</a>
- <span>›</span>
- <span>Elder Solidarity</span>
- </div>
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
 
- <h1>Elder Solidarity Organizations & Resources</h1>
- <hr>
 
- <section class="initiatives-section">
- <h2>Elder Activism & Support</h2>
- <div class="initiative">
- <a href="https://radicalelders.net/">Radical Elders<a>
- <p>A network of elder activists fostering mutual aid and intergenerational solidarity through direct action and community organizing. They coordinate elder support initiatives, political education, and solidarity networks while building power through elder wisdom, movement history preservation, and creating spaces for intergenerational learning and collective resistance.</p>
- </div>
- </section>
 
- <p class="help-text">Know of an elder solidarity organization or resource we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
- </div>
- </main>
- </div>
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/topics">Issues</a>
+                    <span>›</span>
+                    <span>Elder Solidarity</span>
+                </div>
 
- <script src="/theme.js" type="module"></script>
+                <h1>Elder Solidarity Organizations & Resources</h1>
+                <hr>
 
-     
-        
-        
-    </body>
-</html> 
+                <section class="initiatives-section">
+                    <h2>Elder Activism & Support</h2>
+                    <div class="initiative">
+                        <a href="https://radicalelders.net/">Radical Elders<a>
+                                <p>A network of elder activists fostering mutual aid and intergenerational solidarity
+                                    through direct action and community organizing. They coordinate elder support
+                                    initiatives, political education, and solidarity networks while building power
+                                    through elder wisdom, movement history preservation, and creating spaces for
+                                    intergenerational learning and collective resistance.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of an elder solidarity organization or resource we should add? <a
+                        href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="/theme.js" type="module"></script>
+
+
+
+
+</body>
+
+</html>

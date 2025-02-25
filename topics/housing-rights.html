@@ -1,47 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Housing Rights Organizations - Mutual Aid Network Directory</title>
- <meta name="description" content="Find organizations working on housing justice, tenant rights, and community-controlled housing.">
- <meta property="og:title" content="Housing Rights Organizations - Mutual Aid Network Directory">
- <meta property="og:description" content="Find organizations working on housing justice, tenant rights, and community-controlled housing.">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://organize.directory/issues/housing-rights">
- <meta name="twitter:card" content="summary">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link rel="stylesheet" href="/styles/topics.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Rights Organizations - Mutual Aid Network Directory</title>
+    <meta name="description"
+        content="Find organizations working on housing justice, tenant rights, and community-controlled housing.">
+    <meta property="og:title" content="Housing Rights Organizations - Mutual Aid Network Directory">
+    <meta property="og:description"
+        content="Find organizations working on housing justice, tenant rights, and community-controlled housing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/issues/housing-rights">
+    <meta name="twitter:card" content="summary">
 
-    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/topics.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-
-    
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
 
 
-    
-
-
-    
-    
-    
-    
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
             initializeSidebar('location');
-            
+
             // Initialize other components
             initializeComponents({
                 searchHeaderId: 'header'
@@ -49,53 +39,58 @@
         });
     </script>
 </head>
+
 <body>
- <div class="layout">
+    <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
-<main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="topics-page">
- <div class="breadcrumb">
- <a href="/topics">Issues</a>
- <span>›</span>
- <span>Housing Rights</span>
- </div>
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
 
- <h1>Housing Rights Organizations</h1>
- <hr>
 
- <section>
- <h2>Organizations & Initiatives</h2>
- <div class="initiative">
- <a href="https://housingnotprofit.org/">Housing Not Profit</a>
- <p>Coalition working to keep housing in community hands through community land trusts and housing cooperatives.</p>
- </div>
- <div class="initiative">
- <a href="https://www.tenantstogether.org/">Tenants Together</a>
- <p>Statewide coalition of local tenant organizations dedicated to defending and advancing the rights of California tenants.</p>
- </div>
- <div class="initiative">
- <a href="https://www.righttocounselnyc.org/">Right to Counsel NYC</a>
- <p>Coalition that won the first right to counsel for tenants facing eviction in the nation.</p>
- </div>
- <div class="initiative">
- <a href="https://atun-rsia.org/">Autonomous Tenants Union Network</a>
- <p>A North American collaborative of tenant unions committed to building tenant power.</p>
- </div>
- </section>
 
- <p class="help-text">Know of an organization working on housing rights? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
- </div>
- </main>
- </div>
+            <div class="topics-page">
+                <div class="breadcrumb">
+                    <a href="/topics">Issues</a>
+                    <span>›</span>
+                    <span>Housing Rights</span>
+                </div>
 
- <script src="/theme.js" type="module"></script>
+                <h1>Housing Rights Organizations</h1>
+                <hr>
 
-     
-        
-        
-    </body>
+                <section>
+                    <h2>Organizations & Initiatives</h2>
+                    <div class="initiative">
+                        <a href="https://housingnotprofit.org/">Housing Not Profit</a>
+                        <p>Coalition working to keep housing in community hands through community land trusts and
+                            housing cooperatives.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.tenantstogether.org/">Tenants Together</a>
+                        <p>Statewide coalition of local tenant organizations dedicated to defending and advancing the
+                            rights of California tenants.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.righttocounselnyc.org/">Right to Counsel NYC</a>
+                        <p>Coalition that won the first right to counsel for tenants facing eviction in the nation.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://atun-rsia.org/">Autonomous Tenants Union Network</a>
+                        <p>A North American collaborative of tenant unions committed to building tenant power.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of an organization working on housing rights? <a
+                        href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="/theme.js" type="module"></script>
+
+
+
+
+</body>
+
 </html>

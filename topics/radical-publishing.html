@@ -1,42 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Radical Publishing Networks - Mutual Aid & Community Resources</title>
- <meta name="description" content="Find radical publishing initiatives and independent media networks building solidarity through critical analysis and revolutionary literature.">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link rel="stylesheet" href="/styles/topics.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radical Publishing Networks - Mutual Aid & Community Resources</title>
+    <meta name="description"
+        content="Find radical publishing initiatives and independent media networks building solidarity through critical analysis and revolutionary literature.">
 
-    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/topics.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
 
 
-    
-
-
-    
-
-
-    
-    
-    
-    
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
             initializeSidebar('location');
-            
+
             // Initialize other components
             initializeComponents({
                 searchHeaderId: 'header'
@@ -44,41 +33,47 @@
         });
     </script>
 </head>
+
 <body>
- <div class="layout">
+    <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
-<main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="topics-page">
- <div class="breadcrumb">
- <a href="/topics">Issues</a>
- <span>›</span>
- <span>Radical Publishing</span>
- </div>
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
 
- <h1>Radical Publishing Networks</h1>
- <hr>
 
- <section>
- <h2>Independent Media</h2>
- <div class="initiative">
- <a href="https://www.fifthestate.org/">Fifth Estate</a>
- <p>A radical anti-authoritarian publishing project active since 1965, coordinating mutual aid and solidarity through critical analysis, revolutionary literature, and independent media. They organize resource sharing and community education while building networks of resistance through anarchist perspectives on politics, culture, and social movements.</p>
- </div>
- </section>
 
- <p class="help-text">Know of a radical publishing initiative we should add? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
- </div>
- </main>
- </div>
+            <div class="topics-page">
+                <div class="breadcrumb">
+                    <a href="/topics">Issues</a>
+                    <span>›</span>
+                    <span>Radical Publishing</span>
+                </div>
 
- <script src="/theme.js" type="module"></script>
+                <h1>Radical Publishing Networks</h1>
+                <hr>
 
-     
-        
-        
-    </body>
-</html> 
+                <section>
+                    <h2>Independent Media</h2>
+                    <div class="initiative">
+                        <a href="https://www.fifthestate.org/">Fifth Estate</a>
+                        <p>A radical anti-authoritarian publishing project active since 1965, coordinating mutual aid
+                            and solidarity through critical analysis, revolutionary literature, and independent media.
+                            They organize resource sharing and community education while building networks of resistance
+                            through anarchist perspectives on politics, culture, and social movements.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a radical publishing initiative we should add? <a
+                        href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="/theme.js" type="module"></script>
+
+
+
+
+</body>
+
+</html>

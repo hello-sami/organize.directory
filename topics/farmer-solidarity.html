@@ -1,48 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Farmer Solidarity & Land Justice Resources - Mutual Aid Networks</title>
- <meta name="description" content="Find mutual aid networks and community support initiatives focused on farmer solidarity, land justice, and agricultural equity.">
- 
- <!-- Open Graph tags -->
- <meta property="og:title" content="Farmer Solidarity & Land Justice Resources - Mutual Aid Networks">
- <meta property="og:description" content="Find mutual aid networks and community support initiatives focused on farmer solidarity, land justice, and agricultural equity.">
- <meta property="og:type" content="website">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link rel="stylesheet" href="/styles/topics.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <!-- Theme -->
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Solidarity & Land Justice Resources - Mutual Aid Networks</title>
+    <meta name="description"
+        content="Find mutual aid networks and community support initiatives focused on farmer solidarity, land justice, and agricultural equity.">
 
-    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Farmer Solidarity & Land Justice Resources - Mutual Aid Networks">
+    <meta property="og:description"
+        content="Find mutual aid networks and community support initiatives focused on farmer solidarity, land justice, and agricultural equity.">
+    <meta property="og:type" content="website">
 
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/topics.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    
+    <!-- Theme -->
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
 
 
-    
-
-
-    
-    
-    
-    
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
             initializeSidebar('location');
-            
+
             // Initialize other components
             initializeComponents({
                 searchHeaderId: 'header'
@@ -50,41 +40,48 @@
         });
     </script>
 </head>
+
 <body>
- <div class="layout">
+    <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
-<main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="topics-page">
- <div class="breadcrumb">
- <a href="/topics">Issues</a>
- <span>›</span>
- <span>Farmer Solidarity</span>
- </div>
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
 
- <h1>Farmer Solidarity & Land Justice</h1>
- <hr>
 
- <section>
- <h2>National Organizations</h2>
- <div class="initiative">
- <a href="https://www.agrariantrust.org/">Agrarian Trust</a>
- <p>A national land trust fostering mutual aid and land justice through community land ownership and stewardship opportunities. They coordinate land access initiatives, support next-generation farmers, and build solidarity networks while working towards equitable access, cultural reconnection, and regenerative agriculture through their Agrarian Commons model and community-based land ownership programs.</p>
- </div>
- </section>
 
- <p class="help-text">Know of a farmer solidarity or land justice initiative? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
- </div>
- </main>
- </div>
+            <div class="topics-page">
+                <div class="breadcrumb">
+                    <a href="/topics">Issues</a>
+                    <span>›</span>
+                    <span>Farmer Solidarity</span>
+                </div>
 
- <script src="/theme.js" type="module"></script>
+                <h1>Farmer Solidarity & Land Justice</h1>
+                <hr>
 
-     
-        
-        
-    </body>
-</html> 
+                <section>
+                    <h2>National Organizations</h2>
+                    <div class="initiative">
+                        <a href="https://www.agrariantrust.org/">Agrarian Trust</a>
+                        <p>A national land trust fostering mutual aid and land justice through community land ownership
+                            and stewardship opportunities. They coordinate land access initiatives, support
+                            next-generation farmers, and build solidarity networks while working towards equitable
+                            access, cultural reconnection, and regenerative agriculture through their Agrarian Commons
+                            model and community-based land ownership programs.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a farmer solidarity or land justice initiative? <a
+                        href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="/theme.js" type="module"></script>
+
+
+
+
+</body>
+
+</html>

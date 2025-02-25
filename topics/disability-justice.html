@@ -1,41 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Disability Justice Mutual Aid - Support Networks & Community Resources</title>
- <meta name="description" content="Find disability justice mutual aid initiatives and community support networks.">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disability Justice Mutual Aid - Support Networks & Community Resources</title>
+    <meta name="description" content="Find disability justice mutual aid initiatives and community support networks.">
 
-    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
 
 
-    
-
-
-    
-
-
-    
-    
-    
-    
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
             initializeSidebar('location');
-            
+
             // Initialize other components
             initializeComponents({
                 searchHeaderId: 'header'
@@ -43,44 +31,50 @@
         });
     </script>
 </head>
+
 <body>
- <div class="layout">
+    <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
-<main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="city-page">
- <div class="breadcrumb">
- <a href="/topics">Issues</a>
- <span>›</span>
- <span>Disability Justice</span>
- </div>
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
 
- <h1>Disability Justice</h1>
- <hr>
 
- <section class="initiatives">
- <h2>Mutual Aid Networks</h2>
- <div class="initiative">
- <a href="https://www.instagram.com/sickinquarters/">Sick in Quarters</a>
- <p>A disability justice mutual aid collective providing direct support and solidarity for chronically ill and disabled communities. They coordinate resource sharing, community care initiatives, and mutual aid networks while building power through disability justice organizing and collective care.</p>
- </div>
- </section>
 
- <p class="help-text">Know of a disability justice mutual aid initiative? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
- </div>
- <footer class="site-footer">
- <p>Awareness into action. Solidarity not charity.</p>
- </footer>
- </main>
- </div>
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/topics">Issues</a>
+                    <span>›</span>
+                    <span>Disability Justice</span>
+                </div>
 
- <script src="/theme.js" type="module"></script>
+                <h1>Disability Justice</h1>
+                <hr>
 
-     
-        
-        
-    </body>
-</html> 
+                <section class="initiatives">
+                    <h2>Mutual Aid Networks</h2>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/sickinquarters/">Sick in Quarters</a>
+                        <p>A disability justice mutual aid collective providing direct support and solidarity for
+                            chronically ill and disabled communities. They coordinate resource sharing, community care
+                            initiatives, and mutual aid networks while building power through disability justice
+                            organizing and collective care.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a disability justice mutual aid initiative? <a
+                        href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+            <footer class="site-footer">
+                <p>Awareness into action. Solidarity not charity.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="/theme.js" type="module"></script>
+
+
+
+
+</body>
+
+</html>

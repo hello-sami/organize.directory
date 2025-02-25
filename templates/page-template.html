@@ -1,48 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <!-- Google Analytics -->
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
- <script>
- window.dataLayer = window.dataLayer || [];
- function gtag(){dataLayer.push(arguments);}
- gtag('js', new Date());
- gtag('config', 'G-QJ03RCM35H');
- </script>
- 
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>PAGE_TITLE</title>
- <meta name="description" content="PAGE_DESCRIPTION">
- <meta property="og:title" content="PAGE_OG_TITLE">
- <meta property="og:description" content="PAGE_OG_DESCRIPTION">
- <meta property="og:type" content="website">
- <link rel="stylesheet" href="/styles.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- <script src="/theme-init.js"></script>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
 
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGE_TITLE</title>
+    <meta name="description" content="PAGE_DESCRIPTION">
+    <meta property="og:title" content="PAGE_OG_TITLE">
+    <meta property="og:description" content="PAGE_OG_DESCRIPTION">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="/theme-init.js"></script>
 
-
-    
-
-
-    
-
-
-    
-    
-    
-    
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
             initializeSidebar('location');
-            
+
             // Initialize other components
             initializeComponents({
                 searchHeaderId: 'header'
@@ -50,19 +38,21 @@
         });
     </script>
 </head>
-<body>
- <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
-<main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- <!-- Page specific content goes here -->
- 
- </main>
- </div>
 
-     
-        
-        
-    </body>
-</html> 
+<body>
+    <div class="layout">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
+
+            <!-- Page specific content goes here -->
+
+        </main>
+    </div>
+
+
+
+
+</body>
+
+</html>

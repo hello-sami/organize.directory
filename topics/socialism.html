@@ -1,42 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Socialist Organizations - Mutual Aid Network Directory</title>
- <meta name="description" content="Find mutual aid networks and community support initiatives focused on socialist organizing and solidarity.">
- 
- <!-- Styles -->
- <link rel="stylesheet" href="/styles.css">
- <link rel="stylesheet" href="/styles/topics.css">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
- <script src="/theme-init.js" ></script>
- <!-- Critical Scripts -->
- 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socialist Organizations - Mutual Aid Network Directory</title>
+    <meta name="description"
+        content="Find mutual aid networks and community support initiatives focused on socialist organizing and solidarity.">
 
-    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/topics.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script src="/theme-init.js"></script>
+    <!-- Critical Scripts -->
 
 
-    
-
-
-    
-
-
-    
-    
-    
-    
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
-        
+
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
             initializeSidebar('location');
-            
+
             // Initialize other components
             initializeComponents({
                 searchHeaderId: 'header'
@@ -44,44 +33,52 @@
         });
     </script>
 </head>
+
 <body>
- <div class="layout">
+    <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
-<main class="content" role="main">
- <header id="header" class="page-header"></header>
- 
- 
- 
- <div class="topics-page">
- <div class="breadcrumb">
- <a href="/topics">Issues</a>
- <span>›</span>
- <span>Socialist Organizations</span>
- </div>
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
 
- <h1>Socialist Organizations</h1>
- <hr>
 
- <section>
- <div class="initiative">
- <a href="https://frso.org/">Freedom Road Socialist Organization</a>
- <p>A national organization fighting for working class liberation and socialism. FRSO works to build the people's struggle, promote solidarity between movements, and advance revolutionary theory and practice while supporting mutual aid initiatives across communities.</p>
- </div>
- <div class="initiative">
- <a href="https://www.blackrosefed.org/">Black Rose Anarchist Federation</a>
- <p>A national organization coordinating mutual aid and community power building through anarchist principles. They organize direct support initiatives, resource sharing, and solidarity networks while building autonomous movements for liberation through local chapters, political education, and collective action.</p>
- </div>
- </section>
 
- <p class="help-text">Know of a socialist organization involved in mutual aid? <a href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
- </div>
- </main>
- </div>
+            <div class="topics-page">
+                <div class="breadcrumb">
+                    <a href="/topics">Issues</a>
+                    <span>›</span>
+                    <span>Socialist Organizations</span>
+                </div>
 
- <script src="/theme.js" type="module"></script>
+                <h1>Socialist Organizations</h1>
+                <hr>
 
-     
-        
-        
-    </body>
-</html> 
+                <section>
+                    <div class="initiative">
+                        <a href="https://frso.org/">Freedom Road Socialist Organization</a>
+                        <p>A national organization fighting for working class liberation and socialism. FRSO works to
+                            build the people's struggle, promote solidarity between movements, and advance revolutionary
+                            theory and practice while supporting mutual aid initiatives across communities.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.blackrosefed.org/">Black Rose Anarchist Federation</a>
+                        <p>A national organization coordinating mutual aid and community power building through
+                            anarchist principles. They organize direct support initiatives, resource sharing, and
+                            solidarity networks while building autonomous movements for liberation through local
+                            chapters, political education, and collective action.</p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of a socialist organization involved in mutual aid? <a
+                        href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="/theme.js" type="module"></script>
+
+
+
+
+</body>
+
+</html>

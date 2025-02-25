@@ -1,7 +1,6 @@
 // Sidebar component
 export function createSidebar(activePage) {
-     // Create the content but don't return it directly
-     const content = `
+     return `
         <h1><a href="/" class="home-link">The Organize Directory</a></h1>
         <nav>
             <a href="/" class="nav-link ${activePage === "home" ? "active" : ""}">Home</a>
@@ -17,8 +16,6 @@ export function createSidebar(activePage) {
             Solidarity not charity.<br>
             Awareness into action.
         </div>`;
-
-     return content;
 }
 
 // Function to initialize the sidebar
@@ -31,39 +28,44 @@ export function initializeSidebar(activePage) {
      }
 
      try {
-          // Only initialize content if sidebar is empty
+          // Initialize content only once if it's empty
           if (!sidebar.querySelector("nav")) {
                sidebar.innerHTML = createSidebar(activePage);
+
+               // Add mobile menu button if it doesn't exist
+               if (!document.querySelector(".mobile-menu-button")) {
+                    const menuButton = document.createElement("button");
+                    menuButton.className = "mobile-menu-button";
+                    menuButton.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    `;
+                    document.body.insertBefore(
+                         menuButton,
+                         document.body.firstChild
+                    );
+
+                    // Add mobile menu functionality
+                    menuButton.addEventListener("click", () => {
+                         sidebar.classList.toggle("active");
+                         document.body.classList.toggle("menu-open");
+                    });
+               }
           } else {
-               // Just update the active states
+               // Just update the active states without modifying the content
                const links = sidebar.querySelectorAll(".nav-link");
                links.forEach((link) => {
-                    link.classList.remove("active");
-                    if (
-                         (link.getAttribute("href") === "/" &&
-                              activePage === "home") ||
-                         link.getAttribute("href").slice(1) === activePage
-                    ) {
+                    const href = link.getAttribute("href");
+                    const isHome = href === "/" && activePage === "home";
+                    const isCurrentPage = href.slice(1) === activePage;
+
+                    // Only toggle class if needed
+                    if (isHome || isCurrentPage) {
                          link.classList.add("active");
+                    } else {
+                         link.classList.remove("active");
                     }
-               });
-          }
-
-          // Add mobile menu button if it doesn't exist
-          if (!document.querySelector(".mobile-menu-button")) {
-               const menuButton = document.createElement("button");
-               menuButton.className = "mobile-menu-button";
-               menuButton.innerHTML = `
-               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-               </svg>
-               `;
-               document.body.insertBefore(menuButton, document.body.firstChild);
-
-               // Add mobile menu functionality
-               menuButton.addEventListener("click", () => {
-                    sidebar.classList.toggle("active");
-                    document.body.classList.toggle("menu-open");
                });
           }
      } catch (error) {
