@@ -27,50 +27,61 @@ export function initializeSidebar(activePage) {
           return;
      }
 
-     try {
-          // Initialize content only once if it's empty
-          if (!sidebar.querySelector("nav")) {
-               sidebar.innerHTML = createSidebar(activePage);
+     // Create a promise that resolves when the DOM is ready
+     const domReady =
+          document.readyState === "loading"
+               ? new Promise((resolve) =>
+                      document.addEventListener("DOMContentLoaded", resolve)
+                 )
+               : Promise.resolve();
 
-               // Add mobile menu button if it doesn't exist
-               if (!document.querySelector(".mobile-menu-button")) {
-                    const menuButton = document.createElement("button");
-                    menuButton.className = "mobile-menu-button";
-                    menuButton.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    `;
-                    document.body.insertBefore(
-                         menuButton,
-                         document.body.firstChild
-                    );
+     // Initialize content and mobile menu
+     domReady.then(() => {
+          try {
+               // Initialize content only once if it's empty
+               if (!sidebar.querySelector("nav")) {
+                    sidebar.innerHTML = createSidebar(activePage);
 
-                    // Add mobile menu functionality
-                    menuButton.addEventListener("click", () => {
-                         sidebar.classList.toggle("active");
-                         document.body.classList.toggle("menu-open");
+                    // Add mobile menu button if it doesn't exist
+                    if (!document.querySelector(".mobile-menu-button")) {
+                         const menuButton = document.createElement("button");
+                         menuButton.className = "mobile-menu-button";
+                         menuButton.innerHTML = `
+                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                         </svg>
+                         `;
+                         document.body.insertBefore(
+                              menuButton,
+                              document.body.firstChild
+                         );
+
+                         // Add mobile menu functionality
+                         menuButton.addEventListener("click", () => {
+                              sidebar.classList.toggle("active");
+                              document.body.classList.toggle("menu-open");
+                         });
+                    }
+               } else {
+                    // Just update the active states without modifying the content
+                    const links = sidebar.querySelectorAll(".nav-link");
+                    links.forEach((link) => {
+                         const href = link.getAttribute("href");
+                         const isHome = href === "/" && activePage === "home";
+                         const isCurrentPage = href.slice(1) === activePage;
+
+                         // Only toggle class if needed
+                         if (isHome || isCurrentPage) {
+                              link.classList.add("active");
+                         } else {
+                              link.classList.remove("active");
+                         }
                     });
                }
-          } else {
-               // Just update the active states without modifying the content
-               const links = sidebar.querySelectorAll(".nav-link");
-               links.forEach((link) => {
-                    const href = link.getAttribute("href");
-                    const isHome = href === "/" && activePage === "home";
-                    const isCurrentPage = href.slice(1) === activePage;
-
-                    // Only toggle class if needed
-                    if (isHome || isCurrentPage) {
-                         link.classList.add("active");
-                    } else {
-                         link.classList.remove("active");
-                    }
-               });
+          } catch (error) {
+               console.error("Error initializing sidebar:", error);
           }
-     } catch (error) {
-          console.error("Error initializing sidebar:", error);
-     }
+     });
 }
 
 // Function to handle relative paths in subdirectories
