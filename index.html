@@ -12,52 +12,17 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <title>Mutual Aid Network Directory</title>
 
-    <!-- Critical CSS -->
-    <style>
-        /* Critical rendering path styles */
-        :root {
-            --primary-color: #2D3748;
-            --text-color: #4A5568;
-            --light-gray: #F7FAFC;
-            --border-color: #E2E8F0;
-            --bg-color: white;
-            --card-bg: white;
-            --sidebar-width: 250px;
-        }
+    <!-- Resource hints for faster loading -->
+    <link rel="preload" href="/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        body {
-            margin: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-        }
-
-        .layout {
-            display: flex;
-            min-height: 100vh;
-        }
-
-        .content {
-            flex: 1;
-            margin-left: var(--sidebar-width);
-            padding: 2rem;
-        }
-
-        /* Critical sidebar styles */
-        .sidebar {
-            width: var(--sidebar-width);
-            height: 100vh;
-            position: fixed;
-            padding: 2rem;
-            box-sizing: border-box;
-            background: var(--card-bg);
-            overflow-y: auto;
-        }
-    </style>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="/styles.css" as="style">
     <link rel="preload" href="/components/sidebar.js" as="script">
 
     <!-- Deferred CSS -->
