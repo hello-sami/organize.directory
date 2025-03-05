@@ -12,39 +12,62 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <title>Mutual Aid Network Directory</title>
 
-    <!-- DNS Prefetch -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <!-- Critical CSS -->
+    <style>
+        /* Critical rendering path styles */
+        :root {
+            --primary-color: #2D3748;
+            --text-color: #4A5568;
+            --light-gray: #F7FAFC;
+            --border-color: #E2E8F0;
+            --bg-color: white;
+            --card-bg: white;
+            --sidebar-width: 250px;
+        }
 
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://www.google-analytics.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
 
-    <!-- Load CSS -->
-    <link rel="stylesheet" href="/fonts/fonts.css">
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
 
-    <!-- Critical Scripts -->
-    <script src="/js/theme-init.js"></script>
+        .content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            padding: 2rem;
+        }
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+        /* Critical sidebar styles */
+        .sidebar {
+            width: var(--sidebar-width);
+            height: 100vh;
+            position: fixed;
+            padding: 2rem;
+            box-sizing: border-box;
+            background: var(--card-bg);
+            overflow-y: auto;
+        }
+    </style>
 
-        // Initialize sidebar first
-        initializeSidebar('home');
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/styles.css" as="style">
+    <link rel="preload" href="/components/sidebar.js" as="script">
 
-        // Initialize other components
-        initializeComponents({
-            searchHeaderId: 'header'
-        });
-    </script>
+    <!-- Deferred CSS -->
+    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    </noscript>
 </head>
 
 <body>
@@ -67,16 +90,6 @@
             </div>
         </div>
 
-    </head>
-
-<body>
-    
-    <!-- Critical Scripts -->
-
-    </head>
-
-<body>
-    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 
@@ -93,13 +106,22 @@
                     <!-- Posts will be dynamically loaded here -->
                 </div>
             </section>
-
         </main>
     </div>
 
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
 
-
-
+        // Initialize components after DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeSidebar('home');
+            initializeComponents({
+                searchHeaderId: 'header'
+            });
+        });
+    </script>
 </body>
 
 </html>

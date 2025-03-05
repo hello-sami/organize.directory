@@ -100,9 +100,6 @@ function updateActiveStates(sidebar, activePage) {
 
 // Function to initialize the sidebar
 export function initializeSidebar(activePage) {
-     // Initialize critical styles first
-     initializeCriticalStyles();
-
      const sidebar = document.getElementById("sidebar");
      if (!sidebar) {
           console.error("Sidebar element not found");
@@ -117,10 +114,10 @@ export function initializeSidebar(activePage) {
           const menuButton = document.createElement("button");
           menuButton.className = "mobile-menu-button";
           menuButton.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        `;
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+               </svg>
+          `;
           document.body.insertBefore(menuButton, document.body.firstChild);
 
           // Add mobile menu functionality
