@@ -20,6 +20,11 @@
     <meta property="og:description"
         content="Find mutual aid networks and community support initiatives in Nebraska cities including Omaha, Lincoln, Grand Island, and more.">
     <meta property="og:type" content="website">
+
+    <!-- Critical modules -->
+    <script type="module">
+                window.initializeSidebar = initializeSidebar;
+    </script>
     <meta property="og:url" content="https://organize.directory/nebraska">
     <meta name="twitter:card" content="summary">
 
@@ -33,12 +38,11 @@
 
     <!-- Initialize Components -->
     <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+                import { initializeComponents } from '/utils/init.js';
 
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
-            initializeSidebar('location');
+            window.initializeSidebar('location');
 
             // Initialize other components
             initializeComponents({

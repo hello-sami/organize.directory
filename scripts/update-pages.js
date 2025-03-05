@@ -1,101 +1,79 @@
-import { glob } from "glob";
 import { readFileSync, writeFileSync } from "fs";
+import { join } from "path";
+import { glob } from "glob";
 
-const updateHtmlFile = (filePath) => {
-     let content = readFileSync(filePath, "utf8");
-
-     // Remove any existing sidebar HTML structure and text content
-     content = content.replace(
-          /<h1><a[^>]*>The Organize Directory<\/a>[\s\S]*?<\/div>/g,
-          ""
-     );
-     content = content.replace(/<aside[^>]*>[\s\S]*?<\/aside>/g, "");
-
-     // Remove any plaintext sidebar content between layout and main content
-     content = content.replace(
-          /<div class="layout">\s*([^<]*(?:<(?!main|div)[^>]*>[^<]*)*)<(main|div)/g,
-          '<div class="layout">\n        <$2'
-     );
-
-     // Clean up any empty script tags and comments
-     content = content.replace(/<!--\s*Initialize Sidebar\s*-->\s*\n?\s*/g, "");
-     content = content.replace(
-          /<!--\s*Initialize other components\s*-->\s*\n?\s*/g,
-          ""
-     );
-     content = content.replace(
-          /<!--\s*Theme and Components\s*-->\s*\n?\s*/g,
-          ""
-     );
-     content = content.replace(
-          /<!--\s*Initialize components\s*-->\s*\n?\s*/g,
-          ""
-     );
-     content = content.replace(/<!--\s*Scripts\s*-->\s*\n?\s*/g, "");
-     content = content.replace(/<!--\s*Initialize Search\s*-->\s*\n?\s*/g, "");
-
-     // Remove all existing initialization scripts
-     content = content.replace(
-          /<script type="module">\s*import\s*{\s*[^}]*}\s*from\s*['"][^'"]*['"];\s*[^<]*<\/script>\s*\n?/g,
-          ""
-     );
-
-     // Add initialization scripts to head
-     const initScripts = `
-    <!-- Initialize Components -->
+// Critical sidebar initialization code to insert
+const criticalSidebarInit = `
+    <!-- Critical modules -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize sidebar first
-            initializeSidebar('${filePath.includes("/topics/") ? "topic" : "location"}');
-            
-            // Initialize other components
-            initializeComponents({
-                searchHeaderId: 'header'
-            });
-        });
-    </script>`;
+        window.initializeSidebar = initializeSidebar;
+    </script>
+`;
 
-     // Add the init scripts before </head>
-     content = content.replace("</head>", `${initScripts}\n</head>`);
+// Function to update a single HTML file
+function updateHtmlFile(filePath) {
+     let content = readFileSync(filePath, "utf8");
 
-     // Ensure proper layout structure
-     if (!content.includes('<div class="layout">')) {
-          content = content.replace(
-               /<body[^>]*>/,
-               '$&\n    <div class="layout">'
-          );
-          content = content.replace("</body>", "    </div>\n</body>");
+     // Skip if already has the critical modules section
+     if (content.includes("<!-- Critical modules -->")) {
+          console.log(`Skipping ${filePath} - already updated`);
+          return;
      }
 
-     // Add the empty sidebar div if it doesn't exist
-     if (!content.includes('id="sidebar"')) {
-          content = content.replace(
-               /<div class="layout">\s*/,
-               `<div class="layout">\n        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>\n`
-          );
-     }
+     // Find the position to insert the critical sidebar init
+     // Look for common meta tags that appear in the head
+     const insertAfterPatterns = [
+          '<meta property="og:type" content="website">',
+          '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
+          "<!-- Google Analytics -->",
+     ];
 
-     writeFileSync(filePath, content, "utf8");
-     console.log(`Updated ${filePath}`);
-};
-
-const main = async () => {
-     try {
-          const files = await glob("**/*.html");
-          console.log(`Found ${files.length} HTML files to update`);
-
-          for (const file of files) {
-               updateHtmlFile(file);
+     let insertPosition = -1;
+     for (const pattern of insertAfterPatterns) {
+          const pos = content.indexOf(pattern);
+          if (pos !== -1) {
+               insertPosition = content.indexOf("\n", pos) + 1;
+               break;
           }
-
-          console.log("All files updated successfully");
-     } catch (error) {
-          console.error("Error updating files:", error);
-          process.exit(1);
      }
-};
 
-main();
+     if (insertPosition === -1) {
+          console.error(`Could not find insertion point in ${filePath}`);
+          return;
+     }
+
+     // Insert the critical sidebar initialization
+     const newContent =
+          content.slice(0, insertPosition) +
+          criticalSidebarInit +
+          content.slice(insertPosition);
+
+     // Update initializeSidebar call if it exists
+     const updatedContent = newContent
+          .replace(
+               /import\s*{\s*initializeSidebar\s*}\s*from\s*['"]\/components\/sidebar\.js['"];?\s*\n/g,
+               ""
+          )
+          .replace(
+               /initializeSidebar\(['"]([^'"]+)['"]\)/g,
+               "window.initializeSidebar('$1')"
+          );
+
+     // Write the updated content back to the file
+     writeFileSync(filePath, updatedContent);
+     console.log(`Updated ${filePath}`);
+}
+
+// Find all HTML files in the project
+const htmlFiles = await glob("**/*.html", {
+     ignore: ["node_modules/**", "dist/**"],
+});
+
+// Update each HTML file
+htmlFiles.forEach((file) => {
+     const filePath = join(process.cwd(), file);
+     updateHtmlFile(filePath);
+});
+
+console.log("Finished updating HTML files");

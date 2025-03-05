@@ -25,6 +25,11 @@
     content="Find mutual aid initiatives and community support networks in Lancaster, Pennsylvania. Connect with local organizations providing community-based support.">
   <meta property="og:url" content="https://organize.directory/lancaster">
   <meta property="og:type" content="website">
+
+    <!-- Critical modules -->
+    <script type="module">
+                window.initializeSidebar = initializeSidebar;
+    </script>
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
@@ -41,12 +46,11 @@
 
   <!-- Initialize Components -->
   <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
+        import { initializeComponents } from '/utils/init.js';
 
     document.addEventListener('DOMContentLoaded', () => {
       // Initialize sidebar first
-      initializeSidebar('location');
+      window.initializeSidebar('location');
 
       // Initialize other components
       initializeComponents({

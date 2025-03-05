@@ -15,6 +15,11 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Critical modules -->
+    <script type="module">
+                window.initializeSidebar = initializeSidebar;
+    </script>
   <title>
     Rio Grande Valley Mutual Aid Networks - Local Support & Community
     Resources
@@ -36,12 +41,11 @@
 
   <!-- Initialize Components -->
   <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
+        import { initializeComponents } from '/utils/init.js';
 
     document.addEventListener('DOMContentLoaded', () => {
       // Initialize sidebar first
-      initializeSidebar('location');
+      window.initializeSidebar('location');
 
       // Initialize other components
       initializeComponents({

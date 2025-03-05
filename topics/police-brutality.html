@@ -13,6 +13,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Critical modules -->
+    <script type="module">
+                window.initializeSidebar = initializeSidebar;
+    </script>
     <title>Police Brutality Resources & Support Networks - Mutual Aid Directory</title>
     <meta name="description"
         content="Find organizations and resources focused on addressing police brutality, supporting victims, and building community safety alternatives.">
@@ -27,12 +32,11 @@
 
     <!-- Initialize Components -->
     <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+                import { initializeComponents } from '/utils/init.js';
 
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
-            initializeSidebar('location');
+            window.initializeSidebar('location');
 
             // Initialize other components
             initializeComponents({

@@ -13,6 +13,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Critical modules -->
+    <script type="module">
+                window.initializeSidebar = initializeSidebar;
+    </script>
     <meta name="description" <meta name="theme-color" content="#ffffff">
     <meta name="color-scheme" content="light">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -107,12 +112,11 @@
 
     <!-- Initialize Components -->
     <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+                import { initializeComponents } from '/utils/init.js';
 
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
-            initializeSidebar('location');
+            window.initializeSidebar('location');
 
             // Initialize other components
             initializeComponents({

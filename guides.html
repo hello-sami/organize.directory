@@ -11,6 +11,11 @@
     <meta property="og:description"
         content="Learn how to start and organize your own mutual aid network with our comprehensive guides and resources.">
     <meta property="og:type" content="website">
+
+    <!-- Critical modules -->
+    <script type="module">
+                window.initializeSidebar = initializeSidebar;
+    </script>
     <meta property="og:url" content="https://organize.directory/guides">
     <meta name="twitter:card" content="summary">
 
@@ -34,12 +39,11 @@
 
     <!-- Initialize Components -->
     <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+                import { initializeComponents } from '/utils/init.js';
 
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
-            initializeSidebar('guides');
+            window.initializeSidebar('guides');
 
             // Initialize other components
             initializeComponents({});

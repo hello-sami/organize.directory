@@ -13,6 +13,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Critical modules -->
+    <script type="module">
+                window.initializeSidebar = initializeSidebar;
+    </script>
     <title>Elder Solidarity Organizations & Resources - Mutual Aid Networks</title>
     <meta name="description"
         content="Directory of elder solidarity organizations, mutual aid networks, and resources working towards intergenerational justice and elder empowerment.">
@@ -27,12 +32,11 @@
 
     <!-- Initialize Components -->
     <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+                import { initializeComponents } from '/utils/init.js';
 
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize sidebar first
-            initializeSidebar('location');
+            window.initializeSidebar('location');
 
             // Initialize other components
             initializeComponents({

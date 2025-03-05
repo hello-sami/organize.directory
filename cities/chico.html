@@ -14,6 +14,11 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
+
+    <!-- Critical modules -->
+    <script type="module">
+                window.initializeSidebar = initializeSidebar;
+    </script>
   <meta property="og:url" content="https://organize.directory/chico">
   <meta property="og:title" content="Chico Mutual Aid Networks - Local Support & Community Resources">
   <meta property="og:description"
@@ -41,12 +46,11 @@
 
   <!-- Initialize Components -->
   <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
+        import { initializeComponents } from '/utils/init.js';
 
     document.addEventListener('DOMContentLoaded', () => {
       // Initialize sidebar first
-      initializeSidebar('location');
+      window.initializeSidebar('location');
 
       // Initialize other components
       initializeComponents({

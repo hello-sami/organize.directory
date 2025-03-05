@@ -9,6 +9,11 @@
 
   <!-- Open Graph and Twitter Tags -->
   <meta property="og:type" content="website">
+
+    <!-- Critical modules -->
+    <script type="module">
+                window.initializeSidebar = initializeSidebar;
+    </script>
   <meta property="og:title" content="Mutual Aid in Meadville - Local Support Networks">
   <meta property="og:description"
     content="Find mutual aid initiatives and community support networks in Meadville, Pennsylvania. Connect with local organizations providing community-based support.">
@@ -43,12 +48,11 @@
 
   <!-- Initialize Components -->
   <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
+        import { initializeComponents } from '/utils/init.js';
 
     document.addEventListener('DOMContentLoaded', () => {
       // Initialize sidebar first
-      initializeSidebar('location');
+      window.initializeSidebar('location');
 
       // Initialize other components
       initializeComponents({

@@ -13,6 +13,11 @@
   <meta property="og:description"
     content="Find mutual aid networks and community support initiatives in New Orleans, Louisiana.">
   <meta property="og:type" content="website">
+
+    <!-- Critical modules -->
+    <script type="module">
+                window.initializeSidebar = initializeSidebar;
+    </script>
   <meta property="og:url" content="https://organize.directory/new-orleans">
   <meta name="twitter:card" content="summary">
 
@@ -41,12 +46,11 @@
 
   <!-- Initialize Components -->
   <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
+        import { initializeComponents } from '/utils/init.js';
 
     document.addEventListener('DOMContentLoaded', () => {
       // Initialize sidebar first
-      initializeSidebar('location');
+      window.initializeSidebar('location');
 
       // Initialize other components
       initializeComponents({

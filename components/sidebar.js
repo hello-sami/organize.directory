@@ -16,38 +16,63 @@ const initialSidebar = `
         Awareness into action.
     </div>`;
 
-// Add styles immediately to prevent FOUC (Flash of Unstyled Content)
-const sidebarStyles = `
-    <style id="sidebar-styles">
-        .sidebar {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0.2s ease-in-out;
-        }
-        .sidebar.loading {
-            opacity: 0.8;
-            visibility: visible;
-        }
-        .sidebar.loaded {
-            opacity: 1;
-            visibility: visible;
-        }
-    </style>
+// Critical styles that must be inlined in the head
+const criticalStyles = `
+    .sidebar {
+        opacity: 1 !important;
+        visibility: visible !important;
+        background: var(--sidebar-bg, #FDF2F8);
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        padding: 2rem;
+        box-sizing: border-box;
+        overflow-y: auto;
+        z-index: 100;
+    }
+    .sidebar h1 {
+        margin: 0 0 2rem 0;
+        font-size: 1.5rem;
+    }
+    .sidebar nav {
+        margin-bottom: 2rem;
+    }
+    .sidebar .nav-link {
+        display: block;
+        padding: 0.5rem 0;
+        color: inherit;
+        text-decoration: none;
+    }
+    .sidebar .nav-group-title {
+        display: block;
+        font-weight: 600;
+        margin: 0.5rem 0;
+    }
+    .sidebar .nav-link-indented {
+        padding-left: 1rem;
+    }
+    .sidebar .sidebar-motto {
+        font-style: italic;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+    }
 `;
 
-// Immediately initialize sidebar and styles if possible
-if (typeof document !== "undefined") {
-     // Add styles first
-     if (!document.getElementById("sidebar-styles")) {
-          document.head.insertAdjacentHTML("beforeend", sidebarStyles);
-     }
+// Immediately initialize sidebar and styles
+(function () {
+     if (typeof document !== "undefined") {
+          // Add critical styles to head
+          const styleEl = document.createElement("style");
+          styleEl.textContent = criticalStyles;
+          document.head.insertBefore(styleEl, document.head.firstChild);
 
-     // Initialize content
-     const sidebar = document.getElementById("sidebar");
-     if (sidebar && !sidebar.querySelector("nav")) {
-          sidebar.innerHTML = initialSidebar;
+          // Initialize content immediately
+          const sidebar = document.getElementById("sidebar");
+          if (sidebar && !sidebar.querySelector("nav")) {
+               sidebar.innerHTML = initialSidebar;
+          }
      }
-}
+})();
 
 // Sidebar component
 export function createSidebar(activePage) {
@@ -71,19 +96,13 @@ export function createSidebar(activePage) {
 
 // Function to initialize the sidebar
 export function initializeSidebar(activePage) {
-     // Get the sidebar element
      const sidebar = document.getElementById("sidebar");
      if (!sidebar) {
           console.error("Sidebar element not found");
           return;
      }
 
-     // Ensure styles are present
-     if (!document.getElementById("sidebar-styles")) {
-          document.head.insertAdjacentHTML("beforeend", sidebarStyles);
-     }
-
-     // Update content and active states immediately
+     // Only update if we need to change active states
      const newContent = createSidebar(activePage);
      if (sidebar.innerHTML !== newContent) {
           sidebar.innerHTML = newContent;
