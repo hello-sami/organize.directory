@@ -71,24 +71,31 @@ function initializeCriticalStyles() {
      }
 }
 
-// Sidebar component
-export function createSidebar(activePage) {
-     return `
-        <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-        <nav>
-            <a href="/" class="nav-link ${activePage === "home" ? "active" : ""}">Home</a>
-            <div class="nav-group">
-                <span class="nav-group-title">Find a group</span>
-                <a href="/location" class="nav-link nav-link-indented ${activePage === "location" ? "active" : ""}">by location</a>
-                <a href="/topics" class="nav-link nav-link-indented ${activePage === "topics" ? "active" : ""}">by topic</a>
-            </div>
-            <a href="/guides" class="nav-link ${activePage === "guides" ? "active" : ""}">Guides</a>
-            <a href="/contact" class="nav-link ${activePage === "contact" ? "active" : ""}">Contact</a>
-        </nav>
-        <div class="sidebar-motto">
-            Solidarity not charity.<br>
-            Awareness into action.
-        </div>`;
+// Function to update active states
+function updateActiveStates(sidebar, activePage) {
+     if (!sidebar) return;
+
+     // Remove all active classes first
+     sidebar.querySelectorAll(".nav-link").forEach((link) => {
+          link.classList.remove("active");
+     });
+
+     // Add active class based on the current page
+     const activeLinks = {
+          home: 'a[href="/"]',
+          location: 'a[href="/location"]',
+          topics: 'a[href="/topics"]',
+          guides: 'a[href="/guides"]',
+          contact: 'a[href="/contact"]',
+     };
+
+     const activeSelector = activeLinks[activePage];
+     if (activeSelector) {
+          const activeLink = sidebar.querySelector(activeSelector);
+          if (activeLink) {
+               activeLink.classList.add("active");
+          }
+     }
 }
 
 // Function to initialize the sidebar
@@ -102,11 +109,8 @@ export function initializeSidebar(activePage) {
           return;
      }
 
-     // Only update if we need to change active states
-     const newContent = createSidebar(activePage);
-     if (sidebar.innerHTML !== newContent) {
-          sidebar.innerHTML = newContent;
-     }
+     // Update active states
+     updateActiveStates(sidebar, activePage);
 
      // Add mobile menu button if it doesn't exist
      if (!document.querySelector(".mobile-menu-button")) {
