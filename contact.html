@@ -14,10 +14,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
     <meta name="description" <meta name="theme-color" content="#ffffff">
     <meta name="color-scheme" content="light">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -46,8 +42,7 @@
             margin: 0 auto;
             padding: 2rem;
         }
-
-        .contact-form {
+    .contact-form {
             margin-top: 2rem;
             background: var(--surface-color);
             padding: 2rem;
@@ -110,25 +105,10 @@
     <script src="/js/theme-init.js"></script>
 
 
-    <!-- Initialize Components -->
-    <script type="module">
-                import { initializeComponents } from '/utils/init.js';
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize sidebar first
-            window.initializeSidebar('location');
-
-            // Initialize other components
-            initializeComponents({
-                searchHeaderId: 'header'
-            });
-        });
-    </script>
-</head>
+    </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 
@@ -138,7 +118,26 @@
                     directory.
                 </p>
 
-                <form class="contact-form" id="contactForm" action="/form-handler/submit" method="POST">
+                <form class="co
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
+
+        // Initialize sidebar first
+        initializeSidebar('contact');
+
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
+        });
+    </script>
+</head>
+
+<body>
+    <div class="layout">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+ntact-form" id="contactForm" action="/form-handler/submit" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>

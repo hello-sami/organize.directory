@@ -5,10 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
     <title>404 - Page Not Found | Mutual Aid Network Directory</title>
 
     <!-- Preload critical assets -->
@@ -91,16 +87,15 @@
 
     <!-- Initialize Components -->
     <script type="module">
-                import { initializeComponents } from '/utils/init.js';
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize sidebar first
-            window.initializeSidebar('location');
+        // Initialize sidebar first
+        initializeSidebar('home');
 
-            // Initialize other components
-            initializeComponents({
-                searchHeaderId: 'header'
-            });
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
         });
     </script>
 </head>
@@ -108,7 +103,13 @@
 <body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
-        <main class="main-content" role="main">
+
+    </head>
+
+<body>
+    
+        <m
+    ain class="main-content" role="main">
             <div class="error-content">
                 <h1 class="error-title">404</h1>
                 <p class="error-message">The page you're looking for doesn't exist.</p>

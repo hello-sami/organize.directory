@@ -5,11 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
-  <title>
+    <title>
     Monterey Bay Mutual Aid Networks - Local Support & Community Resources
   </title>
   <meta name="description"
@@ -27,6 +23,7 @@
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
+    
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
@@ -37,25 +34,10 @@
   <script src="/js/theme-init.js"></script>
 
 
-  <!-- Initialize Components -->
-  <script type="module">
-        import { initializeComponents } from '/utils/init.js';
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // Initialize sidebar first
-      window.initializeSidebar('location');
-
-      // Initialize other components
-      initializeComponents({
-        searchHeaderId: 'header'
-      });
-    });
-  </script>
-</head>
+  </head>
 
 <body>
-  <div class="layout">
-    <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+  
     <main class="content">
       <header id="header" class="page-header"></header>
 
@@ -68,7 +50,26 @@
           <span>Monterey Bay</span>
         </div>
 
-        <h1>Monterey Bay</h1>
+        <h1>Monterey Bay</h1
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
+
+        // Initialize sidebar first
+        initializeSidebar('location');
+
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
+        });
+    </script>
+</head>
+
+<body>
+    <div class="layout">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+>
         <hr>
 
         <section>

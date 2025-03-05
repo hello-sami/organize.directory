@@ -4,29 +4,51 @@ import { glob } from "glob";
 
 // Critical sidebar initialization code to insert
 const criticalSidebarInit = `
-    <!-- Critical modules -->
+    <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
-        window.initializeSidebar = initializeSidebar;
+        import { initializeComponents } from '/utils/init.js';
+
+        // Initialize sidebar first
+        initializeSidebar('$PAGE_TYPE');
+
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
+        });
     </script>
+</head>
+
+<body>
+    <div class="layout">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
 `;
+
+// Function to determine page type from file path
+function getPageType(filePath) {
+     if (filePath.includes("topics/")) return "topics";
+     if (filePath.includes("guides")) return "guides";
+     if (filePath.includes("contact")) return "contact";
+     if (
+          filePath.includes("location") ||
+          filePath.includes("cities/") ||
+          filePath.includes("states/")
+     )
+          return "location";
+     return "home";
+}
 
 // Function to update a single HTML file
 function updateHtmlFile(filePath) {
      let content = readFileSync(filePath, "utf8");
 
-     // Skip if already has the critical modules section
-     if (content.includes("<!-- Critical modules -->")) {
-          console.log(`Skipping ${filePath} - already updated`);
-          return;
-     }
-
      // Find the position to insert the critical sidebar init
      // Look for common meta tags that appear in the head
      const insertAfterPatterns = [
-          '<meta property="og:type" content="website">',
+          '<script src="/js/theme-init.js',
+          '<link href="https://fonts.googleapis.com',
           '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
-          "<!-- Google Analytics -->",
+          "<head>",
      ];
 
      let insertPosition = -1;
@@ -43,37 +65,46 @@ function updateHtmlFile(filePath) {
           return;
      }
 
+     // Remove any existing initialization scripts and malformed tags
+     content = content.replace(
+          /<!-- Initialize Components -->[\s\S]*?<\/script>\s*/g,
+          ""
+     );
+     content = content.replace(
+          /<!-- Critical modules -->[\s\S]*?<\/script>\s*/g,
+          ""
+     );
+     content = content.replace(/<d[\s\S]*?iv id="sidebar"[\s\S]*?<\/div>/g, "");
+     content = content.replace(/<div id="sidebar"[\s\S]*?<\/div>/g, "");
+     content = content.replace(
+          /<\/head>[\s\S]*?<body>[\s\S]*?<div class="layout">/g,
+          ""
+     );
+
+     // Get the page type
+     const pageType = getPageType(filePath);
+
      // Insert the critical sidebar initialization
      const newContent =
           content.slice(0, insertPosition) +
-          criticalSidebarInit +
+          criticalSidebarInit.replace("$PAGE_TYPE", pageType) +
           content.slice(insertPosition);
 
-     // Update initializeSidebar call if it exists
-     const updatedContent = newContent
-          .replace(
-               /import\s*{\s*initializeSidebar\s*}\s*from\s*['"]\/components\/sidebar\.js['"];?\s*\n/g,
-               ""
-          )
-          .replace(
-               /initializeSidebar\(['"]([^'"]+)['"]\)/g,
-               "window.initializeSidebar('$1')"
-          );
-
-     // Write the updated content back to the file
-     writeFileSync(filePath, updatedContent);
+     writeFileSync(filePath, newContent);
      console.log(`Updated ${filePath}`);
 }
 
-// Find all HTML files in the project
-const htmlFiles = await glob("**/*.html", {
-     ignore: ["node_modules/**", "dist/**"],
-});
+// Find and update all HTML files in states and cities directories
+async function updateAllPages() {
+     const files = await glob("**/*.html", {
+          ignore: ["node_modules/**", "dist/**"],
+     });
 
-// Update each HTML file
-htmlFiles.forEach((file) => {
-     const filePath = join(process.cwd(), file);
-     updateHtmlFile(filePath);
-});
+     for (const file of files) {
+          updateHtmlFile(file);
+     }
+}
+
+updateAllPages().catch(console.error);
 
 console.log("Finished updating HTML files");

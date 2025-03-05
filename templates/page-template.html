@@ -19,28 +19,20 @@
     <meta property="og:description" content="PAGE_OG_DESCRIPTION">
     <meta property="og:type" content="website">
 
-    <!-- Critical modules -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        window.initializeSidebar = initializeSidebar;
-    </script>
-
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <script src="/theme-init.js"></script>
 
     <!-- Initialize Components -->
     <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Update active states
-            window.initializeSidebar('location');
+        // Initialize sidebar first
+        initializeSidebar('home');
 
-            // Initialize other components
-            initializeComponents({
-                searchHeaderId: 'header'
-            });
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
         });
     </script>
 </head>
@@ -48,6 +40,12 @@
 <body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+    <script src="/theme-init.js"></script>
+
+    </head>
+
+<body>
+    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 

@@ -5,10 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
     <title>Find Mutual Aid Networks Near You</title>
     <meta name="description" content="Browse or search for mutual aid initiatives in your area">
 
@@ -55,19 +51,17 @@
     <!-- Critical Scripts -->
     <script src="/js/theme-init.js"></script>
 
-
     <!-- Initialize Components -->
     <script type="module">
-                import { initializeComponents } from '/utils/init.js';
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize sidebar first
-            window.initializeSidebar('location');
+        // Initialize sidebar first
+        initializeSidebar('location');
 
-            // Initialize other components
-            initializeComponents({
-                searchHeaderId: 'header'
-            });
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
         });
     </script>
 </head>
@@ -75,6 +69,11 @@
 <body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+
+    </head>
+
+<body>
+    
         <main class="content" role="main">
             <h2>Choose a state or search for a city.<h2>
                     <header class="page-header">
@@ -152,9 +151,6 @@
     <script src="/js/posts.js" type="module" async></script>
     <script src="/js/search-init.js" defer></script>
     <script src="/js/analytics.js" type="module" async></script>
-
-
-
 
 </body>
 

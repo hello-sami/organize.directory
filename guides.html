@@ -12,10 +12,6 @@
         content="Learn how to start and organize your own mutual aid network with our comprehensive guides and resources.">
     <meta property="og:type" content="website">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
     <meta property="og:url" content="https://organize.directory/guides">
     <meta name="twitter:card" content="summary">
 
@@ -26,7 +22,7 @@
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-QJ03RCM35H');
@@ -37,23 +33,10 @@
 
     <script src="/theme.js" type="module"></script>
 
-    <!-- Initialize Components -->
-    <script type="module">
-                import { initializeComponents } from '/utils/init.js';
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize sidebar first
-            window.initializeSidebar('guides');
-
-            // Initialize other components
-            initializeComponents({});
-        });
-    </script>
-</head>
+    </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+    
 
 
         <main class="content">
@@ -63,7 +46,26 @@
                 <div class="initiative">
                     <a href="https://afsc.org/news/how-create-mutual-aid-network">How to start a mutual aid group</a>
                 </div>
-                <div class="initiative">
+   
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
+
+        // Initialize sidebar first
+        initializeSidebar('guides');
+
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
+        });
+    </script>
+</head>
+
+<body>
+    <div class="layout">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+             <div class="initiative">
                     <a href="https://www.ufcw.org/start-a-union/">How to unionize your workplace</a>
                 </div>
                 <div class="initiative">

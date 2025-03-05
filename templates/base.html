@@ -5,10 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Critical modules -->
+    <!-- Initialize Components -->
     <script type="module">
-                window.initializeSidebar = initializeSidebar;
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
+
+        // Initialize sidebar first
+        initializeSidebar('home');
+
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
+        });
     </script>
+</head>
+
+<body>
+    <div class="layout">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+
     <title>{% block title %}Mutual Aid Network Directory{% endblock %}</title>
 
     <!-- Base Styles -->
@@ -45,25 +60,10 @@
         /* Add any other base styles here */
     </style>
 
-    <!-- Initialize Components -->
-    <script type="module">
-                import { initializeComponents } from '/utils/init.js';
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize sidebar first
-            window.initializeSidebar('location');
-
-            // Initialize other components
-            initializeComponents({
-                searchHeaderId: 'header'
-            });
-        });
-    </script>
-</head>
+    </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+    
         <!-- Include header with search -->
         {% include "templates/header.html" %}
 

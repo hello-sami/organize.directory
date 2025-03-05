@@ -5,10 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
     <title>Resources - The Organize Directory</title>
     <meta name="description"
         content="Resources and guides for organizing mutual aid networks and community support initiatives.">
@@ -22,16 +18,15 @@
 
     <!-- Initialize Components -->
     <script type="module">
-                import { initializeComponents } from '/utils/init.js';
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize sidebar first
-            window.initializeSidebar('location');
+        // Initialize sidebar first
+        initializeSidebar('home');
 
-            // Initialize other components
-            initializeComponents({
-                searchHeaderId: 'header'
-            });
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
         });
     </script>
 </head>
@@ -39,6 +34,10 @@
 <body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+
+    
+        <div id="sideb
+    ar" class="sidebar" aria-label="Main navigation"></div>
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 

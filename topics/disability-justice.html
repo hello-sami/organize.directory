@@ -5,10 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
     <title>Disability Justice Mutual Aid - Support Networks & Community Resources</title>
     <meta name="description" content="Find disability justice mutual aid initiatives and community support networks.">
 
@@ -17,21 +13,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <script src="/js/theme-init.js"></script>
-    <!-- Critical Scripts -->
-
 
     <!-- Initialize Components -->
     <script type="module">
-                import { initializeComponents } from '/utils/init.js';
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize sidebar first
-            window.initializeSidebar('location');
+        // Initialize sidebar first
+        initializeSidebar('topics');
 
-            // Initialize other components
-            initializeComponents({
-                searchHeaderId: 'header'
-            });
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
         });
     </script>
 </head>
@@ -39,6 +32,13 @@
 <body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+    <!-- Critical Scripts -->
+
+
+    </head>
+
+<body>
+    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 

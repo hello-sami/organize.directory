@@ -12,10 +12,6 @@
         content="Find harm reduction networks, addiction support initiatives, and organizations fighting the opioid crisis through mutual aid and direct action.">
     <meta property="og:type" content="website">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
     <meta property="og:url" content="https://organize.directory/issues/opioid-crisis">
     <meta name="twitter:card" content="summary">
 
@@ -26,7 +22,7 @@
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-QJ03RCM35H');
@@ -36,25 +32,10 @@
     <!-- Critical Scripts -->
 
 
-    <!-- Initialize Components -->
-    <script type="module">
-                import { initializeComponents } from '/utils/init.js';
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize sidebar first
-            window.initializeSidebar('location');
-
-            // Initialize other components
-            initializeComponents({
-                searchHeaderId: 'header'
-            });
-        });
-    </script>
-</head>
+    </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+    
         <main class="content">
             <header id="header" class="page-header"></header>
 
@@ -65,7 +46,26 @@
                     <a href="/" class="breadcrumb-link">Home</a>
                     <span>›</span>
                     <a href="/topics" class="breadcrumb-link">Issues</a>
-                    <span>›</span>
+  
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
+
+        // Initialize sidebar first
+        initializeSidebar('topics');
+
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
+        });
+    </script>
+</head>
+
+<body>
+    <div class="layout">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+                  <span>›</span>
                     <span>Opioid Crisis</span>
                 </div>
 

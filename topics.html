@@ -14,31 +14,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
     <title>Topics - Mutual Aid Network Directory</title>
     <meta name="description" <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <script src="/js/theme-init.js"></script>
-    <script src="/search-index.js"></script>
-    <script src="/mobile-menu.js"></script>
 
     <!-- Initialize Components -->
     <script type="module">
-                import { initializeComponents } from '/utils/init.js';
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize sidebar first
-            window.initializeSidebar('topics');
+        // Initialize sidebar first
+        initializeSidebar('home');
 
-            // Initialize other components
-            initializeComponents({
-                searchHeaderId: 'header'
-            });
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
         });
     </script>
 </head>
@@ -46,6 +39,14 @@
 <body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+    <script src="/search-index.js"></script>
+    <script src="/mobile-menu.js"></script
+    >
+
+    </head>
+
+<body>
+    
         <main class="content">
             <header class="page-header">
                 <div class="search-container">

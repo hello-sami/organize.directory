@@ -14,11 +14,6 @@
         content="Find mutual aid networks and community support initiatives focused on anti-war organizing and peace building.">
     <meta property="og:type" content="website">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
-
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/styles/topics.css">
@@ -26,21 +21,18 @@
 
     <!-- Theme -->
     <script src="/js/theme-init.js"></script>
-    <!-- Critical Scripts -->
-
 
     <!-- Initialize Components -->
     <script type="module">
-                import { initializeComponents } from '/utils/init.js';
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize sidebar first
-            window.initializeSidebar('location');
+        // Initialize sidebar first
+        initializeSidebar('topics');
 
-            // Initialize other components
-            initializeComponents({
-                searchHeaderId: 'header'
-            });
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
         });
     </script>
 </head>
@@ -48,6 +40,13 @@
 <body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+    <!-- Critical Scripts -->
+
+
+    </head>
+
+<body>
+    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 

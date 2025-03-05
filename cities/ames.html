@@ -11,11 +11,7 @@
     content="Find mutual aid initiatives and community support networks in Ames, Iowa. Connect with local organizations providing community-based support.">
   <meta property="og:type" content="website">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
-  <meta property="og:url" content="https://organize.directory/ames">
+    <meta property="og:url" content="https://organize.directory/ames">
   <meta name="twitter:card" content="summary">
 
   <title>
@@ -34,6 +30,7 @@
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
+    
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
@@ -45,25 +42,10 @@
   <script src="/js/theme-init.js"></script>
 
 
-  <!-- Initialize Components -->
-  <script type="module">
-        import { initializeComponents } from '/utils/init.js';
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // Initialize sidebar first
-      window.initializeSidebar('location');
-
-      // Initialize other components
-      initializeComponents({
-        searchHeaderId: 'header'
-      });
-    });
-  </script>
-</head>
+  </head>
 
 <body>
-  <div class="layout">
-    <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+  
 
 
     <main class="content" role="main">
@@ -81,7 +63,26 @@
 
         <section>
           <div class="initiative">
-            <a href="https://foodatfirst.com/">Food at First</a>
+            <a h
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
+
+        // Initialize sidebar first
+        initializeSidebar('location');
+
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
+        });
+    </script>
+</head>
+
+<body>
+    <div class="layout">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+ref="https://foodatfirst.com/">Food at First</a>
             <p>
               local non-profit organization consisting of a daily Free Meal
               program and perishable food distribution known to the community

@@ -26,11 +26,7 @@
   <meta property="og:url" content="https://organize.directory/lancaster">
   <meta property="og:type" content="website">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
-  <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
@@ -43,26 +39,30 @@
 
   <script src="/js/theme-init.js"></script>
 
-
-  <!-- Initialize Components -->
-  <script type="module">
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
 
-    document.addEventListener('DOMContentLoaded', () => {
-      // Initialize sidebar first
-      window.initializeSidebar('location');
+        // Initialize sidebar first
+        initializeSidebar('location');
 
-      // Initialize other components
-      initializeComponents({
-        searchHeaderId: 'header'
-      });
-    });
-  </script>
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
+        });
+    </script>
 </head>
 
 <body>
-  <div class="layout">
-    <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+    <div class="layout">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+
+
+  </head>
+
+<body>
+  
 
 
     <main class="content" role="main">

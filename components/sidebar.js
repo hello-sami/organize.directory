@@ -58,21 +58,18 @@ const criticalStyles = `
     }
 `;
 
-// Immediately initialize sidebar and styles
-(function () {
+// Function to initialize critical styles
+function initializeCriticalStyles() {
      if (typeof document !== "undefined") {
-          // Add critical styles to head
-          const styleEl = document.createElement("style");
-          styleEl.textContent = criticalStyles;
-          document.head.insertBefore(styleEl, document.head.firstChild);
-
-          // Initialize content immediately
-          const sidebar = document.getElementById("sidebar");
-          if (sidebar && !sidebar.querySelector("nav")) {
-               sidebar.innerHTML = initialSidebar;
+          // Add critical styles to head if not already present
+          if (!document.querySelector("#sidebar-critical-styles")) {
+               const styleEl = document.createElement("style");
+               styleEl.id = "sidebar-critical-styles";
+               styleEl.textContent = criticalStyles;
+               document.head.insertBefore(styleEl, document.head.firstChild);
           }
      }
-})();
+}
 
 // Sidebar component
 export function createSidebar(activePage) {
@@ -96,6 +93,9 @@ export function createSidebar(activePage) {
 
 // Function to initialize the sidebar
 export function initializeSidebar(activePage) {
+     // Initialize critical styles first
+     initializeCriticalStyles();
+
      const sidebar = document.getElementById("sidebar");
      if (!sidebar) {
           console.error("Sidebar element not found");

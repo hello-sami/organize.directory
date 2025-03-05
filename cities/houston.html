@@ -16,11 +16,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
-  <title>
+    <title>
     Houston Mutual Aid Networks - Local Support & Community Resources
   </title>
   <meta name="description"
@@ -37,26 +33,30 @@
 
   <script src="/js/theme-init.js"></script>
 
-
-  <!-- Initialize Components -->
-  <script type="module">
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
 
-    document.addEventListener('DOMContentLoaded', () => {
-      // Initialize sidebar first
-      window.initializeSidebar('location');
+        // Initialize sidebar first
+        initializeSidebar('location');
 
-      // Initialize other components
-      initializeComponents({
-        searchHeaderId: 'header'
-      });
-    });
-  </script>
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
+        });
+    </script>
 </head>
 
 <body>
-  <div class="layout">
-    <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+    <div class="layout">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+
+
+  </head>
+
+<body>
+  
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 

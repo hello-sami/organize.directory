@@ -16,11 +16,7 @@
     content="Find mutual aid networks and community support initiatives in New Haven, Connecticut.">
   <meta property="og:type" content="website">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
-  <meta property="og:url" content="https://organize.directory/new-haven">
+    <meta property="og:url" content="https://organize.directory/new-haven">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
@@ -34,26 +30,30 @@
   <!-- Theme -->
   <script src="/js/theme-init.js"></script>
 
-
-  <!-- Initialize Components -->
-  <script type="module">
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
 
-    document.addEventListener('DOMContentLoaded', () => {
-      // Initialize sidebar first
-      window.initializeSidebar('location');
+        // Initialize sidebar first
+        initializeSidebar('location');
 
-      // Initialize other components
-      initializeComponents({
-        searchHeaderId: 'header'
-      });
-    });
-  </script>
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
+        });
+    </script>
 </head>
 
 <body>
-  <div class="layout">
-    <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+    <div class="layout">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+
+
+  </head>
+
+<body>
+  
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 

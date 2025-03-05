@@ -10,11 +10,7 @@
     content="Find mutual aid networks and community support initiatives in Tempe, Arizona.">
   <meta property="og:type" content="website">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
-  <meta property="og:url" content="https://organize.directory/tempe">
+    <meta property="og:url" content="https://organize.directory/tempe">
   <meta name="twitter:card" content="summary">
 
   <title>
@@ -33,6 +29,7 @@
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
+    
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
@@ -45,25 +42,10 @@
   <script src="/js/theme-init.js"></script>
 
 
-  <!-- Initialize Components -->
-  <script type="module">
-        import { initializeComponents } from '/utils/init.js';
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // Initialize sidebar first
-      window.initializeSidebar('location');
-
-      // Initialize other components
-      initializeComponents({
-        searchHeaderId: 'header'
-      });
-    });
-  </script>
-</head>
+  </head>
 
 <body>
-  <div class="layout">
-    <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+  
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
@@ -79,7 +61,26 @@
 
         <section>
           <div class="initiative">
-            <a href="https://www.instagram.com/temperrfm/">Really Really Free Market Tempe</a>
+            <a h
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
+
+        // Initialize sidebar first
+        initializeSidebar('location');
+
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
+        });
+    </script>
+</head>
+
+<body>
+    <div class="layout">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+ref="https://www.instagram.com/temperrfm/">Really Really Free Market Tempe</a>
             <p>
               A grassroots organization fostering mutual aid and community
               support through free markets and resource sharing in Tempe. They

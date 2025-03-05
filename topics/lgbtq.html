@@ -23,10 +23,6 @@
         content="Find organizations working to support LGBTQ+ communities through mutual aid and community care.">
     <meta property="og:type" content="website">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
     <meta property="og:url" content="https://organize.directory/issues/lgbtq">
 
     <!-- Styles -->
@@ -35,21 +31,18 @@
 
     <!-- Theme -->
     <script src="/js/theme-init.js"></script>
-    <!-- Critical Scripts -->
-
 
     <!-- Initialize Components -->
     <script type="module">
-                import { initializeComponents } from '/utils/init.js';
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize sidebar first
-            window.initializeSidebar('location');
+        // Initialize sidebar first
+        initializeSidebar('topics');
 
-            // Initialize other components
-            initializeComponents({
-                searchHeaderId: 'header'
-            });
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
         });
     </script>
 </head>
@@ -57,6 +50,13 @@
 <body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+    <!-- Critical Scripts -->
+
+
+    </head>
+
+<body>
+    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 

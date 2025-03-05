@@ -13,11 +13,7 @@
     content="Find mutual aid networks and community support initiatives in Montpelier, Vermont.">
   <meta property="og:type" content="website">
 
-    <!-- Critical modules -->
-    <script type="module">
-                window.initializeSidebar = initializeSidebar;
-    </script>
-  <meta property="og:url" content="https://organize.directory/montpelier">
+    <meta property="og:url" content="https://organize.directory/montpelier">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
@@ -32,6 +28,7 @@
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
+    
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
@@ -43,25 +40,10 @@
   <script src="/js/theme-init.js"></script>
 
 
-  <!-- Initialize Components -->
-  <script type="module">
-        import { initializeComponents } from '/utils/init.js';
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // Initialize sidebar first
-      window.initializeSidebar('location');
-
-      // Initialize other components
-      initializeComponents({
-        searchHeaderId: 'header'
-      });
-    });
-  </script>
-</head>
+  </head>
 
 <body>
-  <div class="layout">
-    <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+  
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
@@ -77,7 +59,26 @@
 
         <section>
           <div class="initiative">
-            <a href="https://freeridemontpelier.org/">Freeride Montpelier</a>
+      
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
+
+        // Initialize sidebar first
+        initializeSidebar('location');
+
+        // Initialize other components
+        initializeComponents({
+            searchHeaderId: 'header'
+        });
+    </script>
+</head>
+
+<body>
+    <div class="layout">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation"></div>
+      <a href="https://freeridemontpelier.org/">Freeride Montpelier</a>
             <p>
               A collectively organized non-profit bike shop providing mutual
               aid through pay-what-you-can pricing and community access to
