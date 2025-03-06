@@ -14,32 +14,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
+    <!-- Inline theme script to prevent FOUC -->
+    <script>
+        (function () {
+            function applyTheme() {
+                try {
+                    const savedTheme = localStorage.getItem("theme");
+                    if (savedTheme) {
+                        document.documentElement.setAttribute("data-theme", savedTheme);
+                    } else {
+                        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                        const theme = prefersDark ? "dark" : "light";
+                        document.documentElement.setAttribute("data-theme", theme);
+                        localStorage.setItem("theme", theme);
+                    }
+                } catch (e) {
+                    document.documentElement.setAttribute("data-theme", "light");
                 }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
             }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
+            applyTheme();
+            document.addEventListener("visibilitychange", function () {
+                if (document.visibilityState === "visible") {
+                    applyTheme();
+                }
+            });
+        })();
+    </script>
 
     <title>Alabama Mutual Aid Networks - Local Support & Community Resources</title>
     <meta name="description"
@@ -90,15 +90,6 @@
             </div>
         </div>
 
-    </head>
-
-<body>
-    
-
-    </head>
-
-<body>
-    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 
@@ -117,7 +108,7 @@
                     <div class="cities-list">
                         <a href="/north-al" class="city-link">North Alabama</a>
                         <a href="/central-al" class="city-link">Central Alabama</a>
-                        <a href="/south-al" class="city-link">South Alabama</a>
+                        <!-- <a href="/south-al" class="city-link">South Alabama</a> -->
                         <a href="/birmingham" class="city-link">Birmingham</a>
                         <a href="/huntsville" class="city-link">Huntsville</a>
                         <a href="/mobile" class="city-link">Mobile</a>
@@ -125,12 +116,13 @@
                         <a href="/tuscaloosa" class="city-link">Tuscaloosa</a>
                         <a href="/auburn" class="city-link">Auburn</a>
                         <a href="/florence-muscle-shoals" class="city-link">Florence / Muscle Shoals</a>
-                        <a href="/gadsden-anniston" class="city-link">Gadsden-Anniston</a>
+                        <!-- <a href="/gadsden-anniston" class="city-link">Gadsden-Anniston</a> -->
                     </div>
                 </section>
+                <hr>
 
                 <section>
-                    <h2>Statewide Initiatives</h2>
+                    <h2>Statewide Organizations</h2>
                     <div class="initiative">
                         <a href="https://www.alabamasurvival.org/">Alabama Survival Coalition</a>
                         <p>A grassroots network fostering mutual aid and community resilience through direct support and
