@@ -16,6 +16,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Inline theme script to prevent FOUC -->
+<script>
+    (function () {
+        function applyTheme() {
+            try {
+                const savedTheme = localStorage.getItem("theme");
+                if (savedTheme) {
+                    document.documentElement.setAttribute("data-theme", savedTheme);
+                } else {
+                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                    const theme = prefersDark ? "dark" : "light";
+                    document.documentElement.setAttribute("data-theme", theme);
+                    localStorage.setItem("theme", theme);
+                }
+            } catch (e) {
+                document.documentElement.setAttribute("data-theme", "light");
+            }
+        }
+        applyTheme();
+        document.addEventListener("visibilitychange", function() {
+            if (document.visibilityState === "visible") {
+                applyTheme();
+            }
+        });
+    })();
+</script>
+
+
     <title>
     Santa Fe/Taos Mutual Aid Networks - Local Support & Community Resources
   </title>
@@ -24,6 +52,8 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
+    <!-- Initialize theme toggle -->
+    <script src="/js/theme.js"></script>
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

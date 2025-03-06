@@ -1,23 +1,37 @@
-// Prevent flash of unstyled content by immediately setting the theme
+// Inject this script inline in the head to prevent FOUC (Flash of Unstyled Content)
+// and ensure consistent theme across page loads
 (function () {
-     try {
-          const savedTheme = localStorage.getItem("theme");
-          if (savedTheme) {
-               document.documentElement.setAttribute("data-theme", savedTheme);
-          } else {
-               const prefersDark = window.matchMedia(
-                    "(prefers-color-scheme: dark)"
-               ).matches;
-               document.documentElement.setAttribute(
-                    "data-theme",
-                    prefersDark ? "dark" : "light"
-               );
-               localStorage.setItem("theme", prefersDark ? "dark" : "light");
+     function applyTheme() {
+          try {
+               const savedTheme = localStorage.getItem("theme");
+               if (savedTheme) {
+                    document.documentElement.setAttribute(
+                         "data-theme",
+                         savedTheme
+                    );
+               } else {
+                    const prefersDark = window.matchMedia(
+                         "(prefers-color-scheme: dark)"
+                    ).matches;
+                    const theme = prefersDark ? "dark" : "light";
+                    document.documentElement.setAttribute("data-theme", theme);
+                    localStorage.setItem("theme", theme);
+               }
+          } catch (e) {
+               // Fallback if localStorage is not available
+               document.documentElement.setAttribute("data-theme", "light");
           }
-     } catch (e) {
-          // Fallback if localStorage is not available
-          document.documentElement.setAttribute("data-theme", "light");
      }
+
+     // Apply theme immediately
+     applyTheme();
+
+     // Re-apply theme when the page becomes visible (for cases like back/forward navigation)
+     document.addEventListener("visibilitychange", function () {
+          if (document.visibilityState === "visible") {
+               applyTheme();
+          }
+     });
 })();
 
 // Theme management
