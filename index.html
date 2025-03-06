@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Inline theme script to prevent FOUC -->
+    <!-- Critical theme script - keep at top -->
     <script>
         (function () {
             function applyTheme() {
@@ -39,26 +39,22 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <title>Mutual Aid Network Directory</title>
 
-    <!-- Resource hints for faster loading -->
-    <link rel="preload" href="/styles.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style">
-
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
     <!-- Preload critical resources -->
     <link rel="preload" href="/components/sidebar.js" as="script">
+    <link rel="preload" href="/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style">
 
-    <!-- Deferred CSS -->
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- Non-blocking font loading -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"
         media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="/styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     </noscript>
 </head>
