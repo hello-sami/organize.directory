@@ -3,51 +3,57 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://cloudflareinsights.com
   X-XSS-Protection: 1; mode=block
-  Cache-Control: public, max-age=0, must-revalidate
   Strict-Transport-Security: max-age=31536000; includeSubDomains
 
-# Static assets with long cache and encoding variation
-/*.{css,js,woff2}
+# HTML pages - Cache for 10 minutes
+/*.html
+  Cache-Control: public, max-age=600
+  Content-Type: text/html; charset=utf-8
+  X-Frame-Options: DENY
+  Vary: Accept-Encoding
+
+# The homepage - Cache for 5 minutes
+/index.html
+  Cache-Control: public, max-age=300
+  Content-Type: text/html; charset=utf-8
+  X-Frame-Options: DENY
+  Vary: Accept-Encoding
+
+# Static assets that rarely change - Cache for 1 year
+/*.{css,js,woff2,jpg,jpeg,png,gif,ico,svg,webp}
   Cache-Control: public, max-age=31536000, immutable
   Vary: Accept-Encoding
 
-# JavaScript specific
-/*.js
-  Content-Type: application/javascript; charset=utf-8
-  Access-Control-Allow-Origin: *
-  Access-Control-Allow-Methods: GET, OPTIONS
-  Access-Control-Allow-Headers: Content-Type
-
-# CSS specific
-/*.css
-  Content-Type: text/css
-
-# Fonts specific
-/*.woff2
-  Content-Type: font/woff2
-  Access-Control-Allow-Origin: *
-
-# HTML files
-/*.html
-  Cache-Control: public, max-age=0, must-revalidate
-  X-Frame-Options: DENY
-  Content-Type: text/html; charset=utf-8
-
-# JSON files
+# JSON data files - Cache for 1 hour
 /*.json
   Cache-Control: public, max-age=3600
   Content-Type: application/json
+  Vary: Accept-Encoding
 
-# Search index specific
-/search-index.js
-  Cache-Control: public, max-age=3600
-  Content-Encoding: br
-  Content-Type: application/javascript; charset=utf-8
+# Search functionality - No caching
+/search/*
+  Cache-Control: no-store
+  Content-Type: application/json
+  Vary: Accept-Encoding
+
+# Font files
+/*.{woff,woff2,ttf,otf,eot}
+  Cache-Control: public, max-age=31536000, immutable
   Access-Control-Allow-Origin: *
-  Access-Control-Allow-Methods: GET, OPTIONS
-  Access-Control-Allow-Headers: Content-Type
+
+# JavaScript files
+/*.js
+  Content-Type: application/javascript; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# CSS files
+/*.css
+  Content-Type: text/css; charset=utf-8
+  Cache-Control: public, max-age=31536000, immutable
+  Vary: Accept-Encoding
 
 # Components and JS directories
 /{components,js}/*
