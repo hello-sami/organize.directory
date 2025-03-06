@@ -7,33 +7,33 @@
 
 /* Theme Variables */
 :root {
-     /* Light mode - Monochrome Red with maximum contrast */
-     --primary-color: #800000;
-     --text-color: #330000;
-     --light-gray: #fff2f2;
-     --border-color: #ffd6d6;
-     --shadow-sm: 0 1px 2px rgba(153, 0, 0, 0.15);
-     --bg-color: #fffafa;
-     --card-bg: #ffe8e8;
-     --link-color: #b30000;
-     --link-hover: #ff0000;
-     --heading-color: #660000;
-     --accent-color: #990000;
+     /* Light mode - Saturated Red theme */
+     --primary-color: #a30000; /* More saturated red */
+     --text-color: #4d0000; /* Deeper red for text */
+     --bg-tint: #ffd4d4; /* More saturated pink background tint */
+     --border-color: #ffb3b3; /* More saturated pink border */
+     --shadow-sm: 0 1px 2px rgba(204, 0, 0, 0.2); /* Redder shadow */
+     --bg-color: #fff5f5; /* Slightly warmer white */
+     --card-bg: #ffd9d9; /* More saturated card background */
+     --link-color: #cc0000; /* Brighter red for links */
+     --link-hover: #ff1a1a; /* More vibrant red for hover */
+     --heading-color: #800000; /* Richer red for headings */
+     --accent-color: #b30000; /* More saturated accent */
      --sidebar-width: 250px;
 }
 
 [data-theme="dark"] {
-     --primary-color: #90cdf4;
-     --text-color: #e2e8f0;
-     --light-gray: #2d3748;
-     --border-color: #4a5568;
+     --primary-color: #d4a373; /* Warm brown */
+     --text-color: #e9dcc9; /* Light warm brown */
+     --bg-tint: #32251a; /* Dark brown */
+     --border-color: #4a3828; /* Medium brown */
      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-     --bg-color: #1a202c;
-     --card-bg: #2d3748;
-     --link-color: #63b3ed;
-     --link-hover: #63b3ed;
-     --heading-color: #90cdf4;
-     --accent-color: #63b3ed;
+     --bg-color: #1a0f0a; /* Very dark brown */
+     --card-bg: #2d1810; /* Dark brown with slight red undertone */
+     --link-color: #deb887; /* Burlywood */
+     --link-hover: #e6ccb3; /* Light brown */
+     --heading-color: #d4a373; /* Warm brown */
+     --accent-color: #c68b59; /* Terracotta brown */
 }
 
 /* Critical Layout */
@@ -136,7 +136,7 @@ h2 {
      position: fixed;
      top: 0;
      left: 0;
-     background: var(--card-bg);
+     background: var(--bg-tint);
      border-right: 1px solid var(--border-color);
      padding: 2rem;
      overflow-y: auto;
@@ -188,7 +188,7 @@ h2 {
      text-decoration: none;
      padding: 0.5rem;
      font-size: 0.95rem;
-     opacity: 0.8;
+     opacity: 0.9;
      transition: all 0.1s ease;
      border-radius: 6px;
 }
@@ -200,7 +200,7 @@ h2 {
 .nav-link:hover {
      opacity: 1;
      color: var(--primary-color);
-     background: var(--light-gray);
+     background: var(--card-bg);
      text-decoration: none;
 }
 
@@ -208,7 +208,7 @@ h2 {
      color: var(--primary-color);
      opacity: 1;
      font-weight: 500;
-     background: var(--light-gray);
+     background: var(--card-bg);
 }
 
 /* Page Components */
@@ -245,7 +245,7 @@ h2 {
 .state-link:hover {
      opacity: 1;
      color: var(--primary-color);
-     background: var(--light-gray);
+     background: var(--bg-tint);
      text-decoration: none;
 }
 
@@ -674,7 +674,7 @@ h2 {
      padding-top: 2rem;
      font-size: 0.85rem;
      color: var(--text-color);
-     opacity: 0.7;
+     opacity: 0.8;
      font-style: italic;
      text-align: left;
      line-height: 1.4;
@@ -721,7 +721,7 @@ a:hover {
 .state-link:hover {
      opacity: 1;
      color: var(--primary-color);
-     background: var(--light-gray);
+     background: var(--bg-tint);
      text-decoration: none;
 }
 
