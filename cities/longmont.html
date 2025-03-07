@@ -16,32 +16,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
+  <!-- Inline theme script to prevent FOUC -->
+  <script>
     (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
+      function applyTheme() {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          } else {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = prefersDark ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+          }
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
         }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
+      }
+      applyTheme();
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          applyTheme();
+        }
+      });
     })();
-</script>
+  </script>
 
   <title>
     Longmont Mutual Aid Networks - Local Support & Community Resources
@@ -52,13 +52,13 @@
     content="Find mutual aid networks and community support initiatives in Longmont, Colorado.">
   <meta property="og:type" content="website">
 
-    <meta property="og:url" content="https://organize.directory/longmont">
+  <meta property="og:url" content="https://organize.directory/longmont">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-    <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
+  <!-- Initialize theme toggle -->
+  <script src="/js/theme.js"></script>
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,104 +68,105 @@
 
   <script src="/js/theme-init.js"></script>
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
 
-        // Initialize sidebar first
-        initializeSidebar('location');
+    // Initialize sidebar first
+    initializeSidebar('location');
 
-        // Initialize other components
-        initializeComponents({
-            searchHeaderId: 'header'
-        });
-    </script>
+    // Initialize other components
+    initializeComponents({
+      searchHeaderId: 'header'
+    });
+  </script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
+  <div class="layout">
+    <div id="sidebar" class="sidebar" aria-label="Main navigation">
+      <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+      <nav>
+        <a href="/" class="nav-link">Home</a>
+        <div class="nav-group">
+          <span class="nav-group-title">Find a group</span>
+          <a href="/location" class="nav-link nav-link-indented">by location</a>
+          <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
+        <a href="/guides" class="nav-link">Guides</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="sidebar-motto">
+        Solidarity not charity.<br>
+        Awareness into action.
+      </div>
+    </div>
 
     </head>
 
-<body>
-    
+    <body>
 
 
-  </head>
 
-<body>
-  
-    <main class="content" role="main">
-      <header id="header" class="page-header"></header>
+      </head>
 
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/colorado">Colorado</a>
-          <span>›</span>
-          <span>Longmont</span>
-        </div>
+      <body>
 
-        <h1>Longmont</h1>
-        <hr>
+        <main class="content" role="main">
+          <header id="header" class="page-header"></header>
 
-        <section>
-          <div class="initiative">
-            <a href="https://longmontforpalestine.org/">Longmont for Palestine</a>
-            <p>
-              We are a community in Longmont, CO dedicated to the liberation
-              of Palestinians and a free Palestine
-            </p>
+          <div class="city-page">
+            <div class="breadcrumb">
+              <a href="/colorado">Colorado</a>
+              <span>›</span>
+              <span>Longmont</span>
+            </div>
+
+            <h1>Longmont, CO</h1>
+            <hr>
+
+            <section>
+              <h2>Local Organizations</h2>
+              <div class="initiative">
+                <a href="https://longmontforpalestine.org/">Longmont for Palestine</a>
+                <p>
+                  We are a community in Longmont, CO dedicated to the liberation
+                  of Palestinians and a free Palestine
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://www.longmontfoodrescue.org/">Longmont Food Rescue</a>
+                <p>
+                  Redistributing perishable food — just in time! Fighting for a
+                  more just and less wasteful food system
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://www.instagram.com/longmontcommunityfridges">Longmont Community Fridges</a>
+                <p>
+                  A collaborative effort between Longmontfoodrescue and UpRoot to
+                  increase 24/7 access to food in the Longmont community
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://safeboulder.org/">SAFE Boulder</a>
+                <p>
+                  We are abolitionists fighting for the rights of unhoused people
+                  through mutual aid and direct action.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://www.instagram.com/thewagonpeople.co/">The Wagon People</a>
+                <p>
+                  Hot Food, First Aid + Cold Supplies for our unhoused people of
+                  Longmont
+                </p>
+              </div>
+            </section>
           </div>
-          <div class="initiative">
-            <a href="https://www.longmontfoodrescue.org/">Longmont Food Rescue</a>
-            <p>
-              Redistributing perishable food — just in time! Fighting for a
-              more just and less wasteful food system
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/longmontcommunityfridges">Longmont Community Fridges</a>
-            <p>
-              A collaborative effort between Longmontfoodrescue and UpRoot to
-              increase 24/7 access to food in the Longmont community
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://safeboulder.org/">SAFE Boulder</a>
-            <p>
-              We are abolitionists fighting for the rights of unhoused people
-              through mutual aid and direct action.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/thewagonpeople.co/">The Wagon People</a>
-            <p>
-              Hot Food, First Aid + Cold Supplies for our unhoused people of
-              Longmont
-            </p>
-          </div>
-        </section>
-      </div>
 
-    </main>
+        </main>
   </div>
 
 

@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Inline theme script to prevent FOUC -->
@@ -37,6 +38,13 @@
   </title>
   <meta name="description" content="Find mutual aid networks and community support initiatives in Central Alabama.">
 
+  <!-- Security headers -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline';">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
   <!-- Open Graph tags -->
   <meta property="og:title" content="Central Alabama Mutual Aid Networks - Local Support & Community Resources">
   <meta property="og:description"
@@ -44,6 +52,7 @@
   <meta property="og:type" content="website">
 
   <meta property="og:url" content="https://organize.directory/central-al">
+  <meta property="og:image" content="https://organize.directory/images/og-image.jpg">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
@@ -118,6 +127,7 @@
         <hr>
 
         <section>
+          <h2>Regional Initiatives</h2>
           <div class="initiative">
             <a href="https://www.instagram.com/jvp_centralalabama/">Jewish Voice for Peace Central Alabama</a>
             <p>

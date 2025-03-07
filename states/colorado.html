@@ -14,32 +14,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
+    <!-- Inline theme script to prevent FOUC -->
+    <script>
+        (function () {
+            function applyTheme() {
+                try {
+                    const savedTheme = localStorage.getItem("theme");
+                    if (savedTheme) {
+                        document.documentElement.setAttribute("data-theme", savedTheme);
+                    } else {
+                        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                        const theme = prefersDark ? "dark" : "light";
+                        document.documentElement.setAttribute("data-theme", theme);
+                        localStorage.setItem("theme", theme);
+                    }
+                } catch (e) {
+                    document.documentElement.setAttribute("data-theme", "light");
                 }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
             }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
+            applyTheme();
+            document.addEventListener("visibilitychange", function () {
+                if (document.visibilityState === "visible") {
+                    applyTheme();
+                }
+            });
+        })();
+    </script>
 
     <title>Colorado Mutual Aid Networks - Local Support & Community Resources</title>
     <meta name="description"
@@ -95,21 +95,8 @@
             </div>
         </div>
 
-    </head>
-
-<body>
-    
-    <!-- Critical Scripts -->
-
-
-    </head>
-
-<body>
-    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
-
-
 
             <div class="city-page">
                 <div class="breadcrumb">
@@ -130,19 +117,21 @@
                         <a href="/colorado-springs" class="city-link">Colorado Springs</a>
                         <a href="/denver" class="city-link">Denver</a>
                         <a href="/durango" class="city-link">Durango</a>
-                        <a href="/eastern-co" class="city-link">Eastern CO</a>
-                        <a href="/fort-collins-north-co" class="city-link">Fort Collins / North CO</a>
+                        <!-- <a href="/eastern-co" class="city-link">Eastern CO</a> -->
+                        <a href="/fort-collins-north-co" class="city-link">Fort Collins</a>
                         <!-- <a href="/grand-junction" class="city-link">Grand Junction</a> -->
                         <!-- <a href="/greeley" class="city-link">Greeley</a> -->
                         <!-- <a href="/high-rockies" class="city-link">High Rockies</a> -->
                         <a href="/longmont" class="city-link">Longmont</a>
-                        <a href="/pueblo" class="city-link">Pueblo</a>
+                        <!-- <a href="/pueblo" class="city-link">Pueblo</a> -->
                         <!-- <a href="/vail" class="city-link">Vail</a> -->
-                        <a href="/western-slope" class="city-link">Western Slope</a>
+                        <!-- <a href="/western-slope" class="city-link">Western Slope</a> -->
                     </div>
                 </section>
+                <hr>
 
                 <section>
+                    <h2>Statewide Organizations</h2>
                     <div class="initiative">
                         <a href="https://lpsurj.wordpress.com/">La Plata SURJ</a>
                         <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity
@@ -169,10 +158,6 @@
 
         </main>
     </div>
-
-
-
-
 </body>
 
 </html>
