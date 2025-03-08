@@ -2,40 +2,10 @@
 <html lang="en">
 
 <head>
-  <!-- Common head content -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
-
   <meta property="og:type" content="website">
-
-    <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary">
   <meta name="description"
     content="Find mutual aid networks and community support initiatives in Wilmington, North Carolina.">
   <meta property="og:title" content="Wilmington, North Carolina - Mutual Aid Network Directory">
@@ -44,20 +14,42 @@
 
   <title>Wilmington, North Carolina - Mutual Aid Network Directory</title>
 
-  <link rel="stylesheet" href="/styles.css">
-    <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
-
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
 
+  <!-- Inline theme script to prevent FOUC -->
+  <script>
+    (function () {
+      function applyTheme() {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          } else {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = prefersDark ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+          }
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      }
+      applyTheme();
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          applyTheme();
+        }
+      });
+    })();
+  </script>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
-    
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
@@ -65,80 +57,78 @@
     gtag("js", new Date());
     gtag("config", "G-QJ03RCM35H");
   </script>
-  <script src="/js/theme-init.js"></script>
-
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('location');
-
-        // Initialize other components
-        initializeComponents({
-            searchHeaderId: 'header'
-        });
-    </script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
+  <div class="layout">
+    <div id="sidebar" class="sidebar" aria-label="Main navigation">
+      <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+      <nav>
+        <a href="/" class="nav-link">Home</a>
+        <div class="nav-group">
+          <span class="nav-group-title">Find a group</span>
+          <a href="/location" class="nav-link nav-link-indented">by location</a>
+          <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
+        <a href="/guides" class="nav-link">Guides</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="sidebar-motto">
+        Solidarity not charity.<br>
+        Awareness into action.
+      </div>
+    </div>
 
-
-  </head>
-
-<body>
-  
-    <!-- Sidebar will be inserted here -->
-
-
-    <main class="content">
+    <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      
-tiative">
-            <a href="https://www.instagram.com/thelowercaseleaders">The Lowercase Leaders</a>
-            <p>
-              a community collective led by black and queer folks focused on
-              mutual aid, abolition and liberation
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://sokotohouse.org/">Sokoto House</a>
-            <p>
-              Cultural hub & community outreach center in Wilmington, NC that
-              aims to build community cohesion and collective efficacy
-            </p>
-          </div>
-        </section>
-      </div>
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/north-carolina">North Carolina</a>
+          <span>›</span>
+          <span>Wilmington</span>
+        </div>
 
+        <h1>Wilmington</h1>
+        <hr>
+
+        <div class="initiatives-container">
+          <section>
+            <div class="initiative">
+              <a href="https://www.instagram.com/thelowercaseleaders">The Lowercase Leaders</a>
+              <p>
+                a community collective led by black and queer folks focused on
+                mutual aid, abolition and liberation
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://sokotohouse.org/">Sokoto House</a>
+              <p>
+                Cultural hub & community outreach center in Wilmington, NC that
+                aims to build community cohesion and collective efficacy
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
     </main>
   </div>
 
-  <!-- Single instance of scripts at the end of body -->
+  <!-- Scripts -->
+  <script src="/js/theme.js"></script>
+  <script src="/js/theme-init.js"></script>
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
 
+    // Initialize sidebar first
+    initializeSidebar('location');
 
-
-
+    // Initialize other components
+    initializeComponents({
+      searchHeaderId: 'header'
+    });
+  </script>
 </body>
 
 </html>

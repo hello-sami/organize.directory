@@ -5,36 +5,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
+  <!-- Inline theme script to prevent FOUC -->
+  <script>
     (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
+      function applyTheme() {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          } else {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = prefersDark ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+          }
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
         }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
+      }
+      applyTheme();
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          applyTheme();
+        }
+      });
     })();
-</script>
+  </script>
 
   <meta property="og:type" content="website">
 
-    <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary">
   <meta name="description"
     content="Find mutual aid initiatives and community support networks in Buffalo, New York. Connect with local organizations and community resources.">
   <meta property="og:title" content="Mutual Aid in Buffalo - Local Support Networks">
@@ -47,8 +47,8 @@
   </title>
 
   <link rel="stylesheet" href="/styles.css">
-    <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
+  <!-- Initialize theme toggle -->
+  <script src="/js/theme.js"></script>
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +59,7 @@
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
-    
+
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
@@ -69,53 +69,56 @@
   </script>
   <script src="/js/theme-init.js"></script>
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
 
-        // Initialize sidebar first
-        initializeSidebar('location');
+    // Initialize sidebar first
+    initializeSidebar('location');
 
-        // Initialize other components
-        initializeComponents({
-            searchHeaderId: 'header'
-        });
-    </script>
+    // Initialize other components
+    initializeComponents({
+      searchHeaderId: 'header'
+    });
+  </script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
+  <div class="layout">
+    <div id="sidebar" class="sidebar" aria-label="Main navigation">
+      <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+      <nav>
+        <a href="/" class="nav-link">Home</a>
+        <div class="nav-group">
+          <span class="nav-group-title">Find a group</span>
+          <a href="/location" class="nav-link nav-link-indented">by location</a>
+          <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
-
-
-  </head>
-
-<body>
-  
-
+        <a href="/guides" class="nav-link">Guides</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="sidebar-motto">
+        Solidarity not charity.<br>
+        Awareness into action.
+      </div>
+    </div>
 
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      
->
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/new-york">New York</a>
+          <span>›</span>
+          <span>Buffalo</span>
+        </div>
+
+        <h1>Buffalo, NY</h1>
+        <hr>
+
+        <section class="initiatives">
+          <div class="initiative">
             <a href="https://burningbooks.com/">Burning Books</a>
             <p>
               A radical bookstore coordinating mutual aid and community
@@ -177,10 +180,12 @@
               aspiring activists.
             </p>
           </div>
+
           <div class="initiative">
             <a href="https://www.instagram.com/the716protests/">The 716 Protests</a>
             <p>Posts protests in the area</p>
           </div>
+
           <div class="initiative">
             <a href="https://www.instagram.com/716.pride/">716 Pride</a>
             <p>
@@ -188,6 +193,7 @@
               all members of the LGBTQIA Buffalo community.
             </p>
           </div>
+
           <div class="initiative">
             <a href="https://www.instagram.com/qhqbuffalo/">Queers Helping Queers Buffalo</a>
             <p>
@@ -196,6 +202,7 @@
               request assistance.
             </p>
           </div>
+
           <div class="initiative">
             <a href="https://www.instagram.com/wnymanmademen/">WNY Man-Made Men</a>
             <p>
@@ -203,21 +210,23 @@
               focused on building community & sharing resources
             </p>
           </div>
+
           <div class="initiative">
             <a href="https://www.instagram.com/jfmfofwny/">Justice for Migrant Families WNY</a>
             <p>
               Small Western New York based community organization supporting
-              migrants’ human and civil rights.
+              migrants' human and civil rights.
             </p>
           </div>
+
           <div class="initiative">
             <a href="https://www.phcbuffalo.org/">Project Homeless Connect Buffalo</a>
             <p>
-
               event held every fall to link our neighbors in need to essential
               services in the community.
             </p>
           </div>
+
           <div class="initiative">
             <a href="https://www.instagram.com/gaza_on_main/">Gaza on Main</a>
             <p>
@@ -225,10 +234,12 @@
               Palestine.
             </p>
           </div>
+
           <div class="initiative">
             <a href="https://www.instagram.com/lola.buffalo716/">LOLA Buffalo</a>
             <p>Liberation for One, Liberation for All</p>
           </div>
+
           <div class="initiative">
             <a href="https://www.buffalocommunityfridges.com/">Buffalo Community Fridges</a>
             <p>
@@ -237,10 +248,12 @@
               Buffalo communities access to fresh and healthy food.
             </p>
           </div>
+
           <div class="initiative">
             <a href="https://buffalo-dsa.org/">Buffalo DSA</a>
             <p>The Buffalo Local of the Democratic Socialists of America</p>
           </div>
+
           <div class="initiative">
             <a href="https://www.voicebuffalo.org/">Voice Buffalo</a>
             <p>
@@ -249,8 +262,9 @@
               organized collective action.
             </p>
           </div>
+
           <div class="initiative">
-            <a href="https://www.instagram.com/buffalo_transit_riders_united/">buffalo Transit Riders United</a>
+            <a href="https://www.instagram.com/buffalo_transit_riders_united/">Buffalo Transit Riders United</a>
             <p>
               Fighting for Buffalonians who ride transit and those who wish
               they can.
@@ -258,14 +272,8 @@
           </div>
         </section>
       </div>
-
-
     </main>
   </div>
-
-
-
-
 </body>
 
 </html>

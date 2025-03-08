@@ -5,32 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
+  <!-- Inline theme script to prevent FOUC -->
+  <script>
     (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
+      function applyTheme() {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          } else {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = prefersDark ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+          }
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
         }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
+      }
+      applyTheme();
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          applyTheme();
+        }
+      });
     })();
-</script>
+  </script>
 
   <title>
     Mutual Aid in Charlotte - Local Support Networks & Community Resources
@@ -42,13 +42,13 @@
     content="Find mutual aid networks and community support initiatives in Charlotte, North Carolina.">
   <meta property="og:type" content="website">
 
-    <meta property="og:url" content="https://organize.directory/charlotte">
+  <meta property="og:url" content="https://organize.directory/charlotte">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-    <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
+  <!-- Initialize theme toggle -->
+  <script src="/js/theme.js"></script>
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +59,7 @@
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
-    
+
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
@@ -70,88 +70,79 @@
 
   <script src="/js/theme-init.js"></script>
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
 
-        // Initialize sidebar first
-        initializeSidebar('location');
+    // Initialize sidebar first
+    initializeSidebar('location');
 
-        // Initialize other components
-        initializeComponents({
-            searchHeaderId: 'header'
-        });
-    </script>
+    // Initialize other components
+    initializeComponents({
+      searchHeaderId: 'header'
+    });
+  </script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
+  <div class="layout">
+    <div id="sidebar" class="sidebar" aria-label="Main navigation">
+      <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+      <nav>
+        <a href="/" class="nav-link">Home</a>
+        <div class="nav-group">
+          <span class="nav-group-title">Find a group</span>
+          <a href="/location" class="nav-link nav-link-indented">by location</a>
+          <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
+        <a href="/guides" class="nav-link">Guides</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="sidebar-motto">
+        Solidarity not charity.<br>
+        Awareness into action.
+      </div>
+    </div>
 
-
-  </head>
-
-<body>
-  
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      
-rt</h2>
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/north-carolina">North Carolina</a>
+          <span>›</span>
+          <span>Charlotte</span>
+        </div>
+
+        <h1>Charlotte</h1>
+        <hr>
+
+        <section class="initiatives">
+          <h2>Charlotte Mutual Aid & Support</h2>
           <div class="initiative">
             <a href="https://www.instagram.com/cltmarxists/">CLT Marxists</a>
-            <p>
-              A grassroots organization fostering mutual aid and community
-              support in Charlotte. They coordinate direct assistance,
-              resource sharing, and solidarity networks while building power
-              through community organizing and creating spaces for collective
-              care and political education.
-            </p>
+            <p>A grassroots organization fostering mutual aid and community support in Charlotte. They coordinate direct
+              assistance, resource sharing, and solidarity networks while building power through community organizing
+              and
+              creating spaces for collective care and political education.</p>
           </div>
           <div class="initiative">
             <a href="https://www.instagram.com/seacvillage/">SEAC Village</a>
-            <p>
-              Southeast Asian community organization building mutual aid
-              networks and cultural solidarity through community care,
-              education, and support initiatives in Charlotte.
-            </p>
+            <p>Southeast Asian community organization building mutual aid networks and cultural solidarity through
+              community care, education, and support initiatives in Charlotte.</p>
           </div>
           <div class="initiative">
             <a href="https://www.foodhelpline.org/directory/regions/charlotte">Lemon Tree's Free Food Directory</a>
-            <p>
-              Map of food pantries and distributions in the Charlotte area.
-            </p>
+            <p>Map of food pantries and distributions in the Charlotte area.</p>
           </div>
           <div class="initiative">
             <a href="https://www.instagram.com/feedthemovementclt">Feed the Movement Charlotte</a>
-            <p>
-              Local mutual aid initiative providing food and resources to
-              community members in need.
-            </p>
+            <p>Local mutual aid initiative providing food and resources to community members in need.</p>
           </div>
           <div class="initiative">
             <a href="https://www.instagram.com/charlotteuprising/">Charlotte Uprising</a>
-            <p>
-              A collective of folks from Charlotte, NC fighting for a world
-              without police and prisons.
-            </p>
+            <p>A collective of folks from Charlotte, NC fighting for a world without police and prisons.</p>
           </div>
           <div class="initiative">
             <a href="https://www.instagram.com/cltworkers/">Charlotte Workers Assembly</a>
@@ -167,35 +158,17 @@ rt</h2>
           </div>
           <div class="initiative">
             <a href="https://www.instagram.com/clt4pali/">Charlotte United for Palestine</a>
-            <p>
-              CUP is a grassroots movement working towards the liberation of
-              Palestinians.
-            </p>
+            <p>CUP is a grassroots movement working towards the liberation of Palestinians.</p>
           </div>
           <div class="initiative">
             <a href="https://www.instagram.com/hjc_clt/">Housing Justice Coalition</a>
-            <p>
-              A community-led coalition in Charlotte, NC, advocating for
-              residents facing displacement, homelessness, & unsafe living
-              conditions.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/charlotteuprising">Charlotte Uprising</a>
-            <p>
-              A collective of folks from Charlotte, NC fighting for a world
-              without police and prisons.
-            </p>
+            <p>A community-led coalition in Charlotte, NC, advocating for residents facing displacement, homelessness, &
+              unsafe living conditions.</p>
           </div>
         </section>
       </div>
-
     </main>
   </div>
-
-
-
-
 </body>
 
 </html>
