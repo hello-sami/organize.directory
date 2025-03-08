@@ -5,32 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
+  <!-- Inline theme script to prevent FOUC -->
+  <script>
     (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
+      function applyTheme() {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          } else {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = prefersDark ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+          }
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
         }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
+      }
+      applyTheme();
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          applyTheme();
+        }
+      });
     })();
-</script>
+  </script>
 
   <title>
     El Paso Mutual Aid Networks - Local Support & Community Resources
@@ -41,13 +41,13 @@
     content="Find mutual aid networks and community support initiatives in El Paso, Texas.">
   <meta property="og:type" content="website">
 
-    <meta property="og:url" content="https://organize.directory/el-paso">
+  <meta property="og:url" content="https://organize.directory/el-paso">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-    <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
+  <!-- Initialize theme toggle -->
+  <script src="/js/theme.js"></script>
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,7 +58,7 @@
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
-    
+
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
@@ -69,85 +69,89 @@
 
   <script src="/js/theme-init.js"></script>
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
 
-        // Initialize sidebar first
-        initializeSidebar('location');
+    // Initialize sidebar first
+    initializeSidebar('location');
 
-        // Initialize other components
-        initializeComponents({
-            searchHeaderId: 'header'
-        });
-    </script>
+    // Initialize other components
+    initializeComponents({
+      searchHeaderId: 'header'
+    });
+  </script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
+  <div class="layout">
+    <div id="sidebar" class="sidebar" aria-label="Main navigation">
+      <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+      <nav>
+        <a href="/" class="nav-link">Home</a>
+        <div class="nav-group">
+          <span class="nav-group-title">Find a group</span>
+          <a href="/location" class="nav-link nav-link-indented">by location</a>
+          <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
+        <a href="/guides" class="nav-link">Guides</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="sidebar-motto">
+        Solidarity not charity.<br>
+        Awareness into action.
+      </div>
+    </div>
 
-
-  </head>
-
-<body>
-  
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      
-ref="https://www.mujerobrera.org/">La Mujer Obrera</a>
-            <p>
-              A women-led organization that develops and celebrates Mexican
-              heritage through economic development, community building, and
-              mutual aid initiatives. They operate several social enterprises
-              including Café Mayapán, Lummetik Trading Co., and Rayito de Sol
-              Daycare, while maintaining programs focused on cultural
-              preservation, food sovereignty, and community organizing through
-              their Tierra es Vida Community Farm and various cultural
-              programs.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.borderlandrainbow.org/">Borderland Rainbow Center</a>
-            <p>
-              A community space in which lesbian, gay, bisexual, transgender,
-              queer/questioning, intersex (LGBTQI) people and their allies can
-              heal, grow, and empower themselves and others.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://bnhr.org/">Border Network for Human Rights</a>
-            <p>
-              Fighting for justice, dignity & social change at our southern
-              border
-            </p>
-          </div>
-        </section>
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/texas">Texas</a>
+          <span>›</span>
+          <span>El Paso</span>
+        </div>
+
+        <h1>El Paso, Texas</h1>
+        <hr>
+
+        <div class="initiatives-container">
+          <section class="initiatives">
+            <div class="initiative">
+              <a href="https://www.mujerobrera.org/">La Mujer Obrera</a>
+              <p>
+                A women-led organization that develops and celebrates Mexican
+                heritage through economic development, community building, and
+                mutual aid initiatives. They operate several social enterprises
+                including Café Mayapán, Lummetik Trading Co., and Rayito de Sol
+                Daycare, while maintaining programs focused on cultural
+                preservation, food sovereignty, and community organizing through
+                their Tierra es Vida Community Farm and various cultural
+                programs.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.borderlandrainbow.org/">Borderland Rainbow Center</a>
+              <p>
+                A community space in which lesbian, gay, bisexual, transgender,
+                queer/questioning, intersex (LGBTQI) people and their allies can
+                heal, grow, and empower themselves and others.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://bnhr.org/">Border Network for Human Rights</a>
+              <p>
+                Fighting for justice, dignity & social change at our southern
+                border
+              </p>
+            </div>
+          </section>
+        </div>
       </div>
     </main>
   </div>
-
-
-
-
 </body>
 
 </html>
