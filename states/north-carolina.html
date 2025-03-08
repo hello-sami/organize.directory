@@ -14,33 +14,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
+    <!-- Theme Management -->
+    <script>
+        (function () {
+            function applyTheme() {
+                try {
+                    const savedTheme = localStorage.getItem("theme");
+                    if (savedTheme) {
+                        document.documentElement.setAttribute("data-theme", savedTheme);
+                    } else {
+                        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                        const theme = prefersDark ? "dark" : "light";
+                        document.documentElement.setAttribute("data-theme", theme);
+                        localStorage.setItem("theme", theme);
+                    }
+                } catch (e) {
+                    document.documentElement.setAttribute("data-theme", "light");
                 }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
             }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
+            applyTheme();
+            document.addEventListener("visibilitychange", function () {
+                if (document.visibilityState === "visible") {
+                    applyTheme();
+                }
+            });
+        })();
+    </script>
 
+    <!-- Meta Tags -->
     <title>North Carolina Mutual Aid Networks - Local Support & Community Resources</title>
     <meta name="description"
         content="Find mutual aid networks and community support initiatives in North Carolina cities including Charlotte, Raleigh, Durham, Asheville, and more.">
@@ -95,21 +96,8 @@
             </div>
         </div>
 
-    </head>
-
-<body>
-    
-    <!-- Critical Scripts -->
-
-
-    </head>
-
-<body>
-    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
-
-
 
             <div class="city-page">
                 <div class="breadcrumb">
@@ -141,8 +129,10 @@
                         <a href="/winston-salem" class="city-link">Winston-Salem</a>
                     </div>
                 </section>
+                <hr>
 
                 <section>
+                    <h2>Statewide Organizations</h2>
                     <div class="initiative">
                         <a href="https://www.carolinaabortionfund.org/">Carolina Abortion Fund</a>
                         <p>A mutual aid network providing financial, logistical, and emotional support to ensure
@@ -225,7 +215,7 @@
                     <div class="initiative">
                         <a href="https://downhomenc.org/">Down Home NC</a>
                         <p>Down Home North Carolina is building power with poor and working-class people in North
-                            Carolina’s small towns and rural communities.</p>
+                            Carolina's small towns and rural communities.</p>
                     </div>
                     <div class="initiative">
                         <a href="https://carolinamigrantnetwork.org/">Carolina Migrant Network</a>
@@ -237,9 +227,6 @@
 
         </main>
     </div>
-
-
-
 
 </body>
 

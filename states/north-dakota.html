@@ -14,32 +14,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
+    <!-- Inline theme script to prevent FOUC -->
+    <script>
+        (function () {
+            function applyTheme() {
+                try {
+                    const savedTheme = localStorage.getItem("theme");
+                    if (savedTheme) {
+                        document.documentElement.setAttribute("data-theme", savedTheme);
+                    } else {
+                        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                        const theme = prefersDark ? "dark" : "light";
+                        document.documentElement.setAttribute("data-theme", theme);
+                        localStorage.setItem("theme", theme);
+                    }
+                } catch (e) {
+                    document.documentElement.setAttribute("data-theme", "light");
                 }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
             }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
+            applyTheme();
+            document.addEventListener("visibilitychange", function () {
+                if (document.visibilityState === "visible") {
+                    applyTheme();
+                }
+            });
+        })();
+    </script>
 
     <title>North Dakota Mutual Aid Networks - Local Support & Community Resources</title>
     <meta name="description"
@@ -95,21 +95,8 @@
             </div>
         </div>
 
-    </head>
-
-<body>
-    
-    <!-- Critical Scripts -->
-
-
-    </head>
-
-<body>
-    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
-
-
 
             <div class="city-page">
                 <div class="breadcrumb">
@@ -129,13 +116,18 @@
                         <a href="/grand-forks" class="city-link">Grand Forks</a>
                     </div>
                 </section>
+                <hr>
 
                 <section>
+                    <h2>Statewide Organizations</h2>
                     <div class="initiative">
                         <a href="https://www.instagram.com/prairieabortionfund/">Prairie Abortion Fund</a>
-                        <p>A grassroots collective fostering mutual aid and community power through abortion access and
-                            reproductive justice in North Dakota. They coordinate direct support, resource sharing, and
-                            solidarity networks while building power through abortion funding, practical support, and
+                        <p>A grassroots collective fostering mutual aid and community power through abortion
+                            access and
+                            reproductive justice in North Dakota. They coordinate direct support, resource
+                            sharing, and
+                            solidarity networks while building power through abortion funding, practical
+                            support, and
                             creating networks of care for reproductive autonomy.</p>
                     </div>
                     <div class="initiative">
@@ -144,7 +136,8 @@
                     </div>
                     <div class="initiative">
                         <a href="https://www.instagram.com/prairieactionnd/">Prarie Action ND</a>
-                        <p>Comms. & advocacy organization that amplifies progressive values, messages & actions in North
+                        <p>Comms. & advocacy organization that amplifies progressive values, messages & actions
+                            in North
                             Dakota.</p>
                     </div>
                     <div class="initiative">
@@ -153,12 +146,16 @@
                     </div>
                     <div class="initiative">
                         <a href="https://www.righttoreadnd.org/">Right to Read ND</a>
-                        <p>Right to Read ND is a group of North Dakotans who have come together in response to the
-                            growing movement to limit access to books and materials in our libraries and schools. </p>
+                        <p>Right to Read ND is a group of North Dakotans who have come together in response to
+                            the
+                            growing movement to limit access to books and materials in our libraries and
+                            schools. </p>
                     </div>
                     <div class="initiative">
-                        <a href="https://www.instagram.com/ppnodak/">Planned Parenthood North Dakota Advocate</a>
-                        <p>Advocating, organizing, and fighting to protect sexual and reproductive health care in North
+                        <a href="https://www.instagram.com/ppnodak/">Planned Parenthood North Dakota
+                            Advocate</a>
+                        <p>Advocating, organizing, and fighting to protect sexual and reproductive health care
+                            in North
                             Dakota</p>
                     </div>
                 </section>
@@ -167,10 +164,6 @@
 
         </main>
     </div>
-
-
-
-
 </body>
 
 </html>

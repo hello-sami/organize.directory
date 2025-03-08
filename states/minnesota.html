@@ -14,32 +14,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
+    <!-- Inline theme script to prevent FOUC -->
+    <script>
+        (function () {
+            function applyTheme() {
+                try {
+                    const savedTheme = localStorage.getItem("theme");
+                    if (savedTheme) {
+                        document.documentElement.setAttribute("data-theme", savedTheme);
+                    } else {
+                        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                        const theme = prefersDark ? "dark" : "light";
+                        document.documentElement.setAttribute("data-theme", theme);
+                        localStorage.setItem("theme", theme);
+                    }
+                } catch (e) {
+                    document.documentElement.setAttribute("data-theme", "light");
                 }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
             }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
+            applyTheme();
+            document.addEventListener("visibilitychange", function () {
+                if (document.visibilityState === "visible") {
+                    applyTheme();
+                }
+            });
+        })();
+    </script>
 
     <title>Minnesota Mutual Aid Networks - Local Support & Community Resources</title>
     <meta name="description"
@@ -95,21 +95,8 @@
             </div>
         </div>
 
-    </head>
-
-<body>
-    
-    <!-- Critical Scripts -->
-
-
-    </head>
-
-<body>
-    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
-
-
 
             <div class="city-page">
                 <div class="breadcrumb">
@@ -135,8 +122,10 @@
                         <a href="/winona" class="city-link">Winona</a>
                     </div>
                 </section>
+                <hr>
 
                 <section>
+                    <h2>Statewide Organizations</h2>
                     <div class="initiative">
                         <a href="https://antiwarcommittee.org/">Anti-War Committee</a>
                         <p>A grassroots organization coordinating mutual aid and solidarity initiatives while organizing
@@ -158,8 +147,6 @@
                     <div class="initiative">
                         <a href="https://rtmn.org/">Rebuilding Together Minnesota</a>
                         <p>A mutual aid organization coordinating home repair and community revitalization initiatives
-
-
                             of solidarity through volunteer mobilization and neighborhood preservation to ensure people
                             can live independently and safely in their homes.</p>
                     </div>
@@ -279,9 +266,6 @@
 
         </main>
     </div>
-
-
-
 
 </body>
 

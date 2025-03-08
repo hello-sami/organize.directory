@@ -14,32 +14,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
+    <!-- Inline theme script to prevent FOUC -->
+    <script>
+        (function () {
+            function applyTheme() {
+                try {
+                    const savedTheme = localStorage.getItem("theme");
+                    if (savedTheme) {
+                        document.documentElement.setAttribute("data-theme", savedTheme);
+                    } else {
+                        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                        const theme = prefersDark ? "dark" : "light";
+                        document.documentElement.setAttribute("data-theme", theme);
+                        localStorage.setItem("theme", theme);
+                    }
+                } catch (e) {
+                    document.documentElement.setAttribute("data-theme", "light");
                 }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
             }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
+            applyTheme();
+            document.addEventListener("visibilitychange", function () {
+                if (document.visibilityState === "visible") {
+                    applyTheme();
+                }
+            });
+        })();
+    </script>
 
     <title>South Dakota Mutual Aid Networks - Local Support & Community Resources</title>
     <meta name="description"
@@ -95,21 +95,8 @@
             </div>
         </div>
 
-    </head>
-
-<body>
-    
-    <!-- Critical Scripts -->
-
-
-    </head>
-
-<body>
-    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
-
-
 
             <div class="city-page">
                 <div class="breadcrumb">
@@ -124,29 +111,22 @@
                 <section>
                     <h2>Cities</h2>
                     <div class="cities-list">
-                        <!-- <a href="/brookings" class="city-link">Brookings</a> -->
-                        <!-- <a href="/mitchell" class="city-link">Mitchell</a> -->
-                        <!-- <a href="/pierre" class="city-link">Pierre</a> -->
                         <a href="/rapid-city" class="city-link">Rapid City</a>
                         <a href="/sioux-falls" class="city-link">Sioux Falls</a>
                         <a href="/watertown" class="city-link">Watertown</a>
                     </div>
                 </section>
+                <hr>
 
                 <section>
+                    <h2>Statewide Organizations</h2>
                     <div class="initiative">
                         <a href="https://www.transadvocacysd.org/">Trans Advocacy South Dakota</a>
-                        <p></p>
                     </div>
                 </section>
             </div>
-
         </main>
     </div>
-
-
-
-
 </body>
 
 </html>

@@ -5,32 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
+    <!-- Inline theme script to prevent FOUC -->
+    <script>
+        (function () {
+            function applyTheme() {
+                try {
+                    const savedTheme = localStorage.getItem("theme");
+                    if (savedTheme) {
+                        document.documentElement.setAttribute("data-theme", savedTheme);
+                    } else {
+                        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                        const theme = prefersDark ? "dark" : "light";
+                        document.documentElement.setAttribute("data-theme", theme);
+                        localStorage.setItem("theme", theme);
+                    }
+                } catch (e) {
+                    document.documentElement.setAttribute("data-theme", "light");
                 }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
             }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
+            applyTheme();
+            document.addEventListener("visibilitychange", function () {
+                if (document.visibilityState === "visible") {
+                    applyTheme();
+                }
+            });
+        })();
+    </script>
 
     <title>Virginia Mutual Aid Networks - Local Support & Community Resources</title>
     <meta name="description"
@@ -52,7 +52,7 @@
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
+        window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-QJ03RCM35H');
@@ -94,20 +94,18 @@
                 Awareness into action.
             </div>
         </div>
-    <!-- Critical Scripts -->
 
-
-    </head>
-
-<body>
-    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/location">States</a>
+                    <span>›</span>
+                    <span>Virginia</span>
+                </div>
 
-
-            
-  <h1>Virginia</h1>
+                <h1>Virginia</h1>
                 <hr>
 
                 <section>
@@ -115,27 +113,32 @@
                     <div class="cities-list">
                         <a href="/charlottesville" class="city-link">Charlottesville</a>
                         <!-- <a href="/danville" class="city-link">Danville</a> -->
-                        <a href="/fredericksburg" class="city-link">Fredericksburg</a>
+                        <!-- <a href="/fredericksburg" class="city-link">Fredericksburg</a> -->
                         <a href="/hampton-roads" class="city-link">Hampton Roads</a>
-                        <a href="/harrisonburg" class="city-link">Harrisonburg</a>
+                        <!-- <a href="/harrisonburg" class="city-link">Harrisonburg</a> -->
                         <a href="/lynchburg" class="city-link">Lynchburg</a>
                         <a href="/new-river-valley" class="city-link">New River Valley</a>
                         <a href="/richmond" class="city-link">Richmond</a>
                         <a href="/roanoke" class="city-link">Roanoke</a>
-                        <a href="/southwest-va" class="city-link">Southwest VA</a>
+                        <!-- <a href="/southwest-va" class="city-link">Southwest VA</a> -->
                         <!-- <a href="/winchester" class="city-link">Winchester</a> -->
                         <a href="/virginia-beach" class="city-link">Virginia Beach</a>
                     </div>
                 </section>
+                <hr>
 
                 <section>
+                    <h2>Statewide Organizations</h2>
                     <div class="initiative">
                         <a href="https://blueridgebailfund.org/">Blue Ridge Community Bail Fund</a>
                         <p>A volunteer-run mutual aid organization providing bail assistance to people held pre-trial in
-                            the Shenandoah Valley region, including Staunton, Harrisonburg, Page County, and
-                            Charlottesville. Through their revolving bail fund, they work to ensure that people do not
-                            remain incarcerated simply due to inability to pay, while addressing the disproportionate
-                            impact of cash bail on communities of color and low-income individuals.</p>
+                            the
+                            Shenandoah Valley region, including Staunton, Harrisonburg, Page County, and
+                            Charlottesville.
+                            Through their revolving bail fund, they work to ensure that people do not remain
+                            incarcerated
+                            simply due to inability to pay, while addressing the disproportionate impact of cash bail on
+                            communities of color and low-income individuals.</p>
                     </div>
                     <div class="initiative">
                         <a href="https://powersafeplace.org/">Power Safe Place Resource Center of Virginia</a>
@@ -206,13 +209,8 @@
                     </div>
                 </section>
             </div>
-
         </main>
     </div>
-
-
-
-
 </body>
 
 </html>

@@ -14,33 +14,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
-
+    <!-- Meta Tags -->
     <title>Florida Mutual Aid Networks - Local Support & Community Resources</title>
     <meta name="description"
         content="Find mutual aid networks and community support initiatives in Florida cities including Miami, Orlando, Tampa, and more.">
@@ -54,13 +28,38 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
-    <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
+    <!-- Theme Scripts -->
+    <script>
+        (function () {
+            function applyTheme() {
+                try {
+                    const savedTheme = localStorage.getItem("theme");
+                    if (savedTheme) {
+                        document.documentElement.setAttribute("data-theme", savedTheme);
+                    } else {
+                        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                        const theme = prefersDark ? "dark" : "light";
+                        document.documentElement.setAttribute("data-theme", theme);
+                        localStorage.setItem("theme", theme);
+                    }
+                } catch (e) {
+                    document.documentElement.setAttribute("data-theme", "light");
+                }
+            }
+            applyTheme();
+            document.addEventListener("visibilitychange", function () {
+                if (document.visibilityState === "visible") {
+                    applyTheme();
+                }
+            });
+        })();
+    </script>
+    <script src="/js/theme.js"></script>
     <script src="/js/theme-init.js"></script>
 
-    <!-- Initialize Components -->
+    <!-- Component Initialization -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
@@ -95,34 +94,21 @@
             </div>
         </div>
 
-    </head>
-
-<body>
-    
-    <!-- Critical Scripts -->
-
-
-    </head>
-
-<body>
-    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 
-
-
             <div class="city-page">
-                <div class="breadcrumb">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
                     <a href="/location">States</a>
                     <span>›</span>
                     <span>Florida</span>
-                </div>
+                </nav>
 
                 <h1>Florida</h1>
                 <hr>
 
-                <section>
-                    <h2>Cities</h2>
+                <section aria-labelledby="cities-heading">
+                    <h2 id="cities-heading">Cities</h2>
                     <div class="cities-list">
                         <a href="/broward-county" class="city-link">Broward County</a>
                         <a href="/central-fl" class="city-link">Central Florida</a>
@@ -152,8 +138,10 @@
                         <a href="/treasure-coast" class="city-link">Treasure Coast</a>
                     </div>
                 </section>
+                <hr>
 
-                <section>
+                <section aria-label="Statewide Organizations">
+                    <h2>Statewide Organizations</h2>
                     <div class="initiative">
                         <a href="https://floridaimmigrant.org/">Florida Immigrant Coalition (FLIC)</a>
                         <p>A statewide alliance of immigrant rights organizations providing mutual aid, legal support,
@@ -203,15 +191,9 @@
                         <p>Official Young Lords FL chapter ALL POWER TO THE PEOPLE</p>
                     </div>
                 </section>
-
             </div>
-
         </main>
     </div>
-
-
-
-
 </body>
 
 </html>

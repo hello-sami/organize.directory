@@ -16,32 +16,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
+  <!-- Inline theme script to prevent FOUC -->
+  <script>
     (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
+      function applyTheme() {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          } else {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = prefersDark ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+          }
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
         }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
+      }
+      applyTheme();
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          applyTheme();
+        }
+      });
     })();
-</script>
+  </script>
 
   <title>
     Casper Mutual Aid Networks - Local Support & Community Resources
@@ -52,13 +52,13 @@
     content="Find mutual aid networks and community support initiatives in Casper, Wyoming.">
   <meta property="og:type" content="website">
 
-    <meta property="og:url" content="https://organize.directory/casper">
+  <meta property="og:url" content="https://organize.directory/casper">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-    <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
+  <!-- Initialize theme toggle -->
+  <script src="/js/theme.js"></script>
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,51 +68,41 @@
 
   <script src="/js/theme-init.js"></script>
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
 
-        // Initialize sidebar first
-        initializeSidebar('location');
+    // Initialize sidebar first
+    initializeSidebar('location');
 
-        // Initialize other components
-        initializeComponents({
-            searchHeaderId: 'header'
-        });
-    </script>
+    // Initialize other components
+    initializeComponents({
+      searchHeaderId: 'header'
+    });
+  </script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
+  <div class="layout">
+    <div id="sidebar" class="sidebar" aria-label="Main navigation">
+      <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+      <nav>
+        <a href="/" class="nav-link">Home</a>
+        <div class="nav-group">
+          <span class="nav-group-title">Find a group</span>
+          <a href="/location" class="nav-link nav-link-indented">by location</a>
+          <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
+        <a href="/guides" class="nav-link">Guides</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="sidebar-motto">
+        Solidarity not charity.<br>
+        Awareness into action.
+      </div>
+    </div>
 
-    </head>
-
-<body>
-    
-
-
-  </head>
-
-<body>
-  
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
@@ -123,40 +113,30 @@
           <span>Casper</span>
         </div>
 
-        <h1>Casper</h1>
+        <h1>Casper, WY</h1>
         <hr>
 
         <section>
+          <h2>Local Organizations</h2>
           <div class="initiative">
             <a href="https://www.facebook.com/CARESFreeStore/">CARES Free Store</a>
-            <p>
-              Mutual Aid Hub and Free Store for our community, providing
-              clothes and household goods.
-            </p>
+            <p>Mutual Aid Hub and Free Store for our community, providing
+              clothes and household goods.</p>
           </div>
           <div class="initiative">
             <a href="https://casperpflag.org/">Casper PFLAG</a>
-            <p>
-              PFLAG promotes the health and well-being of lesbian, gay,
-              bisexual and transgender persons, their families and friends
-            </p>
+            <p>PFLAG promotes the health and well-being of lesbian, gay,
+              bisexual and transgender persons, their families and friends</p>
           </div>
           <div class="initiative">
             <a href="https://casperpride.com/">Casper Pride</a>
-            <p>
-              Casper Pride is your home for LGBTQ+ events, resources, and
-              involvement opportunities in central Wyoming.
-            </p>
+            <p>Casper Pride is your home for LGBTQ+ events, resources, and
+              involvement opportunities in central Wyoming.</p>
           </div>
         </section>
       </div>
-
     </main>
   </div>
-
-
-
-
 </body>
 
 </html>

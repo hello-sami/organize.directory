@@ -13,54 +13,53 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
-
-    <title>Maryland Mutual Aid Networks - Local Support & Community Resources</title>
     <meta name="description"
         content="Find mutual aid networks and community support initiatives in Maryland cities including Baltimore, Annapolis, Frederick, and more.">
+
+    <!-- Open Graph / Social Meta Tags -->
     <meta property="og:title" content="Maryland Mutual Aid Networks - Local Support & Community Resources">
     <meta property="og:description"
         content="Find mutual aid networks and community support initiatives in Maryland cities including Baltimore, Annapolis, Frederick, and more.">
     <meta property="og:type" content="website">
-
     <meta property="og:url" content="https://organize.directory/maryland">
     <meta name="twitter:card" content="summary">
 
+    <title>Maryland Mutual Aid Networks - Local Support & Community Resources</title>
+
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
-    <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
+    <!-- Theme Management -->
+    <script>
+        (function () {
+            function applyTheme() {
+                try {
+                    const savedTheme = localStorage.getItem("theme");
+                    if (savedTheme) {
+                        document.documentElement.setAttribute("data-theme", savedTheme);
+                    } else {
+                        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                        const theme = prefersDark ? "dark" : "light";
+                        document.documentElement.setAttribute("data-theme", theme);
+                        localStorage.setItem("theme", theme);
+                    }
+                } catch (e) {
+                    document.documentElement.setAttribute("data-theme", "light");
+                }
+            }
+            applyTheme();
+            document.addEventListener("visibilitychange", function () {
+                if (document.visibilityState === "visible") {
+                    applyTheme();
+                }
+            });
+        })();
+    </script>
+    <script src="/js/theme.js"></script>
     <script src="/js/theme-init.js"></script>
 
-    <!-- Initialize Components -->
+    <!-- Component Initialization -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
@@ -95,21 +94,8 @@
             </div>
         </div>
 
-    </head>
-
-<body>
-    
-    <!-- Critical Scripts -->
-
-
-    </head>
-
-<body>
-    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
-
-
 
             <div class="city-page">
                 <div class="breadcrumb">
@@ -136,8 +122,10 @@
                         <a href="/western-maryland" class="city-link">Western Maryland</a>
                     </div>
                 </section>
+                <hr>
 
                 <section>
+                    <h2>Statewide Organizations</h2>
                     <div class="initiative">
                         <a href="https://www.belovedcommunityincubator.org/">Beloved Community Incubator</a>
                         <p>A community-based organization fostering mutual aid and economic justice through cooperative
@@ -147,17 +135,9 @@
                             support networks.</p>
                     </div>
                 </section>
-
-
-
             </div>
-
         </main>
     </div>
-
-
-
-
 </body>
 
 </html>

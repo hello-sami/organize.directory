@@ -619,7 +619,6 @@ export async function onRequest({ request, next }) {
           "visalia-tulare",
           "waco",
           "waltham",
-          "washington",
           "washington-dc",
           "waterloo-cedar-falls",
           "watertown",

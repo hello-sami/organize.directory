@@ -14,32 +14,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
+    <!-- Inline theme script to prevent FOUC -->
+    <script>
+        (function () {
+            function applyTheme() {
+                try {
+                    const savedTheme = localStorage.getItem("theme");
+                    if (savedTheme) {
+                        document.documentElement.setAttribute("data-theme", savedTheme);
+                    } else {
+                        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                        const theme = prefersDark ? "dark" : "light";
+                        document.documentElement.setAttribute("data-theme", theme);
+                        localStorage.setItem("theme", theme);
+                    }
+                } catch (e) {
+                    document.documentElement.setAttribute("data-theme", "light");
                 }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
             }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
+            applyTheme();
+            document.addEventListener("visibilitychange", function () {
+                if (document.visibilityState === "visible") {
+                    applyTheme();
+                }
+            });
+        })();
+    </script>
 
     <title>Utah Mutual Aid Networks - Local Support & Community Resources</title>
     <meta name="description"
@@ -95,21 +95,8 @@
             </div>
         </div>
 
-    </head>
-
-<body>
-    
-    <!-- Critical Scripts -->
-
-
-    </head>
-
-<body>
-    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
-
-
 
             <div class="city-page">
                 <div class="breadcrumb">
@@ -124,15 +111,17 @@
                 <section>
                     <h2>Cities</h2>
                     <div class="cities-list">
-                        <a href="/logan" class="city-link">Logan</a>
+                        <!-- <a href="/logan" class="city-link">Logan</a> -->
                         <a href="/ogden-clearfield" class="city-link">Ogden-Clearfield</a>
                         <a href="/provo-orem" class="city-link">Provo / Orem</a>
                         <a href="/salt-lake-city" class="city-link">Salt Lake City</a>
-                        <a href="/st-george" class="city-link">St George</a>
+                        <!-- <a href="/st-george" class="city-link">St George</a> -->
                     </div>
                 </section>
+                <hr>
 
                 <section>
+                    <h2>Statewide Organizations</h2>
                     <div class="initiative">
                         <a href="https://utahmutualaid.org/">Utah Valley Mutual Aid</a>
                         <p>Utah Valley Mutual Aid is a mutual aid network for the whole Utah Valley. We seek to empower
@@ -146,16 +135,10 @@
                             unsheltered residents of Utah, coordinating with existing social services, while working
                             toward creating employment and permanent housing solutions.</p>
                     </div>
-
                 </section>
             </div>
-
         </main>
     </div>
-
-
-
-
 </body>
 
 </html>

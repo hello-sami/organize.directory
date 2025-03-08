@@ -14,32 +14,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
+    <!-- Inline theme script to prevent FOUC -->
+    <script>
+        (function () {
+            function applyTheme() {
+                try {
+                    const savedTheme = localStorage.getItem("theme");
+                    if (savedTheme) {
+                        document.documentElement.setAttribute("data-theme", savedTheme);
+                    } else {
+                        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                        const theme = prefersDark ? "dark" : "light";
+                        document.documentElement.setAttribute("data-theme", theme);
+                        localStorage.setItem("theme", theme);
+                    }
+                } catch (e) {
+                    document.documentElement.setAttribute("data-theme", "light");
                 }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
             }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
+            applyTheme();
+            document.addEventListener("visibilitychange", function () {
+                if (document.visibilityState === "visible") {
+                    applyTheme();
+                }
+            });
+        })();
+    </script>
 
     <title>Iowa Mutual Aid Networks - Local Support & Community Resources</title>
     <meta name="description"
@@ -95,21 +95,8 @@
             </div>
         </div>
 
-    </head>
-
-<body>
-    
-    <!-- Critical Scripts -->
-
-
-    </head>
-
-<body>
-    
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
-
-
 
             <div class="city-page">
                 <div class="breadcrumb">
@@ -137,8 +124,10 @@
                         <!-- <a href="/waterloo-cedar-falls" class="city-link">Waterloo / Cedar Falls</a> -->
                     </div>
                 </section>
+                <hr>
 
                 <section>
+                    <h2>Statewide Organizations</h2>
                     <div class="initiative">
                         <a href="https://www.iowacci.org/">Iowa Citizens for Community Improvement (CCI)</a>
                         <p>A grassroots organization fostering mutual aid and community power through statewide
@@ -155,7 +144,7 @@
                     <div class="initiative">
                         <a href="https://www.iowatransmutualaidfund.org/">Iowa Trans Mutual Aid Fund</a>
                         <p>The Iowa Trans Mutual Aid Fund financially supports Trans, Nonbinary, and Gender Diverse
-                            Iowans as they access gender-affirming care. </p>
+                            Iowans as they access gender-affirming care.</p>
                     </div>
                     <div class="initiative">
                         <a href="https://www.prairielandsfreedomfund.org/">Prarielands Freedom Fund</a>
@@ -164,18 +153,12 @@
                     <div class="initiative">
                         <a href="https://www.iowaabortionaccessfund.org/">Iowa Abortion Access Fund</a>
                         <p>Committed to providing access to abortion services for folks in Iowa, including the QCA, who
-                            lack resources to pay. </p>
+                            lack resources to pay.</p>
                     </div>
                 </section>
-
             </div>
-
         </main>
     </div>
-
-
-
-
 </body>
 
 </html>
