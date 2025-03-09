@@ -16,43 +16,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
+  <!-- Inline theme script to prevent FOUC -->
+  <script>
     (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
+      function applyTheme() {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          } else {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = prefersDark ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+          }
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
         }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
+      }
+      applyTheme();
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          applyTheme();
+        }
+      });
     })();
-</script>
+  </script>
 
 
-    <title>
+  <title>
     Oakland Mutual Aid Networks - Local Support & Community Resources
   </title>
   <meta name="description" content="Find mutual aid networks and community support initiatives in Oakland, California.">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-    <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
+  <!-- Initialize theme toggle -->
+  <script src="/js/theme.js"></script>
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,231 +62,233 @@
 
   <script src="/js/theme-init.js"></script>
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
 
-        // Initialize sidebar first
-        initializeSidebar('location');
+    // Initialize sidebar first
+    initializeSidebar('location');
 
-        // Initialize other components
-        initializeComponents({
-            searchHeaderId: 'header'
-        });
-    </script>
+    // Initialize other components
+    initializeComponents({
+      searchHeaderId: 'header'
+    });
+  </script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
+  <div class="layout">
+    <div id="sidebar" class="sidebar" aria-label="Main navigation">
+      <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+      <nav>
+        <a href="/" class="nav-link">Home</a>
+        <div class="nav-group">
+          <span class="nav-group-title">Find a group</span>
+          <a href="/location" class="nav-link nav-link-indented">by location</a>
+          <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
+        <a href="/guides" class="nav-link">Guides</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="sidebar-motto">
+        Solidarity not charity.<br>
+        Awareness into action.
+      </div>
+    </div>
 
     </head>
 
-<body>
-    
+    <body>
 
 
-  </head>
 
-<body>
-  
-    <main class="content">
-      <header id="header" class="page-header"></header>
+      </head>
 
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/sf-bay-area">Bay Area</a>
-          <span>›</span>
-          <a href="/east-bay">East Bay</a>
-          <span>›</span>
-          <span>Oakland</span>
-        </div>
+      <body>
 
-        <h1>Oakland</h1>
+        <main class="content">
+          <header id="header" class="page-header"></header>
 
-        <section>
-          <div class="initiative">
-            <a href="https://www.abocomix.com/">A.B.O. Comix</a>
-            <p>
-              Organization supporting LGBTQ+ prisoners through art
-              publications, direct financial assistance, and pen pal programs.
-              Provides essential items, legal support, and resources while
-              amplifying prisoner voices through comics and art.
-            </p>
+          <div class="city-page">
+            <div class="breadcrumb">
+              <a href="/sf-bay-area">Bay Area</a>
+              <span>›</span>
+              <a href="/east-bay">East Bay</a>
+              <span>›</span>
+              <span>Oakland</span>
+            </div>
+
+            <h1>Oakland</h1>
+            <hr>
+
+            <section>
+              <h2>Local Organizations</h2>
+              <div class="initiative">
+                <a href="https://www.abocomix.com/">A.B.O. Comix</a>
+                <p>
+                  Organization supporting LGBTQ+ prisoners through art
+                  publications, direct financial assistance, and pen pal programs.
+                  Provides essential items, legal support, and resources while
+                  amplifying prisoner voices through comics and art.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://oaklandabosol.org/">Oakland Abolition & Solidarity</a>
+                <p>
+                  Grassroots collective organizing for prison abolition and
+                  building solidarity between communities inside and outside
+                  prison walls.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://criticalresistance.org/">Critical Resistance</a>
+                <p>
+                  Building an international movement to abolish the prison
+                  industrial complex through grassroots organizing, coalition
+                  building, political education, and direct action. Their Oakland
+                  chapter leads campaigns against imprisonment and policing while
+                  developing community-based alternatives.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://apen4ej.org/">Asian Pacific Environmental Network (APEN)</a>
+                <p>
+                  Building power in Asian immigrant and refugee communities for
+                  environmental, social, and economic justice through grassroots
+                  organizing, mutual aid, and policy advocacy in Oakland and
+                  Richmond.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://cjjc.org/">Causa Justa :: Just Cause (CJJC)</a>
+                <p>
+                  Multi-racial, grassroots organization building community power
+                  through tenant rights advocacy, mutual aid, and organizing
+                  against gentrification and displacement in Oakland and San
+                  Francisco.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://curyj.org/">Communities United for Restorative Youth Justice (CURYJ)</a>
+                <p>
+                  Youth-led organization building power through healing,
+                  leadership development, and community organizing to end youth
+                  incarceration and transform the criminal justice system through
+                  mutual aid and restorative practices.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://www.punkswithlunch.org/">Punks with Lunch</a>
+                <p>
+                  A mutual aid collective providing direct support, harm reduction
+                  services, and community care in Oakland. They coordinate food
+                  distribution, resource sharing, and harm reduction supplies
+                  while building networks of solidarity through street outreach
+                  and community organizing.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://www.momentscooperative.com/">Moments Cooperative Care</a>
+                <p>
+                  A worker-owned cooperative organizing mutual aid and community
+                  care through accessible, trauma-informed support services in
+                  Oakland. They coordinate direct care, resource sharing, and
+                  solidarity networks while building sustainable models of
+                  community-based care and support.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://omnicommons.org/">Omni Commons</a>
+                <p>
+                  A grassroots collective managing a community center focused on
+                  mutual aid, social justice, and radical generosity in Oakland.
+                  They host multiple mutual aid initiatives including Food Not
+                  Bombs, citizen science projects, and free technology resources
+                  while providing space for community organizing and solidarity
+                  networks.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://chiapas-support.org/">Chiapas Support Committee</a>
+                <p>
+                  A grassroots collective organizing mutual aid and solidarity
+                  initiatives in support of Zapatista communities in Chiapas,
+                  Mexico. They coordinate direct support for autonomous education,
+                  resource sharing, and community organizing while building
+                  connections between Oakland and Indigenous movements through
+                  cultural events and political education at the Omni Commons.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://peoplesopen.net/">People's Open Network</a>
+                <p>
+                  A community-owned and operated wireless network providing mutual
+                  aid through free internet access in Oakland. They coordinate
+                  peer-to-peer infrastructure, digital literacy resources, and
+                  community workshops while building autonomous networks for
+                  digital equity and community empowerment.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://www.antipoliceterrorproject.org/">Anti Police-Terror Project (APTP)</a>
+                <p>
+                  A grassroots organization coordinating mutual aid and community
+                  response initiatives in Oakland. They organize direct support
+                  through Mental Health First (MH First) crisis response,
+                  community education, and solidarity networks while building
+                  alternatives to policing through collective action and
+                  transformative justice.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://tamarackoakland.com/">Tamarack</a>
+                <p>
+                  A worker-owned restaurant and mutual aid hub providing
+                  sliding-scale meals and community support in Oakland. They
+                  coordinate food distributions, resource sharing, and solidarity
+                  networks while building community power through sustainable food
+                  systems and creating spaces for collective care and nourishment.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://www.poormagazine.org/">POOR Magazine</a>
+                <p>
+                  A grassroots, non-profit media, arts and education organization
+                  providing voice and visibility for communities in poverty
+                  through mutual aid and revolutionary journalism. They coordinate
+                  media training, publishing projects, and indigenous news
+                  coverage while building power through poor people-led
+                  organizing, radical education, and solidarity networks.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://www.vitalarts.org/">Vital Arts</a>
+                <p>
+                  A grassroots arts organization fostering mutual aid and
+                  solidarity through cultural programming and community spaces in
+                  Oakland. They coordinate art exhibitions, music events, and
+                  solidarity networks while building power through accessible arts
+                  education, youth mentorship, and creating spaces for cultural
+                  expression and collective creativity.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://www.eastsideartsalliance.org/">Eastside Arts Alliance</a>
+                <p>
+                  A cultural center fostering mutual aid and community power
+                  through arts, culture, and social justice organizing in East
+                  Oakland. They coordinate cultural events, youth programs, and
+                  solidarity networks while building power through cultural
+                  preservation, political education, and creating spaces for
+                  community-driven arts and resistance.
+                </p>
+              </div>
+            </section>
           </div>
-          <div class="initiative">
-            <a href="https://oaklandabosol.org/">Oakland Abolition & Solidarity</a>
-            <p>
-              Grassroots collective organizing for prison abolition and
-              building solidarity between communities inside and outside
-              prison walls.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://criticalresistance.org/">Critical Resistance</a>
-            <p>
-              Building an international movement to abolish the prison
-              industrial complex through grassroots organizing, coalition
-              building, political education, and direct action. Their Oakland
-              chapter leads campaigns against imprisonment and policing while
-              developing community-based alternatives.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://apen4ej.org/">Asian Pacific Environmental Network (APEN)</a>
-            <p>
-              Building power in Asian immigrant and refugee communities for
-              environmental, social, and economic justice through grassroots
-              organizing, mutual aid, and policy advocacy in Oakland and
-              Richmond.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://cjjc.org/">Causa Justa :: Just Cause (CJJC)</a>
-            <p>
-              Multi-racial, grassroots organization building community power
-              through tenant rights advocacy, mutual aid, and organizing
-              against gentrification and displacement in Oakland and San
-              Francisco.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://curyj.org/">Communities United for Restorative Youth Justice (CURYJ)</a>
-            <p>
-              Youth-led organization building power through healing,
-              leadership development, and community organizing to end youth
-              incarceration and transform the criminal justice system through
-              mutual aid and restorative practices.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.punkswithlunch.org/">Punks with Lunch</a>
-            <p>
-              A mutual aid collective providing direct support, harm reduction
-              services, and community care in Oakland. They coordinate food
-              distribution, resource sharing, and harm reduction supplies
-              while building networks of solidarity through street outreach
-              and community organizing.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.momentscooperative.com/">Moments Cooperative Care</a>
-            <p>
-              A worker-owned cooperative organizing mutual aid and community
-              care through accessible, trauma-informed support services in
-              Oakland. They coordinate direct care, resource sharing, and
-              solidarity networks while building sustainable models of
-              community-based care and support.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://omnicommons.org/">Omni Commons</a>
-            <p>
-              A grassroots collective managing a community center focused on
-              mutual aid, social justice, and radical generosity in Oakland.
-              They host multiple mutual aid initiatives including Food Not
-              Bombs, citizen science projects, and free technology resources
-              while providing space for community organizing and solidarity
-              networks.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://chiapas-support.org/">Chiapas Support Committee</a>
-            <p>
-              A grassroots collective organizing mutual aid and solidarity
-              initiatives in support of Zapatista communities in Chiapas,
-              Mexico. They coordinate direct support for autonomous education,
-              resource sharing, and community organizing while building
-              connections between Oakland and Indigenous movements through
-              cultural events and political education at the Omni Commons.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://peoplesopen.net/">People's Open Network</a>
-            <p>
-              A community-owned and operated wireless network providing mutual
-              aid through free internet access in Oakland. They coordinate
-              peer-to-peer infrastructure, digital literacy resources, and
-              community workshops while building autonomous networks for
-              digital equity and community empowerment.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.antipoliceterrorproject.org/">Anti Police-Terror Project (APTP)</a>
-            <p>
-              A grassroots organization coordinating mutual aid and community
-              response initiatives in Oakland. They organize direct support
-              through Mental Health First (MH First) crisis response,
-              community education, and solidarity networks while building
-              alternatives to policing through collective action and
-              transformative justice.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://tamarackoakland.com/">Tamarack</a>
-            <p>
-              A worker-owned restaurant and mutual aid hub providing
-              sliding-scale meals and community support in Oakland. They
-              coordinate food distributions, resource sharing, and solidarity
-              networks while building community power through sustainable food
-              systems and creating spaces for collective care and nourishment.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.poormagazine.org/">POOR Magazine</a>
-            <p>
-              A grassroots, non-profit media, arts and education organization
-              providing voice and visibility for communities in poverty
-              through mutual aid and revolutionary journalism. They coordinate
-              media training, publishing projects, and indigenous news
-              coverage while building power through poor people-led
-              organizing, radical education, and solidarity networks.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.vitalarts.org/">Vital Arts</a>
-            <p>
-              A grassroots arts organization fostering mutual aid and
-              solidarity through cultural programming and community spaces in
-              Oakland. They coordinate art exhibitions, music events, and
-              solidarity networks while building power through accessible arts
-              education, youth mentorship, and creating spaces for cultural
-              expression and collective creativity.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.eastsideartsalliance.org/">Eastside Arts Alliance</a>
-            <p>
-              A cultural center fostering mutual aid and community power
-              through arts, culture, and social justice organizing in East
-              Oakland. They coordinate cultural events, youth programs, and
-              solidarity networks while building power through cultural
-              preservation, political education, and creating spaces for
-              community-driven arts and resistance.
-            </p>
-          </div>
-        </section>
-      </div>
 
 
-    </main>
+        </main>
   </div>
 
 

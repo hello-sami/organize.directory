@@ -16,32 +16,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
+  <!-- Inline theme script to prevent FOUC -->
+  <script>
     (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
+      function applyTheme() {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          } else {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = prefersDark ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+          }
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
         }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
+      }
+      applyTheme();
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          applyTheme();
+        }
+      });
     })();
-</script>
+  </script>
 
   <title>
     South Bay Mutual Aid Networks - Local Support & Community Resources
@@ -53,13 +53,13 @@
     content="Find mutual aid networks and community support initiatives in the South Bay area of California.">
   <meta property="og:type" content="website">
 
-    <meta property="og:url" content="https://organize.directory/south-bay">
+  <meta property="og:url" content="https://organize.directory/south-bay">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-    <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
+  <!-- Initialize theme toggle -->
+  <script src="/js/theme.js"></script>
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,92 +69,92 @@
 
   <script src="/js/theme-init.js"></script>
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
 
-        // Initialize sidebar first
-        initializeSidebar('location');
+    // Initialize sidebar first
+    initializeSidebar('location');
 
-        // Initialize other components
-        initializeComponents({
-            searchHeaderId: 'header'
-        });
-    </script>
+    // Initialize other components
+    initializeComponents({
+      searchHeaderId: 'header'
+    });
+  </script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
+  <div class="layout">
+    <div id="sidebar" class="sidebar" aria-label="Main navigation">
+      <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+      <nav>
+        <a href="/" class="nav-link">Home</a>
+        <div class="nav-group">
+          <span class="nav-group-title">Find a group</span>
+          <a href="/location" class="nav-link nav-link-indented">by location</a>
+          <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
+        <a href="/guides" class="nav-link">Guides</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="sidebar-motto">
+        Solidarity not charity.<br>
+        Awareness into action.
+      </div>
+    </div>
 
     </head>
 
-<body>
-    
+    <body>
 
 
-  </head>
 
-<body>
-  
-    <main class="content" role="main">
-      <header id="header" class="page-header"></header>
+      </head>
 
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/northern-california.html">Northern California</a>
-          <span>›</span>
-          <a href="/sf-bay-area">Bay Area</a>
-          <span>›</span>
-          <span>South Bay</span>
-        </div>
+      <body>
 
-        <h1>South Bay</h1>
-        <hr>
+        <main class="content" role="main">
+          <header id="header" class="page-header"></header>
 
-        <section class="cities-section">
-          <div class="cities-list">
-            <a href="/san-jose" class="city-link">San Jose</a>
-            <a href="/sunnyvale" class="city-link">Sunnyvale</a>
-            <a href="/santa-clara" class="city-link">Santa Clara</a>
+          <div class="city-page">
+            <div class="breadcrumb">
+              <a href="/northern-california.html">Northern California</a>
+              <span>›</span>
+              <a href="/sf-bay-area">Bay Area</a>
+              <span>›</span>
+              <span>South Bay</span>
+            </div>
+
+            <h1>South Bay</h1>
+            <hr>
+
+            <section class="cities-section">
+              <div class="cities-list">
+                <a href="/san-jose" class="city-link">San Jose</a>
+                <!-- <a href="/sunnyvale" class="city-link">Sunnyvale</a> -->
+                <!-- <a href="/santa-clara" class="city-link">Santa Clara</a> -->
+              </div>
+            </section>
+
+            <section>
+              <div class="initiative">
+                <a href="https://surjsantaclaracounty.org/">SURJ Santa Clara County</a>
+                <p>
+                  A chapter of Showing Up for Racial Justice fostering mutual aid
+                  and community solidarity through white anti-racist organizing
+                  across Santa Clara County. They coordinate political education,
+                  direct action support, and solidarity networks while building
+                  power through racial justice education and accountable
+                  organizing in partnership with BIPOC-led organizations from San
+                  Jose to Palo Alto, with a focus on decarceration and protecting
+                  indigenous land.
+                </p>
+              </div>
+            </section>
           </div>
-        </section>
 
-        <section>
-          <div class="initiative">
-            <a href="https://surjsantaclaracounty.org/">SURJ Santa Clara County</a>
-            <p>
-              A chapter of Showing Up for Racial Justice fostering mutual aid
-              and community solidarity through white anti-racist organizing
-              across Santa Clara County. They coordinate political education,
-              direct action support, and solidarity networks while building
-              power through racial justice education and accountable
-              organizing in partnership with BIPOC-led organizations from San
-              Jose to Palo Alto, with a focus on decarceration and protecting
-              indigenous land.
-            </p>
-          </div>
-        </section>
-      </div>
-
-    </main>
+        </main>
   </div>
 
 
