@@ -5,32 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
+  <!-- Inline theme script to prevent FOUC -->
+  <script>
     (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
+      function applyTheme() {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          } else {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = prefersDark ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+          }
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
         }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
+      }
+      applyTheme();
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          applyTheme();
+        }
+      });
     })();
-</script>
+  </script>
 
   <title>
     Flagstaff-Sedona Mutual Aid Networks - Local Support & Community Resources
@@ -44,12 +44,12 @@
     content="Find mutual aid networks and community support initiatives in Flagstaff and Sedona, Arizona.">
   <meta property="og:type" content="website">
 
-    <meta property="og:url" content="https://organize.directory/flagstaff-sedona">
+  <meta property="og:url" content="https://organize.directory/flagstaff-sedona">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-    <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
+  <!-- Initialize theme toggle -->
+  <script src="/js/theme.js"></script>
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,131 +60,132 @@
   <!-- Theme -->
   <script src="/js/theme-init.js"></script>
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
 
-        // Initialize sidebar first
-        initializeSidebar('location');
+    // Initialize sidebar first
+    initializeSidebar('location');
 
-        // Initialize other components
-        initializeComponents({
-            searchHeaderId: 'header'
-        });
-    </script>
+    // Initialize other components
+    initializeComponents({
+      searchHeaderId: 'header'
+    });
+  </script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
+  <div class="layout">
+    <div id="sidebar" class="sidebar" aria-label="Main navigation">
+      <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+      <nav>
+        <a href="/" class="nav-link">Home</a>
+        <div class="nav-group">
+          <span class="nav-group-title">Find a group</span>
+          <a href="/location" class="nav-link nav-link-indented">by location</a>
+          <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
+        <a href="/guides" class="nav-link">Guides</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="sidebar-motto">
+        Solidarity not charity.<br>
+        Awareness into action.
+      </div>
+    </div>
 
     </head>
 
-<body>
-    
+    <body>
 
 
-  </head>
 
-<body>
-  
-    <main class="content" role="main">
-      <header id="header" class="page-header"></header>
+      </head>
 
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/arizona">Arizona</a>
-          <span>›</span>
-          <span>Flagstaff-Sedona</span>
-        </div>
+      <body>
 
-        <h1>Flagstaff-Sedona</h1>
-        <hr>
+        <main class="content" role="main">
+          <header id="header" class="page-header"></header>
 
-        <section>
-          <div class="initiative">
-            <a href="https://www.instagram.com/flagstaffcommunitycoalition/">Flagstaff Community Coalition</a>
-            <p>
-              A grassroots collective fostering mutual aid and community
-              solidarity in Flagstaff. They coordinate direct assistance,
-              resource sharing, and community care initiatives while building
-              power through collective action and creating spaces for mutual
-              support and community resilience.
-            </p>
+          <div class="city-page">
+            <div class="breadcrumb">
+              <a href="/arizona">Arizona</a>
+              <span>›</span>
+              <span>Flagstaff-Sedona</span>
+            </div>
+
+            <h1>Flagstaff-Sedona</h1>
+            <hr>
+
+            <section>
+              <h2>Local Organizations</h2>
+              <div class="initiative">
+                <a href="https://www.instagram.com/flagstaffcommunitycoalition/">Flagstaff Community Coalition</a>
+                <p>
+                  A grassroots collective fostering mutual aid and community
+                  solidarity in Flagstaff. They coordinate direct assistance,
+                  resource sharing, and community care initiatives while building
+                  power through collective action and creating spaces for mutual
+                  support and community resilience.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://www.instagram.com/flagfridges/">Flagstaff Community Fridges</a>
+                <p>
+                  A mutual aid initiative fostering food security through
+                  community fridges and food distribution in Flagstaff. They
+                  coordinate free food access, resource sharing, and solidarity
+                  networks while building power through community care and
+                  creating accessible spaces for food justice.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://www.instagram.com/naca_flagstaff/">Native Americans for Community Action (NACA)</a>
+                <p>
+                  An Indigenous-led organization fostering mutual aid and
+                  community wellness through culturally responsive services in
+                  Flagstaff. They coordinate healthcare access, wellness programs,
+                  and community support while building power through
+                  Indigenous-led initiatives and creating pathways for community
+                  wellbeing.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://flagstaffpride.org/">Flagstaff Pride</a>
+                <p>
+                  A community organization fostering mutual aid and LGBTQIA2S+
+                  solidarity through support networks and cultural events in
+                  Flagstaff and Northern Arizona. They coordinate community
+                  resources, social connections, and support services while
+                  building power through collective organizing and creating spaces
+                  where LGBTQIA2S+ individuals can live safely and authentically.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://www.instagram.com/flagstaffqueercollective/">Flagstaff Queer Collective</a>
+                <p>
+                  A grassroots organization fostering mutual aid and community
+                  support for LGBTQIA+ individuals in Flagstaff. They coordinate
+                  resource sharing, peer support networks, and solidarity
+                  initiatives while building power through collective organizing
+                  and creating spaces for queer community care and connection.
+                </p>
+              </div>
+              <div class="initiative">
+                <a href="https://www.instagram.com/flagstaff_sjp/">Flagstaff Students for Justice in Palestine</a>
+                <p>
+                  A student-led organization fostering mutual aid and solidarity
+                  through community organizing and education in Flagstaff. They
+                  coordinate resource sharing, awareness campaigns, and solidarity
+                  initiatives while building power through collective action and
+                  creating spaces for justice and community support.
+                </p>
+              </div>
+            </section>
           </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/flagfridges/">Flagstaff Community Fridges</a>
-            <p>
-              A mutual aid initiative fostering food security through
-              community fridges and food distribution in Flagstaff. They
-              coordinate free food access, resource sharing, and solidarity
-              networks while building power through community care and
-              creating accessible spaces for food justice.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/naca_flagstaff/">Native Americans for Community Action (NACA)</a>
-            <p>
-              An Indigenous-led organization fostering mutual aid and
-              community wellness through culturally responsive services in
-              Flagstaff. They coordinate healthcare access, wellness programs,
-              and community support while building power through
-              Indigenous-led initiatives and creating pathways for community
-              wellbeing.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://flagstaffpride.org/">Flagstaff Pride</a>
-            <p>
-              A community organization fostering mutual aid and LGBTQIA2S+
-              solidarity through support networks and cultural events in
-              Flagstaff and Northern Arizona. They coordinate community
-              resources, social connections, and support services while
-              building power through collective organizing and creating spaces
-              where LGBTQIA2S+ individuals can live safely and authentically.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/flagstaffqueercollective/">Flagstaff Queer Collective</a>
-            <p>
-              A grassroots organization fostering mutual aid and community
-              support for LGBTQIA+ individuals in Flagstaff. They coordinate
-              resource sharing, peer support networks, and solidarity
-              initiatives while building power through collective organizing
-              and creating spaces for queer community care and connection.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/flagstaff_sjp/">Flagstaff Students for Justice in Palestine</a>
-            <p>
-              A student-led organization fostering mutual aid and solidarity
-              through community organizing and education in Flagstaff. They
-              coordinate resource sharing, awareness campaigns, and solidarity
-              initiatives while building power through collective action and
-              creating spaces for justice and community support.
-            </p>
-          </div>
-        </section>
-      </div>
 
-    </main>
+        </main>
   </div>
 
 

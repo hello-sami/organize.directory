@@ -4,37 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
-
   <meta property="og:type" content="website">
-
-    <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary">
   <meta name="description"
     content="Find mutual aid initiatives and community support networks in Cape Cod and Plymouth, Massachusetts. Connect with local organizations and community resources.">
   <meta property="og:title" content="Mutual Aid in Cape Cod - Local Support Networks">
@@ -42,25 +13,46 @@
     content="Find mutual aid initiatives and community support networks in Cape Cod and Plymouth, Massachusetts. Connect with local organizations providing community-based support.">
   <meta property="og:url" content="https://organize.directory/cape-cod-plymouth">
 
-  <title>
-    Mutual Aid in Cape Cod and Plymouth - Local Support Networks & Community
-    Resources
-  </title>
-
-  <link rel="stylesheet" href="/styles.css">
-    <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
+  <title>Mutual Aid in Cape Cod and Plymouth - Local Support Networks & Community Resources</title>
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
 
+  <!-- Inline theme script to prevent FOUC -->
+  <script>
+    (function () {
+      function applyTheme() {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          } else {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = prefersDark ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+          }
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      }
+      applyTheme();
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          applyTheme();
+        }
+      });
+    })();
+  </script>
 
-  <!-- Google Analytics -->
+  <!-- Theme and Analytics Scripts -->
+  <script src="/js/theme.js"></script>
+  <script src="/js/theme-init.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
-    
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
@@ -68,75 +60,67 @@
     gtag("js", new Date());
     gtag("config", "G-QJ03RCM35H");
   </script>
-  <script src="/js/theme-init.js"></script>
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
 
-        // Initialize sidebar first
-        initializeSidebar('location');
+    // Initialize sidebar first
+    initializeSidebar('location');
 
-        // Initialize other components
-        initializeComponents({
-            searchHeaderId: 'header'
-        });
-    </script>
+    // Initialize other components
+    initializeComponents({
+      searchHeaderId: 'header'
+    });
+  </script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
+  <div class="layout">
+    <div id="sidebar" class="sidebar" aria-label="Main navigation">
+      <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+      <nav>
+        <a href="/" class="nav-link">Home</a>
+        <div class="nav-group">
+          <span class="nav-group-title">Find a group</span>
+          <a href="/location" class="nav-link nav-link-indented">by location</a>
+          <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
-
-
-  </head>
-
-<body>
-  
-
+        <a href="/guides" class="nav-link">Guides</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="sidebar-motto">
+        Solidarity not charity.<br>
+        Awareness into action.
+      </div>
+    </div>
 
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      
-<section>
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/massachusetts">Massachusetts</a>
+          <span>›</span>
+          <span>Cape Cod & Plymouth</span>
+        </div>
+
+        <h1>Cape Cod & Plymouth</h1>
+        <hr>
+
+        <section>
           <div class="initiative">
             <a href="https://foodnotbombscc.mmm.page/">Food Not Bombs Cape Cod</a>
-            <p>
-              Join us for free vegan meals, community, mutual aid, and direct
-              action on Cape Cod.
-            </p>
+            <p>Join us for free vegan meals, community, mutual aid, and direct action on Cape Cod.</p>
           </div>
           <div class="initiative">
             <a href="https://www.instagram.com/capecoddsa/">Cape Cod DSA</a>
-            <p>
-              An activist organization, not a political party. Fighting
-              against oppression in its many forms.
-            </p>
+            <p>An activist organization, not a political party. Fighting against oppression in its many forms.</p>
           </div>
           <div class="initiative">
             <a href="https://www.pflagcapecod.org/">PFLAG Cape Cod</a>
-            <p>
-              Creating a caring, just, and affirming world for LGBTQ+ people
-              and those who love them.
-            </p>
+            <p>Creating a caring, just, and affirming world for LGBTQ+ people and those who love them.</p>
           </div>
           <div class="initiative">
             <a href="https://www.instagram.com/plymouth.anarchist.collective/">Plymouth Anarchist Collective</a>
@@ -144,21 +128,13 @@
           </div>
           <div class="initiative">
             <a href="https://www.instagram.com/plymouthforpalestine/">Plymouth for Palestine</a>
-            <p>
-              A Plymouth community coalition advocating for an immediate arms
-              embargo, ceasefire, and end to the occupation
-            </p>
+            <p>A Plymouth community coalition advocating for an immediate arms embargo, ceasefire, and end to the
+              occupation</p>
           </div>
         </section>
       </div>
-
-
     </main>
   </div>
-
-
-
-
 </body>
 
 </html>

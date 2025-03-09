@@ -4,65 +4,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
-
   <meta name="description"
     content="Find mutual aid initiatives and community support networks in Lansing, Michigan. Connect with local organizations and community resources.">
 
   <!-- Open Graph / Twitter Cards -->
   <meta property="og:type" content="website">
-
-    <meta property="og:title" content="Mutual Aid in Lansing - Local Support Networks">
+  <meta property="og:title" content="Mutual Aid in Lansing - Local Support Networks">
   <meta property="og:description"
     content="Find mutual aid initiatives and community support networks in Lansing, Michigan. Connect with local organizations providing community-based support.">
   <meta property="og:url" content="https://organize.directory/lansing">
   <meta name="twitter:card" content="summary">
 
-  <title>
-    Mutual Aid in Lansing - Local Support Networks & Community Resources
-  </title>
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-    <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
+  <title>Mutual Aid in Lansing - Local Support Networks & Community Resources</title>
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+
+  <!-- Inline theme script to prevent FOUC -->
+  <script>
+    (function () {
+      function applyTheme() {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          } else {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = prefersDark ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+          }
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      }
+      applyTheme();
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          applyTheme();
+        }
+      });
+    })();
+  </script>
+
+  <!-- Theme Scripts -->
+  <script src="/js/theme.js"></script>
+  <script src="/js/theme-init.js"></script>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
-    
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
@@ -70,55 +66,58 @@
     gtag("js", new Date());
     gtag("config", "G-QJ03RCM35H");
   </script>
-  <script src="/js/theme-init.js"></script>
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
 
-        // Initialize sidebar first
-        initializeSidebar('location');
+    // Initialize sidebar first
+    initializeSidebar('location');
 
-        // Initialize other components
-        initializeComponents({
-            searchHeaderId: 'header'
-        });
-    </script>
+    // Initialize other components
+    initializeComponents({
+      searchHeaderId: 'header'
+    });
+  </script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
+  <div class="layout">
+    <div id="sidebar" class="sidebar" aria-label="Main navigation">
+      <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+      <nav>
+        <a href="/" class="nav-link">Home</a>
+        <div class="nav-group">
+          <span class="nav-group-title">Find a group</span>
+          <a href="/location" class="nav-link nav-link-indented">by location</a>
+          <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
-
-
-  </head>
-
-<body>
-  
-
+        <a href="/guides" class="nav-link">Guides</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="sidebar-motto">
+        Solidarity not charity.<br>
+        Awareness into action.
+      </div>
+    </div>
 
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      
->
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/michigan">Michigan</a>
+          <span>›</span>
+          <span>Lansing</span>
+        </div>
+
+        <h1>Lansing</h1>
+        <hr>
+
+        <section>
+          <h2>Local Organizations</h2>
+          <div class="initiative">
             <a href="https://www.everybodyreadsbooks.com/">Everybody Reads Books</a>
             <p>
               A radical bookstore fostering mutual aid and community power
@@ -129,6 +128,7 @@
               and movement building.
             </p>
           </div>
+
           <div class="initiative">
             <a href="https://www.peaceedcenter.org/">Peace Education Center</a>
             <p>
@@ -140,10 +140,12 @@
               justice movement building.
             </p>
           </div>
+
           <div class="initiative">
             <a href="https://www.saluscenter.org/">Salus Center</a>
             <p>Lansing's 2SLGBTQIA+ Community Center</p>
           </div>
+
           <div class="initiative">
             <a href="https://www.instagram.com/punkswithlunchlansing">Punks With Lunch Lansing</a>
             <p>
@@ -151,13 +153,15 @@
               marginalized or underserved individuals.
             </p>
           </div>
+
           <div class="initiative">
             <a href="https://www.instagram.com/rentistoodamnhighlansing/">The Rent Is Too Damn High - Lansing</a>
             <p>
               Organization advocating the government for rent control, public
-              houseing, and homeless services.
+              housing, and homeless services.
             </p>
           </div>
+
           <div class="initiative">
             <a href="https://lansingforpalestine.org/">Lansing for Palestine</a>
             <p>
@@ -170,10 +174,6 @@
       </div>
     </main>
   </div>
-
-
-
-
 </body>
 
 </html>

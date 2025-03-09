@@ -5,32 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
+  <!-- Inline theme script to prevent FOUC -->
+  <script>
     (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
+      function applyTheme() {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          } else {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = prefersDark ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+          }
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
         }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
+      }
+      applyTheme();
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          applyTheme();
+        }
+      });
     })();
-</script>
+  </script>
 
   <title>
     Lexington Mutual Aid Networks - Local Support & Community Resources
@@ -41,13 +41,13 @@
     content="Find mutual aid networks and community support initiatives in Lexington, Kentucky.">
   <meta property="og:type" content="website">
 
-    <meta property="og:url" content="https://organize.directory/lexington">
+  <meta property="og:url" content="https://organize.directory/lexington">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-    <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
+  <!-- Initialize theme toggle -->
+  <script src="/js/theme.js"></script>
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,7 +58,7 @@
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
-    
+
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
@@ -69,86 +69,89 @@
 
   <script src="/js/theme-init.js"></script>
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
 
-        // Initialize sidebar first
-        initializeSidebar('location');
+    // Initialize sidebar first
+    initializeSidebar('location');
 
-        // Initialize other components
-        initializeComponents({
-            searchHeaderId: 'header'
-        });
-    </script>
+    // Initialize other components
+    initializeComponents({
+      searchHeaderId: 'header'
+    });
+  </script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
+  <div class="layout">
+    <div id="sidebar" class="sidebar" aria-label="Main navigation">
+      <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+      <nav>
+        <a href="/" class="nav-link">Home</a>
+        <div class="nav-group">
+          <span class="nav-group-title">Find a group</span>
+          <a href="/location" class="nav-link nav-link-indented">by location</a>
+          <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
+        <a href="/guides" class="nav-link">Guides</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="sidebar-motto">
+        Solidarity not charity.<br>
+        Awareness into action.
+      </div>
+    </div>
 
-
-  </head>
-
-<body>
-  
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      
-e">
-            <a href="https://lexingtonmutualaid.com/">Lexington Mutual Aid</a>
-            <p>
-              A grassroots organization coordinating mutual aid and community
-              support initiatives in Lexington. They organize direct
-              assistance, resource sharing, and solidarity networks while
-              building community power through collective action and
-              neighborhood organizing.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.peacecraftinberea.com/">Peacecraft</a>
-            <p>
-              A fair trade store fostering mutual aid and community power
-              through ethical commerce and cultural exchange in Berea. They
-              coordinate artisan support, sustainable trade, and solidarity
-              networks while building power through global partnerships,
-              economic justice, and creating spaces for cultural connection
-              and community education.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://lextools.org/">Lexington Tool Library</a>
-            <p>
-              A community-owned and controlled, pay-what-you-can library of
-              things for making our homes and communities better.
-            </p>
-          </div>
-        </section>
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/kentucky">Kentucky</a>
+          <span>›</span>
+          <span>Lexington</span>
+        </div>
+
+        <h1>Lexington, Kentucky</h1>
+        <hr>
+
+        <div class="initiatives-container">
+          <section class="initiatives">
+            <div class="initiative">
+              <a href="https://lexingtonmutualaid.com/">Lexington Mutual Aid</a>
+              <p>
+                A grassroots organization coordinating mutual aid and community
+                support initiatives in Lexington. They organize direct
+                assistance, resource sharing, and solidarity networks while
+                building community power through collective action and
+                neighborhood organizing.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://www.peacecraftinberea.com/">Peacecraft</a>
+              <p>
+                A fair trade store fostering mutual aid and community power
+                through ethical commerce and cultural exchange in Berea. They
+                coordinate artisan support, sustainable trade, and solidarity
+                networks while building power through global partnerships,
+                economic justice, and creating spaces for cultural connection
+                and community education.
+              </p>
+            </div>
+            <div class="initiative">
+              <a href="https://lextools.org/">Lexington Tool Library</a>
+              <p>
+                A community-owned and controlled, pay-what-you-can library of
+                things for making our homes and communities better.
+              </p>
+            </div>
+          </section>
+        </div>
       </div>
     </main>
   </div>
-
-
-
-
 </body>
 
 </html>
