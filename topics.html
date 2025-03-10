@@ -14,32 +14,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
+    <!-- Inline theme script to prevent FOUC -->
+    <script>
+        (function () {
+            function applyTheme() {
+                try {
+                    const savedTheme = localStorage.getItem("theme");
+                    if (savedTheme) {
+                        document.documentElement.setAttribute("data-theme", savedTheme);
+                    } else {
+                        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                        const theme = prefersDark ? "dark" : "light";
+                        document.documentElement.setAttribute("data-theme", theme);
+                        localStorage.setItem("theme", theme);
+                    }
+                } catch (e) {
+                    document.documentElement.setAttribute("data-theme", "light");
                 }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
             }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
+            applyTheme();
+            document.addEventListener("visibilitychange", function () {
+                if (document.visibilityState === "visible") {
+                    applyTheme();
+                }
+            });
+        })();
+    </script>
 
 
     <title>Topics - Mutual Aid Network Directory</title>
@@ -62,10 +62,11 @@
         initializeSidebar('home');
 
         // Initialize other components
-        initializeComponents({
-            searchHeaderId: 'header'
-        });
+        initializeComponents({});
     </script>
+
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -89,46 +90,79 @@
         </div>
 
         <main class="content">
-            <header class="page-header">
-                <div class="search-container">
-                    <div class="search-input-wrapper">
-                        <input type="text" id="searchInput" class="search-input"
-                            placeholder="Search mutual aid resources..." aria-label="Search mutual aid resources">
-                        <div id="searchResults" class="search-results" role="listbox"></div>
-                    </div>
-                </div>
-            </header>
             <div class="state-page">
                 <h1 class="state-title">Topics</h1>
 
-                <section class="cities-section">
-                    <div class="states-list">
-                        <a href="/topics/anti-war" class="state-link">Anti-War</a>
-                        <a href="/topics/disability-justice" class="state-link">Disability Support</a>
-                        <a href="/topics/food" class="state-link">Food Insecurity</a>
-                        <a href="/topics/global-justice" class="state-link">Global Justice</a>
-                        <a href="/topics/housing-justice" class="state-link">Housing</a>
-                        <a href="/topics/hiv" class="state-link">Healthcare</a>
-                        <a href="/topics/indigenous-solidarity" class="state-link">Indigenous Solidarity</a>
-                        <a href="/topics/labor" class="state-link">Labor Rights</a>
-                        <a href="/topics/migrant-solidarity" class="state-link">Migrant Solidarity</a>
-                        <a href="/topics/lgbtq" class="state-link">Trans & LGBTQ+ Support</a>
-                        <a href="/topics/opioid-crisis" class="state-link">Opioid Crisis</a>
-                        <a href="/topics/palestinian-solidarity" class="state-link">Palestinian Solidarity</a>
-                        <a href="/topics/police-brutality" class="state-link">Police Brutality</a>
-                        <a href="/topics/abortion" class="state-link">Reproductive Justice</a>
-                        <a href="/topics/sex-worker-support" class="state-link">Sex Worker Support</a>
-                        <a href="/topics/socialism" class="state-link">Socialist Organizations</a>
-                    </div>
+                <section class="topics-grid">
+                    <a href="/topics/anti-war" class="topic-card">
+                        <i class="fas fa-dove topic-icon"></i>
+                        <h2 class="topic-name">Anti-War</h2>
+                    </a>
+                    <a href="/topics/disability-justice" class="topic-card">
+                        <i class="fas fa-wheelchair topic-icon"></i>
+                        <h2 class="topic-name">Disability Support</h2>
+                    </a>
+                    <a href="/topics/food" class="topic-card">
+                        <i class="fas fa-utensils topic-icon"></i>
+                        <h2 class="topic-name">Food Insecurity</h2>
+                    </a>
+                    <a href="/topics/global-justice" class="topic-card">
+                        <i class="fas fa-globe topic-icon"></i>
+                        <h2 class="topic-name">Global Justice</h2>
+                    </a>
+                    <a href="/topics/housing-justice" class="topic-card">
+                        <i class="fas fa-home topic-icon"></i>
+                        <h2 class="topic-name">Housing</h2>
+                    </a>
+                    <a href="/topics/hiv" class="topic-card">
+                        <i class="fas fa-heart-pulse topic-icon"></i>
+                        <h2 class="topic-name">Healthcare</h2>
+                    </a>
+                    <a href="/topics/indigenous-solidarity" class="topic-card">
+                        <i class="fas fa-feather-pointed topic-icon"></i>
+                        <h2 class="topic-name">Indigenous Solidarity</h2>
+                    </a>
+                    <a href="/topics/labor" class="topic-card">
+                        <i class="fas fa-hard-hat topic-icon"></i>
+                        <h2 class="topic-name">Labor Rights</h2>
+                    </a>
+                    <a href="/topics/migrant-solidarity" class="topic-card">
+                        <i class="fas fa-passport topic-icon"></i>
+                        <h2 class="topic-name">Migrant Solidarity</h2>
+                    </a>
+                    <a href="/topics/lgbtq" class="topic-card">
+                        <i class="fas fa-rainbow topic-icon"></i>
+                        <h2 class="topic-name">Trans & LGBTQ+ Support</h2>
+                    </a>
+                    <a href="/topics/opioid-crisis" class="topic-card">
+                        <i class="fas fa-prescription topic-icon"></i>
+                        <h2 class="topic-name">Opioid Crisis</h2>
+                    </a>
+                    <a href="/topics/palestinian-solidarity" class="topic-card">
+                        <i class="fas fa-peace topic-icon"></i>
+                        <h2 class="topic-name">Palestinian Solidarity</h2>
+                    </a>
+                    <a href="/topics/police-brutality" class="topic-card">
+                        <i class="fas fa-scale-balanced topic-icon"></i>
+                        <h2 class="topic-name">Police Brutality</h2>
+                    </a>
+                    <a href="/topics/abortion" class="topic-card">
+                        <i class="fas fa-hand-sparkles topic-icon"></i>
+                        <h2 class="topic-name">Reproductive Justice</h2>
+                    </a>
+                    <a href="/topics/sex-worker-support" class="topic-card">
+                        <i class="fas fa-heart topic-icon"></i>
+                        <h2 class="topic-name">Sex Worker Support</h2>
+                    </a>
+                    <a href="/topics/socialism" class="topic-card">
+                        <i class="fas fa-people-carry-box topic-icon"></i>
+                        <h2 class="topic-name">Socialist Organizations</h2>
+                    </a>
                 </section>
 
-                <p class="help-text">Know of a topic area we should add? <a
-                        href="mailto:contact@organize.directory">Contact us</a> with suggestions.</p>
-            </div>
         </main>
     </div>
 
-    <script src="/search-index.js"></script>
     <script src="/mobile-menu.js"></script>
 </body>
 
