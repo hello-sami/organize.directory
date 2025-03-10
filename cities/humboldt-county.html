@@ -5,32 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
+  <!-- Inline theme script to prevent FOUC -->
+  <script>
     (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
+      function applyTheme() {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          } else {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = prefersDark ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+          }
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
         }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
+      }
+      applyTheme();
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          applyTheme();
+        }
+      });
     })();
-</script>
+  </script>
 
   <title>
     Humboldt County Mutual Aid - Local Support Networks & Community Resources
@@ -42,13 +42,13 @@
     content="Find mutual aid networks and community support initiatives in Humboldt County, California including Eureka, Arcata, McKinleyville, and surrounding communities.">
   <meta property="og:type" content="website">
 
-    <meta property="og:url" content="https://organize.directory/humboldt-county">
+  <meta property="og:url" content="https://organize.directory/humboldt-county">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-    <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
+  <!-- Initialize theme toggle -->
+  <script src="/js/theme.js"></script>
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,51 +58,41 @@
 
   <script src="/js/theme-init.js"></script>
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
 
-        // Initialize sidebar first
-        initializeSidebar('location');
+    // Initialize sidebar first
+    initializeSidebar('location');
 
-        // Initialize other components
-        initializeComponents({
-            searchHeaderId: 'header'
-        });
-    </script>
+    // Initialize other components
+    initializeComponents({
+      searchHeaderId: 'header'
+    });
+  </script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
+  <div class="layout">
+    <div id="sidebar" class="sidebar" aria-label="Main navigation">
+      <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+      <nav>
+        <a href="/" class="nav-link">Home</a>
+        <div class="nav-group">
+          <span class="nav-group-title">Find a group</span>
+          <a href="/location" class="nav-link nav-link-indented">by location</a>
+          <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
+        <a href="/guides" class="nav-link">Guides</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="sidebar-motto">
+        Solidarity not charity.<br>
+        Awareness into action.
+      </div>
+    </div>
 
-    </head>
-
-<body>
-    
-
-
-  </head>
-
-<body>
-  
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
@@ -124,22 +114,22 @@
         <section>
           <h2>Communities</h2>
           <div class="cities-list">
-            <a href="/eureka" class="city-link">Eureka</a>
+            <!-- <a href="/eureka" class="city-link">Eureka</a> -->
             <a href="/arcata" class="city-link">Arcata</a>
-            <a href="/mckinleyville" class="city-link">McKinleyville</a>
-            <a href="/fortuna" class="city-link">Fortuna</a>
-            <a href="/trinidad" class="city-link">Trinidad</a>
-            <a href="/ferndale" class="city-link">Ferndale</a>
-            <a href="/blue-lake" class="city-link">Blue Lake</a>
-            <a href="/rio-dell" class="city-link">Rio Dell</a>
-            <a href="/scotia" class="city-link">Scotia</a>
-            <a href="/garberville" class="city-link">Garberville</a>
-            <a href="/willow-creek" class="city-link">Willow Creek</a>
+            <!-- <a href="/mckinleyville" class="city-link">McKinleyville</a> -->
+            <!-- <a href="/fortuna" class="city-link">Fortuna</a> -->
+            <!-- <a href="/trinidad" class="city-link">Trinidad</a> -->
+            <!-- <a href="/ferndale" class="city-link">Ferndale</a> -->
+            <!-- <a href="/blue-lake" class="city-link">Blue Lake</a> -->
+            <!-- <a href="/rio-dell" class="city-link">Rio Dell</a> -->
+            <!-- <a href="/scotia" class="city-link">Scotia</a> -->
+            <!-- <a href="/garberville" class="city-link">Garberville</a> -->
+            <!-- <a href="/willow-creek" class="city-link">Willow Creek</a> -->
           </div>
         </section>
 
-        <section class="initiatives-section">
-          <h2>Community Support</h2>
+        <section>
+          <h2>Local Organizations</h2>
           <div class="initiative">
             <a href="https://cdpueblo.com/">Centro del Pueblo</a>
             <p>
@@ -165,13 +155,8 @@
           </div>
         </section>
       </div>
-
     </main>
   </div>
-
-
-
-
 </body>
 
 </html>

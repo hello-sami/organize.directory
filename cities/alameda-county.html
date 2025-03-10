@@ -5,32 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
+  <!-- Inline theme script to prevent FOUC -->
+  <script>
     (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
+      function applyTheme() {
+        try {
+          const savedTheme = localStorage.getItem("theme");
+          if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+          } else {
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = prefersDark ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+          }
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
         }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
+      }
+      applyTheme();
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") {
+          applyTheme();
+        }
+      });
     })();
-</script>
+  </script>
 
   <title>
     Alameda County Mutual Aid - Local Support Networks & Community Resources
@@ -42,13 +42,13 @@
     content="Find mutual aid networks and community support initiatives in Alameda County, California including Oakland, Berkeley, and surrounding communities.">
   <meta property="og:type" content="website">
 
-    <meta property="og:url" content="https://organize.directory/alameda-county">
+  <meta property="og:url" content="https://organize.directory/alameda-county">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-    <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
+  <!-- Initialize theme toggle -->
+  <script src="/js/theme.js"></script>
 
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,91 +58,92 @@
 
   <script src="/js/theme-init.js"></script>
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
 
-        // Initialize sidebar first
-        initializeSidebar('location');
+    // Initialize sidebar first
+    initializeSidebar('location');
 
-        // Initialize other components
-        initializeComponents({
-            searchHeaderId: 'header'
-        });
-    </script>
+    // Initialize other components
+    initializeComponents({
+      searchHeaderId: 'header'
+    });
+  </script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
-            <nav>
-                <a href="/" class="nav-link">Home</a>
-                <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </nav>
-            <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
-            </div>
+  <div class="layout">
+    <div id="sidebar" class="sidebar" aria-label="Main navigation">
+      <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+      <nav>
+        <a href="/" class="nav-link">Home</a>
+        <div class="nav-group">
+          <span class="nav-group-title">Find a group</span>
+          <a href="/location" class="nav-link nav-link-indented">by location</a>
+          <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
+        <a href="/guides" class="nav-link">Guides</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="sidebar-motto">
+        Solidarity not charity.<br>
+        Awareness into action.
+      </div>
+    </div>
 
     </head>
 
-<body>
-    
+    <body>
 
 
-  </head>
 
-<body>
-  
-    <main class="content" role="main">
-      <header id="header" class="page-header"></header>
+      </head>
 
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/california">California</a>
-          <span>›</span>
-          <a href="/norcal">Northern California</a>
-          <span>›</span>
-          <span>Alameda County</span>
-        </div>
+      <body>
 
-        <h1>Alameda County</h1>
-        <p class="subtitle">
-          Oakland, Berkeley, Fremont, Hayward, and surrounding communities
-        </p>
-        <hr>
+        <main class="content" role="main">
+          <header id="header" class="page-header"></header>
 
-        <section>
-          <h2>Cities & Communities</h2>
-          <div class="cities-list">
-            <a href="/oakland" class="city-link">Oakland</a>
-            <a href="/berkeley" class="city-link">Berkeley</a>
-            <a href="/fremont" class="city-link">Fremont</a>
-            <a href="/hayward" class="city-link">Hayward</a>
-            <a href="/alameda" class="city-link">Alameda</a>
-            <a href="/san-leandro" class="city-link">San Leandro</a>
-            <a href="/livermore" class="city-link">Livermore</a>
-            <a href="/pleasanton" class="city-link">Pleasanton</a>
-            <a href="/union-city" class="city-link">Union City</a>
-            <a href="/dublin" class="city-link">Dublin</a>
+          <div class="city-page">
+            <div class="breadcrumb">
+              <a href="/california">California</a>
+              <span>›</span>
+              <a href="/norcal">Northern California</a>
+              <span>›</span>
+              <span>Alameda County</span>
+            </div>
+
+            <h1>Alameda County</h1>
+            <p class="subtitle">
+              Oakland, Berkeley, Fremont, Hayward, and surrounding communities
+            </p>
+            <hr>
+
+            <section>
+              <h2>Cities & Communities</h2>
+              <div class="cities-list">
+                <a href="/oakland" class="city-link">Oakland</a>
+                <a href="/berkeley" class="city-link">Berkeley</a>
+                <!-- <a href="/fremont" class="city-link">Fremont</a> -->
+                <!-- <a href="/hayward" class="city-link">Hayward</a> -->
+                <!-- <a href="/alameda" class="city-link">Alameda</a> -->
+                <!-- <a href="/san-leandro" class="city-link">San Leandro</a> -->
+                <!-- <a href="/livermore" class="city-link">Livermore</a> -->
+                <!-- <a href="/pleasanton" class="city-link">Pleasanton</a> -->
+                <!-- <a href="/union-city" class="city-link">Union City</a> -->
+                <!-- <a href="/dublin" class="city-link">Dublin</a> -->
+              </div>
+            </section>
+            <hr>
+
+            <section class="initiatives-section">
+              <div class="initiative"></div>
+            </section>
           </div>
-        </section>
 
-        <section class="initiatives-section">
-          <div class="initiative"></div>
-        </section>
-      </div>
-
-    </main>
+        </main>
   </div>
 
 
