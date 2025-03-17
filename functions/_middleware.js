@@ -148,6 +148,7 @@ export async function onRequest({ request, next }) {
           "central-valley",
           "champaign-urbana",
           "charleston",
+          "charleston-wv",
           "charlotte",
           "charlottesville",
           "chattanooga",
