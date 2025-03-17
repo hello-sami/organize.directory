@@ -499,3 +499,133 @@ hr {
           width: 100%;
      }
 }
+
+.cities-section {
+     margin: 1rem 0;
+}
+
+.cities-list {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 1rem;
+     margin: 0;
+}
+
+.city-link {
+     color: var(--heading-color);
+     text-decoration: none;
+     padding: 0;
+     margin: 0;
+     font-size: 0.9rem;
+     font-weight: 700;
+     line-height: 1.2;
+     display: inline;
+     position: relative;
+     background: transparent;
+     border-bottom: none;
+}
+
+.city-link:hover {
+     color: var(--primary-color);
+     text-decoration: underline;
+     text-decoration-color: var(--primary-color);
+     background: transparent;
+     border-bottom: none;
+}
+
+.cities-category {
+     margin-bottom: 1rem;
+}
+
+.cities-category-title {
+     font-size: 1rem;
+     font-weight: 700;
+     color: var(--heading-color);
+     margin-bottom: 0.5rem;
+     text-transform: uppercase;
+     letter-spacing: 0.05em;
+}
+
+@media (max-width: 1020px) {
+     .cities-list {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 0.75rem;
+     }
+}
+
+@media (max-width: 768px) {
+     .cities-list {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.5rem;
+     }
+}
+
+@media (max-width: 480px) {
+     .cities-list {
+          grid-template-columns: 1fr;
+          gap: 0.5rem;
+     }
+
+     .cities-category {
+          margin-bottom: 1.5rem;
+     }
+}
+
+.initiative {
+     margin-bottom: 3rem !important;
+}
+
+.initiative:last-child {
+     margin-bottom: 0;
+}
+
+.initiative h3,
+.initiative a {
+     font-weight: 700;
+     color: var(--heading-color);
+}
+
+.initiative a:hover {
+     color: var(--primary-color);
+     border-color: var(--primary-color);
+}
+
+.initiative a {
+     font-weight: 700;
+     color: var(--heading-color);
+     position: relative;
+     padding-right: 1.5em;
+}
+
+.initiative a::after {
+     content: "→";
+     position: absolute;
+     right: 0.2em;
+     opacity: 0;
+     transform: translateX(-8px);
+     transition: all 0.2s ease;
+}
+
+.initiative a:hover::after {
+     opacity: 1;
+     transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+     .cities-list {
+          grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+          gap: 0.75rem;
+     }
+}
+
+@media (max-width: 480px) {
+     .cities-list {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.5rem;
+     }
+}
+
+.cities-section h2 {
+     font-size: 1.4rem;
+     margin-bottom: 1rem;
+}
