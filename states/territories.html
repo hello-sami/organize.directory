@@ -14,33 +14,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
-
     <title>Territories Statewide Initiatives - Mutual Aid Network Directory</title>
     <meta name="description"
         content="Find statewide mutual aid networks and community support initiatives in Territories.">
@@ -51,10 +24,7 @@
 
     <link rel="stylesheet" href="/styles.css">
     <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <script src="/js/theme-init.js"></script>
-
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
@@ -96,17 +66,12 @@
     
     <!-- Critical Scripts -->
 
-
-    
         <di
     v id="sidebar" class="sidebar" aria-label="Main navigation"></div>
         <!-- Sidebar will be inserted here -->
 
-
         <main class="content">
             <header id="header" class="page-header"></header>
-
-
 
             <div class="state-page">
                 <div class="breadcrumb">
@@ -136,11 +101,6 @@
 
         </main>
     </div>
-
-
-
-
-
 
 </body>
 

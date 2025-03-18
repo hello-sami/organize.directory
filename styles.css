@@ -7,7 +7,7 @@
 
 /* Theme Variables */
 :root {
-     /* Light mode - Saturated Red theme */
+     /* Light theme */
      --primary-color: #a30000;
      --text-color: #4d0000;
      --bg-tint: #ffd4d4;
@@ -21,20 +21,6 @@
      --accent-color: #b30000;
      --sidebar-width: 280px;
      --border-thick: 2px;
-}
-
-[data-theme="dark"] {
-     --primary-color: #d4a373;
-     --text-color: #e9dcc9;
-     --bg-tint: #32251a;
-     --border-color: #4a3828;
-     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
-     --bg-color: #1a0f0a;
-     --card-bg: #2d1810;
-     --link-color: #deb887;
-     --link-hover: #e6ccb3;
-     --heading-color: #d4a373;
-     --accent-color: #c68b59;
 }
 
 /* Typography */
@@ -514,14 +500,11 @@ hr {
 .city-link {
      color: var(--heading-color);
      text-decoration: none;
-     padding: 0;
-     margin: 0;
      font-size: 0.9rem;
      font-weight: 700;
      line-height: 1.2;
-     display: inline;
-     position: relative;
-     background: transparent;
+     width: fit-content;
+     display: block;
      border-bottom: none;
 }
 
@@ -529,7 +512,6 @@ hr {
      color: var(--primary-color);
      text-decoration: underline;
      text-decoration-color: var(--primary-color);
-     background: transparent;
      border-bottom: none;
 }
 
@@ -628,4 +610,75 @@ hr {
 .cities-section h2 {
      font-size: 1.4rem;
      margin-bottom: 1rem;
+}
+
+/* Table of Contents */
+.toc {
+     float: right;
+     width: 250px;
+     background: var(--bg-tint);
+     border: 1px solid var(--border-color);
+     padding: 1.5rem;
+     font-size: 0.9rem;
+     margin: 0 0 2rem 2rem;
+}
+
+.toc-title {
+     font-size: 1.1rem;
+     font-weight: 700;
+     color: var(--heading-color);
+     margin-bottom: 1rem;
+     letter-spacing: 0.02em;
+}
+
+.toc-list {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+}
+
+.toc-item {
+     margin: 0.5rem 0;
+}
+
+.toc-link {
+     color: var(--heading-color);
+     text-decoration: none;
+     border: none;
+     display: inline-block;
+     line-height: 1.4;
+     font-weight: 500;
+}
+
+.toc-link:hover {
+     color: var(--primary-color);
+     text-decoration: underline;
+     text-decoration-color: var(--primary-color);
+     border: none;
+}
+
+.toc-number {
+     opacity: 0.7;
+     margin-right: 0.5rem;
+     font-size: 0.85em;
+}
+
+/* Adjust content width to accommodate TOC */
+.city-page {
+     width: 100%;
+     max-width: 1200px;
+     margin: 0 auto;
+}
+
+@media (max-width: 1020px) {
+     .toc {
+          float: none;
+          width: 100%;
+          margin: 2rem 0;
+     }
+
+     .city-page {
+          width: 100%;
+          margin: 0;
+     }
 }

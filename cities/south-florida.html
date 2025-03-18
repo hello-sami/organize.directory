@@ -16,33 +16,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Inline theme script to prevent FOUC -->
-<script>
-    (function () {
-        function applyTheme() {
-            try {
-                const savedTheme = localStorage.getItem("theme");
-                if (savedTheme) {
-                    document.documentElement.setAttribute("data-theme", savedTheme);
-                } else {
-                    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                    const theme = prefersDark ? "dark" : "light";
-                    document.documentElement.setAttribute("data-theme", theme);
-                    localStorage.setItem("theme", theme);
-                }
-            } catch (e) {
-                document.documentElement.setAttribute("data-theme", "light");
-            }
-        }
-        applyTheme();
-        document.addEventListener("visibilitychange", function() {
-            if (document.visibilityState === "visible") {
-                applyTheme();
-            }
-        });
-    })();
-</script>
-
   <title>
     South Florida Mutual Aid Networks - Local Support & Community Resources
   </title>
@@ -59,17 +32,12 @@
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
     <!-- Initialize theme toggle -->
-    <script src="/js/theme.js"></script>
-
-  <!-- Preconnect to Google Fonts -->
+    <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-
-  <script src="/js/theme-init.js"></script>
-
-    <!-- Initialize Components -->
+  <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
@@ -107,8 +75,6 @@
     </head>
 
 <body>
-    
-
 
   </head>
 
@@ -208,12 +174,8 @@
         </section>
       </div>
 
-
     </main>
   </div>
-
-
-
 
 </body>
 

@@ -5,33 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Inline theme script to prevent FOUC -->
-  <script>
-    (function () {
-      function applyTheme() {
-        try {
-          const savedTheme = localStorage.getItem("theme");
-          if (savedTheme) {
-            document.documentElement.setAttribute("data-theme", savedTheme);
-          } else {
-            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-            const theme = prefersDark ? "dark" : "light";
-            document.documentElement.setAttribute("data-theme", theme);
-            localStorage.setItem("theme", theme);
-          }
-        } catch (e) {
-          document.documentElement.setAttribute("data-theme", "light");
-        }
-      }
-      applyTheme();
-      document.addEventListener("visibilitychange", function () {
-        if (document.visibilityState === "visible") {
-          applyTheme();
-        }
-      });
-    })();
-  </script>
-
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary">
@@ -48,13 +21,10 @@
 
   <link rel="stylesheet" href="/styles.css">
   <!-- Initialize theme toggle -->
-  <script src="/js/theme.js"></script>
-
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
@@ -67,8 +37,6 @@
     gtag("js", new Date());
     gtag("config", "G-QJ03RCM35H");
   </script>
-  <script src="/js/theme-init.js"></script>
-
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
@@ -104,12 +72,9 @@
       </div>
     </div>
 
-
     </head>
 
     <body>
-
-
 
       <main class="content" role="main">
         <header id="header" class="page-header"></header>
@@ -161,9 +126,6 @@
 
       </main>
   </div>
-
-
-
 
 </body>
 

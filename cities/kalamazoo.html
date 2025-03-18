@@ -5,33 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Inline theme script to prevent FOUC -->
-  <script>
-    (function () {
-      function applyTheme() {
-        try {
-          const savedTheme = localStorage.getItem("theme");
-          if (savedTheme) {
-            document.documentElement.setAttribute("data-theme", savedTheme);
-          } else {
-            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-            const theme = prefersDark ? "dark" : "light";
-            document.documentElement.setAttribute("data-theme", theme);
-            localStorage.setItem("theme", theme);
-          }
-        } catch (e) {
-          document.documentElement.setAttribute("data-theme", "light");
-        }
-      }
-      applyTheme();
-      document.addEventListener("visibilitychange", function () {
-        if (document.visibilityState === "visible") {
-          applyTheme();
-        }
-      });
-    })();
-  </script>
-
   <title>Mutual Aid in Kalamazoo - Local Support Networks & Community Resources</title>
   <meta name="description"
     content="Find mutual aid initiatives and community support networks in Kalamazoo, Michigan. Connect with local organizations and community resources.">
@@ -51,9 +24,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- Scripts -->
-  <script src="/js/theme.js"></script>
-  <script src="/js/theme-init.js"></script>
-
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
