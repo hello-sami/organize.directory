@@ -5,9 +5,7 @@
      box-sizing: border-box;
 }
 
-/* Theme Variables */
 :root {
-     /* Light theme */
      --primary-color: #a30000;
      --text-color: #4d0000;
      --bg-tint: #ffd4d4;
@@ -222,65 +220,6 @@ hr {
      background: var(--card-bg);
 }
 
-/* Search Components */
-.search-input {
-     width: 100%;
-     padding: 0.875rem;
-     font-size: 1rem;
-     border: var(--border-thick) solid var(--border-color);
-     background: var(--bg-color);
-     color: var(--text-color);
-     transition: all 0.2s ease;
-     outline: none;
-}
-
-.search-input:focus {
-     border-color: var(--primary-color);
-     box-shadow: 4px 4px 0 var(--border-color);
-}
-
-.search-input::placeholder {
-     color: var(--text-color);
-     opacity: 0.5;
-}
-
-.search-results {
-     position: absolute;
-     top: 100%;
-     left: 0;
-     right: 0;
-     background: var(--card-bg);
-     border: 1px solid var(--border-color);
-     border-radius: 6px;
-     margin-top: 0.5rem;
-     box-shadow: var(--shadow-sm);
-     z-index: 10;
-}
-
-/* Theme Toggle */
-.theme-toggle {
-     position: fixed !important;
-     bottom: 25px !important;
-     right: 25px !important;
-     width: 50px !important;
-     height: 50px !important;
-     border: var(--border-thick) solid var(--border-color) !important;
-     background: var(--card-bg) !important;
-     color: var(--text-color) !important;
-     cursor: pointer !important;
-     transition: all 0.2s ease !important;
-}
-
-.theme-toggle:hover {
-     transform: translate(-2px, -2px);
-     box-shadow: 2px 2px 0 var(--border-color);
-}
-
-.theme-toggle svg {
-     width: 20px;
-     height: 20px;
-}
-
 /* Mobile Menu */
 .mobile-menu-button {
      display: none;
@@ -460,10 +399,6 @@ hr {
 
      .topic-card {
           padding: 1.5rem;
-     }
-
-     .search-input {
-          font-size: 16px;
      }
 
      .states-list {

@@ -5,36 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Critical theme script - keep at top -->
-    <script>
-        (function () {
-            function applyTheme() {
-                try {
-                    const savedTheme = localStorage.getItem("theme");
-                    if (savedTheme) {
-                        document.documentElement.setAttribute("data-theme", savedTheme);
-                    } else {
-                        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                        const theme = prefersDark ? "dark" : "light";
-                        document.documentElement.setAttribute("data-theme", theme);
-                        localStorage.setItem("theme", theme);
-                    }
-                } catch (e) {
-                    document.documentElement.setAttribute("data-theme", "light");
-                }
-            }
-            applyTheme();
-            document.addEventListener("visibilitychange", function () {
-                if (document.visibilityState === "visible") {
-                    applyTheme();
-                }
-            });
-        })();
-    </script>
+    
 
     <meta name="description"
         content="Daily updates and resources for mutual aid networks and grassroots initiatives across different cities.">
-    <meta name="theme-color" content="#ffffff">
+    
     <meta name="color-scheme" content="light">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <title>Mutual Aid Network Directory</title>
@@ -44,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="/js/theme.js" as="script">
+    
     <link rel="preload" href="/components/sidebar.js" as="script" type="module">
     <link rel="preload" href="/styles.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style">
@@ -61,7 +36,6 @@
 </head>
 
 <body>
-    <!-- Theme Toggle Script - Load early -->
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation">
             <h1><a href="/" class="home-link">The Organize Directory</a></h1>
@@ -109,8 +83,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             initializeSidebar('home');
             initializeComponents({
-                searchHeaderId: 'header'
-            });
+                });
         });
     </script>
 </body>
