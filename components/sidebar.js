@@ -5,8 +5,8 @@ const initialSidebar = `
         <a href="/" class="nav-link">Home</a>
         <div class="nav-group">
             <span class="nav-group-title">Find a group</span>
-            <a href="/location" class="nav-link nav-link-indented">by location</a>
-            <a href="/topics" class="nav-link nav-link-indented">by topic</a>
+            <a href="/location" class="nav-link nav-link-indented">Local groups</a>
+            <a href="/topics" class="nav-link nav-link-indented">National groups</a>
         </div>
         <a href="/guides" class="nav-link">Guides</a>
         <a href="/contact" class="nav-link">Contact</a>
@@ -15,6 +15,23 @@ const initialSidebar = `
         Solidarity not charity.<br>
         Awareness into action.
     </div>`;
+
+// Function to insert sidebar HTML
+function insertSidebar() {
+     const sidebarContainer = document.createElement("div");
+     sidebarContainer.id = "sidebar";
+     sidebarContainer.className = "sidebar";
+     sidebarContainer.setAttribute("aria-label", "Main navigation");
+     sidebarContainer.innerHTML = initialSidebar;
+
+     // Insert at the start of .layout
+     const layout = document.querySelector(".layout");
+     if (layout) {
+          layout.insertBefore(sidebarContainer, layout.firstChild);
+     } else {
+          console.error("Layout element not found");
+     }
+}
 
 // Critical styles that must be inlined in the head
 const criticalStyles = `
@@ -100,6 +117,14 @@ function updateActiveStates(sidebar, activePage) {
 
 // Function to initialize the sidebar
 export function initializeSidebar(activePage) {
+     // Initialize critical styles first
+     initializeCriticalStyles();
+
+     // Insert sidebar if it doesn't exist
+     if (!document.getElementById("sidebar")) {
+          insertSidebar();
+     }
+
      const sidebar = document.getElementById("sidebar");
      if (!sidebar) {
           console.error("Sidebar element not found");
@@ -114,10 +139,10 @@ export function initializeSidebar(activePage) {
           const menuButton = document.createElement("button");
           menuButton.className = "mobile-menu-button";
           menuButton.innerHTML = `
-               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-               </svg>
-          `;
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        `;
           document.body.insertBefore(menuButton, document.body.firstChild);
 
           // Add mobile menu functionality
