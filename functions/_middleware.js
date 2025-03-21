@@ -2,6 +2,13 @@ export async function onRequest({ request, next }) {
      const url = new URL(request.url);
      const path = url.pathname;
 
+     // Try to get response from cache first
+     const cache = caches.default;
+     const cachedResponse = await cache.match(request);
+     if (cachedResponse) {
+          return cachedResponse;
+     }
+
      // Define MIME types
      const mimeTypes = {
           ".html": "text/html",
@@ -23,15 +30,22 @@ export async function onRequest({ request, next }) {
           return mimeTypes[ext] || "text/plain";
      };
 
-     // Function to create response with proper MIME type
+     // Function to create response with proper MIME type and cache it
      const createResponse = async (url, originalResponse) => {
           if (!originalResponse.ok) return next();
           const headers = new Headers(originalResponse.headers);
           headers.set("Content-Type", getMimeType(url.pathname));
-          return new Response(originalResponse.body, {
+
+          const response = new Response(originalResponse.body, {
                status: originalResponse.status,
                headers,
           });
+
+          // Cache the response - clone it because the response body can only be used once
+          const cacheResponse = response.clone();
+          await cache.put(request, cacheResponse);
+
+          return response;
      };
 
      // Handle root path
