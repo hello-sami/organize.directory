@@ -34,6 +34,8 @@ export async function onRequestPost(context) {
           const subject = formData.get("subject");
           const message = formData.get("message");
 
+          console.log("Form data received:", { name, email, subject });
+
           // Validate form data
           if (!name || !subject || !message) {
                return new Response(
@@ -42,7 +44,10 @@ export async function onRequestPost(context) {
                     }),
                     {
                          status: 400,
-                         headers: { "Content-Type": "application/json" },
+                         headers: {
+                              "Content-Type": "application/json",
+                              "Access-Control-Allow-Origin": "*",
+                         },
                     }
                );
           }
@@ -59,46 +64,45 @@ export async function onRequestPost(context) {
           const formattedSubject = `Contact Form: ${subjectMapping[subject] || subject}`;
 
           // Create Web3Forms payload
-          // Replace ACCESS_KEY with your actual Web3Forms access key
-          const web3FormsPayload = new FormData();
-          web3FormsPayload.append(
-               "access_key",
-               "66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f"
-          ); // Replace this with your actual key
-          web3FormsPayload.append("name", name);
-          web3FormsPayload.append("subject", formattedSubject);
-          web3FormsPayload.append(
-               "from_name",
-               "Organize Directory Contact Form"
-          );
-
-          // Handle anonymous submissions
-          if (email) {
-               web3FormsPayload.append("email", email);
-               web3FormsPayload.append("replyto", email);
-          } else {
-               web3FormsPayload.append("email", "anonymous@example.com");
-          }
-
-          // Format the message to include submission details
-          const formattedMessage = `
+          let web3FormsData = {
+               access_key: "66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f",
+               subject: formattedSubject,
+               from_name: "Organize Directory Contact Form",
+               name: name,
+               message: `
 Name: ${name}
 Email: ${email ? email : "Anonymous submission"}
 Subject: ${subjectMapping[subject] || subject}
 
 Message:
 ${message}
-          `;
+          `,
+          };
 
-          web3FormsPayload.append("message", formattedMessage);
+          // Handle anonymous submissions
+          if (email) {
+               web3FormsData.email = email;
+               web3FormsData.replyto = email;
+          } else {
+               web3FormsData.email = "anonymous@example.com";
+          }
+
+          console.log("Preparing to send data to Web3Forms");
 
           // Submit to Web3Forms API
           const response = await fetch("https://api.web3forms.com/submit", {
                method: "POST",
-               body: web3FormsPayload,
+               headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+               },
+               body: JSON.stringify(web3FormsData),
           });
 
+          console.log("Web3Forms response status:", response.status);
+
           const responseData = await response.json();
+          console.log("Web3Forms response data:", responseData);
 
           if (response.status === 200 && responseData.success) {
                // Return success response
@@ -133,9 +137,13 @@ ${message}
           }
      } catch (err) {
           // Handle any unexpected errors
-          console.error("Error in form submission:", err);
+          console.error("Error in form submission:", err.message, err.stack);
           return new Response(
-               JSON.stringify({ error: "Internal server error" }),
+               JSON.stringify({
+                    error: "Internal server error",
+                    message: err.message,
+                    stack: err.stack,
+               }),
                {
                     status: 500,
                     headers: {
