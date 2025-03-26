@@ -33,30 +33,34 @@ organize.directory/
 - **Backend**: Express.js (Node.js web framework)
 - **Build Tools**: Custom build scripts
 - **Dependencies**:
-  - cheerio: HTML parsing
-  - express: Web framework
-  - markdown-it: Markdown processing
-  - front-matter: Content metadata parsing
+     - cheerio: HTML parsing
+     - express: Web framework
+     - markdown-it: Markdown processing
+     - front-matter: Content metadata parsing
 
 ## Getting Started
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/organize.directory.git
 cd organize.directory
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm start
 ```
 
 4. Build the site:
+
 ```bash
 npm run build
 ```
@@ -67,11 +71,11 @@ This is an open directory that welcomes contributions from the community. If you
 
 1. Contact us to have it added
 2. Provide the following information:
-   - Organization name
-   - Location (City/State)
-   - Website or social media links
-   - Brief description of their work
-   - Primary focus areas/issues
+     - Organization name
+     - Location (City/State)
+     - Website or social media links
+     - Brief description of their work
+     - Primary focus areas/issues
 
 ## Development
 
@@ -88,8 +92,50 @@ This project is open source and available under the MIT License.
 ## Contact
 
 To add a mutual aid initiative or report issues, please contact:
+
 - Email: contact@organize.directory
 
 ## Acknowledgments
 
-Thanks to all the mutual aid networks and grassroots organizations working to support their communities through direct action and solidarity. 
+Thanks to all the mutual aid networks and grassroots organizations working to support their communities through direct action and solidarity.
+
+# Contact Form Setup Instructions
+
+## Setting Up Web3Forms
+
+To get your contact form working:
+
+1. **Sign up for Web3Forms**:
+
+     - Go to [Web3Forms.com](https://web3forms.com/)
+     - Sign up for a free account using your email
+     - After signing up, you'll be taken to your dashboard where you can create a form
+
+2. **Get your Access Key**:
+
+     - On your dashboard, click "Create Form"
+     - Enter "Organize Directory Contact Form" as the form name
+     - Enter "organizedirectory@proton.me" as the email where you want to receive submissions
+     - Click "Create Form"
+     - You'll receive an Access Key (it will look something like `12a34b56-7c89-0d1e-2f3g-456h7i8j9k0l`)
+
+3. **Update your submit.js file**:
+     - Open `functions/api/submit.js`
+     - Replace `YOUR_WEB3FORMS_ACCESS_KEY` with the access key you received
+     - Save the file and redeploy your site
+
+## Features of Your Contact Form
+
+- **Anonymous Submissions**: The form allows users to leave the email field blank for anonymous submissions
+- **Custom Subject Line**: The form converts the selected subject into a readable format
+- **Direct Email Forwarding**: Form submissions are sent directly to your Proton Mail address
+- **No Monthly Limits**: Free tier includes 1000 submissions per month
+
+## Troubleshooting
+
+If you experience any issues:
+
+1. Check the browser console for error messages
+2. Verify your access key is correctly entered
+3. Make sure your Cloudflare Functions are properly deployed
+4. Contact Web3Forms support if issues persist

@@ -30,7 +30,7 @@ export async function onRequestPost(context) {
           // Parse form data
           const formData = await context.request.formData();
           const name = formData.get("name");
-          const email = formData.get("email");
+          const email = formData.get("email") || "";
           const subject = formData.get("subject");
           const message = formData.get("message");
 
@@ -47,7 +47,7 @@ export async function onRequestPost(context) {
                );
           }
 
-          // Format email content
+          // Format subject based on mapping
           const subjectMapping = {
                "add-network": "Add a Mutual Aid Network",
                "update-info": "Update Existing Information",
@@ -56,56 +56,51 @@ export async function onRequestPost(context) {
                other: "Other",
           };
 
-          const subjectLine = `Contact Form: ${subjectMapping[subject] || subject}`;
+          const formattedSubject = `Contact Form: ${subjectMapping[subject] || subject}`;
+
+          // Create Web3Forms payload
+          // Replace ACCESS_KEY with your actual Web3Forms access key
+          const web3FormsPayload = new FormData();
+          web3FormsPayload.append(
+               "access_key",
+               "66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f"
+          ); // Replace this with your actual key
+          web3FormsPayload.append("name", name);
+          web3FormsPayload.append("subject", formattedSubject);
+          web3FormsPayload.append(
+               "from_name",
+               "Organize Directory Contact Form"
+          );
 
           // Handle anonymous submissions
-          const emailContent = `
+          if (email) {
+               web3FormsPayload.append("email", email);
+               web3FormsPayload.append("replyto", email);
+          } else {
+               web3FormsPayload.append("email", "anonymous@example.com");
+          }
+
+          // Format the message to include submission details
+          const formattedMessage = `
 Name: ${name}
 Email: ${email ? email : "Anonymous submission"}
 Subject: ${subjectMapping[subject] || subject}
 
 Message:
 ${message}
-    `;
+          `;
 
-          // Use the legitimate domain email since user controls organize.directory
-          const senderEmail = "hello@organize.directory";
-          const recipientEmail = "hello@organize.directory"; // Will forward to organizedirectory@proton.me
+          web3FormsPayload.append("message", formattedMessage);
 
-          // Create personalization object
-          const personalization = {
-               to: [{ email: recipientEmail }],
-          };
-
-          // Only add reply-to if email is provided
-          if (email) {
-               personalization.reply_to = { email, name };
-          }
-
-          // Send email via Mailchannels
-          const send = await fetch("https://api.mailchannels.net/tx/v1/send", {
+          // Submit to Web3Forms API
+          const response = await fetch("https://api.web3forms.com/submit", {
                method: "POST",
-               headers: {
-                    "content-type": "application/json",
-               },
-               body: JSON.stringify({
-                    personalizations: [personalization],
-                    from: {
-                         email: senderEmail,
-                         name: "Organize Directory Contact Form",
-                    },
-                    subject: subjectLine,
-                    content: [
-                         {
-                              type: "text/plain",
-                              value: emailContent,
-                         },
-                    ],
-               }),
+               body: web3FormsPayload,
           });
 
-          // Check if email was sent successfully
-          if (send.status >= 200 && send.status < 300) {
+          const responseData = await response.json();
+
+          if (response.status === 200 && responseData.success) {
                // Return success response
                return new Response(JSON.stringify({ success: true }), {
                     status: 200,
@@ -119,9 +114,12 @@ ${message}
                });
           } else {
                // Log the error for debugging
-               console.error("Failed to send email:", await send.text());
+               console.error("Failed to send email:", responseData);
                return new Response(
-                    JSON.stringify({ error: "Failed to send email" }),
+                    JSON.stringify({
+                         error: "Failed to send email",
+                         details: responseData,
+                    }),
                     {
                          status: 500,
                          headers: {
@@ -140,7 +138,12 @@ ${message}
                JSON.stringify({ error: "Internal server error" }),
                {
                     status: 500,
-                    headers: { "Content-Type": "application/json" },
+                    headers: {
+                         "Content-Type": "application/json",
+                         "Access-Control-Allow-Origin": "*",
+                         "Access-Control-Allow-Methods": "POST, OPTIONS",
+                         "Access-Control-Allow-Headers": "Content-Type",
+                    },
                }
           );
      }
