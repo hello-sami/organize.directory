@@ -33,14 +33,42 @@ export async function onRequestPost(context) {
           const email = formData.get("email") || "";
           const subject = formData.get("subject");
           const message = formData.get("message");
+          const location = formData.get("location") || "";
+          const isNewsletter = subject === "Newsletter Subscription";
 
-          console.log("Form data received:", { name, email, subject });
+          // Get interests for newsletter
+          let interests = [];
+          if (isNewsletter) {
+               interests = formData.getAll("interests") || [];
+          }
+
+          console.log("Form data received:", {
+               name,
+               email,
+               subject,
+               isNewsletter,
+          });
 
           // Validate form data
-          if (!name || !subject || !message) {
+          if (!name || !email) {
                return new Response(
                     JSON.stringify({
-                         error: "Name, subject, and message are required",
+                         error: "Name and email are required",
+                    }),
+                    {
+                         status: 400,
+                         headers: {
+                              "Content-Type": "application/json",
+                              "Access-Control-Allow-Origin": "*",
+                         },
+                    }
+               );
+          }
+
+          if (!isNewsletter && (!subject || !message)) {
+               return new Response(
+                    JSON.stringify({
+                         error: "Subject and message are required for contact forms",
                     }),
                     {
                          status: 400,
@@ -61,30 +89,47 @@ export async function onRequestPost(context) {
                other: "Other",
           };
 
-          const formattedSubject = `Contact Form: ${subjectMapping[subject] || subject}`;
+          const formattedSubject = isNewsletter
+               ? "Newsletter Subscription"
+               : `Contact Form: ${subjectMapping[subject] || subject}`;
 
           // Create Web3Forms payload
           let web3FormsData = {
                access_key: "66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f",
                subject: formattedSubject,
-               from_name: "Organize Directory Contact Form",
+               from_name: isNewsletter
+                    ? "Organize Directory Newsletter"
+                    : "Organize Directory Contact Form",
                name: name,
-               message: `
+               email: email,
+               replyto: email,
+          };
+
+          // Format message based on form type
+          if (isNewsletter) {
+               web3FormsData.message = `
+Newsletter Subscription:
+
+Name: ${name}
+Email: ${email}
+Location: ${location || "Not provided"}
+Interests: ${interests.join(", ") || "None selected"}
+               `;
+          } else {
+               web3FormsData.message = `
 Name: ${name}
 Email: ${email ? email : "Anonymous submission"}
 Subject: ${subjectMapping[subject] || subject}
 
 Message:
 ${message}
-          `,
-          };
+               `;
 
-          // Handle anonymous submissions
-          if (email) {
-               web3FormsData.email = email;
-               web3FormsData.replyto = email;
-          } else {
-               web3FormsData.email = "anonymous@example.com";
+               // Handle anonymous submissions for contact form
+               if (!email) {
+                    web3FormsData.email = "anonymous@example.com";
+                    delete web3FormsData.replyto;
+               }
           }
 
           console.log("Preparing to send data to Web3Forms");

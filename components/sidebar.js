@@ -5,11 +5,12 @@ const initialSidebar = `
         <a href="/" class="nav-link">Home</a>
         <div class="nav-group">
             <span class="nav-group-title">Find a group</span>
-            <a href="/location" class="nav-link nav-link-indented">Local groups</a>
-            <a href="/topics" class="nav-link nav-link-indented">National groups</a>
+            <a href="/location" class="nav-link nav-link-indented">by location</a>
+            <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
         <a href="/guides" class="nav-link">Guides</a>
         <a href="/contact" class="nav-link">Contact</a>
+        <a href="/newsletter" class="nav-link">Newsletter</a>
     </nav>
     <div class="sidebar-motto">
         Solidarity not charity.<br>
@@ -39,10 +40,10 @@ const criticalStyles = `
         opacity: 1 !important;
         visibility: visible !important;
         background: var(--sidebar-bg, #FDF2F8);
-        width: 250px;
+        width: var(--sidebar-width, 280px) !important;
         height: 100vh;
         position: fixed;
-        padding: 2rem;
+        padding: 2rem 0;
         box-sizing: border-box;
         overflow-y: auto;
         z-index: 100;
@@ -50,28 +51,53 @@ const criticalStyles = `
     .sidebar h1 {
         margin: 0 0 2rem 0;
         font-size: 1.5rem;
+        padding: 0 1.5rem;
     }
     .sidebar nav {
         margin-bottom: 2rem;
     }
     .sidebar .nav-link {
         display: block;
-        padding: 0.5rem 0;
+        padding: 0.75rem 1.5rem;
         color: inherit;
         text-decoration: none;
+        border-top: 1px solid var(--border-color, #ffb3b3);
+        border-bottom: 1px solid var(--border-color, #ffb3b3);
     }
     .sidebar .nav-group-title {
         display: block;
         font-weight: 600;
         margin: 0.5rem 0;
+        padding: 0.75rem 1.5rem;
+        border-top: 1px solid var(--border-color, #ffb3b3);
+        border-bottom: 1px solid var(--border-color, #ffb3b3);
     }
     .sidebar .nav-link-indented {
-        padding-left: 1rem;
+        padding-left: 2.5rem;
     }
     .sidebar .sidebar-motto {
         font-style: italic;
         margin-top: 2rem;
         font-size: 0.9rem;
+        padding: 0 1.5rem;
+    }
+    /* Add spacing rule to ensure content doesn't overlap with sidebar */
+    .content {
+        margin-left: calc(var(--sidebar-width, 280px) + 4rem) !important;
+    }
+    /* Mobile styles */
+    @media (max-width: 1020px) {
+        .content {
+            margin-left: 0 !important;
+        }
+        .sidebar {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        .sidebar.active {
+            transform: translateX(0);
+            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+        }
     }
 `;
 
@@ -104,6 +130,7 @@ function updateActiveStates(sidebar, activePage) {
           topics: 'a[href="/topics"]',
           guides: 'a[href="/guides"]',
           contact: 'a[href="/contact"]',
+          newsletter: 'a[href="/newsletter"]',
      };
 
      const activeSelector = activeLinks[activePage];

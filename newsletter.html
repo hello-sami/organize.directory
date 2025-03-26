@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="color-scheme" content="light">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Newsletter - Mutual Aid Network Directory</title>
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+
+    <!-- Load CSS -->
+    <link rel="stylesheet" href="/fonts/fonts.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .newsletter-form {
+            margin-top: 1rem;
+            background: var(--surface-color);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .form-helper {
+            display: block;
+            margin-top: 0.25rem;
+            font-size: 0.85em;
+            color: var(--text-secondary);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: var(--input-bg);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .checkbox-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+        }
+
+        .submit-button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .submit-button:hover {
+            background: var(--primary-color-dark);
+        }
+
+        .newsletter-benefits {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--surface-color-alt);
+            border-radius: 8px;
+        }
+
+        .newsletter-benefits h3 {
+            margin-bottom: 1rem;
+            color: var(--heading-color);
+        }
+
+        .benefits-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .benefits-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .benefits-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+    </style>
+
+    <!-- Critical Scripts -->
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
+
+        // Initialize sidebar first
+        initializeSidebar('newsletter');
+
+        // Initialize other components
+        initializeComponents({});
+    </script>
+</head>
+
+<body>
+    <div class="layout">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation">
+            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+            <nav>
+                <a href="/" class="nav-link">Home</a>
+                <div class="nav-group">
+                    <span class="nav-group-title">Find a group</span>
+                    <a href="/location" class="nav-link nav-link-indented">by location</a>
+                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
+                </div>
+                <a href="/guides" class="nav-link">Guides</a>
+                <a href="/contact" class="nav-link">Contact</a>
+                <a href="/newsletter" class="nav-link">Newsletter</a>
+            </nav>
+            <div class="sidebar-motto">
+                Solidarity not charity.<br>
+                Awareness into action.
+            </div>
+        </div>
+
+        <main class="content" role="main">
+            <header id="header" class="page-header">
+                <h1>Subscribe to Our Newsletter</h1>
+                <p>Stay updated with the latest mutual aid initiatives, resources, and community efforts.</p>
+            </header>
+
+            <div class="newsletter-content">
+                <form class="newsletter-form" id="newsletterForm" action="https://api.web3forms.com/submit"
+                    method="POST">
+                    <input type="hidden" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
+                    <input type="hidden" name="subject" value="Newsletter Subscription">
+                    <input type="hidden" name="redirect" value="https://organize.directory/thank-you">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Your Location (City/State)</label>
+                        <input type="text" id="location" name="location">
+                        <small class="form-helper">Helps us send you relevant local information</small>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="interests" value="local-initiatives" checked>
+                            Local mutual aid initiatives
+                        </label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="interests" value="resources" checked>
+                            Mutual aid resources and guides
+                        </label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="interests" value="events">
+                            Events and workshops
+                        </label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" name="consent" required>
+                            I consent to receive email updates from The Organize Directory
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-button">Subscribe</button>
+                </form>
+                <div id="form-error" class="error-message"
+                    style="display: none; color: #d32f2f; margin-top: 1rem; padding: 0.5rem; background: #ffebee; border-radius: 4px;">
+                </div>
+
+                <div class="newsletter-benefits">
+                    <h3>Benefits of subscribing:</h3>
+                    <ul class="benefits-list">
+                        <li>Monthly updates on local and national mutual aid initiatives</li>
+                        <li>Access to resources and guides for organizing and participating in mutual aid</li>
+                        <li>Information about upcoming events and workshops</li>
+                        <li>Opportunities to connect with mutual aid networks near you</li>
+                        <li>Stories of mutual aid success and community impact</li>
+                    </ul>
+                    <p class="privacy-note" style="margin-top: 1rem; font-size: 0.9em;">
+                        We respect your privacy. You can unsubscribe at any time by clicking the unsubscribe link in any
+                        email.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('newsletterForm');
+            const errorDiv = document.getElementById('form-error');
+
+            form.addEventListener('submit', function (e) {
+                // Simple validation example - more complex validation can be added
+                const email = document.getElementById('email').value;
+                if (!email || !email.includes('@')) {
+                    e.preventDefault();
+                    errorDiv.textContent = 'Please enter a valid email address.';
+                    errorDiv.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

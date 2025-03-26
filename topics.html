@@ -23,23 +23,31 @@
 
     <!-- Add Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('topics');
-
-        // Initialize other components
-        initializeComponents({});
-    </script>
 </head>
 
 <body>
     <div class="layout">
-        <main class="content">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation">
+            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+            <nav>
+                <a href="/" class="nav-link">Home</a>
+                <div class="nav-group">
+                    <span class="nav-group-title">Find a group</span>
+                    <a href="/location" class="nav-link nav-link-indented">by location</a>
+                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
+                </div>
+                <a href="/guides" class="nav-link">Guides</a>
+                <a href="/contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="sidebar-motto">
+                Solidarity not charity.<br>
+                Awareness into action.
+            </div>
+        </div>
+
+        <main class="content" role="main">
+            <header class="page-header"></header>
+
             <div class="state-page">
                 <h1 class="state-title">Topics</h1>
 
@@ -113,7 +121,20 @@
         </main>
     </div>
 
-    <script src="/mobile-menu.js"></script>
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
+
+        // Initialize sidebar first
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeSidebar('topics');
+
+            // Initialize other components
+            initializeComponents({});
+        });
+    </script>
+    <script src="/mobile-menu.js" defer></script>
 </body>
 
 </html>
