@@ -1,3 +1,6 @@
+<!-- This is an alternative version using Formspree -->
+<!-- To use it, rename this file to contact.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,13 +96,6 @@
         .submit-button:hover {
             background: var(--primary-color-dark);
         }
-
-        .contact-info {
-            margin-top: 2rem;
-            padding: 1rem;
-            background: var(--surface-color-alt);
-            border-radius: 8px;
-        }
     </style>
 
     <!-- Critical Scripts -->
@@ -144,7 +140,8 @@
             </header>
 
             <div class="contact-content">
-                <form class="contact-form" id="contactForm" action="/form-handler/submit" method="POST">
+                <!-- Replace this with your actual Formspree form ID after signing up -->
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/hello@organize.directory" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -172,64 +169,17 @@
                         <textarea id="message" name="message" required></textarea>
                     </div>
 
+                    <!-- Redirect to your own thank you page after submission -->
+                    <input type="hidden" name="_next" value="https://organize.directory/thank-you">
+                    
+                    <!-- Prevent spam by adding a hidden honeypot field -->
+                    <input type="text" name="_gotcha" style="display:none">
+
                     <button type="submit" class="submit-button">Send Message</button>
                 </form>
-                <div id="form-error" class="error-message"
-                    style="display: none; color: #d32f2f; margin-top: 1rem; padding: 0.5rem; background: #ffebee; border-radius: 4px;">
-                </div>
             </div>
         </main>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('contactForm');
-            const errorMessage = document.getElementById('form-error');
-
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-
-                const submitButton = form.querySelector('button[type="submit"]');
-                submitButton.disabled = true;
-                submitButton.textContent = 'Sending...';
-                errorMessage.style.display = 'none';
-
-                try {
-                    const response = await fetch('/api/submit', {
-                        method: 'POST',
-                        body: new FormData(form),
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-
-                    // For debugging
-                    console.log('Response status:', response.status);
-
-                    const result = await response.json();
-                    console.log('Response data:', result);
-
-                    if (response.ok) {
-                        // Redirect to thank you page
-                        window.location.href = '/thank-you';
-                    } else {
-                        // Show error message
-                        errorMessage.textContent = result.error || 'Failed to send your message. Please try again.';
-                        errorMessage.style.display = 'block';
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Send Message';
-                    }
-                } catch (error) {
-                    // Show error message for network errors
-                    console.error('Form submission error:', error);
-                    errorMessage.textContent = 'Network error. Please check your connection and try again.';
-                    errorMessage.style.display = 'block';
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Send Message';
-                }
-            });
-        });
-    </script>
 </body>
 
-</html>
+</html> 
