@@ -35,9 +35,11 @@ export async function onRequestPost(context) {
           const message = formData.get("message");
 
           // Validate form data
-          if (!name || !email || !subject || !message) {
+          if (!name || !subject || !message) {
                return new Response(
-                    JSON.stringify({ error: "All fields are required" }),
+                    JSON.stringify({
+                         error: "Name, subject, and message are required",
+                    }),
                     {
                          status: 400,
                          headers: { "Content-Type": "application/json" },
@@ -56,10 +58,10 @@ export async function onRequestPost(context) {
 
           const subjectLine = `Contact Form: ${subjectMapping[subject] || subject}`;
 
-          // Email content
+          // Handle anonymous submissions
           const emailContent = `
 Name: ${name}
-Email: ${email}
+Email: ${email ? email : "Anonymous submission"}
 Subject: ${subjectMapping[subject] || subject}
 
 Message:
@@ -70,6 +72,16 @@ ${message}
           const senderEmail = "hello@organize.directory";
           const recipientEmail = "hello@organize.directory"; // Will forward to organizedirectory@proton.me
 
+          // Create personalization object
+          const personalization = {
+               to: [{ email: recipientEmail }],
+          };
+
+          // Only add reply-to if email is provided
+          if (email) {
+               personalization.reply_to = { email, name };
+          }
+
           // Send email via Mailchannels
           const send = await fetch("https://api.mailchannels.net/tx/v1/send", {
                method: "POST",
@@ -77,12 +89,7 @@ ${message}
                     "content-type": "application/json",
                },
                body: JSON.stringify({
-                    personalizations: [
-                         {
-                              to: [{ email: recipientEmail }],
-                              reply_to: { email: email, name: name },
-                         },
-                    ],
+                    personalizations: [personalization],
                     from: {
                          email: senderEmail,
                          name: "Organize Directory Contact Form",

@@ -44,11 +44,19 @@
         }
 
         .contact-form {
-            margin-top: 2rem;
+            margin-top: 1rem;
             background: var(--surface-color);
             padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .alternative-contact {
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: var(--surface-color-alt);
+            border-radius: 4px;
+            text-align: center;
         }
 
         .form-group {
@@ -60,6 +68,19 @@
             margin-bottom: 0.5rem;
             font-weight: 500;
             color: var(--text-color);
+        }
+
+        .optional {
+            font-weight: normal;
+            opacity: 0.8;
+            font-size: 0.9em;
+        }
+
+        .form-helper {
+            display: block;
+            margin-top: 0.25rem;
+            font-size: 0.85em;
+            color: var(--text-secondary);
         }
 
         .form-group input,
@@ -144,6 +165,10 @@
             </header>
 
             <div class="contact-content">
+                <p class="alternative-contact">You can also contact us directly at
+                    <strong>organizedirectory(at)proton.me</strong>
+                </p>
+
                 <form class="contact-form" id="contactForm" action="/api/submit" method="POST">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -151,8 +176,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email <span class="optional">(optional)</span></label>
+                        <input type="email" id="email" name="email">
+                        <small class="form-helper">Leave blank to submit anonymously</small>
                     </div>
 
                     <div class="form-group">
