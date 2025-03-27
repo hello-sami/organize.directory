@@ -401,6 +401,11 @@ hr {
           grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
      }
 
+     .cities-list {
+          grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+          gap: 0.75rem;
+     }
+
      .location-header h1 {
           font-size: 2.5rem;
      }
@@ -425,6 +430,15 @@ hr {
 
      .states-list {
           grid-template-columns: 1fr;
+     }
+
+     .cities-list {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.5rem;
+     }
+
+     .cities-category {
+          margin-bottom: 1.5rem;
      }
 
      .location-header {
@@ -489,78 +503,6 @@ hr {
      .cities-list {
           grid-template-columns: repeat(3, 1fr);
           gap: 0.75rem;
-     }
-}
-
-@media (max-width: 768px) {
-     .cities-list {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 0.5rem;
-     }
-}
-
-@media (max-width: 480px) {
-     .cities-list {
-          grid-template-columns: 1fr;
-          gap: 0.5rem;
-     }
-
-     .cities-category {
-          margin-bottom: 1.5rem;
-     }
-}
-
-.initiative {
-     margin-bottom: 3rem !important;
-}
-
-.initiative:last-child {
-     margin-bottom: 0;
-}
-
-.initiative h3,
-.initiative a {
-     font-weight: 700;
-     color: var(--heading-color);
-}
-
-.initiative a:hover {
-     color: var(--primary-color);
-     border-color: var(--primary-color);
-}
-
-.initiative a {
-     font-weight: 700;
-     color: var(--heading-color);
-     position: relative;
-     padding-right: 1.5em;
-}
-
-.initiative a::after {
-     content: "→";
-     position: absolute;
-     right: 0.2em;
-     opacity: 0;
-     transform: translateX(-8px);
-     transition: all 0.2s ease;
-}
-
-.initiative a:hover::after {
-     opacity: 1;
-     transform: translateX(0);
-}
-
-@media (max-width: 768px) {
-     .cities-list {
-          grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-          gap: 0.75rem;
-     }
-}
-
-@media (max-width: 480px) {
-     .cities-list {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 0.5rem;
      }
 }
 
@@ -659,7 +601,6 @@ hr {
      background: var(--card-bg, #ffd9d9);
      padding: 1.5rem;
      border-radius: 8px;
-     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .state-page section {
@@ -759,4 +700,44 @@ hr {
 .breadcrumb span {
      color: var(--text-color);
      opacity: 0.8;
+}
+
+.initiative {
+     margin-bottom: 3rem !important;
+}
+
+.initiative:last-child {
+     margin-bottom: 0;
+}
+
+.initiative h3,
+.initiative a {
+     font-weight: 700;
+     color: var(--heading-color);
+}
+
+.initiative a:hover {
+     color: var(--primary-color);
+     border-color: var(--primary-color);
+}
+
+.initiative a {
+     font-weight: 700;
+     color: var(--heading-color);
+     position: relative;
+     padding-right: 1.5em;
+}
+
+.initiative a::after {
+     content: "→";
+     position: absolute;
+     right: 0.2em;
+     opacity: 0;
+     transform: translateX(-8px);
+     transition: all 0.2s ease;
+}
+
+.initiative a:hover::after {
+     opacity: 1;
+     transform: translateX(0);
 }
