@@ -656,6 +656,10 @@ hr {
      grid-template-columns: repeat(4, 1fr);
      gap: 1.5rem;
      margin: 1.5rem 0;
+     background: var(--card-bg, #ffd9d9);
+     padding: 1.5rem;
+     border-radius: 8px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .state-page section {
@@ -687,12 +691,21 @@ hr {
      padding: 0.5rem 0;
      display: block;
      width: 100%;
+     color: var(--primary-color-dark, #800000);
+     font-weight: 600;
+}
+
+.state-page .city-link:hover {
+     color: var(--primary-color, #a30000);
+     text-decoration: underline;
+     text-decoration-color: var(--primary-color, #a30000);
 }
 
 @media (max-width: 1020px) {
      .state-page .cities-list {
           grid-template-columns: repeat(3, 1fr);
           gap: 1rem;
+          padding: 1.25rem;
      }
 }
 
@@ -700,6 +713,7 @@ hr {
      .state-page .cities-list {
           grid-template-columns: repeat(2, 1fr);
           gap: 0.75rem;
+          padding: 1rem;
      }
 
      .state-page h1 {
@@ -715,6 +729,7 @@ hr {
      .state-page .cities-list {
           grid-template-columns: 1fr;
           gap: 0.5rem;
+          padding: 1rem;
      }
 
      .state-page h1 {
