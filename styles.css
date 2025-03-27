@@ -649,3 +649,35 @@ hr {
 .content .page-header {
      display: none;
 }
+
+/* State pages specific styling */
+.state-page .cities-list {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 1.5rem;
+     margin: 1.5rem 0;
+}
+
+.state-page section {
+     margin-bottom: 2rem;
+}
+
+.state-page h2 {
+     font-size: 1.8rem;
+     color: var(--heading-color);
+     margin-bottom: 1rem;
+}
+
+.state-page .city-link {
+     font-size: 1rem;
+     padding: 0.5rem 0;
+     display: block;
+     width: 100%;
+}
+
+@media (max-width: 1020px) {
+     .state-page .cities-list {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1rem;
+     }
+}
