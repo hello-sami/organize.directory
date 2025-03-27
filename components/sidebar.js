@@ -10,7 +10,7 @@ const initialSidebar = `
         </div>
         <a href="/guides" class="nav-link">Guides</a>
         <a href="/contact" class="nav-link">Contact</a>
-        <a href="/newsletter" class="nav-link">Newsletter</a>
+        <a href="/subscribe" class="nav-link">Subscribe</a>
     </nav>
     <div class="sidebar-motto">
         Solidarity not charity.<br>
@@ -130,7 +130,7 @@ function updateActiveStates(sidebar, activePage) {
           topics: 'a[href="/topics"]',
           guides: 'a[href="/guides"]',
           contact: 'a[href="/contact"]',
-          newsletter: 'a[href="/newsletter"]',
+          subscribe: 'a[href="/subscribe"]',
      };
 
      const activeSelector = activeLinks[activePage];

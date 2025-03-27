@@ -16,7 +16,7 @@
 
     <meta name="color-scheme" content="light">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <title>Newsletter - Mutual Aid Network Directory</title>
+    <title>Subscribe - Mutual Aid Network Directory</title>
 
     <!-- DNS Prefetch -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -144,13 +144,14 @@
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+        // Import initializeComponents but don't use it to avoid adding search
+        // import { initializeComponents } from '/utils/init.js';
 
         // Initialize sidebar first
-        initializeSidebar('newsletter');
+        initializeSidebar('subscribe');
 
-        // Initialize other components
-        initializeComponents({});
+        // Don't initialize other components to prevent search header
+        // initializeComponents({});
     </script>
 </head>
 
@@ -167,7 +168,7 @@
                 </div>
                 <a href="/guides" class="nav-link">Guides</a>
                 <a href="/contact" class="nav-link">Contact</a>
-                <a href="/newsletter" class="nav-link">Newsletter</a>
+                <a href="/subscribe" class="nav-link">Subscribe</a>
             </nav>
             <div class="sidebar-motto">
                 Solidarity not charity.<br>
