@@ -2,7 +2,7 @@
 const initialSidebar = `
     <div class="sidebar-header">
         <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo">
-        <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+        <h1><a href="/" class="home-link" style="text-decoration: none !important; color: inherit !important; background-color: transparent !important;">The Organize Directory</a></h1>
     </div>
     <nav>
         <a href="/" class="nav-link">Home</a>
@@ -68,6 +68,21 @@ const criticalStyles = `
         margin-bottom: 0;
         text-align: center;
         font-size: 1.6rem;
+        background-color: transparent !important;
+    }
+    .sidebar-header h1 a, 
+    .sidebar-header h1 a:link,
+    .sidebar-header h1 a:visited,
+    .sidebar-header h1 a:hover,
+    .sidebar-header h1 a:active,
+    .home-link {
+        color: inherit !important;
+        text-decoration: none !important;
+        background-color: transparent !important;
+        font-weight: inherit !important;
+        border-bottom: none !important;
+        box-shadow: none !important;
+        outline: none !important;
     }
     .sidebar h1 {
         margin: 0 0 2rem 0;
@@ -153,7 +168,14 @@ function initializeCriticalStyles() {
 function updateActiveStates(sidebar, activePage) {
      if (!sidebar) return;
 
-     // Remove all active classes first
+     console.log("Updating active state for page:", activePage);
+
+     // Special case for homepage - ensure we treat it as 'home'
+     if (!activePage || activePage === "" || activePage === "index") {
+          activePage = "home";
+     }
+
+     // Remove all active classes first and reset styles
      sidebar.querySelectorAll(".nav-link").forEach((link) => {
           link.classList.remove("active");
           link.style.backgroundColor = "";
@@ -162,13 +184,32 @@ function updateActiveStates(sidebar, activePage) {
           link.style.opacity = "";
      });
 
-     // Reset all nav-group-title styles
+     // Reset all nav-group-title styles - ensure they're not highlighted by default
      sidebar.querySelectorAll(".nav-group-title").forEach((title) => {
-          title.style.backgroundColor = "";
-          title.style.color = "";
-          title.style.fontWeight = "";
-          title.style.opacity = "";
+          title.style.cssText = `
+               background-color: transparent !important;
+               color: inherit !important;
+               font-weight: 600 !important;
+               opacity: 1 !important;
+          `;
      });
+
+     // Force remove any potential styling on the header h1 elements with !important inline styles
+     const sidebarHeader = sidebar.querySelector(".sidebar-header");
+     if (sidebarHeader) {
+          const headerH1 = sidebarHeader.querySelector("h1");
+          if (headerH1) {
+               headerH1.style.cssText =
+                    "background-color: transparent !important;";
+               const headerLink = headerH1.querySelector("a");
+               if (headerLink) {
+                    headerLink.style.cssText =
+                         "background-color: transparent !important; color: inherit !important; " +
+                         "font-weight: inherit !important; text-decoration: none !important; " +
+                         "border-bottom: none !important; box-shadow: none !important;";
+               }
+          }
+     }
 
      // Special handling for topics and location
      if (activePage === "topics") {
@@ -187,9 +228,12 @@ function updateActiveStates(sidebar, activePage) {
                     const groupTitle =
                          navGroup.querySelector(".nav-group-title");
                     if (groupTitle) {
-                         groupTitle.style.backgroundColor = "transparent";
-                         groupTitle.style.opacity = "0.7";
-                         groupTitle.style.fontWeight = "400";
+                         groupTitle.style.cssText = `
+                              background-color: transparent !important;
+                              color: inherit !important;
+                              font-weight: 400 !important;
+                              opacity: 0.7 !important;
+                         `;
                     }
                }
           }
@@ -213,18 +257,46 @@ function updateActiveStates(sidebar, activePage) {
                     const groupTitle =
                          navGroup.querySelector(".nav-group-title");
                     if (groupTitle) {
-                         groupTitle.style.backgroundColor = "transparent";
-                         groupTitle.style.opacity = "0.7";
-                         groupTitle.style.fontWeight = "400";
+                         groupTitle.style.cssText = `
+                              background-color: transparent !important;
+                              color: inherit !important;
+                              font-weight: 400 !important;
+                              opacity: 0.7 !important;
+                         `;
                     }
                }
           }
           return;
      }
 
+     // For home page, ensure Find a group is definitely not highlighted
+     if (activePage === "home") {
+          // Set Home link as active
+          const homeLink = sidebar.querySelector('a[href="/"]');
+          if (homeLink) {
+               homeLink.classList.add("active");
+               homeLink.style.cssText = `
+                    background-color: var(--pure-white, #ffffff) !important;
+                    color: var(--primary-color, #a30000) !important;
+                    font-weight: 600 !important;
+               `;
+          }
+
+          // Ensure all nav-group-title elements are not highlighted
+          sidebar.querySelectorAll(".nav-group-title").forEach((title) => {
+               title.style.cssText = `
+                    background-color: transparent !important;
+                    color: inherit !important;
+                    font-weight: 600 !important;
+                    opacity: 1 !important;
+               `;
+          });
+
+          return;
+     }
+
      // For other pages, use the regular mapping
      const activeLinks = {
-          home: 'a[href="/"]',
           guides: 'a[href="/guides"]',
           contact: 'a[href="/contact"]',
           subscribe: 'a[href="/subscribe"]',
@@ -238,7 +310,15 @@ function updateActiveStates(sidebar, activePage) {
                activeLink.style.backgroundColor = "var(--pure-white, #ffffff)";
                activeLink.style.color = "var(--primary-color, #a30000)";
                activeLink.style.fontWeight = "600";
+               console.log("Set active link for:", activeSelector);
+          } else {
+               console.log(
+                    "Active link not found for selector:",
+                    activeSelector
+               );
           }
+     } else {
+          console.log("No active selector for page:", activePage);
      }
 }
 
@@ -247,15 +327,21 @@ export function initializeSidebar(activePage) {
      // Initialize critical styles first
      initializeCriticalStyles();
 
-     // Insert sidebar if it doesn't exist
-     if (!document.getElementById("sidebar")) {
-          insertSidebar();
-     }
-
+     // Get the existing sidebar
      const sidebar = document.getElementById("sidebar");
      if (!sidebar) {
           console.error("Sidebar element not found");
           return;
+     }
+
+     // Add direct inline style to h1 link to prevent underline
+     const h1Link = sidebar.querySelector(".sidebar-header h1 a");
+     if (h1Link) {
+          h1Link.setAttribute(
+               "style",
+               "text-decoration: none !important; color: inherit !important; " +
+                    "background-color: transparent !important; border-bottom: none !important;"
+          );
      }
 
      // Update active states

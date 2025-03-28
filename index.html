@@ -9,8 +9,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-
-
     <meta name="description"
         content="Daily updates and resources for mutual aid networks and grassroots initiatives across different cities.">
 
@@ -22,7 +20,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Preload critical resources -->
-
     <link rel="preload" href="/components/sidebar.js" as="script" type="module">
     <link rel="preload" href="/styles.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style">
@@ -36,19 +33,102 @@
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     </noscript>
+
+    <!-- Add custom style for sidebar header -->
+    <style>
+        /* Prevent sidebar header and h1 from being highlighted */
+        .sidebar-header,
+        .sidebar-header h1 {
+            background-color: transparent !important;
+            background: transparent !important;
+        }
+
+        /* Explicitly style the h1 link to prevent any highlighting */
+        .sidebar-header h1 a,
+        .sidebar-header h1 a:link,
+        .sidebar-header h1 a:visited,
+        .sidebar-header h1 a:hover,
+        .sidebar-header h1 a:active,
+        .sidebar-header h1 a.home-link {
+            text-decoration: none !important;
+            color: inherit !important;
+            background-color: transparent !important;
+            background: transparent !important;
+            border-bottom: none !important;
+            box-shadow: none !important;
+            font-weight: inherit !important;
+        }
+
+        /* Make Home link active by default */
+        .sidebar a[href="/"].nav-link {
+            background-color: var(--pure-white, #ffffff) !important;
+            color: var(--primary-color, #a30000) !important;
+            font-weight: 600 !important;
+        }
+
+        /* Explicitly reset Find a group styling on homepage to match other non-highlighted items */
+        .sidebar .nav-group-title {
+            background-color: transparent !important;
+            color: inherit !important;
+            font-weight: 600 !important;
+            opacity: 1 !important;
+        }
+    </style>
+
+    <!-- Initialize Components Immediately -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+
+        // Initialize sidebar immediately
+        initializeSidebar('home');
+
+        // Extra script to ensure "Find a group" is not highlighted and h1 is not highlighted
+        document.addEventListener('DOMContentLoaded', () => {
+            // Reset nav-group-title
+            const navGroupTitles = document.querySelectorAll('.nav-group-title');
+            navGroupTitles.forEach(title => {
+                title.style.backgroundColor = 'transparent';
+                title.style.color = 'inherit';
+                title.style.fontWeight = '600';
+                title.style.opacity = '1';
+            });
+
+            // Reset header h1 styles
+            const headerH1 = document.querySelector('.sidebar-header h1');
+            if (headerH1) {
+                headerH1.style.backgroundColor = 'transparent';
+                const link = headerH1.querySelector('a');
+                if (link) {
+                    link.style.backgroundColor = 'transparent';
+                    link.style.color = 'inherit';
+                    link.style.textDecoration = 'none';
+                    link.style.borderBottom = 'none';
+                }
+            }
+        });
+    </script>
 </head>
 
 <body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <div class="sidebar-header">
+            <div class="sidebar-header"
+                style="background-color: transparent !important; background: transparent !important;">
                 <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo">
-                <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+                <h1 style="background-color: transparent !important; background: transparent !important;">
+                    <a href="/" class="home-link"
+                        style="text-decoration: none !important; color: inherit !important; background-color: transparent !important; background: transparent !important; border-bottom: none !important;">
+                        The Organize Directory
+                    </a>
+                </h1>
             </div>
             <nav>
-                <a href="/" class="nav-link">Home</a>
+                <a href="/" class="nav-link active"
+                    style="background-color: var(--pure-white, #ffffff); color: var(--primary-color, #a30000); font-weight: 600;">Home</a>
                 <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
+                    <span class="nav-group-title"
+                        style="background-color: transparent !important; color: inherit !important; font-weight: 600 !important; opacity: 1 !important;">Find
+                        a group</span>
                     <a href="/location" class="nav-link nav-link-indented">by location</a>
                     <a href="/topics" class="nav-link nav-link-indented">by topic</a>
                 </div>
@@ -83,14 +163,11 @@
 
     <!-- Initialize Components -->
     <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
 
-        // Initialize components after DOM is ready
+        // Initialize other components after DOM is ready
         document.addEventListener('DOMContentLoaded', () => {
-            initializeSidebar('home');
-            initializeComponents({
-            });
+            initializeComponents({});
         });
     </script>
 </body>
