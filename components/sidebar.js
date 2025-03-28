@@ -7,7 +7,7 @@ const initialSidebar = `
     <nav>
         <a href="/" class="nav-link">Home</a>
         <div class="nav-group">
-            <span class="nav-group-title">Find a group</span>
+            <a href="/location" class="nav-group-title nav-link-group-header">Find a group</a>
             <a href="/location" class="nav-link nav-link-indented">by location</a>
             <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
@@ -110,6 +110,15 @@ const criticalStyles = `
         margin-top: -1px;
         margin-bottom: -1px;
     }
+    .sidebar .nav-link-group-header {
+        cursor: pointer;
+        color: inherit;
+        text-decoration: none;
+    }
+    .sidebar .nav-link-group-header:hover {
+        text-decoration: none;
+        background-color: var(--bg-tint, #f5f5f5);
+    }
     .sidebar .nav-link-indented {
         padding-left: 2.5rem;
     }
@@ -119,11 +128,18 @@ const criticalStyles = `
         font-weight: 600;
     }
     .sidebar .nav-link-indented.active + .nav-group-title,
-    .sidebar .nav-link-indented.active ~ .nav-group-title {
+    .sidebar .nav-link-indented.active ~ .nav-group-title,
+    .sidebar .nav-link-indented.active + .nav-link-group-header,
+    .sidebar .nav-link-indented.active ~ .nav-link-group-header {
         background-color: inherit;
         color: inherit;
         font-weight: normal;
         opacity: 0.7;
+    }
+    .sidebar .nav-link-group-header.active {
+        background-color: var(--pure-white, #ffffff);
+        color: var(--primary-color, #a30000);
+        font-weight: 600;
     }
     .sidebar .sidebar-motto {
         font-style: italic;
@@ -176,13 +192,15 @@ function updateActiveStates(sidebar, activePage) {
      }
 
      // Remove all active classes first and reset styles
-     sidebar.querySelectorAll(".nav-link").forEach((link) => {
-          link.classList.remove("active");
-          link.style.backgroundColor = "";
-          link.style.color = "";
-          link.style.fontWeight = "";
-          link.style.opacity = "";
-     });
+     sidebar
+          .querySelectorAll(".nav-link, .nav-link-group-header")
+          .forEach((link) => {
+               link.classList.remove("active");
+               link.style.backgroundColor = "";
+               link.style.color = "";
+               link.style.fontWeight = "";
+               link.style.opacity = "";
+          });
 
      // Reset all nav-group-title styles - ensure they're not highlighted by default
      sidebar.querySelectorAll(".nav-group-title").forEach((title) => {
@@ -241,6 +259,18 @@ function updateActiveStates(sidebar, activePage) {
      }
 
      if (activePage === "location") {
+          // Highlight both the "Find a group" header and the "by location" link
+          const findGroupTitle = sidebar.querySelector(
+               ".nav-link-group-header"
+          );
+          if (findGroupTitle) {
+               findGroupTitle.classList.add("active");
+               findGroupTitle.style.backgroundColor =
+                    "var(--pure-white, #ffffff)";
+               findGroupTitle.style.color = "var(--primary-color, #a30000)";
+               findGroupTitle.style.fontWeight = "600";
+          }
+
           const locationLink = sidebar.querySelector(
                'a[href="/location"].nav-link-indented'
           );
@@ -250,21 +280,6 @@ function updateActiveStates(sidebar, activePage) {
                     "var(--pure-white, #ffffff)";
                locationLink.style.color = "var(--primary-color, #a30000)";
                locationLink.style.fontWeight = "600";
-
-               // Find the parent nav-group and reduce prominence of its title
-               const navGroup = locationLink.closest(".nav-group");
-               if (navGroup) {
-                    const groupTitle =
-                         navGroup.querySelector(".nav-group-title");
-                    if (groupTitle) {
-                         groupTitle.style.cssText = `
-                              background-color: transparent !important;
-                              color: inherit !important;
-                              font-weight: 400 !important;
-                              opacity: 0.7 !important;
-                         `;
-                    }
-               }
           }
           return;
      }

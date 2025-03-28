@@ -25,8 +25,57 @@
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Add Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Primary Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Backup Font Awesome CDN (in case primary fails) -->
+    <script>
+        // Check if Font Awesome loaded correctly from primary CDN
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                // Check if Font Awesome is loaded
+                const testElement = document.createElement('i');
+                testElement.className = 'fas fa-dove';
+                testElement.style.display = 'none';
+                document.body.appendChild(testElement);
+
+                const style = window.getComputedStyle(testElement);
+                const fontFamily = style.getPropertyValue('font-family');
+                document.body.removeChild(testElement);
+
+                // If Font Awesome not loaded correctly, try alternate CDN
+                if (!fontFamily.includes('Font Awesome') && !fontFamily.includes('FontAwesome')) {
+                    console.log('Primary Font Awesome CDN failed, trying backup...');
+                    const alternateLink = document.createElement('link');
+                    alternateLink.rel = 'stylesheet';
+                    alternateLink.href = 'https://use.fontawesome.com/releases/v6.5.1/css/all.css';
+                    document.head.appendChild(alternateLink);
+
+                    // Also try a third CDN option if needed
+                    setTimeout(() => {
+                        const testElement2 = document.createElement('i');
+                        testElement2.className = 'fas fa-dove';
+                        testElement2.style.display = 'none';
+                        document.body.appendChild(testElement2);
+
+                        const style2 = window.getComputedStyle(testElement2);
+                        const fontFamily2 = style2.getPropertyValue('font-family');
+                        document.body.removeChild(testElement2);
+
+                        if (!fontFamily2.includes('Font Awesome') && !fontFamily2.includes('FontAwesome')) {
+                            console.log('Secondary Font Awesome CDN failed, trying third option...');
+                            const thirdLink = document.createElement('link');
+                            thirdLink.rel = 'stylesheet';
+                            thirdLink.href = 'https://kit.fontawesome.com/a076d05399.js';
+                            document.head.appendChild(thirdLink);
+                        }
+                    }, 500);
+                }
+            }, 500);
+        });
+    </script>
 
     <!-- Custom styles for topics page -->
     <style>
@@ -104,6 +153,12 @@
             justify-content: center;
             flex-shrink: 0;
             margin-right: 1.25rem;
+            /* Fix for icon display */
+            text-align: center;
+            min-width: 1.8rem;
+            /* Ensure icons are visible even when Font Awesome fails */
+            visibility: visible !important;
+            opacity: 1 !important;
         }
 
         /* Topic cards adjustments - much wider cards */
@@ -121,6 +176,8 @@
             align-items: center;
             text-align: left;
             width: 100%;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
         }
 
         /* Fix the alignment of the text and icon */
@@ -139,6 +196,25 @@
         .topic-card:hover {
             background-color: var(--bg-tint);
             border-color: var(--primary-color);
+        }
+
+        /* Make "by topic" link active by default on this page */
+        .sidebar a[href="/topics"].nav-link {
+            background-color: var(--pure-white, #ffffff) !important;
+            color: var(--primary-color, #a30000) !important;
+            font-weight: 600 !important;
+        }
+
+        /* Reduce prominence of "Find a group" heading when topics is active */
+        .sidebar .nav-group-title {
+            font-weight: 400 !important;
+            opacity: 0.7 !important;
+        }
+
+        /* Style for icon fallbacks */
+        .icon-fallback {
+            display: none;
+            /* Hide by default, shown via JS when FA fails */
         }
 
         /* Responsive adjustments */
@@ -201,16 +277,25 @@
 <body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <div class="sidebar-header">
+            <div class="sidebar-header"
+                style="background-color: transparent !important; background: transparent !important;">
                 <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo">
-                <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+                <h1 style="background-color: transparent !important; background: transparent !important;">
+                    <a href="/" class="home-link"
+                        style="text-decoration: none !important; color: inherit !important; background-color: transparent !important; background: transparent !important; border-bottom: none !important;">
+                        The Organize Directory
+                    </a>
+                </h1>
             </div>
             <nav>
                 <a href="/" class="nav-link">Home</a>
                 <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
+                    <span class="nav-group-title" style="font-weight: 400 !important; opacity: 0.7 !important;">Find a
+                        group</span>
                     <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
+                    <a href="/topics" class="nav-link nav-link-indented active"
+                        style="background-color: var(--pure-white, #ffffff); color: var(--primary-color, #a30000); font-weight: 600;">by
+                        topic</a>
                 </div>
                 <a href="/guides" class="nav-link">Guides</a>
                 <a href="/contact" class="nav-link">Contact</a>
@@ -310,6 +395,39 @@
 
             // Initialize other components
             initializeComponents({});
+
+            // Extra script to ensure correct styling on topics page
+            // Make sure topics link is highlighted
+            const topicsLink = document.querySelector('a[href="/topics"].nav-link-indented');
+            if (topicsLink) {
+                topicsLink.classList.add('active');
+                topicsLink.style.backgroundColor = 'var(--pure-white, #ffffff)';
+                topicsLink.style.color = 'var(--primary-color, #a30000)';
+                topicsLink.style.fontWeight = '600';
+            }
+
+            // Reduce prominence of "Find a group" heading
+            const navGroupTitles = document.querySelectorAll('.nav-group-title');
+            navGroupTitles.forEach(title => {
+                title.style.fontWeight = '400';
+                title.style.opacity = '0.7';
+            });
+
+            // Final fallback - if Font Awesome still fails to load after 2 seconds
+            setTimeout(() => {
+                const testIconElement = document.querySelector('.fas');
+                if (testIconElement) {
+                    const style = window.getComputedStyle(testIconElement);
+                    const fontFamily = style.getPropertyValue('font-family');
+
+                    if (!fontFamily.includes('Font Awesome') && !fontFamily.includes('FontAwesome')) {
+                        console.log('All Font Awesome CDNs failed, using text fallbacks');
+
+                        // Show a message in console for debugging
+                        console.log('Font Awesome could not be loaded. Check network for blocked resources.');
+                    }
+                }
+            }, 2000);
         });
     </script>
     <script src="/mobile-menu.js" defer></script>

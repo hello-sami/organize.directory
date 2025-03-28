@@ -51,17 +51,84 @@
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
+    <!-- Custom styles for the active location link in sidebar -->
+    <style>
+        /* Prevent sidebar header and h1 from being highlighted */
+        .sidebar-header,
+        .sidebar-header h1 {
+            background-color: transparent !important;
+            background: transparent !important;
+        }
+
+        /* Explicitly style the h1 link to prevent any highlighting */
+        .sidebar-header h1 a,
+        .sidebar-header h1 a:link,
+        .sidebar-header h1 a:visited,
+        .sidebar-header h1 a:hover,
+        .sidebar-header h1 a:active,
+        .sidebar-header h1 a.home-link {
+            text-decoration: none !important;
+            color: inherit !important;
+            background-color: transparent !important;
+            background: transparent !important;
+            border-bottom: none !important;
+            box-shadow: none !important;
+            font-weight: inherit !important;
+        }
+
+        /* Make "by location" link active by default on this page */
+        .sidebar a[href="/location"].nav-link {
+            background-color: var(--pure-white, #ffffff) !important;
+            color: var(--primary-color, #a30000) !important;
+            font-weight: 600 !important;
+        }
+
+        /* Reduce prominence of "Find a group" heading when location is active */
+        .sidebar .nav-group-title {
+            font-weight: 400 !important;
+            opacity: 0.7 !important;
+        }
+    </style>
+
     <!-- Critical Scripts -->
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
 
-        // Initialize sidebar first
+        // Initialize sidebar immediately
         initializeSidebar('location');
 
-        // Initialize other components
-        initializeComponents({
+        // Extra script to ensure correct styling on location page
+        document.addEventListener('DOMContentLoaded', () => {
+            // Make sure location link is highlighted
+            const locationLink = document.querySelector('a[href="/location"]');
+            if (locationLink) {
+                locationLink.classList.add('active');
+                locationLink.style.backgroundColor = 'var(--pure-white, #ffffff)';
+                locationLink.style.color = 'var(--primary-color, #a30000)';
+                locationLink.style.fontWeight = '600';
+            }
+
+            // Reduce prominence of "Find a group" heading
+            const navGroupTitles = document.querySelectorAll('.nav-group-title');
+            navGroupTitles.forEach(title => {
+                title.style.fontWeight = '400';
+                title.style.opacity = '0.7';
+            });
+
+            // Ensure h1 in sidebar is not highlighted
+            const headerH1 = document.querySelector('.sidebar-header h1');
+            if (headerH1) {
+                headerH1.style.backgroundColor = 'transparent';
+                const link = headerH1.querySelector('a');
+                if (link) {
+                    link.style.backgroundColor = 'transparent';
+                    link.style.color = 'inherit';
+                    link.style.textDecoration = 'none';
+                    link.style.borderBottom = 'none';
+                }
+            }
         });
     </script>
 </head>
@@ -69,15 +136,24 @@
 <body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <div class="sidebar-header">
+            <div class="sidebar-header"
+                style="background-color: transparent !important; background: transparent !important;">
                 <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo">
-                <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+                <h1 style="background-color: transparent !important; background: transparent !important;">
+                    <a href="/" class="home-link"
+                        style="text-decoration: none !important; color: inherit !important; background-color: transparent !important; background: transparent !important; border-bottom: none !important;">
+                        The Organize Directory
+                    </a>
+                </h1>
             </div>
             <nav>
                 <a href="/" class="nav-link">Home</a>
                 <div class="nav-group">
-                    <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
+                    <span class="nav-group-title" style="font-weight: 400 !important; opacity: 0.7 !important;">Find a
+                        group</span>
+                    <a href="/location" class="nav-link nav-link-indented active"
+                        style="background-color: var(--pure-white, #ffffff); color: var(--primary-color, #a30000); font-weight: 600;">by
+                        location</a>
                     <a href="/topics" class="nav-link nav-link-indented">by topic</a>
                 </div>
                 <a href="/guides" class="nav-link">Guides</a>
