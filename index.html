@@ -73,6 +73,119 @@
             font-weight: 600 !important;
             opacity: 1 !important;
         }
+
+        /* Ensure Log heading is left-aligned */
+        #log-heading {
+            text-align: left !important;
+            margin-left: 0 !important;
+            padding-left: 0 !important;
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .daily-log {
+            text-align: left !important;
+        }
+
+        /* Style log entries like the example */
+        .post-entry {
+            margin-bottom: 2.5rem;
+            padding-bottom: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-entry-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            width: 100%;
+            position: relative;
+        }
+
+        .post-entry-header::after {
+            content: "";
+            position: absolute;
+            top: 0.8em;
+            left: 0;
+            right: 0;
+            height: 1px;
+            border-bottom: 1px dotted var(--border-color, #ccc);
+            z-index: 1;
+        }
+
+        .post-entry-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0;
+            padding-right: 8px;
+            background-color: var(--bg-color, #fff);
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+        }
+
+        .post-entry-title a {
+            color: #8B0000;
+            text-decoration: none;
+        }
+
+        .post-entry-title a:hover {
+            text-decoration: underline;
+        }
+
+        .post-entry time {
+            font-size: 0.9rem;
+            color: var(--text-muted, #777);
+            padding-left: 8px;
+            background-color: var(--bg-color, #fff);
+            position: relative;
+            z-index: 2;
+            white-space: nowrap;
+        }
+
+        .post-entry-tagline {
+            margin-top: 0.4rem;
+            color: var(--text-muted, #777);
+            font-size: 0.95rem;
+            text-align: left !important;
+            margin-left: 0 !important;
+            margin-right: auto !important;
+            padding-left: 0 !important;
+            max-width: 100%;
+            width: 100%;
+            display: block !important;
+            text-indent: 0 !important;
+        }
+
+        .post-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        /* All headings should be left-aligned by default */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-align: left !important;
+        }
+
+        /* Ensure all text in post entries is left-aligned */
+        .post-entry,
+        .post-entry * {
+            text-align: left !important;
+        }
+
+        /* Override any center alignment for paragraphs */
+        .post-entry p {
+            text-align: left !important;
+            margin-left: 0 !important;
+            padding-left: 0 !important;
+        }
     </style>
 
     <!-- Initialize Components Immediately -->
@@ -146,16 +259,54 @@
             <header id="header" class="page-header"></header>
 
             <h1>The Organize Directory</h1>
-            <p>Now more than ever, we need to come together to support each other. This directory is a collection of
-                mutual aid networks and grassroots initiatives around the US.
-            </p>
+            <p>Fascism is here. Don't despair, organize.</p>
 
             <hr>
 
-            <section class="daily-log" aria-labelledby="log-heading">
-                <h2 id="log-heading">Updates and priority needs</h2>
+            <section class="daily-log" aria-labelledby="log-heading" style="text-align: left;">
+                <h2 id="log-heading"
+                    style="text-align: left !important; margin-left: 0 !important; padding-left: 0 !important; display: block; width: 100%;">
+                    Log</h2>
                 <div id="posts-list" class="posts-list">
-                    <!-- Posts will be dynamically loaded here -->
+                    <!-- Static posts content as fallback -->
+                    <article class="post-entry">
+                        <div class="post-entry-header">
+                            <h3 class="post-entry-title">
+                                <a href="/posts/housing-assistance-expansion.html">Housing Assistance Expansion for
+                                    Low-Income Families</a>
+                            </h3>
+                            <time datetime="2024-04-15">15-04-2024</time>
+                        </div>
+                        <p class="post-entry-tagline"
+                            style="text-align: left !important; margin-left: 0 !important; text-indent: 0 !important;">
+                            Expanding support for vulnerable communities facing housing
+                            insecurity.</p>
+                    </article>
+                    <article class="post-entry">
+                        <div class="post-entry-header">
+                            <h3 class="post-entry-title">
+                                <a href="/posts/healthcare-initiatives-underserved.html">New Healthcare Initiatives for
+                                    Underserved Communities</a>
+                            </h3>
+                            <time datetime="2024-04-08">08-04-2024</time>
+                        </div>
+                        <p class="post-entry-tagline"
+                            style="text-align: left !important; margin-left: 0 !important; text-indent: 0 !important;">
+                            Bringing healthcare access to communities that need it most.</p>
+                    </article>
+                    <article class="post-entry">
+                        <div class="post-entry-header">
+                            <h3 class="post-entry-title">
+                                <a href="/posts/climate-crisis-response.html">Climate Crisis Response: Supporting
+                                    Affected Regions</a>
+                            </h3>
+                            <time datetime="2024-03-28">28-03-2024</time>
+                        </div>
+                        <p class="post-entry-tagline"
+                            style="text-align: left !important; margin-left: 0 !important; text-indent: 0 !important;">
+                            Addressing the growing impacts of extreme weather events across
+                            the country.</p>
+                    </article>
                 </div>
             </section>
         </main>
@@ -169,6 +320,107 @@
         document.addEventListener('DOMContentLoaded', () => {
             initializeComponents({});
         });
+    </script>
+
+    <!-- Load posts -->
+    <script>
+        // Load posts explicitly for the homepage
+        async function loadPostsHomepage() {
+            try {
+                const response = await fetch('/posts/posts.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error ${response.status}`);
+                }
+
+                const data = await response.json();
+                const postsList = document.getElementById('posts-list');
+
+                // Map of taglines for each post by slug
+                const taglines = {
+                    'housing-assistance-expansion': 'Expanding support for vulnerable communities facing housing insecurity.',
+                    'healthcare-initiatives-underserved': 'Bringing healthcare access to communities that need it most.',
+                    'climate-crisis-response': 'Addressing the growing impacts of extreme weather events across the country.',
+                    'winter-storm-response': 'Coordinating support for communities affected by severe winter weather.',
+                    'food-security-launch': 'Building sustainable food systems for all communities.'
+                };
+
+                // Sort posts by date in descending order
+                const sortedPosts = data.posts.sort((a, b) =>
+                    new Date(b.date) - new Date(a.date)
+                );
+
+                // Create HTML for each post
+                const postsHTML = sortedPosts.map(post => {
+                    // Format date as DD-MM-YYYY
+                    const date = new Date(post.date);
+                    const formattedDate = date.toLocaleDateString('en-GB', {
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit'
+                    }).replace(/\//g, '-');
+
+                    // Get tagline or use a default one
+                    const tagline = taglines[post.slug] || 'Supporting mutual aid efforts across communities.';
+
+                    return `
+                        <article class="post-entry">
+                            <div class="post-entry-header">
+                                <h3 class="post-entry-title">
+                                    <a href="/posts/${post.slug}.html">${post.title}</a>
+                                </h3>
+                                <time datetime="${post.date}">${formattedDate}</time>
+                            </div>
+                            <p class="post-entry-tagline" style="text-align: left !important; margin-left: 0 !important; text-indent: 0 !important;">${tagline}</p>
+                        </article>
+                    `;
+                }).join('');
+
+                postsList.innerHTML = postsHTML;
+                console.log('Posts loaded successfully');
+            } catch (error) {
+                console.error('Error loading posts:', error);
+                document.getElementById('posts-list').innerHTML = `
+                    <div class="error-message">
+                        Unable to load posts. Please try again later. (${error.message})
+                    </div>
+                `;
+            }
+        }
+
+        // Load posts when the page loads
+        document.addEventListener('DOMContentLoaded', loadPostsHomepage);
+    </script>
+
+    <!-- Debug script -->
+    <script>
+        // Verify posts.json can be loaded
+        fetch('/posts/posts.json')
+            .then(response => {
+                if (!response.ok) {
+                    console.error('Failed to load posts.json:', response.status, response.statusText);
+                    document.getElementById('posts-list').innerHTML = `
+                        <div class="error-message">
+                            Error loading posts: ${response.status} ${response.statusText}
+                        </div>
+                    `;
+                } else {
+                    console.log('Successfully loaded posts.json');
+                    return response.json();
+                }
+            })
+            .then(data => {
+                if (data) {
+                    console.log('Posts loaded:', data.posts.length, 'posts found');
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching posts.json:', error);
+                document.getElementById('posts-list').innerHTML = `
+                    <div class="error-message">
+                        Error loading posts: ${error.message}
+                    </div>
+                `;
+            });
     </script>
 </body>
 
