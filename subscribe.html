@@ -13,9 +13,12 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <meta name="color-scheme" content="light">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <title>Subscribe to Our Newsletter - The Organize Directory</title>
     <meta name="description"
         content="Subscribe to The Organize Directory newsletter for monthly organization tips, strategies, and resources for better personal and professional organization.">
@@ -44,6 +47,27 @@
             --text-secondary: #666;
             --input-bg: #fff;
             --primary-color-dark: #800000;
+        }
+
+        .site-logo {
+            display: block;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+        }
+
+        .sidebar-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-header h1 {
+            margin-bottom: 0;
+            text-align: center;
+            font-size: 1.6rem;
         }
 
         .newsletter-content {
@@ -184,7 +208,10 @@
 <body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+            <div class="sidebar-header">
+                <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo">
+                <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+            </div>
             <nav>
                 <a href="/" class="nav-link">Home</a>
                 <div class="nav-group">
@@ -228,34 +255,6 @@
                         <span class="form-helper">We'll never share your email with anyone else.</span>
                     </div>
 
-                    <div class="form-group">
-                        <label for="location">Your Location (City/State) <span
-                                style="font-weight: normal; font-size: 0.9em;">(optional)</span></label>
-                        <input type="text" id="location" name="location">
-                        <span class="form-helper">Helps us send you relevant local mutual aid opportunities</span>
-                    </div>
-
-                    <div class="checkbox-group">
-                        <label>
-                            <input type="checkbox" name="interests" value="local-initiatives" checked>
-                            Local mutual aid initiatives
-                        </label>
-                    </div>
-
-                    <div class="checkbox-group">
-                        <label>
-                            <input type="checkbox" name="interests" value="resources" checked>
-                            Mutual aid resources and guides
-                        </label>
-                    </div>
-
-                    <div class="checkbox-group">
-                        <label>
-                            <input type="checkbox" name="interests" value="events">
-                            Events and workshops
-                        </label>
-                    </div>
-
                     <div class="checkbox-group">
                         <label>
                             <input type="checkbox" name="consent" required>
@@ -285,29 +284,6 @@
                                 <input type="email" name="EMAIL" id="mce-EMAIL" required>
                                 <span class="form-helper">We'll never share your email with anyone else.</span>
                             </div>
-                            <div class="form-group">
-                                <label for="mce-LOCATION">Your Location (City/State) <span style="font-weight: normal; font-size: 0.9em;">(optional)</span></label>
-                                <input type="text" name="LOCATION" id="mce-LOCATION">
-                                <span class="form-helper">Helps us send you relevant local mutual aid opportunities</span>
-                            </div>
-                            <div class="checkbox-group">
-                                <label>
-                                    <input type="checkbox" name="group[12345][1]" value="1" checked>
-                                    Local mutual aid initiatives
-                                </label>
-                            </div>
-                            <div class="checkbox-group">
-                                <label>
-                                    <input type="checkbox" name="group[12345][2]" value="1" checked>
-                                    Mutual aid resources and guides
-                                </label>
-                            </div>
-                            <div class="checkbox-group">
-                                <label>
-                                    <input type="checkbox" name="group[12345][4]" value="1">
-                                    Events and workshops
-                                </label>
-                            </div>
                             <div style="position: absolute; left: -5000px;" aria-hidden="true">
                                 <input type="text" name="b_XXXXXXXX_XXXXXXXX" tabindex="-1" value="">
                             </div>
@@ -323,7 +299,7 @@
                 SENDINBLUE/BREVO INTEGRATION (UNCOMMENT TO USE)
                 Replace the form above with this code and update with your Sendinblue/Brevo form details.
                 
-                <iframe width="100%" height="650" src="https://YOURIDHERE.sibforms.com/serve/YOURFORMCODE" 
+                <iframe width="100%" height="450" src="https://YOURIDHERE.sibforms.com/serve/YOURFORMCODE" 
                     frameborder="0" scrolling="auto" allowfullscreen 
                     style="display: block; margin-left: auto; margin-right: auto; max-width: 100%; max-height: 100vh;">
                 </iframe>
@@ -375,15 +351,8 @@
                 submitButton.textContent = 'Subscribing...';
 
                 try {
-                    // Get selected interests
-                    const selectedInterests = Array.from(
-                        document.querySelectorAll('input[name="interests"]:checked')
-                    ).map(checkbox => checkbox.value);
-
-                    // Add interests to form data
-                    const formData = new FormData(form);
-
                     // Send to Web3Forms
+                    const formData = new FormData(form);
                     const response = await fetch(form.action, {
                         method: 'POST',
                         body: formData
@@ -392,35 +361,6 @@
                     const data = await response.json();
 
                     if (response.ok) {
-                        /* 
-                        // UNCOMMENT TO ALSO SEND SUBSCRIBER TO EMAIL SERVICE API
-                        // Example for Mailchimp API (requires server-side implementation)
-                        try {
-                            const emailServiceResponse = await fetch('/api/subscribe', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify({
-                                    name: nameInput.value.trim(),
-                                    email: emailInput.value.trim(),
-                                    location: document.getElementById('location').value.trim(),
-                                    interests: {
-                                        localInitiatives: selectedInterests.includes('local-initiatives'),
-                                        resources: selectedInterests.includes('resources'),
-                                        events: selectedInterests.includes('events')
-                                    }
-                                })
-                            });
-                            
-                            if (!emailServiceResponse.ok) {
-                                console.error('Failed to add to mailing list, but form was submitted');
-                            }
-                        } catch (error) {
-                            console.error('Error adding to mailing list:', error);
-                        }
-                        */
-
                         // Success - redirect to thank you page
                         window.location.href = form.querySelector('input[name="redirect"]').value;
                     } else {

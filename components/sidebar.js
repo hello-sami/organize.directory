@@ -1,6 +1,9 @@
 // Initial sidebar content to prevent flicker
 const initialSidebar = `
-    <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+    <div class="sidebar-header">
+        <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo">
+        <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+    </div>
     <nav>
         <a href="/" class="nav-link">Home</a>
         <div class="nav-group">
@@ -47,6 +50,24 @@ const criticalStyles = `
         box-sizing: border-box;
         overflow-y: auto;
         z-index: 100;
+    }
+    .site-logo {
+        display: block;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 1rem;
+    }
+    .sidebar-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .sidebar-header h1 {
+        margin-bottom: 0;
+        text-align: center;
+        font-size: 1.6rem;
     }
     .sidebar h1 {
         margin: 0 0 2rem 0;
