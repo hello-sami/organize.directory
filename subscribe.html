@@ -49,6 +49,71 @@
             --primary-color-dark: #800000;
         }
 
+        /* Fix sidebar nav spacing */
+        #sidebar nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin-top: -1px;
+        }
+
+        .nav-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border: none;
+            padding: 0;
+            background: transparent;
+            position: relative;
+            margin: 0;
+        }
+
+        .nav-group-title {
+            color: var(--text-color);
+            font-size: 0.9rem;
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            letter-spacing: 0.02em;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            margin: 0;
+            margin-top: -1px;
+            margin-bottom: -1px;
+            background: var(--bg-color);
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.95rem;
+            opacity: 0.9;
+            transition: all 0.2s ease;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            margin-top: -1px;
+            display: block;
+            width: 100%;
+            position: relative;
+            background: transparent;
+        }
+
+        .nav-link-indented {
+            padding-left: 2.5rem;
+            position: relative;
+        }
+
+        .nav-link-indented::before {
+            content: "";
+            position: absolute;
+            left: 1.5rem;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: var(--border-color);
+            opacity: 0.8;
+        }
+
         .site-logo {
             display: block;
             width: 60px;
@@ -282,7 +347,7 @@
                             <div class="form-group">
                                 <label for="mce-EMAIL">Email Address</label>
                                 <input type="email" name="EMAIL" id="mce-EMAIL" required>
-                                <span class="form-helper">We'll never share your email with anyone else.</span>
+                                <span class="form-helper">Consider using a Proton email for extra privacy.</span>
                             </div>
                             <div style="position: absolute; left: -5000px;" aria-hidden="true">
                                 <input type="text" name="b_XXXXXXXX_XXXXXXXX" tabindex="-1" value="">

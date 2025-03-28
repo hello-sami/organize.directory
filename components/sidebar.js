@@ -88,10 +88,12 @@ const criticalStyles = `
     .sidebar .nav-group-title {
         display: block;
         font-weight: 600;
-        margin: 0.5rem 0;
+        margin: 0;
         padding: 0.75rem 1.5rem;
         border-top: 1px solid var(--border-color, #ffb3b3);
         border-bottom: 1px solid var(--border-color, #ffb3b3);
+        margin-top: -1px;
+        margin-bottom: -1px;
     }
     .sidebar .nav-link-indented {
         padding-left: 2.5rem;
