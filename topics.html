@@ -301,7 +301,10 @@
         import { initializeSidebar } from '/components/sidebar.js';
         import { initializeComponents } from '/utils/init.js';
 
-        // Initialize sidebar first
+        // Initialize sidebar first - ensure it runs immediately
+        initializeSidebar('topics');
+
+        // Also run on DOMContentLoaded for extra assurance
         document.addEventListener('DOMContentLoaded', () => {
             initializeSidebar('topics');
 

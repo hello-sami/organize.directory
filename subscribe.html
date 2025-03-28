@@ -262,8 +262,13 @@
         // Import initializeComponents but don't use it to avoid adding search
         // import { initializeComponents } from '/utils/init.js';
 
-        // Initialize sidebar first
+        // Initialize sidebar immediately
         initializeSidebar('subscribe');
+
+        // Also ensure it runs after DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeSidebar('subscribe');
+        });
 
         // Don't initialize other components to prevent search header
         // initializeComponents({});

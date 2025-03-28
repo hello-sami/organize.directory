@@ -98,6 +98,18 @@ const criticalStyles = `
     .sidebar .nav-link-indented {
         padding-left: 2.5rem;
     }
+    .sidebar .nav-link.active {
+        background-color: var(--pure-white, #ffffff);
+        color: var(--primary-color, #a30000);
+        font-weight: 600;
+    }
+    .sidebar .nav-link-indented.active + .nav-group-title,
+    .sidebar .nav-link-indented.active ~ .nav-group-title {
+        background-color: inherit;
+        color: inherit;
+        font-weight: normal;
+        opacity: 0.7;
+    }
     .sidebar .sidebar-motto {
         font-style: italic;
         margin-top: 2rem;
@@ -144,13 +156,75 @@ function updateActiveStates(sidebar, activePage) {
      // Remove all active classes first
      sidebar.querySelectorAll(".nav-link").forEach((link) => {
           link.classList.remove("active");
+          link.style.backgroundColor = "";
+          link.style.color = "";
+          link.style.fontWeight = "";
+          link.style.opacity = "";
      });
 
-     // Add active class based on the current page
+     // Reset all nav-group-title styles
+     sidebar.querySelectorAll(".nav-group-title").forEach((title) => {
+          title.style.backgroundColor = "";
+          title.style.color = "";
+          title.style.fontWeight = "";
+          title.style.opacity = "";
+     });
+
+     // Special handling for topics and location
+     if (activePage === "topics") {
+          const topicLink = sidebar.querySelector(
+               'a[href="/topics"].nav-link-indented'
+          );
+          if (topicLink) {
+               topicLink.classList.add("active");
+               topicLink.style.backgroundColor = "var(--pure-white, #ffffff)";
+               topicLink.style.color = "var(--primary-color, #a30000)";
+               topicLink.style.fontWeight = "600";
+
+               // Find the parent nav-group and reduce prominence of its title
+               const navGroup = topicLink.closest(".nav-group");
+               if (navGroup) {
+                    const groupTitle =
+                         navGroup.querySelector(".nav-group-title");
+                    if (groupTitle) {
+                         groupTitle.style.backgroundColor = "transparent";
+                         groupTitle.style.opacity = "0.7";
+                         groupTitle.style.fontWeight = "400";
+                    }
+               }
+          }
+          return;
+     }
+
+     if (activePage === "location") {
+          const locationLink = sidebar.querySelector(
+               'a[href="/location"].nav-link-indented'
+          );
+          if (locationLink) {
+               locationLink.classList.add("active");
+               locationLink.style.backgroundColor =
+                    "var(--pure-white, #ffffff)";
+               locationLink.style.color = "var(--primary-color, #a30000)";
+               locationLink.style.fontWeight = "600";
+
+               // Find the parent nav-group and reduce prominence of its title
+               const navGroup = locationLink.closest(".nav-group");
+               if (navGroup) {
+                    const groupTitle =
+                         navGroup.querySelector(".nav-group-title");
+                    if (groupTitle) {
+                         groupTitle.style.backgroundColor = "transparent";
+                         groupTitle.style.opacity = "0.7";
+                         groupTitle.style.fontWeight = "400";
+                    }
+               }
+          }
+          return;
+     }
+
+     // For other pages, use the regular mapping
      const activeLinks = {
           home: 'a[href="/"]',
-          location: 'a[href="/location"]',
-          topics: 'a[href="/topics"]',
           guides: 'a[href="/guides"]',
           contact: 'a[href="/contact"]',
           subscribe: 'a[href="/subscribe"]',
@@ -161,6 +235,9 @@ function updateActiveStates(sidebar, activePage) {
           const activeLink = sidebar.querySelector(activeSelector);
           if (activeLink) {
                activeLink.classList.add("active");
+               activeLink.style.backgroundColor = "var(--pure-white, #ffffff)";
+               activeLink.style.color = "var(--primary-color, #a30000)";
+               activeLink.style.fontWeight = "600";
           }
      }
 }
