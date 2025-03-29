@@ -6,6 +6,10 @@
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://cloudflareinsights.com
   X-XSS-Protection: 1; mode=block
   Strict-Transport-Security: max-age=31536000; includeSubDomains
+  # Disable Cloudflare Auto-Minify and Rocket Loader
+  cf-edge-cache: no-minify, no-rocket-loader, no-mirage
+  # Disable Cloudflare APO
+  cf-apo: off
 
 # HTML pages - Cache for 10 minutes
 /*.html
@@ -13,6 +17,9 @@
   Content-Type: text/html; charset=utf-8
   X-Frame-Options: DENY
   Vary: Accept-Encoding
+  # Disable Cloudflare optimizations
+  cf-edge-cache: no-minify, no-rocket-loader
+  cf-apo: off
 
 # The homepage - Cache for 1 minute (reduced from 5 minutes)
 /index.html
@@ -20,6 +27,9 @@
   Content-Type: text/html; charset=utf-8
   X-Frame-Options: DENY
   Vary: Accept-Encoding
+  # Disable all Cloudflare optimizations for homepage
+  cf-edge-cache: no-minify, no-rocket-loader, no-mirage 
+  cf-apo: off
 
 # Static assets that rarely change - Cache for 1 year
 /*.{css,js,woff2,jpg,jpeg,png,gif,ico,svg,webp}
