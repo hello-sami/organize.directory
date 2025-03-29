@@ -145,9 +145,10 @@ const criticalStyles = `
     }
     .sidebar .sidebar-motto {
         font-style: italic;
-        margin-top: 2rem;
         font-size: 0.9rem;
         padding: 0 1.5rem;
+        margin-top: auto;
+        padding-bottom: 2rem;
     }
     /* Add spacing rule to ensure content doesn't overlap with sidebar */
     .content {

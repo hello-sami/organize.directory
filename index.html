@@ -25,6 +25,24 @@
     <!-- Non-blocking font loading -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
+    <!-- Additional inline styles for sidebar motto -->
+    <style>
+        #sidebar {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #sidebar nav {
+            flex-grow: 1;
+        }
+
+        .sidebar-motto {
+            margin-top: auto;
+            padding-bottom: 2rem;
+        }
+    </style>
+
     <!-- Initialize Components Immediately -->
     <script type="module">
         import { initializeSidebar } from './components/sidebar.js';
