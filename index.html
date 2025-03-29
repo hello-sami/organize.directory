@@ -62,9 +62,6 @@
 
             // Initialize other components
             initializeComponents({});
-
-            // Load homepage posts
-            loadPostsHomepage();
         });
     </script>
 </head>
@@ -105,52 +102,14 @@
             <section class="daily-log" aria-labelledby="log-heading">
                 <h2 id="log-heading">Calls to Action</h2>
                 <div id="posts-list" class="posts-list">
-                    <!-- Posts will be loaded dynamically by JavaScript -->
-                    <!-- Static fallback content if JavaScript is disabled -->
-                    <noscript>
-                        <article class="post-entry">
-                            <div class="post-entry-header">
-                                <h3 class="post-entry-title">
-                                    <a href="/posts/housing-assistance-expansion.html">Housing Assistance Expansion for
-                                        Low-Income Families</a>
-                                </h3>
-                                <time datetime="2024-04-15">15-04-2024</time>
-                            </div>
-                            <p class="post-entry-tagline">
-                                Expanding support for vulnerable communities facing housing
-                                insecurity.</p>
-                        </article>
-                        <article class="post-entry">
-                            <div class="post-entry-header">
-                                <h3 class="post-entry-title">
-                                    <a href="/posts/healthcare-initiatives-underserved.html">New Healthcare Initiatives
-                                        for
-                                        Underserved Communities</a>
-                                </h3>
-                                <time datetime="2024-04-08">08-04-2024</time>
-                            </div>
-                            <p class="post-entry-tagline">
-                                Bringing healthcare access to communities that need it most.</p>
-                        </article>
-                        <article class="post-entry">
-                            <div class="post-entry-header">
-                                <h3 class="post-entry-title">
-                                    <a href="/posts/climate-crisis-response.html">Climate Crisis Response: Supporting
-                                        Affected Regions</a>
-                                </h3>
-                                <time datetime="2024-03-28">28-03-2024</time>
-                            </div>
-                            <p class="post-entry-tagline">
-                                Addressing the growing impacts of extreme weather events across
-                                the country.</p>
-                        </article>
-                    </noscript>
+                    <!-- Default loading state -->
+                    <div class="loading-indicator">Loading posts...</div>
                 </div>
             </section>
         </main>
     </div>
 
-    <!-- Posts loading script -->
+    <!-- Posts loading script - kept separate and with inline trigger -->
     <script>
         // Load posts for the homepage
         async function loadPostsHomepage() {
@@ -162,6 +121,10 @@
 
                 const data = await response.json();
                 const postsList = document.getElementById('posts-list');
+                if (!postsList) {
+                    console.error("Could not find posts-list element");
+                    return;
+                }
 
                 // Map of taglines for each post by slug
                 const taglines = {
@@ -207,12 +170,22 @@
                 console.log('Posts loaded successfully');
             } catch (error) {
                 console.error('Error loading posts:', error);
-                document.getElementById('posts-list').innerHTML = `
-                    <div class="error-message">
-                        Unable to load posts. Please try again later. (${error.message})
-                    </div>
-                `;
+                const postsList = document.getElementById('posts-list');
+                if (postsList) {
+                    postsList.innerHTML = `
+                        <div class="error-message">
+                            Unable to load posts. Please try again later. (${error.message})
+                        </div>
+                    `;
+                }
             }
+        }
+
+        // Ensure this runs regardless of when the script loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadPostsHomepage);
+        } else {
+            loadPostsHomepage();
         }
     </script>
 </body>
