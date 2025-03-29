@@ -766,3 +766,202 @@ hr {
      opacity: 1;
      transform: translateX(0);
 }
+
+/* ======================================
+   Custom Styles from index.html
+   ====================================== */
+
+/* Prevent sidebar header and h1 from being highlighted */
+.sidebar-header,
+.sidebar-header h1 {
+     background-color: transparent;
+     background: transparent;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: flex-start;
+     gap: 0;
+}
+
+/* Style for the site-logo to position it properly next to the heading */
+.site-logo {
+     margin-right: 0;
+     margin-bottom: 0;
+     margin-left: 0;
+     margin-top: 0;
+}
+
+/* Explicitly style the h1 link to prevent any highlighting */
+.sidebar-header h1 {
+     margin: 0;
+     padding: 0;
+     padding-left: 0.2rem;
+}
+
+.sidebar-header h1 a,
+.sidebar-header h1 a:link,
+.sidebar-header h1 a:visited,
+.sidebar-header h1 a:hover,
+.sidebar-header h1 a:active,
+.sidebar-header h1 a.home-link {
+     text-decoration: none;
+     color: inherit;
+     background-color: transparent;
+     background: transparent;
+     border-bottom: none;
+     box-shadow: none;
+     font-weight: inherit;
+     margin: 0;
+     padding: 0;
+}
+
+/* Make Home link active by default */
+.sidebar a[href="/"].nav-link {
+     background-color: var(--pure-white, #ffffff);
+     color: var(--primary-color, #a30000);
+     font-weight: 600;
+}
+
+/* Explicitly reset Find a group styling on homepage to match other non-highlighted items */
+.sidebar .nav-group-title {
+     background-color: transparent;
+     color: inherit;
+     font-weight: 600;
+     opacity: 1;
+}
+
+/* Ensure Log heading is left-aligned */
+#log-heading {
+     text-align: left;
+     margin-left: 0;
+     padding-left: 0;
+     display: block;
+     width: 100%;
+     max-width: 100%;
+     margin-bottom: 2rem;
+}
+
+.daily-log {
+     text-align: left;
+}
+
+/* Style log entries like the example */
+.post-entry {
+     margin-bottom: 2.5rem;
+     padding-bottom: 0;
+     display: flex;
+     flex-direction: column;
+}
+
+.post-entry-header {
+     display: flex;
+     align-items: baseline;
+     justify-content: space-between;
+     width: 100%;
+     position: relative;
+}
+
+.post-entry-header::after {
+     content: "";
+     position: absolute;
+     top: 0.8em;
+     left: 0;
+     right: 0;
+     height: 1px;
+     border-bottom: 1px dotted var(--border-color, #ccc);
+     z-index: 1;
+}
+
+.post-entry-title {
+     font-weight: 600;
+     font-size: 1.1rem;
+     margin: 0;
+     padding-right: 8px;
+     background-color: var(--bg-color, #fff);
+     position: relative;
+     z-index: 2;
+     display: inline-block;
+}
+
+.post-entry-title a {
+     color: #8b0000;
+     text-decoration: none;
+}
+
+.post-entry-title a:hover {
+     text-decoration: underline;
+}
+
+.post-entry time {
+     font-size: 0.9rem;
+     color: var(--text-muted, #777);
+     padding-left: 8px;
+     background-color: var(--bg-color, #fff);
+     position: relative;
+     z-index: 2;
+     white-space: nowrap;
+}
+
+.post-entry-tagline {
+     margin-top: 0.4rem;
+     color: var(--text-muted, #777);
+     font-size: 0.95rem;
+     text-align: left;
+     margin-left: 0;
+     margin-right: auto;
+     padding-left: 0;
+     max-width: 100%;
+     width: 100%;
+     display: block;
+     text-indent: 0;
+}
+
+.post-entry:last-child {
+     margin-bottom: 0;
+}
+
+/* All headings should be left-aligned by default */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+     text-align: left;
+}
+
+/* Ensure all text in post entries is left-aligned */
+.post-entry,
+.post-entry * {
+     text-align: left;
+}
+
+/* Override any center alignment for paragraphs */
+.post-entry p {
+     text-align: left;
+     margin-left: 0;
+     padding-left: 0;
+}
+
+/* ======================================
+   Classes for JavaScript Manipulation
+   ====================================== */
+
+/* Classes for reset styles through JS */
+.reset-nav-group {
+     background-color: transparent;
+     color: inherit;
+     font-weight: 600;
+     opacity: 1;
+}
+
+.reset-header {
+     background-color: transparent;
+}
+
+.reset-header-link {
+     background-color: transparent;
+     color: inherit;
+     text-decoration: none;
+     border-bottom: none;
+}

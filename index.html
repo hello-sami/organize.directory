@@ -35,158 +35,6 @@
     </noscript>
 
     <!-- Add custom style for sidebar header -->
-    <style>
-        /* Prevent sidebar header and h1 from being highlighted */
-        .sidebar-header,
-        .sidebar-header h1 {
-            background-color: transparent !important;
-            background: transparent !important;
-        }
-
-        /* Explicitly style the h1 link to prevent any highlighting */
-        .sidebar-header h1 a,
-        .sidebar-header h1 a:link,
-        .sidebar-header h1 a:visited,
-        .sidebar-header h1 a:hover,
-        .sidebar-header h1 a:active,
-        .sidebar-header h1 a.home-link {
-            text-decoration: none !important;
-            color: inherit !important;
-            background-color: transparent !important;
-            background: transparent !important;
-            border-bottom: none !important;
-            box-shadow: none !important;
-            font-weight: inherit !important;
-        }
-
-        /* Make Home link active by default */
-        .sidebar a[href="/"].nav-link {
-            background-color: var(--pure-white, #ffffff) !important;
-            color: var(--primary-color, #a30000) !important;
-            font-weight: 600 !important;
-        }
-
-        /* Explicitly reset Find a group styling on homepage to match other non-highlighted items */
-        .sidebar .nav-group-title {
-            background-color: transparent !important;
-            color: inherit !important;
-            font-weight: 600 !important;
-            opacity: 1 !important;
-        }
-
-        /* Ensure Log heading is left-aligned */
-        #log-heading {
-            text-align: left !important;
-            margin-left: 0 !important;
-            padding-left: 0 !important;
-            display: block;
-            width: 100%;
-            max-width: 100%;
-            margin-bottom: 2rem;
-        }
-
-        .daily-log {
-            text-align: left !important;
-        }
-
-        /* Style log entries like the example */
-        .post-entry {
-            margin-bottom: 2.5rem;
-            padding-bottom: 0;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .post-entry-header {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            width: 100%;
-            position: relative;
-        }
-
-        .post-entry-header::after {
-            content: "";
-            position: absolute;
-            top: 0.8em;
-            left: 0;
-            right: 0;
-            height: 1px;
-            border-bottom: 1px dotted var(--border-color, #ccc);
-            z-index: 1;
-        }
-
-        .post-entry-title {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin: 0;
-            padding-right: 8px;
-            background-color: var(--bg-color, #fff);
-            position: relative;
-            z-index: 2;
-            display: inline-block;
-        }
-
-        .post-entry-title a {
-            color: #8B0000;
-            text-decoration: none;
-        }
-
-        .post-entry-title a:hover {
-            text-decoration: underline;
-        }
-
-        .post-entry time {
-            font-size: 0.9rem;
-            color: var(--text-muted, #777);
-            padding-left: 8px;
-            background-color: var(--bg-color, #fff);
-            position: relative;
-            z-index: 2;
-            white-space: nowrap;
-        }
-
-        .post-entry-tagline {
-            margin-top: 0.4rem;
-            color: var(--text-muted, #777);
-            font-size: 0.95rem;
-            text-align: left !important;
-            margin-left: 0 !important;
-            margin-right: auto !important;
-            padding-left: 0 !important;
-            max-width: 100%;
-            width: 100%;
-            display: block !important;
-            text-indent: 0 !important;
-        }
-
-        .post-entry:last-child {
-            margin-bottom: 0;
-        }
-
-        /* All headings should be left-aligned by default */
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            text-align: left !important;
-        }
-
-        /* Ensure all text in post entries is left-aligned */
-        .post-entry,
-        .post-entry * {
-            text-align: left !important;
-        }
-
-        /* Override any center alignment for paragraphs */
-        .post-entry p {
-            text-align: left !important;
-            margin-left: 0 !important;
-            padding-left: 0 !important;
-        }
-    </style>
 
     <!-- Initialize Components Immediately -->
     <script type="module">
@@ -200,22 +48,35 @@
             // Reset nav-group-title
             const navGroupTitles = document.querySelectorAll('.nav-group-title');
             navGroupTitles.forEach(title => {
-                title.style.backgroundColor = 'transparent';
-                title.style.color = 'inherit';
-                title.style.fontWeight = '600';
-                title.style.opacity = '1';
+                title.classList.add("reset-nav-group");
             });
 
             // Reset header h1 styles
             const headerH1 = document.querySelector('.sidebar-header h1');
             if (headerH1) {
-                headerH1.style.backgroundColor = 'transparent';
+                headerH1.classList.add("reset-header");
                 const link = headerH1.querySelector('a');
                 if (link) {
-                    link.style.backgroundColor = 'transparent';
-                    link.style.color = 'inherit';
-                    link.style.textDecoration = 'none';
-                    link.style.borderBottom = 'none';
+                    link.classList.add("reset-header-link");
+                }
+            }
+        });
+
+        // Extra script to ensure "Find a group" is not highlighted and h1 is not highlighted
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add classes instead of directly manipulating styles
+            const navGroupTitles = document.querySelectorAll('.nav-group-title');
+            navGroupTitles.forEach(title => {
+                title.classList.add('reset-nav-group');
+            });
+
+            // Reset header h1 styles with classes
+            const headerH1 = document.querySelector('.sidebar-header h1');
+            if (headerH1) {
+                headerH1.classList.add('reset-header');
+                const link = headerH1.querySelector('a');
+                if (link) {
+                    link.classList.add('reset-header-link');
                 }
             }
         });
@@ -225,22 +86,18 @@
 <body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <div class="sidebar-header"
-                style="background-color: transparent !important; background: transparent !important;">
+            <div class="sidebar-header">
                 <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo">
-                <h1 style="background-color: transparent !important; background: transparent !important;">
-                    <a href="/" class="home-link"
-                        style="text-decoration: none !important; color: inherit !important; background-color: transparent !important; background: transparent !important; border-bottom: none !important;">
+                <h1>
+                    <a href="/" class="home-link">
                         The Organize Directory
                     </a>
                 </h1>
             </div>
             <nav>
-                <a href="/" class="nav-link active"
-                    style="background-color: var(--pure-white, #ffffff); color: var(--primary-color, #a30000); font-weight: 600;">Home</a>
+                <a href="/" class="nav-link active">Home</a>
                 <div class="nav-group">
-                    <span class="nav-group-title"
-                        style="background-color: transparent !important; color: inherit !important; font-weight: 600 !important; opacity: 1 !important;">Find
+                    <span class="nav-group-title">Find
                         a group</span>
                     <a href="/location" class="nav-link nav-link-indented">by location</a>
                     <a href="/topics" class="nav-link nav-link-indented">by topic</a>
@@ -250,8 +107,7 @@
                 <a href="/subscribe" class="nav-link">Subscribe</a>
             </nav>
             <div class="sidebar-motto">
-                Solidarity not charity.<br>
-                Awareness into action.
+                Fascism is here. Don't despair, organize.
             </div>
         </div>
 
@@ -259,13 +115,10 @@
             <header id="header" class="page-header"></header>
 
             <h1>The Organize Directory</h1>
-            <p>Fascism is here. Don't despair, organize.</p>
-
             <hr>
 
-            <section class="daily-log" aria-labelledby="log-heading" style="text-align: left;">
-                <h2 id="log-heading"
-                    style="text-align: left !important; margin-left: 0 !important; padding-left: 0 !important; display: block; width: 100%;">
+            <section class="daily-log" aria-labelledby="log-heading">
+                <h2 id="log-heading">
                     Log</h2>
                 <div id="posts-list" class="posts-list">
                     <!-- Static posts content as fallback -->
@@ -277,8 +130,7 @@
                             </h3>
                             <time datetime="2024-04-15">15-04-2024</time>
                         </div>
-                        <p class="post-entry-tagline"
-                            style="text-align: left !important; margin-left: 0 !important; text-indent: 0 !important;">
+                        <p class="post-entry-tagline">
                             Expanding support for vulnerable communities facing housing
                             insecurity.</p>
                     </article>
@@ -290,8 +142,7 @@
                             </h3>
                             <time datetime="2024-04-08">08-04-2024</time>
                         </div>
-                        <p class="post-entry-tagline"
-                            style="text-align: left !important; margin-left: 0 !important; text-indent: 0 !important;">
+                        <p class="post-entry-tagline">
                             Bringing healthcare access to communities that need it most.</p>
                     </article>
                     <article class="post-entry">
@@ -302,8 +153,7 @@
                             </h3>
                             <time datetime="2024-03-28">28-03-2024</time>
                         </div>
-                        <p class="post-entry-tagline"
-                            style="text-align: left !important; margin-left: 0 !important; text-indent: 0 !important;">
+                        <p class="post-entry-tagline">
                             Addressing the growing impacts of extreme weather events across
                             the country.</p>
                     </article>
@@ -370,7 +220,7 @@
                                 </h3>
                                 <time datetime="${post.date}">${formattedDate}</time>
                             </div>
-                            <p class="post-entry-tagline" style="text-align: left !important; margin-left: 0 !important; text-indent: 0 !important;">${tagline}</p>
+                            <p class="post-entry-tagline">${tagline}</p>
                         </article>
                     `;
                 }).join('');

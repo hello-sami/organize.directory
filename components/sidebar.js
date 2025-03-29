@@ -1,8 +1,7 @@
 // Initial sidebar content to prevent flicker
 const initialSidebar = `
     <div class="sidebar-header">
-        <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo">
-        <h1><a href="/" class="home-link" style="text-decoration: none !important; color: inherit !important; background-color: transparent !important;">The Organize Directory</a></h1>
+        <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo"><h1><a href="/" class="home-link" style="text-decoration: none !important; color: inherit !important; background-color: transparent !important; margin: 0; padding: 0;">The Organize Directory</a></h1>
     </div>
     <nav>
         <a href="/" class="nav-link">Home</a>
@@ -16,8 +15,7 @@ const initialSidebar = `
         <a href="/subscribe" class="nav-link">Subscribe</a>
     </nav>
     <div class="sidebar-motto">
-        Solidarity not charity.<br>
-        Awareness into action.
+     Fascism is here. Don't despair, organize.
     </div>`;
 
 // Function to insert sidebar HTML
@@ -55,18 +53,22 @@ const criticalStyles = `
         display: block;
         width: 60px;
         height: 60px;
-        margin: 0 auto 1rem;
+        margin: 0;
     }
     .sidebar-header {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        justify-content: flex-start;
         padding: 0 1.5rem;
         margin-bottom: 1.5rem;
+        gap: 0;
     }
     .sidebar-header h1 {
-        margin-bottom: 0;
-        text-align: center;
+        margin: 0;
+        padding: 0;
+        padding-left: 0.2rem;
+        text-align: left;
         font-size: 1.6rem;
         background-color: transparent !important;
     }
@@ -85,9 +87,9 @@ const criticalStyles = `
         outline: none !important;
     }
     .sidebar h1 {
-        margin: 0 0 2rem 0;
+        margin: 0 0 0rem 0;
         font-size: 1.5rem;
-        padding: 0 1.5rem;
+        padding: 0 0rem;
     }
     .sidebar nav {
         margin-bottom: 2rem;
