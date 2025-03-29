@@ -19,20 +19,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="/components/sidebar.js" as="script" type="module">
-    <link rel="preload" href="/styles.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style">
-
     <!-- Critical CSS -->
     <link rel="stylesheet" href="/styles.css">
 
     <!-- Non-blocking font loading -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"
-        media="print" onload="this.media='all'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    </noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Initialize Components Immediately -->
     <script type="module">
@@ -62,6 +53,23 @@
 
             // Initialize other components
             initializeComponents({});
+        });
+    </script>
+
+    <!-- This script runs immediately to ensure posts load properly -->
+    <script>
+        // Preload the posts.json data to speed up loading
+        window.addEventListener('load', function () {
+            // Initiate a preload of posts.json
+            fetch('/posts/posts.json', {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'Cache-Control': 'no-cache'
+                },
+                mode: 'cors',
+                cache: 'no-store'
+            }).catch(err => console.debug('Prefetch error:', err));
         });
     </script>
 </head>
@@ -122,10 +130,11 @@
             try {
                 console.log('Attempting to fetch posts.json...');
 
-                // Try with a more specific URL and credentials
+                // Direct path to the posts.json file
                 const response = await fetch('/posts/posts.json', {
                     method: 'GET',
-                    credentials: 'same-origin',
+                    mode: 'cors',
+                    cache: 'no-store',
                     headers: {
                         'Accept': 'application/json',
                         'Cache-Control': 'no-cache'
@@ -191,24 +200,13 @@
             } catch (error) {
                 console.error('Error loading posts:', error);
 
-                // Fallback: Try loading the posts with a direct script element
-                if (error.message.includes('HTTP error') || error.message.includes('Failed to fetch')) {
-                    console.log('Trying alternative loading method...');
-                    tryAlternativeLoading();
-                    return;
-                }
-
-                if (postsList) {
-                    postsList.innerHTML = `
-                        <div class="error-message">
-                            Unable to load posts. Please try again later. (${error.message})
-                        </div>
-                    `;
-                }
+                // Fallback: Try loading the posts with hardcoded content
+                console.log('Trying alternative loading method...');
+                tryAlternativeLoading();
             }
         }
 
-        // Alternative loading method using script tag
+        // Alternative loading method using hardcoded data
         function tryAlternativeLoading() {
             const postsList = document.getElementById('posts-list');
 
@@ -260,10 +258,10 @@
             console.log('Posts loaded via fallback method');
         }
 
-        // Ensure this runs regardless of when the script loads
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', loadPostsHomepage);
-        } else {
+        // Execute the posts loading immediately
+        document.addEventListener('DOMContentLoaded', loadPostsHomepage);
+        // Also try loading if the DOM is already ready
+        if (document.readyState !== 'loading') {
             loadPostsHomepage();
         }
     </script>
