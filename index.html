@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
 
     <meta name="description"
         content="Daily updates and resources for mutual aid networks and grassroots initiatives across different cities.">
@@ -20,15 +20,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Critical CSS -->
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="./styles.css">
 
     <!-- Non-blocking font loading -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Initialize Components Immediately -->
     <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+        import { initializeSidebar } from './components/sidebar.js';
+        import { initializeComponents } from './utils/init.js';
 
         // Initialize sidebar immediately
         initializeSidebar('home');
@@ -78,23 +78,23 @@
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation">
             <div class="sidebar-header">
-                <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo">
+                <img src="./logo.png" alt="The Organize Directory Logo" class="site-logo">
                 <h1>
-                    <a href="/" class="home-link">
+                    <a href="./" class="home-link">
                         The Organize Directory
                     </a>
                 </h1>
             </div>
             <nav>
-                <a href="/" class="nav-link active">Home</a>
+                <a href="./" class="nav-link active">Home</a>
                 <div class="nav-group">
-                    <a href="/location" class="nav-group-title">Find a group</a>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
+                    <a href="./location" class="nav-group-title">Find a group</a>
+                    <a href="./location" class="nav-link nav-link-indented">by location</a>
+                    <a href="./topics" class="nav-link nav-link-indented">by topic</a>
                 </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-                <a href="/subscribe" class="nav-link">Subscribe</a>
+                <a href="./guides" class="nav-link">Guides</a>
+                <a href="./contact" class="nav-link">Contact</a>
+                <a href="./subscribe" class="nav-link">Subscribe</a>
             </nav>
             <div class="sidebar-motto">
                 Fascism is here. Don't despair, organize.

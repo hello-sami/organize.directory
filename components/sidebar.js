@@ -1,18 +1,18 @@
 // Initial sidebar content to prevent flicker
 const initialSidebar = `
     <div class="sidebar-header">
-        <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo"><h1><a href="/" class="home-link" style="text-decoration: none !important; color: inherit !important; background-color: transparent !important; margin: 0; padding: 0;">The Organize Directory</a></h1>
+        <img src="./logo.png" alt="The Organize Directory Logo" class="site-logo"><h1><a href="./" class="home-link" style="text-decoration: none !important; color: inherit !important; background-color: transparent !important; margin: 0; padding: 0;">The Organize Directory</a></h1>
     </div>
     <nav>
-        <a href="/" class="nav-link">Home</a>
+        <a href="./" class="nav-link">Home</a>
         <div class="nav-group">
-            <a href="/location" class="nav-group-title nav-link-group-header">Find a group</a>
-            <a href="/location" class="nav-link nav-link-indented">by location</a>
-            <a href="/topics" class="nav-link nav-link-indented">by topic</a>
+            <a href="./location" class="nav-group-title nav-link-group-header">Find a group</a>
+            <a href="./location" class="nav-link nav-link-indented">by location</a>
+            <a href="./topics" class="nav-link nav-link-indented">by topic</a>
         </div>
-        <a href="/guides" class="nav-link">Guides</a>
-        <a href="/contact" class="nav-link">Contact</a>
-        <a href="/subscribe" class="nav-link">Subscribe</a>
+        <a href="./guides" class="nav-link">Guides</a>
+        <a href="./contact" class="nav-link">Contact</a>
+        <a href="./subscribe" class="nav-link">Subscribe</a>
     </nav>
     <div class="sidebar-motto">
      Fascism is here. Don't despair, organize.
@@ -234,7 +234,7 @@ function updateActiveStates(sidebar, activePage) {
      // Special handling for topics and location
      if (activePage === "topics") {
           const topicLink = sidebar.querySelector(
-               'a[href="/topics"].nav-link-indented'
+               'a[href="./topics"].nav-link-indented'
           );
           if (topicLink) {
                topicLink.classList.add("active");
@@ -274,7 +274,7 @@ function updateActiveStates(sidebar, activePage) {
           }
 
           const locationLink = sidebar.querySelector(
-               'a[href="/location"].nav-link-indented'
+               'a[href="./location"].nav-link-indented'
           );
           if (locationLink) {
                locationLink.classList.add("active");
@@ -289,7 +289,7 @@ function updateActiveStates(sidebar, activePage) {
      // For home page, ensure Find a group is definitely not highlighted
      if (activePage === "home") {
           // Set Home link as active
-          const homeLink = sidebar.querySelector('a[href="/"]');
+          const homeLink = sidebar.querySelector('a[href="./"]');
           if (homeLink) {
                homeLink.classList.add("active");
                homeLink.style.cssText = `
@@ -314,9 +314,9 @@ function updateActiveStates(sidebar, activePage) {
 
      // For other pages, use the regular mapping
      const activeLinks = {
-          guides: 'a[href="/guides"]',
-          contact: 'a[href="/contact"]',
-          subscribe: 'a[href="/subscribe"]',
+          guides: 'a[href="./guides"]',
+          contact: 'a[href="./contact"]',
+          subscribe: 'a[href="./subscribe"]',
      };
 
      const activeSelector = activeLinks[activePage];
