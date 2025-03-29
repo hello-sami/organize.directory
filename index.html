@@ -41,13 +41,13 @@
                 title.classList.add('reset-nav-group');
             });
 
-            // Reset header h1 styles
+            // Fix h1 highlighting issue - Apply direct styles to override any unwanted highlighting
             const headerH1 = document.querySelector('.sidebar-header h1');
             if (headerH1) {
-                headerH1.classList.add('reset-header');
+                headerH1.style.cssText = 'background-color: transparent !important; margin: 0; padding: 0; padding-left: 0.2rem;';
                 const link = headerH1.querySelector('a');
                 if (link) {
-                    link.classList.add('reset-header-link');
+                    link.style.cssText = 'background-color: transparent !important; color: inherit !important; text-decoration: none !important; border-bottom: none !important; box-shadow: none !important;';
                 }
             }
 
@@ -61,7 +61,7 @@
         // Preload the posts.json data to speed up loading
         window.addEventListener('load', function () {
             // Initiate a preload of posts.json
-            fetch('/posts/posts.json', {
+            fetch('./posts/posts.json', {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',
@@ -129,9 +129,10 @@
 
             try {
                 console.log('Attempting to fetch posts.json...');
+                console.log('Fetch URL:', './posts/posts.json');
 
                 // Direct path to the posts.json file
-                const response = await fetch('/posts/posts.json', {
+                const response = await fetch('./posts/posts.json', {
                     method: 'GET',
                     mode: 'cors',
                     cache: 'no-store',
@@ -140,6 +141,8 @@
                         'Cache-Control': 'no-cache'
                     }
                 });
+
+                console.log('Response status:', response.status);
 
                 if (!response.ok) {
                     throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
@@ -186,7 +189,7 @@
                         <article class="post-entry">
                             <div class="post-entry-header">
                                 <h3 class="post-entry-title">
-                                    <a href="/posts/${post.slug}.html">${post.title}</a>
+                                    <a href="./posts/${post.slug}.html">${post.title}</a>
                                 </h3>
                                 <time datetime="${post.date}">${formattedDate}</time>
                             </div>
@@ -245,7 +248,7 @@
                     <article class="post-entry">
                         <div class="post-entry-header">
                             <h3 class="post-entry-title">
-                                <a href="/posts/${post.slug}.html">${post.title}</a>
+                                <a href="./posts/${post.slug}.html">${post.title}</a>
                             </h3>
                             <time datetime="${post.date}">${formattedDate}</time>
                         </div>
