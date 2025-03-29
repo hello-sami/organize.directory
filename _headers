@@ -14,9 +14,9 @@
   X-Frame-Options: DENY
   Vary: Accept-Encoding
 
-# The homepage - Cache for 5 minutes
+# The homepage - Cache for 1 minute (reduced from 5 minutes)
 /index.html
-  Cache-Control: public, max-age=300
+  Cache-Control: public, max-age=60, must-revalidate
   Content-Type: text/html; charset=utf-8
   X-Frame-Options: DENY
   Vary: Accept-Encoding
