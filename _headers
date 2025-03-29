@@ -80,4 +80,13 @@
 
 /location
   Cache-Control: public, max-age=0, must-revalidate
-  Content-Type: text/html; charset=utf-8 
+  Content-Type: text/html; charset=utf-8
+
+/posts/posts.json
+  Cache-Control: public, max-age=60, must-revalidate
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, OPTIONS
+  cf-edge-cache: no-minify, no-rocket-loader
+  cf-cache-status: BYPASS
+  cf-apo: off 
