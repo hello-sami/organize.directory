@@ -34,43 +34,23 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     </noscript>
 
-    <!-- Add custom style for sidebar header -->
-
     <!-- Initialize Components Immediately -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
 
         // Initialize sidebar immediately
         initializeSidebar('home');
 
-        // Extra script to ensure "Find a group" is not highlighted and h1 is not highlighted
+        // Apply style fixes after DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             // Reset nav-group-title
-            const navGroupTitles = document.querySelectorAll('.nav-group-title');
-            navGroupTitles.forEach(title => {
-                title.classList.add("reset-nav-group");
-            });
-
-            // Reset header h1 styles
-            const headerH1 = document.querySelector('.sidebar-header h1');
-            if (headerH1) {
-                headerH1.classList.add("reset-header");
-                const link = headerH1.querySelector('a');
-                if (link) {
-                    link.classList.add("reset-header-link");
-                }
-            }
-        });
-
-        // Extra script to ensure "Find a group" is not highlighted and h1 is not highlighted
-        document.addEventListener('DOMContentLoaded', () => {
-            // Add classes instead of directly manipulating styles
             const navGroupTitles = document.querySelectorAll('.nav-group-title');
             navGroupTitles.forEach(title => {
                 title.classList.add('reset-nav-group');
             });
 
-            // Reset header h1 styles with classes
+            // Reset header h1 styles
             const headerH1 = document.querySelector('.sidebar-header h1');
             if (headerH1) {
                 headerH1.classList.add('reset-header');
@@ -79,6 +59,12 @@
                     link.classList.add('reset-header-link');
                 }
             }
+
+            // Initialize other components
+            initializeComponents({});
+
+            // Load homepage posts
+            loadPostsHomepage();
         });
     </script>
 </head>
@@ -97,8 +83,7 @@
             <nav>
                 <a href="/" class="nav-link active">Home</a>
                 <div class="nav-group">
-                    <span class="nav-group-title">Find
-                        a group</span>
+                    <span class="nav-group-title">Find a group</span>
                     <a href="/location" class="nav-link nav-link-indented">by location</a>
                     <a href="/topics" class="nav-link nav-link-indented">by topic</a>
                 </div>
@@ -118,63 +103,56 @@
             <hr>
 
             <section class="daily-log" aria-labelledby="log-heading">
-                <h2 id="log-heading">
-                    Log</h2>
+                <h2 id="log-heading">Calls to Action</h2>
                 <div id="posts-list" class="posts-list">
-                    <!-- Static posts content as fallback -->
-                    <article class="post-entry">
-                        <div class="post-entry-header">
-                            <h3 class="post-entry-title">
-                                <a href="/posts/housing-assistance-expansion.html">Housing Assistance Expansion for
-                                    Low-Income Families</a>
-                            </h3>
-                            <time datetime="2024-04-15">15-04-2024</time>
-                        </div>
-                        <p class="post-entry-tagline">
-                            Expanding support for vulnerable communities facing housing
-                            insecurity.</p>
-                    </article>
-                    <article class="post-entry">
-                        <div class="post-entry-header">
-                            <h3 class="post-entry-title">
-                                <a href="/posts/healthcare-initiatives-underserved.html">New Healthcare Initiatives for
-                                    Underserved Communities</a>
-                            </h3>
-                            <time datetime="2024-04-08">08-04-2024</time>
-                        </div>
-                        <p class="post-entry-tagline">
-                            Bringing healthcare access to communities that need it most.</p>
-                    </article>
-                    <article class="post-entry">
-                        <div class="post-entry-header">
-                            <h3 class="post-entry-title">
-                                <a href="/posts/climate-crisis-response.html">Climate Crisis Response: Supporting
-                                    Affected Regions</a>
-                            </h3>
-                            <time datetime="2024-03-28">28-03-2024</time>
-                        </div>
-                        <p class="post-entry-tagline">
-                            Addressing the growing impacts of extreme weather events across
-                            the country.</p>
-                    </article>
+                    <!-- Posts will be loaded dynamically by JavaScript -->
+                    <!-- Static fallback content if JavaScript is disabled -->
+                    <noscript>
+                        <article class="post-entry">
+                            <div class="post-entry-header">
+                                <h3 class="post-entry-title">
+                                    <a href="/posts/housing-assistance-expansion.html">Housing Assistance Expansion for
+                                        Low-Income Families</a>
+                                </h3>
+                                <time datetime="2024-04-15">15-04-2024</time>
+                            </div>
+                            <p class="post-entry-tagline">
+                                Expanding support for vulnerable communities facing housing
+                                insecurity.</p>
+                        </article>
+                        <article class="post-entry">
+                            <div class="post-entry-header">
+                                <h3 class="post-entry-title">
+                                    <a href="/posts/healthcare-initiatives-underserved.html">New Healthcare Initiatives
+                                        for
+                                        Underserved Communities</a>
+                                </h3>
+                                <time datetime="2024-04-08">08-04-2024</time>
+                            </div>
+                            <p class="post-entry-tagline">
+                                Bringing healthcare access to communities that need it most.</p>
+                        </article>
+                        <article class="post-entry">
+                            <div class="post-entry-header">
+                                <h3 class="post-entry-title">
+                                    <a href="/posts/climate-crisis-response.html">Climate Crisis Response: Supporting
+                                        Affected Regions</a>
+                                </h3>
+                                <time datetime="2024-03-28">28-03-2024</time>
+                            </div>
+                            <p class="post-entry-tagline">
+                                Addressing the growing impacts of extreme weather events across
+                                the country.</p>
+                        </article>
+                    </noscript>
                 </div>
             </section>
         </main>
     </div>
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize other components after DOM is ready
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeComponents({});
-        });
-    </script>
-
-    <!-- Load posts -->
+    <!-- Posts loading script -->
     <script>
-        // Load posts explicitly for the homepage
+        // Load posts for the homepage
         async function loadPostsHomepage() {
             try {
                 const response = await fetch('/posts/posts.json');
@@ -236,41 +214,6 @@
                 `;
             }
         }
-
-        // Load posts when the page loads
-        document.addEventListener('DOMContentLoaded', loadPostsHomepage);
-    </script>
-
-    <!-- Debug script -->
-    <script>
-        // Verify posts.json can be loaded
-        fetch('/posts/posts.json')
-            .then(response => {
-                if (!response.ok) {
-                    console.error('Failed to load posts.json:', response.status, response.statusText);
-                    document.getElementById('posts-list').innerHTML = `
-                        <div class="error-message">
-                            Error loading posts: ${response.status} ${response.statusText}
-                        </div>
-                    `;
-                } else {
-                    console.log('Successfully loaded posts.json');
-                    return response.json();
-                }
-            })
-            .then(data => {
-                if (data) {
-                    console.log('Posts loaded:', data.posts.length, 'posts found');
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching posts.json:', error);
-                document.getElementById('posts-list').innerHTML = `
-                    <div class="error-message">
-                        Error loading posts: ${error.message}
-                    </div>
-                `;
-            });
     </script>
 </body>
 
