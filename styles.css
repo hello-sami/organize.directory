@@ -1155,3 +1155,93 @@ h6 {
           margin-right: 0.75rem;
      }
 }
+
+/* Thank You Page Styles */
+.thank-you-content {
+     max-width: 600px;
+     margin: 0 auto;
+     padding: 2rem;
+     text-align: center;
+}
+
+.thank-you-card {
+     margin-top: 2rem;
+     background: var(--pure-white);
+     padding: 3rem 2rem;
+     border-radius: 8px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.thank-you-icon {
+     font-size: 3rem;
+     color: var(--primary-color);
+     margin-bottom: 1rem;
+}
+
+.thank-you-title {
+     font-size: 1.8rem;
+     margin-bottom: 1rem;
+     color: var(--heading-color);
+}
+
+.thank-you-message {
+     font-size: 1.1rem;
+     margin-bottom: 2rem;
+     color: var(--text-color);
+}
+
+.home-button {
+     display: inline-block;
+     background: var(--primary-color);
+     color: white;
+     border: none;
+     padding: 0.75rem 1.5rem;
+     border-radius: 4px;
+     font-weight: 500;
+     cursor: pointer;
+     text-decoration: none;
+     transition: background-color 0.2s;
+}
+
+.home-button:hover {
+     background: var(--accent-color);
+     border-bottom: none;
+}
+
+/* Location Page Specific Styles */
+/* These styles were moved from inline styles in location.html */
+
+/* Make location link active by default on location page */
+.location-page .sidebar a[href="/location"].nav-link,
+.location-page .sidebar a[href="/location"].nav-link.active {
+     background-color: var(--pure-white);
+     color: var(--primary-color);
+     font-weight: 600;
+}
+
+/* Reduce prominence of "Find a group" heading when location is active */
+.location-page .sidebar .nav-group-title {
+     font-weight: 400;
+     opacity: 0.7;
+}
+
+/* Ensure the sidebar header is not affected by active states */
+.location-page .sidebar-header,
+.location-page .sidebar-header h1 {
+     background-color: transparent;
+}
+
+/* Explicitly style the h1 link to prevent any highlighting */
+.location-page .sidebar-header h1 a,
+.location-page .sidebar-header h1 a:link,
+.location-page .sidebar-header h1 a:visited,
+.location-page .sidebar-header h1 a:hover,
+.location-page .sidebar-header h1 a:active,
+.location-page .sidebar-header h1 a.home-link {
+     text-decoration: none;
+     color: inherit;
+     background-color: transparent;
+     border-bottom: none;
+     box-shadow: none;
+     font-weight: inherit;
+}

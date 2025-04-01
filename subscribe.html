@@ -2,26 +2,18 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-
     <meta name="color-scheme" content="light">
     <title>Subscribe to Our Newsletter - The Organize Directory</title>
     <meta name="description"
         content="Subscribe to The Organize Directory newsletter for monthly organization tips, strategies, and resources for better personal and professional organization.">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <!-- DNS Prefetch -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
@@ -35,243 +27,27 @@
     <link rel="preconnect" href="https://www.google-analytics.com">
     <link rel="preconnect" href="https://www.googletagmanager.com">
 
-    <!-- Load CSS -->
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="/fonts/fonts.css">
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/css/newsletter.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --surface-color: #fff;
-            --surface-color-alt: #ffd9d9;
-            --text-secondary: #666;
-            --input-bg: #fff;
-            --primary-color-dark: #800000;
-        }
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
 
-        /* Fix sidebar nav spacing */
-        #sidebar nav {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            margin-top: -1px;
-        }
-
-        .nav-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            border: none;
-            padding: 0;
-            background: transparent;
-            position: relative;
-            margin: 0;
-        }
-
-        .nav-group-title {
-            color: var(--text-color);
-            font-size: 0.9rem;
-            font-weight: 700;
-            padding: 0.75rem 1.5rem;
-            letter-spacing: 0.02em;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            margin: 0;
-            margin-top: -1px;
-            margin-bottom: -1px;
-            background: var(--bg-color);
-        }
-
-        .nav-link {
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 0.95rem;
-            opacity: 0.9;
-            transition: all 0.2s ease;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            margin-top: -1px;
-            display: block;
-            width: 100%;
-            position: relative;
-            background: transparent;
-        }
-
-        .nav-link-indented {
-            padding-left: 2.5rem;
-            position: relative;
-        }
-
-        .nav-link-indented::before {
-            content: "";
-            position: absolute;
-            left: 1.5rem;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background-color: var(--border-color);
-            opacity: 0.8;
-        }
-
-        .site-logo {
-            display: block;
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 1rem;
-        }
-
-        .sidebar-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 0 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .sidebar-header h1 {
-            margin-bottom: 0;
-            text-align: center;
-            font-size: 1.6rem;
-        }
-
-        .newsletter-content {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .newsletter-form {
-            margin-top: 1rem;
-            background: var(--surface-color);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--border-color);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--text-color);
-        }
-
-        .form-helper {
-            display: block;
-            margin-top: 0.25rem;
-            font-size: 0.85em;
-            color: var(--text-secondary);
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            background: var(--input-bg);
-            color: var(--text-color);
-            font-family: 'Inter', sans-serif;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            border-color: var(--primary-color);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(163, 0, 0, 0.1);
-        }
-
-        .checkbox-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .checkbox-group label {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            cursor: pointer;
-        }
-
-        .checkbox-group input[type="checkbox"] {
-            width: auto;
-            accent-color: var(--primary-color);
-        }
-
-        .submit-button {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.2s, transform 0.1s;
-            width: 100%;
-            max-width: 200px;
-        }
-
-        .submit-button:hover {
-            background: var(--primary-color-dark);
-        }
-
-        .submit-button:active {
-            transform: translateY(1px);
-        }
-
-        .submit-button:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
-
-        .error-message {
-            color: #d32f2f;
-            margin-top: 1rem;
-            padding: 0.5rem;
-            background: #ffebee;
-            border-radius: 4px;
-            display: none;
-        }
-
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .newsletter-content {
-                padding: 1rem;
-            }
-
-            .newsletter-form {
-                padding: 1.5rem;
-            }
-
-            .submit-button {
-                width: 100%;
-                max-width: none;
-            }
-        }
-    </style>
-
-    <!-- Critical Scripts -->
-    <!-- Initialize Components -->
+    <!-- Sidebar Initialization -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
-        // Import initializeComponents but don't use it to avoid adding search
-        // import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar immediately
-        initializeSidebar('subscribe');
-
-        // Also ensure it runs after DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             initializeSidebar('subscribe');
         });
-
-        // Don't initialize other components to prevent search header
-        // initializeComponents({});
     </script>
 </head>
 
@@ -336,119 +112,12 @@
 
                     <button type="submit" class="submit-button" id="submit-button">Subscribe</button>
                 </form>
-
-                <!-- 
-                MAILCHIMP INTEGRATION (UNCOMMENT TO USE)
-                Replace the form above with this code and update the form action URL and hidden field values
-                with your Mailchimp embed form values.
-                
-                <div id="mc_embed_signup">
-                    <form action="https://yourdomain.us1.list-manage.com/subscribe/post?u=XXXXXXXX&amp;id=XXXXXXX" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter-form" target="_blank">
-                        <div id="mc_embed_signup_scroll">
-                            <div class="form-group">
-                                <label for="mce-FNAME">Your Name</label>
-                                <input type="text" name="FNAME" id="mce-FNAME" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="mce-EMAIL">Email Address</label>
-                                <input type="email" name="EMAIL" id="mce-EMAIL" required>
-                                <span class="form-helper">Consider using a Proton email for extra privacy.</span>
-                            </div>
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                                <input type="text" name="b_XXXXXXXX_XXXXXXXX" tabindex="-1" value="">
-                            </div>
-                            <div class="clear">
-                                <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="submit-button">Subscribe</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                -->
-
-                <!-- 
-                SENDINBLUE/BREVO INTEGRATION (UNCOMMENT TO USE)
-                Replace the form above with this code and update with your Sendinblue/Brevo form details.
-                
-                <iframe width="100%" height="450" src="https://YOURIDHERE.sibforms.com/serve/YOURFORMCODE" 
-                    frameborder="0" scrolling="auto" allowfullscreen 
-                    style="display: block; margin-left: auto; margin-right: auto; max-width: 100%; max-height: 100vh;">
-                </iframe>
-                -->
             </div>
         </main>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('newsletterForm');
-            const submitButton = document.getElementById('submit-button');
-            const errorMessage = document.getElementById('error-message');
-
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-
-                // Validate name
-                const nameInput = document.getElementById('name');
-                if (!nameInput.value.trim()) {
-                    errorMessage.textContent = 'Please enter your name.';
-                    errorMessage.style.display = 'block';
-                    return;
-                }
-
-                // Validate email format
-                const emailInput = document.getElementById('email');
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-                if (!emailRegex.test(emailInput.value)) {
-                    errorMessage.textContent = 'Please enter a valid email address.';
-                    errorMessage.style.display = 'block';
-                    return;
-                }
-
-                // Validate consent
-                const consentInput = document.querySelector('input[name="consent"]');
-                if (!consentInput.checked) {
-                    errorMessage.textContent = 'You must consent to receive emails.';
-                    errorMessage.style.display = 'block';
-                    return;
-                }
-
-                // Hide any previous error message
-                errorMessage.style.display = 'none';
-
-                // Disable submit button and show loading state
-                submitButton.disabled = true;
-                submitButton.textContent = 'Subscribing...';
-
-                try {
-                    // Send to Web3Forms
-                    const formData = new FormData(form);
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: formData
-                    });
-
-                    const data = await response.json();
-
-                    if (response.ok) {
-                        // Success - redirect to thank you page
-                        window.location.href = form.querySelector('input[name="redirect"]').value;
-                    } else {
-                        // Show error message
-                        errorMessage.textContent = data.message || 'Something went wrong. Please try again later.';
-                        errorMessage.style.display = 'block';
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Subscribe';
-                    }
-                } catch (error) {
-                    errorMessage.textContent = 'Network error. Please check your connection and try again.';
-                    errorMessage.style.display = 'block';
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Subscribe';
-                }
-            });
-        });
-    </script>
+    <!-- Form Handling Script -->
+    <script src="/js/newsletter-form.js"></script>
 </body>
 
 </html>

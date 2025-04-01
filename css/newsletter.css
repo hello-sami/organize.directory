@@ -1,0 +1,131 @@
+:root {
+     --surface-color: #fff;
+     --surface-color-alt: #ffd9d9;
+     --text-secondary: #666;
+     --input-bg: #fff;
+     --primary-color-dark: #800000;
+}
+
+/* Newsletter specific styles */
+.newsletter-content {
+     max-width: 600px;
+     margin: 0 auto;
+     padding: 2rem;
+}
+
+.newsletter-form {
+     margin-top: 1rem;
+     background: var(--surface-color);
+     padding: 2rem;
+     border-radius: 8px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     border: 1px solid var(--border-color);
+}
+
+.form-group {
+     margin-bottom: 1.5rem;
+}
+
+.form-group label {
+     display: block;
+     margin-bottom: 0.5rem;
+     font-weight: 500;
+     color: var(--text-color);
+}
+
+.form-helper {
+     display: block;
+     margin-top: 0.25rem;
+     font-size: 0.85em;
+     color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group select {
+     width: 100%;
+     padding: 0.75rem;
+     border: 1px solid var(--border-color);
+     border-radius: 4px;
+     background: var(--input-bg);
+     color: var(--text-color);
+     font-family: "Inter", sans-serif;
+     transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+     border-color: var(--primary-color);
+     outline: none;
+     box-shadow: 0 0 0 3px rgba(163, 0, 0, 0.1);
+}
+
+.checkbox-group {
+     margin-bottom: 1.5rem;
+}
+
+.checkbox-group label {
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+     cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"] {
+     width: auto;
+     accent-color: var(--primary-color);
+}
+
+.submit-button {
+     background: var(--primary-color);
+     color: white;
+     border: none;
+     padding: 0.75rem 1.5rem;
+     border-radius: 4px;
+     font-weight: 500;
+     cursor: pointer;
+     transition:
+          background-color 0.2s,
+          transform 0.1s;
+     width: 100%;
+     max-width: 200px;
+}
+
+.submit-button:hover {
+     background: var(--primary-color-dark);
+}
+
+.submit-button:active {
+     transform: translateY(1px);
+}
+
+.submit-button:disabled {
+     opacity: 0.7;
+     cursor: not-allowed;
+}
+
+.error-message {
+     color: #d32f2f;
+     margin-top: 1rem;
+     padding: 0.5rem;
+     background: #ffebee;
+     border-radius: 4px;
+     display: none;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+     .newsletter-content {
+          padding: 1rem;
+     }
+
+     .newsletter-form {
+          padding: 1.5rem;
+     }
+
+     .submit-button {
+          width: 100%;
+          max-width: none;
+     }
+}
