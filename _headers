@@ -11,6 +11,11 @@
   # Disable Cloudflare APO
   cf-apo: off
 
+# IMPORTANT: Temporary redirect to fallback during debugging
+/
+  Link: </fallback.html>; rel=preload; as=document
+  Link: </posts/posts.json>; rel=preload; as=fetch; crossorigin
+
 # HTML pages - Cache for 10 minutes
 /*.html
   Cache-Control: public, max-age=600
