@@ -56,6 +56,7 @@ const criticalStyles = `
         margin: 0;
     }
     .sidebar-header {
+        background-color: transparent;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -221,7 +222,7 @@ function updateActiveStates(sidebar, activePage) {
           const headerH1 = sidebarHeader.querySelector("h1");
           if (headerH1) {
                headerH1.style.cssText =
-                    "background-color: transparent !important;";
+                    "background-color: transparent !important; text-align: left !important;";
                const headerLink = headerH1.querySelector("a");
                if (headerLink) {
                     headerLink.style.cssText =
