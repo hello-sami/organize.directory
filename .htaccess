@@ -1,0 +1,20 @@
+# Enable rewriting
+RewriteEngine On
+
+# Handle 404 errors
+ErrorDocument 404 /404.html
+
+# Redirect www to non-www
+RewriteCond %{HTTP_HOST} ^www\.organize\.directory [NC]
+RewriteRule ^(.*)$ https://organize.directory/$1 [L,R=301]
+
+# Ensure posts.json is served correctly
+<Files "posts/posts.json">
+  Header set Access-Control-Allow-Origin "*"
+  Header set Content-Type "application/json"
+</Files>
+
+# Rewrite rules for clean URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.html [NC,L] 

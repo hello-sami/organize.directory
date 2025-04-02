@@ -233,160 +233,123 @@ function updateActiveStates(sidebar, activePage) {
           }
      }
 
-     // Special handling for topics and location
-     if (activePage === "topics") {
-          const topicLink = sidebar.querySelector(
-               'a[href="./topics"].nav-link-indented'
-          );
-          if (topicLink) {
-               topicLink.classList.add("active");
-               topicLink.style.backgroundColor = "var(--pure-white, #ffffff)";
-               topicLink.style.color = "var(--primary-color, #a30000)";
-               topicLink.style.fontWeight = "600";
-
-               // Find the parent nav-group and reduce prominence of its title
-               const navGroup = topicLink.closest(".nav-group");
-               if (navGroup) {
-                    const groupTitle =
-                         navGroup.querySelector(".nav-group-title");
-                    if (groupTitle) {
-                         groupTitle.style.cssText = `
-                              background-color: transparent !important;
-                              color: inherit !important;
-                              font-weight: 400 !important;
-                              opacity: 0.7 !important;
-                         `;
-                    }
-               }
+     // Now set the appropriate active state
+     if (activePage === "home") {
+          // Home page
+          const homeLink = sidebar.querySelector('a[href="./"].nav-link');
+          if (homeLink) {
+               homeLink.classList.add("active");
           }
-          return;
-     }
-
-     if (activePage === "location") {
-          // Highlight both the "Find a group" header and the "by location" link
-          const findGroupTitle = sidebar.querySelector(
-               ".nav-link-group-header"
-          );
-          if (findGroupTitle) {
-               findGroupTitle.classList.add("active");
-               findGroupTitle.style.backgroundColor =
-                    "var(--pure-white, #ffffff)";
-               findGroupTitle.style.color = "var(--primary-color, #a30000)";
-               findGroupTitle.style.fontWeight = "600";
-          }
-
+     } else if (activePage === "location") {
+          // Location page - set both the nav-group-title and the indented link
           const locationLink = sidebar.querySelector(
                'a[href="./location"].nav-link-indented'
           );
           if (locationLink) {
                locationLink.classList.add("active");
-               locationLink.style.backgroundColor =
-                    "var(--pure-white, #ffffff)";
-               locationLink.style.color = "var(--primary-color, #a30000)";
-               locationLink.style.fontWeight = "600";
           }
-          return;
-     }
-
-     // For home page, ensure Find a group is definitely not highlighted
-     if (activePage === "home") {
-          // Set Home link as active
-          const homeLink = sidebar.querySelector('a[href="./"]');
-          if (homeLink) {
-               homeLink.classList.add("active");
-               homeLink.style.cssText = `
-                    background-color: var(--pure-white, #ffffff) !important;
-                    color: var(--primary-color, #a30000) !important;
-                    font-weight: 600 !important;
-               `;
-          }
-
-          // Ensure all nav-group-title elements are not highlighted
-          sidebar.querySelectorAll(".nav-group-title").forEach((title) => {
-               title.style.cssText = `
-                    background-color: transparent !important;
-                    color: inherit !important;
-                    font-weight: 600 !important;
-                    opacity: 1 !important;
-               `;
-          });
-
-          return;
-     }
-
-     // For other pages, use the regular mapping
-     const activeLinks = {
-          guides: 'a[href="./guides"]',
-          contact: 'a[href="./contact"]',
-          subscribe: 'a[href="./subscribe"]',
-     };
-
-     const activeSelector = activeLinks[activePage];
-     if (activeSelector) {
-          const activeLink = sidebar.querySelector(activeSelector);
-          if (activeLink) {
-               activeLink.classList.add("active");
-               activeLink.style.backgroundColor = "var(--pure-white, #ffffff)";
-               activeLink.style.color = "var(--primary-color, #a30000)";
-               activeLink.style.fontWeight = "600";
-               console.log("Set active link for:", activeSelector);
-          } else {
-               console.log(
-                    "Active link not found for selector:",
-                    activeSelector
-               );
+     } else if (activePage === "topics") {
+          // Topics page
+          const topicsLink = sidebar.querySelector(
+               'a[href="./topics"].nav-link-indented'
+          );
+          if (topicsLink) {
+               topicsLink.classList.add("active");
           }
      } else {
-          console.log("No active selector for page:", activePage);
+          // Other pages
+          const activeLink = sidebar.querySelector(
+               `a[href="./${activePage}"].nav-link`
+          );
+          if (activeLink) {
+               activeLink.classList.add("active");
+          }
      }
 }
 
-// Function to initialize the sidebar
+// Main function to initialize the sidebar
 export function initializeSidebar(activePage) {
+     if (typeof document === "undefined") return;
+
+     console.log("Initializing sidebar for page:", activePage);
+
      // Initialize critical styles first
      initializeCriticalStyles();
 
-     // Get the existing sidebar
-     const sidebar = document.getElementById("sidebar");
+     // If sidebar doesn't exist, insert it
+     let sidebar = document.getElementById("sidebar");
      if (!sidebar) {
-          console.error("Sidebar element not found");
-          return;
+          insertSidebar();
+          sidebar = document.getElementById("sidebar");
      }
 
-     // Add direct inline style to h1 link to prevent underline
-     const h1Link = sidebar.querySelector(".sidebar-header h1 a");
-     if (h1Link) {
-          h1Link.setAttribute(
-               "style",
-               "text-decoration: none !important; color: inherit !important; " +
-                    "background-color: transparent !important; border-bottom: none !important;"
-          );
+     // Update active state based on current page
+     if (sidebar) {
+          updateActiveStates(sidebar, activePage);
+
+          // Add event listener for mobile menu toggle
+          document
+               .querySelectorAll(".mobile-menu-button, .mobile-menu-overlay")
+               .forEach((element) => {
+                    element.addEventListener("click", () => {
+                         sidebar.classList.toggle("active");
+                         const overlay = document.querySelector(
+                              ".mobile-menu-overlay"
+                         );
+                         if (overlay) {
+                              overlay.classList.toggle("active");
+                         }
+                         document.body.classList.toggle("menu-open");
+                    });
+               });
      }
 
-     // Update active states
-     updateActiveStates(sidebar, activePage);
-
-     // Add mobile menu button if it doesn't exist
-     if (!document.querySelector(".mobile-menu-button")) {
-          const menuButton = document.createElement("button");
-          menuButton.className = "mobile-menu-button";
-          menuButton.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-        `;
-          document.body.insertBefore(menuButton, document.body.firstChild);
-
-          // Add mobile menu functionality
-          menuButton.addEventListener("click", () => {
-               sidebar.classList.toggle("active");
-               document.body.classList.toggle("menu-open");
-          });
-     }
+     // Remove any preload links for posts.json that might be causing issues
+     const preloadLinks = document.querySelectorAll('link[rel="preload"]');
+     preloadLinks.forEach((link) => {
+          if (link.href && link.href.includes("posts.json")) {
+               link.parentNode.removeChild(link);
+          }
+     });
 }
 
-// Function to handle relative paths in subdirectories
+// Helper function to adjust paths based on directory depth
 export function adjustPaths(sidebar, depth = 0) {
-     // For static hosting, we keep the absolute paths
-     return sidebar;
+     if (!sidebar) return;
+
+     // Base path prefix
+     let prefix = "./";
+     for (let i = 0; i < depth; i++) {
+          prefix += "../";
+     }
+
+     // Update all links with the correct prefix
+     sidebar.querySelectorAll("a").forEach((link) => {
+          // Skip links that are already absolute
+          if (
+               link.getAttribute("href") &&
+               !link.getAttribute("href").startsWith("http") &&
+               !link.getAttribute("href").startsWith("#") &&
+               !link.getAttribute("href").startsWith("/")
+          ) {
+               // Extract the relative part (after ./)
+               const href = link.getAttribute("href");
+               if (href.startsWith("./")) {
+                    const relativePath = href.substring(2);
+                    link.setAttribute("href", prefix + relativePath);
+               }
+          }
+     });
+
+     // Update logo src
+     const logo = sidebar.querySelector(".site-logo");
+     if (
+          logo &&
+          logo.getAttribute("src") &&
+          logo.getAttribute("src").startsWith("./")
+     ) {
+          const src = logo.getAttribute("src");
+          const relativePath = src.substring(2);
+          logo.setAttribute("src", prefix + relativePath);
+     }
 }
