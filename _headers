@@ -97,4 +97,27 @@
   Access-Control-Allow-Methods: GET, OPTIONS
   cf-edge-cache: no-minify, no-rocket-loader
   cf-cache-status: BYPASS
-  cf-apo: off 
+  cf-apo: off
+
+/*.json
+  Access-Control-Allow-Origin: *
+  Content-Type: application/json
+  Cache-Control: no-cache
+
+/*.html
+  Cache-Control: public, max-age=3600
+
+/*.css
+  Cache-Control: public, max-age=86400
+
+/*.js
+  Cache-Control: public, max-age=86400
+  
+/images/*
+  Cache-Control: public, max-age=604800
+  
+/*.png
+  Cache-Control: public, max-age=604800
+  
+/*.ico
+  Cache-Control: public, max-age=604800 

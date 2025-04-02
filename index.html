@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Force Cloudflare rebuild: 2 - Test deployment fix -->
+<!-- Force Cloudflare rebuild: 3 - Fix posts loading -->
 <html lang="en">
 
 <head>
@@ -46,7 +46,7 @@
 
     <!-- Initialize Components Immediately -->
     <script type="module">
-        import { initializeSidebar } from './components/sidebar.js?v=1.0.1';
+        import { initializeSidebar } from './components/sidebar.js?v=1.0.2';
         import { initializeComponents } from './utils/init.js?v=1.0.1';
 
         // Initialize sidebar immediately
@@ -75,117 +75,60 @@
         });
     </script>
 
-    <!-- This script runs immediately to ensure posts load properly -->
+    <!-- Use hardcoded posts data to avoid loading issues -->
     <script>
-        // Make tryAlternativeLoading available globally
-        let tryAlternativeLoading;
-
-        // Load posts for the homepage
-        async function loadPostsHomepage() {
-            const postsList = document.getElementById('posts-list');
-            if (!postsList) {
-                console.error("Could not find posts-list element");
-                return;
-            }
-
-            try {
-                console.log('Attempting to fetch posts.json...');
-
-                // Direct path to the posts.json file
-                const response = await fetch('./posts/posts.json', {
-                    method: 'GET',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Cache-Control': 'no-cache'
-                    }
-                });
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error ${response.status}`);
-                }
-
-                const data = await response.json();
-
-                if (!data || !data.posts || !Array.isArray(data.posts)) {
-                    throw new Error('Invalid data format');
-                }
-
-                // Map of taglines for each post by slug
-                const taglines = {
-                    'housing-assistance-expansion': 'Expanding support for vulnerable communities facing housing insecurity.',
-                    'healthcare-initiatives-underserved': 'Bringing healthcare access to communities that need it most.',
-                    'climate-crisis-response': 'Addressing the growing impacts of extreme weather events across the country.',
-                    'winter-storm-response': 'Coordinating support for communities affected by severe winter weather.',
-                    'food-security-launch': 'Building sustainable food systems for all communities.'
-                };
-
-                // Sort posts by date in descending order
-                const sortedPosts = data.posts.sort((a, b) =>
-                    new Date(b.date) - new Date(a.date)
-                );
-
-                // Create HTML for each post
-                const postsHTML = sortedPosts.map(post => {
-                    // Format date as DD-MM-YYYY
-                    const date = new Date(post.date);
-                    const formattedDate = date.toLocaleDateString('en-GB', {
-                        year: 'numeric',
-                        month: '2-digit',
-                        day: '2-digit'
-                    }).replace(/\//g, '-');
-
-                    // Get tagline or use a default one
-                    const tagline = taglines[post.slug] || 'Supporting mutual aid efforts across communities.';
-
-                    return `
-                        <article class="post-entry">
-                            <div class="post-entry-header">
-                                <h3 class="post-entry-title">
-                                    <a href="./posts/${post.slug}.html">${post.title}</a>
-                                </h3>
-                                <time datetime="${post.date}">${formattedDate}</time>
-                            </div>
-                            <p class="post-entry-tagline">${tagline}</p>
-                        </article>
-                    `;
-                }).join('');
-
-                postsList.innerHTML = postsHTML;
-                console.log('Posts loaded and displayed successfully');
-            } catch (error) {
-                console.error('Error loading posts:', error);
-                // Automatically use fallback content
-                useHardcodedContent();
-            }
-        }
-
-        // Alternative loading method using hardcoded data
-        function useHardcodedContent() {
-            const postsList = document.getElementById('posts-list');
-
-            // Hardcoded fallback posts as a last resort
-            const fallbackPosts = [
+        // Hardcoded post data
+        const postData = {
+            "posts": [
                 {
-                    title: "Housing Assistance Expansion for Low-Income Families",
-                    date: "2024-04-15",
-                    slug: "housing-assistance-expansion",
-                    tagline: "Expanding support for vulnerable communities facing housing insecurity."
+                    "date": "2024-04-15",
+                    "slug": "housing-assistance-expansion",
+                    "title": "Housing Assistance Expansion for Low-Income Families"
                 },
                 {
-                    title: "New Healthcare Initiatives for Underserved Communities",
-                    date: "2024-04-08",
-                    slug: "healthcare-initiatives-underserved",
-                    tagline: "Bringing healthcare access to communities that need it most."
+                    "date": "2024-04-08",
+                    "slug": "healthcare-initiatives-underserved",
+                    "title": "New Healthcare Initiatives for Underserved Communities"
                 },
                 {
-                    title: "Climate Crisis Response: Supporting Affected Regions",
-                    date: "2024-03-28",
-                    slug: "climate-crisis-response",
-                    tagline: "Addressing the growing impacts of extreme weather events across the country."
+                    "date": "2024-03-28",
+                    "slug": "climate-crisis-response",
+                    "title": "Climate Crisis Response: Supporting Affected Regions"
+                },
+                {
+                    "date": "2024-03-20",
+                    "slug": "winter-storm-response",
+                    "title": "Urgent Need: Winter Storm Response"
+                },
+                {
+                    "date": "2024-03-19",
+                    "slug": "food-security-launch",
+                    "title": "Food Security Initiative Launch"
                 }
-            ];
+            ]
+        };
 
-            const postsHTML = fallbackPosts.map(post => {
+        // Map of taglines for each post by slug
+        const taglines = {
+            'housing-assistance-expansion': 'Expanding support for vulnerable communities facing housing insecurity.',
+            'healthcare-initiatives-underserved': 'Bringing healthcare access to communities that need it most.',
+            'climate-crisis-response': 'Addressing the growing impacts of extreme weather events across the country.',
+            'winter-storm-response': 'Coordinating support for communities affected by severe winter weather.',
+            'food-security-launch': 'Building sustainable food systems for all communities.'
+        };
+
+        // Function to display posts
+        function displayPosts() {
+            const postsList = document.getElementById('posts-list');
+            if (!postsList) return;
+
+            // Sort posts by date in descending order
+            const sortedPosts = postData.posts.sort((a, b) =>
+                new Date(b.date) - new Date(a.date)
+            );
+
+            // Create HTML for each post
+            const postsHTML = sortedPosts.map(post => {
                 // Format date as DD-MM-YYYY
                 const date = new Date(post.date);
                 const formattedDate = date.toLocaleDateString('en-GB', {
@@ -193,6 +136,9 @@
                     month: '2-digit',
                     day: '2-digit'
                 }).replace(/\//g, '-');
+
+                // Get tagline or use a default one
+                const tagline = taglines[post.slug] || 'Supporting mutual aid efforts across communities.';
 
                 return `
                     <article class="post-entry">
@@ -202,24 +148,16 @@
                             </h3>
                             <time datetime="${post.date}">${formattedDate}</time>
                         </div>
-                        <p class="post-entry-tagline">${post.tagline}</p>
+                        <p class="post-entry-tagline">${tagline}</p>
                     </article>
                 `;
             }).join('');
 
             postsList.innerHTML = postsHTML;
-            console.log('Posts loaded via fallback method');
         }
 
-        // For backward compatibility
-        window.tryAlternativeLoading = useHardcodedContent;
-
-        // Execute the posts loading immediately
-        document.addEventListener('DOMContentLoaded', loadPostsHomepage);
-        // Also try loading if the DOM is already ready
-        if (document.readyState !== 'loading') {
-            loadPostsHomepage();
-        }
+        // Execute when DOM is loaded
+        document.addEventListener('DOMContentLoaded', displayPosts);
     </script>
 </head>
 
