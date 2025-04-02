@@ -1,8 +1,17 @@
+name = "organize-directory"
+compatibility_date = "2023-12-01"
+
+# Configure Pages
 [site]
 bucket = "./"
 entry-point = "."
 
+# Configure build settings
 [build]
 command = ""
-upload.format = "directory"
-upload.dir = "." 
+pages_build_output_dir = "./"
+
+# Configure static site directory
+[build.upload]
+format = "directory"
+dir = "." 
