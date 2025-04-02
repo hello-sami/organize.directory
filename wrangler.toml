@@ -1,17 +1,16 @@
 name = "organize-directory"
-compatibility_date = "2023-12-01"
+main = "./"
 
 # Configure Pages
 [site]
 bucket = "./"
-entry-point = "."
 
 # Configure build settings
 [build]
 command = ""
-pages_build_output_dir = "./"
+# Set the directory to be deployed
+output_dir = "./"
 
-# Configure static site directory
+# Required for Cloudflare Pages
 [build.upload]
-format = "directory"
-dir = "." 
+format = "directory" 
