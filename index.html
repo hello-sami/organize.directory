@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Force Cloudflare rebuild: 3 - Fix posts loading -->
+<!-- Force Cloudflare rebuild: 4 - Fix CSS loading issues -->
 <html lang="en">
 
 <head>
@@ -21,17 +21,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Critical CSS -->
-    <link rel="stylesheet" href="./styles.css?v=1.0.1">
+    <link rel="stylesheet" href="./styles.css?v=1.0.2">
+    <link rel="stylesheet" href="./styles-v2.css">
 
     <!-- Non-blocking font loading -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Additional inline styles for sidebar motto -->
+    <!-- Critical inline styles in case external CSS fails -->
     <style>
+        /* Critical fallback styles */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #4d0000;
+            background-color: #fff5f5;
+            margin: 0;
+            padding: 0;
+        }
+
         #sidebar {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            width: 280px;
+            position: fixed;
+            background: #ffd4d4;
+            border-right: 1px solid #ffb3b3;
+            padding: 2rem 0;
+            overflow-y: auto;
         }
 
         #sidebar nav {
@@ -41,6 +57,61 @@
         .sidebar-motto {
             margin-top: auto;
             padding-bottom: 2rem;
+        }
+
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .content {
+            flex: 1;
+            margin-left: 320px;
+            padding: 3rem;
+        }
+
+        a {
+            color: #cc0000;
+            text-decoration: none;
+        }
+
+        h1 {
+            color: #800000;
+            font-weight: 900;
+        }
+
+        .nav-link {
+            padding: 0.75rem 1.5rem;
+            display: block;
+            border-top: 1px solid #ffb3b3;
+            border-bottom: 1px solid #ffb3b3;
+        }
+
+        .site-logo {
+            display: block;
+            width: 60px;
+            height: 60px;
+        }
+
+        .initiative-stats {
+            background-color: #ffd4d4;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .find-groups-buttons {
+            margin: 2rem 0;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 1rem;
         }
     </style>
 

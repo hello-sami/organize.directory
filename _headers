@@ -3,7 +3,7 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com data:; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com
   X-XSS-Protection: 1; mode=block
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   cf-edge-cache: no-minify, no-rocket-loader, no-mirage, no-early-hints
@@ -23,6 +23,13 @@
   Pragma: no-cache
   Expires: 0
   Cloudflare-Features: early_hints=off
+
+# CSS files - no caching for debugging
+/styles.css
+  Cache-Control: no-store, no-cache, must-revalidate
+  Content-Type: text/css; charset=utf-8
+  Pragma: no-cache
+  Vary: Accept-Encoding
 
 # JSON files
 /*.json
@@ -46,6 +53,7 @@
   Content-Type: application/javascript; charset=utf-8
   Access-Control-Allow-Origin: *
 
+# CSS files (except main styles.css)
 /*.css
   Cache-Control: public, max-age=31536000, immutable
   Content-Type: text/css; charset=utf-8
