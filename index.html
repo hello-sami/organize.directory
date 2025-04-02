@@ -80,20 +80,6 @@
         // Make tryAlternativeLoading available globally
         let tryAlternativeLoading;
 
-        // Preload the posts.json data to speed up loading
-        window.addEventListener('load', function () {
-            // Initiate a preload of posts.json
-            fetch('/posts/posts.json?v=' + new Date().getTime(), {
-                method: 'GET',
-                headers: {
-                    'Accept': 'application/json',
-                    'Cache-Control': 'no-cache'
-                },
-                mode: 'cors',
-                cache: 'no-store'
-            }).catch(err => console.debug('Prefetch error:', err));
-        });
-
         // Load posts for the homepage
         async function loadPostsHomepage() {
             const postsList = document.getElementById('posts-list');
@@ -104,31 +90,24 @@
 
             try {
                 console.log('Attempting to fetch posts.json...');
-                console.log('Fetch URL:', '/posts/posts.json?v=' + new Date().getTime());
 
                 // Direct path to the posts.json file
-                const response = await fetch('/posts/posts.json?v=' + new Date().getTime(), {
+                const response = await fetch('./posts/posts.json', {
                     method: 'GET',
-                    mode: 'cors',
-                    cache: 'no-store',
                     headers: {
                         'Accept': 'application/json',
                         'Cache-Control': 'no-cache'
                     }
                 });
 
-                console.log('Response status:', response.status);
-
                 if (!response.ok) {
-                    throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+                    throw new Error(`HTTP error ${response.status}`);
                 }
 
-                console.log('Posts.json fetched successfully, parsing JSON...');
                 const data = await response.json();
-                console.log('JSON parsed successfully:', data);
 
                 if (!data || !data.posts || !Array.isArray(data.posts)) {
-                    throw new Error('Invalid data format: expected data.posts array');
+                    throw new Error('Invalid data format');
                 }
 
                 // Map of taglines for each post by slug
@@ -144,8 +123,6 @@
                 const sortedPosts = data.posts.sort((a, b) =>
                     new Date(b.date) - new Date(a.date)
                 );
-
-                console.log('Generating HTML for posts...');
 
                 // Create HTML for each post
                 const postsHTML = sortedPosts.map(post => {
@@ -177,26 +154,13 @@
                 console.log('Posts loaded and displayed successfully');
             } catch (error) {
                 console.error('Error loading posts:', error);
-
-                // Display the error in the UI for debugging
-                postsList.innerHTML = `
-                    <div class="error-message" style="color: #a30000; background: #ffebee; padding: 1rem; border-radius: 4px; margin: 1rem 0;">
-                        <strong>Error loading posts:</strong> ${error.message}<br>
-                        <small>Path attempted: /posts/posts.json</small><br>
-                        <button onclick="tryAlternativeLoading()" style="margin-top: 0.5rem; padding: 0.5rem 1rem; background: #a30000; color: white; border: none; border-radius: 4px; cursor: pointer;">
-                            Try Fallback Content
-                        </button>
-                    </div>
-                `;
-
-                // Fallback: Try loading the posts with hardcoded content
-                console.log('Trying alternative loading method...');
-                // Don't auto-call tryAlternativeLoading() to allow seeing the error first
+                // Automatically use fallback content
+                useHardcodedContent();
             }
         }
 
         // Alternative loading method using hardcoded data
-        window.tryAlternativeLoading = function () {
+        function useHardcodedContent() {
             const postsList = document.getElementById('posts-list');
 
             // Hardcoded fallback posts as a last resort
@@ -246,6 +210,9 @@
             postsList.innerHTML = postsHTML;
             console.log('Posts loaded via fallback method');
         }
+
+        // For backward compatibility
+        window.tryAlternativeLoading = useHardcodedContent;
 
         // Execute the posts loading immediately
         document.addEventListener('DOMContentLoaded', loadPostsHomepage);
