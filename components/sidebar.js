@@ -184,89 +184,6 @@ function initializeCriticalStyles() {
      }
 }
 
-// Function to update active states
-function updateActiveStates(sidebar, activePage) {
-     if (!sidebar) return;
-
-     console.log("Updating active state for page:", activePage);
-
-     // Special case for homepage - ensure we treat it as 'home'
-     if (!activePage || activePage === "" || activePage === "index") {
-          activePage = "home";
-     }
-
-     // Remove all active classes first and reset styles
-     sidebar
-          .querySelectorAll(".nav-link, .nav-link-group-header")
-          .forEach((link) => {
-               link.classList.remove("active");
-               link.style.backgroundColor = "";
-               link.style.color = "";
-               link.style.fontWeight = "";
-               link.style.opacity = "";
-          });
-
-     // Reset all nav-group-title styles - ensure they're not highlighted by default
-     sidebar.querySelectorAll(".nav-group-title").forEach((title) => {
-          title.style.cssText = `
-               background-color: transparent !important;
-               color: inherit !important;
-               font-weight: 600 !important;
-               opacity: 1 !important;
-          `;
-     });
-
-     // Force remove any potential styling on the header h1 elements with !important inline styles
-     const sidebarHeader = sidebar.querySelector(".sidebar-header");
-     if (sidebarHeader) {
-          const headerH1 = sidebarHeader.querySelector("h1");
-          if (headerH1) {
-               headerH1.style.cssText =
-                    "background-color: transparent !important; text-align: left !important;";
-               const headerLink = headerH1.querySelector("a");
-               if (headerLink) {
-                    headerLink.style.cssText =
-                         "background-color: transparent !important; color: inherit !important; " +
-                         "font-weight: inherit !important; text-decoration: none !important; " +
-                         "border-bottom: none !important; box-shadow: none !important;";
-               }
-          }
-     }
-
-     // Now set the appropriate active state
-     if (activePage === "home") {
-          // Home page
-          const homeLink = sidebar.querySelector('a[href="/"].nav-link');
-          if (homeLink) {
-               homeLink.classList.add("active");
-          }
-     } else if (activePage === "location") {
-          // Location page - set both the nav-group-title and the indented link
-          const locationLink = sidebar.querySelector(
-               'a[href="/location"].nav-link-indented'
-          );
-          if (locationLink) {
-               locationLink.classList.add("active");
-          }
-     } else if (activePage === "topics") {
-          // Topics page
-          const topicsLink = sidebar.querySelector(
-               'a[href="/topics"].nav-link-indented'
-          );
-          if (topicsLink) {
-               topicsLink.classList.add("active");
-          }
-     } else {
-          // Other pages
-          const activeLink = sidebar.querySelector(
-               `a[href="/${activePage}"].nav-link`
-          );
-          if (activeLink) {
-               activeLink.classList.add("active");
-          }
-     }
-}
-
 // Main function to initialize the sidebar
 export function initializeSidebar(activePage) {
      if (typeof document === "undefined") return;
@@ -283,26 +200,114 @@ export function initializeSidebar(activePage) {
           sidebar = document.getElementById("sidebar");
      }
 
-     // Update active state based on current page
-     if (sidebar) {
-          updateActiveStates(sidebar, activePage);
-
-          // Add event listener for mobile menu toggle
-          document
-               .querySelectorAll(".mobile-menu-button, .mobile-menu-overlay")
-               .forEach((element) => {
-                    element.addEventListener("click", () => {
-                         sidebar.classList.toggle("active");
-                         const overlay = document.querySelector(
-                              ".mobile-menu-overlay"
-                         );
-                         if (overlay) {
-                              overlay.classList.toggle("active");
-                         }
-                         document.body.classList.toggle("menu-open");
-                    });
-               });
+     // SIMPLER AUTOMATIC DETECTION - Check URL for city or state pages
+     const currentPath = window.location.pathname;
+     // If this is a city or state page, override the activePage to 'location'
+     if (
+          currentPath.match(
+               /\/(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new-hampshire|new-jersey|new-mexico|new-york|north-carolina|north-dakota|ohio|oklahoma|oregon|pennsylvania|rhode-island|south-carolina|south-dakota|tennessee|texas|utah|vermont|virginia|washington|west-virginia|wisconsin|wyoming)/
+          ) ||
+          currentPath.includes("/cities/")
+     ) {
+          activePage = "location";
+          console.log(
+               "Detected city/state page, setting active page to: location"
+          );
      }
+
+     // Remove ALL active classes first (simpler approach)
+     const allLinks = sidebar.querySelectorAll("a");
+     allLinks.forEach((link) => {
+          link.classList.remove("active");
+          // Also reset any inline styles that might be causing background colors
+          link.style.backgroundColor = "";
+          link.style.color = "";
+          link.style.fontWeight = "";
+     });
+
+     // Apply correct active state based on the current page
+     if (activePage === "home" || activePage === "index" || activePage === "") {
+          // Only highlight Home on the homepage
+          const homeLink = sidebar.querySelector('a[href="/"].nav-link');
+          if (homeLink) {
+               homeLink.classList.add("active");
+               console.log("Home page - activated home link");
+          }
+     } else if (activePage === "location") {
+          // On location page, highlight the location link
+          const locationLink = sidebar.querySelector(
+               'a[href="/location"].nav-link-indented'
+          );
+          if (locationLink) {
+               locationLink.classList.add("active");
+               console.log("Location page - activated location link");
+          }
+     } else if (activePage === "topics") {
+          // On topics page, highlight the topics link
+          const topicsLink = sidebar.querySelector(
+               'a[href="/topics"].nav-link-indented'
+          );
+          if (topicsLink) {
+               topicsLink.classList.add("active");
+               console.log("Topics page - activated topics link");
+          }
+     } else if (activePage === "subscribe") {
+          // Special handling for subscribe page
+          const subscribeLink = sidebar.querySelector(
+               'a[href="/subscribe"].nav-link'
+          );
+          if (subscribeLink) {
+               subscribeLink.classList.add("active");
+               console.log("Subscribe page - activated subscribe link");
+          }
+     } else {
+          // For other pages, find and highlight the corresponding link
+          const activeLink = sidebar.querySelector(
+               `a[href="/${activePage}"].nav-link`
+          );
+          if (activeLink) {
+               activeLink.classList.add("active");
+               console.log(`Activated ${activePage} link`);
+          }
+     }
+
+     // Add class to the body indicating current page
+     document.body.className = document.body.className.replace(
+          /\bpage-\S+/g,
+          ""
+     );
+     document.body.classList.add(`page-${activePage}`);
+
+     // If this is a city or state page, add additional class
+     if (
+          currentPath.match(
+               /\/(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new-hampshire|new-jersey|new-mexico|new-york|north-carolina|north-dakota|ohio|oklahoma|oregon|pennsylvania|rhode-island|south-carolina|south-dakota|tennessee|texas|utah|vermont|virginia|washington|west-virginia|wisconsin|wyoming)/
+          )
+     ) {
+          document.body.classList.add(
+               "page-states-" + currentPath.split("/")[1]
+          );
+     } else if (currentPath.includes("/cities/")) {
+          document.body.classList.add(
+               "page-cities-" + currentPath.split("/")[2]
+          );
+     }
+
+     // Add event listener for mobile menu toggle
+     document
+          .querySelectorAll(".mobile-menu-button, .mobile-menu-overlay")
+          .forEach((element) => {
+               element.addEventListener("click", () => {
+                    sidebar.classList.toggle("active");
+                    const overlay = document.querySelector(
+                         ".mobile-menu-overlay"
+                    );
+                    if (overlay) {
+                         overlay.classList.toggle("active");
+                    }
+                    document.body.classList.toggle("menu-open");
+               });
+          });
 
      // Remove any preload links for posts.json that might be causing issues
      const preloadLinks = document.querySelectorAll('link[rel="preload"]');
