@@ -2,27 +2,31 @@
      "version": 1,
      "routes": [
           {
-               "src": "/(location|topics|guides|contact|subscribe)$",
+               "src": "/(location|topics|guides|contact|subscribe)(/?|/index)$",
                "dest": "/$1.html"
           },
           {
-               "src": "/cities/([^/]+)$",
+               "src": "^/cities/([^/]+)/?$",
                "dest": "/cities/$1.html"
           },
           {
-               "src": "/states/([^/]+)$",
+               "src": "^/states/([^/]+)/?$",
                "dest": "/states/$1.html"
           },
           {
-               "src": "/topics/([^/]+)$",
+               "src": "^/topics/([^/]+)/?$",
                "dest": "/topics/$1.html"
           },
           {
-               "src": "/posts/([^/]+)$",
+               "src": "^/posts/([^/]+)/?$",
                "dest": "/posts/$1.html"
+          },
+          {
+               "src": "^/(cities|states|topics|posts)/.*$",
+               "dest": "/fallback.html"
           }
      ],
-     "include": ["/"],
+     "include": ["/*"],
      "exclude": [
           "/_*",
           "/components/*",
@@ -39,6 +43,7 @@
           "/*.woff2",
           "/*.ttf",
           "/robots.txt",
-          "/sitemap.xml"
+          "/sitemap.xml",
+          "/*.html"
      ]
 }

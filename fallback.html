@@ -13,7 +13,7 @@
         content="Daily updates and resources for mutual aid networks and grassroots initiatives across different cities.">
 
     <meta name="color-scheme" content="light">
-    <title>Mutual Aid Network Directory - Fallback Page</title>
+    <title>Page Helper - The Organize Directory</title>
 
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,103 +32,132 @@
         // Initialize sidebar immediately
         initializeSidebar('home');
     </script>
+
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #4d0000;
+            background-color: #fff5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 2rem;
+            background: #ffd4d4;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(204, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #800000;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .loading {
+            margin: 2rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #a30000;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #cc0000;
+        }
+
+        #debug {
+            margin-top: 2rem;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <div class="sidebar-header">
-                <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo">
-                <h1>
-                    <a href="/" class="home-link">
-                        The Organize Directory
-                    </a>
-                </h1>
-            </div>
-            <nav>
-                <a href="/" class="nav-link active">Home</a>
-                <div class="nav-group">
-                    <a href="/location" class="nav-group-title">Find a group</a>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
-                </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-                <a href="/subscribe" class="nav-link">Subscribe</a>
-            </nav>
-            <div class="sidebar-motto">
-                Fascism is here. Don't despair, organize.
-            </div>
-        </div>
+    <div class="container">
+        <h1>Finding your page...</h1>
+        <p>We're redirecting you to the correct location.</p>
+        <div class="loading">Loading...</div>
+        <a href="/" class="btn">Return to Homepage</a>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
-
-            <h1>The Organize Directory</h1>
-            <hr>
-
-            <section class="daily-log" aria-labelledby="log-heading">
-                <h2 id="log-heading">Calls to Action</h2>
-                <div id="posts-list" class="posts-list">
-                    <article class="post-entry">
-                        <div class="post-entry-header">
-                            <h3 class="post-entry-title">
-                                <a href="/posts/housing-assistance-expansion.html">Housing Assistance Expansion for
-                                    Low-Income Families</a>
-                            </h3>
-                            <time datetime="2024-04-15">15-04-2024</time>
-                        </div>
-                        <p class="post-entry-tagline">Expanding support for vulnerable communities facing housing
-                            insecurity.</p>
-                    </article>
-
-                    <article class="post-entry">
-                        <div class="post-entry-header">
-                            <h3 class="post-entry-title">
-                                <a href="/posts/healthcare-initiatives-underserved.html">New Healthcare Initiatives for
-                                    Underserved Communities</a>
-                            </h3>
-                            <time datetime="2024-04-08">08-04-2024</time>
-                        </div>
-                        <p class="post-entry-tagline">Bringing healthcare access to communities that need it most.</p>
-                    </article>
-
-                    <article class="post-entry">
-                        <div class="post-entry-header">
-                            <h3 class="post-entry-title">
-                                <a href="/posts/climate-crisis-response.html">Climate Crisis Response: Supporting
-                                    Affected Regions</a>
-                            </h3>
-                            <time datetime="2024-03-28">28-03-2024</time>
-                        </div>
-                        <p class="post-entry-tagline">Addressing the growing impacts of extreme weather events across
-                            the country.</p>
-                    </article>
-
-                    <article class="post-entry">
-                        <div class="post-entry-header">
-                            <h3 class="post-entry-title">
-                                <a href="/posts/winter-storm-response.html">Urgent Need: Winter Storm Response</a>
-                            </h3>
-                            <time datetime="2024-03-20">20-03-2024</time>
-                        </div>
-                        <p class="post-entry-tagline">Coordinating support for communities affected by severe winter
-                            weather.</p>
-                    </article>
-
-                    <article class="post-entry">
-                        <div class="post-entry-header">
-                            <h3 class="post-entry-title">
-                                <a href="/posts/food-security-launch.html">Food Security Initiative Launch</a>
-                            </h3>
-                            <time datetime="2024-03-19">19-03-2024</time>
-                        </div>
-                        <p class="post-entry-tagline">Building sustainable food systems for all communities.</p>
-                    </article>
-                </div>
-            </section>
-        </main>
+        <div id="debug"></div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const debug = document.getElementById('debug');
+            const path = window.location.pathname;
+            let redirectPath = '';
+            let debugInfo = 'URL Path: ' + path + '\n';
+
+            // Check if this is a city page
+            if (path.match(/^\/cities\/[^/]+\/?$/)) {
+                const cityName = path.replace(/^\/cities\//, '').replace(/\/$/, '');
+                redirectPath = '/cities/' + cityName + '.html';
+                debugInfo += 'Detected as city page\n';
+            }
+            // Check if this is a state page
+            else if (path.match(/^\/states\/[^/]+\/?$/)) {
+                const stateName = path.replace(/^\/states\//, '').replace(/\/$/, '');
+                redirectPath = '/states/' + stateName + '.html';
+                debugInfo += 'Detected as state page\n';
+            }
+            // Check if this is a topic page
+            else if (path.match(/^\/topics\/[^/]+\/?$/)) {
+                const topicName = path.replace(/^\/topics\//, '').replace(/\/$/, '');
+                redirectPath = '/topics/' + topicName + '.html';
+                debugInfo += 'Detected as topic page\n';
+            }
+            // Check if this is a post page
+            else if (path.match(/^\/posts\/[^/]+\/?$/)) {
+                const postName = path.replace(/^\/posts\//, '').replace(/\/$/, '');
+                redirectPath = '/posts/' + postName + '.html';
+                debugInfo += 'Detected as post page\n';
+            }
+            // Check for main section pages
+            else if (path.match(/^\/(location|topics|guides|contact|subscribe)\/?$/)) {
+                const sectionName = path.replace(/^\//, '').replace(/\/$/, '');
+                redirectPath = '/' + sectionName + '.html';
+                debugInfo += 'Detected as section page\n';
+            }
+
+            if (redirectPath) {
+                debugInfo += 'Redirecting to: ' + redirectPath;
+                debug.textContent = debugInfo;
+
+                // Redirect after a short delay
+                setTimeout(function () {
+                    window.location.href = redirectPath;
+                }, 1500);
+            } else {
+                debugInfo += 'No matching pattern found\n';
+                debug.textContent = debugInfo;
+            }
+        });
+    </script>
 </body>
 
 </html>

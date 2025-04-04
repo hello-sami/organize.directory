@@ -28,12 +28,29 @@
             let href = anchor.getAttribute('href');
             if (!href || href.startsWith('http') || href.startsWith('#')) return;
 
-            // Check if this is a clean URL that needs .html
-            let needsHtml = !href.includes('.') && !href.includes('?') && !href.endsWith('/');
+            // Debugging - uncomment to see which links are being processed
+            // console.log('Processing link:', href);
+
+            // Handle trailing slashes consistently
+            if (href.endsWith('/')) {
+                href = href.slice(0, -1);
+            }
+
+            // Special handling for city & state pages
+            if (href.match(/^\/(cities|states|topics|posts)\/[^/]+$/)) {
+                e.preventDefault();
+                window.location.href = href + '.html';
+                return;
+            }
+
+            // General clean URL handling
+            let needsHtml = !href.includes('.') && !href.includes('?');
 
             if (needsHtml) {
                 e.preventDefault();
                 window.location.href = href + '.html';
+                // Debugging - uncomment to verify URL transformation
+                // console.log('Transformed URL:', href + '.html');
             }
         });
     </script>
