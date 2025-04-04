@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<!-- Force Cloudflare rebuild: 4 - Fix CSS loading issues -->
+<!-- Force Cloudflare rebuild: 5 - Fix CSS paths for clean URLs -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-    <link rel="manifest" href="./site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <meta name="description"
         content="Daily updates and resources for mutual aid networks and grassroots initiatives across different cities.">
@@ -60,8 +60,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Critical CSS -->
-    <link rel="stylesheet" href="./styles.css?v=1.0.2">
-    <link rel="stylesheet" href="./styles-v2.css">
+    <link rel="stylesheet" href="/styles.css?v=1.0.2">
+    <link rel="stylesheet" href="/styles-v2.css">
 
     <!-- Non-blocking font loading -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -156,8 +156,8 @@
 
     <!-- Initialize Components Immediately -->
     <script type="module">
-        import { initializeSidebar } from './components/sidebar.js?v=1.0.2';
-        import { initializeComponents } from './utils/init.js?v=1.0.1';
+        import { initializeSidebar } from '/components/sidebar.js?v=1.0.2';
+        import { initializeComponents } from '/utils/init.js?v=1.0.1';
 
         // Initialize sidebar immediately
         initializeSidebar('home');

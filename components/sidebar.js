@@ -1,18 +1,18 @@
 // Initial sidebar content to prevent flicker
 const initialSidebar = `
     <div class="sidebar-header">
-        <img src="./logo.png" alt="The Organize Directory Logo" class="site-logo"><h1><a href="./" class="home-link" style="text-decoration: none !important; color: inherit !important; background-color: transparent !important; margin: 0; padding: 0;">The Organize Directory</a></h1>
+        <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo"><h1><a href="/" class="home-link" style="text-decoration: none !important; color: inherit !important; background-color: transparent !important; margin: 0; padding: 0;">The Organize Directory</a></h1>
     </div>
     <nav>
-        <a href="./" class="nav-link">Home</a>
+        <a href="/" class="nav-link">Home</a>
         <div class="nav-group">
-            <a href="./location" class="nav-group-title nav-link-group-header">Find a group</a>
-            <a href="./location" class="nav-link nav-link-indented">by location</a>
-            <a href="./topics" class="nav-link nav-link-indented">by topic</a>
+            <a href="/location" class="nav-group-title nav-link-group-header">Find a group</a>
+            <a href="/location" class="nav-link nav-link-indented">by location</a>
+            <a href="/topics" class="nav-link nav-link-indented">by topic</a>
         </div>
-        <a href="./guides" class="nav-link">Guides</a>
-        <a href="./contact" class="nav-link">Contact</a>
-        <a href="./subscribe" class="nav-link">Subscribe</a>
+        <a href="/guides" class="nav-link">Guides</a>
+        <a href="/contact" class="nav-link">Contact</a>
+        <a href="/subscribe" class="nav-link">Subscribe</a>
     </nav>
     <div class="sidebar-motto">
      Fascism is here. Don't despair, organize.
@@ -236,14 +236,14 @@ function updateActiveStates(sidebar, activePage) {
      // Now set the appropriate active state
      if (activePage === "home") {
           // Home page
-          const homeLink = sidebar.querySelector('a[href="./"].nav-link');
+          const homeLink = sidebar.querySelector('a[href="/"].nav-link');
           if (homeLink) {
                homeLink.classList.add("active");
           }
      } else if (activePage === "location") {
           // Location page - set both the nav-group-title and the indented link
           const locationLink = sidebar.querySelector(
-               'a[href="./location"].nav-link-indented'
+               'a[href="/location"].nav-link-indented'
           );
           if (locationLink) {
                locationLink.classList.add("active");
@@ -251,7 +251,7 @@ function updateActiveStates(sidebar, activePage) {
      } else if (activePage === "topics") {
           // Topics page
           const topicsLink = sidebar.querySelector(
-               'a[href="./topics"].nav-link-indented'
+               'a[href="/topics"].nav-link-indented'
           );
           if (topicsLink) {
                topicsLink.classList.add("active");
@@ -259,7 +259,7 @@ function updateActiveStates(sidebar, activePage) {
      } else {
           // Other pages
           const activeLink = sidebar.querySelector(
-               `a[href="./${activePage}"].nav-link`
+               `a[href="/${activePage}"].nav-link`
           );
           if (activeLink) {
                activeLink.classList.add("active");
