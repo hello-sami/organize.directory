@@ -89,6 +89,108 @@ let resultsContainer;
 let searchInput;
 let searchType = "city";
 
+// Main script for organize.directory
+// Version: 2.0.0
+// This is a simplified version with search functionality removed to reduce API calls
+
+// Add event listener after DOM is loaded
+document.addEventListener("DOMContentLoaded", function () {
+     // Initialize mobile menu
+     const mobileMenuButton = document.querySelector(".mobile-menu-button");
+     const sidebar = document.getElementById("sidebar");
+
+     if (mobileMenuButton && sidebar) {
+          mobileMenuButton.addEventListener("click", function () {
+               sidebar.classList.toggle("active");
+               document.body.classList.toggle("menu-open");
+          });
+     }
+
+     // Initialize page-specific functionality
+     initializePageSpecific();
+});
+
+/**
+ * Initialize functionality specific to the current page
+ */
+function initializePageSpecific() {
+     const path = window.location.pathname;
+
+     // Location page specific
+     if (
+          path.includes("/location") ||
+          path.match(
+               /\/(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new-hampshire|new-jersey|new-mexico|new-york|north-carolina|north-dakota|ohio|oklahoma|oregon|pennsylvania|rhode-island|south-carolina|south-dakota|tennessee|texas|utah|vermont|virginia|washington|west-virginia|wisconsin|wyoming)/
+          )
+     ) {
+          console.log("Location page initialized");
+          // Any location-specific functionality would go here
+     }
+     // Topics page specific
+     else if (path.includes("/topics")) {
+          console.log("Topics page initialized");
+          // Any topics-specific functionality would go here
+     }
+     // Home page specific
+     else if (path === "/" || path === "/index.html") {
+          console.log("Home page initialized");
+          // Any home page-specific functionality would go here
+     }
+}
+
+/**
+ * URL parameter utilities
+ */
+function getURLParameter(name) {
+     const params = new URLSearchParams(window.location.search);
+     return params.get(name);
+}
+
+function updateURLParameter(key, value) {
+     const url = new URL(window.location);
+     if (value) {
+          url.searchParams.set(key, value);
+     } else {
+          url.searchParams.delete(key);
+     }
+     window.history.pushState({}, "", url);
+}
+
+/**
+ * Format a date string consistently
+ */
+function formatDate(dateStr) {
+     const date = new Date(dateStr);
+     return date.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+     });
+}
+
+/**
+ * Debounce function to limit how often a function can be called
+ */
+function debounce(func, wait) {
+     let timeout;
+
+     return function executedFunction(...args) {
+          const later = () => {
+               clearTimeout(timeout);
+               func(...args);
+          };
+
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+     };
+}
+
+// Export any functions that need to be accessible globally
+window.formatDate = formatDate;
+window.getURLParameter = getURLParameter;
+window.updateURLParameter = updateURLParameter;
+window.debounce = debounce;
+
 // Wait for both DOM and sidebar to be ready
 document.addEventListener("DOMContentLoaded", () => {
      if (document.querySelector("aside.sidebar")) {
