@@ -16,6 +16,28 @@
     <meta name="color-scheme" content="light">
     <title>Mutual Aid Network Directory</title>
 
+    <!-- URL Normalizer - Reduces worker calls -->
+    <script>
+        // Intercept link clicks to reduce server redirects
+        document.addEventListener('click', function (e) {
+            // Find clicked anchor element
+            let anchor = e.target.closest('a');
+            if (!anchor) return;
+
+            // Only handle internal links
+            let href = anchor.getAttribute('href');
+            if (!href || href.startsWith('http') || href.startsWith('#')) return;
+
+            // Check if this is a clean URL that needs .html
+            let needsHtml = !href.includes('.') && !href.includes('?') && !href.endsWith('/');
+
+            if (needsHtml) {
+                e.preventDefault();
+                window.location.href = href + '.html';
+            }
+        });
+    </script>
+
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

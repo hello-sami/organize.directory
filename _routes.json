@@ -1,5 +1,44 @@
 {
      "version": 1,
-     "include": ["/*"],
-     "exclude": []
+     "routes": [
+          {
+               "src": "/(location|topics|guides|contact|subscribe)$",
+               "dest": "/$1.html"
+          },
+          {
+               "src": "/cities/([^/]+)$",
+               "dest": "/cities/$1.html"
+          },
+          {
+               "src": "/states/([^/]+)$",
+               "dest": "/states/$1.html"
+          },
+          {
+               "src": "/topics/([^/]+)$",
+               "dest": "/topics/$1.html"
+          },
+          {
+               "src": "/posts/([^/]+)$",
+               "dest": "/posts/$1.html"
+          }
+     ],
+     "include": ["/"],
+     "exclude": [
+          "/_*",
+          "/components/*",
+          "/utils/*",
+          "/posts/posts.json",
+          "/*.js",
+          "/*.css",
+          "/*.png",
+          "/*.jpg",
+          "/*.ico",
+          "/*.svg",
+          "/*.webp",
+          "/*.woff",
+          "/*.woff2",
+          "/*.ttf",
+          "/robots.txt",
+          "/sitemap.xml"
+     ]
 }
