@@ -1522,3 +1522,69 @@ h6 {
           max-width: none;
      }
 }
+
+/* ======================================
+   Navigation Active State Fixes
+   ====================================== */
+/* 
+  Fix for sidebar navigation active states 
+  This ensures Home is only highlighted on the homepage
+*/
+
+/* Base rule - Home link should not have active styling by default */
+.sidebar a[href="/"].nav-link {
+     background-color: transparent !important;
+     color: inherit !important;
+     font-weight: normal !important;
+}
+
+/* Only show active state on Home link when body has page-home class */
+body.page-home .sidebar a[href="/"].nav-link,
+body.page-index .sidebar a[href="/"].nav-link {
+     background-color: var(--pure-white, #ffffff) !important;
+     color: var(--primary-color, #a30000) !important;
+     font-weight: 600 !important;
+}
+
+/* SIMPLER PATH-BASED SOLUTION - Highlight "by location" for all city and state pages */
+body[class*="page-cities-"] .sidebar a[href="/location"].nav-link-indented,
+body[class*="page-states-"] .sidebar a[href="/location"].nav-link-indented,
+body.page-location .sidebar a[href="/location"].nav-link-indented {
+     background-color: var(--pure-white, #ffffff) !important;
+     color: var(--primary-color, #a30000) !important;
+     font-weight: 600 !important;
+}
+
+/* Override for specific pages to ensure Home isn't active */
+body.page-subscribe .sidebar a[href="/"].nav-link,
+body.page-contact .sidebar a[href="/"].nav-link,
+body.page-guides .sidebar a[href="/"].nav-link,
+body.page-location .sidebar a[href="/"].nav-link,
+body.page-topics .sidebar a[href="/"].nav-link,
+body[class*="page-cities-"] .sidebar a[href="/"].nav-link,
+body[class*="page-states-"] .sidebar a[href="/"].nav-link {
+     background-color: transparent !important;
+     color: inherit !important;
+     font-weight: normal !important;
+}
+
+/* Make sure subscribe link is active on subscribe page */
+body.page-subscribe .sidebar a[href="/subscribe"].nav-link {
+     background-color: var(--pure-white, #ffffff) !important;
+     color: var(--primary-color, #a30000) !important;
+     font-weight: 600 !important;
+}
+
+/* Make sure contact link is active on contact page */
+body.page-contact .sidebar a[href="/contact"].nav-link {
+     background-color: var(--pure-white, #ffffff) !important;
+     color: var(--primary-color, #a30000) !important;
+     font-weight: 600 !important;
+}
+
+/* Make sure guides link is active on guides page */
+body.page-guides .sidebar a[href="/guides"].nav-link {
+     background-color: var(--pure-white, #ffffff) !important;
+     color: var(--primary-color, #a30000) !important;
+     font-weight: 600 !important;
+}
