@@ -31,6 +31,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css?v=1743111072001">
+    <link rel="stylesheet" href="/styles-fix.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Initialize Components -->
@@ -49,7 +50,7 @@
 
 <body>
     <div class="layout">
-            <div id="sidebar" class="sidebar" aria-label="Main navigation">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation">
             <div class="sidebar-header">
                 <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo">
                 <h1><a href="/" class="home-link">The Organize Directory</a></h1>
@@ -85,58 +86,64 @@
                 <hr>
 
                 <section>
-                    <h2>Regions</h2>
                     <div class="cities-list">
-                        <a href="/norcal" class="city-link">Northern California</a>
-                        <a href="/socal" class="city-link">Southern California</a>
-                        <a href="/central-valley" class="city-link">Central Valley</a>
-                        <a href="/central-coast" class="city-link">Central Coast</a>
-                        <a href="/sierra" class="city-link">Sierra</a>
+                        <h2>Regions</h2>
+                        <div class="city-links-container">
+                            <a href="/norcal" class="city-link">Northern California</a>
+                            <a href="/socal" class="city-link">Southern California</a>
+                            <a href="/central-valley" class="city-link">Central Valley</a>
+                            <a href="/central-coast" class="city-link">Central Coast</a>
+                            <a href="/sierra" class="city-link">Sierra</a>
+                        </div>
                     </div>
                 </section>
                 <hr>
 
                 <section>
-                    <h2>Sub-Regions</h2>
                     <div class="cities-list">
-                        <a href="/sf-bay-area" class="city-link">Bay Area</a>
-                        <a href="/inland-empire" class="city-link">Inland Empire</a>
-                        <a href="/orange-county" class="city-link">Orange County</a>
-                        <a href="/monterey-bay" class="city-link">Monterey Bay</a>
-                        <a href="/san-joaquin-valley" class="city-link">San Joaquin Valley</a>
-                        <a href="/gold-country" class="city-link">Gold Country</a>
-                        <a href="/humboldt-county" class="city-link">Humboldt County</a>
-                        <a href="/imperial-county" class="city-link">Imperial County</a>
-                        <a href="/shasta" class="city-link">Shasta</a>
-                        <a href="/sonoma-county" class="city-link">Sonoma County</a>
+                        <h2>Sub-Regions</h2>
+                        <div class="city-links-container">
+                            <a href="/sf-bay-area" class="city-link">Bay Area</a>
+                            <a href="/inland-empire" class="city-link">Inland Empire</a>
+                            <a href="/orange-county" class="city-link">Orange County</a>
+                            <a href="/monterey-bay" class="city-link">Monterey Bay</a>
+                            <a href="/san-joaquin-valley" class="city-link">San Joaquin Valley</a>
+                            <a href="/gold-country" class="city-link">Gold Country</a>
+                            <a href="/humboldt-county" class="city-link">Humboldt County</a>
+                            <a href="/imperial-county" class="city-link">Imperial County</a>
+                            <a href="/shasta" class="city-link">Shasta</a>
+                            <a href="/sonoma-county" class="city-link">Sonoma County</a>
+                        </div>
                     </div>
                 </section>
                 <hr>
 
                 <section>
-                    <h2>Cities</h2>
                     <div class="cities-list">
-                        <a href="/bakersfield" class="city-link">Bakersfield</a>
-                        <a href="/chico" class="city-link">Chico</a>
-                        <a href="/fresno-madera" class="city-link">Fresno / Madera</a>
-                        <!-- <a href="/hanford-corcoran" class="city-link">Hanford-Corcoran</a> -->
-                        <a href="/long-beach" class="city-link">Long Beach</a>
-                        <a href="/los-angeles" class="city-link">Los Angeles</a>
-                        <a href="/merced" class="city-link">Merced</a>
-                        <!-- <a href="/modesto" class="city-link">Modesto</a> -->
-                        <a href="/palm-springs" class="city-link">Palm Springs</a>
-                        <a href="/redding" class="city-link">Redding</a>
-                        <a href="/sacramento" class="city-link">Sacramento</a>
-                        <a href="/san-diego" class="city-link">San Diego</a>
-                        <a href="/san-luis-obispo" class="city-link">San Luis Obispo</a>
-                        <a href="/santa-barbara" class="city-link">Santa Barbara</a>
-                        <a href="/santa-cruz" class="city-link">Santa Cruz</a>
-                        <!-- <a href="/santa-maria" class="city-link">Santa Maria</a> -->
-                        <a href="/santa-rosa" class="city-link">Santa Rosa</a>
-                        <!-- <a href="/stockton" class="city-link">Stockton</a> -->
-                        <!-- <a href="/susanville" class="city-link">Susanville</a> -->
-                        <!-- <a href="/visalia-tulare" class="city-link">Visalia-Tulare</a> -->
-                        <!-- <a href="/yuba-sutter" class="city-link">Yuba-Sutter</a> -->
+                        <h2>Cities</h2>
+                        <div class="city-links-container">
+                            <a href="/bakersfield" class="city-link">Bakersfield</a>
+                            <a href="/chico" class="city-link">Chico</a>
+                            <a href="/fresno-madera" class="city-link">Fresno / Madera</a>
+                            <!-- <a href="/hanford-corcoran" class="city-link">Hanford-Corcoran</a> -->
+                            <a href="/long-beach" class="city-link">Long Beach</a>
+                            <a href="/los-angeles" class="city-link">Los Angeles</a>
+                            <a href="/merced" class="city-link">Merced</a>
+                            <!-- <a href="/modesto" class="city-link">Modesto</a> -->
+                            <a href="/palm-springs" class="city-link">Palm Springs</a>
+                            <a href="/redding" class="city-link">Redding</a>
+                            <a href="/sacramento" class="city-link">Sacramento</a>
+                            <a href="/san-diego" class="city-link">San Diego</a>
+                            <a href="/san-luis-obispo" class="city-link">San Luis Obispo</a>
+                            <a href="/santa-barbara" class="city-link">Santa Barbara</a>
+                            <a href="/santa-cruz" class="city-link">Santa Cruz</a>
+                            <!-- <a href="/santa-maria" class="city-link">Santa Maria</a> -->
+                            <a href="/santa-rosa" class="city-link">Santa Rosa</a>
+                            <!-- <a href="/stockton" class="city-link">Stockton</a> -->
+                            <!-- <a href="/susanville" class="city-link">Susanville</a> -->
+                            <!-- <a href="/visalia-tulare" class="city-link">Visalia-Tulare</a> -->
+                            <!-- <a href="/yuba-sutter" class="city-link">Yuba-Sutter</a> -->
+                        </div>
                     </div>
                 </section>
                 <hr>

@@ -31,6 +31,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css?v=1743111072001">
+    <link rel="stylesheet" href="/styles-fix.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Initialize Components -->
@@ -43,13 +44,13 @@
 
         // Initialize other components
         initializeComponents({
-            });
+        });
     </script>
 </head>
 
 <body>
     <div class="layout">
-            <div id="sidebar" class="sidebar" aria-label="Main navigation">
+        <div id="sidebar" class="sidebar" aria-label="Main navigation">
             <div class="sidebar-header">
                 <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo">
                 <h1><a href="/" class="home-link">The Organize Directory</a></h1>
@@ -85,38 +86,40 @@
                 <hr>
 
                 <section>
-                    <h2>Cities</h2>
                     <div class="cities-list">
-                        <a href="/abilene" class="city-link">Abilene</a>
-                        <a href="/amarillo" class="city-link">Amarillo</a>
-                        <a href="/austin" class="city-link">Austin</a>
-                        <!-- <a href="/beaumont-port-arthur" class="city-link">Beaumont / Port Arthur</a> -->
-                        <!-- <a href="/brownsville" class="city-link">Brownsville</a> -->
-                        <a href="/college-station" class="city-link">College Station</a>
-                        <a href="/corpus-christi" class="city-link">Corpus Christi</a>
-                        <a href="/dallas-fort-worth" class="city-link">Dallas / Fort Worth</a>
-                        <!-- <a href="/deep-east-texas" class="city-link">Deep East Texas</a> -->
-                        <!-- <a href="/del-rio-eagle-pass" class="city-link">Del Rio / Eagle Pass</a> -->
-                        <a href="/denton" class="city-link">Denton</a>
-                        <a href="/el-paso" class="city-link">El Paso</a>
-                        <a href="/galveston" class="city-link">Galveston</a>
-                        <a href="/houston" class="city-link">Houston</a>
-                        <!-- <a href="/killeen-temple-ft-hood" class="city-link">Killeen / Temple / Ft Hood</a> -->
-                        <a href="/laredo" class="city-link">Laredo</a>
-                        <!-- <a href="/lubbock" class="city-link">Lubbock</a> -->
-                        <!-- <a href="/mcallen-edinburg" class="city-link">McAllen / Edinburg</a> -->
-                        <!-- <a href="/odessa-midland" class="city-link">Odessa / Midland</a> -->
-                        <a href="/plano" class="city-link">Plano</a>
-                        <a href="/rio-grande-valley" class="city-link">Rio Grande Valley</a>
-                        <!-- <a href="/san-angelo" class="city-link">San Angelo</a> -->
-                        <a href="/san-antonio" class="city-link">San Antonio</a>
-                        <a href="/san-marcos" class="city-link">San Marcos</a>
-                        <!-- <a href="/southwest-tx" class="city-link">Southwest TX</a> -->
-                        <!-- <a href="/texoma" class="city-link">Texoma</a> -->
-                        <!-- <a href="/tyler-east-tx" class="city-link">Tyler / East TX</a> -->
-                        <a href="/victoria" class="city-link">Victoria</a>
-                        <a href="/waco" class="city-link">Waco</a>
-                        <!-- <a href="/wichita-falls" class="city-link">Wichita Falls</a> -->
+                        <h2>Cities</h2>
+                        <div class="city-links-container">
+                            <a href="/abilene" class="city-link">Abilene</a>
+                            <a href="/amarillo" class="city-link">Amarillo</a>
+                            <a href="/austin" class="city-link">Austin</a>
+                            <!-- <a href="/beaumont-port-arthur" class="city-link">Beaumont / Port Arthur</a> -->
+                            <!-- <a href="/brownsville" class="city-link">Brownsville</a> -->
+                            <a href="/college-station" class="city-link">College Station</a>
+                            <a href="/corpus-christi" class="city-link">Corpus Christi</a>
+                            <a href="/dallas-fort-worth" class="city-link">Dallas / Fort Worth</a>
+                            <!-- <a href="/deep-east-texas" class="city-link">Deep East Texas</a> -->
+                            <!-- <a href="/del-rio-eagle-pass" class="city-link">Del Rio / Eagle Pass</a> -->
+                            <a href="/denton" class="city-link">Denton</a>
+                            <a href="/el-paso" class="city-link">El Paso</a>
+                            <a href="/galveston" class="city-link">Galveston</a>
+                            <a href="/houston" class="city-link">Houston</a>
+                            <!-- <a href="/killeen-temple-ft-hood" class="city-link">Killeen / Temple / Ft Hood</a> -->
+                            <a href="/laredo" class="city-link">Laredo</a>
+                            <!-- <a href="/lubbock" class="city-link">Lubbock</a> -->
+                            <!-- <a href="/mcallen-edinburg" class="city-link">McAllen / Edinburg</a> -->
+                            <!-- <a href="/odessa-midland" class="city-link">Odessa / Midland</a> -->
+                            <a href="/plano" class="city-link">Plano</a>
+                            <a href="/rio-grande-valley" class="city-link">Rio Grande Valley</a>
+                            <!-- <a href="/san-angelo" class="city-link">San Angelo</a> -->
+                            <a href="/san-antonio" class="city-link">San Antonio</a>
+                            <a href="/san-marcos" class="city-link">San Marcos</a>
+                            <!-- <a href="/southwest-tx" class="city-link">Southwest TX</a> -->
+                            <!-- <a href="/texoma" class="city-link">Texoma</a> -->
+                            <!-- <a href="/tyler-east-tx" class="city-link">Tyler / East TX</a> -->
+                            <a href="/victoria" class="city-link">Victoria</a>
+                            <a href="/waco" class="city-link">Waco</a>
+                            <!-- <a href="/wichita-falls" class="city-link">Wichita Falls</a> -->
+                        </div>
                     </div>
                 </section>
                 <hr>
