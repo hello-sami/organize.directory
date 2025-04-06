@@ -618,90 +618,211 @@ hr {
      display: none;
 }
 
-/* State pages specific styling */
-.state-page .cities-list {
-     display: grid;
-     grid-template-columns: repeat(4, 1fr);
-     gap: 1.5rem;
-     margin: 1.5rem 0;
-     background: var(--bg-tint);
-     border: 1px solid var(--border-color);
-     padding: 1.5rem;
-     border-radius: 8px;
-}
+/* SIMPLIFIED STATE PAGE STYLING */
 
+/* Base section styling - Incorporating emergency fix */
 .state-page section {
+     border: 1px solid var(--border-color);
+     border-radius: 8px;
+     background: white;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
      margin-bottom: 2rem;
+     overflow: hidden; /* This is crucial for preventing content overflow */
+     padding: 0;
+     position: relative;
+     display: block !important; /* Ensure block display */
+     width: 100% !important; /* Full width */
+     clear: both !important; /* Prevent floating issues */
+     float: none !important; /* Emergency fix: prevent floating */
 }
 
-.state-page h1 {
-     font-size: 2.5rem;
-     color: var(--heading-color);
+/* Cities container styling */
+.state-page .cities-container {
+     border: none;
+     background: transparent;
+     box-shadow: none;
+     overflow: visible;
      margin-bottom: 2rem;
-     max-width: 100%;
-     margin-left: 0;
-     margin-right: 0;
-     text-align: left;
+     padding: 0;
 }
 
-.state-page h2 {
-     font-size: 1.8rem;
-     color: var(--heading-color);
-     margin-bottom: 1.5rem;
-     max-width: 100%;
-     margin-left: 0;
-     margin-right: 0;
-     text-align: left;
+/* Cities list styling - Incorporating emergency fix */
+.state-page .cities-list {
+     border: 1px solid var(--border-color);
+     border-radius: 8px;
+     background: white;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     overflow: hidden;
+     padding: 0;
+     margin: 0;
+     position: relative;
+     display: block !important; /* Ensure block display */
+     width: 100% !important; /* Full width */
+     clear: both !important; /* Prevent floating issues */
+     float: none !important; /* Emergency fix: prevent floating */
 }
 
+/* MODAL-STYLE HEADER STYLING: Match the error modal design - Incorporating emergency fix */
+.state-page section > h2,
+.state-page .cities-list > h2 {
+     /* Reset margin and padding */
+     margin: 0 !important;
+     padding: 0.6rem 1.5rem !important;
+
+     /* Ensure full width */
+     width: 100% !important;
+     max-width: none !important;
+
+     /* Fix display properties to ensure horizontal layout */
+     display: block !important;
+     float: none !important;
+     position: static !important; /* Emergency fix: changed from relative to static */
+     box-sizing: border-box !important;
+
+     /* Position fixes from emergency fix */
+     left: 0 !important;
+     right: 0 !important;
+     top: 0 !important;
+
+     /* Critical fixes for layout */
+     clear: both !important;
+     text-align: left !important;
+
+     /* Visual style */
+     background-color: var(--primary-color, #a30000) !important;
+     color: white !important;
+     font-size: 1.5rem !important;
+     font-weight: 600 !important;
+     letter-spacing: 0.01em !important;
+     text-transform: none !important;
+     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+
+     /* Borders */
+     border: none !important;
+     border-radius: 0 !important;
+     border-top-left-radius: 0 !important;
+     border-top-right-radius: 0 !important;
+
+     /* Shadows */
+     box-shadow: 0 2px 4px rgba(163, 0, 0, 0.2) !important;
+}
+
+/* Remove border radius from header to match modal style */
+.state-page .cities-list h2:first-child,
+.state-page section > h2:first-child {
+     border-top-left-radius: 0;
+     border-top-right-radius: 0;
+}
+
+/* Content containers - Incorporating emergency fix */
+.state-page .city-links-container {
+     display: grid !important; /* Ensure grid display */
+     grid-template-columns: repeat(4, 1fr) !important;
+     gap: 0.5rem;
+     padding: 1.5rem !important;
+     margin: 0;
+     clear: both !important; /* Ensure it doesn't affect header layout */
+     width: 100% !important; /* Full width */
+     box-sizing: border-box !important;
+     position: static !important; /* Emergency fix: prevent positioning issues */
+}
+
+/* Initiative styling - Incorporating emergency fix */
+.state-page .initiative {
+     padding: 1.5rem !important;
+     margin-bottom: 0;
+     display: block !important;
+     width: 100% !important;
+     box-sizing: border-box !important;
+     clear: both !important;
+     position: static !important; /* Emergency fix: prevent positioning issues */
+     float: none !important; /* Emergency fix: prevent floating */
+}
+
+.state-page .initiative:last-child {
+     margin-bottom: 0;
+}
+
+/* City link styling */
 .state-page .city-link {
-     font-size: 1rem;
-     padding: 0.5rem 0;
      display: block;
-     width: 100%;
-     color: var(--primary-color-dark, #800000);
-     font-weight: 600;
+     color: #a30000;
+     text-decoration: none;
+     padding: 0.4rem 0.5rem;
+     border-radius: 4px;
+     transition:
+          background-color 0.2s,
+          color 0.2s;
+     font-weight: 500;
 }
 
 .state-page .city-link:hover {
-     color: var(--primary-color, #a30000);
-     text-decoration: underline;
-     text-decoration-color: var(--primary-color, #a30000);
+     background-color: #fff0f0;
+     color: #4d0000;
 }
 
+/* Style the direct city links (for sections that don't have the container) */
+.state-page .cities-list > a.city-link {
+     display: inline-block;
+     width: calc(25% - 0.8rem);
+     margin: 0.15rem;
+}
+
+/* Responsive styles - Ensuring grid adjustments work properly */
 @media (max-width: 1020px) {
-     .state-page .cities-list {
-          grid-template-columns: repeat(3, 1fr);
-          gap: 1rem;
+     .state-page section > h2,
+     .state-page .cities-list > h2 {
+          padding: 0.6rem 1.25rem !important;
+     }
+
+     .state-page .city-links-container {
+          grid-template-columns: repeat(3, 1fr) !important;
           padding: 1.25rem;
+     }
+
+     .state-page .initiative {
+          padding: 1.25rem;
+     }
+
+     .state-page .cities-list > a.city-link {
+          width: calc(33.33% - 0.8rem);
      }
 }
 
 @media (max-width: 768px) {
-     .state-page .cities-list {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 0.75rem;
+     .state-page section > h2,
+     .state-page .cities-list > h2 {
+          padding: 0.5rem 1rem !important;
+          font-size: 1.4rem !important;
+     }
+
+     .state-page .city-links-container {
+          grid-template-columns: repeat(2, 1fr) !important;
           padding: 1rem;
      }
 
-     .state-page h1 {
-          font-size: 3rem;
+     .state-page .initiative {
+          padding: 1rem;
      }
 
-     .state-page h2 {
-          font-size: 1.5rem;
+     .state-page .cities-list > a.city-link {
+          width: calc(50% - 0.6rem);
      }
 }
 
 @media (max-width: 480px) {
-     .state-page .cities-list {
-          grid-template-columns: 1fr;
-          gap: 0.5rem;
-          padding: 1rem;
+     .state-page section > h2,
+     .state-page .cities-list > h2 {
+          font-size: 1.3rem !important;
      }
 
-     .state-page h1 {
-          font-size: 2.5rem;
+     .state-page .city-links-container {
+          grid-template-columns: 1fr !important;
+     }
+
+     .state-page .cities-list > a.city-link {
+          width: 100%;
+          margin: 0.25rem 0;
      }
 }
 
@@ -729,6 +850,7 @@ hr {
      opacity: 0.8;
 }
 
+/* Initiative styles */
 .initiative {
      margin-bottom: 3rem !important;
 }
@@ -809,7 +931,6 @@ hr {
      text-decoration: none;
      color: inherit;
      background-color: transparent;
-     background: transparent;
      border-bottom: none;
      box-shadow: none;
      font-weight: inherit;
@@ -1587,4 +1708,69 @@ body.page-guides .sidebar a[href="/guides"].nav-link {
      background-color: var(--pure-white, #ffffff) !important;
      color: var(--primary-color, #a30000) !important;
      font-weight: 600 !important;
+}
+
+/* Breadcrumb navigation (moved from duplicate section) */
+.breadcrumb {
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+     margin-bottom: 1.5rem;
+     font-size: 0.95rem;
+}
+
+.breadcrumb a {
+     color: var(--link-color);
+     text-decoration: none;
+}
+
+.breadcrumb a:hover {
+     color: var(--link-hover);
+     text-decoration: underline;
+}
+
+.breadcrumb span {
+     color: var(--text-color);
+     opacity: 0.8;
+}
+
+/* Initiative styles (moved from duplicate section) */
+.initiative {
+     margin-bottom: 3rem !important;
+}
+
+.initiative:last-child {
+     margin-bottom: 0;
+}
+
+.initiative h3,
+.initiative a {
+     font-weight: 700;
+     color: var(--heading-color);
+}
+
+.initiative a:hover {
+     color: var(--primary-color);
+     border-color: var(--primary-color);
+}
+
+.initiative a {
+     font-weight: 700;
+     color: var(--heading-color);
+     position: relative;
+     padding-right: 1.5em;
+}
+
+.initiative a::after {
+     content: "→";
+     position: absolute;
+     right: 0.2em;
+     opacity: 0;
+     transform: translateX(-8px);
+     transition: all 0.2s ease;
+}
+
+.initiative a:hover::after {
+     opacity: 1;
+     transform: translateX(0);
 }
