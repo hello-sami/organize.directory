@@ -476,7 +476,7 @@ hr {
 
 @media (max-width: 768px) {
      .states-list {
-          grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+          grid-template-columns: 1fr; /* Keep as single column on mobile */
      }
 
      .cities-list {
@@ -611,7 +611,7 @@ hr {
      }
 
      .states-list {
-          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+          grid-template-columns: 1fr; /* Keep as single column on smallest screens */
      }
 
      .cities-list {
