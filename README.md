@@ -1,4 +1,4 @@
-# Mutual Aid Network Directory
+# The Organize Directory
 
 A comprehensive web directory for finding and connecting with mutual aid networks and grassroots initiatives across different cities and focus areas.
 
