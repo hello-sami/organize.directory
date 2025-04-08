@@ -178,7 +178,55 @@ function initializeCriticalStyles() {
           if (!document.querySelector("#sidebar-critical-styles")) {
                const styleEl = document.createElement("style");
                styleEl.id = "sidebar-critical-styles";
-               styleEl.textContent = criticalStyles;
+               styleEl.textContent =
+                    criticalStyles +
+                    `
+                    /* Performance optimizations to prevent flickering */
+                    * {
+                         -webkit-tap-highlight-color: transparent;
+                    }
+                    
+                    /* Improve performance on mobile */
+                    body {
+                         -webkit-font-smoothing: antialiased;
+                         -moz-osx-font-smoothing: grayscale;
+                    }
+                    
+                    /* Stabilize layout to prevent shifting */
+                    html, body {
+                         overflow-x: hidden;
+                         position: relative;
+                         width: 100%;
+                    }
+                    
+                    /* Prevent font size adjustments on mobile orientation changes */
+                    html {
+                         -webkit-text-size-adjust: 100%;
+                    }
+                    
+                    /* Optimize animations */
+                    @media (max-width: 1020px) {
+                         .sidebar {
+                              transform: translateX(-100%);
+                              transition: transform 0.3s ease;
+                              will-change: transform;
+                              backface-visibility: hidden;
+                              -webkit-backface-visibility: hidden;
+                         }
+                         
+                         /* Use transform instead of opacity for better performance */
+                         .sidebar.active {
+                              transform: translateX(0);
+                         }
+                         
+                         /* Prevent jumps in text sizing */
+                         h1, h2, p {
+                              max-width: 100%;
+                              overflow-wrap: break-word;
+                              word-wrap: break-word;
+                         }
+                    }
+               `;
                document.head.insertBefore(styleEl, document.head.firstChild);
           }
      }
