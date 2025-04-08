@@ -17,11 +17,18 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <title>PAGE_TITLE</title>
-    <meta name="description" content="PAGE_DESCRIPTION">
-    <meta property="og:title" content="PAGE_OG_TITLE">
-    <meta property="og:description" content="PAGE_OG_DESCRIPTION">
+
+    <meta name="description" content="{PAGE_DESCRIPTION}">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="{PAGE_TITLE} | Mutual Aid Network Directory">
+    <meta property="og:description" content="{PAGE_DESCRIPTION}">
+    <meta property="og:image" content="https://organize.directory/preview.png">
+    <meta property="og:url" content="https://organize.directory/{PAGE_URL}">
     <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>{PAGE_TITLE} | Mutual Aid Network Directory</title>
 
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -64,20 +71,12 @@
             </div>
         </div>
 
-        </head>
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
 
-        <body>
+            <!-- Page specific content goes here -->
 
-            </head>
-
-            <body>
-
-                <main class="content" role="main">
-                    <header id="header" class="page-header"></header>
-
-                    <!-- Page specific content goes here -->
-
-                </main>
+        </main>
     </div>
 
 </body>

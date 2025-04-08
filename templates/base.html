@@ -10,6 +10,20 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
+    <!-- SEO and OpenGraph -->
+    <title>{% block title %}Mutual Aid Network Directory{% endblock %}</title>
+    <meta name="description"
+        content="{% block description %}Daily updates and resources for mutual aid networks and grassroots initiatives across different cities.{% endblock %}">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="{% block og_title %}Mutual Aid Network Directory{% endblock %}">
+    <meta property="og:description"
+        content="{% block og_description %}Daily updates and resources for mutual aid networks and grassroots initiatives across different cities.{% endblock %}">
+    <meta property="og:image" content="https://organize.directory/preview.png">
+    <meta property="og:url" content="{% block og_url %}https://organize.directory{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
@@ -47,8 +61,6 @@
                 Don't despair, organize.
             </div>
         </div>
-
-        <title>{% block title %}Mutual Aid Network Directory{% endblock %}</title>
 
         <!-- Base Styles -->
         <style>
