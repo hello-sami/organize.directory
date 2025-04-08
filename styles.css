@@ -487,13 +487,12 @@ hr {
           margin-bottom: 1.5rem;
      }
 
-     .location-header {
-          h1 {
-               font-size: 1.5rem;
-          }
-          p {
-               font-size: 0.9rem;
-          }
+     .location-header h1 {
+          font-size: 1.5rem;
+     }
+
+     .location-header p {
+          font-size: 0.9rem;
      }
 
      aside {
@@ -717,7 +716,7 @@ hr {
 }
 
 /* Community support section styling - Simple unboxed */
-.state-page section:not(:has(.cities-list)) {
+.state-page section:not(.cities-list-container) {
      border: none;
      border-radius: 0;
      background: transparent;
@@ -728,7 +727,7 @@ hr {
 }
 
 /* Fix the Community Support header to match - Simple style */
-.state-page section:not(:has(.cities-list)) > h2 {
+.state-page section:not(.cities-list-container) > h2 {
      background-color: transparent !important;
      color: var(--heading-color) !important;
      text-shadow: none !important;
@@ -797,7 +796,7 @@ hr {
           padding: 0.6rem 1.25rem !important;
      }
 
-     .state-page section:not(:has(.cities-list)) > h2 {
+     .state-page section:not(.cities-list-container) > h2 {
           padding: 0.6rem 0 !important;
      }
 
@@ -813,7 +812,7 @@ hr {
           font-size: 1.1rem !important;
      }
 
-     .state-page section:not(:has(.cities-list)) > h2 {
+     .state-page section:not(.cities-list-container) > h2 {
           padding: 0.5rem 0 !important;
           font-size: 1.1rem !important;
      }
@@ -1860,7 +1859,7 @@ html {
           font-size: 1.1rem !important;
      }
 
-     .state-page section:not(:has(.cities-list)) > h2 {
+     .state-page section:not(.cities-list-container) > h2 {
           font-size: 1.1rem !important;
      }
 
@@ -1876,7 +1875,7 @@ html {
 }
 
 /* Organization section styling - Simple unboxed */
-.state-page section:not(:has(.cities-list)) {
+.state-page section:not(.cities-list-container) {
      border: none;
      border-radius: 0;
      background: transparent;
