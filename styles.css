@@ -22,6 +22,10 @@
      --border-thick: 2px;
      --sidebar-bg: #ffd4d4;
      --primary-color-alpha: rgba(163, 0, 0, 0.1);
+
+     /* Base font sizes */
+     --base-font-size: 16px;
+     --mobile-font-size: 18px;
 }
 
 /* Typography */
@@ -37,6 +41,7 @@ body {
      min-height: 100vh;
      padding-top: 4rem;
      letter-spacing: -0.01em;
+     font-size: var(--base-font-size);
 }
 
 h1 {
@@ -414,7 +419,7 @@ hr {
      }
 
      h1 {
-          font-size: 2rem;
+          font-size: 2.2rem;
           will-change: auto;
      }
 
@@ -440,6 +445,23 @@ hr {
      .topics-grid {
           grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
      }
+
+     /* Increase base font size on tablets */
+     body {
+          font-size: 17px;
+     }
+
+     .nav-link {
+          font-size: 1.05rem;
+     }
+
+     .city-link {
+          font-size: 1rem;
+     }
+
+     .nav-group-title {
+          font-size: 1rem;
+     }
 }
 
 @media (max-width: 768px) {
@@ -452,18 +474,71 @@ hr {
      }
 
      .location-header h1 {
-          font-size: 1.8rem;
+          font-size: 2rem;
      }
 
      body.menu-open {
           overflow: hidden;
      }
+
+     /* Increase font sizes for mobile */
+     body {
+          font-size: var(--mobile-font-size);
+     }
+
+     p {
+          font-size: 1.1rem;
+     }
+
+     .nav-link {
+          font-size: 1.1rem;
+     }
+
+     .city-link {
+          font-size: 1.05rem;
+     }
+
+     .initiative p {
+          font-size: 1.1rem;
+     }
+
+     .breadcrumb {
+          font-size: 1.05rem;
+     }
+
+     .toc {
+          font-size: 1rem;
+     }
+
+     .toc-link {
+          font-size: 1.05rem;
+     }
+
+     .state-link {
+          font-size: 1.15rem;
+     }
+
+     .post-entry-title {
+          font-size: 1.2rem;
+     }
+
+     .post-entry time {
+          font-size: 1rem;
+     }
+
+     .post-entry-tagline {
+          font-size: 1.05rem;
+     }
 }
 
 @media (max-width: 480px) {
      h1 {
-          font-size: 1.8rem;
+          font-size: 2rem;
           line-height: 1.2;
+     }
+
+     h2 {
+          font-size: 1.6rem;
      }
 
      .content {
@@ -488,15 +563,40 @@ hr {
      }
 
      .location-header h1 {
-          font-size: 1.5rem;
+          font-size: 1.8rem;
      }
 
      .location-header p {
-          font-size: 0.9rem;
+          font-size: 1.05rem;
      }
 
      aside {
           margin: 1.5rem 0;
+     }
+
+     /* Additional font size increases for smallest screens */
+     .stat-number {
+          font-size: 2.8rem;
+     }
+
+     .stat-label {
+          font-size: 1.1rem;
+     }
+
+     .find-groups-button {
+          font-size: 1.1rem;
+     }
+
+     .button-text {
+          font-size: 1.15rem;
+     }
+
+     .nav-group-title {
+          font-size: 1.05rem;
+     }
+
+     .cities-category-title {
+          font-size: 1.15rem;
      }
 }
 
@@ -1400,19 +1500,19 @@ h6 {
      }
 
      .topic-name {
-          font-size: 0.75rem !important;
+          font-size: 0.9rem !important;
      }
 
      .topic-icon {
-          font-size: 1.5rem;
-          height: 1.5rem;
-          width: 1.5rem;
+          font-size: 1.6rem;
+          height: 1.6rem;
+          width: 1.6rem;
           margin-right: 1rem;
      }
 
      .topic-card {
-          padding: 0.75rem 1.25rem;
-          min-height: 2.75rem;
+          padding: 0.85rem 1.25rem;
+          min-height: 2.85rem;
      }
 }
 
@@ -1428,12 +1528,13 @@ h6 {
      }
 
      .topic-card {
-          padding: 0.65rem 1rem;
-          min-height: 2.5rem;
+          padding: 0.75rem 1rem;
+          min-height: 2.7rem;
      }
 
      .topic-icon {
-          margin-right: 0.75rem;
+          margin-right: 0.85rem;
+          font-size: 1.5rem;
      }
 }
 
