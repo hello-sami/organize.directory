@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- Updated file structure for Southern California -->
 <html lang="en">
 
 <head>
@@ -15,6 +16,14 @@
   </title>
   <meta name="description"
     content="Find mutual aid initiatives and community support networks in Southern California including Los Angeles, San Diego, and Inland Empire regions.">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Southern California | The Organize Directory">
+  <meta property="og:description" content="Find mutual aid networks and community resources in Southern California.">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta property="og:url" content="https://organize.directory/socal">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
@@ -35,13 +44,6 @@
     initializeComponents({
     });
   </script>
-  <!-- Open Graph / Social Media -->n
-  <meta property="og:title" content="Socal | The Organize Directory">n
-  <meta property="og:description" content="Find mutual aid networks and community resources in socal.">n
-  <meta property="og:image" content="https://organize.directory/preview.png">n
-  <meta property="og:url" content="https://organize.directory/socal">n
-  <meta property="og:type" content="website">n
-  <meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body>
@@ -71,7 +73,7 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      <div class="city-page">
+      <div class="city-page state-page">
         <div class="breadcrumb">
           <a href="/california">California</a>
           <span>›</span>
@@ -84,30 +86,32 @@
         </p>
         <hr>
 
-        <section class="cities-section">
-          <h2>Sub-Regions</h2>
+        <section>
           <div class="cities-list">
-            <a href="/los-angeles" class="city-link">Los Angeles County</a>
-            <a href="/orange-county" class="city-link">Orange County</a>
-            <a href="/inland-empire" class="city-link">Inland Empire</a>
-            <a href="/san-diego" class="city-link">San Diego County</a>
-            <a href="/central-coast" class="city-link">Central Coast</a>
+            <h2>Sub-Regions</h2>
+            <div class="city-links-container">
+              <a href="/los-angeles" class="city-link">Los Angeles County</a>
+              <a href="/orange-county" class="city-link">Orange County</a>
+              <a href="/inland-empire" class="city-link">Inland Empire</a>
+              <a href="/san-diego" class="city-link">San Diego County</a>
+              <a href="/central-coast" class="city-link">Central Coast</a>
+            </div>
           </div>
         </section>
-        <hr>
 
-        <section class="cities-section">
-          <h2>Cities</h2>
+        <section>
           <div class="cities-list">
-            <a href="/los-angeles" class="city-link">Los Angeles</a>
-            <a href="/san-diego" class="city-link">San Diego</a>
-            <a href="/long-beach" class="city-link">Long Beach</a>
-            <a href="/santa-ana" class="city-link">Santa Ana</a>
-            <a href="/riverside" class="city-link">Riverside</a>
-            <!-- <a href="/san-bernardino" class="city-link">San Bernardino</a> -->
+            <h2>Cities</h2>
+            <div class="city-links-container">
+              <a href="/los-angeles" class="city-link">Los Angeles</a>
+              <a href="/san-diego" class="city-link">San Diego</a>
+              <a href="/long-beach" class="city-link">Long Beach</a>
+              <a href="/santa-ana" class="city-link">Santa Ana</a>
+              <a href="/riverside" class="city-link">Riverside</a>
+              <!-- <a href="/san-bernardino" class="city-link">San Bernardino</a> -->
+            </div>
           </div>
         </section>
-        <hr>
 
         <section>
           <h2>Regional Organizations</h2>
