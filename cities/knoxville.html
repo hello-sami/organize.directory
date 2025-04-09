@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-QJ03RCM35H");
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -10,10 +21,18 @@
   <link rel="manifest" href="/site.webmanifest">
 
   <title>
-    Knoxville Mutual Aid Networks - Local Support & Community Resources
+    Mutual Aid in Knoxville - Local Support Networks & Community Resources
   </title>
   <meta name="description"
     content="Find mutual aid networks and community support initiatives in Knoxville, Tennessee.">
+  <meta property="og:title" content="Mutual Aid in Knoxville - Local Support Networks & Community Resources">
+  <meta property="og:description"
+    content="Find mutual aid networks and community support initiatives in Knoxville, Tennessee.">
+  <meta property="og:type" content="website">
+
+  <meta property="og:url" content="https://organize.directory/knoxville">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
@@ -34,13 +53,6 @@
     initializeComponents({
     });
   </script>
-  <!-- Open Graph / Social Media -->n
-  <meta property="og:title" content="Knoxville | The Organize Directory">n
-  <meta property="og:description" content="Find mutual aid networks and community resources in knoxville.">n
-  <meta property="og:image" content="https://organize.directory/preview.png">n
-  <meta property="og:url" content="https://organize.directory/knoxville">n
-  <meta property="og:type" content="website">n
-  <meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body>
@@ -67,61 +79,37 @@
       </div>
     </div>
 
-    <!-- Open Graph / Social Media -->n
-    <meta property="og:title" content="Knoxville | The Organize Directory">n
-    <meta property="og:description" content="Find mutual aid networks and community resources in knoxville.">n
-    <meta property="og:image" content="https://organize.directory/preview.png">n
-    <meta property="og:url" content="https://organize.directory/knoxville">n
-    <meta property="og:type" content="website">n
-    <meta name="twitter:card" content="summary_large_image">
-    </head>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-    <body>
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/tennessee">Tennessee</a>
+          <span>›</span>
+          <span>Knoxville</span>
+        </div>
 
-      <!-- Open Graph / Social Media -->n
-      <meta property="og:title" content="Knoxville | The Organize Directory">n
-      <meta property="og:description" content="Find mutual aid networks and community resources in knoxville.">n
-      <meta property="og:image" content="https://organize.directory/preview.png">n
-      <meta property="og:url" content="https://organize.directory/knoxville">n
-      <meta property="og:type" content="website">n
-      <meta name="twitter:card" content="summary_large_image">
-      </head>
+        <h1>Knoxville, Tennessee</h1>
+        <hr>
 
-      <body>
-
-        <main class="content" role="main">
-          <header id="header" class="page-header"></header>
-
-          <div class="city-page">
-            <div class="breadcrumb">
-              <a href="/tennessee">Tennessee</a>
-              <span>›</span>
-              <span>Knoxville</span>
-            </div>
-
-            <h1>Knoxville, Tennessee</h1>
-            <hr>
-
-            <section>
-              <div class="initiative">
-                <a href="https://www.instagram.com/easttnharmredux/">East TN Harm Reduction</a>
-                <p>
-                  Harm reduction organization providing support and resources to
-                  the East Tennessee community.
-                </p>
-              </div>
-              <div class="initiative">
-                <a href="https://www.facebook.com/firstaidcollectiveknox/">First Aid Collective Knox</a>
-                <p>
-                  First Aid Collective Knox is an autonomous first-aid/wound care
-                  and mutual aid collective crew based in Knoxville, TN.
-                </p>
-              </div>
-            </section>
+        <section>
+          <div class="initiative">
+            <a href="#">East TN Harm Reduction</a>
+            <p>
+              Harm reduction organization providing support and resources to the East Tennessee community.
+            </p>
           </div>
-        </main>
+          <div class="initiative">
+            <a href="#">First Aid Collective Knox</a>
+            <p>
+              First Aid Collective Knox is an autonomous first-aid/wound care and mutual aid collective crew based in
+              Knoxville, TN.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
   </div>
-
 </body>
 
 </html>
