@@ -233,11 +233,29 @@ function initializeCriticalStyles() {
      }
 }
 
+// Function to ensure consistent h1 styling once on initialization
+function fixSidebarHeaderStyling() {
+     // Add standardized classes instead of inline styles for better performance
+     const headerContainer = document.querySelector(".sidebar-header");
+     if (headerContainer) {
+          headerContainer.classList.add("sidebar-header-optimized");
+     }
+
+     const headerH1 = document.querySelector(".sidebar-header h1");
+     if (headerH1) {
+          headerH1.classList.add("sidebar-title-optimized");
+
+          // Fix the link inside h1
+          const link = headerH1.querySelector("a");
+          if (link) {
+               link.classList.add("home-link-optimized");
+          }
+     }
+}
+
 // Main function to initialize the sidebar
 export function initializeSidebar(activePage) {
      if (typeof document === "undefined") return;
-
-     console.log("Initializing sidebar for page:", activePage);
 
      // Initialize critical styles first
      initializeCriticalStyles();
@@ -249,26 +267,27 @@ export function initializeSidebar(activePage) {
           sidebar = document.getElementById("sidebar");
      }
 
-     // SIMPLER AUTOMATIC DETECTION - Check URL for city or state pages
+     // Fix header styling for consistent look across all pages - only once
+     fixSidebarHeaderStyling();
+
+     // Cache result of regex pattern match for better performance
      const currentPath = window.location.pathname;
+     const stateRegex =
+          /\/(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new-hampshire|new-jersey|new-mexico|new-york|north-carolina|north-dakota|ohio|oklahoma|oregon|pennsylvania|rhode-island|south-carolina|south-dakota|tennessee|texas|utah|vermont|virginia|washington|west-virginia|wisconsin|wyoming)/;
+
+     const isStatePage = stateRegex.test(currentPath);
+     const isCityPage = currentPath.includes("/cities/");
+
      // If this is a city or state page, override the activePage to 'location'
-     if (
-          currentPath.match(
-               /\/(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new-hampshire|new-jersey|new-mexico|new-york|north-carolina|north-dakota|ohio|oklahoma|oregon|pennsylvania|rhode-island|south-carolina|south-dakota|tennessee|texas|utah|vermont|virginia|washington|west-virginia|wisconsin|wyoming)/
-          ) ||
-          currentPath.includes("/cities/")
-     ) {
+     if (isStatePage || isCityPage) {
           activePage = "location";
-          console.log(
-               "Detected city/state page, setting active page to: location"
-          );
      }
 
      // Remove ALL active classes first (simpler approach)
      const allLinks = sidebar.querySelectorAll("a");
      allLinks.forEach((link) => {
           link.classList.remove("active");
-          // Also reset any inline styles that might be causing background colors
+          // Reset any inline styles that might be causing background colors
           link.style.backgroundColor = "";
           link.style.color = "";
           link.style.fontWeight = "";
@@ -280,7 +299,6 @@ export function initializeSidebar(activePage) {
           const homeLink = sidebar.querySelector('a[href="/"].nav-link');
           if (homeLink) {
                homeLink.classList.add("active");
-               console.log("Home page - activated home link");
           }
      } else if (activePage === "location") {
           // On location page, highlight the location link
@@ -289,7 +307,6 @@ export function initializeSidebar(activePage) {
           );
           if (locationLink) {
                locationLink.classList.add("active");
-               console.log("Location page - activated location link");
           }
      } else if (activePage === "topics") {
           // On topics page, highlight the topics link
@@ -298,7 +315,6 @@ export function initializeSidebar(activePage) {
           );
           if (topicsLink) {
                topicsLink.classList.add("active");
-               console.log("Topics page - activated topics link");
           }
      } else if (activePage === "subscribe") {
           // Special handling for subscribe page
@@ -307,7 +323,6 @@ export function initializeSidebar(activePage) {
           );
           if (subscribeLink) {
                subscribeLink.classList.add("active");
-               console.log("Subscribe page - activated subscribe link");
           }
      } else {
           // For other pages, find and highlight the corresponding link
@@ -316,7 +331,6 @@ export function initializeSidebar(activePage) {
           );
           if (activeLink) {
                activeLink.classList.add("active");
-               console.log(`Activated ${activePage} link`);
           }
      }
 
@@ -328,15 +342,11 @@ export function initializeSidebar(activePage) {
      document.body.classList.add(`page-${activePage}`);
 
      // If this is a city or state page, add additional class
-     if (
-          currentPath.match(
-               /\/(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new-hampshire|new-jersey|new-mexico|new-york|north-carolina|north-dakota|ohio|oklahoma|oregon|pennsylvania|rhode-island|south-carolina|south-dakota|tennessee|texas|utah|vermont|virginia|washington|west-virginia|wisconsin|wyoming)/
-          )
-     ) {
+     if (isStatePage) {
           document.body.classList.add(
                "page-states-" + currentPath.split("/")[1]
           );
-     } else if (currentPath.includes("/cities/")) {
+     } else if (isCityPage) {
           document.body.classList.add(
                "page-cities-" + currentPath.split("/")[2]
           );

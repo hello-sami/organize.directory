@@ -231,8 +231,8 @@
 
     <!-- Scripts -->
     <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+        import { initializeSidebar } from '/components/sidebar.js?v=1.0.3';
+        import { initializeComponents } from '/utils/init.js?v=1.0.1';
 
         // Create a function to fix navigation highlights
         function fixNavigationHighlights() {
@@ -311,49 +311,20 @@
             // Try to ensure Font Awesome is loaded
             ensureFontAwesomeIsLoaded();
 
-            // Also fix navigation after a short delay to ensure it remains correct
-            // in case initializeSidebar changes anything
+            // Single check after a short delay if needed
             setTimeout(() => {
                 fixNavigationHighlights();
                 ensureFontAwesomeIsLoaded();
             }, 100);
-
-            // Final check after all content is likely loaded
-            setTimeout(() => {
-                fixNavigationHighlights();
-                ensureFontAwesomeIsLoaded();
-
-                // Additional optimization: preload icon pages to ensure they work when clicked
-                const links = document.querySelectorAll('.topic-card');
-                links.forEach(link => {
-                    const href = link.getAttribute('href');
-                    if (href) {
-                        const preloadLink = document.createElement('link');
-                        preloadLink.rel = 'prefetch';
-                        preloadLink.href = href;
-                        document.head.appendChild(preloadLink);
-                    }
-                });
-            }, 2000);
         });
 
-        // Add a mutation observer to ensure the Home link stays unhighlighted
-        // in case something else modifies the DOM
+        // Simplified observer to ensure the Home link stays unhighlighted
         window.addEventListener('load', () => {
             const homeLink = document.getElementById('home-link');
-            if (homeLink) {
-                const observer = new MutationObserver(() => {
-                    if (homeLink.classList.contains('active')) {
-                        homeLink.classList.remove('active');
-                        homeLink.style.backgroundColor = '';
-                        homeLink.style.color = '';
-                    }
-                });
-
-                observer.observe(homeLink, {
-                    attributes: true,
-                    attributeFilter: ['class', 'style']
-                });
+            if (homeLink && homeLink.classList.contains('active')) {
+                homeLink.classList.remove('active');
+                homeLink.style.backgroundColor = '';
+                homeLink.style.color = '';
             }
 
             // Final font awesome check after full page load

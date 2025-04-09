@@ -27,7 +27,7 @@
 
     <!-- Initialize Components Immediately -->
     <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeSidebar } from '/components/sidebar.js?v=1.0.3';
 
         // Initialize sidebar immediately
         initializeSidebar('home');
@@ -149,10 +149,8 @@
                 debugInfo += 'Redirecting to: ' + redirectPath;
                 debug.textContent = debugInfo;
 
-                // Redirect after a short delay
-                setTimeout(function () {
-                    window.location.href = redirectPath;
-                }, 1500);
+                // Redirect immediately instead of waiting
+                window.location.href = redirectPath;
             } else {
                 debugInfo += 'No matching pattern found\n';
                 debug.textContent = debugInfo;

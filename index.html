@@ -28,7 +28,7 @@
 
     <!-- URL Normalizer - Reduces worker calls -->
     <script>
-        // Intercept link clicks to reduce server redirects
+        // Simplified and optimized link handling
         document.addEventListener('click', function (e) {
             // Find clicked anchor element
             let anchor = e.target.closest('a');
@@ -38,29 +38,18 @@
             let href = anchor.getAttribute('href');
             if (!href || href.startsWith('http') || href.startsWith('#')) return;
 
-            // Debugging - uncomment to see which links are being processed
-            // console.log('Processing link:', href);
-
             // Handle trailing slashes consistently
             if (href.endsWith('/')) {
                 href = href.slice(0, -1);
             }
 
-            // Special handling for city & state pages
-            if (href.match(/^\/(cities|states|topics|posts)\/[^/]+$/)) {
+            // Combine conditional checks for better performance
+            const needsHtml = !href.includes('.') && !href.includes('?');
+            const isSpecialPath = href.match(/^\/(cities|states|topics|posts)\/[^/]+$/);
+
+            if (isSpecialPath || needsHtml) {
                 e.preventDefault();
                 window.location.href = href + '.html';
-                return;
-            }
-
-            // General clean URL handling
-            let needsHtml = !href.includes('.') && !href.includes('?');
-
-            if (needsHtml) {
-                e.preventDefault();
-                window.location.href = href + '.html';
-                // Debugging - uncomment to verify URL transformation
-                // console.log('Transformed URL:', href + '.html');
             }
         });
     </script>
@@ -165,7 +154,7 @@
 
     <!-- Initialize Components Immediately -->
     <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js?v=1.0.2';
+        import { initializeSidebar } from '/components/sidebar.js?v=1.0.3';
         import { initializeComponents } from '/utils/init.js?v=1.0.1';
 
         // Initialize sidebar immediately
