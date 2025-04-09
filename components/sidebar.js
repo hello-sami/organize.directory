@@ -15,7 +15,7 @@ const initialSidebar = `
         <a href="/subscribe" class="nav-link">Subscribe</a>
     </nav>
     <div class="sidebar-motto">
-     Fascism is here. Don't despair, organize.
+     Fascism is here.<br> Don't despair, organize.
     </div>`;
 
 // Function to insert sidebar HTML
@@ -120,7 +120,8 @@ const criticalStyles = `
     }
     .sidebar .nav-link-group-header:hover {
         text-decoration: none;
-        background-color: var(--bg-tint, #f5f5f5);
+        background-color: #ffc0c0;
+        color: var(--primary-color, #a30000);
     }
     .sidebar .nav-link-indented {
         padding-left: 2.5rem;

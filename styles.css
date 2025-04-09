@@ -245,13 +245,13 @@ hr {
 }
 
 .nav-link-indented:hover::before {
-     background-color: var(--primary-color);
+     background-color: var(--pure-white);
 }
 
 .nav-link:hover {
      opacity: 1;
      color: var(--primary-color);
-     background: var(--card-bg);
+     background: #ffc0c0;
 }
 
 .nav-link.active {
@@ -2094,4 +2094,11 @@ html {
      margin: 0.3rem 0 0.5rem;
      line-height: 1.5;
      color: var(--text-color);
+}
+
+/* Additional hover effect for sidebar navs */
+.sidebar .nav-link-group-header:hover {
+     text-decoration: none;
+     background-color: #ffc0c0;
+     color: var(--primary-color);
 }
