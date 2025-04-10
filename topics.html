@@ -36,43 +36,39 @@
     <link rel="stylesheet" href="/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
-    <!-- Font Awesome (primary source) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Font Awesome - Local Implementation -->
+    <link rel="stylesheet" href="/css/fa-subset.css?v=1.0.1">
 
-    <!-- Font Awesome (backup source) -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css" media="print"
-        onload="this.media='all'">
+    <!-- Font Awesome Support Script -->
+    <script src="/js/font-awesome-loader.js?v=1.0.3" defer></script>
 
-    <!-- Font Awesome fixed styles -->
+    <!-- Fallback icon styles - Additional failsafe -->
     <style>
         /* Ensure icons are always visible */
         .topic-icon,
-        .fas,
-        .fab,
-        .far {
+        .fas {
             display: inline-block !important;
             visibility: visible !important;
             opacity: 1 !important;
-            font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", FontAwesome, sans-serif !important;
-        }
-
-        /* Override any transforms that might affect icon rendering */
-        .topic-icon {
-            transform: none !important;
-            -webkit-backface-visibility: visible !important;
-            backface-visibility: visible !important;
-            will-change: auto !important;
             font-size: 2rem !important;
             min-width: 2rem !important;
             min-height: 2rem !important;
+            color: var(--primary-color, #a30000) !important;
+            text-align: center !important;
         }
 
         /* Force hardware acceleration for topic cards */
         .topic-card {
             transform: translateZ(0);
             will-change: auto;
+        }
+
+        /* Emergency fallback if Font Awesome fails to load */
+        .topic-icon.icon-failed:before {
+            content: '•';
+            font-size: 2rem;
+            display: inline-block;
+            color: var(--primary-color, #a30000);
         }
     </style>
 
@@ -162,7 +158,12 @@
             <div class="topics-container">
                 <section class="topics-grid">
                     <a href="/topics/abortion" class="topic-card card-base">
-                        <i class="fas fa-hand-sparkles topic-icon"></i>
+                        <svg class="topic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                            aria-hidden="true" focusable="false"
+                            style="width:2rem;height:2rem;color:var(--primary-color)">
+                            <path fill="currentColor"
+                                d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM224 208c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v48h48c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H288v48c0 8.8-7.2 16-16 16H240c-8.8 0-16-7.2-16-16V320H176c-8.8 0-16-7.2-16-16V272c0-8.8 7.2-16 16-16h48V208z" />
+                        </svg>
                         <h2 class="topic-name">Abortion</h2>
                     </a>
                     <a href="/topics/anarchism" class="topic-card card-base">
@@ -339,21 +340,26 @@
             }
         }
 
-        // Function to ensure Font Awesome icons are visible
-        function ensureFontAwesomeIsLoaded() {
+        // Function to ensure icons are visible
+        function ensureIconsAreLoaded() {
+            // Use the global functions from font-awesome-loader.js
+            if (window.faLoader) {
+                window.faLoader.load();
+                window.faLoader.checkDisplay();
+            }
+
             // Check if icons are properly visible
             const icons = document.querySelectorAll('.topic-icon');
             if (icons.length > 0) {
                 const firstIcon = icons[0];
                 const style = window.getComputedStyle(firstIcon);
-                const fontFamily = style.getPropertyValue('font-family');
                 const isVisible = style.getPropertyValue('display') !== 'none' &&
                     style.getPropertyValue('visibility') !== 'hidden' &&
                     parseFloat(style.getPropertyValue('opacity')) > 0;
 
-                // If font awesome is not loaded or icons are not visible
-                if (!fontFamily.includes('Font Awesome') || !isVisible) {
-                    console.log('Font Awesome issues detected, applying fixes...');
+                // If icons are not visible
+                if (!isVisible) {
+                    console.log('Icon issues detected, applying fixes...');
 
                     // Apply direct inline styles to force visibility
                     icons.forEach(icon => {
@@ -366,15 +372,12 @@
                             'height: 2rem !important; ' +
                             'width: 2rem !important;'
                         );
-                    });
 
-                    // If icons still aren't visible, try loading an alternative font awesome
-                    if (!fontFamily.includes('Font Awesome')) {
-                        const alternateLink = document.createElement('link');
-                        alternateLink.rel = 'stylesheet';
-                        alternateLink.href = 'https://kit.fontawesome.com/a076d05399.js';
-                        document.head.appendChild(alternateLink);
-                    }
+                        // Add fallback class if needed
+                        if (icon.clientWidth < 5 || icon.clientHeight < 5) {
+                            icon.classList.add('icon-failed');
+                        }
+                    });
                 }
             }
         }
@@ -390,14 +393,19 @@
             // Fix navigation highlights immediately
             fixNavigationHighlights();
 
-            // Try to ensure Font Awesome is loaded
-            ensureFontAwesomeIsLoaded();
+            // Try to ensure icons are loaded
+            ensureIconsAreLoaded();
 
-            // Single check after a short delay if needed
-            setTimeout(() => {
-                fixNavigationHighlights();
-                ensureFontAwesomeIsLoaded();
-            }, 100);
+            // Multiple checks with increasing delays
+            [100, 500, 1000, 2000].forEach(delay => {
+                setTimeout(() => {
+                    fixNavigationHighlights();
+                    ensureIconsAreLoaded();
+                    if (window.faLoader) {
+                        window.faLoader.checkDisplay();
+                    }
+                }, delay);
+            });
         });
 
         // Simplified observer to ensure the Home link stays unhighlighted
@@ -409,8 +417,22 @@
                 homeLink.style.color = '';
             }
 
-            // Final font awesome check after full page load
-            ensureFontAwesomeIsLoaded();
+            // Final icon check after full page load
+            ensureIconsAreLoaded();
+            if (window.faLoader) {
+                window.faLoader.checkDisplay();
+            }
+
+            // Add a final check for icons after 3 seconds
+            setTimeout(() => {
+                const icons = document.querySelectorAll('.topic-icon');
+                icons.forEach(icon => {
+                    if (icon.clientWidth < 5 || icon.clientHeight < 5) {
+                        console.warn('Icons still not loading properly after 3s');
+                        icon.classList.add('icon-failed');
+                    }
+                });
+            }, 3000);
         });
     </script>
     <script src="/mobile-menu.js" defer=""></script>
