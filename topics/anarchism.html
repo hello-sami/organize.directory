@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-QJ03RCM35H");
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -13,10 +24,20 @@
     <meta name="description"
         content="Find mutual aid networks and community support initiatives focused on anarchist organizing and solidarity.">
 
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Anarchist Networks | The Organize Directory">
+    <meta property="og:description" content="Find mutual aid networks and community resources in anarchism.">
+    <meta property="og:image" content="https://organize.directory/preview.png">
+    <meta property="og:url" content="https://organize.directory/topics/anarchism">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/styles/topics.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Initialize Components -->
     <script type="module">
@@ -27,22 +48,11 @@
         initializeSidebar('topics');
 
         // Initialize other components
-        initializeComponents({
-        });
+        initializeComponents({});
     </script>
-    <!-- Open Graph / Social Media -->
 </head>
 
-<body>n
-    <meta property="og:title" content="Anarchist Networks - Mutual Aid &amp; Community Resources">n
-    <meta property="og:description" content="Find mutual aid networks and community resources in anarchism.">n
-    <meta property="og:image" content="https://organize.directory/preview.png">n
-    <meta property="og:url" content="https://organize.directory/topics/anarchism">n
-    <meta property="og:type" content="website">n
-    <meta name="twitter:card" content="summary_large_image">
-
-
-
+<body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation">
             <div class="sidebar-header">
@@ -61,41 +71,16 @@
                 <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
             </nav>
             <div class="sidebar-motto">
-
                 Don't despair, organize.
             </div>
         </div>
 
-        <!-- Open Graph / Social Media -->n
-        <meta property="og:title" content="Anarchist Networks - Mutual Aid &amp; Community Resources">n
-        <meta property="og:description" content="Find mutual aid networks and community resources in anarchism.">n
-        <meta property="og:image" content="https://organize.directory/preview.png">n
-        <meta property="og:url" content="https://organize.directory/topics/anarchism">n
-        <meta property="og:type" content="website">n
-        <meta name="twitter:card" content="summary_large_image">
-
-
-
-
-        <!-- Critical Scripts -->
-
-        <!-- Open Graph / Social Media -->n
-        <meta property="og:title" content="Anarchist Networks - Mutual Aid &amp; Community Resources">n
-        <meta property="og:description" content="Find mutual aid networks and community resources in anarchism.">n
-        <meta property="og:image" content="https://organize.directory/preview.png">n
-        <meta property="og:url" content="https://organize.directory/topics/anarchism">n
-        <meta property="og:type" content="website">n
-        <meta name="twitter:card" content="summary_large_image">
-
-
-
-
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 
-            <div class="topics-page">
+            <div class="city-page state-page">
                 <div class="breadcrumb">
-                    <a href="/topics">Issues</a>
+                    <a href="/topics">Topics</a>
                     <span>›</span>
                     <span>Anarchism</span>
                 </div>
@@ -107,28 +92,28 @@
                     <h2>National Organizations</h2>
                     <div class="initiative">
                         <a href="https://www.abcf.net/">Anarchist Black Cross Federation (ABCF)</a>
-                        <p>A mutual aid network coordinating support for political prisoners and prisoners of
-                            war since
-                            1994. They organize direct assistance through their Warchest program, resource
-                            sharing, and
-                            solidarity initiatives while building networks of support through local chapters,
-                            prisoner
-                            correspondence, and community defense.</p>
+                        <p>
+                            A mutual aid network coordinating support for political prisoners and prisoners of
+                            war since 1994. They organize direct assistance through their Warchest program, resource
+                            sharing, and solidarity initiatives while building networks of support through local
+                            chapters,
+                            prisoner correspondence, and community defense.
+                        </p>
                     </div>
                     <div class="initiative">
                         <a href="https://www.instagram.com/1312nau/">Northeast Anarchist Union</a>
-                        <p>The Northeast Anarchist Union stands to build up our local communities and prefigure
-                            an
-                            anarchist future</p>
+                        <p>
+                            The Northeast Anarchist Union stands to build up our local communities and prefigure
+                            an anarchist future.
+                        </p>
                     </div>
                 </section>
 
+                <p class="help-text">Know of an anarchist organization or mutual aid network? <a
+                        href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
         </main>
     </div>
-
-
-
 </body>
 
 </html>

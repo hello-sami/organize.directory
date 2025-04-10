@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-QJ03RCM35H");
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,29 +20,26 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <title>Anti-Colonialism Mutual Aid Networks - The Organize Directory</title>
+    <title>Anti-Colonialism Initiatives - The Organize Directory</title>
     <meta name="description"
         content="Find mutual aid networks and community initiatives working towards anti-colonialism and indigenous sovereignty.">
-    <meta property="og:title" content="Anti-Colonialism Mutual Aid Networks">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Anti-Colonialism Initiatives | The Organize Directory">
     <meta property="og:description"
         content="Find mutual aid networks and community initiatives working towards anti-colonialism and indigenous sovereignty.">
     <meta property="og:type" content="website">
-
-    <meta property="og:url" content="https://organize.directory/issues/anti-colonialism">
+    <meta property="og:url" content="https://organize.directory/topics/anti-colonialism">
     <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
@@ -41,8 +49,7 @@
         initializeSidebar('topics');
 
         // Initialize other components
-        initializeComponents({
-        });
+        initializeComponents({});
     </script>
 </head>
 
@@ -65,40 +72,57 @@
                 <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
             </nav>
             <div class="sidebar-motto">
-
                 Don't despair, organize.
             </div>
         </div>
-        <!-- Critical Scripts -->
 
-
-
-
-
-        <main class="content">
+        <main class="content" role="main">
             <header id="header" class="page-header"></header>
 
-            <a href="https://cpt.org/">Community Peacemaker Teams (CPT)</a><a>
-                <p>An international organization building partnerships to transform violence and
-                    oppression through mutual aid and direct action. They work alongside communities
-                    resisting colonialism in Palestine, Iraqi Kurdistan, Colombia, and Turtle Island
-                    (North America), providing support through nonviolent intervention, documentation,
-                    and solidarity networks.</p>
-            </a>
+            <div class="city-page state-page">
+                <div class="breadcrumb">
+                    <a href="/topics">Topics</a>
+                    <span>›</span>
+                    <span>Anti-Colonialism</span>
+                </div>
+
+                <h1>Anti-Colonialism Initiatives</h1>
+                <p class="subtitle">
+                    Mutual aid networks and community initiatives working towards decolonization, indigenous
+                    sovereignty, and resistance to imperial power structures.
+                </p>
+                <hr>
+
+                <section>
+                    <h2>International Organizations</h2>
+                    <div class="initiative">
+                        <a href="https://cpt.org/">Community Peacemaker Teams (CPT)</a>
+                        <p>
+                            An international organization building partnerships to transform violence and
+                            oppression through mutual aid and direct action. They work alongside communities
+                            resisting colonialism in Palestine, Iraqi Kurdistan, Colombia, and Turtle Island
+                            (North America), providing support through nonviolent intervention, documentation,
+                            and solidarity networks.
+                        </p>
+                    </div>
+
+                    <div class="initiative">
+                        <a href="https://behind-enemy-lines.org/">Behind Enemy Lines</a>
+                        <p>
+                            Anti-Imperialist political education and action organization, primarily based in NYC and
+                            Chicago.
+                            They organize against colonialism and imperialism through community education, direct
+                            action, and
+                            solidarity work with colonized peoples.
+                        </p>
+                    </div>
+                </section>
+
+                <p class="help-text">Know of an anti-colonialism or indigenous solidarity initiative? <a
+                        href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
+            </div>
         </main>
-    </div><a>
-    </a>
-    <div class="initiative"><a>
-        </a><a href="https://behind-enemy-lines.org/">Behind Enemy Lines</a>
-        <p>Anti-Imperialist political education and action org, primarily based in NYC and Chicago</p>
     </div>
-
-
-
-
-
-
-
 </body>
 
 </html>

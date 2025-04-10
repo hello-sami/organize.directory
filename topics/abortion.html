@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-QJ03RCM35H");
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,22 +20,25 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <title>Abortion Access Organizations - The Organize Directory</title>
+    <title>Reproductive Justice Organizations - The Organize Directory</title>
     <meta name="description"
         content="Find organizations working to expand abortion access and ensure reproductive rights.">
 
-    <!-- Open Graph tags -->
-    <meta property="og:title" content="Abortion Access Organizations - The Organize Directory">
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Reproductive Justice Organizations | The Organize Directory">
     <meta property="og:description"
         content="Find organizations working to expand abortion access and ensure reproductive rights.">
     <meta property="og:type" content="website">
-
-    <meta property="og:url" content="https://organize.directory/issues/abortion">
+    <meta property="og:url" content="https://organize.directory/topics/abortion">
     <meta property="og:image" content="https://organize.directory/preview.png">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Initialize Components -->
     <script type="module">
@@ -35,8 +49,7 @@
         initializeSidebar('topics');
 
         // Initialize other components
-        initializeComponents({
-        });
+        initializeComponents({});
     </script>
 </head>
 
@@ -59,82 +72,78 @@
                 <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
             </nav>
             <div class="sidebar-motto">
-
                 Don't despair, organize.
             </div>
         </div>
 
-
-
-
-
-        <!-- Critical Scripts -->
-
-
-
-
-
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 
-            <div class="city-page">
+            <div class="city-page state-page">
                 <div class="breadcrumb">
-                    <a href="/topics">Issues</a>
+                    <a href="/topics">Topics</a>
                     <span>›</span>
-                    <span>Abortion Access</span>
+                    <span>Reproductive Justice</span>
                 </div>
 
-                <h1>Abortion Access</h1>
+                <h1>Reproductive Justice</h1>
                 <hr>
 
                 <section>
                     <h2>National Organizations</h2>
                     <div class="initiative">
                         <a href="https://abortionfunds.org/">National Network of Abortion Funds</a>
-                        <p>Network of organizations that help people access and pay for abortions, providing
-                            financial
-                            assistance and practical support.</p>
+                        <p>
+                            Network of organizations that help people access and pay for abortions, providing
+                            financial assistance and practical support.
+                        </p>
                     </div>
                     <div class="initiative">
                         <a href="https://www.plancpills.org/">Plan C</a>
-                        <p>Information about how to access at-home abortion pill options online.</p>
+                        <p>
+                            Information about how to access at-home abortion pill options online.
+                        </p>
                     </div>
                     <div class="initiative">
                         <a href="https://www.ineedana.com/">I Need an A</a>
-                        <p>Directory of verified abortion clinics, information about financial assistance, and
-                            logistical support.</p>
+                        <p>
+                            Directory of verified abortion clinics, information about financial assistance, and
+                            logistical support.
+                        </p>
                     </div>
                     <div class="initiative">
                         <a href="https://brigidalliance.org/">Brigid Alliance</a>
-                        <p>We support people nationwide who must travel for abortion care - funding and
-                            arranging
-                            logistics for transportation, food, lodging, childcare &amp; more.</p>
+                        <p>
+                            We support people nationwide who must travel for abortion care - funding and
+                            arranging logistics for transportation, food, lodging, childcare &amp; more.
+                        </p>
                     </div>
                     <div class="initiative">
                         <a href="https://www.reprocare.com/">Repro Care</a>
-                        <p>Connects people seeking abortions with community support for practical needs like
-                            transportation, lodging, childcare, and emotional support.</p>
+                        <p>
+                            Connects people seeking abortions with community support for practical needs like
+                            transportation, lodging, childcare, and emotional support.
+                        </p>
                     </div>
                     <div class="initiative">
                         <a href="https://reprolegaldefensefund.org/">Repro Legal Defense Fund</a>
-                        <p>Provides legal support and defense funds for people facing criminalization for
-                            self-managed
-                            abortion.</p>
+                        <p>
+                            Provides legal support and defense funds for people facing criminalization for
+                            self-managed abortion.
+                        </p>
                     </div>
-                    <div class="initiatives">
+                    <div class="initiative">
                         <a href="https://www.exposefakeclinics.com/">Expose Fake Clinics</a>
-                        <p>Take action with us to make sure no one gets tricked, manipulated, and shamed by
-                            anti-abortion fake clinics! </p>
+                        <p>
+                            Take action with us to make sure no one gets tricked, manipulated, and shamed by
+                            anti-abortion fake clinics!
+                        </p>
                     </div>
-
                 </section>
-            </div>
 
+            </div>
         </main>
     </div>
-
-
-
 </body>
 
 </html>

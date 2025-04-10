@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-QJ03RCM35H");
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -13,17 +24,21 @@
     <meta name="description"
         content="Find mutual aid networks and community support initiatives focused on anti-war organizing and peace building.">
 
-    <!-- Open Graph tags -->
-    <meta property="og:title" content="Anti-War &amp; Peace Resources - Mutual Aid Networks">
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Anti-War &amp; Peace Resources | The Organize Directory">
     <meta property="og:description"
         content="Find mutual aid networks and community support initiatives focused on anti-war organizing and peace building.">
-    <meta property="og:type" content="website">
     <meta property="og:image" content="https://organize.directory/preview.png">
+    <meta property="og:url" content="https://organize.directory/topics/anti-war">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/styles/topics.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- Initialize Components -->
     <script type="module">
@@ -34,8 +49,7 @@
         initializeSidebar('topics');
 
         // Initialize other components
-        initializeComponents({
-        });
+        initializeComponents({});
     </script>
 </head>
 
@@ -58,25 +72,14 @@
                 <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
             </nav>
             <div class="sidebar-motto">
-
                 Don't despair, organize.
             </div>
         </div>
 
-
-
-
-
-        <!-- Critical Scripts -->
-
-
-
-
-
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 
-            <div class="topics-page">
+            <div class="city-page state-page">
                 <div class="breadcrumb">
                     <a href="/topics">Topics</a>
                     <span>›</span>
@@ -90,23 +93,17 @@
                     <h2>National Organizations</h2>
                     <div class="initiative">
                         <a href="https://www.codepink.org/">CODEPINK</a>
-                        <p>A women-led grassroots organization fostering mutual aid and peace through direct
-                            action and
-                            community organizing. They coordinate anti-war initiatives, solidarity campaigns,
-                            and mutual
-                            aid networks while building power through nonviolent resistance, peace education,
-                            and
-                            creating spaces for collective action against militarism and for global justice.</p>
+                        <p>
+                            A women-led grassroots organization fostering mutual aid and peace through direct
+                            action and community organizing. They coordinate anti-war initiatives, solidarity campaigns,
+                            and mutual aid networks while building power through nonviolent resistance, peace education,
+                            and creating spaces for collective action against militarism and for global justice.
+                        </p>
                     </div>
                 </section>
-
-                <p class="help-text">Know of an anti-war or peace building initiative? <a
-                        href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
         </main>
     </div>
-
-
 
 </body>
 

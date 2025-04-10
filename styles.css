@@ -406,34 +406,15 @@ hr {
 }
 
 /* Topic Cards */
-.topics-grid {
-     display: grid;
-     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-     gap: 1.5rem;
-     padding: 1.5rem;
-}
+/* 
+  REMOVED DUPLICATE .topics-grid DEFINITION HERE
+  See consolidated definition in Topics Page Styles section
+*/
 
-.topic-card {
-     /* Use card-base in HTML */
-     background: var(--bg-light);
-     padding: 0.85rem 2rem;
-     gap: 0.5rem;
-     height: auto;
-     min-height: 3.25rem;
-     display: flex;
-     flex-direction: row;
-     justify-content: flex-start;
-     align-items: center;
-     text-align: left;
-     width: 100%;
-     border-radius: 4px;
-}
-
-.topic-card:hover {
-     background: var(--bg-medium);
-     border-color: var(--color-primary);
-     box-shadow: var(--shadow-sm);
-}
+/* 
+  REMOVED DUPLICATE .topic-card DEFINITION HERE
+  See consolidated definition in Topics Page Styles section
+*/
 
 .topic-icon {
      font-size: 1.8rem;
@@ -1080,9 +1061,7 @@ hr {
      display: grid;
      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
      gap: 1rem;
-     margin: 0;
-     padding: 1rem 1.5rem;
-     background: var(--bg-light);
+     margin: 1.5rem 0 2rem;
      will-change: auto;
      contain: layout;
 }
@@ -1580,7 +1559,10 @@ h6 {
 
 /* Grid takes up horizontal space */
 .topics-grid {
+     /* CONSOLIDATED: This combines styles from multiple .topics-grid definitions */
      display: grid;
+     /* For the topics page we use fixed columns, but the responsive version 
+        below includes the auto-fill approach for smaller screens */
      grid-template-columns: repeat(3, 1fr);
      gap: 1.75rem;
      padding: 1.75rem 0;
@@ -1634,13 +1616,14 @@ h6 {
 
 /* Topic cards adjustments - much wider cards */
 .topic-card {
+     /* Use card-base in HTML instead of duplicating these styles */
      background: var(--bg-light);
      padding: 0.85rem 2rem;
      gap: 0.5rem;
      border-width: 1px;
      height: auto;
      min-height: 3.25rem;
-     transition: background-color 0.2s ease;
+     transition: all 0.2s ease;
      display: flex;
      flex-direction: row;
      justify-content: flex-start;
@@ -1649,6 +1632,12 @@ h6 {
      width: 100%;
      border: 1px solid var(--color-border);
      border-radius: 4px;
+}
+
+.topic-card:hover {
+     background: var(--bg-medium);
+     border-color: var(--color-primary);
+     box-shadow: var(--shadow-sm);
 }
 
 /* Fix the alignment of the text and icon */
@@ -1667,13 +1656,6 @@ h6 {
      min-width: 1.8rem;
      height: 1.8rem;
      width: 1.8rem;
-}
-
-/* Keep only the highlighting effect, remove movement and shadow */
-.topic-card:hover {
-     background-color: var(--bg-medium);
-     border-color: var(--color-primary);
-     box-shadow: var(--shadow-sm);
 }
 
 /* Make "by topic" link active by default on topics page */
@@ -2027,30 +2009,6 @@ body.page-guides .sidebar a[href="/guides"].nav-link {
      background-color: var(--color-white, #ffffff) !important;
      color: var(--color-primary, #a30000) !important;
      font-weight: 600 !important;
-}
-
-/* Breadcrumb navigation (moved from duplicate section) */
-.breadcrumb {
-     display: flex;
-     align-items: center;
-     gap: 0.5rem;
-     margin-bottom: 1.5rem;
-     font-size: 0.95rem;
-}
-
-.breadcrumb a {
-     color: var(--color-link);
-     text-decoration: none;
-}
-
-.breadcrumb a:hover {
-     color: var(--color-link-hover);
-     text-decoration: underline;
-}
-
-.breadcrumb span {
-     color: var(--color-text);
-     opacity: 0.8;
 }
 
 /* Fixing the animation-related issues in city-links-container */

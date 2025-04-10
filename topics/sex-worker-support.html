@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -13,8 +22,18 @@
     <meta name="description"
         content="Find sex worker support networks, harm reduction initiatives, and mutual aid resources across the United States.">
 
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Sex Worker Support Networks - Mutual Aid &amp; Community Resources">
+    <meta property="og:description"
+        content="Find sex worker support networks, harm reduction initiatives, and mutual aid resources across the United States.">
+    <meta property="og:image" content="https://organize.directory/preview.png">
+    <meta property="og:url" content="https://organize.directory/topics/sex-worker-support">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/topics.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
     <!-- Initialize Components -->
@@ -29,19 +48,9 @@
         initializeComponents({
         });
     </script>
-    <!-- Open Graph / Social Media -->
 </head>
 
-<body>n
-    <meta property="og:title" content="Sex Worker Support Networks - Mutual Aid &amp; Community Resources">n
-    <meta property="og:description" content="Find mutual aid networks and community resources in sex-worker-support.">n
-    <meta property="og:image" content="https://organize.directory/preview.png">n
-    <meta property="og:url" content="https://organize.directory/topics/sex-worker-support">n
-    <meta property="og:type" content="website">n
-    <meta name="twitter:card" content="summary_large_image">
-
-
-
+<body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation">
             <div class="sidebar-header">
@@ -60,50 +69,40 @@
                 <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
             </nav>
             <div class="sidebar-motto">
-
                 Don't despair, organize.
             </div>
         </div>
 
-        <!-- Open Graph / Social Media -->n
-        <meta property="og:title" content="Sex Worker Support Networks - Mutual Aid &amp; Community Resources">n
-        <meta property="og:description"
-            content="Find mutual aid networks and community resources in sex-worker-support.">n
-        <meta property="og:image" content="https://organize.directory/preview.png">n
-        <meta property="og:url" content="https://organize.directory/topics/sex-worker-support">n
-        <meta property="og:type" content="website">n
-        <meta name="twitter:card" content="summary_large_image">
-
-
-
-
-        <!-- Critical Scripts -->
-
-        <!-- Open Graph / Social Media -->n
-        <meta property="og:title" content="Sex Worker Support Networks - Mutual Aid &amp; Community Resources">n
-        <meta property="og:description"
-            content="Find mutual aid networks and community resources in sex-worker-support.">n
-        <meta property="og:image" content="https://organize.directory/preview.png">n
-        <meta property="og:url" content="https://organize.directory/topics/sex-worker-support">n
-        <meta property="og:type" content="website">n
-        <meta name="twitter:card" content="summary_large_image">
-
-
-
-
-        <main class="content">
-            <header id="header" class="page-header"></header>
+        <main class="content" role="main">
+            <header id="header" class="page-header">
+                <div class="logo-container">
+                    <a href="/" aria-label="Home">
+                        <div class="logo">Organize<span class="logo-dot">.</span>directory</div>
+                    </a>
+                </div>
+                <div class="mobile-menu-button" role="button" tabindex="0" aria-label="Toggle navigation menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </header>
 
             <div class="state-page">
                 <div class="breadcrumb">
-                    <a href="/topics" class="breadcrumb-link">Topics</a>
+                    <a href="/">Home</a>
+                    <span>›</span>
+                    <a href="/topics">Topics</a>
                     <span>›</span>
                     <span>Sex Worker Support</span>
                 </div>
 
                 <h1 class="state-title">Sex Worker Support</h1>
+                <p class="subtitle">Organizations and initiatives focused on building solidarity, providing resources,
+                    and advancing the rights of sex workers through mutual aid and community care.</p>
+                <hr>
 
-                <section>
+                <section class="initiatives-section">
+                    <h2>Support Networks</h2>
                     <div class="initiative">
                         <a href="https://rougesupportnetwork.org/aboutrougesupportnetwork">Rouge Support
                             Network</a>
@@ -112,7 +111,7 @@
                     <div class="initiative">
                         <a href="https://www.redcanarysong.net/">Red Canary Song</a>
                         <p>A grassroots mutual aid collective of Asian and migrant sex workers organizing
-                            directsupport, resource sharing, and community care. They build networks of
+                            direct support, resource sharing, and community care. They build networks of
                             solidarity through advocacy, education, and organizing while providing mutual aid
                             and harm reduction services to their communities.</p>
                     </div>
@@ -120,20 +119,17 @@
                         <a href="https://www.swopbehindbars.org/">Sex Worker's Outreach Project (SWOP) Behind
                             Bars</a>
                         <p>SWOP Behind Bars (SBB) is a national grassroots social justice network dedicated to
-                            the
-                            fundamental human rights of sex workers, victims of trafficking, and their
-                            communities with
-                            a focus on those currently incarcerated or seeking re-entry.</p>
+                            the fundamental human rights of sex workers, victims of trafficking, and their
+                            communities with a focus on those currently incarcerated or seeking re-entry.</p>
                     </div>
                 </section>
 
             </div>
-
         </main>
     </div>
 
-
-
+    <!-- Scripts -->
+    <script src="/mobile-menu.js" defer></script>
 </body>
 
 </html>

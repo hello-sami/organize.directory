@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,12 +18,20 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <title>Political Education Networks - Mutual Aid Directory</title>
-    <meta name="description" content="Find politcal education initiatives focused on radical leftist issues.">
+    <title>Political Education Networks - The Organize Directory</title>
+    <meta name="description"
+        content="Find political education initiatives focused on radical leftist issues and movement building.">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Political Education Networks - The Organize Directory">
+    <meta property="og:description" content="Find political education initiatives focused on radical leftist issues.">
+    <meta property="og:image" content="https://organize.directory/preview.png">
+    <meta property="og:url" content="https://organize.directory/topics/political-education">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/styles/topics.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
     <!-- Initialize Components -->
@@ -29,19 +46,9 @@
         initializeComponents({
         });
     </script>
-    <!-- Open Graph / Social Media -->
 </head>
 
-<body>n
-    <meta property="og:title" content="Political Education Networks - Mutual Aid Directory">n
-    <meta property="og:description" content="Find politcal education initiatives focused on radical leftist issues.">n
-    <meta property="og:image" content="https://organize.directory/preview.png">n
-    <meta property="og:url" content="https://organize.directory/topics/political-education">n
-    <meta property="og:type" content="website">n
-    <meta name="twitter:card" content="summary_large_image">
-
-
-
+<body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation">
             <div class="sidebar-header">
@@ -60,65 +67,40 @@
                 <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
             </nav>
             <div class="sidebar-motto">
-
                 Don't despair, organize.
             </div>
         </div>
 
-        <!-- Open Graph / Social Media -->n
-        <meta property="og:title" content="Political Education Networks - Mutual Aid Directory">n
-        <meta property="og:description"
-            content="Find politcal education initiatives focused on radical leftist issues.">n
-        <meta property="og:image" content="https://organize.directory/preview.png">n
-        <meta property="og:url" content="https://organize.directory/topics/political-education">n
-        <meta property="og:type" content="website">n
-        <meta name="twitter:card" content="summary_large_image">
-
-
-
-
-        <!-- Critical Scripts -->
-
-        <!-- Open Graph / Social Media -->n
-        <meta property="og:title" content="Political Education Networks - Mutual Aid Directory">n
-        <meta property="og:description"
-            content="Find politcal education initiatives focused on radical leftist issues.">n
-        <meta property="og:image" content="https://organize.directory/preview.png">n
-        <meta property="og:url" content="https://organize.directory/topics/political-education">n
-        <meta property="og:type" content="website">n
-        <meta name="twitter:card" content="summary_large_image">
-
-
-
-
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 
-            <div class="topics-page">
+            <div class="state-page">
                 <div class="breadcrumb">
-                    <a href="/topics">Issues</a>
+                    <a href="/topics" class="breadcrumb-link">Issues</a>
                     <span>›</span>
                     <span>Political Education</span>
                 </div>
 
-                <h1>Political Education</h1>
+                <h1 class="state-title">Political Education</h1>
+                <p class="subtitle">Resources and organizations focused on developing political consciousness, radical
+                    analysis, and movement building through education and collective study.</p>
                 <hr>
 
-                <section>
-
+                <section class="initiatives-section">
+                    <h2>Education Resources</h2>
                     <div class="initiative">
                         <a href="https://www.radicalinprogress.org/">Radical in Progress</a>
-                        <p>Your one-stop-shop for social justice study guides.</p>
+                        <p>Your one-stop-shop for social justice study guides, offering accessible political education
+                            materials to develop critical consciousness and support movement building.</p>
                     </div>
-
                 </section>
 
             </div>
         </main>
     </div>
 
-
-
+    <!-- Scripts -->
+    <script src="/mobile-menu.js" defer></script>
 </body>
 
 </html>

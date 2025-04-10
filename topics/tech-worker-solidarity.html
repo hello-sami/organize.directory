@@ -3,7 +3,7 @@
 
 <head>
     <!-- Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -22,8 +22,18 @@
     <meta name="description"
         content="Find mutual aid networks and initiatives focused on building worker power and solidarity in the tech industry.">
 
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Tech Worker Solidarity Networks - The Organize Directory">
+    <meta property="og:description"
+        content="Find mutual aid networks and initiatives focused on building worker power and solidarity in the tech industry.">
+    <meta property="og:image" content="https://organize.directory/preview.png">
+    <meta property="og:url" content="https://organize.directory/topics/tech-worker-solidarity">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/topics.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
     <!-- Initialize Components -->
@@ -38,20 +48,9 @@
         initializeComponents({
         });
     </script>
-    <!-- Open Graph / Social Media -->
 </head>
 
-<body>n
-    <meta property="og:title" content="Tech Worker Solidarity Networks - The Organize Directory">n
-    <meta property="og:description"
-        content="Find mutual aid networks and community resources in tech-worker-solidarity.">n
-    <meta property="og:image" content="https://organize.directory/preview.png">n
-    <meta property="og:url" content="https://organize.directory/topics/tech-worker-solidarity">n
-    <meta property="og:type" content="website">n
-    <meta name="twitter:card" content="summary_large_image">
-
-
-
+<body>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation">
             <div class="sidebar-header">
@@ -70,76 +69,58 @@
                 <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
             </nav>
             <div class="sidebar-motto">
-
                 Don't despair, organize.
             </div>
         </div>
 
-        <!-- Open Graph / Social Media -->n
-        <meta property="og:title" content="Tech Worker Solidarity Networks - The Organize Directory">n
-        <meta property="og:description"
-            content="Find mutual aid networks and community resources in tech-worker-solidarity.">n
-        <meta property="og:image" content="https://organize.directory/preview.png">n
-        <meta property="og:url" content="https://organize.directory/topics/tech-worker-solidarity">n
-        <meta property="og:type" content="website">n
-        <meta name="twitter:card" content="summary_large_image">
-
-
-
-
-        <!-- Critical Scripts -->
-
-        <!-- Open Graph / Social Media -->n
-        <meta property="og:title" content="Tech Worker Solidarity Networks - The Organize Directory">n
-        <meta property="og:description"
-            content="Find mutual aid networks and community resources in tech-worker-solidarity.">n
-        <meta property="og:image" content="https://organize.directory/preview.png">n
-        <meta property="og:url" content="https://organize.directory/topics/tech-worker-solidarity">n
-        <meta property="og:type" content="website">n
-        <meta name="twitter:card" content="summary_large_image">
-
-
-
-
         <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+            <header id="header" class="page-header">
+                <div class="logo-container">
+                    <a href="/" aria-label="Home">
+                        <div class="logo">Organize<span class="logo-dot">.</span>directory</div>
+                    </a>
+                </div>
+                <div class="mobile-menu-button" role="button" tabindex="0" aria-label="Toggle navigation menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </header>
 
-            <div class="city-page">
+            <div class="topics-page">
                 <div class="breadcrumb">
                     <a href="/">Home</a>
                     <span>›</span>
-                    <a href="/topics">Issues</a>
+                    <a href="/topics">Topics</a>
                     <span>›</span>
                     <span>Tech Worker Solidarity</span>
                 </div>
 
                 <h1>Tech Worker Solidarity Networks</h1>
-                <p class="subtitle">Mutual aid networks and initiatives focused on building worker power and
-                    solidarity
+                <p class="subtitle">Mutual aid networks and initiatives focused on building worker power and solidarity
                     in the tech industry through collective organizing and education.</p>
                 <hr>
 
-                <section>
+                <section class="initiatives-section">
                     <h2>Worker Organizing</h2>
                     <div class="initiative">
                         <a href="https://techworkerscoalition.org/">Tech Workers Coalition (TWC)</a>
                         <p>A democratically structured coalition fostering mutual aid and solidarity through
-                            tech worker
-                            organizing and education. They coordinate worker support, political education, and
-                            solidarity networks while building power through rank-and-file organizing,
-                            cross-movement
+                            tech worker organizing and education. They coordinate worker support, political education,
+                            and
+                            solidarity networks while building power through rank-and-file organizing, cross-movement
                             alliances, and creating spaces for inclusive tech industry transformation.</p>
                     </div>
                 </section>
 
-                <p class="help-text">Know of a tech worker solidarity initiative? <a
+                <p class="help-text">Know of a tech worker solidarity initiative we should add? <a
                         href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
         </main>
     </div>
 
-
-
+    <!-- Scripts -->
+    <script src="/mobile-menu.js" defer></script>
 </body>
 
 </html>

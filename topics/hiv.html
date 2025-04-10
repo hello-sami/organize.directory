@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-QJ03RCM35H');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -13,14 +22,14 @@
     <meta name="description"
         content="Find organizations working to support people living with HIV and prevent new infections through mutual aid and community care.">
 
-    <!-- Open Graph tags -->
+    <!-- Open Graph / Social Media -->
     <meta property="og:title" content="HIV Support Organizations - The Organize Directory">
     <meta property="og:description"
         content="Find organizations working to support people living with HIV and prevent new infections through mutual aid and community care.">
     <meta property="og:type" content="website">
-
-    <meta property="og:url" content="https://organize.directory/issues/hiv">
+    <meta property="og:url" content="https://organize.directory/topics/hiv">
     <meta property="og:image" content="https://organize.directory/preview.png">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
@@ -35,8 +44,7 @@
         initializeSidebar('topics');
 
         // Initialize other components
-        initializeComponents({
-        });
+        initializeComponents({});
     </script>
 </head>
 
@@ -59,20 +67,9 @@
                 <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
             </nav>
             <div class="sidebar-motto">
-
                 Don't despair, organize.
             </div>
         </div>
-
-
-
-
-
-        <!-- Critical Scripts -->
-
-
-
-
 
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
@@ -85,38 +82,30 @@
                 </div>
 
                 <h1>HIV Support</h1>
+                <p class="subtitle">Organizations working to support people living with HIV and prevent new infections
+                    through mutual aid and community care.</p>
                 <hr>
 
-                <section>
+                <section class="initiatives-section">
                     <h2>Regional Organizations</h2>
                     <div class="initiative">
                         <a href="https://southernaidscoalition.org/">Southern AIDS Coalition</a>
                         <p>A community-centered organization fostering mutual aid and healthcare access through
-                            HIV
-                            support and advocacy across the Southern United States. They coordinate capacity
-                            building,
-                            leadership development, strategic grantmaking, and solidarity networks while
-                            building power
-                            through policy advocacy, research, and creating spaces for community-driven
-                            solutions to end
-                            the HIV epidemic in the South. Their work includes direct support services,
-                            educational
-                            initiatives, and building coalitions to address healthcare disparities in the
+                            HIV support and advocacy across the Southern United States. They coordinate capacity
+                            building, leadership development, strategic grantmaking, and solidarity networks while
+                            building power through policy advocacy, research, and creating spaces for community-driven
+                            solutions to end the HIV epidemic in the South. Their work includes direct support services,
+                            educational initiatives, and building coalitions to address healthcare disparities in the
                             region.</p>
                     </div>
                 </section>
 
-                <p class="help-text">Know of an organization working on HIV support? <a
-                        href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
             </div>
-            <footer class="site-footer">
-                <p>Don't despair, organize. </p>
-            </footer>
         </main>
     </div>
 
-
-
+    <!-- Scripts -->
+    <script src="/mobile-menu.js" defer></script>
 </body>
 
 </html>

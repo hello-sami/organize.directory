@@ -2,6 +2,17 @@
 <html lang="en">
 
 <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-QJ03RCM35H");
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,30 +20,26 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-
-    <meta property="og:title" content="Drug Harm Reduction Organizations - The Organize Directory">
-    <meta property="og:description"
-        content="Find organizations working on harm reduction, drug policy reform, and community support.">
-    <meta name="twitter:card" content="summary">
+    <title>Drug Harm Reduction Organizations - The Organize Directory</title>
     <meta name="description"
         content="Find organizations working on harm reduction, drug policy reform, and community support.">
-    <title>Drug Harm Reduction Organizations - The Organize Directory</title>
 
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Drug Harm Reduction Organizations | The Organize Directory">
+    <meta property="og:description"
+        content="Find organizations working on harm reduction, drug policy reform, and community support.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://organize.directory/topics/drug-harm-reduction">
+    <meta property="og:image" content="https://organize.directory/preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="/styles.css">
+    <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
     <!-- Initialize Components -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
@@ -42,8 +49,7 @@
         initializeSidebar('topics');
 
         // Initialize other components
-        initializeComponents({
-        });
+        initializeComponents({});
     </script>
 </head>
 
@@ -66,41 +72,56 @@
                 <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
             </nav>
             <div class="sidebar-motto">
-
                 Don't despair, organize.
             </div>
         </div>
-        <!-- Critical Scripts -->
-
-
-
-
 
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 
-            <h1>Drug Harm Reduction</h1>
-            <hr>
-
-            <section>
-                <div class="initiative">
-                    <a href="https://harmreduction.org/">National Harm Reduction Coalition</a>
-                    <p>Coalition working to expand access to safe syringes and NARCAN</p>
-                </div>
-                <div class="initiative">
-                    <a href="https://inpud.net/">Internation Network of People Who Use Drugs (INPUD)</a>
-                    <p>a global peer-based organisation that seeks to promote the health and defend the rights of
-                        people who use drugs.</p>
+            <div class="city-page state-page">
+                <div class="breadcrumb">
+                    <a href="/topics">Topics</a>
+                    <span>›</span>
+                    <span>Drug Harm Reduction</span>
                 </div>
 
-            </section>
+                <h1>Drug Harm Reduction</h1>
+                <p class="subtitle">
+                    Organizations working to reduce the harms associated with drug use through education, advocacy,
+                    direct services, and policy reform initiatives.
+                </p>
+                <hr>
+
+                <section>
+                    <h2>National & International Organizations</h2>
+                    <div class="initiative">
+                        <a href="https://harmreduction.org/">National Harm Reduction Coalition</a>
+                        <p>
+                            A national advocacy and capacity-building organization that promotes the health and dignity
+                            of individuals and communities affected by drug use. They coordinate training, education,
+                            and advocacy programs to expand access to sterile syringes, naloxone (NARCAN), and other
+                            harm reduction services while working to change policies and attitudes that stigmatize
+                            people who use drugs.
+                        </p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://inpud.net/">International Network of People Who Use Drugs (INPUD)</a>
+                        <p>
+                            A global peer-based organization that seeks to promote the health and defend the rights of
+                            people who use drugs. They advocate for evidence-based harm reduction services, drug policy
+                            reform, and the meaningful involvement of people who use drugs in decisions that affect
+                            their
+                            lives. INPUD works to challenge stigma and discrimination while building networks of
+                            solidarity
+                            and mutual aid among drug user communities worldwide.
+                        </p>
+                    </div>
+                </section>
+
+            </div>
         </main>
     </div>
-
-
-
-
-
 </body>
 
 </html>
