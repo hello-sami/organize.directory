@@ -1,37 +1,41 @@
 {
-  "name": "organize-directory",
-  "version": "1.0.0",
-  "type": "module",
-  "description": "A directory of mutual aid networks and community resources",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "test-search": "npx serve .",
-    "build:cities": "node scripts/build-city-list.js"
-  },
-  "devDependencies": {
-    "glob": "^11.0.1",
-    "nodemon": "^3.1.9",
-    "prettier": "^3.5.1",
-    "serve": "^14.2.4"
-  },
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.12",
-    "express": "^4.18.2",
-    "front-matter": "^4.0.2",
-    "jsdom": "^26.0.0",
-    "markdown-it": "^14.0.0",
-    "node-fetch": "^3.3.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hello-sami/organize.directory.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hello-sami/organize.directory/issues"
-  },
-  "homepage": "https://github.com/hello-sami/organize.directory#readme"
+     "name": "organize-directory",
+     "version": "1.0.0",
+     "type": "module",
+     "description": "A directory of mutual aid networks and community resources",
+     "main": "server.js",
+     "scripts": {
+          "start": "node server.js",
+          "test-search": "npx serve .",
+          "build:cities": "node scripts/build-city-list.js",
+          "update-css": "node batch-update-html.js",
+          "update-css-single": "node update-classes.js",
+          "add-updater": "node add-updater-to-html.js"
+     },
+     "devDependencies": {
+          "glob": "^11.0.1",
+          "nodemon": "^3.1.9",
+          "prettier": "^3.5.1",
+          "serve": "^14.2.4"
+     },
+     "dependencies": {
+          "cheerio": "^1.0.0-rc.12",
+          "express": "^4.18.2",
+          "front-matter": "^4.0.2",
+          "fs-extra": "^10.1.0",
+          "jsdom": "^26.0.0",
+          "markdown-it": "^14.0.0",
+          "node-fetch": "^3.3.2"
+     },
+     "repository": {
+          "type": "git",
+          "url": "git+https://github.com/hello-sami/organize.directory.git"
+     },
+     "keywords": [],
+     "author": "",
+     "license": "ISC",
+     "bugs": {
+          "url": "https://github.com/hello-sami/organize.directory/issues"
+     },
+     "homepage": "https://github.com/hello-sami/organize.directory#readme"
 }

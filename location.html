@@ -1,22 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
+<!DOCTYPE html><html lang="en"><head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, text-size-adjust=100%, -webkit-text-size-adjust=100%">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, text-size-adjust=100%, -webkit-text-size-adjust=100%">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <meta name="description"
-        content="Find mutual aid networks, support initiatives, and community resources by location.">
+    <meta name="description" content="Find mutual aid networks, support initiatives, and community resources by location.">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Find Groups by Location | The Organize Directory">
-    <meta property="og:description"
-        content="Find mutual aid networks, support initiatives, and community resources by location.">
+    <meta property="og:description" content="Find mutual aid networks, support initiatives, and community resources by location.">
     <meta property="og:image" content="https://organize.directory/preview.png">
     <meta property="og:url" content="https://organize.directory/location">
     <meta property="og:type" content="website">
@@ -30,7 +24,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css?v=1.1.1">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
     <!-- Initialize Components -->
     <script type="module">
@@ -54,15 +48,15 @@
                 </h1>
             </div>
             <nav>
-                <a href="/" class="nav-link">Home</a>
+                <a href="/" class="nav-link nav-link-base">Home</a>
                 <div class="nav-group">
                     <span class="nav-group-title">Find a group</span>
-                    <a href="/location" class="nav-link nav-link-indented">by location</a>
-                    <a href="/topics" class="nav-link nav-link-indented">by topic</a>
+                    <a href="/location" class="nav-link nav-link-indented nav-link-base">by location</a>
+                    <a href="/topics" class="nav-link nav-link-indented nav-link-base">by topic</a>
                 </div>
-                <a href="/guides" class="nav-link">Guides</a>
-                <a href="/contact" class="nav-link">Contact</a>
-                <a href="/subscribe" class="nav-link">Subscribe</a>
+                <a href="/guides" class="nav-link nav-link-base">Guides</a>
+                <a href="/contact" class="nav-link nav-link-base">Contact</a>
+                <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
             </nav>
             <div class="sidebar-motto">
                 Fascism is here.<br>
@@ -74,66 +68,66 @@
             <h2>Select a state to get started:</h2>
 
             <div id="states-list-container" class="states-list" data-populated="true">
-                <a href="/alabama" class="state-link">Alabama</a>
-                <a href="/alaska" class="state-link">Alaska</a>
-                <a href="/arizona" class="state-link">Arizona</a>
-                <a href="/arkansas" class="state-link">Arkansas</a>
-                <a href="/california" class="state-link">California</a>
-                <a href="/colorado" class="state-link">Colorado</a>
-                <a href="/connecticut" class="state-link">Connecticut</a>
-                <a href="/delaware" class="state-link">Delaware</a>
-                <a href="/district-of-columbia" class="state-link">District of Columbia</a>
-                <a href="/florida" class="state-link">Florida</a>
-                <a href="/georgia" class="state-link">Georgia</a>
-                <a href="/hawaii" class="state-link">Hawaii</a>
-                <a href="/idaho" class="state-link">Idaho</a>
-                <a href="/illinois" class="state-link">Illinois</a>
-                <a href="/indiana" class="state-link">Indiana</a>
-                <a href="/iowa" class="state-link">Iowa</a>
-                <a href="/kansas" class="state-link">Kansas</a>
-                <a href="/kentucky" class="state-link">Kentucky</a>
-                <a href="/louisiana" class="state-link">Louisiana</a>
-                <a href="/maine" class="state-link">Maine</a>
-                <a href="/maryland" class="state-link">Maryland</a>
-                <a href="/massachusetts" class="state-link">Massachusetts</a>
-                <a href="/michigan" class="state-link">Michigan</a>
-                <a href="/minnesota" class="state-link">Minnesota</a>
-                <a href="/mississippi" class="state-link">Mississippi</a>
-                <a href="/missouri" class="state-link">Missouri</a>
-                <a href="/montana" class="state-link">Montana</a>
-                <a href="/nebraska" class="state-link">Nebraska</a>
-                <a href="/nevada" class="state-link">Nevada</a>
-                <a href="/new-hampshire" class="state-link">New Hampshire</a>
-                <a href="/new-jersey" class="state-link">New Jersey</a>
-                <a href="/new-mexico" class="state-link">New Mexico</a>
-                <a href="/new-york" class="state-link">New York</a>
-                <a href="/north-carolina" class="state-link">North Carolina</a>
-                <a href="/north-dakota" class="state-link">North Dakota</a>
-                <a href="/ohio" class="state-link">Ohio</a>
-                <a href="/oklahoma" class="state-link">Oklahoma</a>
-                <a href="/oregon" class="state-link">Oregon</a>
-                <a href="/pennsylvania" class="state-link">Pennsylvania</a>
-                <a href="/rhode-island" class="state-link">Rhode Island</a>
-                <a href="/south-carolina" class="state-link">South Carolina</a>
-                <a href="/south-dakota" class="state-link">South Dakota</a>
-                <a href="/tennessee" class="state-link">Tennessee</a>
-                <a href="/texas" class="state-link">Texas</a>
-                <a href="/utah" class="state-link">Utah</a>
-                <a href="/vermont" class="state-link">Vermont</a>
-                <a href="/virginia" class="state-link">Virginia</a>
-                <a href="/washington" class="state-link">Washington</a>
-                <a href="/west-virginia" class="state-link">West Virginia</a>
-                <a href="/wisconsin" class="state-link">Wisconsin</a>
-                <a href="/wyoming" class="state-link">Wyoming</a>
+                <a href="/alabama" class="state-link location-link-base">Alabama</a>
+                <a href="/alaska" class="state-link location-link-base">Alaska</a>
+                <a href="/arizona" class="state-link location-link-base">Arizona</a>
+                <a href="/arkansas" class="state-link location-link-base">Arkansas</a>
+                <a href="/california" class="state-link location-link-base">California</a>
+                <a href="/colorado" class="state-link location-link-base">Colorado</a>
+                <a href="/connecticut" class="state-link location-link-base">Connecticut</a>
+                <a href="/delaware" class="state-link location-link-base">Delaware</a>
+                <a href="/district-of-columbia" class="state-link location-link-base">District of Columbia</a>
+                <a href="/florida" class="state-link location-link-base">Florida</a>
+                <a href="/georgia" class="state-link location-link-base">Georgia</a>
+                <a href="/hawaii" class="state-link location-link-base">Hawaii</a>
+                <a href="/idaho" class="state-link location-link-base">Idaho</a>
+                <a href="/illinois" class="state-link location-link-base">Illinois</a>
+                <a href="/indiana" class="state-link location-link-base">Indiana</a>
+                <a href="/iowa" class="state-link location-link-base">Iowa</a>
+                <a href="/kansas" class="state-link location-link-base">Kansas</a>
+                <a href="/kentucky" class="state-link location-link-base">Kentucky</a>
+                <a href="/louisiana" class="state-link location-link-base">Louisiana</a>
+                <a href="/maine" class="state-link location-link-base">Maine</a>
+                <a href="/maryland" class="state-link location-link-base">Maryland</a>
+                <a href="/massachusetts" class="state-link location-link-base">Massachusetts</a>
+                <a href="/michigan" class="state-link location-link-base">Michigan</a>
+                <a href="/minnesota" class="state-link location-link-base">Minnesota</a>
+                <a href="/mississippi" class="state-link location-link-base">Mississippi</a>
+                <a href="/missouri" class="state-link location-link-base">Missouri</a>
+                <a href="/montana" class="state-link location-link-base">Montana</a>
+                <a href="/nebraska" class="state-link location-link-base">Nebraska</a>
+                <a href="/nevada" class="state-link location-link-base">Nevada</a>
+                <a href="/new-hampshire" class="state-link location-link-base">New Hampshire</a>
+                <a href="/new-jersey" class="state-link location-link-base">New Jersey</a>
+                <a href="/new-mexico" class="state-link location-link-base">New Mexico</a>
+                <a href="/new-york" class="state-link location-link-base">New York</a>
+                <a href="/north-carolina" class="state-link location-link-base">North Carolina</a>
+                <a href="/north-dakota" class="state-link location-link-base">North Dakota</a>
+                <a href="/ohio" class="state-link location-link-base">Ohio</a>
+                <a href="/oklahoma" class="state-link location-link-base">Oklahoma</a>
+                <a href="/oregon" class="state-link location-link-base">Oregon</a>
+                <a href="/pennsylvania" class="state-link location-link-base">Pennsylvania</a>
+                <a href="/rhode-island" class="state-link location-link-base">Rhode Island</a>
+                <a href="/south-carolina" class="state-link location-link-base">South Carolina</a>
+                <a href="/south-dakota" class="state-link location-link-base">South Dakota</a>
+                <a href="/tennessee" class="state-link location-link-base">Tennessee</a>
+                <a href="/texas" class="state-link location-link-base">Texas</a>
+                <a href="/utah" class="state-link location-link-base">Utah</a>
+                <a href="/vermont" class="state-link location-link-base">Vermont</a>
+                <a href="/virginia" class="state-link location-link-base">Virginia</a>
+                <a href="/washington" class="state-link location-link-base">Washington</a>
+                <a href="/west-virginia" class="state-link location-link-base">West Virginia</a>
+                <a href="/wisconsin" class="state-link location-link-base">Wisconsin</a>
+                <a href="/wyoming" class="state-link location-link-base">Wyoming</a>
             </div>
         </main>
     </div>
 
     <!-- Core Scripts -->
-    <script src="/js/script.js" type="module" async></script>
-    <script src="/mobile-menu.js" defer></script>
-    <script src="/js/posts.js" type="module" async></script>
-    <script src="/js/analytics.js" type="module" async></script>
-</body>
+    <script src="/js/script.js" type="module" async=""></script>
+    <script src="/mobile-menu.js" defer=""></script>
+    <script src="/js/posts.js" type="module" async=""></script>
+    <script src="/js/analytics.js" type="module" async=""></script>
 
-</html>
+
+</body></html>
