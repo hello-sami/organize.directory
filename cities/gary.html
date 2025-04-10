@@ -1,4 +1,7 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -11,12 +14,32 @@
   </title>
   <meta name="description" content="Find mutual aid networks and community support initiatives in Gary, Indiana.">
 
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Gary | The Organize Directory">
+  <meta property="og:description"
+    content="Find mutual aid networks and community support initiatives in Gary, Indiana.">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta property="og:url" content="https://organize.directory/gary">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-QJ03RCM35H");
+  </script>
 
   <!-- Initialize Components -->
   <script type="module">
@@ -30,16 +53,9 @@
     initializeComponents({
     });
   </script>
-  <!-- Open Graph / Social Media --></head><body>n
-  <meta property="og:title" content="Gary | The Organize Directory">n
-  <meta property="og:description" content="Find mutual aid networks and community support initiatives in Gary, Indiana.">n
-  <meta property="og:image" content="https://organize.directory/preview.png">n
-  <meta property="og:url" content="https://organize.directory/gary">n
-  <meta property="og:type" content="website">n
-  <meta name="twitter:card" content="summary_large_image">
+</head>
 
-
-
+<body>
   <div class="layout">
     <div id="sidebar" class="sidebar" aria-label="Main navigation">
       <div class="sidebar-header">
@@ -58,77 +74,53 @@
         <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
       </nav>
       <div class="sidebar-motto">
-        Fascism is here.<br>
         Don't despair, organize.
       </div>
     </div>
 
-    <!-- Open Graph / Social Media -->n
-    <meta property="og:title" content="Gary | The Organize Directory">n
-    <meta property="og:description" content="Find mutual aid networks and community support initiatives in Gary, Indiana.">n
-    <meta property="og:image" content="https://organize.directory/preview.png">n
-    <meta property="og:url" content="https://organize.directory/gary">n
-    <meta property="og:type" content="website">n
-    <meta name="twitter:card" content="summary_large_image">
-    
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-    
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/indiana">Indiana</a>
+          <span>›</span>
+          <span>Gary</span>
+        </div>
 
-      <!-- Open Graph / Social Media -->n
-      <meta property="og:title" content="Gary | The Organize Directory">n
-      <meta property="og:description" content="Find mutual aid networks and community support initiatives in Gary, Indiana.">n
-      <meta property="og:image" content="https://organize.directory/preview.png">n
-      <meta property="og:url" content="https://organize.directory/gary">n
-      <meta property="og:type" content="website">n
-      <meta name="twitter:card" content="summary_large_image">
-      
+        <h1>Gary, Indiana</h1>
+        <hr>
 
-      
-
-        <main class="content" role="main">
-          <header id="header" class="page-header"></header>
-
-          <div class="city-page">
-            <div class="breadcrumb">
-              <a href="/indiana">Indiana</a>
-              <span>›</span>
-              <span>Gary</span>
-            </div>
-
-            <h1>Gary, Indiana</h1>
-            <hr>
-
-            <section>
-              <div class="initiative">
-                <a href="https://www.joybomb.org/">Joy Bomb Social Center</a>
-                <p>
-                  A radical community space fostering mutual aid and collective
-                  liberation through art, education, and organizing in Gary. They
-                  coordinate resource sharing, political education, and solidarity
-                  networks while building power through community gatherings,
-                  skill-sharing workshops, and creating accessible spaces for
-                  movement building and cultural resistance.
-                </p>
-              </div>
-              <div class="initiative">
-                <a href="https://www.cooperationnwi.org/">Cooperation NWI</a>
-                <p>
-                  The mission of Cooperation Northwest Indiana is building a
-                  brighter future in the ruins of the rust belt.
-                </p>
-              </div>
-              <div class="initiative">
-                <a href="https://www.instagram.com/blmgary/">BLM Gary</a>
-                <p>
-                  Since 2014. Black-led, multiracial, inter-generational
-                  organization rooted in Gary, active in Northwest Indiana region.
-                </p>
-              </div>
-            </section>
+        <section>
+          <div class="initiative">
+            <a href="https://www.joybomb.org/">Joy Bomb Social Center</a>
+            <p>
+              A radical community space fostering mutual aid and collective
+              liberation through art, education, and organizing in Gary. They
+              coordinate resource sharing, political education, and solidarity
+              networks while building power through community gatherings,
+              skill-sharing workshops, and creating accessible spaces for
+              movement building and cultural resistance.
+            </p>
           </div>
-        </main>
+          <div class="initiative">
+            <a href="https://www.cooperationnwi.org/">Cooperation NWI</a>
+            <p>
+              The mission of Cooperation Northwest Indiana is building a
+              brighter future in the ruins of the rust belt.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/blmgary/">BLM Gary</a>
+            <p>
+              Since 2014. Black-led, multiracial, inter-generational
+              organization rooted in Gary, active in Northwest Indiana region.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
   </div>
+</body>
 
-
-
-</body></html>
+</html>

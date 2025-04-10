@@ -1,5 +1,7 @@
-<!DOCTYPE html><html lang="en"><head>
-  <!-- Common head content -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -7,20 +9,24 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <meta property="og:type" content="website">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Iowa City and Cedar Rapids, Iowa. Connect with local organizations and community resources.">
-  <meta property="og:title" content="Mutual Aid in Iowa City and Cedar Rapids - Local Support Networks">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Iowa City and Cedar Rapids, Iowa. Connect with local organizations providing community-based support.">
-  <meta property="og:url" content="https://organize.directory/iowa-city">
-  <meta property="og:image" content="https://organize.directory/preview.png">
-
   <title>
     Mutual Aid in Iowa City and Cedar Rapids- Local Support Networks &amp;
     Community Resources
   </title>
 
+  <meta name="description"
+    content="Find mutual aid initiatives and community support networks in Iowa City and Cedar Rapids, Iowa. Connect with local organizations and community resources.">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Mutual Aid in Iowa City and Cedar Rapids - Local Support Networks">
+  <meta property="og:description"
+    content="Find mutual aid initiatives and community support networks in Iowa City and Cedar Rapids, Iowa. Connect with local organizations providing community-based support.">
+  <meta property="og:url" content="https://organize.directory/iowa-city">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +36,6 @@
   <!-- Google Analytics -->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
-
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
@@ -38,6 +43,7 @@
     gtag("js", new Date());
     gtag("config", "G-QJ03RCM35H");
   </script>
+
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
@@ -71,7 +77,6 @@
         <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
       </nav>
       <div class="sidebar-motto">
-        Fascism is here.<br>
         Don't despair, organize.
       </div>
     </div>
@@ -79,44 +84,52 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      <section class="initiatives">
-        <div class="initiative">
-          <a href="http://peaceiowa.org/">Peace Iowa</a>
-          <p>
-            A grassroots organization fostering mutual aid and community
-            power through peace education and nonviolent action in Iowa
-            City. They coordinate educational programs, direct action, and
-            solidarity networks while building power through anti-war
-            organizing, conflict resolution training, and creating spaces
-            for peace and social justice.
-          </p>
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/iowa">Iowa</a>
+          <span>›</span>
+          <span>Iowa City / Cedar Rapids</span>
         </div>
-        <div class="initiative">
-          <a href="https://icmutualaid.org/">Iowa City Mutual Aid</a>
-          <p>
-            We are IC Mutual Aid. We work to meet the survival needs of the
-            people whom our systems continuously fail.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.instagram.com/iowacityfridge/">Iowa City Fridge</a>
-          <p>Take what you need. Leave what you can.</p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.facebook.com/CorridorCAN/">Corridcor Community Action Network</a>
-          <p>
-            Corridor Community Action Network serves to facilitate resident
-            participation and empowerment, raising awareness about
-            opportunities to improve the quality of life for all individuals
-            in the Iowa Corridor.
-          </p>
-        </div>
-      </section>
+
+        <h1>Iowa City / Cedar Rapids</h1>
+        <hr>
+
+        <section>
+          <div class="initiative">
+            <a href="http://peaceiowa.org/">Peace Iowa</a>
+            <p>
+              A grassroots organization fostering mutual aid and community
+              power through peace education and nonviolent action in Iowa
+              City. They coordinate educational programs, direct action, and
+              solidarity networks while building power through anti-war
+              organizing, conflict resolution training, and creating spaces
+              for peace and social justice.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://icmutualaid.org/">Iowa City Mutual Aid</a>
+            <p>
+              We are IC Mutual Aid. We work to meet the survival needs of the
+              people whom our systems continuously fail.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/iowacityfridge/">Iowa City Fridge</a>
+            <p>Take what you need. Leave what you can.</p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.facebook.com/CorridorCAN/">Corridcor Community Action Network</a>
+            <p>
+              Corridor Community Action Network serves to facilitate resident
+              participation and empowerment, raising awareness about
+              opportunities to improve the quality of life for all individuals
+              in the Iowa Corridor.
+            </p>
+          </div>
+        </section>
+      </div>
     </main>
   </div>
+</body>
 
-  <!-- Single instance of scripts at the end of body -->
-
-
-
-</body></html>
+</html>

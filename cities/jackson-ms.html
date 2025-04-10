@@ -1,5 +1,7 @@
-<!DOCTYPE html><html lang="en"><head>
-  <!-- Common head content -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -7,16 +9,21 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://organize.directory/preview.png">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="description" content="Find mutual aid networks and community support initiatives in Jackson, Mississippi.">
-  <meta property="og:title" content="Jackson, Mississippi - The Organize Directory">
-  <meta property="og:description" content="Find mutual aid networks and community support initiatives in Jackson, Mississippi.">
-
   <title>Jackson, Mississippi - The Organize Directory</title>
 
+  <meta name="description"
+    content="Find mutual aid networks and community support initiatives in Jackson, Mississippi.">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Jackson, Mississippi - The Organize Directory">
+  <meta property="og:description"
+    content="Find mutual aid networks and community support initiatives in Jackson, Mississippi.">
+  <meta property="og:url" content="https://organize.directory/jackson-ms">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +33,6 @@
   <!-- Google Analytics -->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
-
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
@@ -34,6 +40,7 @@
     gtag("js", new Date());
     gtag("config", "G-QJ03RCM35H");
   </script>
+
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
@@ -67,33 +74,42 @@
         <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
       </nav>
       <div class="sidebar-motto">
-        Fascism is here.<br>
         Don't despair, organize.
       </div>
     </div>
 
-    
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-    
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/mississippi">Mississippi</a>
+          <span>›</span>
+          <span>Jackson</span>
+        </div>
 
-      <main class="content" role="main">
-        <header id="header" class="page-header"></header>
+        <h1>Jackson</h1>
+        <hr>
 
-        itiative"&gt;
-        <a href="https://cooperationjackson.org/">Cooperation Jackson</a>
-  </main></div>
-  <div class="initiative">
-    <a href="https://rechfoundationms.org/">The RECH Foundation</a>
-    <p>
-      To help individuals and families impacted by crime and
-      incarceration..
-    </p>
+        <section>
+          <div class="initiative">
+            <a href="https://cooperationjackson.org/">Cooperation Jackson</a>
+            <p>
+              A cooperative network building economic democracy and creating sustainable community development in
+              Jackson, Mississippi.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://rechfoundationms.org/">The RECH Foundation</a>
+            <p>
+              To help individuals and families impacted by crime and
+              incarceration.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
   </div>
-  
-  
-  
-  
+</body>
 
-
-
-</body></html>
+</html>

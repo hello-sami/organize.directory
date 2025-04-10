@@ -15,7 +15,7 @@ const initialSidebar = `
         <a href="/subscribe" class="nav-link">Subscribe</a>
     </nav>
     <div class="sidebar-motto">
-     Fascism is here.<br> Don't despair, organize.
+       Don't despair, organize.
     </div>`;
 
 // Function to insert sidebar HTML

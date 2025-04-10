@@ -1,4 +1,7 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -6,19 +9,23 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <meta property="og:type" content="website">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Butte, Montana. Connect with local organizations and community resources.">
-  <meta property="og:title" content="Mutual Aid in Butte - Local Support Networks">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Butte, Montana. Connect with local organizations providing community-based support.">
-  <meta property="og:url" content="https://organize.directory/butte">
-  <meta property="og:image" content="https://organize.directory/preview.png">
-
   <title>
     Mutual Aid in Butte - Local Support Networks &amp; Community Resources
   </title>
 
+  <meta name="description"
+    content="Find mutual aid initiatives and community support networks in Butte, Montana. Connect with local organizations and community resources.">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Mutual Aid in Butte - Local Support Networks">
+  <meta property="og:description"
+    content="Find mutual aid initiatives and community support networks in Butte, Montana. Connect with local organizations providing community-based support.">
+  <meta property="og:url" content="https://organize.directory/butte">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
   <!-- Preconnect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,7 +35,6 @@
   <!-- Google Analytics -->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
-
     window.dataLayer = window.dataLayer || [];
     function gtag() {
       dataLayer.push(arguments);
@@ -36,6 +42,7 @@
     gtag("js", new Date());
     gtag("config", "G-QJ03RCM35H");
   </script>
+
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
@@ -69,7 +76,6 @@
         <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
       </nav>
       <div class="sidebar-motto">
-        Fascism is here.<br>
         Don't despair, organize.
       </div>
     </div>
@@ -77,29 +83,40 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      <section class="initiatives">
-        <div class="initiative">
-          <a href="https://www.butteactionalliance.org/">Butte Action Alliance</a>
-          <p>
-            We meet to take action, build community, and exercise collective
-            power around abortion, reproductive and human rights for ALL.
-          </p>
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/montana">Montana</a>
+          <span>›</span>
+          <span>Butte</span>
         </div>
-        <div class="initiative">
-          <a href="https://www.buttepride.org/">Butte Pride</a>
-          <p>
-            This page is for all people in &amp; supporting of the queer
-            community of Butte, MT. This is a safe, loving space to be
-            yourself.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.instagram.com/letstalkdisabilitybutte/">Let's Talk Disability, Butte</a>
-          <p>A page for all things Disability in Butte, MT and beyond.</p>
-        </div>
-      </section>
+
+        <h1>Butte</h1>
+        <hr>
+
+        <section>
+          <div class="initiative">
+            <a href="https://www.butteactionalliance.org/">Butte Action Alliance</a>
+            <p>
+              We meet to take action, build community, and exercise collective
+              power around abortion, reproductive and human rights for ALL.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.buttepride.org/">Butte Pride</a>
+            <p>
+              This page is for all people in &amp; supporting of the queer
+              community of Butte, MT. This is a safe, loving space to be
+              yourself.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/letstalkdisabilitybutte/">Let's Talk Disability, Butte</a>
+            <p>A page for all things Disability in Butte, MT and beyond.</p>
+          </div>
+        </section>
+      </div>
     </main>
   </div>
+</body>
 
-
-</body></html>
+</html>
