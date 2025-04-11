@@ -14,9 +14,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light">
-    <title>Thank You for Subscribing - The Organize Directory</title>
+    <title>Thank You - The Organize Directory</title>
     <meta name="description"
-        content="Thank you for subscribing to the The Organize Directory newsletter. Stay updated with the latest mutual aid initiatives, social justice events, and community resources.">
+        content="Thank you for reaching out to The Organize Directory. We'll be in touch with you soon.">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -30,6 +30,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/fonts/fonts.css">
     <link rel="stylesheet" href="/styles.css">
+
+    <style>
+        /* Ensure mobile centering and responsiveness */
+        @media (max-width: 768px) {
+            .thank-you-content {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 70vh;
+                padding: 1rem;
+            }
+
+            .thank-you-card {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .content h1:first-of-type {
+                padding-left: 0;
+            }
+        }
+    </style>
 
     <!-- Critical Scripts -->
     <script type="module">
@@ -45,6 +69,12 @@
 </head>
 
 <body>
+    <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+    <div class="mobile-menu-overlay"></div>
     <div class="layout">
         <div id="sidebar" class="sidebar" aria-label="Main navigation">
             <div class="sidebar-header">
@@ -72,16 +102,16 @@
             <div class="thank-you-content">
                 <div class="thank-you-card card-base">
                     <div class="thank-you-icon">✓</div>
-                    <h1 class="thank-you-title">Subscription Confirmed!</h1>
-                    <p class="thank-you-message">Thank you for subscribing to our newsletter. You'll now receive updates
-                        on local and national mutual aid initiatives, resources, and community events.</p>
+                    <h1 class="thank-you-title">Message Confirmed!</h1>
+                    <p class="thank-you-message">Thank you for reaching out, we will be in touch!</p>
                     <a href="/" class="home-button btn-base">Back to Home</a>
                 </div>
             </div>
         </main>
     </div>
 
-
+    <!-- Mobile Menu Script -->
+    <script src="/mobile-menu.js"></script>
 </body>
 
 </html>

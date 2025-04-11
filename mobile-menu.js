@@ -59,6 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
           });
      }
 
+     // Apply direct fixes to the sidebar header
+     const sidebarHeader = document.querySelector(".sidebar-header");
+     if (sidebarHeader) {
+          sidebarHeader.style.paddingTop = "3.5rem";
+     }
+
      // Add the necessary styles if they don't exist
      if (!document.getElementById("mobile-menu-styles")) {
           const styleEl = document.createElement("style");
@@ -67,22 +73,38 @@ document.addEventListener("DOMContentLoaded", function () {
                .mobile-menu-button {
                     display: none;
                     position: fixed;
-                    top: 1rem;
-                    left: 1rem;
-                    z-index: 110;
-                    background: #ffffff;
+                    top: 0.75rem;
+                    left: 0.75rem;
+                    z-index: 120;
+                    background: rgba(255, 255, 255, 0.95);
                     border: 2px solid #ffb3b3;
                     border-radius: 6px;
                     padding: 0.75rem;
                     cursor: pointer;
                     align-items: center;
                     justify-content: center;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                }
                
                .mobile-menu-button svg {
                     width: 24px;
                     height: 24px;
                     stroke: #800000;
+               }
+
+               /* Mobile menu adjustments */
+               @media (max-width: 1020px) {
+                    /* Force padding on the sidebar header */
+                    .sidebar-header {
+                         padding-top: 3.5rem !important;
+                         margin-top: 0 !important;
+                    }
+                    
+                    /* Make sure the hamburger button stays visible above content */
+                    .mobile-menu-button {
+                         display: flex;
+                         z-index: 999 !important;
+                    }
                }
                
                .mobile-menu-overlay {
