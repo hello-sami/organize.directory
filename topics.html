@@ -42,80 +42,6 @@
     <!-- Font Awesome Support Script -->
     <script src="/js/font-awesome-loader.js?v=1.0.3" defer></script>
 
-    <!-- Fallback icon styles - Additional failsafe -->
-    <style>
-        /* Ensure icons are always visible */
-        .topic-icon,
-        .fas {
-            display: inline-block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            font-size: 2rem !important;
-            min-width: 2rem !important;
-            min-height: 2rem !important;
-            color: var(--primary-color, #a30000) !important;
-            text-align: center !important;
-        }
-
-        /* Force hardware acceleration for topic cards */
-        .topic-card {
-            transform: translateZ(0);
-            will-change: auto;
-        }
-
-        /* Emergency fallback if Font Awesome fails to load */
-        .topic-icon.icon-failed:before {
-            content: '•';
-            font-size: 2rem;
-            display: inline-block;
-            color: var(--primary-color, #a30000);
-        }
-    </style>
-
-    <!-- Page-specific styles that were previously inline -->
-    <style>
-        /* Page-specific styles that were previously inline */
-        .sidebar-header {
-            background-color: transparent !important;
-        }
-
-        .home-link {
-            text-decoration: none !important;
-            color: inherit !important;
-            background-color: transparent !important;
-            border-bottom: none !important;
-        }
-
-        .nav-group-title {
-            font-weight: 400 !important;
-            opacity: 0.7 !important;
-            text-decoration: none;
-            display: block;
-            padding: 0.5rem 1rem;
-            font-weight: normal !important;
-        }
-
-        .active-topic {
-            background-color: var(--pure-white, #ffffff) !important;
-            color: var(--primary-color, #a30000) !important;
-            font-weight: 600 !important;
-        }
-
-        /* Explicitly ensure Home link is not highlighted on this page */
-        .topics-page .sidebar a[href="/"].nav-link {
-            background-color: transparent !important;
-            color: inherit !important;
-            font-weight: 400 !important;
-        }
-
-        /* Ensure only the topics link is highlighted */
-        .topics-page .sidebar a[href="/topics"].nav-link-indented {
-            background-color: var(--pure-white, #ffffff) !important;
-            color: var(--primary-color, #a30000) !important;
-            font-weight: 600 !important;
-        }
-    </style>
-
     <!-- Critical CSS -->
     <link rel="stylesheet" href="/styles.css?v=1.1.1">
 
@@ -137,7 +63,7 @@
             <nav>
                 <a href="/" class="nav-link nav-link-base" id="home-link">Home</a>
                 <div class="nav-group">
-                    <a href="/location" class="nav-group-title" style="font-weight: normal !important;">Find a group</a>
+                    <a href="/location" class="nav-group-title nav-link-base">Find a group</a>
                     <a href="/location" class="nav-link nav-link-indented nav-link-base">by location</a>
                     <a href="/topics" class="nav-link nav-link-indented active-topic nav-link-base" id="topics-link">by
                         topic</a>
@@ -159,8 +85,7 @@
                 <section class="topics-grid">
                     <a href="/topics/abortion" class="topic-card card-base">
                         <svg class="topic-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
-                            aria-hidden="true" focusable="false"
-                            style="width:2rem;height:2rem;color:var(--primary-color)">
+                            aria-hidden="true" focusable="false">
                             <path fill="currentColor"
                                 d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM224 208c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v48h48c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H288v48c0 8.8-7.2 16-16 16H240c-8.8 0-16-7.2-16-16V320H176c-8.8 0-16-7.2-16-16V272c0-8.8 7.2-16 16-16h48V208z" />
                         </svg>
@@ -323,20 +248,14 @@
             const homeLink = document.getElementById('home-link');
             if (homeLink) {
                 homeLink.classList.remove('active');
-                // Also remove any inline styles that might be setting background or color
-                homeLink.style.backgroundColor = '';
-                homeLink.style.color = '';
-                homeLink.style.fontWeight = '400';
+                // No need for inline styles as we have CSS rules in the stylesheet
             }
 
             // 2. Make sure "by topic" IS highlighted - use ID for more specific targeting
             const topicsLink = document.getElementById('topics-link');
             if (topicsLink) {
                 topicsLink.classList.add('active-topic');
-                // Add inline styles for extra assurance
-                topicsLink.style.backgroundColor = 'var(--pure-white, #ffffff)';
-                topicsLink.style.color = 'var(--primary-color, #a30000)';
-                topicsLink.style.fontWeight = '600';
+                // No need for inline styles as we have the active-topic class in stylesheet
             }
         }
 
@@ -360,20 +279,8 @@
                 // If icons are not visible
                 if (!isVisible) {
                     console.log('Icon issues detected, applying fixes...');
-
-                    // Apply direct inline styles to force visibility
+                    // Add fallback class that has styles in the main stylesheet
                     icons.forEach(icon => {
-                        icon.setAttribute('style',
-                            'display: inline-block !important; ' +
-                            'visibility: visible !important; ' +
-                            'opacity: 1 !important; ' +
-                            'font-size: 2rem !important; ' +
-                            'color: var(--primary-color) !important; ' +
-                            'height: 2rem !important; ' +
-                            'width: 2rem !important;'
-                        );
-
-                        // Add fallback class if needed
                         if (icon.clientWidth < 5 || icon.clientHeight < 5) {
                             icon.classList.add('icon-failed');
                         }
@@ -413,8 +320,6 @@
             const homeLink = document.getElementById('home-link');
             if (homeLink && homeLink.classList.contains('active')) {
                 homeLink.classList.remove('active');
-                homeLink.style.backgroundColor = '';
-                homeLink.style.color = '';
             }
 
             // Final icon check after full page load

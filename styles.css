@@ -568,7 +568,36 @@ hr {
 
 @media (max-width: 768px) {
      .states-list {
-          grid-template-columns: 1fr; /* Keep as single column on mobile */
+          max-width: 100%;
+          padding: 0 1rem;
+          margin: 1rem 0;
+          width: 100%;
+          grid-template-columns: 1fr;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+     }
+
+     .state-link {
+          padding: 0.75rem 1rem;
+          margin-bottom: 0.5rem;
+          background-color: var(--bg-light);
+          border: 1px solid var(--color-border);
+          width: 100%;
+          box-sizing: border-box;
+          text-align: left;
+          display: block;
+          margin-left: 0;
+          margin-right: 0;
+          border-radius: 4px;
+     }
+
+     .location-page .content h2 {
+          padding-left: 3.75rem !important; /* Space for menu button */
+          text-align: left !important;
+          margin: 1rem 0 1.5rem 0 !important;
+          max-width: 100% !important;
+          width: 100% !important;
      }
 
      .cities-list {
@@ -681,6 +710,85 @@ hr {
      .state-link {
           padding: 0.8rem 1rem; /* Slightly larger padding for touch */
      }
+
+     /* Ensure content doesn't shift right */
+     .content {
+          padding: 1rem !important;
+          margin-left: 0 !important;
+          width: 100%;
+          box-sizing: border-box;
+     }
+
+     /* Ensure main h2 aligns properly */
+     h2 {
+          width: 100%;
+          box-sizing: border-box;
+     }
+
+     /* State page specific mobile fixes */
+     .location-page .content {
+          padding: 1rem !important;
+          margin: 0 !important;
+          max-width: 100% !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+     }
+
+     .location-page h2 {
+          padding-left: 3.25rem !important;
+          text-indent: 0 !important;
+          font-size: 1.5rem !important;
+          text-align: left !important;
+     }
+
+     .content h2 {
+          padding-left: 0;
+          text-indent: 0; /* Remove text-indent */
+          font-size: 1.6rem !important;
+     }
+
+     /* Improve state list layout on mobile */
+     .states-list {
+          box-sizing: border-box !important;
+          width: 100% !important;
+          padding: 0 !important;
+          margin: 0 !important;
+     }
+
+     /* Location page main header left alignment */
+     .location-page h2 {
+          text-align: left !important;
+          padding-left: 3.75rem !important;
+          text-indent: 0 !important;
+          margin: 1rem 0 1.5rem 0 !important;
+          max-width: 100% !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+     }
+
+     /* Update topics grid to single column on mobile */
+     .topics-grid,
+     .topics-page .topics-grid {
+          grid-template-columns: 1fr !important; /* Single column for mobile */
+          gap: 0.5rem !important;
+          padding: 1rem 0 !important;
+     }
+
+     /* Style topic cards similar to state-link on location page */
+     .topics-page .topics-grid .topic-card,
+     .topic-card {
+          padding: 0.75rem 1rem !important;
+          margin-bottom: 0.5rem !important;
+          background-color: var(--bg-light) !important;
+          border: 1px solid var(--color-border) !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+          text-align: left !important;
+          display: flex !important;
+          align-items: center !important;
+          min-height: auto !important;
+          border-radius: 4px !important;
+     }
 }
 
 @media (max-width: 480px) {
@@ -694,7 +802,9 @@ hr {
      }
 
      .content {
-          padding: 1.5rem 1rem;
+          padding: 1rem 0.75rem !important;
+          width: 100%;
+          box-sizing: border-box;
      }
 
      .topic-card {
@@ -703,7 +813,7 @@ hr {
      }
 
      .states-list {
-          grid-template-columns: 1fr; /* Keep as single column on smallest screens */
+          padding: 0 0.75rem;
      }
 
      .cities-list {
@@ -754,6 +864,14 @@ hr {
           font-size: 1.15rem;
      }
 
+     /* Keep only one clean rule for location page h2 */
+     .location-page h2 {
+          padding-left: 3.25rem !important;
+          text-indent: 0 !important;
+          font-size: 1.5rem !important;
+          text-align: left !important;
+     }
+
      /* Optimizations for very small screens */
      button,
      .btn,
@@ -785,6 +903,22 @@ hr {
      /* Fix for buttons container */
      .buttons-container {
           flex-direction: column;
+     }
+
+     .content h2 {
+          padding-left: 0;
+          text-indent: 0; /* Remove text-indent */
+          font-size: 1.6rem !important;
+     }
+
+     /* Additional fixes for very small screens */
+     .location-page h2 {
+          padding-left: 3.25rem !important;
+          font-size: 1.5rem !important;
+     }
+
+     .location-page .content {
+          padding: 0.75rem !important;
      }
 }
 
@@ -907,6 +1041,7 @@ hr {
      max-width: 600px;
      margin: 0 auto;
      padding: 0;
+     text-indent: 0; /* Ensure no text-indent is applied globally */
 }
 
 .content .page-header {
@@ -1503,11 +1638,6 @@ h6 {
 
 /* Topics Page Styles */
 /* Main layout adjustments for topics page */
-.layout {
-     position: relative;
-}
-
-/* Reset any centering that might be applied globally on topics page */
 .topics-page .content {
      display: block !important;
      text-align: left !important;
@@ -1676,65 +1806,102 @@ h6 {
 
 /* Responsive adjustments for topics page */
 @media (max-width: 768px) {
+     /* Topics page mobile styles */
      .topics-page .content {
           padding: 1.5rem !important;
      }
 
-     .topics-container {
-          max-width: 100%;
-          margin: 0;
-     }
-
+     /* Single column layout for topics - similar to location page */
+     .topics-page .topics-grid,
      .topics-grid {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 1.25rem;
-          padding: 1.25rem 0;
+          grid-template-columns: 1fr !important; /* Single column */
+          gap: 0.5rem !important;
+          padding: 1rem 0 !important;
      }
 
-     .topic-name {
-          font-size: 0.9rem !important;
-     }
-
-     .topic-icon,
-     .topics-grid .topic-card .topic-icon {
-          font-size: 1.3rem !important;
-          height: 1.3rem !important;
-          width: 1.3rem !important;
-          min-width: 1.3rem !important;
-          margin-right: 0.9rem;
-          padding: 0;
-     }
-
+     /* Style topic cards like state links */
+     .topics-page .topics-grid .topic-card,
      .topic-card {
-          padding: 0.65rem 1rem;
-          min-height: 2.65rem;
+          padding: 0.75rem 1rem !important;
+          margin-bottom: 0.5rem !important;
+          background-color: var(--bg-light) !important;
+          border: 1px solid var(--color-border) !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+          text-align: left !important;
+          display: flex !important;
+          align-items: center !important;
+          min-height: auto !important;
+          border-radius: 4px !important;
+     }
+
+     /* Title size adjustments */
+     .topics-page .content h1 {
+          font-size: 1.8rem !important;
+          margin-bottom: 1rem !important;
+          line-height: 1.1 !important;
+     }
+
+     /* Topic name and icon size adjustments */
+     .topics-page .topic-name,
+     .topic-name {
+          font-size: 0.85rem !important;
+          font-weight: 500 !important;
+          line-height: 1.2 !important;
+     }
+
+     .topics-page .topics-grid .topic-card .topic-icon,
+     .topic-icon {
+          font-size: 1.1rem !important;
+          height: 1.1rem !important;
+          width: 1.1rem !important;
+          min-width: 1.1rem !important;
+          margin-right: 0.7rem !important;
      }
 }
 
 @media (max-width: 480px) {
+     /* Smallest screen adjustments for topics page */
      .topics-page .content {
-          padding: 1rem !important;
+          padding: 1rem 0.75rem !important;
      }
 
+     /* Maintain single column layout with adjusted spacing */
+     .topics-page .topics-grid,
      .topics-grid {
-          grid-template-columns: 1fr;
-          gap: 0.75rem;
-          padding: 1rem 0;
+          gap: 0.4rem !important;
+          padding: 0.5rem 0 !important;
      }
 
+     /* Smaller topic cards */
+     .topics-page .topics-grid .topic-card,
      .topic-card {
-          padding: 0.5rem 0.85rem;
-          min-height: 2.5rem;
+          padding: 0.65rem 0.85rem !important;
+          margin-bottom: 0.4rem !important;
      }
 
-     .topic-icon,
-     .topics-grid .topic-card .topic-icon {
-          margin-right: 0.75rem;
-          font-size: 1.2rem !important;
-          height: 1.2rem !important;
-          width: 1.2rem !important;
-          min-width: 1.2rem !important;
-          padding: 0;
+     /* Smaller title */
+     .topics-page .content h1 {
+          font-size: 1.6rem !important;
+          margin-bottom: 0.75rem !important;
+     }
+
+     /* Smaller text on cards */
+     .topics-page .topics-grid .topic-card .topic-name,
+     .topics-page .topic-name,
+     .topic-name {
+          font-size: 0.8rem !important;
+     }
+
+     /* Smaller icons */
+     .topics-page .topics-grid .topic-card .topic-icon,
+     .topics-page .topic-icon,
+     .topic-icon {
+          font-size: 1rem !important;
+          height: 1rem !important;
+          width: 1rem !important;
+          min-width: 1rem !important;
+          margin-right: 0.6rem !important;
      }
 }
 
@@ -2142,62 +2309,73 @@ html {
      margin-bottom: 0;
 }
 
-/* Organization section styling - Simple unboxed */
-.state-page section:not(.cities-list-container) {
-     border: none;
-     border-radius: 0;
-     background: transparent;
-     box-shadow: none;
-     overflow: visible;
-     margin-bottom: 1.5rem;
-     padding: 0;
+/* Topic card icon styles */
+.topic-icon,
+.fas {
+     display: inline-block !important;
+     visibility: visible !important;
+     opacity: 1 !important;
+     font-size: 2rem !important;
+     min-width: 2rem !important;
+     min-height: 2rem !important;
+     color: var(--primary-color, #a30000) !important;
+     text-align: center !important;
 }
 
-/* Initiative paragraph styling */
-.state-page .initiative p {
-     margin: 0.3rem 0 0.5rem;
-     line-height: 1.5;
-     color: var(--color-text);
+/* Force hardware acceleration for topic cards */
+.topic-card {
+     transform: translateZ(0);
+     will-change: auto;
 }
 
-/* Additional hover effect for sidebar navs */
-.sidebar .nav-link-group-header:hover {
-     text-decoration: none;
-     background-color: var(--bg-dark);
-     color: var(--color-primary);
+/* Emergency fallback if Font Awesome fails to load */
+.topic-icon.icon-failed:before {
+     content: "•";
+     font-size: 2rem;
+     display: inline-block;
+     color: var(--primary-color, #a30000);
 }
 
-/* Optimized sidebar classes to replace inline styles */
-.sidebar-header-optimized {
+/* Topics page specific styles */
+.sidebar-header {
      background-color: transparent !important;
-     display: flex !important;
-     flex-direction: row !important;
-     align-items: center !important;
-     justify-content: flex-start !important;
-     padding: 0 1.5rem !important;
-     margin-bottom: 1.5rem !important;
-     gap: 0 !important;
 }
 
-.sidebar-title-optimized {
-     background-color: transparent !important;
-     margin: 0 !important;
-     padding: 0 !important;
-     padding-left: 0.2rem !important;
-     text-align: left !important;
-     font-size: 1.2rem !important;
-     color: inherit !important;
-     font-weight: 900 !important;
-     letter-spacing: -0.02em !important;
-}
-
-.home-link-optimized {
-     background-color: transparent !important;
-     color: inherit !important;
+.home-link {
      text-decoration: none !important;
+     color: inherit !important;
+     background-color: transparent !important;
      border-bottom: none !important;
-     box-shadow: none !important;
-     font-weight: inherit !important;
-     margin: 0 !important;
-     padding: 0 !important;
 }
+
+.nav-group-title {
+     font-weight: 400 !important;
+     opacity: 0.7 !important;
+     text-decoration: none;
+     display: block;
+     padding: 0.5rem 1rem;
+     font-weight: normal !important;
+}
+
+.active-topic {
+     background-color: var(--pure-white, #ffffff) !important;
+     color: var(--primary-color, #a30000) !important;
+     font-weight: 600 !important;
+}
+
+/* Explicitly ensure Home link is not highlighted on topics page */
+.topics-page .sidebar a[href="/"].nav-link {
+     background-color: transparent !important;
+     color: inherit !important;
+     font-weight: 400 !important;
+}
+
+/* Ensure only the topics link is highlighted */
+.topics-page .sidebar a[href="/topics"].nav-link-indented {
+     background-color: var(--pure-white, #ffffff) !important;
+     color: var(--primary-color, #a30000) !important;
+     font-weight: 600 !important;
+}
+
+/* Already existing mobile styles for topics page */
+/* ... existing code ... */

@@ -26,10 +26,21 @@ function insertSidebar() {
      sidebarContainer.setAttribute("aria-label", "Main navigation");
      sidebarContainer.innerHTML = initialSidebar;
 
-     // Insert at the start of .layout
+     // First try to find a sidebar placeholder
+     const placeholder = document.getElementById("sidebar-placeholder");
+
+     if (placeholder) {
+          // Replace the placeholder with our sidebar
+          placeholder.parentNode.replaceChild(sidebarContainer, placeholder);
+          console.log("Sidebar inserted by replacing placeholder");
+          return;
+     }
+
+     // If no placeholder, insert at the start of .layout
      const layout = document.querySelector(".layout");
      if (layout) {
           layout.insertBefore(sidebarContainer, layout.firstChild);
+          console.log("Sidebar inserted at start of .layout");
      } else {
           console.error("Layout element not found");
      }
@@ -284,14 +295,16 @@ export function initializeSidebar(activePage) {
      }
 
      // Remove ALL active classes first (simpler approach)
-     const allLinks = sidebar.querySelectorAll("a");
-     allLinks.forEach((link) => {
-          link.classList.remove("active");
-          // Reset any inline styles that might be causing background colors
-          link.style.backgroundColor = "";
-          link.style.color = "";
-          link.style.fontWeight = "";
-     });
+     if (sidebar) {
+          const allLinks = sidebar.querySelectorAll("a");
+          allLinks.forEach((link) => {
+               link.classList.remove("active");
+               // Reset any inline styles that might be causing background colors
+               link.style.backgroundColor = "";
+               link.style.color = "";
+               link.style.fontWeight = "";
+          });
+     }
 
      // Apply correct active state based on the current page
      if (activePage === "home" || activePage === "index" || activePage === "") {
@@ -356,16 +369,20 @@ export function initializeSidebar(activePage) {
      document
           .querySelectorAll(".mobile-menu-button, .mobile-menu-overlay")
           .forEach((element) => {
-               element.addEventListener("click", () => {
-                    sidebar.classList.toggle("active");
-                    const overlay = document.querySelector(
-                         ".mobile-menu-overlay"
-                    );
-                    if (overlay) {
-                         overlay.classList.toggle("active");
-                    }
-                    document.body.classList.toggle("menu-open");
-               });
+               if (element) {
+                    element.addEventListener("click", () => {
+                         if (sidebar) {
+                              sidebar.classList.toggle("active");
+                              const overlay = document.querySelector(
+                                   ".mobile-menu-overlay"
+                              );
+                              if (overlay) {
+                                   overlay.classList.toggle("active");
+                              }
+                              document.body.classList.toggle("menu-open");
+                         }
+                    });
+               }
           });
 
      // Remove any preload links for posts.json that might be causing issues

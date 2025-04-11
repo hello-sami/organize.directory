@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Menu Test</title>
+    <style>
+        /* Base styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Sidebar styles */
+        #sidebar {
+            width: 280px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #ffd4d4;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        #sidebar.active {
+            transform: translateX(0);
+        }
+
+        /* Content styles */
+        .content {
+            margin-left: 0;
+            padding: 20px;
+        }
+
+        /* Mobile menu button styles */
+        .mobile-menu-button {
+            display: flex;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 110;
+            background: #fff;
+            border: 2px solid #ffb3b3;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .mobile-menu-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Mobile menu overlay styles */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 90;
+        }
+
+        .mobile-menu-overlay.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Mobile menu button -->
+    <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <h2 style="padding: 20px;">Sidebar Content</h2>
+        <p style="padding: 0 20px;">This is a test sidebar</p>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+        <h1>Mobile Menu Test</h1>
+        <p>Click the menu button in the top left to test the mobile menu functionality.</p>
+    </div>
+
+    <!-- Mobile menu script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebar = document.getElementById("sidebar");
+            const mobileMenuButton = document.querySelector(".mobile-menu-button");
+            const mobileMenuOverlay = document.querySelector(".mobile-menu-overlay");
+
+            if (mobileMenuButton && sidebar) {
+                // Toggle sidebar when button is clicked
+                mobileMenuButton.addEventListener("click", function () {
+                    sidebar.classList.toggle("active");
+                    mobileMenuOverlay.classList.toggle("active");
+                });
+
+                // Close sidebar when overlay is clicked
+                mobileMenuOverlay.addEventListener("click", function () {
+                    sidebar.classList.remove("active");
+                    mobileMenuOverlay.classList.remove("active");
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

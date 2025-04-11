@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, text-size-adjust=100%, -webkit-text-size-adjust=100%">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -65,7 +64,14 @@
 
     <!-- Critical inline styles in case external CSS fails -->
     <style>
-        /* Critical fallback styles */
+        /* Critical fallback styles - minimal set for initial rendering */
+        html {
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             color: #4d0000;
@@ -74,30 +80,21 @@
             padding: 0;
         }
 
-        #sidebar {
+        /* Critical layout components to prevent layout shifts */
+        .layout {
             display: flex;
-            flex-direction: column;
             min-height: 100vh;
+        }
+
+        #sidebar {
             width: 280px;
             position: fixed;
             background: #ffd4d4;
             border-right: 1px solid #ffb3b3;
+            height: 100vh;
             padding: 2rem 0;
             overflow-y: auto;
-        }
-
-        #sidebar nav {
-            flex-grow: 1;
-        }
-
-        .sidebar-motto {
-            margin-top: auto;
-            padding-bottom: 2rem;
-        }
-
-        .layout {
-            display: flex;
-            min-height: 100vh;
+            z-index: 100;
         }
 
         .content {
@@ -106,79 +103,129 @@
             padding: 3rem;
         }
 
-        a {
-            color: #cc0000;
-            text-decoration: none;
+        /* Mobile layout adjustments */
+        @media (max-width: 1020px) {
+            .layout {
+                display: block;
+            }
+
+            .content {
+                margin-left: 0 !important;
+                padding: 2rem 1.5rem;
+            }
+
+            #sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            #sidebar.active {
+                transform: translateX(0);
+            }
+
+            .mobile-menu-button {
+                display: flex;
+                /* Redefine position for mobile */
+                top: 0.8rem;
+                left: 0.8rem;
+                /* Make button slightly smaller on very small screens */
+                padding: 0.6rem;
+            }
+
+            /* Target the main heading in the content area */
+            .content h1:first-of-type {
+                padding-left: 3.75rem;
+                /* Add padding to h1 to prevent overlap with menu button */
+                margin-top: 1rem;
+                /* Slightly more top margin for better spacing */
+            }
+
+            /* Additional adjustment for very small screens */
+            @media (max-width: 480px) {
+                .content h1:first-of-type {
+                    padding-left: 3.25rem;
+                    font-size: 1.8rem !important;
+                    /* Reduce font size on very small screens */
+                }
+            }
         }
 
-        h1 {
-            color: #800000;
-            font-weight: 900;
+        /* Critical mobile menu components */
+        .mobile-menu-button {
+            display: none;
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 110;
+            background: #ffffff;
+            border: 2px solid #ffb3b3;
+            border-radius: 6px;
+            padding: 0.75rem;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
         }
 
-        .nav-link {
-            padding: 0.75rem 1.5rem;
+        .mobile-menu-button svg {
+            width: 24px;
+            height: 24px;
+            stroke: #800000;
+            stroke-width: 2px;
+            /* Ensure the lines are visible */
+        }
+
+        /* Minimal overlay styling for mobile menu */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 90;
+        }
+
+        .mobile-menu-overlay.active {
             display: block;
-            border-top: 1px solid #ffb3b3;
-            border-bottom: 1px solid #ffb3b3;
-        }
-
-        .site-logo {
-            display: block;
-            width: 60px;
-            height: 60px;
-        }
-
-        .initiative-stats {
-            background-color: #ffd4d4;
-            border-radius: 8px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .stats-container {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .find-groups-buttons {
-            margin: 2rem 0;
-        }
-
-        .buttons-container {
-            display: flex;
-            gap: 1rem;
         }
     </style>
 
     <!-- Initialize Components Immediately -->
     <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js?v=1.0.3';
-        import { initializeComponents } from '/utils/init.js?v=1.0.1';
+        document.addEventListener('DOMContentLoaded', function () {
+            // Import sidebar initialization after DOM is loaded
+            import('/components/sidebar.js?v=1.0.3')
+                .then(module => {
+                    const { initializeSidebar } = module;
+                    // Initialize sidebar
+                    initializeSidebar('home');
 
-        // Initialize sidebar immediately
-        initializeSidebar('home');
+                    // Reset nav-group-title
+                    const navGroupTitles = document.querySelectorAll('.nav-group-title');
+                    navGroupTitles.forEach(title => {
+                        title.classList.add('reset-nav-group');
+                    });
 
-        // Apply style fixes after DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            // Reset nav-group-title
-            const navGroupTitles = document.querySelectorAll('.nav-group-title');
-            navGroupTitles.forEach(title => {
-                title.classList.add('reset-nav-group');
-            });
-
-            // Fix h1 highlighting issue - Apply direct styles to override any unwanted highlighting
-            const headerH1 = document.querySelector('.sidebar-header h1');
-            if (headerH1) {
-                headerH1.style.cssText = 'background-color: transparent !important; margin: 0; padding: 0; padding-left: 0.2rem; text-align: left !important;';
-                const link = headerH1.querySelector('a');
-                if (link) {
-                    link.style.cssText = 'background-color: transparent !important; color: inherit !important; text-decoration: none !important; border-bottom: none !important; box-shadow: none !important;';
-                }
-            }
+                    // Fix h1 highlighting issue
+                    const headerH1 = document.querySelector('.sidebar-header h1');
+                    if (headerH1) {
+                        headerH1.style.cssText = 'background-color: transparent !important; margin: 0; padding: 0; padding-left: 0.2rem; text-align: left !important;';
+                        const link = headerH1.querySelector('a');
+                        if (link) {
+                            link.style.cssText = 'background-color: transparent !important; color: inherit !important; text-decoration: none !important; border-bottom: none !important; box-shadow: none !important;';
+                        }
+                    }
+                })
+                .catch(error => console.error('Error initializing sidebar:', error));
 
             // Initialize other components
-            initializeComponents({});
+            import('/utils/init.js?v=1.0.1')
+                .then(module => {
+                    const { initializeComponents } = module;
+                    initializeComponents({});
+                })
+                .catch(error => console.error('Error initializing components:', error));
         });
     </script>
 
@@ -268,32 +315,11 @@
     </script>
 </head>
 
-<body>
+<body class="page-home">
+    <!-- First create the layout before any script runs -->
     <div class="layout">
-        <div id="sidebar" class="sidebar" aria-label="Main navigation">
-            <div class="sidebar-header">
-                <img src="./logo.png" alt="The Organize Directory Logo" class="site-logo">
-                <h1>
-                    <a href="./" class="home-link">
-                        The Organize Directory
-                    </a>
-                </h1>
-            </div>
-            <nav>
-                <a href="./" class="nav-link active nav-link-base">Home</a>
-                <div class="nav-group">
-                    <a href="./location" class="nav-group-title">Find a group</a>
-                    <a href="./location" class="nav-link nav-link-indented nav-link-base">by location</a>
-                    <a href="./topics" class="nav-link nav-link-indented nav-link-base">by topic</a>
-                </div>
-                <a href="./guides" class="nav-link nav-link-base">Guides</a>
-                <a href="./contact" class="nav-link nav-link-base">Contact</a>
-                <a href="./subscribe" class="nav-link nav-link-base">Subscribe</a>
-            </nav>
-            <div class="sidebar-motto">
-                Don't despair, organize.
-            </div>
-        </div>
+        <!-- Placeholder for sidebar, will be filled by sidebar.js -->
+        <div id="sidebar-placeholder"></div>
 
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
@@ -340,7 +366,17 @@
         </main>
     </div>
 
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu-overlay"></div>
 
+    <!-- Mobile menu button -->
+    <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+
+    <script src="/mobile-menu.js" defer></script>
 </body>
 
 </html>
