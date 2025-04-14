@@ -1,6 +1,6 @@
 /**
  * Contact Form Handler
- * This script handles the contact form using Cloudflare Pages Forms
+ * This script handles the contact form using Cloudflare Pages Forms Static Forms plugin
  */
 
 function initializeContactForm() {
@@ -14,9 +14,6 @@ function initializeContactForm() {
      const messageInput = document.getElementById("message");
      const statusMessage = document.getElementById("statusMessage");
      const helpDiv = document.getElementById("submission-help");
-
-     // Check for status parameters in URL (for when Cloudflare redirects back)
-     checkUrlParameters();
 
      // Add form submission handler
      if (form) {
@@ -40,6 +37,8 @@ function initializeContactForm() {
                }, 10000);
 
                // Let the form submit naturally to Cloudflare Pages Forms
+               // According to docs: https://developers.cloudflare.com/pages/functions/plugins/static-forms/
+               // The Plugin will automatically handle the form with data-static-form-name attribute
                return true;
           });
      }
@@ -87,44 +86,6 @@ function initializeContactForm() {
           }
 
           return isValid;
-     }
-
-     /**
-      * Checks URL parameters for status and error messages
-      */
-     function checkUrlParameters() {
-          const urlParams = new URLSearchParams(window.location.search);
-          const formName = urlParams.get("form-name");
-          const success = urlParams.get("success");
-
-          // Check if we're returning from a form submission
-          if (formName === "contact") {
-               if (success === "true") {
-                    showSubmitStatus(
-                         "Message sent successfully! We'll be in touch soon.",
-                         "success"
-                    );
-                    // Clear form if successful
-                    if (form) form.reset();
-               } else {
-                    showSubmitStatus(
-                         "Error sending message. Please try again or email us directly.",
-                         "error"
-                    );
-                    if (helpDiv) helpDiv.style.display = "block";
-               }
-
-               // Scroll to status message after redirect
-               const statusElement = document.getElementById("statusMessage");
-               if (statusElement) {
-                    setTimeout(() => {
-                         statusElement.scrollIntoView({
-                              behavior: "smooth",
-                              block: "nearest",
-                         });
-                    }, 100);
-               }
-          }
      }
 }
 
@@ -188,5 +149,47 @@ function isValidEmail(email) {
      return re.test(String(email).toLowerCase());
 }
 
-// Initialize the contact form when the DOM is loaded
-document.addEventListener("DOMContentLoaded", initializeContactForm);
+// Check for status parameters in URL when page loads
+document.addEventListener("DOMContentLoaded", function () {
+     // Initialize the contact form
+     initializeContactForm();
+
+     // Check URL parameters
+     const urlParams = new URLSearchParams(window.location.search);
+     const formName = urlParams.get("form-name");
+     const success = urlParams.get("success");
+
+     // If returning from a form submission
+     if (formName === "contact") {
+          if (success === "true") {
+               showSubmitStatus(
+                    "Message sent successfully! We'll be in touch soon.",
+                    "success"
+               );
+
+               // Reset the form on successful submission
+               const form = document.getElementById("contactForm");
+               if (form) form.reset();
+          } else {
+               showSubmitStatus(
+                    "Error sending message. Please try again or email us directly.",
+                    "error"
+               );
+
+               // Show help div for errors
+               const helpDiv = document.getElementById("submission-help");
+               if (helpDiv) helpDiv.style.display = "block";
+          }
+
+          // Scroll to status message
+          const statusElement = document.getElementById("statusMessage");
+          if (statusElement) {
+               setTimeout(() => {
+                    statusElement.scrollIntoView({
+                         behavior: "smooth",
+                         block: "nearest",
+                    });
+               }, 100);
+          }
+     }
+});
