@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web3Forms API Key Check</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .error {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        button {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Web3Forms API Key Check</h1>
+
+    <p>This will check if your Web3Forms API key is valid by pinging their API.</p>
+
+    <div>
+        <p>Your access key: <code>66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f</code></p>
+        <button id="checkButton">Check API Key</button>
+    </div>
+
+    <div id="result" class="result" style="display: none;"></div>
+
+    <script>
+        document.getElementById('checkButton').addEventListener('click', function () {
+            const accessKey = "66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f";
+            const resultDiv = document.getElementById('result');
+
+            resultDiv.className = 'result';
+            resultDiv.innerHTML = '<p>Checking API key...</p>';
+            resultDiv.style.display = 'block';
+
+            // Test with minimal data - just to see if the key works
+            const formData = new FormData();
+            formData.append('access_key', accessKey);
+            formData.append('name', 'API Test');
+            formData.append('message', 'This is a test message to check if the API key is valid.');
+            formData.append('botcheck', ''); // Honeypot
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error('Network response was not ok');
+                    }
+                })
+                .then(data => {
+                    console.log('API response:', data);
+
+                    if (data.success) {
+                        resultDiv.className = 'result success';
+                        resultDiv.innerHTML = `
+            <p><strong>Success!</strong> Your API key is valid.</p>
+            <p>Response from Web3Forms: ${data.message}</p>
+            <pre>${JSON.stringify(data, null, 2)}</pre>
+          `;
+                    } else {
+                        resultDiv.className = 'result error';
+                        resultDiv.innerHTML = `
+            <p><strong>Error:</strong> There was a problem with your API key.</p>
+            <p>Error message: ${data.message || 'Unknown error'}</p>
+            <pre>${JSON.stringify(data, null, 2)}</pre>
+          `;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    resultDiv.className = 'result error';
+                    resultDiv.innerHTML = `
+          <p><strong>Error:</strong> Could not connect to Web3Forms.</p>
+          <p>Error message: ${error.message}</p>
+          <p>This could be due to network issues, CORS problems, or the API being down.</p>
+        `;
+                });
+        });
+    </script>
+</body>
+
+</html>
