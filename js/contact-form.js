@@ -143,114 +143,35 @@ export function initializeContactForm() {
                     submitBtn.disabled = true;
                }
 
-               // Use fetch API for form submission
-               const formData = new FormData(form);
-               let fetchFailed = false;
+               // Due to CSP restrictions, we'll skip the fetch API and use traditional form submission
+               console.log(
+                    "Using traditional form submission instead of fetch API due to CSP restrictions"
+               );
 
-               fetch(form.action, {
-                    method: "POST",
-                    body: formData,
-                    headers: {
-                         Accept: "application/json",
-                    },
-               })
-                    .then((response) => {
-                         console.log(
-                              "Form submission response received:",
-                              response
-                         );
-                         if (response.ok) {
-                              // Handle successful form submission
-                              console.log("Form submitted successfully");
+               try {
+                    // Remove the event listener to prevent infinite loops
+                    form.removeEventListener("submit", handleFormSubmit);
 
-                              // Try to get the redirect URL from the form
-                              const redirectInput = form.querySelector(
-                                   'input[name="redirect"]'
-                              );
-                              const redirectUrl = redirectInput
-                                   ? redirectInput.value
-                                   : "thank-you";
-
-                              // Redirect the user
-                              window.location.href = redirectUrl;
-                         } else {
-                              throw new Error("Form submission failed");
-                         }
-                    })
-                    .catch((error) => {
-                         console.error("Error submitting form:", error);
-                         fetchFailed = true;
-
-                         // If fetch fails due to CSP, try traditional form submission
-                         if (
-                              error
-                                   .toString()
-                                   .includes("Content Security Policy")
-                         ) {
-                              console.log(
-                                   "Attempting traditional form submission due to CSP issues"
-                              );
-                              // Fallback to traditional form submission
-                              setTimeout(() => {
-                                   form.removeEventListener(
-                                        "submit",
-                                        handleFormSubmit
-                                   );
-                                   form.submit();
-                              }, 100);
-                              return;
-                         }
-
-                         // In case of other errors, enable the button again and show error message
-                         if (submitBtn) {
-                              submitBtn.innerHTML = "Send Message";
-                              submitBtn.disabled = false;
-                         }
-
-                         hideSubmitStatus();
-                         showError(
-                              "There was a problem submitting the form. Please try again or email us directly."
-                         );
-                    });
-
-               // Add a 15-second timeout in case the form gets stuck
-               setTimeout(() => {
-                    // Only act if we haven't redirected or already handled the error
-                    if (
-                         !fetchFailed &&
-                         submitBtn &&
-                         document.body.contains(submitBtn) &&
-                         submitBtn.disabled
-                    ) {
-                         console.log("Form submission timeout reached");
-
-                         // Try traditional form submission as a fallback
-                         try {
-                              console.log(
-                                   "Attempting traditional form submission after timeout"
-                              );
-                              form.removeEventListener(
-                                   "submit",
-                                   handleFormSubmit
-                              );
-                              form.submit();
-                              return;
-                         } catch (e) {
-                              console.error(
-                                   "Error with fallback submission:",
-                                   e
-                              );
-                              // If traditional form submission fails, show error
-                              submitBtn.innerHTML = "Send Message";
-                              submitBtn.disabled = false;
-
-                              hideSubmitStatus();
-                              showError(
-                                   "The form submission is taking longer than expected. Please try again or email us directly."
-                              );
-                         }
+                    // Use a short timeout to allow the UI to update before submitting
+                    setTimeout(() => {
+                         // Submit the form traditionally
+                         form.submit();
+                    }, 100);
+               } catch (error) {
+                    console.error("Error with form submission:", error);
+                    // If traditional submission fails, show error
+                    if (submitBtn) {
+                         submitBtn.innerHTML = "Send Message";
+                         submitBtn.disabled = false;
                     }
-               }, 15000);
+                    hideSubmitStatus();
+                    showError(
+                         "There was a problem submitting the form. Please try again or email us directly."
+                    );
+
+                    // Re-add the event listener if we couldn't submit
+                    form.addEventListener("submit", handleFormSubmit);
+               }
           }
 
           // Intercept the form submission to handle it with fetch API

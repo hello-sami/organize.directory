@@ -53,6 +53,25 @@
     <link rel="stylesheet" href="/styles.css?v=1.1.1">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
+    <!-- Additional styles for the contact form -->
+    <style>
+        /* Mobile responsiveness for contact form */
+        @media (max-width: 768px) {
+            .contact-content {
+                padding: 1rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .submit-button {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+
     <!-- Critical Scripts -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
@@ -114,7 +133,10 @@
                     <input type="hidden" name="redirect" value="https://organize.directory/thank-you">
                     <input type="hidden" name="from_name" value="Organize Directory Contact Form">
                     <input type="hidden" name="subject" value="New Submission from Organize Directory Contact Form">
-                    <input type="hidden" name="botcheck" class="hidden" style="display: none;">
+                    <!-- Honeypot field to prevent spam -->
+                    <input type="checkbox" name="botcheck" id="botcheck" class="hidden" style="display: none;">
+                    <!-- Captcha verification field -->
+                    <input type="hidden" name="captcha_verification" value="enabled">
 
                     <noscript>
                         <div class="form-group"
@@ -169,7 +191,7 @@
                 </form>
                 <div id="form-error" class="error-message"></div>
                 <div id="submit-status">
-                    Sending your message... Please wait.
+                    Sending your message... Please wait. You will be redirected after submission.
                 </div>
             </div>
         </main>
