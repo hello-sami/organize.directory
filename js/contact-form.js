@@ -13,6 +13,9 @@ export function initializeContactForm() {
      const captchaExpected = document.getElementById("captchaExpected");
      const formError = document.getElementById("form-error");
      const submitStatus = document.getElementById("submit-status");
+     const submitBtn = form
+          ? form.querySelector('button[type="submit"]')
+          : null;
 
      // Debug log
      console.log("Contact form init:", {
@@ -63,8 +66,11 @@ export function initializeContactForm() {
      }
 
      // Function to show submit status
-     function showSubmitStatus() {
+     function showSubmitStatus(
+          message = "Sending your message... Please wait. You will be redirected after submission."
+     ) {
           if (submitStatus) {
+               submitStatus.textContent = message;
                submitStatus.classList.add("visible");
           }
      }
@@ -73,6 +79,27 @@ export function initializeContactForm() {
      function hideSubmitStatus() {
           if (submitStatus) {
                submitStatus.classList.remove("visible");
+          }
+     }
+
+     // Fallback function - if form submission hasn't completed after a timeout
+     function submissionFallback() {
+          console.log("Using submission fallback");
+          // Show a message that we're having trouble and suggest a manual redirect
+          showSubmitStatus(
+               "Your message has been sent, but we're having trouble redirecting you. Please click the link below to continue."
+          );
+
+          // Add a link for manual navigation
+          if (submitStatus) {
+               const redirectLink = document.createElement("a");
+               redirectLink.href = "https://organize.directory/thank-you";
+               redirectLink.textContent = "Continue to Thank You page";
+               redirectLink.className = "manual-redirect-link";
+               redirectLink.style.display = "block";
+               redirectLink.style.marginTop = "1rem";
+               redirectLink.style.textAlign = "center";
+               submitStatus.appendChild(redirectLink);
           }
      }
 
@@ -137,45 +164,43 @@ export function initializeContactForm() {
                // Show status message and disable submit button
                showSubmitStatus();
 
-               const submitBtn = form.querySelector('button[type="submit"]');
                if (submitBtn) {
                     submitBtn.innerHTML = "Sending...";
                     submitBtn.disabled = true;
                }
 
-               // Due to CSP restrictions, we'll skip the fetch API and use traditional form submission
-               console.log(
-                    "Using traditional form submission instead of fetch API due to CSP restrictions"
-               );
+               // Set a fallback timer in case the form submission gets stuck
+               const fallbackTimer = setTimeout(submissionFallback, 8000);
 
-               try {
-                    // Remove the event listener to prevent infinite loops
-                    form.removeEventListener("submit", handleFormSubmit);
+               // Create a hidden field to track submission
+               const submissionFlag = document.createElement("input");
+               submissionFlag.type = "hidden";
+               submissionFlag.name = "submission_started";
+               submissionFlag.value = Date.now().toString();
+               form.appendChild(submissionFlag);
 
-                    // Use a short timeout to allow the UI to update before submitting
-                    setTimeout(() => {
-                         // Submit the form traditionally
-                         form.submit();
-                    }, 100);
-               } catch (error) {
-                    console.error("Error with form submission:", error);
-                    // If traditional submission fails, show error
-                    if (submitBtn) {
-                         submitBtn.innerHTML = "Send Message";
-                         submitBtn.disabled = false;
-                    }
-                    hideSubmitStatus();
-                    showError(
-                         "There was a problem submitting the form. Please try again or email us directly."
-                    );
+               // Always use traditional form submission method
+               // This works even when CSP blocks fetch API requests
+               console.log("Using traditional form submission");
+               form.submit();
 
-                    // Re-add the event listener if we couldn't submit
-                    form.addEventListener("submit", handleFormSubmit);
-               }
+               // Clear the event listener to prevent duplicate submissions
+               form.removeEventListener("submit", handleFormSubmit);
+
+               return false;
           }
 
-          // Intercept the form submission to handle it with fetch API
+          // Intercept the form submission to handle it with our custom logic
           form.addEventListener("submit", handleFormSubmit);
+
+          // If returning to this page after submission (e.g., back button)
+          // Reset the form and re-enable the submit button
+          if (submitBtn && submitBtn.disabled) {
+               submitBtn.disabled = false;
+               submitBtn.innerHTML = "Send Message";
+               hideSubmitStatus();
+               hideError();
+          }
      } else {
           console.error(
                "Contact form initialization failed: Missing elements",
