@@ -209,13 +209,26 @@ export function initializeContactForm() {
                     // This helps with identifying the submission in the email
                     const nameEl = document.getElementById("name");
                     const messageEl = document.getElementById("message");
+                    const subjectEl = document.getElementById("subject");
+
+                    // Add the subject selection to the message to make it more visible
+                    const subjectText =
+                         subjectEl && subjectEl.options
+                              ? subjectEl.options[subjectEl.selectedIndex].text
+                              : "Not specified";
 
                     // Create a better message format for the email
                     const betterMessage = document.createElement("input");
                     betterMessage.type = "hidden";
                     betterMessage.name = "message_with_details";
-                    betterMessage.value = `Submission from: ${nameEl ? nameEl.value : "Unknown"}\nEmail: ${emailField.value}\n\nMessage:\n${messageEl ? messageEl.value : ""}`;
+                    betterMessage.value = `Name: ${nameEl ? nameEl.value : "Unknown"}\nEmail: ${emailField.value}\nSubject: ${subjectText}\n\nMessage:\n${messageEl ? messageEl.value : ""}`;
                     form.appendChild(betterMessage);
+
+                    // Also add the information directly to the message field for better compatibility
+                    if (messageEl) {
+                         const originalMessage = messageEl.value;
+                         messageEl.value = `${originalMessage}\n\n---\nSubmission Details:\nName: ${nameEl ? nameEl.value : "Unknown"}\nEmail: ${emailField.value}\nSubject Category: ${subjectText}`;
+                    }
 
                     // Log form data for debugging
                     console.log(
