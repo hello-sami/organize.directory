@@ -187,16 +187,17 @@
                     <input type="hidden" name="redirect" value="https://organize.directory/thank-you">
                     <input type="hidden" name="success_url" value="https://organize.directory/thank-you">
 
-                    <!-- IMPORTANT: Make sure this is a real, accessible email where you can receive messages -->
-                    <!-- This is the email where submissions will be sent -->
-                    <input type="hidden" name="to_email" value="organizedirectory@proton.me">
+                    <!-- Using domain email for better deliverability -->
+                    <input type="hidden" name="to_email" value="hello@organize.directory">
 
-                    <!-- Customize the email subject -->
-                    <input type="hidden" name="subject" value="New Submission from Organize Directory Contact Form">
-
-                    <!-- Organization info -->
+                    <!-- Explicit from address -->
+                    <input type="hidden" name="from_email" value="noreply@organize.directory">
                     <input type="hidden" name="from_name" value="Organize Directory Contact Form">
+
+                    <!-- Standard form parameters -->
                     <input type="hidden" name="website" value="organize.directory">
+                    <input type="hidden" name="template_id" value="organize_directory_contact">
+                    <input type="hidden" name="subject" value="New Contact Form Submission - Organize Directory">
 
                     <!-- Dynamic reply-to field -->
                     <input type="hidden" name="replyto" value="%%email%%" data-dynamic="true">
