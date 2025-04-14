@@ -68,6 +68,21 @@ export function initializeContactForm() {
                // This ensures it works even with CSP restrictions
                console.log("Form submission detected");
 
+               // Validate form
+               const captchaInput = document.getElementById("captchaInput");
+               const captchaValue = document.getElementById("captchaValue");
+
+               if (
+                    captchaInput &&
+                    captchaValue &&
+                    captchaInput.value !== captchaValue.value
+               ) {
+                    e.preventDefault(); // Stop form submission
+                    showError("Captcha validation failed. Please try again.");
+                    generateCaptcha(); // Refresh captcha
+                    return false;
+               }
+
                // Anonymous submission
                if (emailField && !emailField.value.trim()) {
                     console.log("Anonymous submission detected");
