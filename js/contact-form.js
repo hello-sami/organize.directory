@@ -1,7 +1,6 @@
 /**
  * Contact Form Handler
- * This script handles the contact form using a direct mailto approach
- * to avoid server errors with form submissions
+ * This script handles the contact form using Cloudflare Pages Forms
  */
 
 function initializeContactForm() {
@@ -16,81 +15,32 @@ function initializeContactForm() {
      const statusMessage = document.getElementById("statusMessage");
      const helpDiv = document.getElementById("submission-help");
 
+     // Check for status parameters in URL (for when Cloudflare redirects back)
+     checkUrlParameters();
+
      // Add form submission handler
      if (form) {
           form.addEventListener("submit", function (e) {
-               // Always prevent the default form submission
-               e.preventDefault();
-
-               // Validate form
+               // Validate form first
                if (!validateForm(e)) {
-                    return false;
+                    return false; // Stop if validation fails
                }
 
                // If validation passes, show sending status
-               showSubmitStatus("Opening your email client...", "sending");
+               showSubmitStatus("Sending your message...", "sending");
 
-               // Get form values
-               const name = nameInput.value.trim();
-               const email = emailInput.value.trim() || "Anonymous";
-
-               // Get selected subject text
-               let subjectText = "Contact Form Submission";
-               if (subjectSelect.value) {
-                    const selectedOption =
-                         subjectSelect.options[subjectSelect.selectedIndex];
-                    if (selectedOption) {
-                         subjectText = selectedOption.textContent;
-                    }
+               // Handle empty email - set to anonymous
+               if (!emailInput.value.trim()) {
+                    emailInput.value = "anonymous@example.com";
                }
 
-               const message = messageInput.value.trim();
-
-               // Format the email body
-               const bodyText = `
-Name: ${name}
-Email: ${email}
-
-${message}
-
----
-Sent from The Organize Directory contact form
-`;
-
-               // Create and open mailto link
-               const mailtoUrl = `mailto:hello@organize.directory?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(bodyText)}`;
-
-               try {
-                    // Log for debugging
-                    console.log("Opening mailto link");
-
-                    // Open the email client
-                    window.location.href = mailtoUrl;
-
-                    // Show success message
-                    showSubmitStatus(
-                         "Email client opened. Please send the email to complete your submission.",
-                         "success"
-                    );
-
-                    // Clear the form
-                    setTimeout(() => {
-                         form.reset();
-                    }, 2000);
-               } catch (error) {
-                    console.error("Error opening mailto link:", error);
-
-                    // Show error message
-                    showSubmitStatus(
-                         "There was an issue opening your email client. Please try the alternative contact method below.",
-                         "error"
-                    );
-
-                    // Show help div
+               // Show help div after a timeout in case submission takes too long
+               setTimeout(() => {
                     if (helpDiv) helpDiv.style.display = "block";
-               }
+               }, 10000);
 
-               return false;
+               // Let the form submit naturally to Cloudflare Pages Forms
+               return true;
           });
      }
 
@@ -110,29 +60,71 @@ Sent from The Organize Directory contact form
 
           // Validate name
           if (!nameInput.value.trim()) {
+               e.preventDefault(); // Prevent form submission
                showError(nameInput, "Please enter your name");
                isValid = false;
           }
 
           // Email is optional, but if provided, validate format
           if (emailInput.value.trim() && !isValidEmail(emailInput.value)) {
+               e.preventDefault(); // Prevent form submission
                showError(emailInput, "Please enter a valid email address");
                isValid = false;
           }
 
           // Validate subject
           if (!subjectSelect.value) {
+               e.preventDefault(); // Prevent form submission
                showError(subjectSelect, "Please select a subject");
                isValid = false;
           }
 
           // Validate message
           if (!messageInput.value.trim()) {
+               e.preventDefault(); // Prevent form submission
                showError(messageInput, "Please enter your message");
                isValid = false;
           }
 
           return isValid;
+     }
+
+     /**
+      * Checks URL parameters for status and error messages
+      */
+     function checkUrlParameters() {
+          const urlParams = new URLSearchParams(window.location.search);
+          const formName = urlParams.get("form-name");
+          const success = urlParams.get("success");
+
+          // Check if we're returning from a form submission
+          if (formName === "contact") {
+               if (success === "true") {
+                    showSubmitStatus(
+                         "Message sent successfully! We'll be in touch soon.",
+                         "success"
+                    );
+                    // Clear form if successful
+                    if (form) form.reset();
+               } else {
+                    showSubmitStatus(
+                         "Error sending message. Please try again or email us directly.",
+                         "error"
+                    );
+                    if (helpDiv) helpDiv.style.display = "block";
+               }
+
+               // Scroll to status message after redirect
+               const statusElement = document.getElementById("statusMessage");
+               if (statusElement) {
+                    setTimeout(() => {
+                         statusElement.scrollIntoView({
+                              behavior: "smooth",
+                              block: "nearest",
+                         });
+                    }, 100);
+               }
+          }
      }
 }
 
