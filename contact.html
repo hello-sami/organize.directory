@@ -183,9 +183,11 @@
                     <!-- Web3Forms access key - IMPORTANT: Verify this is your correct API key -->
                     <input type="hidden" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
 
-                    <!-- Notification and redirect settings - Using absolute URLs -->
-                    <input type="hidden" name="redirect" value="https://organize.directory/thank-you">
-                    <input type="hidden" name="success_url" value="https://organize.directory/thank-you">
+                    <!-- Notification and redirect settings - Updated for Cloudflare Pages -->
+                    <input type="hidden" name="redirect"
+                        value="https://a3cf64b4.organize-directory.pages.dev/thank-you">
+                    <input type="hidden" name="success_url"
+                        value="https://a3cf64b4.organize-directory.pages.dev/thank-you">
 
                     <!-- Using domain email for better deliverability -->
                     <input type="hidden" name="to_email" value="hello@organize.directory">
@@ -259,20 +261,20 @@
                         const form = document.getElementById('contactForm');
                         const helpDiv = document.getElementById('submission-help');
 
-                        // Show help div after 20 seconds as a backup
+                        // Show help div after 12 seconds as a backup
                         setTimeout(function () {
                             if (helpDiv) helpDiv.style.display = 'block';
-                        }, 20000);
+                        }, 12000);
 
                         // Also show help if form submission takes too long
                         if (form) {
                             form.addEventListener('submit', function () {
-                                // Show help div after 15 seconds if still on the same page
+                                // Show help div after 8 seconds if still on the same page
                                 setTimeout(function () {
-                                    if (!window.location.href.includes('thank-you') && helpDiv) {
+                                    if (!window.location.href.includes('a3cf64b4.organize-directory.pages.dev/thank-you') && helpDiv) {
                                         helpDiv.style.display = 'block';
                                     }
-                                }, 15000);
+                                }, 8000);
                             });
                         }
                     });
