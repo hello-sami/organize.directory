@@ -259,7 +259,7 @@
                 </p>
 
                 <!-- Web3Forms Contact Form -->
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                     <!-- Web3Forms API Key -->
                     <input type="hidden" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
 
@@ -315,7 +315,7 @@
                     style="display: none; margin-top: 2rem; padding: 1rem; border: 1px solid #f0f0f0; border-radius: 4px; background-color: #f9f9f9;">
                     <p><strong>Having trouble with the form?</strong></p>
                     <p>You can email us directly at: <a
-                            href="mailto:hello@organize.directory">hello@organize.directory</a></p>
+                            href="mailto:organizedirectory@proton.me">organizedirectory(at)proton.me</a></p>
                 </div>
             </div>
         </main>
@@ -329,7 +329,6 @@
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('contactForm');
             const statusMessage = document.getElementById('statusMessage');
-            const submitButton = document.getElementById('submitButton');
             const formFailureHelp = document.getElementById('formFailureHelp');
 
             // Check URL parameters for successful form submission
@@ -341,59 +340,29 @@
                 form.reset();
             }
 
-            // Form validation and submission
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-
+            // Basic client-side validation only - no fetch
+            form.addEventListener('submit', function (e) {
                 // Reset previous errors
                 resetErrors();
 
                 // Validate form
                 if (!validateForm()) {
-                    return;
+                    e.preventDefault(); // Prevent form submission
+                    return false;
                 }
 
-                // Show sending status
-                statusMessage.textContent = 'Sending your message...';
-                statusMessage.className = 'status-message sending';
-                statusMessage.style.display = 'block';
-                submitButton.disabled = true;
-
-                // Set anonymous email if blank
+                // Handle anonymous email
                 const emailInput = document.getElementById('email');
                 if (!emailInput.value.trim()) {
                     emailInput.value = 'anonymous@organize.directory';
                 }
 
-                try {
-                    const formData = new FormData(form);
-                    const response = await fetch('https://api.web3forms.com/submit', {
-                        method: 'POST',
-                        body: formData
-                    });
-
-                    const data = await response.json();
-
-                    if (data.success) {
-                        // Successful submission
-                        statusMessage.textContent = 'Thank you! Your message has been sent successfully.';
-                        statusMessage.className = 'status-message success';
-                        form.reset();
-                    } else {
-                        // API returned an error
-                        throw new Error(data.message || 'Something went wrong');
-                    }
-                } catch (error) {
-                    // Handle errors
-                    statusMessage.textContent = 'Sorry, there was a problem sending your message. Please try again or email us directly.';
-                    statusMessage.className = 'status-message error';
+                // Show help div after a delay in case submission is slow
+                setTimeout(() => {
                     formFailureHelp.style.display = 'block';
-                    console.error('Form submission error:', error);
-                } finally {
-                    submitButton.disabled = false;
-                    // Scroll to status message
-                    statusMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }
+                }, 10000);
+
+                return true; // Allow form submission
             });
 
             // Form validation function
