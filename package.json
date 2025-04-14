@@ -10,7 +10,8 @@
           "build:cities": "node scripts/build-city-list.js",
           "update-css": "node batch-update-html.js",
           "update-css-single": "node update-classes.js",
-          "add-updater": "node add-updater-to-html.js"
+          "add-updater": "node add-updater-to-html.js",
+          "dev": "wrangler pages dev --compatibility-date=2023-06-21 ."
      },
      "devDependencies": {
           "glob": "^11.0.1",
@@ -19,6 +20,7 @@
           "serve": "^14.2.4"
      },
      "dependencies": {
+          "@cloudflare/pages-plugin-static-forms": "^1.0.1",
           "cheerio": "^1.0.0-rc.12",
           "express": "^4.18.2",
           "front-matter": "^4.0.2",
