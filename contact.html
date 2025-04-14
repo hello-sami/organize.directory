@@ -4,7 +4,7 @@
 <head>
     <!-- Content Security Policy -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.web3forms.com https://cloudflareinsights.com https://www.google-analytics.com https://www.googletagmanager.com; img-src 'self' data: https://www.google-analytics.com; form-action 'self' https://api.web3forms.com;">
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' static.cloudflareinsights.com googletagmanager.com google-analytics.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; connect-src 'self' api.web3forms.com cloudflareinsights.com google-analytics.com googletagmanager.com; img-src 'self' data: google-analytics.com; form-action 'self' api.web3forms.com; frame-src 'self';">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
@@ -177,8 +177,14 @@
                     <!-- Web3Forms access key -->
                     <input type="hidden" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
                     <input type="hidden" name="redirect" value="https://organize.directory/thank-you">
+                    <input type="hidden" name="success_url" value="https://organize.directory/thank-you">
                     <input type="hidden" name="from_name" value="Organize Directory Contact Form">
                     <input type="hidden" name="subject" value="New Submission from Organize Directory Contact Form">
+
+                    <!-- Web3Forms system fields for proper email delivery -->
+                    <input type="hidden" name="website" value="organize.directory">
+                    <input type="hidden" name="replyto" value="%%email%%" data-dynamic="true">
+
                     <!-- Honeypot field to prevent spam -->
                     <input type="checkbox" name="botcheck" id="botcheck" class="hidden" style="display: none;">
                     <!-- Captcha verification field -->

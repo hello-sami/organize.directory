@@ -17,6 +17,18 @@ export function initializeContactForm() {
           ? form.querySelector('button[type="submit"]')
           : null;
 
+     // Check if there was a previous form submission that didn't complete
+     if (sessionStorage.getItem("form_submitted") === "true") {
+          console.log(
+               "Detected previous form submission, redirecting to thank you page"
+          );
+          // Clear the flag
+          sessionStorage.removeItem("form_submitted");
+          // Redirect to thank you page
+          window.location.href = "https://organize.directory/thank-you";
+          return; // Exit early
+     }
+
      // Debug log
      console.log("Contact form init:", {
           form: !!form,
@@ -85,21 +97,30 @@ export function initializeContactForm() {
      // Fallback function - if form submission hasn't completed after a timeout
      function submissionFallback() {
           console.log("Using submission fallback");
-          // Show a message that we're having trouble and suggest a manual redirect
-          showSubmitStatus(
-               "Your message has been sent, but we're having trouble redirecting you. Please click the link below to continue."
-          );
 
-          // Add a link for manual navigation
-          if (submitStatus) {
-               const redirectLink = document.createElement("a");
-               redirectLink.href = "https://organize.directory/thank-you";
-               redirectLink.textContent = "Continue to Thank You page";
-               redirectLink.className = "manual-redirect-link";
-               redirectLink.style.display = "block";
-               redirectLink.style.marginTop = "1rem";
-               redirectLink.style.textAlign = "center";
-               submitStatus.appendChild(redirectLink);
+          // First try to redirect automatically
+          try {
+               console.log("Attempting automatic redirect to thank you page");
+               window.location.href = "https://organize.directory/thank-you";
+          } catch (err) {
+               console.error("Auto-redirect failed:", err);
+
+               // If automatic redirect fails, show a message with a manual link
+               showSubmitStatus(
+                    "Your message has been sent, but we're having trouble redirecting you. Please click the link below to continue."
+               );
+
+               // Add a link for manual navigation
+               if (submitStatus) {
+                    const redirectLink = document.createElement("a");
+                    redirectLink.href = "https://organize.directory/thank-you";
+                    redirectLink.textContent = "Continue to Thank You page";
+                    redirectLink.className = "manual-redirect-link";
+                    redirectLink.style.display = "block";
+                    redirectLink.style.marginTop = "1rem";
+                    redirectLink.style.textAlign = "center";
+                    submitStatus.appendChild(redirectLink);
+               }
           }
      }
 
@@ -169,23 +190,45 @@ export function initializeContactForm() {
                     submitBtn.disabled = true;
                }
 
-               // Set a fallback timer in case the form submission gets stuck
-               const fallbackTimer = setTimeout(submissionFallback, 8000);
+               try {
+                    // Create a hidden field to track submission
+                    const submissionFlag = document.createElement("input");
+                    submissionFlag.type = "hidden";
+                    submissionFlag.name = "submission_started";
+                    submissionFlag.value = Date.now().toString();
+                    form.appendChild(submissionFlag);
 
-               // Create a hidden field to track submission
-               const submissionFlag = document.createElement("input");
-               submissionFlag.type = "hidden";
-               submissionFlag.name = "submission_started";
-               submissionFlag.value = Date.now().toString();
-               form.appendChild(submissionFlag);
+                    // Log form data for debugging
+                    console.log(
+                         "Form data being submitted via traditional method"
+                    );
+                    const formData = new FormData(form);
+                    for (let [key, value] of formData.entries()) {
+                         console.log(`${key}: ${value}`);
+                    }
 
-               // Always use traditional form submission method
-               // This works even when CSP blocks fetch API requests
-               console.log("Using traditional form submission");
-               form.submit();
+                    // Store a flag in sessionStorage to detect if redirect doesn't happen
+                    sessionStorage.setItem("form_submitted", "true");
 
-               // Clear the event listener to prevent duplicate submissions
-               form.removeEventListener("submit", handleFormSubmit);
+                    // Set a fallback timer for redirection in case the form gets stuck
+                    const fallbackTimer = setTimeout(submissionFallback, 5000);
+
+                    // IMPORTANT: Skip fetch API entirely to avoid CSP issues
+                    // Use only traditional form submission which works with form-action CSP
+                    console.log(
+                         "Using traditional form submission only (bypassing fetch API)"
+                    );
+
+                    // Submit the form directly
+                    form.submit();
+
+                    // Clear the event listener to prevent duplicate submissions
+                    form.removeEventListener("submit", handleFormSubmit);
+               } catch (err) {
+                    console.error("Error during form submission:", err);
+                    // Even if there's an error, try to submit the form anyway
+                    form.submit();
+               }
 
                return false;
           }
