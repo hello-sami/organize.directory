@@ -175,53 +175,34 @@
 
             <div class="contact-content">
                 <p class="alternative-contact">You can also email directly at
-                    <strong>organizedirectory(at)proton.me</strong>
+                    <strong>hello@organize.directory</strong>
                 </p>
 
                 <form class="contact-form card-base" id="contactForm" action="https://api.web3forms.com/submit"
-                    method="POST">
+                    method="POST" target="_blank">
                     <!-- Web3Forms access key - IMPORTANT: Verify this is your correct API key -->
                     <input type="hidden" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
 
-                    <!-- Notification and redirect settings -->
+                    <!-- Notification and redirect settings - Using absolute URLs -->
                     <input type="hidden" name="redirect" value="https://organize.directory/thank-you">
                     <input type="hidden" name="success_url" value="https://organize.directory/thank-you">
 
                     <!-- Using domain email for better deliverability -->
                     <input type="hidden" name="to_email" value="hello@organize.directory">
 
-                    <!-- Explicit from address -->
-                    <input type="hidden" name="from_email" value="noreply@organize.directory">
+                    <!-- Form identification information -->
                     <input type="hidden" name="from_name" value="Organize Directory Contact Form">
-
-                    <!-- Standard form parameters -->
                     <input type="hidden" name="website" value="organize.directory">
-                    <input type="hidden" name="template_id" value="organize_directory_contact">
                     <input type="hidden" name="subject" value="New Contact Form Submission - Organize Directory">
-
-                    <!-- Dynamic reply-to field -->
-                    <input type="hidden" name="replyto" value="%%email%%" data-dynamic="true">
-
-                    <!-- Legacy support fields -->
-                    <input type="hidden" name="form-name" value="organize-directory-contact-form">
-                    <input type="hidden" name="apikey" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
 
                     <!-- Honeypot field to prevent spam -->
                     <input type="checkbox" name="botcheck" id="botcheck" class="hidden" style="display: none;">
-                    <!-- Captcha verification field -->
-                    <input type="hidden" name="captcha_verification" value="enabled">
 
-                    <noscript>
-                        <div class="form-group"
-                            style="padding: 0.75rem; background-color: #fff3cd; color: #856404; border-radius: 4px; margin-bottom: 1.5rem;">
-                            <strong>Note:</strong> JavaScript is disabled in your browser. The spam protection captcha
-                            will not work,
-                            but you can still submit the form. For security reasons, we recommend enabling JavaScript or
-                            contacting us directly at organizedirectory(at)proton.me
-                        </div>
-                        <!-- Hidden field to indicate JavaScript is disabled -->
-                        <input type="hidden" name="javascript_disabled" value="true">
-                    </noscript>
+                    <div class="notice"
+                        style="padding: 0.75rem; background-color: #f9f9f9; border-radius: 4px; margin-bottom: 1.5rem;">
+                        After submitting, you'll be redirected to a thank you page.
+                        <strong>Please allow a few seconds for the form to process.</strong>
+                    </div>
 
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -251,21 +232,12 @@
                         <textarea id="message" name="message" required></textarea>
                     </div>
 
+                    <!-- Simple text-based verification that works without JavaScript -->
                     <div class="form-group" id="captchaContainer">
-                        <label for="captchaAnswer">Security Check: <span id="captchaQuestion"></span></label>
-                        <input type="number" id="captchaAnswer" name="captchaAnswer">
-                        <small class="form-helper">Please solve this simple math problem to prevent spam</small>
-                        <input type="hidden" id="captchaExpected" name="captchaExpected">
-                        <noscript>
-                            <small class="form-helper">JavaScript is required for the security check. If you cannot
-                                enable JavaScript, please email us directly at organizedirectory(at)proton.me</small>
-                            <!-- Alternative text-based verification for no-js -->
-                            <label for="nojs_verification" style="margin-top: 0.5rem; display: block;">
-                                Please type "human" in the box below to verify you're not a robot:
-                            </label>
-                            <input type="text" id="nojs_verification" name="nojs_verification"
-                                style="width: 100%; padding: 0.75rem; margin-top: 0.25rem;" required>
-                        </noscript>
+                        <label for="human_verification">To prevent spam, please type "human" below:</label>
+                        <input type="text" id="human_verification" name="human_verification" required
+                            autocomplete="off">
+                        <small class="form-helper">This helps us filter out automated submissions</small>
                     </div>
 
                     <button type="submit" class="submit-button btn-base">Send Message</button>
