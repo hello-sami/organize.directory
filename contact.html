@@ -138,6 +138,13 @@
                         <textarea id="message" name="message" required=""></textarea>
                     </div>
 
+                    <div class="form-group" id="captchaContainer">
+                        <label for="captcha">Security Check <span id="captchaQuestion"></span></label>
+                        <input type="number" id="captchaAnswer" name="captchaAnswer" required>
+                        <small class="form-helper">Please solve this simple math problem to prevent spam</small>
+                        <input type="hidden" id="captchaExpected" name="captchaExpected">
+                    </div>
+
                     <button type="submit" class="submit-button btn-base">Send Message</button>
                 </form>
                 <div id="form-error" class="error-message"></div>

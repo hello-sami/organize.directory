@@ -1,18 +1,19 @@
 // Initial sidebar content to prevent flicker
 const initialSidebar = `
     <div class="sidebar-header">
-        <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo"><h1><a href="/" class="home-link" style="text-decoration: none !important; color: inherit !important; background-color: transparent !important; margin: 0; padding: 0;">The Organize Directory</a></h1>
+        <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo">
+        <h1><a href="/" class="home-link">The Organize Directory</a></h1>
     </div>
     <nav>
-        <a href="/" class="nav-link">Home</a>
+        <a href="/" class="nav-link nav-link-base">Home</a>
         <div class="nav-group">
-            <a href="/location" class="nav-group-title nav-link-group-header">Find a group</a>
-            <a href="/location" class="nav-link nav-link-indented">by location</a>
-            <a href="/topics" class="nav-link nav-link-indented">by topic</a>
+            <a href="/location" class="nav-group-title nav-link-group-header nav-link-base">Find a group</a>
+            <a href="/location" class="nav-link nav-link-indented nav-link-base">by location</a>
+            <a href="/topics" class="nav-link nav-link-indented nav-link-base">by topic</a>
         </div>
-        <a href="/guides" class="nav-link">Guides</a>
-        <a href="/contact" class="nav-link">Contact</a>
-        <a href="/subscribe" class="nav-link">Subscribe</a>
+        <a href="/guides" class="nav-link nav-link-base">Guides</a>
+        <a href="/contact" class="nav-link nav-link-base">Contact</a>
+        <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
     </nav>
     <div class="sidebar-motto">
        Don't despair, organize.
@@ -74,12 +75,11 @@ const criticalStyles = `
         justify-content: flex-start;
         padding: 0 1.5rem;
         margin-bottom: 1.5rem;
-        gap: 0;
+        gap: 0.75rem;
     }
     .sidebar-header h1 {
         margin: 0;
         padding: 0;
-        padding-left: 0.2rem;
         text-align: left;
         font-size: 1.6rem;
         background-color: transparent !important;
@@ -111,16 +111,16 @@ const criticalStyles = `
         padding: 0.75rem 1.5rem;
         color: inherit;
         text-decoration: none;
-        border-top: 1px solid var(--border-color, #ffb3b3);
-        border-bottom: 1px solid var(--border-color, #ffb3b3);
+        border-top: 1px solid var(--color-border, #ffb3b3);
+        border-bottom: 1px solid var(--color-border, #ffb3b3);
     }
     .sidebar .nav-group-title {
         display: block;
         font-weight: 600;
         margin: 0;
         padding: 0.75rem 1.5rem;
-        border-top: 1px solid var(--border-color, #ffb3b3);
-        border-bottom: 1px solid var(--border-color, #ffb3b3);
+        border-top: 1px solid var(--color-border, #ffb3b3);
+        border-bottom: 1px solid var(--color-border, #ffb3b3);
         margin-top: -1px;
         margin-bottom: -1px;
     }
@@ -250,16 +250,72 @@ function fixSidebarHeaderStyling() {
      const headerContainer = document.querySelector(".sidebar-header");
      if (headerContainer) {
           headerContainer.classList.add("sidebar-header-optimized");
+
+          // Ensure proper spacing in flexbox layout - explicitly set gap for all pages
+          headerContainer.style.display = "flex";
+          headerContainer.style.flexDirection = "row";
+          headerContainer.style.alignItems = "center";
+          headerContainer.style.justifyContent = "flex-start";
+          headerContainer.style.gap = "0.75rem";
+
+          // Explicitly set vertical spacing to ensure consistency
+          headerContainer.style.marginBottom = "1.5rem";
+          headerContainer.style.padding = "0 1.5rem";
+          headerContainer.style.marginTop = "0";
+          headerContainer.style.paddingTop = "0";
+          headerContainer.style.paddingBottom = "0";
+
+          // Ensure consistent background color
+          headerContainer.style.backgroundColor = "transparent";
      }
 
      const headerH1 = document.querySelector(".sidebar-header h1");
      if (headerH1) {
+          // Apply both standardized classes for optimal styling
           headerH1.classList.add("sidebar-title-optimized");
+          headerH1.classList.add("sidebar-title-consistent");
+
+          // Remove any potentially problematic inline styles
+          headerH1.style.paddingLeft = "0";
+          headerH1.style.margin = "0";
+          headerH1.style.padding = "0";
+          headerH1.style.lineHeight = "1.2";
+          headerH1.style.backgroundColor = "transparent";
+
+          // Force consistent font weight - use !important in JS to override any CSS
+          headerH1.setAttribute(
+               "style",
+               headerH1.getAttribute("style") +
+                    "; font-weight: 700 !important; background-color: transparent !important;"
+          );
+
+          // Ensure vertical alignment is consistent
+          headerH1.style.display = "flex";
+          headerH1.style.alignItems = "center";
 
           // Fix the link inside h1
           const link = headerH1.querySelector("a");
           if (link) {
+               // Apply both standardized classes for optimal styling
                link.classList.add("home-link-optimized");
+               link.classList.add("sidebar-title-link");
+
+               // Ensure clean styling with no unexpected properties
+               link.style.textDecoration = "none";
+               link.style.color = "inherit";
+               link.style.backgroundColor = "transparent";
+               link.style.borderBottom = "none";
+               link.style.boxShadow = "none";
+               link.style.margin = "0";
+               link.style.padding = "0";
+               link.style.lineHeight = "1.2";
+
+               // Force link to inherit font weight - use !important in JS
+               link.setAttribute(
+                    "style",
+                    link.getAttribute("style") +
+                         "; font-weight: inherit !important; text-decoration: none !important; box-shadow: none !important; background-color: transparent !important;"
+               );
           }
      }
 }

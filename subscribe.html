@@ -50,16 +50,6 @@
         // Initialize sidebar
         document.addEventListener('DOMContentLoaded', () => {
             initializeSidebar('subscribe');
-
-            // Fix h1 highlighting issue
-            const headerH1 = document.querySelector('.sidebar-header h1');
-            if (headerH1) {
-                headerH1.style.cssText = 'background-color: transparent !important; margin: 0; padding: 0; padding-left: 0.2rem; text-align: left !important;';
-                const link = headerH1.querySelector('a');
-                if (link) {
-                    link.style.cssText = 'background-color: transparent !important; color: inherit !important; text-decoration: none !important; border-bottom: none !important; box-shadow: none !important;';
-                }
-            }
         });
     </script>
 
@@ -98,7 +88,6 @@
                 <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
             </nav>
             <div class="sidebar-motto">
-
                 Don't despair, organize.
             </div>
         </div>
