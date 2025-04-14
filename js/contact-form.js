@@ -1,6 +1,7 @@
 /**
  * Contact Form Handler
  * This script handles the contact form using Cloudflare Pages Forms
+ * with a fallback mechanism if the primary method fails
  */
 
 function initializeContactForm() {
@@ -34,18 +35,108 @@ function initializeContactForm() {
                     emailInput.value = "anonymous@example.com";
                }
 
+               // Format the subject for better readability
+               let subjectText = "Contact Form Submission";
+               if (subjectSelect.value) {
+                    const selectedOption =
+                         subjectSelect.options[subjectSelect.selectedIndex];
+                    if (selectedOption) {
+                         subjectText = selectedOption.textContent;
+                    }
+               }
+
                // Log form submission for debugging purposes
                console.log("Form submitted with Cloudflare Pages Forms");
 
-               // Show help div after a timeout in case submission hangs
+               // Show help div after a delay in case submission hangs
                setTimeout(() => {
                     if (helpDiv) helpDiv.style.display = "block";
                }, 10000);
 
-               // We're letting the form submit naturally to Cloudflare Pages Forms
-               // No need to prevent default or do custom handling
-               return true;
+               try {
+                    // Add a hidden field to track submission method
+                    const methodInput = document.createElement("input");
+                    methodInput.type = "hidden";
+                    methodInput.name = "submission_method";
+                    methodInput.value = "cloudflare_pages_forms";
+                    form.appendChild(methodInput);
+
+                    // We're letting the form submit naturally to Cloudflare Pages Forms
+                    return true;
+               } catch (error) {
+                    console.error("Error during form submission:", error);
+
+                    // If we get here, something went wrong with the standard submission
+                    // Show error message and fallback options
+                    showSubmitStatus(
+                         "There was an issue submitting the form. Please try the alternative contact method below.",
+                         "error"
+                    );
+                    if (helpDiv) helpDiv.style.display = "block";
+
+                    // Create a mailto link as fallback
+                    createMailtoFallback(
+                         nameInput.value,
+                         emailInput.value,
+                         subjectText,
+                         messageInput.value
+                    );
+
+                    return false;
+               }
           });
+     }
+
+     /**
+      * Creates a mailto fallback when form submission fails
+      */
+     function createMailtoFallback(name, email, subject, message) {
+          // Create fallback container if it doesn't exist
+          let fallbackDiv = document.getElementById("mailto-fallback");
+          if (!fallbackDiv) {
+               fallbackDiv = document.createElement("div");
+               fallbackDiv.id = "mailto-fallback";
+               fallbackDiv.className = "mailto-fallback";
+               fallbackDiv.style.marginTop = "20px";
+               fallbackDiv.style.padding = "15px";
+               fallbackDiv.style.backgroundColor = "#f9f9f9";
+               fallbackDiv.style.borderRadius = "4px";
+               fallbackDiv.style.border = "1px solid #ddd";
+
+               // Insert after the help div or form
+               const insertAfter = helpDiv || form;
+               insertAfter.parentNode.insertBefore(
+                    fallbackDiv,
+                    insertAfter.nextSibling
+               );
+          }
+
+          // Format email body
+          const bodyText = `
+Name: ${name}
+Email: ${email || "Anonymous"}
+
+${message}
+
+---
+Sent via fallback from the Organize Directory contact form
+`;
+
+          // Create mailto link
+          const mailtoUrl = `mailto:hello@organize.directory?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyText)}`;
+
+          // Update fallback div content
+          fallbackDiv.innerHTML = `
+               <h3>Send Email Directly</h3>
+               <p>Click the button below to open your email client and send your message directly:</p>
+               <a href="${mailtoUrl}" style="display: inline-block; background: #a30000; color: white; padding: 10px 15px; text-decoration: none; border-radius: 4px; margin-top: 10px;">
+                    Send via Email Client
+               </a>
+               <p style="margin-top: 15px; font-size: 0.9em;">
+                    If the button doesn't work, email us directly at 
+                    <a href="mailto:hello@organize.directory">hello@organize.directory</a>
+               </p>
+          `;
      }
 
      /**

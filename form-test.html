@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form Test | Organize Directory</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            color: #a30000;
+        }
+
+        .form-container {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-column {
+            flex: 1;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            min-height: 120px;
+        }
+
+        button {
+            background-color: #a30000;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #800000;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .result.success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border-left: 4px solid #2e7d32;
+        }
+
+        .result.error {
+            background-color: #ffebee;
+            color: #c62828;
+            border-left: 4px solid #c62828;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Contact Form Testing Page</h1>
+    <p>This page provides two methods to test the contact form functionality:</p>
+
+    <div class="form-container">
+        <!-- Method 1: Standard Form -->
+        <div class="form-column">
+            <h2>Method 1: Standard Form</h2>
+            <p>Tests the standard Cloudflare Pages Forms functionality.</p>
+
+            <form id="standardForm" method="POST" data-static-form-name="contact">
+                <div class="form-group">
+                    <label for="name1">Name</label>
+                    <input type="text" id="name1" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email1">Email (optional)</label>
+                    <input type="email" id="email1" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject1">Subject</label>
+                    <select id="subject1" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="add-network">Add a Mutual Aid Network</option>
+                        <option value="suggestion">Suggestion</option>
+                        <option value="question">General Question</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message1">Message</label>
+                    <textarea id="message1" name="message" required></textarea>
+                </div>
+
+                <button type="submit">Submit (Standard)</button>
+            </form>
+        </div>
+
+        <!-- Method 2: Mailto Form -->
+        <div class="form-column">
+            <h2>Method 2: Mailto Fallback</h2>
+            <p>Uses the mailto: protocol to open your email client directly.</p>
+
+            <form id="mailtoForm">
+                <div class="form-group">
+                    <label for="name2">Name</label>
+                    <input type="text" id="name2" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email2">Email (optional)</label>
+                    <input type="email" id="email2" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="subject2">Subject</label>
+                    <select id="subject2" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="add-network">Add a Mutual Aid Network</option>
+                        <option value="suggestion">Suggestion</option>
+                        <option value="question">General Question</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message2">Message</label>
+                    <textarea id="message2" name="message" required></textarea>
+                </div>
+
+                <button type="button" id="mailtoButton">Open Email Client</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="result" class="result"></div>
+
+    <a href="/contact" class="back-link">← Back to regular contact page</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const standardForm = document.getElementById('standardForm');
+            const mailtoForm = document.getElementById('mailtoForm');
+            const mailtoButton = document.getElementById('mailtoButton');
+            const resultDiv = document.getElementById('result');
+
+            // Handle standard form submission
+            if (standardForm) {
+                standardForm.addEventListener('submit', function (e) {
+                    // Form will submit naturally - just log the attempt
+                    console.log('Standard form submitted');
+
+                    // Handle anonymous email
+                    const emailInput = document.getElementById('email1');
+                    if (emailInput && !emailInput.value.trim()) {
+                        emailInput.value = 'anonymous@example.com';
+                    }
+
+                    showResult('Form is being submitted...', 'success');
+                });
+            }
+
+            // Handle mailto button click
+            if (mailtoButton) {
+                mailtoButton.addEventListener('click', function () {
+                    const name = document.getElementById('name2').value.trim();
+                    const email = document.getElementById('email2').value.trim() || 'Anonymous';
+                    const subjectSelect = document.getElementById('subject2');
+                    const message = document.getElementById('message2').value.trim();
+
+                    // Validate form
+                    if (!name || !subjectSelect.value || !message) {
+                        showResult('Please fill out all required fields', 'error');
+                        return;
+                    }
+
+                    // Get the subject text
+                    const subjectText = subjectSelect.options[subjectSelect.selectedIndex].textContent;
+
+                    // Format email body
+                    const body = `
+Name: ${name}
+Email: ${email}
+
+${message}
+
+---
+Sent from Organize Directory contact form test
+`;
+
+                    // Create and open mailto link
+                    const mailtoUrl = `mailto:hello@organize.directory?subject=${encodeURIComponent(subjectText)}&body=${encodeURIComponent(body)}`;
+                    window.location.href = mailtoUrl;
+
+                    showResult('Opening email client...', 'success');
+                });
+            }
+
+            // Helper function to show result messages
+            function showResult(message, type) {
+                resultDiv.textContent = message;
+                resultDiv.className = `result ${type}`;
+                resultDiv.style.display = 'block';
+
+                // Scroll to the result
+                resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            // Check URL parameters for form submission status
+            const urlParams = new URLSearchParams(window.location.search);
+            const formName = urlParams.get('form-name');
+            const success = urlParams.get('success');
+
+            if (formName === 'contact') {
+                if (success === 'true') {
+                    showResult('Message sent successfully! Cloudflare Pages Forms is working correctly.', 'success');
+                } else {
+                    showResult('There was an error submitting the form. Try the mailto option instead.', 'error');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
