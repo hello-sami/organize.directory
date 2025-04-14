@@ -46,6 +46,36 @@ export function initializeContactForm() {
           return answer;
      }
 
+     // Function to show error message
+     function showError(message) {
+          if (formError) {
+               formError.textContent = message;
+               formError.classList.add("visible");
+          }
+     }
+
+     // Function to hide error message
+     function hideError() {
+          if (formError) {
+               formError.textContent = "";
+               formError.classList.remove("visible");
+          }
+     }
+
+     // Function to show submit status
+     function showSubmitStatus() {
+          if (submitStatus) {
+               submitStatus.classList.add("visible");
+          }
+     }
+
+     // Function to hide submit status
+     function hideSubmitStatus() {
+          if (submitStatus) {
+               submitStatus.classList.remove("visible");
+          }
+     }
+
      if (
           form &&
           emailField &&
@@ -59,10 +89,14 @@ export function initializeContactForm() {
                console.log("Captcha generated successfully");
           } catch (err) {
                console.error("Error generating captcha:", err);
-               formError.textContent =
-                    "Unable to load security check. Please reload the page or contact us directly.";
-               formError.style.display = "block";
+               showError(
+                    "Unable to load security check. Please reload the page or contact us directly."
+               );
           }
+
+          // Add CSS classes for visibility
+          if (formError) formError.classList.add("error-message");
+          if (submitStatus) submitStatus.classList.add("submit-status");
 
           // Intercept the form submission to handle it with fetch API
           form.addEventListener("submit", function (e) {
@@ -80,9 +114,9 @@ export function initializeContactForm() {
                });
 
                if (isNaN(userAnswer) || userAnswer !== expectedAnswer) {
-                    formError.textContent =
-                         "Incorrect answer to the security question. Please try again.";
-                    formError.style.display = "block";
+                    showError(
+                         "Incorrect answer to the security question. Please try again."
+                    );
                     generateCaptcha(); // Generate a new captcha
                     captchaAnswer.value = ""; // Clear the answer field
                     return false;
@@ -94,13 +128,10 @@ export function initializeContactForm() {
                }
 
                // Clear error message
-               formError.textContent = "";
-               formError.style.display = "none";
+               hideError();
 
                // Show status message and disable submit button
-               if (submitStatus) {
-                    submitStatus.style.display = "block";
-               }
+               showSubmitStatus();
 
                const submitBtn = form.querySelector('button[type="submit"]');
                if (submitBtn) {
@@ -150,13 +181,10 @@ export function initializeContactForm() {
                               submitBtn.disabled = false;
                          }
 
-                         if (submitStatus) {
-                              submitStatus.style.display = "none";
-                         }
-
-                         formError.textContent =
-                              "There was a problem submitting the form. Please try again or email us directly.";
-                         formError.style.display = "block";
+                         hideSubmitStatus();
+                         showError(
+                              "There was a problem submitting the form. Please try again or email us directly."
+                         );
                     });
 
                // Add a 15-second timeout in case the form gets stuck
@@ -169,18 +197,10 @@ export function initializeContactForm() {
                          submitBtn.innerHTML = "Send Message";
                          submitBtn.disabled = false;
 
-                         if (
-                              submitStatus &&
-                              document.body.contains(submitStatus)
-                         ) {
-                              submitStatus.style.display = "none";
-                         }
-
-                         if (formError && document.body.contains(formError)) {
-                              formError.textContent =
-                                   "The form submission is taking longer than expected. Please try again or email us directly.";
-                              formError.style.display = "block";
-                         }
+                         hideSubmitStatus();
+                         showError(
+                              "The form submission is taking longer than expected. Please try again or email us directly."
+                         );
                     }
                }, 15000);
           });
@@ -195,10 +215,8 @@ export function initializeContactForm() {
                     captchaExpected: !!captchaExpected,
                }
           );
-          if (formError) {
-               formError.textContent =
-                    "There was a problem loading the contact form. Please refresh the page or contact us directly via email.";
-               formError.style.display = "block";
-          }
+          showError(
+               "There was a problem loading the contact form. Please refresh the page or contact us directly via email."
+          );
      }
 }

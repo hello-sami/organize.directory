@@ -1936,6 +1936,7 @@ h6 {
      }
 
      .topics-page .topics-grid .topic-card .topic-icon,
+     .topics-page .topic-icon,
      .topic-icon {
           font-size: 1.1rem !important;
           height: 1.1rem !important;
@@ -2200,6 +2201,29 @@ h6 {
      padding: 0.5rem;
      background: #ffebee;
      border-radius: 4px;
+}
+
+.error-message.visible {
+     display: block;
+}
+
+#captchaQuestion {
+     font-weight: bold;
+     color: #333;
+}
+
+#submit-status {
+     display: none;
+     margin-top: 1rem;
+     padding: 0.75rem;
+     border-radius: 4px;
+     background-color: #e8f5e9;
+     color: #2e7d32;
+     font-weight: 500;
+}
+
+#submit-status.visible {
+     display: block;
 }
 
 /* Contact form mobile responsiveness */
@@ -3264,6 +3288,29 @@ h6 {
      border-radius: 4px;
 }
 
+.error-message.visible {
+     display: block;
+}
+
+#captchaQuestion {
+     font-weight: bold;
+     color: #333;
+}
+
+#submit-status {
+     display: none;
+     margin-top: 1rem;
+     padding: 0.75rem;
+     border-radius: 4px;
+     background-color: #e8f5e9;
+     color: #2e7d32;
+     font-weight: 500;
+}
+
+#submit-status.visible {
+     display: block;
+}
+
 /* Contact form mobile responsiveness */
 @media (max-width: 768px) {
      .contact-content {
@@ -3430,3 +3477,38 @@ html body #sidebar div.sidebar-header h1 a,
      font-weight: inherit !important;
      font-family: inherit !important;
 }
+
+/* ======================================
+   Contact Form Styling
+   ====================================== */
+.contact-content {
+     padding: 1rem;
+     background: var(--surface-color-alt, #ffd9d9);
+     border-radius: 8px;
+}
+
+.error-message {
+     display: none;
+     color: #d32f2f;
+     margin-top: 1rem;
+     padding: 0.5rem;
+     background: #ffebee;
+     border-radius: 4px;
+}
+
+#captchaQuestion {
+     font-weight: bold;
+     color: #333;
+}
+
+#submit-status {
+     display: none;
+     margin-top: 1rem;
+     padding: 0.75rem;
+     border-radius: 4px;
+     background-color: #e8f5e9;
+     color: #2e7d32;
+     font-weight: 500;
+}
+
+/* Contact form mobile responsiveness */

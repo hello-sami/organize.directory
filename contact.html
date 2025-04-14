@@ -4,7 +4,7 @@
 <head>
     <!-- Content Security Policy -->
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://api.web3forms.com https://www.google-analytics.com; img-src 'self' data: https://www.google-analytics.com; form-action 'self' https://api.web3forms.com;">
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.web3forms.com https://www.google-analytics.com; img-src 'self' data: https://www.google-analytics.com; form-action 'self' https://api.web3forms.com;">
 
     <!-- Google Analytics -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
@@ -62,15 +62,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             initializeSidebar('contact');
             initializeContactForm();
-
-            // Make sure error message has appropriate styling
-            const formError = document.getElementById('form-error');
-            if (formError) {
-                formError.style.display = 'none';
-                formError.style.color = '#e53935';
-                formError.style.marginTop = '1rem';
-                formError.style.fontWeight = 'bold';
-            }
         });
     </script>
 </head>
@@ -154,8 +145,7 @@
                     </div>
 
                     <div class="form-group" id="captchaContainer">
-                        <label for="captchaAnswer">Security Check: <span id="captchaQuestion"
-                                style="font-weight: bold; color: #333;"></span></label>
+                        <label for="captchaAnswer">Security Check: <span id="captchaQuestion"></span></label>
                         <input type="number" id="captchaAnswer" name="captchaAnswer" required>
                         <small class="form-helper">Please solve this simple math problem to prevent spam</small>
                         <input type="hidden" id="captchaExpected" name="captchaExpected">
@@ -164,8 +154,7 @@
                     <button type="submit" class="submit-button btn-base">Send Message</button>
                 </form>
                 <div id="form-error" class="error-message"></div>
-                <div id="submit-status"
-                    style="display: none; margin-top: 1rem; padding: 0.75rem; border-radius: 4px; background-color: #e8f5e9; color: #2e7d32; font-weight: 500;">
+                <div id="submit-status">
                     Sending your message... Please wait.
                 </div>
             </div>
