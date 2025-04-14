@@ -86,6 +86,10 @@ export function initializeContactForm() {
           // Generate initial captcha
           try {
                generateCaptcha();
+               // Add required attribute to captchaAnswer field when JS is working
+               if (captchaAnswer) {
+                    captchaAnswer.setAttribute("required", "required");
+               }
                console.log("Captcha generated successfully");
           } catch (err) {
                console.error("Error generating captcha:", err);
@@ -98,8 +102,8 @@ export function initializeContactForm() {
           if (formError) formError.classList.add("error-message");
           if (submitStatus) submitStatus.classList.add("submit-status");
 
-          // Intercept the form submission to handle it with fetch API
-          form.addEventListener("submit", function (e) {
+          // Function to handle form submission
+          function handleFormSubmit(e) {
                e.preventDefault(); // Always prevent default form submission
                console.log("Form submission attempt");
 
@@ -141,6 +145,7 @@ export function initializeContactForm() {
 
                // Use fetch API for form submission
                const formData = new FormData(form);
+               let fetchFailed = false;
 
                fetch(form.action, {
                     method: "POST",
@@ -174,8 +179,29 @@ export function initializeContactForm() {
                     })
                     .catch((error) => {
                          console.error("Error submitting form:", error);
+                         fetchFailed = true;
 
-                         // In case of error, enable the button again and show error message
+                         // If fetch fails due to CSP, try traditional form submission
+                         if (
+                              error
+                                   .toString()
+                                   .includes("Content Security Policy")
+                         ) {
+                              console.log(
+                                   "Attempting traditional form submission due to CSP issues"
+                              );
+                              // Fallback to traditional form submission
+                              setTimeout(() => {
+                                   form.removeEventListener(
+                                        "submit",
+                                        handleFormSubmit
+                                   );
+                                   form.submit();
+                              }, 100);
+                              return;
+                         }
+
+                         // In case of other errors, enable the button again and show error message
                          if (submitBtn) {
                               submitBtn.innerHTML = "Send Message";
                               submitBtn.disabled = false;
@@ -189,21 +215,46 @@ export function initializeContactForm() {
 
                // Add a 15-second timeout in case the form gets stuck
                setTimeout(() => {
+                    // Only act if we haven't redirected or already handled the error
                     if (
+                         !fetchFailed &&
                          submitBtn &&
                          document.body.contains(submitBtn) &&
                          submitBtn.disabled
                     ) {
-                         submitBtn.innerHTML = "Send Message";
-                         submitBtn.disabled = false;
+                         console.log("Form submission timeout reached");
 
-                         hideSubmitStatus();
-                         showError(
-                              "The form submission is taking longer than expected. Please try again or email us directly."
-                         );
+                         // Try traditional form submission as a fallback
+                         try {
+                              console.log(
+                                   "Attempting traditional form submission after timeout"
+                              );
+                              form.removeEventListener(
+                                   "submit",
+                                   handleFormSubmit
+                              );
+                              form.submit();
+                              return;
+                         } catch (e) {
+                              console.error(
+                                   "Error with fallback submission:",
+                                   e
+                              );
+                              // If traditional form submission fails, show error
+                              submitBtn.innerHTML = "Send Message";
+                              submitBtn.disabled = false;
+
+                              hideSubmitStatus();
+                              showError(
+                                   "The form submission is taking longer than expected. Please try again or email us directly."
+                              );
+                         }
                     }
                }, 15000);
-          });
+          }
+
+          // Intercept the form submission to handle it with fetch API
+          form.addEventListener("submit", handleFormSubmit);
      } else {
           console.error(
                "Contact form initialization failed: Missing elements",
