@@ -740,6 +740,31 @@ export async function onRequest({ request, next }) {
           return createResponse(newUrl, response);
      }
 
+     // Global middleware to handle form submissions on all pages
+     if (request.method === "POST") {
+          try {
+               // Check if it's a form submission by looking for content type
+               const contentType = request.headers.get("content-type") || "";
+               if (contentType.includes("form")) {
+                    // Clone the request so we can read the form data
+                    const formData = await request.clone().formData();
+
+                    // Check if it has our form marker
+                    const formName = formData.get("form-name");
+                    if (formName) {
+                         console.log(
+                              `Intercepted form submission for: ${formName}`
+                         );
+
+                         // Process form normally, but we can add logic here if needed
+                         return next();
+                    }
+               }
+          } catch (error) {
+               console.error("Error in form middleware:", error);
+          }
+     }
+
      // If no matches, continue to next middleware/static file handling
      return next();
 }

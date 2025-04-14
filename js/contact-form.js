@@ -1,6 +1,6 @@
 /**
  * Contact Form Handler
- * This script handles the contact form using Cloudflare Pages Forms Static Forms plugin
+ * This script handles the contact form user experience
  */
 
 function initializeContactForm() {
@@ -36,9 +36,7 @@ function initializeContactForm() {
                     if (helpDiv) helpDiv.style.display = "block";
                }, 10000);
 
-               // Let the form submit naturally to Cloudflare Pages Forms
-               // According to docs: https://developers.cloudflare.com/pages/functions/plugins/static-forms/
-               // The Plugin will automatically handle the form with data-static-form-name attribute
+               // Let the form submit naturally to the Functions endpoint
                return true;
           });
      }

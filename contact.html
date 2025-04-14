@@ -231,13 +231,16 @@
                     <strong>hello@organize.directory</strong>
                 </p>
 
-                <form class="contact-form card-base" id="contactForm" method="POST" data-static-form-name="contact">
+                <form class="contact-form card-base" id="contactForm" method="POST" action="/contact">
                     <!-- Explanation of form process -->
                     <div class="notice"
                         style="padding: 0.75rem; background-color: #f9f9f9; border-radius: 4px; margin-bottom: 1.5rem;">
                         After submitting, your message will be sent directly to our team.
                         <strong>You'll receive a confirmation once submitted.</strong>
                     </div>
+
+                    <!-- Hidden field for form name -->
+                    <input type="hidden" name="form-name" value="contact">
 
                     <!-- Hidden honeypot field to prevent spam -->
                     <div style="position: absolute; left: -9999px;">
