@@ -235,10 +235,13 @@
                     method="POST">
                     <!-- Hidden fields for Web3Forms -->
                     <input type="hidden" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
-                    <input type="hidden" name="redirect" value="/thank-you">
+                    <!-- Use absolute URL for redirect to ensure it works -->
+                    <input type="hidden" name="redirect" value="https://organize.directory/thank-you">
                     <input type="hidden" name="from_name" value="Organize Directory Contact Form">
                     <input type="hidden" name="website" value="organize.directory">
                     <input type="hidden" name="subject" value="New Contact Form Submission - Organize Directory">
+                    <!-- Add a hidden field to store the captcha answer for verification -->
+                    <input type="hidden" name="captcha-answer" id="captchaAnswer">
 
                     <!-- Honeypot field to prevent spam -->
                     <input type="checkbox" name="botcheck" id="botcheck" class="hidden" style="display: none;">
@@ -322,6 +325,20 @@
                                         helpDiv.style.display = 'block';
                                     }
                                 }, 8000);
+                            });
+                        }
+                    });
+
+                    // Add this script to pass the captcha answer to the hidden field
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const form = document.getElementById('contactForm');
+                        const captchaInput = document.getElementById('captchaInput');
+                        const captchaAnswer = document.getElementById('captchaAnswer');
+
+                        if (form && captchaInput && captchaAnswer) {
+                            form.addEventListener('submit', function () {
+                                // Pass the captcha answer to the hidden field before submission
+                                captchaAnswer.value = captchaInput.value;
                             });
                         }
                     });

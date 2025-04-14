@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Simple Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        form {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #a30000;
+            color: white;
+            border: none;
+            padding: 12px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .message {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Contact Us - Simple Test</h1>
+    <p>This is a simplified contact form to test Web3Forms submission</p>
+
+    <div class="message">
+        <strong>Note:</strong> This form submits directly to Web3Forms with minimal JavaScript.
+    </div>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+        <!-- Required: Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
+
+        <!-- Redirect URL (absolute URL) -->
+        <input type="hidden" name="redirect" value="https://organize.directory/thank-you">
+
+        <!-- Email and Subject configuration -->
+        <input type="hidden" name="from_name" value="Organize Directory Contact Form">
+        <input type="hidden" name="subject" value="Test Contact Form Submission">
+
+        <!-- Honeypot field to prevent spam -->
+        <input type="checkbox" name="botcheck" style="display: none;">
+
+        <!-- Form fields -->
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Leave blank to submit anonymously">
+        </div>
+
+        <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject" required>
+                <option value="">Select a subject</option>
+                <option value="add-network">Add a Mutual Aid Network</option>
+                <option value="update-info">Update Existing Information</option>
+                <option value="suggestion">Suggestion</option>
+                <option value="question">General Question</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+    </form>
+
+    <div class="message" style="margin-top: 20px;">
+        If the form submission works on this page but not on your main site, the issue is likely with JavaScript
+        interference or other custom code.
+    </div>
+
+    <p><a href="/contact">Back to regular contact form</a></p>
+
+    <!-- Simple tracking script to see if form is submitted -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function () {
+                    console.log('Form submitted to Web3Forms');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

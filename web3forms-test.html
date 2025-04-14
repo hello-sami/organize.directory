@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Web3Forms Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #a30000;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Web3Forms Test</h1>
+    <p>A minimal form to test Web3Forms submission</p>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+        <!-- Required: Web3Forms Access Key -->
+        <input type="hidden" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
+
+        <!-- Redirect URL -->
+        <input type="hidden" name="redirect" value="https://organize.directory/thank-you">
+
+        <!-- Honeypot field to prevent spam -->
+        <input type="checkbox" name="botcheck" style="display: none;">
+
+        <!-- Form fields -->
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+
+        <button type="submit">Submit Test Form</button>
+    </form>
+
+    <p><small>This form should submit directly to Web3Forms and redirect to your thank-you page.</small></p>
+</body>
+
+</html>

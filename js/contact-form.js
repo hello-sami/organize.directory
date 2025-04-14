@@ -1,7 +1,6 @@
 /**
  * Contact Form Handler
- * This script initializes the contact form, handles captcha generation,
- * validation, and form submission.
+ * This script initializes the contact form, handles captcha generation and validation.
  */
 
 function initializeContactForm() {
@@ -31,75 +30,30 @@ function initializeContactForm() {
      // Check for status parameters in URL (for when returning from form submission)
      checkUrlParameters();
 
-     // Add form submission handling
+     // Add form submission handler - simplified approach
      if (form) {
           form.addEventListener("submit", function (e) {
-               // Only prevent default submission if validation fails
-               if (!validateForm()) {
+               // Only validate the captcha, don't interfere with form submission otherwise
+               if (captchaInput.value.trim() !== captchaValue) {
                     e.preventDefault();
+                    hideError(captchaInput);
+                    showError(captchaInput, "Incorrect captcha value");
+                    captchaValue = generateCaptcha(captchaContainer);
+                    captchaInput.value = "";
                     return false;
                }
 
                // Handle empty email field - set to anonymous if blank
-               if (!emailInput.value.trim()) {
+               if (emailInput.value.trim() === "") {
                     emailInput.value = "anonymous@example.com";
                }
 
-               // Show "Sending..." message
+               // Show sending message
                showSubmitStatus("Sending your message...", "sending");
 
-               // Let the form submit naturally to allow Web3Forms redirect to work
-               // No need to prevent default or use fetch API
+               // Let the form submit naturally - no preventDefault()
                console.log("Form submitting to Web3Forms...");
-
-               // The rest of the submission is handled by Web3Forms
-               // and the redirect is handled by the redirect hidden field
           });
-     }
-
-     /**
-      * Validates the form inputs
-      * @returns {boolean} True if valid, false otherwise
-      */
-     function validateForm() {
-          // Reset previous errors
-          hideError(nameInput);
-          hideError(emailInput);
-          hideError(messageInput);
-          hideError(captchaInput);
-
-          let isValid = true;
-
-          // Validate name
-          if (!nameInput.value.trim()) {
-               showError(nameInput, "Please enter your name");
-               isValid = false;
-          }
-
-          // Email is optional, but if provided, validate format
-          if (emailInput.value.trim() && !isValidEmail(emailInput.value)) {
-               showError(emailInput, "Please enter a valid email address");
-               isValid = false;
-          }
-
-          // Validate message
-          if (!messageInput.value.trim()) {
-               showError(messageInput, "Please enter your message");
-               isValid = false;
-          }
-
-          // Validate captcha
-          if (!captchaInput.value.trim()) {
-               showError(captchaInput, "Please enter the captcha");
-               isValid = false;
-          } else if (captchaInput.value.trim() !== captchaValue) {
-               showError(captchaInput, "Incorrect captcha value");
-               captchaValue = generateCaptcha(captchaContainer);
-               captchaInput.value = "";
-               isValid = false;
-          }
-
-          return isValid;
      }
 
      /**
@@ -185,17 +139,6 @@ function showSubmitStatus(message, type) {
      statusMessage.className = "status-message";
      statusMessage.classList.add(type);
      statusMessage.style.display = "block";
-}
-
-/**
- * Validates an email address format
- * @param {string} email - The email to validate
- * @returns {boolean} True if valid, false otherwise
- */
-function isValidEmail(email) {
-     const re =
-          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-     return re.test(String(email).toLowerCase());
 }
 
 // Initialize the contact form when the DOM is loaded
