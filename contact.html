@@ -231,25 +231,12 @@
                     <strong>hello@organize.directory</strong>
                 </p>
 
-                <form class="contact-form card-base" id="contactForm" action="https://api.web3forms.com/submit"
-                    method="POST">
-                    <!-- Hidden fields for Web3Forms -->
-                    <input type="hidden" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
-                    <!-- Use absolute URL for redirect to ensure it works -->
-                    <input type="hidden" name="redirect" value="https://organize.directory/thank-you">
-                    <input type="hidden" name="from_name" value="Organize Directory Contact Form">
-                    <input type="hidden" name="website" value="organize.directory">
-                    <input type="hidden" name="subject" value="New Contact Form Submission - Organize Directory">
-                    <!-- Add a hidden field to store the captcha answer for verification -->
-                    <input type="hidden" name="captcha-answer" id="captchaAnswer">
-
-                    <!-- Honeypot field to prevent spam -->
-                    <input type="checkbox" name="botcheck" id="botcheck" class="hidden" style="display: none;">
-
+                <form class="contact-form card-base" id="contactForm" method="POST" data-static-form-name="contact">
+                    <!-- Explanation of Cloudflare Forms -->
                     <div class="notice"
                         style="padding: 0.75rem; background-color: #f9f9f9; border-radius: 4px; margin-bottom: 1.5rem;">
-                        After submitting, you'll be redirected to a thank you page.
-                        <strong>Please allow a few seconds for the form to process.</strong>
+                        After submitting, you'll receive a confirmation message.
+                        <strong>Your message will be emailed directly to our team.</strong>
                     </div>
 
                     <div class="form-group">
@@ -280,16 +267,9 @@
                         <textarea id="message" name="message" required></textarea>
                     </div>
 
-                    <!-- Math Captcha -->
-                    <div class="form-group">
-                        <label>Verification Captcha</label>
-                        <div class="captcha-container">
-                            <div id="captcha" class="captcha-display">Loading...</div>
-                            <button type="button" id="refreshCaptcha" class="refresh-captcha">Refresh Captcha</button>
-                        </div>
-                        <input type="text" id="captchaInput" name="captcha" required placeholder="Enter the answer"
-                            autocomplete="off">
-                        <small class="form-helper">Please solve the math problem to verify you're human</small>
+                    <!-- Honeypot field to prevent spam -->
+                    <div style="position: absolute; left: -9999px;">
+                        <input type="text" name="bot-field" tabindex="-1" autocomplete="off">
                     </div>
 
                     <button type="submit" class="submit-button btn-base">Send Message</button>
@@ -301,48 +281,10 @@
                 <div id="submission-help"
                     style="display: none; margin-top: 2rem; padding: 1rem; border: 1px solid #f0f0f0; border-radius: 4px; background-color: #f9f9f9;">
                     <p><strong>Having trouble submitting the form?</strong></p>
-                    <p>If the form isn't working, you can email us directly at: <a
+                    <p>You can email us directly at: <a
                             href="mailto:hello@organize.directory">hello@organize.directory</a></p>
                     <p>Please include the information you were trying to submit in your email.</p>
                 </div>
-                <script>
-                    // Failsafe for form submission
-                    document.addEventListener('DOMContentLoaded', function () {
-                        const form = document.getElementById('contactForm');
-                        const helpDiv = document.getElementById('submission-help');
-
-                        // Show help div after 12 seconds as a backup
-                        setTimeout(function () {
-                            if (helpDiv) helpDiv.style.display = 'block';
-                        }, 12000);
-
-                        // Also show help if form submission takes too long
-                        if (form) {
-                            form.addEventListener('submit', function () {
-                                // Show help div after 8 seconds if still on the same page
-                                setTimeout(function () {
-                                    if (!window.location.href.includes('/thank-you') && helpDiv) {
-                                        helpDiv.style.display = 'block';
-                                    }
-                                }, 8000);
-                            });
-                        }
-                    });
-
-                    // Add this script to pass the captcha answer to the hidden field
-                    document.addEventListener('DOMContentLoaded', function () {
-                        const form = document.getElementById('contactForm');
-                        const captchaInput = document.getElementById('captchaInput');
-                        const captchaAnswer = document.getElementById('captchaAnswer');
-
-                        if (form && captchaInput && captchaAnswer) {
-                            form.addEventListener('submit', function () {
-                                // Pass the captcha answer to the hidden field before submission
-                                captchaAnswer.value = captchaInput.value;
-                            });
-                        }
-                    });
-                </script>
             </div>
         </main>
     </div>

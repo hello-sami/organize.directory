@@ -1,6 +1,6 @@
 /**
  * Contact Form Handler
- * This script initializes the contact form, handles captcha generation and validation.
+ * This script handles the contact form using Cloudflare Pages Forms
  */
 
 function initializeContactForm() {
@@ -8,52 +8,89 @@ function initializeContactForm() {
      const form = document.getElementById("contactForm");
      if (!form) return; // Exit if no form found
 
-     const captchaContainer = document.getElementById("captcha");
-     const captchaInput = document.getElementById("captchaInput");
-     const captchaRefresh = document.getElementById("refreshCaptcha");
      const nameInput = document.getElementById("name");
      const emailInput = document.getElementById("email");
+     const subjectSelect = document.getElementById("subject");
      const messageInput = document.getElementById("message");
      const statusMessage = document.getElementById("statusMessage");
+     const helpDiv = document.getElementById("submission-help");
 
-     // Generate initial captcha
-     let captchaValue = generateCaptcha(captchaContainer);
-
-     // Refresh captcha when the refresh button is clicked
-     if (captchaRefresh) {
-          captchaRefresh.addEventListener("click", function (e) {
-               e.preventDefault();
-               captchaValue = generateCaptcha(captchaContainer);
-          });
-     }
-
-     // Check for status parameters in URL (for when returning from form submission)
+     // Check for status parameters in URL (for when Cloudflare redirects back)
      checkUrlParameters();
 
-     // Add form submission handler - simplified approach
+     // Add form submission handler
      if (form) {
           form.addEventListener("submit", function (e) {
-               // Only validate the captcha, don't interfere with form submission otherwise
-               if (captchaInput.value.trim() !== captchaValue) {
-                    e.preventDefault();
-                    hideError(captchaInput);
-                    showError(captchaInput, "Incorrect captcha value");
-                    captchaValue = generateCaptcha(captchaContainer);
-                    captchaInput.value = "";
+               // Validate form
+               if (!validateForm(e)) {
                     return false;
                }
 
-               // Handle empty email field - set to anonymous if blank
-               if (emailInput.value.trim() === "") {
+               // If validation passes, show sending status
+               showSubmitStatus("Sending your message...", "sending");
+
+               // Handle empty email - set to anonymous
+               if (!emailInput.value.trim()) {
                     emailInput.value = "anonymous@example.com";
                }
 
-               // Show sending message
-               showSubmitStatus("Sending your message...", "sending");
+               // Log form submission for debugging purposes
+               console.log("Form submitted with Cloudflare Pages Forms");
 
-               // Let the form submit naturally - no preventDefault()
-               console.log("Form submitting to Web3Forms...");
+               // Show help div after a timeout in case submission hangs
+               setTimeout(() => {
+                    if (helpDiv) helpDiv.style.display = "block";
+               }, 10000);
+
+               // We're letting the form submit naturally to Cloudflare Pages Forms
+               // No need to prevent default or do custom handling
+               return true;
           });
+     }
+
+     /**
+      * Validates the form fields
+      * @param {Event} e - The submit event
+      * @returns {boolean} True if all validations pass
+      */
+     function validateForm(e) {
+          // Reset previous errors
+          hideError(nameInput);
+          hideError(emailInput);
+          hideError(subjectSelect);
+          hideError(messageInput);
+
+          let isValid = true;
+
+          // Validate name
+          if (!nameInput.value.trim()) {
+               e.preventDefault(); // Prevent form submission
+               showError(nameInput, "Please enter your name");
+               isValid = false;
+          }
+
+          // Email is optional, but if provided, validate format
+          if (emailInput.value.trim() && !isValidEmail(emailInput.value)) {
+               e.preventDefault(); // Prevent form submission
+               showError(emailInput, "Please enter a valid email address");
+               isValid = false;
+          }
+
+          // Validate subject
+          if (!subjectSelect.value) {
+               e.preventDefault(); // Prevent form submission
+               showError(subjectSelect, "Please select a subject");
+               isValid = false;
+          }
+
+          // Validate message
+          if (!messageInput.value.trim()) {
+               e.preventDefault(); // Prevent form submission
+               showError(messageInput, "Please enter your message");
+               isValid = false;
+          }
+
+          return isValid;
      }
 
      /**
@@ -61,41 +98,38 @@ function initializeContactForm() {
       */
      function checkUrlParameters() {
           const urlParams = new URLSearchParams(window.location.search);
-          const status = urlParams.get("status");
-          const error = urlParams.get("error");
+          const formName = urlParams.get("form-name");
+          const success = urlParams.get("success");
 
-          if (status === "success") {
-               showSubmitStatus("Message sent successfully!", "success");
-          } else if (status === "error") {
-               if (error) {
-                    showSubmitStatus(`Error: ${error}`, "error");
+          // Check if we're returning from a form submission
+          if (formName === "contact") {
+               if (success === "true") {
+                    showSubmitStatus(
+                         "Message sent successfully! We'll be in touch soon.",
+                         "success"
+                    );
+                    // Clear form if successful
+                    if (form) form.reset();
                } else {
                     showSubmitStatus(
-                         "Error sending message. Please try again.",
+                         "Error sending message. Please try again or email us directly.",
                          "error"
                     );
+                    if (helpDiv) helpDiv.style.display = "block";
+               }
+
+               // Scroll to status message after redirect
+               const statusElement = document.getElementById("statusMessage");
+               if (statusElement) {
+                    setTimeout(() => {
+                         statusElement.scrollIntoView({
+                              behavior: "smooth",
+                              block: "nearest",
+                         });
+                    }, 100);
                }
           }
      }
-}
-
-/**
- * Generates a simple math captcha
- * @param {HTMLElement} container - The container to display the captcha
- * @returns {string} The captcha answer as a string
- */
-function generateCaptcha(container) {
-     if (!container) return "";
-
-     // Generate two random numbers between 1 and 10
-     const num1 = Math.floor(Math.random() * 10) + 1;
-     const num2 = Math.floor(Math.random() * 10) + 1;
-     const answer = num1 + num2;
-
-     // Set the captcha text
-     container.textContent = `${num1} + ${num2} = ?`;
-
-     return answer.toString();
 }
 
 /**
@@ -110,6 +144,9 @@ function showError(input, message) {
 
      input.classList.add("error");
      input.parentNode.appendChild(errorElement);
+
+     // Scroll to first error
+     input.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
 /**
@@ -139,6 +176,20 @@ function showSubmitStatus(message, type) {
      statusMessage.className = "status-message";
      statusMessage.classList.add(type);
      statusMessage.style.display = "block";
+
+     // Scroll to status message
+     statusMessage.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+/**
+ * Validates an email address format
+ * @param {string} email - The email to validate
+ * @returns {boolean} True if valid, false otherwise
+ */
+function isValidEmail(email) {
+     const re =
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+     return re.test(String(email).toLowerCase());
 }
 
 // Initialize the contact form when the DOM is loaded
