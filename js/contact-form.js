@@ -1,84 +1,202 @@
 /**
- * Contact form handling
- * Sets up contact form functionality for the Organize Directory contact form
+ * Contact Form Handler
+ * This script initializes the contact form, handles captcha generation,
+ * validation, and form submission.
  */
-export function initializeContactForm() {
+
+function initializeContactForm() {
+     // Get form elements
      const form = document.getElementById("contactForm");
-     const emailField = document.getElementById("email");
-     const formError = document.getElementById("form-error");
-     const submitStatus = document.getElementById("submit-status");
-     const submitBtn = form
-          ? form.querySelector('button[type="submit"]')
-          : null;
+     if (!form) return; // Exit if no form found
 
-     // Function to show error message
-     function showError(message) {
-          if (formError) {
-               formError.textContent = message;
-               formError.classList.add("visible");
-          }
+     const captchaContainer = document.getElementById("captcha");
+     const captchaInput = document.getElementById("captchaInput");
+     const captchaRefresh = document.getElementById("refreshCaptcha");
+     const nameInput = document.getElementById("name");
+     const emailInput = document.getElementById("email");
+     const messageInput = document.getElementById("message");
+     const statusMessage = document.getElementById("statusMessage");
+
+     // Generate initial captcha
+     let captchaValue = generateCaptcha(captchaContainer);
+
+     // Refresh captcha when the refresh button is clicked
+     if (captchaRefresh) {
+          captchaRefresh.addEventListener("click", function (e) {
+               e.preventDefault();
+               captchaValue = generateCaptcha(captchaContainer);
+          });
      }
 
-     // Function to hide error message
-     function hideError() {
-          if (formError) {
-               formError.textContent = "";
-               formError.classList.remove("visible");
-          }
-     }
+     // Check for status parameters in URL (for when returning from form submission)
+     checkUrlParameters();
 
-     // Function to show submit status
-     function showSubmitStatus(
-          message = "Sending your message... Please wait. You will be redirected after submission."
-     ) {
-          if (submitStatus) {
-               submitStatus.textContent = message;
-               submitStatus.classList.add("visible");
-          }
-     }
-
+     // Add form submission handling
      if (form) {
-          console.log("Form initialized");
-
-          // Add CSS classes for visibility
-          if (formError) formError.classList.add("error-message");
-          if (submitStatus) submitStatus.classList.add("submit-status");
-
-          // Simple submission handler
           form.addEventListener("submit", function (e) {
-               // Validate form - check the human verification
-               const humanVerification =
-                    document.getElementById("human_verification");
-
-               if (
-                    humanVerification &&
-                    humanVerification.value.trim().toLowerCase() !== "human"
-               ) {
-                    e.preventDefault(); // Stop form submission
-                    showError(
-                         "Please type 'human' in the verification field to prove you're not a bot."
-                    );
+               // Only prevent default submission if validation fails
+               if (!validateForm()) {
+                    e.preventDefault();
                     return false;
                }
 
-               // Hide any previous errors
-               hideError();
-
-               // Anonymous submission
-               if (emailField && !emailField.value.trim()) {
-                    emailField.value = "anonymous@example.com";
+               // Handle empty email field - set to anonymous if blank
+               if (!emailInput.value.trim()) {
+                    emailInput.value = "anonymous@example.com";
                }
 
-               // Show status message
-               showSubmitStatus();
+               // Show "Sending..." message
+               showSubmitStatus("Sending your message...", "sending");
 
-               if (submitBtn) {
-                    submitBtn.innerHTML = "Sending...";
-                    submitBtn.disabled = true;
-               }
+               // Let the form submit naturally to allow Web3Forms redirect to work
+               // No need to prevent default or use fetch API
+               console.log("Form submitting to Web3Forms...");
 
-               // Let the form submit normally - the form has the correct action and redirect URL
-               return true;
+               // The rest of the submission is handled by Web3Forms
+               // and the redirect is handled by the redirect hidden field
           });
      }
+
+     /**
+      * Validates the form inputs
+      * @returns {boolean} True if valid, false otherwise
+      */
+     function validateForm() {
+          // Reset previous errors
+          hideError(nameInput);
+          hideError(emailInput);
+          hideError(messageInput);
+          hideError(captchaInput);
+
+          let isValid = true;
+
+          // Validate name
+          if (!nameInput.value.trim()) {
+               showError(nameInput, "Please enter your name");
+               isValid = false;
+          }
+
+          // Email is optional, but if provided, validate format
+          if (emailInput.value.trim() && !isValidEmail(emailInput.value)) {
+               showError(emailInput, "Please enter a valid email address");
+               isValid = false;
+          }
+
+          // Validate message
+          if (!messageInput.value.trim()) {
+               showError(messageInput, "Please enter your message");
+               isValid = false;
+          }
+
+          // Validate captcha
+          if (!captchaInput.value.trim()) {
+               showError(captchaInput, "Please enter the captcha");
+               isValid = false;
+          } else if (captchaInput.value.trim() !== captchaValue) {
+               showError(captchaInput, "Incorrect captcha value");
+               captchaValue = generateCaptcha(captchaContainer);
+               captchaInput.value = "";
+               isValid = false;
+          }
+
+          return isValid;
+     }
+
+     /**
+      * Checks URL parameters for status and error messages
+      */
+     function checkUrlParameters() {
+          const urlParams = new URLSearchParams(window.location.search);
+          const status = urlParams.get("status");
+          const error = urlParams.get("error");
+
+          if (status === "success") {
+               showSubmitStatus("Message sent successfully!", "success");
+          } else if (status === "error") {
+               if (error) {
+                    showSubmitStatus(`Error: ${error}`, "error");
+               } else {
+                    showSubmitStatus(
+                         "Error sending message. Please try again.",
+                         "error"
+                    );
+               }
+          }
+     }
 }
+
+/**
+ * Generates a simple math captcha
+ * @param {HTMLElement} container - The container to display the captcha
+ * @returns {string} The captcha answer as a string
+ */
+function generateCaptcha(container) {
+     if (!container) return "";
+
+     // Generate two random numbers between 1 and 10
+     const num1 = Math.floor(Math.random() * 10) + 1;
+     const num2 = Math.floor(Math.random() * 10) + 1;
+     const answer = num1 + num2;
+
+     // Set the captcha text
+     container.textContent = `${num1} + ${num2} = ?`;
+
+     return answer.toString();
+}
+
+/**
+ * Shows an error message for a form field
+ * @param {HTMLElement} input - The input element
+ * @param {string} message - The error message
+ */
+function showError(input, message) {
+     const errorElement = document.createElement("div");
+     errorElement.className = "error-message";
+     errorElement.textContent = message;
+
+     input.classList.add("error");
+     input.parentNode.appendChild(errorElement);
+}
+
+/**
+ * Hides error message for a form field
+ * @param {HTMLElement} input - The input element
+ */
+function hideError(input) {
+     input.classList.remove("error");
+
+     const parent = input.parentNode;
+     const errorElement = parent.querySelector(".error-message");
+     if (errorElement) {
+          parent.removeChild(errorElement);
+     }
+}
+
+/**
+ * Shows the form submission status message
+ * @param {string} message - The status message
+ * @param {string} type - The message type (success, error, sending)
+ */
+function showSubmitStatus(message, type) {
+     const statusMessage = document.getElementById("statusMessage");
+     if (!statusMessage) return;
+
+     statusMessage.textContent = message;
+     statusMessage.className = "status-message";
+     statusMessage.classList.add(type);
+     statusMessage.style.display = "block";
+}
+
+/**
+ * Validates an email address format
+ * @param {string} email - The email to validate
+ * @returns {boolean} True if valid, false otherwise
+ */
+function isValidEmail(email) {
+     const re =
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+     return re.test(String(email).toLowerCase());
+}
+
+// Initialize the contact form when the DOM is loaded
+document.addEventListener("DOMContentLoaded", initializeContactForm);

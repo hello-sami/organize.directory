@@ -26,10 +26,7 @@
         content="Contact the The Organize Directory team for questions, suggestions, or to add your group.">
     <meta name="color-scheme" content="light">
 
-    <!-- Web3Forms verification -->
-    <meta name="w3f-form-id" content="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
-    <meta name="w3f-site-url" content="https://organize.directory">
-    <meta name="w3f-site-name" content="The Organize Directory">
+    <!-- Remove Web3Forms verification since we're not using it anymore -->
 
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Contact Us | The Organize Directory">
@@ -77,21 +74,69 @@
             }
         }
 
-        /* Improving visibility of status messages */
-        #submit-status {
-            display: none;
+        /* Styling for error messages */
+        .error-message {
+            color: #d32f2f;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: block;
+        }
+
+        input.error,
+        textarea.error,
+        select.error {
+            border-color: #d32f2f;
+        }
+
+        /* Styling for status message */
+        .status-message {
             margin-top: 1rem;
             padding: 1rem;
             border-radius: 4px;
-            background-color: #e8f5e9;
-            color: #2e7d32;
             font-weight: 500;
             text-align: center;
-            animation: fadeIn 0.3s ease-in-out;
+            display: none;
         }
 
-        #submit-status.visible {
-            display: block;
+        .status-message.success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status-message.error {
+            background-color: #fbe9e7;
+            color: #c62828;
+        }
+
+        .status-message.sending {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+
+        /* Styling for captcha */
+        .captcha-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .captcha-display {
+            background-color: #f5f5f5;
+            padding: 0.75rem 1rem;
+            border-radius: 4px;
+            margin-right: 1rem;
+            font-weight: 600;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .refresh-captcha {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #1976d2;
+            font-size: 0.875rem;
+            text-decoration: underline;
         }
 
         /* Styling for disabled submit button */
@@ -114,12 +159,21 @@
 
         /* Ensure messages are visible on mobile */
         @media (max-width: 480px) {
-
-            #submit-status,
-            #form-error {
+            .status-message {
                 margin: 1rem 0;
                 padding: 0.85rem;
                 font-size: 1rem;
+            }
+
+            .captcha-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .captcha-display {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+                width: 100%;
             }
         }
     </style>
@@ -127,14 +181,13 @@
     <!-- Critical Scripts -->
     <script type="module">
         import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeContactForm } from '/js/contact-form.js';
 
-        // Initialize sidebar and form
+        // Initialize sidebar
         document.addEventListener('DOMContentLoaded', () => {
             initializeSidebar('contact');
-            initializeContactForm();
         });
     </script>
+    <script src="/js/contact-form.js"></script>
 </head>
 
 <body class="page-contact">
@@ -180,19 +233,9 @@
 
                 <form class="contact-form card-base" id="contactForm" action="https://api.web3forms.com/submit"
                     method="POST">
-                    <!-- Web3Forms access key - IMPORTANT: Verify this is your correct API key -->
+                    <!-- Hidden fields for Web3Forms -->
                     <input type="hidden" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
-
-                    <!-- Notification and redirect settings - Updated for Cloudflare Pages -->
-                    <input type="hidden" name="redirect"
-                        value="https://a3cf64b4.organize-directory.pages.dev/thank-you">
-                    <input type="hidden" name="success_url"
-                        value="https://a3cf64b4.organize-directory.pages.dev/thank-you">
-
-                    <!-- Using domain email for better deliverability -->
-                    <input type="hidden" name="to_email" value="hello@organize.directory">
-
-                    <!-- Form identification information -->
+                    <input type="hidden" name="redirect" value="/thank-you">
                     <input type="hidden" name="from_name" value="Organize Directory Contact Form">
                     <input type="hidden" name="website" value="organize.directory">
                     <input type="hidden" name="subject" value="New Contact Form Submission - Organize Directory">
@@ -234,20 +277,24 @@
                         <textarea id="message" name="message" required></textarea>
                     </div>
 
-                    <!-- Simple text-based verification that works without JavaScript -->
-                    <div class="form-group" id="captchaContainer">
-                        <label for="human_verification">To prevent spam, please type "human" below:</label>
-                        <input type="text" id="human_verification" name="human_verification" required
+                    <!-- Math Captcha -->
+                    <div class="form-group">
+                        <label>Verification Captcha</label>
+                        <div class="captcha-container">
+                            <div id="captcha" class="captcha-display">Loading...</div>
+                            <button type="button" id="refreshCaptcha" class="refresh-captcha">Refresh Captcha</button>
+                        </div>
+                        <input type="text" id="captchaInput" name="captcha" required placeholder="Enter the answer"
                             autocomplete="off">
-                        <small class="form-helper">This helps us filter out automated submissions</small>
+                        <small class="form-helper">Please solve the math problem to verify you're human</small>
                     </div>
 
                     <button type="submit" class="submit-button btn-base">Send Message</button>
                 </form>
-                <div id="form-error" class="error-message"></div>
-                <div id="submit-status">
-                    Sending your message... Please wait. You will be redirected after submission.
-                </div>
+
+                <!-- Status message container -->
+                <div id="statusMessage" class="status-message"></div>
+
                 <div id="submission-help"
                     style="display: none; margin-top: 2rem; padding: 1rem; border: 1px solid #f0f0f0; border-radius: 4px; background-color: #f9f9f9;">
                     <p><strong>Having trouble submitting the form?</strong></p>
@@ -271,7 +318,7 @@
                             form.addEventListener('submit', function () {
                                 // Show help div after 8 seconds if still on the same page
                                 setTimeout(function () {
-                                    if (!window.location.href.includes('a3cf64b4.organize-directory.pages.dev/thank-you') && helpDiv) {
+                                    if (!window.location.href.includes('/thank-you') && helpDiv) {
                                         helpDiv.style.display = 'block';
                                     }
                                 }, 8000);
