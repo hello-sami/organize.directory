@@ -26,6 +26,11 @@
         content="Contact the The Organize Directory team for questions, suggestions, or to add your group.">
     <meta name="color-scheme" content="light">
 
+    <!-- Web3Forms verification -->
+    <meta name="w3f-form-id" content="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
+    <meta name="w3f-site-url" content="https://organize.directory">
+    <meta name="w3f-site-name" content="The Organize Directory">
+
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Contact Us | The Organize Directory">
     <meta property="og:description"
@@ -174,16 +179,26 @@
                 </p>
 
                 <form class="contact-form card-base" id="contactForm" action="https://api.web3forms.com/submit"
-                    method="POST" enctype="multipart/form-data">
-                    <!-- Web3Forms access key -->
+                    method="POST">
+                    <!-- Web3Forms access key - IMPORTANT: Verify this is your correct API key -->
                     <input type="hidden" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
+
+                    <!-- Notification and redirect settings -->
                     <input type="hidden" name="redirect" value="https://organize.directory/thank-you">
                     <input type="hidden" name="success_url" value="https://organize.directory/thank-you">
-                    <input type="hidden" name="from_name" value="Organize Directory Contact Form">
+
+                    <!-- IMPORTANT: Make sure this is a real, accessible email where you can receive messages -->
+                    <!-- This is the email where submissions will be sent -->
+                    <input type="hidden" name="to_email" value="organizedirectory@proton.me">
+
+                    <!-- Customize the email subject -->
                     <input type="hidden" name="subject" value="New Submission from Organize Directory Contact Form">
 
-                    <!-- Web3Forms system fields for proper email delivery -->
+                    <!-- Organization info -->
+                    <input type="hidden" name="from_name" value="Organize Directory Contact Form">
                     <input type="hidden" name="website" value="organize.directory">
+
+                    <!-- Dynamic reply-to field -->
                     <input type="hidden" name="replyto" value="%%email%%" data-dynamic="true">
 
                     <!-- Honeypot field to prevent spam -->

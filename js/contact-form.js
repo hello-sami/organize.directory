@@ -177,6 +177,13 @@ export function initializeContactForm() {
                // Handle anonymous submission
                if (!emailField.value.trim()) {
                     emailField.value = "anonymous@example.com";
+
+                    // Add a specific note to the message for anonymous submissions
+                    const anonymousNote = document.createElement("input");
+                    anonymousNote.type = "hidden";
+                    anonymousNote.name = "anonymous_submission";
+                    anonymousNote.value = "true";
+                    form.appendChild(anonymousNote);
                }
 
                // Clear error message
@@ -197,6 +204,18 @@ export function initializeContactForm() {
                     submissionFlag.name = "submission_started";
                     submissionFlag.value = Date.now().toString();
                     form.appendChild(submissionFlag);
+
+                    // Set a more descriptive message that includes the user's email
+                    // This helps with identifying the submission in the email
+                    const nameEl = document.getElementById("name");
+                    const messageEl = document.getElementById("message");
+
+                    // Create a better message format for the email
+                    const betterMessage = document.createElement("input");
+                    betterMessage.type = "hidden";
+                    betterMessage.name = "message_with_details";
+                    betterMessage.value = `Submission from: ${nameEl ? nameEl.value : "Unknown"}\nEmail: ${emailField.value}\n\nMessage:\n${messageEl ? messageEl.value : ""}`;
+                    form.appendChild(betterMessage);
 
                     // Log form data for debugging
                     console.log(
