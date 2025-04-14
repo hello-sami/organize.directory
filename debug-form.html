@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Debug Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .result-container {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .log-entry {
+            margin-bottom: 5px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+
+        .error {
+            color: #D32F2F;
+        }
+
+        .success {
+            color: #388E3C;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Form Submission Debug Tool</h1>
+    <p>This tool helps identify issues with your Web3Forms integration.</p>
+
+    <div class="form-container">
+        <h2>Debug Information</h2>
+        <div id="debug-info">
+            <button id="collect-debug">Collect Debug Info</button>
+            <div class="result-container" id="debug-result"></div>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h2>Test Web3Forms API</h2>
+        <form id="test-form">
+            <div>
+                <label for="access-key">Web3Forms Access Key:</label>
+                <input type="text" id="access-key" name="access-key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
+            </div>
+            <div>
+                <label for="test-email">Test Email (to receive test message):</label>
+                <input type="email" id="test-email" name="test-email" placeholder="Your email to receive test message">
+            </div>
+            <div>
+                <label for="test-name">Test Name:</label>
+                <input type="text" id="test-name" name="test-name" value="Debug Test">
+            </div>
+            <div>
+                <label for="test-message">Test Message:</label>
+                <textarea id="test-message" name="test-message">This is a test message from the debug tool.</textarea>
+            </div>
+            <button type="submit">Send Test Message</button>
+        </form>
+        <div class="result-container" id="test-result"></div>
+    </div>
+
+    <div class="form-container">
+        <h2>Network Activity Log</h2>
+        <div class="result-container" id="network-log"></div>
+        <button id="clear-log">Clear Log</button>
+    </div>
+
+    <script>
+        // Initialize debug tools
+        document.addEventListener('DOMContentLoaded', function () {
+            const debugInfoBtn = document.getElementById('collect-debug');
+            const testForm = document.getElementById('test-form');
+            const debugResult = document.getElementById('debug-result');
+            const testResult = document.getElementById('test-result');
+            const networkLog = document.getElementById('network-log');
+            const clearLogBtn = document.getElementById('clear-log');
+
+            // Network monitoring
+            const originalFetch = window.fetch;
+            const originalXHROpen = XMLHttpRequest.prototype.open;
+            const originalXHRSend = XMLHttpRequest.prototype.send;
+
+            // Intercept fetch requests
+            window.fetch = function (...args) {
+                logNetwork('fetch', args[0], args[1] || {});
+                return originalFetch.apply(this, args)
+                    .then(response => {
+                        const clonedResponse = response.clone();
+                        clonedResponse.text().then(text => {
+                            try {
+                                const jsonData = JSON.parse(text);
+                                logNetwork('fetch-response', args[0], jsonData, response.status);
+                            } catch (e) {
+                                logNetwork('fetch-response', args[0], text, response.status);
+                            }
+                        });
+                        return response;
+                    })
+                    .catch(error => {
+                        logNetwork('fetch-error', args[0], error.message);
+                        throw error;
+                    });
+            };
+
+            // Intercept XHR requests
+            XMLHttpRequest.prototype.open = function (method, url) {
+                this._url = url;
+                this._method = method;
+                return originalXHROpen.apply(this, arguments);
+            };
+
+            XMLHttpRequest.prototype.send = function (data) {
+                logNetwork('xhr', this._url, {
+                    method: this._method,
+                    data: data
+                });
+
+                const originalOnLoad = this.onload;
+                this.onload = function () {
+                    logNetwork('xhr-response', this._url, {
+                        status: this.status,
+                        response: this.responseText
+                    });
+                    if (originalOnLoad) originalOnLoad.apply(this, arguments);
+                };
+
+                const originalOnError = this.onerror;
+                this.onerror = function (event) {
+                    logNetwork('xhr-error', this._url, {
+                        status: this.status,
+                        error: event
+                    });
+                    if (originalOnError) originalOnError.apply(this, arguments);
+                };
+
+                return originalXHRSend.apply(this, arguments);
+            };
+
+            // Log network activity
+            function logNetwork(type, url, data, status) {
+                const entry = document.createElement('div');
+                entry.className = 'log-entry';
+
+                const timestamp = new Date().toISOString();
+                let logClass = '';
+
+                if (type.includes('error')) {
+                    logClass = 'error';
+                } else if (type.includes('response') && (status >= 200 && status < 300)) {
+                    logClass = 'success';
+                }
+
+                entry.innerHTML = `<strong>[${timestamp}] ${type.toUpperCase()}:</strong> <span class="${logClass}">${url}</span>`;
+
+                if (data) {
+                    const dataStr = typeof data === 'object' ? JSON.stringify(data, null, 2) : data;
+                    entry.innerHTML += `<br><pre>${dataStr}</pre>`;
+                }
+
+                networkLog.insertBefore(entry, networkLog.firstChild);
+            }
+
+            // Clear log
+            clearLogBtn.addEventListener('click', function () {
+                networkLog.innerHTML = '';
+            });
+
+            // Collect debug info
+            debugInfoBtn.addEventListener('click', function () {
+                debugResult.innerHTML = '';
+
+                // Browser information
+                const browserInfo = {
+                    userAgent: navigator.userAgent,
+                    language: navigator.language,
+                    cookiesEnabled: navigator.cookieEnabled,
+                    online: navigator.onLine,
+                    platform: navigator.platform
+                };
+
+                // Check form elements
+                const formElements = document.querySelectorAll('#contactForm, #contactForm input, #contactForm button');
+                const formInfo = Array.from(formElements).map(el => {
+                    return {
+                        tagName: el.tagName,
+                        id: el.id,
+                        name: el.name,
+                        type: el.type,
+                        value: el.type === 'hidden' ? el.value : '(redacted for privacy)'
+                    };
+                });
+
+                // Network checks
+                checkConnectivity('https://api.web3forms.com/ping')
+                    .then(web3formsPing => {
+                        const debugData = {
+                            timestamp: new Date().toISOString(),
+                            browserInfo,
+                            formInfo,
+                            connectivity: {
+                                web3formsPing
+                            }
+                        };
+
+                        debugResult.textContent = JSON.stringify(debugData, null, 2);
+                    });
+            });
+
+            // Test Web3Forms submission
+            testForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                testResult.innerHTML = '<p>Sending test submission...</p>';
+
+                const accessKey = document.getElementById('access-key').value;
+                const testEmail = document.getElementById('test-email').value;
+                const testName = document.getElementById('test-name').value;
+                const testMessage = document.getElementById('test-message').value;
+
+                if (!accessKey) {
+                    testResult.innerHTML = '<p class="error">Please enter your Web3Forms access key</p>';
+                    return;
+                }
+
+                const formData = new FormData();
+                formData.append('access_key', accessKey);
+                formData.append('name', testName);
+                formData.append('message', testMessage);
+
+                if (testEmail) {
+                    formData.append('to_email', testEmail);
+                    formData.append('email', testEmail); // For reply-to
+                }
+
+                formData.append('subject', 'Form Debug Test');
+                formData.append('from_name', 'Form Debug Tool');
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        testResult.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+
+                        if (data.success) {
+                            testResult.innerHTML = `
+                            <p class="success">Test message sent successfully!</p>
+                            <p>Check your email (${testEmail}) for the test message.</p>
+                            <pre>${JSON.stringify(data, null, 2)}</pre>
+                        `;
+                        } else {
+                            testResult.innerHTML = `
+                            <p class="error">Error sending test message:</p>
+                            <pre>${JSON.stringify(data, null, 2)}</pre>
+                        `;
+                        }
+                    })
+                    .catch(error => {
+                        testResult.innerHTML = `
+                        <p class="error">Network error when sending test:</p>
+                        <pre>${error.message}</pre>
+                    `;
+                    });
+            });
+
+            // Check connectivity to a URL
+            async function checkConnectivity(url) {
+                try {
+                    const startTime = performance.now();
+                    const response = await fetch(url, { method: 'GET' });
+                    const endTime = performance.now();
+
+                    return {
+                        status: response.status,
+                        ok: response.ok,
+                        responseTime: Math.round(endTime - startTime),
+                        headers: Object.fromEntries([...response.headers])
+                    };
+                } catch (error) {
+                    return {
+                        error: error.message,
+                        failed: true
+                    };
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

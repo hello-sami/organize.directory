@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3Forms Direct Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #a30000;
+        }
+
+        form {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #a30000;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #800000;
+        }
+
+        .result {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+
+        .success {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Web3Forms Direct Test</h1>
+    <p>This page tests if your Web3Forms integration is working correctly by sending a test submission directly through
+        their API.</p>
+
+    <form id="directTestForm">
+        <label for="accessKey">Access Key:</label>
+        <input type="text" id="accessKey" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f" required>
+
+        <label for="testEmail">Your Email (to receive the test message):</label>
+        <input type="email" id="testEmail" name="email" placeholder="Enter your email address" required>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="Test Sender" required>
+
+        <label for="message">Test Message:</label>
+        <textarea id="message" name="message" rows="4"
+            required>This is a test message from the direct test tool.</textarea>
+
+        <input type="hidden" name="subject" value="Web3Forms Direct Test">
+        <input type="hidden" name="from_name" value="Web3Forms Test Tool">
+
+        <button type="submit">Send Test Message</button>
+    </form>
+
+    <div id="status"></div>
+    <div id="result" class="result" style="display: none;"></div>
+
+    <script>
+        document.getElementById('directTestForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const form = this;
+            const statusDiv = document.getElementById('status');
+            const resultDiv = document.getElementById('result');
+
+            // Show loading message
+            statusDiv.innerHTML = '<p>Sending test message...</p>';
+            resultDiv.style.display = 'none';
+
+            // Create FormData object
+            const formData = new FormData(form);
+
+            // Add additional fields
+            formData.append('botcheck', ''); // Honeypot
+            formData.append('to_email', document.getElementById('testEmail').value);
+
+            // Log what we're sending
+            console.log('Sending test to Web3Forms with the following data:');
+            for (let entry of formData.entries()) {
+                console.log(entry[0] + ': ' + entry[1]);
+            }
+
+            // Send the form
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+                .then(async response => {
+                    const data = await response.json();
+                    console.log('Response from Web3Forms:', data);
+
+                    // Display the result
+                    resultDiv.style.display = 'block';
+                    resultDiv.innerHTML = JSON.stringify(data, null, 2);
+
+                    if (data.success) {
+                        statusDiv.innerHTML = `
+                        <div class="success">
+                            <strong>Success!</strong> Test message sent successfully. 
+                            You should receive an email at ${document.getElementById('testEmail').value} shortly.
+                        </div>
+                    `;
+                    } else {
+                        statusDiv.innerHTML = `
+                        <div class="error">
+                            <strong>Error:</strong> ${data.message || 'Unknown error occurred.'}
+                        </div>
+                    `;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    statusDiv.innerHTML = `
+                    <div class="error">
+                        <strong>Error:</strong> Network or server error occurred. See console for details.
+                    </div>
+                `;
+                    resultDiv.style.display = 'block';
+                    resultDiv.innerHTML = `Error: ${error.message}`;
+                });
+        });
+    </script>
+</body>
+
+</html>

@@ -63,6 +63,43 @@ export function initializeContactForm() {
           window.location.href = thankYouUrl;
      }
 
+     // Function to manually submit form data via fetch API
+     async function manuallySubmitForm(formData) {
+          try {
+               console.log("Manually submitting form data via fetch API");
+               const response = await fetch(
+                    "https://api.web3forms.com/submit",
+                    {
+                         method: "POST",
+                         body: formData,
+                         headers: {
+                              Accept: "application/json",
+                         },
+                    }
+               );
+
+               const data = await response.json();
+               console.log("Manual form submission response:", data);
+
+               if (data.success) {
+                    showSubmitStatus(
+                         "Your message has been sent! Redirecting to thank you page..."
+                    );
+                    setTimeout(redirectToThankYou, 1500);
+                    return true;
+               } else {
+                    showError(
+                         `Form submission failed: ${data.message || "Unknown error"}`
+                    );
+                    return false;
+               }
+          } catch (error) {
+               console.error("Manual form submission error:", error);
+               showError(`Network error: ${error.message}`);
+               return false;
+          }
+     }
+
      if (form) {
           // Minimal form validation and setup with no external dependencies
           console.log("Form found, setting up basic submission handler");
@@ -135,21 +172,49 @@ export function initializeContactForm() {
                     );
                }
 
-               // Add a fallback for redirection if the form submission doesn't trigger a redirect
-               setTimeout(function () {
-                    // If we're still on the same page after 8 seconds, try to redirect manually
+               // IMPORTANT: Try both submission methods for better reliability
+               // 1. Standard form submission (this happens automatically without preventDefault)
+               // 2. Manual submission as a fallback after a delay
+
+               // Add a fallback for manual submission if the standard form submission doesn't work
+               setTimeout(async function () {
+                    // If we're still on the same page after 4 seconds, try manual submission
                     if (!window.location.href.includes("thank-you")) {
                          console.log(
-                              "Form submission did not redirect automatically after 8 seconds"
+                              "Form did not redirect automatically after 4 seconds, trying manual submission"
                          );
-                         // Update status message
-                         showSubmitStatus(
-                              "Your message has been sent! Redirecting you to the thank you page..."
-                         );
-                         // Delay redirect slightly to allow the message to be seen
-                         setTimeout(redirectToThankYou, 1500);
+
+                         // Create a FormData object from the form
+                         const formData = new FormData(form);
+
+                         // Log what we're sending
+                         console.log("Sending form data manually:");
+                         for (let pair of formData.entries()) {
+                              console.log(pair[0] + ": " + pair[1]);
+                         }
+
+                         // Try to manually submit the form
+                         const manualSubmitResult =
+                              await manuallySubmitForm(formData);
+
+                         if (manualSubmitResult) {
+                              console.log("Manual submission successful");
+                         } else {
+                              console.error("Manual submission failed");
+
+                              // Enable the submit button again in case they need to retry
+                              if (submitBtn) {
+                                   submitBtn.innerHTML = "Send Message";
+                                   submitBtn.disabled = false;
+                              }
+
+                              // Show help message after failed manual submission
+                              document.getElementById(
+                                   "submission-help"
+                              ).style.display = "block";
+                         }
                     }
-               }, 8000);
+               }, 4000);
 
                // Don't prevent default - let the form submit normally
                // This allows it to work even with strict CSP
