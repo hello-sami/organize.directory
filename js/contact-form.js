@@ -211,13 +211,22 @@ export function initializeContactForm() {
                     sessionStorage.setItem("form_submitted", "true");
 
                     // Set a fallback timer for redirection in case the form gets stuck
-                    const fallbackTimer = setTimeout(submissionFallback, 5000);
+                    // Reduce to 3 seconds for quicker feedback
+                    const fallbackTimer = setTimeout(submissionFallback, 3000);
 
                     // IMPORTANT: Skip fetch API entirely to avoid CSP issues
                     // Use only traditional form submission which works with form-action CSP
                     console.log(
                          "Using traditional form submission only (bypassing fetch API)"
                     );
+
+                    // Verify form action is set correctly
+                    if (!form.action || !form.action.includes("web3forms")) {
+                         console.warn(
+                              "Form action not properly set, fixing it"
+                         );
+                         form.action = "https://api.web3forms.com/submit";
+                    }
 
                     // Submit the form directly
                     form.submit();
