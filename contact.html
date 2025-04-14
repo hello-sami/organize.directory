@@ -246,6 +246,37 @@
                 <div id="submit-status">
                     Sending your message... Please wait. You will be redirected after submission.
                 </div>
+                <div id="submission-help"
+                    style="display: none; margin-top: 2rem; padding: 1rem; border: 1px solid #f0f0f0; border-radius: 4px; background-color: #f9f9f9;">
+                    <p><strong>Having trouble submitting the form?</strong></p>
+                    <p>If the form isn't working, you can email us directly at: <a
+                            href="mailto:hello@organize.directory">hello@organize.directory</a></p>
+                    <p>Please include the information you were trying to submit in your email.</p>
+                </div>
+                <script>
+                    // Failsafe for form submission
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const form = document.getElementById('contactForm');
+                        const helpDiv = document.getElementById('submission-help');
+
+                        // Show help div after 20 seconds as a backup
+                        setTimeout(function () {
+                            if (helpDiv) helpDiv.style.display = 'block';
+                        }, 20000);
+
+                        // Also show help if form submission takes too long
+                        if (form) {
+                            form.addEventListener('submit', function () {
+                                // Show help div after 15 seconds if still on the same page
+                                setTimeout(function () {
+                                    if (!window.location.href.includes('thank-you') && helpDiv) {
+                                        helpDiv.style.display = 'block';
+                                    }
+                                }, 15000);
+                            });
+                        }
+                    });
+                </script>
             </div>
         </main>
     </div>
