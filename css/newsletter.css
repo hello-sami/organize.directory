@@ -128,6 +128,48 @@
      display: none;
 }
 
+/* Status message styles */
+.status-message {
+     padding: 1rem;
+     border-radius: 4px;
+     margin-top: 1rem;
+     text-align: center;
+     font-weight: 500;
+     display: none;
+}
+
+.status-message.success {
+     background-color: #dcfce7;
+     color: #15803d;
+     border: 1px solid #86efac;
+}
+
+.status-message.error {
+     background-color: #fee2e2;
+     color: #b91c1c;
+     border: 1px solid #fca5a5;
+}
+
+.status-message.sending {
+     background-color: #dbeafe;
+     color: #1e40af;
+     border: 1px solid #93c5fd;
+}
+
+/* Error styles for form validation */
+.error-text {
+     color: #dc2626;
+     font-size: 0.875rem;
+     margin-top: 0.25rem;
+     display: none;
+}
+
+input.error,
+select.error,
+textarea.error {
+     border-color: #dc2626;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
      .newsletter-content {
