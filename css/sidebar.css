@@ -12,7 +12,8 @@
  */
 #sidebar.sidebar {
      /* Using more specific selector to ensure these styles take precedence */
-     background: var(--sidebar-bg, #fdf2f8);
+     background: #ffd4d4; /* Restore original light red background */
+     border-right: 1px solid #ffb3b3; /* Add the right border that was missing */
      width: var(--sidebar-width, 280px);
      height: 100vh;
      position: fixed;
@@ -120,7 +121,6 @@
 
 /* Motto section - ensure specificity */
 #sidebar .sidebar-motto {
-     font-style: italic;
      font-size: 0.9rem;
      padding: 0 1.5rem;
      margin-top: auto;
