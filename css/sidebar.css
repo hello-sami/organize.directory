@@ -1,0 +1,213 @@
+/* 
+ * Sidebar Component Styles
+ * 
+ * NOTE: This file contains styles specific to the sidebar component.
+ * Some of these styles may override those in styles.css to ensure
+ * consistent sidebar appearance across the site.
+ */
+
+/*
+ * Core sidebar structure
+ * These override the generic #sidebar styles in styles.css
+ */
+#sidebar.sidebar {
+     /* Using more specific selector to ensure these styles take precedence */
+     background: var(--sidebar-bg, #fdf2f8);
+     width: var(--sidebar-width, 280px);
+     height: 100vh;
+     position: fixed;
+     padding: 2rem 0;
+     box-sizing: border-box;
+     overflow-y: auto;
+     z-index: 100;
+}
+
+/* 
+ * Header & logo 
+ * Using more specific selectors to override styles.css
+ */
+#sidebar .sidebar-header {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: flex-start;
+     padding: 0 1.5rem;
+     margin-bottom: 1.5rem;
+     gap: 0.75rem;
+     background-color: transparent;
+}
+
+#sidebar .site-logo {
+     display: block;
+     width: 60px;
+     height: 60px;
+     margin: 0;
+}
+
+#sidebar .sidebar-header h1 {
+     margin: 0;
+     padding: 0;
+     text-align: left;
+     font-size: 1.6rem;
+     background-color: transparent;
+}
+
+#sidebar .home-link,
+#sidebar .sidebar-header h1 a {
+     color: inherit;
+     text-decoration: none;
+     background-color: transparent;
+     font-weight: inherit;
+     border-bottom: none;
+     box-shadow: none;
+     outline: none;
+}
+
+/* Navigation structure - override specific elements */
+#sidebar nav {
+     margin-bottom: 2rem;
+}
+
+/* 
+ * Extend the nav-link-base class from styles.css
+ * but add specificity and new styles
+ */
+#sidebar .nav-link {
+     display: block;
+     padding: 0.75rem 1.5rem;
+     color: inherit;
+     text-decoration: none;
+     border-top: 1px solid var(--color-border, #ffb3b3);
+     border-bottom: 1px solid var(--color-border, #ffb3b3);
+}
+
+#sidebar .nav-group-title {
+     display: block;
+     font-weight: 600;
+     margin: 0;
+     padding: 0.75rem 1.5rem;
+     border-top: 1px solid var(--color-border, #ffb3b3);
+     border-bottom: 1px solid var(--color-border, #ffb3b3);
+     margin-top: -1px;
+     margin-bottom: -1px;
+}
+
+#sidebar .nav-link-group-header {
+     cursor: pointer;
+     color: inherit;
+     text-decoration: none;
+}
+
+#sidebar .nav-link-indented {
+     padding-left: 2.5rem;
+}
+
+/* Active state styling - more specific than styles.css */
+#sidebar .nav-link.active,
+#sidebar .nav-link-group-header.active {
+     background-color: var(--pure-white, #ffffff);
+     color: var(--primary-color, #a30000);
+     font-weight: 600;
+}
+
+/* Hover effects - ensure these take precedence */
+#sidebar .nav-link-group-header:hover,
+#sidebar .nav-link:hover {
+     text-decoration: none;
+     background-color: #ffc0c0;
+     color: var(--primary-color, #a30000);
+}
+
+/* Motto section - ensure specificity */
+#sidebar .sidebar-motto {
+     font-style: italic;
+     font-size: 0.9rem;
+     padding: 0 1.5rem;
+     margin-top: auto;
+     padding-bottom: 2rem;
+}
+
+/* Content spacing - already in styles.css but kept for completeness */
+/* Commenting out to prevent duplication
+.content {
+    margin-left: calc(var(--sidebar-width, 280px) + 4rem);
+}
+*/
+
+/* Mobile responsive styles - ensure they don't conflict */
+@media (max-width: 1020px) {
+     /* 
+     * These are likely duplicated in styles.css
+     * Commenting out to prevent conflicts
+     *
+    .content {
+        margin-left: 0;
+    }
+    */
+
+     #sidebar.sidebar {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+          will-change: transform;
+          backface-visibility: hidden;
+     }
+
+     #sidebar.sidebar.active {
+          transform: translateX(0);
+          box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+     }
+
+     /* 
+     * Global styles already in styles.css
+     * Commenting out to prevent duplication
+     * 
+    html, body {
+        overflow-x: hidden;
+        position: relative;
+        width: 100%;
+    }
+
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    h1, h2, p {
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+    */
+}
+
+/* 
+ * Performance optimizations
+ * These are global styles that should probably be in styles.css
+ * Commenting out to prevent duplication
+ *
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+*/
+
+#sidebar .clean-sidebar-title {
+     margin: 0;
+     padding: 0;
+     text-align: left;
+     font-size: 1.6rem;
+     background-color: transparent !important;
+     font-weight: 700;
+}
+
+#sidebar .clean-sidebar-link {
+     color: inherit !important;
+     text-decoration: none !important;
+     background-color: transparent !important;
+     font-weight: inherit !important;
+     border-bottom: none !important;
+     box-shadow: none !important;
+}

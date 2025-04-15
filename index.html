@@ -195,7 +195,7 @@
     <script type="module">
         document.addEventListener('DOMContentLoaded', function () {
             // Import sidebar initialization after DOM is loaded
-            import('/components/sidebar.js?v=1.0.3')
+            import('/components/sidebar.js?v=1.0.4')
                 .then(module => {
                     const { initializeSidebar } = module;
                     // Initialize sidebar
@@ -207,15 +207,7 @@
                         title.classList.add('reset-nav-group');
                     });
 
-                    // Fix h1 highlighting issue
-                    const headerH1 = document.querySelector('.sidebar-header h1');
-                    if (headerH1) {
-                        headerH1.style.cssText = 'background-color: transparent !important; margin: 0; padding: 0; padding-left: 0.2rem; text-align: left !important;';
-                        const link = headerH1.querySelector('a');
-                        if (link) {
-                            link.style.cssText = 'background-color: transparent !important; color: inherit !important; text-decoration: none !important; border-bottom: none !important; box-shadow: none !important;';
-                        }
-                    }
+                    // Note: The styling of header elements is now handled by sidebar.css and the cleanupInlineStyles function
                 })
                 .catch(error => console.error('Error initializing sidebar:', error));
 

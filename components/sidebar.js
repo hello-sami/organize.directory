@@ -19,8 +19,11 @@ const initialSidebar = `
        Don't despair, organize.
     </div>`;
 
-// Function to insert sidebar HTML
+/**
+ * Inserts the sidebar into the document
+ */
 function insertSidebar() {
+     // Create sidebar container
      const sidebarContainer = document.createElement("div");
      sidebarContainer.id = "sidebar";
      sidebarContainer.className = "sidebar";
@@ -29,11 +32,9 @@ function insertSidebar() {
 
      // First try to find a sidebar placeholder
      const placeholder = document.getElementById("sidebar-placeholder");
-
      if (placeholder) {
           // Replace the placeholder with our sidebar
           placeholder.parentNode.replaceChild(sidebarContainer, placeholder);
-          console.log("Sidebar inserted by replacing placeholder");
           return;
      }
 
@@ -41,303 +42,65 @@ function insertSidebar() {
      const layout = document.querySelector(".layout");
      if (layout) {
           layout.insertBefore(sidebarContainer, layout.firstChild);
-          console.log("Sidebar inserted at start of .layout");
      } else {
           console.error("Layout element not found");
      }
 }
 
-// Critical styles that must be inlined in the head
-const criticalStyles = `
-    .sidebar {
-        opacity: 1 !important;
-        visibility: visible !important;
-        background: var(--sidebar-bg, #FDF2F8);
-        width: var(--sidebar-width, 280px) !important;
-        height: 100vh;
-        position: fixed;
-        padding: 2rem 0;
-        box-sizing: border-box;
-        overflow-y: auto;
-        z-index: 100;
-    }
-    .site-logo {
-        display: block;
-        width: 60px;
-        height: 60px;
-        margin: 0;
-    }
-    .sidebar-header {
-        background-color: transparent;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        padding: 0 1.5rem;
-        margin-bottom: 1.5rem;
-        gap: 0.75rem;
-    }
-    .sidebar-header h1 {
-        margin: 0;
-        padding: 0;
-        text-align: left;
-        font-size: 1.6rem;
-        background-color: transparent !important;
-    }
-    .sidebar-header h1 a, 
-    .sidebar-header h1 a:link,
-    .sidebar-header h1 a:visited,
-    .sidebar-header h1 a:hover,
-    .sidebar-header h1 a:active,
-    .home-link {
-        color: inherit !important;
-        text-decoration: none !important;
-        background-color: transparent !important;
-        font-weight: inherit !important;
-        border-bottom: none !important;
-        box-shadow: none !important;
-        outline: none !important;
-    }
-    .sidebar h1 {
-        margin: 0 0 0rem 0;
-        font-size: 1.5rem;
-        padding: 0 0rem;
-    }
-    .sidebar nav {
-        margin-bottom: 2rem;
-    }
-    .sidebar .nav-link {
-        display: block;
-        padding: 0.75rem 1.5rem;
-        color: inherit;
-        text-decoration: none;
-        border-top: 1px solid var(--color-border, #ffb3b3);
-        border-bottom: 1px solid var(--color-border, #ffb3b3);
-    }
-    .sidebar .nav-group-title {
-        display: block;
-        font-weight: 600;
-        margin: 0;
-        padding: 0.75rem 1.5rem;
-        border-top: 1px solid var(--color-border, #ffb3b3);
-        border-bottom: 1px solid var(--color-border, #ffb3b3);
-        margin-top: -1px;
-        margin-bottom: -1px;
-    }
-    .sidebar .nav-link-group-header {
-        cursor: pointer;
-        color: inherit;
-        text-decoration: none;
-    }
-    .sidebar .nav-link-group-header:hover {
-        text-decoration: none;
-        background-color: #ffc0c0;
-        color: var(--primary-color, #a30000);
-    }
-    .sidebar .nav-link-indented {
-        padding-left: 2.5rem;
-    }
-    .sidebar .nav-link.active {
-        background-color: var(--pure-white, #ffffff);
-        color: var(--primary-color, #a30000);
-        font-weight: 600;
-    }
-    .sidebar .nav-link-indented.active + .nav-group-title,
-    .sidebar .nav-link-indented.active ~ .nav-group-title,
-    .sidebar .nav-link-indented.active + .nav-link-group-header,
-    .sidebar .nav-link-indented.active ~ .nav-link-group-header {
-        background-color: inherit;
-        color: inherit;
-        font-weight: normal;
-        opacity: 0.7;
-    }
-    .sidebar .nav-link-group-header.active {
-        background-color: var(--pure-white, #ffffff);
-        color: var(--primary-color, #a30000);
-        font-weight: 600;
-    }
-    .sidebar .sidebar-motto {
-        font-style: italic;
-        font-size: 0.9rem;
-        padding: 0 1.5rem;
-        margin-top: auto;
-        padding-bottom: 2rem;
-    }
-    /* Add spacing rule to ensure content doesn't overlap with sidebar */
-    .content {
-        margin-left: calc(var(--sidebar-width, 280px) + 4rem) !important;
-    }
-    /* Mobile styles */
-    @media (max-width: 1020px) {
-        .content {
-            margin-left: 0 !important;
-        }
-        .sidebar {
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
-        .sidebar.active {
-            transform: translateX(0);
-            box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
-        }
-    }
-`;
-
-// Function to initialize critical styles
-function initializeCriticalStyles() {
-     if (typeof document !== "undefined") {
-          // Add critical styles to head if not already present
-          if (!document.querySelector("#sidebar-critical-styles")) {
-               const styleEl = document.createElement("style");
-               styleEl.id = "sidebar-critical-styles";
-               styleEl.textContent =
-                    criticalStyles +
-                    `
-                    /* Performance optimizations to prevent flickering */
-                    * {
-                         -webkit-tap-highlight-color: transparent;
-                    }
-                    
-                    /* Improve performance on mobile */
-                    body {
-                         -webkit-font-smoothing: antialiased;
-                         -moz-osx-font-smoothing: grayscale;
-                    }
-                    
-                    /* Stabilize layout to prevent shifting */
-                    html, body {
-                         overflow-x: hidden;
-                         position: relative;
-                         width: 100%;
-                    }
-                    
-                    /* Prevent font size adjustments on mobile orientation changes */
-                    html {
-                         -webkit-text-size-adjust: 100%;
-                    }
-                    
-                    /* Optimize animations */
-                    @media (max-width: 1020px) {
-                         .sidebar {
-                              transform: translateX(-100%);
-                              transition: transform 0.3s ease;
-                              will-change: transform;
-                              backface-visibility: hidden;
-                              -webkit-backface-visibility: hidden;
-                         }
-                         
-                         /* Use transform instead of opacity for better performance */
-                         .sidebar.active {
-                              transform: translateX(0);
-                         }
-                         
-                         /* Prevent jumps in text sizing */
-                         h1, h2, p {
-                              max-width: 100%;
-                              overflow-wrap: break-word;
-                              word-wrap: break-word;
-                         }
-                    }
-               `;
-               document.head.insertBefore(styleEl, document.head.firstChild);
-          }
+/**
+ * Loads the sidebar.css file
+ */
+function loadSidebarStyles() {
+     // Only load if not already loaded
+     if (!document.querySelector('link[href*="sidebar.css"]')) {
+          const linkElement = document.createElement("link");
+          linkElement.rel = "stylesheet";
+          linkElement.href = "/css/sidebar.css";
+          document.head.appendChild(linkElement);
      }
 }
 
-// Function to ensure consistent h1 styling once on initialization
-function fixSidebarHeaderStyling() {
-     // Add standardized classes instead of inline styles for better performance
-     const headerContainer = document.querySelector(".sidebar-header");
-     if (headerContainer) {
-          headerContainer.classList.add("sidebar-header-optimized");
-
-          // Ensure proper spacing in flexbox layout - explicitly set gap for all pages
-          headerContainer.style.display = "flex";
-          headerContainer.style.flexDirection = "row";
-          headerContainer.style.alignItems = "center";
-          headerContainer.style.justifyContent = "flex-start";
-          headerContainer.style.gap = "0.75rem";
-
-          // Explicitly set vertical spacing to ensure consistency
-          headerContainer.style.marginBottom = "1.5rem";
-          headerContainer.style.padding = "0 1.5rem";
-          headerContainer.style.marginTop = "0";
-          headerContainer.style.paddingTop = "0";
-          headerContainer.style.paddingBottom = "0";
-
-          // Ensure consistent background color
-          headerContainer.style.backgroundColor = "transparent";
-     }
-
+/**
+ * Remove inline styles added by outside scripts
+ * This helps ensure our sidebar.css takes precedence
+ */
+function cleanupInlineStyles() {
+     // Find elements that might have inline styles
      const headerH1 = document.querySelector(".sidebar-header h1");
      if (headerH1) {
-          // Apply both standardized classes for optimal styling
-          headerH1.classList.add("sidebar-title-optimized");
-          headerH1.classList.add("sidebar-title-consistent");
+          // Remove inline styles and add our CSS class instead
+          headerH1.removeAttribute("style");
+          headerH1.classList.add("clean-sidebar-title");
 
-          // Remove any potentially problematic inline styles
-          headerH1.style.paddingLeft = "0";
-          headerH1.style.margin = "0";
-          headerH1.style.padding = "0";
-          headerH1.style.lineHeight = "1.2";
-          headerH1.style.backgroundColor = "transparent";
-
-          // Force consistent font weight - use !important in JS to override any CSS
-          headerH1.setAttribute(
-               "style",
-               headerH1.getAttribute("style") +
-                    "; font-weight: 700 !important; background-color: transparent !important;"
-          );
-
-          // Ensure vertical alignment is consistent
-          headerH1.style.display = "flex";
-          headerH1.style.alignItems = "center";
-
-          // Fix the link inside h1
           const link = headerH1.querySelector("a");
           if (link) {
-               // Apply both standardized classes for optimal styling
-               link.classList.add("home-link-optimized");
-               link.classList.add("sidebar-title-link");
-
-               // Ensure clean styling with no unexpected properties
-               link.style.textDecoration = "none";
-               link.style.color = "inherit";
-               link.style.backgroundColor = "transparent";
-               link.style.borderBottom = "none";
-               link.style.boxShadow = "none";
-               link.style.margin = "0";
-               link.style.padding = "0";
-               link.style.lineHeight = "1.2";
-
-               // Force link to inherit font weight - use !important in JS
-               link.setAttribute(
-                    "style",
-                    link.getAttribute("style") +
-                         "; font-weight: inherit !important; text-decoration: none !important; box-shadow: none !important; background-color: transparent !important;"
-               );
+               link.removeAttribute("style");
+               link.classList.add("clean-sidebar-link");
           }
      }
 }
 
-// Main function to initialize the sidebar
+/**
+ * Main function to initialize the sidebar
+ * @param {string} activePage - The current active page
+ */
 export function initializeSidebar(activePage) {
      if (typeof document === "undefined") return;
 
-     // Initialize critical styles first
-     initializeCriticalStyles();
+     // Load sidebar styles first
+     loadSidebarStyles();
 
-     // If sidebar doesn't exist, insert it
+     // Insert sidebar if it doesn't exist
      let sidebar = document.getElementById("sidebar");
      if (!sidebar) {
           insertSidebar();
           sidebar = document.getElementById("sidebar");
      }
 
-     // Fix header styling for consistent look across all pages - only once
-     fixSidebarHeaderStyling();
+     // Clean up any inline styles
+     cleanupInlineStyles();
 
-     // Cache result of regex pattern match for better performance
+     // Handle active page detection
      const currentPath = window.location.pathname;
      const stateRegex =
           /\/(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new-hampshire|new-jersey|new-mexico|new-york|north-carolina|north-dakota|ohio|oklahoma|oregon|pennsylvania|rhode-island|south-carolina|south-dakota|tennessee|texas|utah|vermont|virginia|washington|west-virginia|wisconsin|wyoming)/;
@@ -350,15 +113,13 @@ export function initializeSidebar(activePage) {
           activePage = "location";
      }
 
-     // Remove ALL active classes first (simpler approach)
+     // Remove ALL active classes first
      if (sidebar) {
           const allLinks = sidebar.querySelectorAll("a");
           allLinks.forEach((link) => {
                link.classList.remove("active");
-               // Reset any inline styles that might be causing background colors
-               link.style.backgroundColor = "";
-               link.style.color = "";
-               link.style.fontWeight = "";
+               // Remove any inline styles that might have been added
+               link.removeAttribute("style");
           });
      }
 
@@ -450,7 +211,11 @@ export function initializeSidebar(activePage) {
      });
 }
 
-// Helper function to adjust paths based on directory depth
+/**
+ * Helper function to adjust paths based on directory depth
+ * @param {HTMLElement} sidebar - The sidebar element
+ * @param {number} depth - Directory depth
+ */
 export function adjustPaths(sidebar, depth = 0) {
      if (!sidebar) return;
 
