@@ -264,7 +264,9 @@ hr {
      display: block;
      width: 60px;
      height: 60px;
-     margin: 0;
+     margin: 0 !important;
+     align-self: center !important;
+     object-fit: contain !important;
 }
 
 .sidebar-header {
@@ -2361,6 +2363,8 @@ body.page-guides .sidebar-header h1,
 body.page-contact .sidebar-header h1,
 body.page-subscribe .sidebar-header h1 {
      font-weight: 700 !important;
+     margin: 0 !important; /* Ensure no margin pushes the h1 down */
+     align-self: center !important; /* Vertically center the h1 */
 }
 
 /* Ensure the link inside h1 inherits font weight properly */
@@ -2453,3 +2457,20 @@ html body #sidebar div.sidebar-header h1 a,
 }
 
 /* Contact form mobile responsiveness */
+
+/* Ensure proper flexbox layout for sidebar header on all pages */
+.sidebar-header,
+body.page-home .sidebar-header,
+body.page-location .sidebar-header,
+body.page-topics .sidebar-header,
+body.page-guides .sidebar-header,
+body.page-contact .sidebar-header,
+body.page-subscribe .sidebar-header {
+     display: flex !important;
+     flex-direction: row !important;
+     align-items: center !important;
+     justify-content: flex-start !important;
+     gap: 0.75rem !important;
+     margin-bottom: 1.5rem !important;
+     padding: 0 1.5rem !important;
+}
