@@ -1,22 +1,21 @@
 // Initial sidebar content to prevent flicker
 const initialSidebar = `
     <div class="sidebar-header">
-        <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo">
-        <h1><a href="/" class="home-link">The Organize Directory</a></h1>
+        <a href="/">
+            <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo">
+        </a>
     </div>
     <nav>
-        <a href="/" class="nav-link nav-link-base">Home</a>
-        <div class="nav-group">
-            <a href="/location" class="nav-group-title nav-link-group-header nav-link-base">Find a group</a>
-            <a href="/location" class="nav-link nav-link-indented nav-link-base">by location</a>
-            <a href="/topics" class="nav-link nav-link-indented nav-link-base">by topic</a>
-        </div>
-        <a href="/guides" class="nav-link nav-link-base">Guides</a>
-        <a href="/contact" class="nav-link nav-link-base">Contact</a>
-        <a href="/subscribe" class="nav-link nav-link-base">Subscribe</a>
+        <a href="/" class="nav-link nav-link-base">HOME</a>
+        <a href="/location" class="nav-link nav-link-base">FIND A GROUP</a>
+        <a href="/location" class="nav-link nav-link-indented nav-link-base">BY LOCATION</a>
+        <a href="/topics" class="nav-link nav-link-indented nav-link-base">BY TOPIC</a>
+        <a href="/guides" class="nav-link nav-link-base">GUIDES</a>
+        <a href="/contact" class="nav-link nav-link-base">CONTACT</a>
+        <a href="/subscribe" class="nav-link nav-link-base">SUBSCRIBE</a>
     </nav>
     <div class="sidebar-motto">
-       Don't despair, organize.
+       DON'T DESPAIR, ORGANIZE.
     </div>`;
 
 /**
@@ -65,18 +64,16 @@ function loadSidebarStyles() {
  * This helps ensure our sidebar.css takes precedence
  */
 function cleanupInlineStyles() {
-     // Find elements that might have inline styles
-     const headerH1 = document.querySelector(".sidebar-header h1");
-     if (headerH1) {
-          // Remove inline styles and add our CSS class instead
-          headerH1.removeAttribute("style");
-          headerH1.classList.add("clean-sidebar-title");
+     // Find logo element and ensure no inline styles
+     const logo = document.querySelector(".sidebar-header .site-logo");
+     if (logo) {
+          logo.removeAttribute("style");
+     }
 
-          const link = headerH1.querySelector("a");
-          if (link) {
-               link.removeAttribute("style");
-               link.classList.add("clean-sidebar-link");
-          }
+     // Find logo link and ensure no inline styles
+     const logoLink = document.querySelector(".sidebar-header a");
+     if (logoLink) {
+          logoLink.removeAttribute("style");
      }
 }
 

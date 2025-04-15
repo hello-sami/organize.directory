@@ -7,32 +7,83 @@
    to reduce redundancy and improve maintainability:
    
    1. .btn-base - Base styling for all buttons
-      Usage: Add both .btn-base and specific button class (e.g., <button class="btn-base submit-button">)
-   
    2. .nav-link-base - Base styling for navigation links
-      Usage: Add both .nav-link-base and specific link class (e.g., <a class="nav-link-base nav-link">)
-   
    3. .location-link-base - Base styling for location links (cities, states)
-      Usage: Add both .location-link-base and specific link class (e.g., <a class="location-link-base city-link">)
-   
    4. .card-base - Base styling for card-like elements
-      Usage: Add both .card-base and specific card class (e.g., <div class="card-base topic-card">)
    
    STANDARDIZED MEDIA QUERY BREAKPOINTS:
    ------------------------------------- 
-   Use these breakpoint variables for all media queries to ensure consistency:
-   
    --breakpoint-xxl: 1400px
    --breakpoint-xl: 1200px 
    --breakpoint-lg: 1020px
    --breakpoint-md: 768px
    --breakpoint-sm: 480px
-   
-   Example:
-   @media (max-width: var(--breakpoint-md)) { ... }
 */
 
-/* Base Styles */
+/*------------------------------------*\
+  #ROOT-VARIABLES
+\*------------------------------------*/
+:root {
+     /* Core brand colors */
+     --red-base: #c01c1c;
+     --red-dark: #a01818;
+     --red-darker: #800000;
+     --red-light: #d82727;
+     --red-lighter: #e53e3e;
+
+     /* Aliases for backward compatibility */
+     --primary-red: #c01c1c;
+     --dark-red: #a01818;
+
+     /* Background colors */
+     --bg-light: #fff7f7;
+     --bg-medium: #ffd4d4;
+     --bg-dark: #ffc0c0;
+     --background-color: #fff7f7;
+     --light-red: #fff7f7;
+     --sidebar-bg: #f8d1d1;
+     --sidebar-nav-bg: #f8d1d1;
+     --active-nav-bg: #c01c1c;
+
+     /* Text colors */
+     --text-color: #333;
+     --light-text: #fff;
+     --color-white: #ffffff;
+
+     /* Functional colors */
+     --color-primary: #c01c1c;
+     --color-accent: #c01c1c;
+     --color-text: #333;
+     --color-heading: #a01818;
+     --color-link: #d82727;
+     --color-link-hover: #e53e3e;
+     --color-border: #ffb3b3;
+
+     /* Compound variables */
+     --shadow-sm: 0 1px 2px rgba(192, 28, 28, 0.2);
+     --color-primary-alpha: rgba(192, 28, 28, 0.1);
+     --color-primary-dark: #a01818;
+
+     /* Layout variables */
+     --sidebar-width: 240px;
+     --content-padding: 3rem;
+     --border-thick: 2px;
+
+     /* Base font sizes */
+     --base-font-size: 16px;
+     --mobile-font-size: 18px;
+
+     /* Standard breakpoints - these are set but not used directly in @media */
+     --breakpoint-xxl: 1400px;
+     --breakpoint-xl: 1200px;
+     --breakpoint-lg: 1020px;
+     --breakpoint-md: 768px;
+     --breakpoint-sm: 480px;
+}
+
+/*------------------------------------*\
+  #RESET & BASE STYLES
+\*------------------------------------*/
 * {
      margin: 0;
      padding: 0;
@@ -45,50 +96,88 @@ html {
      text-size-adjust: 100%;
 }
 
-:root {
-     /* Core brand colors */
-     --red-base: #a30000;
-     --red-dark: #800000;
-     --red-darker: #4d0000;
-     --red-light: #cc0000;
-     --red-lighter: #ff1a1a;
-
-     /* Background colors */
-     --bg-light: #fff5f5;
-     --bg-medium: #ffd4d4;
-     --bg-dark: #ffc0c0;
-
-     /* Functional colors */
-     --color-primary: var(--red-base);
-     --color-accent: var(--red-base);
-     --color-text: var(--red-darker);
-     --color-heading: var(--red-dark);
-     --color-link: var(--red-light);
-     --color-link-hover: var(--red-lighter);
-     --color-border: #ffb3b3;
-     --color-white: #ffffff;
-
-     /* Compound variables */
-     --shadow-sm: 0 1px 2px rgba(163, 0, 0, 0.2);
-     --color-primary-alpha: rgba(163, 0, 0, 0.1);
-     --color-primary-dark: var(--red-dark);
-
-     /* Layout variables */
-     --sidebar-width: 280px;
-     --border-thick: 2px;
-
-     /* Base font sizes */
-     --base-font-size: 16px;
-     --mobile-font-size: 18px;
-
-     /* Standard breakpoints */
-     --breakpoint-xxl: 1400px;
-     --breakpoint-xl: 1200px;
-     --breakpoint-lg: 1020px;
-     --breakpoint-md: 768px;
-     --breakpoint-sm: 480px;
+body {
+     font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          sans-serif;
+     line-height: 1.7;
+     color: var(--color-text);
+     background-color: var(--background-color);
+     min-height: 100vh;
+     font-size: var(--base-font-size);
+     letter-spacing: -0.01em;
+     /* Optimize text rendering */
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+     max-width: 100%;
+     overflow-x: hidden;
 }
 
+h1 {
+     font-family: "Saira", sans-serif;
+     font-size: 2.5rem;
+     color: var(--red-base);
+     margin-bottom: 2rem;
+     font-weight: 700;
+     line-height: 1.1;
+     letter-spacing: -0.02em;
+     text-align: left;
+}
+
+h2 {
+     font-family: "Saira", sans-serif;
+     font-size: 1.8rem;
+     color: var(--red-dark);
+     margin-bottom: 1.5rem;
+     margin-top: 2rem;
+     font-weight: 600;
+     letter-spacing: -0.01em;
+     text-align: left;
+}
+
+/* Ensure all headings are left-aligned by default */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+     text-align: left;
+}
+
+a {
+     color: var(--color-link);
+     text-decoration: none;
+     transition: all 0.2s ease;
+     border-bottom: 1px solid transparent;
+}
+
+a:hover {
+     color: var(--color-link-hover);
+     border-bottom: 1px solid var(--color-link-hover);
+}
+
+hr {
+     border: none;
+     border-top: 1px solid var(--color-border);
+     margin: 2rem 0;
+}
+
+/* Ensure clean spacing for list items */
+li {
+     margin-bottom: 0.5rem;
+}
+
+/*------------------------------------*\
+  #CONSOLIDATED BASE CLASSES
+\*------------------------------------*/
 /* Consolidated Button Base Class */
 .btn-base {
      display: inline-flex;
@@ -96,6 +185,7 @@ html {
      justify-content: center;
      padding: 0.75rem 1.5rem;
      border-radius: 6px;
+     font-family: "Inter", sans-serif;
      font-weight: 600;
      cursor: pointer;
      transition: all 0.2s ease;
@@ -108,6 +198,7 @@ html {
 
 .btn-base:hover {
      transform: translateY(-1px);
+     box-shadow: 0 3px 8px rgba(192, 28, 28, 0.15);
 }
 
 .btn-base:active {
@@ -127,6 +218,8 @@ html {
      opacity: 0.9;
      font-size: 0.95rem;
      width: 100%;
+     text-transform: uppercase;
+     letter-spacing: 0.05em;
 }
 
 .nav-link-base:hover {
@@ -142,7 +235,23 @@ html {
      background: var(--bg-dark);
 }
 
-/* NEW - Consolidated Card Base Class */
+/* Consolidated Location Link Base */
+.location-link-base {
+     display: block;
+     color: var(--color-text);
+     text-decoration: none;
+     transition: all 0.1s ease;
+     padding: 0.25rem 0.5rem;
+     opacity: 0.85;
+}
+
+.location-link-base:hover {
+     opacity: 1;
+     color: var(--color-primary);
+     text-decoration: none;
+}
+
+/* Consolidated Card Base Class */
 .card-base {
      background: var(--bg-light);
      border: 1px solid var(--color-border);
@@ -156,73 +265,37 @@ html {
      box-shadow: var(--shadow-sm);
 }
 
-/* Typography */
+/*------------------------------------*\
+  #LAYOUT
+\*------------------------------------*/
+/* Basic layout structure */
 body {
-     font-family:
-          "Inter",
-          -apple-system,
-          BlinkMacSystemFont,
-          sans-serif;
-     line-height: 1.7;
-     color: var(--color-text);
-     background-color: var(--color-white);
-     min-height: 100vh;
-     padding-top: 4rem;
-     letter-spacing: -0.01em;
-     font-size: var(--base-font-size);
-     /* Optimize text rendering */
-     -webkit-font-smoothing: antialiased;
-     -moz-osx-font-smoothing: grayscale;
+     background-color: var(--background-color);
+     max-width: 100%;
+     overflow-x: hidden;
 }
 
-h1 {
-     font-size: 2.5rem;
-     color: var(--color-heading);
-     margin-bottom: 2rem;
-     font-weight: 900;
-     line-height: 1.1;
-     letter-spacing: -0.03em;
-}
-
-h2 {
-     font-size: 1.8rem;
-     color: var(--color-heading);
-     margin-bottom: 1.5rem;
-     font-weight: 700;
-     letter-spacing: -0.01em;
-}
-
-/* Links */
-a {
-     color: var(--color-link);
-     text-decoration: none;
-     transition: all 0.2s ease;
-     border-bottom: 1px solid transparent;
-}
-
-a:hover {
-     color: var(--color-link-hover);
-     border-bottom: 1px solid var(--color-link-hover);
-}
-
-/* Layout */
 .layout {
      display: flex;
      min-height: 100vh;
      position: relative;
-     gap: 2rem;
+     gap: 0;
      background-color: var(--color-white);
+     max-width: 1400px;
+     margin: 0 auto;
+     border: 1px solid #c01c1c;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 }
 
 .content {
      flex: 1;
      width: 100%;
-     max-width: 900px;
-     margin: 0 auto;
+     max-width: 1200px;
+     margin: 0;
      padding: 3rem;
      position: relative;
-     background: var(--color-white);
-     margin-left: calc(var(--sidebar-width) + 4rem) !important;
+     background: #ffeaea;
+     margin-left: var(--sidebar-width) !important;
 }
 
 /* Content Elements */
@@ -232,17 +305,45 @@ a:hover {
 .content .daily-log,
 .content .about-content,
 .content .initiative {
-     max-width: 800px;
+     max-width: 1000px;
      margin-left: auto;
      margin-right: auto;
 }
 
-hr {
-     border: none;
-     border-top: 1px solid var(--color-border);
-     margin: 2rem 0;
+.content h1 {
+     color: var(--red-base);
+     font-size: 3.5rem;
+     font-weight: 700;
+     text-align: center;
+     margin-bottom: 2rem;
+     font-family: "Saira", sans-serif;
 }
 
+.content h2 {
+     max-width: 600px;
+     margin: 0 auto;
+     padding: 0;
+     text-indent: 0;
+}
+
+.content .page-header {
+     display: none;
+}
+
+/* Main Content Layout */
+.main-content {
+     margin-left: var(--sidebar-width);
+     min-height: 100vh;
+     padding: var(--content-padding);
+     display: flex;
+     flex-direction: column;
+     gap: 2rem;
+     background-color: var(--background-color);
+}
+
+/*------------------------------------*\
+  #SIDEBAR
+\*------------------------------------*/
 /* Sidebar */
 #sidebar {
      width: var(--sidebar-width);
@@ -250,46 +351,44 @@ hr {
      position: fixed;
      top: 0;
      left: 0;
-     background: var(--bg-medium);
-     border-right: 1px solid var(--color-border);
-     padding: 2rem 0;
+     background: var(--sidebar-bg);
+     border-right: 1px solid #c01c1c;
+     padding: 0;
      overflow-y: auto;
      z-index: 100;
      display: flex;
      flex-direction: column;
-     gap: 1.5rem;
+     gap: 0;
 }
 
 .site-logo {
-     display: block;
-     width: 60px;
-     height: 60px;
-     margin: 0 !important;
-     align-self: center !important;
+     display: block !important;
+     width: 120px !important;
+     height: auto !important;
+     margin: 0 auto !important;
+     padding: 1.5rem 0 1rem !important;
+     max-width: none !important;
      object-fit: contain !important;
 }
 
 .sidebar-header {
      display: flex;
-     flex-direction: row;
+     flex-direction: column;
      align-items: center;
-     justify-content: flex-start;
-     padding: 0 1.5rem 0 1.5rem;
-     margin-bottom: 1.5rem;
-     gap: 0.75rem;
-     margin-top: 0;
+     justify-content: center;
+     padding: 0;
+     margin-bottom: 0;
+     gap: 0;
+     background-color: #f8d1d1;
 }
 
 .sidebar-header h1 {
      margin: 0;
      padding: 0;
-     /* Remove padding-left that was causing inconsistency */
-     text-align: left;
      font-size: 1.6rem;
      line-height: 1.2;
      display: flex;
      align-items: center;
-     /* Ensure consistent font weight */
      font-weight: 700;
 }
 
@@ -309,23 +408,13 @@ hr {
      padding: 0;
 }
 
-#sidebar h1 {
-     margin: 0 0 0rem 0;
-     font-size: 1.5rem;
-     padding: 0;
-}
-
-#sidebar h1 a {
-     color: inherit !important;
-     text-decoration: none;
-     border-bottom: none;
-}
-
 #sidebar nav {
      display: flex;
      flex-direction: column;
      gap: 0;
-     margin-top: -1px; /* To ensure clean connection with first item */
+     margin-top: 0;
+     width: 100%;
+     background-color: var(--sidebar-nav-bg);
 }
 
 /* Navigation */
@@ -345,67 +434,47 @@ hr {
 }
 
 .nav-group-title {
-     color: var(--color-text);
-     font-size: 0.9rem;
-     font-weight: 700;
-     padding: 0.75rem 1.5rem;
-     letter-spacing: 0.02em;
-     border-top: 1px solid var(--color-border);
-     border-bottom: 1px solid var(--color-border);
-     margin: 0;
-     margin-top: -1px;
-     margin-bottom: -1px;
-     background: transparent;
+     display: none;
 }
 
 .nav-link {
-     /* Extend .nav-link-base properties */
-     display: block;
-     padding: 0.75rem 1.5rem;
-     color: var(--color-text);
-     text-decoration: none;
-     transition: all 0.2s ease;
-     border-top: 1px solid var(--color-border);
-     border-bottom: 1px solid var(--color-border);
-     margin-top: -1px;
-     opacity: 0.9;
-     font-size: 0.95rem;
-     width: 100%;
-     background: transparent;
-     position: relative;
-}
-
-.nav-link-indented {
-     padding-left: 2.5rem;
-     position: relative;
-}
-
-.nav-link-indented::before {
-     content: "";
-     position: absolute;
-     left: 1.5rem;
-     top: 0;
-     bottom: 0;
-     width: 1px;
-     background-color: var(--color-border);
-     opacity: 0.8;
-}
-
-.nav-link-indented:hover::before {
-     background-color: var(--color-primary);
-}
-
-.nav-link:hover {
-     opacity: 1;
-     color: var(--color-primary);
-     background: var(--bg-dark);
+     /* Empty to clear all previous styles */
 }
 
 .nav-link.active {
-     color: var(--color-primary);
-     opacity: 1;
+     /* Empty to clear all previous styles */
+}
+
+.nav-link:hover {
+     /* Empty to clear all previous styles */
+}
+
+.nav-link[href="/"] {
+     /* Empty to clear all previous styles */
+}
+
+/* Fix any possible conflicts */
+body.page-home .sidebar a[href="/"].nav-link,
+body.page-index .sidebar a[href="/"].nav-link,
+.sidebar a[href="/"].nav-link,
+.nav-link.active,
+.nav-link:first-child,
+.nav-link:nth-of-type(2) {
+     /* Empty to clear all previous styles */
+}
+
+.sidebar-motto {
+     padding: 1rem 1.5rem;
+     font-size: 0.85rem;
+     color: var(--red-dark);
+     opacity: 0.9;
+     text-align: center;
+     line-height: 1.4;
+     margin-top: auto;
      font-weight: 600;
-     background: var(--bg-dark);
+     text-transform: uppercase;
+     letter-spacing: 0.05em;
+     background-color: var(--sidebar-bg);
 }
 
 /* Mobile Menu */
@@ -439,49 +508,354 @@ hr {
      display: block;
 }
 
-/* Topic Cards */
-
-.topic-icon {
-     font-size: 1.8rem;
-     color: var(--color-primary);
-     height: 1.8rem;
-     width: 1.8rem;
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+/* Hero Section */
+.hero-section {
      display: flex;
-     align-items: center;
+     flex-direction: column;
+     gap: 1.5rem;
+     margin-bottom: 3rem;
+}
+
+.hero-title {
+     font-size: 3.5rem;
+     font-weight: 800;
+     line-height: 1.1;
+     color: var(--primary-red);
+     max-width: 800px;
+}
+
+.hero-subtitle {
+     font-size: 1.5rem;
+     max-width: 700px;
+     margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn {
+     display: inline-block;
+     padding: 0.8rem 1.6rem;
+     font-weight: 600;
+     font-size: 1rem;
+     border-radius: 4px;
+     cursor: pointer;
+     transition: all 0.2s ease;
+}
+
+.btn-primary {
+     background-color: var(--primary-red);
+     color: var(--light-text);
+     border: 2px solid var(--primary-red);
+}
+
+.btn-primary:hover {
+     background-color: var(--dark-red);
+     border-color: var(--dark-red);
+}
+
+.btn-secondary {
+     background-color: transparent;
+     color: var(--primary-red);
+     border: 2px solid var(--primary-red);
+}
+
+.btn-secondary:hover {
+     background-color: var(--light-red);
+}
+
+.action-buttons {
+     display: flex;
+     gap: 1rem;
+     margin-bottom: 3rem;
+}
+
+/* Find Groups Buttons */
+.find-groups-buttons {
+     margin: 2rem auto 4rem;
+}
+
+.buttons-container {
+     display: flex;
      justify-content: center;
-     flex-shrink: 0;
-     margin-right: 1.25rem;
-     /* Fix for icon display */
+     gap: 1.5rem;
+     max-width: 800px;
+     margin: 0 auto;
+}
+
+.find-groups-button {
+     background-color: var(--color-primary);
+     color: white;
+     border: none;
+     padding: 1rem 2rem;
+     font-size: 1.1rem;
+     border-radius: 4px;
      text-align: center;
-     min-width: 1.8rem;
-     /* Ensure icons are visible even when Font Awesome fails */
+     min-width: 280px;
+     box-shadow: 0 2px 4px rgba(192, 28, 28, 0.15);
+     font-weight: 500;
+     text-decoration: none;
+     display: block;
+}
+
+.find-groups-button:hover {
+     background-color: var(--red-darker);
+     color: white;
+     text-decoration: none;
+     transform: translateY(-2px);
+     box-shadow: 0 4px 8px rgba(192, 28, 28, 0.2);
+     border-bottom: none;
+}
+
+.find-groups-button:active {
+     transform: translateY(1px);
+     box-shadow: 0 2px 4px rgba(192, 28, 28, 0.1);
+}
+
+.button-text {
+     font-size: 1.2rem;
+     font-weight: 600;
+     font-family: "Saira", sans-serif;
+}
+
+/* Statistics Container */
+.stats-container {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     gap: 2rem;
+     margin: 0 auto 2rem;
+     background-color: white;
+     border-radius: 8px;
+     padding: 2rem;
+     max-width: 900px;
+     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+}
+
+.stat-number {
+     font-size: 3.5rem;
+     font-weight: 800;
+     color: var(--red-base);
+     line-height: 1;
+     margin-bottom: 0.75rem;
+     font-family: "Saira", sans-serif;
+}
+
+.stat-label {
+     font-size: 1.2rem;
+     font-weight: 700;
+     color: var(--red-darker);
+     text-transform: uppercase;
+     letter-spacing: 0.05em;
+     font-family: "Saira", sans-serif;
+}
+
+/* Initiative Statistics Section */
+.initiative-stats {
+     background-color: #fff;
+     border: 2px solid var(--red-base);
+     border-radius: 12px;
+     padding: 2.5rem 2rem;
+     margin: 2rem auto 3rem;
+     max-width: 700px;
+     box-shadow: 0 4px 12px rgba(192, 28, 28, 0.1);
+}
+
+.stats-description {
+     font-size: 1.1rem;
+     max-width: 600px;
+     margin: 1rem auto 0;
+     color: var(--color-text);
+}
+
+/* Topic Cards */
+.topic-icon {
+     font-size: 1.4rem !important;
+     height: 1.4rem !important;
+     width: 1.4rem !important;
+     min-width: 1.4rem !important;
+     display: flex !important;
+     align-items: center !important;
+     justify-content: center !important;
+     text-align: center !important;
+     color: var(--color-primary);
+     margin-right: 1.2rem;
      visibility: visible !important;
      opacity: 1 !important;
-     /* Additional fixes for icon display */
-     transform: none !important;
-     backface-visibility: visible !important;
-     -webkit-backface-visibility: visible !important;
      font-family:
           "Font Awesome 6 Free", "Font Awesome 6 Brands", FontAwesome,
           sans-serif !important;
-     will-change: auto !important;
-     content: attr(data-icon) !important;
-     /* Modern replacement for speak: none */
-     speak: never !important;
 }
 
 .topic-name {
-     font-size: 1.1rem;
+     font-size: 0.85rem !important;
      font-weight: 600;
      margin: 0;
+     padding: 0;
      letter-spacing: 0.01em;
-     color: var(--color-text);
+     line-height: 1.2;
+     display: flex;
+     align-items: center;
+}
+
+.topic-card {
+     /* Use card-base in HTML */
+     background: var(--bg-light);
+     padding: 0.65rem 1.25rem;
+     gap: 0.5rem;
+     height: auto;
+     min-height: 3rem;
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-start;
+     align-items: center;
+     text-align: left;
+     width: 100%;
+     border: 1px solid var(--color-border);
+     border-radius: 4px;
+}
+
+.topic-card:hover {
+     background: var(--bg-medium);
+     border-color: var(--color-primary);
+     box-shadow: var(--shadow-sm);
 }
 
 .topic-card:hover .topic-name {
      color: var(--color-primary);
 }
 
+/* Icon fallback */
+.icon-fallback {
+     display: none;
+     /* Hide by default, shown via JS when FA fails */
+}
+
+/* Topics grid */
+.topics-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 1.75rem;
+     padding: 1.75rem 0;
+     width: 100%;
+     max-width: 100%;
+     margin: 0;
+     justify-content: start;
+}
+
+/* Topics container */
+.topics-container {
+     width: 100%;
+     max-width: 1200px;
+     margin-left: 0;
+     box-sizing: border-box;
+}
+
+/* Post/Blog entries */
+.post-entry {
+     margin-bottom: 1.5rem;
+     padding-bottom: 0;
+     display: flex;
+     flex-direction: column;
+}
+
+.post-entry-header {
+     display: flex;
+     align-items: baseline;
+     justify-content: space-between;
+     width: 100%;
+     position: relative;
+}
+
+.post-entry-header::after {
+     content: none;
+}
+
+.post-entry-title {
+     font-weight: 600;
+     font-size: 1.1rem;
+     margin: 0;
+     padding-right: 0;
+     position: relative;
+     z-index: 2;
+     display: inline-block;
+     color: var(--red-dark);
+}
+
+.post-entry-title a {
+     color: var(--red-dark);
+     text-decoration: none;
+     border-bottom: none;
+}
+
+.post-entry-title a:hover {
+     text-decoration: none;
+     color: var(--red-darker);
+     border-bottom: none;
+}
+
+.post-entry time {
+     font-size: 0.9rem;
+     color: var(--color-text);
+     padding-left: 0;
+     position: relative;
+     z-index: 2;
+     white-space: nowrap;
+     opacity: 0.7;
+     text-align: right;
+}
+
+.post-entry-tagline {
+     margin-top: 0.4rem;
+     color: var(--color-text);
+     font-size: 0.95rem;
+     text-align: left;
+     margin-left: 0;
+     margin-right: auto;
+     padding-left: 0;
+     max-width: 100%;
+     width: 100%;
+     display: block;
+     text-indent: 0;
+     opacity: 0.7;
+}
+
+.post-entry:last-child {
+     margin-bottom: 0;
+}
+
+/* Log section */
+.daily-log {
+     padding: 1rem 0 3rem;
+     margin: 2rem auto;
+     max-width: 800px;
+}
+
+#log-heading {
+     color: var(--red-dark);
+     font-size: 2rem;
+     font-weight: 700;
+     margin-bottom: 2rem;
+     font-family: "Saira", sans-serif;
+     text-align: left;
+     margin-left: 0;
+     padding-left: 0;
+     display: block;
+     width: 100%;
+     max-width: 100%;
+}
+
+/*------------------------------------*\
+  #PAGE-SPECIFIC-COMPONENTS
+\*------------------------------------*/
 /* Location Components */
 .states-list {
      display: grid;
@@ -491,22 +865,6 @@ hr {
      max-width: 600px;
      width: 100%;
      padding: 0;
-}
-
-/* NEW - Consolidated Location Link Base */
-.location-link-base {
-     display: block;
-     color: var(--color-text);
-     text-decoration: none;
-     transition: all 0.1s ease;
-     padding: 0.25rem 0.5rem;
-     opacity: 0.85;
-}
-
-.location-link-base:hover {
-     opacity: 1;
-     color: var(--color-primary);
-     text-decoration: none;
 }
 
 .state-link {
@@ -520,485 +878,6 @@ hr {
 .state-link:hover {
      background: var(--bg-medium);
      border: 1px solid var(--color-primary);
-}
-
-.sidebar-motto {
-     padding: 2rem 1.5rem 0;
-     font-size: 0.85rem;
-     color: var(--color-text);
-     opacity: 0.8;
-     text-align: left;
-     line-height: 1.4;
-}
-
-/* ------------------------------ Responsive Design ------------------------------------------ */
-
-@media (max-width: var(--breakpoint-xxl)) {
-     .content {
-          max-width: 1000px;
-          margin: 0 auto;
-          margin-left: calc(var(--sidebar-width) + 4rem) !important;
-     }
-}
-
-@media (max-width: var(--breakpoint-xl)) {
-     .content {
-          max-width: 900px;
-          margin: 0 1rem;
-          margin-left: calc(var(--sidebar-width) + 4rem) !important;
-     }
-}
-
-@media (max-width: var(--breakpoint-lg)) {
-     .layout {
-          flex-direction: column;
-     }
-
-     h1 {
-          font-size: 2.2rem;
-     }
-
-     .content {
-          margin-left: 0 !important;
-     }
-
-     #sidebar {
-          transform: translateX(-100%);
-     }
-
-     #sidebar.active {
-          transform: translateX(0);
-     }
-
-     .mobile-menu-button {
-          display: flex;
-     }
-
-     .topics-grid {
-          grid-template-columns: repeat(2, 1fr);
-     }
-
-     body {
-          padding-top: 0;
-     }
-
-     .nav-link {
-          padding: 0.85rem 1.5rem;
-     }
-
-     .city-link {
-          padding: 0.4rem;
-     }
-
-     .nav-group-title {
-          padding: 0.85rem 1.5rem;
-     }
-
-     /* Ensure sidebar header maintains proper layout on mobile */
-     .sidebar-header {
-          flex-direction: row;
-          align-items: center;
-          gap: 0.75rem;
-     }
-
-     /* Keep consistent h1 size and positioning on mobile */
-     .sidebar-header h1 {
-          margin: 0;
-          padding: 0;
-          font-size: 1.4rem;
-     }
-
-     /* Specifically ensure location page sidebar header is consistent on mobile */
-     .location-page .sidebar-header {
-          flex-direction: row;
-          align-items: center;
-          gap: 0.75rem;
-     }
-
-     .location-page .sidebar-header h1 {
-          margin: 0;
-          padding: 0;
-          font-size: 1.4rem;
-     }
-}
-
-@media (max-width: 768px) {
-     .states-list {
-          max-width: 100%;
-          padding: 0 1rem;
-          margin: 1rem 0;
-          width: 100%;
-          grid-template-columns: 1fr;
-          box-sizing: border-box;
-          display: flex;
-          flex-direction: column;
-     }
-
-     .state-link {
-          padding: 0.75rem 1rem;
-          margin-bottom: 0.5rem;
-          background-color: var(--bg-light);
-          border: 1px solid var(--color-border);
-          width: 100%;
-          box-sizing: border-box;
-          text-align: left;
-          display: block;
-          margin-left: 0;
-          margin-right: 0;
-          border-radius: 4px;
-     }
-
-     .location-page .content h2 {
-          padding-left: 3.75rem !important; /* Space for menu button */
-          text-align: left !important;
-          margin: 1rem 0 1.5rem 0 !important;
-          max-width: 100% !important;
-          width: 100% !important;
-     }
-
-     .cities-list {
-          grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-     }
-
-     .location-header h1 {
-          font-size: 2rem;
-     }
-
-     body.menu-open {
-          overflow: hidden;
-     }
-
-     /* Increase font sizes for mobile */
-     body {
-          font-size: var(--mobile-font-size);
-     }
-
-     p {
-          font-size: 1.1rem !important;
-          line-height: 1.6;
-     }
-
-     li {
-          font-size: 1.1rem !important;
-     }
-
-     a,
-     .nav-link,
-     .city-link,
-     .state-link {
-          font-size: 1.1rem !important;
-     }
-
-     h1 {
-          font-size: 2rem !important;
-          line-height: 1.2;
-     }
-
-     h2 {
-          font-size: 1.6rem !important;
-          line-height: 1.3;
-     }
-
-     h3 {
-          font-size: 1.4rem !important;
-          line-height: 1.3;
-     }
-
-     .sidebar-motto {
-          font-size: 0.95rem !important;
-     }
-
-     .post-entry-title {
-          font-size: 1.2rem !important;
-     }
-
-     .post-entry time {
-          font-size: 1rem !important;
-     }
-
-     .post-entry-tagline {
-          font-size: 1.05rem !important;
-     }
-
-     .nav-group-title {
-          font-size: 1.05rem !important;
-     }
-
-     .toc {
-          font-size: 1rem !important;
-     }
-
-     .toc-link {
-          font-size: 1.05rem !important;
-     }
-
-     .initiative p {
-          font-size: 1.1rem !important;
-     }
-
-     .breadcrumb {
-          font-size: 1.05rem !important;
-     }
-
-     .stat-label {
-          font-size: 1.1rem !important;
-     }
-
-     .button-text {
-          font-size: 1.1rem !important;
-     }
-
-     /* Enhance touch targets for interactive elements */
-     a,
-     button,
-     .nav-link,
-     .city-link,
-     .state-link {
-          min-height: 44px; /* Apple's recommended minimum touch target size */
-          min-width: 44px;
-          display: inline-flex; /* Use flex to maintain alignment while ensuring minimum size */
-          align-items: center;
-     }
-
-     /* Adjust spacing for touch interfaces */
-     .nav-link,
-     .city-link,
-     .state-link {
-          padding: 0.8rem 1rem; /* Slightly larger padding for touch */
-     }
-
-     /* Ensure content doesn't shift right */
-     .content {
-          padding: 1rem !important;
-          margin-left: 0 !important;
-          width: 100%;
-          box-sizing: border-box;
-     }
-
-     /* Ensure main h2 aligns properly */
-     h2 {
-          width: 100%;
-          box-sizing: border-box;
-     }
-
-     /* State page specific mobile fixes */
-     .location-page .content {
-          padding: 1rem !important;
-          margin: 0 !important;
-          max-width: 100% !important;
-          width: 100% !important;
-          box-sizing: border-box !important;
-     }
-
-     .location-page h2 {
-          padding-left: 3.25rem !important;
-          text-indent: 0 !important;
-          font-size: 1.5rem !important;
-          text-align: left !important;
-     }
-
-     .content h2 {
-          padding-left: 0;
-          text-indent: 0; /* Remove text-indent */
-          font-size: 1.6rem !important;
-     }
-
-     /* Improve state list layout on mobile */
-     .states-list {
-          box-sizing: border-box !important;
-          width: 100% !important;
-          padding: 0 !important;
-          margin: 0 !important;
-     }
-
-     /* Location page main header left alignment */
-     .location-page h2 {
-          text-align: left !important;
-          padding-left: 3.75rem !important;
-          text-indent: 0 !important;
-          margin: 1rem 0 1.5rem 0 !important;
-          max-width: 100% !important;
-          width: 100% !important;
-          box-sizing: border-box !important;
-     }
-
-     /* Update topics grid to single column on mobile */
-     .topics-grid,
-     .topics-page .topics-grid {
-          grid-template-columns: 1fr !important; /* Single column for mobile */
-          gap: 0.5rem !important;
-          padding: 1rem 0 !important;
-     }
-
-     /* Style topic cards similar to state-link on location page */
-     .topics-page .topics-grid .topic-card,
-     .topic-card {
-          padding: 0.75rem 1rem !important;
-          margin-bottom: 0.5rem !important;
-          background-color: var(--bg-light) !important;
-          border: 1px solid var(--color-border) !important;
-          width: 100% !important;
-          box-sizing: border-box !important;
-          text-align: left !important;
-          display: flex !important;
-          align-items: center !important;
-          min-height: auto !important;
-          border-radius: 4px !important;
-     }
-}
-
-@media (max-width: 480px) {
-     h1 {
-          font-size: 2rem;
-          line-height: 1.2;
-     }
-
-     h2 {
-          font-size: 1.6rem;
-     }
-
-     .content {
-          padding: 1rem 0.75rem !important;
-          width: 100%;
-          box-sizing: border-box;
-     }
-
-     .topic-card {
-          padding: 0.5rem 0.85rem;
-          min-height: 2.5rem;
-     }
-
-     .states-list {
-          padding: 0 0.75rem;
-     }
-
-     .cities-list {
-          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-          gap: 0.75rem;
-     }
-
-     .cities-category {
-          margin-bottom: 1.5rem;
-     }
-
-     .location-header h1 {
-          font-size: 1.8rem;
-     }
-
-     .location-header p {
-          font-size: 1.05rem;
-     }
-
-     aside {
-          margin: 1.5rem 0;
-     }
-
-     /* Additional font size increases for smallest screens */
-     .stat-number {
-          font-size: 2.8rem;
-     }
-
-     .stat-label {
-          font-size: 1.1rem;
-     }
-
-     .find-groups-button {
-          font-size: 1.1rem;
-          padding: 0.8rem !important;
-          width: 100%;
-     }
-
-     .button-text {
-          font-size: 1.15rem;
-     }
-
-     .nav-group-title {
-          font-size: 1.05rem;
-     }
-
-     .cities-category-title {
-          font-size: 1.15rem;
-     }
-
-     /* Keep only one clean rule for location page h2 */
-     .location-page h2 {
-          padding-left: 3.25rem !important;
-          text-indent: 0 !important;
-          font-size: 1.5rem !important;
-          text-align: left !important;
-     }
-
-     /* Optimizations for very small screens */
-     button,
-     .btn,
-     .nav-link,
-     .find-groups-button,
-     .state-link,
-     .city-link {
-          padding: 0.8rem !important;
-     }
-
-     /* Ensure inputs are large enough to be easily tapped */
-     input,
-     select,
-     textarea {
-          font-size: 1rem !important;
-          padding: 0.7rem !important;
-     }
-
-     /* Increase spacing between list items */
-     li {
-          margin-bottom: 0.5rem;
-     }
-
-     /* Prevent text from being too small in form elements */
-     .form-group label {
-          font-size: 1.05rem !important;
-     }
-
-     /* Fix for buttons container */
-     .buttons-container {
-          flex-direction: column;
-     }
-
-     .content h2 {
-          padding-left: 0;
-          text-indent: 0; /* Remove text-indent */
-          font-size: 1.6rem !important;
-     }
-
-     /* Additional fixes for very small screens */
-     .location-page h2 {
-          padding-left: 3.25rem !important;
-          font-size: 1.5rem !important;
-     }
-
-     .location-page .content {
-          padding: 0.75rem !important;
-     }
-
-     /* Consistent sidebar header on smallest screens */
-     .sidebar-header {
-          flex-direction: row;
-          align-items: center;
-          gap: 0.75rem;
-          padding: 0 1rem;
-     }
-
-     .sidebar-header h1 {
-          font-size: 1.2rem;
-     }
-
-     /* Ensure location page has same sidebar header styling */
-     .location-page .sidebar-header {
-          flex-direction: row;
-          align-items: center;
-          gap: 0.75rem;
-     }
-
-     .location-page .sidebar-header h1 {
-          font-size: 1.2rem;
-     }
 }
 
 .cities-section {
@@ -1029,13 +908,6 @@ hr {
      text-decoration: underline;
      text-decoration-color: var(--color-primary);
      border-bottom: none;
-}
-
-@media (max-width: 1020px) {
-     .cities-list {
-          grid-template-columns: repeat(3, 1fr);
-          gap: 0.75rem;
-     }
 }
 
 .cities-section h2 {
@@ -1094,7 +966,7 @@ hr {
      font-size: 0.85em;
 }
 
-/* Adjust content width to accommodate TOC */
+/* City and Location page specific */
 .city-page {
      width: 100%;
      max-width: 1200px;
@@ -1103,33 +975,7 @@ hr {
      will-change: auto;
 }
 
-@media (max-width: 1020px) {
-     .toc {
-          float: none;
-          width: 100%;
-          margin: 2rem 0;
-     }
-
-     .city-page {
-          width: 100%;
-          margin: 0;
-     }
-}
-
-.content h2 {
-     max-width: 600px;
-     margin: 0 auto;
-     padding: 0;
-     text-indent: 0; /* Ensure no text-indent is applied globally */
-}
-
-.content .page-header {
-     display: none;
-}
-
-/* SIMPLIFIED STATE PAGE STYLING */
-
-/* Base section styling - Appropriate combination */
+/* State page styling */
 .state-page section {
      border: none;
      border-radius: 0;
@@ -1139,13 +985,12 @@ hr {
      overflow: visible;
      padding: 0;
      position: relative;
-     display: block !important;
-     width: 100% !important;
-     clear: both !important;
-     float: none !important;
+     display: block;
+     width: 100%;
+     clear: both;
+     float: none;
 }
 
-/* Cities list styling - Keep boxed style */
 .state-page .cities-list {
      border: 1px solid var(--color-border);
      border-radius: 4px;
@@ -1155,101 +1000,40 @@ hr {
      padding: 0;
      margin: 0 0 1.5rem 0;
      position: relative;
-     display: block !important;
-     width: 100% !important;
-     clear: both !important;
-     float: none !important;
+     display: block;
+     width: 100%;
+     clear: both;
+     float: none;
 }
 
-/* Header styling - Different for cities and orgs */
 .state-page .cities-list > h2 {
-     /* Reset margin and padding */
-     margin: 0 !important;
-     padding: 0.6rem 1.5rem !important;
-
-     /* Ensure full width */
-     width: 100% !important;
-     max-width: none !important;
-
-     /* Fix display properties */
-     display: block !important;
-     float: none !important;
-     position: static !important;
-     box-sizing: border-box !important;
-
-     /* Position fixes */
-     left: 0 !important;
-     right: 0 !important;
-     top: 0 !important;
-
-     /* Critical fixes for layout */
-     clear: both !important;
-     text-align: left !important;
-
-     /* Visual style - Boxed style for cities */
-     background-color: var(--bg-medium) !important;
-     color: var(--color-heading) !important;
-     font-size: 1.1rem !important;
-     font-weight: 500 !important;
-     letter-spacing: 0.01em !important;
-     text-transform: none !important;
-     text-shadow: none !important;
-     border-bottom: 1px solid var(--color-border) !important;
-
-     /* Borders */
-     border-radius: 0 !important;
-     border-top-left-radius: 4px !important;
-     border-top-right-radius: 4px !important;
-
-     /* Shadows */
-     box-shadow: none !important;
-}
-
-/* Community support section styling - Simple unboxed */
-.state-page section:not(.cities-list-container) {
-     border: none;
+     margin: 0;
+     padding: 0.6rem 1.5rem;
+     width: 100%;
+     max-width: none;
+     display: block;
+     float: none;
+     position: static;
+     box-sizing: border-box;
+     left: 0;
+     right: 0;
+     top: 0;
+     clear: both;
+     text-align: left;
+     background-color: var(--bg-medium);
+     color: var(--color-heading);
+     font-size: 1.1rem;
+     font-weight: 500;
+     letter-spacing: 0.01em;
+     text-transform: none;
+     border-bottom: 1px solid var(--color-border);
      border-radius: 0;
-     background: transparent;
+     border-top-left-radius: 4px;
+     border-top-right-radius: 4px;
      box-shadow: none;
-     overflow: visible;
-     margin-bottom: 1.5rem;
-     padding: 0;
 }
 
-/* Fix the Community Support header to match - Simple style */
-.state-page section:not(.cities-list-container) > h2 {
-     background-color: transparent !important;
-     color: var(--color-heading) !important;
-     text-shadow: none !important;
-     border-bottom: none !important;
-     box-shadow: none !important;
-     font-size: 1.1rem !important;
-     font-weight: 600 !important;
-     margin: 0 0 1rem 0 !important;
-     border-radius: 0 !important;
-     padding: 0.6rem 0 !important;
-
-     /* Ensure full width */
-     width: 100% !important;
-     max-width: none !important;
-
-     /* Fix display properties */
-     display: block !important;
-     float: none !important;
-     position: static !important;
-     box-sizing: border-box !important;
-
-     /* Position fixes */
-     left: 0 !important;
-     right: 0 !important;
-     top: 0 !important;
-
-     /* Critical fixes for layout */
-     clear: both !important;
-     text-align: left !important;
-}
-
-/* Content containers */
+/* City links container */
 .state-page .city-links-container {
      display: grid;
      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -1257,58 +1041,6 @@ hr {
      margin: 1.5rem 0 2rem;
      will-change: auto;
      contain: layout;
-}
-
-/* Initiative styling - simple unboxed style */
-.state-page .initiative {
-     padding: 0.6rem 0 !important;
-     margin-bottom: 0;
-     display: block !important;
-     width: 100% !important;
-     box-sizing: border-box !important;
-     clear: both !important;
-     position: static !important;
-     float: none !important;
-     background: transparent;
-     padding-bottom: 0.6rem !important;
-}
-
-/* Initiative first child styling */
-.state-page .initiative:first-child {
-     padding-top: 0.4rem !important;
-}
-
-/* Responsive styles - adjusted for the combination */
-@media (max-width: 1020px) {
-     .state-page .cities-list > h2 {
-          padding: 0.6rem 1.25rem !important;
-     }
-
-     .state-page section:not(.cities-list-container) > h2 {
-          padding: 0.6rem 0 !important;
-     }
-
-     .state-page .city-links-container {
-          grid-template-columns: repeat(3, 1fr) !important;
-          padding: 0.75rem 1.25rem;
-     }
-}
-
-@media (max-width: 768px) {
-     .state-page .cities-list > h2 {
-          padding: 0.5rem 1rem !important;
-          font-size: 1.1rem !important;
-     }
-
-     .state-page section:not(.cities-list-container) > h2 {
-          padding: 0.5rem 0 !important;
-          font-size: 1.1rem !important;
-     }
-
-     .state-page .city-links-container {
-          grid-template-columns: repeat(2, 1fr) !important;
-          padding: 0.75rem 1rem;
-     }
 }
 
 /* Breadcrumb navigation */
@@ -1327,7 +1059,6 @@ hr {
 
 .breadcrumb a:hover {
      color: var(--color-link-hover);
-     /* text-decoration: underline; */
 }
 
 .breadcrumb span {
@@ -1337,662 +1068,56 @@ hr {
 
 /* Initiative styles */
 .initiative {
-     margin-bottom: 1.8rem !important;
-     padding-bottom: 0.3rem;
+     margin-bottom: 1.5rem;
+     padding-bottom: 0.5rem;
+     display: flex;
+     flex-direction: column;
+     position: relative;
 }
 
 .initiative:last-child {
      margin-bottom: 0;
 }
 
-.initiative h3,
-.initiative a {
+.initiative h3 {
+     font-size: 1.15rem;
      font-weight: 700;
      color: var(--color-heading);
+     margin-bottom: 0.3rem;
+     padding-right: 100px;
+}
+
+.initiative a {
+     font-size: 1.15rem;
+     font-weight: 700;
+     color: var(--color-heading);
+     border-bottom: none;
+     margin-bottom: 0.3rem;
+     text-decoration: none;
+     padding-right: 100px;
 }
 
 .initiative a:hover {
      color: var(--color-primary);
-     border-color: var(--color-primary);
-}
-
-.initiative a {
-     font-weight: 700;
-     color: var(--color-heading);
-     position: relative;
-     padding-right: 1.5em;
-}
-
-.initiative a::after {
-     content: "→";
-     position: absolute;
-     right: 0.2em;
-     opacity: 0;
-     transform: translateX(-8px);
-     transition: all 0.2s ease;
-}
-
-.initiative a:hover::after {
-     opacity: 1;
-     transform: translateX(0);
-}
-
-/* ======================================
-   Custom Styles from index.html
-   ====================================== */
-
-/* Prevent sidebar header and h1 from being highlighted */
-.sidebar-header,
-.sidebar-header h1 {
-     background-color: transparent;
-     background: transparent;
-     display: flex;
-     flex-direction: row;
-     align-items: center;
-     justify-content: flex-start;
-     gap: 0.75rem; /* Ensure consistent spacing between logo and heading */
-}
-
-/* Style for the site-logo to position it properly next to the heading */
-.site-logo {
-     margin-right: 0;
-     margin-bottom: 0;
-     margin-left: 0;
-     margin-top: 0;
-}
-
-/* Explicitly style the h1 link to prevent any highlighting */
-.sidebar-header h1 {
-     margin: 0;
-     padding: 0;
-     /* Remove padding-left that was causing inconsistency */
-     text-align: left;
-     font-size: 1.6rem;
-     line-height: 1.2;
-     display: flex;
-     align-items: center;
-     /* Ensure consistent font weight */
-     font-weight: 700;
-}
-
-.sidebar-header h1 a,
-.sidebar-header h1 a:link,
-.sidebar-header h1 a:visited,
-.sidebar-header h1 a:hover,
-.sidebar-header h1 a:active,
-.sidebar-header h1 a.home-link {
-     text-decoration: none;
-     color: inherit;
-     background-color: transparent;
+     border-color: transparent;
      border-bottom: none;
-     box-shadow: none;
-     font-weight: inherit;
-     margin: 0;
-     padding: 0;
 }
 
-/* Make Home link active by default */
-.sidebar a[href="/"].nav-link {
-     background-color: var(--color-white, #ffffff);
-     color: var(--color-primary, #a30000);
-     font-weight: 600;
-}
-
-/* Explicitly reset Find a group styling on homepage to match other non-highlighted items */
-.sidebar .nav-group-title {
-     background-color: transparent;
-     color: inherit;
-     font-weight: 600;
-     opacity: 1;
-}
-
-/* Ensure Log heading is left-aligned */
-#log-heading {
-     text-align: left;
-     margin-left: 0;
-     padding-left: 0;
-     display: block;
-     width: 100%;
-     max-width: 100%;
-     margin-bottom: 2rem;
-}
-
-.daily-log {
-     padding: 2rem 0;
-     margin-top: 2rem;
-}
-
-/* Find Groups Buttons Section */
-.find-groups-buttons {
-     margin: 1rem 0 3rem;
-}
-
-.buttons-container {
-     display: flex;
-     flex-direction: row;
-     gap: 1rem;
-     max-width: 800px;
-     margin: 0 auto;
-}
-
-.find-groups-button {
-     /* Use the btn-base class directly in HTML instead of composes */
-     background-color: var(--color-primary);
-     color: white;
-     border: 1px solid var(--color-primary);
-     padding: 1.25rem 1rem;
-     font-size: 1.1rem;
-     border-radius: 8px;
-     width: auto;
-}
-
-.find-groups-button:hover {
-     background-color: var(--color-primary-dark);
-     color: white;
-     border-color: var(--color-primary-dark);
-     text-decoration: none;
-}
-
-.button-text {
-     font-size: 1.3rem;
-     font-weight: 700;
-}
-
-@media (max-width: 768px) {
-     .find-groups-button {
-          padding: 1rem;
-     }
-
-     .button-text {
-          font-size: 1.1rem;
-     }
-}
-
-@media (max-width: 480px) {
-     .buttons-container {
-          flex-direction: column;
-     }
-
-     .find-groups-button {
-          width: 100%;
-          padding: 0.85rem 1rem;
-     }
-
-     .button-text {
-          font-size: 1rem;
-     }
-}
-
-/* Initiative Statistics Section */
-.initiative-stats {
-     background-color: var(--bg-medium);
-     border-radius: 8px;
-     padding: 2rem;
-     margin: 2rem 0 3rem;
-     box-shadow: var(--shadow-sm);
-     text-align: center;
-}
-
-.stats-container {
-     display: flex;
-     justify-content: space-around;
-     flex-wrap: wrap;
-     gap: 2rem;
-     margin: 1.5rem 0;
-}
-
-.stat-item {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-}
-
-.stat-number {
-     font-size: 3rem;
-     font-weight: 800;
-     color: var(--color-primary);
-     line-height: 1.1;
-     margin-bottom: 0.5rem;
-}
-
-.stat-label {
-     font-size: 1.2rem;
-     font-weight: 600;
-     color: var(--color-text);
-     text-transform: uppercase;
-     letter-spacing: 0.05em;
-}
-
-.stats-description {
-     font-size: 1.1rem;
-     max-width: 600px;
-     margin: 1rem auto 0;
-     color: var(--color-text);
-}
-
-@media (max-width: 768px) {
-     .stats-container {
-          gap: 1.5rem;
-     }
-
-     .stat-number {
-          font-size: 2.5rem;
-     }
-
-     .stat-label {
-          font-size: 1rem;
-     }
-}
-
-@media (max-width: 480px) {
-     .initiative-stats {
-          padding: 1.5rem;
-     }
-
-     .stats-container {
-          flex-direction: column;
-          gap: 1rem;
-     }
-
-     .stat-item {
-          width: 100%;
-     }
-}
-
-/* Style log entries like the example */
-.post-entry {
-     margin-bottom: 2.5rem;
-     padding-bottom: 0;
-     display: flex;
-     flex-direction: column;
-}
-
-.post-entry-header {
-     display: flex;
-     align-items: baseline;
-     justify-content: space-between;
-     width: 100%;
-     position: relative;
-}
-
-.post-entry-header::after {
-     content: "";
+.initiative time {
      position: absolute;
-     top: 0.8em;
-     left: 0;
      right: 0;
-     height: 1px;
-     border-bottom: 1px dotted var(--color-border, #ccc);
-     z-index: 1;
-}
-
-.post-entry-title {
-     font-weight: 600;
-     font-size: 1.1rem;
-     margin: 0;
-     padding-right: 8px;
-     background-color: var(--color-white);
-     position: relative;
-     z-index: 2;
-     display: inline-block;
-}
-
-.post-entry-title a {
-     color: #8b0000;
-     text-decoration: none;
-}
-
-.post-entry-title a:hover {
-     text-decoration: underline;
-}
-
-.post-entry time {
-     font-size: 0.9rem;
-     color: var(--color-text);
-     padding-left: 8px;
-     background-color: var(--color-white);
-     position: relative;
-     z-index: 2;
-     white-space: nowrap;
-     opacity: 0.7;
-}
-
-.post-entry-tagline {
-     margin-top: 0.4rem;
-     color: var(--color-text);
-     font-size: 0.95rem;
-     text-align: left;
-     margin-left: 0;
-     margin-right: auto;
-     padding-left: 0;
-     max-width: 100%;
-     width: 100%;
-     display: block;
-     text-indent: 0;
-     opacity: 0.7;
-}
-
-.post-entry:last-child {
-     margin-bottom: 0;
-}
-
-/* All headings should be left-aligned by default */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-     text-align: left;
-}
-
-/* Ensure all text in post entries is left-aligned */
-.post-entry,
-.post-entry * {
-     text-align: left;
-}
-
-/* Override any center alignment for paragraphs */
-.post-entry p {
-     text-align: left;
-     margin-left: 0;
-     padding-left: 0;
-}
-
-/* ======================================
-   Classes for JavaScript Manipulation
-   ====================================== */
-
-/* Classes for reset styles through JS */
-.reset-nav-group {
-     background-color: transparent;
-     color: inherit;
-     font-weight: 600;
-     opacity: 1;
-}
-
-.reset-header {
-     background-color: transparent;
-}
-
-.reset-header-link {
-     background-color: transparent;
-     color: inherit;
-     text-decoration: none;
-     border-bottom: none;
-}
-
-/* Topics Page Styles */
-/* Main layout adjustments for topics page */
-.topics-page .content {
-     display: block !important;
-     text-align: left !important;
-     width: 100%;
-     box-sizing: border-box;
-     padding: 2rem !important;
-}
-
-/* Force left alignment for the h1 on topics page */
-.topics-page .content h1 {
-     text-align: left !important;
-     margin-left: 0 !important;
-     margin-right: auto !important;
-     width: auto !important;
-     max-width: 100% !important;
-     margin-bottom: 1.5rem !important;
-     font-size: 2.5rem !important;
-     color: var(--color-primary) !important;
-}
-
-/* Topics container */
-.topics-container {
-     width: 100%;
-     max-width: 1200px;
-     margin-left: 0;
-     box-sizing: border-box;
-}
-
-/* Grid takes up horizontal space */
-.topics-grid {
-     /* CONSOLIDATED: This combines styles from multiple .topics-grid definitions */
-     display: grid;
-     /* For the topics page we use fixed columns, but the responsive version 
-        below includes the auto-fill approach for smaller screens */
-     grid-template-columns: repeat(3, 1fr);
-     gap: 1.75rem;
-     padding: 1.75rem 0;
-     width: 100%;
-     max-width: 100%;
-     margin: 0;
-     justify-content: start;
-}
-
-/* Smaller topic text - fix vertical alignment */
-.topic-name {
-     font-size: 0.85rem !important;
-     font-weight: 600;
-     margin: 0;
-     padding: 0;
-     letter-spacing: 0.01em;
-     line-height: 1.2;
-     display: flex;
-     align-items: center;
-}
-
-/* Ensure icons are displayed correctly */
-.topic-icon {
-     font-size: 1.8rem;
-     color: var(--color-primary);
-     height: 1.8rem;
-     width: 1.8rem;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     flex-shrink: 0;
-     margin-right: 1.25rem;
-     /* Fix for icon display */
-     text-align: center;
-     min-width: 1.8rem;
-     /* Ensure icons are visible even when Font Awesome fails */
-     visibility: visible !important;
-     opacity: 1 !important;
-     /* Additional fixes for icon display */
-     transform: none !important;
-     backface-visibility: visible !important;
-     -webkit-backface-visibility: visible !important;
-     font-family:
-          "Font Awesome 6 Free", "Font Awesome 6 Brands", FontAwesome,
-          sans-serif !important;
-     will-change: auto !important;
-     content: attr(data-icon) !important;
-     /* Modern replacement for speak: none */
-     speak: never !important;
-}
-
-/* Topic cards adjustments - much wider cards */
-.topic-card {
-     /* Use card-base in HTML instead of duplicating these styles */
-     background: var(--bg-light);
-     padding: 0.65rem 1.25rem;
-     gap: 0.5rem;
-     border-width: 1px;
-     height: auto;
-     min-height: 3rem;
-     transition: all 0.2s ease;
-     display: flex;
-     flex-direction: row;
-     justify-content: flex-start;
-     align-items: center;
-     text-align: left;
-     width: 100%;
-     border: 1px solid var(--color-border);
-     border-radius: 4px;
-}
-
-.topic-card:hover {
-     background: var(--bg-medium);
-     border-color: var(--color-primary);
-     box-shadow: var(--shadow-sm);
-}
-
-/* Fix the alignment of the text and icon */
-.topic-card h2 {
-     margin: 0;
-     padding: 0;
-}
-
-/* Reset spacing for the icon cards */
-.topics-grid .topic-card .topic-icon {
-     margin-bottom: 0;
-     position: relative;
      top: 0;
-     margin-right: 1.2rem;
-     font-size: 1.4rem !important;
-     min-width: 1.4rem !important;
-     height: 1.4rem !important;
-     width: 1.4rem !important;
+     color: #666;
+     font-size: 0.9rem;
+}
+
+.initiative p {
+     margin: 0.3rem 0 0 0;
      padding: 0;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     flex-shrink: 0;
-     border-radius: 4px;
+     color: #666;
 }
 
-/* Add global override for topic icons */
-.topic-icon {
-     font-size: 1.4rem !important;
-     height: 1.4rem !important;
-     width: 1.4rem !important;
-     min-width: 1.4rem !important;
-     display: flex !important;
-     align-items: center !important;
-     justify-content: center !important;
-     text-align: center !important;
-}
-
-/* Make "by topic" link active by default on topics page */
-.topics-page .sidebar a[href="/topics"].nav-link {
-     background-color: var(--color-white, #ffffff) !important;
-     color: var(--color-primary, #a30000) !important;
-     font-weight: 600 !important;
-}
-
-/* Reduce prominence of "Find a group" heading when topics is active */
-.topics-page .sidebar .nav-group-title {
-     font-weight: 400 !important;
-     opacity: 0.7 !important;
-}
-
-/* Style for icon fallbacks */
-.icon-fallback {
-     display: none;
-     /* Hide by default, shown via JS when FA fails */
-}
-
-/* Responsive adjustments for topics page */
-@media (max-width: 768px) {
-     /* Topics page mobile styles */
-     .topics-page .content {
-          padding: 1.5rem !important;
-     }
-
-     /* Single column layout for topics - similar to location page */
-     .topics-page .topics-grid,
-     .topics-grid {
-          grid-template-columns: 1fr !important; /* Single column */
-          gap: 0.5rem !important;
-          padding: 1rem 0 !important;
-     }
-
-     /* Style topic cards like state links */
-     .topics-page .topics-grid .topic-card,
-     .topic-card {
-          padding: 0.75rem 1rem !important;
-          margin-bottom: 0.5rem !important;
-          background-color: var(--bg-light) !important;
-          border: 1px solid var(--color-border) !important;
-          width: 100% !important;
-          box-sizing: border-box !important;
-          text-align: left !important;
-          display: flex !important;
-          align-items: center !important;
-          min-height: auto !important;
-          border-radius: 4px !important;
-     }
-
-     /* Title size adjustments */
-     .topics-page .content h1 {
-          font-size: 1.8rem !important;
-          margin-bottom: 1rem !important;
-          line-height: 1.1 !important;
-     }
-
-     /* Topic name and icon size adjustments */
-     .topics-page .topic-name,
-     .topic-name {
-          font-size: 1rem !important;
-          font-weight: 500 !important;
-          line-height: 1.2 !important;
-     }
-
-     .topics-page .topics-grid .topic-card .topic-icon,
-     .topics-page .topic-icon,
-     .topic-icon {
-          font-size: 1.1rem !important;
-          height: 1.1rem !important;
-          width: 1.1rem !important;
-          min-width: 1.1rem !important;
-          margin-right: 0.7rem !important;
-     }
-}
-
-@media (max-width: 480px) {
-     /* Smallest screen adjustments for topics page */
-     .topics-page .content {
-          padding: 1rem 0.75rem !important;
-     }
-
-     /* Maintain single column layout with adjusted spacing */
-     .topics-page .topics-grid,
-     .topics-grid {
-          gap: 0.4rem !important;
-          padding: 0.5rem 0 !important;
-     }
-
-     /* Smaller topic cards */
-     .topics-page .topics-grid .topic-card,
-     .topic-card {
-          padding: 0.65rem 0.85rem !important;
-          margin-bottom: 0.4rem !important;
-     }
-
-     /* Smaller title */
-     .topics-page .content h1 {
-          font-size: 1.6rem !important;
-          margin-bottom: 0.75rem !important;
-     }
-
-     /* Smaller text on cards */
-     .topics-page .topics-grid .topic-card .topic-name,
-     .topics-page .topic-name,
-     .topic-name {
-          font-size: 0.95rem !important;
-     }
-
-     /* Smaller icons */
-     .topics-page .topics-grid .topic-card .topic-icon,
-     .topics-page .topic-icon,
-     .topic-icon {
-          font-size: 1rem !important;
-          height: 1rem !important;
-          width: 1rem !important;
-          min-width: 1rem !important;
-          margin-right: 0.6rem !important;
-     }
-}
-
-/* Thank You Page Styles */
+/* Thank You Page */
 .thank-you-content {
      max-width: 600px;
      margin: 0 auto;
@@ -2028,7 +1153,7 @@ h6 {
 }
 
 .home-button {
-     /* Use the btn-base class directly in HTML instead of composes */
+     /* Use the btn-base class in HTML */
      background: var(--color-primary);
      color: white;
      border: none;
@@ -2040,71 +1165,19 @@ h6 {
      border-bottom: none;
 }
 
-/* Location Page Specific Styles */
-/* These styles were moved from inline styles in location.html */
-
-/* Make location link active by default on location page */
-.location-page .sidebar a[href="/location"].nav-link,
-.location-page .sidebar a[href="/location"].nav-link.active {
-     background-color: var(--color-white);
-     color: var(--color-primary);
-     font-weight: 600;
-}
-
-/* Reduce prominence of "Find a group" heading when location is active */
-.location-page .sidebar .nav-group-title {
-     font-weight: 400;
-     opacity: 0.7;
-}
-
-/* Ensure the sidebar header is not affected by active states */
-.location-page .sidebar-header,
-.location-page .sidebar-header h1 {
-     background-color: transparent;
-     /* Maintain the proper flexbox styling and gap consistently */
-     display: flex;
-     flex-direction: row;
-     align-items: center;
-     justify-content: flex-start;
-     gap: 0.75rem;
-     /* Fix the vertical alignment by ensuring no extra padding/margin */
-     margin-bottom: 1.5rem;
-     padding: 0 1.5rem;
-     margin-top: 0;
-     padding-top: 0;
-     padding-bottom: 0;
-}
-
-/* Explicitly style the h1 link to prevent any highlighting */
-.location-page .sidebar-header h1 a,
-.location-page .sidebar-header h1 a:link,
-.location-page .sidebar-header h1 a:visited,
-.location-page .sidebar-header h1 a:hover,
-.location-page .sidebar-header h1 a:active,
-.location-page .sidebar-header h1 a.home-link {
-     text-decoration: none;
-     color: inherit;
-     background-color: transparent;
-     border-bottom: none;
-     box-shadow: none;
-     font-weight: inherit;
-     /* Ensure no unexpected margins or padding */
-     margin: 0;
-     padding: 0;
-     line-height: 1.2;
-}
-
-/* Contact Form Styles */
+/* Contact Form */
 .contact-content {
      max-width: 600px;
      margin: 0 auto;
-     padding: 2rem;
+     padding: 1rem;
+     background: var(--bg-medium);
+     border-radius: 8px;
 }
 
 .contact-form {
      /* Use card-base in HTML */
      margin-top: 1rem;
-     background: var(--surface-color, #fff);
+     background: var(--color-white);
      padding: 2rem;
      border-radius: 8px;
      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -2113,7 +1186,7 @@ h6 {
 .alternative-contact {
      margin-bottom: 1rem;
      padding: 0.75rem;
-     background: var(--surface-color-alt, #ffd9d9);
+     background: var(--bg-light);
      border-radius: 4px;
      text-align: center;
 }
@@ -2139,7 +1212,7 @@ h6 {
      display: block;
      margin-top: 0.25rem;
      font-size: 0.85em;
-     color: var(--text-secondary, #666);
+     color: #666;
 }
 
 .form-group input,
@@ -2149,7 +1222,7 @@ h6 {
      padding: 0.75rem;
      border: 1px solid var(--color-border);
      border-radius: 4px;
-     background: var(--input-bg, #fff);
+     background: #fff;
      color: var(--color-text);
      font-family: "Inter", sans-serif;
      transition:
@@ -2171,7 +1244,7 @@ h6 {
 }
 
 .submit-button {
-     /* Use the btn-base class directly in HTML instead of composes */
+     /* Use the btn-base class in HTML */
      background: var(--color-primary);
      color: white;
      border: none;
@@ -2181,17 +1254,22 @@ h6 {
 }
 
 .submit-button:hover {
-     background: var(--color-primary-dark, #800000);
+     background: var(--red-darker);
 }
 
 .submit-button:active {
      transform: translateY(1px);
 }
 
+.submit-button:disabled {
+     opacity: 0.7;
+     cursor: not-allowed;
+}
+
 .contact-info {
      margin-top: 2rem;
      padding: 1rem;
-     background: var(--surface-color-alt, #ffd9d9);
+     background: var(--bg-light);
      border-radius: 8px;
 }
 
@@ -2229,6 +1307,14 @@ h6 {
      animation: fadeIn 0.3s ease-in-out;
 }
 
+/* Hide honeypot field */
+.hidden {
+     display: none !important;
+     visibility: hidden !important;
+     position: absolute !important;
+     left: -9999px !important;
+}
+
 /* Animation for fade-in effects */
 @keyframes fadeIn {
      from {
@@ -2239,22 +1325,462 @@ h6 {
      }
 }
 
-/* Prevent multiple submissions */
-.submit-button:disabled {
+/*------------------------------------*\
+  #PAGE-SPECIFIC-STYLES
+\*------------------------------------*/
+/* Topics Page */
+.topics-page .content {
+     display: block;
+     text-align: left;
+     width: 100%;
+     box-sizing: border-box;
+     padding: 2rem;
+}
+
+.topics-page .content h1 {
+     text-align: left;
+     margin-left: 0;
+     margin-right: auto;
+     width: auto;
+     max-width: 100%;
+     margin-bottom: 1.5rem;
+     font-size: 2.5rem;
+     color: var(--color-primary);
+}
+
+/* Make "by topic" link active by default on topics page */
+.topics-page .sidebar a[href="/topics"].nav-link {
+     background-color: var(--color-white);
+     color: var(--color-primary);
+     font-weight: 600;
+}
+
+/* Reduce prominence of "Find a group" heading when topics is active */
+.topics-page .sidebar .nav-group-title {
+     font-weight: 400;
      opacity: 0.7;
-     cursor: not-allowed;
 }
 
-/* Hide honeypot field */
-.hidden {
-     display: none !important;
-     visibility: hidden !important;
-     position: absolute !important;
-     left: -9999px !important;
+/* Location Page */
+/* Make location link active by default on location page */
+.location-page .sidebar a[href="/location"].nav-link,
+.location-page .sidebar a[href="/location"].nav-link.active {
+     background-color: var(--color-white);
+     color: var(--color-primary);
+     font-weight: 600;
 }
 
-/* Contact form mobile responsiveness */
+/* Reduce prominence of "Find a group" heading when location is active */
+.location-page .sidebar .nav-group-title {
+     font-weight: 400;
+     opacity: 0.7;
+}
+
+/* Ensure the sidebar header is not affected by active states */
+.location-page .sidebar-header,
+.location-page .sidebar-header h1 {
+     background-color: transparent;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     justify-content: flex-start;
+     gap: 0.75rem;
+     margin-bottom: 1.5rem;
+     padding: 0 1.5rem;
+     margin-top: 0;
+     padding-top: 0;
+     padding-bottom: 0;
+}
+
+/* Home Page */
+/* Make Home link active by default */
+body.page-home .sidebar a[href="/"].nav-link,
+body.page-index .sidebar a[href="/"].nav-link {
+     background-color: var(--color-white);
+     color: var(--color-primary);
+     font-weight: 600;
+}
+
+/* Navigation Active State Fixes */
+/* Base rule - Home link should not have active styling by default */
+.sidebar a[href="/"].nav-link {
+     background-color: transparent;
+     color: inherit;
+     font-weight: normal;
+}
+
+/* SIMPLER PATH-BASED SOLUTION - Highlight "by location" for all city and state pages */
+body[class*="page-cities-"] .sidebar a[href="/location"].nav-link-indented,
+body[class*="page-states-"] .sidebar a[href="/location"].nav-link-indented,
+body.page-location .sidebar a[href="/location"].nav-link-indented {
+     background-color: var(--color-white);
+     color: var(--color-primary);
+     font-weight: 600;
+}
+
+/* Override for specific pages to ensure Home isn't active */
+body.page-subscribe .sidebar a[href="/"].nav-link,
+body.page-contact .sidebar a[href="/"].nav-link,
+body.page-guides .sidebar a[href="/"].nav-link,
+body.page-location .sidebar a[href="/"].nav-link,
+body.page-topics .sidebar a[href="/"].nav-link,
+body[class*="page-cities-"] .sidebar a[href="/"].nav-link,
+body[class*="page-states-"] .sidebar a[href="/"].nav-link {
+     background-color: transparent;
+     color: inherit;
+     font-weight: normal;
+}
+
+/* Make sure subscribe link is active on subscribe page */
+body.page-subscribe .sidebar a[href="/subscribe"].nav-link {
+     background-color: var(--color-white);
+     color: var(--color-primary);
+     font-weight: 600;
+}
+
+/* Make sure contact link is active on contact page */
+body.page-contact .sidebar a[href="/contact"].nav-link {
+     background-color: var(--color-white);
+     color: var(--color-primary);
+     font-weight: 600;
+}
+
+/* Make sure guides link is active on guides page */
+body.page-guides .sidebar a[href="/guides"].nav-link {
+     background-color: var(--color-white);
+     color: var(--color-primary);
+     font-weight: 600;
+}
+
+/* Critical fixes for inconsistent font weight across all pages */
+html body div.sidebar-header h1,
+html body .sidebar div.sidebar-header h1,
+html body #sidebar div.sidebar-header h1,
+.sidebar-header h1,
+.sidebar h1 {
+     font-weight: 700;
+     font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+}
+
+html body div.sidebar-header h1 a,
+html body .sidebar div.sidebar-header h1 a,
+html body #sidebar div.sidebar-header h1 a,
+.sidebar-header h1 a,
+.sidebar h1 a {
+     font-weight: inherit;
+     font-family: inherit;
+}
+
+/* Classes for JavaScript Manipulation */
+.reset-nav-group {
+     background-color: transparent;
+     color: inherit;
+     font-weight: 600;
+     opacity: 1;
+}
+
+.reset-header {
+     background-color: transparent;
+}
+
+.reset-header-link {
+     background-color: transparent;
+     color: inherit;
+     text-decoration: none;
+     border-bottom: none;
+}
+
+/*------------------------------------*\
+  #MEDIA-QUERIES
+\*------------------------------------*/
+
+/* XXL screens - 1400px and above */
+@media (max-width: 1400px) {
+     .content {
+          max-width: 1000px;
+          margin: 0 auto;
+          margin-left: 280px !important;
+     }
+}
+
+/* XL screens - 1200px and below */
+@media (max-width: 1200px) {
+     .content {
+          max-width: 900px;
+          margin: 0 1rem;
+          margin-left: 280px !important;
+     }
+}
+
+/* Large screens - 1020px and below */
+@media (max-width: 1020px) {
+     /* General Layout */
+     .layout {
+          flex-direction: column;
+     }
+
+     h1 {
+          font-size: 2.2rem;
+     }
+
+     .content {
+          margin-left: 0 !important;
+     }
+
+     /* Sidebar */
+     #sidebar {
+          transform: translateX(-100%);
+     }
+
+     #sidebar.active {
+          transform: translateX(0);
+     }
+
+     .mobile-menu-button {
+          display: flex;
+     }
+
+     /* Topics and Cards */
+     .topics-grid {
+          grid-template-columns: repeat(2, 1fr);
+     }
+
+     /* Nav adjustments */
+     .nav-link {
+          padding: 0.85rem 1.5rem;
+     }
+
+     .city-link {
+          padding: 0.4rem;
+     }
+
+     .nav-group-title {
+          padding: 0.85rem 1.5rem;
+     }
+
+     /* Ensure sidebar header maintains proper layout */
+     .sidebar-header {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.75rem;
+     }
+
+     .sidebar-header h1 {
+          margin: 0;
+          padding: 0;
+          font-size: 1.4rem;
+     }
+
+     /* Table of Contents */
+     .toc {
+          float: none;
+          width: 100%;
+          margin: 2rem 0;
+     }
+
+     .city-page {
+          width: 100%;
+          margin: 0;
+     }
+
+     /* City lists */
+     .cities-list {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 0.75rem;
+     }
+
+     /* State page adjustments */
+     .state-page .cities-list > h2 {
+          padding: 0.6rem 1.25rem;
+     }
+
+     .state-page section:not(.cities-list-container) > h2 {
+          padding: 0.6rem 0;
+     }
+
+     .state-page .city-links-container {
+          grid-template-columns: repeat(3, 1fr);
+          padding: 0.75rem 1.25rem;
+     }
+}
+
+/* Medium screens - 768px and below */
 @media (max-width: 768px) {
+     /* General Text Size Increases */
+     body {
+          font-size: 18px;
+     }
+
+     p {
+          font-size: 1.1rem !important;
+          line-height: 1.6;
+     }
+
+     li {
+          font-size: 1.1rem !important;
+     }
+
+     a,
+     .nav-link,
+     .city-link,
+     .state-link {
+          font-size: 1.1rem !important;
+     }
+
+     h1 {
+          font-size: 2rem !important;
+          line-height: 1.2;
+     }
+
+     h2 {
+          font-size: 1.6rem !important;
+          line-height: 1.3;
+     }
+
+     h3 {
+          font-size: 1.4rem !important;
+          line-height: 1.3;
+     }
+
+     /* Touch Optimization */
+     a,
+     button,
+     .nav-link,
+     .city-link,
+     .state-link {
+          min-height: 44px;
+          min-width: 44px;
+          display: inline-flex;
+          align-items: center;
+     }
+
+     .nav-link,
+     .city-link,
+     .state-link {
+          padding: 0.8rem 1rem;
+     }
+
+     /* Layout */
+     .content {
+          padding: 1rem !important;
+          margin-left: 0 !important;
+          width: 100%;
+          box-sizing: border-box;
+     }
+
+     /* State Link */
+     .states-list {
+          max-width: 100%;
+          padding: 0 1rem;
+          margin: 1rem 0;
+          width: 100%;
+          grid-template-columns: 1fr;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+     }
+
+     .state-link {
+          padding: 0.75rem 1rem;
+          margin-bottom: 0.5rem;
+          background-color: #fff1f1;
+          border: 1px solid #ffb3b3;
+          width: 100%;
+          box-sizing: border-box;
+          text-align: left;
+          display: block;
+          margin-left: 0;
+          margin-right: 0;
+          border-radius: 4px;
+     }
+
+     /* Location Page */
+     .location-page .content h2 {
+          padding-left: 3.75rem !important;
+          text-align: left !important;
+          margin: 1rem 0 1.5rem 0 !important;
+          max-width: 100% !important;
+          width: 100% !important;
+     }
+
+     .cities-list {
+          grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+     }
+
+     .location-header h1 {
+          font-size: 2rem;
+     }
+
+     body.menu-open {
+          overflow: hidden;
+     }
+
+     /* Statistics container */
+     .stats-container {
+          flex-direction: column;
+          gap: 2rem;
+     }
+
+     /* Hero Section */
+     .hero-title {
+          font-size: 2.5rem;
+     }
+
+     .hero-subtitle {
+          font-size: 1.2rem;
+     }
+
+     /* Buttons */
+     .buttons-container {
+          flex-direction: column;
+          gap: 1rem;
+     }
+
+     .find-groups-button {
+          width: 100%;
+          min-width: auto;
+          padding: 1rem;
+     }
+
+     .button-text {
+          font-size: 1.1rem !important;
+     }
+
+     .action-buttons {
+          flex-direction: column;
+     }
+
+     .btn {
+          width: 100%;
+          text-align: center;
+     }
+
+     /* Blog/Post Entries */
+     #log-heading {
+          font-size: 1.8rem;
+     }
+
+     .post-entry time {
+          position: static;
+          display: block;
+          margin-top: 0.25rem;
+          margin-bottom: 0.5rem;
+     }
+
+     .post-entry-title {
+          padding-right: 0;
+          font-size: 1.2rem !important;
+     }
+
+     .post-entry-tagline {
+          font-size: 1.05rem !important;
+     }
+
+     /* Contact Form */
      .contact-content {
           padding: 1rem;
      }
@@ -2267,209 +1793,323 @@ h6 {
           width: 100%;
           max-width: none;
      }
+
+     /* Topic Styles */
+     .topics-page .content {
+          padding: 1.5rem !important;
+     }
+
+     .topics-grid,
+     .topics-page .topics-grid {
+          grid-template-columns: 1fr !important;
+          gap: 0.5rem !important;
+          padding: 1rem 0 !important;
+     }
+
+     .topic-card,
+     .topics-page .topics-grid .topic-card {
+          padding: 0.75rem 1rem !important;
+          margin-bottom: 0.5rem !important;
+          background-color: #fff1f1 !important;
+          border: 1px solid #ffb3b3 !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+          text-align: left !important;
+          display: flex !important;
+          align-items: center !important;
+          min-height: auto !important;
+          border-radius: 4px !important;
+     }
+
+     .topics-page .content h1 {
+          font-size: 1.8rem !important;
+          margin-bottom: 1rem !important;
+          line-height: 1.1 !important;
+     }
+
+     .topic-name,
+     .topics-page .topic-name {
+          font-size: 1rem !important;
+          font-weight: 500 !important;
+          line-height: 1.2 !important;
+     }
+
+     .topic-icon,
+     .topics-page .topic-icon,
+     .topics-page .topics-grid .topic-card .topic-icon {
+          font-size: 1.1rem !important;
+          height: 1.1rem !important;
+          width: 1.1rem !important;
+          min-width: 1.1rem !important;
+          margin-right: 0.7rem !important;
+     }
+
+     /* State page adjustments */
+     .state-page .cities-list > h2 {
+          padding: 0.5rem 1rem !important;
+          font-size: 1.1rem !important;
+     }
+
+     .state-page section:not(.cities-list-container) > h2 {
+          padding: 0.5rem 0 !important;
+          font-size: 1.1rem !important;
+     }
+
+     .state-page .city-links-container {
+          grid-template-columns: repeat(2, 1fr) !important;
+          padding: 0.75rem 1rem;
+     }
 }
 
-/* ======================================
-   Navigation Active State Fixes
-   ====================================== */
-/* 
-  Fix for sidebar navigation active states 
-  This ensures Home is only highlighted on the homepage
-*/
+/* Small screens - 480px and below */
+@media (max-width: 480px) {
+     /* Layout and typography */
+     .content {
+          padding: 1rem 0.75rem !important;
+     }
 
-/* Base rule - Home link should not have active styling by default */
-.sidebar a[href="/"].nav-link {
-     background-color: transparent !important;
-     color: inherit !important;
-     font-weight: normal !important;
+     /* Topic Cards */
+     .topic-card {
+          padding: 0.5rem 0.85rem;
+          min-height: 2.5rem;
+     }
+
+     .topics-page .content {
+          padding: 1rem 0.75rem !important;
+     }
+
+     .topics-page .topics-grid,
+     .topics-grid {
+          gap: 0.4rem !important;
+          padding: 0.5rem 0 !important;
+     }
+
+     .topics-page .topics-grid .topic-card,
+     .topic-card {
+          padding: 0.65rem 0.85rem !important;
+          margin-bottom: 0.4rem !important;
+     }
+
+     .topics-page .content h1 {
+          font-size: 1.6rem !important;
+          margin-bottom: 0.75rem !important;
+     }
+
+     .topics-page .topic-name,
+     .topic-name {
+          font-size: 0.95rem !important;
+     }
+
+     .topics-page .topic-icon,
+     .topic-icon {
+          font-size: 1rem !important;
+          height: 1rem !important;
+          width: 1rem !important;
+          min-width: 1rem !important;
+          margin-right: 0.6rem !important;
+     }
+
+     /* Cities */
+     .states-list {
+          padding: 0 0.75rem;
+     }
+
+     .cities-list {
+          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+          gap: 0.75rem;
+     }
+
+     .cities-category {
+          margin-bottom: 1.5rem;
+     }
+
+     .cities-category-title {
+          font-size: 1.15rem;
+     }
+
+     /* Headers and typography */
+     .location-header h1 {
+          font-size: 1.8rem;
+     }
+
+     .location-header p {
+          font-size: 1.05rem;
+     }
+
+     aside {
+          margin: 1.5rem 0;
+     }
+
+     /* Stats */
+     .stat-number {
+          font-size: 2.8rem;
+     }
+
+     .stat-label {
+          font-size: 1.1rem;
+     }
+
+     /* Buttons */
+     .buttons-container {
+          flex-direction: column;
+     }
+
+     .find-groups-button {
+          width: 100%;
+          padding: 0.85rem 1rem;
+          font-size: 1.1rem;
+     }
+
+     .button-text {
+          font-size: 1rem;
+     }
+
+     /* Form elements */
+     button,
+     .btn,
+     .nav-link,
+     .find-groups-button,
+     .state-link,
+     .city-link {
+          padding: 0.8rem !important;
+     }
+
+     input,
+     select,
+     textarea {
+          font-size: 1rem !important;
+          padding: 0.7rem !important;
+     }
+
+     .form-group label {
+          font-size: 1.05rem !important;
+     }
+
+     /* Location page */
+     .location-page h2 {
+          padding-left: 3.25rem !important;
+          text-indent: 0 !important;
+          font-size: 1.5rem !important;
+          text-align: left !important;
+     }
+
+     .location-page .content {
+          padding: 0.75rem !important;
+     }
+
+     /* Sidebar */
+     .sidebar-header {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.75rem;
+          padding: 2rem 1rem 0;
+     }
+
+     .sidebar-header h1 {
+          font-size: 1.2rem;
+          display: none;
+     }
+
+     .location-page .sidebar-header {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.75rem;
+     }
+
+     .location-page .sidebar-header h1 {
+          font-size: 1.2rem;
+          display: none;
+     }
 }
 
-/* Only show active state on Home link when body has page-home class */
-body.page-home .sidebar a[href="/"].nav-link,
-body.page-index .sidebar a[href="/"].nav-link {
-     background-color: var(--color-white, #ffffff) !important;
-     color: var(--color-primary, #a30000) !important;
-     font-weight: 600 !important;
+/* Fix HOME active state */
+.nav-link[href="/"] {
+     background-color: var(--active-nav-bg);
+     font-weight: 600;
+     color: white;
 }
 
-/* SIMPLER PATH-BASED SOLUTION - Highlight "by location" for all city and state pages */
-body[class*="page-cities-"] .sidebar a[href="/location"].nav-link-indented,
-body[class*="page-states-"] .sidebar a[href="/location"].nav-link-indented,
-body.page-location .sidebar a[href="/location"].nav-link-indented {
-     background-color: var(--color-white, #ffffff) !important;
-     color: var(--color-primary, #a30000) !important;
-     font-weight: 600 !important;
+/* Reset the navigation styles for individual state control */
+#sidebar nav {
+     display: flex;
+     flex-direction: column;
+     gap: 0;
+     margin-top: 0;
+     width: 100%;
+     background-color: var(--sidebar-bg) !important;
 }
 
-/* Override for specific pages to ensure Home isn't active */
-body.page-subscribe .sidebar a[href="/"].nav-link,
-body.page-contact .sidebar a[href="/"].nav-link,
-body.page-guides .sidebar a[href="/"].nav-link,
-body.page-location .sidebar a[href="/"].nav-link,
-body.page-topics .sidebar a[href="/"].nav-link,
-body[class*="page-cities-"] .sidebar a[href="/"].nav-link,
-body[class*="page-states-"] .sidebar a[href="/"].nav-link {
-     background-color: transparent !important;
-     color: inherit !important;
-     font-weight: normal !important;
-}
-
-/* Make sure subscribe link is active on subscribe page */
-body.page-subscribe .sidebar a[href="/subscribe"].nav-link {
-     background-color: var(--color-white, #ffffff) !important;
-     color: var(--color-primary, #a30000) !important;
-     font-weight: 600 !important;
-}
-
-/* Make sure contact link is active on contact page */
-body.page-contact .sidebar a[href="/contact"].nav-link {
-     background-color: var(--color-white, #ffffff) !important;
-     color: var(--color-primary, #a30000) !important;
-     font-weight: 600 !important;
-}
-
-/* Make sure guides link is active on guides page */
-body.page-guides .sidebar a[href="/guides"].nav-link {
-     background-color: var(--color-white, #ffffff) !important;
-     color: var(--color-primary, #a30000) !important;
-     font-weight: 600 !important;
-}
-
-/* Fixing the animation-related issues in city-links-container */
-.state-page .city-links-container {
-     display: grid;
-     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-     gap: 1rem;
-     margin: 1.5rem 0 2rem;
-     will-change: auto;
-     contain: layout;
-}
-
-/* Add containment for improved performance */
-.city-page {
-     contain: content;
-     will-change: auto;
-}
-
-/* Reduce animation/transition properties to prevent flickering */
-
-/* Ensure consistent sidebar header styling across ALL pages */
-body .sidebar-header h1,
-body.page-home .sidebar-header h1,
-body.page-location .sidebar-header h1,
-body.page-topics .sidebar-header h1,
-body.page-guides .sidebar-header h1,
-body.page-contact .sidebar-header h1,
-body.page-subscribe .sidebar-header h1 {
-     font-weight: 700 !important;
-     margin: 0 !important; /* Ensure no margin pushes the h1 down */
-     align-self: center !important; /* Vertically center the h1 */
-}
-
-/* Ensure the link inside h1 inherits font weight properly */
-body .sidebar-header h1 a,
-body.page-home .sidebar-header h1 a,
-body.page-location .sidebar-header h1 a,
-body.page-topics .sidebar-header h1 a,
-body.page-guides .sidebar-header h1 a,
-body.page-contact .sidebar-header h1 a,
-body.page-subscribe .sidebar-header h1 a {
-     font-weight: inherit !important;
-}
-
-/* Create a shared class for consistent sidebar header styling */
-.sidebar-title-consistent {
-     font-weight: 700 !important;
-     margin: 0 !important;
-     padding: 0 !important;
-     font-size: 1.6rem !important;
-     line-height: 1.2 !important;
-     display: flex !important;
-     align-items: center !important;
-}
-
-.sidebar-title-link {
-     text-decoration: none !important;
-     color: inherit !important;
-     background-color: transparent !important;
-     border-bottom: none !important;
-     box-shadow: none !important;
-     font-weight: inherit !important;
-     margin: 0 !important;
-     padding: 0 !important;
-}
-
-/* Critical fixes for inconsistent font weight across all pages */
-html body div.sidebar-header h1,
-html body .sidebar div.sidebar-header h1,
-html body #sidebar div.sidebar-header h1,
-.sidebar-header h1,
-.sidebar h1 {
-     font-weight: 700 !important;
-     font-family:
-          "Inter",
-          -apple-system,
-          BlinkMacSystemFont,
-          sans-serif !important;
-}
-
-html body div.sidebar-header h1 a,
-html body .sidebar div.sidebar-header h1 a,
-html body #sidebar div.sidebar-header h1 a,
-.sidebar-header h1 a,
-.sidebar h1 a {
-     font-weight: inherit !important;
-     font-family: inherit !important;
-}
-
-/* ======================================
-   Contact Form Styling
-   ====================================== */
-.contact-content {
-     padding: 1rem;
-     background: var(--surface-color-alt, #ffd9d9);
-     border-radius: 8px;
-}
-
-.error-message {
-     display: none;
-     color: #d32f2f;
-     margin-top: 1rem;
-     padding: 0.5rem;
-     background: #ffebee;
-     border-radius: 4px;
-}
-
-#captchaQuestion {
-     font-weight: bold;
-     color: #333;
-}
-
-#submit-status {
-     display: none;
-     margin-top: 1rem;
-     padding: 0.75rem;
-     border-radius: 4px;
-     background-color: #e8f5e9;
-     color: #2e7d32;
+/* Base styling for all nav links */
+#sidebar .nav-link {
+     display: block;
+     padding: 0.85rem 1.5rem;
+     color: var(--color-text);
+     text-decoration: none;
+     transition: all 0.2s ease;
+     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+     border-top: none;
+     border-left: none;
+     border-right: none;
+     margin: 0;
+     opacity: 0.9;
+     font-size: 0.95rem;
+     width: 100%;
+     background-color: var(--sidebar-bg) !important;
+     position: relative;
+     text-transform: uppercase;
+     letter-spacing: 0.05em;
      font-weight: 500;
 }
 
-/* Contact form mobile responsiveness */
+/* First link (HOME) styling */
+#sidebar .nav-link:nth-child(1) {
+     background-color: var(--active-nav-bg) !important;
+     color: white !important;
+     font-weight: 600;
+}
 
-/* Ensure proper flexbox layout for sidebar header on all pages */
-.sidebar-header,
-body.page-home .sidebar-header,
-body.page-location .sidebar-header,
-body.page-topics .sidebar-header,
-body.page-guides .sidebar-header,
-body.page-contact .sidebar-header,
-body.page-subscribe .sidebar-header {
-     display: flex !important;
-     flex-direction: row !important;
-     align-items: center !important;
-     justify-content: flex-start !important;
-     gap: 0.75rem !important;
-     margin-bottom: 1.5rem !important;
-     padding: 0 1.5rem !important;
+/* Second link (FIND A GROUP) styling */
+#sidebar .nav-link:nth-child(2) {
+     background-color: var(--active-nav-bg) !important;
+     color: white !important;
+     font-weight: 600;
+}
+
+/* Hover state for all other nav links */
+#sidebar .nav-link:hover:not(:nth-child(1)):not(:nth-child(2)) {
+     background-color: rgba(0, 0, 0, 0.05) !important;
+     color: var(--color-text) !important;
+}
+
+/* Hover state for HOME and FIND A GROUP */
+#sidebar .nav-link:nth-child(1):hover,
+#sidebar .nav-link:nth-child(2):hover {
+     background-color: var(--red-dark) !important;
+     color: white !important;
+}
+
+/* Additional styles for indented links */
+#sidebar .nav-link-indented {
+     padding-left: 2.5rem;
+     position: relative;
+}
+
+#sidebar .nav-link-indented::before {
+     content: "";
+     position: absolute;
+     left: 1.5rem;
+     top: 0;
+     bottom: 0;
+     width: 1px;
+     background-color: rgba(0, 0, 0, 0.1);
+     opacity: 0.8;
+}
+
+/* Make sure our !important styles are applied */
+#sidebar {
+     background-color: var(--sidebar-bg) !important;
+}
+
+#sidebar .nav-link {
+     background-color: var(--sidebar-bg) !important;
 }

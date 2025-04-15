@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Force Cloudflare rebuild: 5 - Fix CSS paths for clean URLs -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -22,7 +22,7 @@
     <meta name="twitter:card" content="summary_large_image">
 
     <meta name="color-scheme" content="light">
-    <title>The Organize Directory</title>
+    <title>Organize Directory - Find Local Action Groups</title>
 
     <!-- URL Normalizer - Reduces worker calls -->
     <script>
@@ -57,14 +57,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
     <!-- Critical CSS -->
-    <link rel="stylesheet" href="/styles.css?v=1.1.1">
+    <link rel="stylesheet" href="/styles.css?v=1.1.5">
 
     <!-- Non-blocking font loading -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Critical inline styles in case external CSS fails -->
     <style>
-        /* Critical fallback styles - minimal set for initial rendering */
+        /* Minimal critical styles for initial rendering */
         html {
             -webkit-text-size-adjust: 100%;
             -moz-text-size-adjust: 100%;
@@ -74,8 +76,8 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #4d0000;
-            background-color: #fff5f5;
+            color: #800000;
+            background-color: #FFF7F7;
             margin: 0;
             padding: 0;
         }
@@ -84,110 +86,25 @@
         .layout {
             display: flex;
             min-height: 100vh;
+            border: 2px solid #c01c1c;
         }
 
         #sidebar {
-            width: 280px;
+            width: 240px;
             position: fixed;
-            background: #ffd4d4;
-            border-right: 1px solid #ffb3b3;
+            background: #f8d1d1;
+            border-right: 1px solid #c01c1c;
             height: 100vh;
-            padding: 2rem 0;
+            padding: 0;
             overflow-y: auto;
             z-index: 100;
         }
 
         .content {
             flex: 1;
-            margin-left: 320px;
-            padding: 3rem;
-        }
-
-        /* Mobile layout adjustments */
-        @media (max-width: 1020px) {
-            .layout {
-                display: block;
-            }
-
-            .content {
-                margin-left: 0 !important;
-                padding: 2rem 1.5rem;
-            }
-
-            #sidebar {
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
-            }
-
-            #sidebar.active {
-                transform: translateX(0);
-            }
-
-            .mobile-menu-button {
-                display: flex;
-                /* Redefine position for mobile */
-                top: 0.8rem;
-                left: 0.8rem;
-                /* Make button slightly smaller on very small screens */
-                padding: 0.6rem;
-            }
-
-            /* Target the main heading in the content area */
-            .content h1:first-of-type {
-                padding-left: 3.75rem;
-                /* Add padding to h1 to prevent overlap with menu button */
-                margin-top: 1rem;
-                /* Slightly more top margin for better spacing */
-            }
-
-            /* Additional adjustment for very small screens */
-            @media (max-width: 480px) {
-                .content h1:first-of-type {
-                    padding-left: 3.25rem;
-                    font-size: 1.8rem !important;
-                    /* Reduce font size on very small screens */
-                }
-            }
-        }
-
-        /* Critical mobile menu components */
-        .mobile-menu-button {
-            display: none;
-            position: fixed;
-            top: 1rem;
-            left: 1rem;
-            z-index: 110;
-            background: #ffffff;
-            border: 2px solid #ffb3b3;
-            border-radius: 6px;
-            padding: 0.75rem;
-            cursor: pointer;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .mobile-menu-button svg {
-            width: 24px;
-            height: 24px;
-            stroke: #800000;
-            stroke-width: 2px;
-            /* Ensure the lines are visible */
-        }
-
-        /* Minimal overlay styling for mobile menu */
-        .mobile-menu-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 90;
-        }
-
-        .mobile-menu-overlay.active {
-            display: block;
+            margin-left: 240px;
+            padding: 2rem 3rem 3rem;
+            background-color: #FFF7F7;
         }
     </style>
 
@@ -195,7 +112,7 @@
     <script type="module">
         document.addEventListener('DOMContentLoaded', function () {
             // Import sidebar initialization after DOM is loaded
-            import('/components/sidebar.js?v=1.0.4')
+            import('/components/sidebar.js?v=1.0.7')
                 .then(module => {
                     const { initializeSidebar } = module;
                     // Initialize sidebar
@@ -281,7 +198,7 @@
                     year: 'numeric',
                     month: '2-digit',
                     day: '2-digit'
-                }).replace(/\//g, '-');
+                }).split('/').join('-');
 
                 // Get tagline or use a default one
                 const tagline = taglines[post.slug] || 'Supporting mutual aid efforts across communities.';
@@ -311,42 +228,58 @@
     <!-- First create the layout before any script runs -->
     <div class="layout">
         <!-- Placeholder for sidebar, will be filled by sidebar.js -->
-        <div id="sidebar-placeholder"></div>
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <a href="/">
+                    <img src="/logo.png" alt="Organize Directory Logo" class="site-logo">
+                </a>
+            </div>
+            <nav>
+                <a href="/" class="nav-link active">HOME</a>
+                <a href="/location" class="nav-link">FIND A GROUP</a>
+                <a href="/location" class="nav-link">BY LOCATION</a>
+                <a href="/topics" class="nav-link">BY TOPIC</a>
+                <a href="/guides" class="nav-link">GUIDES</a>
+                <a href="/contact" class="nav-link">CONTACT</a>
+                <a href="/subscribe" class="nav-link">SUBSCRIBE</a>
+            </nav>
+            <div class="sidebar-motto">
+                DON'T DESPAIR, ORGANIZE.
+            </div>
+        </aside>
 
         <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+            <header class="page-header"></header>
 
             <h1>The Organize Directory</h1>
 
-            <section class="initiative-stats card-base">
+            <section class="initiative-stats">
                 <div class="stats-container">
                     <div class="stat-item">
                         <span class="stat-number">2,154</span>
-                        <span class="stat-label">Groups</span>
+                        <span class="stat-label">GROUPS</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">343</span>
-                        <span class="stat-label">Cities</span>
+                        <span class="stat-label">CITIES</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">41</span>
-                        <span class="stat-label">Categories</span>
+                        <span class="stat-label">CATEGORIES</span>
                     </div>
                 </div>
             </section>
 
             <section class="find-groups-buttons">
                 <div class="buttons-container">
-                    <a href="./location" class="find-groups-button btn-base">
+                    <a href="/location.html" class="find-groups-button">
                         <span class="button-text">Find Local Groups</span>
                     </a>
-                    <a href="./topics" class="find-groups-button btn-base">
+                    <a href="/topics.html" class="find-groups-button">
                         <span class="button-text">Browse National Groups</span>
                     </a>
                 </div>
             </section>
-
-            <hr>
 
             <section class="daily-log" aria-labelledby="log-heading">
                 <h2 id="log-heading">Calls to Action</h2>
