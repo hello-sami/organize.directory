@@ -272,6 +272,12 @@
                     <!-- Honeypot field to prevent spam -->
                     <input type="checkbox" name="botcheck" style="display: none;">
 
+                    <!-- Custom Webhook -->
+                    <input type="hidden" name="from_name" value="Organize Directory Contact Form">
+
+                    <!-- CSRF Token bypass -->
+                    <input type="hidden" name="csrf_token" value="true">
+
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -338,9 +344,12 @@
                 statusMessage.className = 'status-message success';
                 statusMessage.style.display = 'block';
                 form.reset();
+
+                // Scroll to status message
+                statusMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             }
 
-            // Basic client-side validation only - no fetch
+            // Basic client-side validation only
             form.addEventListener('submit', function (e) {
                 // Reset previous errors
                 resetErrors();
@@ -360,7 +369,7 @@
                 // Show help div after a delay in case submission is slow
                 setTimeout(() => {
                     formFailureHelp.style.display = 'block';
-                }, 10000);
+                }, 15000);
 
                 return true; // Allow form submission
             });
