@@ -2,7 +2,9 @@
 const initialSidebar = `
     <div class="sidebar-header">
         <a href="/">
-            <img src="/logo.png" alt="The Organize Directory Logo" class="site-logo">
+          <a href="/">
+                    <img src="/logo.png" alt="Organize Directory Logo" class="site-logo">
+                </a>
         </a>
     </div>
     <nav>
