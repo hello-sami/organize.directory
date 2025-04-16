@@ -2,9 +2,7 @@
 const initialSidebar = `
     <div class="sidebar-header">
         <a href="/">
-          <a href="/">
-                    <img src="/logo.png" alt="Organize Directory Logo" class="site-logo">
-                </a>
+          <img src="/logo.png" alt="Organize Directory Logo" class="site-logo">
         </a>
     </div>
     <nav>
@@ -26,7 +24,6 @@ const initialSidebar = `
 function insertSidebar() {
      // Create sidebar container
      const sidebarContainer = document.createElement("div");
-     sidebarContainer.id = "sidebar";
      sidebarContainer.className = "sidebar";
      sidebarContainer.setAttribute("aria-label", "Main navigation");
      sidebarContainer.innerHTML = initialSidebar;
@@ -90,10 +87,10 @@ export function initializeSidebar(activePage) {
      loadSidebarStyles();
 
      // Insert sidebar if it doesn't exist
-     let sidebar = document.getElementById("sidebar");
+     let sidebar = document.querySelector(".sidebar");
      if (!sidebar) {
           insertSidebar();
-          sidebar = document.getElementById("sidebar");
+          sidebar = document.querySelector(".sidebar");
      }
 
      // Clean up any inline styles

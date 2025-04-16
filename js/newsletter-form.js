@@ -3,7 +3,7 @@
  */
 document.addEventListener("DOMContentLoaded", function () {
      const form = document.getElementById("newsletterForm");
-     const submitButton = document.getElementById("submit-button");
+     const submitButton = document.getElementById("btn-base");
      const errorMessage = document.getElementById("error-message");
 
      if (!form) return;
