@@ -31,63 +31,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
-  <!-- Fix for mobile flickering -->
-  <style>
-    /* Prevent text flickering on mobile */
-    html {
-      -webkit-text-size-adjust: 100%;
-      text-size-adjust: 100%;
-    }
-
-    body {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* Stabilize text and containers */
-    h1,
-    h2,
-    p,
-    .city-page,
-    .initiative,
-    .toc {
-      max-width: 100%;
-      overflow-wrap: break-word;
-      word-wrap: break-word;
-      transform: translateZ(0);
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-    }
-
-    /* Performance optimizations */
-    .city-page {
-      contain: content;
-    }
-
-    /* Prevent content jumps */
-    .toc-list,
-    .initiative {
-      contain: layout style;
-    }
-
-    /* Fix for mobile rendering */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 1.8rem !important;
-        line-height: 1.2;
-      }
-
-      h2 {
-        font-size: 1.5rem !important;
-        line-height: 1.2;
-      }
-
-      .toc {
-        transform: translateZ(0);
-      }
-    }
-  </style>
-
   <!-- Google Analytics -->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
@@ -189,7 +132,7 @@
           </ul>
         </div>
 
-        <section id="housing" class="initiative">
+        <section id="housing" class="city-section">
           <h2>Housing Rights</h2>
           <hr>
           <div class="initiative">
@@ -202,7 +145,7 @@
           </div>
         </section>
 
-        <section id="labor" class="initiative">
+        <section id="labor" class="city-section">
           <h2>Labor Organizations</h2>
           <hr>
           <div class="initiative">
@@ -216,7 +159,7 @@
           </div>
         </section>
 
-        <section id="mutual-aid" class="initiative">
+        <section id="mutual-aid" class="city-section">
           <h2>Mutual Aid Networks</h2>
           <hr>
           <div class="initiative">
@@ -431,7 +374,7 @@
           </div>
         </section>
 
-        <section id="education" class="initiative">
+        <section id="education" class="city-section">
           <h2>Education</h2>
           <hr>
           <div class="initiative">
@@ -445,7 +388,7 @@
           </div>
         </section>
 
-        <section id="environmental" class="initiative">
+        <section id="environmental" class="city-section">
           <h2>Environmental Justice</h2>
           <hr>
           <div class="initiative">
@@ -459,7 +402,7 @@
           </div>
         </section>
 
-        <section id="brooklyn" class="initiative">
+        <section id="brooklyn" class="city-section">
           <h2>Brooklyn</h2>
           <hr>
           <div class="initiative">
@@ -483,892 +426,892 @@
           </div>
         </section>
 
-        <section id="manhattan" class="initiative">
+        <section id="other-initiatives" class="city-section">
+          <h2>Other NYC Initiatives</h2>
+          <hr>
+          <div class="initiative">
+            <a href="https://www.cityworkers4justice.org/">City Workers for Justice</a>
+            <p>
+              Increasing government transparency and cross-pollination of
+              ideas and expertise across city agencies.
+            </p>
+          </div>
 
+          <div class="initiative">
+            <a href="https://www.instagram.com/bxmutualaidnetwork/">Bronx Mutual Aid Network</a>
+            <p>
+              A grassroots collective providing direct support and community
+              care in the Bronx. They coordinate resource distribution,
+              emergency assistance, and solidarity networks while building
+              power through neighborhood-based organizing and mutual aid
+              initiatives.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://webuildtheblock.org/">We Build The Block</a>
+            <p>
+              A grassroots organization coordinating mutual aid and
+              community-led public safety initiatives in New York City. They
+              organize youth leadership development, restorative justice
+              programs, and innovative safety protocols while building
+              networks of solidarity through community education, trauma
+              resolution, and transformative approaches to neighborhood
+              wellbeing.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.paroleprepny.org/">Parole Preparation Project</a>
+            <p>
+              A grassroots organization fostering mutual aid and community
+              solidarity through advocacy, litigation, and direct support for
+              currently and formerly incarcerated New Yorkers. They coordinate
+              parole preparation assistance, community care programs, and
+              solidarity networks while building power through policy
+              advocacy, arts programming, and creating spaces for successful
+              reentry and community reintegration.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.thefreeblackwomenslibrary.com/">The Free Black Women's Library</a>
+            <p>
+              A mobile library and mutual aid initiative celebrating Black
+              women authors and literature. Through book exchanges, cultural
+              events, and community gatherings, they create accessible spaces
+              for learning, sharing resources, and building connections while
+              centering Black women's voices and experiences.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.commonnotions.org/">Common Notions</a>
+            <p>
+              A radical publishing collective fostering mutual aid through
+              accessible political education and movement literature. They
+              work to amplify marginalized voices, support social movements,
+              and create resources for community organizing while building
+              networks of knowledge sharing and solidarity.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://ajmuste.org/">AJ Muste Institute</a>
+            <p>
+              A foundation supporting grassroots activism and mutual aid
+              through grants, fiscal sponsorship, and community space. They
+              provide resources for social justice organizing, nonviolent
+              action, and movement building while fostering connections
+              between activists and organizations working for transformative
+              change.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.instagram.com/lesfoodnotbombs">Food Not Bombs Lower East Side</a>
+            <p>
+              A mutual aid collective fostering food justice and community
+              solidarity through free food sharing in New York City's Lower
+              East Side. They coordinate regular meal distributions, food
+              recovery initiatives, and solidarity networks while building
+              power through direct action, community care, and creating spaces
+              for food sovereignty and collective nourishment.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://caaav.org/">CAAAV: Organizing Asian Communities</a>
+            <p>
+              Building power with working class Asian immigrants in Chinatown
+              and Astoria through tenant organizing, fighting gentrification,
+              and developing grassroots leadership to shape the future of our
+              neighborhoods.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://linktr.ee/undocuwomensfund">Undocumented Women's Fund</a>
+            <p>
+              Care, learning and organizing network supporting immigrant women
+              in NYC.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.instagram.com/nycmigrantsolidarity/">NYC Migrant Solidarity</a>
+            <p>
+              Anti-Authoritarian collective empowering networks of community
+              support in crisis &amp; platforms for mutual aid with migrants.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://maketheroadny.org/">Make the Road NY</a>
+            <p>Building power in immigrant and working class communities.</p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://chhayacdc.org/">Chhaya CDC</a>
+            <p>
+              Building power, housing stability, and economic well-being of
+              South Asian and Indo-Caribbean communities.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://discord.gg/8ZWAYJr">The End Is Queer: NYC Mutual Aid</a>
+            <p>
+              Discord server organizing queer New Yorkers around mutual aid
+              needs.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://gaycenter.org/">The LGBT Community Center</a>
+            <p>
+              Nonprofit community center hosting support groups and meeting
+              spaces.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.ourvoicesarefree.org/">Colectivo TRANSgrediendo</a>
+            <p>
+              Organization working on empowerment, healthcare access, and
+              rights for TransGNB people.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.thebrooklynghostproject.org/">The Brooklyn G.H.O.S.T Project</a>
+            <p>
+              Black, transgender-led nonprofit providing support, resources,
+              and free meals to transgender and non-binary communities of
+              color in Brooklyn.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.instagram.com/griotcircle/">GRIOT Circle</a>
+            <p>
+              A community-based organization building power through mutual aid
+              and intergenerational support for LGBTQ+ elders of color. They
+              coordinate direct assistance, wellness programs, and solidarity
+              networks while creating spaces for connection, cultural
+              preservation, and collective care.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.tcahnyc.org/">The Campaign Against Hunger NYC</a>
+            <p>Nonprofit operating food pantries and gardening workshops.</p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.lovewinsnyc.org/">Love Wins NYC</a>
+            <p>
+              Queer-centric effort distributing free produce to hundreds of
+              families monthly.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.mccny.org/charities/pantry.html">Sylvia Rivera Food Pantry</a>
+            <p>
+              Food pantry assisting low-income and HIV+ community members.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="http://nycommonpantry.org/">NY Common Pantry</a>
+            <p>
+              Reducing hunger and promoting dignity, health, and
+              self-sufficiency.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="http://cbfood.org/">Central Brooklyn Food Coop</a>
+            <p>
+              A Black-led, member-owned and operated food cooperative building
+              food sovereignty through collective ownership, affordable
+              healthy food access, and community wealth building in Central
+              Brooklyn.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.foodhelpline.org/directory/regions/new_york_city">Lemon Tree's Free Food
+              Directory</a>
+            <p>Map of food pantries and distributions throughout the city.</p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://envisionfreedom.org/">Envision Freedom Fund</a>
+            <p>
+              Fighting to dismantle the criminal legal and immigration
+              systems.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.inourheartsnyc.org/">In Our Hearts NYC</a>
+            <p>
+              Anarchist food distribution and action-oriented mutual aid
+              group.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://sxhxcollective.org/">Support Ho(s)e</a>
+            <p>
+              A collective of sex workers and allies building radical
+              community and providing mutual aid.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://rougesupportnetwork.org/">Rouge Support Network</a>
+            <p>
+              National support system serving communities impacted by
+              criminalization and the prison industrial complex.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://swp.urbanjustice.org/">Sex Workers Project</a>
+            <p>
+              Legal services and advocacy supporting the rights of sex workers
+              and survivors of human trafficking.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.bedtu.org/">Brooklyn Eviction Defense Tenant Union</a>
+            <p>Fighting evictions and supporting tenants in Brooklyn.</p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.crownheightstenantunion.org/">Crown Heights Tenant Union</a>
+            <p>
+              Uniting tenant associations in Crown Heights to fight for better
+              living conditions, affordable housing, and tenant power through
+              direct action and mutual aid.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.wbwmutualaid.org/">WBW Mutual Aid</a>
+            <p>
+              A grassroots collective fostering mutual aid and community
+              solidarity through direct support and tenant organizing in NYC.
+              They coordinate emergency assistance, housing advocacy, and
+              solidarity networks while building power through community
+              organizing, direct action, and creating spaces for housing
+              justice.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.instagram.com/micasaresiste/">Mi Casa Resiste</a>
+            <p>
+              Tenant organizing collective building power through mutual aid
+              and direct action to resist displacement and fight for housing
+              justice in NYC.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.instagram.com/notonemoreblock/">Not One More Block</a>
+            <p>
+              Tenant organizing collective fighting gentrification and
+              displacement through direct action, mutual aid, and community
+              power building.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.sanctuaryhood.org/">Sanctuary Neighborhoods NYC</a>
+            <p>
+              A grassroots collective coordinating mutual aid and community
+              defense initiatives to protect neighbors from displacement and
+              build tenant power. They organize direct support, resource
+              sharing, and solidarity networks while developing
+              neighborhood-based strategies for housing justice and community
+              care.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.instagram.com/ridgewoodtenantsunion/">Ridgewood Tenants Union</a>
+            <p>
+              A grassroots tenant organization fostering mutual aid and
+              community solidarity through tenant organizing and housing
+              justice work in Ridgewood, Queens. They coordinate tenant
+              support, housing advocacy, and solidarity networks while
+              building power through collective organizing, direct action, and
+              creating spaces for tenant empowerment.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://weunlock.nyc/">Unlock NYC</a>
+            <p>
+              A community-led initiative fostering mutual aid and housing
+              justice through technology and collective organizing in New York
+              City. They coordinate support for housing voucher holders,
+              document discrimination, and build solidarity networks while
+              creating tools and spaces for tenants to fight source of income
+              discrimination and access safe, affordable housing.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.justfix.org/">JustFix</a>
+            <p>
+              A technology non-profit fostering mutual aid and housing justice
+              through digital tools and data initiatives. They coordinate
+              tenant support platforms, housing data research, and solidarity
+              networks while building power through accessible technology
+              tools that help tenants fight displacement and assert their
+              rights.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.instagram.com/micasaresiste/">Mi Casa Resiste</a>
+            <p>
+              A tenant organizing collective fostering mutual aid and housing
+              justice through direct action and community power in NYC. They
+              coordinate tenant organizing, eviction defense, and solidarity
+              networks while building power through collective resistance
+              against displacement and creating spaces for housing justice
+              organizing.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.housingdatanyc.org/">Housing Data Coalition</a>
+            <p>
+              A volunteer collective fostering mutual aid and housing justice
+              through data analysis and technology tools. They coordinate data
+              research, tool development, and solidarity networks while
+              building power through accessible housing data, technical
+              support for housing justice organizations, and creating spaces
+              for data-driven advocacy.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.streetlives.nyc/">Streetlives</a>
+            <p>
+              Streetlives is an NYC-based non-profit that empowers unhoused
+              individuals through digital products rooted in lived experience.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.ny4reparations.org/">New Yorkers for Reparations</a>
+            <p>
+              A grassroots collective fostering mutual aid and community power
+              through reparations organizing and Black liberation work in NYC.
+              They coordinate direct support, political education, and
+              solidarity networks while building power through community
+              organizing, policy advocacy, and creating spaces for racial
+              justice and transformative change.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.jfrej.org/">Jews for Racial &amp; Economic Justice (JFREJ)</a>
+            <p>
+              A Jewish organization building transformative multiracial
+              movements for justice through mutual aid, community organizing,
+              and solidarity work. JFREJ organizes NYC's Jewish communities to
+              fight for racial and economic justice alongside Black,
+              immigrant, Muslim, Palestinian, and other marginalized
+              communities.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.justicecommittee.org/">Justice Committee</a>
+            <p>
+              Organizing to end police/racial violence and supporting
+              families/survivors of NYPD violence since the 80s.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.claimourspacenow.org/">Claim Our Space Now</a>
+            <p>
+              Black and Queer/Immigrant led organization building community
+              power.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.instagram.com/blackanarchistradicals/">Black Anarchist Radicals</a>
+            <p>
+              Collective organizing for Black liberation and anarchist
+              principles.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.instagram.com/unityandstrug/">Unity &amp; Struggle</a>
+            <p>
+              Revolutionary communist organization focused on building working
+              class power and solidarity.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.instagram.com/how_our_lives_link_altogether/">HOLLA (How Our Lives Link
+              Altogether)</a>
+            <p>
+              Black-led mutual aid collective building community power through
+              solidarity networks, political education, and direct support
+              initiatives.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.instagram.com/daretostruggle.nyc/">Dare to Struggle</a>
+            <p>
+              A revolutionary organization building power through mutual aid,
+              political education, and direct action to advance the struggle
+              for liberation and social justice.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.surewecan.org/">Sure We Can</a>
+            <p>
+              A non-profit recycling center and sustainability hub in Brooklyn
+              that supports canners—community members who collect cans and
+              bottles to make a living. Through recycling, composting,
+              gardening, and arts initiatives, they promote social inclusion,
+              environmental awareness, and economic empowerment for
+              marginalized residents.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://fridays4futurenyc.com/">Fridays For Future NYC</a>
+            <p>
+              The New York City chapter of the international, intersectional
+              youth movement fighting for climate justice.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.cidny.org/">Center for Independence of the Disabled, NY</a>
+            <p>
+              Free services for disabled New Yorkers, including benefits
+              counseling, housing assistance, and independent living support.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.risemagazine.org/">Rise Magazine</a>
+            <p>
+              Parent-led organization working to reform child welfare system
+              and create supportive communities.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://sarapis.org/">Sarapis</a>
+            <p>
+              Tech collective developing open-source solutions for nonprofit
+              and public sector organizations.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://northstarfund.org/">North Star Fund</a>
+            <p>
+              Community foundation supporting grassroots organizing and mutual
+              aid initiatives across New York City and the Hudson Valley
+              through grantmaking and movement building.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.instagram.com/nycactionmedical">NYC Action Medical</a>
+            <p>
+              Collective of street medics assisting in protest actions and
+              providing training workshops.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://pactcollective.xyz/">Pact Collective</a>
+            <p>
+              Impact network supporting grassroots movements with insurance,
+              legal support, and infrastructure.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.woodbine.nyc/">Woodbine</a>
+            <p>
+              Experimental hub for developing autonomy through mutual aid and
+              collective organizing.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://bluestockings.com/">Bluestockings Cooperative</a>
+            <p>
+              A worker-owned cooperative bookstore, cafe, and activist center
+              organizing mutual aid and community support initiatives in the
+              Lower East Side. They coordinate resource sharing, political
+              education, and solidarity networks while building power through
+              radical literature, organizing space, and creating an accessible
+              hub for movement building and collective care.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.wordupbooks.com/">Word Up Community Bookshop</a>
+            <p>
+              A multilingual, collectively-run bookshop fostering mutual aid
+              and community power through accessible literature and cultural
+              programming in Washington Heights. They coordinate book
+              distribution, educational workshops, and solidarity networks
+              while building power through community-driven arts, language
+              justice, and creating spaces for neighborhood gathering and
+              cultural resistance.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://letramuerta.nyc/">Letra Muerta</a>
+            <p>
+              A radical bookstore and community space fostering mutual aid and
+              cultural resistance through accessible literature and political
+              education. They coordinate book distribution, community events,
+              and solidarity networks while building power through
+              Spanish-language publishing, radical literature, and creating
+              spaces for movement building.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://interferencearchive.org/">Interference Archive</a>
+            <p>
+              A volunteer-run archive and community space fostering mutual aid
+              and social movements through cultural preservation and political
+              education. They coordinate exhibitions, workshops, and
+              solidarity networks while building power through archival
+              collections, community programming, and creating spaces for
+              movement history and collective memory.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://booksthroughbarsnyc.org/">Books Through Bars NYC</a>
+            <p>
+              A volunteer-run organization that sends free books to people
+              incarcerated in New York and across the nation, supporting
+              education and literacy through literature access and solidarity.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.instagram.com/takebackthebronx/">Take Back The Bronx</a>
+            <p>
+              A grassroots collective fostering mutual aid and community power
+              through direct action and organizing in The Bronx. They
+              coordinate tenant organizing, anti-gentrification initiatives,
+              and solidarity networks while building power through community
+              defense, political education, and creating spaces for collective
+              resistance against displacement and police violence.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.instagram.com/equality4flatbush">Equality for Flatbush</a>
+            <p>
+              People of color-led grassroots organization fighting
+              gentrification and police violence in Flatbush through direct
+              action, community organizing, and mutual aid initiatives.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://bushwickayudamutua.com/">Bushwick Ayuda Mutua</a>
+            <p>Bushwick neighbors helping Bushwick neighbors.</p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.eastbrooklynmutualaid.org/">East Brooklyn Mutual Aid</a>
+            <p>Community support network in East Brooklyn.</p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.instagram.com/comidapalpueblo/">Comida Pal Pueblo</a>
+            <p>North Brooklyn biweekly food &amp; survival program.</p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.comunidadprimero.org/">Comunidad Primero</a>
+            <p>
+              Bushwick organization fighting food insecurity with food
+              distributions.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://www.instagram.com/club_a_nyc">Club A</a>
+            <p>
+              Anarchist Mutual Aid group distributing food and supplies at
+              Bushwick City Farm.
+            </p>
+          </div>
+
+          <div class="initiative">
+            <a href="https://macc.nyc/">Metropolitan Anarchist Coordinating Council (MACC)</a>
+            <p>
+              an organization based on the guiding principles of
+              horizontalism, anti-oppression, mutual aid, direct democracy,
+              and direct action.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.chfgma.org/">Clinton Hill/Fort Greene Mutual Aid</a>
+            <p>
+              Neighbors helping neighbors in Clinton Hill and Fort Greene.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://crownheightsmutualaid.wordpress.com/">Crown Heights Mutual Aid</a>
+            <p>Community support network in Crown Heights.</p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.gowanusmutualaid.org/">Gowanus Mutual Aid</a>
+            <p>Mutual aid network serving the Gowanus area.</p>
+          </div>
+          <div class="initiative">
+            <a href="https://sites.google.com/view/redhook-mutualaid">Red Hook Mutual Aid</a>
+            <p>Community support in Red Hook.</p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.milmundosbooks.com/">Mil Mundos Books</a>
+            <p>
+              Bilingual bookstore serving as drop-off point for Bushwick Ayuda
+              Mutua donations.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://rainorshinediaperfund.org/">Raine or Shine Diaper Fund Distro</a>
+            <p>
+              Rain or Shine Diaper Fund provides diapers and wipes to families
+              in Brooklyn.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://swma.nyc/">Sunnyside and Woodside Mutual Aid</a>
+            <p>Neighbors helping neighbors in Sunnyside and Woodside.</p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.astoriafoodpantry.com/">Astoria Food Pantry</a>
+            <p>
+              Food pantry, free library, free store, and diaper distributions
+              in Astoria.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/sunsetgardenridgewood/">Sunset Graden Ridgewood</a>
+            <p></p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/survivepunishny/">Survived &amp; Punished NY</a>
+            <p>
+              Local chapter organizing to free criminalized survivors of
+              domestic and sexual violence through mutual aid, advocacy, and
+              community education, while building alternatives to policing and
+              prisons.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.chinatownartbrigade.org/">Chinatown Art Brigade</a>
+            <p>
+              A cultural collective fostering mutual aid and community power
+              through art activism and anti-displacement organizing in NYC's
+              Chinatown. They coordinate public art projects, cultural
+              resistance, and solidarity networks while building power through
+              community-led art initiatives, tenant organizing collaborations,
+              and creating spaces for cultural preservation and
+              anti-gentrification resistance.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://wrongfullyconvicted.info/">Families and Friends of the Wrongfully Convicted (FFWC)</a>
+            <p>
+              Grassroots organization providing support, advocacy, and mutual
+              aid for wrongfully convicted individuals and their families
+              while fighting for criminal justice reform.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.friendlyfridgefoundation.org/">Friendly Fridge BX</a>
+            <p>
+              A mutual aid collective coordinating community fridges and food
+              distribution initiatives in the Bronx. They organize direct
+              support through free food access, resource sharing, and
+              community education while building networks of solidarity
+              through neighborhood organizing and food justice advocacy.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://sbxma.com/">South Bronx Mutual Aid</a>
+            <p>
+              South Bronx Mutual Aid is a volunteer group of neighbors helping
+              neighbors.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://actupny.org/">ACT UP NY</a>
+            <p>
+              A diverse, non-partisan group fostering mutual aid and direct
+              action to end the AIDS crisis since 1987. They coordinate
+              protest actions, community education, and solidarity networks
+              while building power through grassroots organizing, political
+              advocacy, and creating spaces for collective resistance against
+              health inequities. Their work combines direct support with
+              radical activism to fight for healthcare access and justice for
+              people living with HIV/AIDS.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.propertyistheft.org/">Property Is Theft (P.I.T.)</a>
+            <p>
+              A community space in Los Sures, Williamsburg fostering mutual
+              aid and collective power through uncommodified programming and
+              resources. They provide space for artists and activists,
+              offering music lessons, political education, creative workshops,
+              and organizing spaces while building networks of solidarity
+              through cultural programming and revolutionary ideology.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://comeforever.net/">Come Forever</a>
+            <p>
+              A social space fostering cross-accessibility contact through
+              mutual aid and community support. They provide free health
+              resources, public archives, a bookmaking collaborative, and a
+              small library while creating an inclusive environment focused on
+              rest, physical and mental health, and social connection across a
+              disability spectrum.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://times-up.org/">Time's Up</a>
+            <p>
+              A grassroots environmental organization fostering mutual aid and
+              community power through direct action and environmental advocacy
+              in NYC. They coordinate bike programs, community gardens, and
+              solidarity networks while building power through sustainable
+              transportation initiatives, environmental education, and
+              creating spaces for climate justice.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.thewordischange.com/">The Word Is Change</a>
+            <p>
+              A radical bookstore fostering mutual aid and community power
+              through accessible literature and cultural programming in
+              Brooklyn. They coordinate book access, educational resources,
+              and solidarity networks while building power through community
+              events, political education, and creating spaces for learning
+              and movement building.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.starrbar.com/">Starr Bar</a>
+            <p>
+              A movement space and social justice bar fostering mutual aid and
+              community power through cultural programming and organizing in
+              Brooklyn. They coordinate events, resource sharing, and
+              solidarity networks while building power through community
+              gatherings, political education, and creating spaces for
+              movement building and radical hospitality.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://morusnyc.org/">Museum of Reclaimed Urban Space (MoRUS)</a>
+            <p>
+              A volunteer-run museum and community space in the Lower East
+              Side documenting the history of grassroots activism and urban
+              sustainability. They preserve and showcase the neighborhood's
+              activist history through exhibits, radical history walking
+              tours, and community events while fostering mutual aid and
+              environmental justice initiatives.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://maydayspace.org/">Mayday Space</a>
+            <p>
+              A community center and organizing hub in Bushwick providing
+              space for grassroots groups, activists, and residents to build
+              collective power. They host classes, trainings, meetings, and
+              events on a sliding scale while fostering mutual aid,
+              cooperation, and anti-oppressive organizing for social justice.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/firebrandnyc/">Firebrand NYC</a>
+            <p>
+              A revolutionary socialist organization fostering mutual aid and
+              community solidarity through collective organizing in New York
+              City. They coordinate political education, direct action
+              support, and solidarity networks while building power through
+              community organizing and creating spaces for collective study
+              and struggle.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://popgym.org/">POP Gym</a>
+            <p>
+              Pop Gym is a local NYC non-profit that works to provide free/low
+              cost self-defense and martial arts events all around NYC.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/peopleshealtheducationprogram/">People's Health Eductation
+              Program</a>
+            <p>Health Education &amp; Resources for the People by the People</p>
+          </div>
+          <div class="initiative">
+            <a href="https://abortionrights.nyc/">NYC for Abortion Rights</a>
+            <p>
+              An intersectional, abolitionist, socialist-feminist collective
+              fostering mutual aid and community organizing for abortion
+              access and reproductive justice in New York City. They
+              coordinate clinic defense, direct support, and solidarity
+              networks while building power through grassroots organizing and
+              creating pathways for reproductive freedom.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/uptownwagon/">Uptown Wagon</a>
+            <p>
+              A collective of neighbors who meet in uptown Manhattan to
+              distribute meals &amp; supplies to neighbors experiencing
+              homelessness.
+            </p>
+          </div>
+          <div class="initiative">
+            <a href="https://www.instagram.com/dontforgetthestreets/">Don't Forget the Streets</a>
+            <p>
+              Harm reduction collective doing street outreach, naloxone
+              trainings and event tabling in NYC
+            </p>
+          </div>
         </section>
-
-        <div class="initiative">
-          <a href="https://www.cityworkers4justice.org/">City Workers for Justice</a>
-          <p>
-            Increasing government transparency and cross-pollination of
-            ideas and expertise across city agencies.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/bxmutualaidnetwork/">Bronx Mutual Aid Network</a>
-          <p>
-            A grassroots collective providing direct support and community
-            care in the Bronx. They coordinate resource distribution,
-            emergency assistance, and solidarity networks while building
-            power through neighborhood-based organizing and mutual aid
-            initiatives.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://webuildtheblock.org/">We Build The Block</a>
-          <p>
-            A grassroots organization coordinating mutual aid and
-            community-led public safety initiatives in New York City. They
-            organize youth leadership development, restorative justice
-            programs, and innovative safety protocols while building
-            networks of solidarity through community education, trauma
-            resolution, and transformative approaches to neighborhood
-            wellbeing.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.paroleprepny.org/">Parole Preparation Project</a>
-          <p>
-            A grassroots organization fostering mutual aid and community
-            solidarity through advocacy, litigation, and direct support for
-            currently and formerly incarcerated New Yorkers. They coordinate
-            parole preparation assistance, community care programs, and
-            solidarity networks while building power through policy
-            advocacy, arts programming, and creating spaces for successful
-            reentry and community reintegration.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.thefreeblackwomenslibrary.com/">The Free Black Women's Library</a>
-          <p>
-            A mobile library and mutual aid initiative celebrating Black
-            women authors and literature. Through book exchanges, cultural
-            events, and community gatherings, they create accessible spaces
-            for learning, sharing resources, and building connections while
-            centering Black women's voices and experiences.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.commonnotions.org/">Common Notions</a>
-          <p>
-            A radical publishing collective fostering mutual aid through
-            accessible political education and movement literature. They
-            work to amplify marginalized voices, support social movements,
-            and create resources for community organizing while building
-            networks of knowledge sharing and solidarity.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://ajmuste.org/">AJ Muste Institute</a>
-          <p>
-            A foundation supporting grassroots activism and mutual aid
-            through grants, fiscal sponsorship, and community space. They
-            provide resources for social justice organizing, nonviolent
-            action, and movement building while fostering connections
-            between activists and organizations working for transformative
-            change.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/lesfoodnotbombs">Food Not Bombs Lower East Side</a>
-          <p>
-            A mutual aid collective fostering food justice and community
-            solidarity through free food sharing in New York City's Lower
-            East Side. They coordinate regular meal distributions, food
-            recovery initiatives, and solidarity networks while building
-            power through direct action, community care, and creating spaces
-            for food sovereignty and collective nourishment.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://caaav.org/">CAAAV: Organizing Asian Communities</a>
-          <p>
-            Building power with working class Asian immigrants in Chinatown
-            and Astoria through tenant organizing, fighting gentrification,
-            and developing grassroots leadership to shape the future of our
-            neighborhoods.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://linktr.ee/undocuwomensfund">Undocumented Women's Fund</a>
-          <p>
-            Care, learning and organizing network supporting immigrant women
-            in NYC.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/nycmigrantsolidarity/">NYC Migrant Solidarity</a>
-          <p>
-            Anti-Authoritarian collective empowering networks of community
-            support in crisis &amp; platforms for mutual aid with migrants.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://maketheroadny.org/">Make the Road NY</a>
-          <p>Building power in immigrant and working class communities.</p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://chhayacdc.org/">Chhaya CDC</a>
-          <p>
-            Building power, housing stability, and economic well-being of
-            South Asian and Indo-Caribbean communities.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://discord.gg/8ZWAYJr">The End Is Queer: NYC Mutual Aid</a>
-          <p>
-            Discord server organizing queer New Yorkers around mutual aid
-            needs.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://gaycenter.org/">The LGBT Community Center</a>
-          <p>
-            Nonprofit community center hosting support groups and meeting
-            spaces.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.ourvoicesarefree.org/">Colectivo TRANSgrediendo</a>
-          <p>
-            Organization working on empowerment, healthcare access, and
-            rights for TransGNB people.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.thebrooklynghostproject.org/">The Brooklyn G.H.O.S.T Project</a>
-          <p>
-            Black, transgender-led nonprofit providing support, resources,
-            and free meals to transgender and non-binary communities of
-            color in Brooklyn.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/griotcircle/">GRIOT Circle</a>
-          <p>
-            A community-based organization building power through mutual aid
-            and intergenerational support for LGBTQ+ elders of color. They
-            coordinate direct assistance, wellness programs, and solidarity
-            networks while creating spaces for connection, cultural
-            preservation, and collective care.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.tcahnyc.org/">The Campaign Against Hunger NYC</a>
-          <p>Nonprofit operating food pantries and gardening workshops.</p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.lovewinsnyc.org/">Love Wins NYC</a>
-          <p>
-            Queer-centric effort distributing free produce to hundreds of
-            families monthly.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.mccny.org/charities/pantry.html">Sylvia Rivera Food Pantry</a>
-          <p>
-            Food pantry assisting low-income and HIV+ community members.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="http://nycommonpantry.org/">NY Common Pantry</a>
-          <p>
-            Reducing hunger and promoting dignity, health, and
-            self-sufficiency.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="http://cbfood.org/">Central Brooklyn Food Coop</a>
-          <p>
-            A Black-led, member-owned and operated food cooperative building
-            food sovereignty through collective ownership, affordable
-            healthy food access, and community wealth building in Central
-            Brooklyn.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.foodhelpline.org/directory/regions/new_york_city">Lemon Tree's Free Food
-            Directory</a>
-          <p>Map of food pantries and distributions throughout the city.</p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://envisionfreedom.org/">Envision Freedom Fund</a>
-          <p>
-            Fighting to dismantle the criminal legal and immigration
-            systems.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.inourheartsnyc.org/">In Our Hearts NYC</a>
-          <p>
-            Anarchist food distribution and action-oriented mutual aid
-            group.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://sxhxcollective.org/">Support Ho(s)e</a>
-          <p>
-            A collective of sex workers and allies building radical
-            community and providing mutual aid.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://rougesupportnetwork.org/">Rouge Support Network</a>
-          <p>
-            National support system serving communities impacted by
-            criminalization and the prison industrial complex.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://swp.urbanjustice.org/">Sex Workers Project</a>
-          <p>
-            Legal services and advocacy supporting the rights of sex workers
-            and survivors of human trafficking.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.bedtu.org/">Brooklyn Eviction Defense Tenant Union</a>
-          <p>Fighting evictions and supporting tenants in Brooklyn.</p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.crownheightstenantunion.org/">Crown Heights Tenant Union</a>
-          <p>
-            Uniting tenant associations in Crown Heights to fight for better
-            living conditions, affordable housing, and tenant power through
-            direct action and mutual aid.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.wbwmutualaid.org/">WBW Mutual Aid</a>
-          <p>
-            A grassroots collective fostering mutual aid and community
-            solidarity through direct support and tenant organizing in NYC.
-            They coordinate emergency assistance, housing advocacy, and
-            solidarity networks while building power through community
-            organizing, direct action, and creating spaces for housing
-            justice.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/micasaresiste/">Mi Casa Resiste</a>
-          <p>
-            Tenant organizing collective building power through mutual aid
-            and direct action to resist displacement and fight for housing
-            justice in NYC.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/notonemoreblock/">Not One More Block</a>
-          <p>
-            Tenant organizing collective fighting gentrification and
-            displacement through direct action, mutual aid, and community
-            power building.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.sanctuaryhood.org/">Sanctuary Neighborhoods NYC</a>
-          <p>
-            A grassroots collective coordinating mutual aid and community
-            defense initiatives to protect neighbors from displacement and
-            build tenant power. They organize direct support, resource
-            sharing, and solidarity networks while developing
-            neighborhood-based strategies for housing justice and community
-            care.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/ridgewoodtenantsunion/">Ridgewood Tenants Union</a>
-          <p>
-            A grassroots tenant organization fostering mutual aid and
-            community solidarity through tenant organizing and housing
-            justice work in Ridgewood, Queens. They coordinate tenant
-            support, housing advocacy, and solidarity networks while
-            building power through collective organizing, direct action, and
-            creating spaces for tenant empowerment.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://weunlock.nyc/">Unlock NYC</a>
-          <p>
-            A community-led initiative fostering mutual aid and housing
-            justice through technology and collective organizing in New York
-            City. They coordinate support for housing voucher holders,
-            document discrimination, and build solidarity networks while
-            creating tools and spaces for tenants to fight source of income
-            discrimination and access safe, affordable housing.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.justfix.org/">JustFix</a>
-          <p>
-            A technology non-profit fostering mutual aid and housing justice
-            through digital tools and data initiatives. They coordinate
-            tenant support platforms, housing data research, and solidarity
-            networks while building power through accessible technology
-            tools that help tenants fight displacement and assert their
-            rights.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/micasaresiste/">Mi Casa Resiste</a>
-          <p>
-            A tenant organizing collective fostering mutual aid and housing
-            justice through direct action and community power in NYC. They
-            coordinate tenant organizing, eviction defense, and solidarity
-            networks while building power through collective resistance
-            against displacement and creating spaces for housing justice
-            organizing.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.housingdatanyc.org/">Housing Data Coalition</a>
-          <p>
-            A volunteer collective fostering mutual aid and housing justice
-            through data analysis and technology tools. They coordinate data
-            research, tool development, and solidarity networks while
-            building power through accessible housing data, technical
-            support for housing justice organizations, and creating spaces
-            for data-driven advocacy.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.streetlives.nyc/">Streetlives</a>
-          <p>
-            Streetlives is an NYC-based non-profit that empowers unhoused
-            individuals through digital products rooted in lived experience.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.ny4reparations.org/">New Yorkers for Reparations</a>
-          <p>
-            A grassroots collective fostering mutual aid and community power
-            through reparations organizing and Black liberation work in NYC.
-            They coordinate direct support, political education, and
-            solidarity networks while building power through community
-            organizing, policy advocacy, and creating spaces for racial
-            justice and transformative change.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.jfrej.org/">Jews for Racial &amp; Economic Justice (JFREJ)</a>
-          <p>
-            A Jewish organization building transformative multiracial
-            movements for justice through mutual aid, community organizing,
-            and solidarity work. JFREJ organizes NYC's Jewish communities to
-            fight for racial and economic justice alongside Black,
-            immigrant, Muslim, Palestinian, and other marginalized
-            communities.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.justicecommittee.org/">Justice Committee</a>
-          <p>
-            Organizing to end police/racial violence and supporting
-            families/survivors of NYPD violence since the 80s.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.claimourspacenow.org/">Claim Our Space Now</a>
-          <p>
-            Black and Queer/Immigrant led organization building community
-            power.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/blackanarchistradicals/">Black Anarchist Radicals</a>
-          <p>
-            Collective organizing for Black liberation and anarchist
-            principles.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/unityandstrug/">Unity &amp; Struggle</a>
-          <p>
-            Revolutionary communist organization focused on building working
-            class power and solidarity.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/how_our_lives_link_altogether/">HOLLA (How Our Lives Link
-            Altogether)</a>
-          <p>
-            Black-led mutual aid collective building community power through
-            solidarity networks, political education, and direct support
-            initiatives.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/daretostruggle.nyc/">Dare to Struggle</a>
-          <p>
-            A revolutionary organization building power through mutual aid,
-            political education, and direct action to advance the struggle
-            for liberation and social justice.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.surewecan.org/">Sure We Can</a>
-          <p>
-            A non-profit recycling center and sustainability hub in Brooklyn
-            that supports canners—community members who collect cans and
-            bottles to make a living. Through recycling, composting,
-            gardening, and arts initiatives, they promote social inclusion,
-            environmental awareness, and economic empowerment for
-            marginalized residents.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://fridays4futurenyc.com/">Fridays For Future NYC</a>
-          <p>
-            The New York City chapter of the international, intersectional
-            youth movement fighting for climate justice.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.cidny.org/">Center for Independence of the Disabled, NY</a>
-          <p>
-            Free services for disabled New Yorkers, including benefits
-            counseling, housing assistance, and independent living support.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.risemagazine.org/">Rise Magazine</a>
-          <p>
-            Parent-led organization working to reform child welfare system
-            and create supportive communities.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://sarapis.org/">Sarapis</a>
-          <p>
-            Tech collective developing open-source solutions for nonprofit
-            and public sector organizations.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://northstarfund.org/">North Star Fund</a>
-          <p>
-            Community foundation supporting grassroots organizing and mutual
-            aid initiatives across New York City and the Hudson Valley
-            through grantmaking and movement building.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/nycactionmedical">NYC Action Medical</a>
-          <p>
-            Collective of street medics assisting in protest actions and
-            providing training workshops.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://pactcollective.xyz/">Pact Collective</a>
-          <p>
-            Impact network supporting grassroots movements with insurance,
-            legal support, and infrastructure.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.woodbine.nyc/">Woodbine</a>
-          <p>
-            Experimental hub for developing autonomy through mutual aid and
-            collective organizing.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://bluestockings.com/">Bluestockings Cooperative</a>
-          <p>
-            A worker-owned cooperative bookstore, cafe, and activist center
-            organizing mutual aid and community support initiatives in the
-            Lower East Side. They coordinate resource sharing, political
-            education, and solidarity networks while building power through
-            radical literature, organizing space, and creating an accessible
-            hub for movement building and collective care.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.wordupbooks.com/">Word Up Community Bookshop</a>
-          <p>
-            A multilingual, collectively-run bookshop fostering mutual aid
-            and community power through accessible literature and cultural
-            programming in Washington Heights. They coordinate book
-            distribution, educational workshops, and solidarity networks
-            while building power through community-driven arts, language
-            justice, and creating spaces for neighborhood gathering and
-            cultural resistance.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://letramuerta.nyc/">Letra Muerta</a>
-          <p>
-            A radical bookstore and community space fostering mutual aid and
-            cultural resistance through accessible literature and political
-            education. They coordinate book distribution, community events,
-            and solidarity networks while building power through
-            Spanish-language publishing, radical literature, and creating
-            spaces for movement building.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://interferencearchive.org/">Interference Archive</a>
-          <p>
-            A volunteer-run archive and community space fostering mutual aid
-            and social movements through cultural preservation and political
-            education. They coordinate exhibitions, workshops, and
-            solidarity networks while building power through archival
-            collections, community programming, and creating spaces for
-            movement history and collective memory.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://booksthroughbarsnyc.org/">Books Through Bars NYC</a>
-          <p>
-            A volunteer-run organization that sends free books to people
-            incarcerated in New York and across the nation, supporting
-            education and literacy through literature access and solidarity.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/takebackthebronx/">Take Back The Bronx</a>
-          <p>
-            A grassroots collective fostering mutual aid and community power
-            through direct action and organizing in The Bronx. They
-            coordinate tenant organizing, anti-gentrification initiatives,
-            and solidarity networks while building power through community
-            defense, political education, and creating spaces for collective
-            resistance against displacement and police violence.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/equality4flatbush">Equality for Flatbush</a>
-          <p>
-            People of color-led grassroots organization fighting
-            gentrification and police violence in Flatbush through direct
-            action, community organizing, and mutual aid initiatives.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://bushwickayudamutua.com/">Bushwick Ayuda Mutua</a>
-          <p>Bushwick neighbors helping Bushwick neighbors.</p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.eastbrooklynmutualaid.org/">East Brooklyn Mutual Aid</a>
-          <p>Community support network in East Brooklyn.</p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/comidapalpueblo/">Comida Pal Pueblo</a>
-          <p>North Brooklyn biweekly food &amp; survival program.</p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.comunidadprimero.org/">Comunidad Primero</a>
-          <p>
-            Bushwick organization fighting food insecurity with food
-            distributions.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://www.instagram.com/club_a_nyc">Club A</a>
-          <p>
-            Anarchist Mutual Aid group distributing food and supplies at
-            Bushwick City Farm.
-          </p>
-        </div>
-
-        <div class="initiative">
-          <a href="https://macc.nyc/">Metropolitan Anarchist Coordinating Council (MACC)</a>
-          <p>
-            an organization based on the guiding principles of
-            horizontalism, anti-oppression, mutual aid, direct democracy,
-            and direct action.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.chfgma.org/">Clinton Hill/Fort Greene Mutual Aid</a>
-          <p>
-            Neighbors helping neighbors in Clinton Hill and Fort Greene.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://crownheightsmutualaid.wordpress.com/">Crown Heights Mutual Aid</a>
-          <p>Community support network in Crown Heights.</p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.gowanusmutualaid.org/">Gowanus Mutual Aid</a>
-          <p>Mutual aid network serving the Gowanus area.</p>
-        </div>
-        <div class="initiative">
-          <a href="https://sites.google.com/view/redhook-mutualaid">Red Hook Mutual Aid</a>
-          <p>Community support in Red Hook.</p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.milmundosbooks.com/">Mil Mundos Books</a>
-          <p>
-            Bilingual bookstore serving as drop-off point for Bushwick Ayuda
-            Mutua donations.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://rainorshinediaperfund.org/">Raine or Shine Diaper Fund Distro</a>
-          <p>
-            Rain or Shine Diaper Fund provides diapers and wipes to families
-            in Brooklyn.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://swma.nyc/">Sunnyside and Woodside Mutual Aid</a>
-          <p>Neighbors helping neighbors in Sunnyside and Woodside.</p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.astoriafoodpantry.com/">Astoria Food Pantry</a>
-          <p>
-            Food pantry, free library, free store, and diaper distributions
-            in Astoria.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.instagram.com/sunsetgardenridgewood/">Sunset Graden Ridgewood</a>
-          <p></p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.instagram.com/survivepunishny/">Survived &amp; Punished NY</a>
-          <p>
-            Local chapter organizing to free criminalized survivors of
-            domestic and sexual violence through mutual aid, advocacy, and
-            community education, while building alternatives to policing and
-            prisons.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.chinatownartbrigade.org/">Chinatown Art Brigade</a>
-          <p>
-            A cultural collective fostering mutual aid and community power
-            through art activism and anti-displacement organizing in NYC's
-            Chinatown. They coordinate public art projects, cultural
-            resistance, and solidarity networks while building power through
-            community-led art initiatives, tenant organizing collaborations,
-            and creating spaces for cultural preservation and
-            anti-gentrification resistance.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://wrongfullyconvicted.info/">Families and Friends of the Wrongfully Convicted (FFWC)</a>
-          <p>
-            Grassroots organization providing support, advocacy, and mutual
-            aid for wrongfully convicted individuals and their families
-            while fighting for criminal justice reform.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.friendlyfridgefoundation.org/">Friendly Fridge BX</a>
-          <p>
-            A mutual aid collective coordinating community fridges and food
-            distribution initiatives in the Bronx. They organize direct
-            support through free food access, resource sharing, and
-            community education while building networks of solidarity
-            through neighborhood organizing and food justice advocacy.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://sbxma.com/">South Bronx Mutual Aid</a>
-          <p>
-            South Bronx Mutual Aid is a volunteer group of neighbors helping
-            neighbors.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://actupny.org/">ACT UP NY</a>
-          <p>
-            A diverse, non-partisan group fostering mutual aid and direct
-            action to end the AIDS crisis since 1987. They coordinate
-            protest actions, community education, and solidarity networks
-            while building power through grassroots organizing, political
-            advocacy, and creating spaces for collective resistance against
-            health inequities. Their work combines direct support with
-            radical activism to fight for healthcare access and justice for
-            people living with HIV/AIDS.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.propertyistheft.org/">Property Is Theft (P.I.T.)</a>
-          <p>
-            A community space in Los Sures, Williamsburg fostering mutual
-            aid and collective power through uncommodified programming and
-            resources. They provide space for artists and activists,
-            offering music lessons, political education, creative workshops,
-            and organizing spaces while building networks of solidarity
-            through cultural programming and revolutionary ideology.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://comeforever.net/">Come Forever</a>
-          <p>
-            A social space fostering cross-accessibility contact through
-            mutual aid and community support. They provide free health
-            resources, public archives, a bookmaking collaborative, and a
-            small library while creating an inclusive environment focused on
-            rest, physical and mental health, and social connection across a
-            disability spectrum.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://times-up.org/">Time's Up</a>
-          <p>
-            A grassroots environmental organization fostering mutual aid and
-            community power through direct action and environmental advocacy
-            in NYC. They coordinate bike programs, community gardens, and
-            solidarity networks while building power through sustainable
-            transportation initiatives, environmental education, and
-            creating spaces for climate justice.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.thewordischange.com/">The Word Is Change</a>
-          <p>
-            A radical bookstore fostering mutual aid and community power
-            through accessible literature and cultural programming in
-            Brooklyn. They coordinate book access, educational resources,
-            and solidarity networks while building power through community
-            events, political education, and creating spaces for learning
-            and movement building.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.starrbar.com/">Starr Bar</a>
-          <p>
-            A movement space and social justice bar fostering mutual aid and
-            community power through cultural programming and organizing in
-            Brooklyn. They coordinate events, resource sharing, and
-            solidarity networks while building power through community
-            gatherings, political education, and creating spaces for
-            movement building and radical hospitality.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://morusnyc.org/">Museum of Reclaimed Urban Space (MoRUS)</a>
-          <p>
-            A volunteer-run museum and community space in the Lower East
-            Side documenting the history of grassroots activism and urban
-            sustainability. They preserve and showcase the neighborhood's
-            activist history through exhibits, radical history walking
-            tours, and community events while fostering mutual aid and
-            environmental justice initiatives.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://maydayspace.org/">Mayday Space</a>
-          <p>
-            A community center and organizing hub in Bushwick providing
-            space for grassroots groups, activists, and residents to build
-            collective power. They host classes, trainings, meetings, and
-            events on a sliding scale while fostering mutual aid,
-            cooperation, and anti-oppressive organizing for social justice.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.instagram.com/firebrandnyc/">Firebrand NYC</a>
-          <p>
-            A revolutionary socialist organization fostering mutual aid and
-            community solidarity through collective organizing in New York
-            City. They coordinate political education, direct action
-            support, and solidarity networks while building power through
-            community organizing and creating spaces for collective study
-            and struggle.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://popgym.org/">POP Gym</a>
-          <p>
-            Pop Gym is a local NYC non-profit that works to provide free/low
-            cost self-defense and martial arts events all around NYC.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.instagram.com/peopleshealtheducationprogram/">People's Health Eductation
-            Program</a>
-          <p>Health Education &amp; Resources for the People by the People</p>
-        </div>
-        <div class="initiative">
-          <a href="https://abortionrights.nyc/">NYC for Abortion Rights</a>
-          <p>
-            An intersectional, abolitionist, socialist-feminist collective
-            fostering mutual aid and community organizing for abortion
-            access and reproductive justice in New York City. They
-            coordinate clinic defense, direct support, and solidarity
-            networks while building power through grassroots organizing and
-            creating pathways for reproductive freedom.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.instagram.com/uptownwagon/">Uptown Wagon</a>
-          <p>
-            A collective of neighbors who meet in uptown Manhattan to
-            distribute meals &amp; supplies to neighbors experiencing
-            homelessness.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.instagram.com/dontforgetthestreets/">Don't Forget the Streets</a>
-          <p>
-            Harm reduction collective doing street outreach, naloxone
-            trainings and event tabling in NYC
-          </p>
-        </div>
       </div>
     </main>
   </div>
