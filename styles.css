@@ -310,6 +310,7 @@ li {
      box-sizing: border-box;
      overflow-y: auto;
      z-index: 100;
+     border-right: 2px solid #c01c1c;
 }
 
 /* More specific site logo selectors to override any other styles */
@@ -319,7 +320,7 @@ html body .sidebar .site-logo,
      display: block;
      width: 200px;
      height: auto;
-     margin: 0 auto;
+     margin: 0 auto 20px;
      padding: 1.5rem 0 1rem;
      max-width: none;
      object-fit: contain;
@@ -1231,18 +1232,37 @@ form .hidden,
 }
 
 /* Location Page */
-/* Make location link active by default on location page */
-.location-page .sidebar a[href="/location"].nav-link,
-.location-page .sidebar a[href="/location"].nav-link.active {
+/* Make location link active by default on location page, but not the parent */
+.location-page .sidebar a.location-link,
+.location-page .sidebar a.location-link.active {
      background-color: var(--color-white);
      color: var(--red-base);
      font-weight: 600;
 }
 
-/* Reduce prominence of "Find a group" heading when location is active */
-.location-page .sidebar .nav-group-title {
-     font-weight: 400;
-     opacity: 0.7;
+/* Ensure parent link (FIND A GROUP) is not highlighted on location pages */
+.location-page .sidebar a.parent-link {
+     background-color: transparent;
+     color: inherit;
+     font-weight: normal;
+}
+
+/* SIMPLER PATH-BASED SOLUTION - Highlight "by location" for all city and state pages */
+body[class*="page-cities-"] .sidebar a.location-link,
+body[class*="page-states-"] .sidebar a.location-link,
+body.page-location .sidebar a.location-link {
+     background-color: var(--color-white);
+     color: var(--red-base);
+     font-weight: 600;
+}
+
+/* Ensure parent link (FIND A GROUP) is not highlighted on state/city pages */
+body[class*="page-cities-"] .sidebar a.parent-link,
+body[class*="page-states-"] .sidebar a.parent-link,
+body.page-location .sidebar a.parent-link {
+     background-color: transparent;
+     color: inherit;
+     font-weight: normal;
 }
 
 /* Ensure the sidebar header is not affected by active states */
@@ -1261,6 +1281,13 @@ form .hidden,
      padding-bottom: 0;
 }
 
+/* Make sure topics link is active on topics page */
+body.page-topics .sidebar a.topic-link {
+     background-color: var(--color-white);
+     color: var(--red-base);
+     font-weight: 600;
+}
+
 /* Home Page */
 /* Make Home link active by default */
 body.page-home .sidebar a[href="/"].nav-link,
@@ -1276,15 +1303,6 @@ body.page-index .sidebar a[href="/"].nav-link {
      background-color: transparent;
      color: inherit;
      font-weight: normal;
-}
-
-/* SIMPLER PATH-BASED SOLUTION - Highlight "by location" for all city and state pages */
-body[class*="page-cities-"] .sidebar a[href="/location"].nav-link-indented,
-body[class*="page-states-"] .sidebar a[href="/location"].nav-link-indented,
-body.page-location .sidebar a[href="/location"].nav-link-indented {
-     background-color: var(--color-white);
-     color: var(--red-base);
-     font-weight: 600;
 }
 
 /* Override for specific pages to ensure Home isn't active */

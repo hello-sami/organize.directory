@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/styles.css?v=1.1.5" as="style">
+    <script>
+        // Preload CSS to reduce flickering
+        function preloadCriticalCSS() {
+            const criticalStyles = ['/styles.css?v=1.1.5'];
+            criticalStyles.forEach(href => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.href = href;
+                link.as = 'style';
+                document.head.appendChild(link);
+            });
+        }
+        // Execute immediately
+        preloadCriticalCSS();
+    </script>
+
+    <!-- Favicon and app icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Page metadata -->
+    <title>Page Title - Organize Directory</title>
+    <meta name="description" content="Page description here">
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="/styles.css?v=1.1.5">
+
+    <!-- Non-blocking font loading -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Critical inline styles in case external CSS fails -->
+    <style>
+        /* Minimal critical styles for initial rendering */
+        html {
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #800000;
+            background-color: #FFF7F7;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Critical layout components to prevent layout shifts */
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        #sidebar-placeholder {
+            width: 240px;
+            min-height: 100vh;
+            background: #f8d1d1;
+            border-right: 2px solid #c01c1c;
+        }
+
+        .content {
+            flex: 1;
+            margin-left: 240px;
+            padding: 2rem 3rem 3rem;
+            background-color: #FFF7F7;
+        }
+
+        @media (max-width: 768px) {
+            #sidebar-placeholder {
+                position: fixed;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+
+    <!-- Initialize Sidebar as early as possible -->
+    <script type="module">
+        // Import sidebar as early as possible
+        import('/components/sidebar.js?v=1.0.8')
+            .then(module => {
+                const { checkAndInitializeSidebar } = module;
+                // Initialize sidebar with early detection - CHANGE 'pagename' TO MATCH YOUR PAGE
+                checkAndInitializeSidebar('pagename');
+            })
+            .catch(error => console.error('Error initializing sidebar:', error));
+
+        // Initialize other components after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            import('/utils/init.js?v=1.0.1')
+                .then(module => {
+                    const { initializeComponents } = module;
+                    initializeComponents({});
+                })
+                .catch(error => console.error('Error initializing components:', error));
+        });
+    </script>
+</head>
+
+<body class="page-pagename">
+    <div class="layout">
+        <!-- IMPORTANT: This placeholder gets replaced with the actual sidebar -->
+        <div id="sidebar-placeholder"></div>
+
+        <main class="content" role="main">
+            <header class="page-header"></header>
+
+            <!-- Page content goes here -->
+            <h1>Page Title</h1>
+
+            <!-- Your content here -->
+
+        </main>
+    </div>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Mobile menu button -->
+    <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
+
+    <!-- Mobile menu JavaScript -->
+    <script src="/mobile-menu.js" defer></script>
+</body>
+
+</html>

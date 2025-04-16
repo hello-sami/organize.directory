@@ -4,6 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/styles.css?v=1.1.5" as="style">
+    <script>
+        // Preload CSS to reduce flickering
+        function preloadCriticalCSS() {
+            const criticalStyles = ['/styles.css?v=1.1.5'];
+            criticalStyles.forEach(href => {
+                const link = document.createElement('link');
+                link.rel = 'preload';
+                link.href = href;
+                link.as = 'style';
+                document.head.appendChild(link);
+            });
+        }
+        // Execute immediately
+        preloadCriticalCSS();
+    </script>
+
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -109,25 +128,26 @@
 
     <!-- Initialize Components Immediately -->
     <script type="module">
-        document.addEventListener('DOMContentLoaded', function () {
-            // Import sidebar initialization after DOM is loaded
-            import('/components/sidebar.js?v=1.0.7')
-                .then(module => {
-                    const { initializeSidebar } = module;
-                    // Initialize sidebar
-                    initializeSidebar('home');
+        // Import sidebar as early as possible
+        import('/components/sidebar.js?v=1.0.8')
+            .then(module => {
+                const { checkAndInitializeSidebar } = module;
+                // Initialize sidebar with early detection
+                checkAndInitializeSidebar('home');
 
+                // Additional initialization can wait for DOMContentLoaded
+                document.addEventListener('DOMContentLoaded', function () {
                     // Reset nav-group-title
                     const navGroupTitles = document.querySelectorAll('.nav-group-title');
                     navGroupTitles.forEach(title => {
                         title.classList.add('reset-nav-group');
                     });
+                });
+            })
+            .catch(error => console.error('Error initializing sidebar:', error));
 
-                    // Note: The styling of header elements is now handled by the main CSS file and the cleanupInlineStyles function
-                })
-                .catch(error => console.error('Error initializing sidebar:', error));
-
-            // Initialize other components
+        // Initialize other components after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
             import('/utils/init.js?v=1.0.1')
                 .then(module => {
                     const { initializeComponents } = module;

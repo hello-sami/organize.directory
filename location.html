@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, text-size-adjust=100%, -webkit-text-size-adjust=100%">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -24,27 +23,189 @@
 
     <title>Find Mutual Aid Networks By Location</title>
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="/components/sidebar.js" as="script">
-
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css?v=1.1.2">
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js?v=1.0.3';
-        import { initializeComponents } from '/utils/init.js';
+    <!-- Critical sidebar styles to prevent layout shift -->
+    <style>
+        .sidebar {
+            background-color: #ffd4d4;
+            width: 240px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 2rem 0;
+            box-sizing: border-box;
+            overflow-y: auto;
+            z-index: 100;
+            border-right: 2px solid #c01c1c;
+        }
 
-        // Initialize sidebar immediately
-        initializeSidebar('location');
+        .sidebar-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin-bottom: 0;
+        }
+
+        .site-logo {
+            display: block;
+            width: 200px;
+            height: auto;
+            margin: 0 auto 20px;
+            padding: 1.5rem 0 1rem;
+        }
+
+        .sidebar nav {
+            margin-bottom: 2rem;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 0.85rem 1.5rem;
+            color: #4d0000;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            opacity: 0.9;
+            font-size: 0.95rem;
+            width: 100%;
+            background-color: #ffd4d4;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+        }
+
+        .nav-link-indented {
+            padding-left: 2.5rem;
+        }
+
+        .active {
+            background-color: #ffffff;
+            color: #c82525;
+            font-weight: 600;
+        }
+
+        .sidebar-motto {
+            font-size: 0.85rem;
+            color: #de6b6b;
+            opacity: 0.9;
+            text-align: center;
+            line-height: 1.4;
+            margin-top: auto;
+            font-weight: 600;
+        }
+
+        @media (max-width: 1020px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+                box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+        }
+    </style>
+
+    <!-- Inline sidebar initialization to prevent flashing -->
+    <script>
+        // Immediately set the active state for location page
+        function initializeBasicSidebar() {
+            // Wait for DOM to be interactive
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', setActiveSidebar);
+            } else {
+                setActiveSidebar();
+            }
+        }
+
+        function setActiveSidebar() {
+            // Find the location link and make it active
+            const locationLink = document.querySelector('.location-link');
+            if (locationLink) {
+                locationLink.classList.add('active');
+                locationLink.setAttribute('aria-current', 'page');
+            }
+
+            // Setup mobile menu toggling
+            const menuButton = document.querySelector('.mobile-menu-button');
+            const menuOverlay = document.querySelector('.mobile-menu-overlay');
+
+            if (menuButton && menuOverlay) {
+                const toggleMenu = () => {
+                    const sidebar = document.querySelector('.sidebar');
+                    sidebar.classList.toggle('active');
+                    document.body.classList.toggle('menu-open');
+                    menuOverlay.classList.toggle('active');
+                };
+
+                menuButton.addEventListener('click', toggleMenu);
+                menuOverlay.addEventListener('click', toggleMenu);
+            }
+        }
+
+        // Execute immediately
+        initializeBasicSidebar();
+    </script>
+
+    <!-- Load full sidebar functionality asynchronously -->
+    <script type="module">
+        // Import sidebar for enhanced functionality
+        import('/components/sidebar.js?v=1.0.8')
+            .then(module => {
+                const { checkAndInitializeSidebar } = module;
+                // Initialize full sidebar 
+                checkAndInitializeSidebar('location');
+            })
+            .catch(error => console.error('Error initializing sidebar:', error));
+
+        // Initialize other components after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            import('/utils/init.js?v=1.0.1')
+                .then(module => {
+                    const { initializeComponents } = module;
+                    initializeComponents({});
+                })
+                .catch(error => console.error('Error initializing components:', error));
+        });
     </script>
 </head>
 
 <body class="location-page">
     <div class="layout">
-        <div id="sidebar-placeholder"></div>
+        <!-- Embedded sidebar HTML structure to prevent flashing -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="/">
+                    <img src="/logo.png" alt="Organize Directory Logo" class="site-logo">
+                </a>
+            </div>
+            <nav>
+                <a href="/" class="nav-link nav-link-base">HOME</a>
+                <a href="/location" class="nav-link nav-link-base parent-link">FIND A GROUP</a>
+                <a href="/location" class="nav-link nav-link-indented location-link">BY LOCATION</a>
+                <a href="/topics" class="nav-link nav-link-indented topic-link">BY TOPIC</a>
+                <a href="/guides" class="nav-link nav-link-base">GUIDES</a>
+                <a href="/contact" class="nav-link nav-link-base">CONTACT</a>
+                <a href="/subscribe" class="nav-link nav-link-base">SUBSCRIBE</a>
+            </nav>
+            <div class="sidebar-motto">
+                DON'T DESPAIR, ORGANIZE.
+            </div>
+        </div>
+
+        <!-- Mobile menu elements -->
+        <div class="mobile-menu-overlay"></div>
+        <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
 
         <main class="content" role="main">
             <h2>Select a state to get started:</h2>
@@ -106,9 +267,7 @@
     </div>
 
     <!-- Core Scripts -->
-    <script src="/js/script.js" type="module" async=""></script>
     <script src="/mobile-menu.js" defer=""></script>
-    <script src="/js/posts.js" type="module" async=""></script>
     <script src="/js/analytics.js" type="module" async=""></script>
 
 </body>
