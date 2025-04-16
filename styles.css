@@ -94,13 +94,22 @@ body {
 }
 
 h1 {
-     font-family: "Saira", sans-serif;
+     font-family: "Saira Semi Condensed", sans-serif;
      font-size: 2.5rem;
      color: var(--red-base);
-     margin-bottom: 2rem;
+     /* margin-bottom: 2rem; */
      font-weight: 800;
      line-height: 1.1;
      text-align: left;
+}
+
+/* Center h1 only on the homepage */
+body.page-home h1,
+body.page-index h1,
+body.page- h1 {
+     text-align: center;
+     padding-top: 3rem;
+     font-size: 5rem;
 }
 
 h2 {
@@ -260,15 +269,15 @@ li {
      max-width: 1000px;
      margin-left: auto;
      margin-right: auto;
+     text-align: left;
 }
 
 .content h1 {
      color: var(--red-base);
      font-size: 3.5rem;
      font-weight: 700;
-     text-align: left;
-     margin-bottom: 5rem;
-     font-family: "Saira", sans-serif;
+     margin-bottom: 2rem;
+     font-family: "Saira Semi Condensed", sans-serif;
 }
 
 .content h2 {
@@ -277,7 +286,6 @@ li {
      margin-right: auto;
      padding: 0;
      text-indent: 0;
-     text-align: left;
 }
 
 /* Add specific styling for city page section headings */
@@ -335,6 +343,7 @@ html body .sidebar .site-logo,
      display: flex;
      align-items: center;
      font-weight: 700;
+     font-family: "Saira Semi Condensed", sans-serif;
 }
 
 .sidebar-header h1 a,
@@ -461,7 +470,7 @@ html body .sidebar .site-logo,
 
 /* Find Groups Buttons */
 .find-groups-buttons {
-     margin: 2rem auto 4rem;
+     /* margin: 2rem auto 4rem; */
 }
 
 .buttons-container {
@@ -504,7 +513,7 @@ html body .sidebar .site-logo,
 .button-text {
      font-size: 1.2rem;
      font-weight: 600;
-     font-family: "Saira", sans-serif;
+     font-family: "Inter", sans-serif;
 }
 
 /* Statistics Container */
@@ -531,7 +540,7 @@ html body .sidebar .site-logo,
      color: var(--red-base);
      line-height: 1;
      margin-bottom: 0.75rem;
-     font-family: "Saira", sans-serif;
+     font-family: "Saira Semi Condensed", sans-serif;
 }
 
 .stat-label {
@@ -540,7 +549,7 @@ html body .sidebar .site-logo,
      color: var(--red-base);
      text-transform: uppercase;
      letter-spacing: 0.05em;
-     font-family: "Saira", sans-serif;
+     font-family: "Saira Semi Condensed", sans-serif;
 }
 
 /* Initiative Statistics Section */
@@ -550,7 +559,7 @@ html body .sidebar .site-logo,
      border-radius: 12px;
      padding: 2.5rem 2rem;
      margin: 2rem auto 3rem;
-     max-width: 700px;
+     max-width: 800px;
 }
 
 .stats-description {
@@ -736,7 +745,7 @@ html .topic-name,
      font-size: 2rem;
      font-weight: 700;
      margin-bottom: 2rem;
-     font-family: "Saira", sans-serif;
+     font-family: "Saira Semi Condensed", sans-serif;
      text-align: left;
      margin-left: 0;
      padding-left: 0;
@@ -2026,7 +2035,7 @@ body .sidebar .nav-link:nth-child(2):hover,
 }
 
 .city-page .city-section h2 {
-     font-family: "Saira", sans-serif;
+     font-family: "Saira Semi Condensed", sans-serif;
      font-size: 1.8rem;
      color: var(--red-base);
      margin-bottom: 0.75rem;
