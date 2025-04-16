@@ -1974,43 +1974,6 @@ html body #sidebar div.sidebar-header h1 a,
      font-weight: 500;
 }
 
-/* First link (HOME) styling - using higher specificity instead of !important */
-body .sidebar .nav-link:nth-child(1),
-html .sidebar .nav-link:nth-child(1),
-.sidebar .nav-link:nth-child(1) {
-     background-color: var(--red-base);
-     color: white;
-     font-weight: 600;
-}
-
-/* Second link (FIND A GROUP) styling - using higher specificity instead of !important */
-body .sidebar .nav-link:nth-child(2),
-html .sidebar .nav-link:nth-child(2),
-.sidebar .nav-link:nth-child(2) {
-     background-color: var(--red-base);
-     color: white;
-     font-weight: 600;
-}
-
-/* Hover state for all other nav links - using higher specificity instead of !important */
-html .sidebar .nav-link:hover:not(:nth-child(1)):not(:nth-child(2)),
-body .sidebar .nav-link:hover:not(:nth-child(1)):not(:nth-child(2)),
-.sidebar .nav-link:hover:not(:nth-child(1)):not(:nth-child(2)) {
-     background-color: rgba(0, 0, 0, 0.05);
-     color: var(--text-color);
-}
-
-/* Hover state for HOME and FIND A GROUP - using higher specificity instead of !important */
-html .sidebar .nav-link:nth-child(1):hover,
-html .sidebar .nav-link:nth-child(2):hover,
-body .sidebar .nav-link:nth-child(1):hover,
-body .sidebar .nav-link:nth-child(2):hover,
-.sidebar .nav-link:nth-child(1):hover,
-.sidebar .nav-link:nth-child(2):hover {
-     background-color: var(--red-base);
-     color: white;
-}
-
 /* Additional styles for indented links */
 .sidebar .nav-link-indented {
      padding-left: 2.5rem;
