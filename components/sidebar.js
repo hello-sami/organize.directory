@@ -25,6 +25,7 @@ function insertSidebar() {
      // Create sidebar container
      const sidebarContainer = document.createElement("div");
      sidebarContainer.className = "sidebar";
+     sidebarContainer.id = "sidebar"; // Add ID for compatibility with both implementations
      sidebarContainer.setAttribute("aria-label", "Main navigation");
      sidebarContainer.innerHTML = initialSidebar;
 
@@ -77,6 +78,46 @@ function cleanupInlineStyles() {
 }
 
 /**
+ * Handle mobile sidebar toggle functionality
+ */
+function setupMobileToggle() {
+     // Support both toggle mechanisms from both implementations
+
+     // From original components/sidebar.js
+     document
+          .querySelectorAll(".mobile-menu-button, .mobile-menu-overlay")
+          .forEach((element) => {
+               if (element) {
+                    element.addEventListener("click", () => {
+                         const sidebar = document.querySelector(".sidebar");
+                         if (sidebar) {
+                              sidebar.classList.toggle("active");
+                              const overlay = document.querySelector(
+                                   ".mobile-menu-overlay"
+                              );
+                              if (overlay) {
+                                   overlay.classList.toggle("active");
+                              }
+                              document.body.classList.toggle("menu-open");
+                         }
+                    });
+               }
+          });
+
+     // From js/sidebar.js
+     const menuToggle = document.getElementById("menu-toggle");
+     if (menuToggle) {
+          menuToggle.addEventListener("click", () => {
+               const sidebar = document.getElementById("sidebar");
+               if (sidebar) {
+                    sidebar.classList.toggle("sidebar-open");
+                    document.body.classList.toggle("sidebar-active");
+               }
+          });
+     }
+}
+
+/**
  * Main function to initialize the sidebar
  * @param {string} activePage - The current active page
  */
@@ -116,6 +157,8 @@ export function initializeSidebar(activePage) {
                link.classList.remove("active");
                // Remove any inline styles that might have been added
                link.removeAttribute("style");
+               // Also remove aria-current attribute
+               link.removeAttribute("aria-current");
           });
      }
 
@@ -125,6 +168,7 @@ export function initializeSidebar(activePage) {
           const homeLink = sidebar.querySelector('a[href="/"].nav-link');
           if (homeLink) {
                homeLink.classList.add("active");
+               homeLink.setAttribute("aria-current", "page");
           }
      } else if (activePage === "location") {
           // On location page, highlight the location link
@@ -133,6 +177,7 @@ export function initializeSidebar(activePage) {
           );
           if (locationLink) {
                locationLink.classList.add("active");
+               locationLink.setAttribute("aria-current", "page");
           }
      } else if (activePage === "topics") {
           // On topics page, highlight the topics link
@@ -141,6 +186,7 @@ export function initializeSidebar(activePage) {
           );
           if (topicsLink) {
                topicsLink.classList.add("active");
+               topicsLink.setAttribute("aria-current", "page");
           }
      } else if (activePage === "subscribe") {
           // Special handling for subscribe page
@@ -149,6 +195,7 @@ export function initializeSidebar(activePage) {
           );
           if (subscribeLink) {
                subscribeLink.classList.add("active");
+               subscribeLink.setAttribute("aria-current", "page");
           }
      } else {
           // For other pages, find and highlight the corresponding link
@@ -157,6 +204,7 @@ export function initializeSidebar(activePage) {
           );
           if (activeLink) {
                activeLink.classList.add("active");
+               activeLink.setAttribute("aria-current", "page");
           }
      }
 
@@ -178,25 +226,8 @@ export function initializeSidebar(activePage) {
           );
      }
 
-     // Add event listener for mobile menu toggle
-     document
-          .querySelectorAll(".mobile-menu-button, .mobile-menu-overlay")
-          .forEach((element) => {
-               if (element) {
-                    element.addEventListener("click", () => {
-                         if (sidebar) {
-                              sidebar.classList.toggle("active");
-                              const overlay = document.querySelector(
-                                   ".mobile-menu-overlay"
-                              );
-                              if (overlay) {
-                                   overlay.classList.toggle("active");
-                              }
-                              document.body.classList.toggle("menu-open");
-                         }
-                    });
-               }
-          });
+     // Setup mobile menu toggle
+     setupMobileToggle();
 
      // Remove any preload links for posts.json that might be causing issues
      const preloadLinks = document.querySelectorAll('link[rel="preload"]');
