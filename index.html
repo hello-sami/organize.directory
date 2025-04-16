@@ -123,7 +123,7 @@
                         title.classList.add('reset-nav-group');
                     });
 
-                    // Note: The styling of header elements is now handled by sidebar.css and the cleanupInlineStyles function
+                    // Note: The styling of header elements is now handled by the main CSS file and the cleanupInlineStyles function
                 })
                 .catch(error => console.error('Error initializing sidebar:', error));
 
@@ -225,25 +225,7 @@
 
 <body class="page-home">
     <div class="layout">
-        <aside id="sidebar" class="sidebar">
-            <div class="sidebar-header">
-                <a href="/">
-                    <img src="/logo.png" alt="Organize Directory Logo" class="site-logo">
-                </a>
-            </div>
-            <nav>
-                <a href="/" class="nav-link active">HOME</a>
-                <a href="/location" class="nav-link">FIND A GROUP</a>
-                <a href="/location" class="nav-link">BY LOCATION</a>
-                <a href="/topics" class="nav-link">BY TOPIC</a>
-                <a href="/guides" class="nav-link">GUIDES</a>
-                <a href="/contact" class="nav-link">CONTACT</a>
-                <a href="/subscribe" class="nav-link">SUBSCRIBE</a>
-            </nav>
-            <div class="sidebar-motto">
-                DON'T DESPAIR, ORGANIZE.
-            </div>
-        </aside>
+        <div id="sidebar-placeholder"></div>
 
         <main class="content" role="main">
             <header class="page-header"></header>

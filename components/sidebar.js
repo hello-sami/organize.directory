@@ -25,7 +25,7 @@ function insertSidebar() {
      // Create sidebar container
      const sidebarContainer = document.createElement("div");
      sidebarContainer.className = "sidebar";
-     sidebarContainer.id = "sidebar"; // Add ID for compatibility with both implementations
+     sidebarContainer.id = "sidebar";
      sidebarContainer.setAttribute("aria-label", "Main navigation");
      sidebarContainer.innerHTML = initialSidebar;
 
@@ -47,21 +47,8 @@ function insertSidebar() {
 }
 
 /**
- * Loads the sidebar.css file
- */
-function loadSidebarStyles() {
-     // Only load if not already loaded
-     if (!document.querySelector('link[href*="sidebar.css"]')) {
-          const linkElement = document.createElement("link");
-          linkElement.rel = "stylesheet";
-          linkElement.href = "/css/sidebar.css";
-          document.head.appendChild(linkElement);
-     }
-}
-
-/**
  * Remove inline styles added by outside scripts
- * This helps ensure our sidebar.css takes precedence
+ * This helps ensure our CSS takes precedence
  */
 function cleanupInlineStyles() {
      // Find logo element and ensure no inline styles
@@ -81,40 +68,33 @@ function cleanupInlineStyles() {
  * Handle mobile sidebar toggle functionality
  */
 function setupMobileToggle() {
-     // Support both toggle mechanisms from both implementations
+     // Simplified mobile menu handling
+     const toggleElements = document.querySelectorAll(
+          ".mobile-menu-button, .mobile-menu-overlay, #menu-toggle"
+     );
 
-     // From original components/sidebar.js
-     document
-          .querySelectorAll(".mobile-menu-button, .mobile-menu-overlay")
-          .forEach((element) => {
-               if (element) {
-                    element.addEventListener("click", () => {
-                         const sidebar = document.querySelector(".sidebar");
-                         if (sidebar) {
-                              sidebar.classList.toggle("active");
-                              const overlay = document.querySelector(
-                                   ".mobile-menu-overlay"
-                              );
-                              if (overlay) {
-                                   overlay.classList.toggle("active");
-                              }
-                              document.body.classList.toggle("menu-open");
-                         }
-                    });
+     toggleElements.forEach((element) => {
+          if (!element) return;
+
+          element.addEventListener("click", () => {
+               const sidebar = document.querySelector(".sidebar");
+               if (!sidebar) return;
+
+               // Toggle all classes that might be used by different implementations
+               sidebar.classList.toggle("active");
+               sidebar.classList.toggle("sidebar-open");
+
+               // Toggle body classes
+               document.body.classList.toggle("menu-open");
+               document.body.classList.toggle("sidebar-active");
+
+               // Toggle overlay if it exists
+               const overlay = document.querySelector(".mobile-menu-overlay");
+               if (overlay) {
+                    overlay.classList.toggle("active");
                }
           });
-
-     // From js/sidebar.js
-     const menuToggle = document.getElementById("menu-toggle");
-     if (menuToggle) {
-          menuToggle.addEventListener("click", () => {
-               const sidebar = document.getElementById("sidebar");
-               if (sidebar) {
-                    sidebar.classList.toggle("sidebar-open");
-                    document.body.classList.toggle("sidebar-active");
-               }
-          });
-     }
+     });
 }
 
 /**
@@ -123,9 +103,6 @@ function setupMobileToggle() {
  */
 export function initializeSidebar(activePage) {
      if (typeof document === "undefined") return;
-
-     // Load sidebar styles first
-     loadSidebarStyles();
 
      // Insert sidebar if it doesn't exist
      let sidebar = document.querySelector(".sidebar");
@@ -137,75 +114,52 @@ export function initializeSidebar(activePage) {
      // Clean up any inline styles
      cleanupInlineStyles();
 
-     // Handle active page detection
+     // Handle active page detection based on path or passed parameter
      const currentPath = window.location.pathname;
+
+     // Special page detection for state and city pages
      const stateRegex =
           /\/(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new-hampshire|new-jersey|new-mexico|new-york|north-carolina|north-dakota|ohio|oklahoma|oregon|pennsylvania|rhode-island|south-carolina|south-dakota|tennessee|texas|utah|vermont|virginia|washington|west-virginia|wisconsin|wyoming)/;
-
      const isStatePage = stateRegex.test(currentPath);
      const isCityPage = currentPath.includes("/cities/");
 
-     // If this is a city or state page, override the activePage to 'location'
+     // Override active page for state and city pages
      if (isStatePage || isCityPage) {
           activePage = "location";
      }
 
+     // If activePage is empty or undefined, try to determine from path
+     if (!activePage) {
+          const pathParts = currentPath.split("/").filter(Boolean);
+          activePage = pathParts.length > 0 ? pathParts[0] : "home";
+     }
+
      // Remove ALL active classes first
      if (sidebar) {
-          const allLinks = sidebar.querySelectorAll("a");
-          allLinks.forEach((link) => {
+          sidebar.querySelectorAll("a").forEach((link) => {
                link.classList.remove("active");
-               // Remove any inline styles that might have been added
                link.removeAttribute("style");
-               // Also remove aria-current attribute
                link.removeAttribute("aria-current");
           });
      }
 
-     // Apply correct active state based on the current page
-     if (activePage === "home" || activePage === "index" || activePage === "") {
-          // Only highlight Home on the homepage
-          const homeLink = sidebar.querySelector('a[href="/"].nav-link');
-          if (homeLink) {
-               homeLink.classList.add("active");
-               homeLink.setAttribute("aria-current", "page");
-          }
-     } else if (activePage === "location") {
-          // On location page, highlight the location link
-          const locationLink = sidebar.querySelector(
-               'a[href="/location"].nav-link-indented'
-          );
-          if (locationLink) {
-               locationLink.classList.add("active");
-               locationLink.setAttribute("aria-current", "page");
-          }
-     } else if (activePage === "topics") {
-          // On topics page, highlight the topics link
-          const topicsLink = sidebar.querySelector(
-               'a[href="/topics"].nav-link-indented'
-          );
-          if (topicsLink) {
-               topicsLink.classList.add("active");
-               topicsLink.setAttribute("aria-current", "page");
-          }
-     } else if (activePage === "subscribe") {
-          // Special handling for subscribe page
-          const subscribeLink = sidebar.querySelector(
-               'a[href="/subscribe"].nav-link'
-          );
-          if (subscribeLink) {
-               subscribeLink.classList.add("active");
-               subscribeLink.setAttribute("aria-current", "page");
-          }
-     } else {
-          // For other pages, find and highlight the corresponding link
-          const activeLink = sidebar.querySelector(
-               `a[href="/${activePage}"].nav-link`
-          );
-          if (activeLink) {
-               activeLink.classList.add("active");
-               activeLink.setAttribute("aria-current", "page");
-          }
+     // Map of special cases for active link selection
+     const specialCases = {
+          home: 'a[href="/"].nav-link-base',
+          index: 'a[href="/"].nav-link-base',
+          "": 'a[href="/"].nav-link-base',
+          location: 'a[href="/location"].nav-link-indented',
+          topics: 'a[href="/topics"].nav-link-indented',
+     };
+
+     // Apply active state to the correct link
+     const selector =
+          specialCases[activePage] || `a[href="/${activePage}"].nav-link-base`;
+     const activeLink = sidebar.querySelector(selector);
+
+     if (activeLink) {
+          activeLink.classList.add("active");
+          activeLink.setAttribute("aria-current", "page");
      }
 
      // Add class to the body indicating current page
@@ -215,27 +169,17 @@ export function initializeSidebar(activePage) {
      );
      document.body.classList.add(`page-${activePage}`);
 
-     // If this is a city or state page, add additional class
+     // Add additional class for state or city pages
      if (isStatePage) {
-          document.body.classList.add(
-               "page-states-" + currentPath.split("/")[1]
-          );
+          const state = currentPath.split("/")[1];
+          document.body.classList.add(`page-states-${state}`);
      } else if (isCityPage) {
-          document.body.classList.add(
-               "page-cities-" + currentPath.split("/")[2]
-          );
+          const city = currentPath.split("/")[2];
+          document.body.classList.add(`page-cities-${city}`);
      }
 
      // Setup mobile menu toggle
      setupMobileToggle();
-
-     // Remove any preload links for posts.json that might be causing issues
-     const preloadLinks = document.querySelectorAll('link[rel="preload"]');
-     preloadLinks.forEach((link) => {
-          if (link.href && link.href.includes("posts.json")) {
-               link.parentNode.removeChild(link);
-          }
-     });
 }
 
 /**
