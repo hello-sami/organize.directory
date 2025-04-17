@@ -15,7 +15,7 @@ const sidebarTemplate = `
         <a href="/subscribe" class="nav-link-base nav-link">Subscribe</a>
     </nav>
     <div class="sidebar-motto">
-       DON'T DESPAIR, ORGANIZE.
+       don't despair, organize.
     </div>`;
 
 // Track if the sidebar has been initialized
