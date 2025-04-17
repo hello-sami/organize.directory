@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
      const statusMessage = document.getElementById("statusMessage");
      const formFailureHelp = document.getElementById("formFailureHelp");
 
+     // Generate captcha on page load
+     generateCaptcha();
+
      // Check URL parameters for successful form submission
      const urlParams = new URLSearchParams(window.location.search);
      if (urlParams.get("success") === "true") {
@@ -11,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
           statusMessage.className = "status-message success";
           statusMessage.style.display = "block";
           form.reset();
+
+          // Generate new captcha
+          generateCaptcha();
 
           // Scroll to status message
           statusMessage.scrollIntoView({
@@ -43,6 +49,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
           return true; // Allow form submission
      });
+
+     // Generate a simple math captcha
+     function generateCaptcha() {
+          const captchaQuestion = document.getElementById("captchaQuestion");
+          const captchaAnswer = document.getElementById("captchaAnswer");
+
+          // Get two random numbers between 1 and 10
+          const num1 = Math.floor(Math.random() * 10) + 1;
+          const num2 = Math.floor(Math.random() * 10) + 1;
+
+          // Set the question and store the answer
+          captchaQuestion.textContent = `${num1} + ${num2} = ?`;
+          captchaAnswer.value = num1 + num2;
+     }
 
      // Form validation function
      function validateForm() {
@@ -84,6 +104,18 @@ document.addEventListener("DOMContentLoaded", function () {
                isValid = false;
           }
 
+          // Validate captcha
+          const captchaInput = document.getElementById("captcha");
+          const captchaAnswer = document.getElementById("captchaAnswer");
+          const captchaError = document.getElementById("captchaError");
+          if (captchaInput.value.trim() !== captchaAnswer.value) {
+               captchaInput.classList.add("error");
+               captchaError.style.display = "block";
+               isValid = false;
+               // Generate a new captcha if the answer was wrong
+               generateCaptcha();
+          }
+
           // If not valid, scroll to first error
           if (!isValid) {
                document
@@ -118,4 +150,16 @@ document.addEventListener("DOMContentLoaded", function () {
                if (errorEl) errorEl.style.display = "none";
           });
      });
+
+     // Add button to refresh captcha
+     const captchaContainer = document.getElementById("captchaContainer");
+     const refreshButton = document.createElement("button");
+     refreshButton.type = "button";
+     refreshButton.className = "captcha-refresh";
+     refreshButton.innerHTML = "↻";
+     refreshButton.title = "Get a new question";
+     refreshButton.onclick = generateCaptcha;
+     captchaContainer
+          .querySelector(".captcha-challenge")
+          .appendChild(refreshButton);
 });

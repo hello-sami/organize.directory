@@ -1091,6 +1091,7 @@ body.page-contact .page-header {
 body.page-contact .page-header h1 {
      text-align: center;
      margin-bottom: 1rem;
+     font-family: "Saira Semi Condensed", sans-serif;
 }
 
 body.page-contact .page-header p {
@@ -1201,6 +1202,53 @@ textarea.error {
      line-height: 1.5;
 }
 
+/* Captcha styles */
+.captcha-challenge {
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+     flex-wrap: wrap;
+}
+
+.captcha-challenge span {
+     font-size: 1.1rem;
+     font-weight: 500;
+     min-width: 120px;
+}
+
+.captcha-challenge input {
+     flex: 1;
+     min-width: 100px;
+     max-width: 200px;
+}
+
+.captcha-refresh {
+     background-color: var(--bg-medium);
+     border: 1px solid var(--red-base);
+     border-radius: 4px;
+     width: 30px;
+     height: 30px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+     color: var(--red-base);
+     font-size: 1rem;
+     padding: 0;
+     transition: all 0.2s ease;
+}
+
+.captcha-refresh:hover {
+     background-color: var(--red-light);
+     color: white;
+}
+
+.required {
+     color: var(--red-base);
+     font-weight: 500;
+}
+
+/* Alternative contact section p */
 .alternative-contact p {
      text-align: center;
      margin: 0 auto;

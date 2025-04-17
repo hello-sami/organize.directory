@@ -50,6 +50,8 @@
     <link rel="stylesheet" href="/fonts/fonts.css">
     <link rel="stylesheet" href="/styles.css?v=1.1.1">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Critical Scripts -->
     <script type="module">
@@ -133,6 +135,19 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" required></textarea>
                         <div class="error-text" id="messageError">Please enter your message</div>
+                    </div>
+
+                    <!-- Simple Math Captcha -->
+                    <div class="form-group" id="captchaContainer">
+                        <label for="captcha">Please solve this math problem <span
+                                class="required">(required)</span></label>
+                        <div class="captcha-challenge">
+                            <span id="captchaQuestion"></span>
+                            <input type="text" id="captcha" name="captcha" required autocomplete="off">
+                            <input type="hidden" id="captchaAnswer" name="captchaAnswer">
+                        </div>
+                        <small class="form-helper">This helps us prevent spam</small>
+                        <div class="error-text" id="captchaError">Please enter the correct answer</div>
                     </div>
 
                     <button type="submit" class="btn-base" id="submitButton">Send Message</button>
