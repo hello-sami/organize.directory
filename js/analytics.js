@@ -1,18 +1,18 @@
-// Google Analytics with respect for privacy
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
+/**
+ * Google Analytics initialization
+ */
+(function () {
+     // Load Google Analytics script
+     const script = document.createElement("script");
+     script.async = true;
+     script.src = "https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H";
+     document.head.appendChild(script);
 
-// Initialize GA with restricted data collection
-gtag('js', new Date());
-gtag('config', 'G-QJ03RCM35H', {
-    'cookie_flags': 'SameSite=None;Secure',
-    'anonymize_ip': true,
-    'allow_google_signals': false,
-    'allow_ad_personalization_signals': false
-});
-
-// Load GA script with privacy-first settings
-const gaScript = document.createElement('script');
-gaScript.async = true;
-gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H';
-document.head.appendChild(gaScript); 
+     // Initialize Google Analytics
+     window.dataLayer = window.dataLayer || [];
+     function gtag() {
+          dataLayer.push(arguments);
+     }
+     gtag("js", new Date());
+     gtag("config", "G-QJ03RCM35H");
+})();

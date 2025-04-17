@@ -6,13 +6,13 @@ const sidebarTemplate = `
         </a>
     </div>
     <nav>
-        <a href="/" class="nav-link-base nav-link">HOME</a>
-        <a href="/location" class="nav-link-base nav-link parent-link">FIND A GROUP</a>
-        <a href="/location" class="nav-link-base nav-link nav-link-indented location-link">BY LOCATION</a>
-        <a href="/topics" class="nav-link-base nav-link nav-link-indented topic-link">BY TOPIC</a>
-        <a href="/guides" class="nav-link-base nav-link">GUIDES</a>
-        <a href="/contact" class="nav-link-base nav-link">CONTACT</a>
-        <a href="/subscribe" class="nav-link-base nav-link">SUBSCRIBE</a>
+        <a href="/" class="nav-link-base nav-link">Home</a>
+        <a href="/location" class="nav-link-base nav-link parent-link">Find a group</a>
+        <a href="/location" class="nav-link-base nav-link nav-link-indented location-link">Location</a>
+        <a href="/topics" class="nav-link-base nav-link nav-link-indented topic-link">Topic</a>
+        <a href="/guides" class="nav-link-base nav-link">Guides</a>
+        <a href="/contact" class="nav-link-base nav-link">Contact</a>
+        <a href="/subscribe" class="nav-link-base nav-link">Subscribe</a>
     </nav>
     <div class="sidebar-motto">
        DON'T DESPAIR, ORGANIZE.
@@ -49,6 +49,12 @@ function createSidebar() {
 
      const placeholder = document.getElementById("sidebar-placeholder");
      if (placeholder) {
+          // Check for active page attribute
+          const activePage = placeholder.getAttribute("data-active-page");
+          if (activePage) {
+               // Wait a moment for the sidebar to be inserted before setting active page
+               setTimeout(() => setActivePage(activePage), 0);
+          }
           placeholder.parentNode.replaceChild(sidebar, placeholder);
      } else {
           const layout = document.querySelector(".layout");
@@ -198,25 +204,14 @@ export function adjustPaths(sidebar, depth = 0) {
      }
 }
 
-/**
- * Initialize sidebar as early as possible
- */
-export function checkAndInitializeSidebar(activePage) {
-     if (
-          document.readyState === "interactive" ||
-          document.readyState === "complete"
-     ) {
-          initializeSidebar(activePage);
+// Initialize on DOMContentLoaded
+if (typeof document !== "undefined") {
+     if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", () => {
+               initializeSidebar();
+          });
      } else {
-          document.addEventListener("DOMContentLoaded", () =>
-               initializeSidebar(activePage)
-          );
+          // Document already loaded
+          initializeSidebar();
      }
-
-     // Fallback initialization
-     window.setTimeout(() => {
-          if (!document.querySelector(".sidebar")) {
-               initializeSidebar(activePage);
-          }
-     }, 500);
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light">
-    <title>Subscribe to Our Newsletter - The Organize Directory</title>
+    <title>Subscribe to Mailing List - The Organize Directory</title>
     <meta name="description"
         content="Subscribe to The Organize Directory newsletter for monthly organization tips, strategies, and resources for better personal and professional organization.">
 
@@ -15,17 +15,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- DNS Prefetch -->
+    <!-- DNS Prefetch and Preconnect -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-
-    <!-- Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/fonts/fonts.css">
@@ -33,24 +27,11 @@
     <link rel="stylesheet" href="/css/newsletter.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
-    <!-- Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
-
-    <!-- Sidebar Initialization -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-
-        // Initialize sidebar
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeSidebar('subscribe');
-        });
-    </script>
+    <!-- Scripts -->
+    <script type="module" src="/components/sidebar.js"></script>
+    <script src="/js/analytics.js" defer></script>
+    <script src="/js/newsletter-form.js" defer></script>
+    <script src="/mobile-menu.js" defer></script>
 
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Subscribe | The Organize Directory">
@@ -70,12 +51,12 @@
     </button>
     <div class="mobile-menu-overlay"></div>
     <div class="layout">
-        <div id="sidebar-placeholder"></div>
+        <div id="sidebar-placeholder" data-active-page="subscribe"></div>
 
         <main class="content" role="main">
             <header id="header" class="page-header">
-                <h1>Subscribe to Our Newsletter</h1>
-                <p>Stay updated with the latest mutual aid initiatives, social justice events, and community resources.
+                <h1>Mailing List</h1>
+                <p>Stay updated with updates to the directory and other announcements.
                 </p>
             </header>
 
@@ -84,14 +65,8 @@
                     method="POST">
                     <!-- Web3Forms API Key -->
                     <input type="hidden" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
-
-                    <!-- Form Subject -->
                     <input type="hidden" name="subject" value="Newsletter Subscription - Organize Directory">
-
-                    <!-- Return URL after form submission -->
                     <input type="hidden" name="redirect" value="https://organize.directory/subscribe?success=true">
-
-                    <!-- Honeypot field to prevent spam -->
                     <input type="checkbox" name="botcheck" style="display: none;">
 
                     <div class="form-group">
@@ -120,111 +95,10 @@
 
                 <!-- Status Messages -->
                 <div class="status-message" id="statusMessage"></div>
+                <div class="error-message" id="error-message"></div>
             </div>
         </main>
     </div>
-
-    <!-- Form Validation Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('newsletterForm');
-            const statusMessage = document.getElementById('statusMessage');
-
-            // Check URL parameters for successful form submission
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('success') === 'true') {
-                statusMessage.textContent = 'Thank you! You have been successfully subscribed.';
-                statusMessage.className = 'status-message success';
-                statusMessage.style.display = 'block';
-                form.reset();
-
-                // Scroll to status message
-                statusMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
-
-            // Basic client-side validation
-            form.addEventListener('submit', function (e) {
-                // Reset previous errors
-                resetErrors();
-
-                // Validate form
-                if (!validateForm()) {
-                    e.preventDefault(); // Prevent form submission
-                    return false;
-                }
-
-                return true; // Allow form submission
-            });
-
-            // Form validation function
-            function validateForm() {
-                let isValid = true;
-
-                // Validate name
-                const nameInput = document.getElementById('name');
-                const nameError = document.getElementById('nameError');
-                if (!nameInput.value.trim()) {
-                    nameInput.classList.add('error');
-                    nameError.style.display = 'block';
-                    isValid = false;
-                }
-
-                // Validate email
-                const emailInput = document.getElementById('email');
-                const emailError = document.getElementById('emailError');
-                if (!emailInput.value.trim() || !isValidEmail(emailInput.value)) {
-                    emailInput.classList.add('error');
-                    emailError.style.display = 'block';
-                    isValid = false;
-                }
-
-                // Validate consent
-                const consentInput = document.querySelector('input[name="consent"]');
-                const consentError = document.getElementById('consentError');
-                if (!consentInput.checked) {
-                    consentInput.classList.add('error');
-                    consentError.style.display = 'block';
-                    isValid = false;
-                }
-
-                // If not valid, scroll to first error
-                if (!isValid) {
-                    document.querySelector('.error').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-
-                return isValid;
-            }
-
-            // Reset error messages
-            function resetErrors() {
-                const errorInputs = document.querySelectorAll('.error');
-                const errorTexts = document.querySelectorAll('.error-text');
-
-                errorInputs.forEach(input => input.classList.remove('error'));
-                errorTexts.forEach(text => text.style.display = 'none');
-            }
-
-            // Email validation
-            function isValidEmail(email) {
-                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                return re.test(String(email).toLowerCase());
-            }
-
-            // Input event listeners to clear errors on typing
-            document.querySelectorAll('input, select, textarea').forEach(el => {
-                el.addEventListener('input', function () {
-                    this.classList.remove('error');
-                    const errorId = this.id + 'Error';
-                    const errorEl = document.getElementById(errorId);
-                    if (errorEl) errorEl.style.display = 'none';
-                });
-            });
-        });
-    </script>
-
-    <!-- Mobile Menu Script -->
-    <script src="/mobile-menu.js"></script>
-
 </body>
 
 </html>
