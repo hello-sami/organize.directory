@@ -18,13 +18,13 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="description"
-        content="Contact the The Organize Directory team for questions, suggestions, or to add your group.">
+        content="Contact the The Organize Directory team for questions, suggestions, or to add a group.">
     <meta name="color-scheme" content="light">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Contact Us | The Organize Directory">
     <meta property="og:description"
-        content="Contact the The Organize Directory team for questions, suggestions, or to add your group.">
+        content="Contact the The Organize Directory team for questions, suggestions, or to add a group.">
     <meta property="og:image" content="https://organize.directory/preview.png">
     <meta property="og:url" content="https://organize.directory/contact">
     <meta property="og:type" content="website">
@@ -48,135 +48,8 @@
 
     <!-- Load CSS -->
     <link rel="stylesheet" href="/fonts/fonts.css">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles.css?v=1.1.1">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
-
-    <!-- Contact Form Styles -->
-    <style>
-        /* Basic layout for contact content */
-        .contact-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Contact form styles */
-        .contact-form {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
-            margin: 1.5rem 0;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #333;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-family: inherit;
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .form-helper {
-            display: block;
-            margin-top: 0.25rem;
-            font-size: 0.875rem;
-            color: #666;
-        }
-
-        .optional {
-            font-weight: normal;
-            color: #666;
-            font-size: 0.875rem;
-        }
-
-        /* Status message */
-        .status-message {
-            padding: 1rem;
-            border-radius: 4px;
-            margin-top: 1rem;
-            text-align: center;
-            font-weight: 500;
-            display: none;
-        }
-
-        .status-message.success {
-            background-color: #dcfce7;
-            color: #15803d;
-            border: 1px solid #86efac;
-        }
-
-        .status-message.error {
-            background-color: #fee2e2;
-            color: #b91c1c;
-            border: 1px solid #fca5a5;
-        }
-
-        .status-message.sending {
-            background-color: #dbeafe;
-            color: #1e40af;
-            border: 1px solid #93c5fd;
-        }
-
-        /* Error styles */
-        .error-text {
-            color: #dc2626;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-            display: none;
-        }
-
-        input.error,
-        select.error,
-        textarea.error {
-            border-color: #dc2626;
-        }
-
-        /* Alternative contact section */
-        .alternative-contact {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
-            .contact-content {
-                padding: 1rem;
-            }
-
-            .contact-form {
-                padding: 1.5rem;
-            }
-
-        }
-
-        /* Notice box */
-        .notice {
-            background-color: #f8fafc;
-            border-radius: 4px;
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            border-left: 4px solid #3b82f6;
-        }
-    </style>
 
     <!-- Critical Scripts -->
     <script type="module">
@@ -206,9 +79,9 @@
             </header>
 
             <div class="contact-content">
-                <p class="alternative-contact">You can also email us directly at
-                    <strong>organizedirectory(at)proton.me</strong>
-                </p>
+                <div class="alternative-contact">
+                    <p>You can also email us directly at <strong>organizedirectory(at)proton.me</strong></p>
+                </div>
 
                 <!-- Web3Forms Contact Form -->
                 <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
@@ -269,8 +142,7 @@
                 <div class="status-message" id="statusMessage"></div>
 
                 <!-- Alternative contact for form failures -->
-                <div id="formFailureHelp"
-                    style="display: none; margin-top: 2rem; padding: 1rem; border: 1px solid #f0f0f0; border-radius: 4px; background-color: #f9f9f9;">
+                <div id="formFailureHelp">
                     <p><strong>Having trouble with the form?</strong></p>
                     <p>You can email us directly at: <a
                             href="mailto:organizedirectory@proton.me">organizedirectory(at)proton.me</a></p>
@@ -279,126 +151,9 @@
         </main>
     </div>
 
-    <!-- Mobile Menu Script -->
+    <!-- Scripts -->
     <script src="/mobile-menu.js"></script>
-
-    <!-- Contact Form Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('contactForm');
-            const statusMessage = document.getElementById('statusMessage');
-            const formFailureHelp = document.getElementById('formFailureHelp');
-
-            // Check URL parameters for successful form submission
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('success') === 'true') {
-                statusMessage.textContent = 'Thank you! Your message has been sent successfully.';
-                statusMessage.className = 'status-message success';
-                statusMessage.style.display = 'block';
-                form.reset();
-
-                // Scroll to status message
-                statusMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
-
-            // Basic client-side validation only
-            form.addEventListener('submit', function (e) {
-                // Reset previous errors
-                resetErrors();
-
-                // Validate form
-                if (!validateForm()) {
-                    e.preventDefault(); // Prevent form submission
-                    return false;
-                }
-
-                // Handle anonymous email
-                const emailInput = document.getElementById('email');
-                if (!emailInput.value.trim()) {
-                    emailInput.value = 'anonymous@organize.directory';
-                }
-
-                // Show help div after a delay in case submission is slow
-                setTimeout(() => {
-                    formFailureHelp.style.display = 'block';
-                }, 15000);
-
-                return true; // Allow form submission
-            });
-
-            // Form validation function
-            function validateForm() {
-                let isValid = true;
-
-                // Validate name
-                const nameInput = document.getElementById('name');
-                const nameError = document.getElementById('nameError');
-                if (!nameInput.value.trim()) {
-                    nameInput.classList.add('error');
-                    nameError.style.display = 'block';
-                    isValid = false;
-                }
-
-                // Validate email if provided
-                const emailInput = document.getElementById('email');
-                const emailError = document.getElementById('emailError');
-                if (emailInput.value.trim() && !isValidEmail(emailInput.value)) {
-                    emailInput.classList.add('error');
-                    emailError.style.display = 'block';
-                    isValid = false;
-                }
-
-                // Validate inquiry
-                const inquiryInput = document.getElementById('inquiry');
-                const inquiryError = document.getElementById('inquiryError');
-                if (!inquiryInput.value) {
-                    inquiryInput.classList.add('error');
-                    inquiryError.style.display = 'block';
-                    isValid = false;
-                }
-
-                // Validate message
-                const messageInput = document.getElementById('message');
-                const messageError = document.getElementById('messageError');
-                if (!messageInput.value.trim()) {
-                    messageInput.classList.add('error');
-                    messageError.style.display = 'block';
-                    isValid = false;
-                }
-
-                // If not valid, scroll to first error
-                if (!isValid) {
-                    document.querySelector('.error').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-
-                return isValid;
-            }
-
-            // Reset error messages
-            function resetErrors() {
-                const errorInputs = document.querySelectorAll('.error');
-                const errorTexts = document.querySelectorAll('.error-text');
-
-                errorInputs.forEach(input => input.classList.remove('error'));
-                errorTexts.forEach(text => text.style.display = 'none');
-            }
-
-            // Email validation
-            function isValidEmail(email) {
-                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                return re.test(String(email).toLowerCase());
-            }
-
-            // Input event listeners to clear errors on typing
-            document.querySelectorAll('input, select, textarea').forEach(el => {
-                el.addEventListener('input', function () {
-                    this.classList.remove('error');
-                    const errorEl = document.getElementById(this.id + 'Error');
-                    if (errorEl) errorEl.style.display = 'none';
-                });
-            });
-        });
-    </script>
+    <script src="/contact.js"></script>
 </body>
 
 </html>

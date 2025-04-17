@@ -1055,30 +1055,42 @@ html .topic-name,
      color: var(--text-color);
 }
 
-/* Contact Form */
+/*------------------------------------*\
+  #CONTACT PAGE STYLES
+\*------------------------------------*/
+/* Basic layout for contact content */
 .contact-content {
+     max-width: 800px;
+     margin: 0 auto;
+}
+
+/* Contact page header styling */
+body.page-contact .page-header {
+     max-width: 800px;
+     margin: 0 auto 2rem;
+     text-align: center;
+}
+
+body.page-contact .page-header h1 {
+     text-align: center;
+     margin-bottom: 1rem;
+}
+
+body.page-contact .page-header p {
+     text-align: center;
      max-width: 600px;
      margin: 0 auto;
-     padding: 1rem;
-     background: var(--bg-medium);
-     border-radius: 8px;
+     font-size: 1rem;
+     line-height: 1.5;
 }
 
+/* Contact form styles */
 .contact-form {
-     /* Use card-base in HTML */
-     margin-top: 1rem;
-     background: var(--color-white);
-     padding: 2rem;
+     background-color: #fff;
      border-radius: 8px;
-     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.alternative-contact {
-     margin-bottom: 1rem;
-     padding: 0.75rem;
-     background: var(--background-color);
-     border-radius: 4px;
-     text-align: center;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+     padding: 2rem;
+     margin: 1.5rem 0;
 }
 
 .form-group {
@@ -1089,43 +1101,18 @@ html .topic-name,
      display: block;
      margin-bottom: 0.5rem;
      font-weight: 500;
-     color: var(--text-color);
-}
-
-.optional {
-     font-weight: normal;
-     opacity: 0.8;
-     font-size: 0.9em;
-}
-
-.form-helper {
-     display: block;
-     margin-top: 0.25rem;
-     font-size: 0.85em;
-     color: #666;
+     color: #333;
 }
 
 .form-group input,
-.form-group textarea,
-.form-group select {
+.form-group select,
+.form-group textarea {
      width: 100%;
      padding: 0.75rem;
-     border: 1px solid var(--red-base);
+     border: 1px solid #ddd;
      border-radius: 4px;
-     background: #fff;
-     color: var(--text-color);
-     font-family: "Inter", sans-serif;
-     transition:
-          border-color 0.2s,
-          box-shadow 0.2s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-     border-color: var(--red-base);
-     outline: none;
-     box-shadow: 0 0 0 3px rgba(163, 0, 0, 0.1);
+     font-size: 1rem;
+     font-family: inherit;
 }
 
 .form-group textarea {
@@ -1133,65 +1120,113 @@ html .topic-name,
      resize: vertical;
 }
 
-.contact-info {
+.form-helper {
+     display: block;
+     margin-top: 0.25rem;
+     font-size: 0.875rem;
+     color: #666;
+}
+
+.optional {
+     font-weight: normal;
+     color: #666;
+     font-size: 0.875rem;
+}
+
+/* Status message */
+.status-message {
+     padding: 1rem;
+     border-radius: 4px;
+     margin-top: 1rem;
+     text-align: center;
+     font-weight: 500;
+     display: none;
+}
+
+.status-message.success {
+     background-color: #dcfce7;
+     color: #15803d;
+     border: 1px solid #86efac;
+}
+
+.status-message.error {
+     background-color: #fee2e2;
+     color: #b91c1c;
+     border: 1px solid #fca5a5;
+}
+
+.status-message.sending {
+     background-color: #dbeafe;
+     color: #1e40af;
+     border: 1px solid #93c5fd;
+}
+
+/* Error styles */
+.error-text {
+     color: #dc2626;
+     font-size: 0.875rem;
+     margin-top: 0.25rem;
+     display: none;
+}
+
+input.error,
+select.error,
+textarea.error {
+     border-color: #dc2626;
+}
+
+/* Alternative contact section */
+.alternative-contact {
+     margin-bottom: 1.5rem;
+     font-size: inherit;
+     text-align: center;
+     padding: 0.5rem 1rem;
+     line-height: 1.5;
+}
+
+.alternative-contact p {
+     text-align: center;
+     margin: 0 auto;
+     max-width: 600px;
+     font-size: 1rem; /* Match the page header paragraph size */
+}
+
+/* Notice box */
+.notice {
+     background-color: #f8fafc;
+     border-radius: 4px;
+     padding: 1rem;
+     margin-bottom: 1.5rem;
+     border-left: 4px solid #3b82f6;
+}
+
+/* Form failure help */
+#formFailureHelp {
      margin-top: 2rem;
      padding: 1rem;
-     background: var(--background-color);
-     border-radius: 8px;
-}
-
-.error-message {
-     display: none;
-     color: var(--red-base);
-     margin-top: 1rem;
-     padding: 0.5rem;
-     background: var(--background-color);
+     border: 1px solid #f0f0f0;
      border-radius: 4px;
-}
-
-.error-message.visible {
-     display: block;
-     animation: fadeIn 0.3s ease-in-out;
-}
-
-#captchaQuestion {
-     font-weight: bold;
-     color: var(--text-color);
-}
-
-#submit-status {
+     background-color: #f9f9f9;
      display: none;
-     margin-top: 1rem;
-     padding: 0.75rem;
-     border-radius: 4px;
-     background-color: var(--background-color);
-     color: var(--red-base);
-     font-weight: 500;
+     text-align: center;
 }
 
-#submit-status.visible {
-     display: block;
-     animation: fadeIn 0.3s ease-in-out;
+#formFailureHelp p {
+     text-align: center;
 }
 
-/* Hide honeypot field - needs high specificity instead of !important */
-body .hidden,
-html .hidden,
-form .hidden,
-.hidden {
-     display: none;
-     visibility: hidden;
-     position: absolute;
-     left: -9999px;
-}
-
-/* Animation for fade-in effects */
-@keyframes fadeIn {
-     from {
-          opacity: 0;
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+     .contact-content {
+          padding: 1rem;
      }
-     to {
-          opacity: 1;
+
+     .contact-form {
+          padding: 1.5rem;
+     }
+
+     body.page-contact .page-header {
+          padding: 0 1rem;
      }
 }
 
@@ -2032,4 +2067,48 @@ html body #sidebar div.sidebar-header h1 a,
      background-color: transparent;
      border-radius: 0;
      border-left: none;
+}
+
+/*------------------------------------*\
+  #SUBSCRIBE PAGE STYLES
+\*------------------------------------*/
+/* Basic layout for subscribe content */
+body.page-subscribe .content {
+     max-width: 800px;
+     margin: 0 auto;
+}
+
+/* Subscribe page header styling */
+body.page-subscribe .page-header {
+     max-width: 800px;
+     margin: 0 auto 2rem;
+     text-align: center;
+}
+
+body.page-subscribe .page-header h1 {
+     text-align: center;
+     margin-bottom: 1rem;
+}
+
+body.page-subscribe .page-header p {
+     text-align: center;
+     max-width: 600px;
+     margin: 0 auto;
+     font-size: 1rem;
+     line-height: 1.5;
+}
+
+/* Ensure all paragraphs in the subscribe page content are centered */
+body.page-subscribe .content p {
+     text-align: center;
+     max-width: 600px;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+/* Mobile responsiveness for subscribe page */
+@media (max-width: 768px) {
+     body.page-subscribe .page-header {
+          padding: 0 1rem;
+     }
 }
