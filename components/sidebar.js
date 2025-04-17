@@ -6,13 +6,13 @@ const sidebarTemplate = `
         </a>
     </div>
     <nav>
-        <a href="/" class="nav-link nav-link-base">HOME</a>
-        <a href="/location" class="nav-link nav-link-base parent-link">FIND A GROUP</a>
-        <a href="/location" class="nav-link nav-link-indented location-link">BY LOCATION</a>
-        <a href="/topics" class="nav-link nav-link-indented topic-link">BY TOPIC</a>
-        <a href="/guides" class="nav-link nav-link-base">GUIDES</a>
-        <a href="/contact" class="nav-link nav-link-base">CONTACT</a>
-        <a href="/subscribe" class="nav-link nav-link-base">SUBSCRIBE</a>
+        <a href="/" class="nav-link-base nav-link">HOME</a>
+        <a href="/location" class="nav-link-base nav-link parent-link">FIND A GROUP</a>
+        <a href="/location" class="nav-link-base nav-link nav-link-indented location-link">BY LOCATION</a>
+        <a href="/topics" class="nav-link-base nav-link nav-link-indented topic-link">BY TOPIC</a>
+        <a href="/guides" class="nav-link-base nav-link">GUIDES</a>
+        <a href="/contact" class="nav-link-base nav-link">CONTACT</a>
+        <a href="/subscribe" class="nav-link-base nav-link">SUBSCRIBE</a>
     </nav>
     <div class="sidebar-motto">
        DON'T DESPAIR, ORGANIZE.

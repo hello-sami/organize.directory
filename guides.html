@@ -27,6 +27,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
+    <!-- Coming Soon Styles -->
+    <style>
+        .coming-soon-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .coming-soon-card {
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: var(--background-color, #fff5f5);
+            border: 1px solid var(--red-base, #ffb3b3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+        }
+
+        .coming-soon-text {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--red-base, #800000);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .coming-soon-text {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+
     <!-- Google Analytics -->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
     <script>
@@ -50,7 +84,7 @@
     </script>
 </head>
 
-<body>
+<body class="page-guides">
     <div class="layout">
         <div id="sidebar-placeholder"></div>
         <script src="/mobile-menu.js"></script>
@@ -63,54 +97,8 @@
                     <h2 class="coming-soon-text">Coming Soon</h2>
                 </div>
             </div>
-
-            <style>
-                .content {
-                    position: relative;
-                    min-height: 80vh;
-                }
-
-                h1 {
-                    text-align: center;
-                    margin-bottom: 2rem;
-                }
-
-                .coming-soon-container {
-                    max-width: 800px;
-                    margin: 0 auto;
-                }
-
-                .coming-soon-card {
-                    padding: 4rem 2rem;
-                    text-align: center;
-                    border-radius: 8px;
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                    background-color: var(--background-color, #fff5f5);
-                    border: 1px solid var(--red-base, #ffb3b3);
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    min-height: 300px;
-                }
-
-                .coming-soon-text {
-                    font-size: 2rem;
-                    font-weight: 700;
-                    color: var(--red-base, #800000);
-                    margin: 0;
-                }
-
-                @media (max-width: 768px) {
-                    .coming-soon-text {
-                        font-size: 2.5rem;
-                    }
-                }
-            </style>
         </main>
     </div>
-
-
-
 </body>
 
 </html>

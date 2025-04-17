@@ -7,8 +7,8 @@
    to reduce redundancy and improve maintainability:
    
    1. .btn-base - Base styling for all buttons
-   2. .nav-link-base - Base styling for navigation links
-   3. .location-link-base - Base styling for location links (cities, states)
+   2. .nav-link-base - Base styling for ALL navigation links (including locations)
+   3. .location-link - Specific styling for location links (cities, states)
    4. .card-base - Base styling for card-like elements
    
    STANDARDIZED MEDIA QUERY BREAKPOINTS:
@@ -52,6 +52,14 @@
      --breakpoint-lg: 1020px;
      --breakpoint-md: 768px;
      --breakpoint-sm: 480px;
+
+     /* Typography variables */
+     --heading-font: "Saira Semi Condensed", sans-serif;
+     --h1-size: 2.5rem;
+     --h1-size-content: 3.5rem;
+     --h1-size-mobile: 2rem;
+     --h2-size: 1.7em;
+     --h2-size-content: 1.7em;
 }
 
 /*------------------------------------*\
@@ -93,32 +101,35 @@ body {
      overflow-x: hidden;
 }
 
+/* 
+ * HEADING STYLES
+ * Base styles for all headings across the site
+ * More specific contexts (like .content) override these as needed
+ */
 h1 {
-     font-family: "Saira Semi Condensed", sans-serif;
-     font-size: 2.5rem;
+     font-family: var(--heading-font);
+     font-size: var(--h1-size);
      color: var(--red-base);
-     /* margin-bottom: 2rem; */
      font-weight: 800;
      line-height: 1.1;
      text-align: left;
 }
 
-/* Center h1 only on the homepage */
-body.page-home h1,
-body.page-index h1,
-body.page- h1 {
-     text-align: center;
-     padding-top: 3rem;
-     font-size: 5rem;
-}
-
 h2 {
-     font-size: 1.7em;
+     font-size: var(--h2-size);
      margin-top: 40px;
      color: var(--red-base);
      max-width: 1000px;
      text-align: left;
      margin-left: 0;
+}
+
+/* Center h1 only on the homepage and guides page */
+body.page-home h1,
+body.page-guides h1 {
+     text-align: center;
+     padding-top: 3rem;
+     font-size: 5rem;
 }
 
 a {
@@ -174,47 +185,51 @@ li {
      transform: translateY(1px);
 }
 
-/* Consolidated Navigation Link Base Class */
+/* Consolidated Navigation Link Base Class 
+   This contains truly common styles for ALL navigation links */
 .nav-link-base {
      display: block;
      padding: 0.75rem 1.5rem;
-     color: var(--red-base);
      text-decoration: none;
      transition: all 0.2s ease;
-     border-top: 1px solid var(--red-base);
-     border-bottom: 1px solid var(--red-base);
-     /* margin-top: -1px; */
      opacity: 0.9;
      font-size: 0.95rem;
      width: 100%;
-     text-transform: uppercase;
-     /* letter-spacing: 0.05em; */
 }
 
 .nav-link-base:hover {
      opacity: 1;
+}
+
+/* Specific styling for standard navigation links */
+.nav-link {
+     /* Inherit all base styling */
+     color: var(--text-color);
+     background-color: var(--bg-medium);
+     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+     font-weight: 500;
+}
+
+.nav-link:hover {
      color: var(--red-base);
      background: var(--bg-medium);
 }
 
-.nav-link-base.active {
+.nav-link.active {
      color: var(--red-base);
      opacity: 1;
      font-weight: 600;
-     background: var(--bg-medium);
+     background: var(--color-white);
 }
 
-/* Consolidated Location Link Base */
-.location-link-base {
-     display: block;
+/* Location navigation links style */
+.location-link {
+     /* Inherit base styling */
      color: var(--text-color);
-     text-decoration: none;
-     transition: all 0.1s ease;
      padding: 0.25rem 0.5rem;
-     opacity: 0.85;
 }
 
-.location-link-base:hover {
+.location-link:hover {
      opacity: 1;
      color: var(--red-base);
      text-decoration: none;
@@ -259,7 +274,10 @@ li {
      margin-left: var(--sidebar-width);
 }
 
-/* Content Elements */
+/* 
+ * Content Element Styles
+ * These styles apply specifically to elements within the main content area
+ */
 .content p,
 .content h1,
 .content h2,
@@ -272,12 +290,11 @@ li {
      text-align: left;
 }
 
+/* Content area specific heading overrides */
 .content h1 {
-     color: var(--red-base);
-     font-size: 3.5rem;
+     font-size: var(--h1-size-content);
      font-weight: 700;
      margin-bottom: 2rem;
-     font-family: "Saira Semi Condensed", sans-serif;
 }
 
 .content h2 {
@@ -768,7 +785,7 @@ html .topic-name,
 }
 
 .state-link {
-     /* Use location-link-base in HTML */
+     /* Use nav-link-base location-link in HTML */
      font-size: 1.1rem;
      line-height: 1.4;
      border-radius: 6px;
@@ -797,7 +814,7 @@ html .topic-name,
 }
 
 .city-link {
-     /* Use location-link-base in HTML */
+     /* Use nav-link-base location-link in HTML */
      color: var(--red-base);
      font-size: 0.9rem;
      font-weight: 700;
@@ -1566,7 +1583,7 @@ html body #sidebar div.sidebar-header h1 a,
 
      body h1,
      .content h1 {
-          font-size: 2rem;
+          font-size: var(--h1-size-mobile);
           line-height: 1.2;
      }
 
@@ -1992,7 +2009,7 @@ html body #sidebar div.sidebar-header h1 a,
 
 /* Remove all !important declarations from sidebar styling near the end */
 /* Fix HOME active state */
-.nav-link[href="/"] {
+.nav-link-base.nav-link[href="/"] {
      background-color: var(--red-base);
      font-weight: 600;
      color: white;
@@ -2005,26 +2022,15 @@ html body #sidebar div.sidebar-header h1 a,
      padding: 0;
 }
 
-/* Base styling for all nav links */
+/* Sidebar-specific navigation link styling 
+   This extends the base nav-link class with sidebar-specific properties */
 .sidebar .nav-link {
-     display: block;
      padding: 0.85rem 1.5rem;
-     color: var(--text-color);
-     text-decoration: none;
-     transition: all 0.2s ease;
-     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
      border-top: none;
      border-left: none;
      border-right: none;
      margin: 0;
-     opacity: 0.9;
-     font-size: 0.95rem;
-     width: 100%;
-     background-color: var(--bg-medium);
      position: relative;
-     text-transform: uppercase;
-     letter-spacing: 0.05em;
-     font-weight: 500;
 }
 
 /* Additional styles for indented links */
@@ -2111,4 +2117,31 @@ body.page-subscribe .content p {
      body.page-subscribe .page-header {
           padding: 0 1rem;
      }
+}
+
+/* Guides Page Styles */
+.page-guides .content {
+     position: relative;
+     min-height: 80vh;
+}
+
+.page-guides h1 {
+     text-align: center;
+     margin-bottom: 2rem;
+}
+
+/* Make sure guides link is active on guides page */
+body.page-guides .sidebar a[href="/guides"].nav-link {
+     background-color: var(--color-white);
+     color: var(--red-base);
+     font-weight: 600;
+}
+
+/* Topics Page */
+.topics-page .content {
+     display: block;
+     text-align: left;
+     width: 100%;
+     box-sizing: border-box;
+     padding: 2rem;
 }
