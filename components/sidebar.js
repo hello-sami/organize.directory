@@ -18,12 +18,18 @@ const sidebarTemplate = `
        DON'T DESPAIR, ORGANIZE.
     </div>`;
 
+// Track if the sidebar has been initialized
+let sidebarInitialized = false;
+
 /**
  * Main function to initialize the sidebar
  * @param {string} activePage - The current active page
  */
 export function initializeSidebar(activePage) {
      if (typeof document === "undefined") return;
+
+     // Set a flag to prevent double initialization
+     sidebarInitialized = true;
 
      // Insert sidebar if it doesn't exist
      if (!document.querySelector(".sidebar")) {
@@ -204,14 +210,18 @@ export function adjustPaths(sidebar, depth = 0) {
      }
 }
 
-// Initialize on DOMContentLoaded
+// Initialize on DOMContentLoaded only if not already initialized
 if (typeof document !== "undefined") {
      if (document.readyState === "loading") {
           document.addEventListener("DOMContentLoaded", () => {
-               initializeSidebar();
+               if (!sidebarInitialized) {
+                    initializeSidebar();
+               }
           });
      } else {
           // Document already loaded
-          initializeSidebar();
+          if (!sidebarInitialized) {
+               initializeSidebar();
+          }
      }
 }

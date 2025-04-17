@@ -2104,6 +2104,14 @@ body.page-subscribe .page-header p {
      line-height: 1.5;
 }
 
+/* Remove any content-based pseudo-elements that might be adding text */
+body.page-subscribe .page-header h1::before,
+body.page-subscribe .page-header h1::after,
+body.page-subscribe .page-header p::before,
+body.page-subscribe .page-header p::after {
+     content: none !important;
+}
+
 /* Ensure all paragraphs in the subscribe page content are centered */
 body.page-subscribe .content p {
      text-align: center;
