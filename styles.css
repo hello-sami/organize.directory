@@ -85,9 +85,17 @@ html {
      -moz-text-size-adjust: 100%;
      -ms-text-size-adjust: 100%;
      text-size-adjust: 100%;
+     /* Ensure iOS Safari doesn't try to scale the page */
+     max-width: 100vw;
+     overflow-x: hidden;
 }
 
+/* Ensure iOS Safari doesn't allow page to become wider than viewport */
 body {
+     width: 100%;
+     max-width: 100vw;
+     min-width: 320px;
+     overflow-x: hidden;
      font-family:
           "Inter",
           -apple-system,
@@ -106,8 +114,61 @@ body {
      /* Optimize text rendering */
      -webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile-first layout approach to fix iOS Safari's viewport issues */
+.layout {
+     display: flex;
+     min-height: 100vh;
+     position: relative;
+     gap: 0;
+     background-color: var(--background-color);
+     width: 100%;
      max-width: 100%;
-     overflow-x: hidden;
+     box-sizing: border-box;
+     margin: 0;
+     /* Remove padding that could cause overflow */
+     padding-left: 0;
+}
+
+@media (min-width: 1020px) {
+     .layout {
+          max-width: 1400px;
+          margin: 0 auto;
+          padding-left: var(--sidebar-width);
+     }
+}
+
+/* Safari-specific adjustments */
+@supports (-webkit-touch-callout: none) {
+     html,
+     body {
+          /* Force iOS Safari to use the viewport width */
+          width: 100%;
+          min-height: -webkit-fill-available;
+          max-width: 100vw;
+          overflow-x: hidden;
+     }
+
+     /* Apply mobile styling to ensure proper rendering in Safari */
+     body {
+          font-size: var(--safari-mobile-font-size);
+     }
+
+     /* Ensure Safari doesn't try to fit content outside the viewport */
+     .layout {
+          max-width: 100%;
+          min-width: 100%;
+          width: 100%;
+          box-sizing: border-box;
+     }
+
+     .content {
+          max-width: 100%;
+          width: 100%;
+          box-sizing: border-box;
+          overflow-x: hidden;
+     }
 }
 
 /* 
@@ -1666,6 +1727,9 @@ html body #sidebar div.sidebar-header h1 a,
           padding-top: 4rem; /* Add space for the menu button */
           width: 100%;
           box-sizing: border-box;
+          /* Ensure content stays within viewport in Safari */
+          max-width: 100vw;
+          overflow-x: hidden;
      }
 
      /* Safari-specific adjustments */
@@ -1733,6 +1797,45 @@ html body #sidebar div.sidebar-header h1 a,
           .form-group label {
                font-size: 1.15rem;
                margin-bottom: 0.5rem;
+          }
+
+          /* Safari-specific width fixes for common elements */
+          .initiative-stats,
+          .stats-container,
+          .buttons-container,
+          .find-groups-button {
+               width: 100%;
+               max-width: 100%;
+               box-sizing: border-box;
+          }
+
+          /* Ensure large numbers don't cause layout issues */
+          .stat-number {
+               font-size: 3rem;
+               max-width: 100%;
+               overflow: hidden;
+               text-overflow: ellipsis;
+          }
+
+          /* Force main content width to match viewport exactly */
+          .content {
+               width: 100vw;
+               min-width: 100%;
+               max-width: 100vw;
+               margin: 0;
+               padding: 1rem;
+               padding-top: 4rem;
+               box-sizing: border-box;
+          }
+
+          /* Adjust layout for proper viewport fit */
+          .layout {
+               width: 100vw;
+               min-width: 100%;
+               max-width: 100vw;
+               margin: 0;
+               padding: 0;
+               overflow-x: hidden;
           }
      }
 

@@ -3,15 +3,47 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, text-size-adjust=100%, -webkit-text-size-adjust=100%">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- iOS Safari specific viewport handling -->
+    <script>
+        // iOS Safari specific viewport handling
+        (function () {
+            // Only run on iOS Safari
+            const ua = navigator.userAgent;
+            const iOS = /iPad|iPhone|iPod/.test(ua);
+            const webkit = /WebKit/.test(ua);
+
+            if (iOS && webkit) {
+                // Force viewport update on orientation change
+                window.addEventListener('orientationchange', function () {
+                    // Update viewport meta tag
+                    const viewportMeta = document.querySelector('meta[name="viewport"]');
+                    if (viewportMeta) {
+                        // Trick Safari into re-evaluating the viewport by slightly modifying it
+                        viewportMeta.setAttribute('content',
+                            'width=device-width, initial-scale=1.0001, viewport-fit=cover');
+                        setTimeout(function () {
+                            viewportMeta.setAttribute('content',
+                                'width=device-width, initial-scale=1.0, viewport-fit=cover');
+                        }, 100);
+                    }
+                });
+
+                // Fix for iOS Safari zoom issues
+                document.addEventListener('gesturestart', function (e) {
+                    e.preventDefault();
+                });
+            }
+        })();
+    </script>
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="/styles.css?v=1.1.5" as="style">
+    <link rel="preload" href="/styles.css?v=1.1.6" as="style">
     <script>
         // Preload CSS to reduce flickering
         function preloadCriticalCSS() {
-            const criticalStyles = ['/styles.css?v=1.1.5'];
+            const criticalStyles = ['/styles.css?v=1.1.6'];
             criticalStyles.forEach(href => {
                 const link = document.createElement('link');
                 link.rel = 'preload';
@@ -80,12 +112,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
     <!-- Critical CSS -->
-    <link rel="stylesheet" href="/styles.css?v=1.1.5">
+    <link rel="stylesheet" href="/styles.css?v=1.1.6">
 
     <!-- Non-blocking font loading -->
     <link
         href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
+
+    <!-- Safari specific fixes - Load as early as possible -->
+    <script src="/js/safari-fixes.js?v=1.0.0" defer></script>
 
     <!-- Mobile menu script - Load with defer to ensure it runs after DOM is ready -->
     <script src="/mobile-menu.js?v=1.0.1" defer></script>
@@ -120,92 +155,7 @@
                 .catch(error => console.error('Error initializing components:', error));
         });
     </script>
-
-    <!-- Use hardcoded posts data to avoid loading issues
-    <script>
-        // Hardcoded post data
-        const postData = {
-            "posts": [
-                {
-                    "date": "2024-04-15",
-                    "slug": "housing-assistance-expansion",
-                    "title": "Housing Assistance Expansion for Low-Income Families"
-                },
-                {
-                    "date": "2024-04-08",
-                    "slug": "healthcare-initiatives-underserved",
-                    "title": "New Healthcare Initiatives for Underserved Communities"
-                },
-                {
-                    "date": "2024-03-28",
-                    "slug": "climate-crisis-response",
-                    "title": "Climate Crisis Response: Supporting Affected Regions"
-                },
-                {
-                    "date": "2024-03-20",
-                    "slug": "winter-storm-response",
-                    "title": "Urgent Need: Winter Storm Response"
-                },
-                {
-                    "date": "2024-03-19",
-                    "slug": "food-security-launch",
-                    "title": "Food Security Initiative Launch"
-                }
-            ]
-        };
-
-        // Map of taglines for each post by slug
-        const taglines = {
-            'housing-assistance-expansion': 'Expanding support for vulnerable communities facing housing insecurity.',
-            'healthcare-initiatives-underserved': 'Bringing healthcare access to communities that need it most.',
-            'climate-crisis-response': 'Addressing the growing impacts of extreme weather events across the country.',
-            'winter-storm-response': 'Coordinating support for communities affected by severe winter weather.',
-            'food-security-launch': 'Building sustainable food systems for all communities.'
-        };
-
-        // Function to display posts
-        function displayPosts() {
-            const postsList = document.getElementById('posts-list');
-            if (!postsList) return;
-
-            // Sort posts by date in descending order
-            const sortedPosts = postData.posts.sort((a, b) =>
-                new Date(b.date) - new Date(a.date)
-            );
-
-            // Create HTML for each post
-            const postsHTML = sortedPosts.map(post => {
-                // Format date as DD-MM-YYYY
-                const date = new Date(post.date);
-                const formattedDate = date.toLocaleDateString('en-GB', {
-                    year: 'numeric',
-                    month: '2-digit',
-                    day: '2-digit'
-                }).split('/').join('-');
-
-                // Get tagline or use a default one
-                const tagline = taglines[post.slug] || 'Supporting mutual aid efforts across communities.';
-
-                return `
-                    <article class="post-entry">
-                        <div class="post-entry-header">
-                            <h3 class="post-entry-title">
-                                <a href="./posts/${post.slug}.html">${post.title}</a>
-                            </h3>
-                            <time datetime="${post.date}">${formattedDate}</time>
-                        </div>
-                        <p class="post-entry-tagline">${tagline}</p>
-                    </article>
-                `;
-            }).join('');
-
-            postsList.innerHTML = postsHTML;
-        }
-
-        // Execute when DOM is loaded
-        document.addEventListener('DOMContentLoaded', displayPosts);
-    </script>
-</head> -->
+</head>
 
 <body class="page-home">
     <div class="layout">
