@@ -1,6 +1,12 @@
 // Mobile menu functionality
 document.addEventListener("DOMContentLoaded", function () {
-     // Get sidebar element
+     // Get sidebar element after a short delay to ensure it's created
+     setTimeout(() => {
+          setupMobileMenu();
+     }, 100);
+});
+
+function setupMobileMenu() {
      const sidebar = document.getElementById("sidebar");
      const mobileMenuOverlay = document.querySelector(".mobile-menu-overlay");
      const existingButton = document.querySelector(".mobile-menu-button");
@@ -38,6 +44,16 @@ document.addEventListener("DOMContentLoaded", function () {
                sidebar.classList.toggle("active");
                document.body.classList.toggle("menu-open");
                overlay.classList.toggle("active");
+
+               // Force logo visibility when sidebar is opened
+               if (sidebar.classList.contains("active")) {
+                    const logoImg = sidebar.querySelector(".site-logo");
+                    if (logoImg) {
+                         logoImg.classList.add("loaded");
+                         logoImg.style.opacity = "1";
+                         logoImg.style.visibility = "visible";
+                    }
+               }
           });
 
           // Close sidebar when clicking on the overlay
@@ -126,4 +142,4 @@ document.addEventListener("DOMContentLoaded", function () {
           `;
           document.head.appendChild(styleEl);
      }
-});
+}

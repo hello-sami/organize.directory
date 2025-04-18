@@ -298,7 +298,7 @@ li {
 }
 
 .sidebar-header {
-     padding: 1rem;
+     padding: 1.5rem 1rem;
      text-align: center;
      position: relative;
      display: flex;
@@ -306,6 +306,7 @@ li {
      justify-content: center;
      min-height: 120px; /* Fixed minimum height to prevent layout shifts */
      transition: min-height 0.2s ease;
+     width: 100%;
 }
 
 .site-logo {
@@ -313,11 +314,14 @@ li {
      height: auto;
      min-height: 80px; /* Ensures minimum height even before image loads */
      opacity: 0;
-     transition: opacity 0.3s ease;
+     transition: opacity 0.5s ease; /* Increased transition time for smoother fade-in */
+     display: block; /* Ensure it's displayed as block */
+     margin: 0 auto; /* Center the logo */
 }
 
 .site-logo.loaded {
      opacity: 1;
+     visibility: visible; /* Ensure visibility is also set */
 }
 
 /* Add a placeholder while the image loads */
