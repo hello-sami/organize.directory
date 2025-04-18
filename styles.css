@@ -50,6 +50,7 @@
      /* Base font sizes */
      --base-font-size: 16px;
      --mobile-font-size: 18px;
+     --safari-mobile-font-size: 20px; /* Larger default for Safari mobile */
 
      /* Standard breakpoints - these are set but not used directly in @media */
      --breakpoint-xxl: 1400px;
@@ -63,8 +64,10 @@
      --h1-size: 2.5rem;
      --h1-size-content: 3.5rem;
      --h1-size-mobile: 3rem;
+     --h1-size-safari-mobile: 3.25rem; /* Safari specific adjustment */
      --h2-size: 2em;
      --h2-size-content: 1.7em;
+     --h2-size-safari-mobile: 2em;
 }
 
 /*------------------------------------*\
@@ -79,6 +82,8 @@
 /* Prevent text size issues on mobile */
 html {
      -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+     -ms-text-size-adjust: 100%;
      text-size-adjust: 100%;
 }
 
@@ -1661,6 +1666,74 @@ html body #sidebar div.sidebar-header h1 a,
           padding-top: 4rem; /* Add space for the menu button */
           width: 100%;
           box-sizing: border-box;
+     }
+
+     /* Safari-specific adjustments */
+     @supports (-webkit-touch-callout: none) {
+          body {
+               font-size: var(--safari-mobile-font-size);
+          }
+
+          body p,
+          .content p,
+          body li,
+          .content li {
+               font-size: 1.25rem;
+          }
+
+          body a,
+          .content a,
+          body .nav-link,
+          body .city-link,
+          body .state-link {
+               font-size: 1.25rem;
+          }
+
+          body h1,
+          .content h1 {
+               font-size: var(--h1-size-safari-mobile);
+          }
+
+          body h2,
+          .content h2 {
+               font-size: var(--h2-size-safari-mobile);
+          }
+
+          /* Enhance touch targets for Safari */
+          a,
+          button,
+          .nav-link,
+          .city-link,
+          .state-link {
+               min-height: 54px;
+               padding: 1rem 1.3rem;
+          }
+
+          /* Form elements specific to Safari */
+          input,
+          textarea,
+          select,
+          .form-group input,
+          .form-group textarea,
+          .form-group select {
+               font-size: 1.15rem !important; /* Important to override any other styles */
+               min-height: 54px;
+               padding: 0.75rem 1rem;
+          }
+
+          button,
+          .btn,
+          .btn-base,
+          input[type="submit"] {
+               font-size: 1.15rem !important;
+               min-height: 54px;
+               padding: 0.75rem 1.2rem;
+          }
+
+          .form-group label {
+               font-size: 1.15rem;
+               margin-bottom: 0.5rem;
+          }
      }
 
      /* State Link */
