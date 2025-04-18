@@ -5,45 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <!-- iOS Safari specific viewport handling -->
-    <script>
-        // iOS Safari specific viewport handling
-        (function () {
-            // Only run on iOS Safari
-            const ua = navigator.userAgent;
-            const iOS = /iPad|iPhone|iPod/.test(ua);
-            const webkit = /WebKit/.test(ua);
-
-            if (iOS && webkit) {
-                // Force viewport update on orientation change
-                window.addEventListener('orientationchange', function () {
-                    // Update viewport meta tag
-                    const viewportMeta = document.querySelector('meta[name="viewport"]');
-                    if (viewportMeta) {
-                        // Trick Safari into re-evaluating the viewport by slightly modifying it
-                        viewportMeta.setAttribute('content',
-                            'width=device-width, initial-scale=1.0001, viewport-fit=cover');
-                        setTimeout(function () {
-                            viewportMeta.setAttribute('content',
-                                'width=device-width, initial-scale=1.0, viewport-fit=cover');
-                        }, 100);
-                    }
-                });
-
-                // Fix for iOS Safari zoom issues
-                document.addEventListener('gesturestart', function (e) {
-                    e.preventDefault();
-                });
-            }
-        })();
-    </script>
-
     <!-- Preload critical resources -->
-    <link rel="preload" href="/styles.css?v=1.1.6" as="style">
+    <link rel="preload" href="/styles.css?v=1.1.9" as="style">
     <script>
         // Preload CSS to reduce flickering
         function preloadCriticalCSS() {
-            const criticalStyles = ['/styles.css?v=1.1.6'];
+            const criticalStyles = ['/styles.css?v=1.1.9'];
             criticalStyles.forEach(href => {
                 const link = document.createElement('link');
                 link.rel = 'preload';
@@ -55,6 +22,75 @@
         // Execute immediately
         preloadCriticalCSS();
     </script>
+
+    <!-- Force mobile layout with inline CSS -->
+    <style>
+        @media (max-width: 480px) {
+
+            /* Force hide regular stats */
+            .stat-number,
+            .stat-label {
+                display: none !important;
+            }
+
+            /* Force show mobile labels */
+            .stat-mobile-label {
+                display: block !important;
+                font-size: 1.4rem !important;
+                font-weight: 700 !important;
+                text-align: left !important;
+                font-family: "Saira Semi Condensed", sans-serif !important;
+                color: #c82525 !important;
+                line-height: 1.2 !important;
+            }
+
+            /* Force vertical layout */
+            .stats-container {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 1.2rem !important;
+                width: 100% !important;
+            }
+
+            .stat-item {
+                width: 100% !important;
+                text-align: left !important;
+                padding: 0 0.5rem !important;
+            }
+
+            .initiative-stats {
+                padding: 1.5rem !important;
+                margin: 0.75rem auto 1.5rem !important;
+                border-width: 1px !important;
+            }
+        }
+
+        /* Ensure horizontal layout for larger screens */
+        @media (min-width: 481px) {
+            .stat-mobile-label {
+                display: none !important;
+            }
+
+            .stat-number,
+            .stat-label {
+                display: block !important;
+            }
+
+            .stats-container {
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: space-around !important;
+                align-items: center !important;
+            }
+
+            .stat-item {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+        }
+    </style>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -112,15 +148,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
     <!-- Critical CSS -->
-    <link rel="stylesheet" href="/styles.css?v=1.1.6">
+    <link rel="stylesheet" href="/styles.css?v=1.1.9">
 
     <!-- Non-blocking font loading -->
     <link
         href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
-
-    <!-- Safari specific fixes - Load as early as possible -->
-    <script src="/js/safari-fixes.js?v=1.0.0" defer></script>
 
     <!-- Mobile menu script - Load with defer to ensure it runs after DOM is ready -->
     <script src="/mobile-menu.js?v=1.0.1" defer></script>
@@ -171,17 +204,81 @@
                     <div class="stat-item">
                         <span class="stat-number">2,154</span>
                         <span class="stat-label">GROUPS</span>
+                        <span class="stat-mobile-label">GROUPS: 2,154</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">343</span>
                         <span class="stat-label">CITIES</span>
+                        <span class="stat-mobile-label">CITIES: 343</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">41</span>
                         <span class="stat-label">CATEGORIES</span>
+                        <span class="stat-mobile-label">CATEGORIES: 41</span>
                     </div>
                 </div>
             </section>
+
+            <script>
+                // Force mobile styles immediately on load and resize
+                function updateStatDisplay() {
+                    if (window.innerWidth <= 480) {
+                        // Hide regular stats with !important
+                        document.querySelectorAll('.stat-number, .stat-label').forEach(el => {
+                            el.style.cssText = 'display: none !important';
+                        });
+
+                        // Show mobile labels with !important
+                        document.querySelectorAll('.stat-mobile-label').forEach(el => {
+                            el.style.cssText = 'display: block !important; font-size: 1.4rem !important; font-weight: 700 !important; text-align: left !important; font-family: "Saira Semi Condensed", sans-serif !important; color: #c82525 !important;';
+                        });
+
+                        // Make stat items display vertically with !important
+                        document.querySelector('.stats-container').style.cssText = 'display: flex !important; flex-direction: column !important; gap: 1.2rem !important; width: 100% !important;';
+
+                        // Style each stat item with !important
+                        document.querySelectorAll('.stat-item').forEach(el => {
+                            el.style.cssText = 'width: 100% !important; text-align: left !important; padding: 0 0.5rem !important;';
+                        });
+                    } else {
+                        // Reset styles for larger screens - horizontal layout
+                        document.querySelectorAll('.stat-number, .stat-label').forEach(el => {
+                            el.style.cssText = '';  // Remove inline styles
+                        });
+
+                        // Hide mobile labels
+                        document.querySelectorAll('.stat-mobile-label').forEach(el => {
+                            el.style.cssText = 'display: none !important;';
+                        });
+
+                        // Reset container to horizontal layout
+                        document.querySelector('.stats-container').style.cssText = '';
+
+                        // Reset stat items
+                        document.querySelectorAll('.stat-item').forEach(el => {
+                            el.style.cssText = '';
+                        });
+                    }
+                }
+
+                // Run on load
+                updateStatDisplay();
+
+                // Run immediately
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', updateStatDisplay);
+                } else {
+                    updateStatDisplay();
+                }
+
+                // Run on resize
+                window.addEventListener('resize', updateStatDisplay);
+
+                // Force a check after a short delay to catch any late rendering issues
+                setTimeout(updateStatDisplay, 100);
+                setTimeout(updateStatDisplay, 500);
+                setTimeout(updateStatDisplay, 1000);
+            </script>
 
             <section class="find-groups-buttons">
                 <div class="buttons-container">
