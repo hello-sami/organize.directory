@@ -167,28 +167,69 @@ function setActivePage(activePage) {
  * Sets up mobile sidebar toggle functionality
  */
 function setupMobileToggle() {
-     document
-          .querySelectorAll(
-               ".mobile-menu-button, .mobile-menu-overlay, #menu-toggle"
-          )
-          .forEach((element) => {
-               if (!element) return;
+     // Log for debugging
+     console.log("Setting up mobile toggle in sidebar.js");
 
-               element.addEventListener("click", () => {
-                    const sidebar = document.querySelector(".sidebar");
-                    if (!sidebar) return;
+     const mobileMenuButtons = document.querySelectorAll(
+          ".mobile-menu-button, #menu-toggle"
+     );
+     const overlay = document.querySelector(".mobile-menu-overlay");
+     const sidebar = document.querySelector(".sidebar");
 
-                    sidebar.classList.toggle("active");
-                    sidebar.classList.toggle("sidebar-open");
-                    document.body.classList.toggle("menu-open");
-                    document.body.classList.toggle("sidebar-active");
+     console.log("Mobile menu buttons found:", mobileMenuButtons.length);
+     console.log("Overlay found:", !!overlay);
+     console.log("Sidebar found:", !!sidebar);
 
-                    const overlay = document.querySelector(
-                         ".mobile-menu-overlay"
-                    );
-                    if (overlay) overlay.classList.toggle("active");
-               });
+     // Make sure all required elements exist
+     if (!sidebar) {
+          console.error("Sidebar element not found");
+          return;
+     }
+
+     // Setup button click handlers
+     mobileMenuButtons.forEach((button) => {
+          if (!button) return;
+
+          // Remove existing event listeners by cloning
+          const newButton = button.cloneNode(true);
+          if (button.parentNode) {
+               button.parentNode.replaceChild(newButton, button);
+          }
+
+          newButton.addEventListener("click", (e) => {
+               e.preventDefault();
+               e.stopPropagation();
+               console.log("Mobile menu button clicked in sidebar.js");
+
+               sidebar.classList.toggle("active");
+               document.body.classList.toggle("menu-open");
+
+               if (overlay) {
+                    overlay.classList.toggle("active");
+               }
+
+               // Ensure the logo is visible when menu is open
+               const logoImg = sidebar.querySelector(".site-logo");
+               if (logoImg && sidebar.classList.contains("active")) {
+                    logoImg.classList.add("loaded");
+                    logoImg.style.opacity = "1";
+                    logoImg.style.visibility = "visible";
+               }
           });
+     });
+
+     // Setup overlay click handler
+     if (overlay) {
+          // Remove existing event listeners by cloning
+          const newOverlay = overlay.cloneNode(true);
+          overlay.parentNode.replaceChild(newOverlay, overlay);
+
+          newOverlay.addEventListener("click", () => {
+               sidebar.classList.remove("active");
+               document.body.classList.remove("menu-open");
+               newOverlay.classList.remove("active");
+          });
+     }
 }
 
 /**

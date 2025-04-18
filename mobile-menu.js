@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
      // Get sidebar element after a short delay to ensure it's created
      setTimeout(() => {
           setupMobileMenu();
-     }, 100);
+     }, 500); // Increased timeout to ensure sidebar is fully loaded
 });
 
 function setupMobileMenu() {
@@ -14,6 +14,11 @@ function setupMobileMenu() {
      // Use existing mobile menu elements if present, otherwise create them
      let overlay = mobileMenuOverlay;
      let mobileMenuButton = existingButton;
+
+     // Log for debugging
+     console.log("Setting up mobile menu. Sidebar found:", !!sidebar);
+     console.log("Mobile menu button found:", !!mobileMenuButton);
+     console.log("Overlay found:", !!overlay);
 
      if (!mobileMenuButton) {
           // Create mobile menu button if it doesn't exist
@@ -40,7 +45,16 @@ function setupMobileMenu() {
 
      // Add event listener to toggle sidebar
      if (sidebar) {
+          // Remove any existing event listeners to prevent duplicates
+          const newMobileMenuButton = mobileMenuButton.cloneNode(true);
+          mobileMenuButton.parentNode.replaceChild(
+               newMobileMenuButton,
+               mobileMenuButton
+          );
+          mobileMenuButton = newMobileMenuButton;
+
           mobileMenuButton.addEventListener("click", function () {
+               console.log("Mobile menu button clicked");
                sidebar.classList.toggle("active");
                document.body.classList.toggle("menu-open");
                overlay.classList.toggle("active");
@@ -76,6 +90,10 @@ function setupMobileMenu() {
                     overlay.classList.remove("active");
                }
           });
+     } else {
+          // If sidebar doesn't exist yet, try again after a delay
+          console.log("Sidebar not found, retrying in 500ms");
+          setTimeout(setupMobileMenu, 500);
      }
 
      // Add the necessary styles if they don't exist
