@@ -42,6 +42,11 @@
      --content-padding: 3rem;
      --border-thick: 2px;
 
+     /* Sidebar theme */
+     --sidebar-bg: var(--bg-medium);
+     --sidebar-color: var(--text-color);
+     --border-color: #c01c1c;
+
      /* Base font sizes */
      --base-font-size: 16px;
      --mobile-font-size: 18px;
@@ -93,7 +98,6 @@ body {
      background-color: var(--background-color);
      min-height: 100vh;
      font-size: var(--base-font-size);
-     letter-spacing: -0.01em;
      /* Optimize text rendering */
      -webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;
@@ -252,7 +256,7 @@ li {
 /*------------------------------------*\
   #LAYOUT
 \*------------------------------------*/
-/* Basic layout structure */
+/* Basic layout structure - updated for fixed sidebar */
 .layout {
      display: flex;
      min-height: 100vh;
@@ -261,6 +265,9 @@ li {
      background-color: var(--background-color);
      max-width: 1400px;
      margin: 0 auto;
+     padding-left: var(
+          --sidebar-width
+     ); /* Ensure consistent space for fixed sidebar */
 }
 
 .content {
@@ -271,86 +278,59 @@ li {
      padding: 5rem;
      position: relative;
      background: var(--background-color);
-     margin-left: var(--sidebar-width);
 }
 
-/* 
- * Content Element Styles
- * These styles apply specifically to elements within the main content area
- */
-.content p,
-.content h1,
-.content h2,
-.content .daily-log,
-.content .about-content,
-.content .initiative {
-     max-width: 1000px;
-     margin-left: auto;
-     margin-right: auto;
-     text-align: left;
-}
-
-/* Content area specific heading overrides */
-.content h1 {
-     font-size: var(--h1-size-content);
-     font-weight: 700;
-     margin-bottom: 2rem;
-}
-
-.content h2 {
-     max-width: 600px;
-     margin-left: 0;
-     margin-right: auto;
-     padding: 0;
-     text-indent: 0;
-}
-
-/* Add specific styling for city page section headings */
-.city-page section h2 {
-     text-align: left;
-     margin-left: 0;
-     max-width: 1000px;
-}
-
-/*------------------------------------*\
-  #SIDEBAR
-\*------------------------------------*/
-/* Sidebar */
+/* Updated sidebar rules to ensure consistent positioning */
 .sidebar {
-     background-color: #ffd4d4;
-     width: var(--sidebar-width, 280px);
-     height: 100vh;
-     position: fixed;
+     background-color: var(--sidebar-bg);
+     color: var(--sidebar-color);
+     width: var(--sidebar-width);
+     min-width: var(--sidebar-width);
+     height: 100vh; /* Changed from min-height to height for consistency */
+     display: flex;
+     flex-direction: column;
+     position: fixed; /* Changed from sticky to fixed */
      top: 0;
      left: 0;
-     padding: 2rem 0;
-     box-sizing: border-box;
-     overflow-y: auto;
-     z-index: 100;
-     border-right: 2px solid #c01c1c;
-}
-
-/* More specific site logo selectors to override any other styles */
-html body .sidebar .site-logo,
-.layout .sidebar .site-logo,
-.sidebar .site-logo {
-     display: block;
-     width: 200px;
-     height: auto;
-     margin: 0 auto 20px;
-     padding: 1.5rem 0 1rem;
-     max-width: none;
-     object-fit: contain;
+     z-index: 100; /* Increased z-index to ensure it stays above other elements */
+     border-right: 1px solid var(--border-color);
+     overflow-y: auto; /* Changed from hidden to auto to allow scrolling */
 }
 
 .sidebar-header {
+     padding: 1rem;
+     text-align: center;
+     position: relative;
      display: flex;
-     flex-direction: column;
      align-items: center;
      justify-content: center;
-     padding: 0;
-     margin-bottom: 0;
-     gap: 0;
+     min-height: 120px; /* Fixed minimum height to prevent layout shifts */
+     transition: min-height 0.2s ease;
+}
+
+.site-logo {
+     max-width: 100%;
+     height: auto;
+     min-height: 80px; /* Ensures minimum height even before image loads */
+     opacity: 0;
+     transition: opacity 0.3s ease;
+}
+
+.site-logo.loaded {
+     opacity: 1;
+}
+
+/* Add a placeholder while the image loads */
+.sidebar-header::before {
+     content: "";
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 80%;
+     height: 60px;
+     background-color: transparent;
+     z-index: -1;
 }
 
 .sidebar-header h1 {
@@ -567,7 +547,6 @@ html body .sidebar .site-logo,
      font-weight: 700;
      color: var(--red-base);
      text-transform: uppercase;
-     letter-spacing: 0.05em;
      font-family: "Saira Semi Condensed", sans-serif;
 }
 
@@ -620,7 +599,6 @@ html .topic-name,
      font-weight: 600;
      margin: 0;
      padding: 0;
-     letter-spacing: 0.01em;
      line-height: 1.2;
      display: flex;
      align-items: center;
@@ -851,7 +829,6 @@ html .topic-name,
      font-weight: 700;
      color: var(--red-base);
      margin-bottom: 1rem;
-     letter-spacing: 0.02em;
 }
 
 .toc-list {
@@ -944,7 +921,6 @@ html .topic-name,
      color: var(--red-base);
      font-size: 1.1rem;
      font-weight: 500;
-     letter-spacing: 0.01em;
      text-transform: none;
      border-bottom: 1px solid var(--red-base);
      border-radius: 0;
@@ -1493,7 +1469,7 @@ html body #sidebar div.sidebar-header h1 a,
      .content {
           max-width: 1000px;
           margin: 0 auto;
-          margin-left: 280px;
+          padding: 3rem 2rem;
      }
 }
 
@@ -1504,7 +1480,7 @@ html body #sidebar div.sidebar-header h1 a,
      .content {
           max-width: 900px;
           margin: 0 1rem;
-          margin-left: 280px;
+          padding: 3rem 2rem;
      }
 }
 
@@ -1513,6 +1489,7 @@ html body #sidebar div.sidebar-header h1 a,
      /* General Layout */
      .layout {
           flex-direction: column;
+          padding-left: 0; /* Remove padding on mobile to avoid empty space */
      }
 
      h1 {
@@ -1525,10 +1502,17 @@ html body #sidebar div.sidebar-header h1 a,
           margin-left: 0;
      }
 
-     /* Sidebar */
+     /* Sidebar - position fixed needs specific transform treatment */
      .sidebar {
+          position: fixed;
+          top: 0;
+          left: 0;
           transform: translateX(-100%);
           transition: transform 0.3s ease;
+          height: 100vh;
+          overflow-y: auto;
+          width: var(--sidebar-width);
+          box-shadow: none;
      }
 
      .sidebar.active {
@@ -1604,7 +1588,7 @@ html body #sidebar div.sidebar-header h1 a,
      }
 }
 
-/* Medium screens - 768px and below */
+/* Medium screens - 768px and below - updated layout for clarity */
 @media (max-width: 768px) {
      /* General Text Size Increases */
      body {
@@ -1671,6 +1655,7 @@ html body #sidebar div.sidebar-header h1 a,
      .content {
           padding: 1rem;
           margin-left: 0;
+          padding-top: 4rem; /* Add space for the menu button */
           width: 100%;
           box-sizing: border-box;
      }

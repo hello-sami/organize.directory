@@ -62,12 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
           });
      }
 
-     // Apply direct fixes to the sidebar header
-     const sidebarHeader = document.querySelector(".sidebar-header");
-     if (sidebarHeader) {
-          sidebarHeader.style.paddingTop = "3.5rem";
-     }
-
      // Add the necessary styles if they don't exist
      if (!document.getElementById("mobile-menu-styles")) {
           const styleEl = document.createElement("style");
@@ -97,10 +91,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
                /* Mobile menu adjustments */
                @media (max-width: 1020px) {
-                    /* Add padding to the sidebar header at all times on mobile */
+                    /* Only adjust styles through classes, not direct style application */
                     .sidebar-header {
-                         padding-top: 3.5rem !important;
-                         margin-top: 0 !important;
+                         padding-top: 1.5rem; /* Reduced from 3.5rem for better spacing */
                     }
                     
                     /* Make sure the hamburger button stays visible above content */

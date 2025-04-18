@@ -2,7 +2,7 @@
 const sidebarTemplate = `
     <div class="sidebar-header">
         <a href="/">
-          <img src="/logo.png" alt="Organize Directory Logo" class="site-logo">
+          <img src="/logo.png" alt="Organize Directory Logo" class="site-logo" onload="this.classList.add('loaded')">
         </a>
     </div>
     <nav>
@@ -18,8 +18,10 @@ const sidebarTemplate = `
        don't despair, organize.
     </div>`;
 
-// Track if the sidebar has been initialized
-let sidebarInitialized = false;
+// Track if the sidebar has been initialized - placed in global window object to prevent reinit
+if (typeof window !== "undefined" && !window.sidebarInitialized) {
+     window.sidebarInitialized = false;
+}
 
 /**
  * Main function to initialize the sidebar
@@ -28,19 +30,47 @@ let sidebarInitialized = false;
 export function initializeSidebar(activePage) {
      if (typeof document === "undefined") return;
 
-     // Set a flag to prevent double initialization
-     sidebarInitialized = true;
-
-     // Insert sidebar if it doesn't exist
-     if (!document.querySelector(".sidebar")) {
-          createSidebar();
+     // Check global sidebarInitialized flag to prevent double initialization
+     if (window.sidebarInitialized) {
+          // If already initialized, just set the active page
+          setActivePage(activePage || getPageFromPath());
+          return;
      }
+     window.sidebarInitialized = true;
 
-     // Set active page
-     setActivePage(activePage || getPageFromPath());
+     // Preload the logo image to ensure consistent rendering
+     preloadLogo(() => {
+          // Insert sidebar if it doesn't exist
+          if (!document.querySelector(".sidebar")) {
+               createSidebar();
+          }
 
-     // Setup mobile menu toggle
-     setupMobileToggle();
+          // Set active page
+          setActivePage(activePage || getPageFromPath());
+
+          // Setup mobile menu toggle
+          setupMobileToggle();
+     });
+}
+
+// Export this function for early detection
+export function checkAndInitializeSidebar(activePage) {
+     // Use this function for immediate initialization
+     initializeSidebar(activePage);
+}
+
+/**
+ * Preloads the logo image to ensure consistent sidebar header height
+ * @param {Function} callback - Function to call when logo is loaded
+ */
+function preloadLogo(callback) {
+     const img = new Image();
+     img.onload = callback;
+     img.onerror = callback; // Still continue even if the logo fails to load
+     img.src = "/logo.png";
+
+     // Set a timeout to ensure we don't wait forever if image loading is slow
+     setTimeout(callback, 200);
 }
 
 /**
@@ -53,18 +83,22 @@ function createSidebar() {
      sidebar.setAttribute("aria-label", "Main navigation");
      sidebar.innerHTML = sidebarTemplate;
 
+     // Standardize sidebar insertion - always use the placeholder approach
      const placeholder = document.getElementById("sidebar-placeholder");
+
      if (placeholder) {
           // Check for active page attribute
           const activePage = placeholder.getAttribute("data-active-page");
           if (activePage) {
-               // Wait a moment for the sidebar to be inserted before setting active page
-               setTimeout(() => setActivePage(activePage), 0);
+               // Use requestAnimationFrame for better timing with browser rendering
+               requestAnimationFrame(() => setActivePage(activePage));
           }
           placeholder.parentNode.replaceChild(sidebar, placeholder);
      } else {
+          // If no placeholder exists, insert at the beginning of the layout
           const layout = document.querySelector(".layout");
           if (layout) {
+               // Ensure sidebar is always the first child of layout
                layout.insertBefore(sidebar, layout.firstChild);
           } else {
                console.error("Layout element not found");
@@ -211,17 +245,13 @@ export function adjustPaths(sidebar, depth = 0) {
 }
 
 // Initialize on DOMContentLoaded only if not already initialized
-if (typeof document !== "undefined") {
-     if (document.readyState === "loading") {
-          document.addEventListener("DOMContentLoaded", () => {
-               if (!sidebarInitialized) {
-                    initializeSidebar();
-               }
-          });
-     } else {
-          // Document already loaded
-          if (!sidebarInitialized) {
-               initializeSidebar();
-          }
+document.addEventListener("DOMContentLoaded", () => {
+     if (!window.sidebarInitialized) {
+          initializeSidebar();
      }
+});
+
+// Also initialize immediately if the document is already loaded
+if (document.readyState !== "loading" && !window.sidebarInitialized) {
+     initializeSidebar();
 }
