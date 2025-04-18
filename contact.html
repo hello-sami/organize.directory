@@ -53,9 +53,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
+    <!-- Mobile menu script - Load with defer to ensure it runs after DOM is ready -->
+    <script src="/mobile-menu.js?v=1.0.1" defer></script>
+
     <!-- Critical Scripts -->
     <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeSidebar } from '/components/sidebar.js?v=1.0.9';
 
         // Initialize sidebar
         document.addEventListener('DOMContentLoaded', () => {
@@ -166,8 +169,7 @@
         </main>
     </div>
 
-    <!-- Scripts -->
-    <script src="/mobile-menu.js"></script>
+    <!-- Scripts - Removed the mobile-menu.js script since it's now in the head -->
     <script src="/contact.js"></script>
 </body>
 

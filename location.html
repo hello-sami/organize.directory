@@ -27,8 +27,10 @@
     <link rel="stylesheet" href="/styles.css?v=1.1.2">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
+    <!-- Mobile menu script - Load with defer to ensure it runs after DOM is ready -->
+    <script src="/mobile-menu.js?v=1.0.1" defer></script>
 
-    <!-- Inline sidebar initialization to prevent flashing -->
+    <!-- Inline sidebar initialization to prevent flashing - MODIFIED to remove mobile menu code -->
     <script>
         // Immediately set the active state for location page
         function initializeBasicSidebar() {
@@ -48,21 +50,7 @@
                 locationLink.setAttribute('aria-current', 'page');
             }
 
-            // Setup mobile menu toggling
-            const menuButton = document.querySelector('.mobile-menu-button');
-            const menuOverlay = document.querySelector('.mobile-menu-overlay');
-
-            if (menuButton && menuOverlay) {
-                const toggleMenu = () => {
-                    const sidebar = document.querySelector('.sidebar');
-                    sidebar.classList.toggle('active');
-                    document.body.classList.toggle('menu-open');
-                    menuOverlay.classList.toggle('active');
-                };
-
-                menuButton.addEventListener('click', toggleMenu);
-                menuOverlay.addEventListener('click', toggleMenu);
-            }
+            // Removed mobile menu toggling code to avoid conflicts with mobile-menu.js
         }
 
         // Execute immediately
@@ -72,7 +60,7 @@
     <!-- Load full sidebar functionality asynchronously -->
     <script type="module">
         // Import sidebar for enhanced functionality
-        import('/components/sidebar.js?v=1.0.8')
+        import('/components/sidebar.js?v=1.0.9')
             .then(module => {
                 const { checkAndInitializeSidebar } = module;
                 // Initialize full sidebar 
@@ -182,8 +170,7 @@
         </main>
     </div>
 
-    <!-- Core Scripts -->
-    <script src="/mobile-menu.js" defer=""></script>
+    <!-- Core Scripts - REMOVED redundant mobile-menu.js since it's now in the head -->
     <script src="/js/analytics.js" type="module" async=""></script>
 
 </body>

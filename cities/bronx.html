@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <title>
+        Bronx Mutual Aid Networks - Local Support &amp; Community Resources
+    </title>
+    <meta name="description"
+        content="Find mutual aid networks and community support initiatives in the Bronx, New York City.">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Bronx | The Organize Directory">
+    <meta property="og:description"
+        content="Find mutual aid networks and community resources in the Bronx, New York City.">
+    <meta property="og:image" content="https://organize.directory/preview.png">
+    <meta property="og:url" content="https://organize.directory/bronx">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-QJ03RCM35H");
+    </script>
+
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
+
+        // Initialize sidebar first
+        initializeSidebar('location');
+
+        // Initialize other components
+        initializeComponents({
+        });
+    </script>
+</head>
+
+<body>
+    <div class="layout">
+        <div id="sidebar-placeholder"></div>
+
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
+
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/new-york">New York</a>
+                    <span>›</span>
+                    <a href="/nyc">New York City</a>
+                    <span>›</span>
+                    <span>Bronx</span>
+                </div>
+
+                <h1>Bronx</h1>
+                <hr>
+
+                <div class="toc">
+                    <h2 class="toc-title">Contents</h2>
+                    <ul class="toc-list">
+                        <li class="toc-item">
+                            <a href="#mutual-aid" class="toc-link">
+                                <span class="toc-number">1.</span>
+                                Mutual Aid Networks
+                            </a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#food" class="toc-link">
+                                <span class="toc-number">2.</span>
+                                Food Support
+                            </a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#community" class="toc-link">
+                                <span class="toc-number">3.</span>
+                                Community Organizing
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <section id="mutual-aid" class="city-section">
+                    <h2>Mutual Aid Networks</h2>
+                    <hr>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/bxmutualaidnetwork/">Bronx Mutual Aid Network</a>
+                        <p>
+                            A grassroots collective providing direct support and community
+                            care in the Bronx. They coordinate resource distribution,
+                            emergency assistance, and solidarity networks while building
+                            power through neighborhood-based organizing and mutual aid
+                            initiatives.
+                        </p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.bxchange.org/">The BLK Mutual Aid</a>
+                        <p>
+                            A community-led mutual aid initiative serving the Bronx through food distribution,
+                            resource sharing, and community support programs.
+                        </p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://sbxma.com/">South Bronx Mutual Aid</a>
+                        <p>
+                            South Bronx Mutual Aid is a volunteer group of neighbors helping
+                            neighbors.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="food" class="city-section">
+                    <h2>Food Support</h2>
+                    <hr>
+                    <div class="initiative">
+                        <a href="https://www.friendlyfridgefoundation.org/">Friendly Fridge BX</a>
+                        <p>
+                            A mutual aid collective coordinating community fridges and food
+                            distribution initiatives in the Bronx. They organize direct
+                            support through free food access, resource sharing, and
+                            community education while building networks of solidarity
+                            through neighborhood organizing and food justice advocacy.
+                        </p>
+                    </div>
+                    <div class="initiative">
+                        <a href="http://nycommonpantry.org/">NY Common Pantry</a>
+                        <p>
+                            Reducing hunger and promoting dignity, health, and
+                            self-sufficiency with locations in East Harlem and the Bronx.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="community" class="city-section">
+                    <h2>Community Organizing</h2>
+                    <hr>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/takebackthebronx/">Take Back The Bronx</a>
+                        <p>
+                            A grassroots collective fostering mutual aid and community power
+                            through direct action and organizing in The Bronx. They
+                            coordinate tenant organizing, anti-gentrification initiatives,
+                            and solidarity networks while building power through community
+                            defense, political education, and creating spaces for collective
+                            resistance against displacement and police violence.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="/mobile-menu.js" defer></script>
+</body>
+
+</html>

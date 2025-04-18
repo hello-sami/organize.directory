@@ -47,6 +47,19 @@
 
     <!-- Non-blocking font loading -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <!-- Mobile menu script - Load with defer to ensure it runs after DOM is ready -->
+    <script src="/mobile-menu.js?v=1.0.1" defer></script>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu-overlay"></div>
+
+    <!-- Mobile menu button -->
+    <button class="mobile-menu-button" aria-label="Toggle navigation menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+    </button>
 </head>
 
 <body class="topics-page">
@@ -214,7 +227,7 @@
 
     <!-- Scripts -->
     <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js?v=1.0.3';
+        import { initializeSidebar } from '/components/sidebar.js?v=1.0.9';
         import { initializeComponents } from '/utils/init.js?v=1.0.1';
 
         // Create a function to fix navigation highlights
@@ -315,9 +328,6 @@
             }, 3000);
         });
     </script>
-    <script src="/mobile-menu.js" defer=""></script>
-
-
 </body>
 
 </html>

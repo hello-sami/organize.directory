@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <title>
+        Brooklyn Mutual Aid Networks - Local Support &amp; Community Resources
+    </title>
+    <meta name="description"
+        content="Find mutual aid networks and community support initiatives in Brooklyn, New York City.">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Brooklyn | The Organize Directory">
+    <meta property="og:description"
+        content="Find mutual aid networks and community resources in Brooklyn, New York City.">
+    <meta property="og:image" content="https://organize.directory/preview.png">
+    <meta property="og:url" content="https://organize.directory/brooklyn">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-QJ03RCM35H");
+    </script>
+
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
+
+        // Initialize sidebar first
+        initializeSidebar('location');
+
+        // Initialize other components
+        initializeComponents({
+        });
+    </script>
+</head>
+
+<body>
+    <div class="layout">
+        <div id="sidebar-placeholder"></div>
+
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
+
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/new-york">New York</a>
+                    <span>›</span>
+                    <a href="/nyc">New York City</a>
+                    <span>›</span>
+                    <span>Brooklyn</span>
+                </div>
+
+                <h1>Brooklyn</h1>
+                <hr>
+
+                <div class="toc">
+                    <h2 class="toc-title">Contents</h2>
+                    <ul class="toc-list">
+                        <li class="toc-item">
+                            <a href="#mutual-aid" class="toc-link">
+                                <span class="toc-number">1.</span>
+                                Mutual Aid Networks
+                            </a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#housing" class="toc-link">
+                                <span class="toc-number">2.</span>
+                                Housing
+                            </a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#food" class="toc-link">
+                                <span class="toc-number">3.</span>
+                                Food Support
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <section id="mutual-aid" class="city-section">
+                    <h2>Mutual Aid Networks</h2>
+                    <hr>
+                    <div class="initiative">
+                        <a href="https://crownheightsmutualaid.com">Crown Heights Mutual Aid</a>
+                        <p>Neighbors supporting neighbors in Crown Heights and Prospect Heights.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://bedstuystrong.com">Bed-Stuy Strong</a>
+                        <p>A mutual aid network of neighbors helping neighbors in Bedford-Stuyvesant.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.eastbrooklynmutualaid.org/">East Brooklyn Mutual Aid</a>
+                        <p>Community support network in East Brooklyn.</p>
+                    </div>
+                </section>
+
+                <section id="housing" class="city-section">
+                    <h2>Housing</h2>
+                    <hr>
+                    <div class="initiative">
+                        <a href="https://www.bedtu.org/">Brooklyn Eviction Defense Tenant Union</a>
+                        <p>Fighting evictions and supporting tenants in Brooklyn.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.crownheightstenantunion.org/">Crown Heights Tenant Union</a>
+                        <p>
+                            Uniting tenant associations in Crown Heights to fight for better
+                            living conditions, affordable housing, and tenant power through
+                            direct action and mutual aid.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="food" class="city-section">
+                    <h2>Food Support</h2>
+                    <hr>
+                    <div class="initiative">
+                        <a href="http://cbfood.org/">Central Brooklyn Food Coop</a>
+                        <p>
+                            A Black-led, member-owned and operated food cooperative building
+                            food sovereignty through collective ownership, affordable
+                            healthy food access, and community wealth building in Central
+                            Brooklyn.
+                        </p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/comidapalpueblo/">Comida Pal Pueblo</a>
+                        <p>North Brooklyn biweekly food &amp; survival program.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="/mobile-menu.js" defer></script>
+</body>
+
+</html>

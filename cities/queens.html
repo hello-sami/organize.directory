@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <title>
+        Queens Mutual Aid Networks - Local Support &amp; Community Resources
+    </title>
+    <meta name="description"
+        content="Find mutual aid networks and community support initiatives in Queens, New York City.">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Queens | The Organize Directory">
+    <meta property="og:description"
+        content="Find mutual aid networks and community resources in Queens, New York City.">
+    <meta property="og:image" content="https://organize.directory/preview.png">
+    <meta property="og:url" content="https://organize.directory/queens">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-QJ03RCM35H");
+    </script>
+
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
+
+        // Initialize sidebar first
+        initializeSidebar('location');
+
+        // Initialize other components
+        initializeComponents({
+        });
+    </script>
+</head>
+
+<body>
+    <div class="layout">
+        <div id="sidebar-placeholder"></div>
+
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
+
+            <div class="city-page">
+                <div class="breadcrumb">
+                    <a href="/new-york">New York</a>
+                    <span>›</span>
+                    <a href="/nyc">New York City</a>
+                    <span>›</span>
+                    <span>Queens</span>
+                </div>
+
+                <h1>Queens</h1>
+                <hr>
+
+                <div class="toc">
+                    <h2 class="toc-title">Contents</h2>
+                    <ul class="toc-list">
+                        <li class="toc-item">
+                            <a href="#mutual-aid" class="toc-link">
+                                <span class="toc-number">1.</span>
+                                Mutual Aid Networks
+                            </a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#housing" class="toc-link">
+                                <span class="toc-number">2.</span>
+                                Housing
+                            </a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#transportation" class="toc-link">
+                                <span class="toc-number">3.</span>
+                                Transportation
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <section id="mutual-aid" class="city-section">
+                    <h2>Mutual Aid Networks</h2>
+                    <hr>
+                    <div class="initiative">
+                        <a href="https://swma.nyc/">Sunnyside and Woodside Mutual Aid</a>
+                        <p>Neighbors helping neighbors in Sunnyside and Woodside.</p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.astoriafoodpantry.com/">Astoria Food Pantry</a>
+                        <p>
+                            Food pantry, free library, free store, and diaper distributions
+                            in Astoria.
+                        </p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://caaav.org/">CAAAV: Organizing Asian Communities</a>
+                        <p>
+                            Building power with working class Asian immigrants in Chinatown
+                            and Astoria through tenant organizing, fighting gentrification,
+                            and developing grassroots leadership to shape the future of our
+                            neighborhoods.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="housing" class="city-section">
+                    <h2>Housing</h2>
+                    <hr>
+                    <div class="initiative">
+                        <a href="https://chhayacdc.org/">Chhaya CDC</a>
+                        <p>
+                            Building power, housing stability, and economic well-being of
+                            South Asian and Indo-Caribbean communities in Queens.
+                        </p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/ridgewoodtenantsunion/">Ridgewood Tenants Union</a>
+                        <p>
+                            A grassroots tenant organization fostering mutual aid and
+                            community solidarity through tenant organizing and housing
+                            justice work in Ridgewood, Queens. They coordinate tenant
+                            support, housing advocacy, and solidarity networks while
+                            building power through collective organizing, direct action, and
+                            creating spaces for tenant empowerment.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="transportation" class="city-section">
+                    <h2>Transportation</h2>
+                    <hr>
+                    <div class="initiative">
+                        <a href="https://queensridersunited.org/">Queens Riders United</a>
+                        <p>
+                            A grassroots transportation justice organization working to improve public transit access
+                            and safety for Queens residents.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="/mobile-menu.js" defer></script>
+</body>
+
+</html>

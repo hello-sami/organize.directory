@@ -669,6 +669,11 @@ export async function onRequest({ request, next }) {
           "plymouth",
           "pocatello",
           "port-angeles",
+          "bronx",
+          "brooklyn",
+          "manhattan",
+          "queens",
+          "staten-island",
      ];
 
      // Handle city pages with clean URLs
