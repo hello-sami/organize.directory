@@ -2,9 +2,9 @@
 const sidebarTemplate = `
     <div class="sidebar-header">
         <a href="/">
-          <img src="/logo.png" alt="Organize Directory Logo" class="site-logo" 
-               onload="this.classList.add('loaded'); this.style.opacity = '1';"
-               onerror="console.error('Logo failed to load'); this.classList.add('loaded'); this.style.opacity = '1';">
+          <img src="/logo.png" alt="Organize Directory Logo" class="site-logo loaded" 
+               style="opacity: 1; visibility: visible;"
+               onerror="console.error('Logo failed to load');">
         </a>
     </div>
     <nav>
@@ -40,50 +40,22 @@ export function initializeSidebar(activePage) {
      }
      window.sidebarInitialized = true;
 
-     // Preload the logo image to ensure consistent rendering
-     preloadLogo(() => {
-          // Insert sidebar if it doesn't exist
-          if (!document.querySelector(".sidebar")) {
-               createSidebar();
-          }
+     // Insert sidebar if it doesn't exist
+     if (!document.querySelector(".sidebar")) {
+          createSidebar();
+     }
 
-          // Set active page
-          setActivePage(activePage || getPageFromPath());
+     // Set active page
+     setActivePage(activePage || getPageFromPath());
 
-          // Setup mobile menu toggle
-          setupMobileToggle();
-     });
+     // Setup mobile menu toggle
+     setupMobileToggle();
 }
 
 // Export this function for early detection
 export function checkAndInitializeSidebar(activePage) {
      // Use this function for immediate initialization
      initializeSidebar(activePage);
-}
-
-/**
- * Preloads the logo image to ensure consistent sidebar header height
- * @param {Function} callback - Function to call when logo is loaded
- */
-function preloadLogo(callback) {
-     const img = new Image();
-     img.onload = () => {
-          // Ensure we have the image loaded before proceeding
-          console.log("Logo preloaded successfully");
-          setTimeout(callback, 100); // Short delay to ensure DOM updates
-     };
-     img.onerror = () => {
-          // Log error but continue anyway
-          console.error("Error loading logo");
-          callback();
-     };
-
-     // Use absolute path for logo to avoid path issues
-     img.src = "/logo.png";
-
-     // Set a timeout to ensure we don't wait forever if image loading is slow
-     // Increased back to 300ms for better reliability
-     setTimeout(callback, 300);
 }
 
 /**
@@ -95,22 +67,6 @@ function createSidebar() {
      sidebar.id = "sidebar";
      sidebar.setAttribute("aria-label", "Main navigation");
      sidebar.innerHTML = sidebarTemplate;
-
-     // Apply logo loading class explicitly
-     const logoImg = sidebar.querySelector(".site-logo");
-     if (logoImg) {
-          // Force logo to show by using both methods
-          logoImg.onload = function () {
-               this.classList.add("loaded");
-               this.style.opacity = "1";
-          };
-
-          // If logo is already loaded in DOM (cached)
-          if (logoImg.complete) {
-               logoImg.classList.add("loaded");
-               logoImg.style.opacity = "1";
-          }
-     }
 
      // Standardize sidebar insertion - always use the placeholder approach
      const placeholder = document.getElementById("sidebar-placeholder");
@@ -133,25 +89,6 @@ function createSidebar() {
                console.error("Layout element not found");
           }
      }
-
-     // Force load the logo after sidebar insertion
-     forceLogo();
-}
-
-/**
- * Force logo to be visible as a fallback
- */
-function forceLogo() {
-     // Give a small delay to let normal loading happen
-     setTimeout(() => {
-          const logoImg = document.querySelector(".site-logo");
-          if (logoImg && !logoImg.classList.contains("loaded")) {
-               console.log("Forcing logo visibility");
-               logoImg.classList.add("loaded");
-               logoImg.style.opacity = "1";
-               logoImg.style.visibility = "visible";
-          }
-     }, 500);
 }
 
 /**
