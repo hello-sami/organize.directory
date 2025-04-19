@@ -188,7 +188,7 @@ h1 {
 h2 {
      font-size: var(--h2-size);
      margin-top: 40px;
-     color: var(--red-base);
+     color: var(--text-color);
      max-width: 1000px;
      text-align: left;
      margin-left: 0;
@@ -1205,17 +1205,27 @@ html .topic-name,
 .initiative a {
      font-size: 1.15rem;
      font-weight: 700;
-     color: var(--red-base);
+     color: var(--text-color);
      border-bottom: none;
      margin-bottom: 0.3rem;
      text-decoration: none;
      padding-right: 100px;
+     position: relative;
+     display: inline-block;
 }
 
 .initiative a:hover {
      color: var(--red-base);
-     border-color: transparent;
      border-bottom: none;
+     text-decoration: underline;
+     text-decoration-color: var(--red-base);
+}
+
+.initiative a:hover::after {
+     content: "→";
+     position: absolute;
+     margin-left: 5px;
+     display: inline-block;
 }
 
 .initiative time {

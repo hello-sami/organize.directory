@@ -678,6 +678,7 @@ export async function onRequest({ request, next }) {
 
      // Handle city pages with clean URLs
      const cityPath = path.slice(1); // Remove leading slash
+
      if (cityNames.includes(cityPath)) {
           const newUrl = new URL(`/cities/${cityPath}.html`, url.origin);
           const response = await fetch(newUrl);
