@@ -183,11 +183,13 @@ h1 {
      font-weight: 800;
      line-height: 1.1;
      text-align: left;
+     margin-bottom: 1.5rem; /* Added bottom margin for better spacing */
 }
 
 h2 {
      font-size: var(--h2-size);
      margin-top: 40px;
+     margin-bottom: 1.25rem; /* Added bottom margin for better spacing */
      color: var(--text-color);
      max-width: 1000px;
      text-align: left;
@@ -219,6 +221,10 @@ body.page-guides h1 {
           font-size: 2rem;
           padding-top: 1rem;
           padding-bottom: 0.5rem;
+     }
+
+     .cities-list {
+          grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
      }
 }
 
@@ -776,6 +782,16 @@ li {
      .button-text {
           font-size: 1.1rem;
      }
+
+     .cities-list {
+          grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+     }
+
+     .city-link {
+          font-size: 0.95rem;
+          width: 100%;
+          padding: 0.4rem 0;
+     }
 }
 
 .stats-description {
@@ -1004,7 +1020,7 @@ html .topic-name,
 
 .cities-list {
      display: grid;
-     grid-template-columns: repeat(4, 1fr);
+     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
      gap: 1rem;
      margin: 0;
 }
@@ -1015,15 +1031,27 @@ html .topic-name,
      font-size: 0.9rem;
      font-weight: 700;
      line-height: 1.2;
-     width: fit-content;
+     width: 100%;
      border-bottom: none;
+     padding: 0.75rem 1rem;
+     display: flex;
+     align-items: center;
+     background-color: var(--background-color);
+     border: 1px solid var(--red-base);
+     border-radius: 4px;
+     transition: all 0.2s ease;
+     margin: 0;
+     text-align: center;
+     justify-content: center;
 }
 
 .city-link:hover {
      color: var(--red-base);
-     text-decoration: underline;
-     text-decoration-color: var(--red-base);
+     background-color: var(--bg-medium);
+     text-decoration: none;
      border-bottom: none;
+     transform: translateY(-2px);
+     box-shadow: 0 2px 4px rgba(200, 37, 37, 0.15);
 }
 
 .cities-section h2 {
@@ -1156,6 +1184,21 @@ html .topic-name,
      will-change: auto;
      contain: layout;
      padding: 1rem 1.5rem 1rem 1.5rem;
+}
+
+/* Add specific styling for city links inside state pages */
+.state-page .city-links-container .city-link {
+     border: none;
+     background-color: #fff7f7;
+     box-shadow: none;
+     transition: all 0.2s ease;
+}
+
+.state-page .city-links-container .city-link:hover {
+     background-color: var(--bg-medium);
+     transform: none;
+     box-shadow: none;
+     border: none;
 }
 
 /* Breadcrumb navigation */
@@ -1610,6 +1653,11 @@ body.page-location .sidebar a.location-link {
      font-weight: 600;
 }
 
+/* Add more margin for state page h1 headings */
+body[class*="page-states-"] h1 {
+     margin-bottom: 2.5rem; /* Increased bottom margin specifically for state pages */
+}
+
 /* Ensure parent link (FIND A GROUP) is not highlighted on state/city pages */
 body[class*="page-cities-"] .sidebar a.parent-link,
 body[class*="page-states-"] .sidebar a.parent-link,
@@ -1844,7 +1892,7 @@ html body #sidebar div.sidebar-header h1 a,
 
      /* City lists */
      .cities-list {
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
           gap: 0.75rem;
      }
 
@@ -1858,7 +1906,7 @@ html body #sidebar div.sidebar-header h1 a,
      }
 
      .state-page .city-links-container {
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
           padding: 1rem 1.5rem 1rem 1.5rem;
      }
 }
@@ -1922,8 +1970,8 @@ html body #sidebar div.sidebar-header h1 a,
      .nav-link,
      .city-link,
      .state-link {
-          min-height: 48px;
-          min-width: 48px;
+          min-height: 44px;
+          min-width: 44px;
           display: inline-flex;
           align-items: center;
      }
@@ -1932,6 +1980,15 @@ html body #sidebar div.sidebar-header h1 a,
      .city-link,
      .state-link {
           padding: 0.9rem 1.2rem;
+     }
+
+     a.city-link {
+          font-size: 1rem;
+          padding: 0.6rem 0.75rem;
+          min-height: 44px;
+          background-color: var(--background-color);
+          box-shadow: none;
+          transform: none;
      }
 
      /* Layout */
@@ -2120,7 +2177,7 @@ html body #sidebar div.sidebar-header h1 a,
      }
 
      .cities-list {
-          grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
      }
 
      .location-header h1 {
@@ -2267,7 +2324,7 @@ html body #sidebar div.sidebar-header h1 a,
      body .state-page .city-links-container,
      html .state-page .city-links-container,
      .state-page .city-links-container {
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
           padding: 0.75rem 1.5rem;
      }
 }
@@ -2780,6 +2837,10 @@ body.page-home h1:after {
           padding-top: 1.2rem;
           margin-top: 1.2rem;
      }
+
+     .cities-list {
+          grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+     }
 }
 
 /* Desktop stats layout */
@@ -2806,4 +2867,39 @@ body.page-home h1:after {
           align-items: center;
           text-align: center;
      }
+}
+
+@media (max-width: 768px) {
+     /* Mobile styles for city links */
+     a.city-link {
+          font-size: 1rem;
+          padding: 0.6rem 0.75rem;
+          min-height: 44px;
+          background-color: var(--background-color);
+          box-shadow: none;
+          transform: none;
+     }
+}
+
+@media (max-width: 480px) {
+     /* Even smaller mobile styles for city links */
+     a.city-link {
+          font-size: 0.95rem;
+          padding: 0.5rem 0.5rem;
+          min-height: 40px;
+     }
+}
+
+/* City links in cities-list-container should have no borders */
+.cities-list-container .city-link {
+     border: none;
+     background-color: transparent;
+     box-shadow: none;
+}
+
+.cities-list-container .city-link:hover {
+     background-color: var(--bg-medium);
+     transform: none;
+     box-shadow: none;
+     border: none;
 }
