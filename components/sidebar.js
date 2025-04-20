@@ -16,9 +16,8 @@ const sidebarTemplate = `
         <a href="/contact" class="nav-link-base nav-link">Contact</a>
         <a href="/subscribe" class="nav-link-base nav-link">Subscribe</a>
     </nav>
-    <div class="sidebar-motto">
-       don't despair, organize.
-    </div>`;
+
+`;
 
 // Track if the sidebar has been initialized - placed in global window object to prevent reinit
 if (typeof window !== "undefined" && !window.sidebarInitialized) {

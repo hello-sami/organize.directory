@@ -184,6 +184,7 @@ export async function onRequest({ request, next }) {
           "columbus-ga",
           "colusa-county",
           "concord",
+          "concord-ca",
           "contra-costa-county",
           "cookeville",
           "corpus-christi",
@@ -592,6 +593,7 @@ export async function onRequest({ request, next }) {
           "st-george",
           "st-joseph",
           "st-louis",
+          "st-petersburg",
           "stanislaus-county",
           "state-college",
           "statesboro",
@@ -628,6 +630,7 @@ export async function onRequest({ request, next }) {
           "upper-valley",
           "utica-rome-oneida",
           "valdosta",
+          "vallejo",
           "vancouver-wa",
           "ventura-county",
           "victoria",
@@ -635,6 +638,7 @@ export async function onRequest({ request, next }) {
           "visalia-tulare",
           "waco",
           "waltham",
+          "walnut-creek",
           "washington-dc",
           "waterloo-cedar-falls",
           "watertown",
@@ -675,6 +679,7 @@ export async function onRequest({ request, next }) {
           "manhattan",
           "queens",
           "staten-island",
+          "vacaville",
      ];
 
      // Handle city pages with clean URLs

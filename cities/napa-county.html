@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <title>
+        Napa County Mutual Aid - Local Support Networks &amp; Community Resources
+    </title>
+    <meta name="description"
+        content="Find mutual aid networks and community support initiatives in Napa County, California including Napa, Calistoga, St. Helena, American Canyon, and surrounding communities.">
+    <meta property="og:title" content="Napa County Mutual Aid - Local Support Networks &amp; Community Resources">
+    <meta property="og:description"
+        content="Find mutual aid networks and community support initiatives in Napa County, California including Napa, Calistoga, St. Helena, American Canyon, and surrounding communities.">
+    <meta property="og:type" content="website">
+
+    <meta property="og:url" content="https://organize.directory/napa-county">
+    <meta property="og:image" content="https://organize.directory/preview.png">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles.css">
+    <!-- Preconnect to Google Fonts -->
+    <link rel="stylesheet" href="/fonts/fonts.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="/fonts/fonts.css">
+
+    <!-- Initialize Components -->
+    <script type="module">
+        import { initializeSidebar } from '/components/sidebar.js';
+        import { initializeComponents } from '/utils/init.js';
+
+        // Initialize sidebar first
+        initializeSidebar('location');
+
+        // Initialize other components
+        initializeComponents({
+        });
+    </script>
+</head>
+
+<body>
+    <div class="layout">
+        <div id="sidebar-placeholder"></div>
+
+        <main class="content" role="main">
+            <header id="header" class="page-header"></header>
+
+            <div class="city-page state-page">
+                <div class="breadcrumb">
+                    <a href="/norcal">Northern California</a>
+                    <span>›</span>
+                    <a href="/sf-bay-area">Bay Area</a>
+                    <span>›</span>
+                    <span>Napa County</span>
+                </div>
+
+                <h1>Napa County</h1>
+                <hr>
+
+                <section class="cities-list cities-list-container">
+                    <h2>Regions and Cities</h2>
+                    <div class="city-links-container">
+                        <a href="/napa" class="city-link location-link-base">Napa</a>
+                        <a href="/calistoga" class="city-link location-link-base">Calistoga</a>
+                        <a href="/st-helena" class="city-link location-link-base">St. Helena</a>
+                        <a href="/american-canyon" class="city-link location-link-base">American Canyon</a>
+                        <a href="/yountville" class="city-link location-link-base">Yountville</a>
+                        <a href="/angwin" class="city-link location-link-base">Angwin</a>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Regional Organizations</h2>
+                    <div class="initiative">
+                        <a href="https://www.instagram.com/solanonapasolidarity/">Solano Napa Solidarity</a>
+                        <p>
+                            Anticapitalist and antiauthoritarian base-building in Solano and
+                            Napa Counties
+                        </p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.facebook.com/community.action.napa/">Community Action of Napa Valley
+                            (CANV)</a>
+                        <p>
+                            Provides food, shelter, and support services to those in need in Napa County through food
+                            banks, homeless shelters, and senior services.
+                        </p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.napavalleycan.org/">Napa Valley Community Organizations Active in Disaster
+                            (COAD)</a>
+                        <p>
+                            Coalition of nonprofits, faith communities, and community organizations that coordinate
+                            disaster response and recovery efforts in Napa County.
+                        </p>
+                    </div>
+                    <div class="initiative">
+                        <a href="https://www.facebook.com/groups/napacountyhelp/">Napa County Help</a>
+                        <p>
+                            Community Facebook group for neighbors helping neighbors with various needs throughout Napa
+                            County.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+
+    <script src="/mobile-menu.js" defer></script>
+</body>
+
+</html>
