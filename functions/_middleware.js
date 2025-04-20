@@ -271,6 +271,7 @@ export async function onRequest({ request, next }) {
           "harrisonburg",
           "hartford",
           "hattiesburg",
+          "hayward",
           "helena",
           "hickory-lenoir",
           "high-rockies",

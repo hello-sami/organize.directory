@@ -288,6 +288,11 @@ function addSearchStyles() {
           const styleEl = document.createElement("style");
           styleEl.id = "title-search-styles";
           styleEl.textContent = `
+            /* Font loading - make search input fully visible even during loading */
+            html.wf-loading .title-search-input {
+                visibility: visible !important;
+            }
+            
             /* Base styles for all pages */
             .title-search-container {
                 position: relative;
@@ -325,15 +330,27 @@ function addSearchStyles() {
                 display: none;
             }
             
-            /* State links styling */
+            /* State links styling - with consistent sizing to prevent layout shift */
             body.location-page .state-link {
                 display: block;
                 padding: 0.5rem 0;
                 border-bottom: 1px solid #eee;
+                font-size: 1rem;
+                line-height: 1.5;
+                height: 2.5rem;
+                box-sizing: border-box;
             }
             
             body.location-page .state-link:last-child {
                 border-bottom: none;
+            }
+            
+            /* States list container - give it consistent dimensions */
+            body.location-page .states-list {
+                margin-top: 1.5rem;
+                box-sizing: border-box;
+                /* Ensure this container has a fixed size regardless of content */
+                min-height: 100px; /* Minimum height while loading */
             }
             
             /* Mobile styles */
@@ -344,6 +361,11 @@ function addSearchStyles() {
                 
                 .separator-text {
                     margin: 0.75rem 0 1rem;
+                }
+                
+                body.location-page .state-link {
+                    height: 2.25rem; /* Smaller height on mobile */
+                    font-size: 0.95rem;
                 }
             }
             

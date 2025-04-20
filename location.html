@@ -25,7 +25,75 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="/styles.css?v=1.1.9">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+    <!-- Font pre-loading and anti-flash strategies -->
+    <style>
+        /* Critical font loading styles */
+        .wf-loading h1,
+        .wf-loading h2,
+        .wf-loading h3,
+        .wf-loading p,
+        .wf-loading li,
+        .wf-loading a {
+            visibility: hidden;
+        }
+
+        /* State links specific anti-layout-shift */
+        .wf-loading .state-link {
+            visibility: hidden;
+            /* Lock dimensions during font loading to prevent layout shift */
+            height: 40px;
+            /* Fixed height for state links */
+            display: block;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        /* Lock container dimensions during loading */
+        .wf-loading .states-list {
+            min-height: 2150px;
+            /* Approximate height to contain all states */
+        }
+
+        /* Search input remains visible even during font loading */
+        .wf-loading .title-search-input {
+            visibility: visible !important;
+        }
+    </style>
+
+    <!-- WebFontLoader for more reliable font loading -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        // Measure critical metrics for font loading
+        window.fontLoadingStart = performance.now();
+
+        // Initialize Web Font Loader with optimal settings
+        WebFont.load({
+            google: {
+                families: ['Saira Semi Condensed:400,500,600,700,800', 'Inter:400,500,600,700,800']
+            },
+            timeout: 2000, // 2 seconds timeout
+            active: function () {
+                // Measure font load time
+                window.fontLoadingTime = performance.now() - window.fontLoadingStart;
+                console.log('Fonts loaded in ' + window.fontLoadingTime + 'ms');
+
+                // Update CSS class to show fonts
+                document.documentElement.classList.remove('wf-loading');
+                document.documentElement.classList.add('wf-active');
+            },
+            inactive: function () {
+                // If fonts fail to load, still show content
+                console.warn('Web Font Loader timed out after 2000ms');
+                document.documentElement.classList.remove('wf-loading');
+                document.documentElement.classList.add('wf-inactive');
+            },
+            loading: function () {
+                // Mark as loading
+                document.documentElement.classList.add('wf-loading');
+            }
+        });
+    </script>
 
     <!-- Mobile menu script - Load with defer to ensure it runs after DOM is ready -->
     <script src="/mobile-menu.js?v=1.0.1" defer></script>
