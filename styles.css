@@ -688,34 +688,34 @@ li {
      html .initiative-stats,
      .page-home .initiative-stats,
      .initiative-stats {
-          padding: 1.25rem !important;
-          margin: 0.75rem auto 1.25rem !important;
-          border-width: 1px !important;
+          padding: 1.25rem;
+          margin: 0.75rem auto 1.25rem;
+          border-width: 1px;
      }
 
      body .stats-container,
      html .stats-container,
      .page-home .stats-container,
      .stats-container {
-          display: flex !important;
-          flex-direction: column !important;
-          align-items: flex-start !important;
-          gap: 1rem !important;
-          width: 100% !important;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+          width: 100%;
      }
 
      body .stat-item,
      html .stat-item,
      .page-home .stat-item,
      .stat-item {
-          width: 100% !important;
-          text-align: left !important;
-          padding: 0 0.5rem !important;
-          margin: 0 !important;
-          display: flex !important;
-          flex-direction: row !important;
-          align-items: center !important;
-          min-height: auto !important;
+          width: 100%;
+          text-align: left;
+          padding: 0 0.5rem;
+          margin: 0;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          min-height: auto;
      }
 
      /* Force hide the regular number and label */
@@ -727,7 +727,7 @@ li {
      html .stat-label,
      .page-home .stat-label,
      .stat-label {
-          display: none !important;
+          display: none;
      }
 
      /* Force show the mobile labels */
@@ -735,46 +735,46 @@ li {
      html .stat-mobile-label,
      .page-home .stat-mobile-label,
      .stat-mobile-label {
-          display: block !important;
-          font-size: 1.3rem !important;
-          line-height: 1.2 !important;
-          font-weight: 700 !important;
-          color: var(--red-base) !important;
-          font-family: "Saira Semi Condensed", sans-serif !important;
-          text-align: left !important;
-          margin: 0 !important;
-          padding: 0 !important;
+          display: block;
+          font-size: 1.3rem;
+          line-height: 1.2;
+          font-weight: 700;
+          color: var(--red-base);
+          font-family: "Saira Semi Condensed", sans-serif;
+          text-align: left;
+          margin: 0;
+          padding: 0;
      }
 
      /* Make homepage h1 even smaller */
      body.page-home h1 {
-          font-size: 2rem !important;
-          padding-top: 0.75rem !important;
-          padding-bottom: 0.5rem !important;
-          margin-bottom: 0.25rem !important;
+          font-size: 2rem;
+          padding-top: 0.75rem;
+          padding-bottom: 0.5rem;
+          margin-bottom: 0.25rem;
      }
 
      /* Adjust buttons for better mobile layout */
      .find-groups-buttons {
-          margin-top: 0.5rem !important;
+          margin-top: 0.5rem;
      }
 
      .buttons-container {
-          flex-direction: column !important;
-          gap: 0.75rem !important;
-          width: 100% !important;
+          flex-direction: column;
+          gap: 0.75rem;
+          width: 100%;
      }
 
      .find-groups-button {
-          width: 100% !important;
-          margin: 0 !important;
-          padding: 0.75rem 1rem !important;
-          text-align: center !important;
-          justify-content: center !important;
+          width: 100%;
+          margin: 0;
+          padding: 0.75rem 1rem;
+          text-align: center;
+          justify-content: center;
      }
 
      .button-text {
-          font-size: 1.1rem !important;
+          font-size: 1.1rem;
      }
 }
 
@@ -1552,6 +1552,55 @@ textarea.error {
      font-weight: normal;
 }
 
+/* Location search container styling */
+.location-search-container {
+     position: relative;
+     max-width: 800px;
+     margin: 0 auto 1.5rem;
+}
+
+.location-search-input {
+     width: 100%;
+     padding: 12px 16px 12px 2.5rem;
+     border: 2px solid #c82525;
+     border-radius: 8px;
+     font-size: 1rem;
+     box-shadow: 0 2px 6px rgba(200, 37, 37, 0.1);
+     transition: all 0.2s ease;
+}
+
+.location-search-input:focus {
+     outline: none;
+     box-shadow: 0 2px 10px rgba(200, 37, 37, 0.2);
+     border-color: #e02e2e;
+}
+
+.location-search-container .search-icon {
+     position: absolute;
+     left: 0.85rem;
+     top: 50%;
+     transform: translateY(-50%);
+     color: #c82525;
+}
+
+/* Mobile adjustments for location search */
+@media (max-width: 480px) {
+     .location-search-container {
+          margin-bottom: 1.25rem;
+     }
+
+     .location-search-input {
+          font-size: 0.95rem;
+          padding: 10px 12px 10px 2.25rem;
+     }
+
+     .location-search-container .search-icon {
+          width: 18px;
+          height: 18px;
+          left: 0.65rem;
+     }
+}
+
 /* SIMPLER PATH-BASED SOLUTION - Highlight "by location" for all city and state pages */
 body[class*="page-cities-"] .sidebar a.location-link,
 body[class*="page-states-"] .sidebar a.location-link,
@@ -2223,280 +2272,6 @@ html body #sidebar div.sidebar-header h1 a,
      }
 }
 
-/* Small screens - 480px and below */
-@media (max-width: 480px) {
-     /* Increase specificity to ensure these rules apply */
-     body .initiative-stats,
-     html .initiative-stats,
-     .page-home .initiative-stats,
-     .initiative-stats {
-          padding: 1.25rem !important;
-          margin: 0.75rem auto 1.25rem !important;
-          border-width: 1px !important;
-     }
-
-     body .stats-container,
-     html .stats-container,
-     .page-home .stats-container,
-     .stats-container {
-          display: flex !important;
-          flex-direction: column !important;
-          align-items: flex-start !important;
-          gap: 1rem !important;
-          width: 100% !important;
-     }
-
-     body .stat-item,
-     html .stat-item,
-     .page-home .stat-item,
-     .stat-item {
-          width: 100% !important;
-          text-align: left !important;
-          padding: 0 0.5rem !important;
-          margin: 0 !important;
-          display: flex !important;
-          flex-direction: row !important;
-          align-items: center !important;
-          min-height: auto !important;
-     }
-
-     /* Force hide the regular number and label */
-     body .stat-number,
-     html .stat-number,
-     .page-home .stat-number,
-     .stat-number,
-     body .stat-label,
-     html .stat-label,
-     .page-home .stat-label,
-     .stat-label {
-          display: none !important;
-     }
-
-     /* Force show the mobile labels */
-     body .stat-mobile-label,
-     html .stat-mobile-label,
-     .page-home .stat-mobile-label,
-     .stat-mobile-label {
-          display: block !important;
-          font-size: 1.3rem !important;
-          line-height: 1.2 !important;
-          font-weight: 700 !important;
-          color: var(--red-base) !important;
-          font-family: "Saira Semi Condensed", sans-serif !important;
-          text-align: left !important;
-          margin: 0 !important;
-          padding: 0 !important;
-     }
-
-     /* Make homepage h1 even smaller */
-     body.page-home h1 {
-          font-size: 2rem !important;
-          padding-top: 0.75rem !important;
-          padding-bottom: 0.5rem !important;
-          margin-bottom: 0.25rem !important;
-     }
-
-     /* Adjust buttons for better mobile layout */
-     .find-groups-buttons {
-          margin-top: 0.5rem !important;
-     }
-
-     .buttons-container {
-          flex-direction: column !important;
-          gap: 0.75rem !important;
-          width: 100% !important;
-     }
-
-     .find-groups-button {
-          width: 100% !important;
-          margin: 0 !important;
-          padding: 0.75rem 1rem !important;
-          text-align: center !important;
-          justify-content: center !important;
-     }
-
-     .button-text {
-          font-size: 1.1rem !important;
-     }
-
-     /* Topic Cards */
-     .topic-card {
-          padding: 0.7rem 1rem;
-          min-height: 3rem;
-     }
-
-     /* Increased specificity to avoid !important */
-     body .topics-page .topics-grid,
-     html .topics-page .topics-grid,
-     body .topics-grid,
-     html .topics-grid,
-     .topics-page .topics-grid,
-     .topics-grid {
-          gap: 0.4rem;
-          padding: 0.5rem 0;
-     }
-
-     /* Increased specificity to avoid !important */
-     body .topics-page .topics-grid .topic-card,
-     html .topics-page .topics-grid .topic-card,
-     body .topic-card,
-     html .topic-card,
-     .topics-page .topics-grid .topic-card,
-     .topic-card {
-          padding: 0.65rem 0.85rem;
-          margin-bottom: 0.4rem;
-     }
-
-     .topics-page .content h1 {
-          font-size: 1.6rem;
-          margin-bottom: 0.75rem;
-     }
-
-     /* Increased specificity to avoid !important */
-     body .topics-page .topic-name,
-     html .topics-page .topic-name,
-     body .topic-name,
-     html .topic-name,
-     .topics-page .topic-name,
-     .topic-name {
-          font-size: 1.05rem;
-     }
-
-     /* Increased specificity to avoid !important */
-     body .topics-page .topic-icon,
-     html .topics-page .topic-icon,
-     body .topic-icon,
-     html .topic-icon,
-     .topics-page .topic-icon,
-     .topic-icon {
-          font-size: 1.1rem;
-          height: 1.1rem;
-          width: 1.1rem;
-          min-width: 1.1rem;
-          margin-right: 0.7rem;
-     }
-
-     /* Cities */
-     .states-list {
-          padding: 0 0.75rem;
-     }
-
-     .cities-list {
-          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-          gap: 0.75rem;
-     }
-
-     .cities-category {
-          margin-bottom: 1.5rem;
-     }
-
-     .cities-category-title {
-          font-size: 1.15rem;
-     }
-
-     /* Headers and typography */
-     .location-header h1 {
-          font-size: 2rem;
-     }
-
-     .location-header p {
-          font-size: 1.15rem;
-     }
-
-     aside {
-          margin: 1.5rem 0;
-     }
-
-     /* Stats */
-     .stat-number {
-          font-size: 3rem;
-     }
-
-     .stat-label {
-          font-size: 1.2rem;
-     }
-
-     /* Buttons */
-     .buttons-container {
-          flex-direction: column;
-     }
-
-     .find-groups-button {
-          width: 100%;
-          padding: 1rem 1.2rem;
-          font-size: 1.2rem;
-     }
-
-     .button-text {
-          font-size: 1.15rem;
-     }
-
-     /* Form elements */
-     button,
-     .btn,
-     .nav-link,
-     .find-groups-button,
-     .state-link,
-     .city-link {
-          padding: 0.9rem 1rem;
-     }
-
-     body input,
-     html input,
-     body select,
-     html select,
-     body textarea,
-     html textarea,
-     input,
-     select,
-     textarea {
-          font-size: 1.1rem;
-          padding: 0.8rem;
-     }
-
-     body .form-group label,
-     html .form-group label,
-     .form-group label {
-          font-size: 1.15rem;
-     }
-
-     /* Location page */
-     .location-page h2 {
-          padding-left: 3.25rem;
-          text-indent: 0;
-          font-size: 1.7rem;
-          text-align: left;
-     }
-
-     .location-page .content {
-          padding: 0.75rem;
-     }
-
-     /* Sidebar */
-     .sidebar-header {
-          flex-direction: column;
-          align-items: center;
-          gap: 0.75rem;
-          padding: 2rem 1rem 1rem;
-     }
-
-     .sidebar-header h1 {
-          font-size: 1.3rem;
-          display: none;
-     }
-
-     .location-page .sidebar-header {
-          flex-direction: column;
-          align-items: center;
-          gap: 0.75rem;
-     }
-
-     .location-page .sidebar-header h1 {
-          font-size: 1.3rem;
-          display: none;
-     }
-}
-
 /* Remove all !important declarations from sidebar styling near the end */
 /* Fix HOME active state */
 .nav-link-base.nav-link[href="/"] {
@@ -2659,11 +2434,376 @@ a:hover .site-logo {
 
 /* Add this to your existing CSS outside any media query with higher specificity */
 .stat-mobile-label {
-     display: none !important;
+     display: none;
      font-size: 1.2rem;
      font-weight: 700;
      color: var(--red-base);
      font-family: "Saira Semi Condensed", sans-serif;
      text-align: left;
      width: 100%;
+}
+
+/*------------------------------------*\
+  #HOMEPAGE SPECIFIC STYLES
+\*------------------------------------*/
+/* Enhanced styling for homepage */
+body.page-home {
+     background: linear-gradient(160deg, #fff5f5 0%, #fff8f8 100%);
+}
+
+body.page-home .content {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 2rem;
+}
+
+body.page-home h1 {
+     font-size: 4rem;
+     color: #bc2a2a;
+     text-align: center;
+     margin-bottom: 2rem;
+     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.05);
+     position: relative;
+}
+
+body.page-home h1:after {
+     content: "";
+     display: block;
+     width: 100px;
+     height: 4px;
+     background: var(--red-base);
+     margin: 0.5rem auto 0;
+     border-radius: 2px;
+}
+
+/* Tagline styling */
+.tagline {
+     text-align: center;
+     font-size: 1.2rem;
+     color: #666;
+     margin: 0.5rem auto 2rem;
+     max-width: 600px;
+}
+
+.homepage-content {
+     max-width: 1000px;
+     margin: 0 auto;
+     position: relative;
+}
+
+.homepage-content:before {
+     content: "";
+     position: absolute;
+     top: -30px;
+     left: 10%;
+     right: 10%;
+     height: 1px;
+     background: rgba(200, 37, 37, 0.1);
+     z-index: -1;
+}
+
+/* Button styling for homepage */
+.find-groups-buttons {
+     margin: 2.5rem auto;
+     max-width: 800px;
+}
+
+.buttons-container {
+     display: flex;
+     gap: 1.5rem;
+     justify-content: center;
+}
+
+.find-groups-button {
+     background-color: var(--red-base);
+     color: white;
+     padding: 1rem 1.5rem;
+     border-radius: 8px;
+     text-decoration: none;
+     font-weight: 600;
+     font-size: 1.1rem;
+     transition: all 0.2s ease;
+     box-shadow: 0 4px 6px rgba(200, 37, 37, 0.2);
+     border: 2px solid var(--red-base);
+     flex: 1;
+     text-align: center;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 0.5rem;
+}
+
+.primary-button {
+     background-color: var(--red-base);
+     color: white;
+}
+
+.secondary-button {
+     background-color: white;
+     color: var(--red-base);
+}
+
+.button-icon {
+     width: 20px;
+     height: 20px;
+}
+
+.find-groups-button:hover {
+     background-color: #e02e2e;
+     transform: translateY(-2px);
+     box-shadow: 0 6px 12px rgba(200, 37, 37, 0.25);
+}
+
+.find-groups-button:active {
+     transform: translateY(0px);
+     box-shadow: 0 2px 4px rgba(200, 37, 37, 0.3);
+}
+
+.button-text {
+     font-family: var(--heading-font);
+}
+
+/* Stats section styling */
+.initiative-stats {
+     background: white;
+     border: 2px solid var(--red-base);
+     border-radius: 15px;
+     padding: 2rem;
+     margin: 2rem auto 3rem;
+     max-width: 800px;
+     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+     transition: all 0.3s ease;
+     position: relative;
+     overflow: hidden;
+}
+
+.initiative-stats:before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 6px;
+     background: linear-gradient(90deg, var(--red-base), #e02e2e);
+}
+
+.initiative-stats:hover {
+     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+     transform: translateY(-3px);
+}
+
+.stats-container {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+}
+
+.stat-item {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+     padding: 0.5rem 1rem;
+     position: relative;
+}
+
+.stat-item:not(:last-child):after {
+     content: "";
+     position: absolute;
+     right: -10px;
+     top: 20%;
+     bottom: 20%;
+     width: 1px;
+     background: rgba(200, 37, 37, 0.1);
+}
+
+.stat-number {
+     font-size: 3.5rem;
+     font-weight: 800;
+     color: var(--red-base);
+     line-height: 1;
+     margin-bottom: 0.75rem;
+     font-family: var(--heading-font);
+}
+
+.stat-label {
+     font-size: 1.1rem;
+     font-weight: 700;
+     color: var(--red-base);
+     text-transform: uppercase;
+     font-family: var(--heading-font);
+     letter-spacing: 0.05em;
+}
+
+/* Description below stats */
+.stats-description {
+     text-align: center;
+     color: #555;
+     margin: 1.5rem auto 0;
+     font-size: 1.1rem;
+     max-width: 600px;
+     line-height: 1.5;
+     border-top: 1px solid rgba(200, 37, 37, 0.1);
+     padding-top: 1.5rem;
+     margin-top: 1.5rem;
+}
+
+/* Mobile stats display */
+.stat-mobile-label {
+     display: none;
+     font-size: 1.4rem;
+     font-weight: 700;
+     text-align: left;
+     font-family: var(--heading-font);
+     color: var(--red-base);
+     line-height: 1.2;
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+     /* Homepage title adjustments */
+     body.page-home h1 {
+          font-size: 2.5rem;
+          margin-bottom: 1.5rem;
+          padding-top: 0.75rem;
+          padding-bottom: 0.5rem;
+     }
+
+     /* Tagline adjustments */
+     .tagline {
+          font-size: 1rem;
+          margin-bottom: 1.5rem;
+     }
+
+     /* Mobile stats layout */
+     body .stat-number,
+     html .stat-number,
+     .page-home .stat-number,
+     .stat-number,
+     body .stat-label,
+     html .stat-label,
+     .page-home .stat-label,
+     .stat-label {
+          display: none;
+     }
+
+     /* Mobile stats display */
+     body .stat-mobile-label,
+     html .stat-mobile-label,
+     .page-home .stat-mobile-label,
+     .stat-mobile-label {
+          display: block;
+          font-size: 1.3rem;
+          line-height: 1.2;
+          font-weight: 700;
+          color: var(--red-base);
+          font-family: var(--heading-font);
+          text-align: left;
+          margin: 0;
+          padding: 0;
+     }
+
+     /* Mobile vertical stats layout */
+     body .stats-container,
+     html .stats-container,
+     .page-home .stats-container,
+     .stats-container {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+          width: 100%;
+     }
+
+     body .stat-item,
+     html .stat-item,
+     .page-home .stat-item,
+     .stat-item {
+          width: 100%;
+          text-align: left;
+          padding: 0 0.5rem;
+          margin: 0;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          min-height: auto;
+     }
+
+     body .initiative-stats,
+     html .initiative-stats,
+     .page-home .initiative-stats,
+     .initiative-stats {
+          padding: 1.25rem;
+          margin: 0.75rem auto 1.25rem;
+          border-width: 1px;
+     }
+
+     /* Mobile button layout */
+     .find-groups-buttons {
+          margin: 0.5rem auto 2rem;
+     }
+
+     .buttons-container {
+          flex-direction: column;
+          gap: 0.75rem;
+          width: 100%;
+     }
+
+     .find-groups-button {
+          width: 100%;
+          margin: 0;
+          padding: 0.75rem 1rem;
+          text-align: center;
+          justify-content: center;
+     }
+
+     /* Mobile button icons */
+     .button-icon {
+          width: 18px;
+          height: 18px;
+     }
+
+     /* Mobile button styling */
+     .secondary-button {
+          background-color: white;
+          color: var(--red-base);
+     }
+
+     .primary-button {
+          background-color: var(--red-base);
+          color: white;
+     }
+
+     /* Mobile stats description */
+     .stats-description {
+          font-size: 1rem;
+          padding-top: 1.2rem;
+          margin-top: 1.2rem;
+     }
+}
+
+/* Desktop stats layout */
+@media (min-width: 481px) {
+     .stat-mobile-label {
+          display: none;
+     }
+
+     .stat-number,
+     .stat-label {
+          display: block;
+     }
+
+     .stats-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+     }
+
+     .stat-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+     }
 }

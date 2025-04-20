@@ -139,3 +139,39 @@ If you experience any issues:
 2. Verify your access key is correctly entered
 3. Make sure your Cloudflare Functions are properly deployed
 4. Contact Web3Forms support if issues persist
+
+## Title Search Feature
+
+The website includes a lightweight search functionality that indexes and searches only page titles (states, cities, regions, etc.), making it much more performant than searching the entire website content.
+
+### How it Works
+
+1. The search bar is added to the homepage and allows users to search for states, cities, and other location titles.
+2. The search is performed client-side against a pre-generated JSON index of page titles.
+3. Only title information is indexed, not the entire page content, which keeps the search very fast.
+
+### Generating the Title Index
+
+To update the title index (needed whenever new pages are added):
+
+```bash
+npm run generate-title-index
+```
+
+This will:
+
+1. Scan all HTML files in the `states/`, `cities/`, and `topics/` directories
+2. Extract the title from each file
+3. Create a new `js/title-index.json` file with all titles and their URLs
+
+### Implementation Details
+
+- `js/generate-titles-index.js` - Node.js script to generate the title index
+- `js/title-search.js` - Client-side script for search functionality
+- `js/title-index.json` - The generated index of titles
+
+The search is fully client-side and works without any server-side processing, making it very efficient.
+
+### Fallback Mechanism
+
+If the title index JSON file is not available, the search will fall back to a limited static set of states and cities. To ensure the best search experience, always run the index generator after adding new pages.

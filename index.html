@@ -24,255 +24,7 @@
     </script>
 
     <!-- Force mobile layout with inline CSS -->
-    <style>
-        /* Enhanced styling for homepage */
-        body.page-home {
-            background: linear-gradient(160deg, #fff5f5 0%, #fff8f8 100%);
-        }
-
-        body.page-home .content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        body.page-home h1 {
-            font-size: 4rem;
-            color: #bc2a2a;
-            text-align: center;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.05);
-            position: relative;
-        }
-
-        body.page-home h1:after {
-            content: "";
-            display: block;
-            width: 100px;
-            height: 4px;
-            background: #c82525;
-            margin: 0.5rem auto 0;
-            border-radius: 2px;
-        }
-
-        .homepage-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .homepage-content:before {
-            content: "";
-            position: absolute;
-            top: -30px;
-            left: 10%;
-            right: 10%;
-            height: 1px;
-            background: rgba(200, 37, 37, 0.1);
-            z-index: -1;
-        }
-
-        .find-groups-buttons {
-            margin: 2.5rem auto;
-            max-width: 800px;
-        }
-
-        .buttons-container {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-        }
-
-        .find-groups-button {
-            background-color: #c82525;
-            color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 6px rgba(200, 37, 37, 0.2);
-            border: 2px solid #c82525;
-            flex: 1;
-            text-align: center;
-        }
-
-        .find-groups-button:hover {
-            background-color: #e02e2e;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(200, 37, 37, 0.25);
-        }
-
-        .find-groups-button:active {
-            transform: translateY(0px);
-            box-shadow: 0 2px 4px rgba(200, 37, 37, 0.3);
-        }
-
-        .button-text {
-            font-family: "Saira Semi Condensed", sans-serif;
-        }
-
-        .initiative-stats {
-            background: white;
-            border: 2px solid #c82525;
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem auto 3rem;
-            max-width: 800px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .initiative-stats:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: linear-gradient(90deg, #c82525, #e02e2e);
-        }
-
-        .initiative-stats:hover {
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            transform: translateY(-3px);
-        }
-
-        .stats-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 0.5rem 1rem;
-            position: relative;
-        }
-
-        .stat-item:not(:last-child):after {
-            content: "";
-            position: absolute;
-            right: -10px;
-            top: 20%;
-            bottom: 20%;
-            width: 1px;
-            background: rgba(200, 37, 37, 0.1);
-        }
-
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: #c82525;
-            line-height: 1;
-            margin-bottom: 0.75rem;
-            font-family: "Saira Semi Condensed", sans-serif;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #c82525;
-            text-transform: uppercase;
-            font-family: "Saira Semi Condensed", sans-serif;
-            letter-spacing: 0.05em;
-        }
-
-        @media (max-width: 480px) {
-
-            /* Make homepage title bigger and add margin */
-            body.page-home h1 {
-                font-size: 2.5rem !important;
-                margin-bottom: 2.5rem !important;
-                padding-top: 0.75rem !important;
-                padding-bottom: 0.5rem !important;
-            }
-
-            /* Force hide regular stats */
-            .stat-number,
-            .stat-label {
-                display: none !important;
-            }
-
-            /* Force show mobile labels */
-            .stat-mobile-label {
-                display: block !important;
-                font-size: 1.4rem !important;
-                font-weight: 700 !important;
-                text-align: left !important;
-                font-family: "Saira Semi Condensed", sans-serif !important;
-                color: #c82525 !important;
-                line-height: 1.2 !important;
-            }
-
-            /* Force vertical layout */
-            .stats-container {
-                display: flex !important;
-                flex-direction: column !important;
-                gap: 1.2rem !important;
-                width: 100% !important;
-            }
-
-            .stat-item {
-                width: 100% !important;
-                text-align: left !important;
-                padding: 0 0.5rem !important;
-            }
-
-            .initiative-stats {
-                padding: 1.5rem !important;
-                margin: 0.75rem auto 1.5rem !important;
-                border-width: 1px !important;
-            }
-
-            .find-groups-buttons {
-                margin: 0 auto 2rem;
-            }
-
-            .buttons-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .find-groups-button {
-                text-align: center;
-                justify-content: center;
-                display: flex;
-            }
-        }
-
-        /* Ensure horizontal layout for larger screens */
-        @media (min-width: 481px) {
-            .stat-mobile-label {
-                display: none !important;
-            }
-
-            .stat-number,
-            .stat-label {
-                display: block !important;
-            }
-
-            .stats-container {
-                display: flex !important;
-                flex-direction: row !important;
-                justify-content: space-around !important;
-                align-items: center !important;
-            }
-
-            .stat-item {
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: center !important;
-                text-align: center !important;
-            }
-        }
-    </style>
+    <!-- All styles have been moved to the external stylesheet for better maintenance -->
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -370,6 +122,9 @@
                 .catch(error => console.error('Error initializing components:', error));
         });
     </script>
+
+    <!-- Include the title search script -->
+    <script src="/js/title-search.js" defer></script>
 </head>
 
 <body class="page-home">
@@ -381,13 +136,30 @@
 
             <h1>The Organize Directory</h1>
 
+            <!-- Add tagline -->
+            <p class="tagline">Connecting people with local and national organizing initiatives across the country</p>
+
             <div class="homepage-content">
+                <!-- Remove duplicate search box -->
+
                 <section class="find-groups-buttons">
                     <div class="buttons-container">
-                        <a href="/location.html" class="find-groups-button">
+                        <a href="/location.html" class="find-groups-button primary-button">
+                            <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
                             <span class="button-text">Find Local Groups</span>
                         </a>
-                        <a href="/topics.html" class="find-groups-button">
+                        <a href="/topics.html" class="find-groups-button secondary-button">
+                            <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
                             <span class="button-text">Browse National Groups</span>
                         </a>
                     </div>
@@ -411,105 +183,16 @@
                             <span class="stat-mobile-label">CATEGORIES: 41</span>
                         </div>
                     </div>
+
+                    <!-- Add context description -->
+                    <p class="stats-description">
+                        Join thousands of active community groups working on issues that matter across hundreds of
+                        cities nationwide.
+                    </p>
                 </section>
             </div>
 
-            <script>
-                // Force mobile styles immediately on load and resize
-                function updateStatDisplay() {
-                    if (window.innerWidth <= 480) {
-                        // Make h1 bigger and add more margin
-                        const h1Element = document.querySelector('body.page-home h1');
-                        if (h1Element) {
-                            h1Element.style.cssText = 'font-size: 2.5rem !important; margin-bottom: 2.5rem !important; padding-top: 0.75rem !important; padding-bottom: 0.5rem !important;';
-                        }
-
-                        // Hide regular stats with !important
-                        document.querySelectorAll('.stat-number, .stat-label').forEach(el => {
-                            el.style.cssText = 'display: none !important';
-                        });
-
-                        // Show mobile labels with !important
-                        document.querySelectorAll('.stat-mobile-label').forEach(el => {
-                            el.style.cssText = 'display: block !important; font-size: 1.4rem !important; font-weight: 700 !important; text-align: left !important; font-family: "Saira Semi Condensed", sans-serif !important; color: #c82525 !important;';
-                        });
-
-                        // Make stat items display vertically with !important
-                        document.querySelector('.stats-container').style.cssText = 'display: flex !important; flex-direction: column !important; gap: 1.2rem !important; width: 100% !important;';
-
-                        // Style each stat item with !important
-                        document.querySelectorAll('.stat-item').forEach(el => {
-                            el.style.cssText = 'width: 100% !important; text-align: left !important; padding: 0 0.5rem !important;';
-                        });
-
-                        // Style initiative-stats for mobile
-                        const statsContainer = document.querySelector('.initiative-stats');
-                        if (statsContainer) {
-                            statsContainer.style.cssText = 'padding: 1.5rem !important; margin: 0.75rem auto 1.5rem !important; border-width: 1px !important; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05) !important;';
-                        }
-
-                        // Style buttons for mobile
-                        document.querySelector('.buttons-container').style.cssText = 'flex-direction: column !important; gap: 1rem !important;';
-                        document.querySelectorAll('.find-groups-button').forEach(el => {
-                            el.style.cssText = 'display: flex !important; justify-content: center !important; text-align: center !important;';
-                        });
-                    } else {
-                        // Reset h1 styles for larger screens
-                        const h1Element = document.querySelector('body.page-home h1');
-                        if (h1Element) {
-                            h1Element.style.cssText = '';
-                        }
-
-                        // Reset styles for larger screens - horizontal layout
-                        document.querySelectorAll('.stat-number, .stat-label').forEach(el => {
-                            el.style.cssText = '';  // Remove inline styles
-                        });
-
-                        // Hide mobile labels
-                        document.querySelectorAll('.stat-mobile-label').forEach(el => {
-                            el.style.cssText = 'display: none !important;';
-                        });
-
-                        // Reset container to horizontal layout
-                        document.querySelector('.stats-container').style.cssText = '';
-
-                        // Reset stat items
-                        document.querySelectorAll('.stat-item').forEach(el => {
-                            el.style.cssText = '';
-                        });
-
-                        // Reset initiative-stats
-                        const statsContainer = document.querySelector('.initiative-stats');
-                        if (statsContainer) {
-                            statsContainer.style.cssText = '';
-                        }
-
-                        // Reset buttons
-                        document.querySelector('.buttons-container').style.cssText = '';
-                        document.querySelectorAll('.find-groups-button').forEach(el => {
-                            el.style.cssText = '';
-                        });
-                    }
-                }
-
-                // Run on load
-                updateStatDisplay();
-
-                // Run immediately
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', updateStatDisplay);
-                } else {
-                    updateStatDisplay();
-                }
-
-                // Run on resize
-                window.addEventListener('resize', updateStatDisplay);
-
-                // Force a check after a short delay to catch any late rendering issues
-                setTimeout(updateStatDisplay, 100);
-                setTimeout(updateStatDisplay, 500);
-                setTimeout(updateStatDisplay, 1000);
-            </script>
+            <!-- Mobile responsiveness is now handled through CSS media queries in the external stylesheet -->
 
             <!-- <section class="daily-log" aria-labelledby="log-heading">
                 <h2 id="log-heading">Calls to Action</h2>
