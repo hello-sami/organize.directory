@@ -1268,6 +1268,8 @@ html .topic-name,
 
 .breadcrumb a:hover {
      color: var(--red-base);
+     text-decoration: underline;
+     border-bottom: none;
 }
 
 .breadcrumb span {
@@ -1445,12 +1447,6 @@ body.page-contact .page-header p {
      color: #666;
 }
 
-.optional {
-     font-weight: normal;
-     color: #666;
-     font-size: 0.875rem;
-}
-
 /* Status message */
 .status-message {
      padding: 1rem;
@@ -1491,15 +1487,6 @@ input.error,
 select.error,
 textarea.error {
      border-color: #dc2626;
-}
-
-/* Alternative contact section */
-.alternative-contact {
-     margin-bottom: 1.5rem;
-     font-size: inherit;
-     text-align: center;
-     padding: 0.5rem 1rem;
-     line-height: 1.5;
 }
 
 /* Captcha styles */
@@ -1554,15 +1541,6 @@ textarea.error {
      margin: 0 auto;
      max-width: 600px;
      font-size: 1rem; /* Match the page header paragraph size */
-}
-
-/* Notice box */
-.notice {
-     background-color: #f8fafc;
-     border-radius: 4px;
-     padding: 1rem;
-     margin-bottom: 1.5rem;
-     border-left: 4px solid #3b82f6;
 }
 
 /* Form failure help */
@@ -1820,17 +1798,6 @@ html body #sidebar div.sidebar-header h1 a,
      color: inherit;
      font-weight: 600;
      opacity: 1;
-}
-
-.reset-header {
-     background-color: transparent;
-}
-
-.reset-header-link {
-     background-color: transparent;
-     color: inherit;
-     text-decoration: none;
-     border-bottom: none;
 }
 
 /*------------------------------------*\
@@ -2426,19 +2393,21 @@ html body #sidebar div.sidebar-header h1 a,
 
 /* City page specific styles */
 .city-page .city-section {
-     margin-bottom: 40px;
+     padding-bottom: 40px;
      max-width: 1000px;
 }
 
-.city-page .city-section h2 {
-     font-family: "Saira Semi Condensed", sans-serif;
-     font-size: 1.8rem;
+.city-page .city-section h2,
+.city-page h2,
+body[class*="page-cities-"] h2,
+.city-content h2 {
+     font-size: 1.5rem;
      color: var(--red-base);
-     margin-bottom: 0.75rem;
-     margin-top: 1rem;
+     padding: 0.5rem 0.8rem;
      font-weight: 600;
-     text-align: left;
-     margin-left: 0;
+     background-color: var(--bg-medium);
+     border-radius: 6px;
+     border: 1px solid var(--bg-medium);
 }
 
 .city-page .initiative {
@@ -2919,4 +2888,41 @@ body.page-home h1 {
      transform: none;
      box-shadow: none;
      border: none;
+}
+
+@media (max-width: 768px) {
+     /* Remove the ID-specific rules and replace with a general selector */
+     section.city-section h2 {
+          font-size: 1.5rem;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          padding: 0.5rem 0.8rem;
+          letter-spacing: 0.01em;
+          font-weight: 600;
+          background-color: var(--bg-medium);
+          border-radius: 6px;
+          border-left: none;
+          box-shadow: 0 1px 3px rgba(200, 37, 37, 0.12);
+     }
+}
+
+@media (max-width: 768px) {
+     /* Comprehensive selector for all city/state section headings in mobile view */
+     .city-page .city-section h2,
+     .city-page section h2,
+     .state-page section h2,
+     .state-page .cities-list > h2,
+     .city-content section h2,
+     section.city-section h2 {
+          font-size: 1.5rem;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+          padding: 0.5rem 0.8rem;
+          letter-spacing: 0.01em;
+          font-weight: 600;
+          background-color: var(--bg-medium);
+          border-radius: 6px;
+          border-left: none;
+          box-shadow: 0 1px 3px rgba(200, 37, 37, 0.12);
+     }
 }
