@@ -2,7 +2,7 @@
 const sidebarTemplate = `
     <div class="sidebar-header">
         <a href="/">
-          <img src="/logo.png" alt="Organize Directory Logo" class="site-logo loaded" 
+          <img src="/logo.svg" alt="Organize Directory Logo" class="site-logo loaded" 
                style="opacity: 1; visibility: visible;"
                onerror="console.error('Logo failed to load');">
         </a>
@@ -16,7 +16,17 @@ const sidebarTemplate = `
         <a href="/contact" class="nav-link-base nav-link">Contact</a>
         <a href="/subscribe" class="nav-link-base nav-link">Subscribe</a>
     </nav>
-
+    
+    <div class="sidebar-footer" style="position: fixed !important; bottom: 0 !important; left: 0 !important; width: var(--sidebar-width, 280px) !important; text-align: center !important; padding: 1.5rem 0 !important; background-color: #ffd4d4 !important; z-index: 101 !important;">
+        <div class="social-links" style="display: flex !important; justify-content: center !important; align-items: center !important; gap: 2rem !important;">
+            <a href="/subscribe" class="social-link" style="display: flex !important; align-items: center !important; justify-content: center !important;" title="Subscribe to updates">
+                <img src="/icons/email.svg" alt="Subscribe" class="social-icon" style="width: 24px !important; height: 20px !important;">
+            </a>
+            <a href="https://discord.gg/your-discord-invite" class="social-link" style="display: flex !important; align-items: center !important; justify-content: center !important;" title="Join our Discord community">
+                <img src="/icons/discord.svg" alt="Discord" class="social-icon" style="width: 24px !important; height: 20px !important; margin-bottom: 1px !important;">
+            </a>
+        </div>
+    </div>
 `;
 
 // Track if the sidebar has been initialized - placed in global window object to prevent reinit
@@ -65,6 +75,8 @@ function createSidebar() {
      sidebar.className = "sidebar";
      sidebar.id = "sidebar";
      sidebar.setAttribute("aria-label", "Main navigation");
+     // Add inline style to ensure padding at the bottom
+     sidebar.style.paddingBottom = "100px";
      sidebar.innerHTML = sidebarTemplate;
 
      // Standardize sidebar insertion - always use the placeholder approach
@@ -274,9 +286,50 @@ document.addEventListener("DOMContentLoaded", () => {
      if (!window.sidebarInitialized) {
           initializeSidebar();
      }
+
+     // Add extra code to ensure footer positioning
+     ensureSidebarFooterPosition();
 });
 
 // Also initialize immediately if the document is already loaded
 if (document.readyState !== "loading" && !window.sidebarInitialized) {
      initializeSidebar();
+     // Also ensure footer positioning
+     ensureSidebarFooterPosition();
+}
+
+/**
+ * Function to ensure the sidebar footer is positioned correctly
+ */
+function ensureSidebarFooterPosition() {
+     setTimeout(() => {
+          const footer = document.querySelector(".sidebar-footer");
+          if (footer) {
+               // Force the footer to be positioned correctly
+               Object.assign(footer.style, {
+                    position: "fixed",
+                    bottom: "0",
+                    left: "0",
+                    width: "var(--sidebar-width, 280px)",
+                    textAlign: "center",
+                    padding: "1.5rem 0",
+                    backgroundColor: "#ffd4d4",
+                    zIndex: "101",
+                    borderRight: "1px solid #ffb3b3",
+               });
+
+               // Ensure social links are centered
+               const socialLinks = footer.querySelector(".social-links");
+               if (socialLinks) {
+                    Object.assign(socialLinks.style, {
+                         display: "flex",
+                         justifyContent: "center",
+                         alignItems: "center",
+                         gap: "2rem",
+                    });
+               }
+
+               // No need to set color since we're using images now
+          }
+     }, 100); // Small delay to ensure DOM is fully processed
 }

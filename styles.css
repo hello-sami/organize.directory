@@ -70,9 +70,9 @@
      --h2-size-safari-mobile: 2em;
 }
 
-/*------------------------------------*\
+/* ------------------------------------*\
   #RESET & BASE STYLES
-\*------------------------------------*/
+\*------------------------------------ */
 * {
      margin: 0;
      padding: 0;
@@ -1061,52 +1061,103 @@ html .topic-name,
 
 /* Table of Contents */
 .toc {
-     float: right;
-     width: 250px;
-     background: var(--bg-medium);
-     border: 1px solid var(--red-base);
+     background-color: var(--bg-medium);
+     border: 2px solid var(--red-base);
+     border-radius: 8px;
      padding: 1.5rem;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+     max-height: 85vh;
+     overflow-y: auto;
+     width: 280px;
      font-size: 0.9rem;
-     margin: 0 0 2rem 2rem;
+}
+
+/* TOC container with explicit width */
+.toc-container {
+     position: absolute;
+     top: 0;
+     right: 1rem;
+     width: 280px;
+}
+
+/* TOC in fixed mode */
+.toc.toc-fixed {
+     position: fixed;
+     top: 20px;
+     /* right will be set by JS */
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+     z-index: 100;
 }
 
 .toc-title {
-     font-size: 1.1rem;
-     font-weight: 700;
-     color: var(--red-base);
-     margin-bottom: 1rem;
+     display: none; /* Hide the title as requested */
 }
 
 .toc-list {
-     list-style: none;
+     list-style-type: none;
+     padding-left: 0.25rem;
      margin: 0;
-     padding: 0;
 }
 
 .toc-item {
-     margin: 0.5rem 0;
+     margin: 0rem 0;
 }
 
 .toc-link {
      color: var(--red-base);
      text-decoration: none;
-     border: none;
-     display: inline-block;
-     line-height: 1.4;
-     font-weight: 500;
+     display: block;
+     padding: 0.5rem 0.8rem;
+     border-radius: 4px;
+     transition: all 0.2s ease;
 }
 
-.toc-link:hover {
-     color: var(--red-base);
-     text-decoration: underline;
-     text-decoration-color: var(--red-base);
+.toc-link:hover,
+.toc-link.active {
+     background-color: rgba(200, 37, 37, 0.1);
+     color: var(--dark-red);
+     font-weight: 600;
      border: none;
 }
 
 .toc-number {
      opacity: 0.7;
      margin-right: 0.5rem;
-     font-size: 0.85em;
+}
+
+/* Content container with proper positioning context */
+.content-wrapper {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 1rem;
+     position: relative;
+     /* Positioning context for TOC */
+}
+
+/* Main content styling - with right margin for TOC */
+.city-content {
+     width: calc(100% - 320px);
+     margin-right: 320px;
+     /* Space for TOC */
+}
+
+/* Mobile styles */
+@media (max-width: 1019px) {
+     .city-content {
+          width: 100%;
+          margin-right: 0;
+     }
+
+     .toc-container {
+          position: static;
+          width: 100%;
+          margin: 2rem 0;
+     }
+
+     .toc {
+          width: 100%;
+          position: static !important;
+     }
 }
 
 /* City and Location page specific */

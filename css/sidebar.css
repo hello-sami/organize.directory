@@ -19,10 +19,11 @@
      position: fixed;
      top: 0;
      left: 0;
-     padding: 2rem 0;
+     padding: 2rem 0 6rem; /* Add padding at bottom for footer */
      box-sizing: border-box;
      overflow-y: auto;
      z-index: 100;
+     position: relative; /* Create positioning context */
 }
 
 /* 
@@ -71,7 +72,7 @@
 
 /* Navigation structure - override specific elements */
 .sidebar nav {
-     margin-bottom: 2rem;
+     margin-bottom: 0;
 }
 
 /* 
@@ -215,4 +216,50 @@ body {
      font-weight: inherit !important;
      border-bottom: none !important;
      box-shadow: none !important;
+}
+
+/* Sidebar footer and social links - use absolute positioning */
+.sidebar .sidebar-footer {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     padding: 1.5rem 0;
+     background-color: #ffd4d4;
+     z-index: 20; /* Ensure it's above other content */
+     width: 100%;
+     text-align: center;
+}
+
+.sidebar .social-links {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 2rem;
+}
+
+.sidebar .social-link {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 32px;
+     height: 32px;
+     color: #a30000;
+     transition: all 0.2s ease;
+}
+
+.sidebar .social-link:hover {
+     color: #c85c5c !important; /* Slightly darker on hover but still subtle */
+     transform: translateY(-2px);
+}
+
+.sidebar .social-icon {
+     width: 28px;
+     height: 28px;
+     stroke-width: 2px;
+}
+
+/* Spacer to push footer to bottom */
+.sidebar .flex-spacer {
+     /* No longer needed with absolute positioning */
 }

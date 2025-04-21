@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Table of Contents Demo</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff7f7;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Variables for consistent colors */
+        :root {
+            --red-base: #c82525;
+            --red-light: #de6b6b;
+            --dark-red: #a01818;
+            --background-color: #fff7f7;
+            --bg-medium: #ffd4d4;
+        }
+
+        /* Main container layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            color: var(--red-base);
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Two-column layout */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+            position: relative;
+        }
+
+        /* Main content styling */
+        .main-content {
+            grid-column: 1;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+        }
+
+        .section h2 {
+            color: var(--red-base);
+            margin-bottom: 1rem;
+            padding-top: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .section hr {
+            border: none;
+            border-top: 1px solid var(--red-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .section p {
+            margin-bottom: 1rem;
+        }
+
+        /* This is key: a placeholder for the TOC that takes up space */
+        .toc-column {
+            grid-column: 2;
+        }
+
+        /* The sticky TOC */
+        .toc {
+            position: sticky;
+            top: 2rem;
+            background-color: var(--bg-medium);
+            border: 1px solid var(--red-base);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .toc.shadow-active {
+            box-shadow: 0 10px 25px rgba(192, 28, 28, 0.15);
+            border-color: var(--red-base);
+        }
+
+        .toc-title {
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(192, 28, 28, 0.3);
+            color: var(--red-base);
+        }
+
+        .toc-list {
+            list-style-type: none;
+        }
+
+        .toc-item {
+            margin: 0.8rem 0;
+        }
+
+        .toc-link {
+            color: var(--red-base);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem 0.8rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .toc-link:hover {
+            background-color: rgba(192, 28, 28, 0.1);
+            color: var(--dark-red);
+        }
+
+        .toc-link.active {
+            background-color: rgba(192, 28, 28, 0.15);
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+
+        .toc-number {
+            opacity: 0.7;
+            margin-right: 0.5rem;
+        }
+
+        /* Visual indicator that shows when TOC is sticky */
+        .sticky-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: var(--red-base);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 100;
+        }
+
+        .sticky-indicator.visible {
+            opacity: 1;
+        }
+
+        /* Make content sections long enough to demonstrate scrolling */
+        .filler-text {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content,
+            .toc-column {
+                grid-column: 1;
+            }
+
+            .toc {
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>Sticky Table of Contents Demo</h1>
+        </header>
+
+        <p class="subtitle">This page demonstrates a sticky table of contents that follows you as you scroll down the
+            page.</p>
+
+        <div class="content-wrapper">
+            <main class="main-content">
+                <section id="section1" class="section">
+                    <h2>1. Introduction</h2>
+                    <hr>
+                    <p>This is a demonstration of a sticky table of contents that stays in view as you scroll down the
+                        page. The TOC will highlight the current section and allow for easy navigation.</p>
+                    <p class="filler-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at felis
+                        vitae nunc varius feugiat. Cras non enim vel magna ullamcorper faucibus sit amet id mauris.
+                        Quisque sit amet risus lacinia, varius nisi a, dignissim arcu. Cras erat leo, efficitur eu leo
+                        vitae, vestibulum commodo ipsum. Nulla facilisi.</p>
+                    <p class="filler-text">Fusce auctor aliquam nisl, vel interdum dui. Praesent nec ipsum nisl. Nulla
+                        facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                        curae; Integer ac nunc et nisl sagittis vulputate. Vivamus eget sem in nulla venenatis dapibus.
+                        Cras felis enim, condimentum ac elit vel, dapibus tempus leo.</p>
+                    <p class="filler-text">Curabitur gravida arcu vel ex pulvinar, nec facilisis nibh consequat. Quisque
+                        sed diam purus. Nulla facilisi. Curabitur consectetur, metus at bibendum condimentum, leo mauris
+                        ultrices justo, id auctor tellus ligula at lorem. Quisque finibus scelerisque justo, non
+                        ultricies risus sodales in.</p>
+                </section>
+
+                <section id="section2" class="section">
+                    <h2>2. How It Works</h2>
+                    <hr>
+                    <p>The sticky behavior is achieved using CSS <code>position: sticky</code> and enhanced with
+                        JavaScript for active state tracking.</p>
+                    <p class="filler-text">Ut consectetur, ipsum a luctus ullamcorper, nulla lacus volutpat nisl, vitae
+                        bibendum est ex in justo. Suspendisse potenti. Etiam eget justo in justo fermentum sagittis vel
+                        non sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                        curae; Suspendisse non velit nec mi pharetra finibus.</p>
+                    <p class="filler-text">Donec vitae tellus ipsum. Suspendisse potenti. Ut lobortis pharetra velit, id
+                        cursus enim pharetra eget. Sed at mi a magna tincidunt accumsan. Maecenas vulputate in orci sit
+                        amet tincidunt. Vestibulum eget risus purus. Etiam neque arcu, volutpat vel faucibus et, maximus
+                        id neque. Donec rhoncus lacus vitae odio malesuada imperdiet.</p>
+                    <p class="filler-text">Etiam non est ac eros pretium imperdiet. Cras ultrices sagittis tellus, vel
+                        tempus lorem bibendum at. Maecenas venenatis eros sit amet orci scelerisque, ut bibendum odio
+                        imperdiet. Integer eleifend ipsum nisi, at mattis enim vehicula in. Nullam commodo, dolor eget
+                        ultricies molestie, felis magna bibendum purus, vel commodo dui eros et nisl.</p>
+                </section>
+
+                <section id="section3" class="section">
+                    <h2>3. CSS Implementation</h2>
+                    <hr>
+                    <p>The key to making the TOC sticky is using <code>position: sticky</code> with a specific
+                        <code>top</code> value.</p>
+                    <pre><code>.toc {
+  position: sticky;
+  top: 2rem;
+  /* Other styling properties */
+}</code></pre>
+                    <p class="filler-text">Nulla facilisi. Vestibulum ante ipsum primis in faucibus orci luctus et
+                        ultrices posuere cubilia curae; Integer ac nunc et nisl sagittis vulputate. Vivamus eget sem in
+                        nulla venenatis dapibus. Cras felis enim, condimentum ac elit vel, dapibus tempus leo.</p>
+                    <p class="filler-text">Curabitur gravida arcu vel ex pulvinar, nec facilisis nibh consequat. Quisque
+                        sed diam purus. Nulla facilisi. Curabitur consectetur, metus at bibendum condimentum, leo mauris
+                        ultrices justo, id auctor tellus ligula at lorem. Quisque finibus scelerisque justo, non
+                        ultricies risus sodales in.</p>
+                </section>
+
+                <section id="section4" class="section">
+                    <h2>4. JavaScript Enhancement</h2>
+                    <hr>
+                    <p>JavaScript is used to determine which section is currently visible and update the active state in
+                        the TOC.</p>
+                    <p>We use the IntersectionObserver API to efficiently track which sections are visible in the
+                        viewport:</p>
+                    <pre><code>const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    // Update active states based on visibility
+  });
+}, observerOptions);</code></pre>
+                    <p class="filler-text">Ut consectetur, ipsum a luctus ullamcorper, nulla lacus volutpat nisl, vitae
+                        bibendum est ex in justo. Suspendisse potenti. Etiam eget justo in justo fermentum sagittis vel
+                        non sapien. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                        curae; Suspendisse non velit nec mi pharetra finibus.</p>
+                    <p class="filler-text">Donec vitae tellus ipsum. Suspendisse potenti. Ut lobortis pharetra velit, id
+                        cursus enim pharetra eget. Sed at mi a magna tincidunt accumsan. Maecenas vulputate in orci sit
+                        amet tincidunt. Vestibulum eget risus purus. Etiam neque arcu, volutpat vel faucibus et, maximus
+                        id neque. Donec rhoncus lacus vitae odio malesuada imperdiet.</p>
+                </section>
+
+                <section id="section5" class="section">
+                    <h2>5. Handling Edge Cases</h2>
+                    <hr>
+                    <p>There are several edge cases to handle, such as when no section is completely visible or when at
+                        the very top or bottom of the page.</p>
+                    <p class="filler-text">Nulla facilisi. In sed ultrices erat. Phasellus rutrum augue vel quam
+                        eleifend, vitae convallis mi bibendum. Vivamus ac rutrum sem, at pharetra justo. Etiam bibendum
+                        sodales nisi, vel lacinia eros fermentum ut. Praesent porttitor scelerisque enim, ut scelerisque
+                        lacus rutrum eget.</p>
+                    <p class="filler-text">Etiam non est ac eros pretium imperdiet. Cras ultrices sagittis tellus, vel
+                        tempus lorem bibendum at. Maecenas venenatis eros sit amet orci scelerisque, ut bibendum odio
+                        imperdiet. Integer eleifend ipsum nisi, at mattis enim vehicula in. Nullam commodo, dolor eget
+                        ultricies molestie, felis magna bibendum purus, vel commodo dui eros et nisl.</p>
+                    <p class="filler-text">Vivamus vel efficitur arcu. Aenean accumsan orci non ex condimentum, eu
+                        dignissim sem ultrices. Fusce ut rutrum nisi. Integer convallis feugiat enim quis ultrices. Cras
+                        imperdiet lectus vitae magna imperdiet, vitae consequat eros semper. Nunc fermentum interdum
+                        mauris, sed ultrices urna finibus quis. Vivamus vitae bibendum ante. Nullam tempor, tortor vel
+                        dapibus interdum, eros urna tincidunt ligula, a accumsan tortor tellus eu arcu.</p>
+                </section>
+
+                <section id="section6" class="section">
+                    <h2>6. Mobile Considerations</h2>
+                    <hr>
+                    <p>On mobile devices, the TOC typically doesn't remain sticky, and other layout adjustments are
+                        needed.</p>
+                    <p class="filler-text">Curabitur tincidunt fermentum elit et tincidunt. Vivamus ultricies, justo ac
+                        auctor facilisis, diam nulla commodo diam, vel varius velit mi sed justo. Phasellus a mauris eu
+                        justo feugiat accumsan. Aliquam a libero vitae metus luctus interdum. Suspendisse tempus, eros
+                        vitae faucibus tempus, tortor mi blandit lacus, eu mollis quam tortor vitae urna.</p>
+                    <p class="filler-text">Fusce vitae finibus eros. Cras vehicula sed libero non gravida. Aliquam
+                        maximus a est vel bibendum. Quisque pellentesque odio eget vehicula posuere. Suspendisse
+                        potenti. Praesent maximus dictum eros, sit amet suscipit felis dignissim et. Aliquam pulvinar
+                        consequat libero, in molestie nisi molestie nec. Suspendisse ultricies nisi quis lacus
+                        sollicitudin rhoncus.</p>
+                </section>
+
+                <section id="section7" class="section">
+                    <h2>7. Browser Compatibility</h2>
+                    <hr>
+                    <p>The <code>position: sticky</code> property is well-supported in modern browsers, but may need
+                        polyfills for older ones.</p>
+                    <p class="filler-text">Ut et tellus vel nunc volutpat pharetra id ac nisi. Nam ac enim eget velit
+                        maximus vulputate in eget elit. Proin dictum metus non neque pharetra feugiat. Proin quis
+                        blandit dui. Etiam tempus scelerisque erat, ut maximus erat faucibus eu. Etiam aliquam nibh at
+                        ante auctor, non cursus lacus placerat. Quisque ultricies augue eu massa aliquet vestibulum.</p>
+                    <p class="filler-text">Morbi hendrerit mauris dui, sit amet ultrices odio aliquam ut. Nam vitae ex
+                        et arcu scelerisque tristique at id ligula. Nullam fringilla est eu tortor viverra accumsan.
+                        Donec et enim in ex dapibus malesuada. Duis pulvinar lacinia dui, sed varius mi blandit eget.
+                        Nulla facilisi. Aliquam dignissim ante non risus condimentum, at molestie mi faucibus. Morbi
+                        tincidunt varius leo, a faucibus nulla tincidunt non. Morbi feugiat gravida velit, at dapibus
+                        quam euismod ac.</p>
+                    <p class="filler-text">Suspendisse vel orci at neque iaculis luctus. Phasellus vitae ipsum nec mi
+                        tempus imperdiet. Ut ultrices diam non ante maximus, ut auctor nibh volutpat. Ut id ex nec felis
+                        posuere posuere. Maecenas et sagittis urna. Vivamus mattis, neque a consectetur lacinia, nibh
+                        nulla posuere lectus, ut pellentesque ante nulla at lectus. Fusce feugiat blandit purus, quis
+                        vestibulum lacus convallis eget.</p>
+                </section>
+            </main>
+
+            <aside class="toc-column">
+                <nav class="toc" role="navigation" aria-label="Table of Contents">
+                    <h2 class="toc-title">Contents</h2>
+                    <ul class="toc-list">
+                        <li class="toc-item">
+                            <a href="#section1" class="toc-link active">
+                                <span class="toc-number">1.</span>
+                                Introduction
+                            </a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#section2" class="toc-link">
+                                <span class="toc-number">2.</span>
+                                How It Works
+                            </a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#section3" class="toc-link">
+                                <span class="toc-number">3.</span>
+                                CSS Implementation
+                            </a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#section4" class="toc-link">
+                                <span class="toc-number">4.</span>
+                                JavaScript Enhancement
+                            </a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#section5" class="toc-link">
+                                <span class="toc-number">5.</span>
+                                Handling Edge Cases
+                            </a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#section6" class="toc-link">
+                                <span class="toc-number">6.</span>
+                                Mobile Considerations
+                            </a>
+                        </li>
+                        <li class="toc-item">
+                            <a href="#section7" class="toc-link">
+                                <span class="toc-number">7.</span>
+                                Browser Compatibility
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Visual indicator that shows when TOC is sticky -->
+    <div class="sticky-indicator">TOC is sticky!</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get DOM elements
+            const sections = document.querySelectorAll('.section');
+            const tocLinks = document.querySelectorAll('.toc-link');
+            const toc = document.querySelector('.toc');
+            const stickyIndicator = document.querySelector('.sticky-indicator');
+
+            // Smooth scrolling for TOC links
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const headerOffset = 30;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Update active state in TOC
+                        tocLinks.forEach(l => l.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // Shadow effect and sticky indicator when TOC becomes sticky
+            function updateTocEffects() {
+                // Check if TOC is sticky by examining its position relative to document
+                const tocRect = toc.getBoundingClientRect();
+
+                if (window.scrollY > 100) {
+                    toc.classList.add('shadow-active');
+                    stickyIndicator.classList.add('visible');
+                } else {
+                    toc.classList.remove('shadow-active');
+                    stickyIndicator.classList.remove('visible');
+                }
+            }
+
+            // Set up IntersectionObserver to detect which section is in view
+            const observerOptions = {
+                rootMargin: '-10% 0px -70% 0px',
+                threshold: [0, 0.25, 0.5, 0.75, 1]
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio > 0.25) {
+                        const activeId = entry.target.getAttribute('id');
+
+                        // Update active link in TOC
+                        tocLinks.forEach(link => {
+                            const href = link.getAttribute('href').substring(1);
+
+                            if (href === activeId) {
+                                link.classList.add('active');
+                            } else {
+                                link.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Update TOC effects on scroll
+            window.addEventListener('scroll', updateTocEffects);
+
+            // Initialize states
+            updateTocEffects();
+        });
+    </script>
+</body>
+
+</html>
