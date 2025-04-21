@@ -28,13 +28,14 @@
     <!-- Critical CSS -->
     <style>
         :root {
-            --primary-color: #2D3748;
-            --text-color: #4A5568;
-            --light-gray: #F7FAFC;
-            --border-color: #E2E8F0;
-            --bg-color: white;
-            --card-bg: white;
-            --pure-white: #FFFFFF;
+            --primary-color: #c82525;
+            --text-color: #4d0000;
+            --light-gray: #fff7f7;
+            --border-color: #c01c1c;
+            --bg-color: #fff7f7;
+            --card-bg: #ffffff;
+            --pure-white: #ffffff;
+            --sidebar-width: 250px;
         }
 
         body {
@@ -55,14 +56,22 @@
 
         .main-content {
             flex: 1;
-            margin-left: 250px;
+            margin-left: var(--sidebar-width);
             padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .error-content {
             max-width: 600px;
-            margin: 4rem auto;
+            width: 100%;
             text-align: center;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 8px rgba(192, 28, 28, 0.1);
         }
 
         .error-title {
@@ -87,6 +96,17 @@
         #requestedPath {
             font-family: monospace;
             word-break: break-all;
+        }
+
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+            .main-content {
+                margin-left: 0;
+            }
+
+            .error-content {
+                width: 90%;
+            }
         }
     </style>
 
@@ -119,8 +139,10 @@
         <main class="main-content" role="main">
             <div class="error-content">
                 <h1 class="error-title">404</h1>
-                <p class="error-message">The page you're looking for doesn't exist.</p>
-                <p>Try using the navigation menu to find what you're looking for.</p>
+                <p class="error-message">You found an error</p>
+                <p>Try using the navigation menu to find what you're looking for, and if that doesn't work,
+                    <a href="/contact">contact us</a> to fix it.
+                </p>
                 <div class="debug-info">
                     <h2>Debug Information</h2>
                     <p>Requested Path: <span id="requestedPath"></span></p>

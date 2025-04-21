@@ -315,7 +315,7 @@ function ensureSidebarFooterPosition() {
                     padding: "1.5rem 0",
                     backgroundColor: "#ffd4d4",
                     zIndex: "101",
-                    borderRight: "1px solid #ffb3b3",
+                    borderRight: "2px solid var(--border-color)",
                });
 
                // Ensure social links are centered

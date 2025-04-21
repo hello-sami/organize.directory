@@ -68,9 +68,9 @@
 
             // Combine conditional checks for better performance
             const needsHtml = !href.includes('.') && !href.includes('?');
-            const isSpecialPath = href.match(/^\/(cities|states|topics|posts)\/[^/]+$/);
+            const isSpecialPath = href.match(/^\/(cities|states|topics|posts)\/[^/]+$/) && !href.endsWith('.html');
 
-            if (isSpecialPath || needsHtml) {
+            if ((isSpecialPath || needsHtml) && !href.endsWith('.html')) {
                 e.preventDefault();
                 window.location.href = href + '.html';
             }
@@ -135,8 +135,8 @@
             <h1>The Organize Directory</h1>
 
             <!-- Add tagline -->
-            <p class="tagline">An (incomplete) list of leftist and grassroots activist groups near and far. Don't
-                despair, organize.</p>
+            <p class="tagline">An (incomplete) list of leftist and grassroots activist groups <br>near and far.
+                <strong>Don't despair, organize.</strong></p>
 
             <div class="homepage-content">
                 <!-- Remove duplicate search box -->
