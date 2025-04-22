@@ -1184,6 +1184,34 @@ html .topic-name,
      /* Space for TOC */
 }
 
+/* Mobile TOC toggle button */
+.mobile-toc-toggle {
+     display: none;
+     width: 100%;
+     background-color: var(--bg-medium);
+     border: 2px solid var(--red-base);
+     border-radius: 8px;
+     padding: 0.8rem 1rem;
+     margin: 1rem 0 2rem;
+     font-weight: 600;
+     color: var(--red-base);
+     text-align: left;
+     cursor: pointer;
+     position: relative;
+}
+
+.mobile-toc-toggle::after {
+     content: "+";
+     position: absolute;
+     right: 1rem;
+     font-size: 1.2rem;
+     transition: transform 0.3s ease;
+}
+
+.mobile-toc-toggle.open::after {
+     content: "−";
+}
+
 /* Mobile styles */
 @media (max-width: 1019px) {
      .city-content {
@@ -1194,12 +1222,38 @@ html .topic-name,
      .toc-container {
           position: static;
           width: 100%;
-          margin: 2rem 0;
+          margin: 0 0 2rem;
      }
 
      .toc {
           width: 100%;
           position: static !important;
+          display: none;
+          max-height: none;
+          margin-top: 0.5rem;
+     }
+
+     .toc.open {
+          display: block;
+     }
+
+     .mobile-toc-toggle {
+          display: block;
+     }
+}
+
+/* Responsive adjustments for even smaller screens */
+@media (max-width: 480px) {
+     .content-wrapper {
+          padding: 0 0.5rem;
+     }
+
+     .toc {
+          padding: 1rem;
+     }
+
+     .mobile-toc-toggle {
+          padding: 0.7rem 0.8rem;
      }
 }
 

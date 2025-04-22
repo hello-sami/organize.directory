@@ -35,6 +35,48 @@ document.addEventListener("DOMContentLoaded", function () {
                return;
           }
 
+          // Create mobile TOC toggle button
+          const mobileTocToggle = document.createElement("button");
+          mobileTocToggle.className = "mobile-toc-toggle";
+          mobileTocToggle.textContent = "Table of Contents";
+          mobileTocToggle.setAttribute("aria-expanded", "false");
+          mobileTocToggle.setAttribute("aria-controls", "toc");
+
+          // Insert toggle button before TOC
+          tocContainer.insertBefore(mobileTocToggle, toc);
+
+          // Add click event to toggle TOC visibility
+          mobileTocToggle.addEventListener("click", function () {
+               const isExpanded = this.getAttribute("aria-expanded") === "true";
+               this.setAttribute("aria-expanded", !isExpanded);
+               this.classList.toggle("open");
+               toc.classList.toggle("open");
+
+               // Scroll to the TOC if opening
+               if (!isExpanded) {
+                    mobileTocToggle.scrollIntoView({
+                         behavior: "smooth",
+                         block: "start",
+                    });
+               }
+          });
+
+          // Make TOC links close the mobile TOC after clicking
+          if (window.innerWidth < 1020) {
+               document.querySelectorAll(".toc-link").forEach((link) => {
+                    link.addEventListener("click", function () {
+                         if (window.innerWidth < 1020) {
+                              mobileTocToggle.classList.remove("open");
+                              toc.classList.remove("open");
+                              mobileTocToggle.setAttribute(
+                                   "aria-expanded",
+                                   "false"
+                              );
+                         }
+                    });
+               });
+          }
+
           // Initialize TOC position variables
           let initialTocTop = 0;
           let rightOffset = 0;
@@ -149,6 +191,24 @@ document.addEventListener("DOMContentLoaded", function () {
                function () {
                     calculatePositions();
                     updateTocPosition();
+
+                    // Update mobile TOC event handlers on resize
+                    if (window.innerWidth < 1020) {
+                         document
+                              .querySelectorAll(".toc-link")
+                              .forEach((link) => {
+                                   link.addEventListener("click", function () {
+                                        mobileTocToggle.classList.remove(
+                                             "open"
+                                        );
+                                        toc.classList.remove("open");
+                                        mobileTocToggle.setAttribute(
+                                             "aria-expanded",
+                                             "false"
+                                        );
+                                   });
+                              });
+                    }
                },
                { passive: true }
           );
