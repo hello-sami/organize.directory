@@ -443,7 +443,7 @@ li {
      flex: 1;
      width: 100%;
      max-width: 1200px;
-     margin: 0;
+     margin: 0 auto;
      padding: 5rem;
      position: relative;
      background: var(--background-color);
@@ -643,50 +643,64 @@ li {
 
 /* Find Groups Buttons */
 .find-groups-buttons {
-     /* margin: 2rem auto 4rem; */
+     margin: 2.5rem auto;
+     max-width: 800px;
 }
 
 .buttons-container {
      display: flex;
-     justify-content: center;
+     flex-direction: row;
      gap: 1.5rem;
-     max-width: 800px;
-     margin: 0 auto;
+     justify-content: center;
 }
 
 .find-groups-button {
      background-color: var(--red-base);
      color: white;
-     border: none;
-     padding: 1rem 2rem;
-     font-size: 1.1rem;
-     border-radius: 4px;
-     text-align: center;
-     min-width: 280px;
-     box-shadow: 0 2px 4px rgba(192, 28, 28, 0.15);
-     font-weight: 500;
+     padding: 1rem 1.5rem;
+     border-radius: 8px;
      text-decoration: none;
-     display: block;
+     font-weight: 600;
+     font-size: 1.1rem;
+     transition: all 0.2s ease;
+     box-shadow: 0 4px 6px rgba(200, 37, 37, 0.2);
+     border: 2px solid var(--red-base);
+     flex: 1;
+     text-align: center;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 0.5rem;
+}
+
+.primary-button {
+     background-color: var(--red-base);
+     color: white;
+}
+
+.secondary-button {
+     background-color: white;
+     color: var(--red-base);
+}
+
+.button-icon {
+     width: 20px;
+     height: 20px;
 }
 
 .find-groups-button:hover {
-     background-color: var(--red-base);
-     color: white;
-     text-decoration: none;
+     background-color: #e02e2e;
      transform: translateY(-2px);
-     box-shadow: 0 4px 8px rgba(192, 28, 28, 0.2);
-     border-bottom: none;
+     box-shadow: 0 6px 12px rgba(200, 37, 37, 0.25);
 }
 
 .find-groups-button:active {
-     transform: translateY(1px);
-     box-shadow: 0 2px 4px rgba(192, 28, 28, 0.1);
+     transform: translateY(0px);
+     box-shadow: 0 2px 4px rgba(200, 37, 37, 0.3);
 }
 
 .button-text {
-     font-size: 1.2rem;
-     font-weight: 600;
-     font-family: "Inter", sans-serif;
+     font-family: var(--heading-font);
 }
 
 /* Statistics Container */
@@ -701,66 +715,214 @@ li {
 }
 
 .stat-item {
+     text-align: center;
+     padding: 0.5rem 1rem;
+     width: 33.33%;
      display: flex;
      flex-direction: column;
      align-items: center;
-     text-align: center;
 }
 
 .stat-number {
-     font-size: 3.5rem;
-     font-weight: 800;
-     color: var(--red-base);
-     line-height: 1;
-     margin-bottom: 0.75rem;
-     font-family: "Saira Semi Condensed", sans-serif;
+     display: block;
+     font-size: 5rem !important;
+     font-weight: 800 !important;
+     color: var(--red-base) !important;
+     line-height: 1 !important;
+     margin-bottom: 0.75rem !important;
+     font-family: var(--heading-font) !important;
 }
 
 .stat-label {
-     font-size: 1.2rem;
-     font-weight: 700;
-     color: var(--red-base);
-     text-transform: uppercase;
-     font-family: "Saira Semi Condensed", sans-serif;
+     display: block !important;
+     font-size: 1.1rem !important;
+     font-weight: 700 !important;
+     color: var(--red-base) !important;
+     text-transform: uppercase !important;
+     font-family: var(--heading-font) !important;
+     letter-spacing: 0.05em !important;
 }
 
 /* Initiative Statistics Section */
 .initiative-stats {
-     background-color: #fff;
+     background: white;
      border: 2px solid var(--red-base);
-     border-radius: 12px;
-     padding: 2.5rem 2rem;
+     border-radius: 15px;
+     padding: 2rem;
      margin: 2rem auto 3rem;
      max-width: 800px;
+     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+     transition: all 0.3s ease;
+     position: relative;
+     overflow: hidden;
 }
 
-/* Mobile adjustments for statistics section */
-@media (max-width: 768px) {
-     .initiative-stats {
-          padding: 1.25rem 1rem;
-          margin: 1rem auto 2rem;
-          border-width: 1px;
+.stats-container {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+}
+
+.stat-item {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     text-align: center;
+     padding: 0.5rem 1rem;
+     position: relative;
+}
+
+.stat-number {
+     font-size: 4rem; /* Increased from 3.5rem */
+     font-weight: 800;
+     color: var(--red-base);
+     line-height: 1;
+     margin-bottom: 0.75rem;
+     font-family: var(--heading-font);
+     display: block; /* Ensure visibility */
+}
+
+.stat-label {
+     font-size: 1.1rem;
+     font-weight: 700;
+     color: var(--red-base);
+     text-transform: uppercase;
+     font-family: var(--heading-font);
+     letter-spacing: 0.05em;
+     display: block; /* Ensure visibility */
+}
+
+/* Mobile stats display */
+.stat-mobile-label {
+     display: none; /* Hidden by default */
+     font-size: 1.4rem;
+     font-weight: 700;
+     text-align: left;
+     font-family: var(--heading-font);
+     color: var(--red-base);
+     line-height: 1.2;
+}
+
+/* Desktop stats layout - always use this for non-mobile */
+@media (min-width: 769px) {
+     .stat-mobile-label {
+          display: none;
+     }
+
+     .stat-number,
+     .stat-label {
+          display: block;
      }
 
      .stats-container {
+          display: flex;
           flex-direction: row;
-          flex-wrap: wrap;
-          gap: 1rem;
+          justify-content: space-around;
+          align-items: center;
      }
 
      .stat-item {
-          flex: 1;
-          min-width: 90px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
      }
 
-     .stat-number {
-          font-size: 2.25rem;
-          margin-bottom: 0.25rem;
+     /* Override any conflicting styles */
+     body .stat-number,
+     html .stat-number,
+     .page-home .stat-number,
+     body .stat-label,
+     html .stat-label,
+     .page-home .stat-label {
+          display: block;
      }
 
+     body .stats-container,
+     html .stats-container,
+     .page-home .stats-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+     }
+
+     body .stat-item,
+     html .stat-item,
+     .page-home .stat-item {
+          width: auto;
+          text-align: center;
+          padding: 0.5rem 1rem;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+     }
+}
+
+/* Mobile styles - only apply these on mobile screens */
+@media (max-width: 768px) {
+     /* Mobile stats layout */
+     body .stat-number,
+     html .stat-number,
+     .page-home .stat-number,
+     .stat-number,
+     body .stat-label,
+     html .stat-label,
+     .page-home .stat-label,
      .stat-label {
-          font-size: 0.85rem;
-          font-weight: 600;
+          display: none;
+     }
+
+     /* Mobile stats display */
+     body .stat-mobile-label,
+     html .stat-mobile-label,
+     .page-home .stat-mobile-label,
+     .stat-mobile-label {
+          display: block;
+          font-size: 1.3rem;
+          line-height: 1.2;
+          font-weight: 700;
+          color: var(--red-base);
+          font-family: "Saira Semi Condensed", sans-serif;
+          text-align: left;
+          margin: 0;
+          padding: 0;
+     }
+
+     /* Mobile vertical stats layout */
+     body .stats-container,
+     html .stats-container,
+     .page-home .stats-container,
+     .stats-container {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+          width: 100%;
+     }
+
+     body .stat-item,
+     html .stat-item,
+     .page-home .stat-item,
+     .stat-item {
+          width: 100%;
+          text-align: left;
+          padding: 0 0.5rem;
+          margin: 0;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          min-height: auto;
+     }
+
+     body .initiative-stats,
+     html .initiative-stats,
+     .page-home .initiative-stats,
+     .initiative-stats {
+          padding: 1.25rem;
+          margin: 0.75rem auto 1.25rem;
+          border-width: 1px;
      }
 }
 
@@ -1200,8 +1362,9 @@ html .topic-name,
 
 /* Main content styling - with right margin for TOC */
 .city-content {
-     width: calc(100% - 320px);
-     margin-right: 320px;
+     width: calc(100% - 350px);
+     margin-right: 350px;
+     margin-left: 30px;
      /* Space for TOC */
 }
 
@@ -1242,7 +1405,8 @@ html .topic-name,
 @media (max-width: 1019px) {
      .city-content {
           width: 100%;
-          margin-right: 0;
+          margin: 0 auto;
+          max-width: 1000px;
           order: 2; /* Change order in flexbox layout */
      }
 
@@ -1300,7 +1464,7 @@ html .topic-name,
 /* City and Location page specific */
 .city-page {
      width: 100%;
-     max-width: 1200px;
+     max-width: 800px;
      margin: 0 auto;
      contain: content;
      will-change: auto;
@@ -1421,6 +1585,7 @@ html .topic-name,
      display: flex;
      flex-direction: column;
      position: relative;
+     cursor: pointer;
 }
 
 .initiative:last-child {
@@ -1445,6 +1610,7 @@ html .topic-name,
      padding-right: 100px;
      position: relative;
      display: inline-block;
+     z-index: 2; /* Ensure the link is above other elements */
 }
 
 .initiative a:hover {
@@ -1473,7 +1639,54 @@ html .topic-name,
      margin: 0.3rem 0 0 0;
      padding: 0;
      color: var(--text-color);
+     position: relative;
+     z-index: 1;
+     pointer-events: none; /* Allow clicks to pass through to the underlying wrapper */
 }
+
+/* Create a pseudo-element that covers the entire initiative container */
+.initiative::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     z-index: 0;
+}
+
+/* Make the initiative container act as a link wrapper */
+.initiative {
+     position: relative;
+}
+
+/* Extend the link to cover the whole container */
+.initiative a::before {
+     content: "";
+     position: absolute;
+     top: -10px; /* Extend beyond the anchor itself */
+     left: -10px;
+     right: -10px;
+     bottom: -100%; /* Cover the entire container below */
+     z-index: 1;
+}
+
+/* When hovering over the initiative container, style the anchor tag as if it was hovered */
+.initiative:hover a {
+     color: var(--red-base);
+     text-decoration: underline;
+     text-decoration-color: var(--red-base);
+}
+
+/* Show the arrow when hovering over the container */
+.initiative:hover a::after {
+     content: "→";
+     position: absolute;
+     margin-left: 5px;
+     display: inline-block;
+}
+
+/* JavaScript will be used to make the container clickable */
 
 /* New mobile initiative collapsible styles */
 @media (max-width: 768px) {
@@ -2719,7 +2932,10 @@ body[class*="page-cities-"] h2,
      color: var(--red-base);
      font-weight: 200;
      padding-top: 1rem;
+     padding-left: 0;
+     padding-right: 0;
      border-top: 2px solid var(--red-base);
+     text-align: left;
 }
 
 /* Ensure mobile styles properly handle these headings */
@@ -2904,6 +3120,7 @@ body.page-home h1 {
 
 .buttons-container {
      display: flex;
+     flex-direction: row;
      gap: 1.5rem;
      justify-content: center;
 }
@@ -2987,12 +3204,13 @@ body.page-home h1 {
 }
 
 .stat-number {
-     font-size: 3.5rem;
+     font-size: 4rem; /* Increased from 3.5rem */
      font-weight: 800;
      color: var(--red-base);
      line-height: 1;
      margin-bottom: 0.75rem;
      font-family: var(--heading-font);
+     display: block; /* Ensure visibility */
 }
 
 .stat-label {
@@ -3002,6 +3220,141 @@ body.page-home h1 {
      text-transform: uppercase;
      font-family: var(--heading-font);
      letter-spacing: 0.05em;
+     display: block; /* Ensure visibility */
+}
+
+/* Mobile stats display */
+.stat-mobile-label {
+     display: none; /* Hidden by default */
+     font-size: 1.4rem;
+     font-weight: 700;
+     text-align: left;
+     font-family: var(--heading-font);
+     color: var(--red-base);
+     line-height: 1.2;
+}
+
+/* Desktop stats layout - always use this for non-mobile */
+@media (min-width: 769px) {
+     .stat-mobile-label {
+          display: none;
+     }
+
+     .stat-number,
+     .stat-label {
+          display: block;
+     }
+
+     .stats-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+     }
+
+     .stat-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+     }
+
+     /* Override any conflicting styles */
+     body .stat-number,
+     html .stat-number,
+     .page-home .stat-number,
+     body .stat-label,
+     html .stat-label,
+     .page-home .stat-label {
+          display: block;
+     }
+
+     body .stats-container,
+     html .stats-container,
+     .page-home .stats-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+     }
+
+     body .stat-item,
+     html .stat-item,
+     .page-home .stat-item {
+          width: auto;
+          text-align: center;
+          padding: 0.5rem 1rem;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+     }
+}
+
+/* Mobile styles - only apply these on mobile screens */
+@media (max-width: 768px) {
+     /* Mobile stats layout */
+     body .stat-number,
+     html .stat-number,
+     .page-home .stat-number,
+     .stat-number,
+     body .stat-label,
+     html .stat-label,
+     .page-home .stat-label,
+     .stat-label {
+          display: none;
+     }
+
+     /* Mobile stats display */
+     body .stat-mobile-label,
+     html .stat-mobile-label,
+     .page-home .stat-mobile-label,
+     .stat-mobile-label {
+          display: block;
+          font-size: 1.3rem;
+          line-height: 1.2;
+          font-weight: 700;
+          color: var(--red-base);
+          font-family: var(--heading-font);
+          text-align: left;
+          margin: 0;
+          padding: 0;
+     }
+
+     /* Mobile vertical stats layout */
+     body .stats-container,
+     html .stats-container,
+     .page-home .stats-container,
+     .stats-container {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+          width: 100%;
+     }
+
+     body .stat-item,
+     html .stat-item,
+     .page-home .stat-item,
+     .stat-item {
+          width: 100%;
+          text-align: left;
+          padding: 0 0.5rem;
+          margin: 0;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          min-height: auto;
+     }
+
+     body .initiative-stats,
+     html .initiative-stats,
+     .page-home .initiative-stats,
+     .initiative-stats {
+          padding: 1.25rem;
+          margin: 0.75rem auto 1.25rem;
+          border-width: 1px;
+     }
 }
 
 /* Description below stats */
@@ -3015,23 +3368,6 @@ body.page-home h1 {
      border-top: 1px solid rgba(200, 37, 37, 0.1);
      padding-top: 1.5rem;
      margin-top: 1.5rem;
-}
-
-/* Mobile stats display */
-.stat-mobile-label {
-     display: none;
-     font-size: 1.4rem;
-     font-weight: 700;
-     text-align: left;
-     font-family: var(--heading-font);
-     color: var(--red-base);
-     line-height: 1.2;
-}
-
-/* Mobile styles */
-.tagline {
-     font-size: 1rem;
-     margin-bottom: 1.5rem;
 }
 
 /* Mobile stats layout */
@@ -3056,7 +3392,7 @@ html .stat-mobile-label,
      line-height: 1.2;
      font-weight: 700;
      color: var(--red-base);
-     font-family: var(--heading-font);
+     font-family: "Saira Semi Condensed", sans-serif;
      text-align: left;
      margin: 0;
      padding: 0;
@@ -3099,17 +3435,20 @@ html .initiative-stats,
 
 /* Mobile button layout */
 .find-groups-buttons {
-     margin: 0.5rem auto 2rem;
+     margin: 2.5rem auto;
+     max-width: 800px;
 }
 
 .buttons-container {
-     flex-direction: column;
-     gap: 0.75rem;
+     display: flex;
+     flex-direction: row;
+     gap: 1.5rem;
      width: 100%;
+     justify-content: center;
 }
 
 .find-groups-button {
-     width: 100%;
+     flex: 1;
      margin: 0;
      padding: 0.75rem 1rem;
      text-align: center;
@@ -3118,8 +3457,8 @@ html .initiative-stats,
 
 /* Mobile button icons */
 .button-icon {
-     width: 18px;
-     height: 18px;
+     width: 20px;
+     height: 20px;
 }
 
 /* Mobile button styling */
@@ -3216,13 +3555,14 @@ html .initiative-stats,
           font-size: 1.5rem;
           margin-top: 2rem;
           margin-bottom: 1rem;
-          padding: 0.5rem 0.8rem;
+          padding: 0.5rem 0;
           letter-spacing: 0.01em;
           font-weight: 600;
           background-color: var(--bg-medium);
           border-radius: 6px;
           border-left: none;
           box-shadow: 0 1px 3px rgba(200, 37, 37, 0.12);
+          text-align: center;
      }
 }
 
@@ -3237,13 +3577,14 @@ html .initiative-stats,
           font-size: 1.4rem;
           margin-top: 2rem;
           margin-bottom: 1rem;
-          padding: 0.5rem 0.8rem;
+          padding: 0.5rem 0;
           letter-spacing: 0.01em;
           font-weight: 600;
           background-color: var(--bg-medium);
           border-radius: 6px;
           border-left: none;
           box-shadow: 0 1px 3px rgba(200, 37, 37, 0.12);
+          text-align: center;
      }
 }
 
@@ -3649,5 +3990,218 @@ textarea:focus-visible {
      .state-page .city-links-container a::after,
      .state-page .city-links-container .city-link::after {
           font-size: 0.9rem;
+     }
+}
+
+/* Mobile stats layout - LIMIT THIS TO MOBILE ONLY */
+@media (max-width: 768px) {
+     body .stat-number,
+     html .stat-number,
+     .page-home .stat-number,
+     .stat-number,
+     body .stat-label,
+     html .stat-label,
+     .page-home .stat-label,
+     .stat-label {
+          display: none;
+     }
+
+     /* Mobile stats display */
+     body .stat-mobile-label,
+     html .stat-mobile-label,
+     .page-home .stat-mobile-label,
+     .stat-mobile-label {
+          display: block;
+          font-size: 1.3rem;
+          line-height: 1.2;
+          font-weight: 700;
+          color: var(--red-base);
+          font-family: "Saira Semi Condensed", sans-serif;
+          text-align: left;
+          margin: 0;
+          padding: 0;
+     }
+
+     /* Mobile vertical stats layout */
+     body .stats-container,
+     html .stats-container,
+     .page-home .stats-container,
+     .stats-container {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+          width: 100%;
+     }
+
+     body .stat-item,
+     html .stat-item,
+     .page-home .stat-item,
+     .stat-item {
+          width: 100%;
+          text-align: left;
+          padding: 0 0.5rem;
+          margin: 0;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          min-height: auto;
+     }
+}
+
+/* Desktop stats layout - explicitly show big numbers */
+@media (min-width: 769px) {
+     /* Ensure stats are visible */
+     .stat-number,
+     body .stat-number,
+     html .stat-number,
+     .page-home .stat-number {
+          display: block;
+          font-size: 4.5rem;
+          font-weight: 800;
+          color: var(--red-base);
+          line-height: 1;
+          margin-bottom: 0.75rem;
+          font-family: var(--heading-font);
+     }
+
+     .stat-label,
+     body .stat-label,
+     html .stat-label,
+     .page-home .stat-label {
+          display: block;
+          font-size: 1.1rem;
+          font-weight: 700;
+          color: var(--red-base);
+          text-transform: uppercase;
+          font-family: var(--heading-font);
+          letter-spacing: 0.05em;
+     }
+
+     /* Hide mobile labels */
+     .stat-mobile-label,
+     body .stat-mobile-label,
+     html .stat-mobile-label,
+     .page-home .stat-mobile-label {
+          display: none;
+     }
+
+     /* Ensure proper container layout */
+     .stats-container,
+     body .stats-container,
+     html .stats-container,
+     .page-home .stats-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+          width: 100%;
+     }
+
+     /* Ensure proper item layout */
+     .stat-item,
+     body .stat-item,
+     html .stat-item,
+     .page-home .stat-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          width: auto;
+          padding: 0.5rem 1rem;
+     }
+}
+
+@media (min-width: 769px) {
+     .stat-mobile-label {
+          display: none !important;
+     }
+
+     .stat-number,
+     .stat-label {
+          display: block !important;
+     }
+
+     /* Make stats bigger with important flags to override any conflicting styles */
+     .stat-number,
+     body .stat-number,
+     html .stat-number,
+     .page-home .stat-number {
+          display: block !important;
+          font-size: 5rem !important;
+          font-weight: 800 !important;
+          color: var(--red-base) !important;
+          line-height: 1 !important;
+          margin-bottom: 0.75rem !important;
+          font-family: var(--heading-font) !important;
+     }
+
+     .stat-label,
+     body .stat-label,
+     html .stat-label,
+     .page-home .stat-label {
+          display: block !important;
+          font-size: 1.1rem !important;
+          font-weight: 700 !important;
+          color: var(--red-base) !important;
+          text-transform: uppercase !important;
+          font-family: var(--heading-font) !important;
+          letter-spacing: 0.05em !important;
+     }
+
+     .stats-container {
+          display: flex !important;
+          flex-direction: row !important;
+          justify-content: space-around !important;
+          align-items: center !important;
+     }
+
+     .stat-item {
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+          text-align: center !important;
+     }
+
+     /* Override any conflicting styles */
+     body .stat-number,
+     html .stat-number,
+     .page-home .stat-number,
+     body .stat-label,
+     html .stat-label,
+     .page-home .stat-label {
+          display: block !important;
+     }
+
+     body .stats-container,
+     html .stats-container,
+     .page-home .stats-container {
+          display: flex !important;
+          flex-direction: row !important;
+          justify-content: space-around !important;
+          align-items: center !important;
+     }
+
+     body .stat-item,
+     html .stat-item,
+     .page-home .stat-item {
+          width: auto !important;
+          text-align: center !important;
+          padding: 0.5rem 1rem !important;
+          margin: 0 !important;
+          display: flex !important;
+          flex-direction: column !important;
+          align-items: center !important;
+     }
+
+     /* Ensure proper styling for the stats container */
+     .initiative-stats,
+     body .initiative-stats,
+     html .initiative-stats,
+     .page-home .initiative-stats {
+          padding: 2rem !important;
+          margin: 2rem auto 3rem !important;
+          border-width: 2px !important;
+          max-width: 800px !important;
      }
 }

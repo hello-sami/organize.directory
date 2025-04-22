@@ -54,8 +54,8 @@
         initializeComponents({
         });
     </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+    <!-- Mobile optimizations -->
+    <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
@@ -65,7 +65,7 @@
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 
-            <div class="city-page">
+            <div class="page-header">
                 <div class="breadcrumb">
                     <a href="/new-york">New York</a>
                     <span>›</span>
@@ -75,89 +75,279 @@
                 </div>
 
                 <h1>Brooklyn</h1>
+            </div>
+
+            <!-- Wrapper for content and TOC with positioning context -->
+            <div class="content-wrapper">
+                <!-- Main content -->
+                <div class="city-content">
+
+                    <section id="housing" class="city-section">
+                        <h2>Housing</h2>
+
+                        <div class="initiative">
+                            <a href="https://www.bedtu.org/">Brooklyn Eviction Defense Tenant Union</a>
+                            <p>Fighting evictions and supporting tenants in Brooklyn.</p>
+                        </div>
+                    </section>
+
+                    <section id="food" class="city-section">
+                        <h2>Food Support</h2>
+
+                        <div class="initiative">
+                            <a href="http://cbfood.org/">Central Brooklyn Food Coop</a>
+                            <p>
+                                A Black-led, member-owned and operated food cooperative building
+                                food sovereignty through collective ownership, affordable
+                                healthy food access, and community wealth building in Central
+                                Brooklyn.
+                            </p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/comidapalpueblo/">Comida Pal Pueblo</a>
+                            <p>North Brooklyn biweekly food &amp; survival program.</p>
+                        </div>
+                    </section>
+
+                    <section id="williamsburg" class="city-section">
+                        <h2>Williamsburg / Greenpoint</h2>
+                        <div class="initiative">
+                            <a href="https://www.northbrooklynmutualaid.org/">North Brooklyn Mutual Aid</a>
+                            <p>
+                                A network of residents in Williamsburg and Greenpoint working together to provide aid
+                                and resources to neighbors.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="bed-stuy" class="city-section">
+                        <h2>Bedford-Stuyvesant (Bed-Stuy)</h2>
+                        <div class="initiative">
+                            <a href="https://bedstuystrong.com">Bed-Stuy Strong</a>
+                            <p>A mutual aid network of neighbors helping neighbors in Bedford-Stuyvesant.</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://anotherworld.nyc/">Another World</a>
+                            <p>Upcoming radical community space in Bed-Stuy</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.riders4rights.org/">Riders for Rights</a>
+                            <p>Riders4Rights is a Black-led mutual aid organization in BedStuy, Brooklyn</p>
+                        </div>
+                    </section>
+
+                    <section id="crown-heights" class="city-section">
+                        <h2>Crown Heights</h2>
+                        <div class="initiative">
+                            <a href="https://crownheightsmutualaid.wordpress.com/">Crown Heights Mutual Aid</a>
+                            <p>Community support network in Crown Heights.</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/chcarecollective/">Crown Heights Care Collective</a>
+                            <p>Community - Abolition - Resources - Education - Against policing</p>
+                        </div>
+                    </section>
+
+                    <section id="bushwick" class="city-section">
+                        <h2>Bushwick</h2>
+                        <div class="initiative">
+                            <a href="https://bushwickayudamutua.com/">Bushwick Ayuda Mutua</a>
+                            <p>Bushwick neighbors helping Bushwick neighbors through mutual aid.</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/micasaresiste/">Mi Casa Resiste</a>
+                            <p>Bushwick anticapitalist collective using art and direct action to fight the displacement
+                                and criminalization of low-income Black & Brown families in Brooklyn.</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/bushwickcityfarms/">Bushwick City Farms</a>
+                            <p>Community-run garden & mutual aid. Open hours are on Wednesday & weekend afternoons. New
+                                volunteers are encouraged to come Sundays</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.bhipbk.org/">Bushwick Housing Independence Project</a>
+                            <p>Building the collective strength, stability, visibility and self-determination of
+                                Bushwick’s working class and immigrant renters.</p>
+                        </div>
+                    </section>
+
+                    <section id="clinton-hill-fort-greene" class="city-section">
+                        <h2>Clinton Hill / Fort Greene</h2>
+                        <div class="initiative">
+                            <a href="https://www.chfgma.org/">Clinton Hill/Fort Greene Mutual Aid</a>
+                            <p>Neighbors helping neighbors in Clinton Hill and Fort Greene.</p>
+                        </div>
+                    </section>
+
+                    <section id="park-slope" class="city-section">
+                        <h2>Park Slope</h2>
+                    </section>
+
+                    <section id="flatbush" class="city-section">
+                        <h2>Flatbush</h2>
+                        <div class="initiative">
+                        </div>
+                    </section>
 
 
-                <div class="toc">
-                    <h2 class="toc-title">Contents</h2>
-                    <ul class="toc-list">
-                        <li class="toc-item">
-                            <a href="#mutual-aid" class="toc-link">
-                                <span class="toc-number">1.</span>
-                                Mutual Aid Networks
-                            </a>
-                        </li>
-                        <li class="toc-item">
-                            <a href="#housing" class="toc-link">
-                                <span class="toc-number">2.</span>
-                                Housing
-                            </a>
-                        </li>
-                        <li class="toc-item">
-                            <a href="#food" class="toc-link">
-                                <span class="toc-number">3.</span>
-                                Food Support
-                            </a>
-                        </li>
-                    </ul>
+
+                    <section id="dumbo" class="city-section">
+                        <h2>DUMBO</h2>
+                    </section>
+
+                    <section id="brooklyn-heights" class="city-section">
+                        <h2>Brooklyn Heights</h2>
+                    </section>
+
+                    <section id="coney-island" class="city-section">
+                        <h2>Coney Island</h2>
+
+                    </section>
+
+                    <section id="bay-ridge" class="city-section">
+                        <h2>Bay Ridge</h2>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/bayridgesolidarity/">Bay Ridge Solidarity</a>
+                            <p>Amplifying the voices of the oppressed from Bay Ridge</p>
+                        </div>
+                    </section>
+
+                    <section id="east-brooklyn" class="city-section">
+                        <h2>East Brooklyn</h2>
+                        <div class="initiative">
+                            <a href="https://www.eastnewyorkclt.org/">East New York Community Land Trust</a>
+                            <p>Our mission is to protect, stabilize and expand the stock of affordable homes,
+                                locally-owned small businesses, worker co-ops and green spaces in East New York and
+                                Brownsville for the benefit of longtime low-income and working class Black, Latine,
+                                Asian and other communities of color.</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.eastbrooklynmutualaid.org/">East Brooklyn Mutual Aid</a>
+                            <p>Community support network in East Brooklyn.</p>
+                        </div>
+                    </section>
+
+                    <section id="other" class="city-section">
+                        <h2>Other</h2>
+                        <div class="initiative">
+                            <a href="https://brooklynpeace.org/">Brooklyn Peace</a>
+                            <p>Brooklyn For Peace is committed to eliminating war and the social injustices that are its
+                                causes.</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/bkfamiliesforpalestine">Brooklyn Families for
+                                Palestine</a>
+                            <p>Anti-Zionist families of all kinds organizing for a liberated Palestine.</p>
+                        </div>
+                    </section>
                 </div>
 
-                <section id="mutual-aid" class="city-section">
-                    <h2>Mutual Aid Networks</h2>
-
-                    <div class="initiative">
-                        <a href="https://crownheightsmutualaid.com">Crown Heights Mutual Aid</a>
-                        <p>Neighbors supporting neighbors in Crown Heights and Prospect Heights.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://bedstuystrong.com">Bed-Stuy Strong</a>
-                        <p>A mutual aid network of neighbors helping neighbors in Bedford-Stuyvesant.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.eastbrooklynmutualaid.org/">East Brooklyn Mutual Aid</a>
-                        <p>Community support network in East Brooklyn.</p>
-                    </div>
-                </section>
-
-                <section id="housing" class="city-section">
-                    <h2>Housing</h2>
-
-                    <div class="initiative">
-                        <a href="https://www.bedtu.org/">Brooklyn Eviction Defense Tenant Union</a>
-                        <p>Fighting evictions and supporting tenants in Brooklyn.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.crownheightstenantunion.org/">Crown Heights Tenant Union</a>
-                        <p>
-                            Uniting tenant associations in Crown Heights to fight for better
-                            living conditions, affordable housing, and tenant power through
-                            direct action and mutual aid.
-                        </p>
-                    </div>
-                </section>
-
-                <section id="food" class="city-section">
-                    <h2>Food Support</h2>
-
-                    <div class="initiative">
-                        <a href="http://cbfood.org/">Central Brooklyn Food Coop</a>
-                        <p>
-                            A Black-led, member-owned and operated food cooperative building
-                            food sovereignty through collective ownership, affordable
-                            healthy food access, and community wealth building in Central
-                            Brooklyn.
-                        </p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/comidapalpueblo/">Comida Pal Pueblo</a>
-                        <p>North Brooklyn biweekly food &amp; survival program.</p>
-                    </div>
-                </section>
+                <!-- TOC positioned absolutely/fixed -->
+                <aside class="toc-container">
+                    <nav class="toc" role="navigation" aria-label="Table of Contents" id="toc">
+                        <ul class="toc-list">
+                            <li class="toc-item">
+                                <a href="#housing" class="toc-link">
+                                    <span class="toc-number">1.</span>
+                                    Housing
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#food" class="toc-link">
+                                    <span class="toc-number">2.</span>
+                                    Food Support
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#williamsburg" class="toc-link">
+                                    <span class="toc-number">3.</span>
+                                    Williamsburg
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#bed-stuy" class="toc-link">
+                                    <span class="toc-number">4.</span>
+                                    Bedford-Stuyvesant
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#crown-heights" class="toc-link">
+                                    <span class="toc-number">5.</span>
+                                    Crown Heights
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#bushwick" class="toc-link">
+                                    <span class="toc-number">6.</span>
+                                    Bushwick
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#clinton-hill-fort-greene" class="toc-link">
+                                    <span class="toc-number">7.</span>
+                                    Clinton Hill / Fort Greene
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#park-slope" class="toc-link">
+                                    <span class="toc-number">8.</span>
+                                    Park Slope
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#flatbush" class="toc-link">
+                                    <span class="toc-number">9.</span>
+                                    Flatbush
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#dumbo" class="toc-link">
+                                    <span class="toc-number">10.</span>
+                                    DUMBO
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#brooklyn-heights" class="toc-link">
+                                    <span class="toc-number">11.</span>
+                                    Brooklyn Heights
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#coney-island" class="toc-link">
+                                    <span class="toc-number">12.</span>
+                                    Coney Island
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#bay-ridge" class="toc-link">
+                                    <span class="toc-number">13.</span>
+                                    Bay Ridge
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#east-brooklyn" class="toc-link">
+                                    <span class="toc-number">14.</span>
+                                    East Brooklyn
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#other" class="toc-link">
+                                    <span class="toc-number">15.</span>
+                                    Other
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
             </div>
         </main>
     </div>
 
     <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+    <!-- Include the TOC JavaScript -->
+    <script src="/js/city-toc.js" defer></script>
+    <!-- Add initiative collapsible functionality for mobile -->
+    <script src="/js/initiative-collapsible.js"></script>
+</body>
 
 </html>

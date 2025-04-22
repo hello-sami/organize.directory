@@ -25,6 +25,9 @@ const sidebarTemplate = `
             <a href="https://discord.gg/your-discord-invite" class="social-link" style="display: flex !important; align-items: center !important; justify-content: center !important;" title="Join our Discord community">
                 <img src="/icons/discord.svg" alt="Discord" class="social-icon" style="width: 24px !important; height: 20px !important; margin-bottom: 1px !important;">
             </a>
+            <a href="https://www.instagram.com/organize.directory/" class="social-link" style="display: flex !important; align-items: center !important; justify-content: center !important;" title="Follow us on Instagram">
+                <img src="/icons/instagram.svg" alt="Instagram" class="social-icon" style="width: 24px !important; height: 24px !important;">
+            </a>
         </div>
     </div>
 `;

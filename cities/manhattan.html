@@ -54,8 +54,8 @@
         initializeComponents({
         });
     </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+    <!-- Mobile optimizations -->
+    <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
@@ -65,7 +65,7 @@
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 
-            <div class="city-page">
+            <div class="page-heading">
                 <div class="breadcrumb">
                     <a href="/new-york">New York</a>
                     <span>›</span>
@@ -75,94 +75,293 @@
                 </div>
 
                 <h1>Manhattan</h1>
+            </div>
+
+            <!-- Wrapper for content and TOC with positioning context -->
+            <div class="content-wrapper">
+                <!-- Main content -->
+                <div class="city-content">
+                    <section id="mutual-aid" class="city-section">
+                        <h2>Mutual Aid Networks</h2>
+
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/uptownwagon/">Uptown Wagon</a>
+                            <p>
+                                A collective of neighbors who meet in uptown Manhattan to
+                                distribute meals &amp; supplies to neighbors experiencing
+                                homelessness.
+                            </p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/lesfoodnotbombs">Food Not Bombs Lower East Side</a>
+                            <p>
+                                A mutual aid collective fostering food justice and community
+                                solidarity through free food sharing in New York City's Lower
+                                East Side. They coordinate regular meal distributions, food
+                                recovery initiatives, and solidarity networks while building
+                                power through direct action, community care, and creating spaces
+                                for food sovereignty and collective nourishment.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="housing" class="city-section">
+                        <h2>Housing</h2>
+
+                        <div class="initiative">
+                            <a href="https://eastharlempreservation.org/">East Harlem Preservation</a>
+                            <p>
+                                A community organization promoting East Harlem's cultural, economic and housing needs
+                                through advocacy, community organizing, and education.
+                            </p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.metcouncilonhousing.org">Met Council on Housing</a>
+                            <p>A tenants' rights membership organization that fights for tenants' rights and affordable
+                                housing with a strong presence in Manhattan.</p>
+                        </div>
+                    </section>
+
+                    <section id="food" class="city-section">
+                        <h2>Food Support</h2>
+
+                        <div class="initiative">
+                            <a href="http://nycommonpantry.org/">NY Common Pantry</a>
+                            <p>
+                                Reducing hunger and promoting dignity, health, and
+                                self-sufficiency with locations in East Harlem and the Bronx.
+                            </p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.tcahnyc.org/">The Campaign Against Hunger NYC</a>
+                            <p>Nonprofit operating food pantries and gardening workshops.</p>
+                        </div>
+                    </section>
 
 
-                <div class="toc">
-                    <h2 class="toc-title">Contents</h2>
-                    <ul class="toc-list">
-                        <li class="toc-item">
-                            <a href="#mutual-aid" class="toc-link">
-                                <span class="toc-number">1.</span>
-                                Mutual Aid Networks
-                            </a>
-                        </li>
-                        <li class="toc-item">
-                            <a href="#housing" class="toc-link">
-                                <span class="toc-number">2.</span>
-                                Housing
-                            </a>
-                        </li>
-                        <li class="toc-item">
-                            <a href="#food" class="toc-link">
-                                <span class="toc-number">3.</span>
-                                Food Support
-                            </a>
-                        </li>
-                    </ul>
+                    <section id="upper-east-side" class="city-section">
+                        <h2>Upper East Side</h2>
+                        <div class="initiative">
+                            <a href="https://www.nycservice.org/organizations/index.php?org_id=2062">Stanley M. Isaacs
+                                Neighborhood Center</a>
+                            <p>
+                                Provides programs for children, youth, families, and seniors, including meals,
+                                afterschool programs, and community support services.
+                            </p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.96thstreetlibrary.org/">96th Street Library</a>
+                            <p>
+                                A community hub offering free educational resources, programming, and internet access.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="upper-west-side" class="city-section">
+                        <h2>Upper West Side</h2>
+                        <div class="initiative">
+                            <a href="https://westsidecamp.org/">West Side Campaign Against Hunger</a>
+                            <p>
+                                A supermarket-style food pantry that provides emergency food assistance and support
+                                services to those in need.
+                            </p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://goddard.org/">Goddard Riverside Community Center</a>
+                            <p>
+                                Offers programs addressing housing, hunger, education, and senior services for Upper
+                                West Side residents.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="uptown" class="city-section">
+                        <h2>Uptown</h2>
+
+
+                    </section>
+
+                    <section id="midtown" class="city-section">
+                        <h2>Midtown</h2>
+                        <div class="initiative">
+                            <a href="https://www.grandcentralpartnership.org/">Grand Central Partnership</a>
+                            <p>
+                                A neighborhood organization working to improve quality of life and business conditions
+                                in the Midtown area.
+                            </p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://bryantpark.org/programs">Bryant Park Programs</a>
+                            <p>
+                                Free community events, classes, and resources in the heart of Midtown.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="hells-kitchen" class="city-section">
+                        <h2>Hell's Kitchen</h2>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/hkfridge/">Hell's Kitchen Community Cupboard</a>
+                            <p>Free food pantry in Hell's Kitchen 24/7. Mutual aid. Take what you need, leave what you
+                                can</p>
+                        </div>
+
+                    </section>
+
+                    <section id="chelsea" class="city-section">
+                        <h2>Chelsea</h2>
+                        <div class="initiative">
+                            <a href="https://www.hudson-guild.org/">Hudson Guild</a>
+                            <p>
+                                A multi-service community agency serving Chelsea residents of all ages with social
+                                services, arts, education, and recreation programs.
+                            </p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.chelseanow.com/category/news/community/">Chelsea Community News</a>
+                            <p>
+                                Local news source highlighting community issues, events, and resources in the Chelsea
+                                neighborhood.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="greenwich-village" class="city-section">
+                        <h2>Greenwich Village</h2>
+                        <div class="initiative">
+                            <a href="https://www.villagealliance.org/">Village Alliance</a>
+                            <p>
+                                A Business Improvement District working to enhance the neighborhood's quality of life
+                                through public safety, sanitation, economic development, and local advocacy.
+                            </p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.gvshp.org/">Greenwich Village Society for Historic Preservation</a>
+                            <p>
+                                Advocates for the architectural and cultural heritage of Greenwich Village, the East
+                                Village, and NoHo.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section id="lower-east-side" class="city-section">
+                        <h2>Lower East Side</h2>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/lesfoodnotbombs">Food Not Bombs Lower East Side</a>
+                            <p>Serving free vegan meals every Sunday at 4:30pm inside the SW corner of Tompkins Square
+                                Park (E 7th st
+                                & Ave A) DM us if you'd like to get involved!</p>
+                        </div>
+                    </section>
+
+                    <section id="financial-district" class="city-section">
+                        <h2>Financial District</h2>
+                        <div class="initiative">
+                            <a href="https://www.downtownny.com/">Downtown Alliance</a>
+                            <p>
+                                Works to enhance the quality of life in Lower Manhattan for residents, workers, and
+                                visitors through various community programs and initiatives.
+                            </p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://southstreetseaportmuseum.org/community-programs/">South Street Seaport
+                                Museum</a>
+                            <p>
+                                Offers community programs that connect residents with the area's maritime history and
+                                cultural heritage.
+                            </p>
+                        </div>
+                    </section>
                 </div>
 
-                <section id="mutual-aid" class="city-section">
-                    <h2>Mutual Aid Networks</h2>
-
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/uptownwagon/">Uptown Wagon</a>
-                        <p>
-                            A collective of neighbors who meet in uptown Manhattan to
-                            distribute meals &amp; supplies to neighbors experiencing
-                            homelessness.
-                        </p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/lesfoodnotbombs">Food Not Bombs Lower East Side</a>
-                        <p>
-                            A mutual aid collective fostering food justice and community
-                            solidarity through free food sharing in New York City's Lower
-                            East Side. They coordinate regular meal distributions, food
-                            recovery initiatives, and solidarity networks while building
-                            power through direct action, community care, and creating spaces
-                            for food sovereignty and collective nourishment.
-                        </p>
-                    </div>
-                </section>
-
-                <section id="housing" class="city-section">
-                    <h2>Housing</h2>
-
-                    <div class="initiative">
-                        <a href="https://eastharlempreservation.org/">East Harlem Preservation</a>
-                        <p>
-                            A community organization promoting East Harlem's cultural, economic and housing needs
-                            through advocacy, community organizing, and education.
-                        </p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.metcouncilonhousing.org">Met Council on Housing</a>
-                        <p>A tenants' rights membership organization that fights for tenants' rights and affordable
-                            housing with a strong presence in Manhattan.</p>
-                    </div>
-                </section>
-
-                <section id="food" class="city-section">
-                    <h2>Food Support</h2>
-
-                    <div class="initiative">
-                        <a href="http://nycommonpantry.org/">NY Common Pantry</a>
-                        <p>
-                            Reducing hunger and promoting dignity, health, and
-                            self-sufficiency with locations in East Harlem and the Bronx.
-                        </p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.tcahnyc.org/">The Campaign Against Hunger NYC</a>
-                        <p>Nonprofit operating food pantries and gardening workshops.</p>
-                    </div>
-                </section>
+                <!-- TOC positioned absolutely/fixed -->
+                <aside class="toc-container">
+                    <nav class="toc" role="navigation" aria-label="Table of Contents" id="toc">
+                        <ul class="toc-list">
+                            <li class="toc-item">
+                                <a href="#mutual-aid" class="toc-link">
+                                    <span class="toc-number">1.</span>
+                                    Mutual Aid Networks
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#housing" class="toc-link">
+                                    <span class="toc-number">2.</span>
+                                    Housing
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#food" class="toc-link">
+                                    <span class="toc-number">3.</span>
+                                    Food Support
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#upper-east-side" class="toc-link">
+                                    <span class="toc-number">4.</span>
+                                    Upper East Side
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#upper-west-side" class="toc-link">
+                                    <span class="toc-number">5.</span>
+                                    Upper West Side
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#uptown" class="toc-link">
+                                    <span class="toc-number">6.</span>
+                                    Uptown
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#midtown" class="toc-link">
+                                    <span class="toc-number">7.</span>
+                                    Midtown
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#hells-kitchen" class="toc-link">
+                                    <span class="toc-number">8.</span>
+                                    Hell's Kitchen
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#chelsea" class="toc-link">
+                                    <span class="toc-number">9.</span>
+                                    Chelsea
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#greenwich-village" class="toc-link">
+                                    <span class="toc-number">10.</span>
+                                    Greenwich Village
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#lower-east-side" class="toc-link">
+                                    <span class="toc-number">11.</span>
+                                    Lower East Side
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#financial-district" class="toc-link">
+                                    <span class="toc-number">12.</span>
+                                    Financial District
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
             </div>
         </main>
     </div>
 
     <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+    <!-- Include the TOC JavaScript -->
+    <script src="/js/city-toc.js" defer></script>
+    <!-- Add initiative collapsible functionality for mobile -->
+    <script src="/js/initiative-collapsible.js"></script>
+</body>
 
 </html>

@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
      const isMobile = window.innerWidth <= 768;
      const hasTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
+     // Load scripts for all devices
+     // Load clickable initiatives script for all screen sizes
+     if (document.querySelectorAll(".initiative").length > 0) {
+          loadScript("/js/clickable-initiatives.js");
+     }
+
      // Load the appropriate scripts based on device type
      if (isMobile) {
           // Scripts for all mobile devices
