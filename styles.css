@@ -1192,12 +1192,17 @@ html .topic-name,
      border: 2px solid var(--red-base);
      border-radius: 8px;
      padding: 0.8rem 1rem;
-     margin: 1rem 0 2rem;
+     margin: 0.5rem 0 1rem;
      font-weight: 600;
      color: var(--red-base);
      text-align: left;
      cursor: pointer;
      position: relative;
+     transition: background-color 0.2s ease;
+}
+
+.mobile-toc-toggle:hover {
+     background-color: #ffbfbf;
 }
 
 .mobile-toc-toggle::after {
@@ -1217,12 +1222,14 @@ html .topic-name,
      .city-content {
           width: 100%;
           margin-right: 0;
+          order: 2; /* Change order in flexbox layout */
      }
 
      .toc-container {
           position: static;
           width: 100%;
-          margin: 0 0 2rem;
+          margin: 0 0 1.5rem;
+          order: 1; /* Position before content in flexbox layout */
      }
 
      .toc {
@@ -1231,6 +1238,9 @@ html .topic-name,
           display: none;
           max-height: none;
           margin-top: 0.5rem;
+          /* Add a nicer border and shadow when displayed on mobile */
+          border: 1px solid var(--red-base);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
      }
 
      .toc.open {
@@ -1239,6 +1249,23 @@ html .topic-name,
 
      .mobile-toc-toggle {
           display: block;
+     }
+
+     /* Make content wrapper a flex container on mobile */
+     .content-wrapper {
+          display: flex;
+          flex-direction: column;
+          padding-top: 0.5rem;
+     }
+
+     /* For smaller screens, add styling to first h2 heading */
+     .city-content .city-section:first-child h2 {
+          margin-top: 0.5rem;
+     }
+
+     /* Improve spacing between sections on mobile */
+     .city-section {
+          margin-bottom: 2rem;
      }
 }
 

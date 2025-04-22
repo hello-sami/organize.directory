@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // Create mobile TOC toggle button
           const mobileTocToggle = document.createElement("button");
           mobileTocToggle.className = "mobile-toc-toggle";
-          mobileTocToggle.textContent = "Table of Contents";
+          mobileTocToggle.textContent = "Jump to a section";
           mobileTocToggle.setAttribute("aria-expanded", "false");
           mobileTocToggle.setAttribute("aria-controls", "toc");
 
@@ -52,12 +52,11 @@ document.addEventListener("DOMContentLoaded", function () {
                this.classList.toggle("open");
                toc.classList.toggle("open");
 
-               // Scroll to the TOC if opening
+               // Announce screen reader message
                if (!isExpanded) {
-                    mobileTocToggle.scrollIntoView({
-                         behavior: "smooth",
-                         block: "start",
-                    });
+                    this.textContent = "Close section menu";
+               } else {
+                    this.textContent = "Jump to a section";
                }
           });
 
