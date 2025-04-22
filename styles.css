@@ -70,6 +70,10 @@
      --h2-size: 1.75em;
      --h2-size-content: 1.7em;
      --h2-size-safari-mobile: 2em;
+
+     /* Define tap/touch target sizes */
+     --min-touch-target-size: 44px;
+     --safe-touch-spacing: 8px;
 }
 
 /* ------------------------------------*\
@@ -92,11 +96,26 @@ html {
      overflow-x: hidden;
      /* Force the root font size on mobile */
      font-size: 16px;
+     scroll-behavior: smooth; /* Enable smooth scrolling sitewide */
 }
 
 @media (max-width: 768px) {
      html {
           font-size: 14px;
+     }
+}
+
+/* Prefers-reduced-motion - disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+     * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+     }
+
+     html {
+          scroll-behavior: auto !important;
      }
 }
 
@@ -747,100 +766,99 @@ li {
 
 /* Even more compact on very small screens */
 
-     body .stats-container,
-     html .stats-container,
-     .page-home .stats-container,
-     .stats-container {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 1rem;
-          width: 100%;
-     }
+body .stats-container,
+html .stats-container,
+.page-home .stats-container,
+.stats-container {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 1rem;
+     width: 100%;
+}
 
-     body .stat-item,
-     html .stat-item,
-     .page-home .stat-item,
-     .stat-item {
-          width: 100%;
-          text-align: left;
-          padding: 0 0.5rem;
-          margin: 0;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          min-height: auto;
-     }
+body .stat-item,
+html .stat-item,
+.page-home .stat-item,
+.stat-item {
+     width: 100%;
+     text-align: left;
+     padding: 0 0.5rem;
+     margin: 0;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     min-height: auto;
+}
 
-     /* Force hide the regular number and label */
-     body .stat-number,
-     html .stat-number,
-     .page-home .stat-number,
-     .stat-number,
-     body .stat-label,
-     html .stat-label,
-     .page-home .stat-label,
-     .stat-label {
-          display: none;
-     }
+/* Force hide the regular number and label */
+body .stat-number,
+html .stat-number,
+.page-home .stat-number,
+.stat-number,
+body .stat-label,
+html .stat-label,
+.page-home .stat-label,
+.stat-label {
+     display: none;
+}
 
-     /* Force show the mobile labels */
-     body .stat-mobile-label,
-     html .stat-mobile-label,
-     .page-home .stat-mobile-label,
-     .stat-mobile-label {
-          display: block;
-          font-size: 1.3rem;
-          line-height: 1.2;
-          font-weight: 700;
-          color: var(--red-base);
-          font-family: "Saira Semi Condensed", sans-serif;
-          text-align: left;
-          margin: 0;
-          padding: 0;
-     }
+/* Force show the mobile labels */
+body .stat-mobile-label,
+html .stat-mobile-label,
+.page-home .stat-mobile-label,
+.stat-mobile-label {
+     display: block;
+     font-size: 1.3rem;
+     line-height: 1.2;
+     font-weight: 700;
+     color: var(--red-base);
+     font-family: "Saira Semi Condensed", sans-serif;
+     text-align: left;
+     margin: 0;
+     padding: 0;
+}
 
-     /* Make homepage h1 even smaller */
-     body.page-home h1 {
-          font-size: 2rem;
-          padding-top: 0.75rem;
-          padding-bottom: 0.5rem;
-          margin-bottom: 0.25rem;
-     }
+/* Make homepage h1 even smaller */
+body.page-home h1 {
+     font-size: 2rem;
+     padding-top: 0.75rem;
+     padding-bottom: 0.5rem;
+     margin-bottom: 0.25rem;
+}
 
-     /* Adjust buttons for better mobile layout */
-     .find-groups-buttons {
-          margin-top: 0.5rem;
-     }
+/* Adjust buttons for better mobile layout */
+.find-groups-buttons {
+     margin-top: 0.5rem;
+}
 
-     .buttons-container {
-          flex-direction: column;
-          gap: 0.75rem;
-          width: 100%;
-     }
+.buttons-container {
+     flex-direction: column;
+     gap: 0.75rem;
+     width: 100%;
+}
 
-     .find-groups-button {
-          width: 100%;
-          margin: 0;
-          padding: 0.75rem 1rem;
-          text-align: center;
-          justify-content: center;
-     }
+.find-groups-button {
+     width: 100%;
+     margin: 0;
+     padding: 0.75rem 1rem;
+     text-align: center;
+     justify-content: center;
+}
 
-     .button-text {
-          font-size: 1.1rem;
-     }
+.button-text {
+     font-size: 1.1rem;
+}
 
-     .cities-list {
-          grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-     }
+.cities-list {
+     grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+}
 
-     .city-link {
-          font-size: 0.95rem;
-          width: 100%;
-          padding: 0.4rem 0;
-     }
-
+.city-link {
+     font-size: 0.95rem;
+     width: 100%;
+     padding: 0.4rem 0;
+}
 
 .stats-description {
      font-size: 1.1rem;
@@ -1619,31 +1637,30 @@ html .topic-name,
 }
 
 /* Even tighter spacing on very small screens */
-     .initiative-hidden-content p {
-          font-size: 0.9rem;
-     }
+.initiative-hidden-content p {
+     font-size: 0.9rem;
+}
 
-     /* Slightly smaller arrow button for very small screens */
-     .initiative-arrow-link {
-          width: 36px;
-          height: 36px;
-     }
+/* Slightly smaller arrow button for very small screens */
+.initiative-arrow-link {
+     width: 36px;
+     height: 36px;
+}
 
-     .website-icon {
-          width: 14px;
-          height: 14px;
-     }
+.website-icon {
+     width: 14px;
+     height: 14px;
+}
 
-     /* Even tighter spacing on very small screens for headings */
-     .city-page .city-section h2,
-     .city-page h2,
-     body[class*="page-cities-"] h2,
-     .city-content h2 {
-          font-size: 1.3rem;
-          padding: 0.6rem;
-          margin-bottom: 0.75rem;
-     }
-
+/* Even tighter spacing on very small screens for headings */
+.city-page .city-section h2,
+.city-page h2,
+body[class*="page-cities-"] h2,
+.city-content h2 {
+     font-size: 1.3rem;
+     padding: 0.6rem;
+     margin-bottom: 0.75rem;
+}
 
 /* Thank You Page */
 .thank-you-content {
@@ -2737,7 +2754,6 @@ section#staten-island h2 {
      }
 }
 
-
 .city-page .initiative {
      margin-bottom: 20px;
      padding: 0;
@@ -3031,121 +3047,120 @@ body.page-home h1 {
 }
 
 /* Mobile styles */
-     .tagline {
-          font-size: 1rem;
-          margin-bottom: 1.5rem;
-     }
+.tagline {
+     font-size: 1rem;
+     margin-bottom: 1.5rem;
+}
 
-     /* Mobile stats layout */
-     body .stat-number,
-     html .stat-number,
-     .page-home .stat-number,
-     .stat-number,
-     body .stat-label,
-     html .stat-label,
-     .page-home .stat-label,
-     .stat-label {
-          display: none;
-     }
+/* Mobile stats layout */
+body .stat-number,
+html .stat-number,
+.page-home .stat-number,
+.stat-number,
+body .stat-label,
+html .stat-label,
+.page-home .stat-label,
+.stat-label {
+     display: none;
+}
 
-     /* Mobile stats display */
-     body .stat-mobile-label,
-     html .stat-mobile-label,
-     .page-home .stat-mobile-label,
-     .stat-mobile-label {
-          display: block;
-          font-size: 1.3rem;
-          line-height: 1.2;
-          font-weight: 700;
-          color: var(--red-base);
-          font-family: var(--heading-font);
-          text-align: left;
-          margin: 0;
-          padding: 0;
-     }
+/* Mobile stats display */
+body .stat-mobile-label,
+html .stat-mobile-label,
+.page-home .stat-mobile-label,
+.stat-mobile-label {
+     display: block;
+     font-size: 1.3rem;
+     line-height: 1.2;
+     font-weight: 700;
+     color: var(--red-base);
+     font-family: var(--heading-font);
+     text-align: left;
+     margin: 0;
+     padding: 0;
+}
 
-     /* Mobile vertical stats layout */
-     body .stats-container,
-     html .stats-container,
-     .page-home .stats-container,
-     .stats-container {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 1rem;
-          width: 100%;
-     }
+/* Mobile vertical stats layout */
+body .stats-container,
+html .stats-container,
+.page-home .stats-container,
+.stats-container {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 1rem;
+     width: 100%;
+}
 
-     body .stat-item,
-     html .stat-item,
-     .page-home .stat-item,
-     .stat-item {
-          width: 100%;
-          text-align: left;
-          padding: 0 0.5rem;
-          margin: 0;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          min-height: auto;
-     }
+body .stat-item,
+html .stat-item,
+.page-home .stat-item,
+.stat-item {
+     width: 100%;
+     text-align: left;
+     padding: 0 0.5rem;
+     margin: 0;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     min-height: auto;
+}
 
-     body .initiative-stats,
-     html .initiative-stats,
-     .page-home .initiative-stats,
-     .initiative-stats {
-          padding: 1.25rem;
-          margin: 0.75rem auto 1.25rem;
-          border-width: 1px;
-     }
+body .initiative-stats,
+html .initiative-stats,
+.page-home .initiative-stats,
+.initiative-stats {
+     padding: 1.25rem;
+     margin: 0.75rem auto 1.25rem;
+     border-width: 1px;
+}
 
-     /* Mobile button layout */
-     .find-groups-buttons {
-          margin: 0.5rem auto 2rem;
-     }
+/* Mobile button layout */
+.find-groups-buttons {
+     margin: 0.5rem auto 2rem;
+}
 
-     .buttons-container {
-          flex-direction: column;
-          gap: 0.75rem;
-          width: 100%;
-     }
+.buttons-container {
+     flex-direction: column;
+     gap: 0.75rem;
+     width: 100%;
+}
 
-     .find-groups-button {
-          width: 100%;
-          margin: 0;
-          padding: 0.75rem 1rem;
-          text-align: center;
-          justify-content: center;
-     }
+.find-groups-button {
+     width: 100%;
+     margin: 0;
+     padding: 0.75rem 1rem;
+     text-align: center;
+     justify-content: center;
+}
 
-     /* Mobile button icons */
-     .button-icon {
-          width: 18px;
-          height: 18px;
-     }
+/* Mobile button icons */
+.button-icon {
+     width: 18px;
+     height: 18px;
+}
 
-     /* Mobile button styling */
-     .secondary-button {
-          background-color: white;
-          color: var(--red-base);
-     }
+/* Mobile button styling */
+.secondary-button {
+     background-color: white;
+     color: var(--red-base);
+}
 
-     .primary-button {
-          background-color: var(--red-base);
-          color: white;
-     }
+.primary-button {
+     background-color: var(--red-base);
+     color: white;
+}
 
-     /* Mobile stats description */
-     .stats-description {
-          font-size: 1rem;
-          padding-top: 1.2rem;
-          margin-top: 1.2rem;
-     }
+/* Mobile stats description */
+.stats-description {
+     font-size: 1rem;
+     padding-top: 1.2rem;
+     margin-top: 1.2rem;
+}
 
-     .cities-list {
-          grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-     }
-
+.cities-list {
+     grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+}
 
 /* Desktop stats layout */
 @media (min-width: 481px) {
@@ -3272,16 +3287,385 @@ body.page-home h1 {
      }
 }
 
-     /* Adjust the main content area padding */
+/* Adjust the main content area padding */
+.content {
+     padding: 1rem;
+     padding-top: 4rem; /* Keep space for the menu button */
+}
+
+/* Make breadcrumbs more compact */
+.breadcrumb {
+     margin-bottom: 0.5rem;
+     font-size: 0.85rem;
+}
+
+/*------------------------------------*\
+  #MOBILE-OPTIMIZATIONS
+\*------------------------------------*/
+
+/* Optimize touch targets for mobile */
+@media (max-width: 768px) {
+     /* Ensure all interactive elements meet accessibility requirements for touch targets */
+     button,
+     input[type="button"],
+     input[type="submit"],
+     input[type="reset"],
+     input[type="checkbox"],
+     input[type="radio"],
+     select,
+     .btn,
+     .btn-base,
+     .nav-link,
+     .nav-link-base,
+     .location-link,
+     .city-link,
+     .state-link,
+     a[href]:not(.sidebar-header a) {
+          min-height: var(--min-touch-target-size);
+          min-width: var(--min-touch-target-size);
+          padding: 12px; /* Ensure enough padding for easy touching */
+          margin: 4px 0; /* Add spacing between touch targets */
+          display: inline-flex;
+          align-items: center;
+          touch-action: manipulation; /* Prevent delays on touch */
+     }
+
+     /* Improve spacing between buttons and links when stacked for mobile tapping */
+     button + button,
+     a + a,
+     .btn + .btn,
+     .btn-base + .btn-base,
+     .city-link + .city-link,
+     select + button,
+     input + button {
+          margin-top: var(--safe-touch-spacing);
+     }
+
+     /* Add subtle feedback on tap for mobile devices */
+     a:active,
+     button:active,
+     .btn:active,
+     .btn-base:active,
+     .city-link:active,
+     .state-link:active,
+     .nav-link:active,
+     .location-link:active {
+          opacity: 0.7;
+          transform: scale(0.98);
+     }
+
+     /* Optimize form fields for mobile input */
+     input,
+     select,
+     textarea {
+          font-size: 16px !important; /* Prevent iOS zoom on input focus */
+          padding: 12px;
+          border-radius: 8px;
+          box-shadow: none;
+          -webkit-appearance: none; /* Remove default styling */
+          appearance: none;
+     }
+
+     /* Improve form field selection */
+     input:focus,
+     select:focus,
+     textarea:focus {
+          outline: 3px solid rgba(200, 37, 37, 0.3);
+          outline-offset: 1px;
+     }
+
+     /* Apply appropriate mobile keyboard types */
+     input[type="email"] {
+          -webkit-appearance: none;
+          appearance: none;
+     }
+
+     /* Optimize navigation for mobile */
      .content {
-          padding: 1rem;
-          padding-top: 4rem; /* Keep space for the menu button */
+          /* Add content-visibility to improve render performance */
+          content-visibility: auto;
+          contain-intrinsic-size: 1px 5000px; /* Estimate before rendering */
      }
 
-     /* Make breadcrumbs more compact */
+     /* Optimize images for mobile loading */
+     img {
+          max-width: 100%;
+          height: auto;
+          content-visibility: auto;
+     }
+
+     /* Enhanced scrolling experience */
+     .toc,
+     .sidebar {
+          -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+          scroll-behavior: smooth;
+          scrollbar-width: thin;
+     }
+
+     /* Sticky call-to-action for important actions */
+     .mobile-cta {
+          position: sticky;
+          bottom: 16px;
+          left: 0;
+          right: 0;
+          z-index: 90;
+          padding: 12px;
+          margin: 0 12px;
+          background: white;
+          border-radius: 8px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          display: flex;
+          justify-content: center;
+          margin-top: 32px;
+     }
+
+     /* Hide elements that aren't mobile-friendly */
+     .desktop-only {
+          display: none !important;
+     }
+
+     /* Create easy finger-scrollable area for table of contents */
+     .toc {
+          -webkit-overflow-scrolling: touch;
+          scroll-snap-type: y proximity;
+     }
+
+     .toc-link {
+          scroll-snap-align: start;
+          padding: 12px 16px;
+          margin-bottom: 4px;
+     }
+}
+
+/* Optimize loading performance for content */
+@media (max-width: 768px) {
+     /* Use content-visibility for large sections to improve render performance */
+     section,
+     .cities-section,
+     .topics-container,
+     .daily-log,
+     .initiative-stats {
+          content-visibility: auto;
+          contain-intrinsic-size: 1px 800px;
+     }
+
+     /* Make sure the visible content is rendered immediately */
+     .content > *:first-child,
+     .mobile-toc-toggle,
      .breadcrumb {
-          margin-bottom: 0.5rem;
-          font-size: 0.85rem;
+          content-visibility: visible;
+     }
+}
+
+/* Extra small screen tweaks */
+@media (max-width: 375px) {
+     body {
+          font-size: 13px;
      }
 
+     .find-groups-buttons {
+          margin: 0.5rem 0;
+     }
 
+     .city-link {
+          font-size: 0.8rem;
+          padding: 10px 12px;
+     }
+
+     h1 {
+          font-size: 1.6rem;
+     }
+}
+
+/* Mobile form optimizations */
+@media (max-width: 768px) {
+     .form-group {
+          margin-bottom: 24px;
+     }
+
+     .form-group label {
+          font-size: 1rem;
+          margin-bottom: 8px;
+          display: block;
+     }
+
+     /* Make file inputs mobile-friendly */
+     input[type="file"] {
+          width: 100%;
+          padding: 12px;
+          background: white;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          font-size: 14px;
+     }
+
+     /* Mobile-optimized captcha */
+     .captcha-challenge {
+          flex-wrap: wrap;
+     }
+
+     .captcha-challenge span {
+          width: 100%;
+          margin-bottom: 8px;
+     }
+
+     .captcha-challenge input {
+          flex: 1;
+          min-width: calc(100% - 50px);
+     }
+}
+
+/* Back to top button for mobile scrolling */
+.back-to-top {
+     position: fixed;
+     bottom: 20px;
+     right: 20px;
+     width: 48px;
+     height: 48px;
+     border-radius: 50%;
+     background: var(--red-base);
+     color: white;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+     opacity: 0;
+     visibility: hidden;
+     transition:
+          opacity 0.3s,
+          visibility 0.3s;
+     z-index: 80;
+     border: none;
+}
+
+.back-to-top.visible {
+     opacity: 1;
+     visibility: visible;
+}
+
+.back-to-top svg {
+     width: 24px;
+     height: 24px;
+}
+
+/* Improved focus styles for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+     outline: 3px solid var(--red-base);
+     outline-offset: 3px;
+}
+
+/* State page mobile optimizations */
+@media (max-width: 768px) {
+     /* Improve the state page layout for mobile */
+     .state-page {
+          padding: 0.5rem;
+     }
+
+     /* Enhance the regions/cities section header */
+     .state-page section > h2,
+     .state-page .cities-list > h2 {
+          text-align: center;
+          width: 100%;
+          background-color: var(--red-base);
+          color: white;
+          padding: 0.85rem;
+          margin: 1.5rem 0 1rem;
+          border-radius: 8px;
+          font-size: 1.3rem;
+          box-shadow: 0 2px 4px rgba(192, 28, 28, 0.2);
+     }
+
+     /* Optimize city/region links grid for mobile - single column layout */
+     .state-page .city-links-container {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          padding: 0.75rem;
+     }
+
+     /* Enhanced city links for mobile */
+     .state-page .city-links-container a,
+     .state-page .city-links-container .city-link {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          min-height: 54px; /* Larger touch target */
+          padding: 0.9rem 1rem;
+          background-color: white;
+          border-radius: 6px;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          font-size: 1.1rem;
+          font-weight: 500;
+          position: relative;
+          margin: 0;
+          transition: all 0.2s ease;
+     }
+
+     /* Add arrow indicator for city links */
+     .state-page .city-links-container a::after,
+     .state-page .city-links-container .city-link::after {
+          content: "→";
+          position: absolute;
+          right: 1rem;
+          opacity: 0.6;
+          font-size: 1.1rem;
+          transition: transform 0.2s ease;
+     }
+
+     /* Improved active state feedback */
+     .state-page .city-links-container a:active,
+     .state-page .city-links-container .city-link:active {
+          background-color: var(--bg-medium);
+          transform: translateY(1px);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+     }
+
+     .state-page .city-links-container a:active::after,
+     .state-page .city-links-container .city-link:active::after {
+          transform: translateX(3px);
+          opacity: 1;
+     }
+
+     /* Remove the existing hover styling that doesn't work well on touch devices */
+     .state-page .city-links-container a:hover,
+     .state-page .city-links-container .city-link:hover {
+          background-color: white;
+          transform: none;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          border-bottom: none;
+     }
+
+     /* Main state heading */
+     .state-page h1 {
+          font-size: 2rem;
+          text-align: center;
+          margin: 0.5rem 0 1rem;
+     }
+
+     /* When there are many city links, provide visual grouping */
+     .state-page .cities-list {
+          margin-bottom: 2rem;
+          border-radius: 10px;
+          overflow: hidden;
+          border: 1px solid rgba(192, 28, 28, 0.2);
+     }
+}
+
+/* Extra small screens need additional adjustments */
+@media (max-width: 375px) {
+     .state-page .city-links-container a,
+     .state-page .city-links-container .city-link {
+          min-height: 48px;
+          padding: 0.75rem 1rem;
+          font-size: 1rem;
+     }
+
+     .state-page .city-links-container a::after,
+     .state-page .city-links-container .city-link::after {
+          font-size: 0.9rem;
+     }
+}
