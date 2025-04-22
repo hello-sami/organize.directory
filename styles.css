@@ -9,7 +9,9 @@
    1. .btn-base - Base styling for all buttons
    2. .nav-link-base - Base styling for ALL navigation links (including locations)
    3. .location-link - Specific styling for location links (cities, states)
-   4. .card-base - Base styling for card-like elements
+   4. .state-link - Extends location-link with state-specific styling
+   5. .city-link - Extends location-link with city-specific styling
+   6. .card-base - Base styling for card-like elements
    
    STANDARDIZED MEDIA QUERY BREAKPOINTS:
    ------------------------------------- 
@@ -318,9 +320,8 @@ li {
      background: var(--color-white);
 }
 
-/* Location navigation links style */
+/* Location navigation links style - base for both city and state links */
 .location-link {
-     /* Inherit base styling */
      color: var(--text-color);
      padding: 0.25rem 0.5rem;
 }
@@ -329,6 +330,50 @@ li {
      opacity: 1;
      color: var(--red-base);
      text-decoration: none;
+}
+
+/* State links - extends location-link with state-specific styling 
+   HTML usage: class="nav-link-base location-link state-link" */
+.state-link {
+     font-size: 1.1rem;
+     line-height: 1.4;
+     border-radius: 6px;
+}
+
+.state-link:hover {
+     color: var(--red-base);
+     text-decoration: none;
+     background-color: var(--bg-medium);
+}
+
+/* City links - extends location-link with city-specific styling 
+   HTML usage: class="city-link location-link-base" or class="nav-link-base location-link city-link" */
+.city-link {
+     color: var(--red-base);
+     font-size: 0.9rem;
+     font-weight: 700;
+     line-height: 1.2;
+     width: 100%;
+     border-bottom: none;
+     padding: 0.75rem 1rem;
+     display: flex;
+     align-items: center;
+     background-color: var(--background-color);
+     border: 1px solid var(--red-base);
+     border-radius: 4px;
+     transition: all 0.2s ease;
+     margin: 0;
+     text-align: center;
+     justify-content: center;
+}
+
+.city-link:hover {
+     color: var(--red-base);
+     background-color: var(--bg-medium);
+     text-decoration: none;
+     border-bottom: none;
+     transform: translateY(-2px);
+     box-shadow: 0 2px 4px rgba(200, 37, 37, 0.15);
 }
 
 /* Consolidated Card Base Class */
@@ -1002,15 +1047,13 @@ html .topic-name,
      font-size: 1.1rem;
      line-height: 1.4;
      border-radius: 6px;
-     border: 1px solid transparent;
 }
 
 .state-link:hover {
      color: var(--red-base);
      text-decoration: underline;
      text-decoration-color: var(--red-base);
-     background: transparent;
-     border: 1px solid transparent;
+     background-color: var(--bg-medium);
 }
 
 .cities-section {
@@ -2174,7 +2217,6 @@ html body #sidebar div.sidebar-header h1 a,
           padding: 0.75rem 1rem;
           margin-bottom: 0.5rem;
           background-color: var(--background-color);
-          border: 1px solid var(--red-base);
           width: 100%;
           box-sizing: border-box;
           text-align: left;
@@ -2348,7 +2390,6 @@ html body #sidebar div.sidebar-header h1 a,
      }
 }
 
-/* Remove all !important declarations from sidebar styling near the end */
 /* Fix HOME active state */
 .nav-link-base.nav-link[href="/"] {
      background-color: var(--red-base);
