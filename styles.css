@@ -3047,3 +3047,18 @@ body.page-home h1 {
           box-shadow: 0 1px 3px rgba(200, 37, 37, 0.12);
      }
 }
+
+/* Desktop-specific styling */
+@media (min-width: 1020px) {
+     .content-wrapper {
+          display: block; /* Ensure it's not flexbox on desktop */
+     }
+
+     .city-content {
+          order: initial; /* Remove the flexbox ordering */
+     }
+
+     .toc-container {
+          order: initial; /* Remove the flexbox ordering */
+     }
+}

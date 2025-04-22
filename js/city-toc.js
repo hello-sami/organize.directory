@@ -52,11 +52,28 @@ document.addEventListener("DOMContentLoaded", function () {
                this.classList.toggle("open");
                toc.classList.toggle("open");
 
-               // Announce screen reader message
+               // Update button text based on state
                if (!isExpanded) {
                     this.textContent = "Close section menu";
                } else {
                     this.textContent = "Jump to a section";
+               }
+          });
+
+          // Close TOC when clicking anywhere else on the page (for mobile)
+          document.addEventListener("click", function (e) {
+               // Only apply this behavior on mobile
+               if (window.innerWidth >= 1020) return;
+
+               // If click is outside the TOC and the toggle button
+               if (!toc.contains(e.target) && e.target !== mobileTocToggle) {
+                    // And if the TOC is open
+                    if (toc.classList.contains("open")) {
+                         toc.classList.remove("open");
+                         mobileTocToggle.classList.remove("open");
+                         mobileTocToggle.setAttribute("aria-expanded", "false");
+                         mobileTocToggle.textContent = "Jump to a section";
+                    }
                }
           });
 
