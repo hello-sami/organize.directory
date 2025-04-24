@@ -1468,6 +1468,47 @@ html .topic-name,
      margin: 0 auto;
      contain: content;
      will-change: auto;
+     padding: 0; /* Remove container padding since we're handling it in children */
+}
+
+/* Fix city page h1 alignment */
+.content > h1 {
+     padding-left: 0; /* Remove left padding as we're adding it to the city-page container */
+     margin-top: 1rem;
+     margin-left: 0; /* Ensure no left margin */
+}
+
+/* Add specific styling for city pages */
+.city-page h1 {
+     margin-left: 0; /* Override any inherited margins */
+     padding-left: 0; /* Override any inherited paddings */
+     font-size: 2.5rem; /* Slightly larger font */
+     color: var(--red-base); /* Use brand color */
+}
+
+@media (max-width: 768px) {
+     .content > h1 {
+          padding-left: 0; /* Remove left padding on mobile */
+          text-align: center; /* Center the heading on mobile for better appearance */
+     }
+
+     .city-page {
+          padding: 0; /* Remove padding on mobile */
+     }
+
+     .city-page h1 {
+          text-align: center; /* Center on mobile */
+          font-size: 2.2rem; /* Smaller font on mobile */
+     }
+
+     .page-header {
+          padding: 1rem; /* Smaller padding on mobile */
+     }
+
+     .page-header h1 {
+          font-size: 2.5rem; /* Smaller font on mobile */
+          text-align: center !important;
+     }
 }
 
 /* State page styling */

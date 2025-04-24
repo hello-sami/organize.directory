@@ -167,39 +167,163 @@ document.addEventListener("DOMContentLoaded", function () {
                });
           });
 
-          // Set up an intersection observer to track active sections
-          const observerOptions = {
-               rootMargin: "-5% 0px -70% 0px",
-               threshold: [0, 0.1, 0.5],
-          };
+          // Keep track of the last known active section
+          let lastActiveSection = null;
 
-          const observer = new IntersectionObserver((entries) => {
-               entries.forEach((entry) => {
-                    if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
-                         const activeId = entry.target.getAttribute("id");
+          // Helper function to update active TOC link
+          function updateActiveTocLink(activeId) {
+               if (!activeId || activeId === lastActiveSection) return;
 
-                         // Update active link in TOC
-                         document
-                              .querySelectorAll(".toc-link")
-                              .forEach((link) => {
-                                   const href = link
-                                        .getAttribute("href")
-                                        .substring(1);
+               lastActiveSection = activeId;
 
-                                   if (href === activeId) {
-                                        link.classList.add("active");
-                                   } else {
-                                        link.classList.remove("active");
-                                   }
-                              });
+               document.querySelectorAll(".toc-link").forEach((link) => {
+                    const href = link.getAttribute("href").substring(1);
+
+                    if (href === activeId) {
+                         link.classList.add("active");
+                    } else {
+                         link.classList.remove("active");
                     }
                });
-          }, observerOptions);
+          }
 
-          // Observe all sections
-          sections.forEach((section) => {
-               observer.observe(section);
-          });
+          // Get all section IDs and positions for scroll-based detection
+          const allSections = Array.from(sections)
+               .map((section) => {
+                    return {
+                         id: section.id,
+                         el: section,
+                         top: section.offsetTop,
+                         bottom: section.offsetTop + section.offsetHeight,
+                         height: section.offsetHeight,
+                    };
+               })
+               .sort((a, b) => a.top - b.top);
+
+          // Improved scroll-based detection system
+          let scrollTimeout = null;
+          function handleScroll() {
+               // Use requestAnimationFrame for better performance
+               if (scrollTimeout) {
+                    return;
+               }
+
+               scrollTimeout = window.requestAnimationFrame(() => {
+                    scrollTimeout = null;
+
+                    // Get current scroll position
+                    const scrollPos = window.scrollY;
+                    // Get viewport height and calculate various trigger points
+                    const viewportHeight = window.innerHeight;
+                    const scrollTop = scrollPos;
+                    const scrollMid = scrollPos + viewportHeight * 0.4; // 40% from top instead of 50%
+                    const scrollBottom = scrollPos + viewportHeight;
+
+                    // Track active section and its visibility score
+                    let activeSection = null;
+                    let maxVisibility = -1;
+
+                    // First pass: Calculate visibility for each section
+                    for (const section of allSections) {
+                         // Skip sections with zero height
+                         if (section.height <= 0) continue;
+
+                         // Calculate how much of the section is visible in viewport
+                         const sectionTop = Math.max(section.top, scrollTop);
+                         const sectionBottom = Math.min(
+                              section.bottom,
+                              scrollBottom
+                         );
+                         let visibleHeight = Math.max(
+                              0,
+                              sectionBottom - sectionTop
+                         );
+
+                         // For very short sections, give them a visibility boost
+                         if (
+                              section.height < viewportHeight * 0.5 &&
+                              visibleHeight > 0
+                         ) {
+                              visibleHeight = Math.max(
+                                   visibleHeight,
+                                   section.height * 0.5
+                              );
+                         }
+
+                         // Calculate visibility as percentage of section visible (0-1)
+                         const visibilityScore = visibleHeight / section.height;
+
+                         // If this section is more visible than previous best, make it active
+                         if (visibilityScore > maxVisibility) {
+                              maxVisibility = visibilityScore;
+                              activeSection = section.id;
+                         }
+                    }
+
+                    // Second pass: if no section has good visibility, use position heuristics
+                    if (maxVisibility < 0.1) {
+                         // Find which section contains our detection point
+                         for (const section of allSections) {
+                              if (
+                                   scrollMid >= section.top &&
+                                   scrollMid <= section.bottom
+                              ) {
+                                   activeSection = section.id;
+                                   break;
+                              }
+                         }
+                    }
+
+                    // Fallback: if we still don't have an active section
+                    if (!activeSection && allSections.length > 0) {
+                         if (scrollTop < allSections[0].top) {
+                              // We're above the first section
+                              activeSection = allSections[0].id;
+                         } else {
+                              // Find the last section we've scrolled past
+                              for (
+                                   let i = allSections.length - 1;
+                                   i >= 0;
+                                   i--
+                              ) {
+                                   if (scrollTop >= allSections[i].top) {
+                                        activeSection = allSections[i].id;
+                                        break;
+                                   }
+                              }
+                         }
+                    }
+
+                    // Update TOC if we have an active section
+                    if (activeSection) {
+                         updateActiveTocLink(activeSection);
+                    }
+               });
+          }
+
+          // Use passive scroll listener for better performance
+          window.addEventListener("scroll", handleScroll, { passive: true });
+
+          // Update section positions on window resize
+          window.addEventListener(
+               "resize",
+               function () {
+                    // Recalculate section positions
+                    allSections.forEach((section) => {
+                         section.top = section.el.offsetTop;
+                         section.bottom =
+                              section.el.offsetTop + section.el.offsetHeight;
+                         section.height = section.el.offsetHeight;
+                    });
+
+                    // Force an update after resize
+                    handleScroll();
+               },
+               { passive: true }
+          );
+
+          // Initialize by calling once
+          handleScroll();
 
           // Update positions on resize
           window.addEventListener(

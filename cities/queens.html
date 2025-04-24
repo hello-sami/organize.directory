@@ -54,8 +54,8 @@
         initializeComponents({
         });
     </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+    <!-- Mobile optimizations -->
+    <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
@@ -65,7 +65,8 @@
         <main class="content" role="main">
             <header id="header" class="page-header"></header>
 
-            <div class="city-page">
+            <!-- Page header with breadcrumb and title -->
+            <div class="page-heading">
                 <div class="breadcrumb">
                     <a href="/new-york">New York</a>
                     <span>›</span>
@@ -75,97 +76,194 @@
                 </div>
 
                 <h1>Queens</h1>
+            </div>
+
+            <!-- Wrapper for content and TOC with positioning context -->
+            <div class="content-wrapper">
+                <!-- Main content -->
+                <div class="city-content">
+
+                    <section id="astoria" class="city-section">
+                        <h2>Astoria</h2>
+                        <div class="initiative">
+                            <a href="https://www.astoriafoodpantry.com/">Astoria Food Pantry</a>
+                            <p>Food pantry, free library, free store, and diaper distributions in Astoria.</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.astoriatenantunion.org/">Astoria Tenant Union</a>
+                            <p>We provide organizing resources, plan canvasses and tenants' rights training, and
+                                host monthly meetings to retake control of our homes.</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://caaav.org/">CAAAV: Organizing Asian Communities</a>
+                            <p>
+                                Building power with working class Asian immigrants in Chinatown
+                                and Astoria through tenant organizing, fighting gentrification,
+                                and developing grassroots leadership to shape the future of our
+                                neighborhoods.
+                            </p>
+                        </div>
+                    </section>
 
 
-                <div class="toc">
-                    <h2 class="toc-title">Contents</h2>
-                    <ul class="toc-list">
-                        <li class="toc-item">
-                            <a href="#mutual-aid" class="toc-link">
-                                <span class="toc-number">1.</span>
-                                Mutual Aid Networks
-                            </a>
-                        </li>
-                        <li class="toc-item">
-                            <a href="#housing" class="toc-link">
-                                <span class="toc-number">2.</span>
-                                Housing
-                            </a>
-                        </li>
-                        <li class="toc-item">
-                            <a href="#transportation" class="toc-link">
-                                <span class="toc-number">3.</span>
-                                Transportation
-                            </a>
-                        </li>
-                    </ul>
+                    <section id="flushing" class="city-section">
+                        <h2>Flushing</h2>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/tenants_benn/">Flushing Bennington Tenants</a>
+                            <p>Local Tenant Union in #flushingqueens People over Profit</p>
+                        </div>
+                    </section>
+
+                    <section id="jackson-heights" class="city-section">
+                        <h2>Jackson Heights</h2>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/89sttenantsunidos">89st Tenants Unidos</a>
+                        </div>
+                    </section>
+
+                    <section id="ridgewood" class="city-section">
+                        <h2>Ridgewood</h2>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/fenixcommunityfridge">Fenix Community Fridge</a>
+                            <p>Free food distribution for those in need every Friday 5pm</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/ridgewoodtenantsunion/">Ridgewood Tenants Union</a>
+                            <p>Building power with our neighbors to fight displacement in the Ridgewood community.</p>
+                        </div>
+                    </section>
+
+                    <section id="transportation" class="city-section">
+                        <h2>Transportation</h2>
+                        <div class="initiative">
+                            <a href="https://queensridersunited.org/">Queens Riders United</a>
+                            <p>A grassroots transportation justice organization working to improve public transit access
+                                and safety for Queens residents.</p>
+                        </div>
+                    </section>
+
+                    <section id="woodside" class="city-section">
+                        <h2>Woodside</h2>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/gratisgrove/">Gratis Grove</a>
+                            <p>24/7 free accessible community fridge in Woodside</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://swma.nyc/">Sunnyside and Woodside Mutual Aid</a>
+                            <p>Neighbors helping neighbors in Woodside with food distribution, resource sharing, and
+                                community support.</p>
+                        </div>
+
+                    </section>
+
+
+                    <section id="other" class="city-section">
+                        <h2>Other</h2>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/anakbayanqueens">Anakbayan Queens</a>
+                            <p>Community-based in Queens, NY //
+                                Mass org of youth + students fighting for national democracy in Philippines with a
+                                socialist perspective</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/centrocorona/">Centro Corona</a>
+                            <p>We are an intergenerational community space born from the practices, conscientization,
+                                and knowledge of working-class and immigrant communities seeking to build autonomy and a
+                                collectively-imagined future.</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://chhayacdc.org/">Chhaya CDC</a>
+                            <p>Building power, housing stability, and economic well-being of South Asian and
+                                Indo-Caribbean communities in Queens.</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/elcafemundialnyc/">El Cafe Mundial</a>
+                            <p>Free breakfast and information, Every Tues 6:30-8:30am, 69th St & Roosevelt Av.</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.queens6ceasefire.com/">Queens 6 Ceasefire</a>
+                            <p>We urge representative Grace Meng of Queens District 6 to call for an immediate ceasefire
+                                and end the siege on Gaza.</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/queens_collective_4_pal">Queens Collective 4
+                                Palestine</a>
+                            <p>A collective of Queens-based groups and individuals working for a free Palestine.</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.instagram.com/queensneighborhoodsunited">Queens Neighborhoods
+                                United</a>
+                            <p>Anti-BID collective of community folks in Corona, Elmhurst, & Jackson Heights fighting
+                                criminalization & displacement in our communities since 2014.</p>
+                        </div>
+                        <div class="initiative">
+                            <a href="https://www.woodbine.nyc/">Woodbine</a>
+                            <p>Woodbine is an experimental hub building autonomy in Ridgewood, Queens. 585 Woodward Ave.
+                            </p>
+                        </div>
+
+
+                    </section>
                 </div>
 
-                <section id="mutual-aid" class="city-section">
-                    <h2>Mutual Aid Networks</h2>
-
-                    <div class="initiative">
-                        <a href="https://swma.nyc/">Sunnyside and Woodside Mutual Aid</a>
-                        <p>Neighbors helping neighbors in Sunnyside and Woodside.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.astoriafoodpantry.com/">Astoria Food Pantry</a>
-                        <p>
-                            Food pantry, free library, free store, and diaper distributions
-                            in Astoria.
-                        </p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://caaav.org/">CAAAV: Organizing Asian Communities</a>
-                        <p>
-                            Building power with working class Asian immigrants in Chinatown
-                            and Astoria through tenant organizing, fighting gentrification,
-                            and developing grassroots leadership to shape the future of our
-                            neighborhoods.
-                        </p>
-                    </div>
-                </section>
-
-                <section id="housing" class="city-section">
-                    <h2>Housing</h2>
-
-                    <div class="initiative">
-                        <a href="https://chhayacdc.org/">Chhaya CDC</a>
-                        <p>
-                            Building power, housing stability, and economic well-being of
-                            South Asian and Indo-Caribbean communities in Queens.
-                        </p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/ridgewoodtenantsunion/">Ridgewood Tenants Union</a>
-                        <p>
-                            A grassroots tenant organization fostering mutual aid and
-                            community solidarity through tenant organizing and housing
-                            justice work in Ridgewood, Queens. They coordinate tenant
-                            support, housing advocacy, and solidarity networks while
-                            building power through collective organizing, direct action, and
-                            creating spaces for tenant empowerment.
-                        </p>
-                    </div>
-                </section>
-
-                <section id="transportation" class="city-section">
-                    <h2>Transportation</h2>
-
-                    <div class="initiative">
-                        <a href="https://queensridersunited.org/">Queens Riders United</a>
-                        <p>
-                            A grassroots transportation justice organization working to improve public transit access
-                            and safety for Queens residents.
-                        </p>
-                    </div>
-                </section>
+                <!-- TOC positioned absolutely/fixed -->
+                <aside class="toc-container">
+                    <nav class="toc" role="navigation" aria-label="Table of Contents" id="toc">
+                        <ul class="toc-list">
+                            <li class="toc-item">
+                                <a href="#astoria" class="toc-link">
+                                    <span class="toc-number">1.</span>
+                                    Astoria
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#flushing" class="toc-link">
+                                    <span class="toc-number">2.</span>
+                                    Flushing
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#jackson-heights" class="toc-link">
+                                    <span class="toc-number">3.</span>
+                                    Jackson Heights
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#ridgewood" class="toc-link">
+                                    <span class="toc-number">4.</span>
+                                    Ridgewood
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#transportation" class="toc-link">
+                                    <span class="toc-number">5.</span>
+                                    Transportation
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#woodside" class="toc-link">
+                                    <span class="toc-number">6.</span>
+                                    Woodside
+                                </a>
+                            </li>
+                            <li class="toc-item">
+                                <a href="#other" class="toc-link">
+                                    <span class="toc-number">7.</span>
+                                    Other
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
             </div>
         </main>
     </div>
 
     <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+    <!-- Include the TOC JavaScript -->
+    <script src="/js/city-toc.js" defer></script>
+    <!-- Add initiative collapsible functionality for mobile -->
+    <script src="/js/initiative-collapsible.js"></script>
+</body>
 
 </html>
