@@ -19,12 +19,13 @@ This project serves as a centralized resource for discovering mutual aid network
 organize.directory/
 ├── cities/          # City-specific pages and data
 ├── states/          # State-level pages and data
-├── issues/          # Issue-specific category pages
+├── topics/          # Issue-specific category pages
 ├── components/      # Reusable UI components
-├── styles/          # CSS stylesheets
-├── templates/       # HTML templates
-├── js/             # JavaScript modules
-└── functions/      # Server functions
+├── css/             # CSS modules (fa-subset, sidebar, toc, newsletter)
+├── js/              # JavaScript modules
+├── fonts/           # Self-hosted web fonts
+├── functions/       # Cloudflare Workers serverless functions
+└── utils/           # Shared JS utilities
 ```
 
 ## Technology Stack
@@ -79,11 +80,11 @@ This is an open directory that welcomes contributions from the community. If you
 
 ## Development
 
-- `build.js`: Generates static pages from templates
-- `server.js`: Development server configuration
-- `theme.js`: Handles dark/light mode functionality
-- `styles/`: Contains modular CSS files for styling
+- `js/generate-titles-index.js`: Regenerates the search index after adding new pages (`npm run generate-title-index`)
+- `scripts/`: Utility scripts for bulk page updates
+- `css/`: Modular CSS files (fa-subset, sidebar, TOC, newsletter)
 - `components/`: Reusable UI components like sidebar and navigation
+- Deployed via Cloudflare Pages with Workers for routing (`functions/`)
 
 ## License
 
