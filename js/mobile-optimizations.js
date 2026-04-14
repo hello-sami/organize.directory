@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
 
           // Only load state-page script on state pages
-          if (document.body.classList.contains("state-page")) {
+          if (document.querySelector(".state-page")) {
                loadScript("/js/state-page-mobile.js");
           }
 
