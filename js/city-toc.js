@@ -20,18 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const sections = document.querySelectorAll(".city-section");
 
           // Exit if required elements don't exist
-          if (
-               !toc ||
-               !tocContainer ||
-               !contentWrapper ||
-               sections.length === 0
-          ) {
-               console.error("Could not find required elements", {
-                    toc: !!toc,
-                    tocContainer: !!tocContainer,
-                    contentWrapper: !!contentWrapper,
-                    sections: sections.length,
-               });
+          if (!toc || !tocContainer || !contentWrapper || sections.length === 0) {
                return;
           }
 
@@ -361,7 +350,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // Initialize
           calculatePositions();
           updateTocPosition();
-     } catch (err) {
-          console.error("TOC Error:", err);
+     } catch {
+          // TOC unavailable on this page
      }
 });

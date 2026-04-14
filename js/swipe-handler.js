@@ -1,15 +1,11 @@
 /**
  * Swipe Gesture Handler for Mobile
  *
- * Adds swipe right to open sidebar, swipe left to close
- * Also implements swipe between sections on city pages
+ * Adds swipe right to open sidebar, swipe left to close.
+ * TOC link smooth scrolling is handled by mobile-toc.js.
  */
 document.addEventListener("DOMContentLoaded", function () {
-     // Initialize swipe detection
      setupSwipeDetection();
-
-     // Add support for smooth scrolling between sections (TOC navigation)
-     setupSmoothScrolling();
 });
 
 function setupSwipeDetection() {
@@ -72,54 +68,3 @@ function setupSwipeDetection() {
      }
 }
 
-function setupSmoothScrolling() {
-     // Smooth scroll for TOC links
-     const tocLinks = document.querySelectorAll(".toc-link");
-
-     tocLinks.forEach((link) => {
-          link.addEventListener("click", function (e) {
-               const href = this.getAttribute("href");
-
-               // Only handle internal hash links
-               if (href && href.startsWith("#")) {
-                    e.preventDefault();
-
-                    const targetId = href.substring(1);
-                    const targetElement = document.getElementById(targetId);
-
-                    if (targetElement) {
-                         // Calculate position accounting for any fixed headers
-                         const headerOffset = 80; // Adjust based on your fixed header height
-                         const elementPosition =
-                              targetElement.getBoundingClientRect().top;
-                         const offsetPosition =
-                              elementPosition +
-                              window.pageYOffset -
-                              headerOffset;
-
-                         window.scrollTo({
-                              top: offsetPosition,
-                              behavior: "smooth",
-                         });
-
-                         // Update URL without scrolling
-                         history.pushState(null, null, href);
-
-                         // Close mobile TOC if it's open
-                         const toc = document.querySelector(".toc");
-                         const tocToggle =
-                              document.querySelector(".mobile-toc-toggle");
-
-                         if (
-                              toc &&
-                              toc.classList.contains("open") &&
-                              tocToggle
-                         ) {
-                              toc.classList.remove("open");
-                              tocToggle.classList.remove("open");
-                         }
-                    }
-               }
-          });
-     });
-}

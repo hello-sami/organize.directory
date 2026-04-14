@@ -12,9 +12,7 @@ function initTitleSearch() {
      setupSearchUI();
 
      // Load the search index
-     loadSearchIndex().then(() => {
-          console.log(`Search index loaded with ${titleIndex.length} entries`);
-     });
+     loadSearchIndex();
 }
 
 // Setup the search UI elements
@@ -25,11 +23,7 @@ function setupSearchUI() {
           ? document.getElementById("location-search-section")
           : document.querySelector(".homepage-content");
 
-     // Only proceed if we found a valid container
-     if (!targetContainer) {
-          console.warn("Title search container target not found");
-          return;
-     }
+     if (!targetContainer) return;
 
      // Only create if the search container doesn't already exist
      if (!document.getElementById("title-search-container")) {
@@ -105,17 +99,11 @@ async function loadSearchIndex() {
                return;
           }
 
-          // Otherwise fall back to static hardcoded lists
-          console.warn(
-               "Title index JSON not found, falling back to static data"
-          );
           titleIndex = [
                ...(await getFallbackStatesIndex()),
                ...(await getFallbackCitiesIndex()),
           ];
-     } catch (error) {
-          console.error("Error loading search index:", error);
-          // Fall back to static hardcoded lists
+     } catch {
           titleIndex = [
                ...(await getFallbackStatesIndex()),
                ...(await getFallbackCitiesIndex()),

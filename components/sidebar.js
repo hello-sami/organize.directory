@@ -4,7 +4,7 @@ const sidebarTemplate = `
         <a href="/">
           <img src="/logo.svg" alt="Organize Directory Logo" class="site-logo loaded" 
                style="opacity: 1; visibility: visible;"
-               onerror="console.error('Logo failed to load');">
+               onerror="this.style.visibility='hidden';">
         </a>
     </div>
     <nav>
@@ -99,8 +99,6 @@ function createSidebar() {
           if (layout) {
                // Ensure sidebar is always the first child of layout
                layout.insertBefore(sidebar, layout.firstChild);
-          } else {
-               console.error("Layout element not found");
           }
      }
 }
@@ -181,24 +179,13 @@ function setActivePage(activePage) {
  * Sets up mobile sidebar toggle functionality
  */
 function setupMobileToggle() {
-     // Log for debugging
-     console.log("Setting up mobile toggle in sidebar.js");
-
      const mobileMenuButtons = document.querySelectorAll(
           ".mobile-menu-button, #menu-toggle"
      );
      const overlay = document.querySelector(".mobile-menu-overlay");
      const sidebar = document.querySelector(".sidebar");
 
-     console.log("Mobile menu buttons found:", mobileMenuButtons.length);
-     console.log("Overlay found:", !!overlay);
-     console.log("Sidebar found:", !!sidebar);
-
-     // Make sure all required elements exist
-     if (!sidebar) {
-          console.error("Sidebar element not found");
-          return;
-     }
+     if (!sidebar) return;
 
      // Setup button click handlers
      mobileMenuButtons.forEach((button) => {
@@ -213,8 +200,6 @@ function setupMobileToggle() {
           newButton.addEventListener("click", (e) => {
                e.preventDefault();
                e.stopPropagation();
-               console.log("Mobile menu button clicked in sidebar.js");
-
                sidebar.classList.toggle("active");
                document.body.classList.toggle("menu-open");
 

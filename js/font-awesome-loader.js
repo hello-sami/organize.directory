@@ -15,8 +15,6 @@
           // Skip if icons are already loaded
           if (iconsLoaded) return;
 
-          console.log("[Font Awesome Loader] Starting icon load...");
-
           // Create link to load the CSS
           const link = document.createElement("link");
           link.rel = "stylesheet";
@@ -25,9 +23,6 @@
 
           // Set loading event handlers
           link.onload = function () {
-               console.log(
-                    "[Font Awesome Loader] Successfully loaded local Font Awesome subset"
-               );
                iconsLoaded = true;
                applyStyles();
 
@@ -36,9 +31,6 @@
           };
 
           link.onerror = function () {
-               console.error(
-                    "[Font Awesome Loader] Failed to load Font Awesome!"
-               );
                applyFallbackIcons();
           };
 
@@ -65,7 +57,6 @@
 
      // Apply emergency fallback for icons
      function applyFallbackIcons() {
-          console.log("[Font Awesome Loader] Applying fallback icons...");
 
           // Add fallback class to all icons
           document.querySelectorAll(".fas.topic-icon").forEach((icon) => {
@@ -101,19 +92,13 @@
                     computedStyle.visibility === "hidden" ||
                     computedStyle.display === "none"
                ) {
-                    console.warn(
-                         "[Font Awesome Loader] Found invisible icon:",
-                         icon
-                    );
                     icon.classList.add("icon-failed");
                     foundInvisibleIcons = true;
                }
           });
 
           if (foundInvisibleIcons) {
-               console.log(
-                    "[Font Awesome Loader] Applying fallback for invisible icons"
-               );
+               applyFallbackIcons();
           }
      }
 
