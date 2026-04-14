@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,52 +18,29 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Primary Meta Tags -->
-  <title>
-    Boston Mutual Aid Networks - Local Support &amp; Community Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid networks and community support initiatives in Boston, Massachusetts.">
+  <title>Boston Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Boston. Connect with local organizations and community resources.">
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Boston Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Boston. Connect with local organizations and community resources.">
   <meta property="og:type" content="website">
-
   <meta property="og:url" content="https://organize.directory/boston">
   <meta property="og:image" content="https://organize.directory/preview.png">
-  <meta property="og:title" content="Boston Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description"
-    content="Find mutual aid networks and community support initiatives in Boston, Massachusetts.">
-
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary">
 
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
-  </script>
-
   <!-- Styles -->
-  <link rel="stylesheet" href="/fonts/fonts.css">
   <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
+
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-  <!-- Mobile optimizations -->
   <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
@@ -62,128 +48,82 @@
   <div class="layout">
     <div id="sidebar-placeholder"></div>
 
-    <main class="content">
+    <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      <article class="city-page">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
+      
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/massachusetts">Massachusetts</a>
           <span>›</span>
-          <span aria-current="page">Boston</span>
-        </nav>
+          <span>Boston</span>
+        </div>
 
         <h1>Boston</h1>
 
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <div class="initiative">
+      <a href="https://www.surjboston.org/">SURJ Boston</a>
+      <p>Local chapter of Showing Up For Racial Justice, a national network of groups and individuals organizing white people for racial justice.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://outmetrowest.org/">OUT Metrowest</a>
+      <p>OUT MetroWest builds communities where LGBTQ+ youth thrive. Our free programs connect LGBTQ+ youth with supportive peers and LGBTQ+ adult role models.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://bostontenantsunion.org/">Greater Boston Tenants Union</a>
+      <p>We don't need landlords, they need us! Building tenant power in the Greater Boston area.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://warmupboston.org/">Warm Up Boston</a>
+      <p>A radical survival program serving, supporting, and empowering Boston's unhoused community through solidarity rather than charity.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/bostonrevsocialist/">Boston Revolutionary Socialists</a>
+      <p>A revolutionary socialist organization fostering mutual aid and community solidarity through collective organizing in Boston. They coordinate political education, direct action support, and solidarity networks while building power through community organizing and creating spaces for collective study and struggle.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/bdsboston/">BDS Boston</a>
+      <p>An organization building the BDS movement in the Greater Boston area in solidarity with Palestine.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://kataluma.org/">Kataluma</a>
+      <p>A Boston refugee hospitality fellowship working to create safe and welcoming transitional lodgings for newly arrived refugees and asylum-seekers.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.bostonfoodnotbombs.com/">Boston Food Not Bombs</a>
+      <p>A grassroots collective fostering mutual aid through free food distribution and community solidarity in Boston. They coordinate weekly food shares, resource recovery, and solidarity networks while building power through direct action against food waste and hunger, creating spaces for community gathering and collective care.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.aarw.org/">Asian American Resource Workshop</a>
+      <p>We are a political home for pan-Asian communities in Greater Boston. We are a member-led organization committed to building grassroots power through political education, creative expression, and issue-based and neighborhood organizing.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/allstonbrightonfridges/">Allston-Brighton Community Fridges</a>
+      <p>A mutual aid network maintaining community fridges and pantries in the Allston-Brighton neighborhoods of Boston. They coordinate food distribution, resource sharing, and community care while building power through neighborhood solidarity and creating accessible spaces for food security.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/weelauneesolidarityboston">Weelaunee Solidarity Boston</a>
+      <p>A solidarity collective organizing mutual aid and direct support for Indigenous land defense in Weelaunee (Atlanta Forest). They coordinate resource sharing, political education, and solidarity networks while building connections between Boston communities and Indigenous-led struggles for land sovereignty.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://bostonanarchistbookfair.org/">Boston Anarchist Book Fair</a>
+      <p>An annual gathering fostering mutual aid and radical education through literature, workshops, and community building. They coordinate book distribution, skill sharing, and solidarity networks while creating spaces for anarchist organizing, political education, and building connections between various mutual aid initiatives.</p>
+    </div>
+  </section>
+        </div>
+      </div>
 
-        <section class="initiatives">
-          <div class="initiative">
-            <a href="https://www.surjboston.org/">SURJ Boston</a>
-            <p>
-              Local chapter of Showing Up For Racial Justice, a national network of groups and individuals organizing
-              white people for racial justice.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://outmetrowest.org/">OUT Metrowest</a>
-            <p>
-              OUT MetroWest builds communities where LGBTQ+ youth thrive. Our
-              free programs connect LGBTQ+ youth with supportive peers and
-              LGBTQ+ adult role models.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://bostontenantsunion.org/">Greater Boston Tenants Union</a>
-            <p>We don't need landlords, they need us! Building tenant power in the Greater Boston area.</p>
-          </div>
-          <div class="initiative">
-            <a href="https://warmupboston.org/">Warm Up Boston</a>
-            <p>
-              A radical survival program serving, supporting, and empowering Boston's unhoused community through
-              solidarity rather than charity.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/bostonrevsocialist/">Boston Revolutionary Socialists</a>
-            <p>
-              A revolutionary socialist organization fostering mutual aid and
-              community solidarity through collective organizing in Boston.
-              They coordinate political education, direct action support, and
-              solidarity networks while building power through community
-              organizing and creating spaces for collective study and
-              struggle.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/bdsboston/">BDS Boston</a>
-            <p>
-              An organization building the BDS movement in the Greater Boston area in solidarity with Palestine.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://kataluma.org/">Kataluma</a>
-            <p>
-              A Boston refugee hospitality fellowship working to create safe
-              and welcoming transitional lodgings for newly arrived refugees
-              and asylum-seekers.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.bostonfoodnotbombs.com/">Boston Food Not Bombs</a>
-            <p>
-              A grassroots collective fostering mutual aid through free food
-              distribution and community solidarity in Boston. They coordinate
-              weekly food shares, resource recovery, and solidarity networks
-              while building power through direct action against food waste
-              and hunger, creating spaces for community gathering and
-              collective care.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.aarw.org/">Asian American Resource Workshop</a>
-            <p>We are a political home for pan-Asian communities in Greater Boston. We are a member-led organization
-              committed to building grassroots power through political education, creative expression, and issue-based
-              and neighborhood organizing.</p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/allstonbrightonfridges/">Allston-Brighton Community Fridges</a>
-            <p>
-              A mutual aid network maintaining community fridges and pantries
-              in the Allston-Brighton neighborhoods of Boston. They coordinate
-              food distribution, resource sharing, and community care while
-              building power through neighborhood solidarity and creating
-              accessible spaces for food security.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/weelauneesolidarityboston">Weelaunee Solidarity Boston</a>
-            <p>
-              A solidarity collective organizing mutual aid and direct support
-              for Indigenous land defense in Weelaunee (Atlanta Forest). They
-              coordinate resource sharing, political education, and solidarity
-              networks while building connections between Boston communities
-              and Indigenous-led struggles for land sovereignty.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://bostonanarchistbookfair.org/">Boston Anarchist Book Fair</a>
-            <p>
-              An annual gathering fostering mutual aid and radical education
-              through literature, workshops, and community building. They
-              coordinate book distribution, skill sharing, and solidarity
-              networks while creating spaces for anarchist organizing,
-              political education, and building connections between various
-              mutual aid initiatives.
-            </p>
-          </div>
-        </section>
-      </article>
+      
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
 </body>
 
 </html>

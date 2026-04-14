@@ -2,92 +2,88 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
 
-    <title>
-        San Joaquin County Mutual Aid Networks - Local Support &amp; Community
-        Resources
-    </title>
-    <meta name="description"
-        content="Find mutual aid networks and community support initiatives in San Joaquin County, California.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link rel="stylesheet" href="/fonts/fonts.css">
+  <title>San Joaquin County, California Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in San Joaquin County, California. Connect with local organizations and community resources.">
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="San Joaquin County, California Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in San Joaquin County, California. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/san-joaquin-county">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-        // Initialize sidebar first
-        initializeSidebar('location');
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
-        // Initialize other components
-        initializeComponents({
-        });
-    </script>
-    <!-- Open Graph / Social Media -->
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
+    initializeSidebar('location');
+    initializeComponents({});
+  </script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
-    <meta property="og:title" content="San Joaquin County | The Organize Directory">
-    <meta property="og:description" content="Find mutual aid networks and community resources in San Joaquin County.">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta property="og:url" content="https://organize.directory/san-joaquin-county">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+  <div class="layout">
+    <div id="sidebar-placeholder"></div>
 
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+      
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
+          <a href="/california">California</a>
+          <span>›</span>
+          <a href="/san-joaquin-valley">San Joaquin Valley, California</a>
+          <span>›</span>
+          <span>San Joaquin County, California</span>
+        </div>
 
-            <div class="city-page county-page">
-                <div class="breadcrumb">
-                    <a href="/california">California</a>
-                    <span>›</span>
-                    <a href="/norcal">Northern California</a>
-                    <span>›</span>
-                    <a href="/san-joaquin-valley">San Joaquin Valley</a>
-                    <span>›</span>
-                    <span>San Joaquin County</span>
-                </div>
+        <h1>San Joaquin County, California</h1>
 
-                <h1>San Joaquin County, California</h1>
-
-
-                <section>
-                    <div class="cities-list">
-                        <h2>Major Cities</h2>
-                        <div class="city-links-container">
-                            <a href="/stockton" class="city-link location-link-base">Stockton</a>
-                            <a href="/tracy" class="city-link location-link-base">Tracy</a>
-                            <a href="/lodi" class="city-link location-link-base">Lodi</a>
-                            <a href="/manteca" class="city-link location-link-base">Manteca</a>
-                        </div>
-                    </div>
-                </section>
-
-                <section>
-
-                </section>
-            </div>
-        </main>
+        <div class="city-content">
+  <section>
+    <div class="cities-list">
+      <h2>Locations</h2>
+      <div class="city-links-container">
+          <a href="/stockton" class="city-link location-link-base">Stockton</a>
+      </div>
     </div>
+  </section>
+        </div>
+      </div>
 
-    <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+      
+    </main>
+  </div>
+
+  <script src="/mobile-menu.js" defer></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

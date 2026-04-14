@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,53 +18,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Mutual Aid in Fort Collins / North CO - Local Support Networks &amp; Community
-    Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid initiatives and community support networks in Fort Collins / North CO, Colorado. Connect with local organizations and community resources.">
-  <meta property="og:title" content="Mutual Aid in Fort Collins / North CO - Local Support Networks">
-  <meta property="og:description"
-    content="Find mutual aid initiatives and community support networks in Fort Collins / North CO, Colorado. Connect with local organizations providing community-based support.">
-  <meta property="og:type" content="website">
+  <title>Fort Collins / North CO Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Fort Collins / North CO. Connect with local organizations and community resources.">
 
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Fort Collins / North CO Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Fort Collins / North CO. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/fort-collins-north-co">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
-
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-  <script>
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
-  </script>
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
@@ -65,8 +51,11 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
+      
       <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/colorado">Colorado</a>
           <span>›</span>
           <span>Fort Collins / North CO</span>
@@ -74,47 +63,35 @@
 
         <h1>Fort Collins / North CO</h1>
 
-
-        <section>
-          <div class="initiative">
-            <a href="https://www.instagram.com/fortcollinsagainstcapitalism">Fort Collins Against Capitalism</a>
-            <p>
-              A grassroots organization fostering mutual aid and community
-              support in Fort Collins. They coordinate direct assistance,
-              resource sharing, and solidarity networks while building power
-              through community organizing and creating spaces for collective
-              liberation and resistance.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/foodnotbombs_fc/">Food Not Bombs FoCo</a>
-            <p>
-              Free soup on Arapaho, Ute, and Cheyenne territory. Mutual aid.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://clothethepeople.com/">Clothe the People</a>
-            <p>
-              Our mission is radically simple: to distribute clothing, food,
-              hygiene goods, and harm reduction supplies to those in need
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.reddit.com/r/FortCollinsMutualAid/">/r/FortCollinsMutualAid</a>
-            <p>
-              Cooperating to serve community members. A network of care and
-              generosity to meet the immediate needs of neighbors. Share food,
-              resources, skills, effort, and time!
-            </p>
-          </div>
-        </section>
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <div class="initiative">
+      <a href="https://www.instagram.com/fortcollinsagainstcapitalism">Fort Collins Against Capitalism</a>
+      <p>A grassroots organization fostering mutual aid and community support in Fort Collins. They coordinate direct assistance, resource sharing, and solidarity networks while building power through community organizing and creating spaces for collective liberation and resistance.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/foodnotbombs_fc/">Food Not Bombs FoCo</a>
+      <p>Free soup on Arapaho, Ute, and Cheyenne territory. Mutual aid.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://clothethepeople.com/">Clothe the People</a>
+      <p>Our mission is radically simple: to distribute clothing, food, hygiene goods, and harm reduction supplies to those in need</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.reddit.com/r/FortCollinsMutualAid/">/r/FortCollinsMutualAid</a>
+      <p>Cooperating to serve community members. A network of care and generosity to meet the immediate needs of neighbors. Share food, resources, skills, effort, and time!</p>
+    </div>
+  </section>
+        </div>
       </div>
+
+      
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

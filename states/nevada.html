@@ -2,141 +2,95 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <!-- SEO Meta Tags -->
-    <title>Nevada Mutual Aid Networks - Local Support &amp; Community Resources</title>
-    <meta name="description"
-        content="Find mutual aid networks and community support initiatives in Nevada cities including Las Vegas, Reno, Elko, and more.">
-    <meta property="og:title" content="Nevada Mutual Aid Networks - Local Support &amp; Community Resources">
-    <meta property="og:description"
-        content="Find mutual aid networks and community support initiatives in Nevada cities including Las Vegas, Reno, Elko, and more.">
-    <meta property="og:type" content="website">
+  <title>Nevada Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid networks and community support initiatives in Nevada. Connect with local organizations and community resources.">
 
-    <meta property="og:url" content="https://organize.directory/nevada">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta name="twitter:card" content="summary">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Nevada Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid networks and community support initiatives in Nevada. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/nevada">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css?v=1.1.9">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
-
-    <link rel="stylesheet" href="/fonts/fonts.css">
-
-    <!-- Theme Scripts -->
-    <script>
-        (function () {
-            function applyTheme() {
-                try {
-                    const savedTheme = localStorage.getItem("theme");
-                    if (savedTheme) {
-                        document.documentElement.setAttribute("data-theme", savedTheme);
-                    } else {
-                        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                        const theme = prefersDark ? "dark" : "light";
-                        document.documentElement.setAttribute("data-theme", theme);
-                        localStorage.setItem("theme", theme);
-                    }
-                } catch (e) {
-                    document.documentElement.setAttribute("data-theme", "light");
-                }
-            }
-            applyTheme();
-            document.addEventListener("visibilitychange", function () {
-                if (document.visibilityState === "visible") {
-                    applyTheme();
-                }
-            });
-        })();
-    </script>
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('location');
-
-        // Initialize other components
-        initializeComponents({
-        });
-    </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
+    initializeSidebar('location');
+    initializeComponents({});
+  </script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  <div class="layout">
+    <div id="sidebar-placeholder"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-            <div class="city-page state-page">
-                <div class="breadcrumb">
-                    <a href="/location">States</a>
-                    <span>›</span>
-                    <span>Nevada</span>
-                </div>
+      <div class="city-page state-page">
+        <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
+          <span>Nevada</span>
+        </div>
 
-                <h1>Nevada</h1>
+        <h1>Nevada</h1>
 
-
-                <section>
-                    <div class="cities-list">
-                        <h2>Cities</h2>
-                        <div class="city-links-container">
-                            <!-- <a href="/elko" class="city-link">Elko</a> -->
-                            <!-- <a href="/henderson" class="city-link">Henderson</a> -->
-                            <a href="/las-vegas" class="city-link location-link-base">Las Vegas</a>
-                            <a href="/reno-tahoe" class="city-link location-link-base">Reno / Tahoe</a>
-                        </div>
-                    </div>
-                </section>
-
-
-                <section>
-                    <h2>Statewide Organizations</h2>
-                    <div class="initiative">
-                        <a href="https://massliberationnv.com/">Mass Liberation Project</a>
-                        <p>Grassroots organization building power with communities impacted by mass incarceration
-                            through mutual aid, political education, and organizing campaigns to transform Nevada's
-                            criminal legal system.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.wildwestfund.org/">Wild West Fund</a>
-                        <p>A grassroots organization fostering mutual aid and reproductive justice through abortion
-                            access and support across Nevada. They coordinate direct assistance, resource sharing, and
-                            solidarity networks while building power through healthcare access, community organizing,
-                            and creating spaces for reproductive autonomy.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.nnvhra.org/">Northern Nevada Harm Reduction Alliance</a>
-                        <p>Organization expanding harm reduction education, overdose prevention, drug trend surveillance
-                            and notification, soft tissue infection prevention, outreach, and linkage to services.</p>
-                    </div>
-                </section>
-            </div>
-        </main>
+  <section>
+    <div class="cities-list">
+      <h2>Locations</h2>
+      <div class="city-links-container">
+          <a href="/las-vegas" class="city-link location-link-base">Las Vegas</a>
+          <a href="/reno-tahoe" class="city-link location-link-base">Reno / Tahoe</a>
+      </div>
     </div>
+  </section>
 
+  <section id="statewide-organizations" class="city-section">
+    <h2>Statewide Organizations</h2>
+    <div class="initiative">
+      <a href="https://massliberationnv.com/">Mass Liberation Project</a>
+      <p>Grassroots organization building power with communities impacted by mass incarceration through mutual aid, political education, and organizing campaigns to transform Nevada's criminal legal system.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.wildwestfund.org/">Wild West Fund</a>
+      <p>A grassroots organization fostering mutual aid and reproductive justice through abortion access and support across Nevada. They coordinate direct assistance, resource sharing, and solidarity networks while building power through healthcare access, community organizing, and creating spaces for reproductive autonomy.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.nnvhra.org/">Northern Nevada Harm Reduction Alliance</a>
+      <p>Organization expanding harm reduction education, overdose prevention, drug trend surveillance and notification, soft tissue infection prevention, outreach, and linkage to services.</p>
+    </div>
+  </section>
+      </div>
+    </main>
+  </div>
 
-    <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/mobile-menu.js" defer></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
+</body>
 
 </html>

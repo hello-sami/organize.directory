@@ -2,165 +2,123 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <title>South Carolina Mutual Aid Networks - Local Support &amp; Community Resources</title>
-    <meta name="description"
-        content="Find mutual aid initiatives and community support networks in South Carolina cities including Charleston, Columbia, Greenville, and more.">
-    <meta property="og:title" content="South Carolina Mutual Aid Networks - Local Support &amp; Community Resources">
-    <meta property="og:description"
-        content="Find mutual aid initiatives and community support networks in South Carolina cities including Charleston, Columbia, Greenville, and more.">
-    <meta property="og:type" content="website">
+  <title>South Carolina Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid networks and community support initiatives in South Carolina. Connect with local organizations and community resources.">
 
-    <meta property="og:url" content="https://organize.directory/south-carolina">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta name="twitter:card" content="summary">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="South Carolina Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid networks and community support initiatives in South Carolina. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/south-carolina">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css?v=1.1.9">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
-
-    <link rel="stylesheet" href="/fonts/fonts.css">
-
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('location');
-
-        // Initialize other components
-        initializeComponents({
-        });
-    </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
+    initializeSidebar('location');
+    initializeComponents({});
+  </script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  <div class="layout">
+    <div id="sidebar-placeholder"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-            <div class="city-page state-page">
-                <div class="breadcrumb">
-                    <a href="/location">States</a>
-                    <span>›</span>
-                    <span>South Carolina</span>
-                </div>
+      <div class="city-page state-page">
+        <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
+          <span>South Carolina</span>
+        </div>
 
-                <h1>South Carolina</h1>
+        <h1>South Carolina</h1>
 
-
-                <section>
-                    <div class="cities-list">
-                        <h2>Cities</h2>
-                        <div class="city-links-container">
-                            <!-- <a href="/aiken" class="city-link">Aiken</a> -->
-                            <!-- <a href="/anderson" class="city-link">Anderson</a> -->
-                            <a href="/charleston" class="city-link location-link-base">Charleston</a>
-                            <a href="/columbia" class="city-link location-link-base">Columbia</a>
-                            <!-- <a href="/florence" class="city-link">Florence</a> -->
-                            <a href="/greenville" class="city-link location-link-base">Greenville</a>
-                            <!-- <a href="/hilton-head" class="city-link">Hilton Head</a> -->
-                            <a href="/myrtle-beach" class="city-link location-link-base">Myrtle Beach</a>
-                            <a href="/rock-hill" class="city-link location-link-base">Rock Hill</a>
-                            <a href="/spartanburg" class="city-link location-link-base">Spartanburg</a>
-                            <!-- <a href="/sumter" class="city-link">Sumter</a> -->
-                        </div>
-                    </div>
-                </section>
-
-
-                <section>
-                    <h2>Statewide Organizations</h2>
-                    <div class="initiative">
-                        <a href="https://www.harriethancockcenter.org/">Harriet Hancock Center</a>
-                        <p>A statewide organization fostering mutual aid and community support for LGBTQ+ people across
-                            South Carolina. They coordinate direct assistance, resource sharing, and solidarity networks
-                            while building power through community organizing, support services, and creating affirming
-                            spaces for queer and trans people to connect and thrive.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/theladiesroomsc/">The Ladies Room</a>
-                        <p>A grassroots organization fostering mutual aid and community support for LGBTQ+ people across
-                            South Carolina. They coordinate direct assistance, resource sharing, and solidarity networks
-                            while building power through community organizing and creating affirming spaces for queer
-                            and trans people to connect and thrive.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.carolinaabortionfund.org/">Carolina Abortion Fund</a>
-                        <p>A mutual aid network providing financial, logistical, and emotional support to ensure
-                            abortion access for residents of North and South Carolina, while building power for
-                            reproductive justice through community organizing and advocacy.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.cypressfund.org/">Cypress Fund</a>
-                        <p>A social justice fund providing mutual aid and resources to grassroots organizations across
-                            South Carolina. Through community-led grantmaking and donor organizing, they coordinate
-                            resource redistribution and direct support while building power for systemic change and
-                            community self-determination.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/palmettostateabortionfund/">Palmetto State Abortion Fund</a>
-                        <p>A grassroots organization providing mutual aid and support for abortion access across South
-                            Carolina. They coordinate direct financial assistance, practical support, and solidarity
-                            networks while building power through reproductive justice organizing and creating pathways
-                            for healthcare access and bodily autonomy.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/rainydayfund_us/">Rainy Day Fund</a>
-                        <p>A mutual aid network providing direct financial assistance and support to people in need
-                            across South Carolina and Virginia. They coordinate emergency financial aid, resource
-                            sharing, and solidarity networks while building power through community care and creating
-                            pathways for collective support.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/schousingjustice/">SC Housing Justice Network</a>
-                        <p>A grassroots network fostering mutual aid and community support for housing justice across
-                            South Carolina. They coordinate tenant organizing, eviction defense, and solidarity networks
-                            while building power through community organizing and creating pathways for housing justice
-                            and tenant rights.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/scadeathpenalty/">SC Death Penalty Action Network</a>
-                        <p>A grassroots organization working to abolish the death penalty in South Carolina through
-                            mutual aid, advocacy, and community organizing. They coordinate direct support for death row
-                            prisoners and their families, education initiatives, and solidarity networks while building
-                            power through abolition organizing and creating pathways for justice transformation.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://carolinamigrantnetwork.org/">Carolina Migrant Network</a>
-                        <p>CMN offers free represent for people in NC/SC detention and removal proceedings.</p>
-                    </div>
-                </section>
-
-            </div>
-
-        </main>
+  <section>
+    <div class="cities-list">
+      <h2>Locations</h2>
+      <div class="city-links-container">
+          <a href="/charleston" class="city-link location-link-base">Charleston</a>
+          <a href="/columbia" class="city-link location-link-base">Columbia</a>
+          <a href="/greenville" class="city-link location-link-base">Greenville</a>
+          <a href="/myrtle-beach" class="city-link location-link-base">Myrtle Beach, South Carolina</a>
+          <a href="/rock-hill" class="city-link location-link-base">Rock Hill</a>
+          <a href="/spartanburg" class="city-link location-link-base">Spartanburg</a>
+      </div>
     </div>
+  </section>
 
+  <section id="statewide-organizations" class="city-section">
+    <h2>Statewide Organizations</h2>
+    <div class="initiative">
+      <a href="https://www.harriethancockcenter.org/">Harriet Hancock Center</a>
+      <p>A statewide organization fostering mutual aid and community support for LGBTQ+ people across South Carolina. They coordinate direct assistance, resource sharing, and solidarity networks while building power through community organizing, support services, and creating affirming spaces for queer and trans people to connect and thrive.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/theladiesroomsc/">The Ladies Room</a>
+      <p>A grassroots organization fostering mutual aid and community support for LGBTQ+ people across South Carolina. They coordinate direct assistance, resource sharing, and solidarity networks while building power through community organizing and creating affirming spaces for queer and trans people to connect and thrive.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.carolinaabortionfund.org/">Carolina Abortion Fund</a>
+      <p>A mutual aid network providing financial, logistical, and emotional support to ensure abortion access for residents of North and South Carolina, while building power for reproductive justice through community organizing and advocacy.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.cypressfund.org/">Cypress Fund</a>
+      <p>A social justice fund providing mutual aid and resources to grassroots organizations across South Carolina. Through community-led grantmaking and donor organizing, they coordinate resource redistribution and direct support while building power for systemic change and community self-determination.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/palmettostateabortionfund/">Palmetto State Abortion Fund</a>
+      <p>A grassroots organization providing mutual aid and support for abortion access across South Carolina. They coordinate direct financial assistance, practical support, and solidarity networks while building power through reproductive justice organizing and creating pathways for healthcare access and bodily autonomy.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/rainydayfund_us/">Rainy Day Fund</a>
+      <p>A mutual aid network providing direct financial assistance and support to people in need across South Carolina and Virginia. They coordinate emergency financial aid, resource sharing, and solidarity networks while building power through community care and creating pathways for collective support.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/schousingjustice/">SC Housing Justice Network</a>
+      <p>A grassroots network fostering mutual aid and community support for housing justice across South Carolina. They coordinate tenant organizing, eviction defense, and solidarity networks while building power through community organizing and creating pathways for housing justice and tenant rights.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/scadeathpenalty/">SC Death Penalty Action Network</a>
+      <p>A grassroots organization working to abolish the death penalty in South Carolina through mutual aid, advocacy, and community organizing. They coordinate direct support for death row prisoners and their families, education initiatives, and solidarity networks while building power through abolition organizing and creating pathways for justice transformation.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://carolinamigrantnetwork.org/">Carolina Migrant Network</a>
+      <p>CMN offers free represent for people in NC/SC detention and removal proceedings.</p>
+    </div>
+  </section>
+      </div>
+    </main>
+  </div>
 
-
-    <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/mobile-menu.js" defer></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
+</body>
 
 </html>

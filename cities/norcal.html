@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,54 +18,44 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Northern California Mutual Aid - Local Support Networks &amp; Community
-    Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid initiatives and community support networks in Northern California including San Francisco Bay Area, Sacramento, and North Coast regions.">
+  <title>Northern California Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Northern California. Connect with local organizations and community resources.">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Northern California Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Northern California. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/norcal">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-  <!-- Open Graph / Social Media -->
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
-<body>n
-  <meta property="og:title" content="Norcal | The Organize Directory">n
-  <meta property="og:description" content="Find mutual aid networks and community resources in norcal.">n
-  <meta property="og:image" content="https://organize.directory/preview.png">n
-  <meta property="og:url" content="https://organize.directory/norcal">n
-  <meta property="og:type" content="website">n
-  <meta name="twitter:card" content="summary_large_image">
-
-
-
+<body>
   <div class="layout">
     <div id="sidebar-placeholder"></div>
 
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      <div class="city-page state-page">
+      
+      <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/california">California</a>
           <span>›</span>
           <span>Northern California</span>
@@ -64,132 +63,60 @@
 
         <h1>Northern California</h1>
 
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <h2>Community Support</h2>
+    <div class="initiative">
+      <a href="https://www.norcalresist.org/">NorCal Resist</a>
+      <p>A grassroots organization coordinating mutual aid and community support initiatives across Northern California. They organize direct assistance through food distribution, deportation defense, asylum support, and climate resilience programs while building networks of solidarity through their Seeds of Solidarity farm, brake light repair clinics, and community accompaniment services.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.facebook.com/ruralsurjofnorcal/">Rural SURJ of Northern California</a>
+      <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in rural Northern California. They coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with BIPOC-led organizations in rural communities.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://ncip.org/">Northern California Innocence Project</a>
+      <p>A legal group that seeks to exonerate people wrongfully incarcerated by the state.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/norcal_antiwar_action/">Norcal Anti-War Action</a>
+      <p>A grassroots organization coordinating anti-war actions and peace initiatives across Northern California.</p>
+    </div>
+  </section>
 
-
-        <section>
-          <div class="cities-list">
-            <h2>Sub-Regions</h2>
-            <div class="city-links-container">
-              <a href="/sf-bay-area" class="city-link location-link-base">Bay Area</a>
-              <!-- <a href="/sacramento-valley" class="city-link">Sacramento Valley</a> -->
-              <!-- <a href="/north-coast" class="city-link">North Coast</a> -->
-              <!-- <a href="/sierra-nevada" class="city-link">Sierra Nevada</a> -->
-              <a href="/shasta" class="city-link location-link-base">Shasta</a>
-              <a href="/san-joaquin-valley" class="city-link location-link-base">San Joaquin Valley</a>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div class="cities-list">
-            <h2>Counties</h2>
-            <div class="city-links-container">
-              <a href="/alameda-county" class="city-link location-link-base">Alameda</a>
-              <!-- <a href="/alpine-county" class="city-link">Alpine</a> -->
-              <!-- <a href="/amador-county" class="city-link">Amador</a> -->
-              <a href="/butte-county" class="city-link location-link-base">Butte</a>
-              <!-- <a href="/calaveras-county" class="city-link">Calaveras</a> -->
-              <!-- <a href="/colusa-county" class="city-link">Colusa</a> -->
-              <a href="/contra-costa-county" class="city-link">Contra Costa</a>
-              <!-- <a href="/del-norte-county" class="city-link">Del Norte</a> -->
-              <!-- <a href="/el-dorado-county" class="city-link">El Dorado</a> -->
-              <!-- <a href="/fresno-county" class="city-link">Fresno</a> -->
-              <!-- <a href="/glenn-county" class="city-link">Glenn</a> -->
-              <a href="/humboldt-county" class="city-link location-link-base">Humboldt</a>
-              <!-- <a href="/inyo-county" class="city-link">Inyo</a> -->
-              <!-- <a href="/kings-county" class="city-link">Kings</a> -->
-              <!-- <a href="/lake-county" class="city-link">Lake</a> -->
-              <!-- <a href="/lassen-county" class="city-link">Lassen</a> -->
-              <!-- <a href="/madera-county" class="city-link">Madera</a> -->
-              <!-- <a href="/marin-county" class="city-link">Marin</a> -->
-              <!-- <a href="/mariposa-county" class="city-link">Mariposa</a> -->
-              <a href="/mendocino-county" class="city-link location-link-base">Mendocino</a>
-              <!-- <a href="/merced-county" class="city-link">Merced</a> -->
-              <!-- <a href="/modoc-county" class="city-link">Modoc</a> -->
-              <!-- <a href="/mono-county" class="city-link">Mono</a> -->
-              <a href="/monterey-county" class="city-link location-link-base">Monterey</a>
-              <a href="/napa-county" class="city-link location-link-base">Napa</a>
-              <a href="/nevada-county" class="city-link location-link-base">Nevada</a>
-              <!-- <a href="/placer-county" class="city-link">Placer</a> -->
-              <!-- <a href="/plumas-county" class="city-link">Plumas</a> -->
-              <!-- <a href="/sacramento-county" class="city-link">Sacramento</a> -->
-              <!-- <a href="/san-benito-county" class="city-link">San Benito</a> -->
-              <!-- <a href="/san-francisco" class="city-link">San Francisco</a> -->
-              <a href="/san-joaquin-county" class="city-link location-link-base">San Joaquin</a>
-              <!-- <a href="/san-mateo-county" class="city-link">San Mateo</a> -->
-              <!-- <a href="/santa-clara-county" class="city-link">Santa Clara</a> -->
-              <!-- <a href="/santa-cruz-county" class="city-link">Santa Cruz</a> -->
-              <a href="/shasta" class="city-link location-link-base">Shasta</a>
-              <!-- <a href="/sierra" class="city-link">Sierra</a> -->
-              <!-- <a href="/siskiyou-county" class="city-link">Siskiyou</a> -->
-              <a href="/solano-county" class="city-link location-link-base">Solano</a>
-              <a href="/sonoma-county" class="city-link location-link-base">Sonoma</a>
-              <!-- <a href="/stanislaus-county" class="city-link">Stanislaus</a> -->
-              <!-- <a href="/sutter-county" class="city-link">Sutter</a> -->
-              <!-- <a href="/tehama-county" class="city-link">Tehama</a> -->
-              <!-- <a href="/trinity-county" class="city-link">Trinity</a> -->
-              <!-- <a href="/tulare-county" class="city-link">Tulare</a> -->
-              <!-- <a href="/tuolumne-county" class="city-link">Tuolumne</a> -->
-              <!-- <a href="/yolo-county" class="city-link">Yolo</a> -->
-              <!-- <a href="/yuba-county" class="city-link">Yuba</a> -->
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div class="cities-list">
-            <h2>Major Cities</h2>
-            <div class="city-links-container">
-              <a href="/san-francisco" class="city-link location-link-base">San Francisco</a>
-              <a href="/oakland" class="city-link location-link-base">Oakland</a>
-              <a href="/san-jose" class="city-link location-link-base">San Jose</a>
-              <a href="/sacramento" class="city-link location-link-base">Sacramento</a>
-              <a href="/santa-rosa" class="city-link location-link-base">Santa Rosa</a>
-              <a href="/berkeley" class="city-link location-link-base">Berkeley</a>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2>Community Support</h2>
-          <div class="initiative">
-            <a href="https://www.norcalresist.org/">NorCal Resist</a>
-            <p>
-              A grassroots organization coordinating mutual aid and community support initiatives across Northern
-              California. They organize direct assistance through food distribution, deportation defense, asylum
-              support, and climate resilience programs while building networks of solidarity through their Seeds of
-              Solidarity farm, brake light repair clinics, and community accompaniment services.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.facebook.com/ruralsurjofnorcal/">Rural SURJ of Northern California</a>
-            <p>
-              A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white
-              anti-racist organizing in rural Northern California. They coordinate political education, direct action
-              support, and solidarity networks while building power through racial justice education and accountable
-              organizing in partnership with BIPOC-led organizations in rural communities.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://ncip.org/">Northern California Innocence Project</a>
-            <p>
-              A legal group that seeks to exonerate people wrongfully incarcerated by the state.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/norcal_antiwar_action/">Norcal Anti-War Action</a>
-            <p>
-              A grassroots organization coordinating anti-war actions and peace initiatives across Northern California.
-            </p>
-          </div>
-        </section>
+  <section>
+    <div class="cities-list">
+      <h2>Locations</h2>
+      <div class="city-links-container">
+          <a href="/alameda-county" class="city-link location-link-base">Alameda County</a>
+          <a href="/alpine-county" class="city-link location-link-base">Alpine County</a>
+          <a href="/bakersfield" class="city-link location-link-base">Bakersfield</a>
+          <a href="/sf-bay-area" class="city-link location-link-base">Bay Area</a>
+          <a href="/butte-county" class="city-link location-link-base">Butte County</a>
+          <a href="/colusa-county" class="city-link location-link-base">Colusa County</a>
+          <a href="/contra-costa-county" class="city-link location-link-base">Contra Costa County</a>
+          <a href="/del-norte-county" class="city-link location-link-base">Del Norte County</a>
+          <a href="/humboldt-county" class="city-link location-link-base">Humboldt County</a>
+          <a href="/mendocino-county" class="city-link location-link-base">Mendocino County</a>
+          <a href="/sacramento" class="city-link location-link-base">Sacramento</a>
+          <a href="/sacramento-county" class="city-link location-link-base">Sacramento County</a>
+          <a href="/santa-cruz" class="city-link location-link-base">Santa Cruz</a>
+          <a href="/shasta" class="city-link location-link-base">Shasta</a>
+          <a href="/sonoma-county" class="city-link location-link-base">Sonoma County</a>
+          <a href="/sierra" class="city-link location-link-base">The Sierra</a>
       </div>
+    </div>
+  </section>
+        </div>
+      </div>
+
+      
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

@@ -2,15 +2,13 @@
 <html lang="en">
 
 <head>
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
   </script>
 
   <meta charset="UTF-8">
@@ -20,60 +18,44 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Mutual Aid in Mendocino County - Local Support Networks &amp; Community
-    Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid initiatives and community support networks in Mendocino County, California. Connect with local organizations and community resources.">
-  <meta property="og:title" content="Mutual Aid in Mendocino County - Local Support Networks">
-  <meta property="og:description"
-    content="Find mutual aid initiatives and community support networks in Mendocino County, California. Connect with local organizations providing community-based support.">
-  <meta property="og:type" content="website">
+  <title>Mendocino County Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Mendocino County. Connect with local organizations and community resources.">
 
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Mendocino County Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Mendocino County. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/mendocino-county">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
   <div class="layout">
     <div id="sidebar-placeholder"></div>
 
-
-
-
-
-
-
-
-
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
+      <div class="content-wrapper">
       <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/california">California</a>
           <span>›</span>
           <a href="/norcal">Northern California</a>
@@ -83,42 +65,63 @@
 
         <h1>Mendocino County</h1>
 
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <div class="initiative">
+      <a href="https://www.instagram.com/surj_mendo_coast/">SURJ Mendo Coast</a>
+      <p>Local chapter of Showing Up for Racial Justice, a group that organizes white people for anti-racism.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.mendocountysafespace.org/">Mendocino County Safe Space Project</a>
+      <p>Local chapter of Showing Up for Racial Justice, a group that organizes white people for anti-racism.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://mcavhn.org/">Mendocino County AIDS/Viral Hepatitis Network (MCAVHN)</a>
+      <p>Providing services &amp; comfort to persons affected by substance use disorders, behavioral health conditions, the provision of harm reduction services.</p>
+    </div>
+  </section>
 
-        <section class="initiatives">
-          <section>
-            <div class="initiative">
-              <a href="https://www.instagram.com/surj_mendo_coast/">SURJ Mendo Coast</a>
-              <p>
-                Local chapter of Showing Up for Racial Justice, a group that
-                organizes white people for anti-racism.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.mendocountysafespace.org/">Mendocino County Safe Space Project</a>
-              <p>
-                Local chapter of Showing Up for Racial Justice, a group that
-                organizes white people for anti-racism.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://mcavhn.org/">Mendocino County AIDS/Viral Hepatitis Network (MCAVHN)</a>
-              <p>
-                Providing services &amp; comfort to persons affected by substance
-                use disorders, behavioral health conditions, the provision of
-                harm reduction services.
-              </p>
-            </div>
-          </section>
-        </section>
+  <section id="section-1" class="city-section">
+    <div class="initiative">
+      <a href="https://www.instagram.com/surj_mendo_coast/">SURJ Mendo Coast</a>
+      <p>Local chapter of Showing Up for Racial Justice, a group that organizes white people for anti-racism.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.mendocountysafespace.org/">Mendocino County Safe Space Project</a>
+      <p>Local chapter of Showing Up for Racial Justice, a group that organizes white people for anti-racism.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://mcavhn.org/">Mendocino County AIDS/Viral Hepatitis Network (MCAVHN)</a>
+      <p>Providing services &amp; comfort to persons affected by substance use disorders, behavioral health conditions, the provision of harm reduction services.</p>
+    </div>
+  </section>
+        </div>
       </div>
-
+        <aside class="toc-container">
+          <nav class="toc" role="navigation" aria-label="Table of Contents" id="toc">
+            <ul class="toc-list">
+          <li class="toc-item">
+            <a href="#section-0" class="toc-link">
+              <span class="toc-number">1.</span>
+              <span class="toc-text">section-0</span>
+            </a>
+          </li>
+          <li class="toc-item">
+            <a href="#section-1" class="toc-link">
+              <span class="toc-number">2.</span>
+              <span class="toc-text">section-1</span>
+            </a>
+          </li>
+            </ul>
+          </nav>
+        </aside>
+      </div>
     </main>
   </div>
 
-
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  <script src="/js/city-toc.js" defer></script>
+</body>
 
 </html>

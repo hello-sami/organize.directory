@@ -2,93 +2,81 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <title>HIV Support Organizations - The Organize Directory</title>
-    <meta name="description"
-        content="Find organizations working to support people living with HIV and prevent new infections through mutual aid and community care.">
+  <title>HIV Support - The Organize Directory</title>
+  <meta name="description" content="Organizations working to support people living with HIV and prevent new infections
+                    through mutual aid and community care.">
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="HIV Support Organizations - The Organize Directory">
-    <meta property="og:description"
-        content="Find organizations working to support people living with HIV and prevent new infections through mutual aid and community care.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/topics/hiv">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta name="twitter:card" content="summary_large_image">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="HIV Support - The Organize Directory">
+  <meta property="og:description" content="Organizations working to support people living with HIV and prevent new infections
+                    through mutual aid and community care.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/topics/hiv">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('topics');
-
-        // Initialize other components
-        initializeComponents({});
-    </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
+    initializeSidebar('topics');
+    initializeComponents({});
+  </script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  <div class="layout">
+    <div id="sidebar-placeholder"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-            <div class="city-page">
-                <div class="breadcrumb">
-                    <a href="/topics">Issues</a>
-                    <span>›</span>
-                    <span>HIV Support</span>
-                </div>
+      <div class="city-page state-page">
+        <div class="breadcrumb">
+          <a href="/topics">Topics</a>
+          <span>›</span>
+          <span>HIV Support</span>
+        </div>
 
-                <h1>HIV Support</h1>
-                <p class="subtitle">Organizations working to support people living with HIV and prevent new infections
+        <h1>HIV Support</h1>
+        <p class="subtitle">Organizations working to support people living with HIV and prevent new infections
                     through mutual aid and community care.</p>
 
-
-                <section class="initiatives-section">
-                    <h2>Regional Organizations</h2>
-                    <div class="initiative">
-                        <a href="https://southernaidscoalition.org/">Southern AIDS Coalition</a>
-                        <p>A community-centered organization fostering mutual aid and healthcare access through
-                            HIV support and advocacy across the Southern United States. They coordinate capacity
-                            building, leadership development, strategic grantmaking, and solidarity networks while
-                            building power through policy advocacy, research, and creating spaces for community-driven
-                            solutions to end the HIV epidemic in the South. Their work includes direct support services,
-                            educational initiatives, and building coalitions to address healthcare disparities in the
-                            region.</p>
-                    </div>
-                </section>
-
-            </div>
-        </main>
+  <section id="regional-organizations" class="city-section">
+    <h2>Regional Organizations</h2>
+    <div class="initiative">
+      <a href="https://southernaidscoalition.org/">Southern AIDS Coalition</a>
+      <p>A community-centered organization fostering mutual aid and healthcare access through HIV support and advocacy across the Southern United States. They coordinate capacity building, leadership development, strategic grantmaking, and solidarity networks while building power through policy advocacy, research, and creating spaces for community-driven solutions to end the HIV epidemic in the South. Their work includes direct support services, educational initiatives, and building coalitions to address healthcare disparities in the region.</p>
     </div>
+  </section>
+      </div>
+    </main>
+  </div>
 
-    <!-- Scripts -->
-    <script src="/mobile-menu.js" defer></script>
+  <script src="/mobile-menu.js" defer></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
 </body>
 
 </html>

@@ -2,15 +2,13 @@
 <html lang="en">
 
 <head>
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
   </script>
 
   <meta charset="UTF-8">
@@ -20,98 +18,74 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Montgomery Mutual Aid Networks - Local Support &amp; Community Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid initiatives and community support networks in Montgomery, Alabama. Connect with local organizations and community resources.">
-  <meta property="og:title" content="Montgomery Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description"
-    content="Find mutual aid initiatives and community support networks in Montgomery, Alabama. Connect with local organizations providing community-based support.">
-  <meta property="og:type" content="website">
+  <title>Montgomery, AL Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Montgomery, AL. Connect with local organizations and community resources.">
 
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Montgomery, AL Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Montgomery, AL. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/montgomery">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
   <div class="layout">
     <div id="sidebar-placeholder"></div>
 
-
-
-
-
-
-
-
-
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
+      
       <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/alabama">Alabama</a>
           <span>›</span>
           <a href="/central-al">Central Alabama</a>
           <span>›</span>
-          <span>Montgomery</span>
+          <span>Montgomery, AL</span>
         </div>
 
         <h1>Montgomery, AL</h1>
 
-
-        <section>
-          <div class="initiative">
-            <a href="https://www.mgmfoodshare.org/">Montgomery Food Share</a>
-            <p>
-              A community-led mutual aid network focused on addressing food
-              insecurity in Montgomery through food distribution, community
-              gardens, and resource sharing.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.facebook.com/groups/mutualaidmontgomery">Mutual Aid MGM</a>
-            <p>
-              A grassroots collective fostering mutual aid and community care
-              through direct support in Montgomery. They coordinate resource
-              distribution, emergency assistance, and solidarity networks
-              while building power through community relationships, collective
-              action, and creating spaces for neighbors helping neighbors.
-            </p>
-          </div>
-
-        </section>
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <div class="initiative">
+      <a href="https://www.mgmfoodshare.org/">Montgomery Food Share</a>
+      <p>A community-led mutual aid network focused on addressing food insecurity in Montgomery through food distribution, community gardens, and resource sharing.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.facebook.com/groups/mutualaidmontgomery">Mutual Aid MGM</a>
+      <p>A grassroots collective fostering mutual aid and community care through direct support in Montgomery. They coordinate resource distribution, emergency assistance, and solidarity networks while building power through community relationships, collective action, and creating spaces for neighbors helping neighbors.</p>
+    </div>
+  </section>
+        </div>
       </div>
+
+      
     </main>
   </div>
 
-
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

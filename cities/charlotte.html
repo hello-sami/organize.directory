@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,52 +18,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Mutual Aid in Charlotte - Local Support Networks &amp; Community Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid networks and community support initiatives in Charlotte, North Carolina.">
-  <meta property="og:title" content="Mutual Aid in Charlotte - Local Support Networks &amp; Community Resources">
-  <meta property="og:description"
-    content="Find mutual aid networks and community support initiatives in Charlotte, North Carolina.">
-  <meta property="og:type" content="website">
+  <title>Charlotte Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Charlotte. Connect with local organizations and community resources.">
 
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Charlotte Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Charlotte. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/charlotte">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
-
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-  <script>
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
-  </script>
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
@@ -64,8 +51,11 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
+      
       <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/north-carolina">North Carolina</a>
           <span>›</span>
           <span>Charlotte</span>
@@ -73,62 +63,59 @@
 
         <h1>Charlotte</h1>
 
-
-        <section class="initiatives">
-          <div class="initiative">
-            <a href="https://www.instagram.com/cltmarxists/">CLT Marxists</a>
-            <p>A grassroots organization fostering mutual aid and community support in Charlotte. They coordinate direct
-              assistance, resource sharing, and solidarity networks while building power through community organizing
-              and
-              creating spaces for collective care and political education.</p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/seacvillage/">SEAC Village</a>
-            <p>Southeast Asian community organization building mutual aid networks and cultural solidarity through
-              community care, education, and support initiatives in Charlotte.</p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.foodhelpline.org/directory/regions/charlotte">Lemon Tree's Free Food Directory</a>
-            <p>Map of food pantries and distributions in the Charlotte area.</p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/feedthemovementclt">Feed the Movement Charlotte</a>
-            <p>Local mutual aid initiative providing food and resources to community members in need.</p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/charlotteuprising/">Charlotte Uprising</a>
-            <p>A collective of folks from Charlotte, NC fighting for a world without police and prisons.</p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/cltworkers/">Charlotte Workers Assembly</a>
-            <p>Kicking Ass For The Working Class</p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/cltstopcopcity/">Stop Cop City CLT</a>
-            <p>Page to Stop Cop City in Charlotte, NC</p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/clt.bailfund/">Charlotte Bail Fund</a>
-            <p>Help bail people out of jail</p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/clt4pali/">Charlotte United for Palestine</a>
-            <p>CUP is a grassroots movement working towards the liberation of Palestinians.</p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/hjc_clt/">Housing Justice Coalition</a>
-            <p>A community-led coalition in Charlotte, NC, advocating for residents facing displacement, homelessness,
-              &amp;
-              unsafe living conditions.</p>
-          </div>
-        </section>
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <div class="initiative">
+      <a href="https://www.instagram.com/cltmarxists/">CLT Marxists</a>
+      <p>A grassroots organization fostering mutual aid and community support in Charlotte. They coordinate direct assistance, resource sharing, and solidarity networks while building power through community organizing and creating spaces for collective care and political education.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/seacvillage/">SEAC Village</a>
+      <p>Southeast Asian community organization building mutual aid networks and cultural solidarity through community care, education, and support initiatives in Charlotte.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.foodhelpline.org/directory/regions/charlotte">Lemon Tree's Free Food Directory</a>
+      <p>Map of food pantries and distributions in the Charlotte area.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/feedthemovementclt">Feed the Movement Charlotte</a>
+      <p>Local mutual aid initiative providing food and resources to community members in need.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/charlotteuprising/">Charlotte Uprising</a>
+      <p>A collective of folks from Charlotte, NC fighting for a world without police and prisons.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/cltworkers/">Charlotte Workers Assembly</a>
+      <p>Kicking Ass For The Working Class</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/cltstopcopcity/">Stop Cop City CLT</a>
+      <p>Page to Stop Cop City in Charlotte, NC</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/clt.bailfund/">Charlotte Bail Fund</a>
+      <p>Help bail people out of jail</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/clt4pali/">Charlotte United for Palestine</a>
+      <p>CUP is a grassroots movement working towards the liberation of Palestinians.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/hjc_clt/">Housing Justice Coalition</a>
+      <p>A community-led coalition in Charlotte, NC, advocating for residents facing displacement, homelessness, &amp; unsafe living conditions.</p>
+    </div>
+  </section>
+        </div>
       </div>
+
+      
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

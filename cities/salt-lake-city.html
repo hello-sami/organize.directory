@@ -2,15 +2,13 @@
 <html lang="en">
 
 <head>
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
   </script>
 
   <meta charset="UTF-8">
@@ -20,59 +18,44 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Salt Lake City Mutual Aid Networks - Local Support &amp; Community Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid networks and community support initiatives in Salt Lake City, Utah.">
-  <meta property="og:title" content="Salt Lake City Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description"
-    content="Find mutual aid networks and community support initiatives in Salt Lake City, Utah.">
-  <meta property="og:type" content="website">
+  <title>Salt Lake City Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Salt Lake City. Connect with local organizations and community resources.">
 
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Salt Lake City Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Salt Lake City. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/salt-lake-city">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
   <div class="layout">
     <div id="sidebar-placeholder"></div>
 
-
-
-
-
-
-
-
-
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
+      
       <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/utah">Utah</a>
           <span>›</span>
           <span>Salt Lake City</span>
@@ -80,80 +63,51 @@
 
         <h1>Salt Lake City</h1>
 
-
-        <section>
-          <div class="initiative">
-            <a href="https://www.undertheumbrellabookstore.com/">Under the Umbrella</a>
-            <p>
-              A queer-owned and operated bookstore providing a safe community
-              space and mutual aid resources for the LGBTQ+ community in Salt
-              Lake City. They offer a carefully curated selection of books
-              centering queer voices and experiences, while fostering
-              community connections and support through events, book clubs,
-              and accessible pricing options.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://alwayslearningslc.wordpress.com/">Salt Lake City Free Skool</a>
-            <p>
-              decentralized community education network in which skills,
-              information, and knowledge are shared without hierarchy or the
-              institutional environment of formal schooling.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://slcmutualaid.com/">Salt Lake Community Mutual Aid</a>
-            <p>
-              We are a mutual aid collective practicing harm reduction and
-              working to build resilient community structures in the Salt Lake
-              Valley. Runs community fridges.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/foodnotbombssaltlakecity/">Food Not Bombs Salt Lake City</a>
-            <p>
-              Tues, Thurs and Sat. 11am at Richmond Park 444e 600s SLC, UT
-              since 2004. Come get free food!
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.shrpexchange.org/">Salt Lake Harm Reduction Project</a>
-            <p>
-              Syringe Exchange Program in SLC offering safe disposal,
-              education, and COVID resources at no cost.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.slcbailfund.org/">Salt Lake Community Bail Fund</a>
-            <p>
-              Posts bail for individuals in need in Salt lake County. We are
-              committed to ending pre-trial detention in Utah.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.wasatchtenantsunited.org/">Wasatch Tenants United</a>
-            <p>
-              Wasatch Tenants United is an organization commited to the needs
-              of working people and tenants living in Salt Lake City.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/armedqueersslc/">Armed Queers Salt Lake City</a>
-            <p>
-              The Armed Queers are a revolutionary LGBTQ organization
-              dedicated to the defense, and success, of oppressed people’s
-              movements.
-            </p>
-          </div>
-        </section>
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <div class="initiative">
+      <a href="https://www.undertheumbrellabookstore.com/">Under the Umbrella</a>
+      <p>A queer-owned and operated bookstore providing a safe community space and mutual aid resources for the LGBTQ+ community in Salt Lake City. They offer a carefully curated selection of books centering queer voices and experiences, while fostering community connections and support through events, book clubs, and accessible pricing options.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://alwayslearningslc.wordpress.com/">Salt Lake City Free Skool</a>
+      <p>decentralized community education network in which skills, information, and knowledge are shared without hierarchy or the institutional environment of formal schooling.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://slcmutualaid.com/">Salt Lake Community Mutual Aid</a>
+      <p>We are a mutual aid collective practicing harm reduction and working to build resilient community structures in the Salt Lake Valley. Runs community fridges.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/foodnotbombssaltlakecity/">Food Not Bombs Salt Lake City</a>
+      <p>Tues, Thurs and Sat. 11am at Richmond Park 444e 600s SLC, UT since 2004. Come get free food!</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.shrpexchange.org/">Salt Lake Harm Reduction Project</a>
+      <p>Syringe Exchange Program in SLC offering safe disposal, education, and COVID resources at no cost.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.slcbailfund.org/">Salt Lake Community Bail Fund</a>
+      <p>Posts bail for individuals in need in Salt lake County. We are committed to ending pre-trial detention in Utah.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.wasatchtenantsunited.org/">Wasatch Tenants United</a>
+      <p>Wasatch Tenants United is an organization commited to the needs of working people and tenants living in Salt Lake City.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/armedqueersslc/">Armed Queers Salt Lake City</a>
+      <p>The Armed Queers are a revolutionary LGBTQ organization dedicated to the defense, and success, of oppressed people’s movements.</p>
+    </div>
+  </section>
+        </div>
       </div>
+
+      
     </main>
   </div>
 
-
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

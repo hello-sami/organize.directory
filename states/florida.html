@@ -2,194 +2,131 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Meta Tags -->
-    <title>Florida Mutual Aid Networks - Local Support &amp; Community Resources</title>
-    <meta name="description"
-        content="Find mutual aid networks and community support initiatives in Florida cities including Miami, Orlando, Tampa, and more.">
-    <meta property="og:title" content="Florida Mutual Aid Networks - Local Support &amp; Community Resources">
-    <meta property="og:description"
-        content="Find mutual aid networks and community support initiatives in Florida cities including Miami, Orlando, Tampa, and more.">
-    <meta property="og:type" content="website">
+  <title>Florida Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid networks and community support initiatives in Florida. Connect with local organizations and community resources.">
 
-    <meta property="og:url" content="https://organize.directory/florida">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta name="twitter:card" content="summary">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Florida Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid networks and community support initiatives in Florida. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/florida">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css?v=1.1.9">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
-
-    <link rel="stylesheet" href="/fonts/fonts.css">
-
-    <!-- Theme Scripts -->
-    <script>
-        (function () {
-            function applyTheme() {
-                try {
-                    const savedTheme = localStorage.getItem("theme");
-                    if (savedTheme) {
-                        document.documentElement.setAttribute("data-theme", savedTheme);
-                    } else {
-                        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-                        const theme = prefersDark ? "dark" : "light";
-                        document.documentElement.setAttribute("data-theme", theme);
-                        localStorage.setItem("theme", theme);
-                    }
-                } catch (e) {
-                    document.documentElement.setAttribute("data-theme", "light");
-                }
-            }
-            applyTheme();
-            document.addEventListener("visibilitychange", function () {
-                if (document.visibilityState === "visible") {
-                    applyTheme();
-                }
-            });
-        })();
-    </script>
-    <!-- Component Initialization -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('location');
-
-        // Initialize other components
-        initializeComponents({
-        });
-    </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
+    initializeSidebar('location');
+    initializeComponents({});
+  </script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  <div class="layout">
+    <div id="sidebar-placeholder"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-            <div class="city-page state-page">
-                <nav class="breadcrumb" aria-label="Breadcrumb">
-                    <a href="/location">States</a>
-                    <span>›</span>
-                    <span>Florida</span>
-                </nav>
+      <div class="city-page state-page">
+        <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
+          <span>Florida</span>
+        </div>
 
-                <h1>Florida</h1>
+        <h1>Florida</h1>
 
-
-                <section aria-labelledby="cities-heading">
-                    <div class="cities-list">
-                        <h2 id="cities-heading">Cities</h2>
-                        <div class="city-links-container">
-                            <a href="/broward-county" class="city-link location-link-base">Broward County</a>
-                            <a href="/central-fl" class="city-link location-link-base">Central Florida</a>
-                            <a href="/clearwater" class="city-link location-link-base">Clearwater</a>
-                            <a href="/daytona-beach" class="city-link location-link-base">Daytona Beach</a>
-                            <!-- <a href="/florida-keys" class="city-link">Florida Keys</a> -->
-                            <a href="/fort-lauderdale" class="city-link location-link-base">Fort Lauderdale</a>
-                            <!-- <a href="/ft-myers-sw-florida" class="city-link">Ft Myers / SW Florida</a> -->
-                            <a href="/gainesville" class="city-link location-link-base">Gainesville</a>
-                            <!-- <a href="/heartland-florida" class="city-link">Heartland Florida</a> -->
-                            <a href="/jacksonville" class="city-link location-link-base">Jacksonville</a>
-                            <a href="/lakeland" class="city-link location-link-base">Lakeland</a>
-                            <a href="/melbourne" class="city-link location-link-base">Melbourne</a>
-                            <a href="/miami-dade" class="city-link location-link-base">Miami / Dade</a>
-                            <a href="/ocala" class="city-link location-link-base">Ocala</a>
-                            <!-- <a href="/okaloosa-walton" class="city-link">Okaloosa / Walton</a> -->
-                            <a href="/orlando" class="city-link location-link-base">Orlando</a>
-                            <a href="/palm-beach-county" class="city-link location-link-base">Palm Beach County</a>
-                            <!-- <a href="/panama-city" class="city-link">Panama City</a> -->
-                            <a href="/pensacola" class="city-link location-link-base">Pensacola</a>
-                            <!-- <a href="/sarasota-bradenton" class="city-link">Sarasota-Bradenton</a> -->
-                            <a href="/south-florida" class="city-link location-link-base">South Florida</a>
-                            <a href="/space-coast" class="city-link location-link-base">Space Coast</a>
-                            <!-- <a href="/st-augustine" class="city-link">St Augustine</a> -->
-                            <a href="/st-petersburg" class="city-link location-link-base">St. Petersburg</a>
-                            <a href="/tallahassee" class="city-link location-link-base">Tallahassee</a>
-                            <a href="/tampa" class="city-link location-link-base">Tampa</a>
-                            <a href="/treasure-coast" class="city-link location-link-base">Treasure Coast</a>
-                        </div>
-                    </div>
-                </section>
-
-
-                <section aria-label="Statewide Organizations">
-                    <h2>Statewide Organizations</h2>
-                    <div class="initiative">
-                        <a href="https://floridaimmigrant.org/">Florida Immigrant Coalition (FLIC)</a>
-                        <p>A statewide alliance of immigrant rights organizations providing mutual aid, legal support,
-                            and community organizing. Through their network of grassroots groups, they offer direct
-                            assistance to immigrant families while building power for systemic change through advocacy
-                            and collective action.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/solidaritysfl/">Solidarity SFL</a>
-                        <p>A grassroots organization building mutual aid networks and community power through direct
-                            action and solidarity initiatives across South Florida.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://changecomesnowfl.org/">Change Comes Now</a>
-                        <p>Grassroots organization building mutual aid networks and support systems for individuals and
-                            families impacted by the criminal legal system in Florida through advocacy, education, and
-                            direct assistance.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/surjflorida/">SURJ Florida</a>
-                        <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity
-                            through white anti-racist organizing across Florida. They coordinate community organizing,
-                            mobilizing, and education initiatives while building power through political education,
-                            direct action support, and creating spaces for accountable organizing in partnership with
-                            BIPOC-led organizations.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.flharmredux.com/">FL Harm Redux</a>
-                        <p>A grassroots harm reduction organization providing mutual aid and support services across
-                            Florida. They coordinate harm reduction supplies, education, and solidarity networks while
-                            building power through community organizing and creating spaces for health justice and
-                            collective care.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://ciw-online.org/">Coalition of Immokalee Workers</a>
-                        <p>Worker-based human rights organization internationally recognized for its achievements in
-                            fighting human trafficking and gender-based violence at work. Operating in Immokalee, FL.
-                        </p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://floridapalestinenetwork.org/">Florida Palestine Network</a>
-                        <p>Florida Palestine Network is a Palestinian woman founded and led organization struggling for
-                            the liberation of the Palestinian people and oppressed people everywhere.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/newerayounglordsflorida/">New Era Young Lords Florida</a>
-                        <p>Official Young Lords FL chapter ALL POWER TO THE PEOPLE</p>
-                    </div>
-                </section>
-            </div>
-        </main>
+  <section>
+    <div class="cities-list">
+      <h2>Locations</h2>
+      <div class="city-links-container">
+          <a href="/broward-county" class="city-link location-link-base">Broward County</a>
+          <a href="/central-fl" class="city-link location-link-base">Central Florida</a>
+          <a href="/clearwater" class="city-link location-link-base">Clearwater</a>
+          <a href="/daytona-beach" class="city-link location-link-base">Daytona Beach</a>
+          <a href="/fort-lauderdale" class="city-link location-link-base">Fort Lauderdale</a>
+          <a href="/gainesville" class="city-link location-link-base">Gainesville, Florida</a>
+          <a href="/jacksonville" class="city-link location-link-base">Jacksonville</a>
+          <a href="/lakeland" class="city-link location-link-base">Lakeland</a>
+          <a href="/melbourne" class="city-link location-link-base">Melbourne, FL</a>
+          <a href="/ocala" class="city-link location-link-base">Ocala, Florida</a>
+          <a href="/orlando" class="city-link location-link-base">Orlando</a>
+          <a href="/pensacola" class="city-link location-link-base">Pensacola</a>
+          <a href="/south-florida" class="city-link location-link-base">South Florida</a>
+          <a href="/space-coast" class="city-link location-link-base">Space Coast</a>
+          <a href="/st-petersburg" class="city-link location-link-base">St. Petersburg</a>
+          <a href="/tallahassee" class="city-link location-link-base">Tallahassee</a>
+          <a href="/tampa" class="city-link location-link-base">Tampa</a>
+          <a href="/treasure-coast" class="city-link location-link-base">Treasure Coast</a>
+      </div>
     </div>
+  </section>
 
+  <section id="statewide-organizations" class="city-section">
+    <h2>Statewide Organizations</h2>
+    <div class="initiative">
+      <a href="https://floridaimmigrant.org/">Florida Immigrant Coalition (FLIC)</a>
+      <p>A statewide alliance of immigrant rights organizations providing mutual aid, legal support, and community organizing. Through their network of grassroots groups, they offer direct assistance to immigrant families while building power for systemic change through advocacy and collective action.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/solidaritysfl/">Solidarity SFL</a>
+      <p>A grassroots organization building mutual aid networks and community power through direct action and solidarity initiatives across South Florida.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://changecomesnowfl.org/">Change Comes Now</a>
+      <p>Grassroots organization building mutual aid networks and support systems for individuals and families impacted by the criminal legal system in Florida through advocacy, education, and direct assistance.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/surjflorida/">SURJ Florida</a>
+      <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing across Florida. They coordinate community organizing, mobilizing, and education initiatives while building power through political education, direct action support, and creating spaces for accountable organizing in partnership with BIPOC-led organizations.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.flharmredux.com/">FL Harm Redux</a>
+      <p>A grassroots harm reduction organization providing mutual aid and support services across Florida. They coordinate harm reduction supplies, education, and solidarity networks while building power through community organizing and creating spaces for health justice and collective care.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://ciw-online.org/">Coalition of Immokalee Workers</a>
+      <p>Worker-based human rights organization internationally recognized for its achievements in fighting human trafficking and gender-based violence at work. Operating in Immokalee, FL.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://floridapalestinenetwork.org/">Florida Palestine Network</a>
+      <p>Florida Palestine Network is a Palestinian woman founded and led organization struggling for the liberation of the Palestinian people and oppressed people everywhere.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/newerayounglordsflorida/">New Era Young Lords Florida</a>
+      <p>Official Young Lords FL chapter ALL POWER TO THE PEOPLE</p>
+    </div>
+  </section>
+      </div>
+    </main>
+  </div>
 
-    <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/mobile-menu.js" defer></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
+</body>
 
 </html>

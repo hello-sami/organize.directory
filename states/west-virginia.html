@@ -2,116 +2,95 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <title>West Virginia Mutual Aid Networks - Local Support &amp; Community Resources</title>
-    <meta name="description"
-        content="Find mutual aid networks and community support initiatives in West Virginia cities including Charleston, Huntington, Morgantown, and more.">
-    <meta property="og:title" content="West Virginia Mutual Aid Networks - Local Support &amp; Community Resources">
-    <meta property="og:description"
-        content="Find mutual aid networks and community support initiatives in West Virginia cities including Charleston, Huntington, Morgantown, and more.">
-    <meta property="og:type" content="website">
+  <title>West Virginia Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid networks and community support initiatives in West Virginia. Connect with local organizations and community resources.">
 
-    <meta property="og:url" content="https://organize.directory/west-virginia">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta name="twitter:card" content="summary">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="West Virginia Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid networks and community support initiatives in West Virginia. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/west-virginia">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css?v=1.1.9">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
-
-    <link rel="stylesheet" href="/fonts/fonts.css">
-
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('location');
-
-        // Initialize other components
-        initializeComponents({
-        });
-    </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
+    initializeSidebar('location');
+    initializeComponents({});
+  </script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  <div class="layout">
+    <div id="sidebar-placeholder"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-            <div class="city-page state-page">
-                <div class="breadcrumb">
-                    <a href="/location">States</a>
-                    <span>›</span>
-                    <span>West Virginia</span>
-                </div>
+      <div class="city-page state-page">
+        <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
+          <span>West Virginia</span>
+        </div>
 
-                <h1>West Virginia</h1>
+        <h1>West Virginia</h1>
 
-
-                <section>
-                    <div class="cities-list">
-                        <h2>Cities</h2>
-                        <div class="city-links-container">
-                            <!-- <a href="/charleston-wv" class="city-link">Charleston</a> -->
-                            <!-- <a href="/eastern-panhandle" class="city-link">Eastern Panhandle</a> -->
-                            <!-- <a href="/huntington-ashland" class="city-link">Huntington-Ashland</a> -->
-                            <a href="/morgantown" class="city-link location-link-base">Morgantown</a>
-                            <!-- <a href="/northern-panhandle" class="city-link">Northern Panhandle</a> -->
-                            <!-- <a href="/parkersburg-marietta" class="city-link">Parkersburg-Marietta</a> -->
-                            <!-- <a href="/southern-wv" class="city-link">Southern WV</a> -->
-                        </div>
-                    </div>
-                </section>
-
-
-                <section>
-                    <h2>Statewide Organizations</h2>
-                    <div class="initiative">
-                        <a href="https://www.thestayproject.net/">The STAY Project</a>
-                        <p>A youth-led organization building power through mutual aid, leadership development, and
-                            organizing across Central Appalachia. STAY works to create sustainable and inclusive
-                            communities while supporting young people fighting for social, economic, and environmental
-                            justice.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/projectmaydayx">Project Mayday</a>
-                        <p>Peer-led harm reduction &amp; mutual aid in WV.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/wvtranscoalition/">The West Virginia Trans Coalition</a>
-                        <p>A grassroots org that works to ensure the wellbeing, safety, &amp; lived equity of Trans, NB,
-                            &amp;
-                            GNC WVians</p>
-                    </div>
-                </section>
-            </div>
-        </main>
+  <section>
+    <div class="cities-list">
+      <h2>Locations</h2>
+      <div class="city-links-container">
+          <a href="/charleston-wv" class="city-link location-link-base">Charleston, WV</a>
+          <a href="/morgantown" class="city-link location-link-base">Morgantown, WV</a>
+      </div>
     </div>
+  </section>
 
+  <section id="statewide-organizations" class="city-section">
+    <h2>Statewide Organizations</h2>
+    <div class="initiative">
+      <a href="https://www.thestayproject.net/">The STAY Project</a>
+      <p>A youth-led organization building power through mutual aid, leadership development, and organizing across Central Appalachia. STAY works to create sustainable and inclusive communities while supporting young people fighting for social, economic, and environmental justice.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/projectmaydayx">Project Mayday</a>
+      <p>Peer-led harm reduction &amp; mutual aid in WV.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/wvtranscoalition/">The West Virginia Trans Coalition</a>
+      <p>A grassroots org that works to ensure the wellbeing, safety, &amp; lived equity of Trans, NB, &amp; GNC WVians</p>
+    </div>
+  </section>
+      </div>
+    </main>
+  </div>
 
-    <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/mobile-menu.js" defer></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
+</body>
 
 </html>

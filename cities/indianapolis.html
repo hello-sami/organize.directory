@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,51 +18,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Indianapolis Mutual Aid Networks - Local Support &amp; Community Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid initiatives and community support networks in Indianapolis, Indiana. Connect with local organizations and community resources.">
+  <title>Indianapolis Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Indianapolis. Connect with local organizations and community resources.">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Indianapolis | The Organize Directory">
-  <meta property="og:description" content="Find mutual aid networks and community resources in Indianapolis, Indiana">
-  <meta property="og:image" content="https://organize.directory/preview.png">
-  <meta property="og:url" content="https://organize.directory/indianapolis">
+  <meta property="og:title" content="Indianapolis Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Indianapolis. Connect with local organizations and community resources.">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://organize.directory/indianapolis">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
-
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
-  </script>
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
@@ -63,8 +51,11 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
+      
       <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/indiana">Indiana</a>
           <span>›</span>
           <span>Indianapolis</span>
@@ -72,123 +63,67 @@
 
         <h1>Indianapolis</h1>
 
-
-        <section>
-          <div class="initiative">
-            <a href="https://indyliberationcenter.org/">Indianapolis Liberation Center</a>
-            <p>
-              Community space connecting struggles of Indy's oppressed,
-              marginalized, and exploited through mutual aid, education, and
-              organizing.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.focusinitiatives.org/">FOCUS Initiatives</a>
-            <p>
-              Forever On Course, United In Solidarity - Community-led re-entry
-              program supporting formerly incarcerated people through housing,
-              mutual aid, and solidarity.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://beyondbarcodesbookstore.square.site/">Beyond Barcodes Bookstore</a>
-            <p>
-              A Black-owned bookstore fostering mutual aid and community power
-              through literature, cultural programming, and community building
-              in Indianapolis. They coordinate book access, educational
-              events, and solidarity networks while building power through
-              Black literature, community dialogue, and creating spaces for
-              cultural empowerment and connection.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.instagram.com/mutualaidovereverything/">Mutual Aid Over Everything</a>
-            <p>
-              A grassroots collective fostering community care through direct
-              mutual aid and resource distribution in Indianapolis. They
-              coordinate emergency assistance, material support, and
-              solidarity networks while building power through community
-              organizing, direct action, and creating spaces for sustainable
-              community support systems.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.instagram.com/Indianapolisfoodnotbombs">Indianapolis Food Not Bombs</a>
-            <p>Feeding vegan food to homeless people every Sunday.</p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://ccma.community/">Circle City Mutual Aid</a>
-            <p>
-              Circle City Mutual Aid (ccma) is an autonomous collective of
-              Indianapolis residents dedicated to sharing skills + resources,
-              building community through outreach, and developing
-              relationships with our neighbors.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.instagram.com/survive_no_permission/">Heater Bloc Indy</a>
-            <p>
-              Here to help each other survive! Winter project page based in
-              Indianapolis.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.instagram.com/good_neighbors_indy/">Good Neighbors Indy</a>
-            <p>
-              GNMA is a volunteer community action collective for those doing
-              outreach to support our unhoused neighbors and doing direct
-              encampment outreach.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://indyforgaza.com/">Indy for Gaza</a>
-            <p>
-              Join us in our fight for justice and human rights in Gaza.
-              Together, we can make a difference by advocating for an
-              immediate ceasefire, pushing for humanitarian aid, and holding
-              our representatives accountable.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.instagram.com/indymaskbloc/">Indy Mask Bloc</a>
-            <p>
-              Distributing free masks and other protective supplies in the
-              ongoing airborne pandemics
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.instagram.com/communityfoodboxproject/">Community Food Box Project</a>
-            <p>
-              First little pantries in Indiana. 83 locations providing 24 hour
-              access to non-perishable food items.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.instagram.com/ratsharmredux/">Resist and Abolish the Stigma (RATS)</a>
-            <p>
-              Providing safer-use supplies to those experiencing
-              houselessness.
-            </p>
-          </div>
-        </section>
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <div class="initiative">
+      <a href="https://indyliberationcenter.org/">Indianapolis Liberation Center</a>
+      <p>Community space connecting struggles of Indy's oppressed, marginalized, and exploited through mutual aid, education, and organizing.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.focusinitiatives.org/">FOCUS Initiatives</a>
+      <p>Forever On Course, United In Solidarity - Community-led re-entry program supporting formerly incarcerated people through housing, mutual aid, and solidarity.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://beyondbarcodesbookstore.square.site/">Beyond Barcodes Bookstore</a>
+      <p>A Black-owned bookstore fostering mutual aid and community power through literature, cultural programming, and community building in Indianapolis. They coordinate book access, educational events, and solidarity networks while building power through Black literature, community dialogue, and creating spaces for cultural empowerment and connection.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/mutualaidovereverything/">Mutual Aid Over Everything</a>
+      <p>A grassroots collective fostering community care through direct mutual aid and resource distribution in Indianapolis. They coordinate emergency assistance, material support, and solidarity networks while building power through community organizing, direct action, and creating spaces for sustainable community support systems.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/Indianapolisfoodnotbombs">Indianapolis Food Not Bombs</a>
+      <p>Feeding vegan food to homeless people every Sunday.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://ccma.community/">Circle City Mutual Aid</a>
+      <p>Circle City Mutual Aid (ccma) is an autonomous collective of Indianapolis residents dedicated to sharing skills + resources, building community through outreach, and developing relationships with our neighbors.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/survive_no_permission/">Heater Bloc Indy</a>
+      <p>Here to help each other survive! Winter project page based in Indianapolis.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/good_neighbors_indy/">Good Neighbors Indy</a>
+      <p>GNMA is a volunteer community action collective for those doing outreach to support our unhoused neighbors and doing direct encampment outreach.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://indyforgaza.com/">Indy for Gaza</a>
+      <p>Join us in our fight for justice and human rights in Gaza. Together, we can make a difference by advocating for an immediate ceasefire, pushing for humanitarian aid, and holding our representatives accountable.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/indymaskbloc/">Indy Mask Bloc</a>
+      <p>Distributing free masks and other protective supplies in the ongoing airborne pandemics</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/communityfoodboxproject/">Community Food Box Project</a>
+      <p>First little pantries in Indiana. 83 locations providing 24 hour access to non-perishable food items.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/ratsharmredux/">Resist and Abolish the Stigma (RATS)</a>
+      <p>Providing safer-use supplies to those experiencing houselessness.</p>
+    </div>
+  </section>
+        </div>
       </div>
+
+      
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

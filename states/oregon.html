@@ -2,236 +2,155 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <title>Oregon Mutual Aid Networks - Local Support &amp; Community Resources</title>
-    <meta name="description"
-        content="Find mutual aid networks and community support initiatives in Oregon cities including Portland, Eugene, Salem, and more.">
-    <meta property="og:title" content="Oregon Mutual Aid Networks - Local Support &amp; Community Resources">
-    <meta property="og:description"
-        content="Find mutual aid networks and community support initiatives in Oregon cities including Portland, Eugene, Salem, and more.">
-    <meta property="og:type" content="website">
+  <title>Oregon Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid networks and community support initiatives in Oregon. Connect with local organizations and community resources.">
 
-    <meta property="og:url" content="https://organize.directory/oregon">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta name="twitter:card" content="summary">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Oregon Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid networks and community support initiatives in Oregon. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/oregon">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css?v=1.1.9">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
-
-    <link rel="stylesheet" href="/fonts/fonts.css">
-
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('location');
-
-        // Initialize other components
-        initializeComponents({
-        });
-    </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
+    initializeSidebar('location');
+    initializeComponents({});
+  </script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  <div class="layout">
+    <div id="sidebar-placeholder"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-            <div class="city-page state-page">
-                <div class="breadcrumb">
-                    <a href="/location">States</a>
-                    <span>›</span>
-                    <span>Oregon</span>
-                </div>
+      <div class="city-page state-page">
+        <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
+          <span>Oregon</span>
+        </div>
 
-                <h1>Oregon</h1>
+        <h1>Oregon</h1>
 
+  <section>
+    <div class="cities-list">
+      <h2>Locations</h2>
+      <div class="city-links-container">
+          <a href="/bend" class="city-link location-link-base">Bend and Central Oregon</a>
+          <a href="/eugene" class="city-link location-link-base">Eugene</a>
+          <a href="/portland" class="city-link location-link-base">Portland</a>
+          <a href="/redmond" class="city-link location-link-base">Redmond, OR</a>
+          <a href="/rogue-valley" class="city-link location-link-base">Rogue Valley, OR</a>
+          <a href="/salem" class="city-link location-link-base">Salem, Oregon</a>
+          <a href="/southern-oregon" class="city-link location-link-base">Southern Oregon</a>
+          <a href="/willamette-valley" class="city-link location-link-base">Willamette Valley</a>
+      </div>
+    </div>
+  </section>
 
-                <section>
-                    <div class="cities-list">
-                        <h2>Cities</h2>
-                        <div class="city-links-container">
-                            <a href="/bend" class="city-link location-link-base">Central Oregon/Bend</a>
-                            <a href="/corvallis" class="city-link location-link-base">Corvallis</a>
-                            <a href="/eugene" class="city-link location-link-base">Eugene</a>
-                            <!-- <a href="/klamath-falls" class="city-link">Klamath Falls</a> -->
-                            <a href="/portland" class="city-link location-link-base">Portland</a>
-                            <a href="/redmond" class="city-link location-link-base">Redmond</a>
-                            <a href="/rogue-valley" class="city-link location-link-base"> Rogue Valley</a>
-                            <a href="/salem" class="city-link location-link-base">Salem</a>
-                            <a href="/southern-oregon" class="city-link location-link-base">Southern Oregon</a>
-                            <a href="/willamette-valley" class="city-link location-link-base">Willamette Valley</a>
-                        </div>
-                    </div>
-                </section>
-
-
-                <section>
-                    <h2>Statewide Initiatives</h2>
-                    <div class="initiatives">
-                        <div class="initiative">
-                            <a href="https://www.instagram.com/rrfm_albanyor/">Really Really Free Market Albany</a>
-                            <p>A grassroots organization fostering mutual aid and community support through free markets
-                                and resource sharing in Albany. They coordinate direct assistance, free item
-                                distribution, and solidarity networks while building power through community organizing
-                                and creating spaces for gift economy and collective care.</p>
-                        </div>
-                        <div class="initiative">
-                            <a href="https://www.instagram.com/stopthesweepscv/">Stop the Sweeps CV</a>
-                            <p>A grassroots organization fostering mutual aid and community support for unhoused
-                                neighbors
-                                in the Corvallis area. They coordinate direct assistance, encampment support, and
-                                solidarity
-                                networks while building power through community organizing and creating spaces for
-                                housing
-                                justice and collective resistance.</p>
-                        </div>
-                        <div class="initiative">
-                            <a href="https://www.instagram.com/rrfm_corvallis/">Really Really Free Market Corvallis</a>
-                            <p>A grassroots organization fostering mutual aid and community support through free markets
-                                and
-                                resource sharing in Corvallis. They coordinate direct assistance, free item
-                                distribution,
-                                and solidarity networks while building power through community organizing and creating
-                                spaces for gift economy and collective care.</p>
-                        </div>
-                        <div class="initiative">
-                            <a href="https://sites.google.com/view/wwrj/">Western WashCo for Racial Justice (WWRJ)</a>
-                            <p>A grassroots organization fostering mutual aid and community solidarity through racial
-                                and
-                                economic justice organizing in Western Washington County. Originally started as SURJ
-                                Forest
-                                Grove, they now work as part of the Rural Organizing Project family of human dignity
-                                groups,
-                                coordinating political education, direct action support, and solidarity networks while
-                                building power through multiracial organizing and community building.</p>
-                        </div>
-                        <div class="initiative">
-                            <a href="https://www.rogueactioncenter.org/">Rogue Action Center</a>
-                            <p>Community organization building grassroots power through mutual aid networks, tenant
-                                organizing, and solidarity initiatives across Southern Oregon.</p>
-                        </div>
-                        <div class="initiative">
-                            <a href="https://www.nativewomanshare.com/">NativeWomanShare</a>
-                            <p>Indigenous-led organization reuniting Takelma and Inter-Tribal Indigenous Mother Stewards
-                                &amp;
-                                Two-Spirit communities through land stewardship, food sovereignty, and healing
-                                initiatives
-                                across the Pacific Northwest.</p>
-                        </div>
-                        <div class="initiative">
-                            <a href="https://www.uniteoregon.org/">Unite Oregon</a>
-                            <p>Led by people of color, immigrants and refugees, rural communities, and people
-                                experiencing
-                                poverty, building a unified intercultural movement for justice through community
-                                organizing,
-                                mutual aid, and leadership development.</p>
-                        </div>
-                        <div class="initiative">
-                            <a href="https://www.cascadesabortionsupport.org/">Cascades Abortion Support Collective</a>
-                            <p>A mutual aid collective providing practical, emotional, and financial support to people
-                                seeking abortion care in Oregon and Southwest Washington.</p>
-                        </div>
-                        <div class="initiative">
-                            <a href="https://rurallivelihoods.org/">Center for Rural Livelihoods</a>
-                            <p>A non-profit organization focused on rural development and community supported forestry,
-                                offering workforce training, community garden spaces, and educational programs to
-                                support
-                                sustainable rural communities.</p>
-                        </div>
-                        <div class="initiative">
-                            <a href="https://sites.google.com/view/clackamascountyequitycoalition/">Clackamas County
+  <section id="statewide-initiatives" class="city-section">
+    <h2>Statewide Initiatives</h2>
+    <div class="initiative">
+      <a href="https://www.instagram.com/rrfm_albanyor/">Really Really Free Market Albany</a>
+      <p>A grassroots organization fostering mutual aid and community support through free markets and resource sharing in Albany. They coordinate direct assistance, free item distribution, and solidarity networks while building power through community organizing and creating spaces for gift economy and collective care.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/stopthesweepscv/">Stop the Sweeps CV</a>
+      <p>A grassroots organization fostering mutual aid and community support for unhoused neighbors in the Corvallis area. They coordinate direct assistance, encampment support, and solidarity networks while building power through community organizing and creating spaces for housing justice and collective resistance.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/rrfm_corvallis/">Really Really Free Market Corvallis</a>
+      <p>A grassroots organization fostering mutual aid and community support through free markets and resource sharing in Corvallis. They coordinate direct assistance, free item distribution, and solidarity networks while building power through community organizing and creating spaces for gift economy and collective care.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://sites.google.com/view/wwrj/">Western WashCo for Racial Justice (WWRJ)</a>
+      <p>A grassroots organization fostering mutual aid and community solidarity through racial and economic justice organizing in Western Washington County. Originally started as SURJ Forest Grove, they now work as part of the Rural Organizing Project family of human dignity groups, coordinating political education, direct action support, and solidarity networks while building power through multiracial organizing and community building.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.rogueactioncenter.org/">Rogue Action Center</a>
+      <p>Community organization building grassroots power through mutual aid networks, tenant organizing, and solidarity initiatives across Southern Oregon.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.nativewomanshare.com/">NativeWomanShare</a>
+      <p>Indigenous-led organization reuniting Takelma and Inter-Tribal Indigenous Mother Stewards &amp; Two-Spirit communities through land stewardship, food sovereignty, and healing initiatives across the Pacific Northwest.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.uniteoregon.org/">Unite Oregon</a>
+      <p>Led by people of color, immigrants and refugees, rural communities, and people experiencing poverty, building a unified intercultural movement for justice through community organizing, mutual aid, and leadership development.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.cascadesabortionsupport.org/">Cascades Abortion Support Collective</a>
+      <p>A mutual aid collective providing practical, emotional, and financial support to people seeking abortion care in Oregon and Southwest Washington.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://rurallivelihoods.org/">Center for Rural Livelihoods</a>
+      <p>A non-profit organization focused on rural development and community supported forestry, offering workforce training, community garden spaces, and educational programs to support sustainable rural communities.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://sites.google.com/view/clackamascountyequitycoalition/">Clackamas County
                                 Equity
                                 Coalition</a>
-                            <p>A grassroots coalition fostering mutual aid and community solidarity through racial
-                                justice
-                                organizing in Clackamas County. They coordinate direct support, advocacy initiatives,
-                                and
-                                solidarity networks while building power through community education, policy reform, and
-                                creating spaces for racial equity and systemic change.</p>
-                        </div>
-                        <div class="initiative">
-                            <a href="https://respondtoracism.org/">Respond to Racism</a>
-                            <p>A grassroots organization fostering mutual aid and community solidarity through
-                                anti-racist
-                                organizing in Lake Oswego. They coordinate monthly community meetings, educational
-                                initiatives, and solidarity networks while building power through community education,
-                                youth
-                                empowerment, and creating spaces for racial equity and systemic change in Lake Oswego
-                                and
-                                Oregon.</p>
-                        </div>
-                        <div class="initiative">
-                            <a href="https://rop.org/">Rural Organizing Project</a>
-                            <p>A statewide organization fostering mutual aid and community solidarity through rural
-                                organizing across Oregon. They coordinate political education, direct action support,
-                                and
-                                solidarity networks while building power through their network of autonomous human
-                                dignity
-                                groups, creating spaces for rural communities to work for democracy and human dignity.
-                            </p>
-                        </div>
-                        <div class="initiative">
-                            <a href="https://www.blackoregonlandtrust.org/">Black Oregon Land Trust</a>
-                            <p>A community land trust fostering mutual aid and land justice through Black land
-                                stewardship
-                                and ownership in Oregon. They coordinate land acquisition, agricultural programs, and
-                                solidarity networks while building power through Black food sovereignty, cultural
-                                preservation, and creating spaces for sustainable community development and
-                                intergenerational wealth building.</p>
-                        </div>
-                        <div class="initiative">
-                            <a href="https://cldc.org/">Civil Liberties Defense Center</a>
-                            <p>A legal organization fostering mutual aid and movement support through legal advocacy and
-                                education across Oregon. They coordinate legal defense, know-your-rights trainings, and
-                                solidarity networks while building power through movement legal support, community
-                                education, and creating pathways for defending civil rights and civil liberties.</p>
-                        </div>
-                        <div class="initiative">
-                            <a href="https://oregonswc.org/">Oregon Sex Workers Committee</a>
-                            <p>Addresses economic and health disparities among consensual adult sex workers and
-                                trafficking
-                                survivors in Oregon, centering BIPOC communities through research, advocacy, education,
-                                and
-                                harm reduction to promote safety and equity.</p>
-                        </div>
-                        <div class="initiative">
-                            <a href="https://www.oregonrural.org/">Oregon Rural</a>
-                            <p>People organizing for the well-being of our communities and environment.</p>
-                        </div>
-                    </div>
-                </section>
-
-            </div>
-
-        </main>
+      <p>A grassroots coalition fostering mutual aid and community solidarity through racial justice organizing in Clackamas County. They coordinate direct support, advocacy initiatives, and solidarity networks while building power through community education, policy reform, and creating spaces for racial equity and systemic change.</p>
     </div>
+    <div class="initiative">
+      <a href="https://respondtoracism.org/">Respond to Racism</a>
+      <p>A grassroots organization fostering mutual aid and community solidarity through anti-racist organizing in Lake Oswego. They coordinate monthly community meetings, educational initiatives, and solidarity networks while building power through community education, youth empowerment, and creating spaces for racial equity and systemic change in Lake Oswego and Oregon.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://rop.org/">Rural Organizing Project</a>
+      <p>A statewide organization fostering mutual aid and community solidarity through rural organizing across Oregon. They coordinate political education, direct action support, and solidarity networks while building power through their network of autonomous human dignity groups, creating spaces for rural communities to work for democracy and human dignity.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.blackoregonlandtrust.org/">Black Oregon Land Trust</a>
+      <p>A community land trust fostering mutual aid and land justice through Black land stewardship and ownership in Oregon. They coordinate land acquisition, agricultural programs, and solidarity networks while building power through Black food sovereignty, cultural preservation, and creating spaces for sustainable community development and intergenerational wealth building.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://cldc.org/">Civil Liberties Defense Center</a>
+      <p>A legal organization fostering mutual aid and movement support through legal advocacy and education across Oregon. They coordinate legal defense, know-your-rights trainings, and solidarity networks while building power through movement legal support, community education, and creating pathways for defending civil rights and civil liberties.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://oregonswc.org/">Oregon Sex Workers Committee</a>
+      <p>Addresses economic and health disparities among consensual adult sex workers and trafficking survivors in Oregon, centering BIPOC communities through research, advocacy, education, and harm reduction to promote safety and equity.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.oregonrural.org/">Oregon Rural</a>
+      <p>People organizing for the well-being of our communities and environment.</p>
+    </div>
+  </section>
+      </div>
+    </main>
+  </div>
 
-
-    <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/mobile-menu.js" defer></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
+</body>
 
 </html>

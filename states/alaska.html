@@ -2,131 +2,100 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <title>Alaska Mutual Aid Networks - Local Support &amp; Community Resources</title>
-    <meta name="description"
-        content="Find mutual aid networks and community support initiatives in Alaska cities including Anchorage, Fairbanks, and more.">
-    <meta property="og:title" content="Alaska Statewide Initiatives - The Organize Directory">
-    <meta property="og:description"
-        content="Find statewide mutual aid networks and community support initiatives in Alaska.">
-    <meta property="og:type" content="website">
+  <title>Alaska Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid networks and community support initiatives in Alaska. Connect with local organizations and community resources.">
 
-    <meta property="og:url" content="https://organize.directory/alaska">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta name="twitter:card" content="summary">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Alaska Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid networks and community support initiatives in Alaska. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/alaska">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css?v=1.1.9">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
-
-    <link rel="stylesheet" href="/fonts/fonts.css">
-
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('location');
-
-        // Initialize other components
-        initializeComponents({
-        });
-    </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
+    initializeSidebar('location');
+    initializeComponents({});
+  </script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  <div class="layout">
+    <div id="sidebar-placeholder"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-            <div class="city-page state-page">
-                <div class="breadcrumb">
-                    <a href="/location">States</a>
-                    <span>›</span>
-                    <span>Alaska</span>
-                </div>
+      <div class="city-page state-page">
+        <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
+          <span>Alaska</span>
+        </div>
 
-                <h1>Alaska</h1>
+        <h1>Alaska</h1>
 
-
-                <section>
-                    <div class="cities-list">
-                        <h2>Regions and Cities</h2>
-                        <div class="city-links-container">
-                            <a href="/far-north-alaska" class="city-link location-link-base">Far North Alaska</a>
-                            <a href="/interior-alaska" class="city-link location-link-base">Interior Alaska</a>
-                            <a href="/south-central-alaska" class="city-link location-link-base">South Central
-                                Alaska</a>
-                            <a href="/southeast-alaska" class="city-link location-link-base">Southeast Alaska</a>
-                            <a href="/southwest-alaska" class="city-link location-link-base">Southwest Alaska</a>
-                            <a href="/anchorage" class="city-link location-link-base">Anchorage</a>
-                            <a href="/fairbanks" class="city-link location-link-base">Fairbanks</a>
-                            <!-- <a href="/juneau" class="city-link">Juneau</a> -->
-                            <!-- <a href="/kenai-peninsula" class="city-link">Kenai Peninsula</a> -->
-                            <!-- <a href="/kodiak" class="city-link">Kodiak</a> -->
-                        </div>
-                    </div>
-                </section>
-
-
-
-                <section>
-                    <h2>Statewide Initiatives</h2>
-                    <div class="initiative">
-                        <a href="https://www.nativemovement.org/">Native Movement</a>
-                        <p>An Indigenous-led organization building grassroots power through decolonial
-                            education, mutual
-                            aid, and community organizing across Alaska. They focus on climate justice, food
-                            sovereignty, Indigenous rights, and cultural revitalization while supporting
-                            community-led
-                            solutions and traditional knowledge systems.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.identityalaska.org/">Identity Alaska</a>
-                        <p>A statewide LGBTQ+ organization providing mutual aid, community support, and advocacy
-                            for Alaska's queer and trans communities. They coordinate resource sharing, peer support
-                            networks, and direct assistance while building community power through education,
-                            organizing, and creating safe spaces for connection and solidarity.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.justtransitionak.org/">Just Transition Alaska</a>
-                        <p>A grassroots coalition fostering mutual aid and climate justice through community-led
-                            initiatives across Alaska. They coordinate climate action, indigenous solidarity,
-                            and just transition programs while building power through collective organizing, policy
-                            advocacy, and creating spaces for environmental justice and sustainable futures.</p>
-                    </div>
-                </section>
-
-            </div>
-
-
-
-        </main>
+  <section>
+    <div class="cities-list">
+      <h2>Locations</h2>
+      <div class="city-links-container">
+          <a href="/anchorage" class="city-link location-link-base">Anchorage</a>
+          <a href="/fairbanks" class="city-link location-link-base">Fairbanks</a>
+          <a href="/far-north-alaska" class="city-link location-link-base">Far North Alaska</a>
+          <a href="/interior-alaska" class="city-link location-link-base">Interior Alaska</a>
+          <a href="/south-central-alaska" class="city-link location-link-base">South Central Alaska</a>
+          <a href="/southeast-alaska" class="city-link location-link-base">Southeast Alaska</a>
+          <a href="/southwest-alaska" class="city-link location-link-base">Southwest Alaska</a>
+      </div>
     </div>
+  </section>
 
+  <section id="statewide-initiatives" class="city-section">
+    <h2>Statewide Initiatives</h2>
+    <div class="initiative">
+      <a href="https://www.nativemovement.org/">Native Movement</a>
+      <p>An Indigenous-led organization building grassroots power through decolonial education, mutual aid, and community organizing across Alaska. They focus on climate justice, food sovereignty, Indigenous rights, and cultural revitalization while supporting community-led solutions and traditional knowledge systems.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.identityalaska.org/">Identity Alaska</a>
+      <p>A statewide LGBTQ+ organization providing mutual aid, community support, and advocacy for Alaska's queer and trans communities. They coordinate resource sharing, peer support networks, and direct assistance while building community power through education, organizing, and creating safe spaces for connection and solidarity.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.justtransitionak.org/">Just Transition Alaska</a>
+      <p>A grassroots coalition fostering mutual aid and climate justice through community-led initiatives across Alaska. They coordinate climate action, indigenous solidarity, and just transition programs while building power through collective organizing, policy advocacy, and creating spaces for environmental justice and sustainable futures.</p>
+    </div>
+  </section>
+      </div>
+    </main>
+  </div>
 
-    <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/mobile-menu.js" defer></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
+</body>
 
 </html>

@@ -2,15 +2,13 @@
 <html lang="en">
 
 <head>
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
   </script>
 
   <meta charset="UTF-8">
@@ -20,103 +18,57 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    San Luis Obispo County Mutual Aid - Local Support Networks &amp; Community
-    Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid networks and community support initiatives in San Luis Obispo County, California including San Luis Obispo, Paso Robles, Atascadero, and surrounding communities.">
-  <meta property="og:title"
-    content="San Luis Obispo County Mutual Aid - Local Support Networks &amp; Community Resources">
-  <meta property="og:description"
-    content="Find mutual aid networks and community support initiatives in San Luis Obispo County, California including San Luis Obispo, Paso Robles, Atascadero, and surrounding communities.">
-  <meta property="og:type" content="website">
+  <title>San Luis Obispo County Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in San Luis Obispo County. Connect with local organizations and community resources.">
 
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="San Luis Obispo County Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in San Luis Obispo County. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/san-luis-obispo-county">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
   <div class="layout">
     <div id="sidebar-placeholder"></div>
 
-
-
-
-
-
-
-
-
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
+      
       <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/california">California</a>
-          <span>›</span>
-          <a href="/central-california">Central California</a>
-          <span>›</span>
-          <span>San Luis Obispo County</span>
-        </div>
+        <div class="breadcrumb"><a href="/location">States</a><span>›</span><span>San Luis Obispo County</span></div>
 
         <h1>San Luis Obispo County</h1>
-        <p class="subtitle">
-          San Luis Obispo, Paso Robles, Atascadero, and surrounding
-          communities
-        </p>
 
+        <div class="city-content">
 
-        <section>
-          <h2>Communities</h2>
-          <div class="cities-list">
-            <a href="/san-luis-obispo" class="city-link location-link-base">San Luis Obispo</a>
-            <a href="/paso-robles" class="city-link location-link-base">Paso Robles</a>
-            <a href="/atascadero" class="city-link location-link-base">Atascadero</a>
-            <a href="/arroyo-grande" class="city-link location-link-base">Arroyo Grande</a>
-            <a href="/grover-beach" class="city-link location-link-base">Grover Beach</a>
-            <a href="/morro-bay" class="city-link location-link-base">Morro Bay</a>
-            <a href="/pismo-beach" class="city-link location-link-base">Pismo Beach</a>
-            <a href="/cambria" class="city-link location-link-base">Cambria</a>
-            <a href="/nipomo" class="city-link location-link-base">Nipomo</a>
-            <a href="/los-osos" class="city-link location-link-base">Los Osos</a>
-            <a href="/templeton" class="city-link location-link-base">Templeton</a>
-            <a href="/cayucos" class="city-link location-link-base">Cayucos</a>
-          </div>
-        </section>
-
-        <section class="initiatives-section"></section>
+        </div>
       </div>
 
+      
     </main>
   </div>
 
-
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

@@ -2,15 +2,13 @@
 <html lang="en">
 
 <head>
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
   </script>
 
   <meta charset="UTF-8">
@@ -20,41 +18,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Sonoma County Mutual Aid Networks - Local Support &amp; Community Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid networks and community support initiatives in Sonoma County, California.">
+  <title>Sonoma County Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Sonoma County. Connect with local organizations and community resources.">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Sonoma County | The Organize Directory">
-  <meta property="og:description"
-    content="Find mutual aid networks and community resources in Sonoma County, California.">
-  <meta property="og:image" content="https://organize.directory/preview.png">
-  <meta property="og:url" content="https://organize.directory/sonoma-county">
+  <meta property="og:title" content="Sonoma County Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Sonoma County. Connect with local organizations and community resources.">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://organize.directory/sonoma-county">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
@@ -64,8 +51,11 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
+      
       <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/california">California</a>
           <span>›</span>
           <a href="/norcal">Northern California</a>
@@ -75,53 +65,44 @@
 
         <h1>Sonoma County</h1>
 
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <div class="initiative">
+      <a href="https://raizescollective.org/">Raizes Collective</a>
+      <p>Santa Rosa-based organization mobilizing and empowering the community through arts, culture, and environmental education. Supporting artists of color with resources and programming while facilitating healing within bilingual and bicultural communities.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://undocufund.org/">UndocuFund</a>
+      <p>A collaborative mutual aid effort providing direct assistance and resources to undocumented immigrants in Sonoma County affected by disasters, hardships, and other challenges.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.pjcsoco.org/">Peace &amp; Justice Center of Sonoma County</a>
+      <p>A community center fostering mutual aid and solidarity through peace activism, social justice organizing, and community education. They coordinate events, publish the Peace Press, and provide resources while building networks of support through grassroots organizing, indigenous solidarity, and collective action for social change.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://f2f.org/">Face to Face</a>
+      <p>Sonoma County HIV/AIDS service organization providing care, prevention education, and advocacy for people living with HIV/AIDS and related health conditions.</p>
+    </div>
+  </section>
 
-        <section>
-          <div class="initiative">
-            <a href="https://raizescollective.org/">Raizes Collective</a>
-            <p>
-              Santa Rosa-based organization mobilizing and empowering the
-              community through arts, culture, and environmental education.
-              Supporting artists of color with resources and programming while
-              facilitating healing within bilingual and bicultural
-              communities.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://undocufund.org/">UndocuFund</a>
-            <p>
-              A collaborative mutual aid effort providing direct assistance
-              and resources to undocumented immigrants in Sonoma County
-              affected by disasters, hardships, and other challenges.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.pjcsoco.org/">Peace &amp; Justice Center of Sonoma County</a>
-            <p>
-              A community center fostering mutual aid and solidarity through
-              peace activism, social justice organizing, and community
-              education. They coordinate events, publish the Peace Press,
-              and provide resources while building networks of support
-              through grassroots organizing, indigenous solidarity, and
-              collective action for social change.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://f2f.org/">Face to Face</a>
-            <p>Sonoma County HIV/AIDS service organization providing care, prevention education, and advocacy for people
-              living with HIV/AIDS and related health conditions.</p>
-          </div>
-        </section>
+  <section>
+    <div class="cities-list">
+      <h2>Locations</h2>
+      <div class="city-links-container">
+          <a href="/santa-rosa" class="city-link location-link-base">Santa Rosa</a>
       </div>
+    </div>
+  </section>
+        </div>
+      </div>
+
+      
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

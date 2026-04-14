@@ -2,87 +2,77 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <title>Elder Solidarity Organizations &amp; Resources - Mutual Aid Networks</title>
-    <meta name="description"
-        content="Directory of elder solidarity organizations, mutual aid networks, and resources working towards intergenerational justice and elder empowerment.">
+  <title>Elder Solidarity Organizations &amp; Resources - The Organize Directory</title>
+  <meta name="description" content="Find organizations and initiatives focused on Elder Solidarity Organizations &amp; Resources.">
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Elder Solidarity Organizations &amp; Resources - Mutual Aid Networks">
-    <meta property="og:description" content="Find mutual aid networks and community resources in elder-solidarity.">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta property="og:url" content="https://organize.directory/topics/elder-solidarity">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Elder Solidarity Organizations &amp; Resources - The Organize Directory">
+  <meta property="og:description" content="Find organizations and initiatives focused on Elder Solidarity Organizations &amp; Resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/topics/elder-solidarity">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('topics');
-
-        // Initialize other components
-        initializeComponents({});
-    </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
+    initializeSidebar('topics');
+    initializeComponents({});
+  </script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  <div class="layout">
+    <div id="sidebar-placeholder"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-            <div class="city-page">
-                <div class="breadcrumb">
-                    <a href="/topics">Issues</a>
-                    <span>›</span>
-                    <span>Elder Solidarity</span>
-                </div>
+      <div class="city-page state-page">
+        <div class="breadcrumb">
+          <a href="/topics">Topics</a>
+          <span>›</span>
+          <span>Elder Solidarity Organizations &amp; Resources</span>
+        </div>
 
-                <h1>Elder Solidarity Organizations &amp; Resources</h1>
+        <h1>Elder Solidarity Organizations &amp; Resources</h1>
 
-
-                <section class="initiatives-section">
-                    <h2>Elder Activism &amp; Support</h2>
-                    <div class="initiative">
-                        <a href="https://radicalelders.net/">Radical Elders</a>
-                        <p>A network of elder activists fostering mutual aid and intergenerational
-                            solidarity through direct action and community organizing. They coordinate elder
-                            support initiatives, political education, and solidarity networks while building
-                            power through elder wisdom, movement history preservation, and creating spaces for
-                            intergenerational learning and collective resistance.</p>
-                    </div>
-                </section>
-            </div>
-        </main>
+  <section id="elder-activism-support" class="city-section">
+    <h2>Elder Activism &amp; Support</h2>
+    <div class="initiative">
+      <a href="https://radicalelders.net/">Radical Elders</a>
+      <p>A network of elder activists fostering mutual aid and intergenerational solidarity through direct action and community organizing. They coordinate elder support initiatives, political education, and solidarity networks while building power through elder wisdom, movement history preservation, and creating spaces for intergenerational learning and collective resistance.</p>
     </div>
+  </section>
+      </div>
+    </main>
+  </div>
 
-    <!-- Scripts -->
-    <script src="/mobile-menu.js" defer></script>
+  <script src="/mobile-menu.js" defer></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
 </body>
 
 </html>

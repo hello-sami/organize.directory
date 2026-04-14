@@ -2,149 +2,117 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <title>Massachusetts Mutual Aid Networks - Local Support &amp; Community Resources</title>
-    <meta name="description"
-        content="Find mutual aid networks and community support initiatives in Massachusetts cities including Boston, Cape Cod, Worcester, and more.">
-    <meta property="og:title" content="Massachusetts Mutual Aid Networks - Local Support &amp; Community Resources">
-    <meta property="og:description"
-        content="Find mutual aid networks and community support initiatives in Massachusetts cities including Boston, Cape Cod, Worcester, and more.">
-    <meta property="og:type" content="website">
+  <title>Massachusetts Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid networks and community support initiatives in Massachusetts. Connect with local organizations and community resources.">
 
-    <meta property="og:url" content="https://organize.directory/massachusetts">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta name="twitter:card" content="summary">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Massachusetts Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid networks and community support initiatives in Massachusetts. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/massachusetts">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css?v=1.1.9">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
-
-    <link rel="stylesheet" href="/fonts/fonts.css">
-
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('location');
-
-        // Initialize other components
-        initializeComponents({
-        });
-    </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
+    initializeSidebar('location');
+    initializeComponents({});
+  </script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  <div class="layout">
+    <div id="sidebar-placeholder"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-            <div class="city-page state-page">
-                <div class="breadcrumb">
-                    <a href="/location">States</a>
-                    <span>›</span>
-                    <span>Massachusetts</span>
-                </div>
+      <div class="city-page state-page">
+        <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
+          <span>Massachusetts</span>
+        </div>
 
-                <h1>Massachusetts</h1>
+        <h1>Massachusetts</h1>
 
-
-                <section class="cities-container">
-                    <div class="cities-list">
-                        <h2>Cities</h2>
-                        <div class="city-links-container">
-                            <!-- <a href="/arlington-ma" class="city-link">Arlington</a> -->
-                            <a href="/boston" class="city-link location-link-base">Boston</a>
-                            <a href="/cambridge" class="city-link location-link-base">Cambridge</a>
-                            <a href="/cape-cod-plymouth" class="city-link location-link-base">Cape Cod / Plymouth</a>
-                            <a href="/holyoke" class="city-link location-link-base">Holyoke</a>
-                            <a href="/lowell" class="city-link location-link-base">Lowell</a>
-                            <!-- <a href="/plymouth" class="city-link">Plymouth</a> -->
-                            <a href="/somerville" class="city-link location-link-base">Somerville</a>
-                            <!-- <a href="/south-coast" class="city-link">South Coast</a> -->
-                            <a href="/springfield" class="city-link location-link-base">Springfield</a>
-                            <a href="/waltham" class="city-link location-link-base">Waltham</a>
-                            <a href="/western-massachusetts" class="city-link location-link-base">Western
-                                Massachusetts</a>
-                            <a href="/worcester-central-ma" class="city-link location-link-base">Worcester / Central
-                                MA</a>
-                        </div>
-                    </div>
-                </section>
-
-
-                <section>
-                    <h2>Statewide Organizations</h2>
-                    <div class="initiative">
-                        <a href="https://ace-ej.org/">Alternatives for Community and Environment (ACE)</a>
-                        <p>A grassroots organization building community power through mutual aid and environmental
-                            justice initiatives across Massachusetts. They coordinate direct support, resource sharing,
-                            and community organizing while advocating for environmental justice, public health, and
-                            sustainable communities.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.qtmama.org/">Queer &amp; Trans Mutual Aid Massachusetts (QTMAMA)</a>
-                        <p>A collective of LGBTQIA+ residents coordinating mutual aid and community support initiatives
-                            across Massachusetts. They organize direct assistance, resource sharing, and solidarity
-                            networks while building resilient queer communities through neighborhood organizing and
-                            collective action.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://foodforfree.org/">Food For Free</a>
-                        <p>A mutual aid organization coordinating food rescue and distribution initiatives across
-                            Eastern Massachusetts. They organize direct assistance through food rescue, home delivery,
-                            school markets, and meal programs while building sustainable networks of food access and
-                            community care, serving over 130,000 neighbors annually.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://lawrencefridge.neocities.org/">Lawrence Community Fridge</a>
-                        <p>A community-run mutual aid project providing free food access through a public refrigerator
-                            in Lawrence. Located outside of 163 East Haverhill Street, they coordinate food
-                            distribution, resource sharing, and community care while building power through neighborhood
-                            solidarity and creating accessible spaces for food security.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://thestonesoupcafe.org/">Stone Soup Cafe</a>
-                        <p>A pay-what-you-can community cafe fostering mutual aid and food security through shared meals
-                            and community building in Massachusetts. They coordinate food access programs, community
-                            gatherings, and solidarity networks while building power through food justice, collective
-                            care, and creating spaces for nourishment and connection.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.masstpc.org/">Massachussetts Transgender Political Coalition</a>
-                        <p>MTPC works to ensure the wellbeing, safety, and lived equity of all trans, nonbinary, and
-                            gender expansive community members in Massachusetts.</p>
-                    </div>
-                </section>
-
-            </div>
-
-        </main>
+  <section>
+    <div class="cities-list">
+      <h2>Locations</h2>
+      <div class="city-links-container">
+          <a href="/boston" class="city-link location-link-base">Boston</a>
+          <a href="/cambridge" class="city-link location-link-base">Cambridge</a>
+          <a href="/cape-cod-plymouth" class="city-link location-link-base">Cape Cod &amp; Plymouth</a>
+          <a href="/holyoke" class="city-link location-link-base">Holyoke, Massachusetts</a>
+          <a href="/lowell" class="city-link location-link-base">Lowell, Massachusetts</a>
+          <a href="/plymouth" class="city-link location-link-base">Plymouth</a>
+          <a href="/somerville" class="city-link location-link-base">Somerville</a>
+          <a href="/springfield-ma" class="city-link location-link-base">Springfield</a>
+          <a href="/springfield" class="city-link location-link-base">Springfield</a>
+          <a href="/waltham" class="city-link location-link-base">Waltham, Massachusetts</a>
+          <a href="/western-massachusetts" class="city-link location-link-base">Western Massachusetts</a>
+          <a href="/worcester-central-ma" class="city-link location-link-base">Worcester / Central MA</a>
+      </div>
     </div>
+  </section>
 
+  <section id="statewide-organizations" class="city-section">
+    <h2>Statewide Organizations</h2>
+    <div class="initiative">
+      <a href="https://ace-ej.org/">Alternatives for Community and Environment (ACE)</a>
+      <p>A grassroots organization building community power through mutual aid and environmental justice initiatives across Massachusetts. They coordinate direct support, resource sharing, and community organizing while advocating for environmental justice, public health, and sustainable communities.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.qtmama.org/">Queer &amp; Trans Mutual Aid Massachusetts (QTMAMA)</a>
+      <p>A collective of LGBTQIA+ residents coordinating mutual aid and community support initiatives across Massachusetts. They organize direct assistance, resource sharing, and solidarity networks while building resilient queer communities through neighborhood organizing and collective action.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://foodforfree.org/">Food For Free</a>
+      <p>A mutual aid organization coordinating food rescue and distribution initiatives across Eastern Massachusetts. They organize direct assistance through food rescue, home delivery, school markets, and meal programs while building sustainable networks of food access and community care, serving over 130,000 neighbors annually.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://lawrencefridge.neocities.org/">Lawrence Community Fridge</a>
+      <p>A community-run mutual aid project providing free food access through a public refrigerator in Lawrence. Located outside of 163 East Haverhill Street, they coordinate food distribution, resource sharing, and community care while building power through neighborhood solidarity and creating accessible spaces for food security.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://thestonesoupcafe.org/">Stone Soup Cafe</a>
+      <p>A pay-what-you-can community cafe fostering mutual aid and food security through shared meals and community building in Massachusetts. They coordinate food access programs, community gatherings, and solidarity networks while building power through food justice, collective care, and creating spaces for nourishment and connection.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.masstpc.org/">Massachussetts Transgender Political Coalition</a>
+      <p>MTPC works to ensure the wellbeing, safety, and lived equity of all trans, nonbinary, and gender expansive community members in Massachusetts.</p>
+    </div>
+  </section>
+      </div>
+    </main>
+  </div>
 
-    <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/mobile-menu.js" defer></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
+</body>
 
 </html>

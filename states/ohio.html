@@ -2,157 +2,122 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <title>Ohio Mutual Aid Networks - Local Support &amp; Community Resources</title>
-    <meta name="description"
-        content="Find mutual aid networks and community support initiatives in Ohio cities including Cleveland, Columbus, Cincinnati, and more.">
-    <meta property="og:title" content="Ohio Mutual Aid Networks - Local Support &amp; Community Resources">
-    <meta property="og:description"
-        content="Find mutual aid networks and community support initiatives in Ohio cities including Cleveland, Columbus, Cincinnati, and more.">
-    <meta property="og:type" content="website">
+  <title>Ohio Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid networks and community support initiatives in Ohio. Connect with local organizations and community resources.">
 
-    <meta property="og:url" content="https://organize.directory/ohio">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta name="twitter:card" content="summary">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Ohio Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid networks and community support initiatives in Ohio. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/ohio">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css?v=1.1.9">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
-
-    <link rel="stylesheet" href="/fonts/fonts.css">
-
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('location');
-
-        // Initialize other components
-        initializeComponents({
-        });
-    </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
+    initializeSidebar('location');
+    initializeComponents({});
+  </script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  <div class="layout">
+    <div id="sidebar-placeholder"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-            <div class="city-page state-page">
-                <div class="breadcrumb">
-                    <a href="/location">States</a>
-                    <span>›</span>
-                    <span>Ohio</span>
-                </div>
+      <div class="city-page state-page">
+        <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
+          <span>Ohio</span>
+        </div>
 
-                <h1>Ohio</h1>
+        <h1>Ohio</h1>
 
-
-                <section>
-                    <div class="cities-list">
-                        <h2>Cities</h2>
-                        <div class="city-links-container">
-                            <a href="/akron" class="city-link location-link-base">Akron</a>
-                            <a href="/athens" class="city-link location-link-base">Athens</a>
-                            <!-- <a href="/chillicothe" class="city-link">Chillicothe</a> -->
-                            <a href="/cincinnati" class="city-link location-link-base">Cincinnati</a>
-                            <a href="/cleveland" class="city-link location-link-base">Cleveland</a>
-                            <a href="/columbus" class="city-link location-link-base">Columbus</a>
-                            <a href="/dayton-springfield" class="city-link location-link-base">Dayton-Springfield</a>
-                            <!-- <a href="/lima-findlay" class="city-link">Lima / Findlay</a> -->
-                            <!-- <a href="/mansfield" class="city-link">Mansfield</a> -->
-                            <!-- <a href="/sandusky" class="city-link">Sandusky</a> -->
-                            <!-- <a href="/springfield" class="city-link">Springfield</a> -->
-                            <a href="/toledo" class="city-link location-link-base">Toledo</a>
-                            <!-- <a href="/tuscarawas-co" class="city-link">Tuscarawas Co</a> -->
-                            <a href="/youngstown" class="city-link location-link-base">Youngstown</a>
-                            <!-- <a href="/zanesville-cambridge" class="city-link">Zanesville / Cambridge</a> -->
-                        </div>
-                    </div>
-                </section>
-
-
-                <section>
-                    <h2>Statewide Organizations</h2>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/centralohfreedomfund/">Central Ohio Freedom Fund</a>
-                        <p>A mutual aid collective providing bail support and post-release resources through community
-                            solidarity in Central Ohio. They coordinate bail fund distribution, court support, and
-                            solidarity networks while building power through prison abolition organizing and creating
-                            pathways for community-based support beyond incarceration.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.ofuapolicebrutality.com/">Ohio Families Unite Against Police Brutality</a>
-                        <p>A statewide organization fostering mutual aid and community solidarity through support for
-                            families affected by police violence across Ohio. They coordinate direct support
-                            initiatives, advocacy campaigns, and solidarity networks while building power through family
-                            support, community organizing, and creating spaces for healing and justice.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.ofupac.org/">Ohio Families Unite PAC</a>
-                        <p>A political action committee fostering mutual aid and community solidarity through advocacy
-                            and organizing for police accountability across Ohio. They coordinate direct support
-                            initiatives, legislative campaigns, and solidarity networks while building power through
-                            community organizing and creating spaces for systemic change.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.facebook.com/SURJOHIO/">SURJ Ohio</a>
-                        <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity
-                            through white anti-racist organizing across Ohio. They coordinate political education,
-                            direct action support, and solidarity networks while building power through racial justice
-                            education and accountable organizing in partnership with BIPOC-led organizations.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.transohio.org/">Trans Ohio</a>
-                        <p>TransOhio is dedicated to protecting and advancing the rights of trans, nonbinary, intersex,
-                            and gender nonconforming people in Ohio.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.btmohio.org/">Black Transmen of Ohio</a>
-                        <p>A safe, supportive and empowering home for transmen of color in Ohio.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/bqic.ohio/">Black Queer &amp; Intersectional Collective</a>
-                        <p>BQIC is a grassroots community organization in Central Ohio that works towards the liberation
-                            of Black LGBTQIA+ people from all walks of life through direct action, community organizing,
-                            education on our issues, and creating spaces to uplift our voices.</p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://transalliesohio.org/">Trans Allies Ohio</a>
-                        <p>We are a grassroots coalition of transgender youth, their families, and allies who advocate
-                            for equality for Ohio's trans and non-binary people.</p>
-                    </div>
-                </section>
-
-            </div>
-
-        </main>
+  <section>
+    <div class="cities-list">
+      <h2>Locations</h2>
+      <div class="city-links-container">
+          <a href="/akron" class="city-link location-link-base">Akron, OH</a>
+          <a href="/athens" class="city-link location-link-base">Athens</a>
+          <a href="/cincinnati" class="city-link location-link-base">Cincinnati</a>
+          <a href="/cleveland" class="city-link location-link-base">Cleveland</a>
+          <a href="/columbus" class="city-link location-link-base">Columbus, OH</a>
+          <a href="/dayton" class="city-link location-link-base">Dayton</a>
+          <a href="/dayton-springfield" class="city-link location-link-base">Dayton-Springfield, Ohio</a>
+          <a href="/toledo" class="city-link location-link-base">Toledo</a>
+          <a href="/youngstown" class="city-link location-link-base">Youngstown</a>
+      </div>
     </div>
+  </section>
 
+  <section id="statewide-organizations" class="city-section">
+    <h2>Statewide Organizations</h2>
+    <div class="initiative">
+      <a href="https://www.instagram.com/centralohfreedomfund/">Central Ohio Freedom Fund</a>
+      <p>A mutual aid collective providing bail support and post-release resources through community solidarity in Central Ohio. They coordinate bail fund distribution, court support, and solidarity networks while building power through prison abolition organizing and creating pathways for community-based support beyond incarceration.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.ofuapolicebrutality.com/">Ohio Families Unite Against Police Brutality</a>
+      <p>A statewide organization fostering mutual aid and community solidarity through support for families affected by police violence across Ohio. They coordinate direct support initiatives, advocacy campaigns, and solidarity networks while building power through family support, community organizing, and creating spaces for healing and justice.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.ofupac.org/">Ohio Families Unite PAC</a>
+      <p>A political action committee fostering mutual aid and community solidarity through advocacy and organizing for police accountability across Ohio. They coordinate direct support initiatives, legislative campaigns, and solidarity networks while building power through community organizing and creating spaces for systemic change.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.facebook.com/SURJOHIO/">SURJ Ohio</a>
+      <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing across Ohio. They coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with BIPOC-led organizations.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.transohio.org/">Trans Ohio</a>
+      <p>TransOhio is dedicated to protecting and advancing the rights of trans, nonbinary, intersex, and gender nonconforming people in Ohio.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.btmohio.org/">Black Transmen of Ohio</a>
+      <p>A safe, supportive and empowering home for transmen of color in Ohio.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/bqic.ohio/">Black Queer &amp; Intersectional Collective</a>
+      <p>BQIC is a grassroots community organization in Central Ohio that works towards the liberation of Black LGBTQIA+ people from all walks of life through direct action, community organizing, education on our issues, and creating spaces to uplift our voices.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://transalliesohio.org/">Trans Allies Ohio</a>
+      <p>We are a grassroots coalition of transgender youth, their families, and allies who advocate for equality for Ohio's trans and non-binary people.</p>
+    </div>
+  </section>
+      </div>
+    </main>
+  </div>
 
-    <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/mobile-menu.js" defer></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
+</body>
 
 </html>

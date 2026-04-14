@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,52 +18,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Berkeley Mutual Aid Networks - Local Support &amp; Community Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid networks and community support initiatives in Berkeley, California.">
-  <meta property="og:title" content="Berkeley Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description"
-    content="Find mutual aid networks and community support initiatives in Berkeley, California.">
-  <meta property="og:type" content="website">
+  <title>Berkeley Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Berkeley. Connect with local organizations and community resources.">
 
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Berkeley Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Berkeley. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/berkeley">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
-
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-  <script>
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
-  </script>
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
@@ -64,8 +51,15 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
+      
       <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
+          <a href="/california">California</a>
+          <span>›</span>
+          <a href="/norcal">Northern California</a>
+          <span>›</span>
           <a href="/sf-bay-area">Bay Area</a>
           <span>›</span>
           <a href="/east-bay">East Bay</a>
@@ -75,88 +69,55 @@
 
         <h1>Berkeley</h1>
 
-
-        <section>
-          <div class="initiative">
-            <a href="https://slingshotcollective.org/">Slingshot Collective</a>
-            <p>
-              Berkeley-based quarterly, independent, radical, newspaper published since 1988.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/yallaberkeley_palestinelove/">Yalla Berkeley</a>
-            <p>
-              Info on how to mobilize the city of Berkeley to support Palestine
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://thelonghaul.org/">The Long Haul</a>
-            <p>
-              A radical space in south Berkeley with a lending library, zine archive, meeting room, and work spaces for
-              community groups and DIY projects that hosts events.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://lapena.org/">La Peña Cultural Center</a>
-            <p>
-              A center for Latinx, Caribbean, and Indigenous diasporic communities of the Bay Area to preserve and
-              celebrate cultural traditions, present new interdisciplinary creative works, and to nurture grassroots
-              social justice movements with artists, activists, and allies.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://revolutionbooks.org/">Revolution Books</a>
-            <p>
-              A radical bookstore fostering mutual aid and critical
-              consciousness through literature, political theory, and
-              community events. They coordinate book talks, study groups, and
-              solidarity initiatives while building power through
-              revolutionary education, cultural programming, and creating
-              spaces for radical thought and collective learning.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.berkeleyfreeclinic.org/">Berkeley Free Clinic</a>
-            <p>
-              A volunteer-run free clinic fostering mutual aid and solidarity
-              through accessible healthcare since 1969. They coordinate
-              medical services, dental care, and peer counseling while
-              building power through community health education, harm
-              reduction, and creating spaces for equitable healthcare access
-              regardless of ability to pay.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.berkeleycopwatch.org/">Berkeley Copwatch</a>
-            <p>
-              A grassroots organization fostering mutual aid and community
-              safety through police monitoring and accountability since 1990.
-              They coordinate community patrols, know-your-rights trainings,
-              and documentation of police conduct while building power through
-              direct action, public education, and creating networks of
-              community-based oversight and support for those impacted by
-              police violence.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/wheredowegoberkeley/">Where Do We Go Berkeley?</a>
-            <p>Where Do We Go Berkeley is a 501(c)(3) nonprofit founded by Berkeleys unhoused residents offering
-              advocacy and material support people on the street.</p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/peoplesparkberkeley/">People's Park Berkeley</a>
-            <p>National Historic Landmark on Ohlone land
-              Liberated for the people on 4/20/1969
-              Raided by @ucberkeleyofficial on 1/4/2024</p>
-          </div>
-        </section>
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <div class="initiative">
+      <a href="https://slingshotcollective.org/">Slingshot Collective</a>
+      <p>Berkeley-based quarterly, independent, radical, newspaper published since 1988.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/yallaberkeley_palestinelove/">Yalla Berkeley</a>
+      <p>Info on how to mobilize the city of Berkeley to support Palestine</p>
+    </div>
+    <div class="initiative">
+      <a href="https://thelonghaul.org/">The Long Haul</a>
+      <p>A radical space in south Berkeley with a lending library, zine archive, meeting room, and work spaces for community groups and DIY projects that hosts events.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://lapena.org/">La Peña Cultural Center</a>
+      <p>A center for Latinx, Caribbean, and Indigenous diasporic communities of the Bay Area to preserve and celebrate cultural traditions, present new interdisciplinary creative works, and to nurture grassroots social justice movements with artists, activists, and allies.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://revolutionbooks.org/">Revolution Books</a>
+      <p>A radical bookstore fostering mutual aid and critical consciousness through literature, political theory, and community events. They coordinate book talks, study groups, and solidarity initiatives while building power through revolutionary education, cultural programming, and creating spaces for radical thought and collective learning.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.berkeleyfreeclinic.org/">Berkeley Free Clinic</a>
+      <p>A volunteer-run free clinic fostering mutual aid and solidarity through accessible healthcare since 1969. They coordinate medical services, dental care, and peer counseling while building power through community health education, harm reduction, and creating spaces for equitable healthcare access regardless of ability to pay.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.berkeleycopwatch.org/">Berkeley Copwatch</a>
+      <p>A grassroots organization fostering mutual aid and community safety through police monitoring and accountability since 1990. They coordinate community patrols, know-your-rights trainings, and documentation of police conduct while building power through direct action, public education, and creating networks of community-based oversight and support for those impacted by police violence.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/wheredowegoberkeley/">Where Do We Go Berkeley?</a>
+      <p>Where Do We Go Berkeley is a 501(c)(3) nonprofit founded by Berkeleys unhoused residents offering advocacy and material support people on the street.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/peoplesparkberkeley/">People's Park Berkeley</a>
+      <p>National Historic Landmark on Ohlone land Liberated for the people on 4/20/1969 Raided by @ucberkeleyofficial on 1/4/2024</p>
+    </div>
+  </section>
+        </div>
       </div>
+
+      
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

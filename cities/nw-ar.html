@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,49 +18,44 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>Mutual Aid in Northwest Arkansas - Local Support Networks &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid networks and community support initiatives in Northwest Arkansas.">
-  <meta property="og:title"
-    content="Mutual Aid in Northwest Arkansas - Local Support Networks &amp; Community Resources">
-  <meta property="og:description"
-    content="Find mutual aid networks and community support initiatives in Northwest Arkansas.">
-  <meta property="og:type" content="website">
+  <title>Northwest Arkansas Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Northwest Arkansas. Connect with local organizations and community resources.">
 
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Northwest Arkansas Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Northwest Arkansas. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/nw-ar">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
   <div class="layout">
-        <div id="sidebar-placeholder"></div>
+    <div id="sidebar-placeholder"></div>
 
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      <div class="city-page state-page">
+      <div class="content-wrapper">
+      <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/arkansas">Arkansas</a>
           <span>›</span>
           <span>Northwest Arkansas</span>
@@ -59,119 +63,93 @@
 
         <h1>Northwest Arkansas</h1>
 
-        <!-- <section>
-          <div class="cities-list">
-            <h2>Cities</h2>
-            <div class="city-links-container">
-              <a href="/fayetteville" class="city-link">Fayetteville</a>
-              <a href="/fort-smith" class="city-link">Fort Smith</a>
-            </div>
-          </div>
-        </section> -->
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <h2>Community Support</h2>
+    <div class="initiative">
+      <a href="https://dsanwa.org/">DSA Northwest Arkansas</a>
+      <p>A grassroots organization fostering mutual aid and community solidarity in Northwest Arkansas. They coordinate direct support, resource sharing, and solidarity networks while building power through democratic socialist organizing and community care.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/nwasocialistalternative/">NWA Socialist Alternative</a>
+      <p>A grassroots organization fostering mutual aid and community solidarity in Northwest Arkansas. They coordinate direct support, political education, and solidarity networks while building power through socialist organizing and community care initiatives.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.facebook.com/HandsUpNWA/">Hands Up NWA</a>
+      <p>A grassroots organization fostering mutual aid and community support through direct action and solidarity initiatives in Northwest Arkansas. They coordinate resource sharing, community organizing, and support networks while building power through local advocacy and creating spaces for collective care.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/maydaynwa">Mayday NWA</a>
+      <p>A community-based mutual aid network in Northwest Arkansas focused on direct support and solidarity initiatives. They work to build community power through resource sharing, emergency assistance, and collective organizing while fostering sustainable networks of care and support.</p>
+    </div>
+  </section>
 
-        <section>
-          <h2>Community Support</h2>
-          <div class="initiative">
-            <a href="https://dsanwa.org/">DSA Northwest Arkansas</a>
-            <p>
-              A grassroots organization fostering mutual aid and community
-              solidarity in Northwest Arkansas. They coordinate direct
-              support, resource sharing, and solidarity networks while
-              building power through democratic socialist organizing and
-              community care.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/nwasocialistalternative/">NWA Socialist Alternative</a>
-            <p>
-              A grassroots organization fostering mutual aid and community
-              solidarity in Northwest Arkansas. They coordinate direct
-              support, political education, and solidarity networks while
-              building power through socialist organizing and community care
-              initiatives.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.facebook.com/HandsUpNWA/">Hands Up NWA</a>
-            <p>
-              A grassroots organization fostering mutual aid and community
-              support through direct action and solidarity initiatives in
-              Northwest Arkansas. They coordinate resource sharing, community
-              organizing, and support networks while building power through
-              local advocacy and creating spaces for collective care.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/maydaynwa">Mayday NWA</a>
-            <p>
-              A community-based mutual aid network in Northwest Arkansas
-              focused on direct support and solidarity initiatives. They work
-              to build community power through resource sharing, emergency
-              assistance, and collective organizing while fostering
-              sustainable networks of care and support.
-            </p>
-          </div>
-        </section>
+  <section id="section-1" class="city-section">
+    <h2>Food Justice</h2>
+    <div class="initiative">
+      <a href="https://www.instagram.com/nwafoodnotbombs/">NWA Food Not Bombs</a>
+      <p>A mutual aid collective fostering food justice and community solidarity through direct action and food distribution in Northwest Arkansas. They coordinate free meal sharing, resource distribution, and solidarity networks while building power through anti-hunger initiatives and community care.</p>
+    </div>
+  </section>
 
-        <section>
-          <h2>Food Justice</h2>
-          <div class="initiative">
-            <a href="https://www.instagram.com/nwafoodnotbombs/">NWA Food Not Bombs</a>
-            <p>
-              A mutual aid collective fostering food justice and community
-              solidarity through direct action and food distribution in
-              Northwest Arkansas. They coordinate free meal sharing, resource
-              distribution, and solidarity networks while building power
-              through anti-hunger initiatives and community care.
-            </p>
-          </div>
-        </section>
+  <section id="section-2" class="city-section">
+    <h2>International Solidarity</h2>
+    <div class="initiative">
+      <a href="https://www.instagram.com/nwaforpalestine">NWA for Palestine</a>
+      <p>A solidarity collective coordinating mutual aid and community support in Northwest Arkansas. They organize direct assistance, resource distribution, and solidarity initiatives while building power through Palestine solidarity organizing and community care.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/friendsofpalestinenwa/">Friends of Palestine NWA</a>
+      <p>A grassroots solidarity collective fostering mutual aid and community support in Northwest Arkansas. They coordinate direct assistance, resource sharing, and solidarity networks while building power through Palestine solidarity organizing and community care.</p>
+    </div>
+  </section>
 
-        <section>
-          <h2>International Solidarity</h2>
-          <div class="initiative">
-            <a href="https://www.instagram.com/nwaforpalestine">NWA for Palestine</a>
-            <p>
-              A solidarity collective coordinating mutual aid and community
-              support in Northwest Arkansas. They organize direct assistance,
-              resource distribution, and solidarity initiatives while building
-              power through Palestine solidarity organizing and community
-              care.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/friendsofpalestinenwa/">Friends of Palestine NWA</a>
-            <p>
-              A grassroots solidarity collective fostering mutual aid and
-              community support in Northwest Arkansas. They coordinate direct
-              assistance, resource sharing, and solidarity networks while
-              building power through Palestine solidarity organizing and
-              community care.
-            </p>
-          </div>
-        </section>
-
-        <section>
-          <h2>LGBTQ+ Support</h2>
-          <div class="initiative">
-            <a href="https://www.theequalitycrew.org/">The Equality Crew</a>
-            <p>
-              A grassroots organization fostering mutual aid and community
-              support for LGBTQ+ youth across Northwest Arkansas. They
-              coordinate direct assistance, resource sharing, and solidarity
-              networks while building power through youth empowerment,
-              inclusive programming, and creating welcoming spaces for queer
-              and trans youth to thrive.
-            </p>
-          </div>
-        </section>
+  <section id="section-3" class="city-section">
+    <h2>LGBTQ+ Support</h2>
+    <div class="initiative">
+      <a href="https://www.theequalitycrew.org/">The Equality Crew</a>
+      <p>A grassroots organization fostering mutual aid and community support for LGBTQ+ youth across Northwest Arkansas. They coordinate direct assistance, resource sharing, and solidarity networks while building power through youth empowerment, inclusive programming, and creating welcoming spaces for queer and trans youth to thrive.</p>
+    </div>
+  </section>
+        </div>
+      </div>
+        <aside class="toc-container">
+          <nav class="toc" role="navigation" aria-label="Table of Contents" id="toc">
+            <ul class="toc-list">
+          <li class="toc-item">
+            <a href="#section-0" class="toc-link">
+              <span class="toc-number">1.</span>
+              <span class="toc-text">Community Support</span>
+            </a>
+          </li>
+          <li class="toc-item">
+            <a href="#section-1" class="toc-link">
+              <span class="toc-number">2.</span>
+              <span class="toc-text">Food Justice</span>
+            </a>
+          </li>
+          <li class="toc-item">
+            <a href="#section-2" class="toc-link">
+              <span class="toc-number">3.</span>
+              <span class="toc-text">International Solidarity</span>
+            </a>
+          </li>
+          <li class="toc-item">
+            <a href="#section-3" class="toc-link">
+              <span class="toc-number">4.</span>
+              <span class="toc-text">LGBTQ+ Support</span>
+            </a>
+          </li>
+            </ul>
+          </nav>
+        </aside>
       </div>
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  <script src="/js/city-toc.js" defer></script>
+</body>
 
 </html>

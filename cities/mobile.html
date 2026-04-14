@@ -2,15 +2,13 @@
 <html lang="en">
 
 <head>
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
   </script>
 
   <meta charset="UTF-8">
@@ -20,123 +18,124 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Mobile Mutual Aid Networks - Local Support &amp; Community Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid initiatives and community support networks in Mobile, Alabama. Connect with local organizations and community resources.">
-  <meta property="og:title" content="Mobile Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description"
-    content="Find mutual aid initiatives and community support networks in Mobile, Alabama. Connect with local organizations providing community-based support.">
-  <meta property="og:type" content="website">
+  <title>Mobile Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Mobile. Connect with local organizations and community resources.">
 
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Mobile Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Mobile. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/mobile">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
   <div class="layout">
     <div id="sidebar-placeholder"></div>
 
-
-
-
-
-
-
-
-
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
+      <div class="content-wrapper">
       <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/alabama">Alabama</a>
           <span>›</span>
-          <!-- <a href="/south-al.html">South Alabama</a>
-          <span>›</span> -->
           <span>Mobile</span>
         </div>
 
         <h1>Mobile</h1>
 
-        <section>
-          <h2>Local Organizations</h2>
-          <div class="initiative">
-            <a href="https://www.instagram.com/dreamdefendersmobile/">Dream Defenders Mobile</a>
-            <p>The Mobile chapter of The Dream Defenders, an organization of
-              Black and Brown youth organizing against police and prisons.</p>
-          </div>
-          <div class="initiative">
-            <a href="https://onemobileal.org/">ONE Mobile</a>
-            <p>One Mobile™ is a grassroots coalition of local organizations
-              and individuals in Mobile County, Alabama, united in supporting
-              justice.</p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.doyoubelong.org/">Do You Belong</a>
-            <p>Mutual aid and solidarity through arts, culture, and organizing
-              in Mobile.</p>
-          </div>
-        </section>
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <h2>Local Organizations</h2>
+    <div class="initiative">
+      <a href="https://www.instagram.com/dreamdefendersmobile/">Dream Defenders Mobile</a>
+      <p>The Mobile chapter of The Dream Defenders, an organization of Black and Brown youth organizing against police and prisons.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://onemobileal.org/">ONE Mobile</a>
+      <p>One Mobile™ is a grassroots coalition of local organizations and individuals in Mobile County, Alabama, united in supporting justice.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.doyoubelong.org/">Do You Belong</a>
+      <p>Mutual aid and solidarity through arts, culture, and organizing in Mobile.</p>
+    </div>
+  </section>
 
-        <section>
-          <h2>LGBTQ+ Support</h2>
-          <div class="initiative">
-            <a href="https://www.rainbowprideofmobile.org/">Rainbow Pride of Mobile</a>
-            <p>LGBTQ community organization dedicated to consolidating
-              resources and organizing community events.</p>
-          </div>
-          <div class="initiative">
-            <a href="https://prismunited.org/">PRISM United</a>
-            <p>Serving LGBTQ+ youth and their loved ones in southwest Alabama</p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.facebook.com/lgbtqofmobilebay">LGBTQ+ of Mobile Bay</a>
-            <p>We are a secular progressive grassroots LGBTQIA+ organization
-              serving Mobile and Baldwin County, AL.</p>
-          </div>
-        </section>
+  <section id="section-1" class="city-section">
+    <h2>LGBTQ+ Support</h2>
+    <div class="initiative">
+      <a href="https://www.rainbowprideofmobile.org/">Rainbow Pride of Mobile</a>
+      <p>LGBTQ community organization dedicated to consolidating resources and organizing community events.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://prismunited.org/">PRISM United</a>
+      <p>Serving LGBTQ+ youth and their loved ones in southwest Alabama</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.facebook.com/lgbtqofmobilebay">LGBTQ+ of Mobile Bay</a>
+      <p>We are a secular progressive grassroots LGBTQIA+ organization serving Mobile and Baldwin County, AL.</p>
+    </div>
+  </section>
 
-        <section>
-          <h2>International Solidarity</h2>
-          <div class="initiative">
-            <a href="https://www.instagram.com/mobileforpalestine/">Mobile for Palestine</a>
-            <p>Local group in mobile alabama advocating for the peace, and
-              justice of Palestine.</p>
-          </div>
-        </section>
+  <section id="section-2" class="city-section">
+    <h2>International Solidarity</h2>
+    <div class="initiative">
+      <a href="https://www.instagram.com/mobileforpalestine/">Mobile for Palestine</a>
+      <p>Local group in mobile alabama advocating for the peace, and justice of Palestine.</p>
+    </div>
+  </section>
+        </div>
       </div>
-
+        <aside class="toc-container">
+          <nav class="toc" role="navigation" aria-label="Table of Contents" id="toc">
+            <ul class="toc-list">
+          <li class="toc-item">
+            <a href="#section-0" class="toc-link">
+              <span class="toc-number">1.</span>
+              <span class="toc-text">Local Organizations</span>
+            </a>
+          </li>
+          <li class="toc-item">
+            <a href="#section-1" class="toc-link">
+              <span class="toc-number">2.</span>
+              <span class="toc-text">LGBTQ+ Support</span>
+            </a>
+          </li>
+          <li class="toc-item">
+            <a href="#section-2" class="toc-link">
+              <span class="toc-number">3.</span>
+              <span class="toc-text">International Solidarity</span>
+            </a>
+          </li>
+            </ul>
+          </nav>
+        </aside>
+      </div>
     </main>
   </div>
 
-
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  <script src="/js/city-toc.js" defer></script>
+</body>
 
 </html>

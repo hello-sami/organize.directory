@@ -2,7 +2,15 @@
 <html lang="en">
 
 <head>
-  <!-- Common head content -->
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -10,51 +18,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <meta property="og:type" content="website">
+  <title>Lincoln, Nebraska Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Lincoln, Nebraska. Connect with local organizations and community resources.">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="description"
-    content="Find mutual aid initiatives and community support networks in Lincoln, Nebraska. Connect with local organizations and community resources.">
-  <meta property="og:title" content="Mutual Aid in Lincoln - Local Support Networks">
-  <meta property="og:description"
-    content="Find mutual aid initiatives and community support networks in Lincoln, Nebraska. Connect with local organizations providing community-based support.">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Lincoln, Nebraska Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Lincoln, Nebraska. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/lincoln">
   <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-  <title>
-    Mutual Aid in Lincoln - Local Support Networks &amp; Community Resources
-  </title>
-
+  <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-  <script>
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
-  </script>
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
@@ -64,96 +51,59 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
+      
       <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/nebraska">Nebraska</a>
           <span>›</span>
-          <span>Lincoln</span>
+          <span>Lincoln, Nebraska</span>
         </div>
 
         <h1>Lincoln, Nebraska</h1>
 
-
-        <section class="initiatives">
-          <div class="initiative">
-            <a href="https://starcityprideevents.org/">Star City Pride</a>
-            <p>
-              A grassroots organization fostering mutual aid and community
-              power through LGBTQ+ celebration and advocacy in Lincoln. They
-              coordinate pride events, community gatherings, and solidarity
-              networks while building power through queer visibility, cultural
-              programming, and creating spaces for LGBTQ+ people to connect
-              and thrive.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://commonroot.org/">Common Root</a>
-            <p>
-              A mutual aid community center fostering solidarity and
-              collective power through accessible space, education, and
-              organizing in Lincoln. They coordinate workshops, resource
-              sharing, and solidarity networks while building power through
-              community gatherings, skill-sharing, and creating spaces for
-              movement building and social change.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://theblackcathouse.org/">The Black Cat House</a>
-            <p>
-              A radical community space fostering mutual aid and cultural
-              resistance through art, music, and DIY organizing in Lincoln.
-              They coordinate shows, workshops, zine distribution, and
-              solidarity networks while building power through alternative
-              media, collective organizing, and creating accessible spaces for
-              community gathering and creative expression.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://dsanebraska.org/">DSA Nebraska</a>
-            <p>
-              A grassroots organization fostering mutual aid and community
-              solidarity through democratic socialist organizing in Lincoln.
-              They coordinate direct support, resource sharing, and solidarity
-              networks while building power through collective organizing and
-              community care.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.facebook.com/everettfreegroceryprogram/">Everett Free Grocery Program</a>
-            <p>
-              Free food and hygiene item distribution program in the Everett
-              neighborhood of Lincoln, Nebraska.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.reddit.com/r/LincolnMutualAid/">/r/LincolnMutualAid</a>
-            <p>
-              A hub for mutual aid resources in the Lincoln, Nebraska
-              community. Taking care of our neighbors in a time of rising
-              fascism and oligarchy.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.instagram.com/lincolncommunitycare/">Lincoln Community Care</a>
-            <p>
-              Weekly distribution in solidarity with our unhoused neighbors in
-              LNK
-            </p>
-          </div>
-        </section>
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <div class="initiative">
+      <a href="https://starcityprideevents.org/">Star City Pride</a>
+      <p>A grassroots organization fostering mutual aid and community power through LGBTQ+ celebration and advocacy in Lincoln. They coordinate pride events, community gatherings, and solidarity networks while building power through queer visibility, cultural programming, and creating spaces for LGBTQ+ people to connect and thrive.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://commonroot.org/">Common Root</a>
+      <p>A mutual aid community center fostering solidarity and collective power through accessible space, education, and organizing in Lincoln. They coordinate workshops, resource sharing, and solidarity networks while building power through community gatherings, skill-sharing, and creating spaces for movement building and social change.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://theblackcathouse.org/">The Black Cat House</a>
+      <p>A radical community space fostering mutual aid and cultural resistance through art, music, and DIY organizing in Lincoln. They coordinate shows, workshops, zine distribution, and solidarity networks while building power through alternative media, collective organizing, and creating accessible spaces for community gathering and creative expression.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://dsanebraska.org/">DSA Nebraska</a>
+      <p>A grassroots organization fostering mutual aid and community solidarity through democratic socialist organizing in Lincoln. They coordinate direct support, resource sharing, and solidarity networks while building power through collective organizing and community care.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.facebook.com/everettfreegroceryprogram/">Everett Free Grocery Program</a>
+      <p>Free food and hygiene item distribution program in the Everett neighborhood of Lincoln, Nebraska.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.reddit.com/r/LincolnMutualAid/">/r/LincolnMutualAid</a>
+      <p>A hub for mutual aid resources in the Lincoln, Nebraska community. Taking care of our neighbors in a time of rising fascism and oligarchy.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/lincolncommunitycare/">Lincoln Community Care</a>
+      <p>Weekly distribution in solidarity with our unhoused neighbors in LNK</p>
+    </div>
+  </section>
+        </div>
       </div>
+
+      
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

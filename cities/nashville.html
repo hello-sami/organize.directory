@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,52 +18,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Nashville Mutual Aid Networks - Local Support &amp; Community Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid networks and community support initiatives in Nashville, Tennessee.">
-  <meta property="og:title" content="Nashville Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description"
-    content="Find mutual aid networks and community support initiatives in Nashville, Tennessee.">
-  <meta property="og:type" content="website">
+  <title>Nashville, Tennessee Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Nashville, Tennessee. Connect with local organizations and community resources.">
 
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Nashville, Tennessee Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Nashville, Tennessee. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/nashville">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
-
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-  <script>
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
-  </script>
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
@@ -64,106 +51,67 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
+      
       <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/tennessee">Tennessee</a>
           <span>›</span>
-          <span>Nashville</span>
+          <span>Nashville, Tennessee</span>
         </div>
 
         <h1>Nashville, Tennessee</h1>
 
-
-        <section class="initiatives">
-          <div class="initiative">
-            <a href="https://www.brooklynheightscommunitygarden.org/">Brooklyn Heights Community Garden</a>
-            <p>
-              A community-led urban farm and mutual aid hub in North Nashville
-              providing fresh food bundles to neighbors at no cost. Through
-              intergenerational learning, food sovereignty initiatives, and
-              community building, they work to address food apartheid while
-              fostering connection and healing.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.instagram.com/nashvillecommunityfridge">Nashville Community Fridge</a>
-            <p>
-              A mutual aid network providing free, accessible food through
-              community refrigerators across Nashville. Operating under the
-              principle of "take what you need, leave what you can," they work
-              to address food insecurity through direct community support.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.instagram.com/musiccitymigrawatch">Music City Migra Watch</a>
-            <p>
-              A community defense network providing mutual aid and solidarity
-              through immigration enforcement monitoring and rapid response.
-              They coordinate community alerts, resource sharing, and direct
-              support while building power through collective action and
-              immigrant justice organizing.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.facebook.com/groups/foodnotbombsnash">Food Not Bombs Nashville</a>
-            <p>
-              FNB Nashville is an independent volunteer-run organization
-              dedicated to recovering and sharing free food.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://noahtn.org/">Nashville Organized for Action and Hope (NOAH)</a>
-            <p>Uniting Nashvillians to fight for justice in our community</p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.instagram.com/elmahabacenter/">Elmahaba Center</a>
-            <p>
-              Founded in June 2019, Elmahaba Center board, staff, and
-              volunteers are the first Coptic-led organization that is
-              inclusive, intersectional, and intergenerational, serving all
-              Arabic-speaking immigrants, refugees, and their children and
-              anyone who asks for help in Nashville.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.instagram.com/nashvillemutualaid/">Nashville Mutual Aid</a>
-            <p>
-              Committed to building a practice of caring mutual aid in
-              Nashville
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://nashvillepeoplesbudget.org/">Nashville People's Budget Coalition</a>
-            <p>
-              A coalition of organizations gathered to organize for a
-              Nashville that fosters safe and thriving communities through
-              fully-funded and community controlled public goods and
-              non-police crisis response.
-            </p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.transaidnashville.org/">Trans Aid Nashville</a>
-            <p>
-              Providing aid, community, and building power for all transgender
-              people in the greater Nashville Area.
-            </p>
-          </div>
-        </section>
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <div class="initiative">
+      <a href="https://www.brooklynheightscommunitygarden.org/">Brooklyn Heights Community Garden</a>
+      <p>A community-led urban farm and mutual aid hub in North Nashville providing fresh food bundles to neighbors at no cost. Through intergenerational learning, food sovereignty initiatives, and community building, they work to address food apartheid while fostering connection and healing.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/nashvillecommunityfridge">Nashville Community Fridge</a>
+      <p>A mutual aid network providing free, accessible food through community refrigerators across Nashville. Operating under the principle of &quot;take what you need, leave what you can,&quot; they work to address food insecurity through direct community support.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/musiccitymigrawatch">Music City Migra Watch</a>
+      <p>A community defense network providing mutual aid and solidarity through immigration enforcement monitoring and rapid response. They coordinate community alerts, resource sharing, and direct support while building power through collective action and immigrant justice organizing.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.facebook.com/groups/foodnotbombsnash">Food Not Bombs Nashville</a>
+      <p>FNB Nashville is an independent volunteer-run organization dedicated to recovering and sharing free food.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://noahtn.org/">Nashville Organized for Action and Hope (NOAH)</a>
+      <p>Uniting Nashvillians to fight for justice in our community</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/elmahabacenter/">Elmahaba Center</a>
+      <p>Founded in June 2019, Elmahaba Center board, staff, and volunteers are the first Coptic-led organization that is inclusive, intersectional, and intergenerational, serving all Arabic-speaking immigrants, refugees, and their children and anyone who asks for help in Nashville.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/nashvillemutualaid/">Nashville Mutual Aid</a>
+      <p>Committed to building a practice of caring mutual aid in Nashville</p>
+    </div>
+    <div class="initiative">
+      <a href="https://nashvillepeoplesbudget.org/">Nashville People's Budget Coalition</a>
+      <p>A coalition of organizations gathered to organize for a Nashville that fosters safe and thriving communities through fully-funded and community controlled public goods and non-police crisis response.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.transaidnashville.org/">Trans Aid Nashville</a>
+      <p>Providing aid, community, and building power for all transgender people in the greater Nashville Area.</p>
+    </div>
+  </section>
+        </div>
       </div>
+
+      
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

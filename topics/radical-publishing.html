@@ -2,110 +2,81 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <title>Radical Publishing Networks - Mutual Aid &amp; Community Resources</title>
-    <meta name="description"
-        content="Find radical publishing initiatives and independent media networks building solidarity through critical analysis and revolutionary literature.">
+  <title>Radical Publishing Networks - The Organize Directory</title>
+  <meta name="description" content="Independent media and publishing initiatives focused on revolutionary literature,
+                    critical analysis, and building solidarity through radical perspectives.">
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Radical Publishing Networks - Mutual Aid &amp; Community Resources">
-    <meta property="og:description"
-        content="Find radical publishing initiatives and independent media networks building solidarity through critical analysis and revolutionary literature.">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta property="og:url" content="https://organize.directory/topics/radical-publishing">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Radical Publishing Networks - The Organize Directory">
+  <meta property="og:description" content="Independent media and publishing initiatives focused on revolutionary literature,
+                    critical analysis, and building solidarity through radical perspectives.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/topics/radical-publishing">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/styles/topics.css">
-    <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('topics');
-
-        // Initialize other components
-        initializeComponents({
-        });
-    </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
+    initializeSidebar('topics');
+    initializeComponents({});
+  </script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  <div class="layout">
+    <div id="sidebar-placeholder"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header">
-                <div class="logo-container">
-                    <a href="/" aria-label="Home">
-                        <div class="logo">Organize<span class="logo-dot">.</span>directory</div>
-                    </a>
-                </div>
-                <div class="mobile-menu-button" role="button" tabindex="0" aria-label="Toggle navigation menu">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-            </header>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-            <div class="topics-page">
-                <div class="breadcrumb">
-                    <a href="/">Home</a>
-                    <span>›</span>
-                    <a href="/topics">Topics</a>
-                    <span>›</span>
-                    <span>Radical Publishing</span>
-                </div>
+      <div class="city-page state-page">
+        <div class="breadcrumb">
+          <a href="/topics">Topics</a>
+          <span>›</span>
+          <span>Radical Publishing Networks</span>
+        </div>
 
-                <h1>Radical Publishing Networks</h1>
-                <p class="subtitle">Independent media and publishing initiatives focused on revolutionary literature,
+        <h1>Radical Publishing Networks</h1>
+        <p class="subtitle">Independent media and publishing initiatives focused on revolutionary literature,
                     critical analysis, and building solidarity through radical perspectives.</p>
 
-
-                <section class="initiatives-section">
-                    <h2>Independent Media</h2>
-                    <div class="initiative">
-                        <a href="https://www.fifthestate.org/">Fifth Estate</a>
-                        <p>A radical anti-authoritarian publishing project active since 1965, coordinating
-                            mutual aid
-                            and solidarity through critical analysis, revolutionary literature, and independent
-                            media.
-                            They organize resource sharing and community education while building networks of
-                            resistance
-                            through anarchist perspectives on politics, culture, and social movements.</p>
-                    </div>
-                </section>
-
-                <p class="help-text">Know of a radical publishing initiative we should add? <a
-                        href="mailto:contact@organize.directory">Contact us</a> to have it added.</p>
-            </div>
-        </main>
+  <section id="independent-media" class="city-section">
+    <h2>Independent Media</h2>
+    <div class="initiative">
+      <a href="https://www.fifthestate.org/">Fifth Estate</a>
+      <p>A radical anti-authoritarian publishing project active since 1965, coordinating mutual aid and solidarity through critical analysis, revolutionary literature, and independent media. They organize resource sharing and community education while building networks of resistance through anarchist perspectives on politics, culture, and social movements.</p>
     </div>
+  </section>
+      </div>
+    </main>
+  </div>
 
-    <!-- Scripts -->
-    <script src="/mobile-menu.js" defer></script>
+  <script src="/mobile-menu.js" defer></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
 </body>
 
 </html>

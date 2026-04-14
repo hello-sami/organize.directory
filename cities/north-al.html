@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,40 +18,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    North Alabama Mutual Aid Networks - Local Support &amp; Community Resources
-  </title>
-  <meta name="description" content="Find mutual aid networks and community support initiatives in North Alabama.">
+  <title>North Alabama Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in North Alabama. Connect with local organizations and community resources.">
 
-  <!-- Open Graph tags -->
+  <!-- Open Graph / Social Media -->
   <meta property="og:title" content="North Alabama Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description"
-    content="Find mutual aid networks and community support initiatives in North Alabama.">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in North Alabama. Connect with local organizations and community resources.">
   <meta property="og:type" content="website">
-
   <meta property="og:url" content="https://organize.directory/north-al">
   <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
@@ -52,8 +51,11 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      <div class="city-page state-page">
+      
+      <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/alabama">Alabama</a>
           <span>›</span>
           <span>North Alabama</span>
@@ -61,55 +63,45 @@
 
         <h1>North Alabama</h1>
 
-        <section>
-          <div class="cities-list">
-            <h2>Cities</h2>
-            <div class="city-links-container">
-              <a href="/huntsville" class="city-link location-link-base">Huntsville</a>
-              <!-- <a href="/florence" class="city-link">Florence</a> -->
-              <!-- <a href="/athens" class="city-link">Athens</a> -->
-              <!-- <a href="/madison" class="city-link">Madison</a> -->
-              <!-- <a href="/muscle-shoals" class="city-link">Muscle Shoals</a> -->
-            </div>
-          </div>
-        </section>
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <h2>Regional Organizations</h2>
+    <div class="initiative">
+      <a href="https://www.alabamacohosh.org/">Alabama Cohosh</a>
+      <p>We identify the immediate reproductive care needs of people in our community in Madison County, connecting people to appropriate resources within the community when possible, and filling the gaps when resources are unavailable.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://landtrustnal.org/">Land Trust of North Alabama</a>
+      <p>Environmental stewardship through land conservation and public access. They coordinate preservation of natural areas and maintain 80+ miles of public trails.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/dsanorthal/">DSA North Alabama</a>
+      <p>The North Alabama chapter of the Democratic Socialists of America</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/attherootcollective/">At The Root Collective</a>
+      <p>Building resource distribution, solidarity initiatives, and community care networks.</p>
+    </div>
+  </section>
 
-        <section>
-          <h2>Regional Organizations</h2>
-          <div class="initiative">
-            <a href="https://www.alabamacohosh.org/">Alabama Cohosh</a>
-            <p>We identify the immediate reproductive care needs of people in
-              our community in Madison County, connecting people to
-              appropriate resources within the community when possible, and
-              filling the gaps when resources are unavailable.</p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://landtrustnal.org/">Land Trust of North Alabama</a>
-            <p>Environmental stewardship through land conservation and public
-              access. They coordinate preservation of natural areas and
-              maintain 80+ miles of public trails.</p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.instagram.com/dsanorthal/">DSA North Alabama</a>
-            <p>The North Alabama chapter of the Democratic Socialists of
-              America</p>
-          </div>
-
-          <div class="initiative">
-            <a href="https://www.instagram.com/attherootcollective/">At The Root Collective</a>
-            <p>Building resource distribution, solidarity initiatives, and
-              community care networks.</p>
-          </div>
-        </section>
+  <section>
+    <div class="cities-list">
+      <h2>Locations</h2>
+      <div class="city-links-container">
+          <a href="/huntsville" class="city-link location-link-base">Huntsville</a>
       </div>
+    </div>
+  </section>
+        </div>
+      </div>
+
+      
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

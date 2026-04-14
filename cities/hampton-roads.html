@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,41 +18,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Hampton Roads Mutual Aid Networks - Local Support &amp; Community Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid networks and community support initiatives in Hampton Roads, Virginia.">
+  <title>Hampton Roads, VA Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Hampton Roads, VA. Connect with local organizations and community resources.">
 
-  <!-- Open Graph tags -->
-  <meta property="og:title" content="Hampton Roads Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description"
-    content="Find mutual aid networks and community support initiatives in Hampton Roads, Virginia.">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Hampton Roads, VA Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Hampton Roads, VA. Connect with local organizations and community resources.">
   <meta property="og:type" content="website">
-
   <meta property="og:url" content="https://organize.directory/hampton-roads">
   <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
@@ -53,54 +51,43 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
+      
       <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/virginia">Virginia</a>
           <span>›</span>
-          <span>Hampton Roads</span>
+          <span>Hampton Roads, VA</span>
         </div>
 
         <h1>Hampton Roads, VA</h1>
 
-
-        <section>
-          <div class="initiative">
-            <a href="https://www.instagram.com/hamptonroadsharmreduction">Hampton Roads Harm Reduction</a>
-            <p>
-              A community-based harm reduction organization providing support,
-              resources, and education to people who use drugs in the Hampton
-              Roads area. They work to reduce drug-related harms through
-              mutual aid, advocacy, and direct support services.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.757bailfund.com/">757 Bail Fund</a>
-            <p>
-              A community bail fund serving the Hampton Roads area, working to
-              end wealth-based detention through direct action and mutual aid.
-              They provide bail assistance to community members who cannot
-              afford it, while advocating for systemic change in the criminal
-              justice system.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://hrrjl.com/">Hampton Roads Regional Jail Line</a>
-            <p>
-              A mutual aid initiative providing support and resources to
-              incarcerated individuals and their families in Hampton Roads.
-              They work to maintain connections between inmates and their
-              communities while advocating for better conditions and systemic
-              change.
-            </p>
-          </div>
-        </section>
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <div class="initiative">
+      <a href="https://www.instagram.com/hamptonroadsharmreduction">Hampton Roads Harm Reduction</a>
+      <p>A community-based harm reduction organization providing support, resources, and education to people who use drugs in the Hampton Roads area. They work to reduce drug-related harms through mutual aid, advocacy, and direct support services.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.757bailfund.com/">757 Bail Fund</a>
+      <p>A community bail fund serving the Hampton Roads area, working to end wealth-based detention through direct action and mutual aid. They provide bail assistance to community members who cannot afford it, while advocating for systemic change in the criminal justice system.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://hrrjl.com/">Hampton Roads Regional Jail Line</a>
+      <p>A mutual aid initiative providing support and resources to incarcerated individuals and their families in Hampton Roads. They work to maintain connections between inmates and their communities while advocating for better conditions and systemic change.</p>
+    </div>
+  </section>
+        </div>
       </div>
+
+      
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

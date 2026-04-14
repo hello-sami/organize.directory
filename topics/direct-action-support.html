@@ -2,95 +2,80 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-        gtag("config", "G-QJ03RCM35H");
-    </script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <title>Direct Action Support Organizations - The Organize Directory</title>
-    <meta name="description"
-        content="Find organizations providing training, resources, and support for direct action and nonviolent protest.">
+  <title>Direct Action Support - The Organize Directory</title>
+  <meta name="description" content="Organizations providing training, resources, and support for nonviolent direct action and protest
+                    tactics.">
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Direct Action Support Organizations | The Organize Directory">
-    <meta property="og:description"
-        content="Find organizations providing training, resources, and support for direct action and nonviolent protest.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/topics/direct-action-support">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta name="twitter:card" content="summary_large_image">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Direct Action Support - The Organize Directory">
+  <meta property="og:description" content="Organizations providing training, resources, and support for nonviolent direct action and protest
+                    tactics.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/topics/direct-action-support">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('topics');
-
-        // Initialize other components
-        initializeComponents({});
-    </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
+    initializeSidebar('topics');
+    initializeComponents({});
+  </script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  <div class="layout">
+    <div id="sidebar-placeholder"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-            <div class="city-page state-page">
-                <div class="breadcrumb">
-                    <a href="/topics">Topics</a>
-                    <span>›</span>
-                    <span>Direct Action Support</span>
-                </div>
+      <div class="city-page state-page">
+        <div class="breadcrumb">
+          <a href="/topics">Topics</a>
+          <span>›</span>
+          <span>Direct Action Support</span>
+        </div>
 
-                <h1>Direct Action Support</h1>
-                <p class="subtitle">
-                    Organizations providing training, resources, and support for nonviolent direct action and protest
-                    tactics.
-                </p>
+        <h1>Direct Action Support</h1>
+        <p class="subtitle">Organizations providing training, resources, and support for nonviolent direct action and protest
+                    tactics.</p>
 
-
-                <section>
-                    <h2>National Organizations</h2>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/theruckussociety/">The Ruckus Society</a>
-                        <p>
-                            A nonprofit organization that sponsors skill-sharing and non-violent direct action
-                            training, strategy &amp; consultation for activists and organizers. They help build
-                            capacity for effective organizing through training programs, educational resources,
-                            and tactical support for social justice movements.
-                        </p>
-                    </div>
-                </section>
-
-            </div>
-        </main>
+  <section id="main" class="city-section">
+    <div class="initiative">
+      <a href="https://www.instagram.com/theruckussociety/">The Ruckus Society</a>
+      <p>A nonprofit organization that sponsors skill-sharing and non-violent direct action training, strategy &amp; consultation for activists and organizers. They help build capacity for effective organizing through training programs, educational resources, and tactical support for social justice movements.</p>
     </div>
+  </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="/mobile-menu.js" defer></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
 </body>
 
 </html>

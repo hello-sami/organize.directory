@@ -1,7 +1,16 @@
-<!DOCTYPE html><!-- Updated file structure for Southern California -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,40 +18,29 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Southern California Mutual Aid - Local Support Networks &amp; Community
-    Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid initiatives and community support networks in Southern California including Los Angeles, San Diego, and Inland Empire regions.">
+  <title>Southern California Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Southern California. Connect with local organizations and community resources.">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Southern California | The Organize Directory">
-  <meta property="og:description" content="Find mutual aid networks and community resources in Southern California.">
-  <meta property="og:image" content="https://organize.directory/preview.png">
-  <meta property="og:url" content="https://organize.directory/socal">
+  <meta property="og:title" content="Southern California Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Southern California. Connect with local organizations and community resources.">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://organize.directory/socal">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-  <!-- Mobile optimizations -->
   <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
@@ -53,8 +51,11 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      <div class="city-page state-page">
+      
+      <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/california">California</a>
           <span>›</span>
           <span>Southern California</span>
@@ -62,58 +63,38 @@
 
         <h1>Southern California</h1>
 
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <h2>Regional Organizations</h2>
+    <div class="initiative">
+      <a href="https://www.instagram.com/socal.ftp">SoCal FTP</a>
+      <p>A mutual aid collective organizing direct community support and solidarity networks across Southern California. Through their various initiatives, they coordinate resource distribution, community defense, and direct action while building networks of mutual aid and resistance.</p>
+    </div>
+  </section>
 
-        <section>
-          <div class="cities-list">
-            <h2>Sub-Regions</h2>
-            <div class="city-links-container">
-              <a href="/los-angeles" class="city-link location-link-base">Los Angeles County</a>
-              <a href="/orange-county" class="city-link location-link-base">Orange County</a>
-              <a href="/inland-empire" class="city-link location-link-base">Inland Empire</a>
-              <a href="/san-diego" class="city-link location-link-base">San Diego County</a>
-              <a href="/central-coast" class="city-link location-link-base">Central Coast</a>
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <div class="cities-list">
-            <h2>Cities</h2>
-            <div class="city-links-container">
-              <a href="/los-angeles" class="city-link location-link-base">Los Angeles</a>
-              <a href="/san-diego" class="city-link location-link-base">San Diego</a>
-              <a href="/long-beach" class="city-link location-link-base">Long Beach</a>
-              <a href="/santa-ana" class="city-link location-link-base">Santa Ana</a>
-              <a href="/riverside" class="city-link location-link-base">Riverside</a>
-              <!-- <a href="/san-bernardino" class="city-link">San Bernardino</a> -->
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2>Regional Organizations</h2>
-          <div class="initiative">
-            <a href="https://www.instagram.com/socal.ftp">SoCal FTP</a>
-            <p>
-              A mutual aid collective organizing direct community support and
-              solidarity networks across Southern California. Through their
-              various initiatives, they coordinate resource distribution,
-              community defense, and direct action while building networks of
-              mutual aid and resistance.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.pilipinoworkerscenter.org/"></a>Pilipino Workers Center of Southern California</a>
-          </div>
-        </section>
+  <section>
+    <div class="cities-list">
+      <h2>Locations</h2>
+      <div class="city-links-container">
+          <a href="/long-beach" class="city-link location-link-base">Long Beach</a>
+          <a href="/los-angeles" class="city-link location-link-base">Los Angeles</a>
+          <a href="/orange-county" class="city-link location-link-base">Orange County</a>
+          <a href="/san-diego" class="city-link location-link-base">San Diego</a>
+          <a href="/santa-ana" class="city-link location-link-base">Santa Ana</a>
+          <a href="/santa-barbara" class="city-link location-link-base">Santa Barbara</a>
       </div>
+    </div>
+  </section>
+        </div>
+      </div>
+
+      
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
 </body>
 
 </html>

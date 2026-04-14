@@ -2,15 +2,13 @@
 <html lang="en">
 
 <head>
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
   </script>
 
   <meta charset="UTF-8">
@@ -20,39 +18,29 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Los Angeles Mutual Aid Networks - Local Support &amp; Community Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid networks and community support initiatives in Los Angeles, California.">
+  <title>Los Angeles Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Los Angeles. Connect with local organizations and community resources.">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Los Angeles Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Los Angeles. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/los-angeles">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
-
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Los Angeles | The Organize Directory">
-  <meta property="og:description" content="Find mutual aid networks and community resources in Los Angeles.">
-  <meta property="og:image" content="https://organize.directory/preview.png">
-  <meta property="og:url" content="https://organize.directory/los-angeles">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-  <!-- Mobile optimizations -->
   <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
@@ -63,9 +51,11 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      <!-- Breadcrumbs and heading in separate container -->
-      <div class="page-heading">
+      <div class="content-wrapper">
+      <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/california">California</a>
           <span>›</span>
           <a href="/socal">Southern California</a>
@@ -74,478 +64,390 @@
         </div>
 
         <h1>Los Angeles</h1>
-      </div>
 
-      <!-- Wrapper for content and TOC with positioning context -->
-      <div class="content-wrapper">
-        <!-- Main content -->
         <div class="city-content">
+  <section id="mutual-aid" class="city-section">
+    <h2>Mutual Aid</h2>
+    <div class="initiative">
+      <a href="https://mutualaidla.org/">Mutual Aid Los Angeles Network</a>
+      <p>Mutual Aid LA Network (MALAN) is a connector and information hub for mutual aid efforts, people and resources across Los Angeles.</p>
+    </div>
+  </section>
 
-          <section id="mutual-aid" class="city-section">
-            <h2>Mutual Aid</h2>
-            <div class="initiative">
-              <a href="https://mutualaidla.org/">Mutual Aid Los Angeles Network</a>
-              <p>Mutual Aid LA Network (MALAN) is a connector and information hub for mutual aid efforts, people and
-                resources across Los Angeles.</p>
-            </div>
-          </section>
-
-          <section id="cultural" class="city-section">
-            <h2>Community Spaces</h2>
-            <div class="initiative">
-              <a href="https://allpowerbooks.org/">All Power Books</a>
-              <p>volunteer-run bookshop + community space</p>
-            </div>
-            <div class="initiative">
-              <a href="https://blacklanternbooks.com/">Black Lantern Books</a>
-              <p>A Black-led cooperative bookstore open Fri-Sun from 12-7pm. Currently housed within the @legacy.lib</p>
-            </div>
-            <div class="initiative">
-              <a href="https://sites.google.com/view/harriettubmancenterla/home">Harriet Tubman Center for Social
+  <section id="cultural" class="city-section">
+    <h2>Community Spaces</h2>
+    <div class="initiative">
+      <a href="https://allpowerbooks.org/">All Power Books</a>
+      <p>volunteer-run bookshop + community space</p>
+    </div>
+    <div class="initiative">
+      <a href="https://blacklanternbooks.com/">Black Lantern Books</a>
+      <p>A Black-led cooperative bookstore open Fri-Sun from 12-7pm. Currently housed within the @legacy.lib</p>
+    </div>
+    <div class="initiative">
+      <a href="https://sites.google.com/view/harriettubmancenterla/home">Harriet Tubman Center for Social
                 Justice</a>
-              <p>Committed to fighting racism, organizing for immigrant rights, LGBTQI+ rights, and fighting against US
-                imperialism
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/radicalhoodlibrary">Radical Hood Library</a>
-              <p>Headquarters for @nonamereads, 2304 W Jefferson Blvd</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.tiachucha.org/">Tía Chucha's Centro Cultural</a>
-              <p>The mission of Tía Chucha's Centro Cultural is to transform community in the Northeast San Fernando
-                Valley and beyond through ancestral knowledge, the arts, literacy and creative engagement.
-              </p>
-            </div>
-          </section>
+      <p>Committed to fighting racism, organizing for immigrant rights, LGBTQI+ rights, and fighting against US imperialism</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/radicalhoodlibrary">Radical Hood Library</a>
+      <p>Headquarters for @nonamereads, 2304 W Jefferson Blvd</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.tiachucha.org/">Tía Chucha's Centro Cultural</a>
+      <p>The mission of Tía Chucha's Centro Cultural is to transform community in the Northeast San Fernando Valley and beyond through ancestral knowledge, the arts, literacy and creative engagement.</p>
+    </div>
+  </section>
 
-          <section id="food" class="city-section">
-            <h2>Food Justice</h2>
-            <div class="initiative">
-              <a href="https://www.instagram.com/altadenacommunalkitchen/">Altadena Community Kitchen</a>
-              <p>Providing fire relief efforts via donations and meals by partnering with neighbors of the Altadena
-                community.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.altadenaseedlibrary.com/">Altadena Seed Library</a>
-              <p>Altadena Seed Library is a growing network of seed exchange boxes, educational resources, and
-                conservation initiatives. Through the distribution of free seeds and seed education, we are working to
-                expand equitable access to shade and green spaces, increase food sovereignty, connect neighbors, and
-                restore local ecosystems.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://foodnotbombsdtla.wixsite.com/foodnotbombsdtla">Food Not Bombs DTLA</a>
-              <p>We serve vegan food to the houseless every Saturday &amp; some
-                Wednesdays in DTLA. We also take donations such as clothing,
-                blankets &amp; toiletries to distribute to residents around Skid
-                Row.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/foodforcomrades/">Food For Comrades</a>
-              <p>Abolitionists fighting for food justice in LA. via food
-                recovery, harm reduction, &amp; mutual aid.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.lacommunityfridges.com/">LA Community Fridges</a>
-              <p>Free food. Comida gratis. Take what you need, leave what you can. Agarra lo que necesitas, deja lo que
-                no.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/lafnb">Los Angeles Food Not Bombs</a>
-              <p>Feeding the revolution w/ plant-based food.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.polospantry.org/">Polo's Pantry</a>
-              <p>We bring dependable food access and culturally relevant nourishment to food insecure communities.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/selacocnb/">Southeast LA Comida No Bombas</a>
-              <p>Free Hot Food for the 562</p>
-            </div>
-            <div class="initiative">
-              <a href="https://summaeverythang.org/">Summa Everythang</a>
-              <p>Free organic produce box donations for Watts and South Central
-                Los Angeles</p>
-            </div>
-          </section>
+  <section id="food" class="city-section">
+    <h2>Food Justice</h2>
+    <div class="initiative">
+      <a href="https://www.instagram.com/altadenacommunalkitchen/">Altadena Community Kitchen</a>
+      <p>Providing fire relief efforts via donations and meals by partnering with neighbors of the Altadena community.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.altadenaseedlibrary.com/">Altadena Seed Library</a>
+      <p>Altadena Seed Library is a growing network of seed exchange boxes, educational resources, and conservation initiatives. Through the distribution of free seeds and seed education, we are working to expand equitable access to shade and green spaces, increase food sovereignty, connect neighbors, and restore local ecosystems.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://foodnotbombsdtla.wixsite.com/foodnotbombsdtla">Food Not Bombs DTLA</a>
+      <p>We serve vegan food to the houseless every Saturday &amp; some Wednesdays in DTLA. We also take donations such as clothing, blankets &amp; toiletries to distribute to residents around Skid Row.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/foodforcomrades/">Food For Comrades</a>
+      <p>Abolitionists fighting for food justice in LA. via food recovery, harm reduction, &amp; mutual aid.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.lacommunityfridges.com/">LA Community Fridges</a>
+      <p>Free food. Comida gratis. Take what you need, leave what you can. Agarra lo que necesitas, deja lo que no.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/lafnb">Los Angeles Food Not Bombs</a>
+      <p>Feeding the revolution w/ plant-based food.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.polospantry.org/">Polo's Pantry</a>
+      <p>We bring dependable food access and culturally relevant nourishment to food insecure communities.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/selacocnb/">Southeast LA Comida No Bombas</a>
+      <p>Free Hot Food for the 562</p>
+    </div>
+    <div class="initiative">
+      <a href="https://summaeverythang.org/">Summa Everythang</a>
+      <p>Free organic produce box donations for Watts and South Central Los Angeles</p>
+    </div>
+  </section>
 
-          <section id="healthcare" class="city-section">
-            <h2>Healthcare & Harm Reduction</h2>
-            <div class="initiative">
-              <a href="https://www.instagram.com/apfreeclinic/">All Power Free Clinic</a>
-              <p>Volunteer-run free clinic from All Power Books.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://beingalivela.org/">Being Alive</a>
-              <p>a nonprofit organization created and operated by and for
-                people living with HIV/AIDS.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.chpla.org/">Los Angeles Community Health Project</a>
-              <p>Bringing harm reduction services, needle exchange, and outreach to communities throughout Los Angeles
-                since 1992.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.laabortionsupport.org/">LA Abortion Support Network</a>
-              <p>LA Abortion Support Collective (LAASC) is a volunteer led and run collective of trained abortion doulas
-                based in the Los Angeles area.</p>
-            </div>
-          </section>
+  <section id="healthcare" class="city-section">
+    <h2>Healthcare &amp; Harm Reduction</h2>
+    <div class="initiative">
+      <a href="https://www.instagram.com/apfreeclinic/">All Power Free Clinic</a>
+      <p>Volunteer-run free clinic from All Power Books.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://beingalivela.org/">Being Alive</a>
+      <p>a nonprofit organization created and operated by and for people living with HIV/AIDS.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.chpla.org/">Los Angeles Community Health Project</a>
+      <p>Bringing harm reduction services, needle exchange, and outreach to communities throughout Los Angeles since 1992.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.laabortionsupport.org/">LA Abortion Support Network</a>
+      <p>LA Abortion Support Collective (LAASC) is a volunteer led and run collective of trained abortion doulas based in the Los Angeles area.</p>
+    </div>
+  </section>
 
-          <section id="housing" class="city-section">
-            <h2>Housing Justice & Homeless Solidarity</h2>
-            <div class="initiative">
-              <a href="https://www.instagram.com/aetnastreetsolidarity/">Aetna Street Solidarity</a>
-              <p>Mutual aid group organizing around Aetna Street in Van Nuys.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/e_p_m_a_/">Echo Park Mutual Aid</a>
-              <p>building bridges between housed & unhoused neighbors. you strong, i strong. you fed, i fed.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/foodnotbulldozers">Food Not Bulldozers</a>
-              <p>We are a group of friends regularly doing supplies distro among unhoused communities in the South El
-                Monte, “LA” area on Tongva land.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/ktownforall/">Ktown for All</a>
-              <p>An all-volunteer homeless outreach and advocacy organization
-                in Koreatown, Los Angeles.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/lacanetwork_official/">LA CAN</a>
-              <p>Fighting for Human Rights from Skid Row USA.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/lastreetcare">LA Street Care &amp; Mutual Aid</a>
-              <p>Abolitionist mutual aid collective organizing in Los Feliz,
-                Echo Park, Atwater, Historic Filipinotown, Silver Lake, and
-                Rampart.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://latenantsunion.org/">LA Tenants Union</a>
-              <p>The LA Tenants Union has local chapters across the city. Locals organize around neighborhood issues and
-                help link neighborhood struggles to the larger movement for tenant power and housing justice.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://cangress.org/">Los Angeles Community Action Network (LA CAN)</a>
-              <p>The Los Angeles Community Action Network organizes people to fight back against oppression.
-                BASED IN SKID ROW. WORKING GLOBALLY.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/palmsunhousedmutualaid/">Palms Unhoused Mutual Aid</a>
-              <p>Abolitionists dedicated to community care in West LA —standing
-                against state violence.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/ReclaimingHomes">Reclaiming Homes</a>
-              <p>Impacted by the crisis, we are homeless & housing insecure families reclaiming vacant, publicly-owned
-                homes to fight for housing as a human right.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://streetwatchla.com/">Street Watch LA</a>
-              <p>Fighting to empower + protect the rights of poor/unhoused tenants across LA. Started by @dsa_la &
-                @lacanetwork_official</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.ccedla.org/">Chinatown Community for Equitable Development (CCED)</a>
-              <p>Builds grassroots power with low-income and immigrant communities through organizing, education, and
-                mutual help</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.selahnhc.org/">Selah Neighborhood Homeless Coalition</a>
-              <p>Silver Lake, Echo Park, Los Feliz, Atwater Village, Hollywood in LA</p>
-            </div>
-            <div class="initiative">
-              <a href="https://fxma.org/">Fairfax Mutual Aid</a>
-              <p>Fairfax Mutual Aid is a collective of local volunteers
-                organizing material resources, care-based support and
-                companionship to unhoused and housing insecure constituents in
-                multiple districts in Los Angeles.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://x.com/sbmacareclub">South Bay Mutual Aid &amp; Care Club</a>
-              <p>We are queer, neurodivergent, anticapitalist, antifascist,
-                abolitionist harm reductionists aiding over 100 people living
-                without shelter in los angeles</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.thesidewalkproject.org/">The Sidewalk Project</a>
-              <p>We are an arts &amp; peer empowerment program that exists to
-                create wellness for those that live outdoor</p>
-            </div>
-          </section>
+  <section id="housing" class="city-section">
+    <h2>Housing Justice &amp; Homeless Solidarity</h2>
+    <div class="initiative">
+      <a href="https://www.instagram.com/aetnastreetsolidarity/">Aetna Street Solidarity</a>
+      <p>Mutual aid group organizing around Aetna Street in Van Nuys.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/e_p_m_a_/">Echo Park Mutual Aid</a>
+      <p>building bridges between housed &amp; unhoused neighbors. you strong, i strong. you fed, i fed.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/foodnotbulldozers">Food Not Bulldozers</a>
+      <p>We are a group of friends regularly doing supplies distro among unhoused communities in the South El Monte, “LA” area on Tongva land.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/ktownforall/">Ktown for All</a>
+      <p>An all-volunteer homeless outreach and advocacy organization in Koreatown, Los Angeles.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/lacanetwork_official/">LA CAN</a>
+      <p>Fighting for Human Rights from Skid Row USA.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/lastreetcare">LA Street Care &amp; Mutual Aid</a>
+      <p>Abolitionist mutual aid collective organizing in Los Feliz, Echo Park, Atwater, Historic Filipinotown, Silver Lake, and Rampart.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://latenantsunion.org/">LA Tenants Union</a>
+      <p>The LA Tenants Union has local chapters across the city. Locals organize around neighborhood issues and help link neighborhood struggles to the larger movement for tenant power and housing justice.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://cangress.org/">Los Angeles Community Action Network (LA CAN)</a>
+      <p>The Los Angeles Community Action Network organizes people to fight back against oppression. BASED IN SKID ROW. WORKING GLOBALLY.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/palmsunhousedmutualaid/">Palms Unhoused Mutual Aid</a>
+      <p>Abolitionists dedicated to community care in West LA —standing against state violence.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/ReclaimingHomes">Reclaiming Homes</a>
+      <p>Impacted by the crisis, we are homeless &amp; housing insecure families reclaiming vacant, publicly-owned homes to fight for housing as a human right.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://streetwatchla.com/">Street Watch LA</a>
+      <p>Fighting to empower + protect the rights of poor/unhoused tenants across LA. Started by @dsa_la &amp; @lacanetwork_official</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.ccedla.org/">Chinatown Community for Equitable Development (CCED)</a>
+      <p>Builds grassroots power with low-income and immigrant communities through organizing, education, and mutual help</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.selahnhc.org/">Selah Neighborhood Homeless Coalition</a>
+      <p>Silver Lake, Echo Park, Los Feliz, Atwater Village, Hollywood in LA</p>
+    </div>
+    <div class="initiative">
+      <a href="https://fxma.org/">Fairfax Mutual Aid</a>
+      <p>Fairfax Mutual Aid is a collective of local volunteers organizing material resources, care-based support and companionship to unhoused and housing insecure constituents in multiple districts in Los Angeles.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://x.com/sbmacareclub">South Bay Mutual Aid &amp; Care Club</a>
+      <p>We are queer, neurodivergent, anticapitalist, antifascist, abolitionist harm reductionists aiding over 100 people living without shelter in los angeles</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.thesidewalkproject.org/">The Sidewalk Project</a>
+      <p>We are an arts &amp; peer empowerment program that exists to create wellness for those that live outdoor</p>
+    </div>
+  </section>
 
-          <section id="lgbtq" class="city-section">
-            <h2>LGBTQ+ Solidarity</h2>
-            <div class="initiative">
-              <a href="https://transdefensefundla.org/">Trans Defense Fund LA</a>
-              <p>Anticapitalist LA mutual aid project by an ally, self-defense resources for trans BIPOC, NOT a
-                non-profit/501c3</p>
-            </div>
-          </section>
+  <section id="lgbtq" class="city-section">
+    <h2>LGBTQ+ Solidarity</h2>
+    <div class="initiative">
+      <a href="https://transdefensefundla.org/">Trans Defense Fund LA</a>
+      <p>Anticapitalist LA mutual aid project by an ally, self-defense resources for trans BIPOC, NOT a non-profit/501c3</p>
+    </div>
+  </section>
 
-          <section id="anti-racism" class="city-section">
-            <h2>Racial Justice</h2>
-            <div class="initiative">
-              <a href="https://www.awarela.org/home">Alliance of White Anti-Racists Everywhere - Los Angeles
+  <section id="anti-racism" class="city-section">
+    <h2>Racial Justice</h2>
+    <div class="initiative">
+      <a href="https://www.awarela.org/home">Alliance of White Anti-Racists Everywhere - Los Angeles
                 (AWARE-LA)</a>
-              <p>We take collective action to build white anti-racist and multiracial alliances to contribute to a
-                broad-based, social justice movement.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/surjdena/">SURJ Pasadena</a>
-              <p>White people created white supremacy; it's our job to end it.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/wp4bl/">White People 4 Black Lives</a>
-              <p>a Los Angeles-based collective of white folks organizing for racial justice in solidarity with
-                @blmlosangeles. Chapter of @showingupforracialjustice.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.blmla.org/">Black Lives Matter Los Angeles</a>
-              <p>Official #BlackLivesMatter Los Angeles chapter. Est. 7/13/13 to end state-sanctioned violence against
-                Black people.</p>
-            </div>
-          </section>
+      <p>We take collective action to build white anti-racist and multiracial alliances to contribute to a broad-based, social justice movement.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/surjdena/">SURJ Pasadena</a>
+      <p>White people created white supremacy; it's our job to end it.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/wp4bl/">White People 4 Black Lives</a>
+      <p>a Los Angeles-based collective of white folks organizing for racial justice in solidarity with @blmlosangeles. Chapter of @showingupforracialjustice.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.blmla.org/">Black Lives Matter Los Angeles</a>
+      <p>Official #BlackLivesMatter Los Angeles chapter. Est. 7/13/13 to end state-sanctioned violence against Black people.</p>
+    </div>
+  </section>
 
-          <section id="prison" class="city-section">
-            <h2>Prison Abolition and Prisoner Solidarity</h2>
-            <div class="initiative">
-              <a href="https://www.instagram.com/jailsupportla/">Jail Support LA</a>
-              <p>We're a grassroots collective dedicated to supporting anti-repression work in Los Angeles</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/laabcf/">LA Anarchist Black Cross</a>
-              <p>Los Angeles chapter of the Anarchist Black Cross Federation (Est. 1998). We support anarchist,
-                anti-imperialist, & class war political prisoners.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.chirla.org/">Coalition for Humane Immigrant Rights (CHIRLA)</a>
-              <p>CA's largest immigrant rights organization. Founded in 1986.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://stoplapdspying.org/">Stop LAPD Spying Coalition</a>
-              <p>We are a community group working to build community power toward abolishing police surveillance.</p>
-            </div>
-          </section>
+  <section id="prison" class="city-section">
+    <h2>Prison Abolition and Prisoner Solidarity</h2>
+    <div class="initiative">
+      <a href="https://www.instagram.com/jailsupportla/">Jail Support LA</a>
+      <p>We're a grassroots collective dedicated to supporting anti-repression work in Los Angeles</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/laabcf/">LA Anarchist Black Cross</a>
+      <p>Los Angeles chapter of the Anarchist Black Cross Federation (Est. 1998). We support anarchist, anti-imperialist, &amp; class war political prisoners.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.chirla.org/">Coalition for Humane Immigrant Rights (CHIRLA)</a>
+      <p>CA's largest immigrant rights organization. Founded in 1986.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://stoplapdspying.org/">Stop LAPD Spying Coalition</a>
+      <p>We are a community group working to build community power toward abolishing police surveillance.</p>
+    </div>
+  </section>
 
-          <section id="specific-communities" class="city-section" style="margin-bottom: 3rem;">
-            <h2>Specific Communities Support</h2>
-            <div class="initiative">
-              <a href="https://garmentworkercenter.org/">Garment Worker Center</a>
-              <p>A worker center organizing with garment workers in Los Angeles
-                to build power and fight exploitation in the garment industry.
-                Through mutual aid, direct action, and worker-led organizing,
-                they provide support services, leadership development, and
-                advocate for better working conditions and fair wages.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://thewpv.org/">The Women's Protection and Resilience (WPV)</a>
-              <p>A mutual aid organization providing support, resources, and
-                community care to women in Los Angeles through direct
-                assistance and solidarity networks.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/whittierfor/">Whittier For Social Justice</a>
-              <p>W4SJ is an autonomous radical collective committed to
-                grassroots community support and social action in so-called
-                Whittier, CA</p>
-            </div>
-            <div class="initiative">
-              <a href="https://mycielo.org/">Comunidades Indígenas en Liderazgo (CIELO)</a>
-              <p>An Indigenous women-led organization fostering mutual aid and
-                solidarity through Indigenous community organizing in Los
-                Angeles. They coordinate direct support, cultural
-                preservation, and solidarity networks while building power
-                through Indigenous leadership development and creating spaces
-                for community care.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://youthjusticela.org/">Youth Justice Coalition</a>
-              <p>A youth-led organization fostering mutual aid and community
-                power through organizing against the criminalization of young
-                people in Los Angeles. They coordinate direct support,
-                political education, and solidarity networks while building
-                power through youth leadership development, transformative
-                justice, and creating spaces for system-impacted youth to lead
-                movements for change.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/centrocso/">Centro Community Service Organization (Centro CSO)</a>
-              <p>A grassroots organization fostering mutual aid and community
-                power through Chicanx/Latinx organizing in Los Angeles. They
-                coordinate education initiatives, direct action support, and
-                solidarity networks while building power through community
-                organizing, political education, and creating spaces for
-                community empowerment and social justice.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://nolympicsla.com/">NOlympics LA</a>
-              <p>Olympics always accelerate displacement & militarization. Cancel #LA28</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.cesinaction.org/">Community Economic Survival (CES)</a>
-              <p>CES works to empower, educate and organize tenants living in private and government subsidized housing
-                to fight to ensure tenants' rights and preserve quality and safe affordable housing</p>
-            </div>
-          </section>
+  <section id="specific-communities" class="city-section">
+    <h2>Specific Communities Support</h2>
+    <div class="initiative">
+      <a href="https://garmentworkercenter.org/">Garment Worker Center</a>
+      <p>A worker center organizing with garment workers in Los Angeles to build power and fight exploitation in the garment industry. Through mutual aid, direct action, and worker-led organizing, they provide support services, leadership development, and advocate for better working conditions and fair wages.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://thewpv.org/">The Women's Protection and Resilience (WPV)</a>
+      <p>A mutual aid organization providing support, resources, and community care to women in Los Angeles through direct assistance and solidarity networks.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/whittierfor/">Whittier For Social Justice</a>
+      <p>W4SJ is an autonomous radical collective committed to grassroots community support and social action in so-called Whittier, CA</p>
+    </div>
+    <div class="initiative">
+      <a href="https://mycielo.org/">Comunidades Indígenas en Liderazgo (CIELO)</a>
+      <p>An Indigenous women-led organization fostering mutual aid and solidarity through Indigenous community organizing in Los Angeles. They coordinate direct support, cultural preservation, and solidarity networks while building power through Indigenous leadership development and creating spaces for community care.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://youthjusticela.org/">Youth Justice Coalition</a>
+      <p>A youth-led organization fostering mutual aid and community power through organizing against the criminalization of young people in Los Angeles. They coordinate direct support, political education, and solidarity networks while building power through youth leadership development, transformative justice, and creating spaces for system-impacted youth to lead movements for change.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/centrocso/">Centro Community Service Organization (Centro CSO)</a>
+      <p>A grassroots organization fostering mutual aid and community power through Chicanx/Latinx organizing in Los Angeles. They coordinate education initiatives, direct action support, and solidarity networks while building power through community organizing, political education, and creating spaces for community empowerment and social justice.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://nolympicsla.com/">NOlympics LA</a>
+      <p>Olympics always accelerate displacement &amp; militarization. Cancel #LA28</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.cesinaction.org/">Community Economic Survival (CES)</a>
+      <p>CES works to empower, educate and organize tenants living in private and government subsidized housing to fight to ensure tenants' rights and preserve quality and safe affordable housing</p>
+    </div>
+  </section>
 
-
-
-          <section id="other-groups" class="city-section" style="margin-bottom: 3rem;">
-            <h2>Other Groups</h2>
-            <div class="initiative">
-              <a href="https://www.instagram.com/cmb.losangeles">CMB x Los Angeles</a>
-              <p>Los Angeles branch of @communitymovementbuilders
-                We are fighting for the total liberation and self-determination of all oppressed people </p>
-            </div>
-            <div class="initiative">
-              <a href="https://eaglecondorliberation.weebly.com/">Eagle and the Condor Liberation Front (ECLF)</a>
-              <p>The Eagle and the Condor Liberation Front (ECLF) was envisioned at UCLA in October of 2017. Started
-                primarily as a student organization, ECLF expanded beyond student politics to center the diverse
-                Indigenous community of Los Angeles while working through the contours of the university. Since the
-                organization's inception, the main focus of organizing has been conducted through political education,
-                food sovereignty, internationalist solidarity, and public Indigenous speaker engagements.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/freestore161/">Free Store 161</a>
-              <p>Autonomous Antifascist angry, loving, dykes.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/gabrielalosangeles/">GABRIELA Los Angeles</a>
-              <p>Fighting for Filipina women/LGBTQ+/GNC & children's rights & dismantling imperialism as part of the
-                National Democratic movement. DM to join!
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/the.lavender.collective.la">the lavender collective</a>
-              <p>a coalition of dykes and queers focused on mutual aid and community care</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.lapovertydept.org/">Los Angeles Poverty Department (LAPD)</a>
-              <p>LAPD performances connect lived experience to the social forces that shape the lives and communities of
-                people living in poverty.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/losangelessra/">Los Angeles SRA</a>
-              <p>Socialist Rifle Assembly chapter for the greater Los Angeles area. Dedicated to community defense
-                education and mutual aid.
-              </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/lastreetcare/">LA Street Care &amp; Mutual Aid</a>
-              <p>Abolitionist mutual aid collective organizing in Los Feliz, Echo Park, Atwater, Historic Filipinotown,
-                Silver Lake, and Rampart.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/jvp.la/">Jewish Voice for Peace Los Angeles</a>
-              <p>@jewishvoiceforpeace on Tongva and Chumash land. Anti-Zionist Jews and allies for a free Palestine</p>
-            </div>
-            <div class="initiative">
-              <a href="https://jtownaction.com/">Jtown Action</a>
-              <p>Grassroots collective dedicated to revolutionary organizing & building community power in Little Tokyo
-                — Weekly mutual aid</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/la_anarchistsinsolidarity/">LA Anarchists in Solidarity</a>
-              <p>Study group + Produce Distro 4/27 Sunday @ 11AM, Sycamore Grove Park</p>
-            </div>
-            <div class="initiative">
-              <a href="https://nocanyonhills.org/">No Canyon Hills</a>
-              <p>Help us conserve 300+ acres of threatened wildlife habitat in the Verdugo Mountains: Fernandeño
-                Tataviam and Gabrieleno Tongva land.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/queersforpalestinela/">Queers for Palestine Los Angeles</a>
-              <p>We’re Queer! We’re Trans! Free Palestine is our demand! There’s No LGBTQIA+ Pride in Genocide,
-                Apartheid, Imperialism, & Occupation! </p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/peoplescafe.la/">People's Cafe</a>
-              <p>free soup for the family. native foods, zapatista coffee, yerbería, community arts. opening soon!</p>
-            </div>
-            <div class="initiative">
-              <a href="https://swoplosangeles.org/">SWOP Los Angeles</a>
-              <p>SWOPLA is a peer support organization, run by sex workers and for sex workers.</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/venicejustice1/">Venice Justice</a>
-              <p>Documenting human & civil rights violations since 2001, managing the free Venice Justice Citation
-                Clinic since Sept 2014. Tweets @VeniceJustice1</p>
-            </div>
-            <div class="initiative">
-              <a href="https://www.instagram.com/westwoodmutualaid/">Westwood Mutual Aid</a>
-              <p>Every Friday 2pm-5pm on Westwood Blvd & Le Conte Ave. Building solidarity with the Palestinian
-                resistance and all oppressed people globally.</p>
-            </div>
-
-
-          </section>
+  <section id="other-groups" class="city-section">
+    <h2>Other Groups</h2>
+    <div class="initiative">
+      <a href="https://www.instagram.com/cmb.losangeles">CMB x Los Angeles</a>
+      <p>Los Angeles branch of @communitymovementbuilders We are fighting for the total liberation and self-determination of all oppressed people</p>
+    </div>
+    <div class="initiative">
+      <a href="https://eaglecondorliberation.weebly.com/">Eagle and the Condor Liberation Front (ECLF)</a>
+      <p>The Eagle and the Condor Liberation Front (ECLF) was envisioned at UCLA in October of 2017. Started primarily as a student organization, ECLF expanded beyond student politics to center the diverse Indigenous community of Los Angeles while working through the contours of the university. Since the organization's inception, the main focus of organizing has been conducted through political education, food sovereignty, internationalist solidarity, and public Indigenous speaker engagements.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/freestore161/">Free Store 161</a>
+      <p>Autonomous Antifascist angry, loving, dykes.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/gabrielalosangeles/">GABRIELA Los Angeles</a>
+      <p>Fighting for Filipina women/LGBTQ+/GNC &amp; children's rights &amp; dismantling imperialism as part of the National Democratic movement. DM to join!</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/the.lavender.collective.la">the lavender collective</a>
+      <p>a coalition of dykes and queers focused on mutual aid and community care</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.lapovertydept.org/">Los Angeles Poverty Department (LAPD)</a>
+      <p>LAPD performances connect lived experience to the social forces that shape the lives and communities of people living in poverty.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/losangelessra/">Los Angeles SRA</a>
+      <p>Socialist Rifle Assembly chapter for the greater Los Angeles area. Dedicated to community defense education and mutual aid.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/lastreetcare/">LA Street Care &amp; Mutual Aid</a>
+      <p>Abolitionist mutual aid collective organizing in Los Feliz, Echo Park, Atwater, Historic Filipinotown, Silver Lake, and Rampart.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/jvp.la/">Jewish Voice for Peace Los Angeles</a>
+      <p>@jewishvoiceforpeace on Tongva and Chumash land. Anti-Zionist Jews and allies for a free Palestine</p>
+    </div>
+    <div class="initiative">
+      <a href="https://jtownaction.com/">Jtown Action</a>
+      <p>Grassroots collective dedicated to revolutionary organizing &amp; building community power in Little Tokyo — Weekly mutual aid</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/la_anarchistsinsolidarity/">LA Anarchists in Solidarity</a>
+      <p>Study group + Produce Distro 4/27 Sunday @ 11AM, Sycamore Grove Park</p>
+    </div>
+    <div class="initiative">
+      <a href="https://nocanyonhills.org/">No Canyon Hills</a>
+      <p>Help us conserve 300+ acres of threatened wildlife habitat in the Verdugo Mountains: Fernandeño Tataviam and Gabrieleno Tongva land.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/queersforpalestinela/">Queers for Palestine Los Angeles</a>
+      <p>We’re Queer! We’re Trans! Free Palestine is our demand! There’s No LGBTQIA+ Pride in Genocide, Apartheid, Imperialism, &amp; Occupation!</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/peoplescafe.la/">People's Cafe</a>
+      <p>free soup for the family. native foods, zapatista coffee, yerbería, community arts. opening soon!</p>
+    </div>
+    <div class="initiative">
+      <a href="https://swoplosangeles.org/">SWOP Los Angeles</a>
+      <p>SWOPLA is a peer support organization, run by sex workers and for sex workers.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/venicejustice1/">Venice Justice</a>
+      <p>Documenting human &amp; civil rights violations since 2001, managing the free Venice Justice Citation Clinic since Sept 2014. Tweets @VeniceJustice1</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/westwoodmutualaid/">Westwood Mutual Aid</a>
+      <p>Every Friday 2pm-5pm on Westwood Blvd &amp; Le Conte Ave. Building solidarity with the Palestinian resistance and all oppressed people globally.</p>
+    </div>
+  </section>
         </div>
-
-        <!-- TOC positioned absolutely/fixed -->
+      </div>
         <aside class="toc-container">
           <nav class="toc" role="navigation" aria-label="Table of Contents" id="toc">
             <ul class="toc-list">
-              <li class="toc-item">
-                <a href="#cultural" class="toc-link">
-                  <span class="toc-number">1.</span>
-                  Community Spaces
-                </a>
-              </li>
-              <li class="toc-item">
-                <a href="#food" class="toc-link">
-                  <span class="toc-number">2.</span>
-                  Food Justice
-                </a>
-              </li>
-              <li class="toc-item">
-                <a href="#healthcare" class="toc-link">
-                  <span class="toc-number">3.</span>
-                  Harm Reduction
-                </a>
-              </li>
-              <li class="toc-item">
-                <a href="#housing" class="toc-link">
-                  <span class="toc-number">4.</span>
-                  Housing Justice & Homeless Solidarity
-                </a>
-              </li>
-              <li class="toc-item">
-                <a href="#lgbtq" class="toc-link">
-                  <span class="toc-number">5.</span>
-                  LGBTQ+ Solidarity
-                </a>
-              </li>
-              <li class="toc-item">
-                <a href="#anti-racism" class="toc-link">
-                  <span class="toc-number">6.</span>
-                  Racial Justice
-                </a>
-              </li>
-              <li class="toc-item">
-                <a href="#prison" class="toc-link">
-                  <span class="toc-number">7.</span>
-                  Prison Abolition
-                </a>
-              </li>
-              <li class="toc-item">
-                <a href="#specific-communities" class="toc-link">
-                  <span class="toc-number">8.</span>
-                  Specific Communities Support
-                </a>
-              </li>
-
-              <li class="toc-item">
-                <a href="#other-groups" class="toc-link">
-                  <span class="toc-number">9.</span>
-                  Other Groups
-                </a>
-              </li>
+          <li class="toc-item">
+            <a href="#mutual-aid" class="toc-link">
+              <span class="toc-number">1.</span>
+              <span class="toc-text">Mutual Aid</span>
+            </a>
+          </li>
+          <li class="toc-item">
+            <a href="#cultural" class="toc-link">
+              <span class="toc-number">2.</span>
+              <span class="toc-text">Community Spaces</span>
+            </a>
+          </li>
+          <li class="toc-item">
+            <a href="#food" class="toc-link">
+              <span class="toc-number">3.</span>
+              <span class="toc-text">Food Justice</span>
+            </a>
+          </li>
+          <li class="toc-item">
+            <a href="#healthcare" class="toc-link">
+              <span class="toc-number">4.</span>
+              <span class="toc-text">Healthcare &amp; Harm Reduction</span>
+            </a>
+          </li>
+          <li class="toc-item">
+            <a href="#housing" class="toc-link">
+              <span class="toc-number">5.</span>
+              <span class="toc-text">Housing Justice &amp; Homeless Solidarity</span>
+            </a>
+          </li>
+          <li class="toc-item">
+            <a href="#lgbtq" class="toc-link">
+              <span class="toc-number">6.</span>
+              <span class="toc-text">LGBTQ+ Solidarity</span>
+            </a>
+          </li>
+          <li class="toc-item">
+            <a href="#anti-racism" class="toc-link">
+              <span class="toc-number">7.</span>
+              <span class="toc-text">Racial Justice</span>
+            </a>
+          </li>
+          <li class="toc-item">
+            <a href="#prison" class="toc-link">
+              <span class="toc-number">8.</span>
+              <span class="toc-text">Prison Abolition and Prisoner Solidarity</span>
+            </a>
+          </li>
+          <li class="toc-item">
+            <a href="#specific-communities" class="toc-link">
+              <span class="toc-number">9.</span>
+              <span class="toc-text">Specific Communities Support</span>
+            </a>
+          </li>
+          <li class="toc-item">
+            <a href="#other-groups" class="toc-link">
+              <span class="toc-number">10.</span>
+              <span class="toc-text">Other Groups</span>
+            </a>
+          </li>
             </ul>
           </nav>
         </aside>
@@ -553,12 +455,9 @@
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Include the TOC JavaScript -->
+  <script src="/js/initiative-collapsible.js" defer></script>
   <script src="/js/city-toc.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script>
 </body>
 
 </html>

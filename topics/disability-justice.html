@@ -2,94 +2,80 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-        gtag("config", "G-QJ03RCM35H");
-    </script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <title>Disability Justice Mutual Aid - The Organize Directory</title>
-    <meta name="description" content="Find disability justice mutual aid initiatives and community support networks.">
+  <title>Disability Justice - The Organize Directory</title>
+  <meta name="description" content="Mutual aid networks and community initiatives focused on disability justice, accessibility, and
+                    support for disabled and chronically ill communities.">
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Disability Justice Mutual Aid | The Organize Directory">
-    <meta property="og:description"
-        content="Find disability justice mutual aid initiatives and community support networks.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/topics/disability-justice">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta name="twitter:card" content="summary_large_image">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Disability Justice - The Organize Directory">
+  <meta property="og:description" content="Mutual aid networks and community initiatives focused on disability justice, accessibility, and
+                    support for disabled and chronically ill communities.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/topics/disability-justice">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('topics');
-
-        // Initialize other components
-        initializeComponents({});
-    </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
+    initializeSidebar('topics');
+    initializeComponents({});
+  </script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  <div class="layout">
+    <div id="sidebar-placeholder"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-            <div class="city-page state-page">
-                <div class="breadcrumb">
-                    <a href="/topics">Topics</a>
-                    <span>›</span>
-                    <span>Disability Justice</span>
-                </div>
+      <div class="city-page state-page">
+        <div class="breadcrumb">
+          <a href="/topics">Topics</a>
+          <span>›</span>
+          <span>Disability Justice</span>
+        </div>
 
-                <h1>Disability Justice</h1>
-                <p class="subtitle">
-                    Mutual aid networks and community initiatives focused on disability justice, accessibility, and
-                    support for disabled and chronically ill communities.
-                </p>
+        <h1>Disability Justice</h1>
+        <p class="subtitle">Mutual aid networks and community initiatives focused on disability justice, accessibility, and
+                    support for disabled and chronically ill communities.</p>
 
-
-                <section>
-                    <h2>Mutual Aid Networks</h2>
-                    <div class="initiative">
-                        <a href="https://www.instagram.com/sickinquarters/">Sick in Quarters</a>
-                        <p>
-                            A disability justice mutual aid collective providing direct support and solidarity for
-                            chronically ill and disabled communities. They coordinate resource sharing, community care
-                            initiatives, and mutual aid networks while building power through disability justice
-                            organizing and collective care.
-                        </p>
-                    </div>
-                </section>
-
-            </div>
-        </main>
+  <section id="main" class="city-section">
+    <div class="initiative">
+      <a href="https://www.instagram.com/sickinquarters/">Sick in Quarters</a>
+      <p>A disability justice mutual aid collective providing direct support and solidarity for chronically ill and disabled communities. They coordinate resource sharing, community care initiatives, and mutual aid networks while building power through disability justice organizing and collective care.</p>
     </div>
+  </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="/mobile-menu.js" defer></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
 </body>
 
 </html>

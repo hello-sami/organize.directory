@@ -2,134 +2,116 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
 
-    <title>
-        Staten Island Mutual Aid Networks - Local Support &amp; Community Resources
-    </title>
-    <meta name="description"
-        content="Find mutual aid networks and community support initiatives in Staten Island, New York City.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Staten Island | The Organize Directory">
-    <meta property="og:description"
-        content="Find mutual aid networks and community resources in Staten Island, New York City.">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta property="og:url" content="https://organize.directory/staten-island">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+  <title>Staten Island Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Staten Island. Connect with local organizations and community resources.">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css">
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Staten Island Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Staten Island. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/staten-island">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-        gtag("config", "G-QJ03RCM35H");
-    </script>
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('location');
-
-        // Initialize other components
-        initializeComponents({
-        });
-    </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
+    initializeSidebar('location');
+    initializeComponents({});
+  </script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  <div class="layout">
+    <div id="sidebar-placeholder"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-            <div class="city-page">
-                <div class="breadcrumb">
-                    <a href="/new-york">New York</a>
-                    <span>›</span>
-                    <a href="/nyc">New York City</a>
-                    <span>›</span>
-                    <span>Staten Island</span>
-                </div>
+      <div class="content-wrapper">
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
+          <a href="/new-york">New York</a>
+          <span>›</span>
+          <a href="/nyc">New York City</a>
+          <span>›</span>
+          <span>Staten Island</span>
+        </div>
 
-                <h1>Staten Island</h1>
+        <h1>Staten Island</h1>
 
-
-                <div class="toc">
-                    <h2 class="toc-title">Contents</h2>
-                    <ul class="toc-list">
-                        <li class="toc-item">
-                            <a href="#mutual-aid" class="toc-link">
-                                <span class="toc-number">1.</span>
-                                Mutual Aid Networks
-                            </a>
-                        </li>
-                        <li class="toc-item">
-                            <a href="#community" class="toc-link">
-                                <span class="toc-number">2.</span>
-                                Community Organizations
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <section id="mutual-aid" class="city-section">
-                    <h2>Mutual Aid Networks</h2>
-
-                    <div class="initiative">
-                        <a href="https://www.sisociety.org/">Staten Island Mutual Aid Society</a>
-                        <p>
-                            A network of Staten Island residents providing direct support to neighbors in need
-                            through food distribution, resource sharing, and solidarity efforts.
-                        </p>
-                    </div>
-                </section>
-
-                <section id="community" class="city-section">
-                    <h2>Community Organizations</h2>
-
-                    <div class="initiative">
-                        <a href="https://www.sicommunitycoalition.org/">Staten Island Community Coalition</a>
-                        <p>
-                            A coalition of community organizations working to address social justice issues
-                            and build community power on Staten Island.
-                        </p>
-                    </div>
-                    <div class="initiative">
-                        <a href="https://www.projecthospitality.org/">Project Hospitality</a>
-                        <p>
-                            An interfaith organization providing comprehensive services to hungry, homeless, and
-                            vulnerable individuals and families on Staten Island.
-                        </p>
-                    </div>
-                </section>
-            </div>
-        </main>
+        <div class="city-content">
+  <section id="mutual-aid" class="city-section">
+    <h2>Mutual Aid Networks</h2>
+    <div class="initiative">
+      <a href="https://www.sisociety.org/">Staten Island Mutual Aid Society</a>
+      <p>A network of Staten Island residents providing direct support to neighbors in need through food distribution, resource sharing, and solidarity efforts.</p>
     </div>
+  </section>
 
-    <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <section id="community" class="city-section">
+    <h2>Community Organizations</h2>
+    <div class="initiative">
+      <a href="https://www.sicommunitycoalition.org/">Staten Island Community Coalition</a>
+      <p>A coalition of community organizations working to address social justice issues and build community power on Staten Island.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.projecthospitality.org/">Project Hospitality</a>
+      <p>An interfaith organization providing comprehensive services to hungry, homeless, and vulnerable individuals and families on Staten Island.</p>
+    </div>
+  </section>
+        </div>
+      </div>
+        <aside class="toc-container">
+          <nav class="toc" role="navigation" aria-label="Table of Contents" id="toc">
+            <ul class="toc-list">
+          <li class="toc-item">
+            <a href="#mutual-aid" class="toc-link">
+              <span class="toc-number">1.</span>
+              <span class="toc-text">Mutual Aid Networks</span>
+            </a>
+          </li>
+          <li class="toc-item">
+            <a href="#community" class="toc-link">
+              <span class="toc-number">2.</span>
+              <span class="toc-text">Community Organizations</span>
+            </a>
+          </li>
+            </ul>
+          </nav>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script src="/mobile-menu.js" defer></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  <script src="/js/city-toc.js" defer></script>
+</body>
 
 </html>

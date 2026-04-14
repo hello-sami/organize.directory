@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,54 +18,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <meta name="description"
-    content="Find mutual aid initiatives and community support networks in Myrtle Beach, South Carolina. Connect with local organizations and community resources.">
+  <title>Myrtle Beach, South Carolina Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Myrtle Beach, South Carolina. Connect with local organizations and community resources.">
 
-  <!-- Open Graph / Twitter Cards -->
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Myrtle Beach, South Carolina Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Myrtle Beach, South Carolina. Connect with local organizations and community resources.">
   <meta property="og:type" content="website">
-
-  <meta property="og:title" content="Mutual Aid in Myrtle Beach - Local Support Networks">
-  <meta property="og:description"
-    content="Find mutual aid initiatives and community support networks in Myrtle Beach, South Carolina. Connect with local organizations providing community-based support.">
   <meta property="og:url" content="https://organize.directory/myrtle-beach">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <title>
-    Mutual Aid in Myrtle Beach - Local Support Networks &amp; Community Resources
-  </title>
-
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-  <script>
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
-  </script>
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
@@ -66,41 +51,39 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
+      
       <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/south-carolina">South Carolina</a>
           <span>›</span>
-          <span>Myrtle Beach</span>
+          <span>Myrtle Beach, South Carolina</span>
         </div>
 
         <h1>Myrtle Beach, South Carolina</h1>
 
-
-        <section>
-          <div class="initiative">
-            <a href="https://www.t-timetgsupport.org/">T-Time Transgender Support</a>
-            <p>
-              Support and Camaraderie for transgender, intersex, non-binary
-              and gender diverse individuals
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://fyrebirdrecovery.org/">Fyrebird Recovery</a>
-            <p>
-              Fyrebird Recovery is a harm reduction program in Horry County.
-              Through harm reduction efforts we focus addressing social
-              determinants of health, drug user health, and support to high
-              risk communities.
-            </p>
-          </div>
-        </section>
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <div class="initiative">
+      <a href="https://www.t-timetgsupport.org/">T-Time Transgender Support</a>
+      <p>Support and Camaraderie for transgender, intersex, non-binary and gender diverse individuals</p>
+    </div>
+    <div class="initiative">
+      <a href="https://fyrebirdrecovery.org/">Fyrebird Recovery</a>
+      <p>Fyrebird Recovery is a harm reduction program in Horry County. Through harm reduction efforts we focus addressing social determinants of health, drug user health, and support to high risk communities.</p>
+    </div>
+  </section>
+        </div>
       </div>
+
+      
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

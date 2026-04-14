@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,52 +18,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <meta property="og:type" content="website">
+  <title>Inland Empire Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Inland Empire. Connect with local organizations and community resources.">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="description"
-    content="Find mutual aid initiatives and community support networks in Inland Empire, California. Connect with local organizations and community resources.">
-  <meta property="og:title" content="Mutual Aid in Inland Empire - Local Support Networks">
-  <meta property="og:description"
-    content="Find mutual aid initiatives and community support networks in Inland Empire, California. Connect with local organizations providing community-based support.">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Inland Empire Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Inland Empire. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/inland-empire">
   <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-  <title>
-    Mutual Aid in Inland Empire - Local Support Networks &amp; Community
-    Resources
-  </title>
-
+  <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-  <script>
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
-  </script>
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
@@ -64,52 +51,48 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      <h1>Inland Empire</h1>
+      
+      <div class="city-page">
+        <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
+          <a href="/california">California</a>
+          <span>›</span>
+          <span>Inland Empire</span>
+        </div>
 
+        <h1>Inland Empire</h1>
 
-      <section>
-        <h2>Regional Organizations</h2>
-        <div class="initiative">
-          <a href="https://www.instagram.com/inlandempireharmreduction/">Inland Empire Harm Reduction</a>
-          <p>
-            A grassroots harm reduction organization fostering mutual aid
-            and community care through direct support in the Inland Empire
-            region. They coordinate harm reduction supplies distribution,
-            overdose prevention education, and solidarity networks while
-            building power through peer support, direct action, and creating
-            spaces for compassionate care and dignity.
-          </p>
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <h2>Regional Organizations</h2>
+    <div class="initiative">
+      <a href="https://www.instagram.com/inlandempireharmreduction/">Inland Empire Harm Reduction</a>
+      <p>A grassroots harm reduction organization fostering mutual aid and community care through direct support in the Inland Empire region. They coordinate harm reduction supplies distribution, overdose prevention education, and solidarity networks while building power through peer support, direct action, and creating spaces for compassionate care and dignity.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://ic4ij.org/">Inland Coalition for Immigrant Justice</a>
+      <p>Provides support to coaltion of orgs that defend immigrant communities against deportation.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.theieiyc.org/">Inland Empire Immigrant Youth Collective</a>
+      <p>Founded in 2010, the Inland Empire Immigrant Youth Collective creates a safe space for immigrant youth to express themselves and achieve their full potential and their identity that intersects with being undocumented.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/brittlebushdistro/">Brittle Bush Distro</a>
+      <p>Anarchist zine distro based in the Inland (Against) Empire in so-called CA. A couple of dorks with a copy machine.</p>
+    </div>
+  </section>
         </div>
-        <div class="initiative">
-          <a href="https://ic4ij.org/">Inland Coalition for Immigrant Justice</a>
-          <p>
-            Provides support to coaltion of orgs that defend immigrant
-            communities against deportation.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.theieiyc.org/">Inland Empire Immigrant Youth Collective</a>
-          <p>
-            Founded in 2010, the Inland Empire Immigrant Youth Collective
-            creates a safe space for immigrant youth to express themselves
-            and achieve their full potential and their identity that
-            intersects with being undocumented.
-          </p>
-        </div>
-        <div class="initiative">
-          <a href="https://www.instagram.com/brittlebushdistro/">Brittle Bush Distro</a>
-          <p>
-            Anarchist zine distro based in the Inland (Against) Empire in
-            so-called CA. A couple of dorks with a copy machine.
-          </p>
-        </div>
-      </section>
+      </div>
+
+      
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

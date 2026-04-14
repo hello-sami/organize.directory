@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,40 +18,30 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Alameda County Mutual Aid - Local Support Networks &amp; Community Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid networks and community support initiatives in Alameda County, California including Oakland, Berkeley, and surrounding communities.">
-  <meta property="og:title" content="Alameda County Mutual Aid - Local Support Networks &amp; Community Resources">
-  <meta property="og:description"
-    content="Find mutual aid networks and community support initiatives in Alameda County, California including Oakland, Berkeley, and surrounding communities.">
-  <meta property="og:type" content="website">
+  <title>Alameda County Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Alameda County. Connect with local organizations and community resources.">
 
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Alameda County Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Alameda County. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/alameda-county">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
@@ -52,8 +51,11 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      <div class="city-page state-page">
+      
+      <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/california">California</a>
           <span>›</span>
           <a href="/norcal">Northern California</a>
@@ -63,36 +65,18 @@
 
         <h1>Alameda County</h1>
 
+        <div class="city-content">
 
-        <section>
-          <div class="cities-list">
-            <h2>Cities &amp; Communities</h2>
-            <div class="city-links-container">
-              <a href="/oakland" class="city-link location-link-base">Oakland</a>
-              <a href="/berkeley" class="city-link location-link-base">Berkeley</a>
-              <!-- <a href="/fremont" class="city-link">Fremont</a> -->
-              <!-- <a href="/hayward" class="city-link">Hayward</a> -->
-              <!-- <a href="/alameda" class="city-link">Alameda</a> -->
-              <!-- <a href="/san-leandro" class="city-link">San Leandro</a> -->
-              <!-- <a href="/livermore" class="city-link">Livermore</a> -->
-              <!-- <a href="/pleasanton" class="city-link">Pleasanton</a> -->
-              <!-- <a href="/union-city" class="city-link">Union City</a> -->
-              <!-- <a href="/dublin" class="city-link">Dublin</a> -->
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2>Regional Organizations</h2>
-
-        </section>
+        </div>
       </div>
+
+      
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

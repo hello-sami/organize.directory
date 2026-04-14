@@ -2,15 +2,13 @@
 <html lang="en">
 
 <head>
-  <!-- Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
   </script>
 
   <meta charset="UTF-8">
@@ -20,59 +18,44 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Mutual Aid in Greenville - Local Support Networks &amp; Community Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid initiatives and community support networks in Greenville, South Carolina. Connect with local organizations providing community-based support.">
-  <meta property="og:title" content="Mutual Aid in Greenville - Local Support Networks">
-  <meta property="og:description"
-    content="Find mutual aid initiatives and community support networks in Greenville, South Carolina. Connect with local organizations providing community-based support.">
-  <meta property="og:type" content="website">
+  <title>Greenville Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Greenville. Connect with local organizations and community resources.">
 
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Greenville Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Greenville. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/greenville">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
   <div class="layout">
     <div id="sidebar-placeholder"></div>
 
-
-
-
-
-
-
-
-
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
+      
       <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/south-carolina">South Carolina</a>
           <span>›</span>
           <span>Greenville</span>
@@ -80,52 +63,31 @@
 
         <h1>Greenville</h1>
 
-
-        <section>
-          <div class="initiative">
-            <a href="https://www.wmxp955.org/">WMXP 95.5 FM - Malcolm X Center Community Radio</a>
-            <p>
-              The only FCC-registered low-power Black community-owned and
-              operated radio station in South Carolina, providing independent
-              local and national programming for and by Greenville's Black
-              community since 2007. Operating through the Malcolm X Center For
-              Human Rights, they focus on political education, strategic
-              planning, and communications skill enhancement for human rights
-              and self-determination advocacy.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://pridelink.org/">PrideLink</a>
-            <p>
-              A grassroots organization fostering mutual aid and community
-              support for LGBTQ+ people in Upstate South Carolina. They
-              coordinate direct assistance, resource sharing, and solidarity
-              networks while building power through community organizing,
-              mental health support, and creating affirming spaces for queer
-              and trans people to connect and thrive.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.facebook.com/UpstateFoodNotBombs/">Upstate Food Not Bombs</a>
-            <p>
-              A mutual aid collective fostering food justice and community
-              solidarity through free food sharing in Greenville and the
-              Upstate region. They coordinate regular meal distributions, food
-              recovery initiatives, and solidarity networks while building
-              power through direct action, community care, and creating spaces
-              for food sovereignty and collective nourishment.
-            </p>
-          </div>
-        </section>
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <div class="initiative">
+      <a href="https://www.wmxp955.org/">WMXP 95.5 FM - Malcolm X Center Community Radio</a>
+      <p>The only FCC-registered low-power Black community-owned and operated radio station in South Carolina, providing independent local and national programming for and by Greenville's Black community since 2007. Operating through the Malcolm X Center For Human Rights, they focus on political education, strategic planning, and communications skill enhancement for human rights and self-determination advocacy.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://pridelink.org/">PrideLink</a>
+      <p>A grassroots organization fostering mutual aid and community support for LGBTQ+ people in Upstate South Carolina. They coordinate direct assistance, resource sharing, and solidarity networks while building power through community organizing, mental health support, and creating affirming spaces for queer and trans people to connect and thrive.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.facebook.com/UpstateFoodNotBombs/">Upstate Food Not Bombs</a>
+      <p>A mutual aid collective fostering food justice and community solidarity through free food sharing in Greenville and the Upstate region. They coordinate regular meal distributions, food recovery initiatives, and solidarity networks while building power through direct action, community care, and creating spaces for food sovereignty and collective nourishment.</p>
+    </div>
+  </section>
+        </div>
       </div>
 
+      
     </main>
   </div>
 
-
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

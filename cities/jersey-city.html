@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -9,75 +18,44 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <title>
-    Jersey City Mutual Aid - Local Support Networks &amp; Community Resources
-  </title>
-  <meta name="description"
-    content="Find mutual aid initiatives and community support networks in Jersey City, New Jersey.">
+  <title>Jersey City Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid initiatives and community support networks in Jersey City. Connect with local organizations and community resources.">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Jersey City Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Jersey City. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/jersey-city">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-  <!-- Preconnect to Google Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
   <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-  <!-- Open Graph / Social Media -->
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
-<body>n
-  <meta property="og:title" content="Jersey-city | The Organize Directory">n
-  <meta property="og:description" content="Find mutual aid networks and community resources in jersey-city.">n
-  <meta property="og:image" content="https://organize.directory/preview.png">n
-  <meta property="og:url" content="https://organize.directory/jersey-city">n
-  <meta property="og:type" content="website">n
-  <meta name="twitter:card" content="summary_large_image">
-
-
-
+<body>
   <div class="layout">
     <div id="sidebar-placeholder"></div>
-
-    <!-- Open Graph / Social Media -->n
-    <meta property="og:title" content="Jersey-city | The Organize Directory">n
-    <meta property="og:description" content="Find mutual aid networks and community resources in jersey-city.">n
-    <meta property="og:image" content="https://organize.directory/preview.png">n
-    <meta property="og:url" content="https://organize.directory/jersey-city">n
-    <meta property="og:type" content="website">n
-    <meta name="twitter:card" content="summary_large_image">
-
-
-
-
-    <!-- Open Graph / Social Media -->n
-    <meta property="og:title" content="Jersey-city | The Organize Directory">n
-    <meta property="og:description" content="Find mutual aid networks and community resources in jersey-city.">n
-    <meta property="og:image" content="https://organize.directory/preview.png">n
-    <meta property="og:url" content="https://organize.directory/jersey-city">n
-    <meta property="og:type" content="website">n
-    <meta name="twitter:card" content="summary_large_image">
-
-
-
 
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
+      
       <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
           <a href="/new-jersey">New Jersey</a>
           <span>›</span>
           <span>Jersey City</span>
@@ -85,36 +63,27 @@
 
         <h1>Jersey City</h1>
 
-
-        <section>
-          <div class="initiative">
-            <a href="https://www.instagram.com/foodnotbombsjc">Food Not Bombs Jersey City</a>
-            <p>
-              A grassroots mutual aid collective dedicated to recovering and
-              sharing free vegan meals in Jersey City. They coordinate food
-              recovery, community meals, and resource distribution while
-              building solidarity through direct action against hunger and
-              food waste.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.jcmutualaid.org/">Jersey City Mutual Aid Society</a>
-            <p>
-              We are a group of neighbors who are working together to support
-              our fellow neighbors. We collect donations and distribute them
-              to people who need assistance.
-            </p>
-          </div>
-        </section>
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <div class="initiative">
+      <a href="https://www.instagram.com/foodnotbombsjc">Food Not Bombs Jersey City</a>
+      <p>A grassroots mutual aid collective dedicated to recovering and sharing free vegan meals in Jersey City. They coordinate food recovery, community meals, and resource distribution while building solidarity through direct action against hunger and food waste.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.jcmutualaid.org/">Jersey City Mutual Aid Society</a>
+      <p>We are a group of neighbors who are working together to support our fellow neighbors. We collect donations and distribute them to people who need assistance.</p>
+    </div>
+  </section>
+        </div>
       </div>
 
+      
     </main>
   </div>
 
-
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>

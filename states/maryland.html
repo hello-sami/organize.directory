@@ -2,112 +2,90 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="description"
-        content="Find mutual aid networks and community support initiatives in Maryland cities including Baltimore, Annapolis, Frederick, and more.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Open Graph / Social Meta Tags -->
-    <meta property="og:title" content="Maryland Mutual Aid Networks - Local Support &amp; Community Resources">
-    <meta property="og:description"
-        content="Find mutual aid networks and community support initiatives in Maryland cities including Baltimore, Annapolis, Frederick, and more.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://organize.directory/maryland">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <meta name="twitter:card" content="summary">
+  <title>Maryland Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <meta name="description" content="Find mutual aid networks and community support initiatives in Maryland. Connect with local organizations and community resources.">
 
-    <title>Maryland Mutual Aid Networks - Local Support &amp; Community Resources</title>
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Maryland Mutual Aid Networks - Local Support &amp; Community Resources">
+  <meta property="og:description" content="Find mutual aid networks and community support initiatives in Maryland. Connect with local organizations and community resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/maryland">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css?v=1.1.9">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 
-
-    <link rel="stylesheet" href="/fonts/fonts.css">
-
-
-    <!-- Component Initialization -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('location');
-
-        // Initialize other components
-        initializeComponents({
-        });
-    </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Initialize Components -->
+  <script type="module">
+    import { initializeSidebar } from '/components/sidebar.js';
+    import { initializeComponents } from '/utils/init.js';
+    initializeSidebar('location');
+    initializeComponents({});
+  </script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  <div class="layout">
+    <div id="sidebar-placeholder"></div>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header"></header>
+    <main class="content" role="main">
+      <header id="header" class="page-header"></header>
 
-            <div class="city-page state-page">
-                <div class="breadcrumb">
-                    <a href="/location">States</a>
-                    <span>›</span>
-                    <span>Maryland</span>
-                </div>
+      <div class="city-page state-page">
+        <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
+          <span>Maryland</span>
+        </div>
 
-                <h1>Maryland</h1>
+        <h1>Maryland</h1>
 
-
-                <section>
-                    <div class="cities-list">
-                        <h2>Cities</h2>
-                        <div class="city-links-container">
-                            <!-- <a href="/annapolis" class="city-link">Annapolis</a> -->
-                            <a href="/baltimore" class="nav-link-base location-link city-link">Baltimore</a>
-                            <!-- <a href="/columbia" class="city-link">Columbia</a> -->
-                            <!-- <a href="/eastern-shore" class="city-link">Eastern Shore</a> -->
-                            <!-- <a href="/frederick" class="city-link">Frederick</a> -->
-                            <!-- <a href="/hagerstown" class="city-link">Hagerstown</a> -->
-                            <a href="/rockville" class="nav-link-base location-link city-link">Rockville</a>
-                            <!-- <a href="/salisbury" class="city-link">Salisbury</a> -->
-                            <!-- <a href="/southern-maryland" class="city-link">Southern Maryland</a> -->
-                            <!-- <a href="/western-maryland" class="city-link">Western Maryland</a> -->
-                        </div>
-                    </div>
-                </section>
-
-
-                <section>
-                    <h2>Statewide Organizations</h2>
-                    <div class="initiative">
-                        <a href="https://www.belovedcommunityincubator.org/">Beloved Community Incubator</a>
-                        <p>A community-based organization fostering mutual aid and economic justice through cooperative
-                            development in the DMV region. They coordinate worker-owned business incubation, solidarity
-                            economy initiatives, and community wealth building while creating spaces for economic
-                            democracy, racial equity, and collective liberation through their various programs and
-                            support networks.</p>
-                    </div>
-                </section>
-            </div>
-        </main>
+  <section>
+    <div class="cities-list">
+      <h2>Locations</h2>
+      <div class="city-links-container">
+          <a href="/annapolis" class="city-link location-link-base">Annapolis</a>
+          <a href="/baltimore" class="city-link location-link-base">Baltimore</a>
+          <a href="/calvert-county" class="city-link location-link-base">Calvert County</a>
+          <a href="/rockville" class="city-link location-link-base">Rockville</a>
+          <a href="/silver-spring" class="city-link location-link-base">Silver Spring</a>
+      </div>
     </div>
+  </section>
 
+  <section id="statewide-organizations" class="city-section">
+    <h2>Statewide Organizations</h2>
+    <div class="initiative">
+      <a href="https://www.belovedcommunityincubator.org/">Beloved Community Incubator</a>
+      <p>A community-based organization fostering mutual aid and economic justice through cooperative development in the DMV region. They coordinate worker-owned business incubation, solidarity economy initiatives, and community wealth building while creating spaces for economic democracy, racial equity, and collective liberation through their various programs and support networks.</p>
+    </div>
+  </section>
+      </div>
+    </main>
+  </div>
 
-    <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/mobile-menu.js" defer></script>
+  <script src="/js/initiative-collapsible.js" defer></script>
+</body>
 
 </html>

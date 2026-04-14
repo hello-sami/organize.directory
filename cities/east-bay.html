@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-QJ03RCM35H');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -10,11 +19,11 @@
   <link rel="manifest" href="/site.webmanifest">
 
   <title>East Bay Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description"
-    content="Find mutual aid networks and community support initiatives in the East Bay area of California.">
+  <meta name="description" content="Find mutual aid initiatives and community support networks in East Bay. Connect with local organizations and community resources.">
+
+  <!-- Open Graph / Social Media -->
   <meta property="og:title" content="East Bay Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description"
-    content="Find mutual aid networks and community support initiatives in the East Bay area of California.">
+  <meta property="og:description" content="Find mutual aid initiatives and community support networks in East Bay. Connect with local organizations and community resources.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/east-bay">
   <meta property="og:image" content="https://organize.directory/preview.png">
@@ -22,34 +31,17 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 
-  <!-- Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag("js", new Date());
-    gtag("config", "G-QJ03RCM35H");
-  </script>
-
-  <!-- Theme and Components -->
+  <!-- Initialize Components -->
   <script type="module">
     import { initializeSidebar } from '/components/sidebar.js';
     import { initializeComponents } from '/utils/init.js';
-
-    // Initialize sidebar first
     initializeSidebar('location');
-
-    // Initialize other components
-    initializeComponents({
-    });
+    initializeComponents({});
   </script>
-            <!-- Mobile optimizations -->
-            <script src="/js/mobile-optimizations.js" defer></script>
+  <script src="/js/mobile-optimizations.js" defer></script>
 </head>
 
 <body>
@@ -59,8 +51,13 @@
     <main class="content" role="main">
       <header id="header" class="page-header"></header>
 
-      <div class="city-page state-page">
+      
+      <div class="city-page">
         <div class="breadcrumb">
+          <a href="/location">States</a>
+          <span>›</span>
+          <a href="/california">California</a>
+          <span>›</span>
           <a href="/norcal">Northern California</a>
           <span>›</span>
           <a href="/sf-bay-area">Bay Area</a>
@@ -70,113 +67,67 @@
 
         <h1>East Bay</h1>
 
-        <section>
-          <div class="cities-list">
-            <h2>Cities</h2>
-            <div class="city-links-container">
-              <a href="/berkeley" class="city-link location-link-base">Berkeley</a>
-              <a href="/oakland" class="city-link location-link-base">Oakland</a>
-              <a href="/hayward" class="city-link location-link-base">Hayward</a>
-            </div>
-          </div>
-        </section>
+        <div class="city-content">
+  <section id="section-0" class="city-section">
+    <h2>Regional Organizations</h2>
+    <div class="initiative">
+      <a href="https://eastbayfoodnotbombs.org/">East Bay Food Not Bombs</a>
+      <p>We are an all-volunteer collective that serves vegan food in Oakland and Berkeley six days a week. In addition to the seven hot meals we serve each week, we distribute bagged lunches and dinners out of our truck and bicycle across the East Bay.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.cerieastbay.org/">Center for Empowering Refugees and Immigrants (CERI)</a>
+      <p>Community organization providing culturally attuned mental health services, LGBTQ+ advocacy, youth programs, and community care for refugee and immigrant communities in Oakland, with a focus on Southeast Asian genocide survivors and their families.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.centrolegal.org/">Centro Legal de la Raza</a>
+      <p>Community legal organization providing direct legal services, community education, and advocacy for immigrant, tenant, and worker rights in Oakland, with a focus on serving low-income and immigrant communities through mutual aid and solidarity.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://thevillageoflove.org/">Village of Love</a>
+      <p>A grassroots organization operating drop-in centers and providing direct support to unhoused neighbors in Alameda, Berkeley, and Oakland. They coordinate mutual aid initiatives, resource sharing, and community care while building networks of solidarity through direct action and neighborhood organizing.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.jrcofac.org/">JR Consulting</a>
+      <p>A community-based organization providing support and advocacy for families affected by police violence in the East Bay. Through mutual aid and direct support, they offer resources, counseling, and solidarity networks while building power through family advocacy, community organizing, and creating spaces for healing and justice.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.gilltractfarm.org/">Gill Tract Community Farm</a>
+      <p>A community-managed urban farm fostering food sovereignty and mutual aid through agroecology, education, and collective organizing. They coordinate food distributions, seed sharing, and community programs while building power through sustainable agriculture, environmental justice, and creating spaces for community-driven food systems.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.eastbayalternativebookandzinefest.com/">East Bay Alternative Book and Zine Fest</a>
+      <p>A community-driven festival fostering mutual aid and solidarity through independent publishing and DIY arts. They coordinate an annual gathering of zinesters, artists, and radical publishers while building networks of creative resistance and supporting grassroots literary culture in the East Bay.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://www.instagram.com/albelc4palestine/">Albany for Palestine</a>
+      <p>A grassroots collective fostering mutual aid and solidarity through Palestinian liberation organizing in the East Bay. They coordinate direct actions, community education, and solidarity networks while building power through local organizing, boycott campaigns, and creating spaces for Palestinian resistance and community mobilization.</p>
+    </div>
+    <div class="initiative">
+      <a href="https://ebho.org/">East Bay Housing Organizations (EBHO)</a>
+      <p>EBHO is a membership-based advocacy organization fighting for affordable housing for all.</p>
+    </div>
+  </section>
 
-        <section>
-          <h2>Regional Organizations</h2>
-          <div class="initiative">
-            <a href="https://eastbayfoodnotbombs.org/">East Bay Food Not Bombs</a>
-            <p>
-              We are an all-volunteer collective that serves vegan food in
-              Oakland and Berkeley six days a week. In addition to the seven
-              hot meals we serve each week, we distribute bagged lunches and
-              dinners out of our truck and bicycle across the East Bay.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.cerieastbay.org/">Center for Empowering Refugees and Immigrants (CERI)</a>
-            <p>
-              Community organization providing culturally attuned mental
-              health services, LGBTQ+ advocacy, youth programs, and community
-              care for refugee and immigrant communities in Oakland, with a
-              focus on Southeast Asian genocide survivors and their families.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.centrolegal.org/">Centro Legal de la Raza</a>
-            <p>
-              Community legal organization providing direct legal services,
-              community education, and advocacy for immigrant, tenant, and
-              worker rights in Oakland, with a focus on serving low-income and
-              immigrant communities through mutual aid and solidarity.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://thevillageoflove.org/">Village of Love</a>
-            <p>
-              A grassroots organization operating drop-in centers and
-              providing direct support to unhoused neighbors in Alameda,
-              Berkeley, and Oakland. They coordinate mutual aid initiatives,
-              resource sharing, and community care while building networks of
-              solidarity through direct action and neighborhood organizing.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.jrcofac.org/">JR Consulting</a>
-            <p>
-              A community-based organization providing support and advocacy
-              for families affected by police violence in the East Bay.
-              Through mutual aid and direct support, they offer resources,
-              counseling, and solidarity networks while building power through
-              family advocacy, community organizing, and creating spaces for
-              healing and justice.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.gilltractfarm.org/">Gill Tract Community Farm</a>
-            <p>
-              A community-managed urban farm fostering food sovereignty and
-              mutual aid through agroecology, education, and collective
-              organizing. They coordinate food distributions, seed sharing,
-              and community programs while building power through sustainable
-              agriculture, environmental justice, and creating spaces for
-              community-driven food systems.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.eastbayalternativebookandzinefest.com/">East Bay Alternative Book and Zine Fest</a>
-            <p>
-              A community-driven festival fostering mutual aid and solidarity
-              through independent publishing and DIY arts. They coordinate an
-              annual gathering of zinesters, artists, and radical publishers
-              while building networks of creative resistance and supporting
-              grassroots literary culture in the East Bay.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://www.instagram.com/albelc4palestine/">Albany for Palestine</a>
-            <p>
-              A grassroots collective fostering mutual aid and solidarity
-              through Palestinian liberation organizing in the East Bay. They
-              coordinate direct actions, community education, and solidarity
-              networks while building power through local organizing, boycott
-              campaigns, and creating spaces for Palestinian resistance and
-              community mobilization.
-            </p>
-          </div>
-          <div class="initiative">
-            <a href="https://ebho.org/">East Bay Housing Organizations (EBHO)</a>
-            <p>
-              EBHO is a membership-based advocacy organization fighting for affordable housing for all.
-            </p>
-          </div>
-        </section>
+  <section>
+    <div class="cities-list">
+      <h2>Locations</h2>
+      <div class="city-links-container">
+          <a href="/berkeley" class="city-link location-link-base">Berkeley</a>
+          <a href="/hayward" class="city-link location-link-base">Hayward</a>
+          <a href="/oakland" class="city-link location-link-base">Oakland</a>
       </div>
+    </div>
+  </section>
+        </div>
+      </div>
+
+      
     </main>
   </div>
 
-
   <script src="/mobile-menu.js" defer></script>
-  <!-- Add initiative collapsible functionality for mobile -->
-  <script src="/js/initiative-collapsible.js"></script></body>
+  <script src="/js/initiative-collapsible.js" defer></script>
+  
+</body>
 
 </html>
