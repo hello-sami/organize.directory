@@ -3,14 +3,7 @@
 
 <head>
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
-
+    <script src="/js/analytics.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -26,6 +19,7 @@
     <meta property="og:description"
         content="Contact the The Organize Directory team for questions, suggestions, or to add a group.">
     <meta property="og:image" content="https://organize.directory/preview.png">
+    <link rel="canonical" href="https://organize.directory/contact">
     <meta property="og:url" content="https://organize.directory/contact">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -48,17 +42,15 @@
 
     <!-- Load CSS -->
     <link rel="stylesheet" href="/fonts/fonts.css">
-    <link rel="stylesheet" href="/styles.css?v=1.1.9">
+    <link rel="stylesheet" href="/styles.css?v=20260421">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Mobile menu script - Load with defer to ensure it runs after DOM is ready -->
-    <script src="/mobile-menu.js?v=1.0.1" defer></script>
-
     <!-- Critical Scripts -->
     <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js?v=1.0.9';
+        import { initializeSidebar } from '/components/sidebar.js?v=20260421';
 
         // Initialize sidebar
         document.addEventListener('DOMContentLoaded', () => {
@@ -101,14 +93,17 @@
                     <!-- Form Subject -->
                     <input type="hidden" name="subject" value="New Contact Form Submission - Organize Directory">
 
-                    <!-- Honeypot field to prevent spam -->
-                    <input type="checkbox" name="botcheck" style="display: none;">
+                    <!-- Web3Forms built-in honeypot (server-side reject if checked) -->
+                    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
+
+                    <!-- Off-screen text honeypot: bots fill every text field; we abort client-side if non-empty -->
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="website">Leave this field empty</label>
+                        <input type="text" id="website" name="website" autocomplete="off" tabindex="-1">
+                    </div>
 
                     <!-- Custom Webhook -->
                     <input type="hidden" name="from_name" value="Organize Directory Contact Form">
-
-                    <!-- CSRF Token bypass -->
-                    <input type="hidden" name="csrf_token" value="true">
 
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -142,19 +137,6 @@
                         <div class="error-text" id="messageError">Please enter your message</div>
                     </div>
 
-                    <!-- Simple Math Captcha -->
-                    <div class="form-group" id="captchaContainer">
-                        <label for="captcha">Please solve this math problem <span
-                                class="required">(required)</span></label>
-                        <div class="captcha-challenge">
-                            <span id="captchaQuestion"></span>
-                            <input type="text" id="captcha" name="captcha" required autocomplete="off">
-                            <input type="hidden" id="captchaAnswer" name="captchaAnswer">
-                        </div>
-                        <small class="form-helper">This helps us prevent spam</small>
-                        <div class="error-text" id="captchaError">Please enter the correct answer</div>
-                    </div>
-
                     <button type="submit" class="btn-base" id="submitButton">Send Message</button>
                 </form>
 
@@ -171,8 +153,7 @@
         </main>
     </div>
 
-    <!-- Scripts - Removed the mobile-menu.js script since it's now in the head -->
-    <script src="/contact.js"></script>
+    <script type="module" src="/contact.js"></script>
 </body>
 
 </html>

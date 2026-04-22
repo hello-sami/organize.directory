@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     toggleButton.setAttribute(
                          "aria-controls",
                          "initiative-content-" +
-                              Math.random().toString(36).substr(2, 9)
+                              Math.random().toString(36).slice(2, 11)
                     );
 
                     // Create a container for the hidden content

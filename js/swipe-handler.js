@@ -2,7 +2,7 @@
  * Swipe Gesture Handler for Mobile
  *
  * Adds swipe right to open sidebar, swipe left to close.
- * TOC link smooth scrolling is handled by mobile-toc.js.
+ * TOC link smooth scrolling is handled by city-toc.js.
  */
 document.addEventListener("DOMContentLoaded", function () {
      setupSwipeDetection();

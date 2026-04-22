@@ -233,30 +233,59 @@ function handleSearchInput(event) {
           .slice(0, 10); // Limit to 10 results for performance
 
      // Display results
+     resultsContainer.replaceChildren();
      if (results.length > 0) {
-          resultsContainer.innerHTML = "";
           results.forEach((result) => {
                const resultItem = document.createElement("a");
                resultItem.href = result.url;
                resultItem.className = "title-search-result";
-               resultItem.innerHTML = `
-                <div class="result-title">${highlightMatch(result.title, query)}</div>
-                <div class="result-type">${result.type.charAt(0).toUpperCase() + result.type.slice(1)}</div>
-            `;
+
+               const titleDiv = document.createElement("div");
+               titleDiv.className = "result-title";
+               appendHighlightedText(titleDiv, result.title, query);
+
+               const typeDiv = document.createElement("div");
+               typeDiv.className = "result-type";
+               typeDiv.textContent =
+                    result.type.charAt(0).toUpperCase() + result.type.slice(1);
+
+               resultItem.append(titleDiv, typeDiv);
                resultsContainer.appendChild(resultItem);
           });
-          resultsContainer.style.display = "block";
      } else {
-          resultsContainer.innerHTML =
-               '<div class="no-results">No matches found</div>';
-          resultsContainer.style.display = "block";
+          const noResults = document.createElement("div");
+          noResults.className = "no-results";
+          noResults.textContent = "No matches found";
+          resultsContainer.appendChild(noResults);
      }
+     resultsContainer.style.display = "block";
 }
 
-// Highlight the matching portion of text
-function highlightMatch(text, query) {
-     const regex = new RegExp(`(${query})`, "gi");
-     return text.replace(regex, '<span class="highlight">$1</span>');
+// Escape regex metacharacters in user-supplied query
+function escapeRegExp(str) {
+     return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+// Build text with matching substrings wrapped in <span class="highlight"> nodes.
+// All segments are added via textContent, so there's no HTML injection path.
+function appendHighlightedText(parent, text, query) {
+     if (!query) {
+          parent.textContent = text;
+          return;
+     }
+     const regex = new RegExp(`(${escapeRegExp(query)})`, "gi");
+     const parts = text.split(regex);
+     parts.forEach((part, i) => {
+          if (i % 2 === 1) {
+               // Odd indices are matches because of the capture group
+               const span = document.createElement("span");
+               span.className = "highlight";
+               span.textContent = part;
+               parent.appendChild(span);
+          } else if (part) {
+               parent.appendChild(document.createTextNode(part));
+          }
+     });
 }
 
 // Debounce function to prevent excessive processing during typing

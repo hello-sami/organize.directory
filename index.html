@@ -5,27 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="/styles.css?v=1.1.9" as="style">
-    <script>
-        // Preload CSS to reduce flickering
-        function preloadCriticalCSS() {
-            const criticalStyles = ['/styles.css?v=1.1.9'];
-            criticalStyles.forEach(href => {
-                const link = document.createElement('link');
-                link.rel = 'preload';
-                link.href = href;
-                link.as = 'style';
-                document.head.appendChild(link);
-            });
-        }
-        // Execute immediately
-        preloadCriticalCSS();
-    </script>
-
-    <!-- Force mobile layout with inline CSS -->
-    <!-- All styles have been moved to the external stylesheet for better maintenance -->
-
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,6 +18,7 @@
     <meta property="og:description"
         content="Daily updates and resources for mutual aid networks and grassroots initiatives across different cities.">
     <meta property="og:image" content="https://organize.directory/preview.png">
+    <link rel="canonical" href="https://organize.directory">
     <meta property="og:url" content="https://organize.directory">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -46,51 +26,20 @@
     <meta name="color-scheme" content="light">
     <title>Organize Directory - Find Local Action Groups</title>
 
-    <!-- URL Normalizer - Reduces worker calls -->
-    <script>
-        // Simplified and optimized link handling
-        document.addEventListener('click', function (e) {
-            // Find clicked anchor element
-            let anchor = e.target.closest('a');
-            if (!anchor) return;
-
-            // Only handle internal links
-            let href = anchor.getAttribute('href');
-            if (!href || href.startsWith('http') || href.startsWith('#')) return;
-
-            // Handle trailing slashes consistently
-            if (href.endsWith('/')) {
-                href = href.slice(0, -1);
-            }
-
-            // Skip processing for root path
-            if (href === '' || href === '/') return;
-
-            // Combine conditional checks for better performance
-            const needsHtml = !href.includes('.') && !href.includes('?');
-            const isSpecialPath = href.match(/^\/(cities|states|topics|posts)\/[^/]+$/) && !href.endsWith('.html');
-
-            if ((isSpecialPath || needsHtml) && !href.endsWith('.html')) {
-                e.preventDefault();
-                window.location.href = href + '.html';
-            }
-        });
-    </script>
+    <!-- Google Analytics -->
+    <script src="/js/analytics.js" defer></script>
 
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
-    <!-- Critical CSS -->
-    <link rel="stylesheet" href="/styles.css?v=1.1.9">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/fonts/fonts.css">
-
-    <!-- Mobile menu script - Load with defer to ensure it runs after DOM is ready -->
-    <script src="/mobile-menu.js?v=1.0.1" defer></script>
 
     <!-- Initialize Components Immediately -->
     <script type="module">
         // Import sidebar as early as possible
-        import('/components/sidebar.js?v=1.0.9')
+        import('/components/sidebar.js?v=20260421')
             .then(module => {
                 const { initializeSidebar, checkAndInitializeSidebar } = module;
                 // Initialize sidebar with early detection
@@ -109,7 +58,7 @@
 
         // Initialize other components after DOM is loaded
         document.addEventListener('DOMContentLoaded', function () {
-            import('/utils/init.js?v=1.0.1')
+            import('/utils/init.js?v=20260421')
                 .then(module => {
                     const { initializeComponents } = module;
                     initializeComponents({});
@@ -168,14 +117,14 @@
                 <section class="initiative-stats">
                     <div class="stats-container">
                         <div class="stat-item">
-                            <span class="stat-number">2,466</span>
+                            <span class="stat-number">2,535</span>
                             <span class="stat-label">GROUPS</span>
-                            <span class="stat-mobile-label">GROUPS: 2,466</span>
+                            <span class="stat-mobile-label">GROUPS: 2,535</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">343</span>
+                            <span class="stat-number">356</span>
                             <span class="stat-label">CITIES</span>
-                            <span class="stat-mobile-label">CITIES: 343</span>
+                            <span class="stat-mobile-label">CITIES: 356</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-number">41</span>

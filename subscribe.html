@@ -34,6 +34,7 @@
     <meta property="og:description"
         content="Subscribe to updates from the The Organize Directory to stay informed about community support initiatives.">
     <meta property="og:image" content="https://organize.directory/preview.png">
+    <link rel="canonical" href="https://organize.directory/subscribe">
     <meta property="og:url" content="https://organize.directory/subscribe">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -46,8 +47,7 @@
         });
     </script>
     <script src="/js/analytics.js" defer></script>
-    <script src="/js/newsletter-form.js" defer></script>
-    <script src="/mobile-menu.js" defer></script>
+    <script type="module" src="/js/newsletter-form.js"></script>
                   <!-- Mobile optimizations -->
                   <script src="/js/mobile-optimizations.js" defer></script>
 </head>
@@ -75,7 +75,14 @@
                     <input type="hidden" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
                     <input type="hidden" name="subject" value="Newsletter Subscription - Organize Directory">
                     <input type="hidden" name="redirect" value="https://organize.directory/subscribe?success=true">
-                    <input type="checkbox" name="botcheck" style="display: none;">
+                    <!-- Web3Forms built-in honeypot (server-side reject if checked) -->
+                    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
+
+                    <!-- Off-screen text honeypot: bots fill every text field; we abort client-side if non-empty -->
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="website">Leave this field empty</label>
+                        <input type="text" id="website" name="website" autocomplete="off" tabindex="-1">
+                    </div>
 
                     <div class="form-group">
                         <label for="name">Your Name</label>

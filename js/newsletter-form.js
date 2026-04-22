@@ -1,6 +1,8 @@
 /**
  * Newsletter subscription form handling
  */
+import { isValidEmail } from "/utils/validation.js";
+
 document.addEventListener("DOMContentLoaded", function () {
      const form = document.getElementById("newsletterForm");
      const submitButton = document.getElementById("submit-button");
@@ -37,6 +39,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
      form.addEventListener("submit", function (e) {
           e.preventDefault();
+
+          // Honeypot: if a bot filled the hidden "website" field, silently abort.
+          // We intentionally don't show an error — let the bot think it worked.
+          const honeypot = document.getElementById("website");
+          if (honeypot && honeypot.value.trim() !== "") {
+               return false;
+          }
 
           // Reset previous errors
           resetErrors();
@@ -145,17 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
           errorInputs.forEach((input) => input.classList.remove("error"));
           errorTexts.forEach((text) => (text.style.display = "none"));
-     }
-
-     /**
-      * Validates an email address format
-      * @param {string} email - The email to validate
-      * @returns {boolean} Whether the email is valid
-      */
-     function isValidEmail(email) {
-          const re =
-               /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-          return re.test(String(email).toLowerCase());
      }
 
      /**

@@ -2,8 +2,7 @@
 const sidebarTemplate = `
     <div class="sidebar-header">
         <a href="/">
-          <img src="/logo.svg" alt="Organize Directory Logo" class="site-logo loaded" 
-               style="opacity: 1; visibility: visible;"
+          <img src="/logo.svg" alt="Organize Directory Logo" class="site-logo"
                onerror="this.style.visibility='hidden';">
         </a>
     </div>
@@ -16,17 +15,14 @@ const sidebarTemplate = `
         <a href="/contact" class="nav-link-base nav-link">Contact</a>
         <a href="/subscribe" class="nav-link-base nav-link">Subscribe</a>
     </nav>
-    
-    <div class="sidebar-footer" style="position: fixed !important; bottom: 0 !important; left: 0 !important; width: var(--sidebar-width, 280px) !important; text-align: center !important; padding: 1.5rem 0 !important; background-color: #ffd4d4 !important; z-index: 101 !important;">
-        <div class="social-links" style="display: flex !important; justify-content: center !important; align-items: center !important; gap: 2rem !important;">
-            <a href="/subscribe" class="social-link" style="display: flex !important; align-items: center !important; justify-content: center !important;" title="Subscribe to updates">
-                <img src="/icons/email.svg" alt="Subscribe" class="social-icon" style="width: 24px !important; height: 20px !important;">
+
+    <div class="sidebar-footer">
+        <div class="social-links">
+            <a href="/subscribe" class="social-link" title="Subscribe to updates">
+                <img src="/icons/email.svg" alt="Subscribe" class="social-icon">
             </a>
-            <a href="https://discord.gg/your-discord-invite" class="social-link" style="display: flex !important; align-items: center !important; justify-content: center !important;" title="Join our Discord community">
-                <img src="/icons/discord.svg" alt="Discord" class="social-icon" style="width: 24px !important; height: 20px !important; margin-bottom: 1px !important;">
-            </a>
-            <a href="https://www.instagram.com/organize.directory/" class="social-link" style="display: flex !important; align-items: center !important; justify-content: center !important;" title="Follow us on Instagram">
-                <img src="/icons/instagram.svg" alt="Instagram" class="social-icon" style="width: 24px !important; height: 24px !important;">
+            <a href="https://www.instagram.com/organize.directory/" class="social-link" title="Follow us on Instagram">
+                <img src="/icons/instagram.svg" alt="Instagram" class="social-icon">
             </a>
         </div>
     </div>
@@ -78,8 +74,6 @@ function createSidebar() {
      sidebar.className = "sidebar";
      sidebar.id = "sidebar";
      sidebar.setAttribute("aria-label", "Main navigation");
-     // Add inline style to ensure padding at the bottom
-     sidebar.style.paddingBottom = "100px";
      sidebar.innerHTML = sidebarTemplate;
 
      // Standardize sidebar insertion - always use the placeholder approach
@@ -179,56 +173,43 @@ function setActivePage(activePage) {
  * Sets up mobile sidebar toggle functionality
  */
 function setupMobileToggle() {
-     const mobileMenuButtons = document.querySelectorAll(
-          ".mobile-menu-button, #menu-toggle"
-     );
-     const overlay = document.querySelector(".mobile-menu-overlay");
      const sidebar = document.querySelector(".sidebar");
-
      if (!sidebar) return;
 
-     // Setup button click handlers
-     mobileMenuButtons.forEach((button) => {
-          if (!button) return;
+     const button = document.querySelector(".mobile-menu-button, #menu-toggle");
+     const overlay = document.querySelector(".mobile-menu-overlay");
 
-          // Remove existing event listeners by cloning
-          const newButton = button.cloneNode(true);
-          if (button.parentNode) {
-               button.parentNode.replaceChild(newButton, button);
-          }
+     const closeMenu = () => {
+          sidebar.classList.remove("active");
+          document.body.classList.remove("menu-open");
+          if (overlay) overlay.classList.remove("active");
+     };
 
-          newButton.addEventListener("click", (e) => {
+     if (button) {
+          button.addEventListener("click", (e) => {
                e.preventDefault();
                e.stopPropagation();
                sidebar.classList.toggle("active");
                document.body.classList.toggle("menu-open");
-
-               if (overlay) {
-                    overlay.classList.toggle("active");
-               }
-
-               // Ensure the logo is visible when menu is open
-               const logoImg = sidebar.querySelector(".site-logo");
-               if (logoImg && sidebar.classList.contains("active")) {
-                    logoImg.classList.add("loaded");
-                    logoImg.style.opacity = "1";
-                    logoImg.style.visibility = "visible";
-               }
-          });
-     });
-
-     // Setup overlay click handler
-     if (overlay) {
-          // Remove existing event listeners by cloning
-          const newOverlay = overlay.cloneNode(true);
-          overlay.parentNode.replaceChild(newOverlay, overlay);
-
-          newOverlay.addEventListener("click", () => {
-               sidebar.classList.remove("active");
-               document.body.classList.remove("menu-open");
-               newOverlay.classList.remove("active");
+               if (overlay) overlay.classList.toggle("active");
           });
      }
+
+     if (overlay) {
+          overlay.addEventListener("click", closeMenu);
+     }
+
+     // Close when clicking outside the sidebar/button/overlay
+     document.addEventListener("click", (event) => {
+          if (
+               sidebar.classList.contains("active") &&
+               !sidebar.contains(event.target) &&
+               (!button || !button.contains(event.target)) &&
+               (!overlay || !overlay.contains(event.target))
+          ) {
+               closeMenu();
+          }
+     });
 }
 
 /**
@@ -269,55 +250,19 @@ export function adjustPaths(sidebar, depth = 0) {
      }
 }
 
-// Initialize on DOMContentLoaded only if not already initialized
-document.addEventListener("DOMContentLoaded", () => {
+/**
+ * Run a callback once the DOM is ready (or immediately if it already is).
+ */
+function onReady(fn) {
+     if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", fn, { once: true });
+     } else {
+          fn();
+     }
+}
+
+onReady(() => {
      if (!window.sidebarInitialized) {
           initializeSidebar();
      }
-
-     // Add extra code to ensure footer positioning
-     ensureSidebarFooterPosition();
 });
-
-// Also initialize immediately if the document is already loaded
-if (document.readyState !== "loading" && !window.sidebarInitialized) {
-     initializeSidebar();
-     // Also ensure footer positioning
-     ensureSidebarFooterPosition();
-}
-
-/**
- * Function to ensure the sidebar footer is positioned correctly
- */
-function ensureSidebarFooterPosition() {
-     setTimeout(() => {
-          const footer = document.querySelector(".sidebar-footer");
-          if (footer) {
-               // Force the footer to be positioned correctly
-               Object.assign(footer.style, {
-                    position: "fixed",
-                    bottom: "0",
-                    left: "0",
-                    width: "var(--sidebar-width, 280px)",
-                    textAlign: "center",
-                    padding: "1.5rem 0",
-                    backgroundColor: "#ffd4d4",
-                    zIndex: "101",
-                    borderRight: "2px solid var(--border-color)",
-               });
-
-               // Ensure social links are centered
-               const socialLinks = footer.querySelector(".social-links");
-               if (socialLinks) {
-                    Object.assign(socialLinks.style, {
-                         display: "flex",
-                         justifyContent: "center",
-                         alignItems: "center",
-                         gap: "2rem",
-                    });
-               }
-
-               // No need to set color since we're using images now
-          }
-     }, 100); // Small delay to ensure DOM is fully processed
-}

@@ -16,11 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
      if (isMobile) {
           loadScript("/js/back-to-top.js");
 
-          // Only load mobile TOC enhancements when a TOC is present
-          if (document.querySelector(".toc")) {
-               loadScript("/js/mobile-toc.js");
-          }
-
           // Only load state-page script on state pages
           if (document.querySelector(".state-page")) {
                loadScript("/js/state-page-mobile.js");

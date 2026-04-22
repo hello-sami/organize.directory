@@ -464,6 +464,7 @@ li {
      z-index: 100; /* Increased z-index to ensure it stays above other elements */
      border-right: 2px solid var(--border-color);
      overflow-y: auto; /* Changed from hidden to auto to allow scrolling */
+     padding-bottom: 100px; /* Reserve space so scrolled nav doesn't hide under .sidebar-footer */
 }
 
 .sidebar-header {
@@ -566,6 +567,45 @@ li {
      margin-top: auto;
      font-weight: 600;
      text-transform: lowercase;
+}
+
+/* Sidebar footer (social links row, anchored to bottom of sidebar) */
+.sidebar-footer {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     width: 100%;
+     padding: 1.5rem 0;
+     background-color: #ffd4d4;
+     text-align: center;
+     z-index: 101;
+}
+
+.social-links {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 2rem;
+}
+
+.social-link {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 32px;
+     height: 32px;
+     color: #a30000;
+     transition: transform 0.2s ease;
+}
+
+.social-link:hover {
+     transform: translateY(-2px);
+}
+
+.social-icon {
+     width: 24px;
+     height: 20px;
 }
 
 /* Mobile Menu */
@@ -2067,45 +2107,15 @@ textarea.error {
      border-color: #dc2626;
 }
 
-/* Captcha styles */
-.captcha-challenge {
-     display: flex;
-     align-items: center;
-     gap: 1rem;
-     flex-wrap: wrap;
-}
-
-.captcha-challenge span {
-     font-size: 1.1rem;
-     font-weight: 500;
-     min-width: 120px;
-}
-
-.captcha-challenge input {
-     flex: 1;
-     min-width: 100px;
-     max-width: 200px;
-}
-
-.captcha-refresh {
-     background-color: var(--bg-medium);
-     border: 1px solid var(--red-base);
-     border-radius: 4px;
-     width: 30px;
-     height: 30px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     cursor: pointer;
-     color: var(--red-base);
-     font-size: 1rem;
-     padding: 0;
-     transition: all 0.2s ease;
-}
-
-.captcha-refresh:hover {
-     background-color: var(--red-light);
-     color: white;
+/* Off-screen honeypot field — must remain hidden from real users but
+   present in the DOM so naive bots find and fill it */
+.hp-field {
+     position: absolute;
+     left: -9999px;
+     top: auto;
+     width: 1px;
+     height: 1px;
+     overflow: hidden;
 }
 
 .required {
@@ -3863,20 +3873,6 @@ html .initiative-stats,
           font-size: 14px;
      }
 
-     /* Mobile-optimized captcha */
-     .captcha-challenge {
-          flex-wrap: wrap;
-     }
-
-     .captcha-challenge span {
-          width: 100%;
-          margin-bottom: 8px;
-     }
-
-     .captcha-challenge input {
-          flex: 1;
-          min-width: calc(100% - 50px);
-     }
 }
 
 /* Back to top button for mobile scrolling */

@@ -17,6 +17,7 @@
     <meta property="og:description"
         content="Find mutual aid networks, support initiatives, and community resources by location.">
     <meta property="og:image" content="https://organize.directory/preview.png">
+    <link rel="canonical" href="https://organize.directory/location">
     <meta property="og:url" content="https://organize.directory/location">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -25,7 +26,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="/fonts/fonts.css">
-    <link rel="stylesheet" href="/styles.css?v=1.1.9">
+    <link rel="stylesheet" href="/styles.css?v=20260421">
 
     <!-- Font pre-loading and anti-flash strategies -->
     <style>
@@ -75,17 +76,12 @@
             },
             timeout: 2000, // 2 seconds timeout
             active: function () {
-                // Measure font load time
-                window.fontLoadingTime = performance.now() - window.fontLoadingStart;
-                console.log('Fonts loaded in ' + window.fontLoadingTime + 'ms');
-
                 // Update CSS class to show fonts
                 document.documentElement.classList.remove('wf-loading');
                 document.documentElement.classList.add('wf-active');
             },
             inactive: function () {
                 // If fonts fail to load, still show content
-                console.warn('Web Font Loader timed out after 2000ms');
                 document.documentElement.classList.remove('wf-loading');
                 document.documentElement.classList.add('wf-inactive');
             },
@@ -97,8 +93,6 @@
     </script>
 
     <!-- Mobile menu script - Load with defer to ensure it runs after DOM is ready -->
-    <script src="/mobile-menu.js?v=1.0.1" defer></script>
-
     <!-- Include the title search script -->
     <script src="/js/title-search.js" defer></script>
 
@@ -122,7 +116,6 @@
                 locationLink.setAttribute('aria-current', 'page');
             }
 
-            // Removed mobile menu toggling code to avoid conflicts with mobile-menu.js
         }
 
         // Execute immediately
@@ -132,7 +125,7 @@
     <!-- Load full sidebar functionality asynchronously -->
     <script type="module">
         // Import sidebar for enhanced functionality
-        import('/components/sidebar.js?v=1.0.9')
+        import('/components/sidebar.js?v=20260421')
             .then(module => {
                 const { checkAndInitializeSidebar } = module;
                 // Initialize full sidebar 
@@ -142,7 +135,7 @@
 
         // Initialize other components after DOM is loaded
         document.addEventListener('DOMContentLoaded', function () {
-            import('/utils/init.js?v=1.0.1')
+            import('/utils/init.js?v=20260421')
                 .then(module => {
                     const { initializeComponents } = module;
                     initializeComponents({});
@@ -233,7 +226,7 @@
         </main>
     </div>
 
-    <script src="/js/analytics.js" type="module" async=""></script>
+    <script src="/js/analytics.js" defer></script>
 </body>
 
 </html>

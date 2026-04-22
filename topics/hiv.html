@@ -3,13 +3,7 @@
 
 <head>
 <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-QJ03RCM35H');
-  </script>
+  <script src="/js/analytics.js" defer></script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +15,7 @@
   <title>HIV Support - The Organize Directory</title>
   <meta name="description" content="Organizations working to support people living with HIV and prevent new infections
                     through mutual aid and community care.">
+  <link rel="canonical" href="https://organize.directory/topics/hiv">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="HIV Support - The Organize Directory">
@@ -51,8 +46,6 @@
     <div id="sidebar-placeholder"></div>
 
     <main class="content" role="main">
-      <header id="header" class="page-header"></header>
-
       <div class="city-page state-page">
         <div class="breadcrumb">
           <a href="/topics">Topics</a>
@@ -67,7 +60,7 @@
   <section id="regional-organizations" class="city-section">
     <h2>Regional Organizations</h2>
     <div class="initiative">
-      <a href="https://southernaidscoalition.org/">Southern AIDS Coalition</a>
+      <a href="https://southernaidscoalition.org/" target="_blank" rel="noopener noreferrer">Southern AIDS Coalition</a>
       <p>A community-centered organization fostering mutual aid and healthcare access through HIV support and advocacy across the Southern United States. They coordinate capacity building, leadership development, strategic grantmaking, and solidarity networks while building power through policy advocacy, research, and creating spaces for community-driven solutions to end the HIV epidemic in the South. Their work includes direct support services, educational initiatives, and building coalitions to address healthcare disparities in the region.</p>
     </div>
   </section>
@@ -75,7 +68,6 @@
     </main>
   </div>
 
-  <script src="/mobile-menu.js" defer></script>
   <script src="/js/initiative-collapsible.js" defer></script>
 </body>
 

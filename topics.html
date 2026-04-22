@@ -3,14 +3,7 @@
 
 <head>
     <!-- Google Analytics -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QJ03RCM35H"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-QJ03RCM35H');
-    </script>
-
+    <script src="/js/analytics.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, text-size-adjust=100%, -webkit-text-size-adjust=100%">
@@ -26,6 +19,7 @@
     <meta property="og:description"
         content="Browse mutual aid networks and community initiatives by topic or issue area.">
     <meta property="og:image" content="https://organize.directory/preview.png">
+    <link rel="canonical" href="https://organize.directory/topics">
     <meta property="og:url" content="https://organize.directory/topics">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -33,18 +27,16 @@
     <title>Topics - The Organize Directory</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css?v=1.1.9">
+    <link rel="stylesheet" href="/styles.css?v=20260421">
     <link rel="stylesheet" href="/fonts/fonts.css">
 
     <!-- Font Awesome - Local Implementation -->
-    <link rel="stylesheet" href="/css/fa-subset.css?v=1.0.1">
+    <link rel="stylesheet" href="/css/fa-subset.css?v=20260421">
 
     <!-- Font Awesome Support Script -->
-    <script src="/js/font-awesome-loader.js?v=1.0.3" defer></script>
+    <script src="/js/font-awesome-loader.js?v=20260421" defer></script>
 
     <!-- Mobile menu script - Load with defer to ensure it runs after DOM is ready -->
-    <script src="/mobile-menu.js?v=1.0.1" defer></script>
-
     <!-- Mobile optimizations -->
     <script src="/js/mobile-optimizations.js" defer></script>
 </head>
@@ -226,8 +218,8 @@
 
     <!-- Scripts -->
     <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js?v=1.0.9';
-        import { initializeComponents } from '/utils/init.js?v=1.0.1';
+        import { initializeSidebar } from '/components/sidebar.js?v=20260421';
+        import { initializeComponents } from '/utils/init.js?v=20260421';
 
         // Create a function to fix navigation highlights
         function fixNavigationHighlights() {
@@ -263,10 +255,8 @@
                     style.getPropertyValue('visibility') !== 'hidden' &&
                     parseFloat(style.getPropertyValue('opacity')) > 0;
 
-                // If icons are not visible
+                // If icons are not visible, mark failed ones for fallback styling
                 if (!isVisible) {
-                    console.log('Icon issues detected, applying fixes...');
-                    // Add fallback class that has styles in the main stylesheet
                     icons.forEach(icon => {
                         if (icon.clientWidth < 5 || icon.clientHeight < 5) {
                             icon.classList.add('icon-failed');
@@ -320,7 +310,6 @@
                 const icons = document.querySelectorAll('.topic-icon');
                 icons.forEach(icon => {
                     if (icon.clientWidth < 5 || icon.clientHeight < 5) {
-                        console.warn('Icons still not loading properly after 3s');
                         icon.classList.add('icon-failed');
                     }
                 });

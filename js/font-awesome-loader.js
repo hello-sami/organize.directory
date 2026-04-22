@@ -19,7 +19,7 @@
           const link = document.createElement("link");
           link.rel = "stylesheet";
           link.id = "font-awesome-css";
-          link.href = "/css/fa-subset.css?v=1.0.1";
+          link.href = "/css/fa-subset.css?v=20260421";
 
           // Set loading event handlers
           link.onload = function () {
