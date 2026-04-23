@@ -1,115 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Washington DC Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Washington DC. Connect with local organizations and community resources.">
+  <title>Washington DC — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Washington DC.">
   <link rel="canonical" href="https://organize.directory/washington-dc">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Washington DC Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Washington DC. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Washington DC — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Washington DC.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/washington-dc">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb"><a href="/location">States</a><span>›</span><span>Washington DC</span></div>
+<main id="main">
 
-        <h1>Washington DC</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Washington DC</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://www.lavenderfund.org/" target="_blank" rel="noopener noreferrer">Lavender Fund</a>
-      <p>A mutual aid network providing direct support and resources to ensure reproductive healthcare access. They coordinate funding assistance, practical support, and community care while building power through reproductive justice organizing and solidarity networks.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/ward2mutualaid" target="_blank" rel="noopener noreferrer">Ward 2 Mutual Aid</a>
-      <p>A neighborhood-based mutual aid network providing direct support and resources to residents of DC's Ward 2. They coordinate food distribution, emergency assistance, and solidarity networks while building power through community organizing, direct support, and creating spaces for neighbor-to-neighbor aid.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/surj_dc/" target="_blank" rel="noopener noreferrer">SURJ DC</a>
-      <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in Washington DC. They coordinate community organizing, mobilizing, and education initiatives while building power through political education, direct action support, and creating spaces for accountable organizing in partnership with BIPOC-led organizations.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.harrietsdreams.org/" target="_blank" rel="noopener noreferrer">Harriet's Dreams</a>
-      <p>A grassroots organization fostering mutual aid and community solidarity through collective organizing in Washington DC. They coordinate direct support initiatives, political education, and solidarity networks while building power through community organizing and creating spaces for collective liberation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.sptdc.com/" target="_blank" rel="noopener noreferrer">Stop Police Terror DC</a>
-      <p>A community organization fostering mutual aid and solidarity through organizing against police violence in Washington DC. They coordinate direct action support, political education, and solidarity networks while building power through community organizing and creating spaces for collective resistance.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.facebook.com/FFOIP" target="_blank" rel="noopener noreferrer">Families and Friends of Incarcerated People (FFOIP)</a>
-      <p>A grassroots organization fostering mutual aid and community solidarity through support for incarcerated people and their families in Washington DC. They coordinate direct support initiatives, advocacy, and solidarity networks while building power through community organizing and creating spaces for family support and collective care.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.belovedcommunityincubator.org/" target="_blank" rel="noopener noreferrer">Beloved Community Incubator</a>
-      <p>A community-based organization fostering mutual aid and economic justice through cooperative development in the DC metro area. They coordinate worker-owned business incubation, solidarity economy initiatives, and community wealth building while creating spaces for economic democracy, racial equity, and collective liberation through their various programs and support networks.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/foodnotbombsdc/" target="_blank" rel="noopener noreferrer">Food Not Bombs DC</a>
-      <p>A mutual aid collective fostering food justice and community solidarity through free food sharing in Washington, DC. They coordinate regular meal distributions, food recovery initiatives, and solidarity networks while building power through direct action, community care, and creating spaces for food sovereignty and collective nourishment.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://claudiajonesschool.org/" target="_blank" rel="noopener noreferrer">Claudia Jones School</a>
-      <p>The Claudia Jones School for Political Education is a popular education organization aiming to build the political consciousness of the Washington, D.C. working-class community.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/eormutualaid/" target="_blank" rel="noopener noreferrer">East of the River Mutual Aid</a>
-      <p>Part of DC Mutual Network. Representing ward 7 and 8</p>
-    </div>
-    <div class="initiative">
-      <a href="https://freemindsbookclub.org/" target="_blank" rel="noopener noreferrer">Free Minds Book Club</a>
-      <p>Free Minds uses the transformative tools of books, writing, and peacebuilding to create a community of support, assisting incarcerated and formerly incarcerated youths and adults to achieve their education, career, and life goals, write new chapters in their lives, and become powerful voices for change.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/dciwoc/" target="_blank" rel="noopener noreferrer">DC IWOC (Incarcerated Workers Organizing Committee</a>
-      <p>Resisting the state through an abolitionist inside-outside network, on occupied Piscataway, Manahoac, Appamattuck, Chesapeake &amp; Tutelo lands</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Washington DC</h1>
+    <p class="meta">
+      <b>12</b> groups
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Washington DC</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Washington DC…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="lavender fund" data-desc="a mutual aid network providing direct support and resources to ensure reproductive healthcare access. they coordinate funding assistance, practical support, and community care while building power through reproductive justice organizing and solidarity networks.">
+          <div class="row">
+            <a class="name" href="https://www.lavenderfund.org/" target="_blank" rel="noopener noreferrer">Lavender Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">lavenderfund.org</span>
+          </div>
+          <p class="desc">A mutual aid network providing direct support and resources to ensure reproductive healthcare access. They coordinate funding assistance, practical support, and community care while building power through reproductive justice organizing and solidarity networks.</p>
+        </li>
+        <li data-name="ward 2 mutual aid" data-desc="a neighborhood-based mutual aid network providing direct support and resources to residents of dc's ward 2. they coordinate food distribution, emergency assistance, and solidarity networks while building power through community organizing, direct support, and creating spaces for neighbor-to-neighbor aid.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/ward2mutualaid" target="_blank" rel="noopener noreferrer">Ward 2 Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A neighborhood-based mutual aid network providing direct support and resources to residents of DC's Ward 2. They coordinate food distribution, emergency assistance, and solidarity networks while building power through community organizing, direct support, and creating spaces for neighbor-to-neighbor aid.</p>
+        </li>
+        <li data-name="surj dc" data-desc="a chapter of showing up for racial justice fostering mutual aid and community solidarity through white anti-racist organizing in washington dc. they coordinate community organizing, mobilizing, and education initiatives while building power through political education, direct action support, and creating spaces for accountable organizing in partnership with bipoc-led organizations.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/surj_dc/" target="_blank" rel="noopener noreferrer">SURJ DC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in Washington DC. They coordinate community organizing, mobilizing, and education initiatives while building power through political education, direct action support, and creating spaces for accountable organizing in partnership with BIPOC-led organizations.</p>
+        </li>
+        <li data-name="harriet's dreams" data-desc="a grassroots organization fostering mutual aid and community solidarity through collective organizing in washington dc. they coordinate direct support initiatives, political education, and solidarity networks while building power through community organizing and creating spaces for collective liberation.">
+          <div class="row">
+            <a class="name" href="https://www.harrietsdreams.org/" target="_blank" rel="noopener noreferrer">Harriet's Dreams <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">harrietsdreams.org</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community solidarity through collective organizing in Washington DC. They coordinate direct support initiatives, political education, and solidarity networks while building power through community organizing and creating spaces for collective liberation.</p>
+        </li>
+        <li data-name="stop police terror dc" data-desc="a community organization fostering mutual aid and solidarity through organizing against police violence in washington dc. they coordinate direct action support, political education, and solidarity networks while building power through community organizing and creating spaces for collective resistance.">
+          <div class="row">
+            <a class="name" href="https://www.sptdc.com/" target="_blank" rel="noopener noreferrer">Stop Police Terror DC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sptdc.com</span>
+          </div>
+          <p class="desc">A community organization fostering mutual aid and solidarity through organizing against police violence in Washington DC. They coordinate direct action support, political education, and solidarity networks while building power through community organizing and creating spaces for collective resistance.</p>
+        </li>
+        <li data-name="families and friends of incarcerated people (ffoip)" data-desc="a grassroots organization fostering mutual aid and community solidarity through support for incarcerated people and their families in washington dc. they coordinate direct support initiatives, advocacy, and solidarity networks while building power through community organizing and creating spaces for family support and collective care.">
+          <div class="row">
+            <a class="name" href="https://www.facebook.com/FFOIP" target="_blank" rel="noopener noreferrer">Families and Friends of Incarcerated People (FFOIP) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">facebook.com</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community solidarity through support for incarcerated people and their families in Washington DC. They coordinate direct support initiatives, advocacy, and solidarity networks while building power through community organizing and creating spaces for family support and collective care.</p>
+        </li>
+        <li data-name="beloved community incubator" data-desc="a community-based organization fostering mutual aid and economic justice through cooperative development in the dc metro area. they coordinate worker-owned business incubation, solidarity economy initiatives, and community wealth building while creating spaces for economic democracy, racial equity, and collective liberation through their various programs and support networks.">
+          <div class="row">
+            <a class="name" href="https://www.belovedcommunityincubator.org/" target="_blank" rel="noopener noreferrer">Beloved Community Incubator <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">belovedcommunityincubator.org</span>
+          </div>
+          <p class="desc">A community-based organization fostering mutual aid and economic justice through cooperative development in the DC metro area. They coordinate worker-owned business incubation, solidarity economy initiatives, and community wealth building while creating spaces for economic democracy, racial equity, and collective liberation through their various programs and support networks.</p>
+        </li>
+        <li data-name="food not bombs dc" data-desc="a mutual aid collective fostering food justice and community solidarity through free food sharing in washington, dc. they coordinate regular meal distributions, food recovery initiatives, and solidarity networks while building power through direct action, community care, and creating spaces for food sovereignty and collective nourishment.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/foodnotbombsdc/" target="_blank" rel="noopener noreferrer">Food Not Bombs DC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid collective fostering food justice and community solidarity through free food sharing in Washington, DC. They coordinate regular meal distributions, food recovery initiatives, and solidarity networks while building power through direct action, community care, and creating spaces for food sovereignty and collective nourishment.</p>
+        </li>
+        <li data-name="claudia jones school" data-desc="the claudia jones school for political education is a popular education organization aiming to build the political consciousness of the washington, d.c. working-class community.">
+          <div class="row">
+            <a class="name" href="https://claudiajonesschool.org/" target="_blank" rel="noopener noreferrer">Claudia Jones School <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">claudiajonesschool.org</span>
+          </div>
+          <p class="desc">The Claudia Jones School for Political Education is a popular education organization aiming to build the political consciousness of the Washington, D.C. working-class community.</p>
+        </li>
+        <li data-name="east of the river mutual aid" data-desc="part of dc mutual network. representing ward 7 and 8">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/eormutualaid/" target="_blank" rel="noopener noreferrer">East of the River Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Part of DC Mutual Network. Representing ward 7 and 8</p>
+        </li>
+        <li data-name="free minds book club" data-desc="free minds uses the transformative tools of books, writing, and peacebuilding to create a community of support, assisting incarcerated and formerly incarcerated youths and adults to achieve their education, career, and life goals, write new chapters in their lives, and become powerful voices for change.">
+          <div class="row">
+            <a class="name" href="https://freemindsbookclub.org/" target="_blank" rel="noopener noreferrer">Free Minds Book Club <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">freemindsbookclub.org</span>
+          </div>
+          <p class="desc">Free Minds uses the transformative tools of books, writing, and peacebuilding to create a community of support, assisting incarcerated and formerly incarcerated youths and adults to achieve their education, career, and life goals, write new chapters in their lives, and become powerful voices for change.</p>
+        </li>
+        <li data-name="dc iwoc (incarcerated workers organizing committee" data-desc="resisting the state through an abolitionist inside-outside network, on occupied piscataway, manahoac, appamattuck, chesapeake &amp; tutelo lands">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/dciwoc/" target="_blank" rel="noopener noreferrer">DC IWOC (Incarcerated Workers Organizing Committee <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Resisting the state through an abolitionist inside-outside network, on occupied Piscataway, Manahoac, Appamattuck, Chesapeake &amp; Tutelo lands</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

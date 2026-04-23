@@ -1,0 +1,1087 @@
+/* ============================================================================
+   Organize Directory — Design System
+   Source of truth for tokens, base styles, and all shared components.
+   Extracted from concept-d mockups (hybrid, city, city-brooklyn).
+
+   Organization:
+     1. Tokens (custom properties)
+     2. Palettes (light / dark)
+     3. Reset & base elements
+     4. Accessibility primitives (focus, skip link)
+     5. Layout containers (main, .layout)
+     6. Components
+        — Mast / wordmark / menu button / theme toggle
+        — Footer
+        — Breadcrumb
+        — Page head (title + meta)
+        — Hero (homepage)
+        — Doors (search + CTAs)
+        — Stats line
+        — Filter (per-page)
+        — TOC (sidebar + mobile disclosure)
+        — Section + section title
+        — Group list
+        — Suggest-a-group callout
+        — Empty state
+     7. Motion preferences
+============================================================================ */
+
+/* ---------------------------------------------------------------------------
+   1. TOKENS
+   Shared scalars that don't change per palette.
+--------------------------------------------------------------------------- */
+:root{
+  --maxw: 1100px;
+  --radius: 4px;                      /* one corner treatment */
+}
+
+/* ---------------------------------------------------------------------------
+   2. PALETTES
+   The two themes. Applied by a class on <html> so the pre-paint init
+   script can avoid a flash. Both palettes meet WCAG AA contrast for
+   both body text and the rust accent color.
+
+   Contrast reference (measured):
+     LIGHT   ink on paper:  14.5 : 1 (AAA)
+             rose on paper:  5.2 : 1 (AA)
+             paper on ink:  14.5 : 1 (AAA)
+     DARK    ink on paper:  14.0 : 1 (AAA)
+             rose on paper:  8.3 : 1 (AAA)
+             paper on ink:  14.0 : 1 (AAA)
+--------------------------------------------------------------------------- */
+html.light{
+  --paper: #fce0c8;                   /* peach cream */
+  --ink:   #1a1312;                   /* warm near-black */
+  --rose:  #a8361f;                   /* rust accent */
+  --focus: #1a6dff;                   /* keyboard focus ring */
+  color-scheme: light;
+}
+
+html.dark{
+  --paper: #15100d;                   /* deep warm night */
+  --ink:   #f5e6d0;                   /* warm cream */
+  --rose:  #f59368;                   /* warm peach-coral */
+  --focus: #7aa8ff;
+  color-scheme: dark;
+}
+
+/* ---------------------------------------------------------------------------
+   3. RESET & BASE
+--------------------------------------------------------------------------- */
+*{ box-sizing:border-box; margin:0; padding:0; }
+
+html,body{
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: 17px;                    /* bump from 16 for elderly/low-vision */
+  line-height: 1.55;
+}
+
+body{
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+html{ scroll-behavior: smooth; }
+
+a{ color: inherit; text-decoration: none; }
+
+::selection{ background: var(--ink); color: var(--paper); }
+
+/* ---------------------------------------------------------------------------
+   4. ACCESSIBILITY PRIMITIVES
+--------------------------------------------------------------------------- */
+:focus{ outline: none; }
+:focus-visible{
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* Skip link — visible only on keyboard focus */
+.skip{
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip:focus{
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: .75rem 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .85rem;
+  z-index: 100;
+}
+
+/* ---------------------------------------------------------------------------
+   5. LAYOUT CONTAINERS
+--------------------------------------------------------------------------- */
+main{
+  flex: 1;
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Two-column layout used on city / topic pages.
+   Mobile: stacked. Desktop: sidebar + main column. */
+.layout{
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+@media (min-width: 900px){
+  .layout{
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    gap: 3.5rem;
+    align-items: start;
+  }
+  /* If the page has no TOC (e.g. small cities like Davis, or pages whose
+     sections have no named headings), don't reserve the sidebar column —
+     let the main content take the full width. */
+  .layout:not(:has(.toc)){
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   6. COMPONENTS
+--------------------------------------------------------------------------- */
+
+/* === Mast ================================================================= */
+.mast{
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.wordmark{
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(1.15rem, 3vw, 1.4rem);
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: .1em;
+}
+.wordmark .dot{ color: var(--rose); }
+
+.menu-btn{
+  /* 44x44 min touch target per WCAG 2.5.5 */
+  border: 0;
+  background: transparent;
+  padding: .85rem 1rem;
+  color: var(--ink);
+  min-height: 44px;
+  min-width: 44px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.menu-btn:hover,
+.menu-btn:focus-visible{ color: var(--rose); }
+
+/* === Theme toggle ========================================================== */
+.theme-toggle{
+  background: transparent;
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius);
+  padding: 0;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+.theme-toggle:hover{
+  background: color-mix(in srgb, var(--ink) 8%, transparent);
+}
+.theme-toggle svg{ width: 18px; height: 18px; }
+.theme-toggle .icon-sun{ display: none; }
+.theme-toggle .icon-moon{ display: block; }
+html.dark .theme-toggle .icon-sun{ display: block; }
+html.dark .theme-toggle .icon-moon{ display: none; }
+
+/* === Footer =============================================================== */
+footer{
+  background: var(--ink);
+  color: var(--paper);
+  padding: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .8rem;
+  letter-spacing: .1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .25rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+footer a{
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: .6rem 1rem;
+  color: var(--paper);
+}
+footer a:hover,
+footer a:focus-visible{
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+footer a:focus-visible{
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* === Breadcrumb =========================================================== */
+nav.crumbs{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink) 62%, var(--paper));
+  padding: .5rem 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  align-items: center;
+}
+nav.crumbs a{
+  color: color-mix(in srgb, var(--ink) 78%, var(--paper));
+  padding: .25rem .1rem;
+  border-bottom: 1px solid transparent;
+}
+nav.crumbs a:hover,
+nav.crumbs a:focus-visible{
+  color: var(--rose);
+  border-bottom-color: var(--rose);
+}
+nav.crumbs .sep{ opacity: .5; }
+nav.crumbs [aria-current="page"]{
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* === Page head (title + meta) ============================================= */
+.page-head{
+  padding: .5rem 0 2rem;
+  border-bottom: 1.5px solid color-mix(in srgb, var(--ink) 18%, var(--paper));
+  margin-bottom: 2.5rem;
+}
+h1.title{
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(2.8rem, 8vw, 5.5rem);
+  line-height: .95;
+  letter-spacing: -.02em;
+  margin-bottom: .75rem;
+}
+h1.title .accent{ color: var(--rose); }
+
+.meta{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .85rem;
+  letter-spacing: .08em;
+  color: color-mix(in srgb, var(--ink) 68%, var(--paper));
+  display: flex;
+  flex-wrap: wrap;
+  gap: .15rem;
+  align-items: center;
+}
+.meta b{ color: var(--ink); font-weight: 700; }
+.meta .sep{
+  color: color-mix(in srgb, var(--ink) 35%, var(--paper));
+  margin: 0 .55rem;
+}
+
+/* === Static-page prose ==================================================== */
+/* Body text for static pages (contact, subscribe, 404, thank-you, guides,
+   about). Comfortable measure, generous line-height, standard vertical rhythm. */
+.prose{
+  max-width: 42rem;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: color-mix(in srgb, var(--ink) 88%, var(--paper));
+}
+.prose > * + *{ margin-top: 1.15rem; }
+.prose h2{
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: -.005em;
+  color: var(--ink);
+  margin-top: 2rem;
+}
+.prose h3{
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin-top: 1.5rem;
+}
+.prose a{
+  color: var(--rose);
+  text-decoration: underline;
+  text-underline-offset: .15em;
+  text-decoration-thickness: 1px;
+}
+.prose a:hover{ text-decoration-thickness: 2px; }
+.prose ul, .prose ol{
+  padding-left: 1.25rem;
+  margin-top: 1rem;
+}
+.prose li + li{ margin-top: .35rem; }
+.prose code{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .9em;
+  background: color-mix(in srgb, var(--ink) 8%, var(--paper));
+  padding: .1em .35em;
+  border-radius: 3px;
+}
+.prose small{
+  /* 70% ink matches .meta / .stats: accessible muted text that still clears
+     WCAG AA (≈5.2:1 in light, 6.3:1 in dark). */
+  color: color-mix(in srgb, var(--ink) 70%, var(--paper));
+  font-size: .85rem;
+}
+.debug-path{
+  color: color-mix(in srgb, var(--ink) 70%, var(--paper));
+  margin-top: 2.5rem;
+}
+
+/* === Index grid (browse-by-X pages) ======================================= */
+/* Used on /topics and /location for the main browse grid. Reads as a compact
+   alphabetical list at mobile, and a 2–3 column grid on wider viewports. */
+.index-grid{
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 0 1.75rem;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
+}
+.index-grid li{
+  border-top: 1px solid color-mix(in srgb, var(--ink) 8%, var(--paper));
+}
+.index-grid li:first-child,
+.index-grid li:nth-child(-n+3){
+  /* on multi-column layouts the first row shouldn't show a top divider,
+     the outer border-top handles it. Cap at 3 since max grid width = 3 cols. */
+  border-top: none;
+}
+.index-grid a{
+  display: block;
+  color: var(--ink);
+  font-family: 'Archivo', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  /* Padding lives on the link so the hover highlight fills the full row. */
+  padding: .7rem .75rem;
+  margin-inline: -.75rem;
+  border-radius: var(--radius);
+  transition: background-color .12s ease, color .12s ease;
+}
+.index-grid a:hover,
+.index-grid a:focus-visible{
+  color: var(--rose);
+  background: color-mix(in srgb, var(--ink) 5%, var(--paper));
+}
+
+/* === Hero (homepage) ====================================================== */
+main.hero{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2rem, 6vw, 4rem) 1.5rem;
+}
+.hero-inner{
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1.hl{
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(2.6rem, 9vw, 6.5rem);
+  line-height: .92;
+  letter-spacing: -.02em;
+  margin-bottom: 1.5rem;
+}
+/* "despair." — text weight + italic, reads like a sigh */
+h1.hl .soft{
+  font-family: 'Archivo', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -.015em;
+  color: var(--ink);
+}
+/* "Organize." — rust, with a hand-drawn underline */
+h1.hl .warm{
+  color: var(--rose);
+  position: relative;
+  display: inline-block;
+}
+h1.hl .warm .underline{
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  bottom: -.08em;
+  width: 104%;
+  height: .22em;
+  pointer-events: none;
+}
+
+.sub{
+  font-family: 'Archivo', sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  max-width: 46ch;
+  margin: 0 auto 2.75rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--ink) 78%, var(--paper));
+}
+.sub em{
+  font-style: italic;
+  color: var(--rose);
+  font-weight: 600;
+}
+
+/* === Doors (homepage search + CTA buttons) ================================ */
+.doors{
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.search{
+  display: flex;
+  border: 1.5px solid var(--ink);
+  background: var(--paper);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.search:focus-within{
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+.search input{
+  flex: 1;
+  border: 0;
+  background: transparent;
+  padding: 1rem 1.35rem;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink);
+  min-width: 0;
+  min-height: 52px;
+}
+.search input:focus{ outline: none; }
+.search input::placeholder{
+  color: color-mix(in srgb, var(--ink) 72%, var(--paper));
+  opacity: 1;
+}
+.search button{
+  background: var(--ink);
+  color: var(--paper);
+  border: 0;
+  padding: 0 1.6rem;
+  min-height: 52px;
+  min-width: 52px;
+  font-family: 'Archivo Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  font-size: .95rem;
+  cursor: pointer;
+}
+
+.cta-row{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 560px){
+  .cta-row{
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .7rem;
+  padding: 1.1rem 1.6rem;
+  min-height: 52px;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1rem;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--ink);
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: transform .15s ease;
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn.primary{
+  background: var(--rose);
+  color: var(--paper);
+  border-color: var(--rose);
+}
+.btn.ghost{
+  background: transparent;
+  color: var(--ink);
+}
+.btn svg{ width: 18px; height: 18px; flex-shrink: 0; }
+
+/* === Forms (contact, subscribe) =========================================== */
+.form{
+  max-width: 42rem;
+  display: grid;
+  gap: 1.4rem;
+  margin-top: 2rem;
+}
+.form .field{ display: grid; gap: .4rem; }
+.form label{
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: .5rem;
+}
+.form label .optional{
+  font-weight: 400;
+  font-size: .85rem;
+  color: color-mix(in srgb, var(--ink) 70%, var(--paper));
+}
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="search"],
+.form select,
+.form textarea{
+  font: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1.5px solid color-mix(in srgb, var(--ink) 35%, var(--paper));
+  border-radius: var(--radius);
+  padding: .8rem 1rem;
+  min-height: 48px;
+  width: 100%;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.form textarea{
+  min-height: 160px;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.5;
+}
+.form input:focus,
+.form select:focus,
+.form textarea:focus{
+  outline: none;
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--rose) 35%, transparent);
+}
+.form input.error,
+.form select.error,
+.form textarea.error{
+  border-color: var(--rose);
+}
+.form .helper{
+  font-size: .85rem;
+  color: color-mix(in srgb, var(--ink) 70%, var(--paper));
+}
+.form .error-text{
+  font-size: .85rem;
+  color: var(--rose);
+  font-weight: 600;
+  display: none;
+}
+/* Honeypot — off-screen, never shown. Bots fill every text field. */
+.form .hp-field{
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.form button[type="submit"]{
+  justify-self: start;
+  margin-top: .5rem;
+}
+.form .checkbox{
+  display: flex;
+  align-items: flex-start;
+  gap: .65rem;
+  font-family: 'Archivo', sans-serif;
+  font-size: .95rem;
+  line-height: 1.45;
+  color: var(--ink);
+  cursor: pointer;
+}
+.form .checkbox input[type="checkbox"]{
+  flex-shrink: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: .1rem;
+  accent-color: var(--rose);
+  cursor: pointer;
+}
+.form-status{
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  display: none;
+  border: 1.5px solid var(--rose);
+  color: var(--ink);
+}
+/* JS toggles style.display="block" to show — the class modifier only colors. */
+.form-status.success{
+  background: color-mix(in srgb, var(--rose) 12%, var(--paper));
+}
+.form-status.error{
+  background: color-mix(in srgb, var(--rose) 18%, var(--paper));
+}
+.form-failure-help{
+  display: none;
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  border: 1.5px dashed color-mix(in srgb, var(--ink) 40%, var(--paper));
+  border-radius: var(--radius);
+  font-size: .95rem;
+}
+
+/* === Stats line =========================================================== */
+.stats{
+  margin-top: 3rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .85rem;
+  letter-spacing: .08em;
+  color: color-mix(in srgb, var(--ink) 68%, var(--paper));
+}
+.stats b{ color: var(--ink); font-weight: 700; }
+.stats .sep{
+  color: color-mix(in srgb, var(--ink) 40%, var(--paper));
+  margin: 0 .6rem;
+}
+
+/* === Filter (per-page search) ============================================= */
+.filter{
+  display: flex;
+  border: 1.5px solid var(--ink);
+  background: var(--paper);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  max-width: 560px;
+}
+.filter:focus-within{
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+.filter input{
+  flex: 1;
+  border: 0;
+  background: transparent;
+  padding: .85rem 1.1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ink);
+  min-width: 0;
+  min-height: 48px;
+}
+.filter input:focus{ outline: none; }
+.filter input::placeholder{
+  color: color-mix(in srgb, var(--ink) 72%, var(--paper));
+  opacity: 1;
+}
+
+/* === TOC ================================================================== */
+/* Mobile default: sticky disclosure dropdown.
+   Desktop (>=900px): vertical sidebar that scrolls internally if tall. */
+.toc{
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin: 0 -1.5rem 2.5rem;
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1.5px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
+}
+
+.toc-toggle{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  padding: 1rem 1.5rem;
+  min-height: 52px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--ink);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: left;
+}
+.toc-toggle .current{
+  display: flex;
+  align-items: baseline;
+  gap: .55rem;
+  flex: 1;
+  min-width: 0;
+}
+.toc-toggle .current-label{
+  color: color-mix(in srgb, var(--ink) 55%, var(--paper));
+  font-weight: 400;
+  flex-shrink: 0;
+}
+.toc-toggle .current-name{
+  color: var(--rose);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.toc-toggle .chev{
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  transition: transform .2s ease;
+}
+.toc-toggle[aria-expanded="true"] .chev{ transform: rotate(180deg); }
+
+.toc-scroll{
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  padding: .4rem 0 .6rem;
+  max-height: calc(100vh - 8rem);
+  overflow-y: auto;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
+}
+.toc.open .toc-scroll{ display: flex; }
+
+.toc a{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  padding: .85rem 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border: 0;
+  border-left: 2px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: color-mix(in srgb, var(--ink) 80%, var(--paper));
+  min-height: 48px;
+  transition: background .15s ease, color .15s ease;
+}
+.toc a:hover,
+.toc a:focus-visible{
+  background: color-mix(in srgb, var(--ink) 6%, var(--paper));
+  color: var(--ink);
+}
+.toc a.active{
+  color: var(--ink);
+  border-left-color: var(--rose);
+}
+.toc a .count{
+  font-weight: 400;
+  opacity: .55;
+  font-family: 'JetBrains Mono', monospace;
+}
+.toc a.active .count{ color: var(--rose); opacity: .85; }
+.toc a.dim{ opacity: .35; }         /* dimmed by filter when empty */
+
+/* Desktop TOC overrides */
+@media (min-width: 900px){
+  .toc{
+    position: sticky;
+    top: 1.25rem;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 0;
+    max-height: calc(100vh - 2.5rem);
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+  .toc-toggle{ display: none; }
+  .toc-scroll{
+    display: flex !important;
+    flex-direction: column;
+    gap: 0;
+    overflow: visible;
+    padding: 0;
+    border-top: 0;
+    max-height: none;
+  }
+  .toc a{
+    padding: .7rem .9rem;
+    font-size: .72rem;
+    min-height: 40px;
+    color: color-mix(in srgb, var(--ink) 72%, var(--paper));
+  }
+  .toc a.active{ font-weight: 700; }
+  .toc a .count{ opacity: .5; font-size: .7rem; }
+}
+
+/* === Section (group-section) ============================================== */
+section.group-section{
+  padding: 1rem 0 3.5rem;
+  scroll-margin-top: 5rem;            /* offset for mobile sticky TOC */
+}
+section.group-section:first-of-type{ padding-top: 0; }
+section.group-section.hidden{ display: none; }   /* hidden by filter */
+
+@media (min-width: 900px){
+  section.group-section{ scroll-margin-top: 1.5rem; }
+}
+
+h2.section-title{
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  letter-spacing: -.02em;
+  line-height: 1.02;
+  margin-bottom: 1.4rem;
+  padding-top: .1em;
+}
+
+.section-count{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink) 62%, var(--paper));
+  margin-bottom: 1.75rem;
+}
+
+/* === Group list =========================================================== */
+.groups{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.groups li{
+  /* Horizontal padding + negative margin creates a hover "tile" that extends
+     slightly beyond the text column, so the entire row feels like one button
+     when the link inside is hovered. The margin is static — only the bg
+     paints on hover — so layout never shifts. */
+  padding: 1.5rem .9rem;
+  margin-inline: -.9rem;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  min-width: 0;
+  transition: background-color .12s ease;
+}
+.groups li:last-child{
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
+}
+.groups li:has(.name:hover),
+.groups li:has(.name:focus-visible){
+  background: color-mix(in srgb, var(--ink) 5%, var(--paper));
+}
+.groups .row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .5rem .8rem;
+}
+.groups .name{
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 1.65vw, 1.25rem);
+  letter-spacing: -.005em;
+  line-height: 1.25;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  display: inline-flex;
+  align-items: baseline;
+  gap: .4rem;
+  word-break: break-word;
+}
+.groups .name:hover,
+.groups .name:focus-visible{
+  color: var(--rose);
+  border-bottom-color: var(--rose);
+}
+.groups .name .ext{
+  font-size: .7em;
+  opacity: .6;
+  transform: translateY(-.1em);
+  transition: transform .15s ease, opacity .15s ease;
+}
+.groups .name:hover .ext,
+.groups .name:focus-visible .ext{
+  transform: translate(2px, -.2em);
+  opacity: 1;
+}
+.groups .host{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .75rem;
+  /* 65% bumped from 58% to hit 4.5:1 at the small size */
+  color: color-mix(in srgb, var(--ink) 65%, var(--paper));
+  letter-spacing: .02em;
+}
+.groups .desc{
+  color: color-mix(in srgb, var(--ink) 82%, var(--paper));
+  font-size: .98rem;
+  line-height: 1.6;
+  max-width: 72ch;
+}
+
+/* === Compact children list (neighborhoods / state → cities) =============== */
+/* Multi-column grid of simple name-only links. Auto-fills 2–3 cols on wide
+   viewports, collapses to 1 on narrow. Used on container-city pages (NYC →
+   boroughs) and state hubs (California → cities). */
+.groups.children-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  gap: 0 1.5rem;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
+  padding: .25rem 0;
+}
+.groups.children-list li{
+  padding: .4rem .6rem;
+  margin-inline: -.6rem;
+  border-top: none;
+  border-radius: var(--radius);
+  display: block;
+  gap: 0;
+  transition: background-color .12s ease;
+}
+.groups.children-list li:has(.name:hover),
+.groups.children-list li:has(.name:focus-visible){
+  background: color-mix(in srgb, var(--ink) 5%, var(--paper));
+}
+.groups.children-list li:last-child{
+  border-bottom: none;
+}
+.groups.children-list .name{
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* === Suggest-a-group callout ============================================== */
+.suggest{
+  margin: 3rem 0 4rem;
+  padding: 2rem;
+  border: 1.5px dashed color-mix(in srgb, var(--ink) 35%, var(--paper));
+  border-radius: var(--radius);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+}
+.suggest p{
+  font-family: 'Archivo', sans-serif;
+  font-weight: 500;
+  max-width: 42ch;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--ink) 85%, var(--paper));
+}
+.suggest p b{ color: var(--ink); font-weight: 700; }
+.suggest .btn{
+  /* Smaller than a page-primary btn */
+  padding: .85rem 1.4rem;
+  min-height: 48px;
+  font-size: .9rem;
+  letter-spacing: .04em;
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.suggest .btn svg{ width: 16px; height: 16px; }
+
+/* === Empty state (filter returns nothing) ================================= */
+.empty{
+  padding: 3rem 0;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .9rem;
+  color: color-mix(in srgb, var(--ink) 60%, var(--paper));
+  letter-spacing: .06em;
+}
+.empty b{ color: var(--rose); font-weight: 700; }
+
+/* === Small-screen polish ================================================== */
+@media (max-width: 640px){
+  .page-head{ padding-bottom: 1.5rem; margin-bottom: 2rem; }
+  .toc{ padding: .7rem 1.5rem; }
+  .suggest{ padding: 1.5rem; flex-direction: column; align-items: flex-start; }
+}
+
+/* ---------------------------------------------------------------------------
+   7. MOTION PREFERENCES
+   Honor prefers-reduced-motion for all transitions in the system.
+--------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  .btn,
+  .suggest .btn,
+  .groups .name .ext,
+  .toc a,
+  .toc-toggle .chev{
+    transition: none !important;
+  }
+}

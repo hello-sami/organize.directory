@@ -1,239 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Minneapolis / St. Paul Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Minneapolis / St. Paul. Connect with local organizations and community resources.">
+  <title>Minneapolis / St. Paul — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Minneapolis / St. Paul.">
   <link rel="canonical" href="https://organize.directory/minneapolis-st-paul">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Minneapolis / St. Paul Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Minneapolis / St. Paul. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Minneapolis / St. Paul — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Minneapolis / St. Paul.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/minneapolis-st-paul">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/minnesota">Minnesota</a>
-          <span>›</span>
-          <span>Minneapolis / St. Paul</span>
-        </div>
+<main id="main">
 
-        <h1>Minneapolis / St. Paul</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/minnesota">Minnesota</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Minneapolis / St. Paul</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://www.cuapb.org/" target="_blank" rel="noopener noreferrer">Communities United Against Police Brutality (CUAPB)</a>
-      <p>A grassroots organization coordinating mutual aid and community support initiatives focused on addressing police brutality in the Twin Cities. They organize direct support for survivors, resource sharing, and community education while building networks of solidarity through advocacy, legal support, and policy reform campaigns.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.facebook.com/fsfapv" target="_blank" rel="noopener noreferrer">Families Supporting Families Against Police Violence</a>
-      <p>A grassroots organization fostering mutual aid and community solidarity through support for families affected by police violence in the Twin Cities. They coordinate direct support initiatives, advocacy, and solidarity networks while building power through family support, community organizing, and creating spaces for healing and collective resistance.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.themjc.org/" target="_blank" rel="noopener noreferrer">Minnesota Justice Coalition</a>
-      <p>A grassroots organization providing legal and advocacy services to advance social justice and racial equity in Minnesota. They coordinate direct support through legal clinics, legislative reform initiatives, and community education while building networks of solidarity through advocacy, policy work, and creating pathways for justice system healing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.cordaleqhandyinremembranceofme.org/" target="_blank" rel="noopener noreferrer">Cordale Q Handy In Remembrance of Me
-              Foundation</a>
-      <p>A grassroots organization fostering mutual aid and community solidarity through support for families affected by police violence and advocacy for police accountability in Minnesota. They coordinate direct support initiatives, community healing programs, and solidarity networks while building power through family support, community organizing, and creating spaces for remembrance and systemic change.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.futuresbeyondcriminalization.org/" target="_blank" rel="noopener noreferrer">Futures Beyond Criminalization</a>
-      <p>A mutual aid collective organizing community-based alternatives to policing and incarceration in Minneapolis. They coordinate direct support through transformative justice practices, community safety initiatives, and resource sharing while building networks of solidarity through political education, community organizing, and advocacy for non-carceral solutions.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://eastsidefreedomlibrary.org/" target="_blank" rel="noopener noreferrer">East Side Freedom Library</a>
-      <p>A community library fostering mutual aid and solidarity through labor history, immigrant stories, and social justice education in St. Paul. They coordinate educational programs, archival access, and solidarity networks while building power through community knowledge, cultural preservation, and creating spaces for learning and movement building with a focus on labor and immigrant histories.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://maydaybookstore.org/" target="_blank" rel="noopener noreferrer">May Day Books</a>
-      <p>A volunteer-run radical bookstore fostering mutual aid and community power through left-wing literature and political education in Minneapolis's West Bank. They coordinate book access, educational events, and solidarity networks while building power through progressive literature, community gatherings, and creating spaces for political education and movement building since 1975.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://birchbarkbooks.com/" target="_blank" rel="noopener noreferrer">Birch Bark Books</a>
-      <p>An Indigenous-owned bookstore fostering mutual aid and community power through Native literature and cultural programming in Minneapolis. They coordinate book access, educational resources, and solidarity networks while building power through Indigenous storytelling, community events, and creating spaces for Native voices and movement building.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/tcencampmentresponder/" target="_blank" rel="noopener noreferrer">Twin Cities Encampment Responders</a>
-      <p>We are individuals coming together to organize eviction defense, cop watch, &amp; mutual aid for the Twin Cities encampments</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/blackandpinkmpls/" target="_blank" rel="noopener noreferrer">Black and Pink MPLS</a>
-      <p>Black &amp; Pink MPLS works towards prison abolition in MN by providing pen pal matching to LGBTQIA2S+ folks on the inside.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.blackgarnetbooks.com/" target="_blank" rel="noopener noreferrer">Black Garnet Books</a>
-      <p>A Black-owned bookstore fostering mutual aid and community power through Black and BIPOC literature in Minneapolis. They coordinate book access, educational resources, and solidarity networks while building power through representation, community events, and creating spaces for BIPOC voices and movement building.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.boneshakerbooks.com/" target="_blank" rel="noopener noreferrer">Boneshaker Books</a>
-      <p>A volunteer-run radical bookstore in Minneapolis's Seward neighborhood coordinating mutual aid through accessible radical literature and community space. They organize resource sharing and political education while building networks of solidarity through their bookstore, events, and community programming. Their space serves as a hub for leftist politics, movement support, and collective organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://blackbirdrevolt.com/" target="_blank" rel="noopener noreferrer">Blackbird Revolt</a>
-      <p>A Black-owned design studio fostering mutual aid and community power through movement-centered design and creative services in Minneapolis. They coordinate design support, resource sharing, and solidarity networks while building power through radical aesthetics, political education, and creating visual tools for social justice movements.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.rainbowcollectiveforchange.org/" target="_blank" rel="noopener noreferrer">Rainbow Collective for Change</a>
-      <p>An organization building mutual aid networks and community support for LGBTQ+ families with children in the Twin Cities. They coordinate direct support through playgroups, educational programs, and family resources while building inclusive spaces and advocating for LGBTQ+ family equity through community organizing and solidarity networks.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://tigerrs.org/" target="_blank" rel="noopener noreferrer">TIGERRS (Transgender, Intersex, Gender-Expansive Revolutionary
-              Resources &amp; Services)</a>
-      <p>TIGERRS is a nonhierarchical collective dedicated to delivering programs and resources that build solidarity and safety among transgender, intersex and gender-expansive Minnesotans.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.mntransgenderhealth.org/" target="_blank" rel="noopener noreferrer">Minnesot Transgender Health Coalition</a>
-      <p>The Minnesota Transgender Health Coalition is committed to improving health care access and the quality of health care received by trans and gender non-conforming people through education, resources, and advocacy.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://indigenouspeoplestf.org/" target="_blank" rel="noopener noreferrer">Indigenous Peoples Task Force</a>
-      <p>We were founded in 1987 to develop and implement culturally appropriate HIV education and direct services to the Native community in Minnesota.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://womenagainstmilitarymadness.org/" target="_blank" rel="noopener noreferrer">Women Against Military Madness (WAMM)</a>
-      <p>A grassroots organization coordinating mutual aid and peace initiatives in the Twin Cities. They organize direct support, resource sharing, and community education while building networks of solidarity through anti-war organizing, peace advocacy, and social justice campaigns.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://southsideharmreduction.org/" target="_blank" rel="noopener noreferrer">Southside Harm Reduction Services</a>
-      <p>A mutual aid collective providing harm reduction services and community support in Minneapolis. They coordinate direct assistance through syringe access, naloxone distribution, and health resources while building networks of solidarity through peer support, community education, and advocacy for harm reduction approaches to public health.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.swopmpls.com/" target="_blank" rel="noopener noreferrer">Sex Workers Outreach Project (SWOP) Minneapolis</a>
-      <p>A mutual aid collective organizing direct support and advocacy for sex workers in Minneapolis. They coordinate resource sharing, community care, and solidarity initiatives while building networks of support through harm reduction, decriminalization advocacy, and community education.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://racialjusticenetwork.com/" target="_blank" rel="noopener noreferrer">Racial Justice Network (RJN)</a>
-      <p>A multi-racial, grassroots organization fostering mutual aid and community solidarity through racial justice initiatives in the Twin Cities. They coordinate direct support through community relief, crisis response, and educational programs while building networks of solidarity through advocacy, policy reform, and creating spaces for multi-racial coalition building and systemic change.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.surjtc.org/" target="_blank" rel="noopener noreferrer">Showing Up for Racial Justice (SURJ) - Twin Cities</a>
-      <p>A grassroots organization coordinating mutual aid and community support initiatives focused on mobilizing people for racial justice in the Twin Cities. They organize direct action, resource sharing, and political education while building networks of solidarity through community organizing and racial justice advocacy.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://librarypatronsunion.com/" target="_blank" rel="noopener noreferrer">Library Patrons Union</a>
-      <p>A grassroots collective organizing mutual aid and community support initiatives to protect and expand public library services in Minneapolis. They coordinate direct action, resource sharing, and community advocacy while building networks of solidarity through patron organizing, library worker support, and defending public spaces as essential community resources.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.facebook.com/groups/275202273670126/" target="_blank" rel="noopener noreferrer">St. Paul Mutual Aid</a>
-      <p>A grassroots network coordinating mutual aid and community support initiatives in St. Paul. They organize direct assistance, resource sharing, and neighborhood solidarity through their Facebook group, connecting community members to help meet immediate needs while building sustainable networks of care and support.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/sanctuarysupplydepot" target="_blank" rel="noopener noreferrer">Sanctuary Supply Depot</a>
-      <p>A mutual aid collective coordinating community resource distribution and support initiatives in Minneapolis. They organize direct assistance through supply distribution, resource sharing, and solidarity networks while building sustainable systems of community care and mutual support.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/ayu_mpls" target="_blank" rel="noopener noreferrer">AYU</a>
-      <p>A mutual aid collective fostering community support and solidarity through direct assistance in Minneapolis. They coordinate resource distribution, community care initiatives, and solidarity networks while building sustainable systems of mutual support and collective empowerment.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://gbclt.org/" target="_blank" rel="noopener noreferrer">Greater Boston Community Land Trust</a>
-      <p>A community land trust fostering mutual aid and housing justice through collective land ownership and community control in Minneapolis. They coordinate affordable housing initiatives, tenant support, and solidarity networks while building power through community ownership, anti-displacement work, and creating spaces for sustainable, community-controlled housing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/communitykitchenmpls/" target="_blank" rel="noopener noreferrer">Community Kitchen MPLS</a>
-      <p>A mutual aid collective fostering food security through community-based meal preparation and distribution in Minneapolis. They coordinate free meal programs, food resource sharing, and solidarity networks while building power through collective food sovereignty, community care, and creating spaces for nourishment and connection.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/SPIRAL_MN/" target="_blank" rel="noopener noreferrer">SPIRAL Collective</a>
-      <p>Raising money for Lyft rides for abortions and virtual trainings for abortion doulas</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/thirdworldpaisa/" target="_blank" rel="noopener noreferrer">People's Anti-Imperialist Study &amp; Action</a>
-      <p>Third-World diasporas in 'mpls/stp' building support for revolutionary struggles/liberation movements in &amp; beyond amerika. Hosts film screenings, teach-ins, and art builds against imperialism.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/campnenookaasi/" target="_blank" rel="noopener noreferrer">Camp Nenookaasi</a>
-      <p>A community based healing camp rooted in native practices &amp; inclusive of all unsheltered relatives</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.northstarhealthcollective.org/" target="_blank" rel="noopener noreferrer">North Star Health Collective</a>
-      <p>North Star is a community health collective focused on providing first aid and emergency care at protests, direct actions, and in moments of general upheaval around the Twin Cities.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://northdef.wordpress.com/" target="_blank" rel="noopener noreferrer">Near North Camp Defense</a>
-      <p>Help the people living at this encampment in Harrison neighborhood stand against the Minneapolis office of Community Planning &amp; Economic Development— and their brutal enforcers, the infamous Minneapolis Police Department.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.twincitieslogistics.org/" target="_blank" rel="noopener noreferrer">Twin Cities Logistics Collective</a>
-      <p>TLC currently works in collaboration with multiple community garden and food distribution projects, as well as home gardeners towards building food resiliency in South Minneapolis.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/southsidekwes/" target="_blank" rel="noopener noreferrer">Southside Kwes</a>
-      <p>Native Women and Two-Spirit led community based Outreach team STOODIS</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/ayu_mpls/" target="_blank" rel="noopener noreferrer">Autonomous Yurt Union - Minneapolis</a>
-      <p>Autonomous yurt-inspired design builds &amp; deploys in support of unhoused neighbors in the Twin Cities area</p>
-    </div>
-    <div class="initiative">
-      <a href="https://grapevinecollective.org/" target="_blank" rel="noopener noreferrer">Grapevine Collective</a>
-      <p>We’re transforming a church building into a healing justice center, supporting survival programs and revolutionary life in South Minneapolis.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/ayu_stpaul/" target="_blank" rel="noopener noreferrer">Autonomous Yurt Union St. Paul</a>
-      <p>autonomous yurt-inspired design builds &amp; deploys in support of unhoused neighbors in St Paul</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.ncfa-mn.org/" target="_blank" rel="noopener noreferrer">North Country Food Alliance</a>
-      <p>With your help, we share healthy, culturally appropriate food; build community gardens; support local farmers; and reduce commercial and local food waste.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/sanctuarysupplydepot/" target="_blank" rel="noopener noreferrer">Sancutary Supply Depot</a>
-      <p>We are a central hub aimed at facilitating the collection and distribution of basic survival supplies for our unhoused neighbors.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.facebook.com/ThisIsHomeBase/" target="_blank" rel="noopener noreferrer">Home Base Central</a>
-      <p>A collective dedicated to housing justice, support for the unhoused, and mutual aid.</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Minneapolis / St. Paul</h1>
+    <p class="meta">
+      <b>41</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      Minnesota
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Minneapolis / St. Paul</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Minneapolis / St. Paul…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="communities united against police brutality (cuapb)" data-desc="a grassroots organization coordinating mutual aid and community support initiatives focused on addressing police brutality in the twin cities. they organize direct support for survivors, resource sharing, and community education while building networks of solidarity through advocacy, legal support, and policy reform campaigns.">
+          <div class="row">
+            <a class="name" href="https://www.cuapb.org/" target="_blank" rel="noopener noreferrer">Communities United Against Police Brutality (CUAPB) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">cuapb.org</span>
+          </div>
+          <p class="desc">A grassroots organization coordinating mutual aid and community support initiatives focused on addressing police brutality in the Twin Cities. They organize direct support for survivors, resource sharing, and community education while building networks of solidarity through advocacy, legal support, and policy reform campaigns.</p>
+        </li>
+        <li data-name="families supporting families against police violence" data-desc="a grassroots organization fostering mutual aid and community solidarity through support for families affected by police violence in the twin cities. they coordinate direct support initiatives, advocacy, and solidarity networks while building power through family support, community organizing, and creating spaces for healing and collective resistance.">
+          <div class="row">
+            <a class="name" href="https://www.facebook.com/fsfapv" target="_blank" rel="noopener noreferrer">Families Supporting Families Against Police Violence <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">facebook.com</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community solidarity through support for families affected by police violence in the Twin Cities. They coordinate direct support initiatives, advocacy, and solidarity networks while building power through family support, community organizing, and creating spaces for healing and collective resistance.</p>
+        </li>
+        <li data-name="minnesota justice coalition" data-desc="a grassroots organization providing legal and advocacy services to advance social justice and racial equity in minnesota. they coordinate direct support through legal clinics, legislative reform initiatives, and community education while building networks of solidarity through advocacy, policy work, and creating pathways for justice system healing.">
+          <div class="row">
+            <a class="name" href="https://www.themjc.org/" target="_blank" rel="noopener noreferrer">Minnesota Justice Coalition <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">themjc.org</span>
+          </div>
+          <p class="desc">A grassroots organization providing legal and advocacy services to advance social justice and racial equity in Minnesota. They coordinate direct support through legal clinics, legislative reform initiatives, and community education while building networks of solidarity through advocacy, policy work, and creating pathways for justice system healing.</p>
+        </li>
+        <li data-name="cordale q handy in remembrance of me
+              foundation" data-desc="a grassroots organization fostering mutual aid and community solidarity through support for families affected by police violence and advocacy for police accountability in minnesota. they coordinate direct support initiatives, community healing programs, and solidarity networks while building power through family support, community organizing, and creating spaces for remembrance and systemic change.">
+          <div class="row">
+            <a class="name" href="https://www.cordaleqhandyinremembranceofme.org/" target="_blank" rel="noopener noreferrer">Cordale Q Handy In Remembrance of Me
+              Foundation <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">cordaleqhandyinremembranceofme.org</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community solidarity through support for families affected by police violence and advocacy for police accountability in Minnesota. They coordinate direct support initiatives, community healing programs, and solidarity networks while building power through family support, community organizing, and creating spaces for remembrance and systemic change.</p>
+        </li>
+        <li data-name="futures beyond criminalization" data-desc="a mutual aid collective organizing community-based alternatives to policing and incarceration in minneapolis. they coordinate direct support through transformative justice practices, community safety initiatives, and resource sharing while building networks of solidarity through political education, community organizing, and advocacy for non-carceral solutions.">
+          <div class="row">
+            <a class="name" href="https://www.futuresbeyondcriminalization.org/" target="_blank" rel="noopener noreferrer">Futures Beyond Criminalization <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">futuresbeyondcriminalization.org</span>
+          </div>
+          <p class="desc">A mutual aid collective organizing community-based alternatives to policing and incarceration in Minneapolis. They coordinate direct support through transformative justice practices, community safety initiatives, and resource sharing while building networks of solidarity through political education, community organizing, and advocacy for non-carceral solutions.</p>
+        </li>
+        <li data-name="east side freedom library" data-desc="a community library fostering mutual aid and solidarity through labor history, immigrant stories, and social justice education in st. paul. they coordinate educational programs, archival access, and solidarity networks while building power through community knowledge, cultural preservation, and creating spaces for learning and movement building with a focus on labor and immigrant histories.">
+          <div class="row">
+            <a class="name" href="https://eastsidefreedomlibrary.org/" target="_blank" rel="noopener noreferrer">East Side Freedom Library <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">eastsidefreedomlibrary.org</span>
+          </div>
+          <p class="desc">A community library fostering mutual aid and solidarity through labor history, immigrant stories, and social justice education in St. Paul. They coordinate educational programs, archival access, and solidarity networks while building power through community knowledge, cultural preservation, and creating spaces for learning and movement building with a focus on labor and immigrant histories.</p>
+        </li>
+        <li data-name="may day books" data-desc="a volunteer-run radical bookstore fostering mutual aid and community power through left-wing literature and political education in minneapolis's west bank. they coordinate book access, educational events, and solidarity networks while building power through progressive literature, community gatherings, and creating spaces for political education and movement building since 1975.">
+          <div class="row">
+            <a class="name" href="https://maydaybookstore.org/" target="_blank" rel="noopener noreferrer">May Day Books <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">maydaybookstore.org</span>
+          </div>
+          <p class="desc">A volunteer-run radical bookstore fostering mutual aid and community power through left-wing literature and political education in Minneapolis's West Bank. They coordinate book access, educational events, and solidarity networks while building power through progressive literature, community gatherings, and creating spaces for political education and movement building since 1975.</p>
+        </li>
+        <li data-name="birch bark books" data-desc="an indigenous-owned bookstore fostering mutual aid and community power through native literature and cultural programming in minneapolis. they coordinate book access, educational resources, and solidarity networks while building power through indigenous storytelling, community events, and creating spaces for native voices and movement building.">
+          <div class="row">
+            <a class="name" href="https://birchbarkbooks.com/" target="_blank" rel="noopener noreferrer">Birch Bark Books <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">birchbarkbooks.com</span>
+          </div>
+          <p class="desc">An Indigenous-owned bookstore fostering mutual aid and community power through Native literature and cultural programming in Minneapolis. They coordinate book access, educational resources, and solidarity networks while building power through Indigenous storytelling, community events, and creating spaces for Native voices and movement building.</p>
+        </li>
+        <li data-name="twin cities encampment responders" data-desc="we are individuals coming together to organize eviction defense, cop watch, &amp; mutual aid for the twin cities encampments">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/tcencampmentresponder/" target="_blank" rel="noopener noreferrer">Twin Cities Encampment Responders <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We are individuals coming together to organize eviction defense, cop watch, &amp; mutual aid for the Twin Cities encampments</p>
+        </li>
+        <li data-name="black and pink mpls" data-desc="black &amp; pink mpls works towards prison abolition in mn by providing pen pal matching to lgbtqia2s+ folks on the inside.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/blackandpinkmpls/" target="_blank" rel="noopener noreferrer">Black and Pink MPLS <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Black &amp; Pink MPLS works towards prison abolition in MN by providing pen pal matching to LGBTQIA2S+ folks on the inside.</p>
+        </li>
+        <li data-name="black garnet books" data-desc="a black-owned bookstore fostering mutual aid and community power through black and bipoc literature in minneapolis. they coordinate book access, educational resources, and solidarity networks while building power through representation, community events, and creating spaces for bipoc voices and movement building.">
+          <div class="row">
+            <a class="name" href="https://www.blackgarnetbooks.com/" target="_blank" rel="noopener noreferrer">Black Garnet Books <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">blackgarnetbooks.com</span>
+          </div>
+          <p class="desc">A Black-owned bookstore fostering mutual aid and community power through Black and BIPOC literature in Minneapolis. They coordinate book access, educational resources, and solidarity networks while building power through representation, community events, and creating spaces for BIPOC voices and movement building.</p>
+        </li>
+        <li data-name="boneshaker books" data-desc="a volunteer-run radical bookstore in minneapolis's seward neighborhood coordinating mutual aid through accessible radical literature and community space. they organize resource sharing and political education while building networks of solidarity through their bookstore, events, and community programming. their space serves as a hub for leftist politics, movement support, and collective organizing.">
+          <div class="row">
+            <a class="name" href="https://www.boneshakerbooks.com/" target="_blank" rel="noopener noreferrer">Boneshaker Books <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">boneshakerbooks.com</span>
+          </div>
+          <p class="desc">A volunteer-run radical bookstore in Minneapolis's Seward neighborhood coordinating mutual aid through accessible radical literature and community space. They organize resource sharing and political education while building networks of solidarity through their bookstore, events, and community programming. Their space serves as a hub for leftist politics, movement support, and collective organizing.</p>
+        </li>
+        <li data-name="blackbird revolt" data-desc="a black-owned design studio fostering mutual aid and community power through movement-centered design and creative services in minneapolis. they coordinate design support, resource sharing, and solidarity networks while building power through radical aesthetics, political education, and creating visual tools for social justice movements.">
+          <div class="row">
+            <a class="name" href="https://blackbirdrevolt.com/" target="_blank" rel="noopener noreferrer">Blackbird Revolt <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">blackbirdrevolt.com</span>
+          </div>
+          <p class="desc">A Black-owned design studio fostering mutual aid and community power through movement-centered design and creative services in Minneapolis. They coordinate design support, resource sharing, and solidarity networks while building power through radical aesthetics, political education, and creating visual tools for social justice movements.</p>
+        </li>
+        <li data-name="rainbow collective for change" data-desc="an organization building mutual aid networks and community support for lgbtq+ families with children in the twin cities. they coordinate direct support through playgroups, educational programs, and family resources while building inclusive spaces and advocating for lgbtq+ family equity through community organizing and solidarity networks.">
+          <div class="row">
+            <a class="name" href="https://www.rainbowcollectiveforchange.org/" target="_blank" rel="noopener noreferrer">Rainbow Collective for Change <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">rainbowcollectiveforchange.org</span>
+          </div>
+          <p class="desc">An organization building mutual aid networks and community support for LGBTQ+ families with children in the Twin Cities. They coordinate direct support through playgroups, educational programs, and family resources while building inclusive spaces and advocating for LGBTQ+ family equity through community organizing and solidarity networks.</p>
+        </li>
+        <li data-name="tigerrs (transgender, intersex, gender-expansive revolutionary
+              resources &amp; services)" data-desc="tigerrs is a nonhierarchical collective dedicated to delivering programs and resources that build solidarity and safety among transgender, intersex and gender-expansive minnesotans.">
+          <div class="row">
+            <a class="name" href="https://tigerrs.org/" target="_blank" rel="noopener noreferrer">TIGERRS (Transgender, Intersex, Gender-Expansive Revolutionary
+              Resources &amp; Services) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">tigerrs.org</span>
+          </div>
+          <p class="desc">TIGERRS is a nonhierarchical collective dedicated to delivering programs and resources that build solidarity and safety among transgender, intersex and gender-expansive Minnesotans.</p>
+        </li>
+        <li data-name="minnesot transgender health coalition" data-desc="the minnesota transgender health coalition is committed to improving health care access and the quality of health care received by trans and gender non-conforming people through education, resources, and advocacy.">
+          <div class="row">
+            <a class="name" href="https://www.mntransgenderhealth.org/" target="_blank" rel="noopener noreferrer">Minnesot Transgender Health Coalition <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">mntransgenderhealth.org</span>
+          </div>
+          <p class="desc">The Minnesota Transgender Health Coalition is committed to improving health care access and the quality of health care received by trans and gender non-conforming people through education, resources, and advocacy.</p>
+        </li>
+        <li data-name="indigenous peoples task force" data-desc="we were founded in 1987 to develop and implement culturally appropriate hiv education and direct services to the native community in minnesota.">
+          <div class="row">
+            <a class="name" href="https://indigenouspeoplestf.org/" target="_blank" rel="noopener noreferrer">Indigenous Peoples Task Force <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">indigenouspeoplestf.org</span>
+          </div>
+          <p class="desc">We were founded in 1987 to develop and implement culturally appropriate HIV education and direct services to the Native community in Minnesota.</p>
+        </li>
+        <li data-name="women against military madness (wamm)" data-desc="a grassroots organization coordinating mutual aid and peace initiatives in the twin cities. they organize direct support, resource sharing, and community education while building networks of solidarity through anti-war organizing, peace advocacy, and social justice campaigns.">
+          <div class="row">
+            <a class="name" href="https://womenagainstmilitarymadness.org/" target="_blank" rel="noopener noreferrer">Women Against Military Madness (WAMM) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">womenagainstmilitarymadness.org</span>
+          </div>
+          <p class="desc">A grassroots organization coordinating mutual aid and peace initiatives in the Twin Cities. They organize direct support, resource sharing, and community education while building networks of solidarity through anti-war organizing, peace advocacy, and social justice campaigns.</p>
+        </li>
+        <li data-name="southside harm reduction services" data-desc="a mutual aid collective providing harm reduction services and community support in minneapolis. they coordinate direct assistance through syringe access, naloxone distribution, and health resources while building networks of solidarity through peer support, community education, and advocacy for harm reduction approaches to public health.">
+          <div class="row">
+            <a class="name" href="https://southsideharmreduction.org/" target="_blank" rel="noopener noreferrer">Southside Harm Reduction Services <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">southsideharmreduction.org</span>
+          </div>
+          <p class="desc">A mutual aid collective providing harm reduction services and community support in Minneapolis. They coordinate direct assistance through syringe access, naloxone distribution, and health resources while building networks of solidarity through peer support, community education, and advocacy for harm reduction approaches to public health.</p>
+        </li>
+        <li data-name="sex workers outreach project (swop) minneapolis" data-desc="a mutual aid collective organizing direct support and advocacy for sex workers in minneapolis. they coordinate resource sharing, community care, and solidarity initiatives while building networks of support through harm reduction, decriminalization advocacy, and community education.">
+          <div class="row">
+            <a class="name" href="https://www.swopmpls.com/" target="_blank" rel="noopener noreferrer">Sex Workers Outreach Project (SWOP) Minneapolis <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">swopmpls.com</span>
+          </div>
+          <p class="desc">A mutual aid collective organizing direct support and advocacy for sex workers in Minneapolis. They coordinate resource sharing, community care, and solidarity initiatives while building networks of support through harm reduction, decriminalization advocacy, and community education.</p>
+        </li>
+        <li data-name="racial justice network (rjn)" data-desc="a multi-racial, grassroots organization fostering mutual aid and community solidarity through racial justice initiatives in the twin cities. they coordinate direct support through community relief, crisis response, and educational programs while building networks of solidarity through advocacy, policy reform, and creating spaces for multi-racial coalition building and systemic change.">
+          <div class="row">
+            <a class="name" href="https://racialjusticenetwork.com/" target="_blank" rel="noopener noreferrer">Racial Justice Network (RJN) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">racialjusticenetwork.com</span>
+          </div>
+          <p class="desc">A multi-racial, grassroots organization fostering mutual aid and community solidarity through racial justice initiatives in the Twin Cities. They coordinate direct support through community relief, crisis response, and educational programs while building networks of solidarity through advocacy, policy reform, and creating spaces for multi-racial coalition building and systemic change.</p>
+        </li>
+        <li data-name="showing up for racial justice (surj) - twin cities" data-desc="a grassroots organization coordinating mutual aid and community support initiatives focused on mobilizing people for racial justice in the twin cities. they organize direct action, resource sharing, and political education while building networks of solidarity through community organizing and racial justice advocacy.">
+          <div class="row">
+            <a class="name" href="https://www.surjtc.org/" target="_blank" rel="noopener noreferrer">Showing Up for Racial Justice (SURJ) - Twin Cities <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">surjtc.org</span>
+          </div>
+          <p class="desc">A grassroots organization coordinating mutual aid and community support initiatives focused on mobilizing people for racial justice in the Twin Cities. They organize direct action, resource sharing, and political education while building networks of solidarity through community organizing and racial justice advocacy.</p>
+        </li>
+        <li data-name="library patrons union" data-desc="a grassroots collective organizing mutual aid and community support initiatives to protect and expand public library services in minneapolis. they coordinate direct action, resource sharing, and community advocacy while building networks of solidarity through patron organizing, library worker support, and defending public spaces as essential community resources.">
+          <div class="row">
+            <a class="name" href="https://librarypatronsunion.com/" target="_blank" rel="noopener noreferrer">Library Patrons Union <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">librarypatronsunion.com</span>
+          </div>
+          <p class="desc">A grassroots collective organizing mutual aid and community support initiatives to protect and expand public library services in Minneapolis. They coordinate direct action, resource sharing, and community advocacy while building networks of solidarity through patron organizing, library worker support, and defending public spaces as essential community resources.</p>
+        </li>
+        <li data-name="st. paul mutual aid" data-desc="a grassroots network coordinating mutual aid and community support initiatives in st. paul. they organize direct assistance, resource sharing, and neighborhood solidarity through their facebook group, connecting community members to help meet immediate needs while building sustainable networks of care and support.">
+          <div class="row">
+            <a class="name" href="https://www.facebook.com/groups/275202273670126/" target="_blank" rel="noopener noreferrer">St. Paul Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">facebook.com</span>
+          </div>
+          <p class="desc">A grassroots network coordinating mutual aid and community support initiatives in St. Paul. They organize direct assistance, resource sharing, and neighborhood solidarity through their Facebook group, connecting community members to help meet immediate needs while building sustainable networks of care and support.</p>
+        </li>
+        <li data-name="sanctuary supply depot" data-desc="a mutual aid collective coordinating community resource distribution and support initiatives in minneapolis. they organize direct assistance through supply distribution, resource sharing, and solidarity networks while building sustainable systems of community care and mutual support.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/sanctuarysupplydepot" target="_blank" rel="noopener noreferrer">Sanctuary Supply Depot <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid collective coordinating community resource distribution and support initiatives in Minneapolis. They organize direct assistance through supply distribution, resource sharing, and solidarity networks while building sustainable systems of community care and mutual support.</p>
+        </li>
+        <li data-name="ayu" data-desc="a mutual aid collective fostering community support and solidarity through direct assistance in minneapolis. they coordinate resource distribution, community care initiatives, and solidarity networks while building sustainable systems of mutual support and collective empowerment.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/ayu_mpls" target="_blank" rel="noopener noreferrer">AYU <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid collective fostering community support and solidarity through direct assistance in Minneapolis. They coordinate resource distribution, community care initiatives, and solidarity networks while building sustainable systems of mutual support and collective empowerment.</p>
+        </li>
+        <li data-name="greater boston community land trust" data-desc="a community land trust fostering mutual aid and housing justice through collective land ownership and community control in minneapolis. they coordinate affordable housing initiatives, tenant support, and solidarity networks while building power through community ownership, anti-displacement work, and creating spaces for sustainable, community-controlled housing.">
+          <div class="row">
+            <a class="name" href="https://gbclt.org/" target="_blank" rel="noopener noreferrer">Greater Boston Community Land Trust <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">gbclt.org</span>
+          </div>
+          <p class="desc">A community land trust fostering mutual aid and housing justice through collective land ownership and community control in Minneapolis. They coordinate affordable housing initiatives, tenant support, and solidarity networks while building power through community ownership, anti-displacement work, and creating spaces for sustainable, community-controlled housing.</p>
+        </li>
+        <li data-name="community kitchen mpls" data-desc="a mutual aid collective fostering food security through community-based meal preparation and distribution in minneapolis. they coordinate free meal programs, food resource sharing, and solidarity networks while building power through collective food sovereignty, community care, and creating spaces for nourishment and connection.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/communitykitchenmpls/" target="_blank" rel="noopener noreferrer">Community Kitchen MPLS <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid collective fostering food security through community-based meal preparation and distribution in Minneapolis. They coordinate free meal programs, food resource sharing, and solidarity networks while building power through collective food sovereignty, community care, and creating spaces for nourishment and connection.</p>
+        </li>
+        <li data-name="spiral collective" data-desc="raising money for lyft rides for abortions and virtual trainings for abortion doulas">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/SPIRAL_MN/" target="_blank" rel="noopener noreferrer">SPIRAL Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Raising money for Lyft rides for abortions and virtual trainings for abortion doulas</p>
+        </li>
+        <li data-name="people's anti-imperialist study &amp; action" data-desc="third-world diasporas in 'mpls/stp' building support for revolutionary struggles/liberation movements in &amp; beyond amerika. hosts film screenings, teach-ins, and art builds against imperialism.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/thirdworldpaisa/" target="_blank" rel="noopener noreferrer">People's Anti-Imperialist Study &amp; Action <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Third-World diasporas in 'mpls/stp' building support for revolutionary struggles/liberation movements in &amp; beyond amerika. Hosts film screenings, teach-ins, and art builds against imperialism.</p>
+        </li>
+        <li data-name="camp nenookaasi" data-desc="a community based healing camp rooted in native practices &amp; inclusive of all unsheltered relatives">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/campnenookaasi/" target="_blank" rel="noopener noreferrer">Camp Nenookaasi <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A community based healing camp rooted in native practices &amp; inclusive of all unsheltered relatives</p>
+        </li>
+        <li data-name="north star health collective" data-desc="north star is a community health collective focused on providing first aid and emergency care at protests, direct actions, and in moments of general upheaval around the twin cities.">
+          <div class="row">
+            <a class="name" href="https://www.northstarhealthcollective.org/" target="_blank" rel="noopener noreferrer">North Star Health Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">northstarhealthcollective.org</span>
+          </div>
+          <p class="desc">North Star is a community health collective focused on providing first aid and emergency care at protests, direct actions, and in moments of general upheaval around the Twin Cities.</p>
+        </li>
+        <li data-name="near north camp defense" data-desc="help the people living at this encampment in harrison neighborhood stand against the minneapolis office of community planning &amp; economic development— and their brutal enforcers, the infamous minneapolis police department.">
+          <div class="row">
+            <a class="name" href="https://northdef.wordpress.com/" target="_blank" rel="noopener noreferrer">Near North Camp Defense <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">northdef.wordpress.com</span>
+          </div>
+          <p class="desc">Help the people living at this encampment in Harrison neighborhood stand against the Minneapolis office of Community Planning &amp; Economic Development— and their brutal enforcers, the infamous Minneapolis Police Department.</p>
+        </li>
+        <li data-name="twin cities logistics collective" data-desc="tlc currently works in collaboration with multiple community garden and food distribution projects, as well as home gardeners towards building food resiliency in south minneapolis.">
+          <div class="row">
+            <a class="name" href="https://www.twincitieslogistics.org/" target="_blank" rel="noopener noreferrer">Twin Cities Logistics Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">twincitieslogistics.org</span>
+          </div>
+          <p class="desc">TLC currently works in collaboration with multiple community garden and food distribution projects, as well as home gardeners towards building food resiliency in South Minneapolis.</p>
+        </li>
+        <li data-name="southside kwes" data-desc="native women and two-spirit led community based outreach team stoodis">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/southsidekwes/" target="_blank" rel="noopener noreferrer">Southside Kwes <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Native Women and Two-Spirit led community based Outreach team STOODIS</p>
+        </li>
+        <li data-name="autonomous yurt union - minneapolis" data-desc="autonomous yurt-inspired design builds &amp; deploys in support of unhoused neighbors in the twin cities area">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/ayu_mpls/" target="_blank" rel="noopener noreferrer">Autonomous Yurt Union - Minneapolis <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Autonomous yurt-inspired design builds &amp; deploys in support of unhoused neighbors in the Twin Cities area</p>
+        </li>
+        <li data-name="grapevine collective" data-desc="we’re transforming a church building into a healing justice center, supporting survival programs and revolutionary life in south minneapolis.">
+          <div class="row">
+            <a class="name" href="https://grapevinecollective.org/" target="_blank" rel="noopener noreferrer">Grapevine Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">grapevinecollective.org</span>
+          </div>
+          <p class="desc">We’re transforming a church building into a healing justice center, supporting survival programs and revolutionary life in South Minneapolis.</p>
+        </li>
+        <li data-name="autonomous yurt union st. paul" data-desc="autonomous yurt-inspired design builds &amp; deploys in support of unhoused neighbors in st paul">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/ayu_stpaul/" target="_blank" rel="noopener noreferrer">Autonomous Yurt Union St. Paul <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">autonomous yurt-inspired design builds &amp; deploys in support of unhoused neighbors in St Paul</p>
+        </li>
+        <li data-name="north country food alliance" data-desc="with your help, we share healthy, culturally appropriate food; build community gardens; support local farmers; and reduce commercial and local food waste.">
+          <div class="row">
+            <a class="name" href="https://www.ncfa-mn.org/" target="_blank" rel="noopener noreferrer">North Country Food Alliance <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">ncfa-mn.org</span>
+          </div>
+          <p class="desc">With your help, we share healthy, culturally appropriate food; build community gardens; support local farmers; and reduce commercial and local food waste.</p>
+        </li>
+        <li data-name="sancutary supply depot" data-desc="we are a central hub aimed at facilitating the collection and distribution of basic survival supplies for our unhoused neighbors.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/sanctuarysupplydepot/" target="_blank" rel="noopener noreferrer">Sancutary Supply Depot <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We are a central hub aimed at facilitating the collection and distribution of basic survival supplies for our unhoused neighbors.</p>
+        </li>
+        <li data-name="home base central" data-desc="a collective dedicated to housing justice, support for the unhoused, and mutual aid.">
+          <div class="row">
+            <a class="name" href="https://www.facebook.com/ThisIsHomeBase/" target="_blank" rel="noopener noreferrer">Home Base Central <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">facebook.com</span>
+          </div>
+          <p class="desc">A collective dedicated to housing justice, support for the unhoused, and mutual aid.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

@@ -1,115 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Cleveland Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Cleveland. Connect with local organizations and community resources.">
+  <title>Cleveland — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Cleveland.">
   <link rel="canonical" href="https://organize.directory/cleveland">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Cleveland Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Cleveland. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Cleveland — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Cleveland.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/cleveland">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/ohio">Ohio</a>
-          <span>›</span>
-          <span>Cleveland</span>
-        </div>
+<main id="main">
 
-        <h1>Cleveland</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/ohio">Ohio</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Cleveland</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://www.facebook.com/1BLMCLe216" target="_blank" rel="noopener noreferrer">Black Lives Matter Cleveland</a>
-      <p>A grassroots organization fostering mutual aid and community solidarity through racial justice organizing in Cleveland. They coordinate direct action support, political education, and solidarity networks while building power through community organizing and creating spaces for collective resistance and systemic change.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://junwangfoundation.org/" target="_blank" rel="noopener noreferrer">Jun Wang Foundation</a>
-      <p>A community organization fostering mutual aid and solidarity through support for families affected by police violence in Cleveland. They coordinate direct support initiatives, advocacy campaigns, and solidarity networks while building power through family support, community organizing, and creating spaces for healing and justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://lgbtcleveland.org/" target="_blank" rel="noopener noreferrer">LGBT Community Center of Greater Cleveland</a>
-      <p>As one of the nation's oldest LGBTQ+ community centers and among the most prominent organizations in the state, we offer high-quality programming, services, and events to meet your personal and professional needs.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://rhizomehouse.org/" target="_blank" rel="noopener noreferrer">Rhizome House</a>
-      <p>A community space fostering mutual aid through accessible education, arts programming, and cultural events. They provide a hub for community organizing, skill-sharing, and building solidarity while supporting local artists and grassroots initiatives through workshops, gatherings, and collaborative projects.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.facebook.com/BurningRiverAnarchistCollective/" target="_blank" rel="noopener noreferrer">Burning River Anarchist
-              Collective</a>
-      <p>A grassroots collective fostering mutual aid and community solidarity through anarchist organizing in Cleveland. They coordinate direct support initiatives, political education, and solidarity networks while building power through community organizing and creating spaces for collective resistance and mutual support.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/irtfcleveland/" target="_blank" rel="noopener noreferrer">InterReligious Task Force on Central America</a>
-      <p>A solidarity organization fostering mutual aid and international solidarity through community organizing and direct support initiatives. They coordinate solidarity networks, political education, and resource sharing while building connections between Cleveland communities and social movements in Central America and Colombia.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://cprcle.org/" target="_blank" rel="noopener noreferrer">Cleveland Pandemic Response</a>
-      <p>A group of neighborhood organizers and community members aiming to provide mutual aid and support to NEO residents during the COVID-19 pandemic.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/foodnotbombs_cle/" target="_blank" rel="noopener noreferrer">Food Not Bombs Lake County and East Side CLE</a>
-      <p>We share free fresh fruits and vegetables twice a month in Willoughby, and twice a month on Cleveland’s east side.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/westsideclefnb/" target="_blank" rel="noopener noreferrer">Westside Cleveland Food Not Bombs</a>
-      <p>FNB is a national movement that opposes militarism and provides free food for the public, no questions asked.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/irtfcleveland/" target="_blank" rel="noopener noreferrer">The InterReligious Task Force on Central America
-              (IRTF)</a>
-      <p>IRTF is a Cleveland-based interfaith group that promotes solidarity, human rights, and collective liberation.</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Cleveland</h1>
+    <p class="meta">
+      <b>10</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      Ohio
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Cleveland</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Cleveland…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="black lives matter cleveland" data-desc="a grassroots organization fostering mutual aid and community solidarity through racial justice organizing in cleveland. they coordinate direct action support, political education, and solidarity networks while building power through community organizing and creating spaces for collective resistance and systemic change.">
+          <div class="row">
+            <a class="name" href="https://www.facebook.com/1BLMCLe216" target="_blank" rel="noopener noreferrer">Black Lives Matter Cleveland <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">facebook.com</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community solidarity through racial justice organizing in Cleveland. They coordinate direct action support, political education, and solidarity networks while building power through community organizing and creating spaces for collective resistance and systemic change.</p>
+        </li>
+        <li data-name="jun wang foundation" data-desc="a community organization fostering mutual aid and solidarity through support for families affected by police violence in cleveland. they coordinate direct support initiatives, advocacy campaigns, and solidarity networks while building power through family support, community organizing, and creating spaces for healing and justice.">
+          <div class="row">
+            <a class="name" href="https://junwangfoundation.org/" target="_blank" rel="noopener noreferrer">Jun Wang Foundation <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">junwangfoundation.org</span>
+          </div>
+          <p class="desc">A community organization fostering mutual aid and solidarity through support for families affected by police violence in Cleveland. They coordinate direct support initiatives, advocacy campaigns, and solidarity networks while building power through family support, community organizing, and creating spaces for healing and justice.</p>
+        </li>
+        <li data-name="lgbt community center of greater cleveland" data-desc="as one of the nation's oldest lgbtq+ community centers and among the most prominent organizations in the state, we offer high-quality programming, services, and events to meet your personal and professional needs.">
+          <div class="row">
+            <a class="name" href="https://lgbtcleveland.org/" target="_blank" rel="noopener noreferrer">LGBT Community Center of Greater Cleveland <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">lgbtcleveland.org</span>
+          </div>
+          <p class="desc">As one of the nation's oldest LGBTQ+ community centers and among the most prominent organizations in the state, we offer high-quality programming, services, and events to meet your personal and professional needs.</p>
+        </li>
+        <li data-name="rhizome house" data-desc="a community space fostering mutual aid through accessible education, arts programming, and cultural events. they provide a hub for community organizing, skill-sharing, and building solidarity while supporting local artists and grassroots initiatives through workshops, gatherings, and collaborative projects.">
+          <div class="row">
+            <a class="name" href="https://rhizomehouse.org/" target="_blank" rel="noopener noreferrer">Rhizome House <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">rhizomehouse.org</span>
+          </div>
+          <p class="desc">A community space fostering mutual aid through accessible education, arts programming, and cultural events. They provide a hub for community organizing, skill-sharing, and building solidarity while supporting local artists and grassroots initiatives through workshops, gatherings, and collaborative projects.</p>
+        </li>
+        <li data-name="burning river anarchist
+              collective" data-desc="a grassroots collective fostering mutual aid and community solidarity through anarchist organizing in cleveland. they coordinate direct support initiatives, political education, and solidarity networks while building power through community organizing and creating spaces for collective resistance and mutual support.">
+          <div class="row">
+            <a class="name" href="https://www.facebook.com/BurningRiverAnarchistCollective/" target="_blank" rel="noopener noreferrer">Burning River Anarchist
+              Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">facebook.com</span>
+          </div>
+          <p class="desc">A grassroots collective fostering mutual aid and community solidarity through anarchist organizing in Cleveland. They coordinate direct support initiatives, political education, and solidarity networks while building power through community organizing and creating spaces for collective resistance and mutual support.</p>
+        </li>
+        <li data-name="interreligious task force on central america" data-desc="a solidarity organization fostering mutual aid and international solidarity through community organizing and direct support initiatives. they coordinate solidarity networks, political education, and resource sharing while building connections between cleveland communities and social movements in central america and colombia.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/irtfcleveland/" target="_blank" rel="noopener noreferrer">InterReligious Task Force on Central America <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A solidarity organization fostering mutual aid and international solidarity through community organizing and direct support initiatives. They coordinate solidarity networks, political education, and resource sharing while building connections between Cleveland communities and social movements in Central America and Colombia.</p>
+        </li>
+        <li data-name="cleveland pandemic response" data-desc="a group of neighborhood organizers and community members aiming to provide mutual aid and support to neo residents during the covid-19 pandemic.">
+          <div class="row">
+            <a class="name" href="https://cprcle.org/" target="_blank" rel="noopener noreferrer">Cleveland Pandemic Response <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">cprcle.org</span>
+          </div>
+          <p class="desc">A group of neighborhood organizers and community members aiming to provide mutual aid and support to NEO residents during the COVID-19 pandemic.</p>
+        </li>
+        <li data-name="food not bombs lake county and east side cle" data-desc="we share free fresh fruits and vegetables twice a month in willoughby, and twice a month on cleveland’s east side.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/foodnotbombs_cle/" target="_blank" rel="noopener noreferrer">Food Not Bombs Lake County and East Side CLE <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We share free fresh fruits and vegetables twice a month in Willoughby, and twice a month on Cleveland’s east side.</p>
+        </li>
+        <li data-name="westside cleveland food not bombs" data-desc="fnb is a national movement that opposes militarism and provides free food for the public, no questions asked.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/westsideclefnb/" target="_blank" rel="noopener noreferrer">Westside Cleveland Food Not Bombs <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">FNB is a national movement that opposes militarism and provides free food for the public, no questions asked.</p>
+        </li>
+        <li data-name="the interreligious task force on central america
+              (irtf)" data-desc="irtf is a cleveland-based interfaith group that promotes solidarity, human rights, and collective liberation.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/irtfcleveland/" target="_blank" rel="noopener noreferrer">The InterReligious Task Force on Central America
+              (IRTF) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">IRTF is a Cleveland-based interfaith group that promotes solidarity, human rights, and collective liberation.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

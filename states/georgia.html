@@ -1,99 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Georgia Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid networks and community support initiatives in Georgia. Connect with local organizations and community resources.">
+  <title>Georgia — Organize Directory</title>
+  <meta name="description" content="Cities and statewide organizations in Georgia.">
   <link rel="canonical" href="https://organize.directory/georgia">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Georgia Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid networks and community support initiatives in Georgia. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Georgia — Organize Directory">
+  <meta property="og:description" content="Cities and statewide organizations in Georgia.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/georgia">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="city-page state-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <span>Georgia</span>
-        </div>
+<main id="main">
 
-        <h1>Georgia</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Georgia</span>
+  </nav>
 
-  <section>
-    <div class="cities-list">
-      <h2>Locations</h2>
-      <div class="city-links-container">
-          <a href="/athens-ga" class="city-link location-link-base">Athens</a>
-          <a href="/atlanta" class="city-link location-link-base">Atlanta</a>
-          <a href="/augusta" class="city-link location-link-base">Augusta</a>
-          <a href="/columbus-ga" class="city-link location-link-base">Columbus</a>
-          <a href="/savannah-hinesville" class="city-link location-link-base">Savannah / Hinesville</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="statewide-organizations" class="city-section">
-    <h2>Statewide Organizations</h2>
-    <div class="initiative">
-      <a href="https://amplify-ga.org/" target="_blank" rel="noopener noreferrer">Amplify GA Collaborative</a>
-      <p>Coalition of reproductive health, rights, and justice organizations working to protect and expand abortion access across Georgia.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://newgeorgiaproject.org/" target="_blank" rel="noopener noreferrer">New Georgia Project</a>
-      <p>A grassroots organization building community power through civic engagement, mutual aid, and leadership development across Georgia. They coordinate voter registration, political education, and solidarity networks while centering Black, Brown, and young voters in the fight for a more equitable Georgia.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://asianamericanadvocacyfund.org/" target="_blank" rel="noopener noreferrer">Asian American Advocacy Fund</a>
-      <p>A grassroots organization building power with Asian American communities through mutual aid, civic engagement, and community organizing across Georgia. They coordinate voter education, political advocacy, and solidarity networks while centering AAPI voices in the fight for progressive change.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/poderunides/" target="_blank" rel="noopener noreferrer">Poder Unides</a>
-      <p>A grassroots organization fostering mutual aid and community support for immigrant and Latinx communities across Georgia. They coordinate direct assistance, resource sharing, and solidarity networks while building power through community organizing and creating spaces for cultural connection and collective empowerment.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://glahr.org/" target="_blank" rel="noopener noreferrer">Georgia Latino Alliance for Human Rights (GLAHR)</a>
-      <p>educates, organizes and trains the Latino community in Georgia to defend and promote their civil and human rights.</p>
-    </div>
-  </section>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">Georgia</h1>
+    <p class="meta">
+      <b>5</b> statewide groups
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter Georgia</label>
+    <input id="page-filter" type="search" placeholder="Filter Georgia…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+  <nav class="toc" aria-label="Sections on this page">
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
+      <span class="current">
+        <span class="current-label">Section ·</span>
+        <span class="current-name">Places</span>
+      </span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div id="toc-panel" class="toc-scroll">
+      <a href="#places" data-section="places"><span class="label">Places</span></a>
+      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="label">Statewide Organizations</span> <span class="count">5</span></a>
+    </div>
+  </nav>
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="places" class="group-section" data-section="places">
+      <h2 class="section-title">Places</h2>
+      <ol class="groups children-list">
+        <li data-name="athens" data-desc=""><a class="name" href="/athens-ga">Athens</a></li>
+        <li data-name="atlanta" data-desc=""><a class="name" href="/atlanta">Atlanta</a></li>
+        <li data-name="augusta" data-desc=""><a class="name" href="/augusta">Augusta</a></li>
+        <li data-name="columbus" data-desc=""><a class="name" href="/columbus-ga">Columbus</a></li>
+        <li data-name="savannah / hinesville" data-desc=""><a class="name" href="/savannah-hinesville">Savannah / Hinesville</a></li>
+      </ol>
+    </section>
+
+    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations">
+      <h2 class="section-title">Statewide Organizations</h2>
+      <ol class="groups">
+        <li data-name="amplify ga collaborative" data-desc="coalition of reproductive health, rights, and justice organizations working to protect and expand abortion access across georgia.">
+          <div class="row">
+            <a class="name" href="https://amplify-ga.org/" target="_blank" rel="noopener noreferrer">Amplify GA Collaborative <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">amplify-ga.org</span>
+          </div>
+          <p class="desc">Coalition of reproductive health, rights, and justice organizations working to protect and expand abortion access across Georgia.</p>
+        </li>
+        <li data-name="new georgia project" data-desc="a grassroots organization building community power through civic engagement, mutual aid, and leadership development across georgia. they coordinate voter registration, political education, and solidarity networks while centering black, brown, and young voters in the fight for a more equitable georgia.">
+          <div class="row">
+            <a class="name" href="https://newgeorgiaproject.org/" target="_blank" rel="noopener noreferrer">New Georgia Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">newgeorgiaproject.org</span>
+          </div>
+          <p class="desc">A grassroots organization building community power through civic engagement, mutual aid, and leadership development across Georgia. They coordinate voter registration, political education, and solidarity networks while centering Black, Brown, and young voters in the fight for a more equitable Georgia.</p>
+        </li>
+        <li data-name="asian american advocacy fund" data-desc="a grassroots organization building power with asian american communities through mutual aid, civic engagement, and community organizing across georgia. they coordinate voter education, political advocacy, and solidarity networks while centering aapi voices in the fight for progressive change.">
+          <div class="row">
+            <a class="name" href="https://asianamericanadvocacyfund.org/" target="_blank" rel="noopener noreferrer">Asian American Advocacy Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">asianamericanadvocacyfund.org</span>
+          </div>
+          <p class="desc">A grassroots organization building power with Asian American communities through mutual aid, civic engagement, and community organizing across Georgia. They coordinate voter education, political advocacy, and solidarity networks while centering AAPI voices in the fight for progressive change.</p>
+        </li>
+        <li data-name="poder unides" data-desc="a grassroots organization fostering mutual aid and community support for immigrant and latinx communities across georgia. they coordinate direct assistance, resource sharing, and solidarity networks while building power through community organizing and creating spaces for cultural connection and collective empowerment.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/poderunides/" target="_blank" rel="noopener noreferrer">Poder Unides <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community support for immigrant and Latinx communities across Georgia. They coordinate direct assistance, resource sharing, and solidarity networks while building power through community organizing and creating spaces for cultural connection and collective empowerment.</p>
+        </li>
+        <li data-name="georgia latino alliance for human rights (glahr)" data-desc="educates, organizes and trains the latino community in georgia to defend and promote their civil and human rights.">
+          <div class="row">
+            <a class="name" href="https://glahr.org/" target="_blank" rel="noopener noreferrer">Georgia Latino Alliance for Human Rights (GLAHR) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">glahr.org</span>
+          </div>
+          <p class="desc">educates, organizes and trains the Latino community in Georgia to defend and promote their civil and human rights.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No places or groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

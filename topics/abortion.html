@@ -1,93 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Reproductive Justice - The Organize Directory</title>
-  <meta name="description" content="Find organizations and initiatives focused on Reproductive Justice.">
+  <title>Reproductive Justice — Organize Directory</title>
+  <meta name="description" content="Organizations and initiatives focused on Reproductive Justice.">
   <link rel="canonical" href="https://organize.directory/topics/abortion">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Reproductive Justice - The Organize Directory">
-  <meta property="og:description" content="Find organizations and initiatives focused on Reproductive Justice.">
+  <meta property="og:title" content="Reproductive Justice — Organize Directory">
+  <meta property="og:description" content="Organizations and initiatives focused on Reproductive Justice.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/topics/abortion">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('topics');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="city-page state-page">
-        <div class="breadcrumb">
-          <a href="/topics">Topics</a>
-          <span>›</span>
-          <span>Reproductive Justice</span>
-        </div>
+<main id="main">
 
-        <h1>Reproductive Justice</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/topics">Topics</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Reproductive Justice</span>
+  </nav>
 
-  <section id="main" class="city-section">
-    <div class="initiative">
-      <a href="https://abortionfunds.org/" target="_blank" rel="noopener noreferrer">National Network of Abortion Funds</a>
-      <p>Network of organizations that help people access and pay for abortions, providing financial assistance and practical support.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.plancpills.org/" target="_blank" rel="noopener noreferrer">Plan C</a>
-      <p>Information about how to access at-home abortion pill options online.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.ineedana.com/" target="_blank" rel="noopener noreferrer">I Need an A</a>
-      <p>Directory of verified abortion clinics, information about financial assistance, and logistical support.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://brigidalliance.org/" target="_blank" rel="noopener noreferrer">Brigid Alliance</a>
-      <p>We support people nationwide who must travel for abortion care - funding and arranging logistics for transportation, food, lodging, childcare &amp; more.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.reprocare.com/" target="_blank" rel="noopener noreferrer">Repro Care</a>
-      <p>Connects people seeking abortions with community support for practical needs like transportation, lodging, childcare, and emotional support.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://reprolegaldefensefund.org/" target="_blank" rel="noopener noreferrer">Repro Legal Defense Fund</a>
-      <p>Provides legal support and defense funds for people facing criminalization for self-managed abortion.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.exposefakeclinics.com/" target="_blank" rel="noopener noreferrer">Expose Fake Clinics</a>
-      <p>Take action with us to make sure no one gets tricked, manipulated, and shamed by anti-abortion fake clinics!</p>
-    </div>
-  </section>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">Reproductive Justice</h1>
+    <p class="meta"><b>7</b> groups</p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-</body>
 
+
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Reproductive Justice</label>
+    <input id="page-filter" type="search" placeholder="Filter groups…" autocomplete="off">
+  </div>
+
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="main" class="group-section" data-section="main">
+      <ol class="groups">
+        <li data-name="national network of abortion funds" data-desc="network of organizations that help people access and pay for abortions, providing financial assistance and practical support.">
+          <div class="row">
+            <a class="name" href="https://abortionfunds.org/" target="_blank" rel="noopener noreferrer">National Network of Abortion Funds <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">abortionfunds.org</span>
+          </div>
+          <p class="desc">Network of organizations that help people access and pay for abortions, providing financial assistance and practical support.</p>
+        </li>
+        <li data-name="plan c" data-desc="information about how to access at-home abortion pill options online.">
+          <div class="row">
+            <a class="name" href="https://www.plancpills.org/" target="_blank" rel="noopener noreferrer">Plan C <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">plancpills.org</span>
+          </div>
+          <p class="desc">Information about how to access at-home abortion pill options online.</p>
+        </li>
+        <li data-name="i need an a" data-desc="directory of verified abortion clinics, information about financial assistance, and logistical support.">
+          <div class="row">
+            <a class="name" href="https://www.ineedana.com/" target="_blank" rel="noopener noreferrer">I Need an A <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">ineedana.com</span>
+          </div>
+          <p class="desc">Directory of verified abortion clinics, information about financial assistance, and logistical support.</p>
+        </li>
+        <li data-name="brigid alliance" data-desc="we support people nationwide who must travel for abortion care - funding and arranging logistics for transportation, food, lodging, childcare &amp; more.">
+          <div class="row">
+            <a class="name" href="https://brigidalliance.org/" target="_blank" rel="noopener noreferrer">Brigid Alliance <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">brigidalliance.org</span>
+          </div>
+          <p class="desc">We support people nationwide who must travel for abortion care - funding and arranging logistics for transportation, food, lodging, childcare &amp; more.</p>
+        </li>
+        <li data-name="repro care" data-desc="connects people seeking abortions with community support for practical needs like transportation, lodging, childcare, and emotional support.">
+          <div class="row">
+            <a class="name" href="https://www.reprocare.com/" target="_blank" rel="noopener noreferrer">Repro Care <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">reprocare.com</span>
+          </div>
+          <p class="desc">Connects people seeking abortions with community support for practical needs like transportation, lodging, childcare, and emotional support.</p>
+        </li>
+        <li data-name="repro legal defense fund" data-desc="provides legal support and defense funds for people facing criminalization for self-managed abortion.">
+          <div class="row">
+            <a class="name" href="https://reprolegaldefensefund.org/" target="_blank" rel="noopener noreferrer">Repro Legal Defense Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">reprolegaldefensefund.org</span>
+          </div>
+          <p class="desc">Provides legal support and defense funds for people facing criminalization for self-managed abortion.</p>
+        </li>
+        <li data-name="expose fake clinics" data-desc="take action with us to make sure no one gets tricked, manipulated, and shamed by anti-abortion fake clinics!">
+          <div class="row">
+            <a class="name" href="https://www.exposefakeclinics.com/" target="_blank" rel="noopener noreferrer">Expose Fake Clinics <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">exposefakeclinics.com</span>
+          </div>
+          <p class="desc">Take action with us to make sure no one gets tricked, manipulated, and shamed by anti-abortion fake clinics!</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

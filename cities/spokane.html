@@ -1,87 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Spokane Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Spokane. Connect with local organizations and community resources.">
+  <title>Spokane — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Spokane.">
   <link rel="canonical" href="https://organize.directory/spokane">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Spokane Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Spokane. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Spokane — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Spokane.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/spokane">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/district-of-columbia">District of Columbia</a>
-          <span>›</span>
-          <a href="/washington">Washington, DC</a>
-          <span>›</span>
-          <span>Spokane</span>
-        </div>
+<main id="main">
 
-        <h1>Spokane</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/district-of-columbia">District of Columbia</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/washington">Washington, DC</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Spokane</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://pjals.org/" target="_blank" rel="noopener noreferrer">Peace and Justice Action League of Spokane (PJALS)</a>
-      <p>A grassroots organization fostering mutual aid and community solidarity through nonviolent organizing, racial justice education, and movement building in Spokane. They coordinate political education, direct action support, and solidarity networks while building power through their BOLD program, Young Activist Leaders Program, and creating spaces for cross-racial, intergenerational organizing centered on the leadership of impacted people.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/mutualaidsurvivalsquad" target="_blank" rel="noopener noreferrer">Mutual Aid Survival Squad</a>
-      <p>Mutual aid distributions and food shares for the people.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.spectrumcenterspokane.org/" target="_blank" rel="noopener noreferrer">Spectrum Center Spokane</a>
-      <p>An intersectional and intergenerational organization that uplifts the 2SLGBTQIA+ Community.</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Spokane</h1>
+    <p class="meta">
+      <b>3</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      District of Columbia
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Spokane</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Spokane…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="peace and justice action league of spokane (pjals)" data-desc="a grassroots organization fostering mutual aid and community solidarity through nonviolent organizing, racial justice education, and movement building in spokane. they coordinate political education, direct action support, and solidarity networks while building power through their bold program, young activist leaders program, and creating spaces for cross-racial, intergenerational organizing centered on the leadership of impacted people.">
+          <div class="row">
+            <a class="name" href="https://pjals.org/" target="_blank" rel="noopener noreferrer">Peace and Justice Action League of Spokane (PJALS) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">pjals.org</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community solidarity through nonviolent organizing, racial justice education, and movement building in Spokane. They coordinate political education, direct action support, and solidarity networks while building power through their BOLD program, Young Activist Leaders Program, and creating spaces for cross-racial, intergenerational organizing centered on the leadership of impacted people.</p>
+        </li>
+        <li data-name="mutual aid survival squad" data-desc="mutual aid distributions and food shares for the people.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/mutualaidsurvivalsquad" target="_blank" rel="noopener noreferrer">Mutual Aid Survival Squad <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Mutual aid distributions and food shares for the people.</p>
+        </li>
+        <li data-name="spectrum center spokane" data-desc="an intersectional and intergenerational organization that uplifts the 2slgbtqia+ community.">
+          <div class="row">
+            <a class="name" href="https://www.spectrumcenterspokane.org/" target="_blank" rel="noopener noreferrer">Spectrum Center Spokane <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">spectrumcenterspokane.org</span>
+          </div>
+          <p class="desc">An intersectional and intergenerational organization that uplifts the 2SLGBTQIA+ Community.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

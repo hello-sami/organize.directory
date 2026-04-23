@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
      if (urlParams.get("success") === "true") {
           statusMessage.textContent =
                "Thank you! Your message has been sent successfully.";
-          statusMessage.className = "status-message success";
+          statusMessage.className = "form-status success";
           statusMessage.style.display = "block";
           form.reset();
 

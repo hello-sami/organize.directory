@@ -1,126 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Virginia Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid networks and community support initiatives in Virginia. Connect with local organizations and community resources.">
+  <title>Virginia — Organize Directory</title>
+  <meta name="description" content="Cities and statewide organizations in Virginia.">
   <link rel="canonical" href="https://organize.directory/virginia">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Virginia Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid networks and community support initiatives in Virginia. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Virginia — Organize Directory">
+  <meta property="og:description" content="Cities and statewide organizations in Virginia.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/virginia">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="city-page state-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <span>Virginia</span>
-        </div>
+<main id="main">
 
-        <h1>Virginia</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Virginia</span>
+  </nav>
 
-  <section>
-    <div class="cities-list">
-      <h2>Locations</h2>
-      <div class="city-links-container">
-          <a href="/charlottesville" class="city-link location-link-base">Charlottesville, VA</a>
-          <a href="/hampton-roads" class="city-link location-link-base">Hampton Roads, VA</a>
-          <a href="/lynchburg" class="city-link location-link-base">Lynchburg, VA</a>
-          <a href="/new-river-valley" class="city-link location-link-base">New River Valley, VA</a>
-          <a href="/norfolk" class="city-link location-link-base">Norfolk</a>
-          <a href="/richmond" class="city-link location-link-base">Richmond, VA</a>
-          <a href="/roanoke" class="city-link location-link-base">Roanoke, VA</a>
-          <a href="/virginia-beach" class="city-link location-link-base">Virginia Beach</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="statewide-organizations" class="city-section">
-    <h2>Statewide Organizations</h2>
-    <div class="initiative">
-      <a href="https://blueridgebailfund.org/" target="_blank" rel="noopener noreferrer">Blue Ridge Community Bail Fund</a>
-      <p>A volunteer-run mutual aid organization providing bail assistance to people held pre-trial in the Shenandoah Valley region, including Staunton, Harrisonburg, Page County, and Charlottesville. Through their revolving bail fund, they work to ensure that people do not remain incarcerated simply due to inability to pay, while addressing the disproportionate impact of cash bail on communities of color and low-income individuals.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://powersafeplace.org/" target="_blank" rel="noopener noreferrer">Power Safe Place Resource Center of Virginia</a>
-      <p>Power Safe Place Resource Center currently operates in Rural Virginia. We have been providing financial support, job readiness training, transportation, clothes, food, shoes, condoms and more for the LGBTQIA community in Virginia.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/tapvirginia" target="_blank" rel="noopener noreferrer">Transgender Assistance Program of Virginia</a>
-      <p>A 501(c)3 non-profit organization by trans people, for trans people. Dedicated to ending trans homelessness across the Commonwealth of VA.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://surj-ht.wixsite.com/" target="_blank" rel="noopener noreferrer">SURJ Harrisonburg-Timberville</a>
-      <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in the Harrisonburg-Timberville area. They coordinate community organizing, mobilizing, and education initiatives while building power through political education, direct action support, and creating spaces for accountable organizing in partnership with BIPOC-led organizations.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.surjnova.org/" target="_blank" rel="noopener noreferrer">SURJ Northern Virginia</a>
-      <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in Northern Virginia. They coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with BIPOC-led organizations.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://the40strong.com/" target="_blank" rel="noopener noreferrer">The 40 Strong</a>
-      <p>Collective of incarcerated and formerly incarcerated people organizing for prison abolition and supporting families affected by incarceration in Virginia.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://blueridgeabortionfund.org/" target="_blank" rel="noopener noreferrer">Blue Ridge Abortion Fund</a>
-      <p>A community-based mutual aid organization providing financial support, transportation, and lodging assistance for abortion care since 1989. Through their funding network and support services, they work to reduce barriers to access while building community care networks and offering comprehensive support for those seeking abortion care across Virginia.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.belovedcommunityincubator.org/" target="_blank" rel="noopener noreferrer">Beloved Community Incubator</a>
-      <p>A community-based organization fostering mutual aid and economic justice through cooperative development in the DMV region. They coordinate worker-owned business incubation, solidarity economy initiatives, and community wealth building while creating spaces for economic democracy, racial equity, and collective liberation through their various programs and support networks.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://carecollectiveofswva.wordpress.com/" target="_blank" rel="noopener noreferrer">Care Collective of SWVA</a>
-      <p>A grassroots organization fostering mutual aid and community support in Southwest Virginia. They coordinate direct assistance, resource sharing, and solidarity networks while building power through community organizing and creating spaces for collective care and support in the region.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.thegreencab.org/" target="_blank" rel="noopener noreferrer">The Green Cab</a>
-      <p>Our mission is to provide a range of practical and logistical support options for people seeking abortion care in Virginia.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/rainydayfund_us/" target="_blank" rel="noopener noreferrer">Rainy Day Fund</a>
-      <p>A mutual aid network providing direct financial assistance and support to people in need across South Carolina and Virginia. They coordinate emergency financial aid, resource sharing, and solidarity networks while building power through community care and creating pathways for collective support.</p>
-    </div>
-  </section>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">Virginia</h1>
+    <p class="meta">
+      <b>11</b> statewide groups
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter Virginia</label>
+    <input id="page-filter" type="search" placeholder="Filter Virginia…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+  <nav class="toc" aria-label="Sections on this page">
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
+      <span class="current">
+        <span class="current-label">Section ·</span>
+        <span class="current-name">Places</span>
+      </span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div id="toc-panel" class="toc-scroll">
+      <a href="#places" data-section="places"><span class="label">Places</span></a>
+      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="label">Statewide Organizations</span> <span class="count">11</span></a>
+    </div>
+  </nav>
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="places" class="group-section" data-section="places">
+      <h2 class="section-title">Places</h2>
+      <ol class="groups children-list">
+        <li data-name="charlottesville, va" data-desc=""><a class="name" href="/charlottesville">Charlottesville, VA</a></li>
+        <li data-name="hampton roads, va" data-desc=""><a class="name" href="/hampton-roads">Hampton Roads, VA</a></li>
+        <li data-name="lynchburg, va" data-desc=""><a class="name" href="/lynchburg">Lynchburg, VA</a></li>
+        <li data-name="new river valley, va" data-desc=""><a class="name" href="/new-river-valley">New River Valley, VA</a></li>
+        <li data-name="norfolk" data-desc=""><a class="name" href="/norfolk">Norfolk</a></li>
+        <li data-name="richmond, va" data-desc=""><a class="name" href="/richmond">Richmond, VA</a></li>
+        <li data-name="roanoke, va" data-desc=""><a class="name" href="/roanoke">Roanoke, VA</a></li>
+        <li data-name="virginia beach" data-desc=""><a class="name" href="/virginia-beach">Virginia Beach</a></li>
+      </ol>
+    </section>
+
+    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations">
+      <h2 class="section-title">Statewide Organizations</h2>
+      <ol class="groups">
+        <li data-name="blue ridge community bail fund" data-desc="a volunteer-run mutual aid organization providing bail assistance to people held pre-trial in the shenandoah valley region, including staunton, harrisonburg, page county, and charlottesville. through their revolving bail fund, they work to ensure that people do not remain incarcerated simply due to inability to pay, while addressing the disproportionate impact of cash bail on communities of color and low-income individuals.">
+          <div class="row">
+            <a class="name" href="https://blueridgebailfund.org/" target="_blank" rel="noopener noreferrer">Blue Ridge Community Bail Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">blueridgebailfund.org</span>
+          </div>
+          <p class="desc">A volunteer-run mutual aid organization providing bail assistance to people held pre-trial in the Shenandoah Valley region, including Staunton, Harrisonburg, Page County, and Charlottesville. Through their revolving bail fund, they work to ensure that people do not remain incarcerated simply due to inability to pay, while addressing the disproportionate impact of cash bail on communities of color and low-income individuals.</p>
+        </li>
+        <li data-name="power safe place resource center of virginia" data-desc="power safe place resource center currently operates in rural virginia. we have been providing financial support, job readiness training, transportation, clothes, food, shoes, condoms and more for the lgbtqia community in virginia.">
+          <div class="row">
+            <a class="name" href="https://powersafeplace.org/" target="_blank" rel="noopener noreferrer">Power Safe Place Resource Center of Virginia <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">powersafeplace.org</span>
+          </div>
+          <p class="desc">Power Safe Place Resource Center currently operates in Rural Virginia. We have been providing financial support, job readiness training, transportation, clothes, food, shoes, condoms and more for the LGBTQIA community in Virginia.</p>
+        </li>
+        <li data-name="transgender assistance program of virginia" data-desc="a 501(c)3 non-profit organization by trans people, for trans people. dedicated to ending trans homelessness across the commonwealth of va.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/tapvirginia" target="_blank" rel="noopener noreferrer">Transgender Assistance Program of Virginia <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A 501(c)3 non-profit organization by trans people, for trans people. Dedicated to ending trans homelessness across the Commonwealth of VA.</p>
+        </li>
+        <li data-name="surj harrisonburg-timberville" data-desc="a chapter of showing up for racial justice fostering mutual aid and community solidarity through white anti-racist organizing in the harrisonburg-timberville area. they coordinate community organizing, mobilizing, and education initiatives while building power through political education, direct action support, and creating spaces for accountable organizing in partnership with bipoc-led organizations.">
+          <div class="row">
+            <a class="name" href="https://surj-ht.wixsite.com/" target="_blank" rel="noopener noreferrer">SURJ Harrisonburg-Timberville <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">surj-ht.wixsite.com</span>
+          </div>
+          <p class="desc">A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in the Harrisonburg-Timberville area. They coordinate community organizing, mobilizing, and education initiatives while building power through political education, direct action support, and creating spaces for accountable organizing in partnership with BIPOC-led organizations.</p>
+        </li>
+        <li data-name="surj northern virginia" data-desc="a chapter of showing up for racial justice fostering mutual aid and community solidarity through white anti-racist organizing in northern virginia. they coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with bipoc-led organizations.">
+          <div class="row">
+            <a class="name" href="https://www.surjnova.org/" target="_blank" rel="noopener noreferrer">SURJ Northern Virginia <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">surjnova.org</span>
+          </div>
+          <p class="desc">A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in Northern Virginia. They coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with BIPOC-led organizations.</p>
+        </li>
+        <li data-name="the 40 strong" data-desc="collective of incarcerated and formerly incarcerated people organizing for prison abolition and supporting families affected by incarceration in virginia.">
+          <div class="row">
+            <a class="name" href="https://the40strong.com/" target="_blank" rel="noopener noreferrer">The 40 Strong <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">the40strong.com</span>
+          </div>
+          <p class="desc">Collective of incarcerated and formerly incarcerated people organizing for prison abolition and supporting families affected by incarceration in Virginia.</p>
+        </li>
+        <li data-name="blue ridge abortion fund" data-desc="a community-based mutual aid organization providing financial support, transportation, and lodging assistance for abortion care since 1989. through their funding network and support services, they work to reduce barriers to access while building community care networks and offering comprehensive support for those seeking abortion care across virginia.">
+          <div class="row">
+            <a class="name" href="https://blueridgeabortionfund.org/" target="_blank" rel="noopener noreferrer">Blue Ridge Abortion Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">blueridgeabortionfund.org</span>
+          </div>
+          <p class="desc">A community-based mutual aid organization providing financial support, transportation, and lodging assistance for abortion care since 1989. Through their funding network and support services, they work to reduce barriers to access while building community care networks and offering comprehensive support for those seeking abortion care across Virginia.</p>
+        </li>
+        <li data-name="beloved community incubator" data-desc="a community-based organization fostering mutual aid and economic justice through cooperative development in the dmv region. they coordinate worker-owned business incubation, solidarity economy initiatives, and community wealth building while creating spaces for economic democracy, racial equity, and collective liberation through their various programs and support networks.">
+          <div class="row">
+            <a class="name" href="https://www.belovedcommunityincubator.org/" target="_blank" rel="noopener noreferrer">Beloved Community Incubator <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">belovedcommunityincubator.org</span>
+          </div>
+          <p class="desc">A community-based organization fostering mutual aid and economic justice through cooperative development in the DMV region. They coordinate worker-owned business incubation, solidarity economy initiatives, and community wealth building while creating spaces for economic democracy, racial equity, and collective liberation through their various programs and support networks.</p>
+        </li>
+        <li data-name="care collective of swva" data-desc="a grassroots organization fostering mutual aid and community support in southwest virginia. they coordinate direct assistance, resource sharing, and solidarity networks while building power through community organizing and creating spaces for collective care and support in the region.">
+          <div class="row">
+            <a class="name" href="https://carecollectiveofswva.wordpress.com/" target="_blank" rel="noopener noreferrer">Care Collective of SWVA <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">carecollectiveofswva.wordpress.com</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community support in Southwest Virginia. They coordinate direct assistance, resource sharing, and solidarity networks while building power through community organizing and creating spaces for collective care and support in the region.</p>
+        </li>
+        <li data-name="the green cab" data-desc="our mission is to provide a range of practical and logistical support options for people seeking abortion care in virginia.">
+          <div class="row">
+            <a class="name" href="https://www.thegreencab.org/" target="_blank" rel="noopener noreferrer">The Green Cab <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">thegreencab.org</span>
+          </div>
+          <p class="desc">Our mission is to provide a range of practical and logistical support options for people seeking abortion care in Virginia.</p>
+        </li>
+        <li data-name="rainy day fund" data-desc="a mutual aid network providing direct financial assistance and support to people in need across south carolina and virginia. they coordinate emergency financial aid, resource sharing, and solidarity networks while building power through community care and creating pathways for collective support.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/rainydayfund_us/" target="_blank" rel="noopener noreferrer">Rainy Day Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid network providing direct financial assistance and support to people in need across South Carolina and Virginia. They coordinate emergency financial aid, resource sharing, and solidarity networks while building power through community care and creating pathways for collective support.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No places or groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

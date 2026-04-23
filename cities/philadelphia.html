@@ -1,171 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Philadelphia Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Philadelphia. Connect with local organizations and community resources.">
+  <title>Philadelphia — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Philadelphia.">
   <link rel="canonical" href="https://organize.directory/philadelphia">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Philadelphia Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Philadelphia. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Philadelphia — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Philadelphia.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/philadelphia">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/pennsylvania">Pennsylvania</a>
-          <span>›</span>
-          <span>Philadelphia</span>
-        </div>
+<main id="main">
 
-        <h1>Philadelphia</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/pennsylvania">Pennsylvania</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Philadelphia</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://www.phillypeacepark.org/" target="_blank" rel="noopener noreferrer">Philadelphia Peace Park</a>
-      <p>Community-led green space providing food sovereignty, education, and cultural programming in North Philadelphia.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.foodhelpline.org/directory/regions/philadelphia" target="_blank" rel="noopener noreferrer">Lemon Tree's Free Food
-              Directory</a>
-      <p>Map of food pantries and distributions in the Philadelphia area.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.germantowncommunityfridge.com/" target="_blank" rel="noopener noreferrer">Germantown Community Fridge</a>
-      <p>A mutual aid initiative fostering food security through community fridges and food distribution in Philadelphia's Germantown neighborhood. They coordinate free food access, resource sharing, and solidarity networks while building power through community care and creating accessible spaces for food justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.phillystudentunion.org/" target="_blank" rel="noopener noreferrer">Philadelphia Student Union</a>
-      <p>Youth-led organization building power through organizing, leadership development, and mutual aid to transform Philadelphia's public schools. PSU centers student voices in the fight for educational justice while providing community support and political education.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.everywhereproject.org/" target="_blank" rel="noopener noreferrer">The Everywhere Project</a>
-      <p>a Philadelphia based organization that aims to expand the reach of harm reduction resources and education including: food, clothing, clean syringes, naloxone &amp; overdose reversal training, fentanyl testing strips and safer use supplies.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.thepeoplesfridge.org/" target="_blank" rel="noopener noreferrer">The People's Fridge</a>
-      <p>The People's Fridge (TPF) is a one ton, three door florist refrigerator located in the 52nd street corridor in West Philadelphia.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://phillyabc.org/" target="_blank" rel="noopener noreferrer">Philly ABC</a>
-      <p>Philly ABC provides mutual aid and solidarity support to political prisoners and prisoners of conscience. Through community organizing and direct support, they work to build connections between incarcerated individuals and the broader Philadelphia community while advocating for justice system reform.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.tubmanhousecenterforreparativejustice.org/" target="_blank" rel="noopener noreferrer">Tubman House Center For Reparative
-              Justice</a>
-      <p>A grassroots collective dedicated to advocating for lineage-based reparations and self-determination of the American Freedmen community. Through political education and community organizing, they work to raise awareness about the modern reparations campaign and foster community control of their justice claim, following in the tradition of Harriet Tubman and Callie House.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/housingreparationsphilly" target="_blank" rel="noopener noreferrer">Housing Reparations Philly</a>
-      <p>White + non-Black folks mobilized by the Black Visioning Group to secure housing for Black Q/T folks in philly, via wealth redistribution.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/wealthredistribution/" target="_blank" rel="noopener noreferrer">Wealth Redistribution Group</a>
-      <p>WRG works to acquire sustainable reparations for Black folks in Philly.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/arkofsafetyphilly/" target="_blank" rel="noopener noreferrer">Ark of Safety Philly</a>
-      <p>Ark of Safety TLGBQ+ safe haven offers Emergency shelter for TLGBQ +individuals</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.hrcoalition.org/" target="_blank" rel="noopener noreferrer">Human Rights Coalition</a>
-      <p>The Human Rights Coalition (HRC) is a grassroots non-profit group of currently and formerly incarcerated people, their families, and supporters.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.mazzonicenter.org/" target="_blank" rel="noopener noreferrer">Mazzoni Center</a>
-      <p>In a revolutionary city, we provide quality comprehensive health and wellness services in an LGBTQ-focused environment, while preserving the dignity and improving the quality of life of the individuals we serve.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.woodenshoebooks.org/" target="_blank" rel="noopener noreferrer">Wooden Shoe Books</a>
-      <p>A volunteer-run anarchist bookstore and community space providing radical literature, zines, and organizing space for mutual aid initiatives and community events since 1976.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.phillysoapbox.org/" target="_blank" rel="noopener noreferrer">The Soapbox</a>
-      <p>A community print shop, library, and zine archive offering workshops, resources, and space for DIY publishing and artistic collaboration. The Soapbox builds community through skill-sharing and providing accessible tools for creative expression.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.vietlead.org/" target="_blank" rel="noopener noreferrer">VietLead</a>
-      <p>VietLead is a grassroots community organization in Philadelphia and South Jersey that is creating a vision and strategy for community self-determination, social justice, and cultural resilience for the Vietnamese community.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.makingworldsbooks.org/" target="_blank" rel="noopener noreferrer">Making Worlds Bookstore</a>
-      <p>A cooperative bookstore and community space dedicated to building solidarity economies through literature, education, and mutual aid. Making Worlds centers voices from marginalized communities while fostering radical imagination and collective liberation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.thomasmertoncenter.org/" target="_blank" rel="noopener noreferrer">Thomas Merton Center</a>
-      <p>A resource center committed to peace and social justice through nonviolent struggle and mutual aid. The center provides organizing space, education programs, and support for grassroots movements working toward systemic change.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://breadrosesfund.org/" target="_blank" rel="noopener noreferrer">Bread and Roses Fund</a>
-      <p>We are the leading funder of grassroots organizing for racial, social, and economic justice in the Philadelphia region.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://lavazone.org/" target="_blank" rel="noopener noreferrer">Lancaster Avenue Autonomous Space (LAVA)</a>
-      <p>A community center for radical media and organizing in West Philadelphia, providing space for diverse communities to converge, build connections, and organize for justice. LAVA hosts regular mutual aid initiatives including food distributions, a free market, and a community library.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://iffybooks.net/" target="_blank" rel="noopener noreferrer">Iffy Books</a>
-      <p>A community space focused on hacking, free culture, and DIY publishing, offering workshops on technical skills, writing groups, and zine-making. Iffy Books builds mutual aid through skill-sharing and providing accessible tools for creative and technical empowerment.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/fnbsolidarity/" target="_blank" rel="noopener noreferrer">Food Not Bombs Solidarity</a>
-      <p>A mutual aid collective fostering food justice and community solidarity through free food sharing in Philadelphia. They coordinate food recovery, community meals, and solidarity networks while building power through direct action and creating spaces for food sovereignty.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/npfnb/" target="_blank" rel="noopener noreferrer">North Philly Food Not Bombs</a>
-      <p>A grassroots chapter of Food Not Bombs serving the North Philadelphia community through free food sharing and mutual aid. They work to address food insecurity through direct community support, food recovery, and solidarity while creating spaces for community empowerment.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.phillysocialists.org/" target="_blank" rel="noopener noreferrer">Philly Socialists</a>
-      <p>We are dedicated to building the base for socialist politics through projects that serve the people and fight the power: the Cesar Andreu Iglesias Community Garden, Philly Workers for Dignity, and free English classes—just to name a few.</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Philadelphia</h1>
+    <p class="meta">
+      <b>24</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      Pennsylvania
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Philadelphia</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Philadelphia…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="philadelphia peace park" data-desc="community-led green space providing food sovereignty, education, and cultural programming in north philadelphia.">
+          <div class="row">
+            <a class="name" href="https://www.phillypeacepark.org/" target="_blank" rel="noopener noreferrer">Philadelphia Peace Park <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">phillypeacepark.org</span>
+          </div>
+          <p class="desc">Community-led green space providing food sovereignty, education, and cultural programming in North Philadelphia.</p>
+        </li>
+        <li data-name="lemon tree's free food
+              directory" data-desc="map of food pantries and distributions in the philadelphia area.">
+          <div class="row">
+            <a class="name" href="https://www.foodhelpline.org/directory/regions/philadelphia" target="_blank" rel="noopener noreferrer">Lemon Tree's Free Food
+              Directory <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">foodhelpline.org</span>
+          </div>
+          <p class="desc">Map of food pantries and distributions in the Philadelphia area.</p>
+        </li>
+        <li data-name="germantown community fridge" data-desc="a mutual aid initiative fostering food security through community fridges and food distribution in philadelphia's germantown neighborhood. they coordinate free food access, resource sharing, and solidarity networks while building power through community care and creating accessible spaces for food justice.">
+          <div class="row">
+            <a class="name" href="https://www.germantowncommunityfridge.com/" target="_blank" rel="noopener noreferrer">Germantown Community Fridge <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">germantowncommunityfridge.com</span>
+          </div>
+          <p class="desc">A mutual aid initiative fostering food security through community fridges and food distribution in Philadelphia's Germantown neighborhood. They coordinate free food access, resource sharing, and solidarity networks while building power through community care and creating accessible spaces for food justice.</p>
+        </li>
+        <li data-name="philadelphia student union" data-desc="youth-led organization building power through organizing, leadership development, and mutual aid to transform philadelphia's public schools. psu centers student voices in the fight for educational justice while providing community support and political education.">
+          <div class="row">
+            <a class="name" href="https://www.phillystudentunion.org/" target="_blank" rel="noopener noreferrer">Philadelphia Student Union <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">phillystudentunion.org</span>
+          </div>
+          <p class="desc">Youth-led organization building power through organizing, leadership development, and mutual aid to transform Philadelphia's public schools. PSU centers student voices in the fight for educational justice while providing community support and political education.</p>
+        </li>
+        <li data-name="the everywhere project" data-desc="a philadelphia based organization that aims to expand the reach of harm reduction resources and education including: food, clothing, clean syringes, naloxone &amp; overdose reversal training, fentanyl testing strips and safer use supplies.">
+          <div class="row">
+            <a class="name" href="https://www.everywhereproject.org/" target="_blank" rel="noopener noreferrer">The Everywhere Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">everywhereproject.org</span>
+          </div>
+          <p class="desc">a Philadelphia based organization that aims to expand the reach of harm reduction resources and education including: food, clothing, clean syringes, naloxone &amp; overdose reversal training, fentanyl testing strips and safer use supplies.</p>
+        </li>
+        <li data-name="the people's fridge" data-desc="the people's fridge (tpf) is a one ton, three door florist refrigerator located in the 52nd street corridor in west philadelphia.">
+          <div class="row">
+            <a class="name" href="https://www.thepeoplesfridge.org/" target="_blank" rel="noopener noreferrer">The People's Fridge <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">thepeoplesfridge.org</span>
+          </div>
+          <p class="desc">The People's Fridge (TPF) is a one ton, three door florist refrigerator located in the 52nd street corridor in West Philadelphia.</p>
+        </li>
+        <li data-name="philly abc" data-desc="philly abc provides mutual aid and solidarity support to political prisoners and prisoners of conscience. through community organizing and direct support, they work to build connections between incarcerated individuals and the broader philadelphia community while advocating for justice system reform.">
+          <div class="row">
+            <a class="name" href="https://phillyabc.org/" target="_blank" rel="noopener noreferrer">Philly ABC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">phillyabc.org</span>
+          </div>
+          <p class="desc">Philly ABC provides mutual aid and solidarity support to political prisoners and prisoners of conscience. Through community organizing and direct support, they work to build connections between incarcerated individuals and the broader Philadelphia community while advocating for justice system reform.</p>
+        </li>
+        <li data-name="tubman house center for reparative
+              justice" data-desc="a grassroots collective dedicated to advocating for lineage-based reparations and self-determination of the american freedmen community. through political education and community organizing, they work to raise awareness about the modern reparations campaign and foster community control of their justice claim, following in the tradition of harriet tubman and callie house.">
+          <div class="row">
+            <a class="name" href="https://www.tubmanhousecenterforreparativejustice.org/" target="_blank" rel="noopener noreferrer">Tubman House Center For Reparative
+              Justice <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">tubmanhousecenterforreparativejustice.org</span>
+          </div>
+          <p class="desc">A grassroots collective dedicated to advocating for lineage-based reparations and self-determination of the American Freedmen community. Through political education and community organizing, they work to raise awareness about the modern reparations campaign and foster community control of their justice claim, following in the tradition of Harriet Tubman and Callie House.</p>
+        </li>
+        <li data-name="housing reparations philly" data-desc="white + non-black folks mobilized by the black visioning group to secure housing for black q/t folks in philly, via wealth redistribution.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/housingreparationsphilly" target="_blank" rel="noopener noreferrer">Housing Reparations Philly <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">White + non-Black folks mobilized by the Black Visioning Group to secure housing for Black Q/T folks in philly, via wealth redistribution.</p>
+        </li>
+        <li data-name="wealth redistribution group" data-desc="wrg works to acquire sustainable reparations for black folks in philly.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/wealthredistribution/" target="_blank" rel="noopener noreferrer">Wealth Redistribution Group <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">WRG works to acquire sustainable reparations for Black folks in Philly.</p>
+        </li>
+        <li data-name="ark of safety philly" data-desc="ark of safety tlgbq+ safe haven offers emergency shelter for tlgbq +individuals">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/arkofsafetyphilly/" target="_blank" rel="noopener noreferrer">Ark of Safety Philly <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Ark of Safety TLGBQ+ safe haven offers Emergency shelter for TLGBQ +individuals</p>
+        </li>
+        <li data-name="human rights coalition" data-desc="the human rights coalition (hrc) is a grassroots non-profit group of currently and formerly incarcerated people, their families, and supporters.">
+          <div class="row">
+            <a class="name" href="https://www.hrcoalition.org/" target="_blank" rel="noopener noreferrer">Human Rights Coalition <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">hrcoalition.org</span>
+          </div>
+          <p class="desc">The Human Rights Coalition (HRC) is a grassroots non-profit group of currently and formerly incarcerated people, their families, and supporters.</p>
+        </li>
+        <li data-name="mazzoni center" data-desc="in a revolutionary city, we provide quality comprehensive health and wellness services in an lgbtq-focused environment, while preserving the dignity and improving the quality of life of the individuals we serve.">
+          <div class="row">
+            <a class="name" href="https://www.mazzonicenter.org/" target="_blank" rel="noopener noreferrer">Mazzoni Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">mazzonicenter.org</span>
+          </div>
+          <p class="desc">In a revolutionary city, we provide quality comprehensive health and wellness services in an LGBTQ-focused environment, while preserving the dignity and improving the quality of life of the individuals we serve.</p>
+        </li>
+        <li data-name="wooden shoe books" data-desc="a volunteer-run anarchist bookstore and community space providing radical literature, zines, and organizing space for mutual aid initiatives and community events since 1976.">
+          <div class="row">
+            <a class="name" href="https://www.woodenshoebooks.org/" target="_blank" rel="noopener noreferrer">Wooden Shoe Books <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">woodenshoebooks.org</span>
+          </div>
+          <p class="desc">A volunteer-run anarchist bookstore and community space providing radical literature, zines, and organizing space for mutual aid initiatives and community events since 1976.</p>
+        </li>
+        <li data-name="the soapbox" data-desc="a community print shop, library, and zine archive offering workshops, resources, and space for diy publishing and artistic collaboration. the soapbox builds community through skill-sharing and providing accessible tools for creative expression.">
+          <div class="row">
+            <a class="name" href="https://www.phillysoapbox.org/" target="_blank" rel="noopener noreferrer">The Soapbox <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">phillysoapbox.org</span>
+          </div>
+          <p class="desc">A community print shop, library, and zine archive offering workshops, resources, and space for DIY publishing and artistic collaboration. The Soapbox builds community through skill-sharing and providing accessible tools for creative expression.</p>
+        </li>
+        <li data-name="vietlead" data-desc="vietlead is a grassroots community organization in philadelphia and south jersey that is creating a vision and strategy for community self-determination, social justice, and cultural resilience for the vietnamese community.">
+          <div class="row">
+            <a class="name" href="https://www.vietlead.org/" target="_blank" rel="noopener noreferrer">VietLead <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">vietlead.org</span>
+          </div>
+          <p class="desc">VietLead is a grassroots community organization in Philadelphia and South Jersey that is creating a vision and strategy for community self-determination, social justice, and cultural resilience for the Vietnamese community.</p>
+        </li>
+        <li data-name="making worlds bookstore" data-desc="a cooperative bookstore and community space dedicated to building solidarity economies through literature, education, and mutual aid. making worlds centers voices from marginalized communities while fostering radical imagination and collective liberation.">
+          <div class="row">
+            <a class="name" href="https://www.makingworldsbooks.org/" target="_blank" rel="noopener noreferrer">Making Worlds Bookstore <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">makingworldsbooks.org</span>
+          </div>
+          <p class="desc">A cooperative bookstore and community space dedicated to building solidarity economies through literature, education, and mutual aid. Making Worlds centers voices from marginalized communities while fostering radical imagination and collective liberation.</p>
+        </li>
+        <li data-name="thomas merton center" data-desc="a resource center committed to peace and social justice through nonviolent struggle and mutual aid. the center provides organizing space, education programs, and support for grassroots movements working toward systemic change.">
+          <div class="row">
+            <a class="name" href="https://www.thomasmertoncenter.org/" target="_blank" rel="noopener noreferrer">Thomas Merton Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">thomasmertoncenter.org</span>
+          </div>
+          <p class="desc">A resource center committed to peace and social justice through nonviolent struggle and mutual aid. The center provides organizing space, education programs, and support for grassroots movements working toward systemic change.</p>
+        </li>
+        <li data-name="bread and roses fund" data-desc="we are the leading funder of grassroots organizing for racial, social, and economic justice in the philadelphia region.">
+          <div class="row">
+            <a class="name" href="https://breadrosesfund.org/" target="_blank" rel="noopener noreferrer">Bread and Roses Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">breadrosesfund.org</span>
+          </div>
+          <p class="desc">We are the leading funder of grassroots organizing for racial, social, and economic justice in the Philadelphia region.</p>
+        </li>
+        <li data-name="lancaster avenue autonomous space (lava)" data-desc="a community center for radical media and organizing in west philadelphia, providing space for diverse communities to converge, build connections, and organize for justice. lava hosts regular mutual aid initiatives including food distributions, a free market, and a community library.">
+          <div class="row">
+            <a class="name" href="https://lavazone.org/" target="_blank" rel="noopener noreferrer">Lancaster Avenue Autonomous Space (LAVA) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">lavazone.org</span>
+          </div>
+          <p class="desc">A community center for radical media and organizing in West Philadelphia, providing space for diverse communities to converge, build connections, and organize for justice. LAVA hosts regular mutual aid initiatives including food distributions, a free market, and a community library.</p>
+        </li>
+        <li data-name="iffy books" data-desc="a community space focused on hacking, free culture, and diy publishing, offering workshops on technical skills, writing groups, and zine-making. iffy books builds mutual aid through skill-sharing and providing accessible tools for creative and technical empowerment.">
+          <div class="row">
+            <a class="name" href="https://iffybooks.net/" target="_blank" rel="noopener noreferrer">Iffy Books <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">iffybooks.net</span>
+          </div>
+          <p class="desc">A community space focused on hacking, free culture, and DIY publishing, offering workshops on technical skills, writing groups, and zine-making. Iffy Books builds mutual aid through skill-sharing and providing accessible tools for creative and technical empowerment.</p>
+        </li>
+        <li data-name="food not bombs solidarity" data-desc="a mutual aid collective fostering food justice and community solidarity through free food sharing in philadelphia. they coordinate food recovery, community meals, and solidarity networks while building power through direct action and creating spaces for food sovereignty.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/fnbsolidarity/" target="_blank" rel="noopener noreferrer">Food Not Bombs Solidarity <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid collective fostering food justice and community solidarity through free food sharing in Philadelphia. They coordinate food recovery, community meals, and solidarity networks while building power through direct action and creating spaces for food sovereignty.</p>
+        </li>
+        <li data-name="north philly food not bombs" data-desc="a grassroots chapter of food not bombs serving the north philadelphia community through free food sharing and mutual aid. they work to address food insecurity through direct community support, food recovery, and solidarity while creating spaces for community empowerment.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/npfnb/" target="_blank" rel="noopener noreferrer">North Philly Food Not Bombs <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots chapter of Food Not Bombs serving the North Philadelphia community through free food sharing and mutual aid. They work to address food insecurity through direct community support, food recovery, and solidarity while creating spaces for community empowerment.</p>
+        </li>
+        <li data-name="philly socialists" data-desc="we are dedicated to building the base for socialist politics through projects that serve the people and fight the power: the cesar andreu iglesias community garden, philly workers for dignity, and free english classes—just to name a few.">
+          <div class="row">
+            <a class="name" href="https://www.phillysocialists.org/" target="_blank" rel="noopener noreferrer">Philly Socialists <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">phillysocialists.org</span>
+          </div>
+          <p class="desc">We are dedicated to building the base for socialist politics through projects that serve the people and fight the power: the Cesar Andreu Iglesias Community Garden, Philly Workers for Dignity, and free English classes—just to name a few.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

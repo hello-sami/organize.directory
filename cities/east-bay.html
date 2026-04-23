@@ -1,125 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>East Bay Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in East Bay. Connect with local organizations and community resources.">
+  <title>East Bay — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in East Bay.">
   <link rel="canonical" href="https://organize.directory/east-bay">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="East Bay Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in East Bay. Connect with local organizations and community resources.">
+  <meta property="og:title" content="East Bay — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in East Bay.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/east-bay">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/california">California</a>
-          <span>›</span>
-          <a href="/norcal">Northern California</a>
-          <span>›</span>
-          <a href="/sf-bay-area">Bay Area</a>
-          <span>›</span>
-          <span>East Bay</span>
-        </div>
+<main id="main">
 
-        <h1>East Bay</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/california">California</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/norcal">Northern California</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/sf-bay-area">Bay Area</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">East Bay</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <h2>Regional Organizations</h2>
-    <div class="initiative">
-      <a href="https://eastbayfoodnotbombs.org/" target="_blank" rel="noopener noreferrer">East Bay Food Not Bombs</a>
-      <p>We are an all-volunteer collective that serves vegan food in Oakland and Berkeley six days a week. In addition to the seven hot meals we serve each week, we distribute bagged lunches and dinners out of our truck and bicycle across the East Bay.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.cerieastbay.org/" target="_blank" rel="noopener noreferrer">Center for Empowering Refugees and Immigrants (CERI)</a>
-      <p>Community organization providing culturally attuned mental health services, LGBTQ+ advocacy, youth programs, and community care for refugee and immigrant communities in Oakland, with a focus on Southeast Asian genocide survivors and their families.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.centrolegal.org/" target="_blank" rel="noopener noreferrer">Centro Legal de la Raza</a>
-      <p>Community legal organization providing direct legal services, community education, and advocacy for immigrant, tenant, and worker rights in Oakland, with a focus on serving low-income and immigrant communities through mutual aid and solidarity.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://thevillageoflove.org/" target="_blank" rel="noopener noreferrer">Village of Love</a>
-      <p>A grassroots organization operating drop-in centers and providing direct support to unhoused neighbors in Alameda, Berkeley, and Oakland. They coordinate mutual aid initiatives, resource sharing, and community care while building networks of solidarity through direct action and neighborhood organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.jrcofac.org/" target="_blank" rel="noopener noreferrer">JR Consulting</a>
-      <p>A community-based organization providing support and advocacy for families affected by police violence in the East Bay. Through mutual aid and direct support, they offer resources, counseling, and solidarity networks while building power through family advocacy, community organizing, and creating spaces for healing and justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.gilltractfarm.org/" target="_blank" rel="noopener noreferrer">Gill Tract Community Farm</a>
-      <p>A community-managed urban farm fostering food sovereignty and mutual aid through agroecology, education, and collective organizing. They coordinate food distributions, seed sharing, and community programs while building power through sustainable agriculture, environmental justice, and creating spaces for community-driven food systems.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.eastbayalternativebookandzinefest.com/" target="_blank" rel="noopener noreferrer">East Bay Alternative Book and Zine Fest</a>
-      <p>A community-driven festival fostering mutual aid and solidarity through independent publishing and DIY arts. They coordinate an annual gathering of zinesters, artists, and radical publishers while building networks of creative resistance and supporting grassroots literary culture in the East Bay.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/albelc4palestine/" target="_blank" rel="noopener noreferrer">Albany for Palestine</a>
-      <p>A grassroots collective fostering mutual aid and solidarity through Palestinian liberation organizing in the East Bay. They coordinate direct actions, community education, and solidarity networks while building power through local organizing, boycott campaigns, and creating spaces for Palestinian resistance and community mobilization.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://ebho.org/" target="_blank" rel="noopener noreferrer">East Bay Housing Organizations (EBHO)</a>
-      <p>EBHO is a membership-based advocacy organization fighting for affordable housing for all.</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="cities-list">
-      <h2>Locations</h2>
-      <div class="city-links-container">
-          <a href="/berkeley" class="city-link location-link-base">Berkeley</a>
-          <a href="/hayward" class="city-link location-link-base">Hayward</a>
-          <a href="/oakland" class="city-link location-link-base">Oakland</a>
-      </div>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">East Bay</h1>
+    <p class="meta">
+      <b>9</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      California
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in East Bay</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in East Bay…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+  <nav class="toc" aria-label="Sections on this page">
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
+      <span class="current">
+        <span class="current-label">Section ·</span>
+        <span class="current-name">Neighborhoods</span>
+      </span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div id="toc-panel" class="toc-scroll">
+      <a href="#neighborhoods" data-section="neighborhoods"><span class="label">Neighborhoods</span></a>
+      <a href="#section-0" data-section="section-0"><span class="label">Regional Organizations</span> <span class="count">9</span></a>
+    </div>
+  </nav>
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="neighborhoods" class="group-section" data-section="neighborhoods">
+      <h2 class="section-title">Neighborhoods</h2>
+      <ol class="groups children-list">
+        <li data-name="berkeley" data-desc=""><a class="name" href="/berkeley">Berkeley</a></li>
+        <li data-name="hayward" data-desc=""><a class="name" href="/hayward">Hayward</a></li>
+        <li data-name="oakland" data-desc=""><a class="name" href="/oakland">Oakland</a></li>
+      </ol>
+    </section>
+
+    <section id="section-0" class="group-section" data-section="section-0">
+      <h2 class="section-title">Regional Organizations</h2>
+      <ol class="groups">
+        <li data-name="east bay food not bombs" data-desc="we are an all-volunteer collective that serves vegan food in oakland and berkeley six days a week. in addition to the seven hot meals we serve each week, we distribute bagged lunches and dinners out of our truck and bicycle across the east bay.">
+          <div class="row">
+            <a class="name" href="https://eastbayfoodnotbombs.org/" target="_blank" rel="noopener noreferrer">East Bay Food Not Bombs <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">eastbayfoodnotbombs.org</span>
+          </div>
+          <p class="desc">We are an all-volunteer collective that serves vegan food in Oakland and Berkeley six days a week. In addition to the seven hot meals we serve each week, we distribute bagged lunches and dinners out of our truck and bicycle across the East Bay.</p>
+        </li>
+        <li data-name="center for empowering refugees and immigrants (ceri)" data-desc="community organization providing culturally attuned mental health services, lgbtq+ advocacy, youth programs, and community care for refugee and immigrant communities in oakland, with a focus on southeast asian genocide survivors and their families.">
+          <div class="row">
+            <a class="name" href="https://www.cerieastbay.org/" target="_blank" rel="noopener noreferrer">Center for Empowering Refugees and Immigrants (CERI) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">cerieastbay.org</span>
+          </div>
+          <p class="desc">Community organization providing culturally attuned mental health services, LGBTQ+ advocacy, youth programs, and community care for refugee and immigrant communities in Oakland, with a focus on Southeast Asian genocide survivors and their families.</p>
+        </li>
+        <li data-name="centro legal de la raza" data-desc="community legal organization providing direct legal services, community education, and advocacy for immigrant, tenant, and worker rights in oakland, with a focus on serving low-income and immigrant communities through mutual aid and solidarity.">
+          <div class="row">
+            <a class="name" href="https://www.centrolegal.org/" target="_blank" rel="noopener noreferrer">Centro Legal de la Raza <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">centrolegal.org</span>
+          </div>
+          <p class="desc">Community legal organization providing direct legal services, community education, and advocacy for immigrant, tenant, and worker rights in Oakland, with a focus on serving low-income and immigrant communities through mutual aid and solidarity.</p>
+        </li>
+        <li data-name="village of love" data-desc="a grassroots organization operating drop-in centers and providing direct support to unhoused neighbors in alameda, berkeley, and oakland. they coordinate mutual aid initiatives, resource sharing, and community care while building networks of solidarity through direct action and neighborhood organizing.">
+          <div class="row">
+            <a class="name" href="https://thevillageoflove.org/" target="_blank" rel="noopener noreferrer">Village of Love <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">thevillageoflove.org</span>
+          </div>
+          <p class="desc">A grassroots organization operating drop-in centers and providing direct support to unhoused neighbors in Alameda, Berkeley, and Oakland. They coordinate mutual aid initiatives, resource sharing, and community care while building networks of solidarity through direct action and neighborhood organizing.</p>
+        </li>
+        <li data-name="jr consulting" data-desc="a community-based organization providing support and advocacy for families affected by police violence in the east bay. through mutual aid and direct support, they offer resources, counseling, and solidarity networks while building power through family advocacy, community organizing, and creating spaces for healing and justice.">
+          <div class="row">
+            <a class="name" href="https://www.jrcofac.org/" target="_blank" rel="noopener noreferrer">JR Consulting <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">jrcofac.org</span>
+          </div>
+          <p class="desc">A community-based organization providing support and advocacy for families affected by police violence in the East Bay. Through mutual aid and direct support, they offer resources, counseling, and solidarity networks while building power through family advocacy, community organizing, and creating spaces for healing and justice.</p>
+        </li>
+        <li data-name="gill tract community farm" data-desc="a community-managed urban farm fostering food sovereignty and mutual aid through agroecology, education, and collective organizing. they coordinate food distributions, seed sharing, and community programs while building power through sustainable agriculture, environmental justice, and creating spaces for community-driven food systems.">
+          <div class="row">
+            <a class="name" href="https://www.gilltractfarm.org/" target="_blank" rel="noopener noreferrer">Gill Tract Community Farm <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">gilltractfarm.org</span>
+          </div>
+          <p class="desc">A community-managed urban farm fostering food sovereignty and mutual aid through agroecology, education, and collective organizing. They coordinate food distributions, seed sharing, and community programs while building power through sustainable agriculture, environmental justice, and creating spaces for community-driven food systems.</p>
+        </li>
+        <li data-name="east bay alternative book and zine fest" data-desc="a community-driven festival fostering mutual aid and solidarity through independent publishing and diy arts. they coordinate an annual gathering of zinesters, artists, and radical publishers while building networks of creative resistance and supporting grassroots literary culture in the east bay.">
+          <div class="row">
+            <a class="name" href="https://www.eastbayalternativebookandzinefest.com/" target="_blank" rel="noopener noreferrer">East Bay Alternative Book and Zine Fest <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">eastbayalternativebookandzinefest.com</span>
+          </div>
+          <p class="desc">A community-driven festival fostering mutual aid and solidarity through independent publishing and DIY arts. They coordinate an annual gathering of zinesters, artists, and radical publishers while building networks of creative resistance and supporting grassroots literary culture in the East Bay.</p>
+        </li>
+        <li data-name="albany for palestine" data-desc="a grassroots collective fostering mutual aid and solidarity through palestinian liberation organizing in the east bay. they coordinate direct actions, community education, and solidarity networks while building power through local organizing, boycott campaigns, and creating spaces for palestinian resistance and community mobilization.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/albelc4palestine/" target="_blank" rel="noopener noreferrer">Albany for Palestine <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots collective fostering mutual aid and solidarity through Palestinian liberation organizing in the East Bay. They coordinate direct actions, community education, and solidarity networks while building power through local organizing, boycott campaigns, and creating spaces for Palestinian resistance and community mobilization.</p>
+        </li>
+        <li data-name="east bay housing organizations (ebho)" data-desc="ebho is a membership-based advocacy organization fighting for affordable housing for all.">
+          <div class="row">
+            <a class="name" href="https://ebho.org/" target="_blank" rel="noopener noreferrer">East Bay Housing Organizations (EBHO) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">ebho.org</span>
+          </div>
+          <p class="desc">EBHO is a membership-based advocacy organization fighting for affordable housing for all.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

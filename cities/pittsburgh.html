@@ -1,144 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Pittsburgh Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Pittsburgh. Connect with local organizations and community resources.">
+  <title>Pittsburgh — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Pittsburgh.">
   <link rel="canonical" href="https://organize.directory/pittsburgh">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Pittsburgh Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Pittsburgh. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Pittsburgh — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Pittsburgh.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/pittsburgh">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/pennsylvania">Pennsylvania</a>
-          <span>›</span>
-          <span>Pittsburgh</span>
-        </div>
+<main id="main">
 
-        <h1>Pittsburgh</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/pennsylvania">Pennsylvania</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Pittsburgh</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://www.facebook.com/whatsuppgh/" target="_blank" rel="noopener noreferrer">What's Up?! Pittsburgh</a>
-      <p>A grassroots organization fostering mutual aid and community solidarity through anti-racist organizing in Pittsburgh. They coordinate political education, direct action support, and solidarity networks while building power through community organizing and creating spaces for racial justice education and movement building.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.thomasmertoncenter.org/" target="_blank" rel="noopener noreferrer">Thomas Merton Center</a>
-      <p>A resource center committed to peace and social justice through nonviolent struggle and mutual aid. The center provides organizing space, education programs, and support for grassroots movements working toward systemic change in Pittsburgh.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/scorchmedics/" target="_blank" rel="noopener noreferrer">Steel City Organizing Radical Community Health
-              (SCORCH)</a>
-      <p>Community based, all volunteer collective of healthcare activists and street medics.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://letsgetfree.info/" target="_blank" rel="noopener noreferrer">Let's Get Free</a>
-      <p>The Women and Trans Prisoner Defense Committee</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.412foodrescue.org/" target="_blank" rel="noopener noreferrer">412 Food Rescue</a>
-      <p>Preventing food waste by redirecting surplus food to those experiencing food insecurity</p>
-    </div>
-    <div class="initiative">
-      <a href="http://www.thebigideapgh.org/" target="_blank" rel="noopener noreferrer">The Big Idea</a>
-      <p>A volunteer-run radical bookstore and community space providing access to literature, zines, and organizing resources while fostering mutual aid and solidarity through events and community initiatives.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.deathdrivepress.com/" target="_blank" rel="noopener noreferrer">Death Drive Press</a>
-      <p>Anti-profit collective independent press specializing in limited-run hand-made chapbooks and radical literature</p>
-    </div>
-    <div class="initiative">
-      <a href="https://thebigideapgh.com/" target="_blank" rel="noopener noreferrer">The Big Idea Bookstore and Cafe</a>
-      <p>Anarchist bookstore that hosts events and sells radical literature.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://blackliberationautonomouscollective.wordpress.com/" target="_blank" rel="noopener noreferrer">Black Liberation Autonomous
-              Collective
-              (BLAC)</a>
-      <p>Organization focused on Black liberation and TGNCNB mutual aid support in Pittsburgh.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.sisterspgh.org/" target="_blank" rel="noopener noreferrer">Sisters PGH</a>
-      <p>A Black and trans-led mutual aid organization providing direct support and advocacy for the LGBTQ+ community in Pittsburgh. They coordinate housing assistance, resource sharing, and solidarity networks while building power through trans leadership development and creating spaces for community care.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/baccpgh/" target="_blank" rel="noopener noreferrer">Black Anarchist Community Council (BACC)</a>
-      <p>Black-led mutual aid and community support organization.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.pittsburghcares.org/" target="_blank" rel="noopener noreferrer">Pittsburgh Cares</a>
-      <p>Connecting volunteers with community service opportunities and mutual aid initiatives.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.steelcitymutualaidsociety.org/" target="_blank" rel="noopener noreferrer">Steel City Mutual Aid Society</a>
-      <p>Community-based mutual aid network providing direct support</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/steelcityantifascistleague/" target="_blank" rel="noopener noreferrer">Steel City Anti-Fascist League</a>
-      <p>Anti-Fascist Action | Anti-Police Action | Anti-Imperial Action | Straight Edge</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/filler_pgh/" target="_blank" rel="noopener noreferrer">FILLER Pittsburgh</a>
-      <p>A mutual aid collective organizing community support and solidarity initiatives in Pittsburgh. They coordinate resource sharing, direct support, and community organizing while building networks of care and resistance through various social movements.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/womeninprison/" target="_blank" rel="noopener noreferrer">Women in Prison</a>
-      <p>A mutual aid collective providing support and resources to incarcerated women in Pittsburgh and surrounding areas. They coordinate letter writing, commissary support, reentry assistance, and advocacy initiatives while building networks of care and solidarity with incarcerated community members.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.bukitbailfund.org/home" target="_blank" rel="noopener noreferrer">Bukit Bail Fund</a>
-      <p>A coalition of individuals supporting those incarcerated in Allegheny County Jail.</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Pittsburgh</h1>
+    <p class="meta">
+      <b>17</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      Pennsylvania
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Pittsburgh</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Pittsburgh…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="what's up?! pittsburgh" data-desc="a grassroots organization fostering mutual aid and community solidarity through anti-racist organizing in pittsburgh. they coordinate political education, direct action support, and solidarity networks while building power through community organizing and creating spaces for racial justice education and movement building.">
+          <div class="row">
+            <a class="name" href="https://www.facebook.com/whatsuppgh/" target="_blank" rel="noopener noreferrer">What's Up?! Pittsburgh <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">facebook.com</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community solidarity through anti-racist organizing in Pittsburgh. They coordinate political education, direct action support, and solidarity networks while building power through community organizing and creating spaces for racial justice education and movement building.</p>
+        </li>
+        <li data-name="thomas merton center" data-desc="a resource center committed to peace and social justice through nonviolent struggle and mutual aid. the center provides organizing space, education programs, and support for grassroots movements working toward systemic change in pittsburgh.">
+          <div class="row">
+            <a class="name" href="https://www.thomasmertoncenter.org/" target="_blank" rel="noopener noreferrer">Thomas Merton Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">thomasmertoncenter.org</span>
+          </div>
+          <p class="desc">A resource center committed to peace and social justice through nonviolent struggle and mutual aid. The center provides organizing space, education programs, and support for grassroots movements working toward systemic change in Pittsburgh.</p>
+        </li>
+        <li data-name="steel city organizing radical community health
+              (scorch)" data-desc="community based, all volunteer collective of healthcare activists and street medics.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/scorchmedics/" target="_blank" rel="noopener noreferrer">Steel City Organizing Radical Community Health
+              (SCORCH) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Community based, all volunteer collective of healthcare activists and street medics.</p>
+        </li>
+        <li data-name="let's get free" data-desc="the women and trans prisoner defense committee">
+          <div class="row">
+            <a class="name" href="https://letsgetfree.info/" target="_blank" rel="noopener noreferrer">Let's Get Free <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">letsgetfree.info</span>
+          </div>
+          <p class="desc">The Women and Trans Prisoner Defense Committee</p>
+        </li>
+        <li data-name="412 food rescue" data-desc="preventing food waste by redirecting surplus food to those experiencing food insecurity">
+          <div class="row">
+            <a class="name" href="https://www.412foodrescue.org/" target="_blank" rel="noopener noreferrer">412 Food Rescue <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">412foodrescue.org</span>
+          </div>
+          <p class="desc">Preventing food waste by redirecting surplus food to those experiencing food insecurity</p>
+        </li>
+        <li data-name="the big idea" data-desc="a volunteer-run radical bookstore and community space providing access to literature, zines, and organizing resources while fostering mutual aid and solidarity through events and community initiatives.">
+          <div class="row">
+            <a class="name" href="http://www.thebigideapgh.org/" target="_blank" rel="noopener noreferrer">The Big Idea <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">thebigideapgh.org</span>
+          </div>
+          <p class="desc">A volunteer-run radical bookstore and community space providing access to literature, zines, and organizing resources while fostering mutual aid and solidarity through events and community initiatives.</p>
+        </li>
+        <li data-name="death drive press" data-desc="anti-profit collective independent press specializing in limited-run hand-made chapbooks and radical literature">
+          <div class="row">
+            <a class="name" href="https://www.deathdrivepress.com/" target="_blank" rel="noopener noreferrer">Death Drive Press <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">deathdrivepress.com</span>
+          </div>
+          <p class="desc">Anti-profit collective independent press specializing in limited-run hand-made chapbooks and radical literature</p>
+        </li>
+        <li data-name="the big idea bookstore and cafe" data-desc="anarchist bookstore that hosts events and sells radical literature.">
+          <div class="row">
+            <a class="name" href="https://thebigideapgh.com/" target="_blank" rel="noopener noreferrer">The Big Idea Bookstore and Cafe <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">thebigideapgh.com</span>
+          </div>
+          <p class="desc">Anarchist bookstore that hosts events and sells radical literature.</p>
+        </li>
+        <li data-name="black liberation autonomous
+              collective
+              (blac)" data-desc="organization focused on black liberation and tgncnb mutual aid support in pittsburgh.">
+          <div class="row">
+            <a class="name" href="https://blackliberationautonomouscollective.wordpress.com/" target="_blank" rel="noopener noreferrer">Black Liberation Autonomous
+              Collective
+              (BLAC) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">blackliberationautonomouscollective.wordpress.com</span>
+          </div>
+          <p class="desc">Organization focused on Black liberation and TGNCNB mutual aid support in Pittsburgh.</p>
+        </li>
+        <li data-name="sisters pgh" data-desc="a black and trans-led mutual aid organization providing direct support and advocacy for the lgbtq+ community in pittsburgh. they coordinate housing assistance, resource sharing, and solidarity networks while building power through trans leadership development and creating spaces for community care.">
+          <div class="row">
+            <a class="name" href="https://www.sisterspgh.org/" target="_blank" rel="noopener noreferrer">Sisters PGH <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sisterspgh.org</span>
+          </div>
+          <p class="desc">A Black and trans-led mutual aid organization providing direct support and advocacy for the LGBTQ+ community in Pittsburgh. They coordinate housing assistance, resource sharing, and solidarity networks while building power through trans leadership development and creating spaces for community care.</p>
+        </li>
+        <li data-name="black anarchist community council (bacc)" data-desc="black-led mutual aid and community support organization.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/baccpgh/" target="_blank" rel="noopener noreferrer">Black Anarchist Community Council (BACC) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Black-led mutual aid and community support organization.</p>
+        </li>
+        <li data-name="pittsburgh cares" data-desc="connecting volunteers with community service opportunities and mutual aid initiatives.">
+          <div class="row">
+            <a class="name" href="https://www.pittsburghcares.org/" target="_blank" rel="noopener noreferrer">Pittsburgh Cares <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">pittsburghcares.org</span>
+          </div>
+          <p class="desc">Connecting volunteers with community service opportunities and mutual aid initiatives.</p>
+        </li>
+        <li data-name="steel city mutual aid society" data-desc="community-based mutual aid network providing direct support">
+          <div class="row">
+            <a class="name" href="https://www.steelcitymutualaidsociety.org/" target="_blank" rel="noopener noreferrer">Steel City Mutual Aid Society <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">steelcitymutualaidsociety.org</span>
+          </div>
+          <p class="desc">Community-based mutual aid network providing direct support</p>
+        </li>
+        <li data-name="steel city anti-fascist league" data-desc="anti-fascist action | anti-police action | anti-imperial action | straight edge">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/steelcityantifascistleague/" target="_blank" rel="noopener noreferrer">Steel City Anti-Fascist League <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Anti-Fascist Action | Anti-Police Action | Anti-Imperial Action | Straight Edge</p>
+        </li>
+        <li data-name="filler pittsburgh" data-desc="a mutual aid collective organizing community support and solidarity initiatives in pittsburgh. they coordinate resource sharing, direct support, and community organizing while building networks of care and resistance through various social movements.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/filler_pgh/" target="_blank" rel="noopener noreferrer">FILLER Pittsburgh <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid collective organizing community support and solidarity initiatives in Pittsburgh. They coordinate resource sharing, direct support, and community organizing while building networks of care and resistance through various social movements.</p>
+        </li>
+        <li data-name="women in prison" data-desc="a mutual aid collective providing support and resources to incarcerated women in pittsburgh and surrounding areas. they coordinate letter writing, commissary support, reentry assistance, and advocacy initiatives while building networks of care and solidarity with incarcerated community members.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/womeninprison/" target="_blank" rel="noopener noreferrer">Women in Prison <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid collective providing support and resources to incarcerated women in Pittsburgh and surrounding areas. They coordinate letter writing, commissary support, reentry assistance, and advocacy initiatives while building networks of care and solidarity with incarcerated community members.</p>
+        </li>
+        <li data-name="bukit bail fund" data-desc="a coalition of individuals supporting those incarcerated in allegheny county jail.">
+          <div class="row">
+            <a class="name" href="https://www.bukitbailfund.org/home" target="_blank" rel="noopener noreferrer">Bukit Bail Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bukitbailfund.org</span>
+          </div>
+          <p class="desc">A coalition of individuals supporting those incarcerated in Allegheny County Jail.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

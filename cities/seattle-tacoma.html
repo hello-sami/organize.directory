@@ -1,250 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Seattle-Tacoma Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Seattle-Tacoma. Connect with local organizations and community resources.">
+  <title>Seattle-Tacoma — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Seattle-Tacoma.">
   <link rel="canonical" href="https://organize.directory/seattle-tacoma">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Seattle-Tacoma Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Seattle-Tacoma. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Seattle-Tacoma — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Seattle-Tacoma.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/seattle-tacoma">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/district-of-columbia">District of Columbia</a>
-          <span>›</span>
-          <a href="/washington">Washington, DC</a>
-          <span>›</span>
-          <span>Seattle-Tacoma</span>
-        </div>
+<main id="main">
 
-        <h1>Seattle-Tacoma</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/district-of-columbia">District of Columbia</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/washington">Washington, DC</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Seattle-Tacoma</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://www.instagram.com/blackandpinkseatac/" target="_blank" rel="noopener noreferrer">Black and Pink SeaTac</a>
-      <p>A queer/trans prison abolition collective fostering mutual aid and solidarity through prisoner support and advocacy. They coordinate letter writing, resource sharing, and solidarity networks while building power through LGBTQ+ prisoner organizing, abolition education, and creating spaces for connection and support across prison walls.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://transitriders.org/" target="_blank" rel="noopener noreferrer">Transit Riders Union</a>
-      <p>The Transit Riders Union is an independent, democratic, member-run union of transit riders organizing for better public transit in Seattle, King County and beyond.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/seaprotestnet/" target="_blank" rel="noopener noreferrer">Seattle Protest Network</a>
-      <p>a volunteer-led citizen journalism effort established to document and amplify the events of the 2020 Seattle Protests.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/tacomaiww/" target="_blank" rel="noopener noreferrer">Tacoma IWW</a>
-      <p>Tacoma, Wa. branch of the @industrialworkersoftheworld</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.gotgreenseattle.org/" target="_blank" rel="noopener noreferrer">Got Green</a>
-      <p>A South Seattle-based environmental justice organization led by people of color and low-income people. Through mutual aid and grassroots organizing, they work on food access, green jobs, and climate justice while building community power in the South End.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.kingcountyequitynow.com/" target="_blank" rel="noopener noreferrer">King County Equity Now</a>
-      <p>Community-led coalition working to achieve racial and economic justice through land acquisition, capacity building, and policy advocacy in historically Black neighborhoods.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://subvertud.wordpress.com/" target="_blank" rel="noopener noreferrer">Subvert UD</a>
-      <p>Community collective based in Duwamish territory. Food distributions every Sunday</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/coldworldsea" target="_blank" rel="noopener noreferrer">Cold World Seattle</a>
-      <p>A mutual aid collective dedicated to helping our unhoused neighbors.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/casadelxolo" target="_blank" rel="noopener noreferrer">LA CASA DEL XOLOITZCUINTLE</a>
-      <p>mutual aid organization, arts &amp; music venue</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/thepeoplesassembly" target="_blank" rel="noopener noreferrer">The People's Assembly</a>
-      <p>A grassroots organization in Tacoma focused on community empowerment and social justice through mutual aid, education, and direct action. They work to build solidarity networks and create sustainable community support systems.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/superfamilia_kc/" target="_blank" rel="noopener noreferrer">Superfamilia KC</a>
-      <p>Mutual aid group providing support and resources for undocumented communities.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://linktr.ee/singlesparkseattle" target="_blank" rel="noopener noreferrer">Single Spark Seattle</a>
-      <p>An autonomous group giving food, fuel, and water to unhoused Seattle residents.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/awillandawaysea" target="_blank" rel="noopener noreferrer">A Will and A Way Mutual Aid</a>
-      <p>Capitol Hill</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/emeraldseafoodnotbombs/" target="_blank" rel="noopener noreferrer">Emerald Sea Food Not Bombs</a>
-      <p>Local chapter providing free vegan meals and mutual aid in Seattle.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/crossroadsfnb" target="_blank" rel="noopener noreferrer">Crossroads Food not Bombs</a>
-      <p>Hot food, zines, groceries &amp; more! Every Sunday 12-2pm at Crossroads Park 999 164th Ave NE (Bellevue)</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/tacomamutualaid/" target="_blank" rel="noopener noreferrer">Tacoma Mutual Aid</a>
-      <p>Tacoma Mutual Aid Collective works in solidarity with Tacoma communities to support resource, knowledge, and skill sharing across our neighborhoods.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://linktr.ee/greenlightproject" target="_blank" rel="noopener noreferrer">Green Light Project</a>
-      <p>Peer led mutual aid and harm reduction for sex workers/drug users in Seattle.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://sites.google.com/view/beaconhillma" target="_blank" rel="noopener noreferrer">North Beacon Hill Mutual Aid</a>
-      <p>mutual aid &amp; direct service program on unceded Duwamish land</p>
-    </div>
-    <div class="initiative">
-      <a href="https://blackstarfarmers.org/" target="_blank" rel="noopener noreferrer">Blackstar Farmers</a>
-      <p>Our mission is to secure the liberation of all beings through land sovereignty, food sovereignty, and self-determination. We work towards this mission through land stewardship, mutual aid, education, and direct action.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/mutualaidbooks" target="_blank" rel="noopener noreferrer">Mutual Aid Books</a>
-      <p>free books centering Black &amp; Indigenous authors for the people</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/kaibigan_ffps/" target="_blank" rel="noopener noreferrer">Kaibigan FFPS</a>
-      <p>Filipino Food Pantry Seattle building international solidarity through mutual aid and community support for the Filipino diaspora.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.song2sea.com/" target="_blank" rel="noopener noreferrer">Sông2Sea</a>
-      <p>Vietnamese solidarity organization fostering political education and community building through study groups, cultural projects, and mutual aid.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/capybaracolectiva/" target="_blank" rel="noopener noreferrer">Capybara Colectiva</a>
-      <p>A militant, grassroots org of Latin American diaspora fighting and exposing the u.s. imperialism that forces migrants to leave their homelands.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.lifewerqproject.org/" target="_blank" rel="noopener noreferrer">Lifewerq Project</a>
-      <p>LGBTQ+ and BIPOC-led organization providing mutual aid, community support, and resources for queer and trans communities in Seattle.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.seattlestudentunion.org/" target="_blank" rel="noopener noreferrer">Seattle Student Union</a>
-      <p>Student-led organization uniting Seattle schools through collective action, winning resources for mental healthcare, COVID safety, and other community needs.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://phra.org/" target="_blank" rel="noopener noreferrer">People's Harm Reduction Alliance (PHRA)</a>
-      <p>A community-based mutual aid organization providing vital harm reduction services and support to people who use drugs since 2007. Through their various programs including syringe exchange, naloxone distribution, and mobile outreach, they work to empower drug users and provide compassionate, non-judgmental care while building networks of community support across Seattle and King County.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/pipsqueak.seattle" target="_blank" rel="noopener noreferrer">Pipsqueak Seattle</a>
-      <p>Pipsqueak is a radical, sober, all-ages event space located on occupied Duwamish land at 173 16th Ave.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.wanawari.org/" target="_blank" rel="noopener noreferrer">Wa Na Wari</a>
-      <p>A Black cultural center and mutual aid hub housed in a 5th-generation Black-owned home, creating space for Black ownership, possibility, and belonging through art, historic preservation, and community connection. They provide community meals, host art exhibitions, maintain community gardens, and offer various programs while working to preserve Black presence and combat displacement in Seattle's Central District.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/the_long_haul_kitchen/" target="_blank" rel="noopener noreferrer">The Long Haul Kitchen</a>
-      <p>Mutual Aid Group supporting our neighbors in Georgetown and SODO (occupied Duwamish land)</p>
-    </div>
-    <div class="initiative">
-      <a href="https://estelitaslibrary.org/" target="_blank" rel="noopener noreferrer">Estelita's Library</a>
-      <p>A social justice community library and bookstore providing access to radical literature, educational resources, and mutual aid through their community space. They focus on Black and Brown liberation texts while fostering community learning, political education, and solidarity through their lending library, events, and pay-what-you-can book program.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.carw.org/" target="_blank" rel="noopener noreferrer">Coalition of Anti-Racist Whites (CARW)</a>
-      <p>A grassroots organization fostering mutual aid and community solidarity through white anti-racist organizing in Seattle. They coordinate political education, direct action support, and solidarity networks while building power through racial justice education, accountable organizing, and creating spaces for white people to work for racial justice in partnership with BIPOC-led organizations.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/southasiansresist/" target="_blank" rel="noopener noreferrer">South Asians Resist</a>
-      <p>Militant org of South Asians organizing against caste, class, imperialism.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/decrimseattle/" target="_blank" rel="noopener noreferrer">Decriminalize Seattle</a>
-      <p>Grassroots coalition of Seattle abolitionist orgs • holding it down for past 10 yrs • driving #DefundSPD</p>
-    </div>
-    <div class="initiative">
-      <a href="https://seattlerevolutionarysocialists.org/" target="_blank" rel="noopener noreferrer">Seattle Revolutionary Socialists</a>
-      <p>A revolutionary socialist organization fostering mutual aid and community solidarity through collective organizing in Seattle. They coordinate political education, direct action support, and solidarity networks while building power through community organizing and creating spaces for collective study and struggle.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/feminists4jina.sea/" target="_blank" rel="noopener noreferrer">Feminists for Jina PNW-Seattle</a>
-      <p>Intersectional and transnational feminists from Iran in diaspora and exile, in solidarity with the revolutionary people around the world.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/1312.press/" target="_blank" rel="noopener noreferrer">1312 Press</a>
-      <p>Small anarchist zine-distro and publisher</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/skc_e_mutual_aid/" target="_blank" rel="noopener noreferrer">Mutual Aid South &amp; East King</a>
-      <p>Mutual aid support for survivors, sick &amp; disabled, immunocompromised, undocumented, &amp; QTBIPOC folks in South &amp; East King county</p>
-    </div>
-    <div class="initiative">
-      <a href="https://laresistencianw.org/" target="_blank" rel="noopener noreferrer">La Resistencia NW</a>
-      <p>Our goal is to shut down the NWDC, and to end all detentions and deportations in Washington State.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/warmfootfund/" target="_blank" rel="noopener noreferrer">Warm Foot Fund Seattle</a>
-      <p>Serving our unhoused neighbors on occupied Duwamish land. Specialized commitment to providing resources during extreme weather events</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/homieshelpinghomiesseattle/" target="_blank" rel="noopener noreferrer">Homies Helping Homies</a>
-      <p>Mutual aid for the homies. Solidarity. Reparations. Awareness. ACAB</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/auburnmutualaid/" target="_blank" rel="noopener noreferrer">Auburn Mutual Aid</a>
-      <p>Food distribution in Auburn, WA.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.bookstoprisoners.net/" target="_blank" rel="noopener noreferrer">Books to Prisoners</a>
-      <p>A Seattle-based nonprofit fostering mutual aid through free book distribution to people in prison nationwide. They coordinate book donations, letter writing, and solidarity networks while building connections through literature and education across prison walls.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/wednesdayfregangrocery/" target="_blank" rel="noopener noreferrer">Wednesday Fregan Grocery</a>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/distrofugitive/" target="_blank" rel="noopener noreferrer">Distro Fugitive</a>
-      <p>An invitation to revolt...</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Seattle-Tacoma</h1>
+    <p class="meta">
+      <b>44</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      District of Columbia
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Seattle-Tacoma</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Seattle-Tacoma…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="black and pink seatac" data-desc="a queer/trans prison abolition collective fostering mutual aid and solidarity through prisoner support and advocacy. they coordinate letter writing, resource sharing, and solidarity networks while building power through lgbtq+ prisoner organizing, abolition education, and creating spaces for connection and support across prison walls.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/blackandpinkseatac/" target="_blank" rel="noopener noreferrer">Black and Pink SeaTac <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A queer/trans prison abolition collective fostering mutual aid and solidarity through prisoner support and advocacy. They coordinate letter writing, resource sharing, and solidarity networks while building power through LGBTQ+ prisoner organizing, abolition education, and creating spaces for connection and support across prison walls.</p>
+        </li>
+        <li data-name="transit riders union" data-desc="the transit riders union is an independent, democratic, member-run union of transit riders organizing for better public transit in seattle, king county and beyond.">
+          <div class="row">
+            <a class="name" href="https://transitriders.org/" target="_blank" rel="noopener noreferrer">Transit Riders Union <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">transitriders.org</span>
+          </div>
+          <p class="desc">The Transit Riders Union is an independent, democratic, member-run union of transit riders organizing for better public transit in Seattle, King County and beyond.</p>
+        </li>
+        <li data-name="seattle protest network" data-desc="a volunteer-led citizen journalism effort established to document and amplify the events of the 2020 seattle protests.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/seaprotestnet/" target="_blank" rel="noopener noreferrer">Seattle Protest Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">a volunteer-led citizen journalism effort established to document and amplify the events of the 2020 Seattle Protests.</p>
+        </li>
+        <li data-name="tacoma iww" data-desc="tacoma, wa. branch of the @industrialworkersoftheworld">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/tacomaiww/" target="_blank" rel="noopener noreferrer">Tacoma IWW <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Tacoma, Wa. branch of the @industrialworkersoftheworld</p>
+        </li>
+        <li data-name="got green" data-desc="a south seattle-based environmental justice organization led by people of color and low-income people. through mutual aid and grassroots organizing, they work on food access, green jobs, and climate justice while building community power in the south end.">
+          <div class="row">
+            <a class="name" href="https://www.gotgreenseattle.org/" target="_blank" rel="noopener noreferrer">Got Green <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">gotgreenseattle.org</span>
+          </div>
+          <p class="desc">A South Seattle-based environmental justice organization led by people of color and low-income people. Through mutual aid and grassroots organizing, they work on food access, green jobs, and climate justice while building community power in the South End.</p>
+        </li>
+        <li data-name="king county equity now" data-desc="community-led coalition working to achieve racial and economic justice through land acquisition, capacity building, and policy advocacy in historically black neighborhoods.">
+          <div class="row">
+            <a class="name" href="https://www.kingcountyequitynow.com/" target="_blank" rel="noopener noreferrer">King County Equity Now <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">kingcountyequitynow.com</span>
+          </div>
+          <p class="desc">Community-led coalition working to achieve racial and economic justice through land acquisition, capacity building, and policy advocacy in historically Black neighborhoods.</p>
+        </li>
+        <li data-name="subvert ud" data-desc="community collective based in duwamish territory. food distributions every sunday">
+          <div class="row">
+            <a class="name" href="https://subvertud.wordpress.com/" target="_blank" rel="noopener noreferrer">Subvert UD <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">subvertud.wordpress.com</span>
+          </div>
+          <p class="desc">Community collective based in Duwamish territory. Food distributions every Sunday</p>
+        </li>
+        <li data-name="cold world seattle" data-desc="a mutual aid collective dedicated to helping our unhoused neighbors.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/coldworldsea" target="_blank" rel="noopener noreferrer">Cold World Seattle <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid collective dedicated to helping our unhoused neighbors.</p>
+        </li>
+        <li data-name="la casa del xoloitzcuintle" data-desc="mutual aid organization, arts &amp; music venue">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/casadelxolo" target="_blank" rel="noopener noreferrer">LA CASA DEL XOLOITZCUINTLE <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">mutual aid organization, arts &amp; music venue</p>
+        </li>
+        <li data-name="the people's assembly" data-desc="a grassroots organization in tacoma focused on community empowerment and social justice through mutual aid, education, and direct action. they work to build solidarity networks and create sustainable community support systems.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/thepeoplesassembly" target="_blank" rel="noopener noreferrer">The People's Assembly <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots organization in Tacoma focused on community empowerment and social justice through mutual aid, education, and direct action. They work to build solidarity networks and create sustainable community support systems.</p>
+        </li>
+        <li data-name="superfamilia kc" data-desc="mutual aid group providing support and resources for undocumented communities.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/superfamilia_kc/" target="_blank" rel="noopener noreferrer">Superfamilia KC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Mutual aid group providing support and resources for undocumented communities.</p>
+        </li>
+        <li data-name="single spark seattle" data-desc="an autonomous group giving food, fuel, and water to unhoused seattle residents.">
+          <div class="row">
+            <a class="name" href="https://linktr.ee/singlesparkseattle" target="_blank" rel="noopener noreferrer">Single Spark Seattle <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">linktr.ee</span>
+          </div>
+          <p class="desc">An autonomous group giving food, fuel, and water to unhoused Seattle residents.</p>
+        </li>
+        <li data-name="a will and a way mutual aid" data-desc="capitol hill">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/awillandawaysea" target="_blank" rel="noopener noreferrer">A Will and A Way Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Capitol Hill</p>
+        </li>
+        <li data-name="emerald sea food not bombs" data-desc="local chapter providing free vegan meals and mutual aid in seattle.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/emeraldseafoodnotbombs/" target="_blank" rel="noopener noreferrer">Emerald Sea Food Not Bombs <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Local chapter providing free vegan meals and mutual aid in Seattle.</p>
+        </li>
+        <li data-name="crossroads food not bombs" data-desc="hot food, zines, groceries &amp; more! every sunday 12-2pm at crossroads park 999 164th ave ne (bellevue)">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/crossroadsfnb" target="_blank" rel="noopener noreferrer">Crossroads Food not Bombs <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Hot food, zines, groceries &amp; more! Every Sunday 12-2pm at Crossroads Park 999 164th Ave NE (Bellevue)</p>
+        </li>
+        <li data-name="tacoma mutual aid" data-desc="tacoma mutual aid collective works in solidarity with tacoma communities to support resource, knowledge, and skill sharing across our neighborhoods.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/tacomamutualaid/" target="_blank" rel="noopener noreferrer">Tacoma Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Tacoma Mutual Aid Collective works in solidarity with Tacoma communities to support resource, knowledge, and skill sharing across our neighborhoods.</p>
+        </li>
+        <li data-name="green light project" data-desc="peer led mutual aid and harm reduction for sex workers/drug users in seattle.">
+          <div class="row">
+            <a class="name" href="https://linktr.ee/greenlightproject" target="_blank" rel="noopener noreferrer">Green Light Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">linktr.ee</span>
+          </div>
+          <p class="desc">Peer led mutual aid and harm reduction for sex workers/drug users in Seattle.</p>
+        </li>
+        <li data-name="north beacon hill mutual aid" data-desc="mutual aid &amp; direct service program on unceded duwamish land">
+          <div class="row">
+            <a class="name" href="https://sites.google.com/view/beaconhillma" target="_blank" rel="noopener noreferrer">North Beacon Hill Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sites.google.com</span>
+          </div>
+          <p class="desc">mutual aid &amp; direct service program on unceded Duwamish land</p>
+        </li>
+        <li data-name="blackstar farmers" data-desc="our mission is to secure the liberation of all beings through land sovereignty, food sovereignty, and self-determination. we work towards this mission through land stewardship, mutual aid, education, and direct action.">
+          <div class="row">
+            <a class="name" href="https://blackstarfarmers.org/" target="_blank" rel="noopener noreferrer">Blackstar Farmers <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">blackstarfarmers.org</span>
+          </div>
+          <p class="desc">Our mission is to secure the liberation of all beings through land sovereignty, food sovereignty, and self-determination. We work towards this mission through land stewardship, mutual aid, education, and direct action.</p>
+        </li>
+        <li data-name="mutual aid books" data-desc="free books centering black &amp; indigenous authors for the people">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/mutualaidbooks" target="_blank" rel="noopener noreferrer">Mutual Aid Books <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">free books centering Black &amp; Indigenous authors for the people</p>
+        </li>
+        <li data-name="kaibigan ffps" data-desc="filipino food pantry seattle building international solidarity through mutual aid and community support for the filipino diaspora.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/kaibigan_ffps/" target="_blank" rel="noopener noreferrer">Kaibigan FFPS <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Filipino Food Pantry Seattle building international solidarity through mutual aid and community support for the Filipino diaspora.</p>
+        </li>
+        <li data-name="sông2sea" data-desc="vietnamese solidarity organization fostering political education and community building through study groups, cultural projects, and mutual aid.">
+          <div class="row">
+            <a class="name" href="https://www.song2sea.com/" target="_blank" rel="noopener noreferrer">Sông2Sea <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">song2sea.com</span>
+          </div>
+          <p class="desc">Vietnamese solidarity organization fostering political education and community building through study groups, cultural projects, and mutual aid.</p>
+        </li>
+        <li data-name="capybara colectiva" data-desc="a militant, grassroots org of latin american diaspora fighting and exposing the u.s. imperialism that forces migrants to leave their homelands.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/capybaracolectiva/" target="_blank" rel="noopener noreferrer">Capybara Colectiva <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A militant, grassroots org of Latin American diaspora fighting and exposing the u.s. imperialism that forces migrants to leave their homelands.</p>
+        </li>
+        <li data-name="lifewerq project" data-desc="lgbtq+ and bipoc-led organization providing mutual aid, community support, and resources for queer and trans communities in seattle.">
+          <div class="row">
+            <a class="name" href="https://www.lifewerqproject.org/" target="_blank" rel="noopener noreferrer">Lifewerq Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">lifewerqproject.org</span>
+          </div>
+          <p class="desc">LGBTQ+ and BIPOC-led organization providing mutual aid, community support, and resources for queer and trans communities in Seattle.</p>
+        </li>
+        <li data-name="seattle student union" data-desc="student-led organization uniting seattle schools through collective action, winning resources for mental healthcare, covid safety, and other community needs.">
+          <div class="row">
+            <a class="name" href="https://www.seattlestudentunion.org/" target="_blank" rel="noopener noreferrer">Seattle Student Union <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">seattlestudentunion.org</span>
+          </div>
+          <p class="desc">Student-led organization uniting Seattle schools through collective action, winning resources for mental healthcare, COVID safety, and other community needs.</p>
+        </li>
+        <li data-name="people's harm reduction alliance (phra)" data-desc="a community-based mutual aid organization providing vital harm reduction services and support to people who use drugs since 2007. through their various programs including syringe exchange, naloxone distribution, and mobile outreach, they work to empower drug users and provide compassionate, non-judgmental care while building networks of community support across seattle and king county.">
+          <div class="row">
+            <a class="name" href="https://phra.org/" target="_blank" rel="noopener noreferrer">People's Harm Reduction Alliance (PHRA) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">phra.org</span>
+          </div>
+          <p class="desc">A community-based mutual aid organization providing vital harm reduction services and support to people who use drugs since 2007. Through their various programs including syringe exchange, naloxone distribution, and mobile outreach, they work to empower drug users and provide compassionate, non-judgmental care while building networks of community support across Seattle and King County.</p>
+        </li>
+        <li data-name="pipsqueak seattle" data-desc="pipsqueak is a radical, sober, all-ages event space located on occupied duwamish land at 173 16th ave.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/pipsqueak.seattle" target="_blank" rel="noopener noreferrer">Pipsqueak Seattle <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Pipsqueak is a radical, sober, all-ages event space located on occupied Duwamish land at 173 16th Ave.</p>
+        </li>
+        <li data-name="wa na wari" data-desc="a black cultural center and mutual aid hub housed in a 5th-generation black-owned home, creating space for black ownership, possibility, and belonging through art, historic preservation, and community connection. they provide community meals, host art exhibitions, maintain community gardens, and offer various programs while working to preserve black presence and combat displacement in seattle's central district.">
+          <div class="row">
+            <a class="name" href="https://www.wanawari.org/" target="_blank" rel="noopener noreferrer">Wa Na Wari <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">wanawari.org</span>
+          </div>
+          <p class="desc">A Black cultural center and mutual aid hub housed in a 5th-generation Black-owned home, creating space for Black ownership, possibility, and belonging through art, historic preservation, and community connection. They provide community meals, host art exhibitions, maintain community gardens, and offer various programs while working to preserve Black presence and combat displacement in Seattle's Central District.</p>
+        </li>
+        <li data-name="the long haul kitchen" data-desc="mutual aid group supporting our neighbors in georgetown and sodo (occupied duwamish land)">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/the_long_haul_kitchen/" target="_blank" rel="noopener noreferrer">The Long Haul Kitchen <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Mutual Aid Group supporting our neighbors in Georgetown and SODO (occupied Duwamish land)</p>
+        </li>
+        <li data-name="estelita's library" data-desc="a social justice community library and bookstore providing access to radical literature, educational resources, and mutual aid through their community space. they focus on black and brown liberation texts while fostering community learning, political education, and solidarity through their lending library, events, and pay-what-you-can book program.">
+          <div class="row">
+            <a class="name" href="https://estelitaslibrary.org/" target="_blank" rel="noopener noreferrer">Estelita's Library <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">estelitaslibrary.org</span>
+          </div>
+          <p class="desc">A social justice community library and bookstore providing access to radical literature, educational resources, and mutual aid through their community space. They focus on Black and Brown liberation texts while fostering community learning, political education, and solidarity through their lending library, events, and pay-what-you-can book program.</p>
+        </li>
+        <li data-name="coalition of anti-racist whites (carw)" data-desc="a grassroots organization fostering mutual aid and community solidarity through white anti-racist organizing in seattle. they coordinate political education, direct action support, and solidarity networks while building power through racial justice education, accountable organizing, and creating spaces for white people to work for racial justice in partnership with bipoc-led organizations.">
+          <div class="row">
+            <a class="name" href="https://www.carw.org/" target="_blank" rel="noopener noreferrer">Coalition of Anti-Racist Whites (CARW) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">carw.org</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community solidarity through white anti-racist organizing in Seattle. They coordinate political education, direct action support, and solidarity networks while building power through racial justice education, accountable organizing, and creating spaces for white people to work for racial justice in partnership with BIPOC-led organizations.</p>
+        </li>
+        <li data-name="south asians resist" data-desc="militant org of south asians organizing against caste, class, imperialism.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/southasiansresist/" target="_blank" rel="noopener noreferrer">South Asians Resist <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Militant org of South Asians organizing against caste, class, imperialism.</p>
+        </li>
+        <li data-name="decriminalize seattle" data-desc="grassroots coalition of seattle abolitionist orgs • holding it down for past 10 yrs • driving #defundspd">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/decrimseattle/" target="_blank" rel="noopener noreferrer">Decriminalize Seattle <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Grassroots coalition of Seattle abolitionist orgs • holding it down for past 10 yrs • driving #DefundSPD</p>
+        </li>
+        <li data-name="seattle revolutionary socialists" data-desc="a revolutionary socialist organization fostering mutual aid and community solidarity through collective organizing in seattle. they coordinate political education, direct action support, and solidarity networks while building power through community organizing and creating spaces for collective study and struggle.">
+          <div class="row">
+            <a class="name" href="https://seattlerevolutionarysocialists.org/" target="_blank" rel="noopener noreferrer">Seattle Revolutionary Socialists <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">seattlerevolutionarysocialists.org</span>
+          </div>
+          <p class="desc">A revolutionary socialist organization fostering mutual aid and community solidarity through collective organizing in Seattle. They coordinate political education, direct action support, and solidarity networks while building power through community organizing and creating spaces for collective study and struggle.</p>
+        </li>
+        <li data-name="feminists for jina pnw-seattle" data-desc="intersectional and transnational feminists from iran in diaspora and exile, in solidarity with the revolutionary people around the world.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/feminists4jina.sea/" target="_blank" rel="noopener noreferrer">Feminists for Jina PNW-Seattle <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Intersectional and transnational feminists from Iran in diaspora and exile, in solidarity with the revolutionary people around the world.</p>
+        </li>
+        <li data-name="1312 press" data-desc="small anarchist zine-distro and publisher">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/1312.press/" target="_blank" rel="noopener noreferrer">1312 Press <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Small anarchist zine-distro and publisher</p>
+        </li>
+        <li data-name="mutual aid south &amp; east king" data-desc="mutual aid support for survivors, sick &amp; disabled, immunocompromised, undocumented, &amp; qtbipoc folks in south &amp; east king county">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/skc_e_mutual_aid/" target="_blank" rel="noopener noreferrer">Mutual Aid South &amp; East King <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Mutual aid support for survivors, sick &amp; disabled, immunocompromised, undocumented, &amp; QTBIPOC folks in South &amp; East King county</p>
+        </li>
+        <li data-name="la resistencia nw" data-desc="our goal is to shut down the nwdc, and to end all detentions and deportations in washington state.">
+          <div class="row">
+            <a class="name" href="https://laresistencianw.org/" target="_blank" rel="noopener noreferrer">La Resistencia NW <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">laresistencianw.org</span>
+          </div>
+          <p class="desc">Our goal is to shut down the NWDC, and to end all detentions and deportations in Washington State.</p>
+        </li>
+        <li data-name="warm foot fund seattle" data-desc="serving our unhoused neighbors on occupied duwamish land. specialized commitment to providing resources during extreme weather events">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/warmfootfund/" target="_blank" rel="noopener noreferrer">Warm Foot Fund Seattle <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Serving our unhoused neighbors on occupied Duwamish land. Specialized commitment to providing resources during extreme weather events</p>
+        </li>
+        <li data-name="homies helping homies" data-desc="mutual aid for the homies. solidarity. reparations. awareness. acab">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/homieshelpinghomiesseattle/" target="_blank" rel="noopener noreferrer">Homies Helping Homies <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Mutual aid for the homies. Solidarity. Reparations. Awareness. ACAB</p>
+        </li>
+        <li data-name="auburn mutual aid" data-desc="food distribution in auburn, wa.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/auburnmutualaid/" target="_blank" rel="noopener noreferrer">Auburn Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Food distribution in Auburn, WA.</p>
+        </li>
+        <li data-name="books to prisoners" data-desc="a seattle-based nonprofit fostering mutual aid through free book distribution to people in prison nationwide. they coordinate book donations, letter writing, and solidarity networks while building connections through literature and education across prison walls.">
+          <div class="row">
+            <a class="name" href="https://www.bookstoprisoners.net/" target="_blank" rel="noopener noreferrer">Books to Prisoners <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bookstoprisoners.net</span>
+          </div>
+          <p class="desc">A Seattle-based nonprofit fostering mutual aid through free book distribution to people in prison nationwide. They coordinate book donations, letter writing, and solidarity networks while building connections through literature and education across prison walls.</p>
+        </li>
+        <li data-name="wednesday fregan grocery" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/wednesdayfregangrocery/" target="_blank" rel="noopener noreferrer">Wednesday Fregan Grocery <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="distro fugitive" data-desc="an invitation to revolt...">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/distrofugitive/" target="_blank" rel="noopener noreferrer">Distro Fugitive <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">An invitation to revolt...</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

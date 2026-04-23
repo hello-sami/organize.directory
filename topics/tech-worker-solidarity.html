@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Tech Worker Solidarity Networks - The Organize Directory</title>
+  <title>Tech Worker Solidarity Networks — Organize Directory</title>
   <meta name="description" content="Mutual aid networks and initiatives focused on building worker power and solidarity
                     in the tech industry through collective organizing and education.">
   <link rel="canonical" href="https://organize.directory/topics/tech-worker-solidarity">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Tech Worker Solidarity Networks - The Organize Directory">
+  <meta property="og:title" content="Tech Worker Solidarity Networks — Organize Directory">
   <meta property="og:description" content="Mutual aid networks and initiatives focused on building worker power and solidarity
                     in the tech industry through collective organizing and education.">
   <meta property="og:type" content="website">
@@ -26,49 +20,111 @@
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('topics');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="city-page state-page">
-        <div class="breadcrumb">
-          <a href="/topics">Topics</a>
-          <span>›</span>
-          <span>Tech Worker Solidarity Networks</span>
-        </div>
+<main id="main">
 
-        <h1>Tech Worker Solidarity Networks</h1>
-        <p class="subtitle">Mutual aid networks and initiatives focused on building worker power and solidarity
-                    in the tech industry through collective organizing and education.</p>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/topics">Topics</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Tech Worker Solidarity Networks</span>
+  </nav>
 
-  <section id="worker-organizing" class="city-section">
-    <h2>Worker Organizing</h2>
-    <div class="initiative">
-      <a href="https://techworkerscoalition.org/" target="_blank" rel="noopener noreferrer">Tech Workers Coalition (TWC)</a>
-      <p>A democratically structured coalition fostering mutual aid and solidarity through tech worker organizing and education. They coordinate worker support, political education, and solidarity networks while building power through rank-and-file organizing, cross-movement alliances, and creating spaces for inclusive tech industry transformation.</p>
-    </div>
-  </section>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">Tech Worker Solidarity Networks</h1>
+    <p class="meta"><b>1</b> group</p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-</body>
+  <p class="topic-lede">Mutual aid networks and initiatives focused on building worker power and solidarity
+                    in the tech industry through collective organizing and education.</p>
 
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Tech Worker Solidarity Networks</label>
+    <input id="page-filter" type="search" placeholder="Filter groups…" autocomplete="off">
+  </div>
+
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="worker-organizing" class="group-section" data-section="worker-organizing">
+      <h2 class="section-title">Worker Organizing</h2>
+      <ol class="groups">
+        <li data-name="tech workers coalition (twc)" data-desc="a democratically structured coalition fostering mutual aid and solidarity through tech worker organizing and education. they coordinate worker support, political education, and solidarity networks while building power through rank-and-file organizing, cross-movement alliances, and creating spaces for inclusive tech industry transformation.">
+          <div class="row">
+            <a class="name" href="https://techworkerscoalition.org/" target="_blank" rel="noopener noreferrer">Tech Workers Coalition (TWC) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">techworkerscoalition.org</span>
+          </div>
+          <p class="desc">A democratically structured coalition fostering mutual aid and solidarity through tech worker organizing and education. They coordinate worker support, political education, and solidarity networks while building power through rank-and-file organizing, cross-movement alliances, and creating spaces for inclusive tech industry transformation.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

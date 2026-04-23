@@ -26,12 +26,6 @@
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET, OPTIONS
 
-# Posts JSON updates daily — keep edge fresh but allow short browser cache
-/posts/posts.json
-  Cache-Control: public, max-age=300
-  Content-Type: application/json
-  Access-Control-Allow-Origin: *
-
 # Static JS — long-lived, cache-bust via filename/version query
 /*.js
   Cache-Control: public, max-age=31536000, immutable

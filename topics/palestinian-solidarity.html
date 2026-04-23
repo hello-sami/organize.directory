@@ -1,154 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Palestinian Solidarity - The Organize Directory</title>
-  <meta name="description" content="Find organizations and initiatives focused on Palestinian Solidarity.">
+  <title>Palestinian Solidarity — Organize Directory</title>
+  <meta name="description" content="Organizations and initiatives focused on Palestinian Solidarity.">
   <link rel="canonical" href="https://organize.directory/topics/palestinian-solidarity">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Palestinian Solidarity - The Organize Directory">
-  <meta property="og:description" content="Find organizations and initiatives focused on Palestinian Solidarity.">
+  <meta property="og:title" content="Palestinian Solidarity — Organize Directory">
+  <meta property="og:description" content="Organizations and initiatives focused on Palestinian Solidarity.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/topics/palestinian-solidarity">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('topics');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="city-page state-page">
-        <div class="breadcrumb">
-          <a href="/topics">Topics</a>
-          <span>›</span>
-          <span>Palestinian Solidarity</span>
-        </div>
+<main id="main">
 
-        <h1>Palestinian Solidarity</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/topics">Topics</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Palestinian Solidarity</span>
+  </nav>
 
-  <section id="national-initiatives" class="city-section">
-    <h2>National Initiatives</h2>
-    <div class="initiative">
-      <a href="https://palestinianyouthmovement.com/" target="_blank" rel="noopener noreferrer">Palestinian Youth Movement</a>
-      <p>Transnational, independent, grassroots movement of young Palestinians organizing for the liberation of Palestine and the return of all Palestinian refugees.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://palsolidarity.org/" target="_blank" rel="noopener noreferrer">International Solidarity Movement (ISM)</a>
-      <p>A Palestinian-led movement committed to resisting the Israeli occupation of Palestinian land using nonviolent, direct-action methods and principles. ISM provides on-the-ground international presence and witnesses human rights violations while supporting Palestinian-led nonviolent resistance.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://uscpr.org/" target="_blank" rel="noopener noreferrer">US Campaign for Palestinian Rights (USCPR)</a>
-      <p>A national coalition of organizations working together for Palestinian rights and liberation through advocacy, mutual aid, and grassroots mobilization. They coordinate direct support for Palestinian communities, resource sharing, and solidarity initiatives while building power through collective action and intersectional movement building.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.mennoniteaction.org/" target="_blank" rel="noopener noreferrer">Mennonite Action</a>
-      <p>A movement of Mennonites organizing mutual aid and direct action for Palestine solidarity. They coordinate resources, organize nonviolent actions, and build interfaith coalitions while providing material support and advocating for peace and justice through their faith-based approach.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.fosna.org/" target="_blank" rel="noopener noreferrer">Friends of Sabeel North America (FOSNA)</a>
-      <p>An interdenominational Christian organization providing mutual aid and solidarity through education, advocacy, and nonviolent action for Palestine. They amplify Palestinian voices and coordinate support through church networks, community organizing, and direct action campaigns.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.adalahjusticeproject.org/" target="_blank" rel="noopener noreferrer">Adalah Justice Project</a>
-      <p>Palestinian Advocacy Organization based in the U.S., aiming to shift policy &amp; public discourse on Palestine + Organizing for collective liberation</p>
-    </div>
-    <div class="initiative">
-      <a href="https://friendsofpmrs.org/" target="_blank" rel="noopener noreferrer">Friends of Palestinian Medical Relief Society (FPMRS)</a>
-      <p>Friends of PMRS is a US-based nonprofit, 501c(3), tax-exempt organization which exists to support the work of the Palestinian Medical Relief Society in Palestine.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/cpt.palestine/" target="_blank" rel="noopener noreferrer">CPT Palestine</a>
-      <p>A team of Community Peacemaker Teams providing mutual aid and nonviolent intervention in Palestine, particularly in Al-Khalil/Hebron. They work alongside Palestinian communities through direct support, documentation of human rights violations, and solidarity actions.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://ijan.org/" target="_blank" rel="noopener noreferrer">International Jewish Anti-Zionist Network (IJAN)</a>
-      <p>A network of Jews fostering mutual aid and solidarity through anti-colonial and anti-imperialist organizing. They coordinate direct actions, political education, and solidarity networks while building power through Jewish participation in Palestinian liberation struggles and creating spaces for collective resistance against Zionism and oppression.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.rebuildingalliance.org/" target="_blank" rel="noopener noreferrer">Rebuilding Alliance</a>
-      <p>A humanitarian organization fostering mutual aid and solidarity through direct support to Palestinian communities. They coordinate rebuilding projects, emergency relief, and advocacy initiatives while building power through grassroots partnerships, policy change campaigns, and creating spaces for Palestinian voices to be heard by Congress and decision-makers.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://bdsmovement.net/" target="_blank" rel="noopener noreferrer">BDS Movement</a>
-      <p>A Palestinian-led movement fostering mutual aid and solidarity through boycott, divestment, and sanctions campaigns. They coordinate global grassroots initiatives, economic advocacy, and solidarity networks while building power through nonviolent pressure for Palestinian rights and creating spaces for international civil society to support Palestinian liberation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://x.com/decolonize_this" target="_blank" rel="noopener noreferrer">Decolonize This</a>
-      <p>A grassroots collective fostering mutual aid and solidarity through Palestinian liberation organizing and decolonial education in the Bay Area. They coordinate direct actions, political education, and solidarity networks while building power through anti-colonial resistance, community organizing, and creating spaces for Palestinian solidarity and liberation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.refuser.org/" target="_blank" rel="noopener noreferrer">Refuser Solidarity Network</a>
-      <p>A network providing support for Israeli war resisters and conscientious objectors through mutual aid and solidarity initiatives. They coordinate legal support, media campaigns, and educational programs while building power through anti-war organizing, resistance to occupation, and creating spaces for Jewish voices against militarism.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://palestinianfeministcollective.org/" target="_blank" rel="noopener noreferrer">Palestinian Feminist Collective</a>
-      <p>A collective of Palestinian and Arab feminists fostering mutual aid and solidarity through intersectional organizing against gendered, sexual, and colonial violence. They coordinate educational resources, community support, and solidarity networks while building power through feminist approaches to Palestinian liberation and creating spaces for feminist resistance and collective action.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://al-awdapalestine.org/" target="_blank" rel="noopener noreferrer">Al-Awda: The Palestine Right to Return Coalition</a>
-      <p>A grassroots organization fostering mutual aid and solidarity through Palestinian right of return advocacy and community organizing. They coordinate direct support initiatives, educational programs, and solidarity networks while building power through Palestinian diaspora organizing, anti-colonial resistance, and creating spaces for Palestinian cultural preservation and collective liberation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://badil.org/" target="_blank" rel="noopener noreferrer">BADIL Resource Center</a>
-      <p>An independent human rights organization fostering mutual aid and solidarity through research, advocacy, and community support focused on Palestinian refugee and residency rights. They coordinate legal resources, policy research, and solidarity networks while building power through rights-based approaches, documentation of forced displacement, and creating spaces for Palestinian refugee advocacy.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://al-shabaka.org/" target="_blank" rel="noopener noreferrer">Al-Shabaka: The Palestinian Policy Network</a>
-      <p>A global network of Palestinian experts fostering mutual aid and solidarity through critical policy analysis and research. They coordinate policy development, knowledge production, and solidarity networks while building power through Palestinian expertise, strategic thinking, and creating spaces for imagining and developing pathways to liberation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://filipinos4palestine.org/" target="_blank" rel="noopener noreferrer">Filipinos for Palestine National Network</a>
-      <p>A network of U.S. based Filipinos fostering mutual aid and solidarity for a free Palestine. They coordinate advocacy for immediate ceasefire, an end to the military siege and blockade of Gaza and the West Bank, and an end to U.S. aid that funds war in Palestine. They build power through coalition-building, direct action, and creating spaces for Filipino solidarity with Palestinian self-determination and liberation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://samidoun.net/" target="_blank" rel="noopener noreferrer">Samidoun: Palestinian Prisoner Solidarity Network</a>
-      <p>international network of organizers and activists working to build solidarity with Palestinian prisoners in their struggle for freedom.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://theaterworkersforaceasefire.com/" target="_blank" rel="noopener noreferrer">Theater Workers for a Ceasefire</a>
-      <p>US-based theater workers demand a ceasefire in Palestine.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.writersagainstthewarongaza.com/" target="_blank" rel="noopener noreferrer">Writers Against the War on Gaza</a>
-      <p>Building a cultural front for a free Palestine. They write and publish the New York War Crimes.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://palshield.org/" target="_blank" rel="noopener noreferrer">Pal Shield</a>
-      <p>American - Palestinian led organization providing life-saving supplies to protect Palestinian farmers and communities.</p>
-    </div>
-  </section>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">Palestinian Solidarity</h1>
+    <p class="meta"><b>22</b> groups</p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-</body>
 
+
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Palestinian Solidarity</label>
+    <input id="page-filter" type="search" placeholder="Filter groups…" autocomplete="off">
+  </div>
+
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="national-initiatives" class="group-section" data-section="national-initiatives">
+      <h2 class="section-title">National Initiatives</h2>
+      <ol class="groups">
+        <li data-name="palestinian youth movement" data-desc="transnational, independent, grassroots movement of young palestinians organizing for the liberation of palestine and the return of all palestinian refugees.">
+          <div class="row">
+            <a class="name" href="https://palestinianyouthmovement.com/" target="_blank" rel="noopener noreferrer">Palestinian Youth Movement <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">palestinianyouthmovement.com</span>
+          </div>
+          <p class="desc">Transnational, independent, grassroots movement of young Palestinians organizing for the liberation of Palestine and the return of all Palestinian refugees.</p>
+        </li>
+        <li data-name="international solidarity movement (ism)" data-desc="a palestinian-led movement committed to resisting the israeli occupation of palestinian land using nonviolent, direct-action methods and principles. ism provides on-the-ground international presence and witnesses human rights violations while supporting palestinian-led nonviolent resistance.">
+          <div class="row">
+            <a class="name" href="https://palsolidarity.org/" target="_blank" rel="noopener noreferrer">International Solidarity Movement (ISM) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">palsolidarity.org</span>
+          </div>
+          <p class="desc">A Palestinian-led movement committed to resisting the Israeli occupation of Palestinian land using nonviolent, direct-action methods and principles. ISM provides on-the-ground international presence and witnesses human rights violations while supporting Palestinian-led nonviolent resistance.</p>
+        </li>
+        <li data-name="us campaign for palestinian rights (uscpr)" data-desc="a national coalition of organizations working together for palestinian rights and liberation through advocacy, mutual aid, and grassroots mobilization. they coordinate direct support for palestinian communities, resource sharing, and solidarity initiatives while building power through collective action and intersectional movement building.">
+          <div class="row">
+            <a class="name" href="https://uscpr.org/" target="_blank" rel="noopener noreferrer">US Campaign for Palestinian Rights (USCPR) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">uscpr.org</span>
+          </div>
+          <p class="desc">A national coalition of organizations working together for Palestinian rights and liberation through advocacy, mutual aid, and grassroots mobilization. They coordinate direct support for Palestinian communities, resource sharing, and solidarity initiatives while building power through collective action and intersectional movement building.</p>
+        </li>
+        <li data-name="mennonite action" data-desc="a movement of mennonites organizing mutual aid and direct action for palestine solidarity. they coordinate resources, organize nonviolent actions, and build interfaith coalitions while providing material support and advocating for peace and justice through their faith-based approach.">
+          <div class="row">
+            <a class="name" href="https://www.mennoniteaction.org/" target="_blank" rel="noopener noreferrer">Mennonite Action <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">mennoniteaction.org</span>
+          </div>
+          <p class="desc">A movement of Mennonites organizing mutual aid and direct action for Palestine solidarity. They coordinate resources, organize nonviolent actions, and build interfaith coalitions while providing material support and advocating for peace and justice through their faith-based approach.</p>
+        </li>
+        <li data-name="friends of sabeel north america (fosna)" data-desc="an interdenominational christian organization providing mutual aid and solidarity through education, advocacy, and nonviolent action for palestine. they amplify palestinian voices and coordinate support through church networks, community organizing, and direct action campaigns.">
+          <div class="row">
+            <a class="name" href="https://www.fosna.org/" target="_blank" rel="noopener noreferrer">Friends of Sabeel North America (FOSNA) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">fosna.org</span>
+          </div>
+          <p class="desc">An interdenominational Christian organization providing mutual aid and solidarity through education, advocacy, and nonviolent action for Palestine. They amplify Palestinian voices and coordinate support through church networks, community organizing, and direct action campaigns.</p>
+        </li>
+        <li data-name="adalah justice project" data-desc="palestinian advocacy organization based in the u.s., aiming to shift policy &amp; public discourse on palestine + organizing for collective liberation">
+          <div class="row">
+            <a class="name" href="https://www.adalahjusticeproject.org/" target="_blank" rel="noopener noreferrer">Adalah Justice Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">adalahjusticeproject.org</span>
+          </div>
+          <p class="desc">Palestinian Advocacy Organization based in the U.S., aiming to shift policy &amp; public discourse on Palestine + Organizing for collective liberation</p>
+        </li>
+        <li data-name="friends of palestinian medical relief society (fpmrs)" data-desc="friends of pmrs is a us-based nonprofit, 501c(3), tax-exempt organization which exists to support the work of the palestinian medical relief society in palestine.">
+          <div class="row">
+            <a class="name" href="https://friendsofpmrs.org/" target="_blank" rel="noopener noreferrer">Friends of Palestinian Medical Relief Society (FPMRS) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">friendsofpmrs.org</span>
+          </div>
+          <p class="desc">Friends of PMRS is a US-based nonprofit, 501c(3), tax-exempt organization which exists to support the work of the Palestinian Medical Relief Society in Palestine.</p>
+        </li>
+        <li data-name="cpt palestine" data-desc="a team of community peacemaker teams providing mutual aid and nonviolent intervention in palestine, particularly in al-khalil/hebron. they work alongside palestinian communities through direct support, documentation of human rights violations, and solidarity actions.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/cpt.palestine/" target="_blank" rel="noopener noreferrer">CPT Palestine <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A team of Community Peacemaker Teams providing mutual aid and nonviolent intervention in Palestine, particularly in Al-Khalil/Hebron. They work alongside Palestinian communities through direct support, documentation of human rights violations, and solidarity actions.</p>
+        </li>
+        <li data-name="international jewish anti-zionist network (ijan)" data-desc="a network of jews fostering mutual aid and solidarity through anti-colonial and anti-imperialist organizing. they coordinate direct actions, political education, and solidarity networks while building power through jewish participation in palestinian liberation struggles and creating spaces for collective resistance against zionism and oppression.">
+          <div class="row">
+            <a class="name" href="https://ijan.org/" target="_blank" rel="noopener noreferrer">International Jewish Anti-Zionist Network (IJAN) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">ijan.org</span>
+          </div>
+          <p class="desc">A network of Jews fostering mutual aid and solidarity through anti-colonial and anti-imperialist organizing. They coordinate direct actions, political education, and solidarity networks while building power through Jewish participation in Palestinian liberation struggles and creating spaces for collective resistance against Zionism and oppression.</p>
+        </li>
+        <li data-name="rebuilding alliance" data-desc="a humanitarian organization fostering mutual aid and solidarity through direct support to palestinian communities. they coordinate rebuilding projects, emergency relief, and advocacy initiatives while building power through grassroots partnerships, policy change campaigns, and creating spaces for palestinian voices to be heard by congress and decision-makers.">
+          <div class="row">
+            <a class="name" href="https://www.rebuildingalliance.org/" target="_blank" rel="noopener noreferrer">Rebuilding Alliance <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">rebuildingalliance.org</span>
+          </div>
+          <p class="desc">A humanitarian organization fostering mutual aid and solidarity through direct support to Palestinian communities. They coordinate rebuilding projects, emergency relief, and advocacy initiatives while building power through grassroots partnerships, policy change campaigns, and creating spaces for Palestinian voices to be heard by Congress and decision-makers.</p>
+        </li>
+        <li data-name="bds movement" data-desc="a palestinian-led movement fostering mutual aid and solidarity through boycott, divestment, and sanctions campaigns. they coordinate global grassroots initiatives, economic advocacy, and solidarity networks while building power through nonviolent pressure for palestinian rights and creating spaces for international civil society to support palestinian liberation.">
+          <div class="row">
+            <a class="name" href="https://bdsmovement.net/" target="_blank" rel="noopener noreferrer">BDS Movement <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bdsmovement.net</span>
+          </div>
+          <p class="desc">A Palestinian-led movement fostering mutual aid and solidarity through boycott, divestment, and sanctions campaigns. They coordinate global grassroots initiatives, economic advocacy, and solidarity networks while building power through nonviolent pressure for Palestinian rights and creating spaces for international civil society to support Palestinian liberation.</p>
+        </li>
+        <li data-name="decolonize this" data-desc="a grassroots collective fostering mutual aid and solidarity through palestinian liberation organizing and decolonial education in the bay area. they coordinate direct actions, political education, and solidarity networks while building power through anti-colonial resistance, community organizing, and creating spaces for palestinian solidarity and liberation.">
+          <div class="row">
+            <a class="name" href="https://x.com/decolonize_this" target="_blank" rel="noopener noreferrer">Decolonize This <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">x.com</span>
+          </div>
+          <p class="desc">A grassroots collective fostering mutual aid and solidarity through Palestinian liberation organizing and decolonial education in the Bay Area. They coordinate direct actions, political education, and solidarity networks while building power through anti-colonial resistance, community organizing, and creating spaces for Palestinian solidarity and liberation.</p>
+        </li>
+        <li data-name="refuser solidarity network" data-desc="a network providing support for israeli war resisters and conscientious objectors through mutual aid and solidarity initiatives. they coordinate legal support, media campaigns, and educational programs while building power through anti-war organizing, resistance to occupation, and creating spaces for jewish voices against militarism.">
+          <div class="row">
+            <a class="name" href="https://www.refuser.org/" target="_blank" rel="noopener noreferrer">Refuser Solidarity Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">refuser.org</span>
+          </div>
+          <p class="desc">A network providing support for Israeli war resisters and conscientious objectors through mutual aid and solidarity initiatives. They coordinate legal support, media campaigns, and educational programs while building power through anti-war organizing, resistance to occupation, and creating spaces for Jewish voices against militarism.</p>
+        </li>
+        <li data-name="palestinian feminist collective" data-desc="a collective of palestinian and arab feminists fostering mutual aid and solidarity through intersectional organizing against gendered, sexual, and colonial violence. they coordinate educational resources, community support, and solidarity networks while building power through feminist approaches to palestinian liberation and creating spaces for feminist resistance and collective action.">
+          <div class="row">
+            <a class="name" href="https://palestinianfeministcollective.org/" target="_blank" rel="noopener noreferrer">Palestinian Feminist Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">palestinianfeministcollective.org</span>
+          </div>
+          <p class="desc">A collective of Palestinian and Arab feminists fostering mutual aid and solidarity through intersectional organizing against gendered, sexual, and colonial violence. They coordinate educational resources, community support, and solidarity networks while building power through feminist approaches to Palestinian liberation and creating spaces for feminist resistance and collective action.</p>
+        </li>
+        <li data-name="al-awda: the palestine right to return coalition" data-desc="a grassroots organization fostering mutual aid and solidarity through palestinian right of return advocacy and community organizing. they coordinate direct support initiatives, educational programs, and solidarity networks while building power through palestinian diaspora organizing, anti-colonial resistance, and creating spaces for palestinian cultural preservation and collective liberation.">
+          <div class="row">
+            <a class="name" href="https://al-awdapalestine.org/" target="_blank" rel="noopener noreferrer">Al-Awda: The Palestine Right to Return Coalition <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">al-awdapalestine.org</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and solidarity through Palestinian right of return advocacy and community organizing. They coordinate direct support initiatives, educational programs, and solidarity networks while building power through Palestinian diaspora organizing, anti-colonial resistance, and creating spaces for Palestinian cultural preservation and collective liberation.</p>
+        </li>
+        <li data-name="badil resource center" data-desc="an independent human rights organization fostering mutual aid and solidarity through research, advocacy, and community support focused on palestinian refugee and residency rights. they coordinate legal resources, policy research, and solidarity networks while building power through rights-based approaches, documentation of forced displacement, and creating spaces for palestinian refugee advocacy.">
+          <div class="row">
+            <a class="name" href="https://badil.org/" target="_blank" rel="noopener noreferrer">BADIL Resource Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">badil.org</span>
+          </div>
+          <p class="desc">An independent human rights organization fostering mutual aid and solidarity through research, advocacy, and community support focused on Palestinian refugee and residency rights. They coordinate legal resources, policy research, and solidarity networks while building power through rights-based approaches, documentation of forced displacement, and creating spaces for Palestinian refugee advocacy.</p>
+        </li>
+        <li data-name="al-shabaka: the palestinian policy network" data-desc="a global network of palestinian experts fostering mutual aid and solidarity through critical policy analysis and research. they coordinate policy development, knowledge production, and solidarity networks while building power through palestinian expertise, strategic thinking, and creating spaces for imagining and developing pathways to liberation.">
+          <div class="row">
+            <a class="name" href="https://al-shabaka.org/" target="_blank" rel="noopener noreferrer">Al-Shabaka: The Palestinian Policy Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">al-shabaka.org</span>
+          </div>
+          <p class="desc">A global network of Palestinian experts fostering mutual aid and solidarity through critical policy analysis and research. They coordinate policy development, knowledge production, and solidarity networks while building power through Palestinian expertise, strategic thinking, and creating spaces for imagining and developing pathways to liberation.</p>
+        </li>
+        <li data-name="filipinos for palestine national network" data-desc="a network of u.s. based filipinos fostering mutual aid and solidarity for a free palestine. they coordinate advocacy for immediate ceasefire, an end to the military siege and blockade of gaza and the west bank, and an end to u.s. aid that funds war in palestine. they build power through coalition-building, direct action, and creating spaces for filipino solidarity with palestinian self-determination and liberation.">
+          <div class="row">
+            <a class="name" href="https://filipinos4palestine.org/" target="_blank" rel="noopener noreferrer">Filipinos for Palestine National Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">filipinos4palestine.org</span>
+          </div>
+          <p class="desc">A network of U.S. based Filipinos fostering mutual aid and solidarity for a free Palestine. They coordinate advocacy for immediate ceasefire, an end to the military siege and blockade of Gaza and the West Bank, and an end to U.S. aid that funds war in Palestine. They build power through coalition-building, direct action, and creating spaces for Filipino solidarity with Palestinian self-determination and liberation.</p>
+        </li>
+        <li data-name="samidoun: palestinian prisoner solidarity network" data-desc="international network of organizers and activists working to build solidarity with palestinian prisoners in their struggle for freedom.">
+          <div class="row">
+            <a class="name" href="https://samidoun.net/" target="_blank" rel="noopener noreferrer">Samidoun: Palestinian Prisoner Solidarity Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">samidoun.net</span>
+          </div>
+          <p class="desc">international network of organizers and activists working to build solidarity with Palestinian prisoners in their struggle for freedom.</p>
+        </li>
+        <li data-name="theater workers for a ceasefire" data-desc="us-based theater workers demand a ceasefire in palestine.">
+          <div class="row">
+            <a class="name" href="https://theaterworkersforaceasefire.com/" target="_blank" rel="noopener noreferrer">Theater Workers for a Ceasefire <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">theaterworkersforaceasefire.com</span>
+          </div>
+          <p class="desc">US-based theater workers demand a ceasefire in Palestine.</p>
+        </li>
+        <li data-name="writers against the war on gaza" data-desc="building a cultural front for a free palestine. they write and publish the new york war crimes.">
+          <div class="row">
+            <a class="name" href="https://www.writersagainstthewarongaza.com/" target="_blank" rel="noopener noreferrer">Writers Against the War on Gaza <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">writersagainstthewarongaza.com</span>
+          </div>
+          <p class="desc">Building a cultural front for a free Palestine. They write and publish the New York War Crimes.</p>
+        </li>
+        <li data-name="pal shield" data-desc="american - palestinian led organization providing life-saving supplies to protect palestinian farmers and communities.">
+          <div class="row">
+            <a class="name" href="https://palshield.org/" target="_blank" rel="noopener noreferrer">Pal Shield <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">palshield.org</span>
+          </div>
+          <p class="desc">American - Palestinian led organization providing life-saving supplies to protect Palestinian farmers and communities.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

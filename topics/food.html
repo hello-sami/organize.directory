@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Food Insecurity - The Organize Directory</title>
+  <title>Food Insecurity — Organize Directory</title>
   <meta name="description" content="Networks and initiatives focused on addressing food access, building community food
                     systems, and combating hunger through mutual aid.">
   <link rel="canonical" href="https://organize.directory/topics/food">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Food Insecurity - The Organize Directory">
+  <meta property="og:title" content="Food Insecurity — Organize Directory">
   <meta property="og:description" content="Networks and initiatives focused on addressing food access, building community food
                     systems, and combating hunger through mutual aid.">
   <meta property="og:type" content="website">
@@ -26,79 +20,175 @@
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('topics');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="city-page state-page">
-        <div class="breadcrumb">
-          <a href="/topics">Topics</a>
-          <span>›</span>
-          <span>Food Insecurity</span>
-        </div>
+<main id="main">
 
-        <h1>Food Insecurity</h1>
-        <p class="subtitle">Networks and initiatives focused on addressing food access, building community food
-                    systems, and combating hunger through mutual aid.</p>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/topics">Topics</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Food Insecurity</span>
+  </nav>
 
-  <section id="national-resources" class="city-section">
-    <h2>National Resources</h2>
-    <div class="initiative">
-      <a href="https://foodnotbombs.net/" target="_blank" rel="noopener noreferrer">Food Not Bombs</a>
-      <p>A volunteer-driven mutual aid network that recovers food that would otherwise be discarded and shares free vegan and vegetarian meals with the hungry in over 1,000 cities around the world. They organize around the principles that food is a right, not a privilege, and work to build local solidarity while protesting war and poverty.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.mutualaidhub.org/" target="_blank" rel="noopener noreferrer">Mutual Aid Hub</a>
-      <p>A comprehensive mapping resource connecting people to mutual aid networks and resources in their local areas, with a particular focus on food distribution efforts and community-driven food security initiatives.</p>
-    </div>
-  </section>
-
-  <section id="community-resources" class="city-section">
-    <h2>Community Resources</h2>
-    <div class="initiative">
-      <a href="https://mapping.littlefreepantry.org/" target="_blank" rel="noopener noreferrer">Little Free Pantry Mapping</a>
-      <p>A community-driven mapping tool that helps locate and share information about mini food pantries and mutual aid food distribution points across communities. The map allows users to find nearby pantries or add new ones, fostering grassroots food security initiatives and neighborhood-level mutual aid networks.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://freedge.org/locations/" target="_blank" rel="noopener noreferrer">Freedge (Community Refrigerators)</a>
-      <p>A map and resource network for community refrigerators—publicly accessible fridges where people can take or leave food at no cost. These cooperatively managed fridges help reduce food waste while increasing food access in neighborhoods across the country.</p>
-    </div>
-  </section>
-
-  <section id="toolkits-guides" class="city-section">
-    <h2>Toolkits &amp; Guides</h2>
-    <div class="initiative">
-      <a href="https://mutualaiddisasterrelief.org/food-justice/" target="_blank" rel="noopener noreferrer">Mutual Aid Disaster Relief - Food
-                            Justice Resources</a>
-      <p>A collection of guides, toolkits, and resources for starting and maintaining community-led food security initiatives, from urban gardening to food distribution networks and community kitchens.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.mutualaidhub.org/resources-for-starting-a-mutual-aid-network" target="_blank" rel="noopener noreferrer">Mutual Aid
-                            Hub - Starting Food Distribution</a>
-      <p>Resources and step-by-step guides for launching a neighborhood food distribution program, including safety protocols, sourcing guidelines, and organizational structures that promote horizontal decision-making.</p>
-    </div>
-  </section>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">Food Insecurity</h1>
+    <p class="meta"><b>6</b> groups</p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-</body>
+  <p class="topic-lede">Networks and initiatives focused on addressing food access, building community food
+                    systems, and combating hunger through mutual aid.</p>
 
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Food Insecurity</label>
+    <input id="page-filter" type="search" placeholder="Filter groups…" autocomplete="off">
+  </div>
+
+  <div class="layout">
+  <nav class="toc" aria-label="Sections on this page">
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
+      <span class="current">
+        <span class="current-label">Section ·</span>
+        <span class="current-name">National Resources</span>
+      </span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div id="toc-panel" class="toc-scroll">
+      <a href="#national-resources" data-section="national-resources"><span class="label">National Resources</span> <span class="count">2</span></a>
+      <a href="#community-resources" data-section="community-resources"><span class="label">Community Resources</span> <span class="count">2</span></a>
+      <a href="#toolkits-guides" data-section="toolkits-guides"><span class="label">Toolkits &amp; Guides</span> <span class="count">2</span></a>
+    </div>
+  </nav>
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="national-resources" class="group-section" data-section="national-resources">
+      <h2 class="section-title">National Resources</h2>
+      <ol class="groups">
+        <li data-name="food not bombs" data-desc="a volunteer-driven mutual aid network that recovers food that would otherwise be discarded and shares free vegan and vegetarian meals with the hungry in over 1,000 cities around the world. they organize around the principles that food is a right, not a privilege, and work to build local solidarity while protesting war and poverty.">
+          <div class="row">
+            <a class="name" href="https://foodnotbombs.net/" target="_blank" rel="noopener noreferrer">Food Not Bombs <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">foodnotbombs.net</span>
+          </div>
+          <p class="desc">A volunteer-driven mutual aid network that recovers food that would otherwise be discarded and shares free vegan and vegetarian meals with the hungry in over 1,000 cities around the world. They organize around the principles that food is a right, not a privilege, and work to build local solidarity while protesting war and poverty.</p>
+        </li>
+        <li data-name="mutual aid hub" data-desc="a comprehensive mapping resource connecting people to mutual aid networks and resources in their local areas, with a particular focus on food distribution efforts and community-driven food security initiatives.">
+          <div class="row">
+            <a class="name" href="https://www.mutualaidhub.org/" target="_blank" rel="noopener noreferrer">Mutual Aid Hub <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">mutualaidhub.org</span>
+          </div>
+          <p class="desc">A comprehensive mapping resource connecting people to mutual aid networks and resources in their local areas, with a particular focus on food distribution efforts and community-driven food security initiatives.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="community-resources" class="group-section" data-section="community-resources">
+      <h2 class="section-title">Community Resources</h2>
+      <ol class="groups">
+        <li data-name="little free pantry mapping" data-desc="a community-driven mapping tool that helps locate and share information about mini food pantries and mutual aid food distribution points across communities. the map allows users to find nearby pantries or add new ones, fostering grassroots food security initiatives and neighborhood-level mutual aid networks.">
+          <div class="row">
+            <a class="name" href="https://mapping.littlefreepantry.org/" target="_blank" rel="noopener noreferrer">Little Free Pantry Mapping <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">mapping.littlefreepantry.org</span>
+          </div>
+          <p class="desc">A community-driven mapping tool that helps locate and share information about mini food pantries and mutual aid food distribution points across communities. The map allows users to find nearby pantries or add new ones, fostering grassroots food security initiatives and neighborhood-level mutual aid networks.</p>
+        </li>
+        <li data-name="freedge (community refrigerators)" data-desc="a map and resource network for community refrigerators—publicly accessible fridges where people can take or leave food at no cost. these cooperatively managed fridges help reduce food waste while increasing food access in neighborhoods across the country.">
+          <div class="row">
+            <a class="name" href="https://freedge.org/locations/" target="_blank" rel="noopener noreferrer">Freedge (Community Refrigerators) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">freedge.org</span>
+          </div>
+          <p class="desc">A map and resource network for community refrigerators—publicly accessible fridges where people can take or leave food at no cost. These cooperatively managed fridges help reduce food waste while increasing food access in neighborhoods across the country.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="toolkits-guides" class="group-section" data-section="toolkits-guides">
+      <h2 class="section-title">Toolkits &amp; Guides</h2>
+      <ol class="groups">
+        <li data-name="mutual aid disaster relief - food
+                            justice resources" data-desc="a collection of guides, toolkits, and resources for starting and maintaining community-led food security initiatives, from urban gardening to food distribution networks and community kitchens.">
+          <div class="row">
+            <a class="name" href="https://mutualaiddisasterrelief.org/food-justice/" target="_blank" rel="noopener noreferrer">Mutual Aid Disaster Relief - Food
+                            Justice Resources <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">mutualaiddisasterrelief.org</span>
+          </div>
+          <p class="desc">A collection of guides, toolkits, and resources for starting and maintaining community-led food security initiatives, from urban gardening to food distribution networks and community kitchens.</p>
+        </li>
+        <li data-name="mutual aid
+                            hub - starting food distribution" data-desc="resources and step-by-step guides for launching a neighborhood food distribution program, including safety protocols, sourcing guidelines, and organizational structures that promote horizontal decision-making.">
+          <div class="row">
+            <a class="name" href="https://www.mutualaidhub.org/resources-for-starting-a-mutual-aid-network" target="_blank" rel="noopener noreferrer">Mutual Aid
+                            Hub - Starting Food Distribution <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">mutualaidhub.org</span>
+          </div>
+          <p class="desc">Resources and step-by-step guides for launching a neighborhood food distribution program, including safety protocols, sourcing guidelines, and organizational structures that promote horizontal decision-making.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

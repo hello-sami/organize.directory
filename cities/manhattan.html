@@ -1,289 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Manhattan Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Manhattan. Connect with local organizations and community resources.">
+  <title>Manhattan — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Manhattan.">
   <link rel="canonical" href="https://organize.directory/manhattan">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Manhattan Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Manhattan. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Manhattan — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Manhattan.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/manhattan">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="content-wrapper">
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/new-york">New York</a>
-          <span>›</span>
-          <a href="/nyc">New York City</a>
-          <span>›</span>
-          <span>Manhattan</span>
-        </div>
+<main id="main">
 
-        <h1>Manhattan</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/new-york">New York</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/nyc">New York City</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Manhattan</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="east-village" class="city-section">
-    <h2>East Village</h2>
-    <div class="initiative">
-      <a href="https://www.evloves.nyc/" target="_blank" rel="noopener noreferrer">EVLovesNYC</a>
-      <p>501c3 non-profit founded by friends striving to end food insecurity in NYC!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/ev_neighbors_who_care/" target="_blank" rel="noopener noreferrer">EV Neighbors Who Care</a>
-      <p>Mutual aid in the East Village</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.sixthstreetcenter.org/" target="_blank" rel="noopener noreferrer">Sixth Street Center</a>
-      <p>Sixth Street Community Center is a community-based not-for-profit organization founded in 1978 and committed to advancing social, environmental, housing, economic and racial justice in the East Village and Lower East Side community.</p>
-    </div>
-  </section>
-
-  <section id="greenwich-village" class="city-section">
-    <h2>Greenwich Village</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/cccollective.nyc/" target="_blank" rel="noopener noreferrer">Community Care Collective
-                                (ccc)</a>
-      <p>Washington Sq Park, mutual aid, environmentalism, &amp; liberation food distro: Tuesdays, 12:30-3:30</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/wspmutualaid/" target="_blank" rel="noopener noreferrer">WSP Mutual Aid</a>
-      <p>Mutual Aid in Washington Square Park every Friday from 5 - 8 PM.</p>
-    </div>
-  </section>
-
-  <section id="hells-kitchen" class="city-section">
-    <h2>Hell's Kitchen</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/hkfridge/" target="_blank" rel="noopener noreferrer">Hell's Kitchen Community Cupboard</a>
-      <p>Free food pantry in Hell's Kitchen 24/7. Mutual aid. Take what you need, leave what you can</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/hkfreestore/" target="_blank" rel="noopener noreferrer">Hells Kitchen Free Store</a>
-      <p>Lower waste stream. Waste diversion. neighbors helping neighbors. Give what you can. Take what you need.</p>
-    </div>
-  </section>
-
-  <section id="lower-east-side" class="city-section">
-    <h2>Lower East Side and Chinatown</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/anarchy_9_9/" target="_blank" rel="noopener noreferrer">Anarchy 99</a>
-      <p>On Sundays between 12-5pm the corner of E. 9th St and 1st Ave is a hub of radical art, mutual aid, community power and anarchist resistance.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://aad.nyc/" target="_blank" rel="noopener noreferrer">Art Against Displacement</a>
-      <p>AAD supports fights against displacement. Based in NYC's Lower East Side &amp; Chinatown on unceded Lenape land. We meet the 2nd Tuesday of every month.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/bluestockingsnyc" target="_blank" rel="noopener noreferrer">Bluestockings</a>
-      <p>Queer, trans+SWer cooperatively-owned activist bookstore + café in NYC</p>
-    </div>
-    <div class="initiative">
-      <a href="https://caaav.org/" target="_blank" rel="noopener noreferrer">CAAAV: Organizing Asian Communities</a>
-      <p>CAAAV organizes working class Asian immigrants in Chinatown and Astoria to make an intervention in the gentrification of our neighborhoods and New York City.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.chinatownartbrigade.org/" target="_blank" rel="noopener noreferrer">Chinatown Art Brigade</a>
-      <p>The Chinatown Art Brigade (CAB) is a cultural collective of artists, media makers and activists creating art and media to advance social justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/chinatown.communityfridge/" target="_blank" rel="noopener noreferrer">Chinatown Community
-                                Fridge</a>
-      <p>By our community, for our community</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.chinatownworkinggroup.com/" target="_blank" rel="noopener noreferrer">Chinatown Working Group</a>
-      <p>The Chinatown Working Group is a broad coalition of community organizations with the common goal of protecting and preserving the culture and diversity of Chinatown and the Lower East Side from displacement and over-development, and of supporting the people who live and work among us.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/feedthestreets_nyc/" target="_blank" rel="noopener noreferrer">Feed the Streets NYC</a>
-      <p>A hand up, not a hand out, 501c3 nonprofit Lower East Side, NYC</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/lesfoodnotbombs" target="_blank" rel="noopener noreferrer">Food Not Bombs Lower East Side</a>
-      <p>Serving free vegan meals every Sunday at 4:30pm inside the SW corner of Tompkins Square Park (E 7th st &amp; Ave A) DM us if you'd like to get involved!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/tompkins.distro/" target="_blank" rel="noopener noreferrer">Tompkins Distro</a>
-      <p>Saturday weekly community mutual aid distribution for migrant asylum seekers, unhoused neighbors &amp; all in need at Tompkins Square Park. Come help!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/youth_against_displacement/" target="_blank" rel="noopener noreferrer">Youth Against
-                                Displacement</a>
-      <p>Young and young at heart fighting displacement in the LES and Chinatown, picket with us every Thu-Sun 11am-1pm outside MOCA</p>
-    </div>
-  </section>
-
-  <section id="lower-manhattan" class="city-section">
-    <h2>Lower Manhattan</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/friendofafriend_nyc/" target="_blank" rel="noopener noreferrer">Friend of a Friend NYC</a>
-      <p>Building networks of support with our unhoused friends &amp; neighbors in Lower Manhattan.</p>
-    </div>
-  </section>
-
-  <section id="midtown" class="city-section">
-    <h2>Midtown</h2>
-    <div class="initiative">
-      <a href="https://midtownsouthcc.org/" target="_blank" rel="noopener noreferrer">Midtown South Community Council</a>
-      <p>Midtown South Community Council strives to dismantle the causes of homelessness by building an equitable, just, and sustainable social infrastructure.</p>
-    </div>
-  </section>
-
-  <section id="upper-east-side" class="city-section">
-    <h2>Upper East Side</h2>
-    <div class="initiative">
-      <a href="https://ues-mutual-aid.jimdosite.com/" target="_blank" rel="noopener noreferrer">UES Mutual Aid</a>
-      <p>Mutual aid network serving the Upper East Side community</p>
-    </div>
-  </section>
-
-  <section id="uptown" class="city-section">
-    <h2>Uptown</h2>
-    <div class="initiative">
-      <a href="https://defendharlem.org/" target="_blank" rel="noopener noreferrer">Defend Harlem</a>
-      <p>Defend Harlem produces content, organizes public events, and connects with other organizations to raise community awareness about predatory development and create solutions to fight displacement.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/fortfridge/" target="_blank" rel="noopener noreferrer">Fort Fridge</a>
-      <p>Community Fridge in Washington Heights. Take what you need, give what you can. 181st St &amp; Fort Washington Ave. Open 24/7</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/harlem4palestine" target="_blank" rel="noopener noreferrer">Harlem 4 Palestine</a>
-      <p>Fighting for liberation from Harlem to Palestine! DM us to get involved!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/the155streetfridge" target="_blank" rel="noopener noreferrer">The Harlem Community Fridge</a>
-      <p>Community fridge at 250 Bradhurst Ave</p>
-    </div>
-    <div class="initiative">
-      <a href="https://indivisibleharlem.com/" target="_blank" rel="noopener noreferrer">Indivisible Harlem</a>
-      <p>fighting for progressive values in harlem</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/thepeoplespeoplesfridge" target="_blank" rel="noopener noreferrer">The People's Peoples
-                                Fridge</a>
-      <p>mutual aid group + fridge, 2113 Amsterdam Ave outside @wordupbooks</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/uptowntenants/" target="_blank" rel="noopener noreferrer">Upper Manhattan Tenant Union</a>
-      <p>Tenant-led group organizing in our bldgs &amp; on our blocks to counter the violence of our landlords &amp; fight for safe, stable, &amp; dignified housing 4 all</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/uptown4palestine/" target="_blank" rel="noopener noreferrer">Uptown 4 Palestine</a>
-      <p>Group of uptown Manhattan residents organizing for Palestinian liberation</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/theuptownfridge/" target="_blank" rel="noopener noreferrer">The Uptown Fridge</a>
-      <p>Physical fridge location currently out of service. Weekly distributions mid-late Wed afternoons on Sherman between Thayer and Arden</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/uptownwagon/" target="_blank" rel="noopener noreferrer">Uptown Wagon</a>
-      <p>A collective of neighbors who meet in uptown Manhattan to distribute meals &amp; supplies to neighbors experiencing homelessness.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.wethepeople.nyc/" target="_blank" rel="noopener noreferrer">We the People</a>
-      <p>Building &amp; organizing through mutual aid efforts. Weekly distro on Lexington Ave between 124th and 125th St</p>
-    </div>
-  </section>
-        </div>
-      </div>
-        <aside class="toc-container">
-          <nav class="toc" role="navigation" aria-label="Table of Contents" id="toc">
-            <ul class="toc-list">
-          <li class="toc-item">
-            <a href="#east-village" class="toc-link">
-              <span class="toc-number">1.</span>
-              <span class="toc-text">East Village</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#greenwich-village" class="toc-link">
-              <span class="toc-number">2.</span>
-              <span class="toc-text">Greenwich Village</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#hells-kitchen" class="toc-link">
-              <span class="toc-number">3.</span>
-              <span class="toc-text">Hell's Kitchen</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#lower-east-side" class="toc-link">
-              <span class="toc-number">4.</span>
-              <span class="toc-text">Lower East Side and Chinatown</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#lower-manhattan" class="toc-link">
-              <span class="toc-number">5.</span>
-              <span class="toc-text">Lower Manhattan</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#midtown" class="toc-link">
-              <span class="toc-number">6.</span>
-              <span class="toc-text">Midtown</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#upper-east-side" class="toc-link">
-              <span class="toc-number">7.</span>
-              <span class="toc-text">Upper East Side</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#uptown" class="toc-link">
-              <span class="toc-number">8.</span>
-              <span class="toc-text">Uptown</span>
-            </a>
-          </li>
-            </ul>
-          </nav>
-        </aside>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">Manhattan</h1>
+    <p class="meta">
+      <b>32</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      New York
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  <script src="/js/city-toc.js" defer></script>
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Manhattan</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Manhattan…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+  <nav class="toc" aria-label="Sections on this page">
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
+      <span class="current">
+        <span class="current-label">Section ·</span>
+        <span class="current-name">East Village</span>
+      </span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div id="toc-panel" class="toc-scroll">
+      <a href="#east-village" data-section="east-village"><span class="label">East Village</span> <span class="count">3</span></a>
+      <a href="#greenwich-village" data-section="greenwich-village"><span class="label">Greenwich Village</span> <span class="count">2</span></a>
+      <a href="#hells-kitchen" data-section="hells-kitchen"><span class="label">Hell's Kitchen</span> <span class="count">2</span></a>
+      <a href="#lower-east-side" data-section="lower-east-side"><span class="label">Lower East Side and Chinatown</span> <span class="count">11</span></a>
+      <a href="#lower-manhattan" data-section="lower-manhattan"><span class="label">Lower Manhattan</span> <span class="count">1</span></a>
+      <a href="#midtown" data-section="midtown"><span class="label">Midtown</span> <span class="count">1</span></a>
+      <a href="#upper-east-side" data-section="upper-east-side"><span class="label">Upper East Side</span> <span class="count">1</span></a>
+      <a href="#uptown" data-section="uptown"><span class="label">Uptown</span> <span class="count">11</span></a>
+    </div>
+  </nav>
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="east-village" class="group-section" data-section="east-village">
+      <h2 class="section-title">East Village</h2>
+      <ol class="groups">
+        <li data-name="evlovesnyc" data-desc="501c3 non-profit founded by friends striving to end food insecurity in nyc!">
+          <div class="row">
+            <a class="name" href="https://www.evloves.nyc/" target="_blank" rel="noopener noreferrer">EVLovesNYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">evloves.nyc</span>
+          </div>
+          <p class="desc">501c3 non-profit founded by friends striving to end food insecurity in NYC!</p>
+        </li>
+        <li data-name="ev neighbors who care" data-desc="mutual aid in the east village">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/ev_neighbors_who_care/" target="_blank" rel="noopener noreferrer">EV Neighbors Who Care <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Mutual aid in the East Village</p>
+        </li>
+        <li data-name="sixth street center" data-desc="sixth street community center is a community-based not-for-profit organization founded in 1978 and committed to advancing social, environmental, housing, economic and racial justice in the east village and lower east side community.">
+          <div class="row">
+            <a class="name" href="https://www.sixthstreetcenter.org/" target="_blank" rel="noopener noreferrer">Sixth Street Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sixthstreetcenter.org</span>
+          </div>
+          <p class="desc">Sixth Street Community Center is a community-based not-for-profit organization founded in 1978 and committed to advancing social, environmental, housing, economic and racial justice in the East Village and Lower East Side community.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="greenwich-village" class="group-section" data-section="greenwich-village">
+      <h2 class="section-title">Greenwich Village</h2>
+      <ol class="groups">
+        <li data-name="community care collective
+                                (ccc)" data-desc="washington sq park, mutual aid, environmentalism, &amp; liberation food distro: tuesdays, 12:30-3:30">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/cccollective.nyc/" target="_blank" rel="noopener noreferrer">Community Care Collective
+                                (ccc) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Washington Sq Park, mutual aid, environmentalism, &amp; liberation food distro: Tuesdays, 12:30-3:30</p>
+        </li>
+        <li data-name="wsp mutual aid" data-desc="mutual aid in washington square park every friday from 5 - 8 pm.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/wspmutualaid/" target="_blank" rel="noopener noreferrer">WSP Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Mutual Aid in Washington Square Park every Friday from 5 - 8 PM.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="hells-kitchen" class="group-section" data-section="hells-kitchen">
+      <h2 class="section-title">Hell's Kitchen</h2>
+      <ol class="groups">
+        <li data-name="hell's kitchen community cupboard" data-desc="free food pantry in hell's kitchen 24/7. mutual aid. take what you need, leave what you can">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/hkfridge/" target="_blank" rel="noopener noreferrer">Hell's Kitchen Community Cupboard <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Free food pantry in Hell's Kitchen 24/7. Mutual aid. Take what you need, leave what you can</p>
+        </li>
+        <li data-name="hells kitchen free store" data-desc="lower waste stream. waste diversion. neighbors helping neighbors. give what you can. take what you need.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/hkfreestore/" target="_blank" rel="noopener noreferrer">Hells Kitchen Free Store <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Lower waste stream. Waste diversion. neighbors helping neighbors. Give what you can. Take what you need.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="lower-east-side" class="group-section" data-section="lower-east-side">
+      <h2 class="section-title">Lower East Side and Chinatown</h2>
+      <ol class="groups">
+        <li data-name="anarchy 99" data-desc="on sundays between 12-5pm the corner of e. 9th st and 1st ave is a hub of radical art, mutual aid, community power and anarchist resistance.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/anarchy_9_9/" target="_blank" rel="noopener noreferrer">Anarchy 99 <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">On Sundays between 12-5pm the corner of E. 9th St and 1st Ave is a hub of radical art, mutual aid, community power and anarchist resistance.</p>
+        </li>
+        <li data-name="art against displacement" data-desc="aad supports fights against displacement. based in nyc's lower east side &amp; chinatown on unceded lenape land. we meet the 2nd tuesday of every month.">
+          <div class="row">
+            <a class="name" href="https://aad.nyc/" target="_blank" rel="noopener noreferrer">Art Against Displacement <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">aad.nyc</span>
+          </div>
+          <p class="desc">AAD supports fights against displacement. Based in NYC's Lower East Side &amp; Chinatown on unceded Lenape land. We meet the 2nd Tuesday of every month.</p>
+        </li>
+        <li data-name="bluestockings" data-desc="queer, trans+swer cooperatively-owned activist bookstore + café in nyc">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/bluestockingsnyc" target="_blank" rel="noopener noreferrer">Bluestockings <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Queer, trans+SWer cooperatively-owned activist bookstore + café in NYC</p>
+        </li>
+        <li data-name="caaav: organizing asian communities" data-desc="caaav organizes working class asian immigrants in chinatown and astoria to make an intervention in the gentrification of our neighborhoods and new york city.">
+          <div class="row">
+            <a class="name" href="https://caaav.org/" target="_blank" rel="noopener noreferrer">CAAAV: Organizing Asian Communities <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">caaav.org</span>
+          </div>
+          <p class="desc">CAAAV organizes working class Asian immigrants in Chinatown and Astoria to make an intervention in the gentrification of our neighborhoods and New York City.</p>
+        </li>
+        <li data-name="chinatown art brigade" data-desc="the chinatown art brigade (cab) is a cultural collective of artists, media makers and activists creating art and media to advance social justice.">
+          <div class="row">
+            <a class="name" href="https://www.chinatownartbrigade.org/" target="_blank" rel="noopener noreferrer">Chinatown Art Brigade <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">chinatownartbrigade.org</span>
+          </div>
+          <p class="desc">The Chinatown Art Brigade (CAB) is a cultural collective of artists, media makers and activists creating art and media to advance social justice.</p>
+        </li>
+        <li data-name="chinatown community
+                                fridge" data-desc="by our community, for our community">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/chinatown.communityfridge/" target="_blank" rel="noopener noreferrer">Chinatown Community
+                                Fridge <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">By our community, for our community</p>
+        </li>
+        <li data-name="chinatown working group" data-desc="the chinatown working group is a broad coalition of community organizations with the common goal of protecting and preserving the culture and diversity of chinatown and the lower east side from displacement and over-development, and of supporting the people who live and work among us.">
+          <div class="row">
+            <a class="name" href="https://www.chinatownworkinggroup.com/" target="_blank" rel="noopener noreferrer">Chinatown Working Group <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">chinatownworkinggroup.com</span>
+          </div>
+          <p class="desc">The Chinatown Working Group is a broad coalition of community organizations with the common goal of protecting and preserving the culture and diversity of Chinatown and the Lower East Side from displacement and over-development, and of supporting the people who live and work among us.</p>
+        </li>
+        <li data-name="feed the streets nyc" data-desc="a hand up, not a hand out, 501c3 nonprofit lower east side, nyc">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/feedthestreets_nyc/" target="_blank" rel="noopener noreferrer">Feed the Streets NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A hand up, not a hand out, 501c3 nonprofit Lower East Side, NYC</p>
+        </li>
+        <li data-name="food not bombs lower east side" data-desc="serving free vegan meals every sunday at 4:30pm inside the sw corner of tompkins square park (e 7th st &amp; ave a) dm us if you'd like to get involved!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/lesfoodnotbombs" target="_blank" rel="noopener noreferrer">Food Not Bombs Lower East Side <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Serving free vegan meals every Sunday at 4:30pm inside the SW corner of Tompkins Square Park (E 7th st &amp; Ave A) DM us if you'd like to get involved!</p>
+        </li>
+        <li data-name="tompkins distro" data-desc="saturday weekly community mutual aid distribution for migrant asylum seekers, unhoused neighbors &amp; all in need at tompkins square park. come help!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/tompkins.distro/" target="_blank" rel="noopener noreferrer">Tompkins Distro <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Saturday weekly community mutual aid distribution for migrant asylum seekers, unhoused neighbors &amp; all in need at Tompkins Square Park. Come help!</p>
+        </li>
+        <li data-name="youth against
+                                displacement" data-desc="young and young at heart fighting displacement in the les and chinatown, picket with us every thu-sun 11am-1pm outside moca">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/youth_against_displacement/" target="_blank" rel="noopener noreferrer">Youth Against
+                                Displacement <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Young and young at heart fighting displacement in the LES and Chinatown, picket with us every Thu-Sun 11am-1pm outside MOCA</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="lower-manhattan" class="group-section" data-section="lower-manhattan">
+      <h2 class="section-title">Lower Manhattan</h2>
+      <ol class="groups">
+        <li data-name="friend of a friend nyc" data-desc="building networks of support with our unhoused friends &amp; neighbors in lower manhattan.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/friendofafriend_nyc/" target="_blank" rel="noopener noreferrer">Friend of a Friend NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Building networks of support with our unhoused friends &amp; neighbors in Lower Manhattan.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="midtown" class="group-section" data-section="midtown">
+      <h2 class="section-title">Midtown</h2>
+      <ol class="groups">
+        <li data-name="midtown south community council" data-desc="midtown south community council strives to dismantle the causes of homelessness by building an equitable, just, and sustainable social infrastructure.">
+          <div class="row">
+            <a class="name" href="https://midtownsouthcc.org/" target="_blank" rel="noopener noreferrer">Midtown South Community Council <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">midtownsouthcc.org</span>
+          </div>
+          <p class="desc">Midtown South Community Council strives to dismantle the causes of homelessness by building an equitable, just, and sustainable social infrastructure.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="upper-east-side" class="group-section" data-section="upper-east-side">
+      <h2 class="section-title">Upper East Side</h2>
+      <ol class="groups">
+        <li data-name="ues mutual aid" data-desc="mutual aid network serving the upper east side community">
+          <div class="row">
+            <a class="name" href="https://ues-mutual-aid.jimdosite.com/" target="_blank" rel="noopener noreferrer">UES Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">ues-mutual-aid.jimdosite.com</span>
+          </div>
+          <p class="desc">Mutual aid network serving the Upper East Side community</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="uptown" class="group-section" data-section="uptown">
+      <h2 class="section-title">Uptown</h2>
+      <ol class="groups">
+        <li data-name="defend harlem" data-desc="defend harlem produces content, organizes public events, and connects with other organizations to raise community awareness about predatory development and create solutions to fight displacement.">
+          <div class="row">
+            <a class="name" href="https://defendharlem.org/" target="_blank" rel="noopener noreferrer">Defend Harlem <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">defendharlem.org</span>
+          </div>
+          <p class="desc">Defend Harlem produces content, organizes public events, and connects with other organizations to raise community awareness about predatory development and create solutions to fight displacement.</p>
+        </li>
+        <li data-name="fort fridge" data-desc="community fridge in washington heights. take what you need, give what you can. 181st st &amp; fort washington ave. open 24/7">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/fortfridge/" target="_blank" rel="noopener noreferrer">Fort Fridge <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Community Fridge in Washington Heights. Take what you need, give what you can. 181st St &amp; Fort Washington Ave. Open 24/7</p>
+        </li>
+        <li data-name="harlem 4 palestine" data-desc="fighting for liberation from harlem to palestine! dm us to get involved!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/harlem4palestine" target="_blank" rel="noopener noreferrer">Harlem 4 Palestine <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Fighting for liberation from Harlem to Palestine! DM us to get involved!</p>
+        </li>
+        <li data-name="the harlem community fridge" data-desc="community fridge at 250 bradhurst ave">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/the155streetfridge" target="_blank" rel="noopener noreferrer">The Harlem Community Fridge <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Community fridge at 250 Bradhurst Ave</p>
+        </li>
+        <li data-name="indivisible harlem" data-desc="fighting for progressive values in harlem">
+          <div class="row">
+            <a class="name" href="https://indivisibleharlem.com/" target="_blank" rel="noopener noreferrer">Indivisible Harlem <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">indivisibleharlem.com</span>
+          </div>
+          <p class="desc">fighting for progressive values in harlem</p>
+        </li>
+        <li data-name="the people's peoples
+                                fridge" data-desc="mutual aid group + fridge, 2113 amsterdam ave outside @wordupbooks">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/thepeoplespeoplesfridge" target="_blank" rel="noopener noreferrer">The People's Peoples
+                                Fridge <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">mutual aid group + fridge, 2113 Amsterdam Ave outside @wordupbooks</p>
+        </li>
+        <li data-name="upper manhattan tenant union" data-desc="tenant-led group organizing in our bldgs &amp; on our blocks to counter the violence of our landlords &amp; fight for safe, stable, &amp; dignified housing 4 all">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/uptowntenants/" target="_blank" rel="noopener noreferrer">Upper Manhattan Tenant Union <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Tenant-led group organizing in our bldgs &amp; on our blocks to counter the violence of our landlords &amp; fight for safe, stable, &amp; dignified housing 4 all</p>
+        </li>
+        <li data-name="uptown 4 palestine" data-desc="group of uptown manhattan residents organizing for palestinian liberation">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/uptown4palestine/" target="_blank" rel="noopener noreferrer">Uptown 4 Palestine <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Group of uptown Manhattan residents organizing for Palestinian liberation</p>
+        </li>
+        <li data-name="the uptown fridge" data-desc="physical fridge location currently out of service. weekly distributions mid-late wed afternoons on sherman between thayer and arden">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/theuptownfridge/" target="_blank" rel="noopener noreferrer">The Uptown Fridge <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Physical fridge location currently out of service. Weekly distributions mid-late Wed afternoons on Sherman between Thayer and Arden</p>
+        </li>
+        <li data-name="uptown wagon" data-desc="a collective of neighbors who meet in uptown manhattan to distribute meals &amp; supplies to neighbors experiencing homelessness.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/uptownwagon/" target="_blank" rel="noopener noreferrer">Uptown Wagon <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A collective of neighbors who meet in uptown Manhattan to distribute meals &amp; supplies to neighbors experiencing homelessness.</p>
+        </li>
+        <li data-name="we the people" data-desc="building &amp; organizing through mutual aid efforts. weekly distro on lexington ave between 124th and 125th st">
+          <div class="row">
+            <a class="name" href="https://www.wethepeople.nyc/" target="_blank" rel="noopener noreferrer">We the People <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">wethepeople.nyc</span>
+          </div>
+          <p class="desc">Building &amp; organizing through mutual aid efforts. Weekly distro on Lexington Ave between 124th and 125th St</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

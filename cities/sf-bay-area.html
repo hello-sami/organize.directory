@@ -1,405 +1,605 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Bay Area Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Bay Area. Connect with local organizations and community resources.">
+  <title>Bay Area — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Bay Area.">
   <link rel="canonical" href="https://organize.directory/sf-bay-area">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Bay Area Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Bay Area. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Bay Area — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Bay Area.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/sf-bay-area">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="content-wrapper">
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/california">California</a>
-          <span>›</span>
-          <a href="/norcal">Northern California</a>
-          <span>›</span>
-          <span>Bay Area</span>
-        </div>
+<main id="main">
 
-        <h1>Bay Area</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/california">California</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/norcal">Northern California</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Bay Area</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="international-solidarity" class="city-section">
-    <h2>International Solidarity</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/bayarea4palestine/" target="_blank" rel="noopener noreferrer">Bay Area for Palestine</a>
-      <p>Follow for action alerts, info, and safety tips. #PalestineWillBeFree</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.araborganizing.org/" target="_blank" rel="noopener noreferrer">Arab Resource &amp; Organizing Center (AROC)</a>
-      <p>We are abolitionists, feminists, and internationalists who believe that the liberation of SWANA (South West Asian and North African) people is inextricably tied to the liberation of all oppressed people.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/asata_bayarea/" target="_blank" rel="noopener noreferrer">Alliance of South Asians Taking Action (ASATA)</a>
-      <p>The Alliance of South Asians Taking Action empowers South Asians to end violence, oppression, and exploitation within and against our communities.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://quitpalestine.org/" target="_blank" rel="noopener noreferrer">Queers Undermining Israeli Terrorism (QUIT!)</a>
-      <p>Our mission was, and is, to build support in the Bay Area queer communities for Palestinian liberation, to make queers and queer liberation visible and integral to the local Palestine solidarity movement, to support queer organizing in Palestine and around the Arab world, and to oppose United States colonialism, military intervention, and funding and support for Israeli colonialism.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/bayareapym/" target="_blank" rel="noopener noreferrer">Bay Area PYM</a>
-      <p>Bay Area chapter of the @palestinianyouthmovement</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/antirepression_bayarea/" target="_blank" rel="noopener noreferrer">Anti-Repression Bay Area</a>
-      <p>Providing protest support and bail funds for demonstrators through mutual aid networks.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://apen4ej.org/" target="_blank" rel="noopener noreferrer">Asian Pacific Environmental Network (APEN)</a>
-      <p>Building power in Asian immigrant and refugee communities for environmental, social, and economic justice through grassroots organizing, mutual aid, and policy advocacy in Oakland and Richmond.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://communityworkswest.org/" target="_blank" rel="noopener noreferrer">Community Works West</a>
-      <p>Transforming justice through restorative practices, reentry support, and youth empowerment programs across the Bay Area, with a focus on healing and community-led solutions to incarceration.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://sfbayview.com/" target="_blank" rel="noopener noreferrer">San Francisco Bay View National Black Newspaper</a>
-      <p>Independent Black newspaper founded in 1976, serving thought-provoking stories and commentary on the full range of Black trials and triumphs, with a focus on prison abolition, mutual aid, and community empowerment through grassroots journalism.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://indybay.org/" target="_blank" rel="noopener noreferrer">Indybay - SF Bay Area Independent Media Center</a>
-      <p>The San Francisco Bay Area Independent Media Center (Indybay) is a non-commercial, democratic collective of bay area independent media makers and media outlets, and serves as the local organizing unit of the global Indymedia network.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://freespeech.org/" target="_blank" rel="noopener noreferrer">Free Speech TV</a>
-      <p>Free Speech TV is one of the last standing national, independent news networks committed to advancing progressive social change.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/homecooked_care_for_liberation/" target="_blank" rel="noopener noreferrer">Homecooked Care for Liberation</a>
-      <p>Homecooked meals to lessen the load for people actively organizing for and committed to Palestinian liberation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://mujeresunidas.net/" target="_blank" rel="noopener noreferrer">Mujeres Unidas y Activas (MUA)</a>
-      <p>Mujeres Unidas y Activas is an organization of Latina and Indigenous immigrant women with the mission of increasing our personal and communal power for social and economic justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.commonhumanitycollective.org/" target="_blank" rel="noopener noreferrer">Common Humanity Collective</a>
-      <p>At Common Humanity Collective, we’ve engineered designs for inexpensive, highly effective DIY air purifiers, using only a box fan, a large filter, and a few other materials.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://urbanhabitat.org/" target="_blank" rel="noopener noreferrer">Urban Habitat</a>
-      <p>Urban Habitat democratizes power and advances equitable policies to create a just and connected Bay Area for low-income communities of color.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://sogoreaTe-landtrust.org/" target="_blank" rel="noopener noreferrer">Sogorea Te' Land Trust</a>
-      <p>Sogorea Te’ Land Trust is an urban Indigenous women-led land trust that facilitates the return of Indigenous land to Indigenous people.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.1000grandmothers.com/" target="_blank" rel="noopener noreferrer">1000 Grandmothers for Future Generations</a>
-      <p>A collective of elder women and allies organizing mutual aid and direct action for climate justice across the Bay Area. They coordinate solidarity actions supporting indigenous rights, frontline communities, and youth climate movements while building power through nonviolent resistance, community building, and intergenerational organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://350bayarea.org/" target="_blank" rel="noopener noreferrer">350 Bay Area</a>
-      <p>A grassroots climate movement building power through mutual aid and community organizing to achieve climate justice across the Bay Area. They coordinate direct action campaigns, policy advocacy, and solidarity networks while working towards environmental justice, clean energy futures, and the elimination of fossil fuel infrastructure through collective organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.akpress.org/" target="_blank" rel="noopener noreferrer">AK Press</a>
-      <p>A worker-run collective and anarchist publisher fostering mutual aid through radical literature and knowledge sharing since 1990. They coordinate book distribution, publishing projects, and community education while building networks of solidarity through anarchist theory, social justice literature, and creating accessible spaces for revolutionary ideas and collective learning.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.bayresistance.org/" target="_blank" rel="noopener noreferrer">Bay Resistance</a>
-      <p>A network fostering mutual aid and rapid response organizing across the Bay Area. They coordinate direct actions, solidarity networks, and community defense while building power through rapid response mobilizations, political education, and creating spaces for collective resistance against oppression and injustice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.bauaw.org/" target="_blank" rel="noopener noreferrer">Bay Area United Against War (BAUAW)</a>
-      <p>An anti-war coalition fostering mutual aid and solidarity through direct action and movement building across the Bay Area. They coordinate peace actions, educational events, and solidarity networks while building power through anti-imperialist organizing, cross-movement alliances, and creating spaces for collective resistance against war and militarism.</p>
-    </div>
-    <div class="initiative">
-      <a href="http://www.idlenomoresfbay.org/" target="_blank" rel="noopener noreferrer">Idle No More SF Bay</a>
-      <p>An Indigenous-led organization fostering mutual aid and environmental justice through direct action and cultural revitalization. They coordinate Indigenous rights campaigns, land defense initiatives, and solidarity networks while building power through traditional ecological knowledge, decolonial practices, and creating spaces for Indigenous sovereignty and climate justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://bsky.app/profile/iaf-fai.bsky.social" target="_blank" rel="noopener noreferrer">Indigenous Anarchist Federation</a>
-      <p>A collective fostering Indigenous mutual aid and autonomous organizing through direct action and decolonial resistance. They coordinate solidarity networks, resource sharing, and political education while building power through Indigenous anarchist perspectives and creating spaces for anti-colonial struggle.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://filipinos4justice.org/" target="_blank" rel="noopener noreferrer">Filipino Advocates for Justice</a>
-      <p>A grassroots organization fostering mutual aid and community empowerment for Filipino communities across the Bay Area. They coordinate immigrant rights advocacy, youth programs, worker support initiatives, and solidarity networks while building power through civic engagement, labor organizing, and creating spaces for cultural preservation and collective action.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://flyingoverwalls.org/" target="_blank" rel="noopener noreferrer">Flying Over Walls</a>
-      <p>A queer/trans prisoner support collective fostering mutual aid and solidarity through letter writing and direct support. They coordinate pen pal programs, resource sharing, and solidarity networks while building power through LGBTQ+ prisoner advocacy, abolition organizing, and creating spaces for connection across prison walls.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.prisonlit.org/" target="_blank" rel="noopener noreferrer">Prison Literature Project</a>
-      <p>A volunteer-run organization fostering mutual aid through free book distribution to people in prison. They coordinate book donations, letter writing, and solidarity networks while building connections through literature and education across prison walls.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/anarchistcoffeehouse/" target="_blank" rel="noopener noreferrer">Anarchist Coffee House</a>
-      <p>A mutual aid coffee collective providing free coffee, food, and community resources while fostering solidarity and direct support in the Bay Area. Through their mobile coffee service and community gatherings, they create accessible spaces for organizing, political education, and building networks of mutual aid.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://baytanc.com/" target="_blank" rel="noopener noreferrer">Bay Area Tenant and Neighborhood Councils</a>
-      <p>A network of tenant councils fostering mutual aid and housing justice through collective organizing across the Bay Area. They coordinate tenant organizing, leadership development, and solidarity networks while building power through direct action, policy advocacy, and creating spaces for tenant power and anti-displacement organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://bayareaworkerssupport.org/" target="_blank" rel="noopener noreferrer">Bay Area Workers Support (BAWS)</a>
-      <p>Advocating for the health, safety and livelihoods of Bay Area sex workers through direct support &amp; community organizing</p>
-    </div>
-  </section>
-
-  <section id="indigenous" class="city-section">
-    <h2>Indigenous Sovereignty</h2>
-    <div class="initiative">
-      <a href="https://www.nativehealth.org/" target="_blank" rel="noopener noreferrer">Native American Health Center</a>
-      <p>A community health center fostering mutual aid and culturally connected care for Indigenous communities across the Bay Area since 1972. They coordinate comprehensive health services, wellness programs, and youth initiatives while building power through cultural preservation, community organizing, and creating spaces for traditional healing practices and collective wellbeing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://sogoreaTe-landtrust.org/" target="_blank" rel="noopener noreferrer">Sogorea Te' Land Trust</a>
-      <p>An urban Indigenous women-led land trust fostering mutual aid and Indigenous sovereignty through rematriation of Ohlone lands in the Bay Area. They coordinate land return initiatives, cultural revitalization programs, and solidarity networks while building power through Indigenous stewardship, community gardens, and creating spaces for traditional ecological practices and healing.</p>
-    </div>
-    <div class="initiative">
-      <a href="http://www.idlenomoresfbay.org/" target="_blank" rel="noopener noreferrer">Idle No More SF Bay</a>
-      <p>An Indigenous-led organization fostering mutual aid and environmental justice through direct action and cultural revitalization. They coordinate Indigenous rights campaigns, land defense initiatives, and solidarity networks while building power through traditional ecological knowledge, decolonial practices, and creating spaces for Indigenous sovereignty and climate justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://bsky.app/profile/iaf-fai.bsky.social" target="_blank" rel="noopener noreferrer">Indigenous Anarchist Federation</a>
-      <p>A collective fostering Indigenous mutual aid and autonomous organizing through direct action and decolonial resistance. They coordinate solidarity networks, resource sharing, and political education while building power through Indigenous anarchist perspectives and creating spaces for anti-colonial struggle.</p>
-    </div>
-  </section>
-
-  <section id="climate" class="city-section">
-    <h2>Climate &amp; Environmental Justice</h2>
-    <div class="initiative">
-      <a href="https://apen4ej.org/" target="_blank" rel="noopener noreferrer">Asian Pacific Environmental Network (APEN)</a>
-      <p>Building power in Asian immigrant and refugee communities for environmental, social, and economic justice through grassroots organizing, mutual aid, and policy advocacy in Oakland and Richmond.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://urbanhabitat.org/" target="_blank" rel="noopener noreferrer">Urban Habitat</a>
-      <p>A regional organization fostering mutual aid and community power through research, leadership development, and policy advocacy in the Bay Area. They coordinate community organizing, transportation justice, and solidarity networks while building power through democratic participation, equitable development, and creating spaces for environmental and social justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.1000grandmothers.com/" target="_blank" rel="noopener noreferrer">1000 Grandmothers for Future Generations</a>
-      <p>A collective of elder women and allies organizing mutual aid and direct action for climate justice across the Bay Area. They coordinate solidarity actions supporting indigenous rights, frontline communities, and youth climate movements while building power through nonviolent resistance, community building, and intergenerational organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://350bayarea.org/" target="_blank" rel="noopener noreferrer">350 Bay Area</a>
-      <p>A grassroots climate movement building power through mutual aid and community organizing to achieve climate justice across the Bay Area. They coordinate direct action campaigns, policy advocacy, and solidarity networks while working towards environmental justice, clean energy futures, and the elimination of fossil fuel infrastructure through collective organizing.</p>
-    </div>
-  </section>
-
-  <section id="community-support" class="city-section">
-    <h2>Community Support &amp; Mutual Aid</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/homecooked_care_for_liberation/" target="_blank" rel="noopener noreferrer">Homecooked Care for Liberation</a>
-      <p>A mutual aid collective fostering community care through food justice and solidarity initiatives in the Bay Area. They coordinate meal distributions, food sovereignty projects, and solidarity networks while building power through collective nourishment, community kitchens, and creating spaces for food-based liberation work.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.commonhumanitycollective.org/" target="_blank" rel="noopener noreferrer">Common Humanity Collective</a>
-      <p>A mutual aid organization providing direct support, resources, and community care to unhoused and marginalized communities in the Bay Area through grassroots organizing and solidarity networks.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/anarchistcoffeehouse/" target="_blank" rel="noopener noreferrer">Anarchist Coffee House</a>
-      <p>A mutual aid coffee collective providing free coffee, food, and community resources while fostering solidarity and direct support in the Bay Area. Through their mobile coffee service and community gatherings, they create accessible spaces for organizing, political education, and building networks of mutual aid.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://baytanc.com/" target="_blank" rel="noopener noreferrer">Bay Area Tenant and Neighborhood Councils</a>
-      <p>A network of tenant councils fostering mutual aid and housing justice through collective organizing across the Bay Area. They coordinate tenant organizing, leadership development, and solidarity networks while building power through direct action, policy advocacy, and creating spaces for tenant power and anti-displacement organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.bayresistance.org/" target="_blank" rel="noopener noreferrer">Bay Resistance</a>
-      <p>A network fostering mutual aid and rapid response organizing across the Bay Area. They coordinate direct actions, solidarity networks, and community defense while building power through rapid response mobilizations, political education, and creating spaces for collective resistance against oppression and injustice.</p>
-    </div>
-  </section>
-
-  <section id="media-education" class="city-section">
-    <h2>Media &amp; Educational Resources</h2>
-    <div class="initiative">
-      <a href="https://sfbayview.com/" target="_blank" rel="noopener noreferrer">San Francisco Bay View National Black Newspaper</a>
-      <p>Independent Black newspaper founded in 1976, serving thought-provoking stories and commentary on the full range of Black trials and triumphs, with a focus on prison abolition, mutual aid, and community empowerment through grassroots journalism.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://indybay.org/" target="_blank" rel="noopener noreferrer">Indybay - SF Bay Area Independent Media Center</a>
-      <p>A grassroots independent media platform coordinating community journalism and mutual aid initiatives across the Bay Area. They organize direct coverage of social movements, resource sharing, and solidarity networks while building connections between activists, organizers, and communities through participatory media and collective documentation of struggles for justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://freespeech.org/" target="_blank" rel="noopener noreferrer">Free Speech TV</a>
-      <p>An independent media network fostering mutual aid through progressive news coverage and community-driven programming. They coordinate grassroots journalism, documentary films, and solidarity networks while building power through independent media, social justice storytelling, and creating spaces for marginalized voices and movement building.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://crimethinc.com/" target="_blank" rel="noopener noreferrer">CrimethInc</a>
-      <p>An international network fostering mutual aid and autonomous organizing through radical media, publishing, and direct action resources. They coordinate anarchist analysis, skill sharing, and solidarity networks while building power through participatory media, creative resistance, and creating spaces for revolutionary ideas and collective action.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.akpress.org/" target="_blank" rel="noopener noreferrer">AK Press</a>
-      <p>A worker-run collective and anarchist publisher fostering mutual aid through radical literature and knowledge sharing since 1990. They coordinate book distribution, publishing projects, and community education while building networks of solidarity through anarchist theory, social justice literature, and creating accessible spaces for revolutionary ideas and collective learning.</p>
-    </div>
-  </section>
-
-  <section id="economic-justice" class="city-section">
-    <h2>Economic &amp; Worker Justice</h2>
-    <div class="initiative">
-      <a href="https://mujeresunidas.net/" target="_blank" rel="noopener noreferrer">Mujeres Unidas y Activas (MUA)</a>
-      <p>A grassroots organization of Latina immigrant women building power through mutual aid, leadership development, and organizing for worker and immigrant rights. MUA provides direct support while advocating for domestic worker rights, immigrant justice, and economic dignity through community-led campaigns.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://filipinos4justice.org/" target="_blank" rel="noopener noreferrer">Filipino Advocates for Justice</a>
-      <p>A grassroots organization fostering mutual aid and community empowerment for Filipino communities across the Bay Area. They coordinate immigrant rights advocacy, youth programs, worker support initiatives, and solidarity networks while building power through civic engagement, labor organizing, and creating spaces for cultural preservation and collective action.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://bayareaworkerssupport.org/" target="_blank" rel="noopener noreferrer">Bay Area Workers Support (BAWS)</a>
-      <p>Advocating for the health, safety and livelihoods of Bay Area sex workers through direct support &amp; community organizing</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/asata_bayarea/" target="_blank" rel="noopener noreferrer">Alliance of South Asians Taking Action (ASATA)</a>
-      <p>The Alliance of South Asians Taking Action empowers South Asians to end violence, oppression, and exploitation within and against our communities.</p>
-    </div>
-  </section>
-
-  <section id="racial-justice" class="city-section">
-    <h2>Racial Justice</h2>
-    <div class="initiative">
-      <a href="https://www.surjbayarea.org/" target="_blank" rel="noopener noreferrer">SURJ Bay Area</a>
-      <p>Showing Up for Racial Justice (SURJ) Bay Area is part of a national network organizing white people for racial justice. Through community organizing, mobilizing, and education, SURJ moves white people to act as part of a multi-racial majority for justice with passion and accountability. They coordinate study and action programs, political education, and solidarity networks while building power through anti-racist organizing and creating spaces for white people to engage in racial justice work.</p>
-    </div>
-  </section>
-
-  <section id="anti-repression" class="city-section">
-    <h2>Anti-Repression &amp; Prison Abolition</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/antirepression_bayarea/" target="_blank" rel="noopener noreferrer">Anti-Repression Bay Area</a>
-      <p>Providing protest support and bail funds for demonstrators through mutual aid networks.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://communityworkswest.org/" target="_blank" rel="noopener noreferrer">Community Works West</a>
-      <p>Transforming justice through restorative practices, reentry support, and youth empowerment programs across the Bay Area, with a focus on healing and community-led solutions to incarceration.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://flyingoverwalls.org/" target="_blank" rel="noopener noreferrer">Flying Over Walls</a>
-      <p>A letterwriting &amp; penpal program that resists the violent isolation of the prison system by connecting our queer and trans community across prison walls.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.prisonlit.org/" target="_blank" rel="noopener noreferrer">Prison Literature Project</a>
-      <p>By sending free reading materials to those behind bars, PLP aims to foster learning and critical thinking and help prepare people to lead successful lives after incarceration.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://seeingredevents.com/" target="_blank" rel="noopener noreferrer">Seeing Red Events</a>
-      <p>A communist lecture and party series in the Bay Area.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://lavenderphoenix.org/" target="_blank" rel="noopener noreferrer">Lavender Phoenix</a>
-      <p>Lavender Phoenix builds queer and transgender Asian and Pacific Islander power to amplify our voices and increase the visibility of our communities.</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="cities-list">
-      <h2>Locations</h2>
-      <div class="city-links-container">
-          <a href="/east-bay" class="city-link location-link-base">East Bay</a>
-          <a href="/marin" class="city-link location-link-base">Marin</a>
-          <a href="/napa-county" class="city-link location-link-base">Napa County</a>
-          <a href="/north-bay" class="city-link location-link-base">North Bay</a>
-          <a href="/san-francisco" class="city-link location-link-base">San Francisco</a>
-          <a href="/san-mateo" class="city-link location-link-base">San Mateo</a>
-          <a href="/solano-county" class="city-link location-link-base">Solano County</a>
-          <a href="/south-bay" class="city-link location-link-base">South Bay</a>
-      </div>
-    </div>
-  </section>
-        </div>
-      </div>
-        <aside class="toc-container">
-          <nav class="toc" role="navigation" aria-label="Table of Contents" id="toc">
-            <ul class="toc-list">
-          <li class="toc-item">
-            <a href="#international-solidarity" class="toc-link">
-              <span class="toc-number">1.</span>
-              <span class="toc-text">International Solidarity</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#indigenous" class="toc-link">
-              <span class="toc-number">2.</span>
-              <span class="toc-text">Indigenous Sovereignty</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#climate" class="toc-link">
-              <span class="toc-number">3.</span>
-              <span class="toc-text">Climate &amp; Environmental Justice</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#community-support" class="toc-link">
-              <span class="toc-number">4.</span>
-              <span class="toc-text">Community Support &amp; Mutual Aid</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#media-education" class="toc-link">
-              <span class="toc-number">5.</span>
-              <span class="toc-text">Media &amp; Educational Resources</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#economic-justice" class="toc-link">
-              <span class="toc-number">6.</span>
-              <span class="toc-text">Economic &amp; Worker Justice</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#racial-justice" class="toc-link">
-              <span class="toc-number">7.</span>
-              <span class="toc-text">Racial Justice</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#anti-repression" class="toc-link">
-              <span class="toc-number">8.</span>
-              <span class="toc-text">Anti-Repression &amp; Prison Abolition</span>
-            </a>
-          </li>
-            </ul>
-          </nav>
-        </aside>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">Bay Area</h1>
+    <p class="meta">
+      <b>58</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      California
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  <script src="/js/city-toc.js" defer></script>
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Bay Area</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Bay Area…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+  <nav class="toc" aria-label="Sections on this page">
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
+      <span class="current">
+        <span class="current-label">Section ·</span>
+        <span class="current-name">Neighborhoods</span>
+      </span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div id="toc-panel" class="toc-scroll">
+      <a href="#neighborhoods" data-section="neighborhoods"><span class="label">Neighborhoods</span></a>
+      <a href="#international-solidarity" data-section="international-solidarity"><span class="label">International Solidarity</span> <span class="count">29</span></a>
+      <a href="#indigenous" data-section="indigenous"><span class="label">Indigenous Sovereignty</span> <span class="count">4</span></a>
+      <a href="#climate" data-section="climate"><span class="label">Climate &amp; Environmental Justice</span> <span class="count">4</span></a>
+      <a href="#community-support" data-section="community-support"><span class="label">Community Support &amp; Mutual Aid</span> <span class="count">5</span></a>
+      <a href="#media-education" data-section="media-education"><span class="label">Media &amp; Educational Resources</span> <span class="count">5</span></a>
+      <a href="#economic-justice" data-section="economic-justice"><span class="label">Economic &amp; Worker Justice</span> <span class="count">4</span></a>
+      <a href="#racial-justice" data-section="racial-justice"><span class="label">Racial Justice</span> <span class="count">1</span></a>
+      <a href="#anti-repression" data-section="anti-repression"><span class="label">Anti-Repression &amp; Prison Abolition</span> <span class="count">6</span></a>
+    </div>
+  </nav>
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="neighborhoods" class="group-section" data-section="neighborhoods">
+      <h2 class="section-title">Neighborhoods</h2>
+      <ol class="groups children-list">
+        <li data-name="east bay" data-desc=""><a class="name" href="/east-bay">East Bay</a></li>
+        <li data-name="marin" data-desc=""><a class="name" href="/marin">Marin</a></li>
+        <li data-name="napa county" data-desc=""><a class="name" href="/napa-county">Napa County</a></li>
+        <li data-name="north bay" data-desc=""><a class="name" href="/north-bay">North Bay</a></li>
+        <li data-name="san francisco" data-desc=""><a class="name" href="/san-francisco">San Francisco</a></li>
+        <li data-name="san mateo" data-desc=""><a class="name" href="/san-mateo">San Mateo</a></li>
+        <li data-name="solano county" data-desc=""><a class="name" href="/solano-county">Solano County</a></li>
+        <li data-name="south bay" data-desc=""><a class="name" href="/south-bay">South Bay</a></li>
+      </ol>
+    </section>
+
+    <section id="international-solidarity" class="group-section" data-section="international-solidarity">
+      <h2 class="section-title">International Solidarity</h2>
+      <ol class="groups">
+        <li data-name="bay area for palestine" data-desc="follow for action alerts, info, and safety tips. #palestinewillbefree">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/bayarea4palestine/" target="_blank" rel="noopener noreferrer">Bay Area for Palestine <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Follow for action alerts, info, and safety tips. #PalestineWillBeFree</p>
+        </li>
+        <li data-name="arab resource &amp; organizing center (aroc)" data-desc="we are abolitionists, feminists, and internationalists who believe that the liberation of swana (south west asian and north african) people is inextricably tied to the liberation of all oppressed people.">
+          <div class="row">
+            <a class="name" href="https://www.araborganizing.org/" target="_blank" rel="noopener noreferrer">Arab Resource &amp; Organizing Center (AROC) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">araborganizing.org</span>
+          </div>
+          <p class="desc">We are abolitionists, feminists, and internationalists who believe that the liberation of SWANA (South West Asian and North African) people is inextricably tied to the liberation of all oppressed people.</p>
+        </li>
+        <li data-name="alliance of south asians taking action (asata)" data-desc="the alliance of south asians taking action empowers south asians to end violence, oppression, and exploitation within and against our communities.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/asata_bayarea/" target="_blank" rel="noopener noreferrer">Alliance of South Asians Taking Action (ASATA) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">The Alliance of South Asians Taking Action empowers South Asians to end violence, oppression, and exploitation within and against our communities.</p>
+        </li>
+        <li data-name="queers undermining israeli terrorism (quit!)" data-desc="our mission was, and is, to build support in the bay area queer communities for palestinian liberation, to make queers and queer liberation visible and integral to the local palestine solidarity movement, to support queer organizing in palestine and around the arab world, and to oppose united states colonialism, military intervention, and funding and support for israeli colonialism.">
+          <div class="row">
+            <a class="name" href="https://quitpalestine.org/" target="_blank" rel="noopener noreferrer">Queers Undermining Israeli Terrorism (QUIT!) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">quitpalestine.org</span>
+          </div>
+          <p class="desc">Our mission was, and is, to build support in the Bay Area queer communities for Palestinian liberation, to make queers and queer liberation visible and integral to the local Palestine solidarity movement, to support queer organizing in Palestine and around the Arab world, and to oppose United States colonialism, military intervention, and funding and support for Israeli colonialism.</p>
+        </li>
+        <li data-name="bay area pym" data-desc="bay area chapter of the @palestinianyouthmovement">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/bayareapym/" target="_blank" rel="noopener noreferrer">Bay Area PYM <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Bay Area chapter of the @palestinianyouthmovement</p>
+        </li>
+        <li data-name="anti-repression bay area" data-desc="providing protest support and bail funds for demonstrators through mutual aid networks.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/antirepression_bayarea/" target="_blank" rel="noopener noreferrer">Anti-Repression Bay Area <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Providing protest support and bail funds for demonstrators through mutual aid networks.</p>
+        </li>
+        <li data-name="asian pacific environmental network (apen)" data-desc="building power in asian immigrant and refugee communities for environmental, social, and economic justice through grassroots organizing, mutual aid, and policy advocacy in oakland and richmond.">
+          <div class="row">
+            <a class="name" href="https://apen4ej.org/" target="_blank" rel="noopener noreferrer">Asian Pacific Environmental Network (APEN) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">apen4ej.org</span>
+          </div>
+          <p class="desc">Building power in Asian immigrant and refugee communities for environmental, social, and economic justice through grassroots organizing, mutual aid, and policy advocacy in Oakland and Richmond.</p>
+        </li>
+        <li data-name="community works west" data-desc="transforming justice through restorative practices, reentry support, and youth empowerment programs across the bay area, with a focus on healing and community-led solutions to incarceration.">
+          <div class="row">
+            <a class="name" href="https://communityworkswest.org/" target="_blank" rel="noopener noreferrer">Community Works West <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">communityworkswest.org</span>
+          </div>
+          <p class="desc">Transforming justice through restorative practices, reentry support, and youth empowerment programs across the Bay Area, with a focus on healing and community-led solutions to incarceration.</p>
+        </li>
+        <li data-name="san francisco bay view national black newspaper" data-desc="independent black newspaper founded in 1976, serving thought-provoking stories and commentary on the full range of black trials and triumphs, with a focus on prison abolition, mutual aid, and community empowerment through grassroots journalism.">
+          <div class="row">
+            <a class="name" href="https://sfbayview.com/" target="_blank" rel="noopener noreferrer">San Francisco Bay View National Black Newspaper <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sfbayview.com</span>
+          </div>
+          <p class="desc">Independent Black newspaper founded in 1976, serving thought-provoking stories and commentary on the full range of Black trials and triumphs, with a focus on prison abolition, mutual aid, and community empowerment through grassroots journalism.</p>
+        </li>
+        <li data-name="indybay - sf bay area independent media center" data-desc="the san francisco bay area independent media center (indybay) is a non-commercial, democratic collective of bay area independent media makers and media outlets, and serves as the local organizing unit of the global indymedia network.">
+          <div class="row">
+            <a class="name" href="https://indybay.org/" target="_blank" rel="noopener noreferrer">Indybay - SF Bay Area Independent Media Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">indybay.org</span>
+          </div>
+          <p class="desc">The San Francisco Bay Area Independent Media Center (Indybay) is a non-commercial, democratic collective of bay area independent media makers and media outlets, and serves as the local organizing unit of the global Indymedia network.</p>
+        </li>
+        <li data-name="free speech tv" data-desc="free speech tv is one of the last standing national, independent news networks committed to advancing progressive social change.">
+          <div class="row">
+            <a class="name" href="https://freespeech.org/" target="_blank" rel="noopener noreferrer">Free Speech TV <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">freespeech.org</span>
+          </div>
+          <p class="desc">Free Speech TV is one of the last standing national, independent news networks committed to advancing progressive social change.</p>
+        </li>
+        <li data-name="homecooked care for liberation" data-desc="homecooked meals to lessen the load for people actively organizing for and committed to palestinian liberation.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/homecooked_care_for_liberation/" target="_blank" rel="noopener noreferrer">Homecooked Care for Liberation <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Homecooked meals to lessen the load for people actively organizing for and committed to Palestinian liberation.</p>
+        </li>
+        <li data-name="mujeres unidas y activas (mua)" data-desc="mujeres unidas y activas is an organization of latina and indigenous immigrant women with the mission of increasing our personal and communal power for social and economic justice.">
+          <div class="row">
+            <a class="name" href="https://mujeresunidas.net/" target="_blank" rel="noopener noreferrer">Mujeres Unidas y Activas (MUA) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">mujeresunidas.net</span>
+          </div>
+          <p class="desc">Mujeres Unidas y Activas is an organization of Latina and Indigenous immigrant women with the mission of increasing our personal and communal power for social and economic justice.</p>
+        </li>
+        <li data-name="common humanity collective" data-desc="at common humanity collective, we’ve engineered designs for inexpensive, highly effective diy air purifiers, using only a box fan, a large filter, and a few other materials.">
+          <div class="row">
+            <a class="name" href="https://www.commonhumanitycollective.org/" target="_blank" rel="noopener noreferrer">Common Humanity Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">commonhumanitycollective.org</span>
+          </div>
+          <p class="desc">At Common Humanity Collective, we’ve engineered designs for inexpensive, highly effective DIY air purifiers, using only a box fan, a large filter, and a few other materials.</p>
+        </li>
+        <li data-name="urban habitat" data-desc="urban habitat democratizes power and advances equitable policies to create a just and connected bay area for low-income communities of color.">
+          <div class="row">
+            <a class="name" href="https://urbanhabitat.org/" target="_blank" rel="noopener noreferrer">Urban Habitat <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">urbanhabitat.org</span>
+          </div>
+          <p class="desc">Urban Habitat democratizes power and advances equitable policies to create a just and connected Bay Area for low-income communities of color.</p>
+        </li>
+        <li data-name="sogorea te' land trust" data-desc="sogorea te’ land trust is an urban indigenous women-led land trust that facilitates the return of indigenous land to indigenous people.">
+          <div class="row">
+            <a class="name" href="https://sogoreaTe-landtrust.org/" target="_blank" rel="noopener noreferrer">Sogorea Te' Land Trust <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sogoreate-landtrust.org</span>
+          </div>
+          <p class="desc">Sogorea Te’ Land Trust is an urban Indigenous women-led land trust that facilitates the return of Indigenous land to Indigenous people.</p>
+        </li>
+        <li data-name="1000 grandmothers for future generations" data-desc="a collective of elder women and allies organizing mutual aid and direct action for climate justice across the bay area. they coordinate solidarity actions supporting indigenous rights, frontline communities, and youth climate movements while building power through nonviolent resistance, community building, and intergenerational organizing.">
+          <div class="row">
+            <a class="name" href="https://www.1000grandmothers.com/" target="_blank" rel="noopener noreferrer">1000 Grandmothers for Future Generations <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">1000grandmothers.com</span>
+          </div>
+          <p class="desc">A collective of elder women and allies organizing mutual aid and direct action for climate justice across the Bay Area. They coordinate solidarity actions supporting indigenous rights, frontline communities, and youth climate movements while building power through nonviolent resistance, community building, and intergenerational organizing.</p>
+        </li>
+        <li data-name="350 bay area" data-desc="a grassroots climate movement building power through mutual aid and community organizing to achieve climate justice across the bay area. they coordinate direct action campaigns, policy advocacy, and solidarity networks while working towards environmental justice, clean energy futures, and the elimination of fossil fuel infrastructure through collective organizing.">
+          <div class="row">
+            <a class="name" href="https://350bayarea.org/" target="_blank" rel="noopener noreferrer">350 Bay Area <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">350bayarea.org</span>
+          </div>
+          <p class="desc">A grassroots climate movement building power through mutual aid and community organizing to achieve climate justice across the Bay Area. They coordinate direct action campaigns, policy advocacy, and solidarity networks while working towards environmental justice, clean energy futures, and the elimination of fossil fuel infrastructure through collective organizing.</p>
+        </li>
+        <li data-name="ak press" data-desc="a worker-run collective and anarchist publisher fostering mutual aid through radical literature and knowledge sharing since 1990. they coordinate book distribution, publishing projects, and community education while building networks of solidarity through anarchist theory, social justice literature, and creating accessible spaces for revolutionary ideas and collective learning.">
+          <div class="row">
+            <a class="name" href="https://www.akpress.org/" target="_blank" rel="noopener noreferrer">AK Press <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">akpress.org</span>
+          </div>
+          <p class="desc">A worker-run collective and anarchist publisher fostering mutual aid through radical literature and knowledge sharing since 1990. They coordinate book distribution, publishing projects, and community education while building networks of solidarity through anarchist theory, social justice literature, and creating accessible spaces for revolutionary ideas and collective learning.</p>
+        </li>
+        <li data-name="bay resistance" data-desc="a network fostering mutual aid and rapid response organizing across the bay area. they coordinate direct actions, solidarity networks, and community defense while building power through rapid response mobilizations, political education, and creating spaces for collective resistance against oppression and injustice.">
+          <div class="row">
+            <a class="name" href="https://www.bayresistance.org/" target="_blank" rel="noopener noreferrer">Bay Resistance <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bayresistance.org</span>
+          </div>
+          <p class="desc">A network fostering mutual aid and rapid response organizing across the Bay Area. They coordinate direct actions, solidarity networks, and community defense while building power through rapid response mobilizations, political education, and creating spaces for collective resistance against oppression and injustice.</p>
+        </li>
+        <li data-name="bay area united against war (bauaw)" data-desc="an anti-war coalition fostering mutual aid and solidarity through direct action and movement building across the bay area. they coordinate peace actions, educational events, and solidarity networks while building power through anti-imperialist organizing, cross-movement alliances, and creating spaces for collective resistance against war and militarism.">
+          <div class="row">
+            <a class="name" href="https://www.bauaw.org/" target="_blank" rel="noopener noreferrer">Bay Area United Against War (BAUAW) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bauaw.org</span>
+          </div>
+          <p class="desc">An anti-war coalition fostering mutual aid and solidarity through direct action and movement building across the Bay Area. They coordinate peace actions, educational events, and solidarity networks while building power through anti-imperialist organizing, cross-movement alliances, and creating spaces for collective resistance against war and militarism.</p>
+        </li>
+        <li data-name="idle no more sf bay" data-desc="an indigenous-led organization fostering mutual aid and environmental justice through direct action and cultural revitalization. they coordinate indigenous rights campaigns, land defense initiatives, and solidarity networks while building power through traditional ecological knowledge, decolonial practices, and creating spaces for indigenous sovereignty and climate justice.">
+          <div class="row">
+            <a class="name" href="http://www.idlenomoresfbay.org/" target="_blank" rel="noopener noreferrer">Idle No More SF Bay <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">idlenomoresfbay.org</span>
+          </div>
+          <p class="desc">An Indigenous-led organization fostering mutual aid and environmental justice through direct action and cultural revitalization. They coordinate Indigenous rights campaigns, land defense initiatives, and solidarity networks while building power through traditional ecological knowledge, decolonial practices, and creating spaces for Indigenous sovereignty and climate justice.</p>
+        </li>
+        <li data-name="indigenous anarchist federation" data-desc="a collective fostering indigenous mutual aid and autonomous organizing through direct action and decolonial resistance. they coordinate solidarity networks, resource sharing, and political education while building power through indigenous anarchist perspectives and creating spaces for anti-colonial struggle.">
+          <div class="row">
+            <a class="name" href="https://bsky.app/profile/iaf-fai.bsky.social" target="_blank" rel="noopener noreferrer">Indigenous Anarchist Federation <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bsky.app</span>
+          </div>
+          <p class="desc">A collective fostering Indigenous mutual aid and autonomous organizing through direct action and decolonial resistance. They coordinate solidarity networks, resource sharing, and political education while building power through Indigenous anarchist perspectives and creating spaces for anti-colonial struggle.</p>
+        </li>
+        <li data-name="filipino advocates for justice" data-desc="a grassroots organization fostering mutual aid and community empowerment for filipino communities across the bay area. they coordinate immigrant rights advocacy, youth programs, worker support initiatives, and solidarity networks while building power through civic engagement, labor organizing, and creating spaces for cultural preservation and collective action.">
+          <div class="row">
+            <a class="name" href="https://filipinos4justice.org/" target="_blank" rel="noopener noreferrer">Filipino Advocates for Justice <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">filipinos4justice.org</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community empowerment for Filipino communities across the Bay Area. They coordinate immigrant rights advocacy, youth programs, worker support initiatives, and solidarity networks while building power through civic engagement, labor organizing, and creating spaces for cultural preservation and collective action.</p>
+        </li>
+        <li data-name="flying over walls" data-desc="a queer/trans prisoner support collective fostering mutual aid and solidarity through letter writing and direct support. they coordinate pen pal programs, resource sharing, and solidarity networks while building power through lgbtq+ prisoner advocacy, abolition organizing, and creating spaces for connection across prison walls.">
+          <div class="row">
+            <a class="name" href="https://flyingoverwalls.org/" target="_blank" rel="noopener noreferrer">Flying Over Walls <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">flyingoverwalls.org</span>
+          </div>
+          <p class="desc">A queer/trans prisoner support collective fostering mutual aid and solidarity through letter writing and direct support. They coordinate pen pal programs, resource sharing, and solidarity networks while building power through LGBTQ+ prisoner advocacy, abolition organizing, and creating spaces for connection across prison walls.</p>
+        </li>
+        <li data-name="prison literature project" data-desc="a volunteer-run organization fostering mutual aid through free book distribution to people in prison. they coordinate book donations, letter writing, and solidarity networks while building connections through literature and education across prison walls.">
+          <div class="row">
+            <a class="name" href="https://www.prisonlit.org/" target="_blank" rel="noopener noreferrer">Prison Literature Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">prisonlit.org</span>
+          </div>
+          <p class="desc">A volunteer-run organization fostering mutual aid through free book distribution to people in prison. They coordinate book donations, letter writing, and solidarity networks while building connections through literature and education across prison walls.</p>
+        </li>
+        <li data-name="anarchist coffee house" data-desc="a mutual aid coffee collective providing free coffee, food, and community resources while fostering solidarity and direct support in the bay area. through their mobile coffee service and community gatherings, they create accessible spaces for organizing, political education, and building networks of mutual aid.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/anarchistcoffeehouse/" target="_blank" rel="noopener noreferrer">Anarchist Coffee House <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid coffee collective providing free coffee, food, and community resources while fostering solidarity and direct support in the Bay Area. Through their mobile coffee service and community gatherings, they create accessible spaces for organizing, political education, and building networks of mutual aid.</p>
+        </li>
+        <li data-name="bay area tenant and neighborhood councils" data-desc="a network of tenant councils fostering mutual aid and housing justice through collective organizing across the bay area. they coordinate tenant organizing, leadership development, and solidarity networks while building power through direct action, policy advocacy, and creating spaces for tenant power and anti-displacement organizing.">
+          <div class="row">
+            <a class="name" href="https://baytanc.com/" target="_blank" rel="noopener noreferrer">Bay Area Tenant and Neighborhood Councils <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">baytanc.com</span>
+          </div>
+          <p class="desc">A network of tenant councils fostering mutual aid and housing justice through collective organizing across the Bay Area. They coordinate tenant organizing, leadership development, and solidarity networks while building power through direct action, policy advocacy, and creating spaces for tenant power and anti-displacement organizing.</p>
+        </li>
+        <li data-name="bay area workers support (baws)" data-desc="advocating for the health, safety and livelihoods of bay area sex workers through direct support &amp; community organizing">
+          <div class="row">
+            <a class="name" href="https://bayareaworkerssupport.org/" target="_blank" rel="noopener noreferrer">Bay Area Workers Support (BAWS) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bayareaworkerssupport.org</span>
+          </div>
+          <p class="desc">Advocating for the health, safety and livelihoods of Bay Area sex workers through direct support &amp; community organizing</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="indigenous" class="group-section" data-section="indigenous">
+      <h2 class="section-title">Indigenous Sovereignty</h2>
+      <ol class="groups">
+        <li data-name="native american health center" data-desc="a community health center fostering mutual aid and culturally connected care for indigenous communities across the bay area since 1972. they coordinate comprehensive health services, wellness programs, and youth initiatives while building power through cultural preservation, community organizing, and creating spaces for traditional healing practices and collective wellbeing.">
+          <div class="row">
+            <a class="name" href="https://www.nativehealth.org/" target="_blank" rel="noopener noreferrer">Native American Health Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">nativehealth.org</span>
+          </div>
+          <p class="desc">A community health center fostering mutual aid and culturally connected care for Indigenous communities across the Bay Area since 1972. They coordinate comprehensive health services, wellness programs, and youth initiatives while building power through cultural preservation, community organizing, and creating spaces for traditional healing practices and collective wellbeing.</p>
+        </li>
+        <li data-name="sogorea te' land trust" data-desc="an urban indigenous women-led land trust fostering mutual aid and indigenous sovereignty through rematriation of ohlone lands in the bay area. they coordinate land return initiatives, cultural revitalization programs, and solidarity networks while building power through indigenous stewardship, community gardens, and creating spaces for traditional ecological practices and healing.">
+          <div class="row">
+            <a class="name" href="https://sogoreaTe-landtrust.org/" target="_blank" rel="noopener noreferrer">Sogorea Te' Land Trust <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sogoreate-landtrust.org</span>
+          </div>
+          <p class="desc">An urban Indigenous women-led land trust fostering mutual aid and Indigenous sovereignty through rematriation of Ohlone lands in the Bay Area. They coordinate land return initiatives, cultural revitalization programs, and solidarity networks while building power through Indigenous stewardship, community gardens, and creating spaces for traditional ecological practices and healing.</p>
+        </li>
+        <li data-name="idle no more sf bay" data-desc="an indigenous-led organization fostering mutual aid and environmental justice through direct action and cultural revitalization. they coordinate indigenous rights campaigns, land defense initiatives, and solidarity networks while building power through traditional ecological knowledge, decolonial practices, and creating spaces for indigenous sovereignty and climate justice.">
+          <div class="row">
+            <a class="name" href="http://www.idlenomoresfbay.org/" target="_blank" rel="noopener noreferrer">Idle No More SF Bay <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">idlenomoresfbay.org</span>
+          </div>
+          <p class="desc">An Indigenous-led organization fostering mutual aid and environmental justice through direct action and cultural revitalization. They coordinate Indigenous rights campaigns, land defense initiatives, and solidarity networks while building power through traditional ecological knowledge, decolonial practices, and creating spaces for Indigenous sovereignty and climate justice.</p>
+        </li>
+        <li data-name="indigenous anarchist federation" data-desc="a collective fostering indigenous mutual aid and autonomous organizing through direct action and decolonial resistance. they coordinate solidarity networks, resource sharing, and political education while building power through indigenous anarchist perspectives and creating spaces for anti-colonial struggle.">
+          <div class="row">
+            <a class="name" href="https://bsky.app/profile/iaf-fai.bsky.social" target="_blank" rel="noopener noreferrer">Indigenous Anarchist Federation <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bsky.app</span>
+          </div>
+          <p class="desc">A collective fostering Indigenous mutual aid and autonomous organizing through direct action and decolonial resistance. They coordinate solidarity networks, resource sharing, and political education while building power through Indigenous anarchist perspectives and creating spaces for anti-colonial struggle.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="climate" class="group-section" data-section="climate">
+      <h2 class="section-title">Climate &amp; Environmental Justice</h2>
+      <ol class="groups">
+        <li data-name="asian pacific environmental network (apen)" data-desc="building power in asian immigrant and refugee communities for environmental, social, and economic justice through grassroots organizing, mutual aid, and policy advocacy in oakland and richmond.">
+          <div class="row">
+            <a class="name" href="https://apen4ej.org/" target="_blank" rel="noopener noreferrer">Asian Pacific Environmental Network (APEN) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">apen4ej.org</span>
+          </div>
+          <p class="desc">Building power in Asian immigrant and refugee communities for environmental, social, and economic justice through grassroots organizing, mutual aid, and policy advocacy in Oakland and Richmond.</p>
+        </li>
+        <li data-name="urban habitat" data-desc="a regional organization fostering mutual aid and community power through research, leadership development, and policy advocacy in the bay area. they coordinate community organizing, transportation justice, and solidarity networks while building power through democratic participation, equitable development, and creating spaces for environmental and social justice.">
+          <div class="row">
+            <a class="name" href="https://urbanhabitat.org/" target="_blank" rel="noopener noreferrer">Urban Habitat <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">urbanhabitat.org</span>
+          </div>
+          <p class="desc">A regional organization fostering mutual aid and community power through research, leadership development, and policy advocacy in the Bay Area. They coordinate community organizing, transportation justice, and solidarity networks while building power through democratic participation, equitable development, and creating spaces for environmental and social justice.</p>
+        </li>
+        <li data-name="1000 grandmothers for future generations" data-desc="a collective of elder women and allies organizing mutual aid and direct action for climate justice across the bay area. they coordinate solidarity actions supporting indigenous rights, frontline communities, and youth climate movements while building power through nonviolent resistance, community building, and intergenerational organizing.">
+          <div class="row">
+            <a class="name" href="https://www.1000grandmothers.com/" target="_blank" rel="noopener noreferrer">1000 Grandmothers for Future Generations <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">1000grandmothers.com</span>
+          </div>
+          <p class="desc">A collective of elder women and allies organizing mutual aid and direct action for climate justice across the Bay Area. They coordinate solidarity actions supporting indigenous rights, frontline communities, and youth climate movements while building power through nonviolent resistance, community building, and intergenerational organizing.</p>
+        </li>
+        <li data-name="350 bay area" data-desc="a grassroots climate movement building power through mutual aid and community organizing to achieve climate justice across the bay area. they coordinate direct action campaigns, policy advocacy, and solidarity networks while working towards environmental justice, clean energy futures, and the elimination of fossil fuel infrastructure through collective organizing.">
+          <div class="row">
+            <a class="name" href="https://350bayarea.org/" target="_blank" rel="noopener noreferrer">350 Bay Area <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">350bayarea.org</span>
+          </div>
+          <p class="desc">A grassroots climate movement building power through mutual aid and community organizing to achieve climate justice across the Bay Area. They coordinate direct action campaigns, policy advocacy, and solidarity networks while working towards environmental justice, clean energy futures, and the elimination of fossil fuel infrastructure through collective organizing.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="community-support" class="group-section" data-section="community-support">
+      <h2 class="section-title">Community Support &amp; Mutual Aid</h2>
+      <ol class="groups">
+        <li data-name="homecooked care for liberation" data-desc="a mutual aid collective fostering community care through food justice and solidarity initiatives in the bay area. they coordinate meal distributions, food sovereignty projects, and solidarity networks while building power through collective nourishment, community kitchens, and creating spaces for food-based liberation work.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/homecooked_care_for_liberation/" target="_blank" rel="noopener noreferrer">Homecooked Care for Liberation <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid collective fostering community care through food justice and solidarity initiatives in the Bay Area. They coordinate meal distributions, food sovereignty projects, and solidarity networks while building power through collective nourishment, community kitchens, and creating spaces for food-based liberation work.</p>
+        </li>
+        <li data-name="common humanity collective" data-desc="a mutual aid organization providing direct support, resources, and community care to unhoused and marginalized communities in the bay area through grassroots organizing and solidarity networks.">
+          <div class="row">
+            <a class="name" href="https://www.commonhumanitycollective.org/" target="_blank" rel="noopener noreferrer">Common Humanity Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">commonhumanitycollective.org</span>
+          </div>
+          <p class="desc">A mutual aid organization providing direct support, resources, and community care to unhoused and marginalized communities in the Bay Area through grassroots organizing and solidarity networks.</p>
+        </li>
+        <li data-name="anarchist coffee house" data-desc="a mutual aid coffee collective providing free coffee, food, and community resources while fostering solidarity and direct support in the bay area. through their mobile coffee service and community gatherings, they create accessible spaces for organizing, political education, and building networks of mutual aid.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/anarchistcoffeehouse/" target="_blank" rel="noopener noreferrer">Anarchist Coffee House <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid coffee collective providing free coffee, food, and community resources while fostering solidarity and direct support in the Bay Area. Through their mobile coffee service and community gatherings, they create accessible spaces for organizing, political education, and building networks of mutual aid.</p>
+        </li>
+        <li data-name="bay area tenant and neighborhood councils" data-desc="a network of tenant councils fostering mutual aid and housing justice through collective organizing across the bay area. they coordinate tenant organizing, leadership development, and solidarity networks while building power through direct action, policy advocacy, and creating spaces for tenant power and anti-displacement organizing.">
+          <div class="row">
+            <a class="name" href="https://baytanc.com/" target="_blank" rel="noopener noreferrer">Bay Area Tenant and Neighborhood Councils <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">baytanc.com</span>
+          </div>
+          <p class="desc">A network of tenant councils fostering mutual aid and housing justice through collective organizing across the Bay Area. They coordinate tenant organizing, leadership development, and solidarity networks while building power through direct action, policy advocacy, and creating spaces for tenant power and anti-displacement organizing.</p>
+        </li>
+        <li data-name="bay resistance" data-desc="a network fostering mutual aid and rapid response organizing across the bay area. they coordinate direct actions, solidarity networks, and community defense while building power through rapid response mobilizations, political education, and creating spaces for collective resistance against oppression and injustice.">
+          <div class="row">
+            <a class="name" href="https://www.bayresistance.org/" target="_blank" rel="noopener noreferrer">Bay Resistance <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bayresistance.org</span>
+          </div>
+          <p class="desc">A network fostering mutual aid and rapid response organizing across the Bay Area. They coordinate direct actions, solidarity networks, and community defense while building power through rapid response mobilizations, political education, and creating spaces for collective resistance against oppression and injustice.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="media-education" class="group-section" data-section="media-education">
+      <h2 class="section-title">Media &amp; Educational Resources</h2>
+      <ol class="groups">
+        <li data-name="san francisco bay view national black newspaper" data-desc="independent black newspaper founded in 1976, serving thought-provoking stories and commentary on the full range of black trials and triumphs, with a focus on prison abolition, mutual aid, and community empowerment through grassroots journalism.">
+          <div class="row">
+            <a class="name" href="https://sfbayview.com/" target="_blank" rel="noopener noreferrer">San Francisco Bay View National Black Newspaper <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sfbayview.com</span>
+          </div>
+          <p class="desc">Independent Black newspaper founded in 1976, serving thought-provoking stories and commentary on the full range of Black trials and triumphs, with a focus on prison abolition, mutual aid, and community empowerment through grassroots journalism.</p>
+        </li>
+        <li data-name="indybay - sf bay area independent media center" data-desc="a grassroots independent media platform coordinating community journalism and mutual aid initiatives across the bay area. they organize direct coverage of social movements, resource sharing, and solidarity networks while building connections between activists, organizers, and communities through participatory media and collective documentation of struggles for justice.">
+          <div class="row">
+            <a class="name" href="https://indybay.org/" target="_blank" rel="noopener noreferrer">Indybay - SF Bay Area Independent Media Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">indybay.org</span>
+          </div>
+          <p class="desc">A grassroots independent media platform coordinating community journalism and mutual aid initiatives across the Bay Area. They organize direct coverage of social movements, resource sharing, and solidarity networks while building connections between activists, organizers, and communities through participatory media and collective documentation of struggles for justice.</p>
+        </li>
+        <li data-name="free speech tv" data-desc="an independent media network fostering mutual aid through progressive news coverage and community-driven programming. they coordinate grassroots journalism, documentary films, and solidarity networks while building power through independent media, social justice storytelling, and creating spaces for marginalized voices and movement building.">
+          <div class="row">
+            <a class="name" href="https://freespeech.org/" target="_blank" rel="noopener noreferrer">Free Speech TV <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">freespeech.org</span>
+          </div>
+          <p class="desc">An independent media network fostering mutual aid through progressive news coverage and community-driven programming. They coordinate grassroots journalism, documentary films, and solidarity networks while building power through independent media, social justice storytelling, and creating spaces for marginalized voices and movement building.</p>
+        </li>
+        <li data-name="crimethinc" data-desc="an international network fostering mutual aid and autonomous organizing through radical media, publishing, and direct action resources. they coordinate anarchist analysis, skill sharing, and solidarity networks while building power through participatory media, creative resistance, and creating spaces for revolutionary ideas and collective action.">
+          <div class="row">
+            <a class="name" href="https://crimethinc.com/" target="_blank" rel="noopener noreferrer">CrimethInc <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">crimethinc.com</span>
+          </div>
+          <p class="desc">An international network fostering mutual aid and autonomous organizing through radical media, publishing, and direct action resources. They coordinate anarchist analysis, skill sharing, and solidarity networks while building power through participatory media, creative resistance, and creating spaces for revolutionary ideas and collective action.</p>
+        </li>
+        <li data-name="ak press" data-desc="a worker-run collective and anarchist publisher fostering mutual aid through radical literature and knowledge sharing since 1990. they coordinate book distribution, publishing projects, and community education while building networks of solidarity through anarchist theory, social justice literature, and creating accessible spaces for revolutionary ideas and collective learning.">
+          <div class="row">
+            <a class="name" href="https://www.akpress.org/" target="_blank" rel="noopener noreferrer">AK Press <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">akpress.org</span>
+          </div>
+          <p class="desc">A worker-run collective and anarchist publisher fostering mutual aid through radical literature and knowledge sharing since 1990. They coordinate book distribution, publishing projects, and community education while building networks of solidarity through anarchist theory, social justice literature, and creating accessible spaces for revolutionary ideas and collective learning.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="economic-justice" class="group-section" data-section="economic-justice">
+      <h2 class="section-title">Economic &amp; Worker Justice</h2>
+      <ol class="groups">
+        <li data-name="mujeres unidas y activas (mua)" data-desc="a grassroots organization of latina immigrant women building power through mutual aid, leadership development, and organizing for worker and immigrant rights. mua provides direct support while advocating for domestic worker rights, immigrant justice, and economic dignity through community-led campaigns.">
+          <div class="row">
+            <a class="name" href="https://mujeresunidas.net/" target="_blank" rel="noopener noreferrer">Mujeres Unidas y Activas (MUA) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">mujeresunidas.net</span>
+          </div>
+          <p class="desc">A grassroots organization of Latina immigrant women building power through mutual aid, leadership development, and organizing for worker and immigrant rights. MUA provides direct support while advocating for domestic worker rights, immigrant justice, and economic dignity through community-led campaigns.</p>
+        </li>
+        <li data-name="filipino advocates for justice" data-desc="a grassroots organization fostering mutual aid and community empowerment for filipino communities across the bay area. they coordinate immigrant rights advocacy, youth programs, worker support initiatives, and solidarity networks while building power through civic engagement, labor organizing, and creating spaces for cultural preservation and collective action.">
+          <div class="row">
+            <a class="name" href="https://filipinos4justice.org/" target="_blank" rel="noopener noreferrer">Filipino Advocates for Justice <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">filipinos4justice.org</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community empowerment for Filipino communities across the Bay Area. They coordinate immigrant rights advocacy, youth programs, worker support initiatives, and solidarity networks while building power through civic engagement, labor organizing, and creating spaces for cultural preservation and collective action.</p>
+        </li>
+        <li data-name="bay area workers support (baws)" data-desc="advocating for the health, safety and livelihoods of bay area sex workers through direct support &amp; community organizing">
+          <div class="row">
+            <a class="name" href="https://bayareaworkerssupport.org/" target="_blank" rel="noopener noreferrer">Bay Area Workers Support (BAWS) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bayareaworkerssupport.org</span>
+          </div>
+          <p class="desc">Advocating for the health, safety and livelihoods of Bay Area sex workers through direct support &amp; community organizing</p>
+        </li>
+        <li data-name="alliance of south asians taking action (asata)" data-desc="the alliance of south asians taking action empowers south asians to end violence, oppression, and exploitation within and against our communities.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/asata_bayarea/" target="_blank" rel="noopener noreferrer">Alliance of South Asians Taking Action (ASATA) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">The Alliance of South Asians Taking Action empowers South Asians to end violence, oppression, and exploitation within and against our communities.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="racial-justice" class="group-section" data-section="racial-justice">
+      <h2 class="section-title">Racial Justice</h2>
+      <ol class="groups">
+        <li data-name="surj bay area" data-desc="showing up for racial justice (surj) bay area is part of a national network organizing white people for racial justice. through community organizing, mobilizing, and education, surj moves white people to act as part of a multi-racial majority for justice with passion and accountability. they coordinate study and action programs, political education, and solidarity networks while building power through anti-racist organizing and creating spaces for white people to engage in racial justice work.">
+          <div class="row">
+            <a class="name" href="https://www.surjbayarea.org/" target="_blank" rel="noopener noreferrer">SURJ Bay Area <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">surjbayarea.org</span>
+          </div>
+          <p class="desc">Showing Up for Racial Justice (SURJ) Bay Area is part of a national network organizing white people for racial justice. Through community organizing, mobilizing, and education, SURJ moves white people to act as part of a multi-racial majority for justice with passion and accountability. They coordinate study and action programs, political education, and solidarity networks while building power through anti-racist organizing and creating spaces for white people to engage in racial justice work.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="anti-repression" class="group-section" data-section="anti-repression">
+      <h2 class="section-title">Anti-Repression &amp; Prison Abolition</h2>
+      <ol class="groups">
+        <li data-name="anti-repression bay area" data-desc="providing protest support and bail funds for demonstrators through mutual aid networks.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/antirepression_bayarea/" target="_blank" rel="noopener noreferrer">Anti-Repression Bay Area <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Providing protest support and bail funds for demonstrators through mutual aid networks.</p>
+        </li>
+        <li data-name="community works west" data-desc="transforming justice through restorative practices, reentry support, and youth empowerment programs across the bay area, with a focus on healing and community-led solutions to incarceration.">
+          <div class="row">
+            <a class="name" href="https://communityworkswest.org/" target="_blank" rel="noopener noreferrer">Community Works West <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">communityworkswest.org</span>
+          </div>
+          <p class="desc">Transforming justice through restorative practices, reentry support, and youth empowerment programs across the Bay Area, with a focus on healing and community-led solutions to incarceration.</p>
+        </li>
+        <li data-name="flying over walls" data-desc="a letterwriting &amp; penpal program that resists the violent isolation of the prison system by connecting our queer and trans community across prison walls.">
+          <div class="row">
+            <a class="name" href="https://flyingoverwalls.org/" target="_blank" rel="noopener noreferrer">Flying Over Walls <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">flyingoverwalls.org</span>
+          </div>
+          <p class="desc">A letterwriting &amp; penpal program that resists the violent isolation of the prison system by connecting our queer and trans community across prison walls.</p>
+        </li>
+        <li data-name="prison literature project" data-desc="by sending free reading materials to those behind bars, plp aims to foster learning and critical thinking and help prepare people to lead successful lives after incarceration.">
+          <div class="row">
+            <a class="name" href="https://www.prisonlit.org/" target="_blank" rel="noopener noreferrer">Prison Literature Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">prisonlit.org</span>
+          </div>
+          <p class="desc">By sending free reading materials to those behind bars, PLP aims to foster learning and critical thinking and help prepare people to lead successful lives after incarceration.</p>
+        </li>
+        <li data-name="seeing red events" data-desc="a communist lecture and party series in the bay area.">
+          <div class="row">
+            <a class="name" href="https://seeingredevents.com/" target="_blank" rel="noopener noreferrer">Seeing Red Events <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">seeingredevents.com</span>
+          </div>
+          <p class="desc">A communist lecture and party series in the Bay Area.</p>
+        </li>
+        <li data-name="lavender phoenix" data-desc="lavender phoenix builds queer and transgender asian and pacific islander power to amplify our voices and increase the visibility of our communities.">
+          <div class="row">
+            <a class="name" href="https://lavenderphoenix.org/" target="_blank" rel="noopener noreferrer">Lavender Phoenix <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">lavenderphoenix.org</span>
+          </div>
+          <p class="desc">Lavender Phoenix builds queer and transgender Asian and Pacific Islander power to amplify our voices and increase the visibility of our communities.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

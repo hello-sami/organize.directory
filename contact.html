@@ -1,159 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Google Analytics -->
-    <script src="/js/analytics.js" defer></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="description"
-        content="Contact the The Organize Directory team for questions, suggestions, or to add a group.">
-    <meta name="color-scheme" content="light">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Contact Us | The Organize Directory">
-    <meta property="og:description"
-        content="Contact the The Organize Directory team for questions, suggestions, or to add a group.">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <link rel="canonical" href="https://organize.directory/contact">
-    <meta property="og:url" content="https://organize.directory/contact">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+  <title>Contact — Organize Directory</title>
+  <meta name="description" content="Contact the Organize Directory team with questions, suggestions, or to add a group.">
+  <link rel="canonical" href="https://organize.directory/contact">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
-    <title>Contact Us | The Organize Directory</title>
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Contact — Organize Directory">
+  <meta property="og:description" content="Questions, suggestions, or groups to add — get in touch.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/contact">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- DNS Prefetch -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-    <link rel="dns-prefetch" href="https://www.google-analytics.com">
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <link rel="dns-prefetch" href="https://api.web3forms.com">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://api.web3forms.com">
+  <!-- Pre-paint theme init -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
+  </script>
 
-    <!-- Load CSS -->
-    <link rel="stylesheet" href="/fonts/fonts.css">
-    <link rel="stylesheet" href="/styles.css?v=20260421">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://api.web3forms.com">
+  <link rel="preconnect" href="https://api.web3forms.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Mobile menu script - Load with defer to ensure it runs after DOM is ready -->
-    <!-- Critical Scripts -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js?v=20260421';
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
 
-        // Initialize sidebar
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeSidebar('contact');
-        });
-    </script>
-                  <!-- Mobile optimizations -->
-                  <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
-<body class="page-contact">
-    <button class="mobile-menu-button" aria-label="Toggle navigation menu">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
     </button>
-    <div class="mobile-menu-overlay"></div>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  </div>
+</header>
 
-        <main class="content" role="main">
-            <header id="header" class="page-header">
-                <h1>Contact Us</h1>
-                <p>Send in your suggestions, questions, feedback, or anything else.</p>
-            </header>
+<main id="main">
 
-            <div class="contact-content">
-                <div class="alternative-contact">
-                    <p>You can also email directly at <strong>organizedirectory(at)proton.me</strong></p>
-                </div>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Contact</span>
+  </nav>
 
-                <!-- Web3Forms Contact Form -->
-                <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                    <!-- Web3Forms API Key -->
-                    <input type="hidden" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
+  <div class="page-head">
+    <h1 class="title">Contact</h1>
+    <p class="meta">Questions, suggestions, broken links, groups to add — send them all here.</p>
+  </div>
 
-                    <!-- Return URL after form submission -->
-                    <input type="hidden" name="redirect" value="https://organize.directory/contact?success=true">
+  <div class="prose">
+    <p>Prefer email? Reach us at <strong>organizedirectory(at)proton.me</strong>.</p>
+  </div>
 
-                    <!-- Form Subject -->
-                    <input type="hidden" name="subject" value="New Contact Form Submission - Organize Directory">
+  <form class="form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+    <!-- Web3Forms API key -->
+    <input type="hidden" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
+    <input type="hidden" name="redirect" value="https://organize.directory/contact?success=true">
+    <input type="hidden" name="subject" value="New Contact Form Submission - Organize Directory">
+    <input type="hidden" name="from_name" value="Organize Directory Contact Form">
 
-                    <!-- Web3Forms built-in honeypot (server-side reject if checked) -->
-                    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
+    <!-- Web3Forms built-in honeypot (server-side reject if checked) -->
+    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
 
-                    <!-- Off-screen text honeypot: bots fill every text field; we abort client-side if non-empty -->
-                    <div class="hp-field" aria-hidden="true">
-                        <label for="website">Leave this field empty</label>
-                        <input type="text" id="website" name="website" autocomplete="off" tabindex="-1">
-                    </div>
-
-                    <!-- Custom Webhook -->
-                    <input type="hidden" name="from_name" value="Organize Directory Contact Form">
-
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                        <div class="error-text" id="nameError">Please enter your name</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email <span class="optional">(optional)</span></label>
-                        <input type="email" id="email" name="email">
-                        <small class="form-helper">Leave blank to submit anonymously</small>
-                        <div class="error-text" id="emailError">Please enter a valid email address</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="inquiry">Type of Inquiry</label>
-                        <select id="inquiry" name="inquiry" required>
-                            <option value="">Select a type</option>
-                            <option value="add-network">Add a Mutual Aid Network</option>
-                            <option value="update-info">Update Existing Information</option>
-                            <option value="suggestion">Suggestion</option>
-                            <option value="question">General Question</option>
-                            <option value="other">Other</option>
-                        </select>
-                        <div class="error-text" id="inquiryError">Please select an inquiry type</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                        <div class="error-text" id="messageError">Please enter your message</div>
-                    </div>
-
-                    <button type="submit" class="btn-base" id="submitButton">Send Message</button>
-                </form>
-
-                <!-- Status Messages -->
-                <div class="status-message" id="statusMessage"></div>
-
-                <!-- Alternative contact for form failures -->
-                <div id="formFailureHelp">
-                    <p><strong>Having trouble with the form?</strong></p>
-                    <p>You can email us directly at: <a
-                            href="mailto:organizedirectory@proton.me">organizedirectory(at)proton.me</a></p>
-                </div>
-            </div>
-        </main>
+    <!-- Off-screen text honeypot: bots fill every text field; we abort client-side if non-empty -->
+    <div class="hp-field" aria-hidden="true">
+      <label for="website">Leave this field empty</label>
+      <input type="text" id="website" name="website" autocomplete="off" tabindex="-1">
     </div>
 
-    <script type="module" src="/contact.js"></script>
-</body>
+    <div class="field">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required autocomplete="name">
+      <div class="error-text" id="nameError">Please enter your name</div>
+    </div>
 
+    <div class="field">
+      <label for="email">Email <span class="optional">(optional)</span></label>
+      <input type="email" id="email" name="email" autocomplete="email">
+      <small class="helper">Leave blank to submit anonymously.</small>
+      <div class="error-text" id="emailError">Please enter a valid email address</div>
+    </div>
+
+    <div class="field">
+      <label for="inquiry">Type of inquiry</label>
+      <select id="inquiry" name="inquiry" required>
+        <option value="">Select a type…</option>
+        <option value="add-network">Add a group</option>
+        <option value="update-info">Update existing info</option>
+        <option value="suggestion">Suggestion</option>
+        <option value="question">General question</option>
+        <option value="other">Other</option>
+      </select>
+      <div class="error-text" id="inquiryError">Please select an inquiry type</div>
+    </div>
+
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+      <div class="error-text" id="messageError">Please enter your message</div>
+    </div>
+
+    <button type="submit" class="btn primary" id="submitButton">Send message</button>
+  </form>
+
+  <div class="form-status" id="statusMessage" role="status" aria-live="polite"></div>
+
+  <div class="form-failure-help" id="formFailureHelp">
+    <p><strong>Having trouble with the form?</strong></p>
+    <p>You can email us directly at <a href="mailto:organizedirectory@proton.me">organizedirectory(at)proton.me</a>.</p>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script type="module" src="/contact.js"></script>
+
+</body>
 </html>

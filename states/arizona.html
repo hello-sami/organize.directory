@@ -1,141 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Arizona Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid networks and community support initiatives in Arizona. Connect with local organizations and community resources.">
+  <title>Arizona — Organize Directory</title>
+  <meta name="description" content="Cities and statewide organizations in Arizona.">
   <link rel="canonical" href="https://organize.directory/arizona">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Arizona Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid networks and community support initiatives in Arizona. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Arizona — Organize Directory">
+  <meta property="og:description" content="Cities and statewide organizations in Arizona.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/arizona">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="city-page state-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <span>Arizona</span>
-        </div>
+<main id="main">
 
-        <h1>Arizona</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Arizona</span>
+  </nav>
 
-  <section>
-    <div class="cities-list">
-      <h2>Locations</h2>
-      <div class="city-links-container">
-          <a href="/flagstaff-sedona" class="city-link location-link-base">Flagstaff-Sedona</a>
-          <a href="/phoenix" class="city-link location-link-base">Phoenix Metro</a>
-          <a href="/sierra-vista" class="city-link location-link-base">Sierra Vista</a>
-          <a href="/tempe" class="city-link location-link-base">Tempe</a>
-          <a href="/tucson" class="city-link location-link-base">Tucson</a>
-          <a href="/yuma" class="city-link location-link-base">Yuma, AZ</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="statewide-organizations" class="city-section">
-    <h2>Statewide Organizations</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/nomoredeaths_nomasmuertes/" target="_blank" rel="noopener noreferrer">No More Deaths / No Más
-                            Muertes</a>
-      <p>A humanitarian organization fostering mutual aid and solidarity through direct aid to migrants in the borderlands. They coordinate water drops, emergency medical care, and solidarity networks while building power through humanitarian assistance, advocacy, and creating pathways for migrant justice and survival.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://alientoaz.org/" target="_blank" rel="noopener noreferrer">Aliento</a>
-      <p>A DACA recipient and undocumented youth-led organization building community power through mutual aid, arts, and healing justice. They coordinate direct support, leadership development, and solidarity networks while centering the voices of directly impacted communities in the fight for immigrant justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.tqpueblo.org/" target="_blank" rel="noopener noreferrer">Trans Queer Pueblo</a>
-      <p>A safe space for LGBT+ migrants of color in Arizona.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.ajosamaritans.com/" target="_blank" rel="noopener noreferrer">Ajo Samaritans</a>
-      <p>A humanitarian aid organization providing mutual aid and direct support to migrants in the Sonoran Desert. They coordinate water drops, emergency response, and resource sharing while building networks of solidarity and care across the Arizona borderlands.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/masslibaz/" target="_blank" rel="noopener noreferrer">Mass Liberation Arizona</a>
-      <p>A grassroots organization fostering mutual aid and community power through prison abolition and criminal justice reform across Arizona. They coordinate direct support, resource sharing, and solidarity networks while building power through community organizing, policy advocacy, and creating pathways for transformative justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://iwwnaz.wordpress.com/" target="_blank" rel="noopener noreferrer">Industrial Workers of the World - Northern Arizona</a>
-      <p>A worker-led organization fostering mutual aid and labor solidarity through organizing and direct support across Northern Arizona. They coordinate worker advocacy, resource sharing, and solidarity networks while building power through collective action, worker education, and creating spaces for labor organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.azdeathpenalty.org/" target="_blank" rel="noopener noreferrer">Death Penalty Alternatives for Arizona</a>
-      <p>A grassroots organization fostering mutual aid and community support through death penalty abolition work across Arizona. They coordinate advocacy, education, and solidarity networks while building power through community organizing, policy reform, and creating pathways for restorative justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.equalityarizona.org/" target="_blank" rel="noopener noreferrer">Equality Arizona</a>
-      <p>A statewide organization fostering mutual aid and community power through LGBTQ+ advocacy and civic engagement across Arizona. They coordinate community building, education initiatives, and solidarity networks while building power through policy advocacy, voter engagement, and creating pathways for LGBTQ+ civil rights and social equality.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/sonoranpreventionworks/" target="_blank" rel="noopener noreferrer">Sonoran Prevention Works</a>
-      <p>A grassroots harm reduction organization fostering mutual aid and community care through direct support across Arizona. They coordinate harm reduction supplies distribution, overdose prevention education, and solidarity networks while building power through peer support, advocacy, and creating spaces for dignity and healing in harm reduction.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/oodhampiipaashalliance/" target="_blank" rel="noopener noreferrer">O'odham Piipaash Alliance</a>
-      <p>An Indigenous-led collective fostering mutual aid and solidarity through cultural preservation and land defense in O'odham and Piipaash territories. They coordinate community support, traditional knowledge sharing, and solidarity networks while building power through Indigenous sovereignty and creating pathways for cultural resurgence.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.facebook.com/SaveOakFlatArizona" target="_blank" rel="noopener noreferrer">Save Oak Flat</a>
-      <p>An Indigenous-led movement fostering mutual aid and solidarity through the protection of sacred Apache land at Oak Flat. They coordinate direct action, cultural preservation, and solidarity networks while building power through Indigenous sovereignty and creating pathways for sacred land defense.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/keinfoshop" target="_blank" rel="noopener noreferrer">K'é Infoshop</a>
-      <p>Anti-colonial, anti-heteropatriarchy, and anti-capitalist with indigenous feminism as our guiding principles. We're a collective of Diné uniting to liberate nihi k'ei/our relatives.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://discord.gg/xUK6Qkeb" target="_blank" rel="noopener noreferrer">AZ Comm-Unity</a>
-      <p>central hub for all people and groups within all of Arizona who are taking a stand against the rising wave of authoritarianism and fascism to come together to meet and coordinate with their local communities as well as communicate with the rest of the movement around the state.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://discord.gg/yEQTkC3Dmx" target="_blank" rel="noopener noreferrer">AZ50501 Discord Server</a>
-      <p>Get the latest updates on the 50501 movement and connect with other Arizonans</p>
-    </div>
-    <div class="initiative">
-      <a href="https://haulno.com/" target="_blank" rel="noopener noreferrer">Haul No</a>
-      <p>Protect Grand Canyon, sacred sites, precious water, and our communities from uranium mining!</p>
-    </div>
-  </section>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">Arizona</h1>
+    <p class="meta">
+      <b>15</b> statewide groups
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter Arizona</label>
+    <input id="page-filter" type="search" placeholder="Filter Arizona…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+  <nav class="toc" aria-label="Sections on this page">
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
+      <span class="current">
+        <span class="current-label">Section ·</span>
+        <span class="current-name">Places</span>
+      </span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div id="toc-panel" class="toc-scroll">
+      <a href="#places" data-section="places"><span class="label">Places</span></a>
+      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="label">Statewide Organizations</span> <span class="count">15</span></a>
+    </div>
+  </nav>
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="places" class="group-section" data-section="places">
+      <h2 class="section-title">Places</h2>
+      <ol class="groups children-list">
+        <li data-name="flagstaff-sedona" data-desc=""><a class="name" href="/flagstaff-sedona">Flagstaff-Sedona</a></li>
+        <li data-name="phoenix metro" data-desc=""><a class="name" href="/phoenix">Phoenix Metro</a></li>
+        <li data-name="sierra vista" data-desc=""><a class="name" href="/sierra-vista">Sierra Vista</a></li>
+        <li data-name="tempe" data-desc=""><a class="name" href="/tempe">Tempe</a></li>
+        <li data-name="tucson" data-desc=""><a class="name" href="/tucson">Tucson</a></li>
+        <li data-name="yuma, az" data-desc=""><a class="name" href="/yuma">Yuma, AZ</a></li>
+      </ol>
+    </section>
+
+    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations">
+      <h2 class="section-title">Statewide Organizations</h2>
+      <ol class="groups">
+        <li data-name="no more deaths / no más
+                            muertes" data-desc="a humanitarian organization fostering mutual aid and solidarity through direct aid to migrants in the borderlands. they coordinate water drops, emergency medical care, and solidarity networks while building power through humanitarian assistance, advocacy, and creating pathways for migrant justice and survival.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nomoredeaths_nomasmuertes/" target="_blank" rel="noopener noreferrer">No More Deaths / No Más
+                            Muertes <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A humanitarian organization fostering mutual aid and solidarity through direct aid to migrants in the borderlands. They coordinate water drops, emergency medical care, and solidarity networks while building power through humanitarian assistance, advocacy, and creating pathways for migrant justice and survival.</p>
+        </li>
+        <li data-name="aliento" data-desc="a daca recipient and undocumented youth-led organization building community power through mutual aid, arts, and healing justice. they coordinate direct support, leadership development, and solidarity networks while centering the voices of directly impacted communities in the fight for immigrant justice.">
+          <div class="row">
+            <a class="name" href="https://alientoaz.org/" target="_blank" rel="noopener noreferrer">Aliento <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">alientoaz.org</span>
+          </div>
+          <p class="desc">A DACA recipient and undocumented youth-led organization building community power through mutual aid, arts, and healing justice. They coordinate direct support, leadership development, and solidarity networks while centering the voices of directly impacted communities in the fight for immigrant justice.</p>
+        </li>
+        <li data-name="trans queer pueblo" data-desc="a safe space for lgbt+ migrants of color in arizona.">
+          <div class="row">
+            <a class="name" href="https://www.tqpueblo.org/" target="_blank" rel="noopener noreferrer">Trans Queer Pueblo <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">tqpueblo.org</span>
+          </div>
+          <p class="desc">A safe space for LGBT+ migrants of color in Arizona.</p>
+        </li>
+        <li data-name="ajo samaritans" data-desc="a humanitarian aid organization providing mutual aid and direct support to migrants in the sonoran desert. they coordinate water drops, emergency response, and resource sharing while building networks of solidarity and care across the arizona borderlands.">
+          <div class="row">
+            <a class="name" href="https://www.ajosamaritans.com/" target="_blank" rel="noopener noreferrer">Ajo Samaritans <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">ajosamaritans.com</span>
+          </div>
+          <p class="desc">A humanitarian aid organization providing mutual aid and direct support to migrants in the Sonoran Desert. They coordinate water drops, emergency response, and resource sharing while building networks of solidarity and care across the Arizona borderlands.</p>
+        </li>
+        <li data-name="mass liberation arizona" data-desc="a grassroots organization fostering mutual aid and community power through prison abolition and criminal justice reform across arizona. they coordinate direct support, resource sharing, and solidarity networks while building power through community organizing, policy advocacy, and creating pathways for transformative justice.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/masslibaz/" target="_blank" rel="noopener noreferrer">Mass Liberation Arizona <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community power through prison abolition and criminal justice reform across Arizona. They coordinate direct support, resource sharing, and solidarity networks while building power through community organizing, policy advocacy, and creating pathways for transformative justice.</p>
+        </li>
+        <li data-name="industrial workers of the world - northern arizona" data-desc="a worker-led organization fostering mutual aid and labor solidarity through organizing and direct support across northern arizona. they coordinate worker advocacy, resource sharing, and solidarity networks while building power through collective action, worker education, and creating spaces for labor organizing.">
+          <div class="row">
+            <a class="name" href="https://iwwnaz.wordpress.com/" target="_blank" rel="noopener noreferrer">Industrial Workers of the World - Northern Arizona <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">iwwnaz.wordpress.com</span>
+          </div>
+          <p class="desc">A worker-led organization fostering mutual aid and labor solidarity through organizing and direct support across Northern Arizona. They coordinate worker advocacy, resource sharing, and solidarity networks while building power through collective action, worker education, and creating spaces for labor organizing.</p>
+        </li>
+        <li data-name="death penalty alternatives for arizona" data-desc="a grassroots organization fostering mutual aid and community support through death penalty abolition work across arizona. they coordinate advocacy, education, and solidarity networks while building power through community organizing, policy reform, and creating pathways for restorative justice.">
+          <div class="row">
+            <a class="name" href="https://www.azdeathpenalty.org/" target="_blank" rel="noopener noreferrer">Death Penalty Alternatives for Arizona <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">azdeathpenalty.org</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community support through death penalty abolition work across Arizona. They coordinate advocacy, education, and solidarity networks while building power through community organizing, policy reform, and creating pathways for restorative justice.</p>
+        </li>
+        <li data-name="equality arizona" data-desc="a statewide organization fostering mutual aid and community power through lgbtq+ advocacy and civic engagement across arizona. they coordinate community building, education initiatives, and solidarity networks while building power through policy advocacy, voter engagement, and creating pathways for lgbtq+ civil rights and social equality.">
+          <div class="row">
+            <a class="name" href="https://www.equalityarizona.org/" target="_blank" rel="noopener noreferrer">Equality Arizona <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">equalityarizona.org</span>
+          </div>
+          <p class="desc">A statewide organization fostering mutual aid and community power through LGBTQ+ advocacy and civic engagement across Arizona. They coordinate community building, education initiatives, and solidarity networks while building power through policy advocacy, voter engagement, and creating pathways for LGBTQ+ civil rights and social equality.</p>
+        </li>
+        <li data-name="sonoran prevention works" data-desc="a grassroots harm reduction organization fostering mutual aid and community care through direct support across arizona. they coordinate harm reduction supplies distribution, overdose prevention education, and solidarity networks while building power through peer support, advocacy, and creating spaces for dignity and healing in harm reduction.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/sonoranpreventionworks/" target="_blank" rel="noopener noreferrer">Sonoran Prevention Works <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots harm reduction organization fostering mutual aid and community care through direct support across Arizona. They coordinate harm reduction supplies distribution, overdose prevention education, and solidarity networks while building power through peer support, advocacy, and creating spaces for dignity and healing in harm reduction.</p>
+        </li>
+        <li data-name="o'odham piipaash alliance" data-desc="an indigenous-led collective fostering mutual aid and solidarity through cultural preservation and land defense in o'odham and piipaash territories. they coordinate community support, traditional knowledge sharing, and solidarity networks while building power through indigenous sovereignty and creating pathways for cultural resurgence.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/oodhampiipaashalliance/" target="_blank" rel="noopener noreferrer">O'odham Piipaash Alliance <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">An Indigenous-led collective fostering mutual aid and solidarity through cultural preservation and land defense in O'odham and Piipaash territories. They coordinate community support, traditional knowledge sharing, and solidarity networks while building power through Indigenous sovereignty and creating pathways for cultural resurgence.</p>
+        </li>
+        <li data-name="save oak flat" data-desc="an indigenous-led movement fostering mutual aid and solidarity through the protection of sacred apache land at oak flat. they coordinate direct action, cultural preservation, and solidarity networks while building power through indigenous sovereignty and creating pathways for sacred land defense.">
+          <div class="row">
+            <a class="name" href="https://www.facebook.com/SaveOakFlatArizona" target="_blank" rel="noopener noreferrer">Save Oak Flat <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">facebook.com</span>
+          </div>
+          <p class="desc">An Indigenous-led movement fostering mutual aid and solidarity through the protection of sacred Apache land at Oak Flat. They coordinate direct action, cultural preservation, and solidarity networks while building power through Indigenous sovereignty and creating pathways for sacred land defense.</p>
+        </li>
+        <li data-name="k'é infoshop" data-desc="anti-colonial, anti-heteropatriarchy, and anti-capitalist with indigenous feminism as our guiding principles. we're a collective of diné uniting to liberate nihi k'ei/our relatives.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/keinfoshop" target="_blank" rel="noopener noreferrer">K'é Infoshop <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Anti-colonial, anti-heteropatriarchy, and anti-capitalist with indigenous feminism as our guiding principles. We're a collective of Diné uniting to liberate nihi k'ei/our relatives.</p>
+        </li>
+        <li data-name="az comm-unity" data-desc="central hub for all people and groups within all of arizona who are taking a stand against the rising wave of authoritarianism and fascism to come together to meet and coordinate with their local communities as well as communicate with the rest of the movement around the state.">
+          <div class="row">
+            <a class="name" href="https://discord.gg/xUK6Qkeb" target="_blank" rel="noopener noreferrer">AZ Comm-Unity <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">discord.gg</span>
+          </div>
+          <p class="desc">central hub for all people and groups within all of Arizona who are taking a stand against the rising wave of authoritarianism and fascism to come together to meet and coordinate with their local communities as well as communicate with the rest of the movement around the state.</p>
+        </li>
+        <li data-name="az50501 discord server" data-desc="get the latest updates on the 50501 movement and connect with other arizonans">
+          <div class="row">
+            <a class="name" href="https://discord.gg/yEQTkC3Dmx" target="_blank" rel="noopener noreferrer">AZ50501 Discord Server <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">discord.gg</span>
+          </div>
+          <p class="desc">Get the latest updates on the 50501 movement and connect with other Arizonans</p>
+        </li>
+        <li data-name="haul no" data-desc="protect grand canyon, sacred sites, precious water, and our communities from uranium mining!">
+          <div class="row">
+            <a class="name" href="https://haulno.com/" target="_blank" rel="noopener noreferrer">Haul No <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">haulno.com</span>
+          </div>
+          <p class="desc">Protect Grand Canyon, sacred sites, precious water, and our communities from uranium mining!</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No places or groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

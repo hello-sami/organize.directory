@@ -1,97 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <meta name="description" content="Practical guides and resources for organizing mutual aid in your community.">
+  <title>Guides — Organize Directory</title>
+  <meta name="description" content="Practical guides and resources for organizing in your community. Coming soon.">
+  <link rel="canonical" href="https://organize.directory/guides">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Organizing Guides | The Organize Directory">
-    <meta property="og:description"
-        content="Practical guides and resources for organizing mutual aid in your community.">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <link rel="canonical" href="https://organize.directory/guides">
-    <meta property="og:url" content="https://organize.directory/guides">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Guides — Organize Directory">
+  <meta property="og:description" content="Practical guides and resources for organizing in your community. Coming soon.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/guides">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <title>Organizing Guides | The Organize Directory</title>
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="/styles.css?v=20260421">
-    <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Pre-paint theme init -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
+  </script>
 
-    <!-- Coming Soon Styles -->
-    <style>
-        .coming-soon-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-        .coming-soon-card {
-            padding: 4rem 2rem;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            background-color: var(--background-color, #fff5f5);
-            border: 1px solid var(--red-base, #ffb3b3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 300px;
-        }
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
 
-        .coming-soon-text {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--red-base, #800000);
-            margin: 0;
-        }
-
-        @media (max-width: 768px) {
-            .coming-soon-text {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
-
-    <!-- Google Analytics -->
-    <script src="/js/analytics.js" defer></script>
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js?v=20260421';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('guides');
-
-        // Initialize other components
-        initializeComponents({
-        });
-    </script>
-<!-- Mobile optimizations -->
-<script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-<body class="page-guides">
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
-        <main class="content">
-            <h1>Guides and Resources</h1>
+<main id="main">
 
-            <div class="coming-soon-container">
-                <div class="coming-soon-card card-base">
-                    <h2 class="coming-soon-text">Coming Soon</h2>
-                </div>
-            </div>
-        </main>
-    </div>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Guides</span>
+  </nav>
+
+  <div class="page-head">
+    <h1 class="title">Guides</h1>
+    <p class="meta">Coming soon — practical resources for organizers.</p>
+  </div>
+
+  <div class="prose">
+    <p>We're building out a library of short, practical guides — on starting a mutual aid group, running a tenant union meeting, running a safe know-your-rights training, and more.</p>
+    <p>In the meantime, the best guide is the one written by people already doing the work. <a href="/location">Find a group near you</a> and get involved.</p>
+    <p>Want to contribute a guide? <a href="/contact">Get in touch</a>.</p>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+
 </body>
-
 </html>

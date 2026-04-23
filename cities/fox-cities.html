@@ -1,97 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Fox Cities, WI Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Fox Cities, WI. Connect with local organizations and community resources.">
+  <title>Fox Cities, WI — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Fox Cities, WI.">
   <link rel="canonical" href="https://organize.directory/fox-cities">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Fox Cities, WI Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Fox Cities, WI. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Fox Cities, WI — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Fox Cities, WI.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/fox-cities">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/wisconsin">Wisconsin</a>
-          <span>›</span>
-          <span>Fox Cities, WI</span>
-        </div>
+<main id="main">
 
-        <h1>Fox Cities, WI</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/wisconsin">Wisconsin</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Fox Cities, WI</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://www.instagram.com/hatefreeoutagamie/" target="_blank" rel="noopener noreferrer">Hate Free Outagmie</a>
-      <p>Outagmie County antifascist organizing</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/appletonscreening/" target="_blank" rel="noopener noreferrer">Appleton Screening</a>
-      <p>reading and movie club spreading awareness in Appleton, WI &amp; beyond</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/foodnotbombs_foxvalley/" target="_blank" rel="noopener noreferrer">Food Not Bombs Fox Valley</a>
-      <p>Mutual aid org. based in the Fox Cities of Wisconsin. DM for more information or to get involved!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.hopefridge.com/" target="_blank" rel="noopener noreferrer">Hope Fridge</a>
-      <p>Providing mutual aid via free food and household products directly to communities in the Fox Valley of Northeast Wisconsin.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/diverseandresilientappleton/" target="_blank" rel="noopener noreferrer">Diverse and Resilient Appleton</a>
-      <p>We see a future in which LGBTQ people in Wisconsin thrive, living healthy, satisfying lives in safe, supportive communities.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://esther-foxvalley.org/" target="_blank" rel="noopener noreferrer">ESTHER Fox Valley</a>
-      <p>ESTHER is an interfaith social-justice organization. We are grassroots and non-profit, focusing our work in the Fox Valley region of Wisconsin.</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Fox Cities, WI</h1>
+    <p class="meta">
+      <b>6</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      Wisconsin
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Fox Cities, WI</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Fox Cities, WI…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="hate free outagmie" data-desc="outagmie county antifascist organizing">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/hatefreeoutagamie/" target="_blank" rel="noopener noreferrer">Hate Free Outagmie <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Outagmie County antifascist organizing</p>
+        </li>
+        <li data-name="appleton screening" data-desc="reading and movie club spreading awareness in appleton, wi &amp; beyond">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/appletonscreening/" target="_blank" rel="noopener noreferrer">Appleton Screening <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">reading and movie club spreading awareness in Appleton, WI &amp; beyond</p>
+        </li>
+        <li data-name="food not bombs fox valley" data-desc="mutual aid org. based in the fox cities of wisconsin. dm for more information or to get involved!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/foodnotbombs_foxvalley/" target="_blank" rel="noopener noreferrer">Food Not Bombs Fox Valley <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Mutual aid org. based in the Fox Cities of Wisconsin. DM for more information or to get involved!</p>
+        </li>
+        <li data-name="hope fridge" data-desc="providing mutual aid via free food and household products directly to communities in the fox valley of northeast wisconsin.">
+          <div class="row">
+            <a class="name" href="https://www.hopefridge.com/" target="_blank" rel="noopener noreferrer">Hope Fridge <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">hopefridge.com</span>
+          </div>
+          <p class="desc">Providing mutual aid via free food and household products directly to communities in the Fox Valley of Northeast Wisconsin.</p>
+        </li>
+        <li data-name="diverse and resilient appleton" data-desc="we see a future in which lgbtq people in wisconsin thrive, living healthy, satisfying lives in safe, supportive communities.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/diverseandresilientappleton/" target="_blank" rel="noopener noreferrer">Diverse and Resilient Appleton <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We see a future in which LGBTQ people in Wisconsin thrive, living healthy, satisfying lives in safe, supportive communities.</p>
+        </li>
+        <li data-name="esther fox valley" data-desc="esther is an interfaith social-justice organization. we are grassroots and non-profit, focusing our work in the fox valley region of wisconsin.">
+          <div class="row">
+            <a class="name" href="https://esther-foxvalley.org/" target="_blank" rel="noopener noreferrer">ESTHER Fox Valley <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">esther-foxvalley.org</span>
+          </div>
+          <p class="desc">ESTHER is an interfaith social-justice organization. We are grassroots and non-profit, focusing our work in the Fox Valley region of Wisconsin.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

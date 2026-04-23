@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Prisoner Solidarity - The Organize Directory</title>
+  <title>Prisoner Solidarity — Organize Directory</title>
   <meta name="description" content="Organizations and resources supporting incarcerated individuals, their families, and
                     communities through mutual aid, advocacy, education, and re-entry assistance.">
   <link rel="canonical" href="https://organize.directory/topics/prisoner-solidarity">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Prisoner Solidarity - The Organize Directory">
+  <meta property="og:title" content="Prisoner Solidarity — Organize Directory">
   <meta property="og:description" content="Organizations and resources supporting incarcerated individuals, their families, and
                     communities through mutual aid, advocacy, education, and re-entry assistance.">
   <meta property="og:type" content="website">
@@ -26,116 +20,240 @@
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('topics');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="city-page state-page">
-        <div class="breadcrumb">
-          <a href="/topics">Topics</a>
-          <span>›</span>
-          <span>Prisoner Solidarity</span>
-        </div>
+<main id="main">
 
-        <h1>Prisoner Solidarity</h1>
-        <p class="subtitle">Organizations and resources supporting incarcerated individuals, their families, and
-                    communities through mutual aid, advocacy, education, and re-entry assistance.</p>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/topics">Topics</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Prisoner Solidarity</span>
+  </nav>
 
-  <section id="re-entry-support" class="city-section">
-    <h2>Re-Entry Support</h2>
-    <div class="initiative">
-      <a href="https://thenationalreentrynetwork.org/" target="_blank" rel="noopener noreferrer">The National Reentry Network</a>
-      <p>Building mutual aid networks and support systems for formerly incarcerated people through community organizing, direct assistance, and advocacy for successful reintegration.</p>
-    </div>
-  </section>
-
-  <section id="national-initiatives" class="city-section">
-    <h2>National Initiatives</h2>
-    <div class="initiative">
-      <a href="https://abolitionistlawcenter.org/" target="_blank" rel="noopener noreferrer">Abolitionist Law Center</a>
-      <p>Public interest law firm and grassroots organization fighting for the rights of people in prison through litigation and community organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://prisonerswithchildren.org/" target="_blank" rel="noopener noreferrer">Legal Services for Prisoners with Children
-                            (LSPC)</a>
-      <p>Grassroots civil and human rights organization building public awareness of structural racism in the criminal legal system while organizing communities impacted by incarceration through legal advocacy, policy work, and the All of Us or None movement.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://prisonlaw.com/" target="_blank" rel="noopener noreferrer">Prison Law Office</a>
-      <p>Legal advocacy organization protecting the constitutional rights of incarcerated people through litigation, education, and advocacy, with significant victories improving prison conditions and healthcare access in California and Arizona.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.prisonactivist.org/" target="_blank" rel="noopener noreferrer">Prison Activist Resource Center (PARC)</a>
-      <p>Prison abolitionist group providing free resources and support to incarcerated people through their comprehensive national directory of organizations, while working to expose and challenge systemic oppression in the Prison Industrial Complex.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://incarceratedworkers.org/" target="_blank" rel="noopener noreferrer">Incarcerated Workers Organizing Committee
-                            (IWOC)</a>
-      <p>A prisoner-led section of the Industrial Workers of the World coordinating mutual aid and labor organizing inside prisons. They organize direct support through solidarity campaigns, resource sharing, and advocacy while building networks between incarcerated workers and outside supporters to fight prison slavery and the prison industrial complex.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.arcgenderjustice.org/" target="_blank" rel="noopener noreferrer">Alyssa Rodriguez Center for Gender
-                            Justice</a>
-      <p>A grassroots organization fostering mutual aid and solidarity through gender justice advocacy across prison walls. They coordinate inside-outside organizing, resource sharing, and solidarity networks while building power through LGBTQ+ prisoner advocacy, transformative justice, and creating spaces for incarcerated survivors to lead movements for gender justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/freecaseynow" target="_blank" rel="noopener noreferrer">Free Casey Now</a>
-      <p>A grassroots campaign fostering mutual aid and solidarity through support for Casey Goonan</p>
-    </div>
-  </section>
-
-  <section id="books-education" class="city-section">
-    <h2>Books &amp; Education</h2>
-    <div class="initiative">
-      <a href="https://plsn-nyc.tumblr.com/" target="_blank" rel="noopener noreferrer">Prison Library Support Network (PLSN)</a>
-      <p>A mutual aid network supporting incarcerated people through book donations, letter writing, and resource sharing. PLSN works to expand access to literature and educational materials in prisons while building connections between incarcerated and non-incarcerated communities.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://lgbtbookstoprisoners.org/" target="_blank" rel="noopener noreferrer">LGBT Books to Prisoners</a>
-      <p>A volunteer-run organization fostering mutual aid and solidarity through free book distribution to LGBTQ+ people in prison. They coordinate book donations, letter writing, and solidarity networks while building power through queer/trans prisoner support, resource sharing, and creating spaces for connection across prison walls.</p>
-    </div>
-  </section>
-
-  <section id="updates-from-inside" class="city-section">
-    <h2>Updates from Inside</h2>
-    <div class="initiative">
-      <a href="https://www.prisonlegalnews.org/" target="_blank" rel="noopener noreferrer">Prison Legal News (PLN)</a>
-      <p>Monthly publication covering criminal justice issues and prison conditions through investigative reporting, while providing legal resources and analysis to incarcerated people. Published by the Human Rights Defense Center with a focus on amplifying voices from inside.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://betweenthebars.org/" target="_blank" rel="noopener noreferrer">Between the Bars</a>
-      <p>A blogging platform fostering mutual aid and connection through digital publishing of writing by incarcerated people. They coordinate blog hosting, letter transcription, and solidarity networks while amplifying voices from inside and creating spaces for dialogue across prison walls.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/bellyzine/" target="_blank" rel="noopener noreferrer">Belly Zine</a>
-      <p>A radical publication fostering mutual aid and solidarity through art and writing by incarcerated people. They coordinate zine distribution, correspondence networks, and solidarity initiatives while amplifying voices from inside and building power through creative expression, political education, and creating spaces for connection across prison walls.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/freecaseynow/" target="_blank" rel="noopener noreferrer">Free Casey Now</a>
-      <p>Casey is a dedicated community educator, writer, distroist, and printer who has committed their life to struggles for liberation. A federal investigation by the FBI and several other law enforcement agencies resulted in Casey’s arrest for alleged politically motivated “crimes.” Since June 17 2024, Casey has been incarcerated at Santa Rita Jail facing federal felonies that could result in up to 20 years of imprisonment.</p>
-    </div>
-  </section>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">Prisoner Solidarity</h1>
+    <p class="meta"><b>14</b> groups</p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-</body>
+  <p class="topic-lede">Organizations and resources supporting incarcerated individuals, their families, and
+                    communities through mutual aid, advocacy, education, and re-entry assistance.</p>
 
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Prisoner Solidarity</label>
+    <input id="page-filter" type="search" placeholder="Filter groups…" autocomplete="off">
+  </div>
+
+  <div class="layout">
+  <nav class="toc" aria-label="Sections on this page">
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
+      <span class="current">
+        <span class="current-label">Section ·</span>
+        <span class="current-name">Re-Entry Support</span>
+      </span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div id="toc-panel" class="toc-scroll">
+      <a href="#re-entry-support" data-section="re-entry-support"><span class="label">Re-Entry Support</span> <span class="count">1</span></a>
+      <a href="#national-initiatives" data-section="national-initiatives"><span class="label">National Initiatives</span> <span class="count">7</span></a>
+      <a href="#books-education" data-section="books-education"><span class="label">Books &amp; Education</span> <span class="count">2</span></a>
+      <a href="#updates-from-inside" data-section="updates-from-inside"><span class="label">Updates from Inside</span> <span class="count">4</span></a>
+    </div>
+  </nav>
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="re-entry-support" class="group-section" data-section="re-entry-support">
+      <h2 class="section-title">Re-Entry Support</h2>
+      <ol class="groups">
+        <li data-name="the national reentry network" data-desc="building mutual aid networks and support systems for formerly incarcerated people through community organizing, direct assistance, and advocacy for successful reintegration.">
+          <div class="row">
+            <a class="name" href="https://thenationalreentrynetwork.org/" target="_blank" rel="noopener noreferrer">The National Reentry Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">thenationalreentrynetwork.org</span>
+          </div>
+          <p class="desc">Building mutual aid networks and support systems for formerly incarcerated people through community organizing, direct assistance, and advocacy for successful reintegration.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="national-initiatives" class="group-section" data-section="national-initiatives">
+      <h2 class="section-title">National Initiatives</h2>
+      <ol class="groups">
+        <li data-name="abolitionist law center" data-desc="public interest law firm and grassroots organization fighting for the rights of people in prison through litigation and community organizing.">
+          <div class="row">
+            <a class="name" href="https://abolitionistlawcenter.org/" target="_blank" rel="noopener noreferrer">Abolitionist Law Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">abolitionistlawcenter.org</span>
+          </div>
+          <p class="desc">Public interest law firm and grassroots organization fighting for the rights of people in prison through litigation and community organizing.</p>
+        </li>
+        <li data-name="legal services for prisoners with children
+                            (lspc)" data-desc="grassroots civil and human rights organization building public awareness of structural racism in the criminal legal system while organizing communities impacted by incarceration through legal advocacy, policy work, and the all of us or none movement.">
+          <div class="row">
+            <a class="name" href="https://prisonerswithchildren.org/" target="_blank" rel="noopener noreferrer">Legal Services for Prisoners with Children
+                            (LSPC) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">prisonerswithchildren.org</span>
+          </div>
+          <p class="desc">Grassroots civil and human rights organization building public awareness of structural racism in the criminal legal system while organizing communities impacted by incarceration through legal advocacy, policy work, and the All of Us or None movement.</p>
+        </li>
+        <li data-name="prison law office" data-desc="legal advocacy organization protecting the constitutional rights of incarcerated people through litigation, education, and advocacy, with significant victories improving prison conditions and healthcare access in california and arizona.">
+          <div class="row">
+            <a class="name" href="https://prisonlaw.com/" target="_blank" rel="noopener noreferrer">Prison Law Office <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">prisonlaw.com</span>
+          </div>
+          <p class="desc">Legal advocacy organization protecting the constitutional rights of incarcerated people through litigation, education, and advocacy, with significant victories improving prison conditions and healthcare access in California and Arizona.</p>
+        </li>
+        <li data-name="prison activist resource center (parc)" data-desc="prison abolitionist group providing free resources and support to incarcerated people through their comprehensive national directory of organizations, while working to expose and challenge systemic oppression in the prison industrial complex.">
+          <div class="row">
+            <a class="name" href="https://www.prisonactivist.org/" target="_blank" rel="noopener noreferrer">Prison Activist Resource Center (PARC) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">prisonactivist.org</span>
+          </div>
+          <p class="desc">Prison abolitionist group providing free resources and support to incarcerated people through their comprehensive national directory of organizations, while working to expose and challenge systemic oppression in the Prison Industrial Complex.</p>
+        </li>
+        <li data-name="incarcerated workers organizing committee
+                            (iwoc)" data-desc="a prisoner-led section of the industrial workers of the world coordinating mutual aid and labor organizing inside prisons. they organize direct support through solidarity campaigns, resource sharing, and advocacy while building networks between incarcerated workers and outside supporters to fight prison slavery and the prison industrial complex.">
+          <div class="row">
+            <a class="name" href="https://incarceratedworkers.org/" target="_blank" rel="noopener noreferrer">Incarcerated Workers Organizing Committee
+                            (IWOC) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">incarceratedworkers.org</span>
+          </div>
+          <p class="desc">A prisoner-led section of the Industrial Workers of the World coordinating mutual aid and labor organizing inside prisons. They organize direct support through solidarity campaigns, resource sharing, and advocacy while building networks between incarcerated workers and outside supporters to fight prison slavery and the prison industrial complex.</p>
+        </li>
+        <li data-name="alyssa rodriguez center for gender
+                            justice" data-desc="a grassroots organization fostering mutual aid and solidarity through gender justice advocacy across prison walls. they coordinate inside-outside organizing, resource sharing, and solidarity networks while building power through lgbtq+ prisoner advocacy, transformative justice, and creating spaces for incarcerated survivors to lead movements for gender justice.">
+          <div class="row">
+            <a class="name" href="https://www.arcgenderjustice.org/" target="_blank" rel="noopener noreferrer">Alyssa Rodriguez Center for Gender
+                            Justice <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">arcgenderjustice.org</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and solidarity through gender justice advocacy across prison walls. They coordinate inside-outside organizing, resource sharing, and solidarity networks while building power through LGBTQ+ prisoner advocacy, transformative justice, and creating spaces for incarcerated survivors to lead movements for gender justice.</p>
+        </li>
+        <li data-name="free casey now" data-desc="a grassroots campaign fostering mutual aid and solidarity through support for casey goonan">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/freecaseynow" target="_blank" rel="noopener noreferrer">Free Casey Now <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots campaign fostering mutual aid and solidarity through support for Casey Goonan</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="books-education" class="group-section" data-section="books-education">
+      <h2 class="section-title">Books &amp; Education</h2>
+      <ol class="groups">
+        <li data-name="prison library support network (plsn)" data-desc="a mutual aid network supporting incarcerated people through book donations, letter writing, and resource sharing. plsn works to expand access to literature and educational materials in prisons while building connections between incarcerated and non-incarcerated communities.">
+          <div class="row">
+            <a class="name" href="https://plsn-nyc.tumblr.com/" target="_blank" rel="noopener noreferrer">Prison Library Support Network (PLSN) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">plsn-nyc.tumblr.com</span>
+          </div>
+          <p class="desc">A mutual aid network supporting incarcerated people through book donations, letter writing, and resource sharing. PLSN works to expand access to literature and educational materials in prisons while building connections between incarcerated and non-incarcerated communities.</p>
+        </li>
+        <li data-name="lgbt books to prisoners" data-desc="a volunteer-run organization fostering mutual aid and solidarity through free book distribution to lgbtq+ people in prison. they coordinate book donations, letter writing, and solidarity networks while building power through queer/trans prisoner support, resource sharing, and creating spaces for connection across prison walls.">
+          <div class="row">
+            <a class="name" href="https://lgbtbookstoprisoners.org/" target="_blank" rel="noopener noreferrer">LGBT Books to Prisoners <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">lgbtbookstoprisoners.org</span>
+          </div>
+          <p class="desc">A volunteer-run organization fostering mutual aid and solidarity through free book distribution to LGBTQ+ people in prison. They coordinate book donations, letter writing, and solidarity networks while building power through queer/trans prisoner support, resource sharing, and creating spaces for connection across prison walls.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="updates-from-inside" class="group-section" data-section="updates-from-inside">
+      <h2 class="section-title">Updates from Inside</h2>
+      <ol class="groups">
+        <li data-name="prison legal news (pln)" data-desc="monthly publication covering criminal justice issues and prison conditions through investigative reporting, while providing legal resources and analysis to incarcerated people. published by the human rights defense center with a focus on amplifying voices from inside.">
+          <div class="row">
+            <a class="name" href="https://www.prisonlegalnews.org/" target="_blank" rel="noopener noreferrer">Prison Legal News (PLN) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">prisonlegalnews.org</span>
+          </div>
+          <p class="desc">Monthly publication covering criminal justice issues and prison conditions through investigative reporting, while providing legal resources and analysis to incarcerated people. Published by the Human Rights Defense Center with a focus on amplifying voices from inside.</p>
+        </li>
+        <li data-name="between the bars" data-desc="a blogging platform fostering mutual aid and connection through digital publishing of writing by incarcerated people. they coordinate blog hosting, letter transcription, and solidarity networks while amplifying voices from inside and creating spaces for dialogue across prison walls.">
+          <div class="row">
+            <a class="name" href="https://betweenthebars.org/" target="_blank" rel="noopener noreferrer">Between the Bars <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">betweenthebars.org</span>
+          </div>
+          <p class="desc">A blogging platform fostering mutual aid and connection through digital publishing of writing by incarcerated people. They coordinate blog hosting, letter transcription, and solidarity networks while amplifying voices from inside and creating spaces for dialogue across prison walls.</p>
+        </li>
+        <li data-name="belly zine" data-desc="a radical publication fostering mutual aid and solidarity through art and writing by incarcerated people. they coordinate zine distribution, correspondence networks, and solidarity initiatives while amplifying voices from inside and building power through creative expression, political education, and creating spaces for connection across prison walls.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/bellyzine/" target="_blank" rel="noopener noreferrer">Belly Zine <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A radical publication fostering mutual aid and solidarity through art and writing by incarcerated people. They coordinate zine distribution, correspondence networks, and solidarity initiatives while amplifying voices from inside and building power through creative expression, political education, and creating spaces for connection across prison walls.</p>
+        </li>
+        <li data-name="free casey now" data-desc="casey is a dedicated community educator, writer, distroist, and printer who has committed their life to struggles for liberation. a federal investigation by the fbi and several other law enforcement agencies resulted in casey’s arrest for alleged politically motivated “crimes.” since june 17 2024, casey has been incarcerated at santa rita jail facing federal felonies that could result in up to 20 years of imprisonment.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/freecaseynow/" target="_blank" rel="noopener noreferrer">Free Casey Now <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Casey is a dedicated community educator, writer, distroist, and printer who has committed their life to struggles for liberation. A federal investigation by the FBI and several other law enforcement agencies resulted in Casey’s arrest for alleged politically motivated “crimes.” Since June 17 2024, Casey has been incarcerated at Santa Rita Jail facing federal felonies that could result in up to 20 years of imprisonment.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

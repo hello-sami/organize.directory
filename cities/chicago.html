@@ -1,375 +1,567 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Chicago Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Chicago. Connect with local organizations and community resources.">
+  <title>Chicago — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Chicago.">
   <link rel="canonical" href="https://organize.directory/chicago">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Chicago Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Chicago. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Chicago — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Chicago.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/chicago">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="content-wrapper">
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/illinois">Illinois</a>
-          <span>›</span>
-          <span>Chicago</span>
-        </div>
+<main id="main">
 
-        <h1>Chicago</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/illinois">Illinois</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Chicago</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="mutual-aid" class="city-section">
-    <h2>Mutual Aid Networks</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/scuttle_chicago/" target="_blank" rel="noopener noreferrer">Scuttle Chicago</a>
-      <p>A grassroots collective coordinating mutual aid and community support initiatives in Chicago. They organize direct assistance, resource sharing, and solidarity networks while building community power through collective action and neighborhood organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/avondalemutualaid/" target="_blank" rel="noopener noreferrer">Avondale Mutual Aid</a>
-      <p>All-volunteer group- Avondale, Chicago.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://linktr.ee/edgewatermutualaid" target="_blank" rel="noopener noreferrer">Edgewater Mutual Aid</a>
-      <p>EMAN: Abolitionist Mutual Aid Network in Edgewater, Chicago</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/evanstonfridges/" target="_blank" rel="noopener noreferrer">Evanston Community Fridges</a>
-      <p>A food based mutual aid project led by the community for the community!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.mutualaiddawning.org/" target="_blank" rel="noopener noreferrer">Mutual Aid Dawning</a>
-      <p>A mutual aid collective building liberation culture and projects in the suburbs of shikaakwa (settler named Chicago, IL).</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.logansquaremutualaid.org/" target="_blank" rel="noopener noreferrer">Logan Square Mutual Aid</a>
-      <p>Logan Square Mutual Aid is here to make helping one another easy. In the face of widespread inequity and an ongoing pandemic, the most effective thing we can do is to be there for each other.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://pilsenmutualaid.org/" target="_blank" rel="noopener noreferrer">Pilsen Solidarity Network</a>
-      <p>Neighbor to Neighbor Mutual Aid</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/westsidemutualaid/" target="_blank" rel="noopener noreferrer">Westside Mutual Aid</a>
-      <p>Mutual aid network between Austin, East Garfield Park, North Lawndale, West Garfield Park, and West Loop.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/albanyparkaid/" target="_blank" rel="noopener noreferrer">Albany Park Mutual Aid</a>
-      <p>We support neighbors in need by providing goods such as groceries, household supplies, diapers, and the like. We also provide advice and resources according to specific requests.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/hpsolidaritynetwork/" target="_blank" rel="noopener noreferrer">HP Solidarity Network</a>
-      <p>Neighbors helping neighbors in Humboldt Park.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/westtownmutualaid/" target="_blank" rel="noopener noreferrer">West Town Mutual Aid</a>
-      <p>West Town Mutual Aid is an all-volunteer, grassroots group operating in Chicago in Ukrainian Village, Bucktown, Wicker Park, and the surrounding areas.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/irvingparkmutualaid/" target="_blank" rel="noopener noreferrer">Irving Park Mutual Aid</a>
-      <p>Working to provide support &amp; relief to our neighbors in Irving Park impacted by the COVID-19 crisis.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/elginsolidarityblm/" target="_blank" rel="noopener noreferrer">Elgin in Solidarity with Black Lives Matter</a>
-      <p>Organize, educate, agitate, liberate! This is a digital community space to share resources &amp; knowledge.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.mayfairmutualaid.com/" target="_blank" rel="noopener noreferrer">Mayfair Mutual Aid</a>
-      <p>Neighbors help with grocery and medicine pick up/delivery, provide cash assistance for rent and other bills, and share resources for medical care, employment, and other help.</p>
-    </div>
-  </section>
-
-  <section id="food-justice" class="city-section">
-    <h2>Food Justice</h2>
-    <div class="initiative">
-      <a href="https://www.foodnotbombs.net/illinois.html" target="_blank" rel="noopener noreferrer">Food Not Bombs Chicago</a>
-      <p>Sharing free vegan and vegetarian meals with anyone who is hungry.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/rogersparkfoodnotbombs/" target="_blank" rel="noopener noreferrer">Rogers Park Food Not Bombs</a>
-      <p>A grassroots collective fostering mutual aid through free food distribution and community care in Rogers Park. They coordinate weekly meal shares, food recovery initiatives, and solidarity networks while building power through food justice organizing and creating spaces for collective nourishment.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.globalgardenschicago.org/" target="_blank" rel="noopener noreferrer">Global Gardens Chicago</a>
-      <p>A vacant lot transformed into a vibrant farm in which 75+ refugees grow vegetables in Chicago's Albany Park neighborhood.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/foodnotbombshp/" target="_blank" rel="noopener noreferrer">Food Not Bombs Humboldt Park</a>
-      <p>Sharing groceries in Chicago's Humboldt Park neighborhood.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/veggiemijaschicago/" target="_blank" rel="noopener noreferrer">Veggie Mijas Chicago</a>
-      <p>A collective focusing on food justice, sustainability &amp; plant-based lifestyles.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.facebook.com/hammondcommunitygarden/" target="_blank" rel="noopener noreferrer">Hammond Community Garden</a>
-      <p>A food justice/sovereignty project which seeks to bring ​neighbors and local community members together in a ​collaborative setting, engage in mutual aid, and ​collectively meet our need for fresh, healthy food to be ​freely available and shared.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/foodsovereigntychicago/" target="_blank" rel="noopener noreferrer">Chicagoland Food Sovereignty Coalition</a>
-      <p>CFSC is a coalition of Chicago and Cook County mutual aid groups working together to create #foodsovereignty for all people in all of our communities.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.thelovefridge.com/" target="_blank" rel="noopener noreferrer">The Love Fridge</a>
-      <p>The Love Fridge is a mutual aid group working to ensure every Chicagoan has access to fresh food by maintaining free community fridges in neighborhoods across the city.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/foodsovereigntychicago/" target="_blank" rel="noopener noreferrer">Chicagoland Food Sovereignty Coalition</a>
-      <p>CFSC is a coalition of autonomous mutual aid groups working to reimagine a resilient, sustainable and equitable local food system based on food sovereignty.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/freestore_rogerspark/" target="_blank" rel="noopener noreferrer">Rogers Park Free Store</a>
-      <p>Mutual Aid space for the Rogers Park neighborhood. Open hours are on Saturday from 12-2pm</p>
-    </div>
-  </section>
-
-  <section id="housing" class="city-section">
-    <h2>Housing Justice</h2>
-    <div class="initiative">
-      <a href="https://chicagohomeless.org/" target="_blank" rel="noopener noreferrer">Chicago Coalition to End Homelessness</a>
-      <p>A statewide organization fostering mutual aid and community power through housing justice and homelessness prevention across Illinois. They coordinate legal aid, direct support, and solidarity networks while building power through policy advocacy, community organizing, and creating pathways for housing access and stability.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/chi_warmingcenters/" target="_blank" rel="noopener noreferrer">Chicago Warming Centers</a>
-      <p>Network of warming centers and emergency shelters providing support during extreme weather.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/eastlaketenantsunion/" target="_blank" rel="noopener noreferrer">Eastlake Tenants Union</a>
-      <p>Organizing to improve the quality of life in East Lake managed buildings across Chicago</p>
-    </div>
-    <div class="initiative">
-      <a href="https://tenantsunitedchicago.org/" target="_blank" rel="noopener noreferrer">Tenants United Chicago</a>
-      <p>Our mission is to build neighborhood justice and grassroots democracy by developing autonomous tenants unions that are welcoming for all.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/yurtunionchicago/" target="_blank" rel="noopener noreferrer">Autonomous Yurt Union Chicago</a>
-      <p>autonomous yurt-inspired design builds &amp; deploys in support of unhoused neighbors in Chicago</p>
-    </div>
-  </section>
-
-  <section id="social-justice" class="city-section">
-    <h2>Social Justice Organizations</h2>
-    <div class="initiative">
-      <a href="https://unraveledpress.com/" target="_blank" rel="noopener noreferrer">Unraveled Press</a>
-      <p>A radical publishing collective coordinating mutual aid and community support initiatives through accessible literature and zine distribution in Chicago. They organize resource sharing, political education, and solidarity networks while building community power through radical publishing and collective organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://kocoonline.org/" target="_blank" rel="noopener noreferrer">Kenwood Oakland Community Organization</a>
-      <p>By engaging low-income and working families, KOCO develops leaders who impact public policy and work hard to improve life in local communities.</p>
-    </div>
-    <div class="initiative">
-      <a href="http://www.lvejo.org/" target="_blank" rel="noopener noreferrer">Little Village Environmental Justice Organization (LVEJO)</a>
-      <p>A grassroots organization building power through community organizing, mutual aid, and advocacy in Chicago's Little Village neighborhood. LVEJO works on environmental justice, public transit access, food justice, and community development while centering the leadership of working-class residents.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://thetriibe.com/" target="_blank" rel="noopener noreferrer">The TRiiBE</a>
-      <p>A digital media platform fostering mutual aid and community power through narrative journalism and cultural documentation in Chicago. They coordinate storytelling initiatives, resource sharing, and solidarity networks while amplifying Black voices and building power through grassroots media, arts coverage, and creating spaces for community-driven journalism.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.poboxcollective.org/" target="_blank" rel="noopener noreferrer">PO Box Collective</a>
-      <p>A grassroots community space fostering mutual aid and radical education through art, workshops, and collective organizing in Rogers Park. They coordinate skill-sharing, resource distribution, and solidarity networks while building power through community-led programming, political education, and creating accessible spaces for movement building.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.caarpr.org/" target="_blank" rel="noopener noreferrer">CAARP (Chicago Alliance Against Racist and Political Repression)</a>
-      <p>A grassroots organization fostering mutual aid and community power through anti-racist organizing and political advocacy in Chicago. They coordinate direct support, community defense, and solidarity networks while building power through collective action against racist and political repression, community organizing, and creating spaces for racial justice and liberation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.letusbreathecollective.com/" target="_blank" rel="noopener noreferrer">Let Us Breathe Collective</a>
-      <p>A Black-led organization fostering mutual aid and community power through cultural organizing and abolitionist movement building in Chicago. They coordinate direct support, political education, and solidarity networks while building power through arts activism, transformative justice, and creating spaces for Black liberation and community care.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/southsidetogether/" target="_blank" rel="noopener noreferrer">Southside Together</a>
-      <p>A grassroots collective fostering mutual aid and community power through neighborhood organizing and solidarity work on Chicago's South Side. They coordinate direct support, resource sharing, and community defense initiatives while building power through collective action, political education, and creating spaces for neighborhood-based organizing and mutual support.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/dare2strugglechi/" target="_blank" rel="noopener noreferrer">Dare to Struggle Chicago</a>
-      <p>A revolutionary organization fostering mutual aid and community solidarity through collective organizing in Chicago. They coordinate political education, direct action support, and solidarity networks while building power through community organizing and creating spaces for collective study and struggle.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.southwestcollective.org/" target="_blank" rel="noopener noreferrer">Southwest Collective</a>
-      <p>Breaking down barriers &amp; building up communities on Chicago's southwest side.</p>
-    </div>
-  </section>
-
-  <section id="healthcare" class="city-section">
-    <h2>Healthcare</h2>
-    <div class="initiative">
-      <a href="https://www.bravespacealliance.org/" target="_blank" rel="noopener noreferrer">Brave Space Alliance</a>
-      <p>A Black-led, trans-led LGBTQ+ center fostering mutual aid and community power on the South Side of Chicago. They coordinate direct support services, resource distribution, and solidarity networks while building power through community organizing, trans mutual aid programs, and creating brave spaces for Black and Brown LGBTQ+ people.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://sxhxcollective.org/" target="_blank" rel="noopener noreferrer">Support Ho(s)e</a>
-      <p>A collective of sex workers and allies providing mutual aid, harm reduction, and community support.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.chicagoabortionfund.org/" target="_blank" rel="noopener noreferrer">Chicago Abortion Fund</a>
-      <p>A mutual aid organization providing financial, logistical, and emotional support to people seeking abortion care in Chicago and Illinois. They work to make abortion accessible to everyone through direct funding assistance and community support networks.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.aidschicago.org/" target="_blank" rel="noopener noreferrer">AIDS Foundation Chicago</a>
-      <p>A grassroots organization fostering mutual aid and community power through HIV/AIDS support and health justice in Chicago. They coordinate direct services, resource sharing, and solidarity networks while building power through community health initiatives, advocacy, and creating pathways for equitable healthcare access and support.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.chicagoactionmedical.org/" target="_blank" rel="noopener noreferrer">Chicago Action Medical</a>
-      <p>A collective of street medics fostering mutual aid through direct action medical support and health justice organizing. They coordinate emergency care at protests, medical training workshops, and solidarity networks while building power through community health education, harm reduction, and creating spaces for grassroots healthcare.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/chicarecollective/" target="_blank" rel="noopener noreferrer">Chi Care</a>
-      <p>Help us provide warm meals, clean water, basic necessities, and a restored sense of dignity to individuals experiencing homelessness in Chicagoland.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.swopchicago.org/" target="_blank" rel="noopener noreferrer">Sex Workers Outreach Project Chicago</a>
-      <p>Sex Workers Outreach Project Chicago is a Black-led, grassroots organization dedicated to providing direct aid and advocacy for anyone working in the sex industry.</p>
-    </div>
-  </section>
-
-  <section id="prison-abolition" class="city-section">
-    <h2>Prison Abolition and Prisoner Solidarity</h2>
-    <div class="initiative">
-      <a href="https://believersbailout.org/" target="_blank" rel="noopener noreferrer">Believers Bail Out</a>
-      <p>We are a community led bail fund freeing Muslims from pre-trial &amp; immigration incarceration.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://chicago-community-jail-support.webnode.page/" target="_blank" rel="noopener noreferrer">Chicago Community Jail Support</a>
-      <p>A mutual aid collective providing direct support and resources to people being released from Cook County Jail. They coordinate daily jail support, resource distribution, and solidarity networks while building power through community care, direct action, and creating spaces for support during and after incarceration.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/pushingenvelopes/" target="_blank" rel="noopener noreferrer">Pushing Envelopes</a>
-      <p>A grassroots organization fostering mutual aid and solidarity through letter writing and support for incarcerated LGBTQ+ people. They coordinate pen pal programs, resource sharing, and solidarity networks while building power through prisoner advocacy, community education, and creating spaces for connection across prison walls.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://midwestbookstoprisoners.org/" target="_blank" rel="noopener noreferrer">Midwest Books to Prisoners</a>
-      <p>A volunteer-run organization fostering mutual aid through free book distribution to incarcerated people since 2004. They coordinate book donations, letter writing, and solidarity networks while building power through educational access, resource sharing, and creating spaces for connection and learning across prison walls.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://chicagotorturejustice.org/" target="_blank" rel="noopener noreferrer">Chicago Torture Justice Center</a>
-      <p>A Center for survivors of police torture in Chicago. We are part of &amp; support the movement to end all forms of police violence</p>
-    </div>
-  </section>
-
-  <section id="indigenous" class="city-section">
-    <h2>Indigenous Solidarity</h2>
-    <div class="initiative">
-      <a href="https://www.chinationsyouth.org/" target="_blank" rel="noopener noreferrer">Chi Nations Youth Council</a>
-      <p>Our mission is to create safe space for Native Youth through arts, activism, and education.</p>
-    </div>
-  </section>
-
-  <section id="migrant-support" class="city-section">
-    <h2>Migrant Support</h2>
-    <div class="initiative">
-      <a href="https://refugeecommunityconnection.org/" target="_blank" rel="noopener noreferrer">Refugee Community Connection</a>
-      <p>RCC is an all-volunteer Chicago based mutual aid organization that seeks to ease the transition of our newly arrived neighbors (refugees, asylees, and others forced to flee their home country) into permanent housing in the Chicago area</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/nuevosvecinostiendagratis/" target="_blank" rel="noopener noreferrer">Nuevos Vecinos Free Store</a>
-      <p>Shopping at the Nuevos Vecinos Tienda Gratis (New Neighbors Free Store) is often the first opportunity for new arrivals to replace the clothes and shoes that have served them for more than 4,000 miles.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.casaalfatiha.org/" target="_blank" rel="noopener noreferrer">Casa Al-Fatiha</a>
-      <p>Casa Al-Fatiha is an autonomous, Chicago-based, sanctuary house for LGBTQ+ asylum seekers, people released from detention, and peer supporters.</p>
-    </div>
-  </section>
-        </div>
-      </div>
-        <aside class="toc-container">
-          <nav class="toc" role="navigation" aria-label="Table of Contents" id="toc">
-            <ul class="toc-list">
-          <li class="toc-item">
-            <a href="#mutual-aid" class="toc-link">
-              <span class="toc-number">1.</span>
-              <span class="toc-text">Mutual Aid Networks</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#food-justice" class="toc-link">
-              <span class="toc-number">2.</span>
-              <span class="toc-text">Food Justice</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#housing" class="toc-link">
-              <span class="toc-number">3.</span>
-              <span class="toc-text">Housing Justice</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#social-justice" class="toc-link">
-              <span class="toc-number">4.</span>
-              <span class="toc-text">Social Justice Organizations</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#healthcare" class="toc-link">
-              <span class="toc-number">5.</span>
-              <span class="toc-text">Healthcare</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#prison-abolition" class="toc-link">
-              <span class="toc-number">6.</span>
-              <span class="toc-text">Prison Abolition and Prisoner Solidarity</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#indigenous" class="toc-link">
-              <span class="toc-number">7.</span>
-              <span class="toc-text">Indigenous Solidarity</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#migrant-support" class="toc-link">
-              <span class="toc-number">8.</span>
-              <span class="toc-text">Migrant Support</span>
-            </a>
-          </li>
-            </ul>
-          </nav>
-        </aside>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">Chicago</h1>
+    <p class="meta">
+      <b>55</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      Illinois
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  <script src="/js/city-toc.js" defer></script>
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Chicago</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Chicago…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+  <nav class="toc" aria-label="Sections on this page">
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
+      <span class="current">
+        <span class="current-label">Section ·</span>
+        <span class="current-name">Mutual Aid Networks</span>
+      </span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div id="toc-panel" class="toc-scroll">
+      <a href="#mutual-aid" data-section="mutual-aid"><span class="label">Mutual Aid Networks</span> <span class="count">14</span></a>
+      <a href="#food-justice" data-section="food-justice"><span class="label">Food Justice</span> <span class="count">10</span></a>
+      <a href="#housing" data-section="housing"><span class="label">Housing Justice</span> <span class="count">5</span></a>
+      <a href="#social-justice" data-section="social-justice"><span class="label">Social Justice Organizations</span> <span class="count">10</span></a>
+      <a href="#healthcare" data-section="healthcare"><span class="label">Healthcare</span> <span class="count">7</span></a>
+      <a href="#prison-abolition" data-section="prison-abolition"><span class="label">Prison Abolition and Prisoner Solidarity</span> <span class="count">5</span></a>
+      <a href="#indigenous" data-section="indigenous"><span class="label">Indigenous Solidarity</span> <span class="count">1</span></a>
+      <a href="#migrant-support" data-section="migrant-support"><span class="label">Migrant Support</span> <span class="count">3</span></a>
+    </div>
+  </nav>
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="mutual-aid" class="group-section" data-section="mutual-aid">
+      <h2 class="section-title">Mutual Aid Networks</h2>
+      <ol class="groups">
+        <li data-name="scuttle chicago" data-desc="a grassroots collective coordinating mutual aid and community support initiatives in chicago. they organize direct assistance, resource sharing, and solidarity networks while building community power through collective action and neighborhood organizing.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/scuttle_chicago/" target="_blank" rel="noopener noreferrer">Scuttle Chicago <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots collective coordinating mutual aid and community support initiatives in Chicago. They organize direct assistance, resource sharing, and solidarity networks while building community power through collective action and neighborhood organizing.</p>
+        </li>
+        <li data-name="avondale mutual aid" data-desc="all-volunteer group- avondale, chicago.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/avondalemutualaid/" target="_blank" rel="noopener noreferrer">Avondale Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">All-volunteer group- Avondale, Chicago.</p>
+        </li>
+        <li data-name="edgewater mutual aid" data-desc="eman: abolitionist mutual aid network in edgewater, chicago">
+          <div class="row">
+            <a class="name" href="https://linktr.ee/edgewatermutualaid" target="_blank" rel="noopener noreferrer">Edgewater Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">linktr.ee</span>
+          </div>
+          <p class="desc">EMAN: Abolitionist Mutual Aid Network in Edgewater, Chicago</p>
+        </li>
+        <li data-name="evanston community fridges" data-desc="a food based mutual aid project led by the community for the community!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/evanstonfridges/" target="_blank" rel="noopener noreferrer">Evanston Community Fridges <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A food based mutual aid project led by the community for the community!</p>
+        </li>
+        <li data-name="mutual aid dawning" data-desc="a mutual aid collective building liberation culture and projects in the suburbs of shikaakwa (settler named chicago, il).">
+          <div class="row">
+            <a class="name" href="https://www.mutualaiddawning.org/" target="_blank" rel="noopener noreferrer">Mutual Aid Dawning <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">mutualaiddawning.org</span>
+          </div>
+          <p class="desc">A mutual aid collective building liberation culture and projects in the suburbs of shikaakwa (settler named Chicago, IL).</p>
+        </li>
+        <li data-name="logan square mutual aid" data-desc="logan square mutual aid is here to make helping one another easy. in the face of widespread inequity and an ongoing pandemic, the most effective thing we can do is to be there for each other.">
+          <div class="row">
+            <a class="name" href="https://www.logansquaremutualaid.org/" target="_blank" rel="noopener noreferrer">Logan Square Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">logansquaremutualaid.org</span>
+          </div>
+          <p class="desc">Logan Square Mutual Aid is here to make helping one another easy. In the face of widespread inequity and an ongoing pandemic, the most effective thing we can do is to be there for each other.</p>
+        </li>
+        <li data-name="pilsen solidarity network" data-desc="neighbor to neighbor mutual aid">
+          <div class="row">
+            <a class="name" href="https://pilsenmutualaid.org/" target="_blank" rel="noopener noreferrer">Pilsen Solidarity Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">pilsenmutualaid.org</span>
+          </div>
+          <p class="desc">Neighbor to Neighbor Mutual Aid</p>
+        </li>
+        <li data-name="westside mutual aid" data-desc="mutual aid network between austin, east garfield park, north lawndale, west garfield park, and west loop.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/westsidemutualaid/" target="_blank" rel="noopener noreferrer">Westside Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Mutual aid network between Austin, East Garfield Park, North Lawndale, West Garfield Park, and West Loop.</p>
+        </li>
+        <li data-name="albany park mutual aid" data-desc="we support neighbors in need by providing goods such as groceries, household supplies, diapers, and the like. we also provide advice and resources according to specific requests.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/albanyparkaid/" target="_blank" rel="noopener noreferrer">Albany Park Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We support neighbors in need by providing goods such as groceries, household supplies, diapers, and the like. We also provide advice and resources according to specific requests.</p>
+        </li>
+        <li data-name="hp solidarity network" data-desc="neighbors helping neighbors in humboldt park.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/hpsolidaritynetwork/" target="_blank" rel="noopener noreferrer">HP Solidarity Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Neighbors helping neighbors in Humboldt Park.</p>
+        </li>
+        <li data-name="west town mutual aid" data-desc="west town mutual aid is an all-volunteer, grassroots group operating in chicago in ukrainian village, bucktown, wicker park, and the surrounding areas.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/westtownmutualaid/" target="_blank" rel="noopener noreferrer">West Town Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">West Town Mutual Aid is an all-volunteer, grassroots group operating in Chicago in Ukrainian Village, Bucktown, Wicker Park, and the surrounding areas.</p>
+        </li>
+        <li data-name="irving park mutual aid" data-desc="working to provide support &amp; relief to our neighbors in irving park impacted by the covid-19 crisis.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/irvingparkmutualaid/" target="_blank" rel="noopener noreferrer">Irving Park Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Working to provide support &amp; relief to our neighbors in Irving Park impacted by the COVID-19 crisis.</p>
+        </li>
+        <li data-name="elgin in solidarity with black lives matter" data-desc="organize, educate, agitate, liberate! this is a digital community space to share resources &amp; knowledge.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/elginsolidarityblm/" target="_blank" rel="noopener noreferrer">Elgin in Solidarity with Black Lives Matter <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Organize, educate, agitate, liberate! This is a digital community space to share resources &amp; knowledge.</p>
+        </li>
+        <li data-name="mayfair mutual aid" data-desc="neighbors help with grocery and medicine pick up/delivery, provide cash assistance for rent and other bills, and share resources for medical care, employment, and other help.">
+          <div class="row">
+            <a class="name" href="https://www.mayfairmutualaid.com/" target="_blank" rel="noopener noreferrer">Mayfair Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">mayfairmutualaid.com</span>
+          </div>
+          <p class="desc">Neighbors help with grocery and medicine pick up/delivery, provide cash assistance for rent and other bills, and share resources for medical care, employment, and other help.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="food-justice" class="group-section" data-section="food-justice">
+      <h2 class="section-title">Food Justice</h2>
+      <ol class="groups">
+        <li data-name="food not bombs chicago" data-desc="sharing free vegan and vegetarian meals with anyone who is hungry.">
+          <div class="row">
+            <a class="name" href="https://www.foodnotbombs.net/illinois.html" target="_blank" rel="noopener noreferrer">Food Not Bombs Chicago <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">foodnotbombs.net</span>
+          </div>
+          <p class="desc">Sharing free vegan and vegetarian meals with anyone who is hungry.</p>
+        </li>
+        <li data-name="rogers park food not bombs" data-desc="a grassroots collective fostering mutual aid through free food distribution and community care in rogers park. they coordinate weekly meal shares, food recovery initiatives, and solidarity networks while building power through food justice organizing and creating spaces for collective nourishment.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/rogersparkfoodnotbombs/" target="_blank" rel="noopener noreferrer">Rogers Park Food Not Bombs <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots collective fostering mutual aid through free food distribution and community care in Rogers Park. They coordinate weekly meal shares, food recovery initiatives, and solidarity networks while building power through food justice organizing and creating spaces for collective nourishment.</p>
+        </li>
+        <li data-name="global gardens chicago" data-desc="a vacant lot transformed into a vibrant farm in which 75+ refugees grow vegetables in chicago's albany park neighborhood.">
+          <div class="row">
+            <a class="name" href="https://www.globalgardenschicago.org/" target="_blank" rel="noopener noreferrer">Global Gardens Chicago <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">globalgardenschicago.org</span>
+          </div>
+          <p class="desc">A vacant lot transformed into a vibrant farm in which 75+ refugees grow vegetables in Chicago's Albany Park neighborhood.</p>
+        </li>
+        <li data-name="food not bombs humboldt park" data-desc="sharing groceries in chicago's humboldt park neighborhood.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/foodnotbombshp/" target="_blank" rel="noopener noreferrer">Food Not Bombs Humboldt Park <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Sharing groceries in Chicago's Humboldt Park neighborhood.</p>
+        </li>
+        <li data-name="veggie mijas chicago" data-desc="a collective focusing on food justice, sustainability &amp; plant-based lifestyles.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/veggiemijaschicago/" target="_blank" rel="noopener noreferrer">Veggie Mijas Chicago <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A collective focusing on food justice, sustainability &amp; plant-based lifestyles.</p>
+        </li>
+        <li data-name="hammond community garden" data-desc="a food justice/sovereignty project which seeks to bring ​neighbors and local community members together in a ​collaborative setting, engage in mutual aid, and ​collectively meet our need for fresh, healthy food to be ​freely available and shared.">
+          <div class="row">
+            <a class="name" href="https://www.facebook.com/hammondcommunitygarden/" target="_blank" rel="noopener noreferrer">Hammond Community Garden <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">facebook.com</span>
+          </div>
+          <p class="desc">A food justice/sovereignty project which seeks to bring ​neighbors and local community members together in a ​collaborative setting, engage in mutual aid, and ​collectively meet our need for fresh, healthy food to be ​freely available and shared.</p>
+        </li>
+        <li data-name="chicagoland food sovereignty coalition" data-desc="cfsc is a coalition of chicago and cook county mutual aid groups working together to create #foodsovereignty for all people in all of our communities.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/foodsovereigntychicago/" target="_blank" rel="noopener noreferrer">Chicagoland Food Sovereignty Coalition <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">CFSC is a coalition of Chicago and Cook County mutual aid groups working together to create #foodsovereignty for all people in all of our communities.</p>
+        </li>
+        <li data-name="the love fridge" data-desc="the love fridge is a mutual aid group working to ensure every chicagoan has access to fresh food by maintaining free community fridges in neighborhoods across the city.">
+          <div class="row">
+            <a class="name" href="https://www.thelovefridge.com/" target="_blank" rel="noopener noreferrer">The Love Fridge <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">thelovefridge.com</span>
+          </div>
+          <p class="desc">The Love Fridge is a mutual aid group working to ensure every Chicagoan has access to fresh food by maintaining free community fridges in neighborhoods across the city.</p>
+        </li>
+        <li data-name="chicagoland food sovereignty coalition" data-desc="cfsc is a coalition of autonomous mutual aid groups working to reimagine a resilient, sustainable and equitable local food system based on food sovereignty.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/foodsovereigntychicago/" target="_blank" rel="noopener noreferrer">Chicagoland Food Sovereignty Coalition <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">CFSC is a coalition of autonomous mutual aid groups working to reimagine a resilient, sustainable and equitable local food system based on food sovereignty.</p>
+        </li>
+        <li data-name="rogers park free store" data-desc="mutual aid space for the rogers park neighborhood. open hours are on saturday from 12-2pm">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/freestore_rogerspark/" target="_blank" rel="noopener noreferrer">Rogers Park Free Store <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Mutual Aid space for the Rogers Park neighborhood. Open hours are on Saturday from 12-2pm</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="housing" class="group-section" data-section="housing">
+      <h2 class="section-title">Housing Justice</h2>
+      <ol class="groups">
+        <li data-name="chicago coalition to end homelessness" data-desc="a statewide organization fostering mutual aid and community power through housing justice and homelessness prevention across illinois. they coordinate legal aid, direct support, and solidarity networks while building power through policy advocacy, community organizing, and creating pathways for housing access and stability.">
+          <div class="row">
+            <a class="name" href="https://chicagohomeless.org/" target="_blank" rel="noopener noreferrer">Chicago Coalition to End Homelessness <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">chicagohomeless.org</span>
+          </div>
+          <p class="desc">A statewide organization fostering mutual aid and community power through housing justice and homelessness prevention across Illinois. They coordinate legal aid, direct support, and solidarity networks while building power through policy advocacy, community organizing, and creating pathways for housing access and stability.</p>
+        </li>
+        <li data-name="chicago warming centers" data-desc="network of warming centers and emergency shelters providing support during extreme weather.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/chi_warmingcenters/" target="_blank" rel="noopener noreferrer">Chicago Warming Centers <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Network of warming centers and emergency shelters providing support during extreme weather.</p>
+        </li>
+        <li data-name="eastlake tenants union" data-desc="organizing to improve the quality of life in east lake managed buildings across chicago">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/eastlaketenantsunion/" target="_blank" rel="noopener noreferrer">Eastlake Tenants Union <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Organizing to improve the quality of life in East Lake managed buildings across Chicago</p>
+        </li>
+        <li data-name="tenants united chicago" data-desc="our mission is to build neighborhood justice and grassroots democracy by developing autonomous tenants unions that are welcoming for all.">
+          <div class="row">
+            <a class="name" href="https://tenantsunitedchicago.org/" target="_blank" rel="noopener noreferrer">Tenants United Chicago <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">tenantsunitedchicago.org</span>
+          </div>
+          <p class="desc">Our mission is to build neighborhood justice and grassroots democracy by developing autonomous tenants unions that are welcoming for all.</p>
+        </li>
+        <li data-name="autonomous yurt union chicago" data-desc="autonomous yurt-inspired design builds &amp; deploys in support of unhoused neighbors in chicago">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/yurtunionchicago/" target="_blank" rel="noopener noreferrer">Autonomous Yurt Union Chicago <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">autonomous yurt-inspired design builds &amp; deploys in support of unhoused neighbors in Chicago</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="social-justice" class="group-section" data-section="social-justice">
+      <h2 class="section-title">Social Justice Organizations</h2>
+      <ol class="groups">
+        <li data-name="unraveled press" data-desc="a radical publishing collective coordinating mutual aid and community support initiatives through accessible literature and zine distribution in chicago. they organize resource sharing, political education, and solidarity networks while building community power through radical publishing and collective organizing.">
+          <div class="row">
+            <a class="name" href="https://unraveledpress.com/" target="_blank" rel="noopener noreferrer">Unraveled Press <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">unraveledpress.com</span>
+          </div>
+          <p class="desc">A radical publishing collective coordinating mutual aid and community support initiatives through accessible literature and zine distribution in Chicago. They organize resource sharing, political education, and solidarity networks while building community power through radical publishing and collective organizing.</p>
+        </li>
+        <li data-name="kenwood oakland community organization" data-desc="by engaging low-income and working families, koco develops leaders who impact public policy and work hard to improve life in local communities.">
+          <div class="row">
+            <a class="name" href="https://kocoonline.org/" target="_blank" rel="noopener noreferrer">Kenwood Oakland Community Organization <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">kocoonline.org</span>
+          </div>
+          <p class="desc">By engaging low-income and working families, KOCO develops leaders who impact public policy and work hard to improve life in local communities.</p>
+        </li>
+        <li data-name="little village environmental justice organization (lvejo)" data-desc="a grassroots organization building power through community organizing, mutual aid, and advocacy in chicago's little village neighborhood. lvejo works on environmental justice, public transit access, food justice, and community development while centering the leadership of working-class residents.">
+          <div class="row">
+            <a class="name" href="http://www.lvejo.org/" target="_blank" rel="noopener noreferrer">Little Village Environmental Justice Organization (LVEJO) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">lvejo.org</span>
+          </div>
+          <p class="desc">A grassroots organization building power through community organizing, mutual aid, and advocacy in Chicago's Little Village neighborhood. LVEJO works on environmental justice, public transit access, food justice, and community development while centering the leadership of working-class residents.</p>
+        </li>
+        <li data-name="the triibe" data-desc="a digital media platform fostering mutual aid and community power through narrative journalism and cultural documentation in chicago. they coordinate storytelling initiatives, resource sharing, and solidarity networks while amplifying black voices and building power through grassroots media, arts coverage, and creating spaces for community-driven journalism.">
+          <div class="row">
+            <a class="name" href="https://thetriibe.com/" target="_blank" rel="noopener noreferrer">The TRiiBE <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">thetriibe.com</span>
+          </div>
+          <p class="desc">A digital media platform fostering mutual aid and community power through narrative journalism and cultural documentation in Chicago. They coordinate storytelling initiatives, resource sharing, and solidarity networks while amplifying Black voices and building power through grassroots media, arts coverage, and creating spaces for community-driven journalism.</p>
+        </li>
+        <li data-name="po box collective" data-desc="a grassroots community space fostering mutual aid and radical education through art, workshops, and collective organizing in rogers park. they coordinate skill-sharing, resource distribution, and solidarity networks while building power through community-led programming, political education, and creating accessible spaces for movement building.">
+          <div class="row">
+            <a class="name" href="https://www.poboxcollective.org/" target="_blank" rel="noopener noreferrer">PO Box Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">poboxcollective.org</span>
+          </div>
+          <p class="desc">A grassroots community space fostering mutual aid and radical education through art, workshops, and collective organizing in Rogers Park. They coordinate skill-sharing, resource distribution, and solidarity networks while building power through community-led programming, political education, and creating accessible spaces for movement building.</p>
+        </li>
+        <li data-name="caarp (chicago alliance against racist and political repression)" data-desc="a grassroots organization fostering mutual aid and community power through anti-racist organizing and political advocacy in chicago. they coordinate direct support, community defense, and solidarity networks while building power through collective action against racist and political repression, community organizing, and creating spaces for racial justice and liberation.">
+          <div class="row">
+            <a class="name" href="https://www.caarpr.org/" target="_blank" rel="noopener noreferrer">CAARP (Chicago Alliance Against Racist and Political Repression) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">caarpr.org</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community power through anti-racist organizing and political advocacy in Chicago. They coordinate direct support, community defense, and solidarity networks while building power through collective action against racist and political repression, community organizing, and creating spaces for racial justice and liberation.</p>
+        </li>
+        <li data-name="let us breathe collective" data-desc="a black-led organization fostering mutual aid and community power through cultural organizing and abolitionist movement building in chicago. they coordinate direct support, political education, and solidarity networks while building power through arts activism, transformative justice, and creating spaces for black liberation and community care.">
+          <div class="row">
+            <a class="name" href="https://www.letusbreathecollective.com/" target="_blank" rel="noopener noreferrer">Let Us Breathe Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">letusbreathecollective.com</span>
+          </div>
+          <p class="desc">A Black-led organization fostering mutual aid and community power through cultural organizing and abolitionist movement building in Chicago. They coordinate direct support, political education, and solidarity networks while building power through arts activism, transformative justice, and creating spaces for Black liberation and community care.</p>
+        </li>
+        <li data-name="southside together" data-desc="a grassroots collective fostering mutual aid and community power through neighborhood organizing and solidarity work on chicago's south side. they coordinate direct support, resource sharing, and community defense initiatives while building power through collective action, political education, and creating spaces for neighborhood-based organizing and mutual support.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/southsidetogether/" target="_blank" rel="noopener noreferrer">Southside Together <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots collective fostering mutual aid and community power through neighborhood organizing and solidarity work on Chicago's South Side. They coordinate direct support, resource sharing, and community defense initiatives while building power through collective action, political education, and creating spaces for neighborhood-based organizing and mutual support.</p>
+        </li>
+        <li data-name="dare to struggle chicago" data-desc="a revolutionary organization fostering mutual aid and community solidarity through collective organizing in chicago. they coordinate political education, direct action support, and solidarity networks while building power through community organizing and creating spaces for collective study and struggle.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/dare2strugglechi/" target="_blank" rel="noopener noreferrer">Dare to Struggle Chicago <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A revolutionary organization fostering mutual aid and community solidarity through collective organizing in Chicago. They coordinate political education, direct action support, and solidarity networks while building power through community organizing and creating spaces for collective study and struggle.</p>
+        </li>
+        <li data-name="southwest collective" data-desc="breaking down barriers &amp; building up communities on chicago's southwest side.">
+          <div class="row">
+            <a class="name" href="https://www.southwestcollective.org/" target="_blank" rel="noopener noreferrer">Southwest Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">southwestcollective.org</span>
+          </div>
+          <p class="desc">Breaking down barriers &amp; building up communities on Chicago's southwest side.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="healthcare" class="group-section" data-section="healthcare">
+      <h2 class="section-title">Healthcare</h2>
+      <ol class="groups">
+        <li data-name="brave space alliance" data-desc="a black-led, trans-led lgbtq+ center fostering mutual aid and community power on the south side of chicago. they coordinate direct support services, resource distribution, and solidarity networks while building power through community organizing, trans mutual aid programs, and creating brave spaces for black and brown lgbtq+ people.">
+          <div class="row">
+            <a class="name" href="https://www.bravespacealliance.org/" target="_blank" rel="noopener noreferrer">Brave Space Alliance <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bravespacealliance.org</span>
+          </div>
+          <p class="desc">A Black-led, trans-led LGBTQ+ center fostering mutual aid and community power on the South Side of Chicago. They coordinate direct support services, resource distribution, and solidarity networks while building power through community organizing, trans mutual aid programs, and creating brave spaces for Black and Brown LGBTQ+ people.</p>
+        </li>
+        <li data-name="support ho(s)e" data-desc="a collective of sex workers and allies providing mutual aid, harm reduction, and community support.">
+          <div class="row">
+            <a class="name" href="https://sxhxcollective.org/" target="_blank" rel="noopener noreferrer">Support Ho(s)e <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sxhxcollective.org</span>
+          </div>
+          <p class="desc">A collective of sex workers and allies providing mutual aid, harm reduction, and community support.</p>
+        </li>
+        <li data-name="chicago abortion fund" data-desc="a mutual aid organization providing financial, logistical, and emotional support to people seeking abortion care in chicago and illinois. they work to make abortion accessible to everyone through direct funding assistance and community support networks.">
+          <div class="row">
+            <a class="name" href="https://www.chicagoabortionfund.org/" target="_blank" rel="noopener noreferrer">Chicago Abortion Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">chicagoabortionfund.org</span>
+          </div>
+          <p class="desc">A mutual aid organization providing financial, logistical, and emotional support to people seeking abortion care in Chicago and Illinois. They work to make abortion accessible to everyone through direct funding assistance and community support networks.</p>
+        </li>
+        <li data-name="aids foundation chicago" data-desc="a grassroots organization fostering mutual aid and community power through hiv/aids support and health justice in chicago. they coordinate direct services, resource sharing, and solidarity networks while building power through community health initiatives, advocacy, and creating pathways for equitable healthcare access and support.">
+          <div class="row">
+            <a class="name" href="https://www.aidschicago.org/" target="_blank" rel="noopener noreferrer">AIDS Foundation Chicago <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">aidschicago.org</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community power through HIV/AIDS support and health justice in Chicago. They coordinate direct services, resource sharing, and solidarity networks while building power through community health initiatives, advocacy, and creating pathways for equitable healthcare access and support.</p>
+        </li>
+        <li data-name="chicago action medical" data-desc="a collective of street medics fostering mutual aid through direct action medical support and health justice organizing. they coordinate emergency care at protests, medical training workshops, and solidarity networks while building power through community health education, harm reduction, and creating spaces for grassroots healthcare.">
+          <div class="row">
+            <a class="name" href="https://www.chicagoactionmedical.org/" target="_blank" rel="noopener noreferrer">Chicago Action Medical <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">chicagoactionmedical.org</span>
+          </div>
+          <p class="desc">A collective of street medics fostering mutual aid through direct action medical support and health justice organizing. They coordinate emergency care at protests, medical training workshops, and solidarity networks while building power through community health education, harm reduction, and creating spaces for grassroots healthcare.</p>
+        </li>
+        <li data-name="chi care" data-desc="help us provide warm meals, clean water, basic necessities, and a restored sense of dignity to individuals experiencing homelessness in chicagoland.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/chicarecollective/" target="_blank" rel="noopener noreferrer">Chi Care <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Help us provide warm meals, clean water, basic necessities, and a restored sense of dignity to individuals experiencing homelessness in Chicagoland.</p>
+        </li>
+        <li data-name="sex workers outreach project chicago" data-desc="sex workers outreach project chicago is a black-led, grassroots organization dedicated to providing direct aid and advocacy for anyone working in the sex industry.">
+          <div class="row">
+            <a class="name" href="https://www.swopchicago.org/" target="_blank" rel="noopener noreferrer">Sex Workers Outreach Project Chicago <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">swopchicago.org</span>
+          </div>
+          <p class="desc">Sex Workers Outreach Project Chicago is a Black-led, grassroots organization dedicated to providing direct aid and advocacy for anyone working in the sex industry.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="prison-abolition" class="group-section" data-section="prison-abolition">
+      <h2 class="section-title">Prison Abolition and Prisoner Solidarity</h2>
+      <ol class="groups">
+        <li data-name="believers bail out" data-desc="we are a community led bail fund freeing muslims from pre-trial &amp; immigration incarceration.">
+          <div class="row">
+            <a class="name" href="https://believersbailout.org/" target="_blank" rel="noopener noreferrer">Believers Bail Out <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">believersbailout.org</span>
+          </div>
+          <p class="desc">We are a community led bail fund freeing Muslims from pre-trial &amp; immigration incarceration.</p>
+        </li>
+        <li data-name="chicago community jail support" data-desc="a mutual aid collective providing direct support and resources to people being released from cook county jail. they coordinate daily jail support, resource distribution, and solidarity networks while building power through community care, direct action, and creating spaces for support during and after incarceration.">
+          <div class="row">
+            <a class="name" href="https://chicago-community-jail-support.webnode.page/" target="_blank" rel="noopener noreferrer">Chicago Community Jail Support <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">chicago-community-jail-support.webnode.page</span>
+          </div>
+          <p class="desc">A mutual aid collective providing direct support and resources to people being released from Cook County Jail. They coordinate daily jail support, resource distribution, and solidarity networks while building power through community care, direct action, and creating spaces for support during and after incarceration.</p>
+        </li>
+        <li data-name="pushing envelopes" data-desc="a grassroots organization fostering mutual aid and solidarity through letter writing and support for incarcerated lgbtq+ people. they coordinate pen pal programs, resource sharing, and solidarity networks while building power through prisoner advocacy, community education, and creating spaces for connection across prison walls.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/pushingenvelopes/" target="_blank" rel="noopener noreferrer">Pushing Envelopes <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and solidarity through letter writing and support for incarcerated LGBTQ+ people. They coordinate pen pal programs, resource sharing, and solidarity networks while building power through prisoner advocacy, community education, and creating spaces for connection across prison walls.</p>
+        </li>
+        <li data-name="midwest books to prisoners" data-desc="a volunteer-run organization fostering mutual aid through free book distribution to incarcerated people since 2004. they coordinate book donations, letter writing, and solidarity networks while building power through educational access, resource sharing, and creating spaces for connection and learning across prison walls.">
+          <div class="row">
+            <a class="name" href="https://midwestbookstoprisoners.org/" target="_blank" rel="noopener noreferrer">Midwest Books to Prisoners <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">midwestbookstoprisoners.org</span>
+          </div>
+          <p class="desc">A volunteer-run organization fostering mutual aid through free book distribution to incarcerated people since 2004. They coordinate book donations, letter writing, and solidarity networks while building power through educational access, resource sharing, and creating spaces for connection and learning across prison walls.</p>
+        </li>
+        <li data-name="chicago torture justice center" data-desc="a center for survivors of police torture in chicago. we are part of &amp; support the movement to end all forms of police violence">
+          <div class="row">
+            <a class="name" href="https://chicagotorturejustice.org/" target="_blank" rel="noopener noreferrer">Chicago Torture Justice Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">chicagotorturejustice.org</span>
+          </div>
+          <p class="desc">A Center for survivors of police torture in Chicago. We are part of &amp; support the movement to end all forms of police violence</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="indigenous" class="group-section" data-section="indigenous">
+      <h2 class="section-title">Indigenous Solidarity</h2>
+      <ol class="groups">
+        <li data-name="chi nations youth council" data-desc="our mission is to create safe space for native youth through arts, activism, and education.">
+          <div class="row">
+            <a class="name" href="https://www.chinationsyouth.org/" target="_blank" rel="noopener noreferrer">Chi Nations Youth Council <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">chinationsyouth.org</span>
+          </div>
+          <p class="desc">Our mission is to create safe space for Native Youth through arts, activism, and education.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="migrant-support" class="group-section" data-section="migrant-support">
+      <h2 class="section-title">Migrant Support</h2>
+      <ol class="groups">
+        <li data-name="refugee community connection" data-desc="rcc is an all-volunteer chicago based mutual aid organization that seeks to ease the transition of our newly arrived neighbors (refugees, asylees, and others forced to flee their home country) into permanent housing in the chicago area">
+          <div class="row">
+            <a class="name" href="https://refugeecommunityconnection.org/" target="_blank" rel="noopener noreferrer">Refugee Community Connection <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">refugeecommunityconnection.org</span>
+          </div>
+          <p class="desc">RCC is an all-volunteer Chicago based mutual aid organization that seeks to ease the transition of our newly arrived neighbors (refugees, asylees, and others forced to flee their home country) into permanent housing in the Chicago area</p>
+        </li>
+        <li data-name="nuevos vecinos free store" data-desc="shopping at the nuevos vecinos tienda gratis (new neighbors free store) is often the first opportunity for new arrivals to replace the clothes and shoes that have served them for more than 4,000 miles.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nuevosvecinostiendagratis/" target="_blank" rel="noopener noreferrer">Nuevos Vecinos Free Store <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Shopping at the Nuevos Vecinos Tienda Gratis (New Neighbors Free Store) is often the first opportunity for new arrivals to replace the clothes and shoes that have served them for more than 4,000 miles.</p>
+        </li>
+        <li data-name="casa al-fatiha" data-desc="casa al-fatiha is an autonomous, chicago-based, sanctuary house for lgbtq+ asylum seekers, people released from detention, and peer supporters.">
+          <div class="row">
+            <a class="name" href="https://www.casaalfatiha.org/" target="_blank" rel="noopener noreferrer">Casa Al-Fatiha <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">casaalfatiha.org</span>
+          </div>
+          <p class="desc">Casa Al-Fatiha is an autonomous, Chicago-based, sanctuary house for LGBTQ+ asylum seekers, people released from detention, and peer supporters.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

@@ -1,129 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Triangle Area Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Triangle Area. Connect with local organizations and community resources.">
+  <title>Triangle Area — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Triangle Area.">
   <link rel="canonical" href="https://organize.directory/raleigh-durham-ch">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Triangle Area Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Triangle Area. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Triangle Area — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Triangle Area.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/raleigh-durham-ch">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/north-carolina">North Carolina</a>
-          <span>›</span>
-          <span>Triangle Area</span>
-        </div>
+<main id="main">
 
-        <h1>Triangle Area</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/north-carolina">North Carolina</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Triangle Area</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="main" class="city-section">
-    <div class="initiative">
-      <a href="https://www.instagram.com/feeddurhamnc/" target="_blank" rel="noopener noreferrer">Feed Durham NC</a>
-      <p>A grassroots mutual aid collective organizing food distribution and community support in Durham. They coordinate food rescue, resource sharing, and direct support while building sustainable networks of food access and community care.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://durhambeyondpolicing.org/" target="_blank" rel="noopener noreferrer">Durham Beyond Policing</a>
-      <p>A grassroots coalition organizing mutual aid and community support while building towards a Durham that invests in people, not police. They coordinate resource sharing, direct support initiatives, and community organizing while advocating for transformative justice and community-led safety solutions.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.paulimurraycenter.com/" target="_blank" rel="noopener noreferrer">Pauli Murray Center for History &amp; Social Justice</a>
-      <p>A historic site and community center dedicated to advancing social justice through preserving the legacy of Rev. Dr. Pauli Murray, a groundbreaking civil rights activist, legal scholar, feminist, author, and Episcopal priest. They coordinate educational programs, community dialogues, arts initiatives, and mutual aid organizing while connecting Durham's history of activism to contemporary human rights issues.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.rainbowcollectiveforchange.org/" target="_blank" rel="noopener noreferrer">Rainbow Collective for Change</a>
-      <p>An organization building mutual aid networks and community support for LGBTQ+ families with children in Durham. They coordinate direct support through playgroups, educational programs, and family resources while building inclusive spaces and advocating for LGBTQ+ family equity through community organizing and solidarity networks.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/triangleart4aid/" target="_blank" rel="noopener noreferrer">Triangle Art for Aid</a>
-      <p>A mutual aid collective organizing art-based fundraising and community support in the Triangle area. They coordinate resource sharing and direct support through art sales and creative initiatives while building networks of solidarity between artists and community needs.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/durhamprisonletters/" target="_blank" rel="noopener noreferrer">Durham Prison Letters</a>
-      <p>A mutual aid collective providing support and connection to incarcerated individuals in Durham through letter writing and resource sharing. They coordinate correspondence, educational materials, and solidarity networks while working to break isolation and build connections between communities inside and outside prison walls.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/comradesinthecommons/" target="_blank" rel="noopener noreferrer">Comrades in the Commons</a>
-      <p>A mutual aid collective organizing community support and resource sharing in Durham. They coordinate direct support initiatives, solidarity networks, and community education while building power through collective action and grassroots organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://solidarityhubs.org/" target="_blank" rel="noopener noreferrer">People's Solidarity Hub</a>
-      <p>A mutual aid collective organizing community support and resource sharing in Durham. They coordinate direct support initiatives, solidarity networks, and community spaces while building sustainable networks of mutual aid through shared resources, education, and collective organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.trianglemutualaid.org/" target="_blank" rel="noopener noreferrer">Triangle Mutual Aid</a>
-      <p>Point of connection between residents, communities + mutual aid projects in Carrboro, Hillsborough, Durham + Chapel Hill.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/carrborofreemarket/" target="_blank" rel="noopener noreferrer">Carrboro Free Market</a>
-      <p>A community-driven mutual aid initiative organizing free resource sharing and distribution in Carrboro. They coordinate regular free markets, facilitate direct community support, and build networks of solidarity through the exchange of goods, resources, and skills.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/activated_nc/" target="_blank" rel="noopener noreferrer">Activated NC</a>
-      <p>Southern Resistance</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/trianglehealthcareradicals" target="_blank" rel="noopener noreferrer">Triangle Healthcare Radicals</a>
-      <p>A collective of healthcare workers organizing mutual aid and community support initiatives in the Triangle region. They coordinate resource sharing, health education, and direct support while building networks of solidarity and care to address healthcare access and equity in North Carolina communities.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/triangleabortionaccess/" target="_blank" rel="noopener noreferrer">Triangle Abortion Access</a>
-      <p>A mutual aid collective organizing support and resources for abortion access in the Triangle region. They coordinate direct support, resource sharing, and solidarity networks while building community power to ensure reproductive healthcare accessibility and justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/triangleguerrillacinema/" target="_blank" rel="noopener noreferrer">Triangle Guerrilla Cinema</a>
-      <p>A mutual aid collective organizing free film screenings and cultural programming in the Triangle region. They coordinate community resources, educational events, and direct support while building networks of solidarity through accessible arts and radical cinema.</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Triangle Area</h1>
+    <p class="meta">
+      <b>14</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      North Carolina
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Triangle Area</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Triangle Area…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="main" class="group-section" data-section="main">
+      <ol class="groups">
+        <li data-name="feed durham nc" data-desc="a grassroots mutual aid collective organizing food distribution and community support in durham. they coordinate food rescue, resource sharing, and direct support while building sustainable networks of food access and community care.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/feeddurhamnc/" target="_blank" rel="noopener noreferrer">Feed Durham NC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots mutual aid collective organizing food distribution and community support in Durham. They coordinate food rescue, resource sharing, and direct support while building sustainable networks of food access and community care.</p>
+        </li>
+        <li data-name="durham beyond policing" data-desc="a grassroots coalition organizing mutual aid and community support while building towards a durham that invests in people, not police. they coordinate resource sharing, direct support initiatives, and community organizing while advocating for transformative justice and community-led safety solutions.">
+          <div class="row">
+            <a class="name" href="https://durhambeyondpolicing.org/" target="_blank" rel="noopener noreferrer">Durham Beyond Policing <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">durhambeyondpolicing.org</span>
+          </div>
+          <p class="desc">A grassroots coalition organizing mutual aid and community support while building towards a Durham that invests in people, not police. They coordinate resource sharing, direct support initiatives, and community organizing while advocating for transformative justice and community-led safety solutions.</p>
+        </li>
+        <li data-name="pauli murray center for history &amp; social justice" data-desc="a historic site and community center dedicated to advancing social justice through preserving the legacy of rev. dr. pauli murray, a groundbreaking civil rights activist, legal scholar, feminist, author, and episcopal priest. they coordinate educational programs, community dialogues, arts initiatives, and mutual aid organizing while connecting durham's history of activism to contemporary human rights issues.">
+          <div class="row">
+            <a class="name" href="https://www.paulimurraycenter.com/" target="_blank" rel="noopener noreferrer">Pauli Murray Center for History &amp; Social Justice <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">paulimurraycenter.com</span>
+          </div>
+          <p class="desc">A historic site and community center dedicated to advancing social justice through preserving the legacy of Rev. Dr. Pauli Murray, a groundbreaking civil rights activist, legal scholar, feminist, author, and Episcopal priest. They coordinate educational programs, community dialogues, arts initiatives, and mutual aid organizing while connecting Durham's history of activism to contemporary human rights issues.</p>
+        </li>
+        <li data-name="rainbow collective for change" data-desc="an organization building mutual aid networks and community support for lgbtq+ families with children in durham. they coordinate direct support through playgroups, educational programs, and family resources while building inclusive spaces and advocating for lgbtq+ family equity through community organizing and solidarity networks.">
+          <div class="row">
+            <a class="name" href="https://www.rainbowcollectiveforchange.org/" target="_blank" rel="noopener noreferrer">Rainbow Collective for Change <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">rainbowcollectiveforchange.org</span>
+          </div>
+          <p class="desc">An organization building mutual aid networks and community support for LGBTQ+ families with children in Durham. They coordinate direct support through playgroups, educational programs, and family resources while building inclusive spaces and advocating for LGBTQ+ family equity through community organizing and solidarity networks.</p>
+        </li>
+        <li data-name="triangle art for aid" data-desc="a mutual aid collective organizing art-based fundraising and community support in the triangle area. they coordinate resource sharing and direct support through art sales and creative initiatives while building networks of solidarity between artists and community needs.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/triangleart4aid/" target="_blank" rel="noopener noreferrer">Triangle Art for Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid collective organizing art-based fundraising and community support in the Triangle area. They coordinate resource sharing and direct support through art sales and creative initiatives while building networks of solidarity between artists and community needs.</p>
+        </li>
+        <li data-name="durham prison letters" data-desc="a mutual aid collective providing support and connection to incarcerated individuals in durham through letter writing and resource sharing. they coordinate correspondence, educational materials, and solidarity networks while working to break isolation and build connections between communities inside and outside prison walls.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/durhamprisonletters/" target="_blank" rel="noopener noreferrer">Durham Prison Letters <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid collective providing support and connection to incarcerated individuals in Durham through letter writing and resource sharing. They coordinate correspondence, educational materials, and solidarity networks while working to break isolation and build connections between communities inside and outside prison walls.</p>
+        </li>
+        <li data-name="comrades in the commons" data-desc="a mutual aid collective organizing community support and resource sharing in durham. they coordinate direct support initiatives, solidarity networks, and community education while building power through collective action and grassroots organizing.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/comradesinthecommons/" target="_blank" rel="noopener noreferrer">Comrades in the Commons <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid collective organizing community support and resource sharing in Durham. They coordinate direct support initiatives, solidarity networks, and community education while building power through collective action and grassroots organizing.</p>
+        </li>
+        <li data-name="people's solidarity hub" data-desc="a mutual aid collective organizing community support and resource sharing in durham. they coordinate direct support initiatives, solidarity networks, and community spaces while building sustainable networks of mutual aid through shared resources, education, and collective organizing.">
+          <div class="row">
+            <a class="name" href="https://solidarityhubs.org/" target="_blank" rel="noopener noreferrer">People's Solidarity Hub <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">solidarityhubs.org</span>
+          </div>
+          <p class="desc">A mutual aid collective organizing community support and resource sharing in Durham. They coordinate direct support initiatives, solidarity networks, and community spaces while building sustainable networks of mutual aid through shared resources, education, and collective organizing.</p>
+        </li>
+        <li data-name="triangle mutual aid" data-desc="point of connection between residents, communities + mutual aid projects in carrboro, hillsborough, durham + chapel hill.">
+          <div class="row">
+            <a class="name" href="https://www.trianglemutualaid.org/" target="_blank" rel="noopener noreferrer">Triangle Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">trianglemutualaid.org</span>
+          </div>
+          <p class="desc">Point of connection between residents, communities + mutual aid projects in Carrboro, Hillsborough, Durham + Chapel Hill.</p>
+        </li>
+        <li data-name="carrboro free market" data-desc="a community-driven mutual aid initiative organizing free resource sharing and distribution in carrboro. they coordinate regular free markets, facilitate direct community support, and build networks of solidarity through the exchange of goods, resources, and skills.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/carrborofreemarket/" target="_blank" rel="noopener noreferrer">Carrboro Free Market <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A community-driven mutual aid initiative organizing free resource sharing and distribution in Carrboro. They coordinate regular free markets, facilitate direct community support, and build networks of solidarity through the exchange of goods, resources, and skills.</p>
+        </li>
+        <li data-name="activated nc" data-desc="southern resistance">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/activated_nc/" target="_blank" rel="noopener noreferrer">Activated NC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Southern Resistance</p>
+        </li>
+        <li data-name="triangle healthcare radicals" data-desc="a collective of healthcare workers organizing mutual aid and community support initiatives in the triangle region. they coordinate resource sharing, health education, and direct support while building networks of solidarity and care to address healthcare access and equity in north carolina communities.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/trianglehealthcareradicals" target="_blank" rel="noopener noreferrer">Triangle Healthcare Radicals <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A collective of healthcare workers organizing mutual aid and community support initiatives in the Triangle region. They coordinate resource sharing, health education, and direct support while building networks of solidarity and care to address healthcare access and equity in North Carolina communities.</p>
+        </li>
+        <li data-name="triangle abortion access" data-desc="a mutual aid collective organizing support and resources for abortion access in the triangle region. they coordinate direct support, resource sharing, and solidarity networks while building community power to ensure reproductive healthcare accessibility and justice.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/triangleabortionaccess/" target="_blank" rel="noopener noreferrer">Triangle Abortion Access <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid collective organizing support and resources for abortion access in the Triangle region. They coordinate direct support, resource sharing, and solidarity networks while building community power to ensure reproductive healthcare accessibility and justice.</p>
+        </li>
+        <li data-name="triangle guerrilla cinema" data-desc="a mutual aid collective organizing free film screenings and cultural programming in the triangle region. they coordinate community resources, educational events, and direct support while building networks of solidarity through accessible arts and radical cinema.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/triangleguerrillacinema/" target="_blank" rel="noopener noreferrer">Triangle Guerrilla Cinema <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid collective organizing free film screenings and cultural programming in the Triangle region. They coordinate community resources, educational events, and direct support while building networks of solidarity through accessible arts and radical cinema.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

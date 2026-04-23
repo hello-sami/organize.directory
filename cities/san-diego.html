@@ -1,139 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>San Diego Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in San Diego. Connect with local organizations and community resources.">
+  <title>San Diego — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in San Diego.">
   <link rel="canonical" href="https://organize.directory/san-diego">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="San Diego Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in San Diego. Connect with local organizations and community resources.">
+  <meta property="og:title" content="San Diego — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in San Diego.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/san-diego">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/california">California</a>
-          <span>›</span>
-          <a href="/socal">Southern California</a>
-          <span>›</span>
-          <span>San Diego</span>
-        </div>
+<main id="main">
 
-        <h1>San Diego</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/california">California</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/socal">Southern California</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">San Diego</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://rjcsd.org/" target="_blank" rel="noopener noreferrer">Racial Justice Coalition of San Diego</a>
-      <p>A grassroots coalition fostering mutual aid and community power through racial justice organizing in San Diego. They coordinate direct support, advocacy, and solidarity networks while building power through community education, policy reform, and creating spaces for racial equity and systemic change.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.facebook.com/surjncsd/" target="_blank" rel="noopener noreferrer">SURJ North County San Diego</a>
-      <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in North County San Diego. They coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with BIPOC-led organizations.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/uaptsd/" target="_blank" rel="noopener noreferrer">Union del Pueblo Transfronterizo San Diego</a>
-      <p>A transborder mutual aid collective building solidarity and support networks across the US-Mexico border. They coordinate direct assistance, resource sharing, and community organizing while building power through cross-border solidarity, immigrant rights advocacy, and creating spaces for transnational community care.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/sdbrownberets" target="_blank" rel="noopener noreferrer">San Diego Brown Berets</a>
-      <p>A Chicanx grassroots organization fostering mutual aid and community power through cultural resistance and direct action. They coordinate community defense, education initiatives, and solidarity networks while building power through cultural organizing, political education, and creating spaces for Chicanx liberation and community care.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://sdindivisible.com/" target="_blank" rel="noopener noreferrer">Indivisible San Diego Persist</a>
-      <p>A grassroots organization fostering mutual aid and community power through progressive organizing and direct action in San Diego. They coordinate education initiatives, advocacy campaigns, and solidarity networks while building power through community organizing, political education, and creating spaces for collective action.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://changebeginswithmesite.wordpress.com/" target="_blank" rel="noopener noreferrer">Change Begins With ME</a>
-      <p>A grassroots volunteer group fostering mutual aid and civic engagement through local organizing and collaborative action. They coordinate with frontline organizations on racial, environmental, and social justice initiatives while building power through community education, inclusive activism, and creating spaces for collective change.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/blackpantherparty_sd" target="_blank" rel="noopener noreferrer">San Diego Black Panther Party</a>
-      <p>A revolutionary organization building community power through mutual aid, political education, and direct action in San Diego. They coordinate food distribution programs, community defense initiatives, and solidarity networks while advancing Black liberation and social justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.genteunidasd.net/" target="_blank" rel="noopener noreferrer">Gente Unida</a>
-      <p>A human rights border coalition fostering mutual aid and community support for migrants and refugees. They coordinate education programs, direct assistance, and solidarity networks while building power through advocacy, arts programming, and creating spaces for migrant justice and community care.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.borderlandsequity.org/" target="_blank" rel="noopener noreferrer">Borderlands for Equity</a>
-      <p>A grassroots organization fostering mutual aid and community solidarity at the US-Mexico border region. They coordinate direct support for migrants and refugees, build power through community organizing, and create spaces for cross-border solidarity and justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://moralgovernance.org/" target="_blank" rel="noopener noreferrer">Community Advocates for Just and Moral Governance (MoGo)</a>
-      <p>A community organization fostering mutual aid and accountability through impact litigation and advocacy. They coordinate legal services, policy initiatives like PrOTECT, and solidarity networks while building power through community empowerment, police accountability, and creating spaces for systemic change.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/feedingdaygo/" target="_blank" rel="noopener noreferrer">Feeding Daygo</a>
-      <p>mutual aid, EVERYBODY eats</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/borderlandsreliefcollective/" target="_blank" rel="noopener noreferrer">Borderlands Relief Collective</a>
-      <p>We leave supplies in the borderlands to support human rights, and to decrease the risk of death, for all people who cross through Kumeyaay land.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/directactiondrumline/" target="_blank" rel="noopener noreferrer">Direct Action Drumline</a>
-      <p>Protest Drumline, Zine Distro &amp; Mutual Aid</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/anakbayansd/" target="_blank" rel="noopener noreferrer">Anakbayan San Diego</a>
-      <p>Filipino youth fighting for national democracy in the Philippines</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/pymsandiego/" target="_blank" rel="noopener noreferrer">Palestinian Youth Movement San Diego</a>
-      <p>A movement of Palestinian &amp; Arab youth struggling for the liberation of our homeland.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/freeshitcollective/" target="_blank" rel="noopener noreferrer">Free Shit Collective</a>
-      <p>Redistributing supplies to the unhoused</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">San Diego</h1>
+    <p class="meta">
+      <b>16</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      California
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in San Diego</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in San Diego…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="racial justice coalition of san diego" data-desc="a grassroots coalition fostering mutual aid and community power through racial justice organizing in san diego. they coordinate direct support, advocacy, and solidarity networks while building power through community education, policy reform, and creating spaces for racial equity and systemic change.">
+          <div class="row">
+            <a class="name" href="https://rjcsd.org/" target="_blank" rel="noopener noreferrer">Racial Justice Coalition of San Diego <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">rjcsd.org</span>
+          </div>
+          <p class="desc">A grassroots coalition fostering mutual aid and community power through racial justice organizing in San Diego. They coordinate direct support, advocacy, and solidarity networks while building power through community education, policy reform, and creating spaces for racial equity and systemic change.</p>
+        </li>
+        <li data-name="surj north county san diego" data-desc="a chapter of showing up for racial justice fostering mutual aid and community solidarity through white anti-racist organizing in north county san diego. they coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with bipoc-led organizations.">
+          <div class="row">
+            <a class="name" href="https://www.facebook.com/surjncsd/" target="_blank" rel="noopener noreferrer">SURJ North County San Diego <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">facebook.com</span>
+          </div>
+          <p class="desc">A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in North County San Diego. They coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with BIPOC-led organizations.</p>
+        </li>
+        <li data-name="union del pueblo transfronterizo san diego" data-desc="a transborder mutual aid collective building solidarity and support networks across the us-mexico border. they coordinate direct assistance, resource sharing, and community organizing while building power through cross-border solidarity, immigrant rights advocacy, and creating spaces for transnational community care.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/uaptsd/" target="_blank" rel="noopener noreferrer">Union del Pueblo Transfronterizo San Diego <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A transborder mutual aid collective building solidarity and support networks across the US-Mexico border. They coordinate direct assistance, resource sharing, and community organizing while building power through cross-border solidarity, immigrant rights advocacy, and creating spaces for transnational community care.</p>
+        </li>
+        <li data-name="san diego brown berets" data-desc="a chicanx grassroots organization fostering mutual aid and community power through cultural resistance and direct action. they coordinate community defense, education initiatives, and solidarity networks while building power through cultural organizing, political education, and creating spaces for chicanx liberation and community care.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/sdbrownberets" target="_blank" rel="noopener noreferrer">San Diego Brown Berets <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A Chicanx grassroots organization fostering mutual aid and community power through cultural resistance and direct action. They coordinate community defense, education initiatives, and solidarity networks while building power through cultural organizing, political education, and creating spaces for Chicanx liberation and community care.</p>
+        </li>
+        <li data-name="indivisible san diego persist" data-desc="a grassroots organization fostering mutual aid and community power through progressive organizing and direct action in san diego. they coordinate education initiatives, advocacy campaigns, and solidarity networks while building power through community organizing, political education, and creating spaces for collective action.">
+          <div class="row">
+            <a class="name" href="https://sdindivisible.com/" target="_blank" rel="noopener noreferrer">Indivisible San Diego Persist <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sdindivisible.com</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community power through progressive organizing and direct action in San Diego. They coordinate education initiatives, advocacy campaigns, and solidarity networks while building power through community organizing, political education, and creating spaces for collective action.</p>
+        </li>
+        <li data-name="change begins with me" data-desc="a grassroots volunteer group fostering mutual aid and civic engagement through local organizing and collaborative action. they coordinate with frontline organizations on racial, environmental, and social justice initiatives while building power through community education, inclusive activism, and creating spaces for collective change.">
+          <div class="row">
+            <a class="name" href="https://changebeginswithmesite.wordpress.com/" target="_blank" rel="noopener noreferrer">Change Begins With ME <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">changebeginswithmesite.wordpress.com</span>
+          </div>
+          <p class="desc">A grassroots volunteer group fostering mutual aid and civic engagement through local organizing and collaborative action. They coordinate with frontline organizations on racial, environmental, and social justice initiatives while building power through community education, inclusive activism, and creating spaces for collective change.</p>
+        </li>
+        <li data-name="san diego black panther party" data-desc="a revolutionary organization building community power through mutual aid, political education, and direct action in san diego. they coordinate food distribution programs, community defense initiatives, and solidarity networks while advancing black liberation and social justice.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/blackpantherparty_sd" target="_blank" rel="noopener noreferrer">San Diego Black Panther Party <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A revolutionary organization building community power through mutual aid, political education, and direct action in San Diego. They coordinate food distribution programs, community defense initiatives, and solidarity networks while advancing Black liberation and social justice.</p>
+        </li>
+        <li data-name="gente unida" data-desc="a human rights border coalition fostering mutual aid and community support for migrants and refugees. they coordinate education programs, direct assistance, and solidarity networks while building power through advocacy, arts programming, and creating spaces for migrant justice and community care.">
+          <div class="row">
+            <a class="name" href="https://www.genteunidasd.net/" target="_blank" rel="noopener noreferrer">Gente Unida <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">genteunidasd.net</span>
+          </div>
+          <p class="desc">A human rights border coalition fostering mutual aid and community support for migrants and refugees. They coordinate education programs, direct assistance, and solidarity networks while building power through advocacy, arts programming, and creating spaces for migrant justice and community care.</p>
+        </li>
+        <li data-name="borderlands for equity" data-desc="a grassroots organization fostering mutual aid and community solidarity at the us-mexico border region. they coordinate direct support for migrants and refugees, build power through community organizing, and create spaces for cross-border solidarity and justice.">
+          <div class="row">
+            <a class="name" href="https://www.borderlandsequity.org/" target="_blank" rel="noopener noreferrer">Borderlands for Equity <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">borderlandsequity.org</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community solidarity at the US-Mexico border region. They coordinate direct support for migrants and refugees, build power through community organizing, and create spaces for cross-border solidarity and justice.</p>
+        </li>
+        <li data-name="community advocates for just and moral governance (mogo)" data-desc="a community organization fostering mutual aid and accountability through impact litigation and advocacy. they coordinate legal services, policy initiatives like protect, and solidarity networks while building power through community empowerment, police accountability, and creating spaces for systemic change.">
+          <div class="row">
+            <a class="name" href="https://moralgovernance.org/" target="_blank" rel="noopener noreferrer">Community Advocates for Just and Moral Governance (MoGo) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">moralgovernance.org</span>
+          </div>
+          <p class="desc">A community organization fostering mutual aid and accountability through impact litigation and advocacy. They coordinate legal services, policy initiatives like PrOTECT, and solidarity networks while building power through community empowerment, police accountability, and creating spaces for systemic change.</p>
+        </li>
+        <li data-name="feeding daygo" data-desc="mutual aid, everybody eats">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/feedingdaygo/" target="_blank" rel="noopener noreferrer">Feeding Daygo <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">mutual aid, EVERYBODY eats</p>
+        </li>
+        <li data-name="borderlands relief collective" data-desc="we leave supplies in the borderlands to support human rights, and to decrease the risk of death, for all people who cross through kumeyaay land.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/borderlandsreliefcollective/" target="_blank" rel="noopener noreferrer">Borderlands Relief Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We leave supplies in the borderlands to support human rights, and to decrease the risk of death, for all people who cross through Kumeyaay land.</p>
+        </li>
+        <li data-name="direct action drumline" data-desc="protest drumline, zine distro &amp; mutual aid">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/directactiondrumline/" target="_blank" rel="noopener noreferrer">Direct Action Drumline <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Protest Drumline, Zine Distro &amp; Mutual Aid</p>
+        </li>
+        <li data-name="anakbayan san diego" data-desc="filipino youth fighting for national democracy in the philippines">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/anakbayansd/" target="_blank" rel="noopener noreferrer">Anakbayan San Diego <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Filipino youth fighting for national democracy in the Philippines</p>
+        </li>
+        <li data-name="palestinian youth movement san diego" data-desc="a movement of palestinian &amp; arab youth struggling for the liberation of our homeland.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/pymsandiego/" target="_blank" rel="noopener noreferrer">Palestinian Youth Movement San Diego <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A movement of Palestinian &amp; Arab youth struggling for the liberation of our homeland.</p>
+        </li>
+        <li data-name="free shit collective" data-desc="redistributing supplies to the unhoused">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/freeshitcollective/" target="_blank" rel="noopener noreferrer">Free Shit Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Redistributing supplies to the unhoused</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

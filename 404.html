@@ -1,163 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Page Not Found | The Organize Directory">
-    <meta property="og:description"
-        content="Browse our directory to find mutual aid networks and community resources in your area.">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <link rel="canonical" href="https://organize.directory/404">
-    <meta property="og:url" content="https://organize.directory/404">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+  <title>Page not found — Organize Directory</title>
+  <meta name="description" content="That page doesn't exist. Browse by location or topic to find the groups doing the work near you.">
+  <link rel="canonical" href="https://organize.directory/404">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
-    <title>404 - Page Not Found | The Organize Directory</title>
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Page not found — Organize Directory">
+  <meta property="og:description" content="That page doesn't exist. Browse by location or topic to find the groups doing the work near you.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/404">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Preload critical assets -->
-    <link rel="preload" href="/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin="">
-    <link rel="preload" href="/fonts/inter-semibold.woff2" as="font" type="font/woff2" crossorigin="">
-    <link rel="preload" href="/components/sidebar.js" as="script" type="module">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Critical CSS -->
-    <style>
-        :root {
-            --primary-color: #c82525;
-            --text-color: #4d0000;
-            --light-gray: #fff7f7;
-            --border-color: #c01c1c;
-            --bg-color: #fff7f7;
-            --card-bg: #ffffff;
-            --pure-white: #ffffff;
-            --sidebar-width: 250px;
-        }
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
+  </script>
 
-        body {
-            margin: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--pure-white);
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-        }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-        .layout {
-            display: flex;
-            min-height: 100vh;
-            background-color: var(--pure-white);
-        }
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
 
-        .main-content {
-            flex: 1;
-            margin-left: var(--sidebar-width);
-            padding: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .error-content {
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            padding: 2rem;
-            background-color: var(--card-bg);
-            box-shadow: 0 4px 8px rgba(192, 28, 28, 0.1);
-        }
-
-        .error-title {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .error-message {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .debug-info {
-            background: var(--light-gray);
-            padding: 1rem;
-            border-radius: 4px;
-            margin-top: 2rem;
-            text-align: left;
-        }
-
-        #requestedPath {
-            font-family: monospace;
-            word-break: break-all;
-        }
-
-        /* Media query for mobile devices */
-        @media (max-width: 768px) {
-            .main-content {
-                margin-left: 0;
-            }
-
-            .error-content {
-                width: 90%;
-            }
-        }
-    </style>
-
-    <!-- Defer non-critical CSS -->
-    <link rel="stylesheet" href="/fonts/fonts.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="/fonts/fonts.css">
-        <link rel="stylesheet" href="/styles.css">
-    </noscript>
-
-    <!-- Initialize Components -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
-
-        // Initialize sidebar first
-        initializeSidebar('home');
-
-        // Initialize other components
-        initializeComponents({
-        });
-    </script>
-<!-- Mobile optimizations -->
-<script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-        <main class="main-content" role="main">
-            <div class="error-content">
-                <h1 class="error-title">404</h1>
-                <p class="error-message">You found an error</p>
-                <p>Try using the navigation menu to find what you're looking for, and if that doesn't work,
-                    <a href="/contact">contact us</a> to fix it.
-                </p>
-                <div class="debug-info">
-                    <h2>Debug Information</h2>
-                    <p>Requested Path: <span id="requestedPath"></span></p>
-                </div>
-            </div>
-        </main>
-    </div>
-    <!-- Core Scripts -->
-    <script src="/js/analytics.js" defer></script>
+<main id="main">
 
+  <div class="page-head">
+    <h1 class="title">Page not found</h1>
+    <p class="meta">That page doesn't exist — or the link's gone stale.</p>
+  </div>
 
+  <div class="prose">
+    <p>Try one of these instead:</p>
+    <ul>
+      <li><a href="/location">Browse by location</a> — find groups in your city or state.</li>
+      <li><a href="/topics">Browse by topic</a> — from housing and mutual aid to anti-war organizing.</li>
+      <li><a href="/">Start over on the homepage</a>.</li>
+    </ul>
+    <p>Still stuck? <a href="/contact">Tell us what you were looking for</a> and we'll try to help.</p>
+    <p class="debug-path"><small>Requested path: <code id="requestedPath"></code></small></p>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script>
+  // Fill in the requested path for debugging broken links.
+  try {
+    var el = document.getElementById('requestedPath');
+    if (el) el.textContent = window.location.pathname + window.location.search;
+  } catch(e) {}
+</script>
 
 </body>
-
 </html>

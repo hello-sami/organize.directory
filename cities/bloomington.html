@@ -1,101 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Bloomington Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Bloomington. Connect with local organizations and community resources.">
+  <title>Bloomington — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Bloomington.">
   <link rel="canonical" href="https://organize.directory/bloomington">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Bloomington Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Bloomington. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Bloomington — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Bloomington.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/bloomington">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/indiana">Indiana</a>
-          <span>›</span>
-          <span>Bloomington</span>
-        </div>
+<main id="main">
 
-        <h1>Bloomington</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/indiana">Indiana</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Bloomington</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://www.instagram.com/reallyreallyfree/" target="_blank" rel="noopener noreferrer">Really Really Free Market</a>
-      <p>A grassroots organization fostering mutual aid and community support through free markets and resource sharing in Bloomington. They coordinate direct assistance, free item distribution, and solidarity networks while building power through community organizing and creating spaces for gift economy and collective care.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://mcfostercloset.org/" target="_blank" rel="noopener noreferrer">McLean County Foster Closet</a>
-      <p>A grassroots organization fostering mutual aid and community power through support for foster families in McLean County. They coordinate resource distribution, direct assistance, and solidarity networks while building power through community care, family support, and creating pathways for foster children and families to thrive.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://lfpbloomington.org/" target="_blank" rel="noopener noreferrer">Lunch for Peace</a>
-      <p>A grassroots collective fostering mutual aid and community power through food justice initiatives in Bloomington-Normal. They coordinate free meal programs, resource sharing, and solidarity networks while building power through community nourishment, collective care, and creating spaces for food access and dignity.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://simplycsl.org/" target="_blank" rel="noopener noreferrer">Center for Sustainable Living</a>
-      <p>A grassroots organization fostering mutual aid and community power through sustainability initiatives in Bloomington. They coordinate multiple projects including bike repair, food pantries, tool sharing, and solar energy while building power through skill-sharing, environmental justice, and creating spaces for sustainable community development.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://pagestoprisoners.org/" target="_blank" rel="noopener noreferrer">Pages to Prisoners</a>
-      <p>A grassroots organization fostering mutual aid and community power through book distribution to incarcerated people. They coordinate book donations, letter writing, and solidarity networks while building power through educational access, resource sharing, and creating pathways for learning and connection across prison walls.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://indianarecoveryalliance.org/" target="_blank" rel="noopener noreferrer">Indiana Recovery Alliance</a>
-      <p>Shifts resources and power to people who use drugs to reduce the harms caused by racialized drug policy through direct action and advocacy.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://bloomingtonabc.noblogs.org/" target="_blank" rel="noopener noreferrer">Bloomington Anarchist Black Cross</a>
-      <p>n anarchist group focusing on solidarity with anarchist prisoners, prisoners of other liberatory struggles, and individuals engaged in prison rebellion.</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Bloomington</h1>
+    <p class="meta">
+      <b>7</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      Indiana
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Bloomington</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Bloomington…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="really really free market" data-desc="a grassroots organization fostering mutual aid and community support through free markets and resource sharing in bloomington. they coordinate direct assistance, free item distribution, and solidarity networks while building power through community organizing and creating spaces for gift economy and collective care.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/reallyreallyfree/" target="_blank" rel="noopener noreferrer">Really Really Free Market <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community support through free markets and resource sharing in Bloomington. They coordinate direct assistance, free item distribution, and solidarity networks while building power through community organizing and creating spaces for gift economy and collective care.</p>
+        </li>
+        <li data-name="mclean county foster closet" data-desc="a grassroots organization fostering mutual aid and community power through support for foster families in mclean county. they coordinate resource distribution, direct assistance, and solidarity networks while building power through community care, family support, and creating pathways for foster children and families to thrive.">
+          <div class="row">
+            <a class="name" href="https://mcfostercloset.org/" target="_blank" rel="noopener noreferrer">McLean County Foster Closet <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">mcfostercloset.org</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community power through support for foster families in McLean County. They coordinate resource distribution, direct assistance, and solidarity networks while building power through community care, family support, and creating pathways for foster children and families to thrive.</p>
+        </li>
+        <li data-name="lunch for peace" data-desc="a grassroots collective fostering mutual aid and community power through food justice initiatives in bloomington-normal. they coordinate free meal programs, resource sharing, and solidarity networks while building power through community nourishment, collective care, and creating spaces for food access and dignity.">
+          <div class="row">
+            <a class="name" href="https://lfpbloomington.org/" target="_blank" rel="noopener noreferrer">Lunch for Peace <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">lfpbloomington.org</span>
+          </div>
+          <p class="desc">A grassroots collective fostering mutual aid and community power through food justice initiatives in Bloomington-Normal. They coordinate free meal programs, resource sharing, and solidarity networks while building power through community nourishment, collective care, and creating spaces for food access and dignity.</p>
+        </li>
+        <li data-name="center for sustainable living" data-desc="a grassroots organization fostering mutual aid and community power through sustainability initiatives in bloomington. they coordinate multiple projects including bike repair, food pantries, tool sharing, and solar energy while building power through skill-sharing, environmental justice, and creating spaces for sustainable community development.">
+          <div class="row">
+            <a class="name" href="https://simplycsl.org/" target="_blank" rel="noopener noreferrer">Center for Sustainable Living <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">simplycsl.org</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community power through sustainability initiatives in Bloomington. They coordinate multiple projects including bike repair, food pantries, tool sharing, and solar energy while building power through skill-sharing, environmental justice, and creating spaces for sustainable community development.</p>
+        </li>
+        <li data-name="pages to prisoners" data-desc="a grassroots organization fostering mutual aid and community power through book distribution to incarcerated people. they coordinate book donations, letter writing, and solidarity networks while building power through educational access, resource sharing, and creating pathways for learning and connection across prison walls.">
+          <div class="row">
+            <a class="name" href="https://pagestoprisoners.org/" target="_blank" rel="noopener noreferrer">Pages to Prisoners <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">pagestoprisoners.org</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community power through book distribution to incarcerated people. They coordinate book donations, letter writing, and solidarity networks while building power through educational access, resource sharing, and creating pathways for learning and connection across prison walls.</p>
+        </li>
+        <li data-name="indiana recovery alliance" data-desc="shifts resources and power to people who use drugs to reduce the harms caused by racialized drug policy through direct action and advocacy.">
+          <div class="row">
+            <a class="name" href="https://indianarecoveryalliance.org/" target="_blank" rel="noopener noreferrer">Indiana Recovery Alliance <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">indianarecoveryalliance.org</span>
+          </div>
+          <p class="desc">Shifts resources and power to people who use drugs to reduce the harms caused by racialized drug policy through direct action and advocacy.</p>
+        </li>
+        <li data-name="bloomington anarchist black cross" data-desc="n anarchist group focusing on solidarity with anarchist prisoners, prisoners of other liberatory struggles, and individuals engaged in prison rebellion.">
+          <div class="row">
+            <a class="name" href="https://bloomingtonabc.noblogs.org/" target="_blank" rel="noopener noreferrer">Bloomington Anarchist Black Cross <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bloomingtonabc.noblogs.org</span>
+          </div>
+          <p class="desc">n anarchist group focusing on solidarity with anarchist prisoners, prisoners of other liberatory struggles, and individuals engaged in prison rebellion.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
      if (urlParams.get("success") === "true") {
           statusMessage.textContent =
                "Thank you! You have been successfully subscribed.";
-          statusMessage.className = "status-message success";
+          statusMessage.className = "form-status success";
           statusMessage.style.display = "block";
           form.reset();
 

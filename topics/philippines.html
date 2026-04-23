@@ -1,134 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Philippines - The Organize Directory</title>
-  <meta name="description" content="Find organizations and initiatives focused on Philippines.">
+  <title>Philippines — Organize Directory</title>
+  <meta name="description" content="Organizations and initiatives focused on Philippines.">
   <link rel="canonical" href="https://organize.directory/topics/philippines">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Philippines - The Organize Directory">
-  <meta property="og:description" content="Find organizations and initiatives focused on Philippines.">
+  <meta property="og:title" content="Philippines — Organize Directory">
+  <meta property="og:description" content="Organizations and initiatives focused on Philippines.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/topics/philippines">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('topics');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="city-page state-page">
-        <div class="breadcrumb">
-          <a href="/topics">Topics</a>
-          <span>›</span>
-          <span>Philippines</span>
-        </div>
+<main id="main">
 
-        <h1>Philippines</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/topics">Topics</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Philippines</span>
+  </nav>
 
-  <section id="national-initiatives" class="city-section">
-    <h2>National Initiatives</h2>
-    <div class="initiative">
-      <a href="https://bayan-usa.org/" target="_blank" rel="noopener noreferrer">BAYAN-USA</a>
-      <p>An alliance of progressive Filipino organizations in the U.S. representing the national democratic movement in the Philippines, working on issues of human rights, anti-imperialism, and genuine democracy.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.gabrielawomensparty.net/" target="_blank" rel="noopener noreferrer">GABRIELA USA</a>
-      <p>A grassroots organization advocating for the rights and welfare of Filipino women through education, organizing, and mobilizing for gender justice, economic justice, and human rights in the Philippines and the U.S.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://anakbayanusa.org/" target="_blank" rel="noopener noreferrer">Anakbayan-USA</a>
-      <p>A comprehensive national Filipino youth and student organization that addresses issues affecting Filipinos in the U.S. and the Philippines through community organizing, education, and direct action.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.migrante.org/" target="_blank" rel="noopener noreferrer">Migrante International</a>
-      <p>A global alliance of Filipino migrant organizations focused on protecting the rights and welfare of overseas Filipino workers and their families through advocacy, education, and direct support services.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://nafconusa.org/" target="_blank" rel="noopener noreferrer">National Alliance for Filipino Concerns (NAFCON)</a>
-      <p>A national multi-issue alliance of Filipino organizations and individuals in the United States serving Filipino communities, advocating for social, economic, and racial justice, and advancing the rights and welfare of Filipinos.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.malaya-movement.com/" target="_blank" rel="noopener noreferrer">Malaya Movement USA</a>
-      <p>A movement of Filipinos and allies in the U.S. working to defend democracy, human rights, and sovereignty in the Philippines through education, advocacy, and mobilization.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.kursongbinhi.org/" target="_blank" rel="noopener noreferrer">Kursong Binhi</a>
-      <p>A collective offering political education and organizing training for Filipinos in the diaspora, focusing on sustainable activism, community building, and addressing root causes of issues affecting Filipino communities.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.filipinosolidaritycentre.org.uk/" target="_blank" rel="noopener noreferrer">Filipino Solidarity Centre</a>
-      <p>An organization fostering solidarity between Filipinos globally and their allies, providing resources for mutual aid, political education, and coordinating solidarity actions for Philippine issues.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.pesanteguild.org/" target="_blank" rel="noopener noreferrer">Pesante-USA</a>
-      <p>An organization supporting Filipino peasants and agricultural workers through solidarity campaigns, education about land rights, and advocacy for agrarian reform in the Philippines.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://filipinosworldwide.org/" target="_blank" rel="noopener noreferrer">Philippine Forum</a>
-      <p>A community-based organization providing services to the Filipino migrant community while organizing for immigrant rights, workers' rights, and social justice through community empowerment programs.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.kamalayannational.org/" target="_blank" rel="noopener noreferrer">Kamalayan Collective</a>
-      <p>A grassroots organization building capacity among Filipino youth through cultural work, arts-based organizing, and political education connecting issues in Filipino communities across the diaspora.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://kasama.org/" target="_blank" rel="noopener noreferrer">Kasama</a>
-      <p>An organization promoting mutual aid, community empowerment, and political education for Filipino communities in the U.S., organizing around issues of labor rights, immigration, and anti-imperialism.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.babae-us.org/" target="_blank" rel="noopener noreferrer">BABAE</a>
-      <p>A Filipino women's organization focused on addressing issues of gender-based violence, trafficking, and discrimination against Filipino women through advocacy, education, and support services.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.kabataanalliance.org/" target="_blank" rel="noopener noreferrer">Kabataan Alliance</a>
-      <p>A national alliance of Filipino youth and student organizations in the United States advocating for education rights, immigrant rights, and international solidarity through grassroots organizing and leadership development.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://filipinos4justice.org/" target="_blank" rel="noopener noreferrer">Filipinos for Justice</a>
-      <p>the vision of FAJ is to foster a Filipino community with the power to advance social &amp; economic justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.filipinosolidarity.net/" target="_blank" rel="noopener noreferrer">Filipino Solidarity Network</a>
-      <p>A network coordinating solidarity campaigns and mutual aid initiatives in support of human rights, environmental justice, and indigenous rights in the Philippines through global advocacy and direct action.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://migranteusa.org/" target="_blank" rel="noopener noreferrer">Migrante USA</a>
-      <p>An alliance of Filipino migrant and worker organizations in the U.S.</p>
-    </div>
-  </section>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">Philippines</h1>
+    <p class="meta"><b>17</b> groups</p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-</body>
 
+
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Philippines</label>
+    <input id="page-filter" type="search" placeholder="Filter groups…" autocomplete="off">
+  </div>
+
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="national-initiatives" class="group-section" data-section="national-initiatives">
+      <h2 class="section-title">National Initiatives</h2>
+      <ol class="groups">
+        <li data-name="bayan-usa" data-desc="an alliance of progressive filipino organizations in the u.s. representing the national democratic movement in the philippines, working on issues of human rights, anti-imperialism, and genuine democracy.">
+          <div class="row">
+            <a class="name" href="https://bayan-usa.org/" target="_blank" rel="noopener noreferrer">BAYAN-USA <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bayan-usa.org</span>
+          </div>
+          <p class="desc">An alliance of progressive Filipino organizations in the U.S. representing the national democratic movement in the Philippines, working on issues of human rights, anti-imperialism, and genuine democracy.</p>
+        </li>
+        <li data-name="gabriela usa" data-desc="a grassroots organization advocating for the rights and welfare of filipino women through education, organizing, and mobilizing for gender justice, economic justice, and human rights in the philippines and the u.s.">
+          <div class="row">
+            <a class="name" href="https://www.gabrielawomensparty.net/" target="_blank" rel="noopener noreferrer">GABRIELA USA <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">gabrielawomensparty.net</span>
+          </div>
+          <p class="desc">A grassroots organization advocating for the rights and welfare of Filipino women through education, organizing, and mobilizing for gender justice, economic justice, and human rights in the Philippines and the U.S.</p>
+        </li>
+        <li data-name="anakbayan-usa" data-desc="a comprehensive national filipino youth and student organization that addresses issues affecting filipinos in the u.s. and the philippines through community organizing, education, and direct action.">
+          <div class="row">
+            <a class="name" href="https://anakbayanusa.org/" target="_blank" rel="noopener noreferrer">Anakbayan-USA <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">anakbayanusa.org</span>
+          </div>
+          <p class="desc">A comprehensive national Filipino youth and student organization that addresses issues affecting Filipinos in the U.S. and the Philippines through community organizing, education, and direct action.</p>
+        </li>
+        <li data-name="migrante international" data-desc="a global alliance of filipino migrant organizations focused on protecting the rights and welfare of overseas filipino workers and their families through advocacy, education, and direct support services.">
+          <div class="row">
+            <a class="name" href="https://www.migrante.org/" target="_blank" rel="noopener noreferrer">Migrante International <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">migrante.org</span>
+          </div>
+          <p class="desc">A global alliance of Filipino migrant organizations focused on protecting the rights and welfare of overseas Filipino workers and their families through advocacy, education, and direct support services.</p>
+        </li>
+        <li data-name="national alliance for filipino concerns (nafcon)" data-desc="a national multi-issue alliance of filipino organizations and individuals in the united states serving filipino communities, advocating for social, economic, and racial justice, and advancing the rights and welfare of filipinos.">
+          <div class="row">
+            <a class="name" href="https://nafconusa.org/" target="_blank" rel="noopener noreferrer">National Alliance for Filipino Concerns (NAFCON) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">nafconusa.org</span>
+          </div>
+          <p class="desc">A national multi-issue alliance of Filipino organizations and individuals in the United States serving Filipino communities, advocating for social, economic, and racial justice, and advancing the rights and welfare of Filipinos.</p>
+        </li>
+        <li data-name="malaya movement usa" data-desc="a movement of filipinos and allies in the u.s. working to defend democracy, human rights, and sovereignty in the philippines through education, advocacy, and mobilization.">
+          <div class="row">
+            <a class="name" href="https://www.malaya-movement.com/" target="_blank" rel="noopener noreferrer">Malaya Movement USA <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">malaya-movement.com</span>
+          </div>
+          <p class="desc">A movement of Filipinos and allies in the U.S. working to defend democracy, human rights, and sovereignty in the Philippines through education, advocacy, and mobilization.</p>
+        </li>
+        <li data-name="kursong binhi" data-desc="a collective offering political education and organizing training for filipinos in the diaspora, focusing on sustainable activism, community building, and addressing root causes of issues affecting filipino communities.">
+          <div class="row">
+            <a class="name" href="https://www.kursongbinhi.org/" target="_blank" rel="noopener noreferrer">Kursong Binhi <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">kursongbinhi.org</span>
+          </div>
+          <p class="desc">A collective offering political education and organizing training for Filipinos in the diaspora, focusing on sustainable activism, community building, and addressing root causes of issues affecting Filipino communities.</p>
+        </li>
+        <li data-name="filipino solidarity centre" data-desc="an organization fostering solidarity between filipinos globally and their allies, providing resources for mutual aid, political education, and coordinating solidarity actions for philippine issues.">
+          <div class="row">
+            <a class="name" href="https://www.filipinosolidaritycentre.org.uk/" target="_blank" rel="noopener noreferrer">Filipino Solidarity Centre <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">filipinosolidaritycentre.org.uk</span>
+          </div>
+          <p class="desc">An organization fostering solidarity between Filipinos globally and their allies, providing resources for mutual aid, political education, and coordinating solidarity actions for Philippine issues.</p>
+        </li>
+        <li data-name="pesante-usa" data-desc="an organization supporting filipino peasants and agricultural workers through solidarity campaigns, education about land rights, and advocacy for agrarian reform in the philippines.">
+          <div class="row">
+            <a class="name" href="https://www.pesanteguild.org/" target="_blank" rel="noopener noreferrer">Pesante-USA <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">pesanteguild.org</span>
+          </div>
+          <p class="desc">An organization supporting Filipino peasants and agricultural workers through solidarity campaigns, education about land rights, and advocacy for agrarian reform in the Philippines.</p>
+        </li>
+        <li data-name="philippine forum" data-desc="a community-based organization providing services to the filipino migrant community while organizing for immigrant rights, workers' rights, and social justice through community empowerment programs.">
+          <div class="row">
+            <a class="name" href="https://filipinosworldwide.org/" target="_blank" rel="noopener noreferrer">Philippine Forum <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">filipinosworldwide.org</span>
+          </div>
+          <p class="desc">A community-based organization providing services to the Filipino migrant community while organizing for immigrant rights, workers' rights, and social justice through community empowerment programs.</p>
+        </li>
+        <li data-name="kamalayan collective" data-desc="a grassroots organization building capacity among filipino youth through cultural work, arts-based organizing, and political education connecting issues in filipino communities across the diaspora.">
+          <div class="row">
+            <a class="name" href="https://www.kamalayannational.org/" target="_blank" rel="noopener noreferrer">Kamalayan Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">kamalayannational.org</span>
+          </div>
+          <p class="desc">A grassroots organization building capacity among Filipino youth through cultural work, arts-based organizing, and political education connecting issues in Filipino communities across the diaspora.</p>
+        </li>
+        <li data-name="kasama" data-desc="an organization promoting mutual aid, community empowerment, and political education for filipino communities in the u.s., organizing around issues of labor rights, immigration, and anti-imperialism.">
+          <div class="row">
+            <a class="name" href="https://kasama.org/" target="_blank" rel="noopener noreferrer">Kasama <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">kasama.org</span>
+          </div>
+          <p class="desc">An organization promoting mutual aid, community empowerment, and political education for Filipino communities in the U.S., organizing around issues of labor rights, immigration, and anti-imperialism.</p>
+        </li>
+        <li data-name="babae" data-desc="a filipino women's organization focused on addressing issues of gender-based violence, trafficking, and discrimination against filipino women through advocacy, education, and support services.">
+          <div class="row">
+            <a class="name" href="https://www.babae-us.org/" target="_blank" rel="noopener noreferrer">BABAE <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">babae-us.org</span>
+          </div>
+          <p class="desc">A Filipino women's organization focused on addressing issues of gender-based violence, trafficking, and discrimination against Filipino women through advocacy, education, and support services.</p>
+        </li>
+        <li data-name="kabataan alliance" data-desc="a national alliance of filipino youth and student organizations in the united states advocating for education rights, immigrant rights, and international solidarity through grassroots organizing and leadership development.">
+          <div class="row">
+            <a class="name" href="https://www.kabataanalliance.org/" target="_blank" rel="noopener noreferrer">Kabataan Alliance <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">kabataanalliance.org</span>
+          </div>
+          <p class="desc">A national alliance of Filipino youth and student organizations in the United States advocating for education rights, immigrant rights, and international solidarity through grassroots organizing and leadership development.</p>
+        </li>
+        <li data-name="filipinos for justice" data-desc="the vision of faj is to foster a filipino community with the power to advance social &amp; economic justice.">
+          <div class="row">
+            <a class="name" href="https://filipinos4justice.org/" target="_blank" rel="noopener noreferrer">Filipinos for Justice <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">filipinos4justice.org</span>
+          </div>
+          <p class="desc">the vision of FAJ is to foster a Filipino community with the power to advance social &amp; economic justice.</p>
+        </li>
+        <li data-name="filipino solidarity network" data-desc="a network coordinating solidarity campaigns and mutual aid initiatives in support of human rights, environmental justice, and indigenous rights in the philippines through global advocacy and direct action.">
+          <div class="row">
+            <a class="name" href="https://www.filipinosolidarity.net/" target="_blank" rel="noopener noreferrer">Filipino Solidarity Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">filipinosolidarity.net</span>
+          </div>
+          <p class="desc">A network coordinating solidarity campaigns and mutual aid initiatives in support of human rights, environmental justice, and indigenous rights in the Philippines through global advocacy and direct action.</p>
+        </li>
+        <li data-name="migrante usa" data-desc="an alliance of filipino migrant and worker organizations in the u.s.">
+          <div class="row">
+            <a class="name" href="https://migranteusa.org/" target="_blank" rel="noopener noreferrer">Migrante USA <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">migranteusa.org</span>
+          </div>
+          <p class="desc">An alliance of Filipino migrant and worker organizations in the U.S.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

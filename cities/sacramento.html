@@ -1,128 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Sacramento Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Sacramento. Connect with local organizations and community resources.">
+  <title>Sacramento — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Sacramento.">
   <link rel="canonical" href="https://organize.directory/sacramento">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Sacramento Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Sacramento. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Sacramento — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Sacramento.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/sacramento">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/california">California</a>
-          <span>›</span>
-          <a href="/norcal">Northern California</a>
-          <span>›</span>
-          <span>Sacramento</span>
-        </div>
+<main id="main">
 
-        <h1>Sacramento</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/california">California</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/norcal">Northern California</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Sacramento</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://www.trp916.org/" target="_blank" rel="noopener noreferrer">The Reclamation Project</a>
-      <p>Youth-run grassroots organization building mutual aid initiatives, political education, and community healing programs for marginalized youth, with a focus on BIPOC, immigrant/refugee, and LGBTQ+ communities.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.lavenderlibrary.com/" target="_blank" rel="noopener noreferrer">Lavender Library</a>
-      <p>Community-run LGBTQ+ library and archive providing free access to queer literature, history, and cultural resources through mutual aid and solidarity.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/cellblock2cityblock/" target="_blank" rel="noopener noreferrer">Cellblock 2 Cityblock</a>
-      <p>Re-entry support organization helping formerly incarcerated people transition back to the community through mutual aid and solidarity.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/campresolution/" target="_blank" rel="noopener noreferrer">Camp Resolution</a>
-      <p>A self-governing homeless encampment in Sacramento that provides a safe, community-run space for unhoused individuals with support from local nonprofits and the city.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://sacramentohomelessunion.org/" target="_blank" rel="noopener noreferrer">Sacramento Homeless Union</a>
-      <p>We are a 100% grassroots, community-funded, humanitarian group committed to providing equipment, clothing, and supplies to folks living on the streets.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/sacsocialjusticeevents/" target="_blank" rel="noopener noreferrer">Sac Social Justice Events</a>
-      <p>Local activist posting event announcements.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://sacpwl.wordpress.com/" target="_blank" rel="noopener noreferrer">Sacramento Punks with Lunch</a>
-      <p>A mutual aid collective providing direct support and harm reduction services in Sacramento. They coordinate food distribution, resource sharing, and harm reduction supplies while building networks of solidarity through street outreach and community organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.antipoliceterrorproject.org/sacramento" target="_blank" rel="noopener noreferrer">Anti Police-Terror Project (APTP)
-              Sacramento</a>
-      <p>A grassroots organization coordinating mutual aid and community response initiatives in Sacramento. They organize direct support through Mental Health First (MH First) crisis response, community education, and solidarity networks while building alternatives to policing through collective action and transformative justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/sacareapeaceaction/" target="_blank" rel="noopener noreferrer">Sacramento Peace Action</a>
-      <p>A grassroots organization fostering mutual aid and community power through peace education and nonviolent action in Sacramento. They coordinate direct action, political education, and solidarity networks while building power through anti-war activism, social justice organizing, and creating spaces for movement building.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://surjsacramento.org/" target="_blank" rel="noopener noreferrer">SURJ Sacramento</a>
-      <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in Sacramento. They coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with BIPOC-led organizations like CHIRP (California Heritage: Indigenous Research Project) and NorCal Resist.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/sacfoodnotbombs" target="_blank" rel="noopener noreferrer">Sacramento Food Not Bombs</a>
-      <p>Serving a free vegan meal the 2nd and 4th Sunday of the month at 1:30pm on the corner of 10th &amp; J. If you're interested in joining, message us!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://saciww.com/" target="_blank" rel="noopener noreferrer">Sacramento Valley IWW</a>
-      <p>We are a worker-led union dedicated to direct action, workplace democracy, and industrial unionism.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/blmsacramento/" target="_blank" rel="noopener noreferrer">Black Lives Matter Sacramento</a>
-      <p>Racial justice organization that also hosts a community garden</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Sacramento</h1>
+    <p class="meta">
+      <b>13</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      California
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Sacramento</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Sacramento…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="the reclamation project" data-desc="youth-run grassroots organization building mutual aid initiatives, political education, and community healing programs for marginalized youth, with a focus on bipoc, immigrant/refugee, and lgbtq+ communities.">
+          <div class="row">
+            <a class="name" href="https://www.trp916.org/" target="_blank" rel="noopener noreferrer">The Reclamation Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">trp916.org</span>
+          </div>
+          <p class="desc">Youth-run grassroots organization building mutual aid initiatives, political education, and community healing programs for marginalized youth, with a focus on BIPOC, immigrant/refugee, and LGBTQ+ communities.</p>
+        </li>
+        <li data-name="lavender library" data-desc="community-run lgbtq+ library and archive providing free access to queer literature, history, and cultural resources through mutual aid and solidarity.">
+          <div class="row">
+            <a class="name" href="https://www.lavenderlibrary.com/" target="_blank" rel="noopener noreferrer">Lavender Library <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">lavenderlibrary.com</span>
+          </div>
+          <p class="desc">Community-run LGBTQ+ library and archive providing free access to queer literature, history, and cultural resources through mutual aid and solidarity.</p>
+        </li>
+        <li data-name="cellblock 2 cityblock" data-desc="re-entry support organization helping formerly incarcerated people transition back to the community through mutual aid and solidarity.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/cellblock2cityblock/" target="_blank" rel="noopener noreferrer">Cellblock 2 Cityblock <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Re-entry support organization helping formerly incarcerated people transition back to the community through mutual aid and solidarity.</p>
+        </li>
+        <li data-name="camp resolution" data-desc="a self-governing homeless encampment in sacramento that provides a safe, community-run space for unhoused individuals with support from local nonprofits and the city.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/campresolution/" target="_blank" rel="noopener noreferrer">Camp Resolution <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A self-governing homeless encampment in Sacramento that provides a safe, community-run space for unhoused individuals with support from local nonprofits and the city.</p>
+        </li>
+        <li data-name="sacramento homeless union" data-desc="we are a 100% grassroots, community-funded, humanitarian group committed to providing equipment, clothing, and supplies to folks living on the streets.">
+          <div class="row">
+            <a class="name" href="https://sacramentohomelessunion.org/" target="_blank" rel="noopener noreferrer">Sacramento Homeless Union <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sacramentohomelessunion.org</span>
+          </div>
+          <p class="desc">We are a 100% grassroots, community-funded, humanitarian group committed to providing equipment, clothing, and supplies to folks living on the streets.</p>
+        </li>
+        <li data-name="sac social justice events" data-desc="local activist posting event announcements.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/sacsocialjusticeevents/" target="_blank" rel="noopener noreferrer">Sac Social Justice Events <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Local activist posting event announcements.</p>
+        </li>
+        <li data-name="sacramento punks with lunch" data-desc="a mutual aid collective providing direct support and harm reduction services in sacramento. they coordinate food distribution, resource sharing, and harm reduction supplies while building networks of solidarity through street outreach and community organizing.">
+          <div class="row">
+            <a class="name" href="https://sacpwl.wordpress.com/" target="_blank" rel="noopener noreferrer">Sacramento Punks with Lunch <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sacpwl.wordpress.com</span>
+          </div>
+          <p class="desc">A mutual aid collective providing direct support and harm reduction services in Sacramento. They coordinate food distribution, resource sharing, and harm reduction supplies while building networks of solidarity through street outreach and community organizing.</p>
+        </li>
+        <li data-name="anti police-terror project (aptp)
+              sacramento" data-desc="a grassroots organization coordinating mutual aid and community response initiatives in sacramento. they organize direct support through mental health first (mh first) crisis response, community education, and solidarity networks while building alternatives to policing through collective action and transformative justice.">
+          <div class="row">
+            <a class="name" href="https://www.antipoliceterrorproject.org/sacramento" target="_blank" rel="noopener noreferrer">Anti Police-Terror Project (APTP)
+              Sacramento <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">antipoliceterrorproject.org</span>
+          </div>
+          <p class="desc">A grassroots organization coordinating mutual aid and community response initiatives in Sacramento. They organize direct support through Mental Health First (MH First) crisis response, community education, and solidarity networks while building alternatives to policing through collective action and transformative justice.</p>
+        </li>
+        <li data-name="sacramento peace action" data-desc="a grassroots organization fostering mutual aid and community power through peace education and nonviolent action in sacramento. they coordinate direct action, political education, and solidarity networks while building power through anti-war activism, social justice organizing, and creating spaces for movement building.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/sacareapeaceaction/" target="_blank" rel="noopener noreferrer">Sacramento Peace Action <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community power through peace education and nonviolent action in Sacramento. They coordinate direct action, political education, and solidarity networks while building power through anti-war activism, social justice organizing, and creating spaces for movement building.</p>
+        </li>
+        <li data-name="surj sacramento" data-desc="a chapter of showing up for racial justice fostering mutual aid and community solidarity through white anti-racist organizing in sacramento. they coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with bipoc-led organizations like chirp (california heritage: indigenous research project) and norcal resist.">
+          <div class="row">
+            <a class="name" href="https://surjsacramento.org/" target="_blank" rel="noopener noreferrer">SURJ Sacramento <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">surjsacramento.org</span>
+          </div>
+          <p class="desc">A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in Sacramento. They coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with BIPOC-led organizations like CHIRP (California Heritage: Indigenous Research Project) and NorCal Resist.</p>
+        </li>
+        <li data-name="sacramento food not bombs" data-desc="serving a free vegan meal the 2nd and 4th sunday of the month at 1:30pm on the corner of 10th &amp; j. if you're interested in joining, message us!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/sacfoodnotbombs" target="_blank" rel="noopener noreferrer">Sacramento Food Not Bombs <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Serving a free vegan meal the 2nd and 4th Sunday of the month at 1:30pm on the corner of 10th &amp; J. If you're interested in joining, message us!</p>
+        </li>
+        <li data-name="sacramento valley iww" data-desc="we are a worker-led union dedicated to direct action, workplace democracy, and industrial unionism.">
+          <div class="row">
+            <a class="name" href="https://saciww.com/" target="_blank" rel="noopener noreferrer">Sacramento Valley IWW <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">saciww.com</span>
+          </div>
+          <p class="desc">We are a worker-led union dedicated to direct action, workplace democracy, and industrial unionism.</p>
+        </li>
+        <li data-name="black lives matter sacramento" data-desc="racial justice organization that also hosts a community garden">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/blmsacramento/" target="_blank" rel="noopener noreferrer">Black Lives Matter Sacramento <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Racial justice organization that also hosts a community garden</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

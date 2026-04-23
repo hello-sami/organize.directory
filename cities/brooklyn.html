@@ -1,397 +1,573 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Brooklyn Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Brooklyn. Connect with local organizations and community resources.">
+  <title>Brooklyn — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Brooklyn.">
   <link rel="canonical" href="https://organize.directory/brooklyn">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Brooklyn Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Brooklyn. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Brooklyn — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Brooklyn.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/brooklyn">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="content-wrapper">
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/new-york">New York</a>
-          <span>›</span>
-          <a href="/nyc">New York City</a>
-          <span>›</span>
-          <span>Brooklyn</span>
-        </div>
+<main id="main">
 
-        <h1>Brooklyn</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/new-york">New York</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/nyc">New York City</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Brooklyn</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="bay-ridge" class="city-section">
-    <h2>Bay Ridge</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/bayridgesolidarity/" target="_blank" rel="noopener noreferrer">Bay Ridge Solidarity</a>
-      <p>Amplifying the voices of the oppressed from Bay Ridge</p>
-    </div>
-  </section>
-
-  <section id="bed-stuy" class="city-section">
-    <h2>Bedford-Stuyvesant (Bed-Stuy)</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/1pulaski/" target="_blank" rel="noopener noreferrer">1 Pulaski Community Fridge and Library</a>
-      <p>Community fridge and library in Bed-Stuy</p>
-    </div>
-    <div class="initiative">
-      <a href="https://anotherworld.nyc/" target="_blank" rel="noopener noreferrer">Another World</a>
-      <p>Upcoming radical community space in Bed-Stuy</p>
-    </div>
-    <div class="initiative">
-      <a href="https://bedstuystrong.com" target="_blank" rel="noopener noreferrer">Bed-Stuy Strong</a>
-      <p>A mutual aid network of neighbors helping neighbors in Bedford-Stuyvesant.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/feedthepeople_bedstuy" target="_blank" rel="noopener noreferrer">Feed the People Bed-Stuy</a>
-      <p>free meals for food shares, strikes &amp; jail support, find us @ Herbert von king every sat @ 3pm</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.riders4rights.org/" target="_blank" rel="noopener noreferrer">Riders for Rights</a>
-      <p>Riders4Rights is a Black-led mutual aid organization in BedStuy, Brooklyn</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/seedsofliberation_/" target="_blank" rel="noopener noreferrer">Seeds of Liberation</a>
-      <p>Equipping underserved communities with educational programming, direct actions &amp; tools for self-liberation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.wethepeople.nyc/" target="_blank" rel="noopener noreferrer">We the People</a>
-      <p>Building &amp; organizing through mutual aid efforts. Weekly distro at the corner of Fulton st &amp; Nostrand Ave</p>
-    </div>
-  </section>
-
-  <section id="bushwick" class="city-section">
-    <h2>Bushwick</h2>
-    <div class="initiative">
-      <a href="https://bushwickayudamutua.com/" target="_blank" rel="noopener noreferrer">Bushwick Ayuda Mutua</a>
-      <p>Bushwick neighbors helping Bushwick neighbors through mutual aid.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/bushwickcityfarms/" target="_blank" rel="noopener noreferrer">Bushwick City Farms</a>
-      <p>Community-run garden &amp; mutual aid. Open hours are on Wednesday &amp; weekend afternoons. New volunteers are encouraged to come Sundays</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/thebushwickfridge" target="_blank" rel="noopener noreferrer">The Bushwick Fridge</a>
-      <p>Always accepting food donations! *DIY*24 hours* dont ask just go help.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.bhipbk.org/" target="_blank" rel="noopener noreferrer">Bushwick Housing Independence Project</a>
-      <p>Building the collective strength, stability, visibility and self-determination of Bushwick's working class and immigrant renters.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://bushwicktenantunion.com/" target="_blank" rel="noopener noreferrer">Bushwick Tenant Union</a>
-      <p>Bushwick's tenant union. Educating and empowering tenants on their rights!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/club_a_nyc" target="_blank" rel="noopener noreferrer">Club A</a>
-      <p>Anarchist mutual aid collective distributing groceries at @bushwickcityfarms every Wednesday &amp; Saturday 12-3pm.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.comunidadprimero.org/" target="_blank" rel="noopener noreferrer">Comunidad Primero</a>
-      <p>Bushwick organization fighting food insecurity with food distributions.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/foodfightbk" target="_blank" rel="noopener noreferrer">Food Fight BK</a>
-      <p>Free food distribution program serving the people of Bushwick</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/loyal_harts_collective" target="_blank" rel="noopener noreferrer">Loyal Harts Collective</a>
-      <p>Anarchist community food distro, Sundays at 2pm at Til Death, 603 Hart St, Reach out to volunteer with us!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/micasaresiste/" target="_blank" rel="noopener noreferrer">Mi Casa Resiste</a>
-      <p>Bushwick anticapitalist collective using art and direct action to fight the displacement and criminalization of low-income Black &amp; Brown families in Brooklyn.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://milmundosencomun.org/" target="_blank" rel="noopener noreferrer">Mil Mundos En Comun</a>
-      <p>a volunteer-run 501(3)(c) nonprofit working to provide access to essential goods, literacy, and digital connectivity in Bushwick, Brooklyn since 2021.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://rainorshinediaperfund.org/" target="_blank" rel="noopener noreferrer">Rain or Shine Diaper Fund</a>
-      <p>We provide diapers and wipes to our community every Monday, rain or shine! 1094 Broadway, Brooklyn NY.</p>
-    </div>
-  </section>
-
-  <section id="clinton-hill-fort-greene" class="city-section">
-    <h2>Clinton Hill / Fort Greene</h2>
-    <div class="initiative">
-      <a href="https://www.chfgma.org/" target="_blank" rel="noopener noreferrer">Clinton Hill/Fort Greene Mutual Aid</a>
-      <p>Neighbors helping neighbors in Clinton Hill and Fort Greene.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/kidzonedistro" target="_blank" rel="noopener noreferrer">Kid Zone Distro</a>
-      <p>Art, toys, and essential supplies mutual aid distribution for migrant children in the Hall St shelter at Clinton Hill. Every Saturday</p>
-    </div>
-  </section>
-
-  <section id="crown-heights" class="city-section">
-    <h2>Crown Heights</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/classon_community_fridge/" target="_blank" rel="noopener noreferrer">Classon Community Fridge</a>
-      <p>Community fridge outside of Friends and Lovers, also food distros</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/crownheightsbitesback" target="_blank" rel="noopener noreferrer">Crown Heights Bites Back</a>
-      <p>CH-based collective resisting the state and providing food, clothing, and political education to our neighbors. TUESDAYS 5PM, UTICA AND EAST. PARKWAY</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/chcarecollective/" target="_blank" rel="noopener noreferrer">Crown Heights Care Collective</a>
-      <p>Community - Abolition - Resources - Education - Against policing</p>
-    </div>
-    <div class="initiative">
-      <a href="https://crownheightsmutualaid.wordpress.com/" target="_blank" rel="noopener noreferrer">Crown Heights Mutual Aid</a>
-      <p>Community support network in Crown Heights.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.crownheightstenantunion.org/" target="_blank" rel="noopener noreferrer">Crown Heights Tenant Union</a>
-      <p>CHTU is an autonomous, democratic union of tenants who live in Crown Heights and the surrounding neighborhoods.</p>
-    </div>
-  </section>
-
-  <section id="east-brooklyn" class="city-section">
-    <h2>East Brooklyn</h2>
-    <div class="initiative">
-      <a href="https://www.eastbrooklynmutualaid.org/" target="_blank" rel="noopener noreferrer">East Brooklyn Mutual Aid</a>
-      <p>Community support network in East Brooklyn.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.eastnewyorkclt.org/" target="_blank" rel="noopener noreferrer">East New York Community Land Trust</a>
-      <p>Our mission is to protect, stabilize and expand the stock of affordable homes, locally-owned small businesses, worker co-ops and green spaces in East New York and Brownsville for the benefit of longtime low-income and working class Black, Latine, Asian and other communities of color.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/hope_organizers" target="_blank" rel="noopener noreferrer">HOPE Organizers</a>
-      <p>HOPE is a Tenant Union made up of community members and Tenants' Associations located in Eastern Brooklyn fighting for housing justice!</p>
-    </div>
-  </section>
-
-  <section id="flatbush" class="city-section">
-    <h2>Flatbush</h2>
-    <div class="initiative">
-      <a href="https://www.equalityforflatbush.org/" target="_blank" rel="noopener noreferrer">Equality for Flatbush</a>
-      <p>E4F is a Black Lives Matter organization that has fought police violence, displacement &amp; gentrification in Brooklyn, NY since 2013</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/flatbushpower" target="_blank" rel="noopener noreferrer">Flatbush Power</a>
-      <p>Building tenant power in Brooklyn &amp; beyond</p>
-    </div>
-  </section>
-
-  <section id="south-brooklyn" class="city-section">
-    <h2>South Brooklyn</h2>
-    <div class="initiative">
-      <a href="https://www.gowanusmutualaid.org/" target="_blank" rel="noopener noreferrer">Gowanus Mutual Aid</a>
-      <p>Mutual aid network serving the Gowanus area.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://massmutualaid.cargo.site/" target="_blank" rel="noopener noreferrer">MASS: Mutual Aid &amp; Scientific Socialism</a>
-      <p>A revolutionary community organization in Brooklyn providing free food, clothing, books, education and agitation to organize against systemic exploitation and oppression.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://sites.google.com/view/redhook-mutualaid" target="_blank" rel="noopener noreferrer">Red Hook Mutual Aid</a>
-      <p>Community support in Red Hook.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/southbklyn4palestine" target="_blank" rel="noopener noreferrer">South Brooklyn 4 Palestine</a>
-      <p>We're the South BK working group of the Shut it Down 4 Palestine Coalition Fighting for liberation &amp; return</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/southbrooklynmutualaid" target="_blank" rel="noopener noreferrer">South Brooklyn Mutual Aid</a>
-      <p>Throwing down and showing up as neighbors of South Brooklyn together.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.southbrooklynsanctuary.org/" target="_blank" rel="noopener noreferrer">South Brooklyn Sanctuary</a>
-      <p>We train every-day New Yorkers to provide support to immigrants who cannot afford attorneys.</p>
-    </div>
-  </section>
-
-  <section id="sunset-park" class="city-section">
-    <h2>Sunset Park</h2>
-    <div class="initiative">
-      <a href="https://www.mixteca.org/" target="_blank" rel="noopener noreferrer">Mixteca</a>
-      <p>We are a community-based organization supporting Sunset Park's Latinx and Indigenous immigrant community.</p>
-    </div>
-  </section>
-
-  <section id="williamsburg" class="city-section">
-    <h2>Williamsburg / Greenpoint</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/comeforever_" target="_blank" rel="noopener noreferrer">Come Forever</a>
-      <p>public archives + public bathroom + mutual aid in South Williamsburg</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.northbrooklynmutualaid.org/" target="_blank" rel="noopener noreferrer">North Brooklyn Mutual Aid</a>
-      <p>A network of residents in Williamsburg and Greenpoint working together to provide aid and resources to neighbors.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.propertyistheft.org/" target="_blank" rel="noopener noreferrer">Property Is Theft (P.I.T.)</a>
-      <p>P.I.T. is a community space, venue and info-shop in Los Sures, Williamsburg supported by book and record sales.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/sid4p_nbk" target="_blank" rel="noopener noreferrer">Shut it Down 4 Palestine North Brooklyn</a>
-      <p>nbk working group of shut it down 4 palestine organzing against imperialism at home and abroad 🇵🇸 fundraising for @mecaforpeace</p>
-    </div>
-  </section>
-
-  <section id="other" class="city-section">
-    <h2>Other</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/bkjailsupport/" target="_blank" rel="noopener noreferrer">BK Jail Support</a>
-      <p>an abolitionist, mutual aid potluck</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/blackstarresistance" target="_blank" rel="noopener noreferrer">Black Star Resistance</a>
-      <p>An alliance of working-class Black and Indigenous organizers devoted to an uncompromising struggle against imperialism &amp; colonization.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.bedtu.org/" target="_blank" rel="noopener noreferrer">Brooklyn Eviction Defense Tenant Union</a>
-      <p>Fighting evictions and supporting tenants in Brooklyn.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/bkfamiliesforpalestine" target="_blank" rel="noopener noreferrer">Brooklyn Families for
-                                Palestine</a>
-      <p>Anti-Zionist families of all kinds organizing for a liberated Palestine.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://brooklynpeace.org/" target="_blank" rel="noopener noreferrer">Brooklyn For Peace</a>
-      <p>Brooklyn For Peace is committed to eliminating war and the social injustices that are its causes.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/g_rebls/" target="_blank" rel="noopener noreferrer">G-REBELS</a>
-      <p>G-REBELS is a grassroots, Brooklyn based org aimed at promoting solidarity through community action.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/jupi.bk/" target="_blank" rel="noopener noreferrer">Jupi (Juventud Unida por la Independencia) - BK
-                                Chapter</a>
-      <p>Educating, organizing, and mobilizing Boricua youth, students, and their allies for an independent, anti-imperialist, and socialist Puerto Rico</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/thirdworldalliance" target="_blank" rel="noopener noreferrer">Third World Alliance</a>
-      <p>We are anti-imperialist student organizers working on political education and mutual aid.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.wbwmutualaid.org/" target="_blank" rel="noopener noreferrer">WBW Mutual Aid</a>
-      <p>We are a community of neighbors in West Brooklyn organizing to support each other through the COVID-19 pandemic and beyond.</p>
-    </div>
-  </section>
-        </div>
-      </div>
-        <aside class="toc-container">
-          <nav class="toc" role="navigation" aria-label="Table of Contents" id="toc">
-            <ul class="toc-list">
-          <li class="toc-item">
-            <a href="#bay-ridge" class="toc-link">
-              <span class="toc-number">1.</span>
-              <span class="toc-text">Bay Ridge</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#bed-stuy" class="toc-link">
-              <span class="toc-number">2.</span>
-              <span class="toc-text">Bedford-Stuyvesant (Bed-Stuy)</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#bushwick" class="toc-link">
-              <span class="toc-number">3.</span>
-              <span class="toc-text">Bushwick</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#clinton-hill-fort-greene" class="toc-link">
-              <span class="toc-number">4.</span>
-              <span class="toc-text">Clinton Hill / Fort Greene</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#crown-heights" class="toc-link">
-              <span class="toc-number">5.</span>
-              <span class="toc-text">Crown Heights</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#east-brooklyn" class="toc-link">
-              <span class="toc-number">6.</span>
-              <span class="toc-text">East Brooklyn</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#flatbush" class="toc-link">
-              <span class="toc-number">7.</span>
-              <span class="toc-text">Flatbush</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#south-brooklyn" class="toc-link">
-              <span class="toc-number">8.</span>
-              <span class="toc-text">South Brooklyn</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#sunset-park" class="toc-link">
-              <span class="toc-number">9.</span>
-              <span class="toc-text">Sunset Park</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#williamsburg" class="toc-link">
-              <span class="toc-number">10.</span>
-              <span class="toc-text">Williamsburg / Greenpoint</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#other" class="toc-link">
-              <span class="toc-number">11.</span>
-              <span class="toc-text">Other</span>
-            </a>
-          </li>
-            </ul>
-          </nav>
-        </aside>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">Brooklyn</h1>
+    <p class="meta">
+      <b>52</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      New York
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  <script src="/js/city-toc.js" defer></script>
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Brooklyn</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Brooklyn…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+  <nav class="toc" aria-label="Sections on this page">
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
+      <span class="current">
+        <span class="current-label">Section ·</span>
+        <span class="current-name">Bay Ridge</span>
+      </span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div id="toc-panel" class="toc-scroll">
+      <a href="#bay-ridge" data-section="bay-ridge"><span class="label">Bay Ridge</span> <span class="count">1</span></a>
+      <a href="#bed-stuy" data-section="bed-stuy"><span class="label">Bedford-Stuyvesant (Bed-Stuy)</span> <span class="count">7</span></a>
+      <a href="#bushwick" data-section="bushwick"><span class="label">Bushwick</span> <span class="count">12</span></a>
+      <a href="#clinton-hill-fort-greene" data-section="clinton-hill-fort-greene"><span class="label">Clinton Hill / Fort Greene</span> <span class="count">2</span></a>
+      <a href="#crown-heights" data-section="crown-heights"><span class="label">Crown Heights</span> <span class="count">5</span></a>
+      <a href="#east-brooklyn" data-section="east-brooklyn"><span class="label">East Brooklyn</span> <span class="count">3</span></a>
+      <a href="#flatbush" data-section="flatbush"><span class="label">Flatbush</span> <span class="count">2</span></a>
+      <a href="#south-brooklyn" data-section="south-brooklyn"><span class="label">South Brooklyn</span> <span class="count">6</span></a>
+      <a href="#sunset-park" data-section="sunset-park"><span class="label">Sunset Park</span> <span class="count">1</span></a>
+      <a href="#williamsburg" data-section="williamsburg"><span class="label">Williamsburg / Greenpoint</span> <span class="count">4</span></a>
+      <a href="#other" data-section="other"><span class="label">Other</span> <span class="count">9</span></a>
+    </div>
+  </nav>
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="bay-ridge" class="group-section" data-section="bay-ridge">
+      <h2 class="section-title">Bay Ridge</h2>
+      <ol class="groups">
+        <li data-name="bay ridge solidarity" data-desc="amplifying the voices of the oppressed from bay ridge">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/bayridgesolidarity/" target="_blank" rel="noopener noreferrer">Bay Ridge Solidarity <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Amplifying the voices of the oppressed from Bay Ridge</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="bed-stuy" class="group-section" data-section="bed-stuy">
+      <h2 class="section-title">Bedford-Stuyvesant (Bed-Stuy)</h2>
+      <ol class="groups">
+        <li data-name="1 pulaski community fridge and library" data-desc="community fridge and library in bed-stuy">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/1pulaski/" target="_blank" rel="noopener noreferrer">1 Pulaski Community Fridge and Library <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Community fridge and library in Bed-Stuy</p>
+        </li>
+        <li data-name="another world" data-desc="upcoming radical community space in bed-stuy">
+          <div class="row">
+            <a class="name" href="https://anotherworld.nyc/" target="_blank" rel="noopener noreferrer">Another World <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">anotherworld.nyc</span>
+          </div>
+          <p class="desc">Upcoming radical community space in Bed-Stuy</p>
+        </li>
+        <li data-name="bed-stuy strong" data-desc="a mutual aid network of neighbors helping neighbors in bedford-stuyvesant.">
+          <div class="row">
+            <a class="name" href="https://bedstuystrong.com" target="_blank" rel="noopener noreferrer">Bed-Stuy Strong <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bedstuystrong.com</span>
+          </div>
+          <p class="desc">A mutual aid network of neighbors helping neighbors in Bedford-Stuyvesant.</p>
+        </li>
+        <li data-name="feed the people bed-stuy" data-desc="free meals for food shares, strikes &amp; jail support, find us @ herbert von king every sat @ 3pm">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/feedthepeople_bedstuy" target="_blank" rel="noopener noreferrer">Feed the People Bed-Stuy <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">free meals for food shares, strikes &amp; jail support, find us @ Herbert von king every sat @ 3pm</p>
+        </li>
+        <li data-name="riders for rights" data-desc="riders4rights is a black-led mutual aid organization in bedstuy, brooklyn">
+          <div class="row">
+            <a class="name" href="https://www.riders4rights.org/" target="_blank" rel="noopener noreferrer">Riders for Rights <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">riders4rights.org</span>
+          </div>
+          <p class="desc">Riders4Rights is a Black-led mutual aid organization in BedStuy, Brooklyn</p>
+        </li>
+        <li data-name="seeds of liberation" data-desc="equipping underserved communities with educational programming, direct actions &amp; tools for self-liberation.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/seedsofliberation_/" target="_blank" rel="noopener noreferrer">Seeds of Liberation <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Equipping underserved communities with educational programming, direct actions &amp; tools for self-liberation.</p>
+        </li>
+        <li data-name="we the people" data-desc="building &amp; organizing through mutual aid efforts. weekly distro at the corner of fulton st &amp; nostrand ave">
+          <div class="row">
+            <a class="name" href="https://www.wethepeople.nyc/" target="_blank" rel="noopener noreferrer">We the People <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">wethepeople.nyc</span>
+          </div>
+          <p class="desc">Building &amp; organizing through mutual aid efforts. Weekly distro at the corner of Fulton st &amp; Nostrand Ave</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="bushwick" class="group-section" data-section="bushwick">
+      <h2 class="section-title">Bushwick</h2>
+      <ol class="groups">
+        <li data-name="bushwick ayuda mutua" data-desc="bushwick neighbors helping bushwick neighbors through mutual aid.">
+          <div class="row">
+            <a class="name" href="https://bushwickayudamutua.com/" target="_blank" rel="noopener noreferrer">Bushwick Ayuda Mutua <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bushwickayudamutua.com</span>
+          </div>
+          <p class="desc">Bushwick neighbors helping Bushwick neighbors through mutual aid.</p>
+        </li>
+        <li data-name="bushwick city farms" data-desc="community-run garden &amp; mutual aid. open hours are on wednesday &amp; weekend afternoons. new volunteers are encouraged to come sundays">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/bushwickcityfarms/" target="_blank" rel="noopener noreferrer">Bushwick City Farms <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Community-run garden &amp; mutual aid. Open hours are on Wednesday &amp; weekend afternoons. New volunteers are encouraged to come Sundays</p>
+        </li>
+        <li data-name="the bushwick fridge" data-desc="always accepting food donations! *diy*24 hours* dont ask just go help.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/thebushwickfridge" target="_blank" rel="noopener noreferrer">The Bushwick Fridge <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Always accepting food donations! *DIY*24 hours* dont ask just go help.</p>
+        </li>
+        <li data-name="bushwick housing independence project" data-desc="building the collective strength, stability, visibility and self-determination of bushwick's working class and immigrant renters.">
+          <div class="row">
+            <a class="name" href="https://www.bhipbk.org/" target="_blank" rel="noopener noreferrer">Bushwick Housing Independence Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bhipbk.org</span>
+          </div>
+          <p class="desc">Building the collective strength, stability, visibility and self-determination of Bushwick's working class and immigrant renters.</p>
+        </li>
+        <li data-name="bushwick tenant union" data-desc="bushwick's tenant union. educating and empowering tenants on their rights!">
+          <div class="row">
+            <a class="name" href="https://bushwicktenantunion.com/" target="_blank" rel="noopener noreferrer">Bushwick Tenant Union <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bushwicktenantunion.com</span>
+          </div>
+          <p class="desc">Bushwick's tenant union. Educating and empowering tenants on their rights!</p>
+        </li>
+        <li data-name="club a" data-desc="anarchist mutual aid collective distributing groceries at @bushwickcityfarms every wednesday &amp; saturday 12-3pm.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/club_a_nyc" target="_blank" rel="noopener noreferrer">Club A <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Anarchist mutual aid collective distributing groceries at @bushwickcityfarms every Wednesday &amp; Saturday 12-3pm.</p>
+        </li>
+        <li data-name="comunidad primero" data-desc="bushwick organization fighting food insecurity with food distributions.">
+          <div class="row">
+            <a class="name" href="https://www.comunidadprimero.org/" target="_blank" rel="noopener noreferrer">Comunidad Primero <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">comunidadprimero.org</span>
+          </div>
+          <p class="desc">Bushwick organization fighting food insecurity with food distributions.</p>
+        </li>
+        <li data-name="food fight bk" data-desc="free food distribution program serving the people of bushwick">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/foodfightbk" target="_blank" rel="noopener noreferrer">Food Fight BK <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Free food distribution program serving the people of Bushwick</p>
+        </li>
+        <li data-name="loyal harts collective" data-desc="anarchist community food distro, sundays at 2pm at til death, 603 hart st, reach out to volunteer with us!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/loyal_harts_collective" target="_blank" rel="noopener noreferrer">Loyal Harts Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Anarchist community food distro, Sundays at 2pm at Til Death, 603 Hart St, Reach out to volunteer with us!</p>
+        </li>
+        <li data-name="mi casa resiste" data-desc="bushwick anticapitalist collective using art and direct action to fight the displacement and criminalization of low-income black &amp; brown families in brooklyn.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/micasaresiste/" target="_blank" rel="noopener noreferrer">Mi Casa Resiste <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Bushwick anticapitalist collective using art and direct action to fight the displacement and criminalization of low-income Black &amp; Brown families in Brooklyn.</p>
+        </li>
+        <li data-name="mil mundos en comun" data-desc="a volunteer-run 501(3)(c) nonprofit working to provide access to essential goods, literacy, and digital connectivity in bushwick, brooklyn since 2021.">
+          <div class="row">
+            <a class="name" href="https://milmundosencomun.org/" target="_blank" rel="noopener noreferrer">Mil Mundos En Comun <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">milmundosencomun.org</span>
+          </div>
+          <p class="desc">a volunteer-run 501(3)(c) nonprofit working to provide access to essential goods, literacy, and digital connectivity in Bushwick, Brooklyn since 2021.</p>
+        </li>
+        <li data-name="rain or shine diaper fund" data-desc="we provide diapers and wipes to our community every monday, rain or shine! 1094 broadway, brooklyn ny.">
+          <div class="row">
+            <a class="name" href="https://rainorshinediaperfund.org/" target="_blank" rel="noopener noreferrer">Rain or Shine Diaper Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">rainorshinediaperfund.org</span>
+          </div>
+          <p class="desc">We provide diapers and wipes to our community every Monday, rain or shine! 1094 Broadway, Brooklyn NY.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="clinton-hill-fort-greene" class="group-section" data-section="clinton-hill-fort-greene">
+      <h2 class="section-title">Clinton Hill / Fort Greene</h2>
+      <ol class="groups">
+        <li data-name="clinton hill/fort greene mutual aid" data-desc="neighbors helping neighbors in clinton hill and fort greene.">
+          <div class="row">
+            <a class="name" href="https://www.chfgma.org/" target="_blank" rel="noopener noreferrer">Clinton Hill/Fort Greene Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">chfgma.org</span>
+          </div>
+          <p class="desc">Neighbors helping neighbors in Clinton Hill and Fort Greene.</p>
+        </li>
+        <li data-name="kid zone distro" data-desc="art, toys, and essential supplies mutual aid distribution for migrant children in the hall st shelter at clinton hill. every saturday">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/kidzonedistro" target="_blank" rel="noopener noreferrer">Kid Zone Distro <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Art, toys, and essential supplies mutual aid distribution for migrant children in the Hall St shelter at Clinton Hill. Every Saturday</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="crown-heights" class="group-section" data-section="crown-heights">
+      <h2 class="section-title">Crown Heights</h2>
+      <ol class="groups">
+        <li data-name="classon community fridge" data-desc="community fridge outside of friends and lovers, also food distros">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/classon_community_fridge/" target="_blank" rel="noopener noreferrer">Classon Community Fridge <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Community fridge outside of Friends and Lovers, also food distros</p>
+        </li>
+        <li data-name="crown heights bites back" data-desc="ch-based collective resisting the state and providing food, clothing, and political education to our neighbors. tuesdays 5pm, utica and east. parkway">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/crownheightsbitesback" target="_blank" rel="noopener noreferrer">Crown Heights Bites Back <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">CH-based collective resisting the state and providing food, clothing, and political education to our neighbors. TUESDAYS 5PM, UTICA AND EAST. PARKWAY</p>
+        </li>
+        <li data-name="crown heights care collective" data-desc="community - abolition - resources - education - against policing">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/chcarecollective/" target="_blank" rel="noopener noreferrer">Crown Heights Care Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Community - Abolition - Resources - Education - Against policing</p>
+        </li>
+        <li data-name="crown heights mutual aid" data-desc="community support network in crown heights.">
+          <div class="row">
+            <a class="name" href="https://crownheightsmutualaid.wordpress.com/" target="_blank" rel="noopener noreferrer">Crown Heights Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">crownheightsmutualaid.wordpress.com</span>
+          </div>
+          <p class="desc">Community support network in Crown Heights.</p>
+        </li>
+        <li data-name="crown heights tenant union" data-desc="chtu is an autonomous, democratic union of tenants who live in crown heights and the surrounding neighborhoods.">
+          <div class="row">
+            <a class="name" href="https://www.crownheightstenantunion.org/" target="_blank" rel="noopener noreferrer">Crown Heights Tenant Union <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">crownheightstenantunion.org</span>
+          </div>
+          <p class="desc">CHTU is an autonomous, democratic union of tenants who live in Crown Heights and the surrounding neighborhoods.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="east-brooklyn" class="group-section" data-section="east-brooklyn">
+      <h2 class="section-title">East Brooklyn</h2>
+      <ol class="groups">
+        <li data-name="east brooklyn mutual aid" data-desc="community support network in east brooklyn.">
+          <div class="row">
+            <a class="name" href="https://www.eastbrooklynmutualaid.org/" target="_blank" rel="noopener noreferrer">East Brooklyn Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">eastbrooklynmutualaid.org</span>
+          </div>
+          <p class="desc">Community support network in East Brooklyn.</p>
+        </li>
+        <li data-name="east new york community land trust" data-desc="our mission is to protect, stabilize and expand the stock of affordable homes, locally-owned small businesses, worker co-ops and green spaces in east new york and brownsville for the benefit of longtime low-income and working class black, latine, asian and other communities of color.">
+          <div class="row">
+            <a class="name" href="https://www.eastnewyorkclt.org/" target="_blank" rel="noopener noreferrer">East New York Community Land Trust <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">eastnewyorkclt.org</span>
+          </div>
+          <p class="desc">Our mission is to protect, stabilize and expand the stock of affordable homes, locally-owned small businesses, worker co-ops and green spaces in East New York and Brownsville for the benefit of longtime low-income and working class Black, Latine, Asian and other communities of color.</p>
+        </li>
+        <li data-name="hope organizers" data-desc="hope is a tenant union made up of community members and tenants' associations located in eastern brooklyn fighting for housing justice!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/hope_organizers" target="_blank" rel="noopener noreferrer">HOPE Organizers <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">HOPE is a Tenant Union made up of community members and Tenants' Associations located in Eastern Brooklyn fighting for housing justice!</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="flatbush" class="group-section" data-section="flatbush">
+      <h2 class="section-title">Flatbush</h2>
+      <ol class="groups">
+        <li data-name="equality for flatbush" data-desc="e4f is a black lives matter organization that has fought police violence, displacement &amp; gentrification in brooklyn, ny since 2013">
+          <div class="row">
+            <a class="name" href="https://www.equalityforflatbush.org/" target="_blank" rel="noopener noreferrer">Equality for Flatbush <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">equalityforflatbush.org</span>
+          </div>
+          <p class="desc">E4F is a Black Lives Matter organization that has fought police violence, displacement &amp; gentrification in Brooklyn, NY since 2013</p>
+        </li>
+        <li data-name="flatbush power" data-desc="building tenant power in brooklyn &amp; beyond">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/flatbushpower" target="_blank" rel="noopener noreferrer">Flatbush Power <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Building tenant power in Brooklyn &amp; beyond</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="south-brooklyn" class="group-section" data-section="south-brooklyn">
+      <h2 class="section-title">South Brooklyn</h2>
+      <ol class="groups">
+        <li data-name="gowanus mutual aid" data-desc="mutual aid network serving the gowanus area.">
+          <div class="row">
+            <a class="name" href="https://www.gowanusmutualaid.org/" target="_blank" rel="noopener noreferrer">Gowanus Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">gowanusmutualaid.org</span>
+          </div>
+          <p class="desc">Mutual aid network serving the Gowanus area.</p>
+        </li>
+        <li data-name="mass: mutual aid &amp; scientific socialism" data-desc="a revolutionary community organization in brooklyn providing free food, clothing, books, education and agitation to organize against systemic exploitation and oppression.">
+          <div class="row">
+            <a class="name" href="https://massmutualaid.cargo.site/" target="_blank" rel="noopener noreferrer">MASS: Mutual Aid &amp; Scientific Socialism <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">massmutualaid.cargo.site</span>
+          </div>
+          <p class="desc">A revolutionary community organization in Brooklyn providing free food, clothing, books, education and agitation to organize against systemic exploitation and oppression.</p>
+        </li>
+        <li data-name="red hook mutual aid" data-desc="community support in red hook.">
+          <div class="row">
+            <a class="name" href="https://sites.google.com/view/redhook-mutualaid" target="_blank" rel="noopener noreferrer">Red Hook Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sites.google.com</span>
+          </div>
+          <p class="desc">Community support in Red Hook.</p>
+        </li>
+        <li data-name="south brooklyn 4 palestine" data-desc="we're the south bk working group of the shut it down 4 palestine coalition fighting for liberation &amp; return">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/southbklyn4palestine" target="_blank" rel="noopener noreferrer">South Brooklyn 4 Palestine <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We're the South BK working group of the Shut it Down 4 Palestine Coalition Fighting for liberation &amp; return</p>
+        </li>
+        <li data-name="south brooklyn mutual aid" data-desc="throwing down and showing up as neighbors of south brooklyn together.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/southbrooklynmutualaid" target="_blank" rel="noopener noreferrer">South Brooklyn Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Throwing down and showing up as neighbors of South Brooklyn together.</p>
+        </li>
+        <li data-name="south brooklyn sanctuary" data-desc="we train every-day new yorkers to provide support to immigrants who cannot afford attorneys.">
+          <div class="row">
+            <a class="name" href="https://www.southbrooklynsanctuary.org/" target="_blank" rel="noopener noreferrer">South Brooklyn Sanctuary <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">southbrooklynsanctuary.org</span>
+          </div>
+          <p class="desc">We train every-day New Yorkers to provide support to immigrants who cannot afford attorneys.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="sunset-park" class="group-section" data-section="sunset-park">
+      <h2 class="section-title">Sunset Park</h2>
+      <ol class="groups">
+        <li data-name="mixteca" data-desc="we are a community-based organization supporting sunset park's latinx and indigenous immigrant community.">
+          <div class="row">
+            <a class="name" href="https://www.mixteca.org/" target="_blank" rel="noopener noreferrer">Mixteca <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">mixteca.org</span>
+          </div>
+          <p class="desc">We are a community-based organization supporting Sunset Park's Latinx and Indigenous immigrant community.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="williamsburg" class="group-section" data-section="williamsburg">
+      <h2 class="section-title">Williamsburg / Greenpoint</h2>
+      <ol class="groups">
+        <li data-name="come forever" data-desc="public archives + public bathroom + mutual aid in south williamsburg">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/comeforever_" target="_blank" rel="noopener noreferrer">Come Forever <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">public archives + public bathroom + mutual aid in South Williamsburg</p>
+        </li>
+        <li data-name="north brooklyn mutual aid" data-desc="a network of residents in williamsburg and greenpoint working together to provide aid and resources to neighbors.">
+          <div class="row">
+            <a class="name" href="https://www.northbrooklynmutualaid.org/" target="_blank" rel="noopener noreferrer">North Brooklyn Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">northbrooklynmutualaid.org</span>
+          </div>
+          <p class="desc">A network of residents in Williamsburg and Greenpoint working together to provide aid and resources to neighbors.</p>
+        </li>
+        <li data-name="property is theft (p.i.t.)" data-desc="p.i.t. is a community space, venue and info-shop in los sures, williamsburg supported by book and record sales.">
+          <div class="row">
+            <a class="name" href="https://www.propertyistheft.org/" target="_blank" rel="noopener noreferrer">Property Is Theft (P.I.T.) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">propertyistheft.org</span>
+          </div>
+          <p class="desc">P.I.T. is a community space, venue and info-shop in Los Sures, Williamsburg supported by book and record sales.</p>
+        </li>
+        <li data-name="shut it down 4 palestine north brooklyn" data-desc="nbk working group of shut it down 4 palestine organzing against imperialism at home and abroad 🇵🇸 fundraising for @mecaforpeace">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/sid4p_nbk" target="_blank" rel="noopener noreferrer">Shut it Down 4 Palestine North Brooklyn <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">nbk working group of shut it down 4 palestine organzing against imperialism at home and abroad 🇵🇸 fundraising for @mecaforpeace</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="other" class="group-section" data-section="other">
+      <h2 class="section-title">Other</h2>
+      <ol class="groups">
+        <li data-name="bk jail support" data-desc="an abolitionist, mutual aid potluck">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/bkjailsupport/" target="_blank" rel="noopener noreferrer">BK Jail Support <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">an abolitionist, mutual aid potluck</p>
+        </li>
+        <li data-name="black star resistance" data-desc="an alliance of working-class black and indigenous organizers devoted to an uncompromising struggle against imperialism &amp; colonization.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/blackstarresistance" target="_blank" rel="noopener noreferrer">Black Star Resistance <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">An alliance of working-class Black and Indigenous organizers devoted to an uncompromising struggle against imperialism &amp; colonization.</p>
+        </li>
+        <li data-name="brooklyn eviction defense tenant union" data-desc="fighting evictions and supporting tenants in brooklyn.">
+          <div class="row">
+            <a class="name" href="https://www.bedtu.org/" target="_blank" rel="noopener noreferrer">Brooklyn Eviction Defense Tenant Union <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bedtu.org</span>
+          </div>
+          <p class="desc">Fighting evictions and supporting tenants in Brooklyn.</p>
+        </li>
+        <li data-name="brooklyn families for
+                                palestine" data-desc="anti-zionist families of all kinds organizing for a liberated palestine.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/bkfamiliesforpalestine" target="_blank" rel="noopener noreferrer">Brooklyn Families for
+                                Palestine <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Anti-Zionist families of all kinds organizing for a liberated Palestine.</p>
+        </li>
+        <li data-name="brooklyn for peace" data-desc="brooklyn for peace is committed to eliminating war and the social injustices that are its causes.">
+          <div class="row">
+            <a class="name" href="https://brooklynpeace.org/" target="_blank" rel="noopener noreferrer">Brooklyn For Peace <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">brooklynpeace.org</span>
+          </div>
+          <p class="desc">Brooklyn For Peace is committed to eliminating war and the social injustices that are its causes.</p>
+        </li>
+        <li data-name="g-rebels" data-desc="g-rebels is a grassroots, brooklyn based org aimed at promoting solidarity through community action.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/g_rebls/" target="_blank" rel="noopener noreferrer">G-REBELS <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">G-REBELS is a grassroots, Brooklyn based org aimed at promoting solidarity through community action.</p>
+        </li>
+        <li data-name="jupi (juventud unida por la independencia) - bk
+                                chapter" data-desc="educating, organizing, and mobilizing boricua youth, students, and their allies for an independent, anti-imperialist, and socialist puerto rico">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/jupi.bk/" target="_blank" rel="noopener noreferrer">Jupi (Juventud Unida por la Independencia) - BK
+                                Chapter <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Educating, organizing, and mobilizing Boricua youth, students, and their allies for an independent, anti-imperialist, and socialist Puerto Rico</p>
+        </li>
+        <li data-name="third world alliance" data-desc="we are anti-imperialist student organizers working on political education and mutual aid.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/thirdworldalliance" target="_blank" rel="noopener noreferrer">Third World Alliance <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We are anti-imperialist student organizers working on political education and mutual aid.</p>
+        </li>
+        <li data-name="wbw mutual aid" data-desc="we are a community of neighbors in west brooklyn organizing to support each other through the covid-19 pandemic and beyond.">
+          <div class="row">
+            <a class="name" href="https://www.wbwmutualaid.org/" target="_blank" rel="noopener noreferrer">WBW Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">wbwmutualaid.org</span>
+          </div>
+          <p class="desc">We are a community of neighbors in West Brooklyn organizing to support each other through the COVID-19 pandemic and beyond.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

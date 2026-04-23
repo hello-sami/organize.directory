@@ -1,953 +1,1484 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>New York City Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in New York City. Connect with local organizations and community resources.">
+  <title>New York City — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in New York City.">
   <link rel="canonical" href="https://organize.directory/nyc">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="New York City Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in New York City. Connect with local organizations and community resources.">
+  <meta property="og:title" content="New York City — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in New York City.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/nyc">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="content-wrapper">
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/new-york">New York</a>
-          <span>›</span>
-          <span>New York City</span>
-        </div>
+<main id="main">
 
-        <h1>New York City</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/new-york">New York</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">New York City</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="event-calendars" class="city-section">
-    <h2>Event Calendars</h2>
-    <div class="initiative">
-      <a href="https://protest.one/" target="_blank" rel="noopener noreferrer">Protest NYC</a>
-      <p>Comprehensive calendar of protests, rallies, and direct actions throughout NYC, with regularly updated listings.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://cal.red/" target="_blank" rel="noopener noreferrer">Red Calendar</a>
-      <p>Red Calendar is an arts and action calendar that helps NYC gather without big tech middlemen.</p>
-    </div>
-  </section>
-
-  <section id="abortion" class="city-section">
-    <h2>Abortion</h2>
-    <div class="initiative">
-      <a href="https://abortionrights.nyc/" target="_blank" rel="noopener noreferrer">NYC for Abortion Rights</a>
-      <p>We are an intersectional, abolitionist, socialist-feminist collective of activists who believe NYC needs an unapologetic grassroots movement to fight for full abortion and reproductive justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.nyaaf.org/" target="_blank" rel="noopener noreferrer">NY Abortion Access Fund</a>
-      <p>The New York Abortion Access Fund (NYAAF) supports New Yorkers and people traveling to New York State to access abortion care through financial assistance, case management, and connections to other resources.</p>
-    </div>
-  </section>
-
-  <section id="black-liberation" class="city-section">
-    <h2>Black Liberation</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/bapnewyorkcity/" target="_blank" rel="noopener noreferrer">Black Alliance for Peace NYC</a>
-      <p>Official account of BAP-NYC/NJ, a citywide alliance organizing against imperialism, militarism, and war from a Black internationalist perspective.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/blackanarchistradicals/" target="_blank" rel="noopener noreferrer">Black Anarchist Radicals</a>
-      <p>Collective organizing for Black liberation and anarchist principles.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/blackintifada/" target="_blank" rel="noopener noreferrer">Black Intifada</a>
-      <p>Black Trans Queer community of resistance towards a Free Palestine, Congo, Sudan, Haiti, Black America and us all.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/blacktransliberation/" target="_blank" rel="noopener noreferrer">Black Trans Liberation</a>
-      <p>Community organization that empowers and celebrates TGNC People through mutual aid, public events, and community building.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://d12m.com/" target="_blank" rel="noopener noreferrer">December 12th Movement</a>
-      <p>Pan-Africanist human rights organization of African revolutionaries fighting for the self-determination and liberation of the masses of our people.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/forourliberation" target="_blank" rel="noopener noreferrer">For Our Liberation</a>
-      <p>A collective of Black communists fighting against capitalism, racism and imperialism in the U.S. for the sake of Black Liberation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.thefreeblackwomenslibrary.com/" target="_blank" rel="noopener noreferrer">The Free Black Women's Library</a>
-      <p>A mobile library and mutual aid initiative celebrating Black women authors and literature through book exchanges, cultural events, and community gatherings.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/warriorsinthegarden/" target="_blank" rel="noopener noreferrer">Warriors in the Garden</a>
-      <p>Dedicated to protecting our community from all forms of systemic oppression through peaceful protest and community organizing.</p>
-    </div>
-  </section>
-
-  <section id="community-spaces" class="city-section">
-    <h2>Community Spaces</h2>
-    <div class="initiative">
-      <a href="https://bluestockings.com/" target="_blank" rel="noopener noreferrer">Bluestockings Cooperative</a>
-      <p>A worker-owned cooperative bookstore, cafe, and activist center organizing mutual aid and community support initiatives in the Lower East Side.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://comeforever.net/" target="_blank" rel="noopener noreferrer">Come Forever</a>
-      <p>A social space fostering cross-accessibility contact through mutual aid and community support with free health resources, public archives, and a small library.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://interferencearchive.org/" target="_blank" rel="noopener noreferrer">Interference Archive</a>
-      <p>Interference Archive is a volunteer-run library, gallery, and archive of historical materials related to social and political activism and movements.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.judson.org/" target="_blank" rel="noopener noreferrer">Judson Memorial Church</a>
-      <p>A Community of Radical Hope serving as a sanctuary and organizing space for social justice movements.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/justicecenterenelbarrio/" target="_blank" rel="noopener noreferrer">Justice Center El Barrio</a>
-      <p>A dynamic space in NYC for social justice and community organizing committed to building people's movements</p>
-    </div>
-    <div class="initiative">
-      <a href="https://maydayspace.org/" target="_blank" rel="noopener noreferrer">Mayday Space</a>
-      <p>A community center and organizing hub in Bushwick providing space for grassroots groups, activists, and residents to build collective power.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.milmundosbooks.com/" target="_blank" rel="noopener noreferrer">Mil Mundos Books</a>
-      <p>Bilingual bookstore serving as drop-off point for Bushwick Ayuda Mutua donations.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://morusnyc.org/" target="_blank" rel="noopener noreferrer">Museum of Reclaimed Urban Space (MoRUS)</a>
-      <p>A volunteer-run museum and community space in the Lower East Side documenting the history of grassroots activism and urban sustainability.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://peoplesforum.org/" target="_blank" rel="noopener noreferrer">The People's Forum</a>
-      <p>Movement incubator and event space for political education and community building with co-working space, conference rooms, theater, media laboratory, and lending library.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.propertyistheft.org/" target="_blank" rel="noopener noreferrer">Property Is Theft (P.I.T.)</a>
-      <p>P.I.T. is a community space, venue and info-shop in Los Sures, Williamsburg supported by book and record sales.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/sixthstreetcc/" target="_blank" rel="noopener noreferrer">Sixth Street Community Center</a>
-      <p>Youth empowerment, climate, housing and food justice since 1978.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.starrbar.com/" target="_blank" rel="noopener noreferrer">Starr Bar</a>
-      <p>A movement space and social justice bar fostering mutual aid and community power through cultural programming and organizing in Brooklyn.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.thewordischange.com/" target="_blank" rel="noopener noreferrer">The Word Is Change</a>
-      <p>A radical bookstore in Bed-Stuy, Brooklyn, selling used and new books, hosting readings and meetings, buying books for resale, and supporting visual artists.</p>
-    </div>
-  </section>
-
-  <section id="environmental" class="city-section">
-    <h2>Environmental Justice</h2>
-    <div class="initiative">
-      <a href="https://planetoverprofit.org/" target="_blank" rel="noopener noreferrer">Planet Over Profit</a>
-      <p>Planet Over Profit uses direct action to take on the 1% torching our planet</p>
-    </div>
-    <div class="initiative">
-      <a href="https://times-up.org/" target="_blank" rel="noopener noreferrer">Time's Up</a>
-      <p>TIME'S UP! is a grassroots environmental group that uses educational outreach and direct action to promote a more sustainable, less toxic city.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://uprose.org" target="_blank" rel="noopener noreferrer">UPROSE</a>
-      <p>Brooklyn's oldest Latino community-based organization promoting sustainability and resiliency.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://weact.org" target="_blank" rel="noopener noreferrer">WE ACT</a>
-      <p>Building healthy communities by ensuring people of color and low-income residents participate in environmental decision-making.</p>
-    </div>
-  </section>
-
-  <section id="harm-reduction" class="city-section">
-    <h2>Harm Reduction</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/dontforgetthestreets/" target="_blank" rel="noopener noreferrer">Don't Forget the Streets</a>
-      <p>Harm reduction collective doing street outreach, naloxone trainings and event tabling in NYC</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.vocal-ny.org/" target="_blank" rel="noopener noreferrer">Vocal NY</a>
-      <p>VOCAL-NY has been building power among low-income people affected by HIV/AIDS, the drug war, mass incarceration, and homelessness in order to create healthy and just communities.</p>
-    </div>
-  </section>
-
-  <section id="homeless" class="city-section">
-    <h2>Homeless Solidarity</h2>
-    <div class="initiative">
-      <a href="https://www.freefoodforthehomeless.com/" target="_blank" rel="noopener noreferrer">Free Food for the Homeless</a>
-      <p>Our mission is to provide sustenance, support, and solidarity to the homeless individuals navigating the underground world of New York City's subway system.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://harrietnetwork.com/" target="_blank" rel="noopener noreferrer">The Harriet Network</a>
-      <p>Harriet is a telecommunications device that connects unhoused New Yorkers to each other and community organizations without the use of mobile data or WiFi. This project allows unhoused New Yorkers to access housing resources, improved disaster resilience, and a stronger community.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/rentrefusersunited/" target="_blank" rel="noopener noreferrer">Rent Refusers United</a>
-      <p>We're housed and unhoused out to destroy the predatory housing system. Apartments not shelters and housing for all by any means!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.streetlives.nyc/" target="_blank" rel="noopener noreferrer">Streetlives</a>
-      <p>Streetlives is an NYC-based non-profit that empowers unhoused individuals through digital products rooted in lived experience.</p>
-    </div>
-  </section>
-
-  <section id="housing" class="city-section">
-    <h2>Housing Justice</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/antidisplacementnyc/" target="_blank" rel="noopener noreferrer">Anti-Displacement NYC</a>
-      <p>ADNYC is a housing policy collective promoting decommodified housing solutions &amp; fighting displacement through political education.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/fttenantunion" target="_blank" rel="noopener noreferrer">Full Time Tenant Union</a>
-      <p>Union of Tenants in FullTime management and Watermark Capital owned buildings. Fighting for better conditions and against displacement in NYC.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.housingdatanyc.org/" target="_blank" rel="noopener noreferrer">Housing Data Coalition</a>
-      <p>The Housing Data Coalition (HDC) is a group of individuals and organizations who collaborate on their use of public data to further housing justice in New York City.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://housingjusticeforall.org" target="_blank" rel="noopener noreferrer">Housing Justice For All</a>
-      <p>A statewide movement of tenants and homeless New Yorkers fighting for housing justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.justfix.org/" target="_blank" rel="noopener noreferrer">JustFix</a>
-      <p>We're a non-profit that builds free tools for tenants to exercise their rights to a livable home.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.metcouncilonhousing.org" target="_blank" rel="noopener noreferrer">Met Council on Housing</a>
-      <p>A tenants' rights membership organization that fights for tenants' rights and affordable housing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/notonemoreblock/" target="_blank" rel="noopener noreferrer">Not One More Block</a>
-      <p>A NYC autonomous network to stop gentrification, displacement, homelessness &amp; ethnic cleansing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/rogueresidents" target="_blank" rel="noopener noreferrer">Rogue Residents</a>
-      <p>Rogue Residents is a NYC group of fed up NYCHA residents that seek to collaborate, share, and collectively unite against privatization efforts</p>
-    </div>
-    <div class="initiative">
-      <a href="https://weunlock.nyc/" target="_blank" rel="noopener noreferrer">Unlock NYC</a>
-      <p>The tools you need to stand up for yourself on your housing search - created with and led by tenants who've been there.</p>
-    </div>
-  </section>
-
-  <section id="jewish" class="city-section">
-    <h2>Jewish Solidarity</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/jaws_nyc/" target="_blank" rel="noopener noreferrer">Jews Against White Supremacy (JAWS)</a>
-      <p>The NYC chapter of @jewsagainstwhitesupremacy, a Jewish organization dedicated to challenging and defeating Zionist institutions</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/jewishvoiceforpeace_nyc/" target="_blank" rel="noopener noreferrer">Jewish Voice for Peace NYC</a>
-      <p>Jewish Voice for Peace NYC is organizing Jews and allies against antisemitism, Islamophobia, and racism in all forms in support of Palestinian rights.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.jfrej.org/" target="_blank" rel="noopener noreferrer">Jews for Racial &amp; Economic Justice (JFREJ)</a>
-      <p>Jews for Racial &amp; Economic Justice is the home for Jewish New Yorkers organizing with our neighbors and allies to transform New York from a playground for the wealthy few into a real democracy for all of us, free from all forms of racist violence.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.makingmensches.com/" target="_blank" rel="noopener noreferrer">Making Mensches</a>
-      <p>Your home for Queer, Anti-Zionist Jewish ritual, radical education, and community.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/nycbund" target="_blank" rel="noopener noreferrer">New York City Jewish Labor Bund</a>
-      <p>NYC's Local of the International Jewish Labor Bund! Fighting Zionism, Colonialism, and Capitalism with Jewishness, Doikayt, and Socialism.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://outlivethemnyc.com/" target="_blank" rel="noopener noreferrer">Outlive Them NYC</a>
-      <p>Jewish antifascists organizing for a world without pogroms, and a future without fascism.</p>
-    </div>
-  </section>
-
-  <section id="labor" class="city-section">
-    <h2>Labor Organizing</h2>
-    <div class="initiative">
-      <a href="https://www.cityworkers4justice.org/" target="_blank" rel="noopener noreferrer">City Workers for Justice</a>
-      <p>Increasing government transparency and cross-pollination of ideas and expertise across city agencies.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/generalstrike.nyc/" target="_blank" rel="noopener noreferrer">General Strike NYC</a>
-      <p>@thegeneralstrikeus NYC Chapter, Organizing 3.5% of U.S workers to General Strike for liberation and bring the U.S empire to its knees!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://iww.nyc/" target="_blank" rel="noopener noreferrer">Industrial Workers of the World (IWW) - NYC</a>
-      <p>The NYC branch of the @industrialworkersoftheworld, a global union dedicated to direct action, solidarity, and industrial democracy.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://laundryworkerscenter.org" target="_blank" rel="noopener noreferrer">Laundry Workers Center</a>
-      <p>Combating abuses in the laundry, warehouse, and food service industries.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://nycworker.coop/" target="_blank" rel="noopener noreferrer">The New York City Network of Worker Cooperatives (NYC NOWC)</a>
-      <p>the trade association for worker cooperative businesses in the NYC metropolitan region</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.nytwa.org/" target="_blank" rel="noopener noreferrer">NY Taxi Workers Alliance</a>
-      <p>We are committed to a progressive, internationalist, democratic labor movement that stands in steadfast solidarity with workers' movements of the U.S. and around the world.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://workersjustice.org" target="_blank" rel="noopener noreferrer">Worker's Justice Project</a>
-      <p>Addressing the racial and economic injustices that day laborers face by building collective power.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/wmlnyc/" target="_blank" rel="noopener noreferrer">Workers' Movement for Liberation</a>
-      <p>WML is an organization of working class youth in NYC, it aims to connect the youth to all struggles against oppression and exploitation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.cityworkers4justice.org/" target="_blank" rel="noopener noreferrer">City Workers for Justice</a>
-      <p>Increasing government transparency and cross-pollination of ideas and expertise across city agencies.</p>
-    </div>
-  </section>
-
-  <section id="lgbt" class="city-section">
-    <h2>LGBTQ+ Solidarity</h2>
-    <div class="initiative">
-      <a href="https://actupny.org/" target="_blank" rel="noopener noreferrer">ACT UP NY</a>
-      <p>ACT UP is a diverse, non-partisan group of individuals united in anger and committed to direct action to end the AIDS crisis.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://alp.org/" target="_blank" rel="noopener noreferrer">Audre Lorde Project</a>
-      <p>A community organizing center for Lesbian, Gay, Two-Spirit, Trans, &amp; Gender-Nonconforming people of color across NYC's five boroughs.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/aunties4liberation" target="_blank" rel="noopener noreferrer">Aunties 4 Liberation</a>
-      <p>Coalition to protect trans kids.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.bdlinitiative.org/" target="_blank" rel="noopener noreferrer">Black Diaspora Liberation Initiative</a>
-      <p>We advocate for the rights and well-being of Black LGBT+ immigrants, by fostering a supportive &amp; inclusive environment where all individuals can thrive.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/blacktransliberation/" target="_blank" rel="noopener noreferrer">Black Trans Liberation</a>
-      <p>Community Organization That Empowers And Celebrates TGNC People.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.thebrooklynghostproject.org/" target="_blank" rel="noopener noreferrer">The Brooklyn G.H.O.S.T Project</a>
-      <p>Black, transgender-led nonprofit providing support, resources, and free meals to transgender and non-binary communities of color in Brooklyn.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.claimourspacenow.org/" target="_blank" rel="noopener noreferrer">Claim Our Space Now</a>
-      <p>Claim Our Space Now is a NYC Based and Black-Queer and Immigrant led nonprofit organization focused on building and mobilizing community power by making activism accessible and dismantling systems of white supremacy</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.ourvoicesarefree.org/" target="_blank" rel="noopener noreferrer">Colectivo TRANSgrediendo</a>
-      <p>Organization working on empowerment, healthcare access, and rights for TransGNB people.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://discord.gg/8ZWAYJr" target="_blank" rel="noopener noreferrer">The End Is Queer: NYC Mutual Aid</a>
-      <p>Discord server organizing queer New Yorkers around mutual aid needs.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.glitsinc.org/" target="_blank" rel="noopener noreferrer">Gays &amp; Lesbians Living in a Transgender Society (G.L.I.T.S.)</a>
-      <p>G.L.I.T.S is a Black trans-led advocacy and direct services organization that is dedicated to fighting systemic discrimination against marginalized communities, in New York City and beyond.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://gaycenter.org/" target="_blank" rel="noopener noreferrer">The LGBT Community Center</a>
-      <p>Nonprofit community center hosting support groups and meeting spaces.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/nycqueertransdefense/" target="_blank" rel="noopener noreferrer">NYC Queer Trans Defense</a>
-      <p>Community members fighting back against homophobia, transphobia and queerphobia in NYC, at drag story hours and beyond. Show up to get involved!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/nycyouth4transrights" target="_blank" rel="noopener noreferrer">NYC Youth 4 Trans Rights</a>
-      <p>Run by trans youth for trans youth, we organize protests &amp; events in NYC</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/queers.gambit/" target="_blank" rel="noopener noreferrer">Queers Gambit</a>
-      <p>queerest anti-imperialist chess club on earth</p>
-    </div>
-    <div class="initiative">
-      <a href="https://reclaimpridenyc.org/" target="_blank" rel="noopener noreferrer">Reclaim Pride Coalition</a>
-      <p>Organizers of the annual Queer Liberation March</p>
-    </div>
-  </section>
-
-  <section id="migrants" class="city-section">
-    <h2>Migrant Solidarity</h2>
-    <div class="initiative">
-      <a href="https://www.weareafghans.org/" target="_blank" rel="noopener noreferrer">Afghans for a Better Tomorrow</a>
-      <p>We organize the AfghAm community to bring about systemic change in the U.S. &amp; beyond to ensure all Afghans have lives of safety, dignity, and freedom.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/club_a_nyc" target="_blank" rel="noopener noreferrer">Club A</a>
-      <p>Anarchist Mutual Aid group distributing food and supplies at Bushwick City Farm, also runs Bikes for Migrants.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://familiesforfreedom.org/" target="_blank" rel="noopener noreferrer">Families for Freedom</a>
-      <p>New York-based multi-ethnic human rights organization by and for families facing deportation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/nycicewatch/" target="_blank" rel="noopener noreferrer">ICE Watch NYC</a>
-      <p>DM if you see ICE, bad cops, evictions</p>
-    </div>
-    <div class="initiative">
-      <a href="https://maketheroadny.org/" target="_blank" rel="noopener noreferrer">Make the Road NY</a>
-      <p>Building power in immigrant and working class communities.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/migrantenewyork" target="_blank" rel="noopener noreferrer">Migrante New York</a>
-      <p>A grassroots organization fighting for rights and welfare of Filipino Migrant Workers in the U.S. and for a genuine democracy in the Philippines.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.nynice.org/" target="_blank" rel="noopener noreferrer">New Immigrant Community Empowerment (NICE)</a>
-      <p>NICE aims to inspire, empower, and organize immigrants in life and at work</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.newsanctuarynsc.org/" target="_blank" rel="noopener noreferrer">New Sanctuary Coalition</a>
-      <p>For over 17 years, the New Sanctuary Coalition (NSC) has been led by and for immigrants to stop the inhumane system of deportations and detentions in this country. Our small and scrappy team works with an army of over 500 volunteers to provide person-to-person support to many hundreds of immigrants facing detention and deportation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.nysylc.org/" target="_blank" rel="noopener noreferrer">New York State Youth Leadership Council (NYSYLC)</a>
-      <p>The NYSYLC envisions an inclusive society where currently- and formerly-undocumented youth belong, thrive, and are unafraid.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/nycmigrantsolidarity/" target="_blank" rel="noopener noreferrer">NYC Migrant Solidarity</a>
-      <p>Anti-Authoritarian collective empowering networks of community support in crisis &amp; platforms for mutual aid with migrants.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.safepassageproject.org/" target="_blank" rel="noopener noreferrer">Safe Passage Project</a>
-      <p>We provide free lawyers to immigrant and refugee children who are being deported</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.sanctuaryhood.org/" target="_blank" rel="noopener noreferrer">Sanctuary Neighborhoods NYC</a>
-      <p>a coalition of grassroots activists in collaboration with our local Houses of Worship in an effort to support families and keep our diverse communities whole.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.streetvendor.org/" target="_blank" rel="noopener noreferrer">Street Vendor Project</a>
-      <p>Through direct legal representation, small business training, organizing support, leadership development, and strategic legislative advocacy, SVP builds power and community among vendors.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://linktr.ee/undocuwomensfund" target="_blank" rel="noopener noreferrer">Undocumented Women's Fund</a>
-      <p>Care, learning and organizing network supporting immigrant women in NYC.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/welcomemigrantsnyc/" target="_blank" rel="noopener noreferrer">Welcome Migrants NYC</a>
-      <p>We keep us safe! join us in defending those who have been displaced by capitalism:mutual aid, fightback, &amp; solidarity</p>
-    </div>
-  </section>
-
-  <section id="palestine" class="city-section">
-    <h2>Palestine Solidarity</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/asians4palestinenyc" target="_blank" rel="noopener noreferrer">Asians for Palestine NYC</a>
-      <p>We are the Asian diaspora of NYC united under a FREE PALESTINE</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/bnyfundsgenocide/" target="_blank" rel="noopener noreferrer">BNY Funds Genocide</a>
-      <p>NY-based campaign to demand BNY Mellon divest from war manufacturers!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/columbia.psc" target="_blank" rel="noopener noreferrer">Columbia Palestine Solidarity Coalition (CPSC)</a>
-      <p>Palestinian-led, Palestine-focused coalition fighting for divestment at Columbia University</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/cuny4palestine/" target="_blank" rel="noopener noreferrer">CUNY For Palestine</a>
-      <p>We are a network of CUNY students &amp; workers organizing for BDS &amp; in solidarity with Palestine liberation</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/demilitarizebklynnavyyard/" target="_blank" rel="noopener noreferrer">Demilitarize Brooklyn Navy Yard</a>
-      <p>Working towards a Brooklyn Navy Yard that is free from the military manufacturers that contribute towards genocide in Gaza</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/hcw4pnyc" target="_blank" rel="noopener noreferrer">Healthcare Workers for Palestine NYC</a>
-      <p>We are a collective of healthcare workers in New York City organizing to end the siege on Gaza and fighting for the liberation of Palestine.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/mamas_4_afreepalestine" target="_blank" rel="noopener noreferrer">Mamas 4 a Free Palestine</a>
-      <p>A mother-led organization that supports the Palestinian struggle for liberation and justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/nycresistswithgaza/" target="_blank" rel="noopener noreferrer">NYC Resists with Gaza</a>
-      <p>Autonomous group organizing to support the Palestinian struggle for liberation and justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/nyirish4palestine" target="_blank" rel="noopener noreferrer">NY Irish for Palestine</a>
-      <p>From Ireland to Palestine, occupation is a crime.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://palestineswg.org/" target="_blank" rel="noopener noreferrer">Palestine Solidarity Working Group</a>
-      <p>We are an anti-Zionist group of revolutionary socialists building a solidarity movement on turtle island accountable to Palestinians</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/promiseofpoppies" target="_blank" rel="noopener noreferrer">Promise of Poppies</a>
-      <p>Mutual aid events for Palestine</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/queersforaliberatedpalestine" target="_blank" rel="noopener noreferrer">Queers for a Liberated Palestine</a>
-      <p>NYC based queer collective fighting for a free Palestine.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://samidoun.net/nyc/" target="_blank" rel="noopener noreferrer">Samidoun NYC</a>
-      <p>Palestinian Prisoner Solidarity Network organizing support for Palestinian political prisoners in Israeli jails</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.statenisland4palestine.org/" target="_blank" rel="noopener noreferrer">Staten Island for Palestine</a>
-      <p>Our vision is to unite Staten Islanders to champion Palestinian rights and strive for a global society that upholds justice, equality, and dignity, free from racism, oppression, and occupation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://theaterworkersforaceasefire.com/" target="_blank" rel="noopener noreferrer">Theater Workers for a Ceasefire</a>
-      <p>US-based theater workers demand a ceasefire in Palestine.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/nycunderthesun/" target="_blank" rel="noopener noreferrer">Under the Sun Collective</a>
-      <p>NYC-based mutual aid group fundraising for Palestinian families and other communities affected by the capitalist and imperialist war machine.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/uptown4palestine/" target="_blank" rel="noopener noreferrer">Uptown 4 Palestine</a>
-      <p>Group of uptown Manhattan residents organizing for Palestinian liberation</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/waadmutualaid/" target="_blank" rel="noopener noreferrer">Waad Mutual Aid</a>
-      <p>Working to provide vital financial support to families in besieged communities, and Gazan refugees, in the Northern West Bank.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://withinourlifetime.org/" target="_blank" rel="noopener noreferrer">Within Our Lifetime</a>
-      <p>Palestinian-led community organization working towards the liberation of Palestine and all oppressed peoples</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.writersagainstthewarongaza.com/" target="_blank" rel="noopener noreferrer">Writers Against the War on Gaza</a>
-      <p>Building a cultural front for a free Palestine. They write and publish the New York War Crimes.</p>
-    </div>
-  </section>
-
-  <section id="prison-abolition" class="city-section">
-    <h2>Prison Abolition and Prisoner Solidarity</h2>
-    <div class="initiative">
-      <a href="https://www.instagram.com/blackandpinknyc/" target="_blank" rel="noopener noreferrer">Black and Pink NYC</a>
-      <p>Organizes a pen pal program for LGBTQ and HIV-positive prisoners, and distributes a prisoner-written newspaper to its incarcerated members</p>
-    </div>
-    <div class="initiative">
-      <a href="https://booksthroughbarsnyc.org/" target="_blank" rel="noopener noreferrer">Books Through Bars NYC</a>
-      <p>NYC Books Through Bars is an all volunteer-run group that sends free, donated books to incarcerated people across the nation!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/boroughbasedliberationproject/" target="_blank" rel="noopener noreferrer">Borough Based Liberation Project</a>
-      <p>Raising abolitionist resistance against the NYC borough-based jail plan.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.courtwatchnyc.org/" target="_blank" rel="noopener noreferrer">Court Watch NYC</a>
-      <p>Court Watch NYC is a volunteer-run anti-carceral project focused on reducing the harm of the carceral state by training New Yorkers to observe and collect data on arraignments.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://envisionfreedom.org/" target="_blank" rel="noopener noreferrer">Envision Freedom Fund</a>
-      <p>Fighting to dismantle the criminal legal and immigration systems.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://wrongfullyconvicted.info/" target="_blank" rel="noopener noreferrer">Families and Friends of the Wrongfully Convicted (FFWC)</a>
-      <p>Grassroots organization providing support, advocacy, and mutual aid for wrongfully convicted individuals and their families while fighting for criminal justice reform.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.f2lrelieffund.org/" target="_blank" rel="noopener noreferrer">Fight 2 Live</a>
-      <p>We are a community effort working to end the incarceration of Black, Indigenous, and/or people of color who are queer, trans, and/or Two-Spirit in NY.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://fa.urbanjustice.org/" target="_blank" rel="noopener noreferrer">Freedom Agenda</a>
-      <p>Freedom Agenda is a grassroots member-led organization of people directly impacted by incarceration to achieve decarceration &amp; system transformation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://erasethedatabasenyc.com/" target="_blank" rel="noopener noreferrer">G.A.N.G.S. Coalition</a>
-      <p>Our mission is to end systems that target, surveil, harass, and criminalize the association of young Black and Latinx people.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/how_our_lives_link_altogether/" target="_blank" rel="noopener noreferrer">HOLLA (How Our Lives Link
-                Altogether)</a>
-      <p>Is a grassroots org committed to co-creating space for youth to heal and engage critically with/in the use and misuse of power thru youth organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/jailsactioncoalition/" target="_blank" rel="noopener noreferrer">Jails Action Coalition</a>
-      <p>We are a coalition of activists working to promote human rights, dignity &amp; safety for people in NYC jails since December 2011.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.justicecommittee.org/" target="_blank" rel="noopener noreferrer">Justice Committee</a>
-      <p>Organizing to end police/racial violence and supporting families/survivors of NYPD violence since the 80s.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/justiceforallan/" target="_blank" rel="noopener noreferrer">Justice for Allan</a>
-      <p>Family of #AllanFeliz. He was 31 yr old when he was killed by @nypd on 10/17/19. There have been no charges in our case. We need your support!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/mdc_solidarity/" target="_blank" rel="noopener noreferrer">MDC Solidarity</a>
-      <p>We are a small group organizing around the horrible conditions at MDC-Brooklyn.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/nyaarpr" target="_blank" rel="noopener noreferrer">NY Alliance Against Racist &amp; Political Repression</a>
-      <p>Organization dedicated to fighting police crimes and brutality in NYC, building community control over the police.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/nycabc/" target="_blank" rel="noopener noreferrer">NYC Anarchist Black Cross</a>
-      <p>We demand freedom for all US held political prisoners and prisoners of war. More at nycabc.wordpress.com</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/nycblockwatch/" target="_blank" rel="noopener noreferrer">NYC Block Watch</a>
-      <p>Stop cop surveillance, community defense + know your neighbors = cops out the hood</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.paroleprepny.org/" target="_blank" rel="noopener noreferrer">Parole Preparation Project</a>
-      <p>Providing advocacy and critical support for people serving life sentences and those who have returned home</p>
-    </div>
-    <div class="initiative">
-      <a href="https://rappcampaign.com/" target="_blank" rel="noopener noreferrer">Release Aging People in Prison (RAPP)</a>
-      <p>Led by formerly incarcerated people and family members of people in prison, RAPP works to end mass incarceration and promote racial justice through the release of aging people in prison and those serving long sentences</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.theremedyproj.org/" target="_blank" rel="noopener noreferrer">The Remedy Project</a>
-      <p>Bringing together students and justice-system-impacted advocates to fight for incarcerated people. End the human rights crisis behind bars.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://rougesupportnetwork.org/" target="_blank" rel="noopener noreferrer">Rouge Support Network</a>
-      <p>National support system of artists, storytellers, health workers &amp; resource mobilizers serving those impacted by capitalism, criminalization &amp; the PIC</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.saxapahawprisonbooks.org/" target="_blank" rel="noopener noreferrer">Saxapahaw Prison Books Project</a>
-      <p>Operating out of P.I.T. in Williamsburg, sending free books to people incarcerated in Georgia.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/stopcopcitynyc/" target="_blank" rel="noopener noreferrer">Stop Cop City NYC</a>
-      <p>Cop City Will Never Be Built! No Cop City Anywhere! Account organized by @bapnewyorkcity</p>
-    </div>
-    <div class="initiative">
-      <a href="https://swipeitforward.nyc/" target="_blank" rel="noopener noreferrer">Swipe It Forward</a>
-      <p>We are a grassroots community response to Broken Windows Policing. We are Abolitionists and Anti-Police. Transportation is a right. No one deserves to go to jail for $2.75.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/survivepunishny/" target="_blank" rel="noopener noreferrer">Survived &amp; Punished NY</a>
-      <p>New York formation of @survivepunish. Volunteers working to end the criminalization of survivors of domestic and sexual violence.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/weelauneedefense_nyc" target="_blank" rel="noopener noreferrer">Weelaunee Defense NYC</a>
-      <p>NYC Chapter of the Weelaunee Defense Society In solidarity with the movement to defend the Atlanta forest</p>
-    </div>
-  </section>
-
-  <section id="sex-workers" class="city-section">
-    <h2>Sex Worker Solidarity</h2>
-    <div class="initiative">
-      <a href="https://sxhxcollective.org/" target="_blank" rel="noopener noreferrer">Support Ho(s)e</a>
-      <p>A collective of sex workers and allies building radical community and providing mutual aid.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://swp.urbanjustice.org/" target="_blank" rel="noopener noreferrer">Sex Workers Project</a>
-      <p>Legal services and advocacy supporting the rights of sex workers and survivors of human trafficking.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.redcanarysong.net/" target="_blank" rel="noopener noreferrer">Red Canary Song</a>
-      <p>Organizing with migrant &amp; Asian sex workers in NYC. Rights, not raids or rescue. Anti-trafficking, Pro-decrim. Transnational.</p>
-    </div>
-  </section>
-
-  <section id="other" class="city-section">
-    <h2>Other Groups</h2>
-    <div class="initiative">
-      <a href="https://www.adhikaar.org/" target="_blank" rel="noopener noreferrer">Adhikaar</a>
-      <p>The only women-led worker and community center that serves and organizes the Nepali-speaking immigrant and refugee community.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/arrt_nyc/" target="_blank" rel="noopener noreferrer">Artists Rapid Response Team NYC</a>
-      <p>Artists Rapid Response team meets monthly to create art, banners, signs, and propaganda material for activist/community organizations in NYC.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/behindenemylines_nyc/" target="_blank" rel="noopener noreferrer">Behind Enemy Lines NYC</a>
-      <p>NYC chapter of @anti_imperialist_resistance. The empire is the enemy. From the belly of the beast, we choose to resist it.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/theboricollective" target="_blank" rel="noopener noreferrer">The Bori Collective</a>
-      <p>The Crisis Persists, The People Resist.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/cafeanarquista/" target="_blank" rel="noopener noreferrer">Cafe Anarquista</a>
-      <p>A mutual aid movement to help make protests more communal. We distribute zines, snacks, and coffee to foster comradery. Educate, agitate, caffeinate.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://chhayacdc.org/" target="_blank" rel="noopener noreferrer">Chhaya CDC</a>
-      <p>Building power, housing stability, and economic well-being of South Asian and Indo-Caribbean communities.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/cinemovil.nyc/" target="_blank" rel="noopener noreferrer">Cinemovil NYC</a>
-      <p>revolutionary mobile cinema collective</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/codepink.nyc" target="_blank" rel="noopener noreferrer">Code Pink NYC</a>
-      <p>Anti-imperialist, transnational feminists organizing for peace, justice, and collective liberation! @codepinkalert NYC chapter</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/daretostrugglenyc/" target="_blank" rel="noopener noreferrer">Dare to Struggle</a>
-      <p>Dare to Struggle is committed to standing with the people subjected to the American nightmare and organizing them in collective struggle.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/dpc.nycnj" target="_blank" rel="noopener noreferrer">Diaspora Pa'lante Collective NYC.NJ</a>
-      <p>We are an organization of Boricuas and allies in the diaspora &amp; the archipelago fighting for the liberation of Borikén &amp; all oppressed peoples.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.drumnyc.org/" target="_blank" rel="noopener noreferrer">DRUM (Desis Rising Up and Moving)</a>
-      <p>DRUM was founded in 2000 to build the power of South Asian and Indo-Caribbean low wage immigrant workers, youth, and families in New York City to win economic and educational justice, and civil and immigrant rights.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/friendsofswazifreedom" target="_blank" rel="noopener noreferrer">Friends of Swazi Freedom</a>
-      <p>A solidarity organization committed to supporting the struggle for political, social, and economic freedom in Swaziland.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/gabrielanewyork" target="_blank" rel="noopener noreferrer">Gabriela New York</a>
-      <p>Advancing the militant women's movement in the Philippines and around the world</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/garudacollective161/" target="_blank" rel="noopener noreferrer">Garuda Collective</a>
-      <p>Empowered Communities Are Harder to Oppress, Community Defense, Mutual Aid</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.inourheartsnyc.org/" target="_blank" rel="noopener noreferrer">In Our Hearts NYC</a>
-      <p>Anarchist food distribution and action-oriented mutual aid group.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/lal_morich/" target="_blank" rel="noopener noreferrer">Lal Morich</a>
-      <p>A Bangladeshi anti-imperialist diaspora org in support of the New Democratic Movement in Bangladesh.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/lda_nyc/" target="_blank" rel="noopener noreferrer">Let's Discuss Anarchism NYC</a>
-      <p>LDA is a new and ongoing series of open, in person discussions about anarchist ideas, rotating through different spaces in the five boroughs.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://macc.nyc/" target="_blank" rel="noopener noreferrer">Metropolitan Anarchist Coordinating Council (MACC)</a>
-      <p>An organization based on the guiding principles of horizontalism, anti-oppression, mutual aid, direct democracy, and direct action.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/themisandrycommittee" target="_blank" rel="noopener noreferrer">The Misandry Committee</a>
-      <p>Liberating the commons through anti-capitalist and anti-imperialist means</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.memsnyc.org/" target="_blank" rel="noopener noreferrer">Mission to End Modern Slavery</a>
-      <p>Building a survivor-led movement against human trafficking and wage theft.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/ny_mbl" target="_blank" rel="noopener noreferrer">Movement to Birth Liberation</a>
-      <p>A non hierarchical network of birth &amp; reproductive justice activists together imagining &amp; working to birth liberation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://anarchistbookfair.net/" target="_blank" rel="noopener noreferrer">NYC Anarchist Bookfair</a>
-      <p>Each year, the NYC Anarchist Book Fair hosts over 60 exhibitors including publishers, writers, designers, artists, musicians and other activists.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.nycommunities.org/" target="_blank" rel="noopener noreferrer">NY Communities for Change</a>
-      <p>One of the largest &amp; most uncompromising community organizations in the country. Jobs. Housing. Public Safety. Climate. Immigrant Power. Join us.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/nycdissenters" target="_blank" rel="noopener noreferrer">NYC Dissenters</a>
-      <p>NYC crew of @wearedissenters, a new wave of young people turning the tide against endless war at home and abroad</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/nycpsl" target="_blank" rel="noopener noreferrer">NYC PSL</a>
-      <p>The New York City branch of the Party for Socialism and Liberation</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/palaverglobal/" target="_blank" rel="noopener noreferrer">Palaver Global</a>
-      <p>Our struggle is collective, so will be our liberation. We will win!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/thepeoplesbodeganyc" target="_blank" rel="noopener noreferrer">The Peoples Bodega</a>
-      <p>volunteer led mobile mutual aid, located inside a 14 ft box truck</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/thepeoplestownhall/" target="_blank" rel="noopener noreferrer">The People's Town Hall</a>
-      <p>A grassroots coalition of people organizing towards collective liberation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/plazaproletaria/" target="_blank" rel="noopener noreferrer">Plaza Proletaria</a>
-      <p>We're united by a working-class fraternity &amp; the understanding of the need to fight together and cooperate to pave the road towards a socialist world.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://radix.coop/" target="_blank" rel="noopener noreferrer">Radix Cooperative</a>
-      <p>RADIX is a worker-owned, union print shop and publisher in Brooklyn, NY.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.riseandresist.org/" target="_blank" rel="noopener noreferrer">Rise and Resist</a>
-      <p>Rise and Resist is a NONVIOLENT direct action group committed to opposing, disrupting, and defeating any government act that threatens democracy, equality, and our civil liberties.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.lalsalam.org/" target="_blank" rel="noopener noreferrer">SALAM</a>
-      <p>NYC-based political org building a South Asian Left</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/socialistnyc/" target="_blank" rel="noopener noreferrer">Socialist Alternative NYC</a>
-      <p>NYC branch of @Socialist_Alternative.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://surjnyc.com/" target="_blank" rel="noopener noreferrer">SURJ NYC</a>
-      <p>NYC Chapter of @showingupforracialjustice</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.mccny.org/charities/pantry.html" target="_blank" rel="noopener noreferrer">Sylvia Rivera Food Pantry</a>
-      <p>Food pantry assisting low-income and HIV+ community members.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/unityandstrug/" target="_blank" rel="noopener noreferrer">Unity &amp; Struggle</a>
-      <p>Revolutionary communist organization focused on building working class power and solidarity.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/urbanindigenouscollective" target="_blank" rel="noopener noreferrer">Urban Indigenous Collective</a>
-      <p>Indigenous led public health community center now open!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/victory.in.puerto.rico" target="_blank" rel="noopener noreferrer">Victory In Puerto Rico</a>
-      <p>We are V.I.P.R. and our mission is to defend Puerto Rico and Puerto Rican communities worldwide. To rebuild,restore,&amp;respond in times of need&amp;to reclaim our history and culture!</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="cities-list">
-      <h2>Locations</h2>
-      <div class="city-links-container">
-          <a href="/bronx" class="city-link location-link-base">Bronx</a>
-          <a href="/brooklyn" class="city-link location-link-base">Brooklyn</a>
-          <a href="/manhattan" class="city-link location-link-base">Manhattan</a>
-          <a href="/queens" class="city-link location-link-base">Queens</a>
-          <a href="/staten-island" class="city-link location-link-base">Staten Island</a>
-      </div>
-    </div>
-  </section>
-        </div>
-      </div>
-        <aside class="toc-container">
-          <nav class="toc" role="navigation" aria-label="Table of Contents" id="toc">
-            <ul class="toc-list">
-          <li class="toc-item">
-            <a href="#event-calendars" class="toc-link">
-              <span class="toc-number">1.</span>
-              <span class="toc-text">Event Calendars</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#abortion" class="toc-link">
-              <span class="toc-number">2.</span>
-              <span class="toc-text">Abortion</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#black-liberation" class="toc-link">
-              <span class="toc-number">3.</span>
-              <span class="toc-text">Black Liberation</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#community-spaces" class="toc-link">
-              <span class="toc-number">4.</span>
-              <span class="toc-text">Community Spaces</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#environmental" class="toc-link">
-              <span class="toc-number">5.</span>
-              <span class="toc-text">Environmental Justice</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#harm-reduction" class="toc-link">
-              <span class="toc-number">6.</span>
-              <span class="toc-text">Harm Reduction</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#homeless" class="toc-link">
-              <span class="toc-number">7.</span>
-              <span class="toc-text">Homeless Solidarity</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#housing" class="toc-link">
-              <span class="toc-number">8.</span>
-              <span class="toc-text">Housing Justice</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#jewish" class="toc-link">
-              <span class="toc-number">9.</span>
-              <span class="toc-text">Jewish Solidarity</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#labor" class="toc-link">
-              <span class="toc-number">10.</span>
-              <span class="toc-text">Labor Organizing</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#lgbt" class="toc-link">
-              <span class="toc-number">11.</span>
-              <span class="toc-text">LGBTQ+ Solidarity</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#migrants" class="toc-link">
-              <span class="toc-number">12.</span>
-              <span class="toc-text">Migrant Solidarity</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#palestine" class="toc-link">
-              <span class="toc-number">13.</span>
-              <span class="toc-text">Palestine Solidarity</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#prison-abolition" class="toc-link">
-              <span class="toc-number">14.</span>
-              <span class="toc-text">Prison Abolition and Prisoner Solidarity</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#sex-workers" class="toc-link">
-              <span class="toc-number">15.</span>
-              <span class="toc-text">Sex Worker Solidarity</span>
-            </a>
-          </li>
-          <li class="toc-item">
-            <a href="#other" class="toc-link">
-              <span class="toc-number">16.</span>
-              <span class="toc-text">Other Groups</span>
-            </a>
-          </li>
-            </ul>
-          </nav>
-        </aside>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">New York City</h1>
+    <p class="meta">
+      <b>176</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      New York
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  <script src="/js/city-toc.js" defer></script>
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in New York City</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in New York City…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+  <nav class="toc" aria-label="Sections on this page">
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
+      <span class="current">
+        <span class="current-label">Section ·</span>
+        <span class="current-name">Neighborhoods</span>
+      </span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div id="toc-panel" class="toc-scroll">
+      <a href="#neighborhoods" data-section="neighborhoods"><span class="label">Neighborhoods</span></a>
+      <a href="#event-calendars" data-section="event-calendars"><span class="label">Event Calendars</span> <span class="count">2</span></a>
+      <a href="#abortion" data-section="abortion"><span class="label">Abortion</span> <span class="count">2</span></a>
+      <a href="#black-liberation" data-section="black-liberation"><span class="label">Black Liberation</span> <span class="count">8</span></a>
+      <a href="#community-spaces" data-section="community-spaces"><span class="label">Community Spaces</span> <span class="count">13</span></a>
+      <a href="#environmental" data-section="environmental"><span class="label">Environmental Justice</span> <span class="count">4</span></a>
+      <a href="#harm-reduction" data-section="harm-reduction"><span class="label">Harm Reduction</span> <span class="count">2</span></a>
+      <a href="#homeless" data-section="homeless"><span class="label">Homeless Solidarity</span> <span class="count">4</span></a>
+      <a href="#housing" data-section="housing"><span class="label">Housing Justice</span> <span class="count">9</span></a>
+      <a href="#jewish" data-section="jewish"><span class="label">Jewish Solidarity</span> <span class="count">6</span></a>
+      <a href="#labor" data-section="labor"><span class="label">Labor Organizing</span> <span class="count">9</span></a>
+      <a href="#lgbt" data-section="lgbt"><span class="label">LGBTQ+ Solidarity</span> <span class="count">15</span></a>
+      <a href="#migrants" data-section="migrants"><span class="label">Migrant Solidarity</span> <span class="count">15</span></a>
+      <a href="#palestine" data-section="palestine"><span class="label">Palestine Solidarity</span> <span class="count">20</span></a>
+      <a href="#prison-abolition" data-section="prison-abolition"><span class="label">Prison Abolition and Prisoner Solidarity</span> <span class="count">26</span></a>
+      <a href="#sex-workers" data-section="sex-workers"><span class="label">Sex Worker Solidarity</span> <span class="count">3</span></a>
+      <a href="#other" data-section="other"><span class="label">Other Groups</span> <span class="count">38</span></a>
+    </div>
+  </nav>
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="neighborhoods" class="group-section" data-section="neighborhoods">
+      <h2 class="section-title">Neighborhoods</h2>
+      <ol class="groups children-list">
+        <li data-name="bronx" data-desc=""><a class="name" href="/bronx">Bronx</a></li>
+        <li data-name="brooklyn" data-desc=""><a class="name" href="/brooklyn">Brooklyn</a></li>
+        <li data-name="manhattan" data-desc=""><a class="name" href="/manhattan">Manhattan</a></li>
+        <li data-name="queens" data-desc=""><a class="name" href="/queens">Queens</a></li>
+        <li data-name="staten island" data-desc=""><a class="name" href="/staten-island">Staten Island</a></li>
+      </ol>
+    </section>
+
+    <section id="event-calendars" class="group-section" data-section="event-calendars">
+      <h2 class="section-title">Event Calendars</h2>
+      <ol class="groups">
+        <li data-name="protest nyc" data-desc="comprehensive calendar of protests, rallies, and direct actions throughout nyc, with regularly updated listings.">
+          <div class="row">
+            <a class="name" href="https://protest.one/" target="_blank" rel="noopener noreferrer">Protest NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">protest.one</span>
+          </div>
+          <p class="desc">Comprehensive calendar of protests, rallies, and direct actions throughout NYC, with regularly updated listings.</p>
+        </li>
+        <li data-name="red calendar" data-desc="red calendar is an arts and action calendar that helps nyc gather without big tech middlemen.">
+          <div class="row">
+            <a class="name" href="https://cal.red/" target="_blank" rel="noopener noreferrer">Red Calendar <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">cal.red</span>
+          </div>
+          <p class="desc">Red Calendar is an arts and action calendar that helps NYC gather without big tech middlemen.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="abortion" class="group-section" data-section="abortion">
+      <h2 class="section-title">Abortion</h2>
+      <ol class="groups">
+        <li data-name="nyc for abortion rights" data-desc="we are an intersectional, abolitionist, socialist-feminist collective of activists who believe nyc needs an unapologetic grassroots movement to fight for full abortion and reproductive justice.">
+          <div class="row">
+            <a class="name" href="https://abortionrights.nyc/" target="_blank" rel="noopener noreferrer">NYC for Abortion Rights <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">abortionrights.nyc</span>
+          </div>
+          <p class="desc">We are an intersectional, abolitionist, socialist-feminist collective of activists who believe NYC needs an unapologetic grassroots movement to fight for full abortion and reproductive justice.</p>
+        </li>
+        <li data-name="ny abortion access fund" data-desc="the new york abortion access fund (nyaaf) supports new yorkers and people traveling to new york state to access abortion care through financial assistance, case management, and connections to other resources.">
+          <div class="row">
+            <a class="name" href="https://www.nyaaf.org/" target="_blank" rel="noopener noreferrer">NY Abortion Access Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">nyaaf.org</span>
+          </div>
+          <p class="desc">The New York Abortion Access Fund (NYAAF) supports New Yorkers and people traveling to New York State to access abortion care through financial assistance, case management, and connections to other resources.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="black-liberation" class="group-section" data-section="black-liberation">
+      <h2 class="section-title">Black Liberation</h2>
+      <ol class="groups">
+        <li data-name="black alliance for peace nyc" data-desc="official account of bap-nyc/nj, a citywide alliance organizing against imperialism, militarism, and war from a black internationalist perspective.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/bapnewyorkcity/" target="_blank" rel="noopener noreferrer">Black Alliance for Peace NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Official account of BAP-NYC/NJ, a citywide alliance organizing against imperialism, militarism, and war from a Black internationalist perspective.</p>
+        </li>
+        <li data-name="black anarchist radicals" data-desc="collective organizing for black liberation and anarchist principles.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/blackanarchistradicals/" target="_blank" rel="noopener noreferrer">Black Anarchist Radicals <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Collective organizing for Black liberation and anarchist principles.</p>
+        </li>
+        <li data-name="black intifada" data-desc="black trans queer community of resistance towards a free palestine, congo, sudan, haiti, black america and us all.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/blackintifada/" target="_blank" rel="noopener noreferrer">Black Intifada <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Black Trans Queer community of resistance towards a Free Palestine, Congo, Sudan, Haiti, Black America and us all.</p>
+        </li>
+        <li data-name="black trans liberation" data-desc="community organization that empowers and celebrates tgnc people through mutual aid, public events, and community building.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/blacktransliberation/" target="_blank" rel="noopener noreferrer">Black Trans Liberation <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Community organization that empowers and celebrates TGNC People through mutual aid, public events, and community building.</p>
+        </li>
+        <li data-name="december 12th movement" data-desc="pan-africanist human rights organization of african revolutionaries fighting for the self-determination and liberation of the masses of our people.">
+          <div class="row">
+            <a class="name" href="https://d12m.com/" target="_blank" rel="noopener noreferrer">December 12th Movement <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">d12m.com</span>
+          </div>
+          <p class="desc">Pan-Africanist human rights organization of African revolutionaries fighting for the self-determination and liberation of the masses of our people.</p>
+        </li>
+        <li data-name="for our liberation" data-desc="a collective of black communists fighting against capitalism, racism and imperialism in the u.s. for the sake of black liberation.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/forourliberation" target="_blank" rel="noopener noreferrer">For Our Liberation <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A collective of Black communists fighting against capitalism, racism and imperialism in the U.S. for the sake of Black Liberation.</p>
+        </li>
+        <li data-name="the free black women's library" data-desc="a mobile library and mutual aid initiative celebrating black women authors and literature through book exchanges, cultural events, and community gatherings.">
+          <div class="row">
+            <a class="name" href="https://www.thefreeblackwomenslibrary.com/" target="_blank" rel="noopener noreferrer">The Free Black Women's Library <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">thefreeblackwomenslibrary.com</span>
+          </div>
+          <p class="desc">A mobile library and mutual aid initiative celebrating Black women authors and literature through book exchanges, cultural events, and community gatherings.</p>
+        </li>
+        <li data-name="warriors in the garden" data-desc="dedicated to protecting our community from all forms of systemic oppression through peaceful protest and community organizing.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/warriorsinthegarden/" target="_blank" rel="noopener noreferrer">Warriors in the Garden <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Dedicated to protecting our community from all forms of systemic oppression through peaceful protest and community organizing.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="community-spaces" class="group-section" data-section="community-spaces">
+      <h2 class="section-title">Community Spaces</h2>
+      <ol class="groups">
+        <li data-name="bluestockings cooperative" data-desc="a worker-owned cooperative bookstore, cafe, and activist center organizing mutual aid and community support initiatives in the lower east side.">
+          <div class="row">
+            <a class="name" href="https://bluestockings.com/" target="_blank" rel="noopener noreferrer">Bluestockings Cooperative <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bluestockings.com</span>
+          </div>
+          <p class="desc">A worker-owned cooperative bookstore, cafe, and activist center organizing mutual aid and community support initiatives in the Lower East Side.</p>
+        </li>
+        <li data-name="come forever" data-desc="a social space fostering cross-accessibility contact through mutual aid and community support with free health resources, public archives, and a small library.">
+          <div class="row">
+            <a class="name" href="https://comeforever.net/" target="_blank" rel="noopener noreferrer">Come Forever <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">comeforever.net</span>
+          </div>
+          <p class="desc">A social space fostering cross-accessibility contact through mutual aid and community support with free health resources, public archives, and a small library.</p>
+        </li>
+        <li data-name="interference archive" data-desc="interference archive is a volunteer-run library, gallery, and archive of historical materials related to social and political activism and movements.">
+          <div class="row">
+            <a class="name" href="https://interferencearchive.org/" target="_blank" rel="noopener noreferrer">Interference Archive <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">interferencearchive.org</span>
+          </div>
+          <p class="desc">Interference Archive is a volunteer-run library, gallery, and archive of historical materials related to social and political activism and movements.</p>
+        </li>
+        <li data-name="judson memorial church" data-desc="a community of radical hope serving as a sanctuary and organizing space for social justice movements.">
+          <div class="row">
+            <a class="name" href="https://www.judson.org/" target="_blank" rel="noopener noreferrer">Judson Memorial Church <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">judson.org</span>
+          </div>
+          <p class="desc">A Community of Radical Hope serving as a sanctuary and organizing space for social justice movements.</p>
+        </li>
+        <li data-name="justice center el barrio" data-desc="a dynamic space in nyc for social justice and community organizing committed to building people's movements">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/justicecenterenelbarrio/" target="_blank" rel="noopener noreferrer">Justice Center El Barrio <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A dynamic space in NYC for social justice and community organizing committed to building people's movements</p>
+        </li>
+        <li data-name="mayday space" data-desc="a community center and organizing hub in bushwick providing space for grassroots groups, activists, and residents to build collective power.">
+          <div class="row">
+            <a class="name" href="https://maydayspace.org/" target="_blank" rel="noopener noreferrer">Mayday Space <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">maydayspace.org</span>
+          </div>
+          <p class="desc">A community center and organizing hub in Bushwick providing space for grassroots groups, activists, and residents to build collective power.</p>
+        </li>
+        <li data-name="mil mundos books" data-desc="bilingual bookstore serving as drop-off point for bushwick ayuda mutua donations.">
+          <div class="row">
+            <a class="name" href="https://www.milmundosbooks.com/" target="_blank" rel="noopener noreferrer">Mil Mundos Books <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">milmundosbooks.com</span>
+          </div>
+          <p class="desc">Bilingual bookstore serving as drop-off point for Bushwick Ayuda Mutua donations.</p>
+        </li>
+        <li data-name="museum of reclaimed urban space (morus)" data-desc="a volunteer-run museum and community space in the lower east side documenting the history of grassroots activism and urban sustainability.">
+          <div class="row">
+            <a class="name" href="https://morusnyc.org/" target="_blank" rel="noopener noreferrer">Museum of Reclaimed Urban Space (MoRUS) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">morusnyc.org</span>
+          </div>
+          <p class="desc">A volunteer-run museum and community space in the Lower East Side documenting the history of grassroots activism and urban sustainability.</p>
+        </li>
+        <li data-name="the people's forum" data-desc="movement incubator and event space for political education and community building with co-working space, conference rooms, theater, media laboratory, and lending library.">
+          <div class="row">
+            <a class="name" href="https://peoplesforum.org/" target="_blank" rel="noopener noreferrer">The People's Forum <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">peoplesforum.org</span>
+          </div>
+          <p class="desc">Movement incubator and event space for political education and community building with co-working space, conference rooms, theater, media laboratory, and lending library.</p>
+        </li>
+        <li data-name="property is theft (p.i.t.)" data-desc="p.i.t. is a community space, venue and info-shop in los sures, williamsburg supported by book and record sales.">
+          <div class="row">
+            <a class="name" href="https://www.propertyistheft.org/" target="_blank" rel="noopener noreferrer">Property Is Theft (P.I.T.) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">propertyistheft.org</span>
+          </div>
+          <p class="desc">P.I.T. is a community space, venue and info-shop in Los Sures, Williamsburg supported by book and record sales.</p>
+        </li>
+        <li data-name="sixth street community center" data-desc="youth empowerment, climate, housing and food justice since 1978.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/sixthstreetcc/" target="_blank" rel="noopener noreferrer">Sixth Street Community Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Youth empowerment, climate, housing and food justice since 1978.</p>
+        </li>
+        <li data-name="starr bar" data-desc="a movement space and social justice bar fostering mutual aid and community power through cultural programming and organizing in brooklyn.">
+          <div class="row">
+            <a class="name" href="https://www.starrbar.com/" target="_blank" rel="noopener noreferrer">Starr Bar <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">starrbar.com</span>
+          </div>
+          <p class="desc">A movement space and social justice bar fostering mutual aid and community power through cultural programming and organizing in Brooklyn.</p>
+        </li>
+        <li data-name="the word is change" data-desc="a radical bookstore in bed-stuy, brooklyn, selling used and new books, hosting readings and meetings, buying books for resale, and supporting visual artists.">
+          <div class="row">
+            <a class="name" href="https://www.thewordischange.com/" target="_blank" rel="noopener noreferrer">The Word Is Change <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">thewordischange.com</span>
+          </div>
+          <p class="desc">A radical bookstore in Bed-Stuy, Brooklyn, selling used and new books, hosting readings and meetings, buying books for resale, and supporting visual artists.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="environmental" class="group-section" data-section="environmental">
+      <h2 class="section-title">Environmental Justice</h2>
+      <ol class="groups">
+        <li data-name="planet over profit" data-desc="planet over profit uses direct action to take on the 1% torching our planet">
+          <div class="row">
+            <a class="name" href="https://planetoverprofit.org/" target="_blank" rel="noopener noreferrer">Planet Over Profit <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">planetoverprofit.org</span>
+          </div>
+          <p class="desc">Planet Over Profit uses direct action to take on the 1% torching our planet</p>
+        </li>
+        <li data-name="time's up" data-desc="time's up! is a grassroots environmental group that uses educational outreach and direct action to promote a more sustainable, less toxic city.">
+          <div class="row">
+            <a class="name" href="https://times-up.org/" target="_blank" rel="noopener noreferrer">Time's Up <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">times-up.org</span>
+          </div>
+          <p class="desc">TIME'S UP! is a grassroots environmental group that uses educational outreach and direct action to promote a more sustainable, less toxic city.</p>
+        </li>
+        <li data-name="uprose" data-desc="brooklyn's oldest latino community-based organization promoting sustainability and resiliency.">
+          <div class="row">
+            <a class="name" href="https://uprose.org" target="_blank" rel="noopener noreferrer">UPROSE <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">uprose.org</span>
+          </div>
+          <p class="desc">Brooklyn's oldest Latino community-based organization promoting sustainability and resiliency.</p>
+        </li>
+        <li data-name="we act" data-desc="building healthy communities by ensuring people of color and low-income residents participate in environmental decision-making.">
+          <div class="row">
+            <a class="name" href="https://weact.org" target="_blank" rel="noopener noreferrer">WE ACT <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">weact.org</span>
+          </div>
+          <p class="desc">Building healthy communities by ensuring people of color and low-income residents participate in environmental decision-making.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="harm-reduction" class="group-section" data-section="harm-reduction">
+      <h2 class="section-title">Harm Reduction</h2>
+      <ol class="groups">
+        <li data-name="don't forget the streets" data-desc="harm reduction collective doing street outreach, naloxone trainings and event tabling in nyc">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/dontforgetthestreets/" target="_blank" rel="noopener noreferrer">Don't Forget the Streets <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Harm reduction collective doing street outreach, naloxone trainings and event tabling in NYC</p>
+        </li>
+        <li data-name="vocal ny" data-desc="vocal-ny has been building power among low-income people affected by hiv/aids, the drug war, mass incarceration, and homelessness in order to create healthy and just communities.">
+          <div class="row">
+            <a class="name" href="https://www.vocal-ny.org/" target="_blank" rel="noopener noreferrer">Vocal NY <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">vocal-ny.org</span>
+          </div>
+          <p class="desc">VOCAL-NY has been building power among low-income people affected by HIV/AIDS, the drug war, mass incarceration, and homelessness in order to create healthy and just communities.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="homeless" class="group-section" data-section="homeless">
+      <h2 class="section-title">Homeless Solidarity</h2>
+      <ol class="groups">
+        <li data-name="free food for the homeless" data-desc="our mission is to provide sustenance, support, and solidarity to the homeless individuals navigating the underground world of new york city's subway system.">
+          <div class="row">
+            <a class="name" href="https://www.freefoodforthehomeless.com/" target="_blank" rel="noopener noreferrer">Free Food for the Homeless <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">freefoodforthehomeless.com</span>
+          </div>
+          <p class="desc">Our mission is to provide sustenance, support, and solidarity to the homeless individuals navigating the underground world of New York City's subway system.</p>
+        </li>
+        <li data-name="the harriet network" data-desc="harriet is a telecommunications device that connects unhoused new yorkers to each other and community organizations without the use of mobile data or wifi. this project allows unhoused new yorkers to access housing resources, improved disaster resilience, and a stronger community.">
+          <div class="row">
+            <a class="name" href="https://harrietnetwork.com/" target="_blank" rel="noopener noreferrer">The Harriet Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">harrietnetwork.com</span>
+          </div>
+          <p class="desc">Harriet is a telecommunications device that connects unhoused New Yorkers to each other and community organizations without the use of mobile data or WiFi. This project allows unhoused New Yorkers to access housing resources, improved disaster resilience, and a stronger community.</p>
+        </li>
+        <li data-name="rent refusers united" data-desc="we're housed and unhoused out to destroy the predatory housing system. apartments not shelters and housing for all by any means!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/rentrefusersunited/" target="_blank" rel="noopener noreferrer">Rent Refusers United <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We're housed and unhoused out to destroy the predatory housing system. Apartments not shelters and housing for all by any means!</p>
+        </li>
+        <li data-name="streetlives" data-desc="streetlives is an nyc-based non-profit that empowers unhoused individuals through digital products rooted in lived experience.">
+          <div class="row">
+            <a class="name" href="https://www.streetlives.nyc/" target="_blank" rel="noopener noreferrer">Streetlives <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">streetlives.nyc</span>
+          </div>
+          <p class="desc">Streetlives is an NYC-based non-profit that empowers unhoused individuals through digital products rooted in lived experience.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="housing" class="group-section" data-section="housing">
+      <h2 class="section-title">Housing Justice</h2>
+      <ol class="groups">
+        <li data-name="anti-displacement nyc" data-desc="adnyc is a housing policy collective promoting decommodified housing solutions &amp; fighting displacement through political education.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/antidisplacementnyc/" target="_blank" rel="noopener noreferrer">Anti-Displacement NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">ADNYC is a housing policy collective promoting decommodified housing solutions &amp; fighting displacement through political education.</p>
+        </li>
+        <li data-name="full time tenant union" data-desc="union of tenants in fulltime management and watermark capital owned buildings. fighting for better conditions and against displacement in nyc.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/fttenantunion" target="_blank" rel="noopener noreferrer">Full Time Tenant Union <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Union of Tenants in FullTime management and Watermark Capital owned buildings. Fighting for better conditions and against displacement in NYC.</p>
+        </li>
+        <li data-name="housing data coalition" data-desc="the housing data coalition (hdc) is a group of individuals and organizations who collaborate on their use of public data to further housing justice in new york city.">
+          <div class="row">
+            <a class="name" href="https://www.housingdatanyc.org/" target="_blank" rel="noopener noreferrer">Housing Data Coalition <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">housingdatanyc.org</span>
+          </div>
+          <p class="desc">The Housing Data Coalition (HDC) is a group of individuals and organizations who collaborate on their use of public data to further housing justice in New York City.</p>
+        </li>
+        <li data-name="housing justice for all" data-desc="a statewide movement of tenants and homeless new yorkers fighting for housing justice.">
+          <div class="row">
+            <a class="name" href="https://housingjusticeforall.org" target="_blank" rel="noopener noreferrer">Housing Justice For All <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">housingjusticeforall.org</span>
+          </div>
+          <p class="desc">A statewide movement of tenants and homeless New Yorkers fighting for housing justice.</p>
+        </li>
+        <li data-name="justfix" data-desc="we're a non-profit that builds free tools for tenants to exercise their rights to a livable home.">
+          <div class="row">
+            <a class="name" href="https://www.justfix.org/" target="_blank" rel="noopener noreferrer">JustFix <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">justfix.org</span>
+          </div>
+          <p class="desc">We're a non-profit that builds free tools for tenants to exercise their rights to a livable home.</p>
+        </li>
+        <li data-name="met council on housing" data-desc="a tenants' rights membership organization that fights for tenants' rights and affordable housing.">
+          <div class="row">
+            <a class="name" href="https://www.metcouncilonhousing.org" target="_blank" rel="noopener noreferrer">Met Council on Housing <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">metcouncilonhousing.org</span>
+          </div>
+          <p class="desc">A tenants' rights membership organization that fights for tenants' rights and affordable housing.</p>
+        </li>
+        <li data-name="not one more block" data-desc="a nyc autonomous network to stop gentrification, displacement, homelessness &amp; ethnic cleansing.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/notonemoreblock/" target="_blank" rel="noopener noreferrer">Not One More Block <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A NYC autonomous network to stop gentrification, displacement, homelessness &amp; ethnic cleansing.</p>
+        </li>
+        <li data-name="rogue residents" data-desc="rogue residents is a nyc group of fed up nycha residents that seek to collaborate, share, and collectively unite against privatization efforts">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/rogueresidents" target="_blank" rel="noopener noreferrer">Rogue Residents <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Rogue Residents is a NYC group of fed up NYCHA residents that seek to collaborate, share, and collectively unite against privatization efforts</p>
+        </li>
+        <li data-name="unlock nyc" data-desc="the tools you need to stand up for yourself on your housing search - created with and led by tenants who've been there.">
+          <div class="row">
+            <a class="name" href="https://weunlock.nyc/" target="_blank" rel="noopener noreferrer">Unlock NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">weunlock.nyc</span>
+          </div>
+          <p class="desc">The tools you need to stand up for yourself on your housing search - created with and led by tenants who've been there.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="jewish" class="group-section" data-section="jewish">
+      <h2 class="section-title">Jewish Solidarity</h2>
+      <ol class="groups">
+        <li data-name="jews against white supremacy (jaws)" data-desc="the nyc chapter of @jewsagainstwhitesupremacy, a jewish organization dedicated to challenging and defeating zionist institutions">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/jaws_nyc/" target="_blank" rel="noopener noreferrer">Jews Against White Supremacy (JAWS) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">The NYC chapter of @jewsagainstwhitesupremacy, a Jewish organization dedicated to challenging and defeating Zionist institutions</p>
+        </li>
+        <li data-name="jewish voice for peace nyc" data-desc="jewish voice for peace nyc is organizing jews and allies against antisemitism, islamophobia, and racism in all forms in support of palestinian rights.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/jewishvoiceforpeace_nyc/" target="_blank" rel="noopener noreferrer">Jewish Voice for Peace NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Jewish Voice for Peace NYC is organizing Jews and allies against antisemitism, Islamophobia, and racism in all forms in support of Palestinian rights.</p>
+        </li>
+        <li data-name="jews for racial &amp; economic justice (jfrej)" data-desc="jews for racial &amp; economic justice is the home for jewish new yorkers organizing with our neighbors and allies to transform new york from a playground for the wealthy few into a real democracy for all of us, free from all forms of racist violence.">
+          <div class="row">
+            <a class="name" href="https://www.jfrej.org/" target="_blank" rel="noopener noreferrer">Jews for Racial &amp; Economic Justice (JFREJ) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">jfrej.org</span>
+          </div>
+          <p class="desc">Jews for Racial &amp; Economic Justice is the home for Jewish New Yorkers organizing with our neighbors and allies to transform New York from a playground for the wealthy few into a real democracy for all of us, free from all forms of racist violence.</p>
+        </li>
+        <li data-name="making mensches" data-desc="your home for queer, anti-zionist jewish ritual, radical education, and community.">
+          <div class="row">
+            <a class="name" href="https://www.makingmensches.com/" target="_blank" rel="noopener noreferrer">Making Mensches <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">makingmensches.com</span>
+          </div>
+          <p class="desc">Your home for Queer, Anti-Zionist Jewish ritual, radical education, and community.</p>
+        </li>
+        <li data-name="new york city jewish labor bund" data-desc="nyc's local of the international jewish labor bund! fighting zionism, colonialism, and capitalism with jewishness, doikayt, and socialism.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nycbund" target="_blank" rel="noopener noreferrer">New York City Jewish Labor Bund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">NYC's Local of the International Jewish Labor Bund! Fighting Zionism, Colonialism, and Capitalism with Jewishness, Doikayt, and Socialism.</p>
+        </li>
+        <li data-name="outlive them nyc" data-desc="jewish antifascists organizing for a world without pogroms, and a future without fascism.">
+          <div class="row">
+            <a class="name" href="https://outlivethemnyc.com/" target="_blank" rel="noopener noreferrer">Outlive Them NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">outlivethemnyc.com</span>
+          </div>
+          <p class="desc">Jewish antifascists organizing for a world without pogroms, and a future without fascism.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="labor" class="group-section" data-section="labor">
+      <h2 class="section-title">Labor Organizing</h2>
+      <ol class="groups">
+        <li data-name="city workers for justice" data-desc="increasing government transparency and cross-pollination of ideas and expertise across city agencies.">
+          <div class="row">
+            <a class="name" href="https://www.cityworkers4justice.org/" target="_blank" rel="noopener noreferrer">City Workers for Justice <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">cityworkers4justice.org</span>
+          </div>
+          <p class="desc">Increasing government transparency and cross-pollination of ideas and expertise across city agencies.</p>
+        </li>
+        <li data-name="general strike nyc" data-desc="@thegeneralstrikeus nyc chapter, organizing 3.5% of u.s workers to general strike for liberation and bring the u.s empire to its knees!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/generalstrike.nyc/" target="_blank" rel="noopener noreferrer">General Strike NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">@thegeneralstrikeus NYC Chapter, Organizing 3.5% of U.S workers to General Strike for liberation and bring the U.S empire to its knees!</p>
+        </li>
+        <li data-name="industrial workers of the world (iww) - nyc" data-desc="the nyc branch of the @industrialworkersoftheworld, a global union dedicated to direct action, solidarity, and industrial democracy.">
+          <div class="row">
+            <a class="name" href="https://iww.nyc/" target="_blank" rel="noopener noreferrer">Industrial Workers of the World (IWW) - NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">iww.nyc</span>
+          </div>
+          <p class="desc">The NYC branch of the @industrialworkersoftheworld, a global union dedicated to direct action, solidarity, and industrial democracy.</p>
+        </li>
+        <li data-name="laundry workers center" data-desc="combating abuses in the laundry, warehouse, and food service industries.">
+          <div class="row">
+            <a class="name" href="https://laundryworkerscenter.org" target="_blank" rel="noopener noreferrer">Laundry Workers Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">laundryworkerscenter.org</span>
+          </div>
+          <p class="desc">Combating abuses in the laundry, warehouse, and food service industries.</p>
+        </li>
+        <li data-name="the new york city network of worker cooperatives (nyc nowc)" data-desc="the trade association for worker cooperative businesses in the nyc metropolitan region">
+          <div class="row">
+            <a class="name" href="https://nycworker.coop/" target="_blank" rel="noopener noreferrer">The New York City Network of Worker Cooperatives (NYC NOWC) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">nycworker.coop</span>
+          </div>
+          <p class="desc">the trade association for worker cooperative businesses in the NYC metropolitan region</p>
+        </li>
+        <li data-name="ny taxi workers alliance" data-desc="we are committed to a progressive, internationalist, democratic labor movement that stands in steadfast solidarity with workers' movements of the u.s. and around the world.">
+          <div class="row">
+            <a class="name" href="https://www.nytwa.org/" target="_blank" rel="noopener noreferrer">NY Taxi Workers Alliance <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">nytwa.org</span>
+          </div>
+          <p class="desc">We are committed to a progressive, internationalist, democratic labor movement that stands in steadfast solidarity with workers' movements of the U.S. and around the world.</p>
+        </li>
+        <li data-name="worker's justice project" data-desc="addressing the racial and economic injustices that day laborers face by building collective power.">
+          <div class="row">
+            <a class="name" href="https://workersjustice.org" target="_blank" rel="noopener noreferrer">Worker's Justice Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">workersjustice.org</span>
+          </div>
+          <p class="desc">Addressing the racial and economic injustices that day laborers face by building collective power.</p>
+        </li>
+        <li data-name="workers' movement for liberation" data-desc="wml is an organization of working class youth in nyc, it aims to connect the youth to all struggles against oppression and exploitation.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/wmlnyc/" target="_blank" rel="noopener noreferrer">Workers' Movement for Liberation <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">WML is an organization of working class youth in NYC, it aims to connect the youth to all struggles against oppression and exploitation.</p>
+        </li>
+        <li data-name="city workers for justice" data-desc="increasing government transparency and cross-pollination of ideas and expertise across city agencies.">
+          <div class="row">
+            <a class="name" href="https://www.cityworkers4justice.org/" target="_blank" rel="noopener noreferrer">City Workers for Justice <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">cityworkers4justice.org</span>
+          </div>
+          <p class="desc">Increasing government transparency and cross-pollination of ideas and expertise across city agencies.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="lgbt" class="group-section" data-section="lgbt">
+      <h2 class="section-title">LGBTQ+ Solidarity</h2>
+      <ol class="groups">
+        <li data-name="act up ny" data-desc="act up is a diverse, non-partisan group of individuals united in anger and committed to direct action to end the aids crisis.">
+          <div class="row">
+            <a class="name" href="https://actupny.org/" target="_blank" rel="noopener noreferrer">ACT UP NY <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">actupny.org</span>
+          </div>
+          <p class="desc">ACT UP is a diverse, non-partisan group of individuals united in anger and committed to direct action to end the AIDS crisis.</p>
+        </li>
+        <li data-name="audre lorde project" data-desc="a community organizing center for lesbian, gay, two-spirit, trans, &amp; gender-nonconforming people of color across nyc's five boroughs.">
+          <div class="row">
+            <a class="name" href="https://alp.org/" target="_blank" rel="noopener noreferrer">Audre Lorde Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">alp.org</span>
+          </div>
+          <p class="desc">A community organizing center for Lesbian, Gay, Two-Spirit, Trans, &amp; Gender-Nonconforming people of color across NYC's five boroughs.</p>
+        </li>
+        <li data-name="aunties 4 liberation" data-desc="coalition to protect trans kids.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/aunties4liberation" target="_blank" rel="noopener noreferrer">Aunties 4 Liberation <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Coalition to protect trans kids.</p>
+        </li>
+        <li data-name="black diaspora liberation initiative" data-desc="we advocate for the rights and well-being of black lgbt+ immigrants, by fostering a supportive &amp; inclusive environment where all individuals can thrive.">
+          <div class="row">
+            <a class="name" href="https://www.bdlinitiative.org/" target="_blank" rel="noopener noreferrer">Black Diaspora Liberation Initiative <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bdlinitiative.org</span>
+          </div>
+          <p class="desc">We advocate for the rights and well-being of Black LGBT+ immigrants, by fostering a supportive &amp; inclusive environment where all individuals can thrive.</p>
+        </li>
+        <li data-name="black trans liberation" data-desc="community organization that empowers and celebrates tgnc people.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/blacktransliberation/" target="_blank" rel="noopener noreferrer">Black Trans Liberation <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Community Organization That Empowers And Celebrates TGNC People.</p>
+        </li>
+        <li data-name="the brooklyn g.h.o.s.t project" data-desc="black, transgender-led nonprofit providing support, resources, and free meals to transgender and non-binary communities of color in brooklyn.">
+          <div class="row">
+            <a class="name" href="https://www.thebrooklynghostproject.org/" target="_blank" rel="noopener noreferrer">The Brooklyn G.H.O.S.T Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">thebrooklynghostproject.org</span>
+          </div>
+          <p class="desc">Black, transgender-led nonprofit providing support, resources, and free meals to transgender and non-binary communities of color in Brooklyn.</p>
+        </li>
+        <li data-name="claim our space now" data-desc="claim our space now is a nyc based and black-queer and immigrant led nonprofit organization focused on building and mobilizing community power by making activism accessible and dismantling systems of white supremacy">
+          <div class="row">
+            <a class="name" href="https://www.claimourspacenow.org/" target="_blank" rel="noopener noreferrer">Claim Our Space Now <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">claimourspacenow.org</span>
+          </div>
+          <p class="desc">Claim Our Space Now is a NYC Based and Black-Queer and Immigrant led nonprofit organization focused on building and mobilizing community power by making activism accessible and dismantling systems of white supremacy</p>
+        </li>
+        <li data-name="colectivo transgrediendo" data-desc="organization working on empowerment, healthcare access, and rights for transgnb people.">
+          <div class="row">
+            <a class="name" href="https://www.ourvoicesarefree.org/" target="_blank" rel="noopener noreferrer">Colectivo TRANSgrediendo <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">ourvoicesarefree.org</span>
+          </div>
+          <p class="desc">Organization working on empowerment, healthcare access, and rights for TransGNB people.</p>
+        </li>
+        <li data-name="the end is queer: nyc mutual aid" data-desc="discord server organizing queer new yorkers around mutual aid needs.">
+          <div class="row">
+            <a class="name" href="https://discord.gg/8ZWAYJr" target="_blank" rel="noopener noreferrer">The End Is Queer: NYC Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">discord.gg</span>
+          </div>
+          <p class="desc">Discord server organizing queer New Yorkers around mutual aid needs.</p>
+        </li>
+        <li data-name="gays &amp; lesbians living in a transgender society (g.l.i.t.s.)" data-desc="g.l.i.t.s is a black trans-led advocacy and direct services organization that is dedicated to fighting systemic discrimination against marginalized communities, in new york city and beyond.">
+          <div class="row">
+            <a class="name" href="https://www.glitsinc.org/" target="_blank" rel="noopener noreferrer">Gays &amp; Lesbians Living in a Transgender Society (G.L.I.T.S.) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">glitsinc.org</span>
+          </div>
+          <p class="desc">G.L.I.T.S is a Black trans-led advocacy and direct services organization that is dedicated to fighting systemic discrimination against marginalized communities, in New York City and beyond.</p>
+        </li>
+        <li data-name="the lgbt community center" data-desc="nonprofit community center hosting support groups and meeting spaces.">
+          <div class="row">
+            <a class="name" href="https://gaycenter.org/" target="_blank" rel="noopener noreferrer">The LGBT Community Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">gaycenter.org</span>
+          </div>
+          <p class="desc">Nonprofit community center hosting support groups and meeting spaces.</p>
+        </li>
+        <li data-name="nyc queer trans defense" data-desc="community members fighting back against homophobia, transphobia and queerphobia in nyc, at drag story hours and beyond. show up to get involved!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nycqueertransdefense/" target="_blank" rel="noopener noreferrer">NYC Queer Trans Defense <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Community members fighting back against homophobia, transphobia and queerphobia in NYC, at drag story hours and beyond. Show up to get involved!</p>
+        </li>
+        <li data-name="nyc youth 4 trans rights" data-desc="run by trans youth for trans youth, we organize protests &amp; events in nyc">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nycyouth4transrights" target="_blank" rel="noopener noreferrer">NYC Youth 4 Trans Rights <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Run by trans youth for trans youth, we organize protests &amp; events in NYC</p>
+        </li>
+        <li data-name="queers gambit" data-desc="queerest anti-imperialist chess club on earth">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/queers.gambit/" target="_blank" rel="noopener noreferrer">Queers Gambit <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">queerest anti-imperialist chess club on earth</p>
+        </li>
+        <li data-name="reclaim pride coalition" data-desc="organizers of the annual queer liberation march">
+          <div class="row">
+            <a class="name" href="https://reclaimpridenyc.org/" target="_blank" rel="noopener noreferrer">Reclaim Pride Coalition <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">reclaimpridenyc.org</span>
+          </div>
+          <p class="desc">Organizers of the annual Queer Liberation March</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="migrants" class="group-section" data-section="migrants">
+      <h2 class="section-title">Migrant Solidarity</h2>
+      <ol class="groups">
+        <li data-name="afghans for a better tomorrow" data-desc="we organize the afgham community to bring about systemic change in the u.s. &amp; beyond to ensure all afghans have lives of safety, dignity, and freedom.">
+          <div class="row">
+            <a class="name" href="https://www.weareafghans.org/" target="_blank" rel="noopener noreferrer">Afghans for a Better Tomorrow <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">weareafghans.org</span>
+          </div>
+          <p class="desc">We organize the AfghAm community to bring about systemic change in the U.S. &amp; beyond to ensure all Afghans have lives of safety, dignity, and freedom.</p>
+        </li>
+        <li data-name="club a" data-desc="anarchist mutual aid group distributing food and supplies at bushwick city farm, also runs bikes for migrants.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/club_a_nyc" target="_blank" rel="noopener noreferrer">Club A <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Anarchist Mutual Aid group distributing food and supplies at Bushwick City Farm, also runs Bikes for Migrants.</p>
+        </li>
+        <li data-name="families for freedom" data-desc="new york-based multi-ethnic human rights organization by and for families facing deportation.">
+          <div class="row">
+            <a class="name" href="https://familiesforfreedom.org/" target="_blank" rel="noopener noreferrer">Families for Freedom <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">familiesforfreedom.org</span>
+          </div>
+          <p class="desc">New York-based multi-ethnic human rights organization by and for families facing deportation.</p>
+        </li>
+        <li data-name="ice watch nyc" data-desc="dm if you see ice, bad cops, evictions">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nycicewatch/" target="_blank" rel="noopener noreferrer">ICE Watch NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">DM if you see ICE, bad cops, evictions</p>
+        </li>
+        <li data-name="make the road ny" data-desc="building power in immigrant and working class communities.">
+          <div class="row">
+            <a class="name" href="https://maketheroadny.org/" target="_blank" rel="noopener noreferrer">Make the Road NY <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">maketheroadny.org</span>
+          </div>
+          <p class="desc">Building power in immigrant and working class communities.</p>
+        </li>
+        <li data-name="migrante new york" data-desc="a grassroots organization fighting for rights and welfare of filipino migrant workers in the u.s. and for a genuine democracy in the philippines.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/migrantenewyork" target="_blank" rel="noopener noreferrer">Migrante New York <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots organization fighting for rights and welfare of Filipino Migrant Workers in the U.S. and for a genuine democracy in the Philippines.</p>
+        </li>
+        <li data-name="new immigrant community empowerment (nice)" data-desc="nice aims to inspire, empower, and organize immigrants in life and at work">
+          <div class="row">
+            <a class="name" href="https://www.nynice.org/" target="_blank" rel="noopener noreferrer">New Immigrant Community Empowerment (NICE) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">nynice.org</span>
+          </div>
+          <p class="desc">NICE aims to inspire, empower, and organize immigrants in life and at work</p>
+        </li>
+        <li data-name="new sanctuary coalition" data-desc="for over 17 years, the new sanctuary coalition (nsc) has been led by and for immigrants to stop the inhumane system of deportations and detentions in this country. our small and scrappy team works with an army of over 500 volunteers to provide person-to-person support to many hundreds of immigrants facing detention and deportation.">
+          <div class="row">
+            <a class="name" href="https://www.newsanctuarynsc.org/" target="_blank" rel="noopener noreferrer">New Sanctuary Coalition <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">newsanctuarynsc.org</span>
+          </div>
+          <p class="desc">For over 17 years, the New Sanctuary Coalition (NSC) has been led by and for immigrants to stop the inhumane system of deportations and detentions in this country. Our small and scrappy team works with an army of over 500 volunteers to provide person-to-person support to many hundreds of immigrants facing detention and deportation.</p>
+        </li>
+        <li data-name="new york state youth leadership council (nysylc)" data-desc="the nysylc envisions an inclusive society where currently- and formerly-undocumented youth belong, thrive, and are unafraid.">
+          <div class="row">
+            <a class="name" href="https://www.nysylc.org/" target="_blank" rel="noopener noreferrer">New York State Youth Leadership Council (NYSYLC) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">nysylc.org</span>
+          </div>
+          <p class="desc">The NYSYLC envisions an inclusive society where currently- and formerly-undocumented youth belong, thrive, and are unafraid.</p>
+        </li>
+        <li data-name="nyc migrant solidarity" data-desc="anti-authoritarian collective empowering networks of community support in crisis &amp; platforms for mutual aid with migrants.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nycmigrantsolidarity/" target="_blank" rel="noopener noreferrer">NYC Migrant Solidarity <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Anti-Authoritarian collective empowering networks of community support in crisis &amp; platforms for mutual aid with migrants.</p>
+        </li>
+        <li data-name="safe passage project" data-desc="we provide free lawyers to immigrant and refugee children who are being deported">
+          <div class="row">
+            <a class="name" href="https://www.safepassageproject.org/" target="_blank" rel="noopener noreferrer">Safe Passage Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">safepassageproject.org</span>
+          </div>
+          <p class="desc">We provide free lawyers to immigrant and refugee children who are being deported</p>
+        </li>
+        <li data-name="sanctuary neighborhoods nyc" data-desc="a coalition of grassroots activists in collaboration with our local houses of worship in an effort to support families and keep our diverse communities whole.">
+          <div class="row">
+            <a class="name" href="https://www.sanctuaryhood.org/" target="_blank" rel="noopener noreferrer">Sanctuary Neighborhoods NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sanctuaryhood.org</span>
+          </div>
+          <p class="desc">a coalition of grassroots activists in collaboration with our local Houses of Worship in an effort to support families and keep our diverse communities whole.</p>
+        </li>
+        <li data-name="street vendor project" data-desc="through direct legal representation, small business training, organizing support, leadership development, and strategic legislative advocacy, svp builds power and community among vendors.">
+          <div class="row">
+            <a class="name" href="https://www.streetvendor.org/" target="_blank" rel="noopener noreferrer">Street Vendor Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">streetvendor.org</span>
+          </div>
+          <p class="desc">Through direct legal representation, small business training, organizing support, leadership development, and strategic legislative advocacy, SVP builds power and community among vendors.</p>
+        </li>
+        <li data-name="undocumented women's fund" data-desc="care, learning and organizing network supporting immigrant women in nyc.">
+          <div class="row">
+            <a class="name" href="https://linktr.ee/undocuwomensfund" target="_blank" rel="noopener noreferrer">Undocumented Women's Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">linktr.ee</span>
+          </div>
+          <p class="desc">Care, learning and organizing network supporting immigrant women in NYC.</p>
+        </li>
+        <li data-name="welcome migrants nyc" data-desc="we keep us safe! join us in defending those who have been displaced by capitalism:mutual aid, fightback, &amp; solidarity">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/welcomemigrantsnyc/" target="_blank" rel="noopener noreferrer">Welcome Migrants NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We keep us safe! join us in defending those who have been displaced by capitalism:mutual aid, fightback, &amp; solidarity</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="palestine" class="group-section" data-section="palestine">
+      <h2 class="section-title">Palestine Solidarity</h2>
+      <ol class="groups">
+        <li data-name="asians for palestine nyc" data-desc="we are the asian diaspora of nyc united under a free palestine">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/asians4palestinenyc" target="_blank" rel="noopener noreferrer">Asians for Palestine NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We are the Asian diaspora of NYC united under a FREE PALESTINE</p>
+        </li>
+        <li data-name="bny funds genocide" data-desc="ny-based campaign to demand bny mellon divest from war manufacturers!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/bnyfundsgenocide/" target="_blank" rel="noopener noreferrer">BNY Funds Genocide <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">NY-based campaign to demand BNY Mellon divest from war manufacturers!</p>
+        </li>
+        <li data-name="columbia palestine solidarity coalition (cpsc)" data-desc="palestinian-led, palestine-focused coalition fighting for divestment at columbia university">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/columbia.psc" target="_blank" rel="noopener noreferrer">Columbia Palestine Solidarity Coalition (CPSC) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Palestinian-led, Palestine-focused coalition fighting for divestment at Columbia University</p>
+        </li>
+        <li data-name="cuny for palestine" data-desc="we are a network of cuny students &amp; workers organizing for bds &amp; in solidarity with palestine liberation">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/cuny4palestine/" target="_blank" rel="noopener noreferrer">CUNY For Palestine <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We are a network of CUNY students &amp; workers organizing for BDS &amp; in solidarity with Palestine liberation</p>
+        </li>
+        <li data-name="demilitarize brooklyn navy yard" data-desc="working towards a brooklyn navy yard that is free from the military manufacturers that contribute towards genocide in gaza">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/demilitarizebklynnavyyard/" target="_blank" rel="noopener noreferrer">Demilitarize Brooklyn Navy Yard <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Working towards a Brooklyn Navy Yard that is free from the military manufacturers that contribute towards genocide in Gaza</p>
+        </li>
+        <li data-name="healthcare workers for palestine nyc" data-desc="we are a collective of healthcare workers in new york city organizing to end the siege on gaza and fighting for the liberation of palestine.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/hcw4pnyc" target="_blank" rel="noopener noreferrer">Healthcare Workers for Palestine NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We are a collective of healthcare workers in New York City organizing to end the siege on Gaza and fighting for the liberation of Palestine.</p>
+        </li>
+        <li data-name="mamas 4 a free palestine" data-desc="a mother-led organization that supports the palestinian struggle for liberation and justice.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/mamas_4_afreepalestine" target="_blank" rel="noopener noreferrer">Mamas 4 a Free Palestine <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mother-led organization that supports the Palestinian struggle for liberation and justice.</p>
+        </li>
+        <li data-name="nyc resists with gaza" data-desc="autonomous group organizing to support the palestinian struggle for liberation and justice.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nycresistswithgaza/" target="_blank" rel="noopener noreferrer">NYC Resists with Gaza <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Autonomous group organizing to support the Palestinian struggle for liberation and justice.</p>
+        </li>
+        <li data-name="ny irish for palestine" data-desc="from ireland to palestine, occupation is a crime.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nyirish4palestine" target="_blank" rel="noopener noreferrer">NY Irish for Palestine <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">From Ireland to Palestine, occupation is a crime.</p>
+        </li>
+        <li data-name="palestine solidarity working group" data-desc="we are an anti-zionist group of revolutionary socialists building a solidarity movement on turtle island accountable to palestinians">
+          <div class="row">
+            <a class="name" href="https://palestineswg.org/" target="_blank" rel="noopener noreferrer">Palestine Solidarity Working Group <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">palestineswg.org</span>
+          </div>
+          <p class="desc">We are an anti-Zionist group of revolutionary socialists building a solidarity movement on turtle island accountable to Palestinians</p>
+        </li>
+        <li data-name="promise of poppies" data-desc="mutual aid events for palestine">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/promiseofpoppies" target="_blank" rel="noopener noreferrer">Promise of Poppies <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Mutual aid events for Palestine</p>
+        </li>
+        <li data-name="queers for a liberated palestine" data-desc="nyc based queer collective fighting for a free palestine.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/queersforaliberatedpalestine" target="_blank" rel="noopener noreferrer">Queers for a Liberated Palestine <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">NYC based queer collective fighting for a free Palestine.</p>
+        </li>
+        <li data-name="samidoun nyc" data-desc="palestinian prisoner solidarity network organizing support for palestinian political prisoners in israeli jails">
+          <div class="row">
+            <a class="name" href="https://samidoun.net/nyc/" target="_blank" rel="noopener noreferrer">Samidoun NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">samidoun.net</span>
+          </div>
+          <p class="desc">Palestinian Prisoner Solidarity Network organizing support for Palestinian political prisoners in Israeli jails</p>
+        </li>
+        <li data-name="staten island for palestine" data-desc="our vision is to unite staten islanders to champion palestinian rights and strive for a global society that upholds justice, equality, and dignity, free from racism, oppression, and occupation.">
+          <div class="row">
+            <a class="name" href="https://www.statenisland4palestine.org/" target="_blank" rel="noopener noreferrer">Staten Island for Palestine <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">statenisland4palestine.org</span>
+          </div>
+          <p class="desc">Our vision is to unite Staten Islanders to champion Palestinian rights and strive for a global society that upholds justice, equality, and dignity, free from racism, oppression, and occupation.</p>
+        </li>
+        <li data-name="theater workers for a ceasefire" data-desc="us-based theater workers demand a ceasefire in palestine.">
+          <div class="row">
+            <a class="name" href="https://theaterworkersforaceasefire.com/" target="_blank" rel="noopener noreferrer">Theater Workers for a Ceasefire <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">theaterworkersforaceasefire.com</span>
+          </div>
+          <p class="desc">US-based theater workers demand a ceasefire in Palestine.</p>
+        </li>
+        <li data-name="under the sun collective" data-desc="nyc-based mutual aid group fundraising for palestinian families and other communities affected by the capitalist and imperialist war machine.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nycunderthesun/" target="_blank" rel="noopener noreferrer">Under the Sun Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">NYC-based mutual aid group fundraising for Palestinian families and other communities affected by the capitalist and imperialist war machine.</p>
+        </li>
+        <li data-name="uptown 4 palestine" data-desc="group of uptown manhattan residents organizing for palestinian liberation">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/uptown4palestine/" target="_blank" rel="noopener noreferrer">Uptown 4 Palestine <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Group of uptown Manhattan residents organizing for Palestinian liberation</p>
+        </li>
+        <li data-name="waad mutual aid" data-desc="working to provide vital financial support to families in besieged communities, and gazan refugees, in the northern west bank.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/waadmutualaid/" target="_blank" rel="noopener noreferrer">Waad Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Working to provide vital financial support to families in besieged communities, and Gazan refugees, in the Northern West Bank.</p>
+        </li>
+        <li data-name="within our lifetime" data-desc="palestinian-led community organization working towards the liberation of palestine and all oppressed peoples">
+          <div class="row">
+            <a class="name" href="https://withinourlifetime.org/" target="_blank" rel="noopener noreferrer">Within Our Lifetime <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">withinourlifetime.org</span>
+          </div>
+          <p class="desc">Palestinian-led community organization working towards the liberation of Palestine and all oppressed peoples</p>
+        </li>
+        <li data-name="writers against the war on gaza" data-desc="building a cultural front for a free palestine. they write and publish the new york war crimes.">
+          <div class="row">
+            <a class="name" href="https://www.writersagainstthewarongaza.com/" target="_blank" rel="noopener noreferrer">Writers Against the War on Gaza <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">writersagainstthewarongaza.com</span>
+          </div>
+          <p class="desc">Building a cultural front for a free Palestine. They write and publish the New York War Crimes.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="prison-abolition" class="group-section" data-section="prison-abolition">
+      <h2 class="section-title">Prison Abolition and Prisoner Solidarity</h2>
+      <ol class="groups">
+        <li data-name="black and pink nyc" data-desc="organizes a pen pal program for lgbtq and hiv-positive prisoners, and distributes a prisoner-written newspaper to its incarcerated members">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/blackandpinknyc/" target="_blank" rel="noopener noreferrer">Black and Pink NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Organizes a pen pal program for LGBTQ and HIV-positive prisoners, and distributes a prisoner-written newspaper to its incarcerated members</p>
+        </li>
+        <li data-name="books through bars nyc" data-desc="nyc books through bars is an all volunteer-run group that sends free, donated books to incarcerated people across the nation!">
+          <div class="row">
+            <a class="name" href="https://booksthroughbarsnyc.org/" target="_blank" rel="noopener noreferrer">Books Through Bars NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">booksthroughbarsnyc.org</span>
+          </div>
+          <p class="desc">NYC Books Through Bars is an all volunteer-run group that sends free, donated books to incarcerated people across the nation!</p>
+        </li>
+        <li data-name="borough based liberation project" data-desc="raising abolitionist resistance against the nyc borough-based jail plan.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/boroughbasedliberationproject/" target="_blank" rel="noopener noreferrer">Borough Based Liberation Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Raising abolitionist resistance against the NYC borough-based jail plan.</p>
+        </li>
+        <li data-name="court watch nyc" data-desc="court watch nyc is a volunteer-run anti-carceral project focused on reducing the harm of the carceral state by training new yorkers to observe and collect data on arraignments.">
+          <div class="row">
+            <a class="name" href="https://www.courtwatchnyc.org/" target="_blank" rel="noopener noreferrer">Court Watch NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">courtwatchnyc.org</span>
+          </div>
+          <p class="desc">Court Watch NYC is a volunteer-run anti-carceral project focused on reducing the harm of the carceral state by training New Yorkers to observe and collect data on arraignments.</p>
+        </li>
+        <li data-name="envision freedom fund" data-desc="fighting to dismantle the criminal legal and immigration systems.">
+          <div class="row">
+            <a class="name" href="https://envisionfreedom.org/" target="_blank" rel="noopener noreferrer">Envision Freedom Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">envisionfreedom.org</span>
+          </div>
+          <p class="desc">Fighting to dismantle the criminal legal and immigration systems.</p>
+        </li>
+        <li data-name="families and friends of the wrongfully convicted (ffwc)" data-desc="grassroots organization providing support, advocacy, and mutual aid for wrongfully convicted individuals and their families while fighting for criminal justice reform.">
+          <div class="row">
+            <a class="name" href="https://wrongfullyconvicted.info/" target="_blank" rel="noopener noreferrer">Families and Friends of the Wrongfully Convicted (FFWC) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">wrongfullyconvicted.info</span>
+          </div>
+          <p class="desc">Grassroots organization providing support, advocacy, and mutual aid for wrongfully convicted individuals and their families while fighting for criminal justice reform.</p>
+        </li>
+        <li data-name="fight 2 live" data-desc="we are a community effort working to end the incarceration of black, indigenous, and/or people of color who are queer, trans, and/or two-spirit in ny.">
+          <div class="row">
+            <a class="name" href="https://www.f2lrelieffund.org/" target="_blank" rel="noopener noreferrer">Fight 2 Live <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">f2lrelieffund.org</span>
+          </div>
+          <p class="desc">We are a community effort working to end the incarceration of Black, Indigenous, and/or people of color who are queer, trans, and/or Two-Spirit in NY.</p>
+        </li>
+        <li data-name="freedom agenda" data-desc="freedom agenda is a grassroots member-led organization of people directly impacted by incarceration to achieve decarceration &amp; system transformation.">
+          <div class="row">
+            <a class="name" href="https://fa.urbanjustice.org/" target="_blank" rel="noopener noreferrer">Freedom Agenda <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">fa.urbanjustice.org</span>
+          </div>
+          <p class="desc">Freedom Agenda is a grassroots member-led organization of people directly impacted by incarceration to achieve decarceration &amp; system transformation.</p>
+        </li>
+        <li data-name="g.a.n.g.s. coalition" data-desc="our mission is to end systems that target, surveil, harass, and criminalize the association of young black and latinx people.">
+          <div class="row">
+            <a class="name" href="https://erasethedatabasenyc.com/" target="_blank" rel="noopener noreferrer">G.A.N.G.S. Coalition <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">erasethedatabasenyc.com</span>
+          </div>
+          <p class="desc">Our mission is to end systems that target, surveil, harass, and criminalize the association of young Black and Latinx people.</p>
+        </li>
+        <li data-name="holla (how our lives link
+                altogether)" data-desc="is a grassroots org committed to co-creating space for youth to heal and engage critically with/in the use and misuse of power thru youth organizing.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/how_our_lives_link_altogether/" target="_blank" rel="noopener noreferrer">HOLLA (How Our Lives Link
+                Altogether) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Is a grassroots org committed to co-creating space for youth to heal and engage critically with/in the use and misuse of power thru youth organizing.</p>
+        </li>
+        <li data-name="jails action coalition" data-desc="we are a coalition of activists working to promote human rights, dignity &amp; safety for people in nyc jails since december 2011.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/jailsactioncoalition/" target="_blank" rel="noopener noreferrer">Jails Action Coalition <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We are a coalition of activists working to promote human rights, dignity &amp; safety for people in NYC jails since December 2011.</p>
+        </li>
+        <li data-name="justice committee" data-desc="organizing to end police/racial violence and supporting families/survivors of nypd violence since the 80s.">
+          <div class="row">
+            <a class="name" href="https://www.justicecommittee.org/" target="_blank" rel="noopener noreferrer">Justice Committee <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">justicecommittee.org</span>
+          </div>
+          <p class="desc">Organizing to end police/racial violence and supporting families/survivors of NYPD violence since the 80s.</p>
+        </li>
+        <li data-name="justice for allan" data-desc="family of #allanfeliz. he was 31 yr old when he was killed by @nypd on 10/17/19. there have been no charges in our case. we need your support!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/justiceforallan/" target="_blank" rel="noopener noreferrer">Justice for Allan <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Family of #AllanFeliz. He was 31 yr old when he was killed by @nypd on 10/17/19. There have been no charges in our case. We need your support!</p>
+        </li>
+        <li data-name="mdc solidarity" data-desc="we are a small group organizing around the horrible conditions at mdc-brooklyn.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/mdc_solidarity/" target="_blank" rel="noopener noreferrer">MDC Solidarity <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We are a small group organizing around the horrible conditions at MDC-Brooklyn.</p>
+        </li>
+        <li data-name="ny alliance against racist &amp; political repression" data-desc="organization dedicated to fighting police crimes and brutality in nyc, building community control over the police.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nyaarpr" target="_blank" rel="noopener noreferrer">NY Alliance Against Racist &amp; Political Repression <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Organization dedicated to fighting police crimes and brutality in NYC, building community control over the police.</p>
+        </li>
+        <li data-name="nyc anarchist black cross" data-desc="we demand freedom for all us held political prisoners and prisoners of war. more at nycabc.wordpress.com">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nycabc/" target="_blank" rel="noopener noreferrer">NYC Anarchist Black Cross <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We demand freedom for all US held political prisoners and prisoners of war. More at nycabc.wordpress.com</p>
+        </li>
+        <li data-name="nyc block watch" data-desc="stop cop surveillance, community defense + know your neighbors = cops out the hood">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nycblockwatch/" target="_blank" rel="noopener noreferrer">NYC Block Watch <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Stop cop surveillance, community defense + know your neighbors = cops out the hood</p>
+        </li>
+        <li data-name="parole preparation project" data-desc="providing advocacy and critical support for people serving life sentences and those who have returned home">
+          <div class="row">
+            <a class="name" href="https://www.paroleprepny.org/" target="_blank" rel="noopener noreferrer">Parole Preparation Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">paroleprepny.org</span>
+          </div>
+          <p class="desc">Providing advocacy and critical support for people serving life sentences and those who have returned home</p>
+        </li>
+        <li data-name="release aging people in prison (rapp)" data-desc="led by formerly incarcerated people and family members of people in prison, rapp works to end mass incarceration and promote racial justice through the release of aging people in prison and those serving long sentences">
+          <div class="row">
+            <a class="name" href="https://rappcampaign.com/" target="_blank" rel="noopener noreferrer">Release Aging People in Prison (RAPP) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">rappcampaign.com</span>
+          </div>
+          <p class="desc">Led by formerly incarcerated people and family members of people in prison, RAPP works to end mass incarceration and promote racial justice through the release of aging people in prison and those serving long sentences</p>
+        </li>
+        <li data-name="the remedy project" data-desc="bringing together students and justice-system-impacted advocates to fight for incarcerated people. end the human rights crisis behind bars.">
+          <div class="row">
+            <a class="name" href="https://www.theremedyproj.org/" target="_blank" rel="noopener noreferrer">The Remedy Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">theremedyproj.org</span>
+          </div>
+          <p class="desc">Bringing together students and justice-system-impacted advocates to fight for incarcerated people. End the human rights crisis behind bars.</p>
+        </li>
+        <li data-name="rouge support network" data-desc="national support system of artists, storytellers, health workers &amp; resource mobilizers serving those impacted by capitalism, criminalization &amp; the pic">
+          <div class="row">
+            <a class="name" href="https://rougesupportnetwork.org/" target="_blank" rel="noopener noreferrer">Rouge Support Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">rougesupportnetwork.org</span>
+          </div>
+          <p class="desc">National support system of artists, storytellers, health workers &amp; resource mobilizers serving those impacted by capitalism, criminalization &amp; the PIC</p>
+        </li>
+        <li data-name="saxapahaw prison books project" data-desc="operating out of p.i.t. in williamsburg, sending free books to people incarcerated in georgia.">
+          <div class="row">
+            <a class="name" href="https://www.saxapahawprisonbooks.org/" target="_blank" rel="noopener noreferrer">Saxapahaw Prison Books Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">saxapahawprisonbooks.org</span>
+          </div>
+          <p class="desc">Operating out of P.I.T. in Williamsburg, sending free books to people incarcerated in Georgia.</p>
+        </li>
+        <li data-name="stop cop city nyc" data-desc="cop city will never be built! no cop city anywhere! account organized by @bapnewyorkcity">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/stopcopcitynyc/" target="_blank" rel="noopener noreferrer">Stop Cop City NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Cop City Will Never Be Built! No Cop City Anywhere! Account organized by @bapnewyorkcity</p>
+        </li>
+        <li data-name="swipe it forward" data-desc="we are a grassroots community response to broken windows policing. we are abolitionists and anti-police. transportation is a right. no one deserves to go to jail for $2.75.">
+          <div class="row">
+            <a class="name" href="https://swipeitforward.nyc/" target="_blank" rel="noopener noreferrer">Swipe It Forward <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">swipeitforward.nyc</span>
+          </div>
+          <p class="desc">We are a grassroots community response to Broken Windows Policing. We are Abolitionists and Anti-Police. Transportation is a right. No one deserves to go to jail for $2.75.</p>
+        </li>
+        <li data-name="survived &amp; punished ny" data-desc="new york formation of @survivepunish. volunteers working to end the criminalization of survivors of domestic and sexual violence.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/survivepunishny/" target="_blank" rel="noopener noreferrer">Survived &amp; Punished NY <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">New York formation of @survivepunish. Volunteers working to end the criminalization of survivors of domestic and sexual violence.</p>
+        </li>
+        <li data-name="weelaunee defense nyc" data-desc="nyc chapter of the weelaunee defense society in solidarity with the movement to defend the atlanta forest">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/weelauneedefense_nyc" target="_blank" rel="noopener noreferrer">Weelaunee Defense NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">NYC Chapter of the Weelaunee Defense Society In solidarity with the movement to defend the Atlanta forest</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="sex-workers" class="group-section" data-section="sex-workers">
+      <h2 class="section-title">Sex Worker Solidarity</h2>
+      <ol class="groups">
+        <li data-name="support ho(s)e" data-desc="a collective of sex workers and allies building radical community and providing mutual aid.">
+          <div class="row">
+            <a class="name" href="https://sxhxcollective.org/" target="_blank" rel="noopener noreferrer">Support Ho(s)e <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sxhxcollective.org</span>
+          </div>
+          <p class="desc">A collective of sex workers and allies building radical community and providing mutual aid.</p>
+        </li>
+        <li data-name="sex workers project" data-desc="legal services and advocacy supporting the rights of sex workers and survivors of human trafficking.">
+          <div class="row">
+            <a class="name" href="https://swp.urbanjustice.org/" target="_blank" rel="noopener noreferrer">Sex Workers Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">swp.urbanjustice.org</span>
+          </div>
+          <p class="desc">Legal services and advocacy supporting the rights of sex workers and survivors of human trafficking.</p>
+        </li>
+        <li data-name="red canary song" data-desc="organizing with migrant &amp; asian sex workers in nyc. rights, not raids or rescue. anti-trafficking, pro-decrim. transnational.">
+          <div class="row">
+            <a class="name" href="https://www.redcanarysong.net/" target="_blank" rel="noopener noreferrer">Red Canary Song <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">redcanarysong.net</span>
+          </div>
+          <p class="desc">Organizing with migrant &amp; Asian sex workers in NYC. Rights, not raids or rescue. Anti-trafficking, Pro-decrim. Transnational.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="other" class="group-section" data-section="other">
+      <h2 class="section-title">Other Groups</h2>
+      <ol class="groups">
+        <li data-name="adhikaar" data-desc="the only women-led worker and community center that serves and organizes the nepali-speaking immigrant and refugee community.">
+          <div class="row">
+            <a class="name" href="https://www.adhikaar.org/" target="_blank" rel="noopener noreferrer">Adhikaar <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">adhikaar.org</span>
+          </div>
+          <p class="desc">The only women-led worker and community center that serves and organizes the Nepali-speaking immigrant and refugee community.</p>
+        </li>
+        <li data-name="artists rapid response team nyc" data-desc="artists rapid response team meets monthly to create art, banners, signs, and propaganda material for activist/community organizations in nyc.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/arrt_nyc/" target="_blank" rel="noopener noreferrer">Artists Rapid Response Team NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Artists Rapid Response team meets monthly to create art, banners, signs, and propaganda material for activist/community organizations in NYC.</p>
+        </li>
+        <li data-name="behind enemy lines nyc" data-desc="nyc chapter of @anti_imperialist_resistance. the empire is the enemy. from the belly of the beast, we choose to resist it.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/behindenemylines_nyc/" target="_blank" rel="noopener noreferrer">Behind Enemy Lines NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">NYC chapter of @anti_imperialist_resistance. The empire is the enemy. From the belly of the beast, we choose to resist it.</p>
+        </li>
+        <li data-name="the bori collective" data-desc="the crisis persists, the people resist.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/theboricollective" target="_blank" rel="noopener noreferrer">The Bori Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">The Crisis Persists, The People Resist.</p>
+        </li>
+        <li data-name="cafe anarquista" data-desc="a mutual aid movement to help make protests more communal. we distribute zines, snacks, and coffee to foster comradery. educate, agitate, caffeinate.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/cafeanarquista/" target="_blank" rel="noopener noreferrer">Cafe Anarquista <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid movement to help make protests more communal. We distribute zines, snacks, and coffee to foster comradery. Educate, agitate, caffeinate.</p>
+        </li>
+        <li data-name="chhaya cdc" data-desc="building power, housing stability, and economic well-being of south asian and indo-caribbean communities.">
+          <div class="row">
+            <a class="name" href="https://chhayacdc.org/" target="_blank" rel="noopener noreferrer">Chhaya CDC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">chhayacdc.org</span>
+          </div>
+          <p class="desc">Building power, housing stability, and economic well-being of South Asian and Indo-Caribbean communities.</p>
+        </li>
+        <li data-name="cinemovil nyc" data-desc="revolutionary mobile cinema collective">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/cinemovil.nyc/" target="_blank" rel="noopener noreferrer">Cinemovil NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">revolutionary mobile cinema collective</p>
+        </li>
+        <li data-name="code pink nyc" data-desc="anti-imperialist, transnational feminists organizing for peace, justice, and collective liberation! @codepinkalert nyc chapter">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/codepink.nyc" target="_blank" rel="noopener noreferrer">Code Pink NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Anti-imperialist, transnational feminists organizing for peace, justice, and collective liberation! @codepinkalert NYC chapter</p>
+        </li>
+        <li data-name="dare to struggle" data-desc="dare to struggle is committed to standing with the people subjected to the american nightmare and organizing them in collective struggle.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/daretostrugglenyc/" target="_blank" rel="noopener noreferrer">Dare to Struggle <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Dare to Struggle is committed to standing with the people subjected to the American nightmare and organizing them in collective struggle.</p>
+        </li>
+        <li data-name="diaspora pa'lante collective nyc.nj" data-desc="we are an organization of boricuas and allies in the diaspora &amp; the archipelago fighting for the liberation of borikén &amp; all oppressed peoples.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/dpc.nycnj" target="_blank" rel="noopener noreferrer">Diaspora Pa'lante Collective NYC.NJ <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We are an organization of Boricuas and allies in the diaspora &amp; the archipelago fighting for the liberation of Borikén &amp; all oppressed peoples.</p>
+        </li>
+        <li data-name="drum (desis rising up and moving)" data-desc="drum was founded in 2000 to build the power of south asian and indo-caribbean low wage immigrant workers, youth, and families in new york city to win economic and educational justice, and civil and immigrant rights.">
+          <div class="row">
+            <a class="name" href="https://www.drumnyc.org/" target="_blank" rel="noopener noreferrer">DRUM (Desis Rising Up and Moving) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">drumnyc.org</span>
+          </div>
+          <p class="desc">DRUM was founded in 2000 to build the power of South Asian and Indo-Caribbean low wage immigrant workers, youth, and families in New York City to win economic and educational justice, and civil and immigrant rights.</p>
+        </li>
+        <li data-name="friends of swazi freedom" data-desc="a solidarity organization committed to supporting the struggle for political, social, and economic freedom in swaziland.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/friendsofswazifreedom" target="_blank" rel="noopener noreferrer">Friends of Swazi Freedom <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A solidarity organization committed to supporting the struggle for political, social, and economic freedom in Swaziland.</p>
+        </li>
+        <li data-name="gabriela new york" data-desc="advancing the militant women's movement in the philippines and around the world">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/gabrielanewyork" target="_blank" rel="noopener noreferrer">Gabriela New York <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Advancing the militant women's movement in the Philippines and around the world</p>
+        </li>
+        <li data-name="garuda collective" data-desc="empowered communities are harder to oppress, community defense, mutual aid">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/garudacollective161/" target="_blank" rel="noopener noreferrer">Garuda Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Empowered Communities Are Harder to Oppress, Community Defense, Mutual Aid</p>
+        </li>
+        <li data-name="in our hearts nyc" data-desc="anarchist food distribution and action-oriented mutual aid group.">
+          <div class="row">
+            <a class="name" href="https://www.inourheartsnyc.org/" target="_blank" rel="noopener noreferrer">In Our Hearts NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">inourheartsnyc.org</span>
+          </div>
+          <p class="desc">Anarchist food distribution and action-oriented mutual aid group.</p>
+        </li>
+        <li data-name="lal morich" data-desc="a bangladeshi anti-imperialist diaspora org in support of the new democratic movement in bangladesh.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/lal_morich/" target="_blank" rel="noopener noreferrer">Lal Morich <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A Bangladeshi anti-imperialist diaspora org in support of the New Democratic Movement in Bangladesh.</p>
+        </li>
+        <li data-name="let's discuss anarchism nyc" data-desc="lda is a new and ongoing series of open, in person discussions about anarchist ideas, rotating through different spaces in the five boroughs.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/lda_nyc/" target="_blank" rel="noopener noreferrer">Let's Discuss Anarchism NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">LDA is a new and ongoing series of open, in person discussions about anarchist ideas, rotating through different spaces in the five boroughs.</p>
+        </li>
+        <li data-name="metropolitan anarchist coordinating council (macc)" data-desc="an organization based on the guiding principles of horizontalism, anti-oppression, mutual aid, direct democracy, and direct action.">
+          <div class="row">
+            <a class="name" href="https://macc.nyc/" target="_blank" rel="noopener noreferrer">Metropolitan Anarchist Coordinating Council (MACC) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">macc.nyc</span>
+          </div>
+          <p class="desc">An organization based on the guiding principles of horizontalism, anti-oppression, mutual aid, direct democracy, and direct action.</p>
+        </li>
+        <li data-name="the misandry committee" data-desc="liberating the commons through anti-capitalist and anti-imperialist means">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/themisandrycommittee" target="_blank" rel="noopener noreferrer">The Misandry Committee <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Liberating the commons through anti-capitalist and anti-imperialist means</p>
+        </li>
+        <li data-name="mission to end modern slavery" data-desc="building a survivor-led movement against human trafficking and wage theft.">
+          <div class="row">
+            <a class="name" href="https://www.memsnyc.org/" target="_blank" rel="noopener noreferrer">Mission to End Modern Slavery <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">memsnyc.org</span>
+          </div>
+          <p class="desc">Building a survivor-led movement against human trafficking and wage theft.</p>
+        </li>
+        <li data-name="movement to birth liberation" data-desc="a non hierarchical network of birth &amp; reproductive justice activists together imagining &amp; working to birth liberation.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/ny_mbl" target="_blank" rel="noopener noreferrer">Movement to Birth Liberation <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A non hierarchical network of birth &amp; reproductive justice activists together imagining &amp; working to birth liberation.</p>
+        </li>
+        <li data-name="nyc anarchist bookfair" data-desc="each year, the nyc anarchist book fair hosts over 60 exhibitors including publishers, writers, designers, artists, musicians and other activists.">
+          <div class="row">
+            <a class="name" href="https://anarchistbookfair.net/" target="_blank" rel="noopener noreferrer">NYC Anarchist Bookfair <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">anarchistbookfair.net</span>
+          </div>
+          <p class="desc">Each year, the NYC Anarchist Book Fair hosts over 60 exhibitors including publishers, writers, designers, artists, musicians and other activists.</p>
+        </li>
+        <li data-name="ny communities for change" data-desc="one of the largest &amp; most uncompromising community organizations in the country. jobs. housing. public safety. climate. immigrant power. join us.">
+          <div class="row">
+            <a class="name" href="https://www.nycommunities.org/" target="_blank" rel="noopener noreferrer">NY Communities for Change <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">nycommunities.org</span>
+          </div>
+          <p class="desc">One of the largest &amp; most uncompromising community organizations in the country. Jobs. Housing. Public Safety. Climate. Immigrant Power. Join us.</p>
+        </li>
+        <li data-name="nyc dissenters" data-desc="nyc crew of @wearedissenters, a new wave of young people turning the tide against endless war at home and abroad">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nycdissenters" target="_blank" rel="noopener noreferrer">NYC Dissenters <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">NYC crew of @wearedissenters, a new wave of young people turning the tide against endless war at home and abroad</p>
+        </li>
+        <li data-name="nyc psl" data-desc="the new york city branch of the party for socialism and liberation">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nycpsl" target="_blank" rel="noopener noreferrer">NYC PSL <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">The New York City branch of the Party for Socialism and Liberation</p>
+        </li>
+        <li data-name="palaver global" data-desc="our struggle is collective, so will be our liberation. we will win!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/palaverglobal/" target="_blank" rel="noopener noreferrer">Palaver Global <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Our struggle is collective, so will be our liberation. We will win!</p>
+        </li>
+        <li data-name="the peoples bodega" data-desc="volunteer led mobile mutual aid, located inside a 14 ft box truck">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/thepeoplesbodeganyc" target="_blank" rel="noopener noreferrer">The Peoples Bodega <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">volunteer led mobile mutual aid, located inside a 14 ft box truck</p>
+        </li>
+        <li data-name="the people's town hall" data-desc="a grassroots coalition of people organizing towards collective liberation.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/thepeoplestownhall/" target="_blank" rel="noopener noreferrer">The People's Town Hall <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots coalition of people organizing towards collective liberation.</p>
+        </li>
+        <li data-name="plaza proletaria" data-desc="we're united by a working-class fraternity &amp; the understanding of the need to fight together and cooperate to pave the road towards a socialist world.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/plazaproletaria/" target="_blank" rel="noopener noreferrer">Plaza Proletaria <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We're united by a working-class fraternity &amp; the understanding of the need to fight together and cooperate to pave the road towards a socialist world.</p>
+        </li>
+        <li data-name="radix cooperative" data-desc="radix is a worker-owned, union print shop and publisher in brooklyn, ny.">
+          <div class="row">
+            <a class="name" href="https://radix.coop/" target="_blank" rel="noopener noreferrer">Radix Cooperative <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">radix.coop</span>
+          </div>
+          <p class="desc">RADIX is a worker-owned, union print shop and publisher in Brooklyn, NY.</p>
+        </li>
+        <li data-name="rise and resist" data-desc="rise and resist is a nonviolent direct action group committed to opposing, disrupting, and defeating any government act that threatens democracy, equality, and our civil liberties.">
+          <div class="row">
+            <a class="name" href="https://www.riseandresist.org/" target="_blank" rel="noopener noreferrer">Rise and Resist <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">riseandresist.org</span>
+          </div>
+          <p class="desc">Rise and Resist is a NONVIOLENT direct action group committed to opposing, disrupting, and defeating any government act that threatens democracy, equality, and our civil liberties.</p>
+        </li>
+        <li data-name="salam" data-desc="nyc-based political org building a south asian left">
+          <div class="row">
+            <a class="name" href="https://www.lalsalam.org/" target="_blank" rel="noopener noreferrer">SALAM <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">lalsalam.org</span>
+          </div>
+          <p class="desc">NYC-based political org building a South Asian Left</p>
+        </li>
+        <li data-name="socialist alternative nyc" data-desc="nyc branch of @socialist_alternative.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/socialistnyc/" target="_blank" rel="noopener noreferrer">Socialist Alternative NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">NYC branch of @Socialist_Alternative.</p>
+        </li>
+        <li data-name="surj nyc" data-desc="nyc chapter of @showingupforracialjustice">
+          <div class="row">
+            <a class="name" href="https://surjnyc.com/" target="_blank" rel="noopener noreferrer">SURJ NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">surjnyc.com</span>
+          </div>
+          <p class="desc">NYC Chapter of @showingupforracialjustice</p>
+        </li>
+        <li data-name="sylvia rivera food pantry" data-desc="food pantry assisting low-income and hiv+ community members.">
+          <div class="row">
+            <a class="name" href="https://www.mccny.org/charities/pantry.html" target="_blank" rel="noopener noreferrer">Sylvia Rivera Food Pantry <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">mccny.org</span>
+          </div>
+          <p class="desc">Food pantry assisting low-income and HIV+ community members.</p>
+        </li>
+        <li data-name="unity &amp; struggle" data-desc="revolutionary communist organization focused on building working class power and solidarity.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/unityandstrug/" target="_blank" rel="noopener noreferrer">Unity &amp; Struggle <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Revolutionary communist organization focused on building working class power and solidarity.</p>
+        </li>
+        <li data-name="urban indigenous collective" data-desc="indigenous led public health community center now open!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/urbanindigenouscollective" target="_blank" rel="noopener noreferrer">Urban Indigenous Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Indigenous led public health community center now open!</p>
+        </li>
+        <li data-name="victory in puerto rico" data-desc="we are v.i.p.r. and our mission is to defend puerto rico and puerto rican communities worldwide. to rebuild,restore,&amp;respond in times of need&amp;to reclaim our history and culture!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/victory.in.puerto.rico" target="_blank" rel="noopener noreferrer">Victory In Puerto Rico <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We are V.I.P.R. and our mission is to defend Puerto Rico and Puerto Rican communities worldwide. To rebuild,restore,&amp;respond in times of need&amp;to reclaim our history and culture!</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

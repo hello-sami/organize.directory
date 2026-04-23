@@ -1,91 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Google Analytics -->
-    <script src="/js/analytics.js" defer></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="color-scheme" content="light">
-    <link rel="canonical" href="https://organize.directory/thank-you">    <title>Thank You - The Organize Directory</title>
-    <meta name="description"
-        content="Thank you for reaching out to The Organize Directory. We'll be in touch with you soon.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <title>Thank you — Organize Directory</title>
+  <meta name="description" content="Thanks for reaching out to Organize Directory. We'll be in touch soon.">
+  <link rel="canonical" href="https://organize.directory/thank-you">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
-    <!-- Fonts and Styles -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/fonts/fonts.css">
-    <link rel="stylesheet" href="/styles.css">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Thank you — Organize Directory">
+  <meta property="og:description" content="Thanks for reaching out. We'll be in touch soon.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/thank-you">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <style>
-        /* Ensure mobile centering and responsiveness */
-        @media (max-width: 768px) {
-            .thank-you-content {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                min-height: 70vh;
-                padding: 1rem;
-            }
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-            .thank-you-card {
-                width: 100%;
-                max-width: 400px;
-                margin: 0 auto;
-                text-align: center;
-            }
+  <!-- Pre-paint theme init -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
+  </script>
 
-            .content h1:first-of-type {
-                padding-left: 0;
-            }
-        }
-    </style>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Critical Scripts -->
-    <script type="module">
-        import { initializeSidebar } from '/components/sidebar.js';
-        import { initializeComponents } from '/utils/init.js';
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
 
-        document.addEventListener('DOMContentLoaded', () => {
-            initializeSidebar('contact');
-            initializeComponents({});
-        });
-    </script>
-    <meta property="og:image" content="https://organize.directory/preview.png">
-<!-- Mobile optimizations -->
-<script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-    <button class="mobile-menu-button" aria-label="Toggle navigation menu">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
     </button>
-    <div class="mobile-menu-overlay"></div>
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+  </div>
+</header>
 
-        <main class="content" role="main">
-            <div class="thank-you-content">
-                <div class="thank-you-card card-base">
-                    <div class="thank-you-icon">✓</div>
-                    <h1 class="thank-you-title">Message Confirmed!</h1>
-                    <p class="thank-you-message">Thank you for reaching out, we will be in touch!</p>
-                    <a href="/" class="home-button btn-base">Back to Home</a>
-                </div>
-            </div>
-        </main>
-    </div>
+<main id="main">
 
-    <!-- Mobile Menu Script -->
+  <div class="page-head">
+    <h1 class="title">Message received.</h1>
+    <p class="meta">We read everything. We'll be in touch.</p>
+  </div>
+
+  <div class="prose">
+    <p>Thanks for reaching out. A real person will read your note and get back to you soon.</p>
+    <p>While you're here:</p>
+    <ul>
+      <li><a href="/location">Browse groups by location</a></li>
+      <li><a href="/topics">Browse groups by topic</a></li>
+      <li><a href="/">Back to the homepage</a></li>
+    </ul>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+
 </body>
-
 </html>

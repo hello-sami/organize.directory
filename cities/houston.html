@@ -1,129 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Houston Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Houston. Connect with local organizations and community resources.">
+  <title>Houston — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Houston.">
   <link rel="canonical" href="https://organize.directory/houston">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Houston Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Houston. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Houston — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Houston.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/houston">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/texas">Texas</a>
-          <span>›</span>
-          <span>Houston</span>
-        </div>
+<main id="main">
 
-        <h1>Houston</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/texas">Texas</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Houston</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://www.facebook.com/BrownBeretsDeHouston/" target="_blank" rel="noopener noreferrer">Brown Berets De Houston</a>
-      <p>A grassroots organization dedicated to community empowerment and social justice in Houston. Through mutual aid and direct action, they work to support local communities, advocate for justice, and build solidarity networks across the city.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/bayou.action.street.health" target="_blank" rel="noopener noreferrer">Bayou Action Street Health</a>
-      <p>Street medic collective out of Houston.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.weststreetrecovery.org/" target="_blank" rel="noopener noreferrer">West Street Recovery</a>
-      <p>West Street Recovery was formed during Hurricane Harvey by a group of people who came together to perform rescues, distribute food and water, and meet the needs of flood survivors.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/foodnotbombshtx/" target="_blank" rel="noopener noreferrer">Houston Food Not Bombs</a>
-      <p>Feeding the hungry, viral on social media for receiving ticket citations for their food programs.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/spacecityharmreduction/" target="_blank" rel="noopener noreferrer">Space City Harm Reduction</a>
-      <p>Harm reduction info, resources and supplies for health self-management in the greater Houston, TX area.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.themahoganyproject.org/" target="_blank" rel="noopener noreferrer">The Mahogany Project</a>
-      <p>The Mahogany Project aims to reduce social isolation, stigma, and acts of injustice in TQLGB+ Communities of Color.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/spacecityao/" target="_blank" rel="noopener noreferrer">Space City Anarchist Organization</a>
-      <p>Federation of anarchist collectives in the so-called &quot;Greater Houston Area&quot; working together to prefigure an anarchist future.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/distrohtx/" target="_blank" rel="noopener noreferrer">Houseless Distro HTX</a>
-      <p>Mutual aid collective that delivers shelter, aid, and builds community with our unhoused neighbors in Houston, Texas.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/northsidetxac/" target="_blank" rel="noopener noreferrer">Northside Anarchist Collective</a>
-      <p>Grassroots group based out of so-called Northwest Houston and the surrounding areas. We are here to build community.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/htxfeminists/" target="_blank" rel="noopener noreferrer">Houston Feminist Collective</a>
-      <p>Coming soon in early 2025.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://streetvalueharmredux.wordpress.com/" target="_blank" rel="noopener noreferrer">Street Value HTX</a>
-      <p>SV's primary focus is overdose prevention, safe supply distribution, and becoming Houston's first sustainable above ground drug-user health program</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/queersforpalestinehtx/" target="_blank" rel="noopener noreferrer">Queers for Palestine Houston</a>
-      <p>Queers4PalestineHTX is a decentralized, grassroots collective of LGBTQ+ people and allies focused on direct action for Palestinian Liberation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/setejasbrownberets/" target="_blank" rel="noopener noreferrer">Southeast Tejas Brown Beret Organization</a>
-      <p>Preserving the past, protecting the present, and creating a future.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://liberatehtx.com/" target="_blank" rel="noopener noreferrer">Liberate HTX</a>
-      <p>The Houston Abolitionist Collective is a group of organizers committed to building power and a movement around abolition in Houston and Harris County.</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Houston</h1>
+    <p class="meta">
+      <b>14</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      Texas
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Houston</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Houston…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="brown berets de houston" data-desc="a grassroots organization dedicated to community empowerment and social justice in houston. through mutual aid and direct action, they work to support local communities, advocate for justice, and build solidarity networks across the city.">
+          <div class="row">
+            <a class="name" href="https://www.facebook.com/BrownBeretsDeHouston/" target="_blank" rel="noopener noreferrer">Brown Berets De Houston <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">facebook.com</span>
+          </div>
+          <p class="desc">A grassroots organization dedicated to community empowerment and social justice in Houston. Through mutual aid and direct action, they work to support local communities, advocate for justice, and build solidarity networks across the city.</p>
+        </li>
+        <li data-name="bayou action street health" data-desc="street medic collective out of houston.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/bayou.action.street.health" target="_blank" rel="noopener noreferrer">Bayou Action Street Health <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Street medic collective out of Houston.</p>
+        </li>
+        <li data-name="west street recovery" data-desc="west street recovery was formed during hurricane harvey by a group of people who came together to perform rescues, distribute food and water, and meet the needs of flood survivors.">
+          <div class="row">
+            <a class="name" href="https://www.weststreetrecovery.org/" target="_blank" rel="noopener noreferrer">West Street Recovery <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">weststreetrecovery.org</span>
+          </div>
+          <p class="desc">West Street Recovery was formed during Hurricane Harvey by a group of people who came together to perform rescues, distribute food and water, and meet the needs of flood survivors.</p>
+        </li>
+        <li data-name="houston food not bombs" data-desc="feeding the hungry, viral on social media for receiving ticket citations for their food programs.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/foodnotbombshtx/" target="_blank" rel="noopener noreferrer">Houston Food Not Bombs <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Feeding the hungry, viral on social media for receiving ticket citations for their food programs.</p>
+        </li>
+        <li data-name="space city harm reduction" data-desc="harm reduction info, resources and supplies for health self-management in the greater houston, tx area.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/spacecityharmreduction/" target="_blank" rel="noopener noreferrer">Space City Harm Reduction <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Harm reduction info, resources and supplies for health self-management in the greater Houston, TX area.</p>
+        </li>
+        <li data-name="the mahogany project" data-desc="the mahogany project aims to reduce social isolation, stigma, and acts of injustice in tqlgb+ communities of color.">
+          <div class="row">
+            <a class="name" href="https://www.themahoganyproject.org/" target="_blank" rel="noopener noreferrer">The Mahogany Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">themahoganyproject.org</span>
+          </div>
+          <p class="desc">The Mahogany Project aims to reduce social isolation, stigma, and acts of injustice in TQLGB+ Communities of Color.</p>
+        </li>
+        <li data-name="space city anarchist organization" data-desc="federation of anarchist collectives in the so-called &quot;greater houston area&quot; working together to prefigure an anarchist future.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/spacecityao/" target="_blank" rel="noopener noreferrer">Space City Anarchist Organization <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Federation of anarchist collectives in the so-called &quot;Greater Houston Area&quot; working together to prefigure an anarchist future.</p>
+        </li>
+        <li data-name="houseless distro htx" data-desc="mutual aid collective that delivers shelter, aid, and builds community with our unhoused neighbors in houston, texas.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/distrohtx/" target="_blank" rel="noopener noreferrer">Houseless Distro HTX <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Mutual aid collective that delivers shelter, aid, and builds community with our unhoused neighbors in Houston, Texas.</p>
+        </li>
+        <li data-name="northside anarchist collective" data-desc="grassroots group based out of so-called northwest houston and the surrounding areas. we are here to build community.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/northsidetxac/" target="_blank" rel="noopener noreferrer">Northside Anarchist Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Grassroots group based out of so-called Northwest Houston and the surrounding areas. We are here to build community.</p>
+        </li>
+        <li data-name="houston feminist collective" data-desc="coming soon in early 2025.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/htxfeminists/" target="_blank" rel="noopener noreferrer">Houston Feminist Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Coming soon in early 2025.</p>
+        </li>
+        <li data-name="street value htx" data-desc="sv's primary focus is overdose prevention, safe supply distribution, and becoming houston's first sustainable above ground drug-user health program">
+          <div class="row">
+            <a class="name" href="https://streetvalueharmredux.wordpress.com/" target="_blank" rel="noopener noreferrer">Street Value HTX <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">streetvalueharmredux.wordpress.com</span>
+          </div>
+          <p class="desc">SV's primary focus is overdose prevention, safe supply distribution, and becoming Houston's first sustainable above ground drug-user health program</p>
+        </li>
+        <li data-name="queers for palestine houston" data-desc="queers4palestinehtx is a decentralized, grassroots collective of lgbtq+ people and allies focused on direct action for palestinian liberation.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/queersforpalestinehtx/" target="_blank" rel="noopener noreferrer">Queers for Palestine Houston <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Queers4PalestineHTX is a decentralized, grassroots collective of LGBTQ+ people and allies focused on direct action for Palestinian Liberation.</p>
+        </li>
+        <li data-name="southeast tejas brown beret organization" data-desc="preserving the past, protecting the present, and creating a future.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/setejasbrownberets/" target="_blank" rel="noopener noreferrer">Southeast Tejas Brown Beret Organization <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Preserving the past, protecting the present, and creating a future.</p>
+        </li>
+        <li data-name="liberate htx" data-desc="the houston abolitionist collective is a group of organizers committed to building power and a movement around abolition in houston and harris county.">
+          <div class="row">
+            <a class="name" href="https://liberatehtx.com/" target="_blank" rel="noopener noreferrer">Liberate HTX <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">liberatehtx.com</span>
+          </div>
+          <p class="desc">The Houston Abolitionist Collective is a group of organizers committed to building power and a movement around abolition in Houston and Harris County.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

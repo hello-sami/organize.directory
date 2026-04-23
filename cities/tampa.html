@@ -1,134 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Tampa Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Tampa. Connect with local organizations and community resources.">
+  <title>Tampa — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Tampa.">
   <link rel="canonical" href="https://organize.directory/tampa">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Tampa Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Tampa. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Tampa — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Tampa.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/tampa">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/florida">Florida</a>
-          <span>›</span>
-          <span>Tampa</span>
-        </div>
+<main id="main">
 
-        <h1>Tampa</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/florida">Florida</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Tampa</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://www.instagram.com/tampafoodnotbombs/" target="_blank" rel="noopener noreferrer">Food Not Bombs Tampa</a>
-      <p>A mutual aid collective fostering food justice and community solidarity through free food sharing in Tampa. They coordinate regular meal distributions, food recovery initiatives, and solidarity networks while building power through direct action, community care, and creating spaces for food sovereignty and collective nourishment.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/forthepeople.foodplot/" target="_blank" rel="noopener noreferrer">For the People Food Plot</a>
-      <p>A communal space for growing organic food, sharing resources and gardening education. On Tocobaga, Mascogo, and Miccosukee land known as V.M. Ybor</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/taarpr_/" target="_blank" rel="noopener noreferrer">Tampa African American Reparations and Policy Reform
-              (TAARPR)</a>
-      <p>A grassroots organization fostering mutual aid and racial justice through community organizing in Tampa. They coordinate direct support initiatives, policy advocacy, and solidarity networks while building power through collective action, political education, and creating spaces for Black liberation and community empowerment.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.tropicalcommunists.org/" target="_blank" rel="noopener noreferrer">Committee for a Tropical Communist Party</a>
-      <p>We are a committee working to establish a communist party in Tampa, FL.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/thertbofficial/" target="_blank" rel="noopener noreferrer">The Resistance Tampa Bay</a>
-      <p>A community coming together to make Tampa a better place. We are here to defend, and stand up for people who can’t stand up for themselves.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/pjcshalom/" target="_blank" rel="noopener noreferrer">Progressove Jewish Coalition of Tampa Bay</a>
-      <p>We organize Jews for a brighter future guided by Teshuva, Tzedek, Tikun Olam. For us to have justice, we must create justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/rjcoalition/" target="_blank" rel="noopener noreferrer">Restorative Justice Coalition</a>
-      <p>Tampa based and ran, grassroots no 501c, volunteer ran, multi cultural org. DM for info</p>
-    </div>
-    <div class="initiative">
-      <a href="https://andrewjosephfoundation.com/" target="_blank" rel="noopener noreferrer">Andrew Joseph Foundation</a>
-      <p>On February 7, 2014 during the Florida State Fair, 14 year old Andrew Joseph, III a student was attending a school district supported fair with friends and was struck and killed by a motorist as he tried to cross Interstate 4 on foot after being wrongfully detained, ejected, transported and then abandoned miles from the fair by law enforcement officials with no call to parents.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/ppapinellas/" target="_blank" rel="noopener noreferrer">Progressive People’s Action</a>
-      <p>Florida mutual aid on Seminole Land.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/bayareadreamdefenders/" target="_blank" rel="noopener noreferrer">Tampa Bay Area Dream Defenders</a>
-      <p>Freedom. Justice. Peace. Liberation. Join us at our monthly Books and Breakfast event!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/taarpr_/" target="_blank" rel="noopener noreferrer">Tampa Alliance Against Racist and Political Repression</a>
-      <p>Tampa Chapter of NAARPR, founded during the uprising of George Floyd in 2020 dedicated to fighting for justice, progressive change and accountability.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.tampadsa.org/" target="_blank" rel="noopener noreferrer">Tampa DSA</a>
-      <p>Tampa DSA is an official chapter of the Democratic Socialists of America. We believe that both the economy and society should be run democratically to meet human needs, not to make profits for a few.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://tbafund.com/" target="_blank" rel="noopener noreferrer">Tampa Bay Abortion Fund</a>
-      <p>We specifically assist pregnant people seeking abortion in Hillsborough and Pinellas Counties. We also provide funding assistance and practical/travel support at numerous out-of-state clinics for Floridians over 6 weeks, due to unnecessary abortion restrictions in Florida.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/tatutenants/" target="_blank" rel="noopener noreferrer">Tampa Autonomous Tenants Union</a>
-      <p>TATU is an autonomous tenants union for renters in Tampa. We're organizing our neighborhoods for better living conditions and lower rents.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/813hoodgarden" target="_blank" rel="noopener noreferrer">813 Hood Garden</a>
-      <p>Inspiring you to grow what you eat. Making neighborHOOD gardens a thing. A space for growing &amp; feeding our Minds, Bodies &amp; Souls.</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Tampa</h1>
+    <p class="meta">
+      <b>15</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      Florida
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Tampa</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Tampa…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="food not bombs tampa" data-desc="a mutual aid collective fostering food justice and community solidarity through free food sharing in tampa. they coordinate regular meal distributions, food recovery initiatives, and solidarity networks while building power through direct action, community care, and creating spaces for food sovereignty and collective nourishment.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/tampafoodnotbombs/" target="_blank" rel="noopener noreferrer">Food Not Bombs Tampa <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid collective fostering food justice and community solidarity through free food sharing in Tampa. They coordinate regular meal distributions, food recovery initiatives, and solidarity networks while building power through direct action, community care, and creating spaces for food sovereignty and collective nourishment.</p>
+        </li>
+        <li data-name="for the people food plot" data-desc="a communal space for growing organic food, sharing resources and gardening education. on tocobaga, mascogo, and miccosukee land known as v.m. ybor">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/forthepeople.foodplot/" target="_blank" rel="noopener noreferrer">For the People Food Plot <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A communal space for growing organic food, sharing resources and gardening education. On Tocobaga, Mascogo, and Miccosukee land known as V.M. Ybor</p>
+        </li>
+        <li data-name="tampa african american reparations and policy reform
+              (taarpr)" data-desc="a grassroots organization fostering mutual aid and racial justice through community organizing in tampa. they coordinate direct support initiatives, policy advocacy, and solidarity networks while building power through collective action, political education, and creating spaces for black liberation and community empowerment.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/taarpr_/" target="_blank" rel="noopener noreferrer">Tampa African American Reparations and Policy Reform
+              (TAARPR) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and racial justice through community organizing in Tampa. They coordinate direct support initiatives, policy advocacy, and solidarity networks while building power through collective action, political education, and creating spaces for Black liberation and community empowerment.</p>
+        </li>
+        <li data-name="committee for a tropical communist party" data-desc="we are a committee working to establish a communist party in tampa, fl.">
+          <div class="row">
+            <a class="name" href="https://www.tropicalcommunists.org/" target="_blank" rel="noopener noreferrer">Committee for a Tropical Communist Party <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">tropicalcommunists.org</span>
+          </div>
+          <p class="desc">We are a committee working to establish a communist party in Tampa, FL.</p>
+        </li>
+        <li data-name="the resistance tampa bay" data-desc="a community coming together to make tampa a better place. we are here to defend, and stand up for people who can’t stand up for themselves.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/thertbofficial/" target="_blank" rel="noopener noreferrer">The Resistance Tampa Bay <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A community coming together to make Tampa a better place. We are here to defend, and stand up for people who can’t stand up for themselves.</p>
+        </li>
+        <li data-name="progressove jewish coalition of tampa bay" data-desc="we organize jews for a brighter future guided by teshuva, tzedek, tikun olam. for us to have justice, we must create justice.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/pjcshalom/" target="_blank" rel="noopener noreferrer">Progressove Jewish Coalition of Tampa Bay <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We organize Jews for a brighter future guided by Teshuva, Tzedek, Tikun Olam. For us to have justice, we must create justice.</p>
+        </li>
+        <li data-name="restorative justice coalition" data-desc="tampa based and ran, grassroots no 501c, volunteer ran, multi cultural org. dm for info">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/rjcoalition/" target="_blank" rel="noopener noreferrer">Restorative Justice Coalition <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Tampa based and ran, grassroots no 501c, volunteer ran, multi cultural org. DM for info</p>
+        </li>
+        <li data-name="andrew joseph foundation" data-desc="on february 7, 2014 during the florida state fair, 14 year old andrew joseph, iii a student was attending a school district supported fair with friends and was struck and killed by a motorist as he tried to cross interstate 4 on foot after being wrongfully detained, ejected, transported and then abandoned miles from the fair by law enforcement officials with no call to parents.">
+          <div class="row">
+            <a class="name" href="https://andrewjosephfoundation.com/" target="_blank" rel="noopener noreferrer">Andrew Joseph Foundation <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">andrewjosephfoundation.com</span>
+          </div>
+          <p class="desc">On February 7, 2014 during the Florida State Fair, 14 year old Andrew Joseph, III a student was attending a school district supported fair with friends and was struck and killed by a motorist as he tried to cross Interstate 4 on foot after being wrongfully detained, ejected, transported and then abandoned miles from the fair by law enforcement officials with no call to parents.</p>
+        </li>
+        <li data-name="progressive people’s action" data-desc="florida mutual aid on seminole land.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/ppapinellas/" target="_blank" rel="noopener noreferrer">Progressive People’s Action <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Florida mutual aid on Seminole Land.</p>
+        </li>
+        <li data-name="tampa bay area dream defenders" data-desc="freedom. justice. peace. liberation. join us at our monthly books and breakfast event!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/bayareadreamdefenders/" target="_blank" rel="noopener noreferrer">Tampa Bay Area Dream Defenders <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Freedom. Justice. Peace. Liberation. Join us at our monthly Books and Breakfast event!</p>
+        </li>
+        <li data-name="tampa alliance against racist and political repression" data-desc="tampa chapter of naarpr, founded during the uprising of george floyd in 2020 dedicated to fighting for justice, progressive change and accountability.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/taarpr_/" target="_blank" rel="noopener noreferrer">Tampa Alliance Against Racist and Political Repression <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Tampa Chapter of NAARPR, founded during the uprising of George Floyd in 2020 dedicated to fighting for justice, progressive change and accountability.</p>
+        </li>
+        <li data-name="tampa dsa" data-desc="tampa dsa is an official chapter of the democratic socialists of america. we believe that both the economy and society should be run democratically to meet human needs, not to make profits for a few.">
+          <div class="row">
+            <a class="name" href="https://www.tampadsa.org/" target="_blank" rel="noopener noreferrer">Tampa DSA <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">tampadsa.org</span>
+          </div>
+          <p class="desc">Tampa DSA is an official chapter of the Democratic Socialists of America. We believe that both the economy and society should be run democratically to meet human needs, not to make profits for a few.</p>
+        </li>
+        <li data-name="tampa bay abortion fund" data-desc="we specifically assist pregnant people seeking abortion in hillsborough and pinellas counties. we also provide funding assistance and practical/travel support at numerous out-of-state clinics for floridians over 6 weeks, due to unnecessary abortion restrictions in florida.">
+          <div class="row">
+            <a class="name" href="https://tbafund.com/" target="_blank" rel="noopener noreferrer">Tampa Bay Abortion Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">tbafund.com</span>
+          </div>
+          <p class="desc">We specifically assist pregnant people seeking abortion in Hillsborough and Pinellas Counties. We also provide funding assistance and practical/travel support at numerous out-of-state clinics for Floridians over 6 weeks, due to unnecessary abortion restrictions in Florida.</p>
+        </li>
+        <li data-name="tampa autonomous tenants union" data-desc="tatu is an autonomous tenants union for renters in tampa. we're organizing our neighborhoods for better living conditions and lower rents.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/tatutenants/" target="_blank" rel="noopener noreferrer">Tampa Autonomous Tenants Union <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">TATU is an autonomous tenants union for renters in Tampa. We're organizing our neighborhoods for better living conditions and lower rents.</p>
+        </li>
+        <li data-name="813 hood garden" data-desc="inspiring you to grow what you eat. making neighborhood gardens a thing. a space for growing &amp; feeding our minds, bodies &amp; souls.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/813hoodgarden" target="_blank" rel="noopener noreferrer">813 Hood Garden <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Inspiring you to grow what you eat. Making neighborHOOD gardens a thing. A space for growing &amp; feeding our Minds, Bodies &amp; Souls.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

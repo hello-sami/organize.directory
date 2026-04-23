@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>LGBTQ+ Support - The Organize Directory</title>
+  <title>LGBTQ+ Support — Organize Directory</title>
   <meta name="description" content="Mutual aid networks and initiatives focused on supporting LGBTQ+ communities through
                     solidarity, direct support, and community organizing.">
   <link rel="canonical" href="https://organize.directory/topics/lgbtq">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="LGBTQ+ Support - The Organize Directory">
+  <meta property="og:title" content="LGBTQ+ Support — Organize Directory">
   <meta property="og:description" content="Mutual aid networks and initiatives focused on supporting LGBTQ+ communities through
                     solidarity, direct support, and community organizing.">
   <meta property="og:type" content="website">
@@ -26,116 +20,240 @@
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('topics');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="city-page state-page">
-        <div class="breadcrumb">
-          <a href="/topics">Topics</a>
-          <span>›</span>
-          <span>LGBTQ+ Support</span>
-        </div>
+<main id="main">
 
-        <h1>LGBTQ+ Support</h1>
-        <p class="subtitle">Mutual aid networks and initiatives focused on supporting LGBTQ+ communities through
-                    solidarity, direct support, and community organizing.</p>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/topics">Topics</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">LGBTQ+ Support</span>
+  </nav>
 
-  <section id="trans-support" class="city-section">
-    <h2>Trans Support</h2>
-    <div class="initiative">
-      <a href="https://tgijp.org/" target="_blank" rel="noopener noreferrer">Transgender, Gender-Variant &amp; Intersex Justice Project
-                            (TGIJP)</a>
-      <p>A grassroots organization fostering mutual aid and community support for transgender, gender-variant, and intersex people who are currently or formerly incarcerated. They coordinate direct assistance, advocacy, leadership development, and solidarity networks while building power through community organizing, legal support, and creating spaces for healing and collective liberation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/transasylumsupport/" target="_blank" rel="noopener noreferrer">Trans Asylum Seekers Support
-                            Network</a>
-      <p>A national mutual aid collective building an autonomous organization to provide very longterm, comprehensive, and needs-based support to trans women and LGBTQI+ people that is not available through nonprofits, churches, or sponsorships.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://transdoetaskforce.org/" target="_blank" rel="noopener noreferrer">Trans Doe Task Force</a>
-      <p>A trans-led nonprofit organization that finds and researches cases of LGBTQ+ missing and murdered persons.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.pointofpride.org/" target="_blank" rel="noopener noreferrer">Point of Pride</a>
-      <p>A trans-led organization fostering mutual aid and community power through direct support programs for the trans community worldwide. They coordinate gender-affirming aid, financial assistance, and solidarity networks while building power through community support, resource sharing, and creating accessible pathways to transition-related care.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://360healthx.org/" target="_blank" rel="noopener noreferrer">360 Health X</a>
-      <p>Connecting people to gender affirmation resources that save lives. Local services in: VA, DC, MD, NY, with virtual Services available everywhere.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/genderlib" target="_blank" rel="noopener noreferrer">Gender Liberation Movement</a>
-      <p>Building a movement for bodily autonomy, self-determination, collectivism, &amp; fulfillment. It’s our bodies, our genders, our choices, our futures!</p>
-    </div>
-  </section>
-
-  <section id="legal-advocacy-resources" class="city-section">
-    <h2>Legal Advocacy &amp; Resources</h2>
-    <div class="initiative">
-      <a href="https://www.aclu.org/legislative-attacks-on-lgbtq-rights-2025" target="_blank" rel="noopener noreferrer">ACLU LGBTQ
-                            Rights Legislative Tracker</a>
-      <p>A comprehensive resource tracking anti-LGBTQ legislation across U.S. state legislatures, maintained by the ACLU's legal and advocacy team. The tracker monitors bills targeting transgender rights, local protections, and religious exemptions while providing updates on the status of legislation and related court cases. This tool helps communities stay informed about legislative threats and organize mutual aid responses to support affected LGBTQ+ individuals.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.lgbtqfund.org/" target="_blank" rel="noopener noreferrer">LGBTQ Freedom Fund</a>
-      <p>LGBTQ Freedom Fund pays bail to secure the safety and liberty of individuals in jail and immigration detention.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.nclrights.org/" target="_blank" rel="noopener noreferrer">National Center for Lesbian Rights (NCLR)</a>
-      <p>A feminist-founded legal organization fostering mutual aid and solidarity through LGBTQ civil rights advocacy and impact litigation. They coordinate legal support, policy advocacy, and solidarity networks while building power through racial and economic justice initiatives, creating systemic change for LGBTQ individuals and their families.</p>
-    </div>
-  </section>
-
-  <section id="community-networks-libraries" class="city-section">
-    <h2>Community Networks &amp; Libraries</h2>
-    <div class="initiative">
-      <a href="https://www.queerliberationlibrary.org/" target="_blank" rel="noopener noreferrer">Queer Liberation Library</a>
-      <p>A community-driven resource library fostering mutual aid and queer liberation through accessible knowledge sharing and community education. They coordinate book lending, resource distribution, and solidarity networks while building power through queer literature, political education, and creating spaces for LGBTQ+ community learning and empowerment.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.facebook.com/groups/1430434247261784" target="_blank" rel="noopener noreferrer">LGBTQ+ Mutual Aid Network</a>
-      <p>An online community fostering mutual aid and solidarity through direct support and resource sharing for LGBTQ+ individuals. They coordinate assistance requests, community support, and solidarity networks while building power through digital organizing, peer support, and creating virtual spaces for LGBTQ+ mutual aid.</p>
-    </div>
-  </section>
-
-  <section id="intersex-support" class="city-section">
-    <h2>Intersex Support</h2>
-    <div class="initiative">
-      <a href="https://www.intersexjusticeproject.org/" target="_blank" rel="noopener noreferrer">Intersex Justice Project</a>
-      <p>Intersex Justice Project works to end invasive and unnecessary surgeries on intersex youth by empowering intersex people of color as change-makers.</p>
-    </div>
-  </section>
-
-  <section id="black-lgbtq-support" class="city-section">
-    <h2>Black LGBTQ Support</h2>
-    <div class="initiative">
-      <a href="https://www.thecounternarrative.org/" target="_blank" rel="noopener noreferrer">The Counter Narrative Project</a>
-      <p>A Black gay men's advocacy organization building power through storytelling, mutual aid, and community organizing. They coordinate narrative change, political education, and solidarity networks while centering Black gay men's voices in the fight for racial, economic, and health justice.</p>
-    </div>
-  </section>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">LGBTQ+ Support</h1>
+    <p class="meta"><b>13</b> groups</p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-</body>
+  <p class="topic-lede">Mutual aid networks and initiatives focused on supporting LGBTQ+ communities through
+                    solidarity, direct support, and community organizing.</p>
 
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in LGBTQ+ Support</label>
+    <input id="page-filter" type="search" placeholder="Filter groups…" autocomplete="off">
+  </div>
+
+  <div class="layout">
+  <nav class="toc" aria-label="Sections on this page">
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
+      <span class="current">
+        <span class="current-label">Section ·</span>
+        <span class="current-name">Trans Support</span>
+      </span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div id="toc-panel" class="toc-scroll">
+      <a href="#trans-support" data-section="trans-support"><span class="label">Trans Support</span> <span class="count">6</span></a>
+      <a href="#legal-advocacy-resources" data-section="legal-advocacy-resources"><span class="label">Legal Advocacy &amp; Resources</span> <span class="count">3</span></a>
+      <a href="#community-networks-libraries" data-section="community-networks-libraries"><span class="label">Community Networks &amp; Libraries</span> <span class="count">2</span></a>
+      <a href="#intersex-support" data-section="intersex-support"><span class="label">Intersex Support</span> <span class="count">1</span></a>
+      <a href="#black-lgbtq-support" data-section="black-lgbtq-support"><span class="label">Black LGBTQ Support</span> <span class="count">1</span></a>
+    </div>
+  </nav>
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="trans-support" class="group-section" data-section="trans-support">
+      <h2 class="section-title">Trans Support</h2>
+      <ol class="groups">
+        <li data-name="transgender, gender-variant &amp; intersex justice project
+                            (tgijp)" data-desc="a grassroots organization fostering mutual aid and community support for transgender, gender-variant, and intersex people who are currently or formerly incarcerated. they coordinate direct assistance, advocacy, leadership development, and solidarity networks while building power through community organizing, legal support, and creating spaces for healing and collective liberation.">
+          <div class="row">
+            <a class="name" href="https://tgijp.org/" target="_blank" rel="noopener noreferrer">Transgender, Gender-Variant &amp; Intersex Justice Project
+                            (TGIJP) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">tgijp.org</span>
+          </div>
+          <p class="desc">A grassroots organization fostering mutual aid and community support for transgender, gender-variant, and intersex people who are currently or formerly incarcerated. They coordinate direct assistance, advocacy, leadership development, and solidarity networks while building power through community organizing, legal support, and creating spaces for healing and collective liberation.</p>
+        </li>
+        <li data-name="trans asylum seekers support
+                            network" data-desc="a national mutual aid collective building an autonomous organization to provide very longterm, comprehensive, and needs-based support to trans women and lgbtqi+ people that is not available through nonprofits, churches, or sponsorships.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/transasylumsupport/" target="_blank" rel="noopener noreferrer">Trans Asylum Seekers Support
+                            Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A national mutual aid collective building an autonomous organization to provide very longterm, comprehensive, and needs-based support to trans women and LGBTQI+ people that is not available through nonprofits, churches, or sponsorships.</p>
+        </li>
+        <li data-name="trans doe task force" data-desc="a trans-led nonprofit organization that finds and researches cases of lgbtq+ missing and murdered persons.">
+          <div class="row">
+            <a class="name" href="https://transdoetaskforce.org/" target="_blank" rel="noopener noreferrer">Trans Doe Task Force <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">transdoetaskforce.org</span>
+          </div>
+          <p class="desc">A trans-led nonprofit organization that finds and researches cases of LGBTQ+ missing and murdered persons.</p>
+        </li>
+        <li data-name="point of pride" data-desc="a trans-led organization fostering mutual aid and community power through direct support programs for the trans community worldwide. they coordinate gender-affirming aid, financial assistance, and solidarity networks while building power through community support, resource sharing, and creating accessible pathways to transition-related care.">
+          <div class="row">
+            <a class="name" href="https://www.pointofpride.org/" target="_blank" rel="noopener noreferrer">Point of Pride <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">pointofpride.org</span>
+          </div>
+          <p class="desc">A trans-led organization fostering mutual aid and community power through direct support programs for the trans community worldwide. They coordinate gender-affirming aid, financial assistance, and solidarity networks while building power through community support, resource sharing, and creating accessible pathways to transition-related care.</p>
+        </li>
+        <li data-name="360 health x" data-desc="connecting people to gender affirmation resources that save lives. local services in: va, dc, md, ny, with virtual services available everywhere.">
+          <div class="row">
+            <a class="name" href="https://360healthx.org/" target="_blank" rel="noopener noreferrer">360 Health X <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">360healthx.org</span>
+          </div>
+          <p class="desc">Connecting people to gender affirmation resources that save lives. Local services in: VA, DC, MD, NY, with virtual Services available everywhere.</p>
+        </li>
+        <li data-name="gender liberation movement" data-desc="building a movement for bodily autonomy, self-determination, collectivism, &amp; fulfillment. it’s our bodies, our genders, our choices, our futures!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/genderlib" target="_blank" rel="noopener noreferrer">Gender Liberation Movement <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Building a movement for bodily autonomy, self-determination, collectivism, &amp; fulfillment. It’s our bodies, our genders, our choices, our futures!</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="legal-advocacy-resources" class="group-section" data-section="legal-advocacy-resources">
+      <h2 class="section-title">Legal Advocacy &amp; Resources</h2>
+      <ol class="groups">
+        <li data-name="aclu lgbtq
+                            rights legislative tracker" data-desc="a comprehensive resource tracking anti-lgbtq legislation across u.s. state legislatures, maintained by the aclu's legal and advocacy team. the tracker monitors bills targeting transgender rights, local protections, and religious exemptions while providing updates on the status of legislation and related court cases. this tool helps communities stay informed about legislative threats and organize mutual aid responses to support affected lgbtq+ individuals.">
+          <div class="row">
+            <a class="name" href="https://www.aclu.org/legislative-attacks-on-lgbtq-rights-2025" target="_blank" rel="noopener noreferrer">ACLU LGBTQ
+                            Rights Legislative Tracker <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">aclu.org</span>
+          </div>
+          <p class="desc">A comprehensive resource tracking anti-LGBTQ legislation across U.S. state legislatures, maintained by the ACLU's legal and advocacy team. The tracker monitors bills targeting transgender rights, local protections, and religious exemptions while providing updates on the status of legislation and related court cases. This tool helps communities stay informed about legislative threats and organize mutual aid responses to support affected LGBTQ+ individuals.</p>
+        </li>
+        <li data-name="lgbtq freedom fund" data-desc="lgbtq freedom fund pays bail to secure the safety and liberty of individuals in jail and immigration detention.">
+          <div class="row">
+            <a class="name" href="https://www.lgbtqfund.org/" target="_blank" rel="noopener noreferrer">LGBTQ Freedom Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">lgbtqfund.org</span>
+          </div>
+          <p class="desc">LGBTQ Freedom Fund pays bail to secure the safety and liberty of individuals in jail and immigration detention.</p>
+        </li>
+        <li data-name="national center for lesbian rights (nclr)" data-desc="a feminist-founded legal organization fostering mutual aid and solidarity through lgbtq civil rights advocacy and impact litigation. they coordinate legal support, policy advocacy, and solidarity networks while building power through racial and economic justice initiatives, creating systemic change for lgbtq individuals and their families.">
+          <div class="row">
+            <a class="name" href="https://www.nclrights.org/" target="_blank" rel="noopener noreferrer">National Center for Lesbian Rights (NCLR) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">nclrights.org</span>
+          </div>
+          <p class="desc">A feminist-founded legal organization fostering mutual aid and solidarity through LGBTQ civil rights advocacy and impact litigation. They coordinate legal support, policy advocacy, and solidarity networks while building power through racial and economic justice initiatives, creating systemic change for LGBTQ individuals and their families.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="community-networks-libraries" class="group-section" data-section="community-networks-libraries">
+      <h2 class="section-title">Community Networks &amp; Libraries</h2>
+      <ol class="groups">
+        <li data-name="queer liberation library" data-desc="a community-driven resource library fostering mutual aid and queer liberation through accessible knowledge sharing and community education. they coordinate book lending, resource distribution, and solidarity networks while building power through queer literature, political education, and creating spaces for lgbtq+ community learning and empowerment.">
+          <div class="row">
+            <a class="name" href="https://www.queerliberationlibrary.org/" target="_blank" rel="noopener noreferrer">Queer Liberation Library <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">queerliberationlibrary.org</span>
+          </div>
+          <p class="desc">A community-driven resource library fostering mutual aid and queer liberation through accessible knowledge sharing and community education. They coordinate book lending, resource distribution, and solidarity networks while building power through queer literature, political education, and creating spaces for LGBTQ+ community learning and empowerment.</p>
+        </li>
+        <li data-name="lgbtq+ mutual aid network" data-desc="an online community fostering mutual aid and solidarity through direct support and resource sharing for lgbtq+ individuals. they coordinate assistance requests, community support, and solidarity networks while building power through digital organizing, peer support, and creating virtual spaces for lgbtq+ mutual aid.">
+          <div class="row">
+            <a class="name" href="https://www.facebook.com/groups/1430434247261784" target="_blank" rel="noopener noreferrer">LGBTQ+ Mutual Aid Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">facebook.com</span>
+          </div>
+          <p class="desc">An online community fostering mutual aid and solidarity through direct support and resource sharing for LGBTQ+ individuals. They coordinate assistance requests, community support, and solidarity networks while building power through digital organizing, peer support, and creating virtual spaces for LGBTQ+ mutual aid.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="intersex-support" class="group-section" data-section="intersex-support">
+      <h2 class="section-title">Intersex Support</h2>
+      <ol class="groups">
+        <li data-name="intersex justice project" data-desc="intersex justice project works to end invasive and unnecessary surgeries on intersex youth by empowering intersex people of color as change-makers.">
+          <div class="row">
+            <a class="name" href="https://www.intersexjusticeproject.org/" target="_blank" rel="noopener noreferrer">Intersex Justice Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">intersexjusticeproject.org</span>
+          </div>
+          <p class="desc">Intersex Justice Project works to end invasive and unnecessary surgeries on intersex youth by empowering intersex people of color as change-makers.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="black-lgbtq-support" class="group-section" data-section="black-lgbtq-support">
+      <h2 class="section-title">Black LGBTQ Support</h2>
+      <ol class="groups">
+        <li data-name="the counter narrative project" data-desc="a black gay men's advocacy organization building power through storytelling, mutual aid, and community organizing. they coordinate narrative change, political education, and solidarity networks while centering black gay men's voices in the fight for racial, economic, and health justice.">
+          <div class="row">
+            <a class="name" href="https://www.thecounternarrative.org/" target="_blank" rel="noopener noreferrer">The Counter Narrative Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">thecounternarrative.org</span>
+          </div>
+          <p class="desc">A Black gay men's advocacy organization building power through storytelling, mutual aid, and community organizing. They coordinate narrative change, political education, and solidarity networks while centering Black gay men's voices in the fight for racial, economic, and health justice.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

@@ -1,181 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Austin, Texas Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Austin, Texas. Connect with local organizations and community resources.">
+  <title>Austin, Texas — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Austin, Texas.">
   <link rel="canonical" href="https://organize.directory/austin">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Austin, Texas Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Austin, Texas. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Austin, Texas — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Austin, Texas.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/austin">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/texas">Texas</a>
-          <span>›</span>
-          <span>Austin, Texas</span>
-        </div>
+<main id="main">
 
-        <h1>Austin, Texas</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/texas">Texas</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Austin, Texas</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://www.monkeywrenchbooks.org/" target="_blank" rel="noopener noreferrer">Monkeywrench Books</a>
-      <p>A volunteer-run radical bookstore and community space providing access to literature, zines, and organizing resources. Through their bookstore, events, and community programs, they foster mutual aid networks and create spaces for education, organizing, and building solidarity in Austin.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://austinmutualaid.com/" target="_blank" rel="noopener noreferrer">Austin Mutual Aid</a>
-      <p>Community-based network providing food, water, and essential supplies to those in need.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://atxfreefridge.com/" target="_blank" rel="noopener noreferrer">ATX Free Fridge Project</a>
-      <p>Network of community fridges providing free food access across Austin.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://insidebooksproject.org/" target="_blank" rel="noopener noreferrer">Inside Books Project</a>
-      <p>Volunteer organization sending free books and educational materials to people incarcerated in Texas prisons.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/austinliberation/" target="_blank" rel="noopener noreferrer">Austin Liberation</a>
-      <p>A youth-led grassroots organization dedicated to implementing revolutionary change within Austin, TX.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://stopthedisplacement.org/" target="_blank" rel="noopener noreferrer">Stop the Displacement ATX</a>
-      <p>Fighting gentrification and displacement through direct action and mutual aid.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.casamarianella.org/" target="_blank" rel="noopener noreferrer">Casa Marianella</a>
-      <p>Shelter and support services for displaced immigrants. Also has a hosting program where residents can stay with members of the community.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://linktr.ee/austinmutualaidcollective" target="_blank" rel="noopener noreferrer">Austin Mutual Aid Collective</a>
-      <p>Coordinating mutual aid efforts and resource distribution across Austin.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://niceprojectatx.com/" target="_blank" rel="noopener noreferrer">NICE Project</a>
-      <p>Free 24/7 Naloxone vending machines.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.queertopiatx.org/" target="_blank" rel="noopener noreferrer">Queertopia</a>
-      <p>Support for Unhoused LGBTQ+ in ATX, Black, Indigenous, trans, elders, swers</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/batcityao/" target="_blank" rel="noopener noreferrer">Bat City Anarchist Organization</a>
-      <p>Collection of anarchists out of so called &quot;Austin, TX&quot;</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/streetforumatx/" target="_blank" rel="noopener noreferrer">Street Forum Mutual Aid</a>
-      <p>Mutual aid centering unhoused Austinites since 2019 | Weekly distro downtown</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.communitypoweredatx.com/" target="_blank" rel="noopener noreferrer">Community Powered ATX</a>
-      <p>Community Powered ATX is a collective of young Black, Indigenous, People of Color organizers, East Austin community members, and allies working to build people power to fight for housing and social-environmental justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/atxbrownberets/" target="_blank" rel="noopener noreferrer">Austin Brown Berets</a>
-      <p>Indigenous Chicanxs here to Serve, Observe and Protect our Community</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.austinagainstapartheid.com/" target="_blank" rel="noopener noreferrer">Austin Against Apartheid</a>
-      <p>Austin Against Apartheid unites businesses and customers in a boycott campaign calling for freedom, justice, and equality for the Palestinian people.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/austinbicyclemeals/" target="_blank" rel="noopener noreferrer">Austin Bicycle Meals</a>
-      <p>Serving meals &amp; kindness to the Austin community!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/batcityjailsupport/" target="_blank" rel="noopener noreferrer">Bat City Jail Support Collective</a>
-      <p>Systematizing and strengthening jail support and release processes in Travis County.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/austinactionmedical/" target="_blank" rel="noopener noreferrer">Austin Action Medical</a>
-      <p>A principled street medic collective formed to build community through medical skill/sharing and action support in Austin, TX</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/harmreductiontx/" target="_blank" rel="noopener noreferrer">Texas Harm Reduction Alliance</a>
-      <p>Overdose prevention and harm reduction services in ATX &amp; statewide advocacy for policies that promote the rights &amp; dignity of people who use drugs.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/isim.atx/" target="_blank" rel="noopener noreferrer">In Sight, In Mind (ISIM)</a>
-      <p>Artists for collective liberation</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/primroseatx/" target="_blank" rel="noopener noreferrer">Primrose Community Care</a>
-      <p>Mutual aid, harm reduction supplies and training</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.sweetatx.org/" target="_blank" rel="noopener noreferrer">Sex Workers Educating &amp; Empowering Texans (SWEET)</a>
-      <p>We are dedicated to ending the stigma against and criminalization of sex work through peer support, outreach, public education, and harm reduction.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://austinjustice.org/" target="_blank" rel="noopener noreferrer">Austin Justice Coalition</a>
-      <p>AJC serves people who are historically and systematically impacted by gentrification, segregation, over policing, a lack of educational and employment opportunities, and other institutional forms of racism in Austin.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/texastransfutures/" target="_blank" rel="noopener noreferrer">Texas Trans Futures</a>
-      <p>trans youth freedom school in central tx, hosting free workshops for trans middle and high schoolers</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/wds_atx/" target="_blank" rel="noopener noreferrer">Weelaunee Defense Society ATX</a>
-      <p>The Austin chapter of the Weelaunee Defense Society.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/atxabc/" target="_blank" rel="noopener noreferrer">Austin Anarchist Black Cross</a>
-      <p>Prison abolition, queer and trans prisoner support, political prisoner support, anti-repression.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/pricklypearrifleclub/" target="_blank" rel="noopener noreferrer">Prickly Pear Rifle Club</a>
-      <p>Antifascist gun club based in Austin.</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Austin, Texas</h1>
+    <p class="meta">
+      <b>27</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      Texas
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Austin, Texas</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Austin, Texas…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="monkeywrench books" data-desc="a volunteer-run radical bookstore and community space providing access to literature, zines, and organizing resources. through their bookstore, events, and community programs, they foster mutual aid networks and create spaces for education, organizing, and building solidarity in austin.">
+          <div class="row">
+            <a class="name" href="https://www.monkeywrenchbooks.org/" target="_blank" rel="noopener noreferrer">Monkeywrench Books <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">monkeywrenchbooks.org</span>
+          </div>
+          <p class="desc">A volunteer-run radical bookstore and community space providing access to literature, zines, and organizing resources. Through their bookstore, events, and community programs, they foster mutual aid networks and create spaces for education, organizing, and building solidarity in Austin.</p>
+        </li>
+        <li data-name="austin mutual aid" data-desc="community-based network providing food, water, and essential supplies to those in need.">
+          <div class="row">
+            <a class="name" href="https://austinmutualaid.com/" target="_blank" rel="noopener noreferrer">Austin Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">austinmutualaid.com</span>
+          </div>
+          <p class="desc">Community-based network providing food, water, and essential supplies to those in need.</p>
+        </li>
+        <li data-name="atx free fridge project" data-desc="network of community fridges providing free food access across austin.">
+          <div class="row">
+            <a class="name" href="https://atxfreefridge.com/" target="_blank" rel="noopener noreferrer">ATX Free Fridge Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">atxfreefridge.com</span>
+          </div>
+          <p class="desc">Network of community fridges providing free food access across Austin.</p>
+        </li>
+        <li data-name="inside books project" data-desc="volunteer organization sending free books and educational materials to people incarcerated in texas prisons.">
+          <div class="row">
+            <a class="name" href="https://insidebooksproject.org/" target="_blank" rel="noopener noreferrer">Inside Books Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">insidebooksproject.org</span>
+          </div>
+          <p class="desc">Volunteer organization sending free books and educational materials to people incarcerated in Texas prisons.</p>
+        </li>
+        <li data-name="austin liberation" data-desc="a youth-led grassroots organization dedicated to implementing revolutionary change within austin, tx.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/austinliberation/" target="_blank" rel="noopener noreferrer">Austin Liberation <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A youth-led grassroots organization dedicated to implementing revolutionary change within Austin, TX.</p>
+        </li>
+        <li data-name="stop the displacement atx" data-desc="fighting gentrification and displacement through direct action and mutual aid.">
+          <div class="row">
+            <a class="name" href="https://stopthedisplacement.org/" target="_blank" rel="noopener noreferrer">Stop the Displacement ATX <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">stopthedisplacement.org</span>
+          </div>
+          <p class="desc">Fighting gentrification and displacement through direct action and mutual aid.</p>
+        </li>
+        <li data-name="casa marianella" data-desc="shelter and support services for displaced immigrants. also has a hosting program where residents can stay with members of the community.">
+          <div class="row">
+            <a class="name" href="https://www.casamarianella.org/" target="_blank" rel="noopener noreferrer">Casa Marianella <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">casamarianella.org</span>
+          </div>
+          <p class="desc">Shelter and support services for displaced immigrants. Also has a hosting program where residents can stay with members of the community.</p>
+        </li>
+        <li data-name="austin mutual aid collective" data-desc="coordinating mutual aid efforts and resource distribution across austin.">
+          <div class="row">
+            <a class="name" href="https://linktr.ee/austinmutualaidcollective" target="_blank" rel="noopener noreferrer">Austin Mutual Aid Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">linktr.ee</span>
+          </div>
+          <p class="desc">Coordinating mutual aid efforts and resource distribution across Austin.</p>
+        </li>
+        <li data-name="nice project" data-desc="free 24/7 naloxone vending machines.">
+          <div class="row">
+            <a class="name" href="https://niceprojectatx.com/" target="_blank" rel="noopener noreferrer">NICE Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">niceprojectatx.com</span>
+          </div>
+          <p class="desc">Free 24/7 Naloxone vending machines.</p>
+        </li>
+        <li data-name="queertopia" data-desc="support for unhoused lgbtq+ in atx, black, indigenous, trans, elders, swers">
+          <div class="row">
+            <a class="name" href="https://www.queertopiatx.org/" target="_blank" rel="noopener noreferrer">Queertopia <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">queertopiatx.org</span>
+          </div>
+          <p class="desc">Support for Unhoused LGBTQ+ in ATX, Black, Indigenous, trans, elders, swers</p>
+        </li>
+        <li data-name="bat city anarchist organization" data-desc="collection of anarchists out of so called &quot;austin, tx&quot;">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/batcityao/" target="_blank" rel="noopener noreferrer">Bat City Anarchist Organization <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Collection of anarchists out of so called &quot;Austin, TX&quot;</p>
+        </li>
+        <li data-name="street forum mutual aid" data-desc="mutual aid centering unhoused austinites since 2019 | weekly distro downtown">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/streetforumatx/" target="_blank" rel="noopener noreferrer">Street Forum Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Mutual aid centering unhoused Austinites since 2019 | Weekly distro downtown</p>
+        </li>
+        <li data-name="community powered atx" data-desc="community powered atx is a collective of young black, indigenous, people of color organizers, east austin community members, and allies working to build people power to fight for housing and social-environmental justice.">
+          <div class="row">
+            <a class="name" href="https://www.communitypoweredatx.com/" target="_blank" rel="noopener noreferrer">Community Powered ATX <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">communitypoweredatx.com</span>
+          </div>
+          <p class="desc">Community Powered ATX is a collective of young Black, Indigenous, People of Color organizers, East Austin community members, and allies working to build people power to fight for housing and social-environmental justice.</p>
+        </li>
+        <li data-name="austin brown berets" data-desc="indigenous chicanxs here to serve, observe and protect our community">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/atxbrownberets/" target="_blank" rel="noopener noreferrer">Austin Brown Berets <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Indigenous Chicanxs here to Serve, Observe and Protect our Community</p>
+        </li>
+        <li data-name="austin against apartheid" data-desc="austin against apartheid unites businesses and customers in a boycott campaign calling for freedom, justice, and equality for the palestinian people.">
+          <div class="row">
+            <a class="name" href="https://www.austinagainstapartheid.com/" target="_blank" rel="noopener noreferrer">Austin Against Apartheid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">austinagainstapartheid.com</span>
+          </div>
+          <p class="desc">Austin Against Apartheid unites businesses and customers in a boycott campaign calling for freedom, justice, and equality for the Palestinian people.</p>
+        </li>
+        <li data-name="austin bicycle meals" data-desc="serving meals &amp; kindness to the austin community!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/austinbicyclemeals/" target="_blank" rel="noopener noreferrer">Austin Bicycle Meals <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Serving meals &amp; kindness to the Austin community!</p>
+        </li>
+        <li data-name="bat city jail support collective" data-desc="systematizing and strengthening jail support and release processes in travis county.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/batcityjailsupport/" target="_blank" rel="noopener noreferrer">Bat City Jail Support Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Systematizing and strengthening jail support and release processes in Travis County.</p>
+        </li>
+        <li data-name="austin action medical" data-desc="a principled street medic collective formed to build community through medical skill/sharing and action support in austin, tx">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/austinactionmedical/" target="_blank" rel="noopener noreferrer">Austin Action Medical <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A principled street medic collective formed to build community through medical skill/sharing and action support in Austin, TX</p>
+        </li>
+        <li data-name="texas harm reduction alliance" data-desc="overdose prevention and harm reduction services in atx &amp; statewide advocacy for policies that promote the rights &amp; dignity of people who use drugs.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/harmreductiontx/" target="_blank" rel="noopener noreferrer">Texas Harm Reduction Alliance <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Overdose prevention and harm reduction services in ATX &amp; statewide advocacy for policies that promote the rights &amp; dignity of people who use drugs.</p>
+        </li>
+        <li data-name="in sight, in mind (isim)" data-desc="artists for collective liberation">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/isim.atx/" target="_blank" rel="noopener noreferrer">In Sight, In Mind (ISIM) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Artists for collective liberation</p>
+        </li>
+        <li data-name="primrose community care" data-desc="mutual aid, harm reduction supplies and training">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/primroseatx/" target="_blank" rel="noopener noreferrer">Primrose Community Care <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Mutual aid, harm reduction supplies and training</p>
+        </li>
+        <li data-name="sex workers educating &amp; empowering texans (sweet)" data-desc="we are dedicated to ending the stigma against and criminalization of sex work through peer support, outreach, public education, and harm reduction.">
+          <div class="row">
+            <a class="name" href="https://www.sweetatx.org/" target="_blank" rel="noopener noreferrer">Sex Workers Educating &amp; Empowering Texans (SWEET) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sweetatx.org</span>
+          </div>
+          <p class="desc">We are dedicated to ending the stigma against and criminalization of sex work through peer support, outreach, public education, and harm reduction.</p>
+        </li>
+        <li data-name="austin justice coalition" data-desc="ajc serves people who are historically and systematically impacted by gentrification, segregation, over policing, a lack of educational and employment opportunities, and other institutional forms of racism in austin.">
+          <div class="row">
+            <a class="name" href="https://austinjustice.org/" target="_blank" rel="noopener noreferrer">Austin Justice Coalition <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">austinjustice.org</span>
+          </div>
+          <p class="desc">AJC serves people who are historically and systematically impacted by gentrification, segregation, over policing, a lack of educational and employment opportunities, and other institutional forms of racism in Austin.</p>
+        </li>
+        <li data-name="texas trans futures" data-desc="trans youth freedom school in central tx, hosting free workshops for trans middle and high schoolers">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/texastransfutures/" target="_blank" rel="noopener noreferrer">Texas Trans Futures <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">trans youth freedom school in central tx, hosting free workshops for trans middle and high schoolers</p>
+        </li>
+        <li data-name="weelaunee defense society atx" data-desc="the austin chapter of the weelaunee defense society.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/wds_atx/" target="_blank" rel="noopener noreferrer">Weelaunee Defense Society ATX <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">The Austin chapter of the Weelaunee Defense Society.</p>
+        </li>
+        <li data-name="austin anarchist black cross" data-desc="prison abolition, queer and trans prisoner support, political prisoner support, anti-repression.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/atxabc/" target="_blank" rel="noopener noreferrer">Austin Anarchist Black Cross <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Prison abolition, queer and trans prisoner support, political prisoner support, anti-repression.</p>
+        </li>
+        <li data-name="prickly pear rifle club" data-desc="antifascist gun club based in austin.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/pricklypearrifleclub/" target="_blank" rel="noopener noreferrer">Prickly Pear Rifle Club <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Antifascist gun club based in Austin.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>Add a group — Organize Directory</title>
+  <meta name="description" content="Know a group doing the work? Send it our way and we'll add it to the directory.">
+  <link rel="canonical" href="https://organize.directory/add">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Add a group — Organize Directory">
+  <meta property="og:description" content="Help us keep the directory current. Send in a group and we'll add it.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/add">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Pre-paint theme init -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Add a group</span>
+  </nav>
+
+  <div class="page-head">
+    <h1 class="title">Add a group.</h1>
+    <p class="meta">This directory grows because people like you send in groups.</p>
+  </div>
+
+  <div class="prose">
+    <p>Know a mutual aid network, tenant union, bail fund, harm reduction crew, anti-war group, or any other leftist or grassroots organization we're missing? Send it in and we'll add it.</p>
+
+    <h2>What we need</h2>
+    <ul>
+      <li>The group's <strong>name</strong> and a <strong>link</strong> (website, Instagram, Signal group, whatever they use).</li>
+      <li>The <strong>city or region</strong> they organize in — or "national" / "international" if they aren't locality-bound.</li>
+      <li>What they <strong>focus on</strong> (housing, food, labor, defense, etc.) — one or two sentences is plenty.</li>
+    </ul>
+
+    <h2>What we don't list</h2>
+    <p>We keep this directory to groups doing material, on-the-ground organizing or solidarity work. We don't list: electoral campaigns, nonprofits that exist mostly to raise money, law enforcement collaborations, or groups that do harm to the communities they claim to serve. If you're not sure, send it anyway — we'd rather talk it through.</p>
+
+    <h2>Send it over</h2>
+    <p><a href="/contact" class="btn primary" style="margin-top:.5rem">Open the contact form</a></p>
+    <p>Or email <strong>organizedirectory(at)proton.me</strong> directly.</p>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+
+</body>
+</html>

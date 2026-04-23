@@ -1,117 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Rogue Valley, OR Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Rogue Valley, OR. Connect with local organizations and community resources.">
+  <title>Rogue Valley, OR — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Rogue Valley, OR.">
   <link rel="canonical" href="https://organize.directory/rogue-valley">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Rogue Valley, OR Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Rogue Valley, OR. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Rogue Valley, OR — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Rogue Valley, OR.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/rogue-valley">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/oregon">Oregon</a>
-          <span>›</span>
-          <span>Rogue Valley, OR</span>
-        </div>
+<main id="main">
 
-        <h1>Rogue Valley, OR</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/oregon">Oregon</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Rogue Valley, OR</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://www.maslowproject.com/" target="_blank" rel="noopener noreferrer">Maslow Project</a>
-      <p>Community organization providing comprehensive support for homeless youth and families through basic needs assistance, street outreach, family advocacy, case management, and permanent supportive housing programs.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://rvmentoring.org/" target="_blank" rel="noopener noreferrer">Rogue Valley Mentoring</a>
-      <p>Community-based mentoring organization providing support, guidance, and resources to youth through mutual aid and solidarity networks.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.judismidnightdiner.org/" target="_blank" rel="noopener noreferrer">Judi's Midnight Diner</a>
-      <p>Judi's Midnight Diner is a volunteer-run project bringing a heated pop-up tent, food, and hot drinks to folks around the Rogue Valley, Oregon.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/stabbinwagonmfr/" target="_blank" rel="noopener noreferrer">Stabbin Wagon</a>
-      <p>Harm reduction supplies &amp; services in Jackson County</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/birdsofgazaashland/" target="_blank" rel="noopener noreferrer">Birds of Gaza Ashland</a>
-      <p>A community art project of paper birds representing the 43,000+ lives lost in Palestine</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/freepalestineroguevalley/" target="_blank" rel="noopener noreferrer">Free Palestine Rogue Valley</a>
-      <p>Community effort for Palestine in the Rogue Valley. Fundraising, education, activism.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.octaviasoptions.org/" target="_blank" rel="noopener noreferrer">Octavia's Options</a>
-      <p>At Octavia's Options, our mission is to empower others and help them get into safe and stable housing by implementing the Housing First model and treating our clients with compassion through a trauma-informed lens.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/sugarloafcenter/" target="_blank" rel="noopener noreferrer">Sugarloaf Center</a>
-      <p>An unschooling center, infoshop &amp; all-ages community venue.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.rogueactioncenter.org/" target="_blank" rel="noopener noreferrer">Rogue Action Center</a>
-      <p>Rogue Action Center is working to grow organizing power &amp; leaders for a more just &amp; thriving Southern Oregon.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://rvpeppershakers.com/" target="_blank" rel="noopener noreferrer">Rogue Valley Pepper Shakers</a>
-      <p>We focus on protecting abortion and LGBTQ+ events and spaces.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.roguefoodunites.org/" target="_blank" rel="noopener noreferrer">Rogue Food Unites</a>
-      <p>RFU coordinates with locally-invested food businesses to provide fresh, nutritious, and shelf-stable ingredients, assembled and delivered to our communities.</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Rogue Valley, OR</h1>
+    <p class="meta">
+      <b>11</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      Oregon
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Rogue Valley, OR</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Rogue Valley, OR…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="maslow project" data-desc="community organization providing comprehensive support for homeless youth and families through basic needs assistance, street outreach, family advocacy, case management, and permanent supportive housing programs.">
+          <div class="row">
+            <a class="name" href="https://www.maslowproject.com/" target="_blank" rel="noopener noreferrer">Maslow Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">maslowproject.com</span>
+          </div>
+          <p class="desc">Community organization providing comprehensive support for homeless youth and families through basic needs assistance, street outreach, family advocacy, case management, and permanent supportive housing programs.</p>
+        </li>
+        <li data-name="rogue valley mentoring" data-desc="community-based mentoring organization providing support, guidance, and resources to youth through mutual aid and solidarity networks.">
+          <div class="row">
+            <a class="name" href="https://rvmentoring.org/" target="_blank" rel="noopener noreferrer">Rogue Valley Mentoring <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">rvmentoring.org</span>
+          </div>
+          <p class="desc">Community-based mentoring organization providing support, guidance, and resources to youth through mutual aid and solidarity networks.</p>
+        </li>
+        <li data-name="judi's midnight diner" data-desc="judi's midnight diner is a volunteer-run project bringing a heated pop-up tent, food, and hot drinks to folks around the rogue valley, oregon.">
+          <div class="row">
+            <a class="name" href="https://www.judismidnightdiner.org/" target="_blank" rel="noopener noreferrer">Judi's Midnight Diner <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">judismidnightdiner.org</span>
+          </div>
+          <p class="desc">Judi's Midnight Diner is a volunteer-run project bringing a heated pop-up tent, food, and hot drinks to folks around the Rogue Valley, Oregon.</p>
+        </li>
+        <li data-name="stabbin wagon" data-desc="harm reduction supplies &amp; services in jackson county">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/stabbinwagonmfr/" target="_blank" rel="noopener noreferrer">Stabbin Wagon <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Harm reduction supplies &amp; services in Jackson County</p>
+        </li>
+        <li data-name="birds of gaza ashland" data-desc="a community art project of paper birds representing the 43,000+ lives lost in palestine">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/birdsofgazaashland/" target="_blank" rel="noopener noreferrer">Birds of Gaza Ashland <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A community art project of paper birds representing the 43,000+ lives lost in Palestine</p>
+        </li>
+        <li data-name="free palestine rogue valley" data-desc="community effort for palestine in the rogue valley. fundraising, education, activism.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/freepalestineroguevalley/" target="_blank" rel="noopener noreferrer">Free Palestine Rogue Valley <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Community effort for Palestine in the Rogue Valley. Fundraising, education, activism.</p>
+        </li>
+        <li data-name="octavia's options" data-desc="at octavia's options, our mission is to empower others and help them get into safe and stable housing by implementing the housing first model and treating our clients with compassion through a trauma-informed lens.">
+          <div class="row">
+            <a class="name" href="https://www.octaviasoptions.org/" target="_blank" rel="noopener noreferrer">Octavia's Options <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">octaviasoptions.org</span>
+          </div>
+          <p class="desc">At Octavia's Options, our mission is to empower others and help them get into safe and stable housing by implementing the Housing First model and treating our clients with compassion through a trauma-informed lens.</p>
+        </li>
+        <li data-name="sugarloaf center" data-desc="an unschooling center, infoshop &amp; all-ages community venue.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/sugarloafcenter/" target="_blank" rel="noopener noreferrer">Sugarloaf Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">An unschooling center, infoshop &amp; all-ages community venue.</p>
+        </li>
+        <li data-name="rogue action center" data-desc="rogue action center is working to grow organizing power &amp; leaders for a more just &amp; thriving southern oregon.">
+          <div class="row">
+            <a class="name" href="https://www.rogueactioncenter.org/" target="_blank" rel="noopener noreferrer">Rogue Action Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">rogueactioncenter.org</span>
+          </div>
+          <p class="desc">Rogue Action Center is working to grow organizing power &amp; leaders for a more just &amp; thriving Southern Oregon.</p>
+        </li>
+        <li data-name="rogue valley pepper shakers" data-desc="we focus on protecting abortion and lgbtq+ events and spaces.">
+          <div class="row">
+            <a class="name" href="https://rvpeppershakers.com/" target="_blank" rel="noopener noreferrer">Rogue Valley Pepper Shakers <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">rvpeppershakers.com</span>
+          </div>
+          <p class="desc">We focus on protecting abortion and LGBTQ+ events and spaces.</p>
+        </li>
+        <li data-name="rogue food unites" data-desc="rfu coordinates with locally-invested food businesses to provide fresh, nutritious, and shelf-stable ingredients, assembled and delivered to our communities.">
+          <div class="row">
+            <a class="name" href="https://www.roguefoodunites.org/" target="_blank" rel="noopener noreferrer">Rogue Food Unites <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">roguefoodunites.org</span>
+          </div>
+          <p class="desc">RFU coordinates with locally-invested food businesses to provide fresh, nutritious, and shelf-stable ingredients, assembled and delivered to our communities.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

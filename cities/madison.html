@@ -1,138 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Madison, WI Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Madison, WI. Connect with local organizations and community resources.">
+  <title>Madison, WI — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Madison, WI.">
   <link rel="canonical" href="https://organize.directory/madison">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Madison, WI Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Madison, WI. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Madison, WI — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Madison, WI.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/madison">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/wisconsin">Wisconsin</a>
-          <span>›</span>
-          <span>Madison, WI</span>
-        </div>
+<main id="main">
 
-        <h1>Madison, WI</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/wisconsin">Wisconsin</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Madison, WI</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://socialjusticecenter.org/" target="_blank" rel="noopener noreferrer">Social Justice Center</a>
-      <p>A community hub fostering mutual aid and social justice through collaborative organizing and resource sharing. They provide space and support for grassroots organizations while building networks of solidarity through community programs, educational events, and direct support initiatives in Madison.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://madanarcha.noblogs.org/" target="_blank" rel="noopener noreferrer">Madison Anarcha Collective</a>
-      <p>Community coming together for intersectional liberation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://transadvocacymadison.com/" target="_blank" rel="noopener noreferrer">Trans Advocacy Madison</a>
-      <p>A grassroots advocacy collective for the Transgender, Non-Binary, Two-Spirit, &amp; gender-expansive community in Teejop (Madison, WI)area</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/madison4pali/" target="_blank" rel="noopener noreferrer">Madison For Palestine</a>
-      <p>Ind. &amp; unaffiliated anti-imperialist collective based in Madison WI focused on Palestinian liberation</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.freedom-inc.org/" target="_blank" rel="noopener noreferrer">Freedom Inc</a>
-      <p>Freedom, Inc. engages low- to no-income communities of color in Dane County, WI. Our mission is to achieve social justice through coupling direct services with leadership development and community organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.transfolx.com/trans-medical-mutual-aid" target="_blank" rel="noopener noreferrer">Trans Medical Mutual Aid</a>
-      <p>Aid for gender-affirming surgery patients. Rides to the hospital, meals for recovery, wound care supplies, surgery classes, peer support</p>
-    </div>
-    <div class="initiative">
-      <a href="https://madisonrafah.org/" target="_blank" rel="noopener noreferrer">Madison-Rafah Sister City Project</a>
-      <p>Unofficial sister city project to forge connections and increase public awareness of Palestine solidarity.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/rrfm_madison/" target="_blank" rel="noopener noreferrer">Really Really Free Market Madison</a>
-      <p>Come thru and take what you need &amp; donate what you can.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/outreachlgbtqmadison/" target="_blank" rel="noopener noreferrer">OutReach LGBTQ Center</a>
-      <p>Welcome to the Official OutReach LGBTQ+ Community Center page. Building equity + providing community</p>
-    </div>
-    <div class="initiative">
-      <a href="https://madisoniww.org/" target="_blank" rel="noopener noreferrer">Madison IWW</a>
-      <p>Madison, Wisconsin IWW (Industrial Workers of the World) General Membership Branch</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/madisontrac/" target="_blank" rel="noopener noreferrer">Madison Trans Resistance Action Committee</a>
-      <p>TRAC is a grassroots org fighting for the rights of TGNC people in Madison via direct action! Join us - come to a monthly meeting or an action!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.disabilitypridemadison.org/" target="_blank" rel="noopener noreferrer">Disability Pride Madison</a>
-      <p>Disability Pride Madison's mission is to work as a cross-disability organization to support and celebrate disabled communities and promote disability justice in Madison, Wisconsin, and beyond.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/madisonsolidarity/" target="_blank" rel="noopener noreferrer">Madison Solidarity</a>
-      <p>Doing mutual aid to support movements in and around Madison, WI</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.madisonmarrch.org/" target="_blank" rel="noopener noreferrer">Madison Abortion &amp; Reproductive Rights Coalition for Healthcare
-              (MARRCH)</a>
-      <p>Grassroots abortion justice right here in Wisconsin. Join us + stand together!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://madison-dsa.org/" target="_blank" rel="noopener noreferrer">Madison DSA</a>
-      <p>The Madison, WI Chapter of the Democratic Socialists of America</p>
-    </div>
-    <div class="initiative">
-      <a href="https://groups.io/g/madisonactivistcalendar" target="_blank" rel="noopener noreferrer">Madison Activist Calendar</a>
-      <p>Weekly calendar of activist events in the greater Madison, WI bioregion</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Madison, WI</h1>
+    <p class="meta">
+      <b>16</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      Wisconsin
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Madison, WI</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Madison, WI…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="social justice center" data-desc="a community hub fostering mutual aid and social justice through collaborative organizing and resource sharing. they provide space and support for grassroots organizations while building networks of solidarity through community programs, educational events, and direct support initiatives in madison.">
+          <div class="row">
+            <a class="name" href="https://socialjusticecenter.org/" target="_blank" rel="noopener noreferrer">Social Justice Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">socialjusticecenter.org</span>
+          </div>
+          <p class="desc">A community hub fostering mutual aid and social justice through collaborative organizing and resource sharing. They provide space and support for grassroots organizations while building networks of solidarity through community programs, educational events, and direct support initiatives in Madison.</p>
+        </li>
+        <li data-name="madison anarcha collective" data-desc="community coming together for intersectional liberation.">
+          <div class="row">
+            <a class="name" href="https://madanarcha.noblogs.org/" target="_blank" rel="noopener noreferrer">Madison Anarcha Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">madanarcha.noblogs.org</span>
+          </div>
+          <p class="desc">Community coming together for intersectional liberation.</p>
+        </li>
+        <li data-name="trans advocacy madison" data-desc="a grassroots advocacy collective for the transgender, non-binary, two-spirit, &amp; gender-expansive community in teejop (madison, wi)area">
+          <div class="row">
+            <a class="name" href="https://transadvocacymadison.com/" target="_blank" rel="noopener noreferrer">Trans Advocacy Madison <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">transadvocacymadison.com</span>
+          </div>
+          <p class="desc">A grassroots advocacy collective for the Transgender, Non-Binary, Two-Spirit, &amp; gender-expansive community in Teejop (Madison, WI)area</p>
+        </li>
+        <li data-name="madison for palestine" data-desc="ind. &amp; unaffiliated anti-imperialist collective based in madison wi focused on palestinian liberation">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/madison4pali/" target="_blank" rel="noopener noreferrer">Madison For Palestine <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Ind. &amp; unaffiliated anti-imperialist collective based in Madison WI focused on Palestinian liberation</p>
+        </li>
+        <li data-name="freedom inc" data-desc="freedom, inc. engages low- to no-income communities of color in dane county, wi. our mission is to achieve social justice through coupling direct services with leadership development and community organizing.">
+          <div class="row">
+            <a class="name" href="https://www.freedom-inc.org/" target="_blank" rel="noopener noreferrer">Freedom Inc <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">freedom-inc.org</span>
+          </div>
+          <p class="desc">Freedom, Inc. engages low- to no-income communities of color in Dane County, WI. Our mission is to achieve social justice through coupling direct services with leadership development and community organizing.</p>
+        </li>
+        <li data-name="trans medical mutual aid" data-desc="aid for gender-affirming surgery patients. rides to the hospital, meals for recovery, wound care supplies, surgery classes, peer support">
+          <div class="row">
+            <a class="name" href="https://www.transfolx.com/trans-medical-mutual-aid" target="_blank" rel="noopener noreferrer">Trans Medical Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">transfolx.com</span>
+          </div>
+          <p class="desc">Aid for gender-affirming surgery patients. Rides to the hospital, meals for recovery, wound care supplies, surgery classes, peer support</p>
+        </li>
+        <li data-name="madison-rafah sister city project" data-desc="unofficial sister city project to forge connections and increase public awareness of palestine solidarity.">
+          <div class="row">
+            <a class="name" href="https://madisonrafah.org/" target="_blank" rel="noopener noreferrer">Madison-Rafah Sister City Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">madisonrafah.org</span>
+          </div>
+          <p class="desc">Unofficial sister city project to forge connections and increase public awareness of Palestine solidarity.</p>
+        </li>
+        <li data-name="really really free market madison" data-desc="come thru and take what you need &amp; donate what you can.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/rrfm_madison/" target="_blank" rel="noopener noreferrer">Really Really Free Market Madison <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Come thru and take what you need &amp; donate what you can.</p>
+        </li>
+        <li data-name="outreach lgbtq center" data-desc="welcome to the official outreach lgbtq+ community center page. building equity + providing community">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/outreachlgbtqmadison/" target="_blank" rel="noopener noreferrer">OutReach LGBTQ Center <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Welcome to the Official OutReach LGBTQ+ Community Center page. Building equity + providing community</p>
+        </li>
+        <li data-name="madison iww" data-desc="madison, wisconsin iww (industrial workers of the world) general membership branch">
+          <div class="row">
+            <a class="name" href="https://madisoniww.org/" target="_blank" rel="noopener noreferrer">Madison IWW <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">madisoniww.org</span>
+          </div>
+          <p class="desc">Madison, Wisconsin IWW (Industrial Workers of the World) General Membership Branch</p>
+        </li>
+        <li data-name="madison trans resistance action committee" data-desc="trac is a grassroots org fighting for the rights of tgnc people in madison via direct action! join us - come to a monthly meeting or an action!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/madisontrac/" target="_blank" rel="noopener noreferrer">Madison Trans Resistance Action Committee <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">TRAC is a grassroots org fighting for the rights of TGNC people in Madison via direct action! Join us - come to a monthly meeting or an action!</p>
+        </li>
+        <li data-name="disability pride madison" data-desc="disability pride madison's mission is to work as a cross-disability organization to support and celebrate disabled communities and promote disability justice in madison, wisconsin, and beyond.">
+          <div class="row">
+            <a class="name" href="https://www.disabilitypridemadison.org/" target="_blank" rel="noopener noreferrer">Disability Pride Madison <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">disabilitypridemadison.org</span>
+          </div>
+          <p class="desc">Disability Pride Madison's mission is to work as a cross-disability organization to support and celebrate disabled communities and promote disability justice in Madison, Wisconsin, and beyond.</p>
+        </li>
+        <li data-name="madison solidarity" data-desc="doing mutual aid to support movements in and around madison, wi">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/madisonsolidarity/" target="_blank" rel="noopener noreferrer">Madison Solidarity <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Doing mutual aid to support movements in and around Madison, WI</p>
+        </li>
+        <li data-name="madison abortion &amp; reproductive rights coalition for healthcare
+              (marrch)" data-desc="grassroots abortion justice right here in wisconsin. join us + stand together!">
+          <div class="row">
+            <a class="name" href="https://www.madisonmarrch.org/" target="_blank" rel="noopener noreferrer">Madison Abortion &amp; Reproductive Rights Coalition for Healthcare
+              (MARRCH) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">madisonmarrch.org</span>
+          </div>
+          <p class="desc">Grassroots abortion justice right here in Wisconsin. Join us + stand together!</p>
+        </li>
+        <li data-name="madison dsa" data-desc="the madison, wi chapter of the democratic socialists of america">
+          <div class="row">
+            <a class="name" href="https://madison-dsa.org/" target="_blank" rel="noopener noreferrer">Madison DSA <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">madison-dsa.org</span>
+          </div>
+          <p class="desc">The Madison, WI Chapter of the Democratic Socialists of America</p>
+        </li>
+        <li data-name="madison activist calendar" data-desc="weekly calendar of activist events in the greater madison, wi bioregion">
+          <div class="row">
+            <a class="name" href="https://groups.io/g/madisonactivistcalendar" target="_blank" rel="noopener noreferrer">Madison Activist Calendar <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">groups.io</span>
+          </div>
+          <p class="desc">Weekly calendar of activist events in the greater Madison, WI bioregion</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

@@ -1,140 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>North Carolina Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid networks and community support initiatives in North Carolina. Connect with local organizations and community resources.">
+  <title>North Carolina — Organize Directory</title>
+  <meta name="description" content="Cities and statewide organizations in North Carolina.">
   <link rel="canonical" href="https://organize.directory/north-carolina">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="North Carolina Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid networks and community support initiatives in North Carolina. Connect with local organizations and community resources.">
+  <meta property="og:title" content="North Carolina — Organize Directory">
+  <meta property="og:description" content="Cities and statewide organizations in North Carolina.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/north-carolina">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="city-page state-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <span>North Carolina</span>
-        </div>
+<main id="main">
 
-        <h1>North Carolina</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">North Carolina</span>
+  </nav>
 
-  <section>
-    <div class="cities-list">
-      <h2>Locations</h2>
-      <div class="city-links-container">
-          <a href="/asheville" class="city-link location-link-base">Asheville, NC</a>
-          <a href="/boone" class="city-link location-link-base">Boone</a>
-          <a href="/charlotte" class="city-link location-link-base">Charlotte</a>
-          <a href="/durham" class="city-link location-link-base">Durham</a>
-          <a href="/greensboro" class="city-link location-link-base">Greensboro</a>
-          <a href="/hillsborough" class="city-link location-link-base">Hillsborough, North Carolina</a>
-          <a href="/raleigh" class="city-link location-link-base">Raleigh</a>
-          <a href="/raleigh-durham-ch" class="city-link location-link-base">Triangle Area</a>
-          <a href="/wilmington-nc" class="city-link location-link-base">Wilmington</a>
-          <a href="/winston-salem" class="city-link location-link-base">Winston-Salem, NC</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="statewide-organizations" class="city-section">
-    <h2>Statewide Organizations</h2>
-    <div class="initiative">
-      <a href="https://www.carolinaabortionfund.org/" target="_blank" rel="noopener noreferrer">Carolina Abortion Fund</a>
-      <p>A mutual aid network providing financial, logistical, and emotional support to ensure abortion access for residents of North and South Carolina, while building power for reproductive justice through community organizing and advocacy.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://kiraninc.org/" target="_blank" rel="noopener noreferrer">Kiran</a>
-      <p>A community-based organization providing crisis intervention, support services, and mutual aid to South Asian and Middle Eastern survivors of domestic violence across North Carolina. Through culturally-specific services, advocacy, and community organizing, they work to build safety and empowerment.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.nchrc.org/" target="_blank" rel="noopener noreferrer">NC Harm Reduction Coalition</a>
-      <p>A statewide grassroots organization providing mutual aid and harm reduction services across North Carolina. Through direct support, resource sharing, and advocacy, they work to improve health outcomes and dignity for people impacted by drug use, incarceration, sex work, and HIV/hepatitis while building power for systemic change.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://ncwpb.org/" target="_blank" rel="noopener noreferrer">NC Women's Prison Book Project</a>
-      <p>A volunteer-run collective providing mutual aid through books and letters to people incarcerated in women's prisons and jails across North Carolina. Through literature and correspondence, they work to break isolation, build connections, and support education and empowerment for incarcerated individuals.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://nctree.xyz/" target="_blank" rel="noopener noreferrer">NC Tree</a>
-      <p>A mutual aid network organizing community support and resource sharing across North Carolina. Through their online platform and community organizing, they coordinate direct support initiatives, connect local mutual aid groups, and facilitate solidarity networks to address community needs throughout the state.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.operationstopcps.com/" target="_blank" rel="noopener noreferrer">Operation Stop CPS</a>
-      <p>A grassroots organization providing mutual aid and advocacy support to families impacted by the child welfare system in North Carolina. They coordinate direct support, resource sharing, and community organizing while building networks of solidarity to support families, advocate for systemic change, and promote family preservation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.cypressfund.org/" target="_blank" rel="noopener noreferrer">Cypress Fund</a>
-      <p>A social justice fund providing mutual aid and resources to grassroots organizations across North Carolina. Through community-led grantmaking and donor organizing, they coordinate resource redistribution and direct support while building power for systemic change and community self-determination.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.siembranc.org/" target="_blank" rel="noopener noreferrer">Siembra NC</a>
-      <p>A Latinx organization providing mutual aid and organizing support to immigrant communities across North Carolina. They coordinate direct support through wage theft recovery, workers' rights education, and rapid response networks while building community power through solidarity initiatives and collective action.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/trianglecopwatch/" target="_blank" rel="noopener noreferrer">Triangle Copwatch</a>
-      <p>A mutual aid collective organizing community defense and police accountability initiatives across North Carolina. They coordinate direct support, resource sharing, and community education while building networks of solidarity to protect communities and advocate for transformative justice solutions.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://cooperatewnc.org/" target="_blank" rel="noopener noreferrer">Cooperate WNC</a>
-      <p>A cooperative development organization fostering mutual aid and economic democracy through worker-owned businesses and solidarity economy initiatives in Western North Carolina. They coordinate cooperative education, business development support, and solidarity networks while building power through collective ownership, community wealth building, and creating spaces for economic justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/_roar_wnc/" target="_blank" rel="noopener noreferrer">ROAR (Rural Organizing and Resistance)</a>
-      <p>Hurricane Helene mutual aid hub based out of Western North Carolina.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.hollerharmreduction.org/" target="_blank" rel="noopener noreferrer">Holler Harm Reduction</a>
-      <p>A free and confidential service that provides delivery of Harm Reduction supplies and overdose prevention materials to folks using drugs in Madison County, North Carolina.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://downhomenc.org/" target="_blank" rel="noopener noreferrer">Down Home NC</a>
-      <p>Down Home North Carolina is building power with poor and working-class people in North Carolina's small towns and rural communities.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://carolinamigrantnetwork.org/" target="_blank" rel="noopener noreferrer">Carolina Migrant Network</a>
-      <p>CMN offers free represent for people in NC/SC detention and removal proceedings.</p>
-    </div>
-  </section>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">North Carolina</h1>
+    <p class="meta">
+      <b>14</b> statewide groups
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter North Carolina</label>
+    <input id="page-filter" type="search" placeholder="Filter North Carolina…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+  <nav class="toc" aria-label="Sections on this page">
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
+      <span class="current">
+        <span class="current-label">Section ·</span>
+        <span class="current-name">Places</span>
+      </span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div id="toc-panel" class="toc-scroll">
+      <a href="#places" data-section="places"><span class="label">Places</span></a>
+      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="label">Statewide Organizations</span> <span class="count">14</span></a>
+    </div>
+  </nav>
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="places" class="group-section" data-section="places">
+      <h2 class="section-title">Places</h2>
+      <ol class="groups children-list">
+        <li data-name="asheville, nc" data-desc=""><a class="name" href="/asheville">Asheville, NC</a></li>
+        <li data-name="boone" data-desc=""><a class="name" href="/boone">Boone</a></li>
+        <li data-name="charlotte" data-desc=""><a class="name" href="/charlotte">Charlotte</a></li>
+        <li data-name="durham" data-desc=""><a class="name" href="/durham">Durham</a></li>
+        <li data-name="greensboro" data-desc=""><a class="name" href="/greensboro">Greensboro</a></li>
+        <li data-name="hillsborough, north carolina" data-desc=""><a class="name" href="/hillsborough">Hillsborough, North Carolina</a></li>
+        <li data-name="raleigh" data-desc=""><a class="name" href="/raleigh">Raleigh</a></li>
+        <li data-name="triangle area" data-desc=""><a class="name" href="/raleigh-durham-ch">Triangle Area</a></li>
+        <li data-name="wilmington" data-desc=""><a class="name" href="/wilmington-nc">Wilmington</a></li>
+        <li data-name="winston-salem, nc" data-desc=""><a class="name" href="/winston-salem">Winston-Salem, NC</a></li>
+      </ol>
+    </section>
+
+    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations">
+      <h2 class="section-title">Statewide Organizations</h2>
+      <ol class="groups">
+        <li data-name="carolina abortion fund" data-desc="a mutual aid network providing financial, logistical, and emotional support to ensure abortion access for residents of north and south carolina, while building power for reproductive justice through community organizing and advocacy.">
+          <div class="row">
+            <a class="name" href="https://www.carolinaabortionfund.org/" target="_blank" rel="noopener noreferrer">Carolina Abortion Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">carolinaabortionfund.org</span>
+          </div>
+          <p class="desc">A mutual aid network providing financial, logistical, and emotional support to ensure abortion access for residents of North and South Carolina, while building power for reproductive justice through community organizing and advocacy.</p>
+        </li>
+        <li data-name="kiran" data-desc="a community-based organization providing crisis intervention, support services, and mutual aid to south asian and middle eastern survivors of domestic violence across north carolina. through culturally-specific services, advocacy, and community organizing, they work to build safety and empowerment.">
+          <div class="row">
+            <a class="name" href="https://kiraninc.org/" target="_blank" rel="noopener noreferrer">Kiran <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">kiraninc.org</span>
+          </div>
+          <p class="desc">A community-based organization providing crisis intervention, support services, and mutual aid to South Asian and Middle Eastern survivors of domestic violence across North Carolina. Through culturally-specific services, advocacy, and community organizing, they work to build safety and empowerment.</p>
+        </li>
+        <li data-name="nc harm reduction coalition" data-desc="a statewide grassroots organization providing mutual aid and harm reduction services across north carolina. through direct support, resource sharing, and advocacy, they work to improve health outcomes and dignity for people impacted by drug use, incarceration, sex work, and hiv/hepatitis while building power for systemic change.">
+          <div class="row">
+            <a class="name" href="https://www.nchrc.org/" target="_blank" rel="noopener noreferrer">NC Harm Reduction Coalition <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">nchrc.org</span>
+          </div>
+          <p class="desc">A statewide grassroots organization providing mutual aid and harm reduction services across North Carolina. Through direct support, resource sharing, and advocacy, they work to improve health outcomes and dignity for people impacted by drug use, incarceration, sex work, and HIV/hepatitis while building power for systemic change.</p>
+        </li>
+        <li data-name="nc women's prison book project" data-desc="a volunteer-run collective providing mutual aid through books and letters to people incarcerated in women's prisons and jails across north carolina. through literature and correspondence, they work to break isolation, build connections, and support education and empowerment for incarcerated individuals.">
+          <div class="row">
+            <a class="name" href="https://ncwpb.org/" target="_blank" rel="noopener noreferrer">NC Women's Prison Book Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">ncwpb.org</span>
+          </div>
+          <p class="desc">A volunteer-run collective providing mutual aid through books and letters to people incarcerated in women's prisons and jails across North Carolina. Through literature and correspondence, they work to break isolation, build connections, and support education and empowerment for incarcerated individuals.</p>
+        </li>
+        <li data-name="nc tree" data-desc="a mutual aid network organizing community support and resource sharing across north carolina. through their online platform and community organizing, they coordinate direct support initiatives, connect local mutual aid groups, and facilitate solidarity networks to address community needs throughout the state.">
+          <div class="row">
+            <a class="name" href="https://nctree.xyz/" target="_blank" rel="noopener noreferrer">NC Tree <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">nctree.xyz</span>
+          </div>
+          <p class="desc">A mutual aid network organizing community support and resource sharing across North Carolina. Through their online platform and community organizing, they coordinate direct support initiatives, connect local mutual aid groups, and facilitate solidarity networks to address community needs throughout the state.</p>
+        </li>
+        <li data-name="operation stop cps" data-desc="a grassroots organization providing mutual aid and advocacy support to families impacted by the child welfare system in north carolina. they coordinate direct support, resource sharing, and community organizing while building networks of solidarity to support families, advocate for systemic change, and promote family preservation.">
+          <div class="row">
+            <a class="name" href="https://www.operationstopcps.com/" target="_blank" rel="noopener noreferrer">Operation Stop CPS <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">operationstopcps.com</span>
+          </div>
+          <p class="desc">A grassroots organization providing mutual aid and advocacy support to families impacted by the child welfare system in North Carolina. They coordinate direct support, resource sharing, and community organizing while building networks of solidarity to support families, advocate for systemic change, and promote family preservation.</p>
+        </li>
+        <li data-name="cypress fund" data-desc="a social justice fund providing mutual aid and resources to grassroots organizations across north carolina. through community-led grantmaking and donor organizing, they coordinate resource redistribution and direct support while building power for systemic change and community self-determination.">
+          <div class="row">
+            <a class="name" href="https://www.cypressfund.org/" target="_blank" rel="noopener noreferrer">Cypress Fund <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">cypressfund.org</span>
+          </div>
+          <p class="desc">A social justice fund providing mutual aid and resources to grassroots organizations across North Carolina. Through community-led grantmaking and donor organizing, they coordinate resource redistribution and direct support while building power for systemic change and community self-determination.</p>
+        </li>
+        <li data-name="siembra nc" data-desc="a latinx organization providing mutual aid and organizing support to immigrant communities across north carolina. they coordinate direct support through wage theft recovery, workers' rights education, and rapid response networks while building community power through solidarity initiatives and collective action.">
+          <div class="row">
+            <a class="name" href="https://www.siembranc.org/" target="_blank" rel="noopener noreferrer">Siembra NC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">siembranc.org</span>
+          </div>
+          <p class="desc">A Latinx organization providing mutual aid and organizing support to immigrant communities across North Carolina. They coordinate direct support through wage theft recovery, workers' rights education, and rapid response networks while building community power through solidarity initiatives and collective action.</p>
+        </li>
+        <li data-name="triangle copwatch" data-desc="a mutual aid collective organizing community defense and police accountability initiatives across north carolina. they coordinate direct support, resource sharing, and community education while building networks of solidarity to protect communities and advocate for transformative justice solutions.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/trianglecopwatch/" target="_blank" rel="noopener noreferrer">Triangle Copwatch <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A mutual aid collective organizing community defense and police accountability initiatives across North Carolina. They coordinate direct support, resource sharing, and community education while building networks of solidarity to protect communities and advocate for transformative justice solutions.</p>
+        </li>
+        <li data-name="cooperate wnc" data-desc="a cooperative development organization fostering mutual aid and economic democracy through worker-owned businesses and solidarity economy initiatives in western north carolina. they coordinate cooperative education, business development support, and solidarity networks while building power through collective ownership, community wealth building, and creating spaces for economic justice.">
+          <div class="row">
+            <a class="name" href="https://cooperatewnc.org/" target="_blank" rel="noopener noreferrer">Cooperate WNC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">cooperatewnc.org</span>
+          </div>
+          <p class="desc">A cooperative development organization fostering mutual aid and economic democracy through worker-owned businesses and solidarity economy initiatives in Western North Carolina. They coordinate cooperative education, business development support, and solidarity networks while building power through collective ownership, community wealth building, and creating spaces for economic justice.</p>
+        </li>
+        <li data-name="roar (rural organizing and resistance)" data-desc="hurricane helene mutual aid hub based out of western north carolina.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/_roar_wnc/" target="_blank" rel="noopener noreferrer">ROAR (Rural Organizing and Resistance) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Hurricane Helene mutual aid hub based out of Western North Carolina.</p>
+        </li>
+        <li data-name="holler harm reduction" data-desc="a free and confidential service that provides delivery of harm reduction supplies and overdose prevention materials to folks using drugs in madison county, north carolina.">
+          <div class="row">
+            <a class="name" href="https://www.hollerharmreduction.org/" target="_blank" rel="noopener noreferrer">Holler Harm Reduction <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">hollerharmreduction.org</span>
+          </div>
+          <p class="desc">A free and confidential service that provides delivery of Harm Reduction supplies and overdose prevention materials to folks using drugs in Madison County, North Carolina.</p>
+        </li>
+        <li data-name="down home nc" data-desc="down home north carolina is building power with poor and working-class people in north carolina's small towns and rural communities.">
+          <div class="row">
+            <a class="name" href="https://downhomenc.org/" target="_blank" rel="noopener noreferrer">Down Home NC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">downhomenc.org</span>
+          </div>
+          <p class="desc">Down Home North Carolina is building power with poor and working-class people in North Carolina's small towns and rural communities.</p>
+        </li>
+        <li data-name="carolina migrant network" data-desc="cmn offers free represent for people in nc/sc detention and removal proceedings.">
+          <div class="row">
+            <a class="name" href="https://carolinamigrantnetwork.org/" target="_blank" rel="noopener noreferrer">Carolina Migrant Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">carolinamigrantnetwork.org</span>
+          </div>
+          <p class="desc">CMN offers free represent for people in NC/SC detention and removal proceedings.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No places or groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

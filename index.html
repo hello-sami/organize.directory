@@ -1,161 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <title>Organize Directory</title>
+  <meta name="description" content="An (incomplete) list of leftist and grassroots groups in the US. Find your people and get to work.">
+  <link rel="canonical" href="https://organize.directory/">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
-    <meta name="description"
-        content="Daily updates and resources for mutual aid networks and grassroots initiatives across different cities.">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Organize Directory">
+  <meta property="og:description" content="An (incomplete) list of leftist and grassroots groups in the US. Find your people and get to work.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://organize.directory/">
+  <meta property="og:image" content="https://organize.directory/preview.png">
+  <meta name="twitter:card" content="summary">
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="The Organize Directory">
-    <meta property="og:description"
-        content="Daily updates and resources for mutual aid networks and grassroots initiatives across different cities.">
-    <meta property="og:image" content="https://organize.directory/preview.png">
-    <link rel="canonical" href="https://organize.directory">
-    <meta property="og:url" content="https://organize.directory">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-    <meta name="color-scheme" content="light">
-    <title>Organize Directory - Find Local Action Groups</title>
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
+  </script>
 
-    <!-- Google Analytics -->
-    <script src="/js/analytics.js" defer></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/fonts/fonts.css">
-
-    <!-- Initialize Components Immediately -->
-    <script type="module">
-        // Import sidebar as early as possible
-        import('/components/sidebar.js?v=20260421')
-            .then(module => {
-                const { initializeSidebar, checkAndInitializeSidebar } = module;
-                // Initialize sidebar with early detection
-                checkAndInitializeSidebar('home');
-
-                // Additional initialization can wait for DOMContentLoaded
-                document.addEventListener('DOMContentLoaded', function () {
-                    // Reset nav-group-title
-                    const navGroupTitles = document.querySelectorAll('.nav-group-title');
-                    navGroupTitles.forEach(title => {
-                        title.classList.add('reset-nav-group');
-                    });
-                });
-            })
-            .catch(error => console.error('Error initializing sidebar:', error));
-
-        // Initialize other components after DOM is loaded
-        document.addEventListener('DOMContentLoaded', function () {
-            import('/utils/init.js?v=20260421')
-                .then(module => {
-                    const { initializeComponents } = module;
-                    initializeComponents({});
-                })
-                .catch(error => console.error('Error initializing components:', error));
-        });
-    </script>
-
-    <!-- Include the title search script -->
-    <script src="/js/title-search.js" defer></script>
-
-    <!-- Mobile optimizations -->
-    <script src="/js/mobile-optimizations.js" defer></script>
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-<body class="page-home">
-    <div class="layout">
-        <div id="sidebar-placeholder"></div>
+<main id="main" class="hero">
+  <div class="hero-inner">
+    <h1 class="hl">Don't <span class="soft">despair.</span><br><span class="warm">Organize.<svg class="underline" viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M4 10 C 60 2, 120 14, 180 6 S 280 10, 296 8" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></span></h1>
+    <p class="sub">An (incomplete) list of leftist and grassroots groups in the US. Find your people and get to work.</p>
 
-        <main class="content" role="main">
-            <header class="page-header"></header>
+    <div class="doors">
+      <form class="search" role="search" action="/search" method="get" onsubmit="event.preventDefault()">
+        <label class="skip" for="site-search">Search the directory</label>
+        <input id="site-search" name="q" type="search" placeholder="Search city, state, issue, or group…" autocomplete="off">
+        <button type="submit" aria-label="Search">Go <span aria-hidden="true">→</span></button>
+      </form>
 
-            <h1>The Organize Directory</h1>
-
-            <!-- Add tagline -->
-            <p class="tagline">An (incomplete) list of leftist and grassroots activist groups near and far.
-                <strong>Don't despair, organize.</strong>
-            </p>
-
-            <div class="homepage-content">
-                <!-- Remove duplicate search box -->
-
-                <section class="find-groups-buttons">
-                    <div class="buttons-container">
-                        <a href="/location.html" class="find-groups-button primary-button">
-                            <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            <span class="button-text">Find Local Groups</span>
-                        </a>
-                        <a href="/topics.html" class="find-groups-button secondary-button">
-                            <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                            </svg>
-                            <span class="button-text">Browse by Issue</span>
-                        </a>
-                    </div>
-                </section>
-
-                <section class="initiative-stats">
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <span class="stat-number">2,535</span>
-                            <span class="stat-label">GROUPS</span>
-                            <span class="stat-mobile-label">GROUPS: 2,535</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">356</span>
-                            <span class="stat-label">CITIES</span>
-                            <span class="stat-mobile-label">CITIES: 356</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">41</span>
-                            <span class="stat-label">CATEGORIES</span>
-                            <span class="stat-mobile-label">CATEGORIES: 41</span>
-                        </div>
-                    </div>
-
-                </section>
-            </div>
-
-            <!-- Mobile responsiveness is now handled through CSS media queries in the external stylesheet -->
-
-            <!-- <section class="daily-log" aria-labelledby="log-heading">
-                <h2 id="log-heading">Calls to Action</h2>
-                <div id="posts-list" class="posts-list">
-                    <div class="loading-indicator">Loading posts...</div>
-                </div>
-            </section> -->
-        </main>
+      <div class="cta-row">
+        <a href="/location" class="btn primary">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Find Local Groups
+        </a>
+        <a href="/topics" class="btn ghost">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          Browse by Issue
+        </a>
+      </div>
     </div>
 
-    <!-- Mobile menu overlay -->
-    <div class="mobile-menu-overlay"></div>
+    <p class="stats"><b>2,535</b> groups<span class="sep" aria-hidden="true">·</span><b>356</b> cities<span class="sep" aria-hidden="true">·</span><b>41</b> topics</p>
+  </div>
+</main>
 
-    <!-- Mobile menu button -->
-    <button class="mobile-menu-button" aria-label="Toggle navigation menu">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-    </button>
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/js/title-search.js" defer></script>
 </body>
-
 </html>

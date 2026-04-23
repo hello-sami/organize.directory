@@ -1,166 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Portland Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Portland. Connect with local organizations and community resources.">
+  <title>Portland — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Portland.">
   <link rel="canonical" href="https://organize.directory/portland">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Portland Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Portland. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Portland — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Portland.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/portland">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/oregon">Oregon</a>
-          <span>›</span>
-          <span>Portland</span>
-        </div>
+<main id="main">
 
-        <h1>Portland</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/oregon">Oregon</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Portland</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://swcorridorequity.org/" target="_blank" rel="noopener noreferrer">Southwest Corridor Equity Coalition (SWEC)</a>
-      <p>Coalition of community organizations fighting displacement and advocating for equitable development in Southwest Portland through grassroots organizing, mutual aid, and community-led planning initiatives.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/kalikasan_sol_org/" target="_blank" rel="noopener noreferrer">Kalikasan Solidarity Org</a>
-      <p>Organizing in solidarity with environmental defenders in the Philippines in their struggle for land and livelihood!</p>
-    </div>
-    <div class="initiative">
-      <a href="https://350pdx.org/" target="_blank" rel="noopener noreferrer">350PDX</a>
-      <p>Grassroots climate justice organization building people power to tackle the root causes of climate chaos through mutual aid, direct action, and solidarity with frontline communities.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.opalpdx.org/" target="_blank" rel="noopener noreferrer">OPAL Environmental Justice Oregon</a>
-      <p>A grassroots organization building power for environmental justice and civil rights in low-income communities and communities of color through organizing, leadership development, and mutual aid. Their work focuses on transit justice, housing rights, and climate action while centering the voices of those most impacted by environmental racism.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/revolutionrisingpdx/" target="_blank" rel="noopener noreferrer">Revolution Rising PDX</a>
-      <p>Grassroots collective building mutual aid networks and community power through direct action, political education, and solidarity organizing.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://sjacpdx.org/" target="_blank" rel="noopener noreferrer">Social Justice Action Center (SJAC)</a>
-      <p>A community organizing space and mutual aid hub providing resources and support for grassroots movements and social justice initiatives in Portland. SJAC serves as a gathering place for organizing, skill-sharing, and building collective power.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/criticalresistancepdx/" target="_blank" rel="noopener noreferrer">Critical Resistance PDX</a>
-      <p>Portland chapter of Critical Resistance, a national grassroots organization working to abolish the prison industrial complex.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/thepeoplesstorepdx/" target="_blank" rel="noopener noreferrer">The People's Store PDX</a>
-      <p>Mobile mutual aid resourcing unhoused people on occupied Multnomah, Cowlitz, &amp; Grand Ronde land.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.dontshootpdx.org/" target="_blank" rel="noopener noreferrer">Don't Shoot PDX</a>
-      <p>Black-led social justice organization focused on art, education, and mutual aid initiatives. Provides community resources through their Black Culture Library, art exhibitions, and direct action programs while advocating for civil rights and racial justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.surjpdx.com/" target="_blank" rel="noopener noreferrer">SURJ PDX</a>
-      <p>A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in the Portland Metropolitan Area. Founded in 2013, they coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with BIPOC-led organizations. Their work is guided by values including calling people in rather than calling out, taking risks and learning from mistakes, and organizing out of mutual interest.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://blackfoodnw.org/" target="_blank" rel="noopener noreferrer">Black Food Sovereignty Coalition</a>
-      <p>Coalition igniting Black and Brown communities to build food sovereignty, community wealth, and leadership within food systems. Operates programs including Come Thru Market, Grandma's Hands, and Back To The Root while supporting Black-owned farms and food initiatives.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.blackbeyondthebinarycollective.org/" target="_blank" rel="noopener noreferrer">Black &amp; Beyond the Binary Collective</a>
-      <p>Organization building leadership, healing, and safety for Black-African transgender, queer, nonbinary, two-spirit, and intersex (TQN2SI+) Oregonians through community support and mutual aid initiatives.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/antibinarypdx/" target="_blank" rel="noopener noreferrer">Anti-Binary PDX</a>
-      <p>Mutual aid collective providing direct support and resources to trans and nonbinary community members in Portland through solidarity networks and community care.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.eberhardtpress.org/" target="_blank" rel="noopener noreferrer">Eberhardt Press</a>
-      <p>Radical printing press in Portland.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/kaibigan_ffps/" target="_blank" rel="noopener noreferrer">Kaibigan FFPS</a>
-      <p>Filipino Food Pantry Seattle building international solidarity through mutual aid and community support for the Filipino diaspora.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.song2sea.com/" target="_blank" rel="noopener noreferrer">Sông2Sea</a>
-      <p>Vietnamese solidarity organization fostering political education and community building through study groups, cultural projects, and mutual aid.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/capybaracolectiva/" target="_blank" rel="noopener noreferrer">Capybara Colectiva</a>
-      <p>A militant, grassroots org of Latin American diaspora fighting and exposing the u.s. imperialism that forces migrants to leave their homelands.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/gabriela.pdx/" target="_blank" rel="noopener noreferrer">GABRIELA Portland</a>
-      <p>Filipino women's organization building mutual aid networks and international solidarity through grassroots organizing, political education, and cultural work.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/blackandpinkpdx/" target="_blank" rel="noopener noreferrer">Black &amp; Pink PDX</a>
-      <p>PDX org fighting for abolition of the prison industrial complex alongside incarcerated LGBTQ people✨mtgs evry 2nd thurs</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.everlyproject.org/" target="_blank" rel="noopener noreferrer">Everly Project</a>
-      <p>We provide syringe services, Narcan, and other crucial supplies, and run non-traditional recovery groups.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/merp.multnomah/" target="_blank" rel="noopener noreferrer">MERP (Munincipal Eco-Resiliency Project)
-              Multnomah</a>
-      <p>We're about expanding grassroots power &amp; attaining sustainable resources w/ marginalized communities to build food sovereignty 4 climate justice.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://streetbooks.org/" target="_blank" rel="noopener noreferrer">Street Books</a>
-      <p>Mobile library &amp; community gathering space for people who live outside: books, glasses, essential needs, &amp; harm reduction.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://portlandmutualaidnetwork.com/" target="_blank" rel="noopener noreferrer">Portland Mutual Aid Network</a>
-      <p>We are an all-volunteer mutual aid group distributing food, survival supplies, and personal care products weekly.</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Portland</h1>
+    <p class="meta">
+      <b>23</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      Oregon
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Portland</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Portland…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="southwest corridor equity coalition (swec)" data-desc="coalition of community organizations fighting displacement and advocating for equitable development in southwest portland through grassroots organizing, mutual aid, and community-led planning initiatives.">
+          <div class="row">
+            <a class="name" href="https://swcorridorequity.org/" target="_blank" rel="noopener noreferrer">Southwest Corridor Equity Coalition (SWEC) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">swcorridorequity.org</span>
+          </div>
+          <p class="desc">Coalition of community organizations fighting displacement and advocating for equitable development in Southwest Portland through grassroots organizing, mutual aid, and community-led planning initiatives.</p>
+        </li>
+        <li data-name="kalikasan solidarity org" data-desc="organizing in solidarity with environmental defenders in the philippines in their struggle for land and livelihood!">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/kalikasan_sol_org/" target="_blank" rel="noopener noreferrer">Kalikasan Solidarity Org <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Organizing in solidarity with environmental defenders in the Philippines in their struggle for land and livelihood!</p>
+        </li>
+        <li data-name="350pdx" data-desc="grassroots climate justice organization building people power to tackle the root causes of climate chaos through mutual aid, direct action, and solidarity with frontline communities.">
+          <div class="row">
+            <a class="name" href="https://350pdx.org/" target="_blank" rel="noopener noreferrer">350PDX <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">350pdx.org</span>
+          </div>
+          <p class="desc">Grassroots climate justice organization building people power to tackle the root causes of climate chaos through mutual aid, direct action, and solidarity with frontline communities.</p>
+        </li>
+        <li data-name="opal environmental justice oregon" data-desc="a grassroots organization building power for environmental justice and civil rights in low-income communities and communities of color through organizing, leadership development, and mutual aid. their work focuses on transit justice, housing rights, and climate action while centering the voices of those most impacted by environmental racism.">
+          <div class="row">
+            <a class="name" href="https://www.opalpdx.org/" target="_blank" rel="noopener noreferrer">OPAL Environmental Justice Oregon <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">opalpdx.org</span>
+          </div>
+          <p class="desc">A grassroots organization building power for environmental justice and civil rights in low-income communities and communities of color through organizing, leadership development, and mutual aid. Their work focuses on transit justice, housing rights, and climate action while centering the voices of those most impacted by environmental racism.</p>
+        </li>
+        <li data-name="revolution rising pdx" data-desc="grassroots collective building mutual aid networks and community power through direct action, political education, and solidarity organizing.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/revolutionrisingpdx/" target="_blank" rel="noopener noreferrer">Revolution Rising PDX <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Grassroots collective building mutual aid networks and community power through direct action, political education, and solidarity organizing.</p>
+        </li>
+        <li data-name="social justice action center (sjac)" data-desc="a community organizing space and mutual aid hub providing resources and support for grassroots movements and social justice initiatives in portland. sjac serves as a gathering place for organizing, skill-sharing, and building collective power.">
+          <div class="row">
+            <a class="name" href="https://sjacpdx.org/" target="_blank" rel="noopener noreferrer">Social Justice Action Center (SJAC) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sjacpdx.org</span>
+          </div>
+          <p class="desc">A community organizing space and mutual aid hub providing resources and support for grassroots movements and social justice initiatives in Portland. SJAC serves as a gathering place for organizing, skill-sharing, and building collective power.</p>
+        </li>
+        <li data-name="critical resistance pdx" data-desc="portland chapter of critical resistance, a national grassroots organization working to abolish the prison industrial complex.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/criticalresistancepdx/" target="_blank" rel="noopener noreferrer">Critical Resistance PDX <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Portland chapter of Critical Resistance, a national grassroots organization working to abolish the prison industrial complex.</p>
+        </li>
+        <li data-name="the people's store pdx" data-desc="mobile mutual aid resourcing unhoused people on occupied multnomah, cowlitz, &amp; grand ronde land.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/thepeoplesstorepdx/" target="_blank" rel="noopener noreferrer">The People's Store PDX <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Mobile mutual aid resourcing unhoused people on occupied Multnomah, Cowlitz, &amp; Grand Ronde land.</p>
+        </li>
+        <li data-name="don't shoot pdx" data-desc="black-led social justice organization focused on art, education, and mutual aid initiatives. provides community resources through their black culture library, art exhibitions, and direct action programs while advocating for civil rights and racial justice.">
+          <div class="row">
+            <a class="name" href="https://www.dontshootpdx.org/" target="_blank" rel="noopener noreferrer">Don't Shoot PDX <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">dontshootpdx.org</span>
+          </div>
+          <p class="desc">Black-led social justice organization focused on art, education, and mutual aid initiatives. Provides community resources through their Black Culture Library, art exhibitions, and direct action programs while advocating for civil rights and racial justice.</p>
+        </li>
+        <li data-name="surj pdx" data-desc="a chapter of showing up for racial justice fostering mutual aid and community solidarity through white anti-racist organizing in the portland metropolitan area. founded in 2013, they coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with bipoc-led organizations. their work is guided by values including calling people in rather than calling out, taking risks and learning from mistakes, and organizing out of mutual interest.">
+          <div class="row">
+            <a class="name" href="https://www.surjpdx.com/" target="_blank" rel="noopener noreferrer">SURJ PDX <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">surjpdx.com</span>
+          </div>
+          <p class="desc">A chapter of Showing Up for Racial Justice fostering mutual aid and community solidarity through white anti-racist organizing in the Portland Metropolitan Area. Founded in 2013, they coordinate political education, direct action support, and solidarity networks while building power through racial justice education and accountable organizing in partnership with BIPOC-led organizations. Their work is guided by values including calling people in rather than calling out, taking risks and learning from mistakes, and organizing out of mutual interest.</p>
+        </li>
+        <li data-name="black food sovereignty coalition" data-desc="coalition igniting black and brown communities to build food sovereignty, community wealth, and leadership within food systems. operates programs including come thru market, grandma's hands, and back to the root while supporting black-owned farms and food initiatives.">
+          <div class="row">
+            <a class="name" href="https://blackfoodnw.org/" target="_blank" rel="noopener noreferrer">Black Food Sovereignty Coalition <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">blackfoodnw.org</span>
+          </div>
+          <p class="desc">Coalition igniting Black and Brown communities to build food sovereignty, community wealth, and leadership within food systems. Operates programs including Come Thru Market, Grandma's Hands, and Back To The Root while supporting Black-owned farms and food initiatives.</p>
+        </li>
+        <li data-name="black &amp; beyond the binary collective" data-desc="organization building leadership, healing, and safety for black-african transgender, queer, nonbinary, two-spirit, and intersex (tqn2si+) oregonians through community support and mutual aid initiatives.">
+          <div class="row">
+            <a class="name" href="https://www.blackbeyondthebinarycollective.org/" target="_blank" rel="noopener noreferrer">Black &amp; Beyond the Binary Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">blackbeyondthebinarycollective.org</span>
+          </div>
+          <p class="desc">Organization building leadership, healing, and safety for Black-African transgender, queer, nonbinary, two-spirit, and intersex (TQN2SI+) Oregonians through community support and mutual aid initiatives.</p>
+        </li>
+        <li data-name="anti-binary pdx" data-desc="mutual aid collective providing direct support and resources to trans and nonbinary community members in portland through solidarity networks and community care.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/antibinarypdx/" target="_blank" rel="noopener noreferrer">Anti-Binary PDX <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Mutual aid collective providing direct support and resources to trans and nonbinary community members in Portland through solidarity networks and community care.</p>
+        </li>
+        <li data-name="eberhardt press" data-desc="radical printing press in portland.">
+          <div class="row">
+            <a class="name" href="https://www.eberhardtpress.org/" target="_blank" rel="noopener noreferrer">Eberhardt Press <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">eberhardtpress.org</span>
+          </div>
+          <p class="desc">Radical printing press in Portland.</p>
+        </li>
+        <li data-name="kaibigan ffps" data-desc="filipino food pantry seattle building international solidarity through mutual aid and community support for the filipino diaspora.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/kaibigan_ffps/" target="_blank" rel="noopener noreferrer">Kaibigan FFPS <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Filipino Food Pantry Seattle building international solidarity through mutual aid and community support for the Filipino diaspora.</p>
+        </li>
+        <li data-name="sông2sea" data-desc="vietnamese solidarity organization fostering political education and community building through study groups, cultural projects, and mutual aid.">
+          <div class="row">
+            <a class="name" href="https://www.song2sea.com/" target="_blank" rel="noopener noreferrer">Sông2Sea <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">song2sea.com</span>
+          </div>
+          <p class="desc">Vietnamese solidarity organization fostering political education and community building through study groups, cultural projects, and mutual aid.</p>
+        </li>
+        <li data-name="capybara colectiva" data-desc="a militant, grassroots org of latin american diaspora fighting and exposing the u.s. imperialism that forces migrants to leave their homelands.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/capybaracolectiva/" target="_blank" rel="noopener noreferrer">Capybara Colectiva <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A militant, grassroots org of Latin American diaspora fighting and exposing the u.s. imperialism that forces migrants to leave their homelands.</p>
+        </li>
+        <li data-name="gabriela portland" data-desc="filipino women's organization building mutual aid networks and international solidarity through grassroots organizing, political education, and cultural work.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/gabriela.pdx/" target="_blank" rel="noopener noreferrer">GABRIELA Portland <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Filipino women's organization building mutual aid networks and international solidarity through grassroots organizing, political education, and cultural work.</p>
+        </li>
+        <li data-name="black &amp; pink pdx" data-desc="pdx org fighting for abolition of the prison industrial complex alongside incarcerated lgbtq people✨mtgs evry 2nd thurs">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/blackandpinkpdx/" target="_blank" rel="noopener noreferrer">Black &amp; Pink PDX <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">PDX org fighting for abolition of the prison industrial complex alongside incarcerated LGBTQ people✨mtgs evry 2nd thurs</p>
+        </li>
+        <li data-name="everly project" data-desc="we provide syringe services, narcan, and other crucial supplies, and run non-traditional recovery groups.">
+          <div class="row">
+            <a class="name" href="https://www.everlyproject.org/" target="_blank" rel="noopener noreferrer">Everly Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">everlyproject.org</span>
+          </div>
+          <p class="desc">We provide syringe services, Narcan, and other crucial supplies, and run non-traditional recovery groups.</p>
+        </li>
+        <li data-name="merp (munincipal eco-resiliency project)
+              multnomah" data-desc="we're about expanding grassroots power &amp; attaining sustainable resources w/ marginalized communities to build food sovereignty 4 climate justice.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/merp.multnomah/" target="_blank" rel="noopener noreferrer">MERP (Munincipal Eco-Resiliency Project)
+              Multnomah <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">We're about expanding grassroots power &amp; attaining sustainable resources w/ marginalized communities to build food sovereignty 4 climate justice.</p>
+        </li>
+        <li data-name="street books" data-desc="mobile library &amp; community gathering space for people who live outside: books, glasses, essential needs, &amp; harm reduction.">
+          <div class="row">
+            <a class="name" href="https://streetbooks.org/" target="_blank" rel="noopener noreferrer">Street Books <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">streetbooks.org</span>
+          </div>
+          <p class="desc">Mobile library &amp; community gathering space for people who live outside: books, glasses, essential needs, &amp; harm reduction.</p>
+        </li>
+        <li data-name="portland mutual aid network" data-desc="we are an all-volunteer mutual aid group distributing food, survival supplies, and personal care products weekly.">
+          <div class="row">
+            <a class="name" href="https://portlandmutualaidnetwork.com/" target="_blank" rel="noopener noreferrer">Portland Mutual Aid Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">portlandmutualaidnetwork.com</span>
+          </div>
+          <p class="desc">We are an all-volunteer mutual aid group distributing food, survival supplies, and personal care products weekly.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

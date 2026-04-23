@@ -1,109 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Milwaukee, WI Mutual Aid Networks - Local Support &amp; Community Resources</title>
-  <meta name="description" content="Find mutual aid initiatives and community support networks in Milwaukee, WI. Connect with local organizations and community resources.">
+  <title>Milwaukee, WI — Organize Directory</title>
+  <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Milwaukee, WI.">
   <link rel="canonical" href="https://organize.directory/milwaukee">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Milwaukee, WI Mutual Aid Networks - Local Support &amp; Community Resources">
-  <meta property="og:description" content="Find mutual aid initiatives and community support networks in Milwaukee, WI. Connect with local organizations and community resources.">
+  <meta property="og:title" content="Milwaukee, WI — Organize Directory">
+  <meta property="og:description" content="Leftist, grassroots, and mutual aid organizations in Milwaukee, WI.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/milwaukee">
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('location');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      
-      <div class="city-page">
-        <div class="breadcrumb">
-          <a href="/location">States</a>
-          <span>›</span>
-          <a href="/wisconsin">Wisconsin</a>
-          <span>›</span>
-          <span>Milwaukee, WI</span>
-        </div>
+<main id="main">
 
-        <h1>Milwaukee, WI</h1>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/wisconsin">Wisconsin</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Milwaukee, WI</span>
+  </nav>
 
-        <div class="city-content">
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://www.facebook.com/MKEMutualAid" target="_blank" rel="noopener noreferrer">Milwaukee Mutual Aid</a>
-      <p>A grassroots network coordinating mutual aid and community support initiatives in Milwaukee. They organize direct assistance, resource sharing, and neighborhood solidarity while building sustainable networks of care and support through community organizing and collective action.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.facebook.com/MKEFridges" target="_blank" rel="noopener noreferrer">Milwaukee Community Fridge</a>
-      <p>A mutual aid collective organizing free food access and community support through public refrigerators in Milwaukee. They coordinate food distribution, resource sharing, and solidarity networks while building power through food justice, community care, and creating spaces for sustainable food access.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.facebook.com/groups/460812344093736/" target="_blank" rel="noopener noreferrer">Milwaukee Mutual Aid</a>
-      <p>A grassroots network fostering community solidarity and direct support across Milwaukee through mutual aid organizing. They coordinate resource sharing, emergency assistance, and community care while building networks of support through local organizing and collective action.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.facebook.com/MCCMutualAid/" target="_blank" rel="noopener noreferrer">Milwaukee Community Care and Mutual Aid</a>
-      <p>Milwaukee Community Care and Mutual Aid was organized to provide collaborative care and information to community members who may be most affected during these uncertain times.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://sites.google.com/blackandpinkmke.org/web" target="_blank" rel="noopener noreferrer">Black and Pink Milwaukee</a>
-      <p>We are a collective in Milwaukee, WI organizing from an abolitionist feminist praxis to support currently and formerly incarcerated people who identify across the LGBTQ+ spectrum and/or living with HIV/AIDS.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.cooperationmke.coop/" target="_blank" rel="noopener noreferrer">Cooperation Milwaukee</a>
-      <p>Libsoc counter-power organization; rank &amp; file unions, worker-owned cooperatives, community assemblies, mutual aid in so called Milwaukee</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/sun__seekermke/" target="_blank" rel="noopener noreferrer">Sun-Seeker MKE</a>
-      <p>A Black &amp; Trans abolitionist collective co-conspiring to build holistic safety &amp; security for Black communities, Trans comrades &amp; M.A.G.E.S.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.instagram.com/butterflycollectivemke/" target="_blank" rel="noopener noreferrer">Butterfly Collective MKE</a>
-      <p>A platform that seeks to uplift and support Black and Brown Trans &amp; Gender nonconforming folks in Milwaukee, WI</p>
-    </div>
-    <div class="initiative">
-      <a href="https://matunion.org/" target="_blank" rel="noopener noreferrer">Milwaukee Autonomous Tenants Union</a>
-      <p>Fighting for the human right to housing and defending tenants' right to dignified and safe homes.</p>
-    </div>
-  </section>
-        </div>
-      </div>
-
-      
-    </main>
+  <div class="page-head">
+    <h1 class="title">Milwaukee, WI</h1>
+    <p class="meta">
+      <b>9</b> groups
+      <span class="sep" aria-hidden="true">·</span>
+      Wisconsin
+    </p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-  
-</body>
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Milwaukee, WI</label>
+    <input id="page-filter" type="search" placeholder="Filter groups in Milwaukee, WI…" autocomplete="off">
+  </div>
 
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="milwaukee mutual aid" data-desc="a grassroots network coordinating mutual aid and community support initiatives in milwaukee. they organize direct assistance, resource sharing, and neighborhood solidarity while building sustainable networks of care and support through community organizing and collective action.">
+          <div class="row">
+            <a class="name" href="https://www.facebook.com/MKEMutualAid" target="_blank" rel="noopener noreferrer">Milwaukee Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">facebook.com</span>
+          </div>
+          <p class="desc">A grassroots network coordinating mutual aid and community support initiatives in Milwaukee. They organize direct assistance, resource sharing, and neighborhood solidarity while building sustainable networks of care and support through community organizing and collective action.</p>
+        </li>
+        <li data-name="milwaukee community fridge" data-desc="a mutual aid collective organizing free food access and community support through public refrigerators in milwaukee. they coordinate food distribution, resource sharing, and solidarity networks while building power through food justice, community care, and creating spaces for sustainable food access.">
+          <div class="row">
+            <a class="name" href="https://www.facebook.com/MKEFridges" target="_blank" rel="noopener noreferrer">Milwaukee Community Fridge <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">facebook.com</span>
+          </div>
+          <p class="desc">A mutual aid collective organizing free food access and community support through public refrigerators in Milwaukee. They coordinate food distribution, resource sharing, and solidarity networks while building power through food justice, community care, and creating spaces for sustainable food access.</p>
+        </li>
+        <li data-name="milwaukee mutual aid" data-desc="a grassroots network fostering community solidarity and direct support across milwaukee through mutual aid organizing. they coordinate resource sharing, emergency assistance, and community care while building networks of support through local organizing and collective action.">
+          <div class="row">
+            <a class="name" href="https://www.facebook.com/groups/460812344093736/" target="_blank" rel="noopener noreferrer">Milwaukee Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">facebook.com</span>
+          </div>
+          <p class="desc">A grassroots network fostering community solidarity and direct support across Milwaukee through mutual aid organizing. They coordinate resource sharing, emergency assistance, and community care while building networks of support through local organizing and collective action.</p>
+        </li>
+        <li data-name="milwaukee community care and mutual aid" data-desc="milwaukee community care and mutual aid was organized to provide collaborative care and information to community members who may be most affected during these uncertain times.">
+          <div class="row">
+            <a class="name" href="https://www.facebook.com/MCCMutualAid/" target="_blank" rel="noopener noreferrer">Milwaukee Community Care and Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">facebook.com</span>
+          </div>
+          <p class="desc">Milwaukee Community Care and Mutual Aid was organized to provide collaborative care and information to community members who may be most affected during these uncertain times.</p>
+        </li>
+        <li data-name="black and pink milwaukee" data-desc="we are a collective in milwaukee, wi organizing from an abolitionist feminist praxis to support currently and formerly incarcerated people who identify across the lgbtq+ spectrum and/or living with hiv/aids.">
+          <div class="row">
+            <a class="name" href="https://sites.google.com/blackandpinkmke.org/web" target="_blank" rel="noopener noreferrer">Black and Pink Milwaukee <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sites.google.com</span>
+          </div>
+          <p class="desc">We are a collective in Milwaukee, WI organizing from an abolitionist feminist praxis to support currently and formerly incarcerated people who identify across the LGBTQ+ spectrum and/or living with HIV/AIDS.</p>
+        </li>
+        <li data-name="cooperation milwaukee" data-desc="libsoc counter-power organization; rank &amp; file unions, worker-owned cooperatives, community assemblies, mutual aid in so called milwaukee">
+          <div class="row">
+            <a class="name" href="https://www.cooperationmke.coop/" target="_blank" rel="noopener noreferrer">Cooperation Milwaukee <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">cooperationmke.coop</span>
+          </div>
+          <p class="desc">Libsoc counter-power organization; rank &amp; file unions, worker-owned cooperatives, community assemblies, mutual aid in so called Milwaukee</p>
+        </li>
+        <li data-name="sun-seeker mke" data-desc="a black &amp; trans abolitionist collective co-conspiring to build holistic safety &amp; security for black communities, trans comrades &amp; m.a.g.e.s.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/sun__seekermke/" target="_blank" rel="noopener noreferrer">Sun-Seeker MKE <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A Black &amp; Trans abolitionist collective co-conspiring to build holistic safety &amp; security for Black communities, Trans comrades &amp; M.A.G.E.S.</p>
+        </li>
+        <li data-name="butterfly collective mke" data-desc="a platform that seeks to uplift and support black and brown trans &amp; gender nonconforming folks in milwaukee, wi">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/butterflycollectivemke/" target="_blank" rel="noopener noreferrer">Butterfly Collective MKE <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A platform that seeks to uplift and support Black and Brown Trans &amp; Gender nonconforming folks in Milwaukee, WI</p>
+        </li>
+        <li data-name="milwaukee autonomous tenants union" data-desc="fighting for the human right to housing and defending tenants' right to dignified and safe homes.">
+          <div class="row">
+            <a class="name" href="https://matunion.org/" target="_blank" rel="noopener noreferrer">Milwaukee Autonomous Tenants Union <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">matunion.org</span>
+          </div>
+          <p class="desc">Fighting for the human right to housing and defending tenants' right to dignified and safe homes.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>

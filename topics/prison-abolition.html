@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Google Analytics -->
-  <script src="/js/analytics.js" defer></script>
-
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Prison Abolition - The Organize Directory</title>
+  <title>Prison Abolition — Organize Directory</title>
   <meta name="description" content="Networks and initiatives working to abolish the prison industrial complex, build
                     alternatives to incarceration, and support currently and formerly incarcerated people.">
   <link rel="canonical" href="https://organize.directory/topics/prison-abolition">
+  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
 
   <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Prison Abolition - The Organize Directory">
+  <meta property="og:title" content="Prison Abolition — Organize Directory">
   <meta property="og:description" content="Networks and initiatives working to abolish the prison industrial complex, build
                     alternatives to incarceration, and support currently and formerly incarcerated people.">
   <meta property="og:type" content="website">
@@ -26,72 +20,152 @@
   <meta property="og:image" content="https://organize.directory/preview.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/fonts/fonts.css">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Initialize Components -->
-  <script type="module">
-    import { initializeSidebar } from '/components/sidebar.js';
-    import { initializeComponents } from '/utils/init.js';
-    initializeSidebar('topics');
-    initializeComponents({});
+  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
+  <script>
+    (function(){
+      try {
+        var stored = localStorage.getItem('theme');
+        var dark = stored ? stored === 'dark'
+                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.add(dark ? 'dark' : 'light');
+      } catch(e) { document.documentElement.classList.add('light'); }
+    })();
   </script>
-  <script src="/js/mobile-optimizations.js" defer></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/styles/system.css">
+
+  <!-- Analytics -->
+  <script src="/js/analytics.js" defer></script>
 </head>
-
 <body>
-  <div class="layout">
-    <div id="sidebar-placeholder"></div>
+<a href="#main" class="skip">Skip to content</a>
+<header class="mast">
+  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</header>
 
-    <main class="content" role="main">
-      <div class="city-page state-page">
-        <div class="breadcrumb">
-          <a href="/topics">Topics</a>
-          <span>›</span>
-          <span>Prison Abolition</span>
-        </div>
+<main id="main">
 
-        <h1>Prison Abolition</h1>
-        <p class="subtitle">Networks and initiatives working to abolish the prison industrial complex, build
-                    alternatives to incarceration, and support currently and formerly incarcerated people.</p>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/">Home</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <a href="/topics">Topics</a>
+    <span class="sep" aria-hidden="true">/</span>
+    <span aria-current="page">Prison Abolition</span>
+  </nav>
 
-  <section id="section-0" class="city-section">
-    <div class="initiative">
-      <a href="https://criticalresistance.org/" target="_blank" rel="noopener noreferrer">Critical Resistance</a>
-      <p>Building an international movement to abolish the prison industrial complex through grassroots organizing, coalition building, political education, and direct action. Their work includes prisoner solidarity programs, The Abolitionist newspaper, fighting imprisonment, resisting policing, and developing alternatives to punishment and control.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://deathpenalty.org/" target="_blank" rel="noopener noreferrer">Death Penalty Focus</a>
-      <p>Organization working to abolish capital punishment through advocacy, education, and grassroots organizing. Building mutual aid networks to support death row prisoners and their families while advancing policy changes and public awareness campaigns for alternatives to the death penalty.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://solitarywatch.org/" target="_blank" rel="noopener noreferrer">Solitary Watch</a>
-      <p>Independent watchdog organization shining light into the darkest corners of the U.S. punishment system through investigative journalism, advocacy, and solidarity with incarcerated people. Their work includes exposing human rights violations in solitary confinement, amplifying voices from solitary, and building public awareness to end this form of torture.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://fighttoxicprisons.wordpress.com/" target="_blank" rel="noopener noreferrer">Fight Toxic Prisons</a>
-      <p>A grassroots coalition challenging the intersection of mass incarceration and environmental justice through direct action, advocacy, and mutual aid support for prisoners affected by toxic conditions and environmental hazards. FTP's mission is to conduct grassroots organizing and direct action to challenge the prison system which is putting prisoners at risk of dangerous environmental conditions, as well as impacting surrounding communities and ecosystems by their construction and operation.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://mongoosedistro.com/" target="_blank" rel="noopener noreferrer">Mongoose Distro</a>
-      <p>A radical distribution project fostering mutual aid and solidarity through prisoner support and political education. They coordinate literature distribution, resource sharing, and solidarity networks while building power through anarchist publishing, prisoner correspondence, and creating spaces for connection across prison walls.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.sisterhelen.org/" target="_blank" rel="noopener noreferrer">Ministry Against Death Penalty</a>
-      <p>The Ministry Against the Death Penalty (MADP) works to end capital punishment by fostering creative, reflective and educational programs that awaken hearts and minds, inspire social change, and strengthen our democracy's commitment to human rights.</p>
-    </div>
-    <div class="initiative">
-      <a href="https://www.prisonpolicy.org/" target="_blank" rel="noopener noreferrer">Prison Policy Initiative</a>
-      <p>Challenging mass incarceration &amp; criminalization through research, advocacy, and organizing.</p>
-    </div>
-  </section>
-      </div>
-    </main>
+  <div class="page-head">
+    <h1 class="title">Prison Abolition</h1>
+    <p class="meta"><b>7</b> groups</p>
   </div>
 
-  <script src="/js/initiative-collapsible.js" defer></script>
-</body>
+  <p class="topic-lede">Networks and initiatives working to abolish the prison industrial complex, build
+                    alternatives to incarceration, and support currently and formerly incarcerated people.</p>
 
+  <div class="filter" role="search">
+    <label class="skip" for="page-filter">Filter groups in Prison Abolition</label>
+    <input id="page-filter" type="search" placeholder="Filter groups…" autocomplete="off">
+  </div>
+
+  <div class="layout">
+
+    <div class="main-col">
+
+      <div id="sections-root">
+    <section id="section-0" class="group-section" data-section="section-0">
+      <ol class="groups">
+        <li data-name="critical resistance" data-desc="building an international movement to abolish the prison industrial complex through grassroots organizing, coalition building, political education, and direct action. their work includes prisoner solidarity programs, the abolitionist newspaper, fighting imprisonment, resisting policing, and developing alternatives to punishment and control.">
+          <div class="row">
+            <a class="name" href="https://criticalresistance.org/" target="_blank" rel="noopener noreferrer">Critical Resistance <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">criticalresistance.org</span>
+          </div>
+          <p class="desc">Building an international movement to abolish the prison industrial complex through grassroots organizing, coalition building, political education, and direct action. Their work includes prisoner solidarity programs, The Abolitionist newspaper, fighting imprisonment, resisting policing, and developing alternatives to punishment and control.</p>
+        </li>
+        <li data-name="death penalty focus" data-desc="organization working to abolish capital punishment through advocacy, education, and grassroots organizing. building mutual aid networks to support death row prisoners and their families while advancing policy changes and public awareness campaigns for alternatives to the death penalty.">
+          <div class="row">
+            <a class="name" href="https://deathpenalty.org/" target="_blank" rel="noopener noreferrer">Death Penalty Focus <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">deathpenalty.org</span>
+          </div>
+          <p class="desc">Organization working to abolish capital punishment through advocacy, education, and grassroots organizing. Building mutual aid networks to support death row prisoners and their families while advancing policy changes and public awareness campaigns for alternatives to the death penalty.</p>
+        </li>
+        <li data-name="solitary watch" data-desc="independent watchdog organization shining light into the darkest corners of the u.s. punishment system through investigative journalism, advocacy, and solidarity with incarcerated people. their work includes exposing human rights violations in solitary confinement, amplifying voices from solitary, and building public awareness to end this form of torture.">
+          <div class="row">
+            <a class="name" href="https://solitarywatch.org/" target="_blank" rel="noopener noreferrer">Solitary Watch <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">solitarywatch.org</span>
+          </div>
+          <p class="desc">Independent watchdog organization shining light into the darkest corners of the U.S. punishment system through investigative journalism, advocacy, and solidarity with incarcerated people. Their work includes exposing human rights violations in solitary confinement, amplifying voices from solitary, and building public awareness to end this form of torture.</p>
+        </li>
+        <li data-name="fight toxic prisons" data-desc="a grassroots coalition challenging the intersection of mass incarceration and environmental justice through direct action, advocacy, and mutual aid support for prisoners affected by toxic conditions and environmental hazards. ftp's mission is to conduct grassroots organizing and direct action to challenge the prison system which is putting prisoners at risk of dangerous environmental conditions, as well as impacting surrounding communities and ecosystems by their construction and operation.">
+          <div class="row">
+            <a class="name" href="https://fighttoxicprisons.wordpress.com/" target="_blank" rel="noopener noreferrer">Fight Toxic Prisons <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">fighttoxicprisons.wordpress.com</span>
+          </div>
+          <p class="desc">A grassroots coalition challenging the intersection of mass incarceration and environmental justice through direct action, advocacy, and mutual aid support for prisoners affected by toxic conditions and environmental hazards. FTP's mission is to conduct grassroots organizing and direct action to challenge the prison system which is putting prisoners at risk of dangerous environmental conditions, as well as impacting surrounding communities and ecosystems by their construction and operation.</p>
+        </li>
+        <li data-name="mongoose distro" data-desc="a radical distribution project fostering mutual aid and solidarity through prisoner support and political education. they coordinate literature distribution, resource sharing, and solidarity networks while building power through anarchist publishing, prisoner correspondence, and creating spaces for connection across prison walls.">
+          <div class="row">
+            <a class="name" href="https://mongoosedistro.com/" target="_blank" rel="noopener noreferrer">Mongoose Distro <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">mongoosedistro.com</span>
+          </div>
+          <p class="desc">A radical distribution project fostering mutual aid and solidarity through prisoner support and political education. They coordinate literature distribution, resource sharing, and solidarity networks while building power through anarchist publishing, prisoner correspondence, and creating spaces for connection across prison walls.</p>
+        </li>
+        <li data-name="ministry against death penalty" data-desc="the ministry against the death penalty (madp) works to end capital punishment by fostering creative, reflective and educational programs that awaken hearts and minds, inspire social change, and strengthen our democracy's commitment to human rights.">
+          <div class="row">
+            <a class="name" href="https://www.sisterhelen.org/" target="_blank" rel="noopener noreferrer">Ministry Against Death Penalty <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">sisterhelen.org</span>
+          </div>
+          <p class="desc">The Ministry Against the Death Penalty (MADP) works to end capital punishment by fostering creative, reflective and educational programs that awaken hearts and minds, inspire social change, and strengthen our democracy's commitment to human rights.</p>
+        </li>
+        <li data-name="prison policy initiative" data-desc="challenging mass incarceration &amp; criminalization through research, advocacy, and organizing.">
+          <div class="row">
+            <a class="name" href="https://www.prisonpolicy.org/" target="_blank" rel="noopener noreferrer">Prison Policy Initiative <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">prisonpolicy.org</span>
+          </div>
+          <p class="desc">Challenging mass incarceration &amp; criminalization through research, advocacy, and organizing.</p>
+        </li>
+      </ol>
+    </section>
+        <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
+      </div>
+
+      <aside class="suggest">
+    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+    <a href="/add" class="btn">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+      Suggest a group
+    </a>
+  </aside>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a href="/add">Add a group</a>
+  <a href="/subscribe">Subscribe</a>
+  <a href="/contact">Contact</a>
+</footer>
+
+<script src="/assets/scripts/theme-toggle.js" defer></script>
+<script src="/assets/scripts/city-page.js" defer></script>
+
+</body>
 </html>
