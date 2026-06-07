@@ -17,73 +17,100 @@ function initTitleSearch() {
 
 // Setup the search UI elements
 function setupSearchUI() {
-     // Check if we're on the location page or homepage
-     const isLocationPage = document.body.classList.contains("location-page");
-     const targetContainer = isLocationPage
-          ? document.getElementById("location-search-section")
-          : document.querySelector(".homepage-content");
+     // Detect the page by which mount point is present rather than a body
+     // class (the location page doesn't reliably carry a `location-page`
+     // class). The location page provides an empty #location-search-section
+     // for us to fill; the homepage ships a static #site-search form we wire
+     // onto directly.
+     const locationMount = document.getElementById("location-search-section");
+     const existingInput = document.getElementById("site-search");
+     const isLocationPage = !!locationMount;
 
-     if (!targetContainer) return;
+     let searchContainer, searchInput, searchResults;
 
-     // Only create if the search container doesn't already exist
-     if (!document.getElementById("title-search-container")) {
-          // Create search container
-          const searchContainer = document.createElement("div");
+     if (existingInput && !isLocationPage) {
+          // Avoid double-initialization
+          if (document.getElementById("title-search-results")) {
+               addSearchStyles();
+               return;
+          }
+
+          searchInput = existingInput;
+          const form = existingInput.closest("form") || existingInput;
+
+          // The form has overflow:hidden, which would clip an absolutely
+          // positioned dropdown. Wrap it in a positioned container and place
+          // the results outside the form so they render fully.
+          const wrapper = document.createElement("div");
+          wrapper.className = "title-search-wrapper";
+          wrapper.style.position = "relative";
+          form.parentNode.insertBefore(wrapper, form);
+          wrapper.appendChild(form);
+
+          searchResults = document.createElement("div");
+          searchResults.id = "title-search-results";
+          searchResults.className = "title-search-results";
+          wrapper.appendChild(searchResults);
+
+          searchContainer = wrapper;
+
+          // Submitting (Enter or the "Go" button) jumps to the top result.
+          form.addEventListener("submit", function (event) {
+               event.preventDefault();
+               const first = searchResults.querySelector("a.title-search-result");
+               if (first) window.location.href = first.getAttribute("href");
+          });
+     } else {
+          // Location page (and any legacy .homepage-content layout): inject our
+          // own input/results into the designated container.
+          const targetContainer =
+               locationMount || document.querySelector(".homepage-content");
+
+          if (!targetContainer) return;
+          if (document.getElementById("title-search-container")) {
+               addSearchStyles();
+               return;
+          }
+
+          searchContainer = document.createElement("div");
           searchContainer.id = "title-search-container";
           searchContainer.className = "title-search-container";
 
-          // Create search input
-          const searchInput = document.createElement("input");
+          searchInput = document.createElement("input");
           searchInput.type = "text";
           searchInput.id = "title-search-input";
           searchInput.className = "title-search-input";
-
-          // Set appropriate placeholder based on page type
           searchInput.placeholder = isLocationPage
                ? "Search states, cities..."
                : "Search states, cities, regions...";
+          searchInput.setAttribute("aria-label", "Search states, cities, regions");
 
-          searchInput.setAttribute(
-               "aria-label",
-               "Search states, cities, regions"
-          );
-
-          // Create search results container
-          const searchResults = document.createElement("div");
+          searchResults = document.createElement("div");
           searchResults.id = "title-search-results";
           searchResults.className = "title-search-results";
 
-          // Add elements to container
           searchContainer.appendChild(searchInput);
           searchContainer.appendChild(searchResults);
 
-          // Add search container to the page
           if (isLocationPage) {
-               // For location page, replace the existing search section
                targetContainer.appendChild(searchContainer);
           } else {
-               // For homepage, insert at the beginning
                targetContainer.insertBefore(
                     searchContainer,
                     targetContainer.firstChild
                );
           }
-
-          // Add event listener for input
-          searchInput.addEventListener(
-               "input",
-               debounce(handleSearchInput, 300)
-          );
-
-          // Close results when clicking outside
-          document.addEventListener("click", function (event) {
-               if (!searchContainer.contains(event.target)) {
-                    searchResults.style.display = "none";
-               }
-          });
      }
 
-     // Add search styles
+     // Shared wiring for whichever input/results we ended up with
+     searchInput.addEventListener("input", debounce(handleSearchInput, 300));
+
+     document.addEventListener("click", function (event) {
+          if (!searchContainer.contains(event.target)) {
+               searchResults.style.display = "none";
+          }
+     });
+
      addSearchStyles();
 }
 
@@ -246,8 +273,9 @@ function handleSearchInput(event) {
 
                const typeDiv = document.createElement("div");
                typeDiv.className = "result-type";
+               const typeLabel = result.type || "Page";
                typeDiv.textContent =
-                    result.type.charAt(0).toUpperCase() + result.type.slice(1);
+                    typeLabel.charAt(0).toUpperCase() + typeLabel.slice(1);
 
                resultItem.append(titleDiv, typeDiv);
                resultsContainer.appendChild(resultItem);
