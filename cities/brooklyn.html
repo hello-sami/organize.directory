@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/brooklyn">
   <meta property="og:image" content="https://organize.directory/preview.png">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -36,16 +36,15 @@
     })();
   </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
+       body weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
 
   <!-- Analytics -->
-  <script src="/js/analytics.js" defer></script>
+  <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
@@ -74,7 +73,7 @@
   <div class="page-head">
     <h1 class="title">Brooklyn</h1>
     <p class="meta">
-      <b>52</b> groups
+      <b>61</b> groups
       <span class="sep" aria-hidden="true">·</span>
       New York
     </p>
@@ -96,16 +95,16 @@
     </button>
     <div id="toc-panel" class="toc-scroll">
       <a href="#bay-ridge" data-section="bay-ridge"><span class="label">Bay Ridge</span> <span class="count">1</span></a>
-      <a href="#bed-stuy" data-section="bed-stuy"><span class="label">Bedford-Stuyvesant (Bed-Stuy)</span> <span class="count">7</span></a>
-      <a href="#bushwick" data-section="bushwick"><span class="label">Bushwick</span> <span class="count">12</span></a>
-      <a href="#clinton-hill-fort-greene" data-section="clinton-hill-fort-greene"><span class="label">Clinton Hill / Fort Greene</span> <span class="count">2</span></a>
+      <a href="#bed-stuy" data-section="bed-stuy"><span class="label">Bedford-Stuyvesant (Bed-Stuy)</span> <span class="count">8</span></a>
+      <a href="#bushwick" data-section="bushwick"><span class="label">Bushwick</span> <span class="count">15</span></a>
+      <a href="#clinton-hill-fort-greene" data-section="clinton-hill-fort-greene"><span class="label">Clinton Hill / Fort Greene</span> <span class="count">3</span></a>
       <a href="#crown-heights" data-section="crown-heights"><span class="label">Crown Heights</span> <span class="count">5</span></a>
-      <a href="#east-brooklyn" data-section="east-brooklyn"><span class="label">East Brooklyn</span> <span class="count">3</span></a>
+      <a href="#east-brooklyn" data-section="east-brooklyn"><span class="label">East Brooklyn</span> <span class="count">4</span></a>
       <a href="#flatbush" data-section="flatbush"><span class="label">Flatbush</span> <span class="count">2</span></a>
-      <a href="#south-brooklyn" data-section="south-brooklyn"><span class="label">South Brooklyn</span> <span class="count">6</span></a>
+      <a href="#south-brooklyn" data-section="south-brooklyn"><span class="label">South Brooklyn</span> <span class="count">7</span></a>
       <a href="#sunset-park" data-section="sunset-park"><span class="label">Sunset Park</span> <span class="count">1</span></a>
-      <a href="#williamsburg" data-section="williamsburg"><span class="label">Williamsburg / Greenpoint</span> <span class="count">4</span></a>
-      <a href="#other" data-section="other"><span class="label">Other</span> <span class="count">9</span></a>
+      <a href="#williamsburg" data-section="williamsburg"><span class="label">Williamsburg / Greenpoint</span> <span class="count">5</span></a>
+      <a href="#other" data-section="other"><span class="label">Other</span> <span class="count">10</span></a>
     </div>
   </nav>
     <div class="main-col">
@@ -175,6 +174,12 @@
             <span class="host">wethepeople.nyc</span>
           </div>
           <p class="desc">Building &amp; organizing through mutual aid efforts. Weekly distro at the corner of Fulton st &amp; Nostrand Ave</p>
+        </li>
+        <li data-name="the word is change: books" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/thewordischange/" target="_blank" rel="noopener noreferrer">The Word Is Change: Books <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
         </li>
       </ol>
     </section>
@@ -266,6 +271,25 @@
           </div>
           <p class="desc">We provide diapers and wipes to our community every Monday, rain or shine! 1094 Broadway, Brooklyn NY.</p>
         </li>
+        <li data-name="bushwick ayuda mutua" data-desc="una red de vecines respaldando vecines en bushwick 🌱 | a network of neighbors supporting neighbors in bushwick">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/bushwickayudamutua/" target="_blank" rel="noopener noreferrer">Bushwick Ayuda Mutua <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Una red de vecines respaldando vecines en Bushwick 🌱 | A network of neighbors supporting neighbors in Bushwick</p>
+        </li>
+        <li data-name="bushwick mutual aid" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/bushwickmutualaid/" target="_blank" rel="noopener noreferrer">Bushwick Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="bushwick free store" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/bushwickfreestore/" target="_blank" rel="noopener noreferrer">Bushwick Free Store <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
       </ol>
     </section>
 
@@ -285,6 +309,12 @@
             <span class="host">instagram.com</span>
           </div>
           <p class="desc">Art, toys, and essential supplies mutual aid distribution for migrant children in the Hall St shelter at Clinton Hill. Every Saturday</p>
+        </li>
+        <li data-name="adelphi free store" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/adelphifreestore/" target="_blank" rel="noopener noreferrer">Adelphi Free Store <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
         </li>
       </ol>
     </section>
@@ -354,6 +384,12 @@
           </div>
           <p class="desc">HOPE is a Tenant Union made up of community members and Tenants' Associations located in Eastern Brooklyn fighting for housing justice!</p>
         </li>
+        <li data-name="universe city nyc" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/universecitynyc/" target="_blank" rel="noopener noreferrer">Universe City NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
       </ol>
     </section>
 
@@ -422,6 +458,12 @@
           </div>
           <p class="desc">We train every-day New Yorkers to provide support to immigrants who cannot afford attorneys.</p>
         </li>
+        <li data-name="kensington-wt mutual aid" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/kwtmutualaid/" target="_blank" rel="noopener noreferrer">Kensington-WT Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
       </ol>
     </section>
 
@@ -468,6 +510,12 @@
             <span class="host">instagram.com</span>
           </div>
           <p class="desc">nbk working group of shut it down 4 palestine organzing against imperialism at home and abroad 🇵🇸 fundraising for @mecaforpeace</p>
+        </li>
+        <li data-name="deflock williamsburg" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/wmbg.against.surveillance/" target="_blank" rel="noopener noreferrer">Deflock Williamsburg <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
         </li>
       </ol>
     </section>
@@ -542,6 +590,13 @@
           </div>
           <p class="desc">We are a community of neighbors in West Brooklyn organizing to support each other through the COVID-19 pandemic and beyond.</p>
         </li>
+        <li data-name="no brooklyn jail" data-desc="a campaign to close rikers, stop the jail’s construction, and redirect spending">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nobrooklynjail/" target="_blank" rel="noopener noreferrer">No Brooklyn Jail <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">A campaign to CLOSE Rikers, STOP the jail’s construction, and REDIRECT spending</p>
+        </li>
       </ol>
     </section>
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
@@ -566,8 +621,8 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js" defer></script>
-<script src="/assets/scripts/city-page.js" defer></script>
+<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
+<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
 
 </body>
 </html>

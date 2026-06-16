@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/minnesota">
   <meta property="og:image" content="https://organize.directory/preview.png">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -36,16 +36,15 @@
     })();
   </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
+       body weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
 
   <!-- Analytics -->
-  <script src="/js/analytics.js" defer></script>
+  <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
@@ -70,7 +69,7 @@
   <div class="page-head">
     <h1 class="title">Minnesota</h1>
     <p class="meta">
-      <b>21</b> statewide groups
+      <b>23</b> statewide groups
     </p>
   </div>
 
@@ -90,7 +89,7 @@
     </button>
     <div id="toc-panel" class="toc-scroll">
       <a href="#places" data-section="places"><span class="label">Places</span></a>
-      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="label">Statewide Organizations</span> <span class="count">21</span></a>
+      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="label">Statewide Organizations</span> <span class="count">23</span></a>
     </div>
   </nav>
     <div class="main-col">
@@ -258,6 +257,18 @@
           </div>
           <p class="desc">Discord server for mutual aid events in the state.</p>
         </li>
+        <li data-name="giniwcollectiveverified" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/giniwcollective/" target="_blank" rel="noopener noreferrer">giniwcollectiveVerified <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="atlas defense" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/atlasdefensemn/" target="_blank" rel="noopener noreferrer">Atlas Defense <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
       </ol>
     </section>
         <p class="empty" id="empty-state" hidden>No places or groups match <b id="empty-query"></b>. Try a different search.</p>
@@ -282,8 +293,8 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js" defer></script>
-<script src="/assets/scripts/city-page.js" defer></script>
+<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
+<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
 
 </body>
 </html>

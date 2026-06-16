@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/queens">
   <meta property="og:image" content="https://organize.directory/preview.png">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -36,16 +36,15 @@
     })();
   </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
+       body weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
 
   <!-- Analytics -->
-  <script src="/js/analytics.js" defer></script>
+  <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
@@ -74,7 +73,7 @@
   <div class="page-head">
     <h1 class="title">Queens</h1>
     <p class="meta">
-      <b>19</b> groups
+      <b>25</b> groups
       <span class="sep" aria-hidden="true">·</span>
       New York
     </p>
@@ -95,13 +94,13 @@
       <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
     </button>
     <div id="toc-panel" class="toc-scroll">
-      <a href="#astoria" data-section="astoria"><span class="label">Astoria</span> <span class="count">4</span></a>
+      <a href="#astoria" data-section="astoria"><span class="label">Astoria</span> <span class="count">7</span></a>
       <a href="#flushing" data-section="flushing"><span class="label">Flushing</span> <span class="count">1</span></a>
       <a href="#jackson-heights" data-section="jackson-heights"><span class="label">Jackson Heights</span> <span class="count">1</span></a>
-      <a href="#ridgewood" data-section="ridgewood"><span class="label">Ridgewood</span> <span class="count">2</span></a>
+      <a href="#ridgewood" data-section="ridgewood"><span class="label">Ridgewood</span> <span class="count">3</span></a>
       <a href="#transportation" data-section="transportation"><span class="label">Transportation</span> <span class="count">1</span></a>
-      <a href="#woodside" data-section="woodside"><span class="label">Woodside</span> <span class="count">2</span></a>
-      <a href="#other" data-section="other"><span class="label">Other</span> <span class="count">8</span></a>
+      <a href="#woodside" data-section="woodside"><span class="label">Woodside</span> <span class="count">3</span></a>
+      <a href="#other" data-section="other"><span class="label">Other</span> <span class="count">9</span></a>
     </div>
   </nav>
     <div class="main-col">
@@ -137,6 +136,24 @@
             <span class="host">caaav.org</span>
           </div>
           <p class="desc">Building power with working class Asian immigrants in Chinatown and Astoria through tenant organizing, fighting gentrification, and developing grassroots leadership to shape the future of our neighborhoods.</p>
+        </li>
+        <li data-name="the rolling library" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/therollinglibrary/" target="_blank" rel="noopener noreferrer">The Rolling Library <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="astoria mutual aid network" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/astoria_mutual_aid/" target="_blank" rel="noopener noreferrer">Astoria Mutual Aid Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="queens jail support" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/queensjailsupport/" target="_blank" rel="noopener noreferrer">Queens Jail Support <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
         </li>
       </ol>
     </section>
@@ -183,6 +200,12 @@
           </div>
           <p class="desc">Building power with our neighbors to fight displacement in the Ridgewood community.</p>
         </li>
+        <li data-name="ridgewoodcommons" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/ridgewoodcommons/" target="_blank" rel="noopener noreferrer">ridgewoodcommons <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
       </ol>
     </section>
 
@@ -215,6 +238,12 @@
             <span class="host">swma.nyc</span>
           </div>
           <p class="desc">Neighbors helping neighbors in Woodside with food distribution, resource sharing, and community support.</p>
+        </li>
+        <li data-name="sunnyside &amp; woodside ma" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/swma.nyc/" target="_blank" rel="noopener noreferrer">Sunnyside &amp; Woodside MA <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
         </li>
       </ol>
     </section>
@@ -282,6 +311,12 @@
           </div>
           <p class="desc">Woodbine is an experimental hub building autonomy in Ridgewood, Queens. 585 Woodward Ave.</p>
         </li>
+        <li data-name="jamaica center distro" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/jcdqueens/" target="_blank" rel="noopener noreferrer">Jamaica Center Distro <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
       </ol>
     </section>
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
@@ -306,8 +341,8 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js" defer></script>
-<script src="/assets/scripts/city-page.js" defer></script>
+<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
+<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
 
 </body>
 </html>

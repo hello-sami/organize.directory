@@ -18,12 +18,110 @@
 
 import fs from 'fs/promises';
 import path from 'path';
+import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const DRY_RUN = process.argv.includes('--dry-run');
 const PREVIEW = process.argv.includes('--preview');
+
+// ─── Asset cache-busting ────────────────────────────────────────────────────
+// CSS/JS are served `immutable, max-age=1yr` (see _headers). Without a per-
+// content token the browser would never re-fetch an edited file. We append
+// ?v=<contenthash> so a changed file gets a new URL and is re-fetched, while
+// unchanged files stay cached forever. Populated once at build start.
+const VERSIONED_ASSETS = [
+  '/assets/styles/system.css',
+  '/assets/scripts/city-page.js',
+  '/assets/scripts/theme-toggle.js',
+  '/js/title-search.js',
+  '/js/analytics.js',
+  '/js/newsletter-form.js',
+];
+const ASSET_HASHES = {};
+
+async function computeAssetHashes() {
+  for (const a of VERSIONED_ASSETS) {
+    try {
+      const buf = await fs.readFile(path.join(ROOT, a.replace(/^\//, '')));
+      ASSET_HASHES[a] = crypto.createHash('sha256').update(buf).digest('hex').slice(0, 8);
+    } catch {
+      /* asset missing (e.g. partial checkout) — leave unversioned */
+    }
+  }
+}
+
+// Append the content hash to a site-absolute asset path: /x.css → /x.css?v=ab12cd34
+function assetUrl(p) {
+  const h = ASSET_HASHES[p];
+  return h ? `${p}?v=${h}` : p;
+}
+
+function escapeRegExp(s) {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Hand-maintained pages (location.html, contact.html, …) carry their own static
+// <head> rather than going through systemHead(). This brings them in line with
+// generated pages: drop the Google Fonts <link> (fonts are self-hosted now),
+// preload the body font, and apply the same ?v=<hash> cache-busting. Idempotent
+// — re-running with unchanged assets is a no-op, so it only churns these files
+// when an asset they reference actually changed.
+const STATIC_PAGES = [
+  'location.html', 'topics.html', 'guides.html', 'contact.html',
+  'subscribe.html', 'thank-you.html', 'add.html', '404.html',
+];
+
+function processStaticHead(html) {
+  // 1. Drop Google Fonts preconnects + stylesheet link (now self-hosted).
+  html = html
+    .split('\n')
+    .filter(l => !/fonts\.(googleapis|gstatic)\.com/.test(l))
+    .join('\n');
+
+  // 2. Preload the self-hosted body font, just before the system stylesheet.
+  if (!html.includes('/assets/fonts/archivo-latin-var.woff2')) {
+    html = html.replace(
+      /([ \t]*)(<link rel="stylesheet" href="\/assets\/styles\/system\.css)/,
+      '$1<link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>\n$1$2',
+    );
+  }
+
+  // 3. Match generated pages: large Twitter card (preview.png is a wide image).
+  html = html.replace(
+    /(<meta name="twitter:card" content=")summary(">)/,
+    '$1summary_large_image$2',
+  );
+
+  // 4. Apply ?v=<hash> to every known asset (stripping any prior ?v=…).
+  for (const a of VERSIONED_ASSETS) {
+    const h = ASSET_HASHES[a];
+    if (!h) continue;
+    const re = new RegExp(escapeRegExp(a) + '(\\?v=[a-f0-9]+)?', 'g');
+    html = html.replace(re, `${a}?v=${h}`);
+  }
+  return html;
+}
+
+async function processStaticPages(rootDir) {
+  let changed = 0;
+  for (const f of STATIC_PAGES) {
+    const fp = path.join(rootDir, f);
+    let html;
+    try {
+      html = await fs.readFile(fp, 'utf-8');
+    } catch {
+      continue; // page not present (e.g. preview root before copy)
+    }
+    const out = processStaticHead(html);
+    if (out !== html) {
+      await fs.writeFile(fp, out, 'utf-8');
+      changed++;
+    }
+  }
+  return changed;
+}
 
 // ─── Shared helpers ─────────────────────────────────────────────────────────
 
@@ -71,7 +169,7 @@ function systemHead({ title, description, canonicalPath, ogImage = '/preview.png
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory${canonicalPath}">
   <meta property="og:image" content="https://organize.directory${ogImage}">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -91,16 +189,15 @@ function systemHead({ title, description, canonicalPath, ogImage = '/preview.png
     })();
   </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
+       body weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css">
+  <link rel="stylesheet" href="${assetUrl('/assets/styles/system.css')}">
 
   <!-- Analytics -->
-  <script src="/js/analytics.js" defer></script>`;
+  <script src="${assetUrl('/js/analytics.js')}" defer></script>`;
 }
 
 function renderMast() {
@@ -335,8 +432,8 @@ ${childrenHtml ? childrenHtml + '\n\n' : ''}${sectionsHtml}
 
 ${renderFooter()}
 
-<script src="/assets/scripts/theme-toggle.js" defer></script>
-<script src="/assets/scripts/city-page.js" defer></script>
+<script src="${assetUrl('/assets/scripts/theme-toggle.js')}" defer></script>
+<script src="${assetUrl('/assets/scripts/city-page.js')}" defer></script>
 
 </body>
 </html>
@@ -431,8 +528,8 @@ ${childrenHtml ? childrenHtml + '\n\n' : ''}${sectionsHtml}
 
 ${renderFooter()}
 
-<script src="/assets/scripts/theme-toggle.js" defer></script>
-<script src="/assets/scripts/city-page.js" defer></script>
+<script src="${assetUrl('/assets/scripts/theme-toggle.js')}" defer></script>
+<script src="${assetUrl('/assets/scripts/city-page.js')}" defer></script>
 
 </body>
 </html>
@@ -516,8 +613,8 @@ ${sectionsHtml}
 
 ${renderFooter()}
 
-<script src="/assets/scripts/theme-toggle.js" defer></script>
-<script src="/assets/scripts/city-page.js" defer></script>
+<script src="${assetUrl('/assets/scripts/theme-toggle.js')}" defer></script>
+<script src="${assetUrl('/assets/scripts/city-page.js')}" defer></script>
 
 </body>
 </html>
@@ -571,8 +668,8 @@ ${renderMast()}
 
 ${renderFooter()}
 
-<script src="/assets/scripts/theme-toggle.js" defer></script>
-<script src="/js/title-search.js" defer></script>
+<script src="${assetUrl('/assets/scripts/theme-toggle.js')}" defer></script>
+<script src="${assetUrl('/js/title-search.js')}" defer></script>
 </body>
 </html>
 `;
@@ -870,6 +967,9 @@ async function runLiveBuild({ locationIndex, stateIndex, topicIndex, childrenOf,
   await fs.writeFile(path.join(ROOT, 'data', 'stats.json'), JSON.stringify(stats, null, 2), 'utf-8');
   console.log(`Wrote data/stats.json (${stats.groups} groups, ${stats.cities} cities, ${stats.categories} categories)`);
 
+  const staticChanged = await processStaticPages(ROOT);
+  console.log(`Processed static pages (font + cache-bust): ${staticChanged} updated`);
+
   return { locationPairs, statePairs, topicPairs, sitemapCount };
 }
 
@@ -957,6 +1057,9 @@ async function runPreviewBuild({ locationIndex, stateIndex, topicIndex, children
   await copyPreviewAssets(PREVIEW_ROOT);
   console.log('Copied /assets, favicons, and /js/title-search.js + /js/analytics.js into dist-preview/');
 
+  const staticChanged = await processStaticPages(PREVIEW_ROOT);
+  console.log(`Processed static pages (font + cache-bust): ${staticChanged} updated`);
+
   return { locationPairs, statePairs, topicPairs, sitemapCount };
 }
 
@@ -967,6 +1070,8 @@ async function runPreviewBuild({ locationIndex, stateIndex, topicIndex, children
 async function run() {
   const mode = PREVIEW ? '🔬 PREVIEW' : (DRY_RUN ? '🔍 DRY RUN' : '🏗  BUILD');
   console.log(`${mode}  Building HTML from JSON\n`);
+
+  await computeAssetHashes();
 
   const [locationIndex, stateIndex, topicIndex] = await Promise.all([
     loadDir(path.join(ROOT, 'data/locations')),

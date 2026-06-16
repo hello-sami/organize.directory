@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/mendocino-county">
   <meta property="og:image" content="https://organize.directory/preview.png">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -36,16 +36,15 @@
     })();
   </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
+       body weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
 
   <!-- Analytics -->
-  <script src="/js/analytics.js" defer></script>
+  <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
@@ -74,7 +73,7 @@
   <div class="page-head">
     <h1 class="title">Mendocino County</h1>
     <p class="meta">
-      <b>6</b> groups
+      <b>4</b> groups
       <span class="sep" aria-hidden="true">·</span>
       California
     </p>
@@ -92,13 +91,6 @@
       <div id="sections-root">
     <section id="section-0" class="group-section" data-section="section-0">
       <ol class="groups">
-        <li data-name="surj mendo coast" data-desc="local chapter of showing up for racial justice, a group that organizes white people for anti-racism.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/surj_mendo_coast/" target="_blank" rel="noopener noreferrer">SURJ Mendo Coast <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
-          <p class="desc">Local chapter of Showing Up for Racial Justice, a group that organizes white people for anti-racism.</p>
-        </li>
         <li data-name="mendocino county safe space project" data-desc="local chapter of showing up for racial justice, a group that organizes white people for anti-racism.">
           <div class="row">
             <a class="name" href="https://www.mendocountysafespace.org/" target="_blank" rel="noopener noreferrer">Mendocino County Safe Space Project <span class="ext" aria-hidden="true">↗</span></a>
@@ -118,13 +110,6 @@
 
     <section id="section-1" class="group-section" data-section="section-1">
       <ol class="groups">
-        <li data-name="surj mendo coast" data-desc="local chapter of showing up for racial justice, a group that organizes white people for anti-racism.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/surj_mendo_coast/" target="_blank" rel="noopener noreferrer">SURJ Mendo Coast <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
-          <p class="desc">Local chapter of Showing Up for Racial Justice, a group that organizes white people for anti-racism.</p>
-        </li>
         <li data-name="mendocino county safe space project" data-desc="local chapter of showing up for racial justice, a group that organizes white people for anti-racism.">
           <div class="row">
             <a class="name" href="https://www.mendocountysafespace.org/" target="_blank" rel="noopener noreferrer">Mendocino County Safe Space Project <span class="ext" aria-hidden="true">↗</span></a>
@@ -163,8 +148,8 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js" defer></script>
-<script src="/assets/scripts/city-page.js" defer></script>
+<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
+<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
 
 </body>
 </html>

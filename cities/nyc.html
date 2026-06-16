@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/nyc">
   <meta property="og:image" content="https://organize.directory/preview.png">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -36,16 +36,15 @@
     })();
   </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
+       body weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
 
   <!-- Analytics -->
-  <script src="/js/analytics.js" defer></script>
+  <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
@@ -72,7 +71,7 @@
   <div class="page-head">
     <h1 class="title">New York City</h1>
     <p class="meta">
-      <b>176</b> groups
+      <b>214</b> groups
       <span class="sep" aria-hidden="true">·</span>
       New York
     </p>
@@ -97,19 +96,19 @@
       <a href="#event-calendars" data-section="event-calendars"><span class="label">Event Calendars</span> <span class="count">2</span></a>
       <a href="#abortion" data-section="abortion"><span class="label">Abortion</span> <span class="count">2</span></a>
       <a href="#black-liberation" data-section="black-liberation"><span class="label">Black Liberation</span> <span class="count">8</span></a>
-      <a href="#community-spaces" data-section="community-spaces"><span class="label">Community Spaces</span> <span class="count">13</span></a>
-      <a href="#environmental" data-section="environmental"><span class="label">Environmental Justice</span> <span class="count">4</span></a>
-      <a href="#harm-reduction" data-section="harm-reduction"><span class="label">Harm Reduction</span> <span class="count">2</span></a>
+      <a href="#community-spaces" data-section="community-spaces"><span class="label">Community Spaces</span> <span class="count">14</span></a>
+      <a href="#environmental" data-section="environmental"><span class="label">Environmental Justice</span> <span class="count">5</span></a>
+      <a href="#harm-reduction" data-section="harm-reduction"><span class="label">Harm Reduction</span> <span class="count">3</span></a>
       <a href="#homeless" data-section="homeless"><span class="label">Homeless Solidarity</span> <span class="count">4</span></a>
-      <a href="#housing" data-section="housing"><span class="label">Housing Justice</span> <span class="count">9</span></a>
+      <a href="#housing" data-section="housing"><span class="label">Housing Justice</span> <span class="count">11</span></a>
       <a href="#jewish" data-section="jewish"><span class="label">Jewish Solidarity</span> <span class="count">6</span></a>
       <a href="#labor" data-section="labor"><span class="label">Labor Organizing</span> <span class="count">9</span></a>
-      <a href="#lgbt" data-section="lgbt"><span class="label">LGBTQ+ Solidarity</span> <span class="count">15</span></a>
-      <a href="#migrants" data-section="migrants"><span class="label">Migrant Solidarity</span> <span class="count">15</span></a>
-      <a href="#palestine" data-section="palestine"><span class="label">Palestine Solidarity</span> <span class="count">20</span></a>
-      <a href="#prison-abolition" data-section="prison-abolition"><span class="label">Prison Abolition and Prisoner Solidarity</span> <span class="count">26</span></a>
+      <a href="#lgbt" data-section="lgbt"><span class="label">LGBTQ+ Solidarity</span> <span class="count">17</span></a>
+      <a href="#migrants" data-section="migrants"><span class="label">Migrant Solidarity</span> <span class="count">21</span></a>
+      <a href="#palestine" data-section="palestine"><span class="label">Palestine Solidarity</span> <span class="count">23</span></a>
+      <a href="#prison-abolition" data-section="prison-abolition"><span class="label">Prison Abolition and Prisoner Solidarity</span> <span class="count">35</span></a>
       <a href="#sex-workers" data-section="sex-workers"><span class="label">Sex Worker Solidarity</span> <span class="count">3</span></a>
-      <a href="#other" data-section="other"><span class="label">Other Groups</span> <span class="count">38</span></a>
+      <a href="#other" data-section="other"><span class="label">Other Groups</span> <span class="count">51</span></a>
     </div>
   </nav>
     <div class="main-col">
@@ -322,6 +321,15 @@
           </div>
           <p class="desc">A radical bookstore in Bed-Stuy, Brooklyn, selling used and new books, hosting readings and meetings, buying books for resale, and supporting visual artists.</p>
         </li>
+        <li data-name="interference archive" data-desc="open mon 6-9, fri 1-6, sat + sun 12-5.
+ // info@interferencearchive.org // 314 7th st. occupied lenape land, brooklyn.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/interferencearchive/" target="_blank" rel="noopener noreferrer">Interference Archive <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">open mon 6-9, fri 1-6, sat + sun 12-5.
+ // info@interferencearchive.org // 314 7th St. occupied Lenape land, Brooklyn.</p>
+        </li>
       </ol>
     </section>
 
@@ -356,6 +364,12 @@
           </div>
           <p class="desc">Building healthy communities by ensuring people of color and low-income residents participate in environmental decision-making.</p>
         </li>
+        <li data-name="@350nyc" data-desc="">
+          <div class="row">
+            <a class="name" href="https://bsky.app/profile/350nyc.bsky.social" target="_blank" rel="noopener noreferrer">@350NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">bsky.app</span>
+          </div>
+        </li>
       </ol>
     </section>
 
@@ -375,6 +389,12 @@
             <span class="host">vocal-ny.org</span>
           </div>
           <p class="desc">VOCAL-NY has been building power among low-income people affected by HIV/AIDS, the drug war, mass incarceration, and homelessness in order to create healthy and just communities.</p>
+        </li>
+        <li data-name="partysafe medics llc" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/partysafemedics/" target="_blank" rel="noopener noreferrer">PartySafe Medics LLC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
         </li>
       </ol>
     </section>
@@ -478,6 +498,18 @@
             <span class="host">weunlock.nyc</span>
           </div>
           <p class="desc">The tools you need to stand up for yourself on your housing search - created with and led by tenants who've been there.</p>
+        </li>
+        <li data-name="youth alliance for housing (yah)" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/youth4housing/" target="_blank" rel="noopener noreferrer">Youth Alliance for Housing (YAH) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="right to counsel" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/righttocounselnyc/" target="_blank" rel="noopener noreferrer">Right to Counsel <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
         </li>
       </ol>
     </section>
@@ -707,6 +739,21 @@
           </div>
           <p class="desc">Organizers of the annual Queer Liberation March</p>
         </li>
+        <li data-name="queer disability aid" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/queerdisabilityaid/" target="_blank" rel="noopener noreferrer">Queer Disability Aid <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="⚔️ a strap &amp; a strategy ⚔️" data-desc="black trans women-led socialist front organizing for the liberation of all oppressed people
+💌 armthedollz@proton.me">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/armthedollz/" target="_blank" rel="noopener noreferrer">⚔️ A STRAP &amp; A STRATEGY ⚔️ <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">black trans women-led socialist front organizing for the liberation of all oppressed people
+💌 armthedollz@proton.me</p>
+        </li>
       </ol>
     </section>
 
@@ -817,6 +864,45 @@
             <span class="host">instagram.com</span>
           </div>
           <p class="desc">We keep us safe! join us in defending those who have been displaced by capitalism:mutual aid, fightback, &amp; solidarity</p>
+        </li>
+        <li data-name="immigration coalition" data-desc="immigration advocacy | pic abolition | mutual aid | not an org/non-profit | not affiliated with the nyic 
+follow b/u account @immigration_coalition">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/immigrationcoalition/" target="_blank" rel="noopener noreferrer">Immigration Coalition <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Immigration Advocacy | PIC Abolition | Mutual Aid | NOT an Org/NON-PROFIT | Not Affiliated with the NYIC 
+Follow B/U account @immigration_coalition</p>
+        </li>
+        <li data-name="make the road new york" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/maketheroadny/" target="_blank" rel="noopener noreferrer">Make the Road New York <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="new york immigration coalition (nyic)" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/thenyic/" target="_blank" rel="noopener noreferrer">New York Immigration Coalition (NYIC) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="la mif migrant resource collective" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/la_mif_nyc/" target="_blank" rel="noopener noreferrer">La Mif Migrant Resource Collective <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="immigrant justice working group of nyc-dsa" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/immigrant.justice.nycdsa/" target="_blank" rel="noopener noreferrer">Immigrant Justice Working Group of NYC-DSA <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="iceoutofny" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/iceoutofny/" target="_blank" rel="noopener noreferrer">iceoutofny <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
         </li>
       </ol>
     </section>
@@ -963,6 +1049,24 @@
             <span class="host">writersagainstthewarongaza.com</span>
           </div>
           <p class="desc">Building a cultural front for a free Palestine. They write and publish the New York War Crimes.</p>
+        </li>
+        <li data-name="jews for racial &amp; economic justice" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/jfrejnyc/" target="_blank" rel="noopener noreferrer">Jews for Racial &amp; Economic Justice <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="pal-awda ny🗝️" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/palawda/" target="_blank" rel="noopener noreferrer">Pal-Awda NY🗝️ <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="pym nyc" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nycpym/" target="_blank" rel="noopener noreferrer">PYM NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
         </li>
       </ol>
     </section>
@@ -1153,6 +1257,63 @@
             <span class="host">instagram.com</span>
           </div>
           <p class="desc">NYC Chapter of the Weelaunee Defense Society In solidarity with the movement to defend the Atlanta forest</p>
+        </li>
+        <li data-name="nycarg" data-desc="anti-imperialist organization fighting against prisons and state repression.
+nycantirepressiongroup@proton.me">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nycantirepressiongroup/" target="_blank" rel="noopener noreferrer">NYCARG <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">Anti-imperialist organization fighting against prisons and state repression.
+nycantirepressiongroup@proton.me</p>
+        </li>
+        <li data-name="#closerikers" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/closerikersnow/" target="_blank" rel="noopener noreferrer">#CLOSErikers <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="#haltsolitary" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/haltsolitary_ny/" target="_blank" rel="noopener noreferrer">#HALTsolitary <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="women's prison association" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/wpa_nyc/" target="_blank" rel="noopener noreferrer">Women's Prison Association <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="interrupting criminalization" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/interruptcrim/" target="_blank" rel="noopener noreferrer">Interrupting Criminalization <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="worth rises" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/worthrises/" target="_blank" rel="noopener noreferrer">Worth Rises <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="nyc books through bars" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nycbooksthroughbars/" target="_blank" rel="noopener noreferrer">NYC Books through Bars <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="surveillance technology oversight project (s.t.o.p.)" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/stopspyingny/" target="_blank" rel="noopener noreferrer">Surveillance Technology Oversight Project (S.T.O.P.) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="books4rikers" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/books4rikers/" target="_blank" rel="noopener noreferrer">books4rikers <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
         </li>
       </ol>
     </section>
@@ -1453,6 +1614,84 @@
           </div>
           <p class="desc">We are V.I.P.R. and our mission is to defend Puerto Rico and Puerto Rican communities worldwide. To rebuild,restore,&amp;respond in times of need&amp;to reclaim our history and culture!</p>
         </li>
+        <li data-name="mutual aid nyc" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/mutualaidnyc/" target="_blank" rel="noopener noreferrer">Mutual Aid NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="nycresourcelibrary" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nycresourcelibrary/" target="_blank" rel="noopener noreferrer">nycresourcelibrary <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="new york city action medical (nycam)" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nycactionmedical/" target="_blank" rel="noopener noreferrer">New York City Action Medical (NYCAM) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="the legal aid society" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/legalaidnyc/" target="_blank" rel="noopener noreferrer">The Legal Aid Society <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="action readiness collective of nyc (arcnyc)" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/actionreadinesscollective_nyc/" target="_blank" rel="noopener noreferrer">Action Readiness Collective of NYC (ARCNYC) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="worn not torn exchange nyc" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/wornnottornexchange.nyc/" target="_blank" rel="noopener noreferrer">Worn Not Torn Exchange NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="flood the streets nyc" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/floodthestreetsnyc/" target="_blank" rel="noopener noreferrer">Flood the Streets NYC <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="a new world in our hearts" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/iohnyc/" target="_blank" rel="noopener noreferrer">A New World In Our Hearts <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="nyc social movements" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/nyc_social_movements/" target="_blank" rel="noopener noreferrer">NYC Social Movements <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="n.y. cultural solidarity project" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/culturalsolidarity/" target="_blank" rel="noopener noreferrer">N.Y. Cultural Solidarity Project <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="degrownyc" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/degrownyc/" target="_blank" rel="noopener noreferrer">degrownyc <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="desis rising up &amp; moving" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/drumnyc/" target="_blank" rel="noopener noreferrer">Desis Rising Up &amp; Moving <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="soar over hate" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/soaroverhate/" target="_blank" rel="noopener noreferrer">soar over hate <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
       </ol>
     </section>
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
@@ -1477,8 +1716,8 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js" defer></script>
-<script src="/assets/scripts/city-page.js" defer></script>
+<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
+<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
 
 </body>
 </html>

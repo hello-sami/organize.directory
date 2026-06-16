@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/manhattan">
   <meta property="og:image" content="https://organize.directory/preview.png">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -36,16 +36,15 @@
     })();
   </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
+       body weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
 
   <!-- Analytics -->
-  <script src="/js/analytics.js" defer></script>
+  <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
@@ -74,7 +73,7 @@
   <div class="page-head">
     <h1 class="title">Manhattan</h1>
     <p class="meta">
-      <b>32</b> groups
+      <b>36</b> groups
       <span class="sep" aria-hidden="true">·</span>
       New York
     </p>
@@ -95,14 +94,14 @@
       <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
     </button>
     <div id="toc-panel" class="toc-scroll">
-      <a href="#east-village" data-section="east-village"><span class="label">East Village</span> <span class="count">3</span></a>
+      <a href="#east-village" data-section="east-village"><span class="label">East Village</span> <span class="count">4</span></a>
       <a href="#greenwich-village" data-section="greenwich-village"><span class="label">Greenwich Village</span> <span class="count">2</span></a>
       <a href="#hells-kitchen" data-section="hells-kitchen"><span class="label">Hell's Kitchen</span> <span class="count">2</span></a>
-      <a href="#lower-east-side" data-section="lower-east-side"><span class="label">Lower East Side and Chinatown</span> <span class="count">11</span></a>
+      <a href="#lower-east-side" data-section="lower-east-side"><span class="label">Lower East Side and Chinatown</span> <span class="count">12</span></a>
       <a href="#lower-manhattan" data-section="lower-manhattan"><span class="label">Lower Manhattan</span> <span class="count">1</span></a>
       <a href="#midtown" data-section="midtown"><span class="label">Midtown</span> <span class="count">1</span></a>
-      <a href="#upper-east-side" data-section="upper-east-side"><span class="label">Upper East Side</span> <span class="count">1</span></a>
-      <a href="#uptown" data-section="uptown"><span class="label">Uptown</span> <span class="count">11</span></a>
+      <a href="#upper-east-side" data-section="upper-east-side"><span class="label">Upper East Side</span> <span class="count">2</span></a>
+      <a href="#uptown" data-section="uptown"><span class="label">Uptown</span> <span class="count">12</span></a>
     </div>
   </nav>
     <div class="main-col">
@@ -131,6 +130,12 @@
             <span class="host">sixthstreetcenter.org</span>
           </div>
           <p class="desc">Sixth Street Community Center is a community-based not-for-profit organization founded in 1978 and committed to advancing social, environmental, housing, economic and racial justice in the East Village and Lower East Side community.</p>
+        </li>
+        <li data-name="cafewal.nyc" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/cafewal.nyc/" target="_blank" rel="noopener noreferrer">cafewal.nyc <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
         </li>
       </ol>
     </section>
@@ -261,6 +266,13 @@
           </div>
           <p class="desc">Young and young at heart fighting displacement in the LES and Chinatown, picket with us every Thu-Sun 11am-1pm outside MOCA</p>
         </li>
+        <li data-name="art against displacement" data-desc="aad supports fights against displacement. based in nyc’s lower east side &amp; chinatown on unceded lenape land. we meet the 2nd tuesday of every month.">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/aad.nyc/" target="_blank" rel="noopener noreferrer">Art Against Displacement <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+          <p class="desc">AAD supports fights against displacement. Based in NYC’s Lower East Side &amp; Chinatown on unceded Lenape land. We meet the 2nd Tuesday of every month.</p>
+        </li>
       </ol>
     </section>
 
@@ -299,6 +311,12 @@
             <span class="host">ues-mutual-aid.jimdosite.com</span>
           </div>
           <p class="desc">Mutual aid network serving the Upper East Side community</p>
+        </li>
+        <li data-name="ues collective action network" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/ues.can/" target="_blank" rel="noopener noreferrer">UES Collective Action Network <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
         </li>
       </ol>
     </section>
@@ -385,6 +403,12 @@
           </div>
           <p class="desc">Building &amp; organizing through mutual aid efforts. Weekly distro on Lexington Ave between 124th and 125th St</p>
         </li>
+        <li data-name="west harlem ayuda mutua" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/westharlemayudamutua/" target="_blank" rel="noopener noreferrer">West Harlem Ayuda Mutua <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
       </ol>
     </section>
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
@@ -409,8 +433,8 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js" defer></script>
-<script src="/assets/scripts/city-page.js" defer></script>
+<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
+<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
 
 </body>
 </html>

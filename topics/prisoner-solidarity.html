@@ -18,7 +18,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/topics/prisoner-solidarity">
   <meta property="og:image" content="https://organize.directory/preview.png">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -38,16 +38,15 @@
     })();
   </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
+       body weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
 
   <!-- Analytics -->
-  <script src="/js/analytics.js" defer></script>
+  <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
@@ -73,7 +72,7 @@
 
   <div class="page-head">
     <h1 class="title">Prisoner Solidarity</h1>
-    <p class="meta"><b>14</b> groups</p>
+    <p class="meta"><b>18</b> groups</p>
   </div>
 
   <p class="topic-lede">Organizations and resources supporting incarcerated individuals, their families, and
@@ -97,7 +96,7 @@
       <a href="#re-entry-support" data-section="re-entry-support"><span class="label">Re-Entry Support</span> <span class="count">1</span></a>
       <a href="#national-initiatives" data-section="national-initiatives"><span class="label">National Initiatives</span> <span class="count">7</span></a>
       <a href="#books-education" data-section="books-education"><span class="label">Books &amp; Education</span> <span class="count">2</span></a>
-      <a href="#updates-from-inside" data-section="updates-from-inside"><span class="label">Updates from Inside</span> <span class="count">4</span></a>
+      <a href="#updates-from-inside" data-section="updates-from-inside"><span class="label">Updates from Inside</span> <span class="count">8</span></a>
     </div>
   </nav>
     <div class="main-col">
@@ -228,6 +227,30 @@
           </div>
           <p class="desc">Casey is a dedicated community educator, writer, distroist, and printer who has committed their life to struggles for liberation. A federal investigation by the FBI and several other law enforcement agencies resulted in Casey’s arrest for alleged politically motivated “crimes.” Since June 17 2024, Casey has been incarcerated at Santa Rita Jail facing federal felonies that could result in up to 20 years of imprisonment.</p>
         </li>
+        <li data-name="free palestine 🇵🇸❤️‍🔥" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/jakhisolidarity/" target="_blank" rel="noopener noreferrer">FREE PALESTINE 🇵🇸❤️‍🔥 <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="free alex stokes" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/freealexstokesproject/" target="_blank" rel="noopener noreferrer">Free Alex Stokes <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="justiceforkeithlamar" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/justiceforkeithlamar/" target="_blank" rel="noopener noreferrer">justiceforkeithlamar <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="stand with tarek bazrouk 🇵🇸" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/freetarekbazrouk/" target="_blank" rel="noopener noreferrer">Stand with Tarek Bazrouk 🇵🇸 <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
       </ol>
     </section>
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
@@ -252,8 +275,8 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js" defer></script>
-<script src="/assets/scripts/city-page.js" defer></script>
+<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
+<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
 
 </body>
 </html>

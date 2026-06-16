@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/amarillo">
   <meta property="og:image" content="https://organize.directory/preview.png">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -36,16 +36,15 @@
     })();
   </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
+       body weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
 
   <!-- Analytics -->
-  <script src="/js/analytics.js" defer></script>
+  <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
@@ -72,7 +71,7 @@
   <div class="page-head">
     <h1 class="title">Amarillo, TX</h1>
     <p class="meta">
-      <b>7</b> groups
+      <b>12</b> groups
       <span class="sep" aria-hidden="true">·</span>
       Texas
     </p>
@@ -139,6 +138,36 @@
           </div>
           <p class="desc">Y'all-idarity in the West Texas Panhandle</p>
         </li>
+        <li data-name="food_not_bombs_amarillo" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/food_not_bombs_amarillo/" target="_blank" rel="noopener noreferrer">food_not_bombs_amarillo <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="amarillo street medics" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/amarillostreetmedics/" target="_blank" rel="noopener noreferrer">Amarillo Street Medics <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="amarillorapidresponse" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/amarillorapidresponse/" target="_blank" rel="noopener noreferrer">amarillorapidresponse <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="yellow city street food (ycsf)" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/yellowcitystreetfood/" target="_blank" rel="noopener noreferrer">Yellow City Street Food (YCSF) <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
+        <li data-name="amarillo uu social justice committee" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/amarillouusocialjustice/" target="_blank" rel="noopener noreferrer">Amarillo UU Social Justice Committee <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
       </ol>
     </section>
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
@@ -163,8 +192,8 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js" defer></script>
-<script src="/assets/scripts/city-page.js" defer></script>
+<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
+<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
 
 </body>
 </html>

@@ -27,6 +27,41 @@
 ============================================================================ */
 
 /* ---------------------------------------------------------------------------
+   0. FONTS (self-hosted, latin subset)
+   Replaces the render-blocking Google Fonts <link>. Variable woff2 files
+   cover the weight range the design uses (400–700); Archivo Black is a
+   single 900 weight. Downloaded from Google Fonts, latin subset only.
+--------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/assets/fonts/archivo-latin-var.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/assets/fonts/archivo-italic-latin-var.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Archivo Black';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/assets/fonts/archivo-black-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/assets/fonts/jetbrains-mono-latin-var.woff2') format('woff2');
+}
+
+/* ---------------------------------------------------------------------------
    1. TOKENS
    Shared scalars that don't change per palette.
 --------------------------------------------------------------------------- */

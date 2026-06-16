@@ -3,7 +3,7 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://cloudflareinsights.com https://api.web3forms.com https://www.google-analytics.com https://www.googletagmanager.com; img-src 'self' data: https://www.google-analytics.com; form-action 'self' https://api.web3forms.com; frame-src 'self';
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://cloudflareinsights.com https://api.web3forms.com https://www.google-analytics.com https://www.googletagmanager.com; img-src 'self' data: https://www.google-analytics.com; form-action 'self' https://api.web3forms.com; frame-src 'self';
   Strict-Transport-Security: max-age=31536000; includeSubDomains
   cf-edge-cache: no-minify, no-rocket-loader, no-mirage, no-early-hints
   cf-apo: off
@@ -38,11 +38,28 @@
   Content-Type: text/css; charset=utf-8
   Vary: Accept-Encoding
 
-# Images
-/*.{png,jpg,jpeg,gif,ico,svg,webp}
+# Images — one rule per extension. Cloudflare _headers globs support `*`
+# (matches across path segments) but NOT brace expansion `{a,b}`, so the old
+# /*.{png,jpg,…} rule silently matched nothing and images fell back to no cache.
+/*.png
+  Cache-Control: public, max-age=604800
+/*.jpg
+  Cache-Control: public, max-age=604800
+/*.jpeg
+  Cache-Control: public, max-age=604800
+/*.gif
+  Cache-Control: public, max-age=604800
+/*.ico
+  Cache-Control: public, max-age=604800
+/*.svg
+  Cache-Control: public, max-age=604800
+/*.webp
   Cache-Control: public, max-age=604800
 
-# Fonts
-/*.{woff,woff2,ttf,otf,eot}
+# Fonts (self-hosted woff2 in /assets/fonts/). Same brace-glob caveat as images.
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+/*.woff
   Cache-Control: public, max-age=31536000, immutable
   Access-Control-Allow-Origin: *

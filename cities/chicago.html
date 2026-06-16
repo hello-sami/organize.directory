@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://organize.directory/chicago">
   <meta property="og:image" content="https://organize.directory/preview.png">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -36,16 +36,15 @@
     })();
   </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wdth,wght@0,75..125,400;0,75..125,500;0,75..125,600;0,75..125,700;1,75..125,500;1,75..125,600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
+       body weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
 
   <!-- Analytics -->
-  <script src="/js/analytics.js" defer></script>
+  <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
 <body>
 <a href="#main" class="skip">Skip to content</a>
@@ -72,7 +71,7 @@
   <div class="page-head">
     <h1 class="title">Chicago</h1>
     <p class="meta">
-      <b>55</b> groups
+      <b>57</b> groups
       <span class="sep" aria-hidden="true">·</span>
       Illinois
     </p>
@@ -94,11 +93,11 @@
     </button>
     <div id="toc-panel" class="toc-scroll">
       <a href="#mutual-aid" data-section="mutual-aid"><span class="label">Mutual Aid Networks</span> <span class="count">14</span></a>
-      <a href="#food-justice" data-section="food-justice"><span class="label">Food Justice</span> <span class="count">10</span></a>
+      <a href="#food-justice" data-section="food-justice"><span class="label">Food Justice</span> <span class="count">11</span></a>
       <a href="#housing" data-section="housing"><span class="label">Housing Justice</span> <span class="count">5</span></a>
       <a href="#social-justice" data-section="social-justice"><span class="label">Social Justice Organizations</span> <span class="count">10</span></a>
       <a href="#healthcare" data-section="healthcare"><span class="label">Healthcare</span> <span class="count">7</span></a>
-      <a href="#prison-abolition" data-section="prison-abolition"><span class="label">Prison Abolition and Prisoner Solidarity</span> <span class="count">5</span></a>
+      <a href="#prison-abolition" data-section="prison-abolition"><span class="label">Prison Abolition and Prisoner Solidarity</span> <span class="count">6</span></a>
       <a href="#indigenous" data-section="indigenous"><span class="label">Indigenous Solidarity</span> <span class="count">1</span></a>
       <a href="#migrant-support" data-section="migrant-support"><span class="label">Migrant Support</span> <span class="count">3</span></a>
     </div>
@@ -282,6 +281,12 @@
             <span class="host">instagram.com</span>
           </div>
           <p class="desc">Mutual Aid space for the Rogers Park neighborhood. Open hours are on Saturday from 12-2pm</p>
+        </li>
+        <li data-name="food not bombs humboldt park" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/foodnotbombshumboldtpark/" target="_blank" rel="noopener noreferrer">Food Not Bombs Humboldt Park <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
         </li>
       </ol>
     </section>
@@ -496,6 +501,12 @@
           </div>
           <p class="desc">A Center for survivors of police torture in Chicago. We are part of &amp; support the movement to end all forms of police violence</p>
         </li>
+        <li data-name="#defundcpd campaign" data-desc="">
+          <div class="row">
+            <a class="name" href="https://www.instagram.com/defundcpd/" target="_blank" rel="noopener noreferrer">#DefundCPD Campaign <span class="ext" aria-hidden="true">↗</span></a>
+            <span class="host">instagram.com</span>
+          </div>
+        </li>
       </ol>
     </section>
 
@@ -560,8 +571,8 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js" defer></script>
-<script src="/assets/scripts/city-page.js" defer></script>
+<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
+<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
 
 </body>
 </html>
