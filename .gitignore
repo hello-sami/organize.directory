@@ -34,7 +34,10 @@ build/
 .temp/
 
 # Local CMS (dev tool, not deployed)
-cms/
+# The CMS edits this repo's data/ and pushes it live, so its own code must never
+# be committed or deployed. Moved here out of Misen 2026-08-09, when it stopped
+# being a launcher app; it starts from a Project Sketchbook snippet on port 8763.
+_cms/
 
 # Wrangler local dev cache
 .wrangler/
