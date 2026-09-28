@@ -56,7 +56,7 @@ Submissions are POSTed directly to [Web3Forms](https://web3forms.com/) from the 
 
 ## Deployment
 
-Pushed to `main` → Cloudflare Pages auto-builds and deploys. The build command is `npm run build`; the output directory is the repo root.
+Pushed to `main` → Cloudflare Pages deploys the repo root **exactly as committed — it does not run the build**. So the regenerated HTML has to be committed alongside the JSON; a push of `data/` alone changes nothing on the live site. The local CMS (`_cms/`, gitignored) does this automatically: after each edit it rebuilds and commits `data/` plus the build output (`cities/`, `states/`, `topics/`, `index.html`, `sitemap.xml`, `_redirects`, `robots.txt`).
 
 ## License
 
