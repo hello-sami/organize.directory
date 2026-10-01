@@ -17,6 +17,7 @@
  */
 
 import fs from 'fs/promises';
+import { readFileSync, existsSync } from 'fs';
 import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
@@ -750,6 +751,21 @@ function buildTitleIndex(locationIndex, stateIndex, topicIndex) {
   ].sort((a, b) => a.title.localeCompare(b.title));
 }
 
+// data/redirects.json maps the slug of a retired/merged page to the slug it
+// now lives under, so old links keep working (301). Ignored if the old slug is
+// a live page again.
+function retiredRedirects(sortedLocations, sortedStates) {
+  const file = path.join(ROOT, 'data', 'redirects.json');
+  if (!existsSync(file)) return [];
+  const map = JSON.parse(readFileSync(file, 'utf-8'));
+  const live = new Set([...sortedLocations, ...sortedStates]);
+  const rules = Object.entries(map)
+    .filter(([from]) => !live.has(from))
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([from, to]) => `/${from}\t/${to}\t301`);
+  return rules.length ? ['# Retired pages (data/redirects.json)', ...rules, ''] : [];
+}
+
 function buildRedirects(locationIndex, stateIndex) {
   // States listed first so they win slug collisions (/washington → state,
   // not washington-dc city).
@@ -778,6 +794,7 @@ function buildRedirects(locationIndex, stateIndex) {
     '# Cities',
     ...sortedLocations.map(slug => `/${slug}\t/cities/${slug}.html\t200`),
     '',
+    ...retiredRedirects(sortedLocations, sortedStates),
   ].join('\n');
 
   return { text, sortedLocations, sortedStates };
