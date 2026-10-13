@@ -94,6 +94,14 @@
     var emptyQ = document.getElementById('empty-query');
     if (!input) return;
 
+    // Remember each count's full total the first time we touch it, and put
+    // it back when the filter is cleared.
+    function setCount(el, n){
+      if (!el) return;
+      if (el.dataset.total == null) el.dataset.total = el.textContent;
+      el.textContent = input.value.trim() ? n : el.dataset.total;
+    }
+
     function apply(){
       var q = input.value.trim().toLowerCase();
       var visibleTotal = 0;
@@ -110,11 +118,16 @@
         }
       });
 
+      // Counts follow the filter, so a heading never says 14 while showing 1.
       sections.forEach(function(sec){
-        sec.classList.toggle('hidden', !sectionCounts[sec.dataset.section]);
+        var n = sectionCounts[sec.dataset.section] || 0;
+        sec.classList.toggle('hidden', !n);
+        setCount(sec.querySelector('.hd .k'), n);
       });
       links.forEach(function(a){
-        a.classList.toggle('dim', !sectionCounts[a.dataset.section]);
+        var n = sectionCounts[a.dataset.section] || 0;
+        a.classList.toggle('dim', !n);
+        setCount(a.querySelector('.k'), n);
       });
 
       if (empty) {
