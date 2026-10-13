@@ -7,8 +7,7 @@
   <title>Palm Beach County — Organize Directory</title>
   <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Palm Beach County.">
   <link rel="canonical" href="https://organize.directory/palm-beach-county">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Palm Beach County — Organize Directory">
@@ -19,104 +18,69 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide></span>
+  <span class="c">White Pages</span>
+  <span class="r">Palm Beach County, Florida</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/florida">Florida</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/south-florida">South Florida</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Palm Beach County</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Palm Beach County</h1>
-    <p class="meta">
-      <b>4</b> groups
-      <span class="sep" aria-hidden="true">·</span>
-      Florida
-    </p>
+    <div class="meta"><b>4</b> groups. <nav aria-label="Breadcrumb">Part of <a href="/south-florida">South Florida</a>, <a href="/florida">Florida</a>.</nav></div>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Palm Beach County</label>
+      <input id="page-filter" type="search" placeholder="Filter groups in Palm Beach County" autocomplete="off">
+    </div>
   </div>
 
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Palm Beach County</label>
-    <input id="page-filter" type="search" placeholder="Filter groups in Palm Beach County…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="section-0" class="group-section" data-section="section-0">
+    <section id="section-0" class="group-section" data-section="section-0" data-title="">
       <ol class="groups">
         <li data-name="food not bombs west palm beach" data-desc="shares free vegan and vegetarian food every saturday at jose marti park in west palm beach, and has opposed the city's 2023 feeding permit ordinance.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/foodnotbombswpb" target="_blank" rel="noopener noreferrer">Food Not Bombs West Palm Beach <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/foodnotbombswpb" target="_blank" rel="noopener noreferrer"><span class="name">Food Not Bombs West Palm Beach</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Shares free vegan and vegetarian food every Saturday at Jose Marti Park in West Palm Beach, and has opposed the city's 2023 feeding permit ordinance.</p>
         </li>
         <li data-name="radical eldub" data-desc="a community land trust in lake worth beach that runs two co-op houses with affordable housing, a sanctuary project for lgbtq+ migrant detainees, an urban farm, and a food not bombs kitchen.">
-          <div class="row">
-            <a class="name" href="https://radeldub.weebly.com/" target="_blank" rel="noopener noreferrer">Radical Eldub <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">radeldub.weebly.com</span>
-          </div>
+          <a class="row" href="https://radeldub.weebly.com/" target="_blank" rel="noopener noreferrer"><span class="name">Radical Eldub</span><span class="dots" aria-hidden="true"></span><span class="host">radeldub.weebly.com</span></a>
           <p class="desc">A community land trust in Lake Worth Beach that runs two co-op houses with affordable housing, a sanctuary project for LGBTQ+ migrant detainees, an urban farm, and a Food Not Bombs kitchen.</p>
         </li>
         <li data-name="ema abortion fund" data-desc="we serve the palm beaches &amp; treasure coast. get help paying for your abortions!">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/emawpb" target="_blank" rel="noopener noreferrer">EMA Abortion Fund <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/emawpb" target="_blank" rel="noopener noreferrer"><span class="name">EMA Abortion Fund</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">We serve the Palm Beaches &amp; Treasure Coast. Get help paying for your abortions!</p>
         </li>
         <li data-name="mask bloc palm beach" data-desc="distributing free high quality masks in palm beach county, fl">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/maskblocpalmbch/" target="_blank" rel="noopener noreferrer">Mask Bloc Palm Beach <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/maskblocpalmbch/" target="_blank" rel="noopener noreferrer"><span class="name">Mask Bloc Palm Beach</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Distributing free high quality masks in Palm Beach County, FL</p>
         </li>
       </ol>
@@ -124,14 +88,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -143,8 +103,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

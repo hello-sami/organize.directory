@@ -8,8 +8,7 @@
   <meta name="description" content="Networks and initiatives working to abolish the prison industrial complex, build
                     alternatives to incarceration, and support currently and formerly incarcerated people.">
   <link rel="canonical" href="https://organize.directory/topics/prison-abolition">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Prison Abolition — Organize Directory">
@@ -21,164 +20,106 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="yellow">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location">White Pages</a><a href="/topics" aria-current="page">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location">White Pages</a><a href="/topics" aria-current="page">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide></span>
+  <span class="c">Yellow Pages</span>
+  <span class="r">Prison Abolition</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/topics">Topics</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Prison Abolition</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Prison Abolition</h1>
     <p class="meta"><b>13</b> groups</p>
+    <p class="lede">Networks and initiatives working to abolish the prison industrial complex, build alternatives to incarceration, and support currently and formerly incarcerated people.</p>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Prison Abolition</label>
+      <input id="page-filter" type="search" placeholder="Filter groups" autocomplete="off">
+    </div>
   </div>
 
-  <p class="topic-lede">Networks and initiatives working to abolish the prison industrial complex, build
-                    alternatives to incarceration, and support currently and formerly incarcerated people.</p>
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Prison Abolition</label>
-    <input id="page-filter" type="search" placeholder="Filter groups…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="section-0" class="group-section" data-section="section-0">
+    <section id="section-0" class="group-section" data-section="section-0" data-title="">
       <ol class="groups">
         <li data-name="critical resistance" data-desc="building an international movement to abolish the prison industrial complex through grassroots organizing, coalition building, political education, and direct action. their work includes prisoner solidarity programs, the abolitionist newspaper, fighting imprisonment, resisting policing, and developing alternatives to punishment and control.">
-          <div class="row">
-            <a class="name" href="https://criticalresistance.org/" target="_blank" rel="noopener noreferrer">Critical Resistance <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">criticalresistance.org</span>
-          </div>
+          <a class="row" href="https://criticalresistance.org/" target="_blank" rel="noopener noreferrer"><span class="name">Critical Resistance</span><span class="dots" aria-hidden="true"></span><span class="host">criticalresistance.org</span></a>
           <p class="desc">Building an international movement to abolish the prison industrial complex through grassroots organizing, coalition building, political education, and direct action. Their work includes prisoner solidarity programs, The Abolitionist newspaper, fighting imprisonment, resisting policing, and developing alternatives to punishment and control.</p>
         </li>
         <li data-name="death penalty focus" data-desc="organization working to abolish capital punishment through advocacy, education, and grassroots organizing. building mutual aid networks to support death row prisoners and their families while advancing policy changes and public awareness campaigns for alternatives to the death penalty.">
-          <div class="row">
-            <a class="name" href="https://deathpenalty.org/" target="_blank" rel="noopener noreferrer">Death Penalty Focus <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">deathpenalty.org</span>
-          </div>
+          <a class="row" href="https://deathpenalty.org/" target="_blank" rel="noopener noreferrer"><span class="name">Death Penalty Focus</span><span class="dots" aria-hidden="true"></span><span class="host">deathpenalty.org</span></a>
           <p class="desc">Organization working to abolish capital punishment through advocacy, education, and grassroots organizing. Building mutual aid networks to support death row prisoners and their families while advancing policy changes and public awareness campaigns for alternatives to the death penalty.</p>
         </li>
         <li data-name="solitary watch" data-desc="independent watchdog organization shining light into the darkest corners of the u.s. punishment system through investigative journalism, advocacy, and solidarity with incarcerated people. their work includes exposing human rights violations in solitary confinement, amplifying voices from solitary, and building public awareness to end this form of torture.">
-          <div class="row">
-            <a class="name" href="https://solitarywatch.org/" target="_blank" rel="noopener noreferrer">Solitary Watch <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">solitarywatch.org</span>
-          </div>
+          <a class="row" href="https://solitarywatch.org/" target="_blank" rel="noopener noreferrer"><span class="name">Solitary Watch</span><span class="dots" aria-hidden="true"></span><span class="host">solitarywatch.org</span></a>
           <p class="desc">Independent watchdog organization shining light into the darkest corners of the U.S. punishment system through investigative journalism, advocacy, and solidarity with incarcerated people. Their work includes exposing human rights violations in solitary confinement, amplifying voices from solitary, and building public awareness to end this form of torture.</p>
         </li>
         <li data-name="fight toxic prisons" data-desc="organizes against prisons that expose incarcerated people and nearby communities to environmental hazards. it is currently fighting the planned federal prison in letcher county, kentucky.">
-          <div class="row">
-            <a class="name" href="https://fighttoxicprisons.wordpress.com/" target="_blank" rel="noopener noreferrer">Fight Toxic Prisons <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">fighttoxicprisons.wordpress.com</span>
-          </div>
+          <a class="row" href="https://fighttoxicprisons.wordpress.com/" target="_blank" rel="noopener noreferrer"><span class="name">Fight Toxic Prisons</span><span class="dots" aria-hidden="true"></span><span class="host">fighttoxicprisons.wordpress.com</span></a>
           <p class="desc">Organizes against prisons that expose incarcerated people and nearby communities to environmental hazards. It is currently fighting the planned federal prison in Letcher County, Kentucky.</p>
         </li>
         <li data-name="mongoose distro" data-desc="a publishing project based in new york and texas that prints and posts writing and art by incarcerated people, distributed to prisoners in print and online.">
-          <div class="row">
-            <a class="name" href="https://mongoosedistro.com/" target="_blank" rel="noopener noreferrer">Mongoose Distro <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">mongoosedistro.com</span>
-          </div>
+          <a class="row" href="https://mongoosedistro.com/" target="_blank" rel="noopener noreferrer"><span class="name">Mongoose Distro</span><span class="dots" aria-hidden="true"></span><span class="host">mongoosedistro.com</span></a>
           <p class="desc">A publishing project based in New York and Texas that prints and posts writing and art by incarcerated people, distributed to prisoners in print and online.</p>
         </li>
         <li data-name="ministry against death penalty" data-desc="sister helen prejean's ministry working to end the death penalty in the us through education, speaking and advocacy.">
-          <div class="row">
-            <a class="name" href="https://www.sisterhelen.org/" target="_blank" rel="noopener noreferrer">Ministry Against Death Penalty <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">sisterhelen.org</span>
-          </div>
+          <a class="row" href="https://www.sisterhelen.org/" target="_blank" rel="noopener noreferrer"><span class="name">Ministry Against Death Penalty</span><span class="dots" aria-hidden="true"></span><span class="host">sisterhelen.org</span></a>
           <p class="desc">Sister Helen Prejean's ministry working to end the death penalty in the US through education, speaking and advocacy.</p>
         </li>
         <li data-name="prison policy initiative" data-desc="challenging mass incarceration &amp; criminalization through research, advocacy, and organizing.">
-          <div class="row">
-            <a class="name" href="https://www.prisonpolicy.org/" target="_blank" rel="noopener noreferrer">Prison Policy Initiative <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">prisonpolicy.org</span>
-          </div>
+          <a class="row" href="https://www.prisonpolicy.org/" target="_blank" rel="noopener noreferrer"><span class="name">Prison Policy Initiative</span><span class="dots" aria-hidden="true"></span><span class="host">prisonpolicy.org</span></a>
           <p class="desc">Challenging mass incarceration &amp; criminalization through research, advocacy, and organizing.</p>
         </li>
         <li data-name="schools not prisons" data-desc="campaign started in 2016 by revolve impact, based in los angeles. it uses music, art and a podcast to push for shifting public spending from prisons to schools and youth.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/_notprisons/" target="_blank" rel="noopener noreferrer">Schools Not Prisons <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/_notprisons/" target="_blank" rel="noopener noreferrer"><span class="name">Schools Not Prisons</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Campaign started in 2016 by Revolve Impact, based in Los Angeles. It uses music, art and a podcast to push for shifting public spending from prisons to schools and youth.</p>
         </li>
         <li data-name="#abolishincarceratedrealityshows" data-desc="campaign run by america on trial inc. in new york against reality tv shows that profit from incarcerated people. it won a&amp;e's cancellation of '60 days in' and now targets amc's 'love after lockup'.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/airscampaign/" target="_blank" rel="noopener noreferrer">#AbolishIncarceratedRealityShows <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/airscampaign/" target="_blank" rel="noopener noreferrer"><span class="name">#AbolishIncarceratedRealityShows</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Campaign run by America On Trial Inc. in New York against reality TV shows that profit from incarcerated people. It won A&amp;E's cancellation of '60 Days In' and now targets AMC's 'Love After Lockup'.</p>
         </li>
         <li data-name="#endtheexception" data-desc="national campaign led by worth rises to remove the 13th amendment clause that allows slavery and forced labor as punishment for a crime.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/endtheexception/" target="_blank" rel="noopener noreferrer">#EndTheException <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/endtheexception/" target="_blank" rel="noopener noreferrer"><span class="name">#EndTheException</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">National campaign led by Worth Rises to remove the 13th Amendment clause that allows slavery and forced labor as punishment for a crime.</p>
         </li>
         <li data-name="the bail project" data-desc="national nonprofit that pays bail for people who can't afford it and provides court reminders and support, in select cities across the us. also advocates for pretrial reform.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/bailproject/" target="_blank" rel="noopener noreferrer">The Bail Project <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/bailproject/" target="_blank" rel="noopener noreferrer"><span class="name">The Bail Project</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">National nonprofit that pays bail for people who can't afford it and provides court reminders and support, in select cities across the US. Also advocates for pretrial reform.</p>
         </li>
         <li data-name="national lawyers guild (nlg)" data-desc="national association of progressive lawyers, legal workers and law students. provides legal observers and legal support for protests and movements, with local chapters across the us.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/nationallawyersguild/" target="_blank" rel="noopener noreferrer">National Lawyers Guild (NLG) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/nationallawyersguild/" target="_blank" rel="noopener noreferrer"><span class="name">National Lawyers Guild (NLG)</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">National association of progressive lawyers, legal workers and law students. Provides legal observers and legal support for protests and movements, with local chapters across the US.</p>
         </li>
         <li data-name="innocence project" data-desc="nonprofit legal organization that works to free people who were wrongfully convicted, using dna and other evidence, and pushes for reforms to prevent wrongful convictions.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/innocenceproject/" target="_blank" rel="noopener noreferrer">Innocence Project <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/innocenceproject/" target="_blank" rel="noopener noreferrer"><span class="name">Innocence Project</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Nonprofit legal organization that works to free people who were wrongfully convicted, using DNA and other evidence, and pushes for reforms to prevent wrongful convictions.</p>
         </li>
       </ol>
@@ -186,14 +127,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -205,8 +142,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

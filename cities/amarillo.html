@@ -7,8 +7,7 @@
   <title>Amarillo, TX — Organize Directory</title>
   <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Amarillo, TX.">
   <link rel="canonical" href="https://organize.directory/amarillo">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Amarillo, TX — Organize Directory">
@@ -19,143 +18,92 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide></span>
+  <span class="c">White Pages</span>
+  <span class="r">Amarillo, TX, Texas</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/texas">Texas</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Amarillo, TX</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Amarillo, TX</h1>
-    <p class="meta">
-      <b>10</b> groups
-      <span class="sep" aria-hidden="true">·</span>
-      Texas
-    </p>
+    <div class="meta"><b>10</b> groups. <nav aria-label="Breadcrumb">Part of <a href="/texas">Texas</a>.</nav></div>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Amarillo, TX</label>
+      <input id="page-filter" type="search" placeholder="Filter groups in Amarillo, TX" autocomplete="off">
+    </div>
   </div>
 
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Amarillo, TX</label>
-    <input id="page-filter" type="search" placeholder="Filter groups in Amarillo, TX…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="section-0" class="group-section" data-section="section-0">
+    <section id="section-0" class="group-section" data-section="section-0" data-title="">
       <ol class="groups">
         <li data-name="food not bombs amarillo" data-desc="food not bombs recovers healthy, nutritious, vegetarian food that would have otherwise been discarded.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/foodnotbombsamarillo/" target="_blank" rel="noopener noreferrer">Food Not Bombs Amarillo <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/foodnotbombsamarillo/" target="_blank" rel="noopener noreferrer"><span class="name">Food Not Bombs Amarillo</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">Food Not Bombs recovers healthy, nutritious, vegetarian food that would have otherwise been discarded.</p>
         </li>
         <li data-name="amarillo reproductive freedom alliance" data-desc="a grassroots network committed to protecting reproductive freedom in the texas panhandle.">
-          <div class="row">
-            <a class="name" href="https://www.amarillorfa.org/" target="_blank" rel="noopener noreferrer">Amarillo Reproductive Freedom Alliance <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">amarillorfa.org</span>
-          </div>
+          <a class="row" href="https://www.amarillorfa.org/" target="_blank" rel="noopener noreferrer"><span class="name">Amarillo Reproductive Freedom Alliance</span><span class="dots" aria-hidden="true"></span><span class="host">amarillorfa.org</span></a>
           <p class="desc">A grassroots network committed to protecting reproductive freedom in the Texas panhandle.</p>
         </li>
         <li data-name="amarillo area transgender advocacy group" data-desc="our mission is to educate, advocate, and provide resources for our vibrant community.">
-          <div class="row">
-            <a class="name" href="https://aatagtx.org/" target="_blank" rel="noopener noreferrer">Amarillo Area Transgender Advocacy Group <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">aatagtx.org</span>
-          </div>
+          <a class="row" href="https://aatagtx.org/" target="_blank" rel="noopener noreferrer"><span class="name">Amarillo Area Transgender Advocacy Group</span><span class="dots" aria-hidden="true"></span><span class="host">aatagtx.org</span></a>
           <p class="desc">Our mission is to educate, advocate, and provide resources for our vibrant community.</p>
         </li>
         <li data-name="chapterhouse bookstore" data-desc="racialized &amp; lgbt+ literature">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/chapterhouse_bookstore/" target="_blank" rel="noopener noreferrer">Chapterhouse Bookstore <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/chapterhouse_bookstore/" target="_blank" rel="noopener noreferrer"><span class="name">Chapterhouse Bookstore</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Racialized &amp; LGBT+ Literature</p>
         </li>
         <li data-name="abortion access amarillo" data-desc="providing education, advocacy and support for reproductive rights in the texas panhandle.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/abortionaccessamarillo/" target="_blank" rel="noopener noreferrer">Abortion Access Amarillo <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/abortionaccessamarillo/" target="_blank" rel="noopener noreferrer"><span class="name">Abortion Access Amarillo</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Providing education, advocacy and support for reproductive rights in the Texas Panhandle.</p>
         </li>
         <li data-name="panhandle solidarity network" data-desc="y'all-idarity in the west texas panhandle">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/panhandlesolidaritynetwork/" target="_blank" rel="noopener noreferrer">Panhandle Solidarity Network <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/panhandlesolidaritynetwork/" target="_blank" rel="noopener noreferrer"><span class="name">Panhandle Solidarity Network</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Y'all-idarity in the West Texas Panhandle</p>
         </li>
         <li data-name="food not bombs amarillo" data-desc="volunteer group in amarillo that recovers vegetarian food that would otherwise be thrown out and serves it to people facing food insecurity.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/food_not_bombs_amarillo/" target="_blank" rel="noopener noreferrer">Food Not Bombs Amarillo <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/food_not_bombs_amarillo/" target="_blank" rel="noopener noreferrer"><span class="name">Food Not Bombs Amarillo</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Volunteer group in Amarillo that recovers vegetarian food that would otherwise be thrown out and serves it to people facing food insecurity.</p>
         </li>
         <li data-name="amarillo street medics" data-desc="nurse-founded group in amarillo that offers bandage changes, basic first aid, and hygiene packs to unhoused people, with a saturday booth at ellwood park.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/amarillostreetmedics/" target="_blank" rel="noopener noreferrer">Amarillo Street Medics <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/amarillostreetmedics/" target="_blank" rel="noopener noreferrer"><span class="name">Amarillo Street Medics</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Nurse-founded group in Amarillo that offers bandage changes, basic first aid, and hygiene packs to unhoused people, with a Saturday booth at Ellwood Park.</p>
         </li>
         <li data-name="amarillorapidresponse" data-desc="">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/amarillorapidresponse/" target="_blank" rel="noopener noreferrer">amarillorapidresponse <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/amarillorapidresponse/" target="_blank" rel="noopener noreferrer"><span class="name">amarillorapidresponse</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
         </li>
         <li data-name="amarillo uu social justice committee" data-desc="committee of the amarillo unitarian universalist fellowship that connects members with local volunteer work on homelessness and food insecurity, and hosts community events.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/amarillouusocialjustice/" target="_blank" rel="noopener noreferrer">Amarillo UU Social Justice Committee <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/amarillouusocialjustice/" target="_blank" rel="noopener noreferrer"><span class="name">Amarillo UU Social Justice Committee</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Committee of the Amarillo Unitarian Universalist Fellowship that connects members with local volunteer work on homelessness and food insecurity, and hosts community events.</p>
         </li>
       </ol>
@@ -163,14 +111,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -182,8 +126,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

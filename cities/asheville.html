@@ -7,8 +7,7 @@
   <title>Asheville, NC — Organize Directory</title>
   <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Asheville, NC.">
   <link rel="canonical" href="https://organize.directory/asheville">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Asheville, NC — Organize Directory">
@@ -19,137 +18,89 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide></span>
+  <span class="c">White Pages</span>
+  <span class="r">Asheville, NC, North Carolina</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/north-carolina">North Carolina</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Asheville, NC</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Asheville, NC</h1>
-    <p class="meta">
-      <b>9</b> groups
-      <span class="sep" aria-hidden="true">·</span>
-      North Carolina
-    </p>
+    <div class="meta"><b>9</b> groups. <nav aria-label="Breadcrumb">Part of <a href="/north-carolina">North Carolina</a>.</nav></div>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Asheville, NC</label>
+      <input id="page-filter" type="search" placeholder="Filter groups in Asheville, NC" autocomplete="off">
+    </div>
   </div>
 
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Asheville, NC</label>
-    <input id="page-filter" type="search" placeholder="Filter groups in Asheville, NC…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="section-0" class="group-section" data-section="section-0">
+    <section id="section-0" class="group-section" data-section="section-0" data-title="">
       <ol class="groups">
         <li data-name="beloved asheville" data-desc="a grassroots organization building community power through mutual aid, housing justice, and economic dignity. beloved works to create systemic change while providing direct support through their street medic team, community house, food distribution, and advocacy for unhoused neighbors.">
-          <div class="row">
-            <a class="name" href="https://www.belovedasheville.com/" target="_blank" rel="noopener noreferrer">BeLoved Asheville <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">belovedasheville.com</span>
-          </div>
+          <a class="row" href="https://www.belovedasheville.com/" target="_blank" rel="noopener noreferrer"><span class="name">BeLoved Asheville</span><span class="dots" aria-hidden="true"></span><span class="host">belovedasheville.com</span></a>
           <p class="desc">A grassroots organization building community power through mutual aid, housing justice, and economic dignity. BeLoved works to create systemic change while providing direct support through their street medic team, community house, food distribution, and advocacy for unhoused neighbors.</p>
         </li>
         <li data-name="pansy collective" data-desc="a queer mutual aid collective in asheville providing direct support, community care, and solidarity to lgbtq+ community members through resource sharing, emergency assistance, and collective organizing.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/pansy.collective/" target="_blank" rel="noopener noreferrer">Pansy Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/pansy.collective/" target="_blank" rel="noopener noreferrer"><span class="name">Pansy Collective</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">A queer mutual aid collective in Asheville providing direct support, community care, and solidarity to LGBTQ+ community members through resource sharing, emergency assistance, and collective organizing.</p>
         </li>
         <li data-name="tranzmission prison project" data-desc="volunteer-run group in asheville, nc that sends free books, zines, and resources to incarcerated lgbtq+ people, mainly in the southeastern us.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/tranzmissionprisonproject/" target="_blank" rel="noopener noreferrer">Tranzmission Prison Project <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/tranzmissionprisonproject/" target="_blank" rel="noopener noreferrer"><span class="name">Tranzmission Prison Project</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Volunteer-run group in Asheville, NC that sends free books, zines, and resources to incarcerated LGBTQ+ people, mainly in the southeastern US.</p>
         </li>
         <li data-name="firestorm books" data-desc="collectively owned radical bookstore and event space at 1022 haywood rd in asheville. run by a worker collective using consensus decision-making; open since 2008.">
-          <div class="row">
-            <a class="name" href="https://firestorm.coop/" target="_blank" rel="noopener noreferrer">Firestorm Books <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">firestorm.coop</span>
-          </div>
+          <a class="row" href="https://firestorm.coop/" target="_blank" rel="noopener noreferrer"><span class="name">Firestorm Books</span><span class="dots" aria-hidden="true"></span><span class="host">firestorm.coop</span></a>
           <p class="desc">Collectively owned radical bookstore and event space at 1022 Haywood Rd in Asheville. Run by a worker collective using consensus decision-making; open since 2008.</p>
         </li>
         <li data-name="the steady collective" data-desc="the steady collective distributes naloxone, and provides syringe exchange services, wound care and a range of other services in three locations around asheville.">
-          <div class="row">
-            <a class="name" href="https://www.thesteadycollective.org/" target="_blank" rel="noopener noreferrer">The Steady Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">thesteadycollective.org</span>
-          </div>
+          <a class="row" href="https://www.thesteadycollective.org/" target="_blank" rel="noopener noreferrer"><span class="name">The Steady Collective</span><span class="dots" aria-hidden="true"></span><span class="host">thesteadycollective.org</span></a>
           <p class="desc">The Steady Collective distributes Naloxone, and provides syringe exchange services, wound care and a range of other services in three locations around Asheville.</p>
         </li>
         <li data-name="blue ridge anarchist black cross" data-desc="asheville chapter of the anarchist black cross. holds monthly political prisoner letter-writing events at firestorm books in west asheville and supports prison abolition.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/BlueRidgeABC/" target="_blank" rel="noopener noreferrer">Blue Ridge Anarchist Black Cross <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/BlueRidgeABC/" target="_blank" rel="noopener noreferrer"><span class="name">Blue Ridge Anarchist Black Cross</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">Asheville chapter of the Anarchist Black Cross. Holds monthly political prisoner letter-writing events at Firestorm Books in West Asheville and supports prison abolition.</p>
         </li>
         <li data-name="asheville dsa" data-desc="western north carolina chapter of the democratic socialists of america, based in asheville. holds monthly meetings and runs working groups on housing, electoral work, mutual aid, and community gardening.">
-          <div class="row">
-            <a class="name" href="https://avldsa.org/" target="_blank" rel="noopener noreferrer">Asheville DSA <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">avldsa.org</span>
-          </div>
+          <a class="row" href="https://avldsa.org/" target="_blank" rel="noopener noreferrer"><span class="name">Asheville DSA</span><span class="dots" aria-hidden="true"></span><span class="host">avldsa.org</span></a>
           <p class="desc">Western North Carolina chapter of the Democratic Socialists of America, based in Asheville. Holds monthly meetings and runs working groups on housing, electoral work, mutual aid, and community gardening.</p>
         </li>
         <li data-name="asheville survival program" data-desc="mutual aid network formed in 2020 that runs streetside, a food, camping gear and supply distribution for unhoused people in asheville, nc.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/avlsurvival/" target="_blank" rel="noopener noreferrer">Asheville Survival Program <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/avlsurvival/" target="_blank" rel="noopener noreferrer"><span class="name">Asheville Survival Program</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Mutual aid network formed in 2020 that runs Streetside, a food, camping gear and supply distribution for unhoused people in Asheville, NC.</p>
         </li>
         <li data-name="12 baskets cafe: a program of asheville poverty initiative" data-desc="cafe at 610 haywood rd in west asheville serving free meals to anyone, run by asheville poverty initiative. also gives out grocery boxes and rescues food.">
-          <div class="row">
-            <a class="name" href="https://www.ashevillepovertyinitiative.org/12baskets" target="_blank" rel="noopener noreferrer">12 Baskets Cafe: a program of Asheville Poverty Initiative <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">ashevillepovertyinitiative.org</span>
-          </div>
+          <a class="row" href="https://www.ashevillepovertyinitiative.org/12baskets" target="_blank" rel="noopener noreferrer"><span class="name">12 Baskets Cafe: a program of Asheville Poverty Initiative</span><span class="dots" aria-hidden="true"></span><span class="host">ashevillepovertyinitiative.org</span></a>
           <p class="desc">Cafe at 610 Haywood Rd in West Asheville serving free meals to anyone, run by Asheville Poverty Initiative. Also gives out grocery boxes and rescues food.</p>
         </li>
       </ol>
@@ -157,14 +108,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -176,8 +123,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

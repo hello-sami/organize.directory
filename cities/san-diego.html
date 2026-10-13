@@ -7,8 +7,7 @@
   <title>San Diego — Organize Directory</title>
   <meta name="description" content="Leftist, grassroots, and mutual aid organizations in San Diego.">
   <link rel="canonical" href="https://organize.directory/san-diego">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="San Diego — Organize Directory">
@@ -19,209 +18,129 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide></span>
+  <span class="c">White Pages</span>
+  <span class="r">San Diego, California</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/california">California</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/socal">Southern California</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">San Diego</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">San Diego</h1>
-    <p class="meta">
-      <b>19</b> groups
-      <span class="sep" aria-hidden="true">·</span>
-      California
-    </p>
+    <div class="meta"><b>19</b> groups. <nav aria-label="Breadcrumb">Part of <a href="/socal">Southern California</a>, <a href="/california">California</a>.</nav></div>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in San Diego</label>
+      <input id="page-filter" type="search" placeholder="Filter groups in San Diego" autocomplete="off">
+    </div>
   </div>
 
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in San Diego</label>
-    <input id="page-filter" type="search" placeholder="Filter groups in San Diego…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="section-0" class="group-section" data-section="section-0">
+    <section id="section-0" class="group-section" data-section="section-0" data-title="">
       <ol class="groups">
         <li data-name="racial justice coalition of san diego" data-desc="countywide coalition of about 25 san diego organizations that works against racial discrimination and abusive policing in communities of color; also runs the continuing the conversation program on racism.">
-          <div class="row">
-            <a class="name" href="https://rjcsd.org/" target="_blank" rel="noopener noreferrer">Racial Justice Coalition of San Diego <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">rjcsd.org</span>
-          </div>
+          <a class="row" href="https://rjcsd.org/" target="_blank" rel="noopener noreferrer"><span class="name">Racial Justice Coalition of San Diego</span><span class="dots" aria-hidden="true"></span><span class="host">rjcsd.org</span></a>
           <p class="desc">Countywide coalition of about 25 San Diego organizations that works against racial discrimination and abusive policing in communities of color; also runs the Continuing the Conversation program on racism.</p>
         </li>
         <li data-name="surj north county san diego" data-desc="north county san diego chapter of showing up for racial justice. volunteers organize white people for racial justice through education, action and local police accountability campaigns.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/surjncsd/" target="_blank" rel="noopener noreferrer">SURJ North County San Diego <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/surjncsd/" target="_blank" rel="noopener noreferrer"><span class="name">SURJ North County San Diego</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">North County San Diego chapter of Showing Up for Racial Justice. Volunteers organize white people for racial justice through education, action and local police accountability campaigns.</p>
         </li>
         <li data-name="united against police terror san diego" data-desc="san diego copwatch and police accountability group. runs a 24/7 copwatch hotline, documents police stops, and advocates for victims of excessive force.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/uaptsd/" target="_blank" rel="noopener noreferrer">United Against Police Terror San Diego <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/uaptsd/" target="_blank" rel="noopener noreferrer"><span class="name">United Against Police Terror San Diego</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">San Diego copwatch and police accountability group. Runs a 24/7 copwatch hotline, documents police stops, and advocates for victims of excessive force.</p>
         </li>
         <li data-name="san diego brown beret national organization" data-desc="san diego chapter of the brown beret national organization, a chicano community group. it does community service and activism in san diego.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/sdbrownberets" target="_blank" rel="noopener noreferrer">San Diego Brown Beret National Organization <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/sdbrownberets" target="_blank" rel="noopener noreferrer"><span class="name">San Diego Brown Beret National Organization</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">San Diego chapter of the Brown Beret National Organization, a Chicano community group. It does community service and activism in San Diego.</p>
         </li>
         <li data-name="indivisible san diego persist" data-desc="san diego indivisible group formed by merging the downtown and central chapters. organizes advocacy and events pushing back on the trump administration and supporting local reforms.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/isdpersist/" target="_blank" rel="noopener noreferrer">Indivisible San Diego Persist <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/isdpersist/" target="_blank" rel="noopener noreferrer"><span class="name">Indivisible San Diego Persist</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">San Diego Indivisible group formed by merging the Downtown and Central chapters. Organizes advocacy and events pushing back on the Trump administration and supporting local reforms.</p>
         </li>
         <li data-name="change begins with me" data-desc="indivisible-affiliated volunteer group based in san diego's golden triangle that holds monthly meetings, candidate forums, rallies and voter postcard-writing campaigns.">
-          <div class="row">
-            <a class="name" href="https://changebeginswithmesite.wordpress.com/" target="_blank" rel="noopener noreferrer">Change Begins With ME <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">changebeginswithmesite.wordpress.com</span>
-          </div>
+          <a class="row" href="https://changebeginswithmesite.wordpress.com/" target="_blank" rel="noopener noreferrer"><span class="name">Change Begins With ME</span><span class="dots" aria-hidden="true"></span><span class="host">changebeginswithmesite.wordpress.com</span></a>
           <p class="desc">Indivisible-affiliated volunteer group based in San Diego's Golden Triangle that holds monthly meetings, candidate forums, rallies and voter postcard-writing campaigns.</p>
         </li>
         <li data-name="san diego black panther party" data-desc="san diego chapter of the black panther party. runs community outreach and youth programs based on the party's 10 point platform.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/blackpantherparty_sd" target="_blank" rel="noopener noreferrer">San Diego Black Panther Party <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/blackpantherparty_sd" target="_blank" rel="noopener noreferrer"><span class="name">San Diego Black Panther Party</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">San Diego chapter of the Black Panther Party. Runs community outreach and youth programs based on the Party's 10 Point Platform.</p>
         </li>
         <li data-name="gente unida" data-desc="san diego nonprofit human rights border coalition founded by enrique morones in 2005; raises awareness of immigration issues and runs education and arts programs for migrant children in baja shelters.">
-          <div class="row">
-            <a class="name" href="https://www.genteunidasd.net/" target="_blank" rel="noopener noreferrer">Gente Unida <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">genteunidasd.net</span>
-          </div>
+          <a class="row" href="https://www.genteunidasd.net/" target="_blank" rel="noopener noreferrer"><span class="name">Gente Unida</span><span class="dots" aria-hidden="true"></span><span class="host">genteunidasd.net</span></a>
           <p class="desc">San Diego nonprofit human rights border coalition founded by Enrique Morones in 2005; raises awareness of immigration issues and runs education and arts programs for migrant children in Baja shelters.</p>
         </li>
         <li data-name="borderlands for equity" data-desc="la mesa-based group doing advocacy and training in san diego county's border region, including bystander and anti-misogyny training, with a focus on bipoc, immigrant and refugee communities.">
-          <div class="row">
-            <a class="name" href="https://www.borderlandsequity.org/" target="_blank" rel="noopener noreferrer">Borderlands for Equity <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">borderlandsequity.org</span>
-          </div>
+          <a class="row" href="https://www.borderlandsequity.org/" target="_blank" rel="noopener noreferrer"><span class="name">Borderlands for Equity</span><span class="dots" aria-hidden="true"></span><span class="host">borderlandsequity.org</span></a>
           <p class="desc">La Mesa-based group doing advocacy and training in San Diego County's border region, including bystander and anti-misogyny training, with a focus on BIPOC, immigrant and refugee communities.</p>
         </li>
         <li data-name="community advocates for just and moral governance (mogo)" data-desc="san diego nonprofit that brings impact lawsuits and community education on police accountability, jail conditions and city government. also runs town halls.">
-          <div class="row">
-            <a class="name" href="https://moralgovernance.org/" target="_blank" rel="noopener noreferrer">Community Advocates for Just and Moral Governance (MoGo) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">moralgovernance.org</span>
-          </div>
+          <a class="row" href="https://moralgovernance.org/" target="_blank" rel="noopener noreferrer"><span class="name">Community Advocates for Just and Moral Governance (MoGo)</span><span class="dots" aria-hidden="true"></span><span class="host">moralgovernance.org</span></a>
           <p class="desc">San Diego nonprofit that brings impact lawsuits and community education on police accountability, jail conditions and city government. Also runs town halls.</p>
         </li>
         <li data-name="feeding daygo" data-desc="mutual aid, everybody eats">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/feedingdaygo/" target="_blank" rel="noopener noreferrer">Feeding Daygo <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/feedingdaygo/" target="_blank" rel="noopener noreferrer"><span class="name">Feeding Daygo</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">mutual aid, EVERYBODY eats</p>
         </li>
         <li data-name="borderlands relief collective" data-desc="we leave supplies in the borderlands to support human rights, and to decrease the risk of death, for all people who cross through kumeyaay land.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/borderlandsreliefcollective/" target="_blank" rel="noopener noreferrer">Borderlands Relief Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/borderlandsreliefcollective/" target="_blank" rel="noopener noreferrer"><span class="name">Borderlands Relief Collective</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">We leave supplies in the borderlands to support human rights, and to decrease the risk of death, for all people who cross through Kumeyaay land.</p>
         </li>
         <li data-name="direct action drumline" data-desc="protest drumline, zine distro &amp; mutual aid">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/directactiondrumline/" target="_blank" rel="noopener noreferrer">Direct Action Drumline <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/directactiondrumline/" target="_blank" rel="noopener noreferrer"><span class="name">Direct Action Drumline</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Protest Drumline, Zine Distro &amp; Mutual Aid</p>
         </li>
         <li data-name="anakbayan san diego" data-desc="filipino youth fighting for national democracy in the philippines">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/anakbayansd/" target="_blank" rel="noopener noreferrer">Anakbayan San Diego <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/anakbayansd/" target="_blank" rel="noopener noreferrer"><span class="name">Anakbayan San Diego</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Filipino youth fighting for national democracy in the Philippines</p>
         </li>
         <li data-name="palestinian youth movement san diego" data-desc="a movement of palestinian &amp; arab youth struggling for the liberation of our homeland.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/pymsandiego/" target="_blank" rel="noopener noreferrer">Palestinian Youth Movement San Diego <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/pymsandiego/" target="_blank" rel="noopener noreferrer"><span class="name">Palestinian Youth Movement San Diego</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">A movement of Palestinian &amp; Arab youth struggling for the liberation of our homeland.</p>
         </li>
         <li data-name="free shit collective" data-desc="redistributing supplies to the unhoused">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/freeshitcollective/" target="_blank" rel="noopener noreferrer">Free Shit Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/freeshitcollective/" target="_blank" rel="noopener noreferrer"><span class="name">Free Shit Collective</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Redistributing supplies to the unhoused</p>
         </li>
         <li data-name="#borderclick" data-desc="digital archive and photography project by young people who live between tijuana and san diego, documenting transborder life. started in 2016 with the aja project.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/borderclick/" target="_blank" rel="noopener noreferrer">#borderclick <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/borderclick/" target="_blank" rel="noopener noreferrer"><span class="name">#borderclick</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Digital archive and photography project by young people who live between Tijuana and San Diego, documenting transborder life. Started in 2016 with The AjA Project.</p>
         </li>
         <li data-name="north county mutual aid collection" data-desc="mutual aid collective in north county, sd ca. radical harm reduction and outreach crew.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/northcounty_mac/" target="_blank" rel="noopener noreferrer">North County Mutual Aid Collection <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/northcounty_mac/" target="_blank" rel="noopener noreferrer"><span class="name">North County Mutual Aid Collection</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Mutual aid collective in North County, SD CA. Radical harm reduction and outreach crew.</p>
         </li>
         <li data-name="all we got san diego" data-desc="volunteer mutual aid group in city heights that packs and gives out weekly food bags across san diego county, and has also helped migrants released at the san diego airport.">
-          <div class="row">
-            <a class="name" href="https://www.weallwegotsd.com/" target="_blank" rel="noopener noreferrer">All We Got San Diego <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">weallwegotsd.com</span>
-          </div>
+          <a class="row" href="https://www.weallwegotsd.com/" target="_blank" rel="noopener noreferrer"><span class="name">All We Got San Diego</span><span class="dots" aria-hidden="true"></span><span class="host">weallwegotsd.com</span></a>
           <p class="desc">Volunteer mutual aid group in City Heights that packs and gives out weekly food bags across San Diego County, and has also helped migrants released at the San Diego airport.</p>
         </li>
       </ol>
@@ -229,14 +148,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -248,8 +163,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

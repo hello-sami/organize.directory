@@ -7,8 +7,7 @@
   <title>New York — Organize Directory</title>
   <meta name="description" content="Cities and statewide organizations in New York.">
   <link rel="canonical" href="https://organize.directory/new-york">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="New York — Organize Directory">
@@ -19,202 +18,134 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>Places – Statewide Organizations</span>
+  <span class="c">White Pages</span>
+  <span class="r">New York</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">New York</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">New York</h1>
-    <p class="meta">
-      <b>14</b> statewide groups
-    </p>
-  </div>
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter New York</label>
-    <input id="page-filter" type="search" placeholder="Filter New York…" autocomplete="off">
-  </div>
-
-  <div class="layout">
-  <nav class="toc" aria-label="Sections on this page">
-    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
-      <span class="current">
-        <span class="current-label">Section ·</span>
-        <span class="current-name">Places</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div id="toc-panel" class="toc-scroll">
-      <a href="#places" data-section="places"><span class="label">Places</span></a>
-      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="label">Statewide Organizations</span> <span class="count">14</span></a>
+    <p class="meta"><b>14</b> statewide groups</p>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter New York</label>
+      <input id="page-filter" type="search" placeholder="Filter New York" autocomplete="off">
     </div>
-  </nav>
-    <div class="main-col">
+  </div>
 
+  <div class="spread">
+    <nav class="thumbs" aria-label="Sections on this page">
+      <a href="#places" data-section="places"><span class="notch" aria-hidden="true"></span><span class="lbl">Places</span></a>
+      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="notch" aria-hidden="true"></span><span class="lbl">Statewide Organizations</span><span class="k">14</span></a>
+    </nav>
+    <div class="main-col">
       <div id="sections-root">
-    <section id="places" class="group-section" data-section="places">
-      <h2 class="section-title">Places</h2>
-      <ol class="groups children-list">
-        <li data-name="albany, ny" data-desc=""><a class="name" href="/albany">Albany, NY</a></li>
-        <li data-name="binghamton, ny" data-desc=""><a class="name" href="/binghamton">Binghamton, NY</a></li>
-        <li data-name="buffalo, ny" data-desc=""><a class="name" href="/buffalo">Buffalo, NY</a></li>
-        <li data-name="catskills" data-desc=""><a class="name" href="/catskills">Catskills</a></li>
-        <li data-name="elmira-corning" data-desc=""><a class="name" href="/elmira-corning">Elmira-Corning</a></li>
-        <li data-name="hudson valley" data-desc=""><a class="name" href="/hudson-valley">Hudson Valley</a></li>
-        <li data-name="hudson, ny" data-desc=""><a class="name" href="/hudson">Hudson, NY</a></li>
-        <li data-name="ithaca" data-desc=""><a class="name" href="/ithaca">Ithaca</a></li>
-        <li data-name="kingston, ny" data-desc=""><a class="name" href="/kingston">Kingston, NY</a></li>
-        <li data-name="long island" data-desc=""><a class="name" href="/long-island">Long Island</a></li>
-        <li data-name="new paltz" data-desc=""><a class="name" href="/new-paltz">New Paltz</a></li>
-        <li data-name="new york city" data-desc=""><a class="name" href="/nyc">New York City</a></li>
-        <li data-name="rochester, ny" data-desc=""><a class="name" href="/rochester">Rochester, NY</a></li>
-        <li data-name="watertown, new york" data-desc=""><a class="name" href="/watertown">Watertown, New York</a></li>
-        <li data-name="westchester, new york" data-desc=""><a class="name" href="/westchester">Westchester, New York</a></li>
+    <section id="places" class="group-section" data-section="places" data-title="Places">
+      <h2 class="hd"><span>Places</span></h2>
+      <ol class="index-list">
+        <li data-name="albany, ny" data-desc=""><a href="/albany"><span class="n">Albany, NY</span></a></li>
+        <li data-name="binghamton, ny" data-desc=""><a href="/binghamton"><span class="n">Binghamton, NY</span></a></li>
+        <li data-name="buffalo, ny" data-desc=""><a href="/buffalo"><span class="n">Buffalo, NY</span></a></li>
+        <li data-name="catskills" data-desc=""><a href="/catskills"><span class="n">Catskills</span></a></li>
+        <li data-name="elmira-corning" data-desc=""><a href="/elmira-corning"><span class="n">Elmira-Corning</span></a></li>
+        <li data-name="hudson valley" data-desc=""><a href="/hudson-valley"><span class="n">Hudson Valley</span></a></li>
+        <li data-name="hudson, ny" data-desc=""><a href="/hudson"><span class="n">Hudson, NY</span></a></li>
+        <li data-name="ithaca" data-desc=""><a href="/ithaca"><span class="n">Ithaca</span></a></li>
+        <li data-name="kingston, ny" data-desc=""><a href="/kingston"><span class="n">Kingston, NY</span></a></li>
+        <li data-name="long island" data-desc=""><a href="/long-island"><span class="n">Long Island</span></a></li>
+        <li data-name="new paltz" data-desc=""><a href="/new-paltz"><span class="n">New Paltz</span></a></li>
+        <li data-name="new york city" data-desc=""><a href="/nyc"><span class="n">New York City</span></a></li>
+        <li data-name="rochester, ny" data-desc=""><a href="/rochester"><span class="n">Rochester, NY</span></a></li>
+        <li data-name="watertown, new york" data-desc=""><a href="/watertown"><span class="n">Watertown, New York</span></a></li>
+        <li data-name="westchester, new york" data-desc=""><a href="/westchester"><span class="n">Westchester, New York</span></a></li>
       </ol>
     </section>
 
-    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations">
-      <h2 class="section-title">Statewide Organizations</h2>
+    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations" data-title="Statewide Organizations">
+      <h2 class="hd"><span>Statewide Organizations</span><span class="k" aria-hidden="true">14</span></h2>
       <ol class="groups">
         <li data-name="prisoners' legal services of new york" data-desc="nonprofit law office providing free legal representation to people in new york state prisons, with offices in albany, buffalo, ithaca, and newburgh.">
-          <div class="row">
-            <a class="name" href="https://plsny.org/" target="_blank" rel="noopener noreferrer">Prisoners' Legal Services of New York <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">plsny.org</span>
-          </div>
+          <a class="row" href="https://plsny.org/" target="_blank" rel="noopener noreferrer"><span class="name">Prisoners' Legal Services of New York</span><span class="dots" aria-hidden="true"></span><span class="host">plsny.org</span></a>
           <p class="desc">Nonprofit law office providing free legal representation to people in New York State prisons, with offices in Albany, Buffalo, Ithaca, and Newburgh.</p>
         </li>
         <li data-name="f2l network" data-desc="sends commissary money and other support to incarcerated black, indigenous and people of color who are queer, trans or two-spirit in new york state prisons and nyc jails.">
-          <div class="row">
-            <a class="name" href="https://www.f2lrelieffund.org/" target="_blank" rel="noopener noreferrer">F2L Network <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">f2lrelieffund.org</span>
-          </div>
+          <a class="row" href="https://www.f2lrelieffund.org/" target="_blank" rel="noopener noreferrer"><span class="name">F2L Network</span><span class="dots" aria-hidden="true"></span><span class="host">f2lrelieffund.org</span></a>
           <p class="desc">Sends commissary money and other support to incarcerated Black, Indigenous and people of color who are queer, trans or Two-Spirit in New York State prisons and NYC jails.</p>
         </li>
         <li data-name="community voices heard (cvh)" data-desc="black- and brown-led membership organization in new york organizing low-income new yorkers on housing, public housing preservation, and economic justice.">
-          <div class="row">
-            <a class="name" href="https://www.cvhaction.org/" target="_blank" rel="noopener noreferrer">Community Voices Heard (CVH) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">cvhaction.org</span>
-          </div>
+          <a class="row" href="https://www.cvhaction.org/" target="_blank" rel="noopener noreferrer"><span class="name">Community Voices Heard (CVH)</span><span class="dots" aria-hidden="true"></span><span class="host">cvhaction.org</span></a>
           <p class="desc">Black- and brown-led membership organization in New York organizing low-income New Yorkers on housing, public housing preservation, and economic justice.</p>
         </li>
         <li data-name="new york civil liberties union" data-desc="new york state affiliate of the aclu that works on civil liberties through litigation, policy advocacy, and organizing.">
-          <div class="row">
-            <a class="name" href="https://www.nyclu.org/" target="_blank" rel="noopener noreferrer">New York Civil Liberties Union <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">nyclu.org</span>
-          </div>
+          <a class="row" href="https://www.nyclu.org/" target="_blank" rel="noopener noreferrer"><span class="name">New York Civil Liberties Union</span><span class="dots" aria-hidden="true"></span><span class="host">nyclu.org</span></a>
           <p class="desc">New York state affiliate of the ACLU that works on civil liberties through litigation, policy advocacy, and organizing.</p>
         </li>
         <li data-name="envision freedom fund" data-desc="brooklyn-based fund that pays immigration bonds to free people from ice detention in new york and helps them after release. formerly the brooklyn community bail fund.">
-          <div class="row">
-            <a class="name" href="https://envisionfreedom.org/" target="_blank" rel="noopener noreferrer">Envision Freedom Fund <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">envisionfreedom.org</span>
-          </div>
+          <a class="row" href="https://envisionfreedom.org/" target="_blank" rel="noopener noreferrer"><span class="name">Envision Freedom Fund</span><span class="dots" aria-hidden="true"></span><span class="host">envisionfreedom.org</span></a>
           <p class="desc">Brooklyn-based fund that pays immigration bonds to free people from ICE detention in New York and helps them after release. Formerly the Brooklyn Community Bail Fund.</p>
         </li>
         <li data-name="equality new york" data-desc="equality new york (eqny) is a grassroots advocacy organization that advances the lives of all lgbtqi+ new yorkers and their families.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/EqualityNY/" target="_blank" rel="noopener noreferrer">Equality New York <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/EqualityNY/" target="_blank" rel="noopener noreferrer"><span class="name">Equality New York</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">Equality New York (EQNY) is a grassroots advocacy organization that advances the lives of all LGBTQI+ New Yorkers and their families.</p>
         </li>
         <li data-name="new york immigration coalition" data-desc="umbrella advocacy group of more than 200 immigrant and refugee organizations across new york state, working on immigrant rights, legal services, language access, and civic participation.">
-          <div class="row">
-            <a class="name" href="https://www.nyic.org/" target="_blank" rel="noopener noreferrer">New York Immigration Coalition <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">nyic.org</span>
-          </div>
+          <a class="row" href="https://www.nyic.org/" target="_blank" rel="noopener noreferrer"><span class="name">New York Immigration Coalition</span><span class="dots" aria-hidden="true"></span><span class="host">nyic.org</span></a>
           <p class="desc">Umbrella advocacy group of more than 200 immigrant and refugee organizations across New York State, working on immigrant rights, legal services, language access, and civic participation.</p>
         </li>
         <li data-name="upstate ny socialist rifle association" data-desc="we are the upstate ny chapter of the socialist rifle association.">
-          <div class="row">
-            <a class="name" href="https://linktr.ee/unysra" target="_blank" rel="noopener noreferrer">Upstate NY Socialist Rifle Association <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">linktr.ee</span>
-          </div>
+          <a class="row" href="https://linktr.ee/unysra" target="_blank" rel="noopener noreferrer"><span class="name">Upstate NY Socialist Rifle Association</span><span class="dots" aria-hidden="true"></span><span class="host">linktr.ee</span></a>
           <p class="desc">We are the Upstate NY chapter of the Socialist Rifle Association.</p>
         </li>
         <li data-name="upstate anti-fascist coalition" data-desc="grassroots anti-fascist group based in glens falls, with members in salem, south glens falls and saratoga. holds rallies and joins solidarity pickets with migrant justice.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/upstateafc/" target="_blank" rel="noopener noreferrer">Upstate Anti-Fascist Coalition <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/upstateafc/" target="_blank" rel="noopener noreferrer"><span class="name">Upstate Anti-Fascist Coalition</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Grassroots anti-fascist group based in Glens Falls, with members in Salem, South Glens Falls and Saratoga. Holds rallies and joins solidarity pickets with Migrant Justice.</p>
         </li>
         <li data-name="northern new york coalition" data-desc="massena-based coalition in new york's north country that organizes protests and community events, including 2026 no kings rallies in massena and ogdensburg.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/nnycoalition/" target="_blank" rel="noopener noreferrer">Northern New York Coalition <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/nnycoalition/" target="_blank" rel="noopener noreferrer"><span class="name">Northern New York Coalition</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Massena-based coalition in New York's North Country that organizes protests and community events, including 2026 No Kings rallies in Massena and Ogdensburg.</p>
         </li>
         <li data-name="housing justice for all" data-desc="statewide coalition of over 80 tenant, homeless and public housing groups from brooklyn to buffalo, working on tenant protections, eviction limits and affordable housing.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/housingjustice4all/" target="_blank" rel="noopener noreferrer">Housing Justice for All <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/housingjustice4all/" target="_blank" rel="noopener noreferrer"><span class="name">Housing Justice for All</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Statewide coalition of over 80 tenant, homeless and public housing groups from Brooklyn to Buffalo, working on tenant protections, eviction limits and affordable housing.</p>
         </li>
         <li data-name="release aging people in prison (rapp) campaign" data-desc="new york campaign working to release older people from state prison, including support for the elder parole bill. organizes with local groups statewide.">
-          <div class="row">
-            <a class="name" href="https://rappcampaign.com/" target="_blank" rel="noopener noreferrer">Release Aging People in Prison (RAPP) Campaign <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">rappcampaign.com</span>
-          </div>
+          <a class="row" href="https://rappcampaign.com/" target="_blank" rel="noopener noreferrer"><span class="name">Release Aging People in Prison (RAPP) Campaign</span><span class="dots" aria-hidden="true"></span><span class="host">rappcampaign.com</span></a>
           <p class="desc">New York campaign working to release older people from state prison, including support for the Elder Parole bill. Organizes with local groups statewide.</p>
         </li>
         <li data-name="decrimny" data-desc="coalition of sex workers, legal aid and advocacy groups working to decriminalize sex work in new york and backing the stop violence in the sex trades act.">
-          <div class="row">
-            <a class="name" href="https://www.decrimny.com/" target="_blank" rel="noopener noreferrer">DecrimNY <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">decrimny.com</span>
-          </div>
+          <a class="row" href="https://www.decrimny.com/" target="_blank" rel="noopener noreferrer"><span class="name">DecrimNY</span><span class="dots" aria-hidden="true"></span><span class="host">decrimny.com</span></a>
           <p class="desc">Coalition of sex workers, legal aid and advocacy groups working to decriminalize sex work in New York and backing the Stop Violence in the Sex Trades Act.</p>
         </li>
         <li data-name="osborne association" data-desc="nonprofit serving people and families affected by incarceration in new york, with court advocacy, family programs, reentry services and housing, plus offices across the state.">
-          <div class="row">
-            <a class="name" href="https://www.osborneny.org/" target="_blank" rel="noopener noreferrer">Osborne Association <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">osborneny.org</span>
-          </div>
+          <a class="row" href="https://www.osborneny.org/" target="_blank" rel="noopener noreferrer"><span class="name">Osborne Association</span><span class="dots" aria-hidden="true"></span><span class="host">osborneny.org</span></a>
           <p class="desc">Nonprofit serving people and families affected by incarceration in New York, with court advocacy, family programs, reentry services and housing, plus offices across the state.</p>
         </li>
       </ol>
@@ -222,14 +153,10 @@
         <p class="empty" id="empty-state" hidden>No places or groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -241,8 +168,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

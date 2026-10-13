@@ -1,132 +1,145 @@
 /* ============================================================================
-   Organize Directory — Design System
+   Organize Directory — Design System ("Phone Book", October 2026)
    Source of truth for tokens, base styles, and all shared components.
-   Extracted from concept-d mockups (hybrid, city, city-brooklyn).
+   Design reference: design-mockups/rebrand/phonebook.html (local, gitignored).
+
+   The idea: the site is built like a phone book.
+     - White Pages = groups by place (cities, states, /location) on grey newsprint.
+     - Yellow Pages = groups by issue (topics, /topics) and the cover (homepage)
+       on faded yellow.
+     - Thin paper: a faint mirrored page shows through, plus paper grain.
+     - The thumb notch (a D with a punched O) is the logo, the favicon, and
+       the "you are here" marker in each page's section navigation.
+     - Listings: name · leader dots · website, description hanging below.
 
    Organization:
-     1. Tokens (custom properties)
-     2. Palettes (light / dark)
-     3. Reset & base elements
-     4. Accessibility primitives (focus, skip link)
-     5. Layout containers (main, .layout)
-     6. Components
-        — Mast / wordmark / menu button / theme toggle
-        — Footer
-        — Breadcrumb
-        — Page head (title + meta)
-        — Hero (homepage)
-        — Doors (search + CTAs)
-        — Stats line
-        — Filter (per-page)
-        — TOC (sidebar + mobile disclosure)
-        — Section + section title
-        — Group list
-        — Suggest-a-group callout
-        — Empty state
-     7. Motion preferences
+     0. Fonts
+     1. Tokens
+     2. Paper (backgrounds per page type)
+     3. Reset & base
+     4. Accessibility primitives
+     5. Header bar, logo, menu
+     6. Running head
+     7. Page opener (title, meta, filter)
+     8. Spread + thumb notches (section navigation)
+     9. Sections, headings, listings
+    10. Index lists (places, states, topics)
+    11. Display ad (suggest a group)
+    12. Cover (homepage)
+    13. Search dropdown (title-search.js)
+    14. Static pages: prose, forms, buttons
+    15. Footer
+    16. Small screens
+    17. Motion + contrast preferences
 ============================================================================ */
 
 /* ---------------------------------------------------------------------------
-   0. FONTS (self-hosted, latin subset)
-   Replaces the render-blocking Google Fonts <link>. Variable woff2 files
-   cover the weight range the design uses (400–700); Archivo Black is a
-   single 900 weight. Downloaded from Google Fonts, latin subset only.
+   0. FONTS — IBM Plex Sans Condensed (SIL OFL, see assets/fonts/IBM-Plex-OFL.txt),
+   self-hosted, latin subset. One family for everything.
 --------------------------------------------------------------------------- */
-@font-face {
-  font-family: 'Archivo';
+@font-face{
+  font-family: 'Plex Condensed';
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 400;
   font-display: swap;
-  src: url('/assets/fonts/archivo-latin-var.woff2') format('woff2');
+  src: url('/assets/fonts/plex-sans-condensed-400-latin.woff2') format('woff2');
 }
-@font-face {
-  font-family: 'Archivo';
+@font-face{
+  font-family: 'Plex Condensed';
   font-style: italic;
-  font-weight: 400 700;
+  font-weight: 400;
   font-display: swap;
-  src: url('/assets/fonts/archivo-italic-latin-var.woff2') format('woff2');
+  src: url('/assets/fonts/plex-sans-condensed-400i-latin.woff2') format('woff2');
 }
-@font-face {
-  font-family: 'Archivo Black';
+@font-face{
+  font-family: 'Plex Condensed';
   font-style: normal;
-  font-weight: 900;
+  font-weight: 500;
   font-display: swap;
-  src: url('/assets/fonts/archivo-black-latin.woff2') format('woff2');
+  src: url('/assets/fonts/plex-sans-condensed-500-latin.woff2') format('woff2');
 }
-@font-face {
-  font-family: 'JetBrains Mono';
+@font-face{
+  font-family: 'Plex Condensed';
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 700;
   font-display: swap;
-  src: url('/assets/fonts/jetbrains-mono-latin-var.woff2') format('woff2');
+  src: url('/assets/fonts/plex-sans-condensed-700-latin.woff2') format('woff2');
 }
 
 /* ---------------------------------------------------------------------------
    1. TOKENS
-   Shared scalars that don't change per palette.
+   Contrast (computed, ink on paper): yellow 13.2:1, white 14.7:1, heading
+   band 11.2:1 — all AAA. On the darkest patches of grain + show-through
+   ink is still 9.7:1 (yellow) / 10.6:1 (white).
 --------------------------------------------------------------------------- */
 :root{
-  --maxw: 1100px;
-  --radius: 4px;                      /* one corner treatment */
-}
+  --yellow: #f1e49b;          /* yellow-pages paper: faded, thin stock */
+  --band:   #f3cf33;          /* full-strength yellow, heading bands only */
+  --white:  #efeee8;          /* white-pages paper: grey newsprint, not beige */
+  --ink:    #1d1c18;          /* black ink soaked into cheap paper */
+  --pure:   #ffffff;          /* search fields, ads on yellow pages */
+  --focus:  #1a5fd0;          /* keyboard focus ring */
 
-/* ---------------------------------------------------------------------------
-   2. PALETTES
-   The two themes. Applied by a class on <html> so the pre-paint init
-   script can avoid a flash. Both palettes meet WCAG AA contrast for
-   both body text and the rust accent color.
+  --paper:  var(--white);     /* overridden per page by body.yellow */
+  --gutter: 28px;             /* page margin; the logo notch sits inside it */
+  --notch:  20px;             /* logo notch width in the header */
+  --rh:     38px;             /* running-head height (sticky offset) */
+  --maxw:   1440px;           /* text stops widening here; paper keeps going */
 
-   Contrast reference (measured):
-     LIGHT   ink on paper:  14.5 : 1 (AAA)
-             rose on paper:  5.2 : 1 (AA)
-             paper on ink:  14.5 : 1 (AAA)
-     DARK    ink on paper:  14.0 : 1 (AAA)
-             rose on paper:  8.3 : 1 (AAA)
-             paper on ink:  14.0 : 1 (AAA)
---------------------------------------------------------------------------- */
-html.light{
-  --paper: #fce0c8;                   /* peach cream */
-  --ink:   #1a1312;                   /* warm near-black */
-  --rose:  #a8361f;                   /* rust accent */
-  --focus: #1a6dff;                   /* keyboard focus ring */
   color-scheme: light;
 }
 
-html.dark{
-  --paper: #15100d;                   /* deep warm night */
-  --ink:   #f5e6d0;                   /* warm cream */
-  --rose:  #f59368;                   /* warm peach-coral */
-  --focus: #7aa8ff;
-  color-scheme: dark;
+/* ---------------------------------------------------------------------------
+   2. PAPER
+   Layers, top to bottom: grain (multiplied into the paper), show-through
+   (a mirrored page of listings, ~3% ink), paper color.
+--------------------------------------------------------------------------- */
+body{
+  background-color: var(--paper);
+  background-image:
+    url('/assets/paper/grain.svg'),
+    url('/assets/paper/ghost-white.svg');
+  background-blend-mode: multiply, normal;
+}
+body.yellow{
+  --paper: var(--yellow);
+  background-image:
+    url('/assets/paper/grain.svg'),
+    url('/assets/paper/ghost-yellow.svg');
 }
 
 /* ---------------------------------------------------------------------------
    3. RESET & BASE
 --------------------------------------------------------------------------- */
-*{ box-sizing:border-box; margin:0; padding:0; }
+*{ box-sizing: border-box; margin: 0; padding: 0; }
 
-html,body{
-  background: var(--paper);
-  color: var(--ink);
-  font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  font-size: 17px;                    /* bump from 16 for elderly/low-vision */
-  line-height: 1.55;
+html{
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body{
-  overflow-x: hidden;
+  color: var(--ink);
+  font-family: 'Plex Condensed', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+  font-size: 17px;                    /* kept from v1: elderly/low-vision readers */
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
-html{ scroll-behavior: smooth; }
-
 a{ color: inherit; text-decoration: none; }
-
+b, strong{ font-weight: 700; }
 ::selection{ background: var(--ink); color: var(--paper); }
+
+main{
+  flex: 1;
+  width: 100%;
+  max-width: var(--maxw);
+}
 
 /* ---------------------------------------------------------------------------
    4. ACCESSIBILITY PRIMITIVES
@@ -134,10 +147,10 @@ a{ color: inherit; text-decoration: none; }
 :focus{ outline: none; }
 :focus-visible{
   outline: 3px solid var(--focus);
-  outline-offset: 3px;
+  outline-offset: 2px;
 }
 
-/* Skip link — visible only on keyboard focus */
+/* Visually hidden, still read aloud. Becomes the skip link on focus. */
 .skip{
   position: absolute;
   left: -9999px;
@@ -146,7 +159,7 @@ a{ color: inherit; text-decoration: none; }
   height: 1px;
   overflow: hidden;
 }
-.skip:focus{
+a.skip:focus{
   position: fixed;
   left: 1rem;
   top: 1rem;
@@ -154,969 +167,667 @@ a{ color: inherit; text-decoration: none; }
   height: auto;
   padding: .75rem 1rem;
   background: var(--ink);
-  color: var(--paper);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .85rem;
+  color: var(--pure);
+  font-weight: 700;
   z-index: 100;
 }
 
 /* ---------------------------------------------------------------------------
-   5. LAYOUT CONTAINERS
+   5. HEADER BAR, LOGO, MENU
 --------------------------------------------------------------------------- */
-main{
-  flex: 1;
-  width: 100%;
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-/* Two-column layout used on city / topic pages.
-   Mobile: stacked. Desktop: sidebar + main column. */
-.layout{
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-@media (min-width: 900px){
-  .layout{
-    display: grid;
-    grid-template-columns: 210px 1fr;
-    gap: 3.5rem;
-    align-items: start;
-  }
-  /* If the page has no TOC (e.g. small cities like Davis, or pages whose
-     sections have no named headings), don't reserve the sidebar column —
-     let the main content take the full width. */
-  .layout:not(:has(.toc)){
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-}
-
-/* ---------------------------------------------------------------------------
-   6. COMPONENTS
---------------------------------------------------------------------------- */
-
-/* === Mast ================================================================= */
-.mast{
-  padding: 1.25rem 1.5rem;
+.bar{
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  max-width: var(--maxw);
-  margin: 0 auto;
-  width: 100%;
+  min-height: 60px;
+  padding: 0 var(--gutter);
+  border-bottom: 1px solid var(--ink);
+  position: relative;
+  z-index: 30;
 }
 
-.wordmark{
-  font-family: 'Archivo Black', sans-serif;
-  font-size: clamp(1.15rem, 3vw, 1.4rem);
-  letter-spacing: -.02em;
-  text-transform: uppercase;
-  line-height: 1;
+/* The notch is cut into the left edge of the page: it sits in the gutter,
+   flush with the edge, and the words line up with the text column. */
+.logo{
   display: inline-flex;
   align-items: center;
-  gap: .1em;
-}
-.wordmark .dot{ color: var(--rose); }
-
-.menu-btn{
-  /* 44x44 min touch target per WCAG 2.5.5 */
-  border: 0;
-  background: transparent;
-  padding: .85rem 1rem;
-  color: var(--ink);
+  gap: calc(var(--gutter) - var(--notch));
+  margin-left: calc(var(--gutter) * -1);
   min-height: 44px;
-  min-width: 44px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .85rem;
   font-weight: 700;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  cursor: pointer;
+  font-size: 21px;
+  letter-spacing: -.01em;
+  line-height: 1;
+  white-space: nowrap;
 }
-.menu-btn:hover,
-.menu-btn:focus-visible{ color: var(--rose); }
+.logo svg{
+  display: block;
+  flex: none;
+  width: var(--notch);
+  height: calc(var(--notch) * 2);
+  fill: var(--ink);
+}
 
-/* === Theme toggle ========================================================== */
-.theme-toggle{
-  background: transparent;
-  border: 1.5px solid var(--ink);
-  border-radius: var(--radius);
-  padding: 0;
-  cursor: pointer;
-  width: 44px;
-  height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--ink);
-  flex-shrink: 0;
-}
-.theme-toggle:hover{
-  background: color-mix(in srgb, var(--ink) 8%, transparent);
-}
-.theme-toggle svg{ width: 18px; height: 18px; }
-.theme-toggle .icon-sun{ display: none; }
-.theme-toggle .icon-moon{ display: block; }
-html.dark .theme-toggle .icon-sun{ display: block; }
-html.dark .theme-toggle .icon-moon{ display: none; }
-
-/* === Footer =============================================================== */
-footer{
-  background: var(--ink);
-  color: var(--paper);
-  padding: 1rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .8rem;
-  letter-spacing: .1em;
+.bar-nav{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: .25rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+  gap: 1.4rem;
+  font-weight: 500;
 }
-footer a{
+.bar-nav a{
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  padding: .6rem 1rem;
-  color: var(--paper);
 }
-footer a:hover,
-footer a:focus-visible{
+.bar-nav a:hover,
+.bar-nav a[aria-current="page"]{
   text-decoration: underline;
+  text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
-footer a:focus-visible{
+
+/* Phone: links go behind a Menu button. No JS — a <details> disclosure. */
+.menu{ display: none; position: relative; }
+.menu summary{
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1.5px solid var(--ink);
+  font-weight: 500;
+  user-select: none;
+}
+.menu summary::-webkit-details-marker{ display: none; }
+.menu[open] summary{ background: var(--ink); color: var(--pure); }
+.menu nav{
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  min-width: 13rem;
+  background: var(--pure);
+  border: 1.5px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+.menu nav a{
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 16px;
+  font-weight: 500;
+}
+.menu nav a + a{ border-top: 1px solid var(--ink); }
+.menu nav a:hover{ text-decoration: underline; }
+
+/* ---------------------------------------------------------------------------
+   6. RUNNING HEAD
+   Guide words, like the top corner of a phone book page. On list pages the
+   left side shows the first and last section in view (city-page.js).
+--------------------------------------------------------------------------- */
+.runhead{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  min-height: var(--rh);
+  padding: 0 var(--gutter);
+  border-bottom: 1px solid var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  background-color: var(--paper);
+  background-image: url('/assets/paper/grain.svg');
+  background-blend-mode: multiply;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.runhead > *{ min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.runhead .c{ font-weight: 500; text-transform: none; letter-spacing: 0; }
+.runhead .r{ text-align: right; }
+
+/* ---------------------------------------------------------------------------
+   7. PAGE OPENER
+--------------------------------------------------------------------------- */
+.opener{
+  padding: 24px var(--gutter) 20px;
+  border-bottom: 1px solid var(--ink);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: 28px;
+  row-gap: 8px;
+  align-items: end;
+}
+.opener > :not(h1){ grid-column: 2; }
+.opener .filter{ grid-column: 1 / -1; margin-top: 10px; }
+.opener .lede{ grid-column: 1 / -1; max-width: 46em; }
+
+h1.title{
+  font-size: clamp(2.6rem, 6vw, 4rem);
+  line-height: .9;
+  font-weight: 700;
+  letter-spacing: -.03em;
+}
+
+.meta{ font-size: 17px; }
+.meta a{ text-decoration: underline; text-underline-offset: 2px; }
+.meta a:hover{ text-decoration-thickness: 2px; }
+.meta nav{ display: inline; }
+
+/* Lookup field: the filter on list pages, and the search on the cover. */
+.filter,
+.lookup{
+  display: flex;
+  max-width: 44rem;
+  border: 1.5px solid var(--ink);
+  background: var(--pure);
+}
+.filter:focus-within,
+.lookup:focus-within{
   outline: 3px solid var(--focus);
   outline-offset: 2px;
 }
-
-/* === Breadcrumb =========================================================== */
-nav.crumbs{
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .78rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--ink) 62%, var(--paper));
-  padding: .5rem 0 1.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: .45rem;
-  align-items: center;
-}
-nav.crumbs a{
-  color: color-mix(in srgb, var(--ink) 78%, var(--paper));
-  padding: .25rem .1rem;
-  border-bottom: 1px solid transparent;
-}
-nav.crumbs a:hover,
-nav.crumbs a:focus-visible{
-  color: var(--rose);
-  border-bottom-color: var(--rose);
-}
-nav.crumbs .sep{ opacity: .5; }
-nav.crumbs [aria-current="page"]{
-  color: var(--ink);
-  font-weight: 700;
-}
-
-/* === Page head (title + meta) ============================================= */
-.page-head{
-  padding: .5rem 0 2rem;
-  border-bottom: 1.5px solid color-mix(in srgb, var(--ink) 18%, var(--paper));
-  margin-bottom: 2.5rem;
-}
-h1.title{
-  font-family: 'Archivo Black', sans-serif;
-  font-size: clamp(2.8rem, 8vw, 5.5rem);
-  line-height: .95;
-  letter-spacing: -.02em;
-  margin-bottom: .75rem;
-}
-h1.title .accent{ color: var(--rose); }
-
-.meta{
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .85rem;
-  letter-spacing: .08em;
-  color: color-mix(in srgb, var(--ink) 68%, var(--paper));
-  display: flex;
-  flex-wrap: wrap;
-  gap: .15rem;
-  align-items: center;
-}
-.meta b{ color: var(--ink); font-weight: 700; }
-.meta .sep{
-  color: color-mix(in srgb, var(--ink) 35%, var(--paper));
-  margin: 0 .55rem;
-}
-
-/* === Static-page prose ==================================================== */
-/* Body text for static pages (contact, subscribe, 404, thank-you, guides,
-   about). Comfortable measure, generous line-height, standard vertical rhythm. */
-.prose{
-  max-width: 42rem;
-  font-size: 1.05rem;
-  line-height: 1.65;
-  color: color-mix(in srgb, var(--ink) 88%, var(--paper));
-}
-.prose > * + *{ margin-top: 1.15rem; }
-.prose h2{
-  font-family: 'Archivo', sans-serif;
-  font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.3;
-  letter-spacing: -.005em;
-  color: var(--ink);
-  margin-top: 2rem;
-}
-.prose h3{
-  font-family: 'Archivo', sans-serif;
-  font-weight: 600;
-  font-size: 1.05rem;
-  color: var(--ink);
-  margin-top: 1.5rem;
-}
-.prose a{
-  color: var(--rose);
-  text-decoration: underline;
-  text-underline-offset: .15em;
-  text-decoration-thickness: 1px;
-}
-.prose a:hover{ text-decoration-thickness: 2px; }
-.prose ul, .prose ol{
-  padding-left: 1.25rem;
-  margin-top: 1rem;
-}
-.prose li + li{ margin-top: .35rem; }
-.prose code{
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .9em;
-  background: color-mix(in srgb, var(--ink) 8%, var(--paper));
-  padding: .1em .35em;
-  border-radius: 3px;
-}
-.prose small{
-  /* 70% ink matches .meta / .stats: accessible muted text that still clears
-     WCAG AA (≈5.2:1 in light, 6.3:1 in dark). */
-  color: color-mix(in srgb, var(--ink) 70%, var(--paper));
-  font-size: .85rem;
-}
-.debug-path{
-  color: color-mix(in srgb, var(--ink) 70%, var(--paper));
-  margin-top: 2.5rem;
-}
-
-/* === Index grid (browse-by-X pages) ======================================= */
-/* Used on /topics and /location for the main browse grid. Reads as a compact
-   alphabetical list at mobile, and a 2–3 column grid on wider viewports. */
-.index-grid{
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
-  gap: 0 1.75rem;
-  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
-  border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
-}
-.index-grid li{
-  border-top: 1px solid color-mix(in srgb, var(--ink) 8%, var(--paper));
-}
-.index-grid li:first-child,
-.index-grid li:nth-child(-n+3){
-  /* on multi-column layouts the first row shouldn't show a top divider,
-     the outer border-top handles it. Cap at 3 since max grid width = 3 cols. */
-  border-top: none;
-}
-.index-grid a{
-  display: block;
-  color: var(--ink);
-  font-family: 'Archivo', sans-serif;
-  font-weight: 500;
-  font-size: 1rem;
-  text-decoration: none;
-  /* Padding lives on the link so the hover highlight fills the full row. */
-  padding: .7rem .75rem;
-  margin-inline: -.75rem;
-  border-radius: var(--radius);
-  transition: background-color .12s ease, color .12s ease;
-}
-.index-grid a:hover,
-.index-grid a:focus-visible{
-  color: var(--rose);
-  background: color-mix(in srgb, var(--ink) 5%, var(--paper));
-}
-
-/* === Hero (homepage) ====================================================== */
-main.hero{
+.filter input,
+.lookup input{
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(2rem, 6vw, 4rem) 1.5rem;
-}
-.hero-inner{
-  width: 100%;
-  max-width: var(--maxw);
-  margin: 0 auto;
-  text-align: center;
-}
-
-h1.hl{
-  font-family: 'Archivo Black', sans-serif;
-  font-size: clamp(2.6rem, 9vw, 6.5rem);
-  line-height: .92;
-  letter-spacing: -.02em;
-  margin-bottom: 1.5rem;
-}
-/* "despair." — text weight + italic, reads like a sigh */
-h1.hl .soft{
-  font-family: 'Archivo', sans-serif;
-  font-weight: 500;
-  font-style: italic;
-  letter-spacing: -.015em;
-  color: var(--ink);
-}
-/* "Organize." — rust, with a hand-drawn underline */
-h1.hl .warm{
-  color: var(--rose);
-  position: relative;
-  display: inline-block;
-}
-h1.hl .warm .underline{
-  position: absolute;
-  left: -2%;
-  right: -2%;
-  bottom: -.08em;
-  width: 104%;
-  height: .22em;
-  pointer-events: none;
-}
-
-.sub{
-  font-family: 'Archivo', sans-serif;
-  font-weight: 500;
-  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
-  max-width: 46ch;
-  margin: 0 auto 2.75rem;
-  line-height: 1.55;
-  color: color-mix(in srgb, var(--ink) 78%, var(--paper));
-}
-.sub em{
-  font-style: italic;
-  color: var(--rose);
-  font-weight: 600;
-}
-
-/* === Doors (homepage search + CTA buttons) ================================ */
-.doors{
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  max-width: 620px;
-  margin: 0 auto;
-}
-
-.search{
-  display: flex;
-  border: 1.5px solid var(--ink);
-  background: var(--paper);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-.search:focus-within{
-  outline: 3px solid var(--focus);
-  outline-offset: 3px;
-}
-.search input{
-  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  padding: 0 12px;
   border: 0;
   background: transparent;
-  padding: 1rem 1.35rem;
-  font-family: inherit;
-  font-size: 1.1rem;
-  font-weight: 500;
+  font: inherit;
   color: var(--ink);
-  min-width: 0;
-  min-height: 52px;
 }
-.search input:focus{ outline: none; }
-.search input::placeholder{
-  color: color-mix(in srgb, var(--ink) 72%, var(--paper));
-  opacity: 1;
-}
-.search button{
-  background: var(--ink);
-  color: var(--paper);
+.filter input:focus,
+.lookup input:focus{ outline: none; }
+.filter input::placeholder,
+.lookup input::placeholder{ color: color-mix(in srgb, var(--ink) 70%, var(--pure)); opacity: 1; }
+.lookup button{
   border: 0;
-  padding: 0 1.6rem;
-  min-height: 52px;
-  min-width: 52px;
-  font-family: 'Archivo Black', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-  font-size: .95rem;
+  border-left: 1.5px solid var(--ink);
+  background: var(--ink);
+  color: var(--pure);
+  font: 700 17px 'Plex Condensed', sans-serif;
+  padding: 0 18px;
+  min-height: 48px;
   cursor: pointer;
 }
 
-.cta-row{
+/* ---------------------------------------------------------------------------
+   8. SPREAD + THUMB NOTCHES
+   Desktop: a column of notches cut into the left edge, sticky under the
+   running head. The filled notch is the section you're reading.
+   Phone: a swipeable strip, sticky at the top.
+--------------------------------------------------------------------------- */
+.spread{
   display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  align-items: start;
+}
+.spread:not(:has(.thumbs)){ grid-template-columns: minmax(0, 1fr); }
+
+.thumbs{
+  position: sticky;
+  top: var(--rh);
+  max-height: calc(100vh - var(--rh));
+  overflow-y: auto;
+  scrollbar-width: thin;
+  padding: 18px 0 28px;
+  border-right: 1px solid var(--ink);
+  align-self: stretch;
+}
+.thumbs a{
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 10px;
+  min-height: 44px;
+  padding: 4px 14px 4px 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+.thumbs .notch{
+  width: 18px;
+  height: 36px;
+  border: 1.5px solid var(--ink);
+  border-left: 0;
+  border-radius: 0 18px 18px 0;
+}
+.thumbs .k{ font-weight: 400; }
+.thumbs a:hover .lbl{ text-decoration: underline; }
+.thumbs a:hover .notch{ background: color-mix(in srgb, var(--ink) 18%, transparent); }
+.thumbs a.active{ font-weight: 700; }
+.thumbs a.active .notch{ background: var(--ink); }
+.thumbs a.dim{ opacity: .4; }            /* section emptied by the filter */
+
+.main-col{ padding: 20px var(--gutter) 40px; min-width: 0; }
+
+/* ---------------------------------------------------------------------------
+   9. SECTIONS, HEADINGS, LISTINGS
+--------------------------------------------------------------------------- */
+section.group-section{
+  scroll-margin-top: calc(var(--rh) + 12px);
+}
+section.group-section + section.group-section{ margin-top: 26px; }
+section.group-section.hidden{ display: none; }
+
+/* Heading: the one heavy rule in the system. On yellow pages it also gets
+   a band of full-strength yellow, like a classified heading. */
+.hd{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   gap: 1rem;
-  grid-template-columns: 1fr;
+  border-top: 4px solid var(--ink);
+  padding: 3px 0 0;
+  margin-bottom: 6px;
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  line-height: 1.3;
 }
-@media (min-width: 560px){
-  .cta-row{
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-  }
+.hd .k{ font-weight: 500; flex: none; }
+body.yellow .hd{
+  background: var(--band);
+  border-top-width: 3px;
+  padding: 3px 6px 2px;
 }
+
+/* Listings flow in columns within their section, like a phone book page.
+   Columns are per section, so a long page never makes you scroll back up. */
+.groups{
+  list-style: none;
+  columns: 17rem;
+  column-gap: 28px;
+  column-rule: 1px solid var(--ink);
+}
+.groups li{
+  break-inside: avoid;
+  padding: 5px 0 8px;
+}
+.groups .row{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: last baseline;
+  column-gap: 4px;
+}
+.groups .name{ font-weight: 700; }
+.groups .dots{
+  flex: 1 1 1.5em;
+  min-width: 1.5em;
+  border-bottom: 2px dotted color-mix(in srgb, var(--ink) 55%, transparent);
+  transform: translateY(-.3em);
+}
+.groups .host{
+  white-space: nowrap;
+  font-weight: 500;
+  margin-left: auto;
+}
+.groups a.row:hover .name,
+.groups a.row:focus-visible .name{
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+.groups .desc{
+  padding-left: 14px;
+  font-size: 16px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.empty{ padding: 2rem 0; font-size: 18px; }
+
+/* ---------------------------------------------------------------------------
+   10. INDEX LISTS — places on a state/city page, the cover's state index,
+   and the /location and /topics pages. Dense columns, optional counts.
+--------------------------------------------------------------------------- */
+.index-list{
+  list-style: none;
+  columns: 12rem;
+  column-gap: 28px;
+  column-rule: 1px solid var(--ink);
+}
+.index-list li{ break-inside: avoid; }
+.index-list a{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  min-height: 32px;
+  padding: 4px 0;
+  font-size: 16px;
+}
+.index-list a:hover .n{ text-decoration: underline; }
+.index-list .c{ font-weight: 400; flex: none; }
+.index-list.wide{ columns: 16rem; }
+
+/* ---------------------------------------------------------------------------
+   11. DISPLAY AD — "Know a group we're missing?" Boxed, in the opposite
+   paper color, with the call to action in a black bar where a phone number
+   would go. The only boxed thing on any page.
+--------------------------------------------------------------------------- */
+.ad{
+  margin: 34px 0 10px;
+  max-width: 30rem;
+  border: 2px solid var(--ink);
+  background: var(--yellow);
+  padding: 14px 16px 0;
+}
+body.yellow .ad{ background: var(--pure); }
+.ad p{ font-size: 17px; }
+.ad b{
+  display: block;
+  font-size: 24px;
+  line-height: 1.05;
+  margin-bottom: 6px;
+}
+.ad .go{
+  display: block;
+  margin: 14px -16px 0;
+  padding: 8px 16px;
+  background: var(--ink);
+  color: var(--pure);
+  font-size: 22px;
+  font-weight: 700;
+}
+.ad .go:hover{ text-decoration: underline; }
+
+/* ---------------------------------------------------------------------------
+   12. COVER (homepage)
+--------------------------------------------------------------------------- */
+.cover-top{
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 24px 48px;
+  align-items: center;
+  padding: 40px var(--gutter) 36px;
+  border-bottom: 4px solid var(--ink);
+}
+.cover-title{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: calc(var(--gutter) * -1);
+}
+.cover-title svg{
+  flex: none;
+  width: clamp(48px, 6vw, 84px);
+  height: clamp(96px, 12vw, 168px);
+  fill: var(--ink);
+}
+.cover-title h1{
+  font-size: clamp(3.4rem, 8.4vw, 6.4rem);
+  line-height: .86;
+  font-weight: 700;
+  letter-spacing: -.035em;
+}
+.edition{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin-top: 20px;
+  font-weight: 500;
+}
+.tagline{
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+.cover-sub{ margin: 10px 0 18px; max-width: 34em; }
+
+.contents{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 48px;
+  padding: 18px var(--gutter) 8px;
+}
+.contents .row{
+  display: flex;
+  align-items: last baseline;
+  flex-wrap: wrap;
+  column-gap: 6px;
+  padding: 10px 0;
+  font-size: 22px;
+}
+.contents .name{ font-weight: 700; }
+.contents .dots{
+  flex: 1 1 2em;
+  min-width: 2em;
+  border-bottom: 2px dotted color-mix(in srgb, var(--ink) 55%, transparent);
+  transform: translateY(-.3em);
+}
+.contents .host{ font-weight: 500; margin-left: auto; white-space: nowrap; }
+.contents a.row:hover .name{ text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+.state-index{ padding: 14px var(--gutter) 40px; }
+.state-index .hd{ margin-bottom: 8px; }
+
+/* ---------------------------------------------------------------------------
+   13. SEARCH DROPDOWN (built by /js/title-search.js)
+--------------------------------------------------------------------------- */
+.title-search-wrapper,
+.title-search-container{ position: relative; max-width: 44rem; }
+.title-search-input{
+  width: 100%;
+  min-height: 48px;
+  padding: 0 12px;
+  border: 1.5px solid var(--ink);
+  background: var(--pure);
+  font: inherit;
+  color: var(--ink);
+}
+.title-search-input:focus{ outline: 3px solid var(--focus); outline-offset: 2px; }
+.title-search-input::placeholder{ color: color-mix(in srgb, var(--ink) 70%, var(--pure)); opacity: 1; }
+.title-search-results{
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% - 1.5px);
+  z-index: 40;
+  max-height: 420px;
+  overflow-y: auto;
+  background: var(--pure);
+  border: 1.5px solid var(--ink);
+}
+.title-search-result{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  min-height: 44px;
+  padding: 10px 12px;
+}
+.title-search-result + .title-search-result{ border-top: 1px solid var(--ink); }
+.title-search-result:hover,
+.title-search-result:focus-visible{ background: var(--band); }
+.result-title{ font-weight: 700; }
+.result-type{ font-weight: 400; flex: none; }
+.title-search-results .highlight{ text-decoration: underline; text-decoration-thickness: 2px; }
+.no-results{ padding: 12px; }
+
+/* ---------------------------------------------------------------------------
+   14. STATIC PAGES — prose, forms, buttons
+--------------------------------------------------------------------------- */
+.page-body{ padding: 28px var(--gutter) 48px; }
+
+.prose{ max-width: 40rem; font-size: 18px; line-height: 1.5; }
+.prose > * + *{ margin-top: 1rem; }
+.prose h2{
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  border-top: 4px solid var(--ink);
+  padding-top: 3px;
+  margin-top: 2rem;
+}
+.prose a{ text-decoration: underline; text-underline-offset: 2px; }
+.prose a:hover{ text-decoration-thickness: 2px; }
+.prose ul, .prose ol{ padding-left: 1.2rem; }
+.prose li + li{ margin-top: .35rem; }
+.prose code{ font-family: ui-monospace, monospace; font-size: .9em; }
+.prose small{ font-size: 15px; }
 
 .btn{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: .7rem;
-  padding: 1.1rem 1.6rem;
-  min-height: 52px;
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 1rem;
-  letter-spacing: .03em;
-  text-transform: uppercase;
+  min-height: 48px;
+  padding: 0 20px;
   border: 1.5px solid var(--ink);
+  background: var(--ink);
+  color: var(--pure);
+  font: 700 18px 'Plex Condensed', sans-serif;
   cursor: pointer;
-  border-radius: var(--radius);
-  transition: transform .15s ease;
 }
-.btn:hover{ transform: translateY(-1px); }
-.btn.primary{
-  background: var(--rose);
-  color: var(--paper);
-  border-color: var(--rose);
-}
-.btn.ghost{
-  background: transparent;
-  color: var(--ink);
-}
-.btn svg{ width: 18px; height: 18px; flex-shrink: 0; }
+.prose a.btn{ text-decoration: none; }
+.btn:hover{ text-decoration: underline; }
 
-/* === Forms (contact, subscribe) =========================================== */
 .form{
-  max-width: 42rem;
+  max-width: 40rem;
   display: grid;
-  gap: 1.4rem;
-  margin-top: 2rem;
+  gap: 1.3rem;
+  margin-top: 1.75rem;
 }
-.form .field{ display: grid; gap: .4rem; }
-.form label{
-  font-family: 'Archivo', sans-serif;
-  font-weight: 600;
-  font-size: .95rem;
-  color: var(--ink);
-  display: flex;
-  align-items: baseline;
-  gap: .5rem;
-}
-.form label .optional{
-  font-weight: 400;
-  font-size: .85rem;
-  color: color-mix(in srgb, var(--ink) 70%, var(--paper));
-}
+.form .field{ display: grid; gap: .35rem; }
+.form label{ font-weight: 700; display: flex; align-items: baseline; gap: .5rem; }
+.form label .optional{ font-weight: 400; }
 .form input[type="text"],
 .form input[type="email"],
 .form input[type="search"],
 .form select,
 .form textarea{
-  font: inherit;
-  font-size: 1rem;
-  color: var(--ink);
-  background: var(--paper);
-  border: 1.5px solid color-mix(in srgb, var(--ink) 35%, var(--paper));
-  border-radius: var(--radius);
-  padding: .8rem 1rem;
-  min-height: 48px;
   width: 100%;
-  transition: border-color .15s ease, box-shadow .15s ease;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--ink);
+  border-radius: 0;
+  background: var(--pure);
+  font: inherit;
+  color: var(--ink);
 }
-.form textarea{
-  min-height: 160px;
-  resize: vertical;
-  font-family: inherit;
-  line-height: 1.5;
-}
+.form textarea{ min-height: 160px; resize: vertical; line-height: 1.45; }
 .form input:focus,
 .form select:focus,
-.form textarea:focus{
-  outline: none;
-  border-color: var(--ink);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--rose) 35%, transparent);
-}
+.form textarea:focus{ outline: 3px solid var(--focus); outline-offset: 2px; }
 .form input.error,
 .form select.error,
-.form textarea.error{
-  border-color: var(--rose);
-}
-.form .helper{
-  font-size: .85rem;
-  color: color-mix(in srgb, var(--ink) 70%, var(--paper));
-}
-.form .error-text{
-  font-size: .85rem;
-  color: var(--rose);
-  font-weight: 600;
-  display: none;
-}
-/* Honeypot — off-screen, never shown. Bots fill every text field. */
-.form .hp-field{
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-.form button[type="submit"]{
-  justify-self: start;
-  margin-top: .5rem;
-}
-.form .checkbox{
-  display: flex;
-  align-items: flex-start;
-  gap: .65rem;
-  font-family: 'Archivo', sans-serif;
-  font-size: .95rem;
-  line-height: 1.45;
-  color: var(--ink);
-  cursor: pointer;
-}
-.form .checkbox input[type="checkbox"]{
-  flex-shrink: 0;
-  width: 1.2rem;
-  height: 1.2rem;
-  margin-top: .1rem;
-  accent-color: var(--rose);
-  cursor: pointer;
-}
+.form textarea.error{ border-width: 3px; }
+.form .helper{ font-size: 15px; }
+.form .error-text{ font-size: 15px; font-weight: 700; display: none; }
+.form .error-text::before{ content: "⚠ "; }
+.form .hp-field{ position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form button[type="submit"]{ justify-self: start; margin-top: .4rem; }
+.form .checkbox{ font-weight: 400; display: flex; align-items: flex-start; gap: .6rem; cursor: pointer; line-height: 1.4; }
+.form .checkbox input[type="checkbox"]{ flex: none; width: 1.2rem; height: 1.2rem; margin-top: .1rem; accent-color: var(--ink); }
+
 .form-status{
+  display: none;               /* JS sets style.display="block" */
   margin-top: 1.5rem;
-  padding: 1rem 1.25rem;
-  border-radius: var(--radius);
+  max-width: 40rem;
+  padding: 12px 14px;
+  border: 2px solid var(--ink);
+  background: var(--pure);
   font-weight: 500;
-  display: none;
-  border: 1.5px solid var(--rose);
-  color: var(--ink);
-}
-/* JS toggles style.display="block" to show — the class modifier only colors. */
-.form-status.success{
-  background: color-mix(in srgb, var(--rose) 12%, var(--paper));
-}
-.form-status.error{
-  background: color-mix(in srgb, var(--rose) 18%, var(--paper));
 }
 .form-failure-help{
   display: none;
   margin-top: 1.25rem;
-  padding: 1rem 1.25rem;
-  border: 1.5px dashed color-mix(in srgb, var(--ink) 40%, var(--paper));
-  border-radius: var(--radius);
-  font-size: .95rem;
-}
-
-/* === Stats line =========================================================== */
-.stats{
-  margin-top: 3rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .85rem;
-  letter-spacing: .08em;
-  color: color-mix(in srgb, var(--ink) 68%, var(--paper));
-}
-.stats b{ color: var(--ink); font-weight: 700; }
-.stats .sep{
-  color: color-mix(in srgb, var(--ink) 40%, var(--paper));
-  margin: 0 .6rem;
-}
-
-/* === Filter (per-page search) ============================================= */
-.filter{
-  display: flex;
-  border: 1.5px solid var(--ink);
-  background: var(--paper);
-  border-radius: var(--radius);
-  overflow: hidden;
-  margin-bottom: 2rem;
-  max-width: 560px;
-}
-.filter:focus-within{
-  outline: 3px solid var(--focus);
-  outline-offset: 3px;
-}
-.filter input{
-  flex: 1;
-  border: 0;
-  background: transparent;
-  padding: .85rem 1.1rem;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--ink);
-  min-width: 0;
-  min-height: 48px;
-}
-.filter input:focus{ outline: none; }
-.filter input::placeholder{
-  color: color-mix(in srgb, var(--ink) 72%, var(--paper));
-  opacity: 1;
-}
-
-/* === TOC ================================================================== */
-/* Mobile default: sticky disclosure dropdown.
-   Desktop (>=900px): vertical sidebar that scrolls internally if tall. */
-.toc{
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  margin: 0 -1.5rem 2.5rem;
-  background: color-mix(in srgb, var(--paper) 94%, transparent);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1.5px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
-}
-
-.toc-toggle{
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  gap: .75rem;
-  padding: 1rem 1.5rem;
-  min-height: 52px;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  color: var(--ink);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .78rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  text-align: left;
-}
-.toc-toggle .current{
-  display: flex;
-  align-items: baseline;
-  gap: .55rem;
-  flex: 1;
-  min-width: 0;
-}
-.toc-toggle .current-label{
-  color: color-mix(in srgb, var(--ink) 55%, var(--paper));
-  font-weight: 400;
-  flex-shrink: 0;
-}
-.toc-toggle .current-name{
-  color: var(--rose);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.toc-toggle .chev{
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-  transition: transform .2s ease;
-}
-.toc-toggle[aria-expanded="true"] .chev{ transform: rotate(180deg); }
-
-.toc-scroll{
-  display: none;
-  flex-direction: column;
-  gap: 0;
-  padding: .4rem 0 .6rem;
-  max-height: calc(100vh - 8rem);
-  overflow-y: auto;
-  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
-}
-.toc.open .toc-scroll{ display: flex; }
-
-.toc a{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: .75rem;
-  padding: .85rem 1.5rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .8rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  border: 0;
-  border-left: 2px solid transparent;
-  border-radius: 0;
-  background: transparent;
-  color: color-mix(in srgb, var(--ink) 80%, var(--paper));
-  min-height: 48px;
-  transition: background .15s ease, color .15s ease;
-}
-.toc a:hover,
-.toc a:focus-visible{
-  background: color-mix(in srgb, var(--ink) 6%, var(--paper));
-  color: var(--ink);
-}
-.toc a.active{
-  color: var(--ink);
-  border-left-color: var(--rose);
-}
-.toc a .count{
-  font-weight: 400;
-  opacity: .55;
-  font-family: 'JetBrains Mono', monospace;
-}
-.toc a.active .count{ color: var(--rose); opacity: .85; }
-.toc a.dim{ opacity: .35; }         /* dimmed by filter when empty */
-
-/* Desktop TOC overrides */
-@media (min-width: 900px){
-  .toc{
-    position: sticky;
-    top: 1.25rem;
-    z-index: 1;
-    margin: 0;
-    padding: 0;
-    background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-bottom: 0;
-    max-height: calc(100vh - 2.5rem);
-    overflow-y: auto;
-    scrollbar-width: thin;
-  }
-  .toc-toggle{ display: none; }
-  .toc-scroll{
-    display: flex !important;
-    flex-direction: column;
-    gap: 0;
-    overflow: visible;
-    padding: 0;
-    border-top: 0;
-    max-height: none;
-  }
-  .toc a{
-    padding: .7rem .9rem;
-    font-size: .72rem;
-    min-height: 40px;
-    color: color-mix(in srgb, var(--ink) 72%, var(--paper));
-  }
-  .toc a.active{ font-weight: 700; }
-  .toc a .count{ opacity: .5; font-size: .7rem; }
-}
-
-/* === Section (group-section) ============================================== */
-section.group-section{
-  padding: 1rem 0 3.5rem;
-  scroll-margin-top: 5rem;            /* offset for mobile sticky TOC */
-}
-section.group-section:first-of-type{ padding-top: 0; }
-section.group-section.hidden{ display: none; }   /* hidden by filter */
-
-@media (min-width: 900px){
-  section.group-section{ scroll-margin-top: 1.5rem; }
-}
-
-h2.section-title{
-  font-family: 'Archivo Black', sans-serif;
-  font-size: clamp(1.9rem, 4vw, 2.7rem);
-  letter-spacing: -.02em;
-  line-height: 1.02;
-  margin-bottom: 1.4rem;
-  padding-top: .1em;
-}
-
-.section-count{
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .78rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--ink) 62%, var(--paper));
-  margin-bottom: 1.75rem;
-}
-
-/* === Group list =========================================================== */
-.groups{
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.groups li{
-  /* Horizontal padding + negative margin creates a hover "tile" that extends
-     slightly beyond the text column, so the entire row feels like one button
-     when the link inside is hovered. The margin is static — only the bg
-     paints on hover — so layout never shifts. */
-  padding: 1.5rem .9rem;
-  margin-inline: -.9rem;
-  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
-  border-radius: var(--radius);
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-  min-width: 0;
-  transition: background-color .12s ease;
-}
-.groups li:last-child{
-  border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
-}
-.groups li:has(.name:hover),
-.groups li:has(.name:focus-visible){
-  background: color-mix(in srgb, var(--ink) 5%, var(--paper));
-}
-.groups .row{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: .5rem .8rem;
-}
-.groups .name{
-  font-family: 'Archivo', sans-serif;
-  font-weight: 700;
-  font-size: clamp(1.1rem, 1.65vw, 1.25rem);
-  letter-spacing: -.005em;
-  line-height: 1.25;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 2px;
-  display: inline-flex;
-  align-items: baseline;
-  gap: .4rem;
-  word-break: break-word;
-}
-.groups .name:hover,
-.groups .name:focus-visible{
-  color: var(--rose);
-  border-bottom-color: var(--rose);
-}
-.groups .name .ext{
-  font-size: .7em;
-  opacity: .6;
-  transform: translateY(-.1em);
-  transition: transform .15s ease, opacity .15s ease;
-}
-.groups .name:hover .ext,
-.groups .name:focus-visible .ext{
-  transform: translate(2px, -.2em);
-  opacity: 1;
-}
-.groups .host{
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .75rem;
-  /* 65% bumped from 58% to hit 4.5:1 at the small size */
-  color: color-mix(in srgb, var(--ink) 65%, var(--paper));
-  letter-spacing: .02em;
-}
-.groups .desc{
-  color: color-mix(in srgb, var(--ink) 82%, var(--paper));
-  font-size: .98rem;
-  line-height: 1.6;
-  max-width: 72ch;
-}
-
-/* === Compact children list (neighborhoods / state → cities) =============== */
-/* Multi-column grid of simple name-only links. Auto-fills 2–3 cols on wide
-   viewports, collapses to 1 on narrow. Used on container-city pages (NYC →
-   boroughs) and state hubs (California → cities). */
-.groups.children-list{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  gap: 0 1.5rem;
-  border-top: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
-  border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, var(--paper));
-  padding: .25rem 0;
-}
-.groups.children-list li{
-  padding: .4rem .6rem;
-  margin-inline: -.6rem;
-  border-top: none;
-  border-radius: var(--radius);
-  display: block;
-  gap: 0;
-  transition: background-color .12s ease;
-}
-.groups.children-list li:has(.name:hover),
-.groups.children-list li:has(.name:focus-visible){
-  background: color-mix(in srgb, var(--ink) 5%, var(--paper));
-}
-.groups.children-list li:last-child{
-  border-bottom: none;
-}
-.groups.children-list .name{
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-/* === Suggest-a-group callout ============================================== */
-.suggest{
-  margin: 3rem 0 4rem;
-  padding: 2rem;
-  border: 1.5px dashed color-mix(in srgb, var(--ink) 35%, var(--paper));
-  border-radius: var(--radius);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.25rem;
-}
-.suggest p{
-  font-family: 'Archivo', sans-serif;
-  font-weight: 500;
-  max-width: 42ch;
-  line-height: 1.5;
-  color: color-mix(in srgb, var(--ink) 85%, var(--paper));
-}
-.suggest p b{ color: var(--ink); font-weight: 700; }
-.suggest .btn{
-  /* Smaller than a page-primary btn */
-  padding: .85rem 1.4rem;
-  min-height: 48px;
-  font-size: .9rem;
-  letter-spacing: .04em;
-  background: var(--ink);
-  color: var(--paper);
-  border-color: var(--ink);
-}
-.suggest .btn svg{ width: 16px; height: 16px; }
-
-/* === Empty state (filter returns nothing) ================================= */
-.empty{
-  padding: 3rem 0;
-  text-align: center;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .9rem;
-  color: color-mix(in srgb, var(--ink) 60%, var(--paper));
-  letter-spacing: .06em;
-}
-.empty b{ color: var(--rose); font-weight: 700; }
-
-/* === Small-screen polish ================================================== */
-@media (max-width: 640px){
-  .page-head{ padding-bottom: 1.5rem; margin-bottom: 2rem; }
-  .toc{ padding: .7rem 1.5rem; }
-  .suggest{ padding: 1.5rem; flex-direction: column; align-items: flex-start; }
+  max-width: 40rem;
+  padding: 12px 14px;
+  border: 1.5px dashed var(--ink);
 }
 
 /* ---------------------------------------------------------------------------
-   7. MOTION PREFERENCES
-   Honor prefers-reduced-motion for all transitions in the system.
+   15. FOOTER
+--------------------------------------------------------------------------- */
+footer{
+  border-top: 1px solid var(--ink);
+  padding: 8px var(--gutter);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.6rem;
+  font-weight: 500;
+}
+footer a{ display: inline-flex; align-items: center; min-height: 44px; }
+footer a:hover{ text-decoration: underline; text-underline-offset: 4px; }
+
+/* ---------------------------------------------------------------------------
+   16. SMALL SCREENS
+--------------------------------------------------------------------------- */
+@media (max-width: 899px){
+  :root{ --gutter: 20px; --notch: 15px; }
+
+  .bar-nav{ display: none; }
+  .menu{ display: block; }
+
+  /* One sticky thing on phones: the notch strip. The running head scrolls. */
+  .runhead{ position: static; grid-template-columns: 1fr auto; }
+  .runhead .c{ display: none; }
+
+  .opener{ grid-template-columns: minmax(0, 1fr); }
+  .opener > :not(h1){ grid-column: 1; }
+
+  .spread{ grid-template-columns: minmax(0, 1fr); }
+  .thumbs{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    max-height: none;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--ink);
+    background-color: var(--paper);
+    background-image: url('/assets/paper/grain.svg');
+    background-blend-mode: multiply;
+    scrollbar-width: none;
+  }
+  .thumbs::-webkit-scrollbar{ display: none; }
+  .thumbs a{
+    flex: none;
+    display: flex;
+    gap: 8px;
+    min-height: 48px;
+    padding: 0 14px 0 0;
+    border-right: 1px solid var(--ink);
+    white-space: nowrap;
+  }
+  .thumbs a + a{ padding-left: 0; }
+  .thumbs .notch{ width: 12px; height: 24px; border-radius: 0 12px 12px 0; }
+
+  section.group-section{ scroll-margin-top: 60px; }
+  .main-col{ padding-top: 16px; }
+
+  .cover-top{ grid-template-columns: minmax(0, 1fr); padding-top: 28px; }
+  .contents{ grid-template-columns: minmax(0, 1fr); }
+  .contents .row{ font-size: 20px; }
+}
+
+@media (max-width: 420px){
+  .logo{ font-size: 19px; }
+  .groups .desc{ padding-left: 10px; }
+}
+
+/* ---------------------------------------------------------------------------
+   17. MOTION + CONTRAST PREFERENCES
 --------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior: auto; }
-  .btn,
-  .suggest .btn,
-  .groups .name .ext,
-  .toc a,
-  .toc-toggle .chev{
-    transition: none !important;
-  }
+}
+
+/* Asked for more contrast? Plain paper: no grain, no show-through. */
+@media (prefers-contrast: more){
+  body, body.yellow, .runhead, .thumbs{ background-image: none; }
+  .groups .dots, .contents .dots{ border-bottom-color: var(--ink); }
 }

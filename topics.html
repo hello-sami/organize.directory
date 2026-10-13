@@ -7,8 +7,7 @@
   <title>Topics — Organize Directory</title>
   <meta name="description" content="Browse organizing work by topic — housing, labor, mutual aid, prison abolition, and more.">
   <link rel="canonical" href="https://organize.directory/topics">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Topics — Organize Directory">
@@ -19,100 +18,90 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
   <!-- Fonts -->
 
   <!-- Styles -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="yellow">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location">White Pages</a><a href="/topics" aria-current="page">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location">White Pages</a><a href="/topics" aria-current="page">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l">Abortion – Tech Worker Solidarity</span>
+  <span class="c">Yellow Pages</span>
+  <span class="r"></span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Topics</span>
-  </nav>
 
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Browse by topic.</h1>
     <p class="meta">Groups organized by what they're fighting for.</p>
   </div>
 
-  <ol class="index-grid">
-    <li><a href="/topics/abortion">Abortion &amp; Reproductive Justice</a></li>
-    <li><a href="/topics/anarchism">Anarchism</a></li>
-    <li><a href="/topics/anti-capitalist">Anti-Capitalist</a></li>
-    <li><a href="/topics/anti-caste">Anti-Caste</a></li>
-    <li><a href="/topics/anti-colonialism">Anti-Colonialism</a></li>
-    <li><a href="/topics/anti-war">Anti-War</a></li>
-    <li><a href="/topics/appalachia">Appalachian Support</a></li>
-    <li><a href="/topics/direct-action-support">Direct Action Support</a></li>
-    <li><a href="/topics/disability-justice">Disability Justice</a></li>
-    <li><a href="/topics/drug-harm-reduction">Drug Harm Reduction</a></li>
-    <li><a href="/topics/elder-solidarity">Elder Solidarity</a></li>
-    <li><a href="/topics/environmental-justice">Environmental Justice</a></li>
-    <li><a href="/topics/farmer-solidarity">Farmer Solidarity</a></li>
-    <li><a href="/topics/feminism">Feminism</a></li>
-    <li><a href="/topics/firearms-education">Firearms Education</a></li>
-    <li><a href="/topics/food">Food &amp; Food Security</a></li>
-    <li><a href="/topics/global-justice">Global Justice</a></li>
-    <li><a href="/topics/hiv">HIV &amp; Healthcare</a></li>
-    <li><a href="/topics/housing-justice">Housing Justice</a></li>
-    <li><a href="/topics/indigenous-solidarity">Indigenous Solidarity</a></li>
-    <li><a href="/topics/jewish-solidarity">Jewish Solidarity</a></li>
-    <li><a href="/topics/labor">Labor</a></li>
-    <li><a href="/topics/lgbtq">Trans &amp; LGBTQ+ Support</a></li>
-    <li><a href="/topics/migrant-solidarity">Migrant Solidarity</a></li>
-    <li><a href="/topics/muslim-solidarity">Muslim Solidarity</a></li>
-    <li><a href="/topics/opioid-crisis">Opioid Crisis</a></li>
-    <li><a href="/topics/palestinian-solidarity">Palestinian Solidarity</a></li>
-    <li><a href="/topics/philippines">Philippines</a></li>
-    <li><a href="/topics/police-brutality">Police Brutality</a></li>
-    <li><a href="/topics/political-education">Political Education</a></li>
-    <li><a href="/topics/poverty">Poverty &amp; Economic Justice</a></li>
-    <li><a href="/topics/prison-abolition">Prison Abolition</a></li>
-    <li><a href="/topics/prisoner-solidarity">Prisoner Solidarity</a></li>
-    <li><a href="/topics/puerto-rico">Puerto Rico</a></li>
-    <li><a href="/topics/racial-justice">Racial Justice</a></li>
-    <li><a href="/topics/radical-news">Radical News</a></li>
-    <li><a href="/topics/radical-publishing">Radical Publishing</a></li>
-    <li><a href="/topics/sex-worker-support">Sex Worker Support</a></li>
-    <li><a href="/topics/socialism">Socialism</a></li>
-    <li><a href="/topics/stop-cop-city">Stop Cop City</a></li>
-    <li><a href="/topics/tech-worker-solidarity">Tech Worker Solidarity</a></li>
+  <div class="page-body">
+  <ol class="index-list wide">
+    <li><a href="/topics/abortion"><span class="n">Abortion &amp; Reproductive Justice</span></a></li>
+    <li><a href="/topics/anarchism"><span class="n">Anarchism</span></a></li>
+    <li><a href="/topics/anti-capitalist"><span class="n">Anti-Capitalist</span></a></li>
+    <li><a href="/topics/anti-caste"><span class="n">Anti-Caste</span></a></li>
+    <li><a href="/topics/anti-colonialism"><span class="n">Anti-Colonialism</span></a></li>
+    <li><a href="/topics/anti-war"><span class="n">Anti-War</span></a></li>
+    <li><a href="/topics/appalachia"><span class="n">Appalachian Support</span></a></li>
+    <li><a href="/topics/direct-action-support"><span class="n">Direct Action Support</span></a></li>
+    <li><a href="/topics/disability-justice"><span class="n">Disability Justice</span></a></li>
+    <li><a href="/topics/drug-harm-reduction"><span class="n">Drug Harm Reduction</span></a></li>
+    <li><a href="/topics/elder-solidarity"><span class="n">Elder Solidarity</span></a></li>
+    <li><a href="/topics/environmental-justice"><span class="n">Environmental Justice</span></a></li>
+    <li><a href="/topics/farmer-solidarity"><span class="n">Farmer Solidarity</span></a></li>
+    <li><a href="/topics/feminism"><span class="n">Feminism</span></a></li>
+    <li><a href="/topics/firearms-education"><span class="n">Firearms Education</span></a></li>
+    <li><a href="/topics/food"><span class="n">Food &amp; Food Security</span></a></li>
+    <li><a href="/topics/global-justice"><span class="n">Global Justice</span></a></li>
+    <li><a href="/topics/hiv"><span class="n">HIV &amp; Healthcare</span></a></li>
+    <li><a href="/topics/housing-justice"><span class="n">Housing Justice</span></a></li>
+    <li><a href="/topics/indigenous-solidarity"><span class="n">Indigenous Solidarity</span></a></li>
+    <li><a href="/topics/jewish-solidarity"><span class="n">Jewish Solidarity</span></a></li>
+    <li><a href="/topics/labor"><span class="n">Labor</span></a></li>
+    <li><a href="/topics/lgbtq"><span class="n">Trans &amp; LGBTQ+ Support</span></a></li>
+    <li><a href="/topics/migrant-solidarity"><span class="n">Migrant Solidarity</span></a></li>
+    <li><a href="/topics/muslim-solidarity"><span class="n">Muslim Solidarity</span></a></li>
+    <li><a href="/topics/opioid-crisis"><span class="n">Opioid Crisis</span></a></li>
+    <li><a href="/topics/palestinian-solidarity"><span class="n">Palestinian Solidarity</span></a></li>
+    <li><a href="/topics/philippines"><span class="n">Philippines</span></a></li>
+    <li><a href="/topics/police-brutality"><span class="n">Police Brutality</span></a></li>
+    <li><a href="/topics/political-education"><span class="n">Political Education</span></a></li>
+    <li><a href="/topics/poverty"><span class="n">Poverty &amp; Economic Justice</span></a></li>
+    <li><a href="/topics/prison-abolition"><span class="n">Prison Abolition</span></a></li>
+    <li><a href="/topics/prisoner-solidarity"><span class="n">Prisoner Solidarity</span></a></li>
+    <li><a href="/topics/puerto-rico"><span class="n">Puerto Rico</span></a></li>
+    <li><a href="/topics/racial-justice"><span class="n">Racial Justice</span></a></li>
+    <li><a href="/topics/radical-news"><span class="n">Radical News</span></a></li>
+    <li><a href="/topics/radical-publishing"><span class="n">Radical Publishing</span></a></li>
+    <li><a href="/topics/sex-worker-support"><span class="n">Sex Worker Support</span></a></li>
+    <li><a href="/topics/socialism"><span class="n">Socialism</span></a></li>
+    <li><a href="/topics/stop-cop-city"><span class="n">Stop Cop City</span></a></li>
+    <li><a href="/topics/tech-worker-solidarity"><span class="n">Tech Worker Solidarity</span></a></li>
   </ol>
+  </div>
 
 </main>
 
@@ -122,7 +111,6 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
 
 </body>
 </html>

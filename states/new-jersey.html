@@ -7,8 +7,7 @@
   <title>New Jersey — Organize Directory</title>
   <meta name="description" content="Cities and statewide organizations in New Jersey.">
   <link rel="canonical" href="https://organize.directory/new-jersey">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="New Jersey — Organize Directory">
@@ -19,172 +18,113 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>Places – Statewide Organizations</span>
+  <span class="c">White Pages</span>
+  <span class="r">New Jersey</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">New Jersey</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">New Jersey</h1>
-    <p class="meta">
-      <b>11</b> statewide groups
-    </p>
-  </div>
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter New Jersey</label>
-    <input id="page-filter" type="search" placeholder="Filter New Jersey…" autocomplete="off">
-  </div>
-
-  <div class="layout">
-  <nav class="toc" aria-label="Sections on this page">
-    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
-      <span class="current">
-        <span class="current-label">Section ·</span>
-        <span class="current-name">Places</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div id="toc-panel" class="toc-scroll">
-      <a href="#places" data-section="places"><span class="label">Places</span></a>
-      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="label">Statewide Organizations</span> <span class="count">11</span></a>
+    <p class="meta"><b>11</b> statewide groups</p>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter New Jersey</label>
+      <input id="page-filter" type="search" placeholder="Filter New Jersey" autocomplete="off">
     </div>
-  </nav>
-    <div class="main-col">
+  </div>
 
+  <div class="spread">
+    <nav class="thumbs" aria-label="Sections on this page">
+      <a href="#places" data-section="places"><span class="notch" aria-hidden="true"></span><span class="lbl">Places</span></a>
+      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="notch" aria-hidden="true"></span><span class="lbl">Statewide Organizations</span><span class="k">11</span></a>
+    </nav>
+    <div class="main-col">
       <div id="sections-root">
-    <section id="places" class="group-section" data-section="places">
-      <h2 class="section-title">Places</h2>
-      <ol class="groups children-list">
-        <li data-name="jersey city" data-desc=""><a class="name" href="/jersey-city">Jersey City</a></li>
-        <li data-name="jersey shore" data-desc=""><a class="name" href="/jersey-shore">Jersey Shore</a></li>
-        <li data-name="montclair" data-desc=""><a class="name" href="/montclair">Montclair</a></li>
-        <li data-name="newark, nj" data-desc=""><a class="name" href="/newark">Newark, NJ</a></li>
-        <li data-name="south jersey" data-desc=""><a class="name" href="/south-jersey">South Jersey</a></li>
-        <li data-name="trenton" data-desc=""><a class="name" href="/trenton">Trenton</a></li>
+    <section id="places" class="group-section" data-section="places" data-title="Places">
+      <h2 class="hd"><span>Places</span></h2>
+      <ol class="index-list">
+        <li data-name="jersey city" data-desc=""><a href="/jersey-city"><span class="n">Jersey City</span></a></li>
+        <li data-name="jersey shore" data-desc=""><a href="/jersey-shore"><span class="n">Jersey Shore</span></a></li>
+        <li data-name="montclair" data-desc=""><a href="/montclair"><span class="n">Montclair</span></a></li>
+        <li data-name="newark, nj" data-desc=""><a href="/newark"><span class="n">Newark, NJ</span></a></li>
+        <li data-name="south jersey" data-desc=""><a href="/south-jersey"><span class="n">South Jersey</span></a></li>
+        <li data-name="trenton" data-desc=""><a href="/trenton"><span class="n">Trenton</span></a></li>
       </ol>
     </section>
 
-    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations">
-      <h2 class="section-title">Statewide Organizations</h2>
+    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations" data-title="Statewide Organizations">
+      <h2 class="hd"><span>Statewide Organizations</span><span class="k" aria-hidden="true">11</span></h2>
       <ol class="groups">
         <li data-name="nj trans and queer defense" data-desc="anarchist community self-defense project run by and for trans and queer people in new jersey. shares self-defense and safety resources; not membership-based.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/njtransqueerdefense" target="_blank" rel="noopener noreferrer">NJ Trans and Queer Defense <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/njtransqueerdefense" target="_blank" rel="noopener noreferrer"><span class="name">NJ Trans and Queer Defense</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Anarchist community self-defense project run by and for trans and queer people in New Jersey. Shares self-defense and safety resources; not membership-based.</p>
         </li>
         <li data-name="say gay nj" data-desc="posts about school board meetings, actions and resources supporting lgbtq+ youth and community in new jersey. focuses on school board policies and student rights.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/saygaynj" target="_blank" rel="noopener noreferrer">Say Gay NJ <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/saygaynj" target="_blank" rel="noopener noreferrer"><span class="name">Say Gay NJ</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Posts about school board meetings, actions and resources supporting LGBTQ+ youth and community in New Jersey. Focuses on school board policies and student rights.</p>
         </li>
         <li data-name="books behind bars" data-desc="volunteer-run books-to-prisoners program based in wildwood. mails free books on request to people in new jersey prisons and runs a pen pal program.">
-          <div class="row">
-            <a class="name" href="https://www.booksbehindbarsnj.com/" target="_blank" rel="noopener noreferrer">Books Behind Bars <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">booksbehindbarsnj.com</span>
-          </div>
+          <a class="row" href="https://www.booksbehindbarsnj.com/" target="_blank" rel="noopener noreferrer"><span class="name">Books Behind Bars</span><span class="dots" aria-hidden="true"></span><span class="host">booksbehindbarsnj.com</span></a>
           <p class="desc">Volunteer-run books-to-prisoners program based in Wildwood. Mails free books on request to people in New Jersey prisons and runs a pen pal program.</p>
         </li>
         <li data-name="new jersey harm reduction coalition" data-desc="a mutual aid network providing free harm reduction supplies and support across new jersey. they coordinate direct assistance through naloxone distribution, syringe access, and safer use supplies while building community power through evidence-informed public health resources, education, and advocacy to promote the safety and dignity of people who use drugs.">
-          <div class="row">
-            <a class="name" href="https://njharmreduction.org/" target="_blank" rel="noopener noreferrer">New Jersey Harm Reduction Coalition <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">njharmreduction.org</span>
-          </div>
+          <a class="row" href="https://njharmreduction.org/" target="_blank" rel="noopener noreferrer"><span class="name">New Jersey Harm Reduction Coalition</span><span class="dots" aria-hidden="true"></span><span class="host">njharmreduction.org</span></a>
           <p class="desc">A mutual aid network providing free harm reduction supplies and support across New Jersey. They coordinate direct assistance through naloxone distribution, syringe access, and safer use supplies while building community power through evidence-informed public health resources, education, and advocacy to promote the safety and dignity of people who use drugs.</p>
         </li>
         <li data-name="nj peace and justice works" data-desc="coalition of survivors, families, faith groups and advocates pushing new jersey to enforce its 2019 law limiting solitary confinement in state prisons.">
-          <div class="row">
-            <a class="name" href="https://njpjw.org/" target="_blank" rel="noopener noreferrer">NJ Peace and Justice Works <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">njpjw.org</span>
-          </div>
+          <a class="row" href="https://njpjw.org/" target="_blank" rel="noopener noreferrer"><span class="name">NJ Peace and Justice Works</span><span class="dots" aria-hidden="true"></span><span class="host">njpjw.org</span></a>
           <p class="desc">Coalition of survivors, families, faith groups and advocates pushing New Jersey to enforce its 2019 law limiting solitary confinement in state prisons.</p>
         </li>
         <li data-name="ida's bookshop" data-desc="black-owned independent bookstore at 734 haddon ave in collingswood, nj, named for ida b. wells and centered on women authors, artists and activists.">
-          <div class="row">
-            <a class="name" href="https://x.com/idasbooks" target="_blank" rel="noopener noreferrer">Ida's Bookshop <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">x.com</span>
-          </div>
+          <a class="row" href="https://x.com/idasbooks" target="_blank" rel="noopener noreferrer"><span class="name">Ida's Bookshop</span><span class="dots" aria-hidden="true"></span><span class="host">x.com</span></a>
           <p class="desc">Black-owned independent bookstore at 734 Haddon Ave in Collingswood, NJ, named for Ida B. Wells and centered on women authors, artists and activists.</p>
         </li>
         <li data-name="new jersey red umbrella alliance" data-desc="the new jersey red umbrella alliance (njrua) is a working alliance of activists and allies who are dedicated to promoting, defending, and advocating for the human rights of sex workers in the state of new jersey.">
-          <div class="row">
-            <a class="name" href="https://njrua.org/" target="_blank" rel="noopener noreferrer">New Jersey Red Umbrella Alliance <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">njrua.org</span>
-          </div>
+          <a class="row" href="https://njrua.org/" target="_blank" rel="noopener noreferrer"><span class="name">New Jersey Red Umbrella Alliance</span><span class="dots" aria-hidden="true"></span><span class="host">njrua.org</span></a>
           <p class="desc">The New Jersey Red Umbrella Alliance (NJRUA) is a working alliance of activists and allies who are dedicated to promoting, defending, and advocating for the human rights of sex workers in the state of New Jersey.</p>
         </li>
         <li data-name="new jersey abortion access fund" data-desc="volunteer-run fund that pays clinics to cover abortion costs for people traveling to, from and within new jersey.">
-          <div class="row">
-            <a class="name" href="https://njaaf.org/" target="_blank" rel="noopener noreferrer">New Jersey Abortion Access Fund <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">njaaf.org</span>
-          </div>
+          <a class="row" href="https://njaaf.org/" target="_blank" rel="noopener noreferrer"><span class="name">New Jersey Abortion Access Fund</span><span class="dots" aria-hidden="true"></span><span class="host">njaaf.org</span></a>
           <p class="desc">Volunteer-run fund that pays clinics to cover abortion costs for people traveling to, from and within New Jersey.</p>
         </li>
         <li data-name="mutual aid morris" data-desc="mutual aid and community building in morris county, nj">
-          <div class="row">
-            <a class="name" href="https://mutualmorris.com/" target="_blank" rel="noopener noreferrer">Mutual Aid Morris <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">mutualmorris.com</span>
-          </div>
+          <a class="row" href="https://mutualmorris.com/" target="_blank" rel="noopener noreferrer"><span class="name">Mutual Aid Morris</span><span class="dots" aria-hidden="true"></span><span class="host">mutualmorris.com</span></a>
           <p class="desc">Mutual aid and community building in Morris County, NJ</p>
         </li>
         <li data-name="cosecha nj" data-desc="fighting for respect, dignity and permanent protection for all.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/cosechanj/" target="_blank" rel="noopener noreferrer">Cosecha NJ <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/cosechanj/" target="_blank" rel="noopener noreferrer"><span class="name">Cosecha NJ</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Fighting for Respect, Dignity and Permanent Protection for all.</p>
         </li>
         <li data-name="nj burn" data-desc="new jersey youth-led organization working to build sustained political struggle in our neighborhoods.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/nj.burn/" target="_blank" rel="noopener noreferrer">NJ Burn <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/nj.burn/" target="_blank" rel="noopener noreferrer"><span class="name">NJ Burn</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">New Jersey youth-led organization working to build sustained political struggle in our neighborhoods.</p>
         </li>
       </ol>
@@ -192,14 +132,10 @@
         <p class="empty" id="empty-state" hidden>No places or groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -211,8 +147,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

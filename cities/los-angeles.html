@@ -7,8 +7,7 @@
   <title>Los Angeles — Organize Directory</title>
   <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Los Angeles.">
   <link rel="canonical" href="https://organize.directory/los-angeles">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Los Angeles — Organize Directory">
@@ -19,666 +18,418 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>Neighborhoods – Other Groups</span>
+  <span class="c">White Pages</span>
+  <span class="r">Los Angeles, California</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/california">California</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/socal">Southern California</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Los Angeles</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Los Angeles</h1>
-    <p class="meta">
-      <b>72</b> groups
-      <span class="sep" aria-hidden="true">·</span>
-      California
-    </p>
-  </div>
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Los Angeles</label>
-    <input id="page-filter" type="search" placeholder="Filter groups in Los Angeles…" autocomplete="off">
-  </div>
-
-  <div class="layout">
-  <nav class="toc" aria-label="Sections on this page">
-    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
-      <span class="current">
-        <span class="current-label">Section ·</span>
-        <span class="current-name">Neighborhoods</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div id="toc-panel" class="toc-scroll">
-      <a href="#neighborhoods" data-section="neighborhoods"><span class="label">Neighborhoods</span></a>
-      <a href="#mutual-aid" data-section="mutual-aid"><span class="label">Mutual Aid</span> <span class="count">3</span></a>
-      <a href="#cultural" data-section="cultural"><span class="label">Community Spaces</span> <span class="count">5</span></a>
-      <a href="#food" data-section="food"><span class="label">Food Justice</span> <span class="count">9</span></a>
-      <a href="#healthcare" data-section="healthcare"><span class="label">Healthcare &amp; Harm Reduction</span> <span class="count">4</span></a>
-      <a href="#housing" data-section="housing"><span class="label">Housing Justice &amp; Homeless Solidarity</span> <span class="count">16</span></a>
-      <a href="#lgbtq" data-section="lgbtq"><span class="label">LGBTQ+ Solidarity</span> <span class="count">2</span></a>
-      <a href="#anti-racism" data-section="anti-racism"><span class="label">Racial Justice</span> <span class="count">4</span></a>
-      <a href="#prison" data-section="prison"><span class="label">Prison Abolition and Prisoner Solidarity</span> <span class="count">4</span></a>
-      <a href="#specific-communities" data-section="specific-communities"><span class="label">Specific Communities Support</span> <span class="count">8</span></a>
-      <a href="#other-groups" data-section="other-groups"><span class="label">Other Groups</span> <span class="count">17</span></a>
+    <div class="meta"><b>72</b> groups. <nav aria-label="Breadcrumb">Part of <a href="/socal">Southern California</a>, <a href="/california">California</a>.</nav></div>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Los Angeles</label>
+      <input id="page-filter" type="search" placeholder="Filter groups in Los Angeles" autocomplete="off">
     </div>
-  </nav>
-    <div class="main-col">
+  </div>
 
+  <div class="spread">
+    <nav class="thumbs" aria-label="Sections on this page">
+      <a href="#neighborhoods" data-section="neighborhoods"><span class="notch" aria-hidden="true"></span><span class="lbl">Neighborhoods</span></a>
+      <a href="#mutual-aid" data-section="mutual-aid"><span class="notch" aria-hidden="true"></span><span class="lbl">Mutual Aid</span><span class="k">3</span></a>
+      <a href="#cultural" data-section="cultural"><span class="notch" aria-hidden="true"></span><span class="lbl">Community Spaces</span><span class="k">5</span></a>
+      <a href="#food" data-section="food"><span class="notch" aria-hidden="true"></span><span class="lbl">Food Justice</span><span class="k">9</span></a>
+      <a href="#healthcare" data-section="healthcare"><span class="notch" aria-hidden="true"></span><span class="lbl">Healthcare &amp; Harm Reduction</span><span class="k">4</span></a>
+      <a href="#housing" data-section="housing"><span class="notch" aria-hidden="true"></span><span class="lbl">Housing Justice &amp; Homeless Solidarity</span><span class="k">16</span></a>
+      <a href="#lgbtq" data-section="lgbtq"><span class="notch" aria-hidden="true"></span><span class="lbl">LGBTQ+ Solidarity</span><span class="k">2</span></a>
+      <a href="#anti-racism" data-section="anti-racism"><span class="notch" aria-hidden="true"></span><span class="lbl">Racial Justice</span><span class="k">4</span></a>
+      <a href="#prison" data-section="prison"><span class="notch" aria-hidden="true"></span><span class="lbl">Prison Abolition and Prisoner Solidarity</span><span class="k">4</span></a>
+      <a href="#specific-communities" data-section="specific-communities"><span class="notch" aria-hidden="true"></span><span class="lbl">Specific Communities Support</span><span class="k">8</span></a>
+      <a href="#other-groups" data-section="other-groups"><span class="notch" aria-hidden="true"></span><span class="lbl">Other Groups</span><span class="k">17</span></a>
+    </nav>
+    <div class="main-col">
       <div id="sections-root">
-    <section id="neighborhoods" class="group-section" data-section="neighborhoods">
-      <h2 class="section-title">Neighborhoods</h2>
-      <ol class="groups children-list">
-        <li data-name="pomona" data-desc=""><a class="name" href="/pomona">Pomona</a></li>
+    <section id="neighborhoods" class="group-section" data-section="neighborhoods" data-title="Neighborhoods">
+      <h2 class="hd"><span>Neighborhoods</span></h2>
+      <ol class="index-list">
+        <li data-name="pomona" data-desc=""><a href="/pomona"><span class="n">Pomona</span></a></li>
       </ol>
     </section>
 
-    <section id="mutual-aid" class="group-section" data-section="mutual-aid">
-      <h2 class="section-title">Mutual Aid</h2>
+    <section id="mutual-aid" class="group-section" data-section="mutual-aid" data-title="Mutual Aid">
+      <h2 class="hd"><span>Mutual Aid</span><span class="k" aria-hidden="true">3</span></h2>
       <ol class="groups">
         <li data-name="mutual aid los angeles network" data-desc="mutual aid la network (malan) is a connector and information hub for mutual aid efforts, people and resources across los angeles.">
-          <div class="row">
-            <a class="name" href="https://mutualaidla.org/" target="_blank" rel="noopener noreferrer">Mutual Aid Los Angeles Network <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">mutualaidla.org</span>
-          </div>
+          <a class="row" href="https://mutualaidla.org/" target="_blank" rel="noopener noreferrer"><span class="name">Mutual Aid Los Angeles Network</span><span class="dots" aria-hidden="true"></span><span class="host">mutualaidla.org</span></a>
           <p class="desc">Mutual Aid LA Network (MALAN) is a connector and information hub for mutual aid efforts, people and resources across Los Angeles.</p>
         </li>
         <li data-name="mutual aid la network" data-desc="volunteer hub that connects mutual aid groups across los angeles, keeps a directory of them, and runs its own projects like hygiene hello! kit builds and produce in the park.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/mutualaidlanetwork/" target="_blank" rel="noopener noreferrer">Mutual Aid LA Network <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/mutualaidlanetwork/" target="_blank" rel="noopener noreferrer"><span class="name">Mutual Aid LA Network</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Volunteer hub that connects mutual aid groups across Los Angeles, keeps a directory of them, and runs its own projects like Hygiene Hello! kit builds and Produce in the Park.</p>
         </li>
         <li data-name="#abolishicela" data-desc="">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/abolishicela/" target="_blank" rel="noopener noreferrer">#AbolishICELA <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/abolishicela/" target="_blank" rel="noopener noreferrer"><span class="name">#AbolishICELA</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
         </li>
       </ol>
     </section>
 
-    <section id="cultural" class="group-section" data-section="cultural">
-      <h2 class="section-title">Community Spaces</h2>
+    <section id="cultural" class="group-section" data-section="cultural" data-title="Community Spaces">
+      <h2 class="hd"><span>Community Spaces</span><span class="k" aria-hidden="true">5</span></h2>
       <ol class="groups">
         <li data-name="all power books" data-desc="volunteer-run bookshop + community space">
-          <div class="row">
-            <a class="name" href="https://allpowerbooks.org/" target="_blank" rel="noopener noreferrer">All Power Books <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">allpowerbooks.org</span>
-          </div>
+          <a class="row" href="https://allpowerbooks.org/" target="_blank" rel="noopener noreferrer"><span class="name">All Power Books</span><span class="dots" aria-hidden="true"></span><span class="host">allpowerbooks.org</span></a>
           <p class="desc">volunteer-run bookshop + community space</p>
         </li>
         <li data-name="black lantern books" data-desc="a black-led cooperative bookstore open fri-sun from 12-7pm. currently housed within the @legacy.lib">
-          <div class="row">
-            <a class="name" href="https://blacklanternbooks.com/" target="_blank" rel="noopener noreferrer">Black Lantern Books <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">blacklanternbooks.com</span>
-          </div>
+          <a class="row" href="https://blacklanternbooks.com/" target="_blank" rel="noopener noreferrer"><span class="name">Black Lantern Books</span><span class="dots" aria-hidden="true"></span><span class="host">blacklanternbooks.com</span></a>
           <p class="desc">A Black-led cooperative bookstore open Fri-Sun from 12-7pm. Currently housed within the @legacy.lib</p>
         </li>
         <li data-name="harriet tubman center for social
                 justice" data-desc="committed to fighting racism, organizing for immigrant rights, lgbtqi+ rights, and fighting against us imperialism">
-          <div class="row">
-            <a class="name" href="https://sites.google.com/view/harriettubmancenterla/home" target="_blank" rel="noopener noreferrer">Harriet Tubman Center for Social
-                Justice <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">sites.google.com</span>
-          </div>
+          <a class="row" href="https://sites.google.com/view/harriettubmancenterla/home" target="_blank" rel="noopener noreferrer"><span class="name">Harriet Tubman Center for Social
+                Justice</span><span class="dots" aria-hidden="true"></span><span class="host">sites.google.com</span></a>
           <p class="desc">Committed to fighting racism, organizing for immigrant rights, LGBTQI+ rights, and fighting against US imperialism</p>
         </li>
         <li data-name="radical hood library" data-desc="headquarters for @nonamereads, 2304 w jefferson blvd">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/radicalhoodlibrary" target="_blank" rel="noopener noreferrer">Radical Hood Library <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/radicalhoodlibrary" target="_blank" rel="noopener noreferrer"><span class="name">Radical Hood Library</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Headquarters for @nonamereads, 2304 W Jefferson Blvd</p>
         </li>
         <li data-name="tía chucha's centro cultural" data-desc="the mission of tía chucha's centro cultural is to transform community in the northeast san fernando valley and beyond through ancestral knowledge, the arts, literacy and creative engagement.">
-          <div class="row">
-            <a class="name" href="https://www.tiachucha.org/" target="_blank" rel="noopener noreferrer">Tía Chucha's Centro Cultural <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">tiachucha.org</span>
-          </div>
+          <a class="row" href="https://www.tiachucha.org/" target="_blank" rel="noopener noreferrer"><span class="name">Tía Chucha's Centro Cultural</span><span class="dots" aria-hidden="true"></span><span class="host">tiachucha.org</span></a>
           <p class="desc">The mission of Tía Chucha's Centro Cultural is to transform community in the Northeast San Fernando Valley and beyond through ancestral knowledge, the arts, literacy and creative engagement.</p>
         </li>
       </ol>
     </section>
 
-    <section id="food" class="group-section" data-section="food">
-      <h2 class="section-title">Food Justice</h2>
+    <section id="food" class="group-section" data-section="food" data-title="Food Justice">
+      <h2 class="hd"><span>Food Justice</span><span class="k" aria-hidden="true">9</span></h2>
       <ol class="groups">
         <li data-name="altadena community kitchen" data-desc="providing fire relief efforts via donations and meals by partnering with neighbors of the altadena community.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/altadenacommunalkitchen/" target="_blank" rel="noopener noreferrer">Altadena Community Kitchen <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/altadenacommunalkitchen/" target="_blank" rel="noopener noreferrer"><span class="name">Altadena Community Kitchen</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Providing fire relief efforts via donations and meals by partnering with neighbors of the Altadena community.</p>
         </li>
         <li data-name="altadena seed library" data-desc="altadena seed library is a growing network of seed exchange boxes, educational resources, and conservation initiatives. through the distribution of free seeds and seed education, we are working to expand equitable access to shade and green spaces, increase food sovereignty, connect neighbors, and restore local ecosystems.">
-          <div class="row">
-            <a class="name" href="https://www.altadenaseedlibrary.com/" target="_blank" rel="noopener noreferrer">Altadena Seed Library <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">altadenaseedlibrary.com</span>
-          </div>
+          <a class="row" href="https://www.altadenaseedlibrary.com/" target="_blank" rel="noopener noreferrer"><span class="name">Altadena Seed Library</span><span class="dots" aria-hidden="true"></span><span class="host">altadenaseedlibrary.com</span></a>
           <p class="desc">Altadena Seed Library is a growing network of seed exchange boxes, educational resources, and conservation initiatives. Through the distribution of free seeds and seed education, we are working to expand equitable access to shade and green spaces, increase food sovereignty, connect neighbors, and restore local ecosystems.</p>
         </li>
         <li data-name="food not bombs dtla" data-desc="serves free vegan meals on skid row every saturday at gladys park in downtown la, and hands out donated clothing, blankets and toiletries.">
-          <div class="row">
-            <a class="name" href="https://foodnotbombsdtla.wixsite.com/foodnotbombsdtla" target="_blank" rel="noopener noreferrer">Food Not Bombs DTLA <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">foodnotbombsdtla.wixsite.com</span>
-          </div>
+          <a class="row" href="https://foodnotbombsdtla.wixsite.com/foodnotbombsdtla" target="_blank" rel="noopener noreferrer"><span class="name">Food Not Bombs DTLA</span><span class="dots" aria-hidden="true"></span><span class="host">foodnotbombsdtla.wixsite.com</span></a>
           <p class="desc">Serves free vegan meals on Skid Row every Saturday at Gladys Park in downtown LA, and hands out donated clothing, blankets and toiletries.</p>
         </li>
         <li data-name="food for comrades" data-desc="abolitionists fighting for food justice in la. via food recovery, harm reduction, &amp; mutual aid.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/foodforcomrades/" target="_blank" rel="noopener noreferrer">Food For Comrades <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/foodforcomrades/" target="_blank" rel="noopener noreferrer"><span class="name">Food For Comrades</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Abolitionists fighting for food justice in LA. via food recovery, harm reduction, &amp; mutual aid.</p>
         </li>
         <li data-name="la community fridges" data-desc="free food. comida gratis. take what you need, leave what you can. agarra lo que necesitas, deja lo que no.">
-          <div class="row">
-            <a class="name" href="https://www.lacommunityfridges.com/" target="_blank" rel="noopener noreferrer">LA Community Fridges <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">lacommunityfridges.com</span>
-          </div>
+          <a class="row" href="https://www.lacommunityfridges.com/" target="_blank" rel="noopener noreferrer"><span class="name">LA Community Fridges</span><span class="dots" aria-hidden="true"></span><span class="host">lacommunityfridges.com</span></a>
           <p class="desc">Free food. Comida gratis. Take what you need, leave what you can. Agarra lo que necesitas, deja lo que no.</p>
         </li>
         <li data-name="los angeles food not bombs" data-desc="feeding the revolution w/ plant-based food.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/lafnb" target="_blank" rel="noopener noreferrer">Los Angeles Food Not Bombs <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/lafnb" target="_blank" rel="noopener noreferrer"><span class="name">Los Angeles Food Not Bombs</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Feeding the revolution w/ plant-based food.</p>
         </li>
         <li data-name="polo's pantry" data-desc="we bring dependable food access and culturally relevant nourishment to food insecure communities.">
-          <div class="row">
-            <a class="name" href="https://www.polospantry.org/" target="_blank" rel="noopener noreferrer">Polo's Pantry <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">polospantry.org</span>
-          </div>
+          <a class="row" href="https://www.polospantry.org/" target="_blank" rel="noopener noreferrer"><span class="name">Polo's Pantry</span><span class="dots" aria-hidden="true"></span><span class="host">polospantry.org</span></a>
           <p class="desc">We bring dependable food access and culturally relevant nourishment to food insecure communities.</p>
         </li>
         <li data-name="southeast la comida no bombas" data-desc="free hot food for the 562">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/selacocnb/" target="_blank" rel="noopener noreferrer">Southeast LA Comida No Bombas <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/selacocnb/" target="_blank" rel="noopener noreferrer"><span class="name">Southeast LA Comida No Bombas</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Free Hot Food for the 562</p>
         </li>
         <li data-name="summaeverythang community center" data-desc="south central la nonprofit founded by artist lauren halsey. it offers free youth programs in arts, education and wellness, and since 2020 has given out free organic produce boxes in watts.">
-          <div class="row">
-            <a class="name" href="https://summaeverythangcc.org/" target="_blank" rel="noopener noreferrer">Summaeverythang Community Center <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">summaeverythangcc.org</span>
-          </div>
+          <a class="row" href="https://summaeverythangcc.org/" target="_blank" rel="noopener noreferrer"><span class="name">Summaeverythang Community Center</span><span class="dots" aria-hidden="true"></span><span class="host">summaeverythangcc.org</span></a>
           <p class="desc">South Central LA nonprofit founded by artist Lauren Halsey. It offers free youth programs in arts, education and wellness, and since 2020 has given out free organic produce boxes in Watts.</p>
         </li>
       </ol>
     </section>
 
-    <section id="healthcare" class="group-section" data-section="healthcare">
-      <h2 class="section-title">Healthcare &amp; Harm Reduction</h2>
+    <section id="healthcare" class="group-section" data-section="healthcare" data-title="Healthcare &amp; Harm Reduction">
+      <h2 class="hd"><span>Healthcare &amp; Harm Reduction</span><span class="k" aria-hidden="true">4</span></h2>
       <ol class="groups">
         <li data-name="all power free clinic" data-desc="volunteer-run free clinic from all power books.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/apfreeclinic/" target="_blank" rel="noopener noreferrer">All Power Free Clinic <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/apfreeclinic/" target="_blank" rel="noopener noreferrer"><span class="name">All Power Free Clinic</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Volunteer-run free clinic from All Power Books.</p>
         </li>
         <li data-name="being alive" data-desc="a nonprofit organization created and operated by and for people living with hiv/aids.">
-          <div class="row">
-            <a class="name" href="https://beingalivela.org/" target="_blank" rel="noopener noreferrer">Being Alive <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">beingalivela.org</span>
-          </div>
+          <a class="row" href="https://beingalivela.org/" target="_blank" rel="noopener noreferrer"><span class="name">Being Alive</span><span class="dots" aria-hidden="true"></span><span class="host">beingalivela.org</span></a>
           <p class="desc">a nonprofit organization created and operated by and for people living with HIV/AIDS.</p>
         </li>
         <li data-name="los angeles community health project" data-desc="bringing harm reduction services, needle exchange, and outreach to communities throughout los angeles since 1992.">
-          <div class="row">
-            <a class="name" href="https://www.chpla.org/" target="_blank" rel="noopener noreferrer">Los Angeles Community Health Project <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">chpla.org</span>
-          </div>
+          <a class="row" href="https://www.chpla.org/" target="_blank" rel="noopener noreferrer"><span class="name">Los Angeles Community Health Project</span><span class="dots" aria-hidden="true"></span><span class="host">chpla.org</span></a>
           <p class="desc">Bringing harm reduction services, needle exchange, and outreach to communities throughout Los Angeles since 1992.</p>
         </li>
         <li data-name="la abortion support network" data-desc="la abortion support collective (laasc) is a volunteer led and run collective of trained abortion doulas based in the los angeles area.">
-          <div class="row">
-            <a class="name" href="https://www.laabortionsupport.org/" target="_blank" rel="noopener noreferrer">LA Abortion Support Network <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">laabortionsupport.org</span>
-          </div>
+          <a class="row" href="https://www.laabortionsupport.org/" target="_blank" rel="noopener noreferrer"><span class="name">LA Abortion Support Network</span><span class="dots" aria-hidden="true"></span><span class="host">laabortionsupport.org</span></a>
           <p class="desc">LA Abortion Support Collective (LAASC) is a volunteer led and run collective of trained abortion doulas based in the Los Angeles area.</p>
         </li>
       </ol>
     </section>
 
-    <section id="housing" class="group-section" data-section="housing">
-      <h2 class="section-title">Housing Justice &amp; Homeless Solidarity</h2>
+    <section id="housing" class="group-section" data-section="housing" data-title="Housing Justice &amp; Homeless Solidarity">
+      <h2 class="hd"><span>Housing Justice &amp; Homeless Solidarity</span><span class="k" aria-hidden="true">16</span></h2>
       <ol class="groups">
         <li data-name="aetna street solidarity" data-desc="mutual aid group organizing around aetna street in van nuys.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/aetnastreetsolidarity/" target="_blank" rel="noopener noreferrer">Aetna Street Solidarity <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/aetnastreetsolidarity/" target="_blank" rel="noopener noreferrer"><span class="name">Aetna Street Solidarity</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Mutual aid group organizing around Aetna Street in Van Nuys.</p>
         </li>
         <li data-name="echo park mutual aid" data-desc="building bridges between housed &amp; unhoused neighbors. you strong, i strong. you fed, i fed.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/e_p_m_a_/" target="_blank" rel="noopener noreferrer">Echo Park Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/e_p_m_a_/" target="_blank" rel="noopener noreferrer"><span class="name">Echo Park Mutual Aid</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">building bridges between housed &amp; unhoused neighbors. you strong, i strong. you fed, i fed.</p>
         </li>
         <li data-name="food not bulldozers" data-desc="we are a group of friends regularly doing supplies distro among unhoused communities in the south el monte, “la” area on tongva land.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/foodnotbulldozers" target="_blank" rel="noopener noreferrer">Food Not Bulldozers <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/foodnotbulldozers" target="_blank" rel="noopener noreferrer"><span class="name">Food Not Bulldozers</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">We are a group of friends regularly doing supplies distro among unhoused communities in the South El Monte, “LA” area on Tongva land.</p>
         </li>
         <li data-name="ktown for all" data-desc="an all-volunteer homeless outreach and advocacy organization in koreatown, los angeles.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/ktownforall/" target="_blank" rel="noopener noreferrer">Ktown for All <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/ktownforall/" target="_blank" rel="noopener noreferrer"><span class="name">Ktown for All</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">An all-volunteer homeless outreach and advocacy organization in Koreatown, Los Angeles.</p>
         </li>
         <li data-name="la can" data-desc="fighting for human rights from skid row usa.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/lacanetwork_official/" target="_blank" rel="noopener noreferrer">LA CAN <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/lacanetwork_official/" target="_blank" rel="noopener noreferrer"><span class="name">LA CAN</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Fighting for Human Rights from Skid Row USA.</p>
         </li>
         <li data-name="la street care &amp; mutual aid" data-desc="abolitionist mutual aid collective organizing in los feliz, echo park, atwater, historic filipinotown, silver lake, and rampart.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/lastreetcare" target="_blank" rel="noopener noreferrer">LA Street Care &amp; Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/lastreetcare" target="_blank" rel="noopener noreferrer"><span class="name">LA Street Care &amp; Mutual Aid</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Abolitionist mutual aid collective organizing in Los Feliz, Echo Park, Atwater, Historic Filipinotown, Silver Lake, and Rampart.</p>
         </li>
         <li data-name="la tenants union" data-desc="the la tenants union has local chapters across the city. locals organize around neighborhood issues and help link neighborhood struggles to the larger movement for tenant power and housing justice.">
-          <div class="row">
-            <a class="name" href="https://latenantsunion.org/" target="_blank" rel="noopener noreferrer">LA Tenants Union <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">latenantsunion.org</span>
-          </div>
+          <a class="row" href="https://latenantsunion.org/" target="_blank" rel="noopener noreferrer"><span class="name">LA Tenants Union</span><span class="dots" aria-hidden="true"></span><span class="host">latenantsunion.org</span></a>
           <p class="desc">The LA Tenants Union has local chapters across the city. Locals organize around neighborhood issues and help link neighborhood struggles to the larger movement for tenant power and housing justice.</p>
         </li>
         <li data-name="los angeles community action network (la can)" data-desc="the los angeles community action network organizes people to fight back against oppression. based in skid row. working globally.">
-          <div class="row">
-            <a class="name" href="https://cangress.org/" target="_blank" rel="noopener noreferrer">Los Angeles Community Action Network (LA CAN) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">cangress.org</span>
-          </div>
+          <a class="row" href="https://cangress.org/" target="_blank" rel="noopener noreferrer"><span class="name">Los Angeles Community Action Network (LA CAN)</span><span class="dots" aria-hidden="true"></span><span class="host">cangress.org</span></a>
           <p class="desc">The Los Angeles Community Action Network organizes people to fight back against oppression. BASED IN SKID ROW. WORKING GLOBALLY.</p>
         </li>
         <li data-name="palms unhoused mutual aid" data-desc="abolitionists dedicated to community care in west la —standing against state violence.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/palmsunhousedmutualaid/" target="_blank" rel="noopener noreferrer">Palms Unhoused Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/palmsunhousedmutualaid/" target="_blank" rel="noopener noreferrer"><span class="name">Palms Unhoused Mutual Aid</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Abolitionists dedicated to community care in West LA —standing against state violence.</p>
         </li>
         <li data-name="reclaiming homes" data-desc="impacted by the crisis, we are homeless &amp; housing insecure families reclaiming vacant, publicly-owned homes to fight for housing as a human right.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/ReclaimingHomes" target="_blank" rel="noopener noreferrer">Reclaiming Homes <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/ReclaimingHomes" target="_blank" rel="noopener noreferrer"><span class="name">Reclaiming Homes</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Impacted by the crisis, we are homeless &amp; housing insecure families reclaiming vacant, publicly-owned homes to fight for housing as a human right.</p>
         </li>
         <li data-name="street watch la" data-desc="fighting to empower + protect the rights of poor/unhoused tenants across la. started by @dsa_la &amp; @lacanetwork_official">
-          <div class="row">
-            <a class="name" href="https://streetwatchla.com/" target="_blank" rel="noopener noreferrer">Street Watch LA <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">streetwatchla.com</span>
-          </div>
+          <a class="row" href="https://streetwatchla.com/" target="_blank" rel="noopener noreferrer"><span class="name">Street Watch LA</span><span class="dots" aria-hidden="true"></span><span class="host">streetwatchla.com</span></a>
           <p class="desc">Fighting to empower + protect the rights of poor/unhoused tenants across LA. Started by @dsa_la &amp; @lacanetwork_official</p>
         </li>
         <li data-name="chinatown community for equitable development (cced)" data-desc="builds grassroots power with low-income and immigrant communities through organizing, education, and mutual help">
-          <div class="row">
-            <a class="name" href="https://www.ccedla.org/" target="_blank" rel="noopener noreferrer">Chinatown Community for Equitable Development (CCED) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">ccedla.org</span>
-          </div>
+          <a class="row" href="https://www.ccedla.org/" target="_blank" rel="noopener noreferrer"><span class="name">Chinatown Community for Equitable Development (CCED)</span><span class="dots" aria-hidden="true"></span><span class="host">ccedla.org</span></a>
           <p class="desc">Builds grassroots power with low-income and immigrant communities through organizing, education, and mutual help</p>
         </li>
         <li data-name="selah neighborhood homeless coalition" data-desc="silver lake, echo park, los feliz, atwater village, hollywood in la">
-          <div class="row">
-            <a class="name" href="https://www.selahnhc.org/" target="_blank" rel="noopener noreferrer">Selah Neighborhood Homeless Coalition <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">selahnhc.org</span>
-          </div>
+          <a class="row" href="https://www.selahnhc.org/" target="_blank" rel="noopener noreferrer"><span class="name">Selah Neighborhood Homeless Coalition</span><span class="dots" aria-hidden="true"></span><span class="host">selahnhc.org</span></a>
           <p class="desc">Silver Lake, Echo Park, Los Feliz, Atwater Village, Hollywood in LA</p>
         </li>
         <li data-name="fairfax mutual aid" data-desc="fairfax mutual aid is a collective of local volunteers organizing material resources, care-based support and companionship to unhoused and housing insecure constituents in multiple districts in los angeles.">
-          <div class="row">
-            <a class="name" href="https://fxma.org/" target="_blank" rel="noopener noreferrer">Fairfax Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">fxma.org</span>
-          </div>
+          <a class="row" href="https://fxma.org/" target="_blank" rel="noopener noreferrer"><span class="name">Fairfax Mutual Aid</span><span class="dots" aria-hidden="true"></span><span class="host">fxma.org</span></a>
           <p class="desc">Fairfax Mutual Aid is a collective of local volunteers organizing material resources, care-based support and companionship to unhoused and housing insecure constituents in multiple districts in Los Angeles.</p>
         </li>
         <li data-name="south bay mutual aid &amp; care club" data-desc="we are queer, neurodivergent, anticapitalist, antifascist, abolitionist harm reductionists aiding over 100 people living without shelter in los angeles">
-          <div class="row">
-            <a class="name" href="https://x.com/sbmacareclub" target="_blank" rel="noopener noreferrer">South Bay Mutual Aid &amp; Care Club <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">x.com</span>
-          </div>
+          <a class="row" href="https://x.com/sbmacareclub" target="_blank" rel="noopener noreferrer"><span class="name">South Bay Mutual Aid &amp; Care Club</span><span class="dots" aria-hidden="true"></span><span class="host">x.com</span></a>
           <p class="desc">We are queer, neurodivergent, anticapitalist, antifascist, abolitionist harm reductionists aiding over 100 people living without shelter in los angeles</p>
         </li>
         <li data-name="the sidewalk project" data-desc="we are an arts &amp; peer empowerment program that exists to create wellness for those that live outdoor">
-          <div class="row">
-            <a class="name" href="https://www.thesidewalkproject.org/" target="_blank" rel="noopener noreferrer">The Sidewalk Project <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">thesidewalkproject.org</span>
-          </div>
+          <a class="row" href="https://www.thesidewalkproject.org/" target="_blank" rel="noopener noreferrer"><span class="name">The Sidewalk Project</span><span class="dots" aria-hidden="true"></span><span class="host">thesidewalkproject.org</span></a>
           <p class="desc">We are an arts &amp; peer empowerment program that exists to create wellness for those that live outdoor</p>
         </li>
       </ol>
     </section>
 
-    <section id="lgbtq" class="group-section" data-section="lgbtq">
-      <h2 class="section-title">LGBTQ+ Solidarity</h2>
+    <section id="lgbtq" class="group-section" data-section="lgbtq" data-title="LGBTQ+ Solidarity">
+      <h2 class="hd"><span>LGBTQ+ Solidarity</span><span class="k" aria-hidden="true">2</span></h2>
       <ol class="groups">
         <li data-name="trans defense fund la" data-desc="los angeles mutual aid project that gives free self-defense kits and classes to queer and trans bipoc, prioritizing black trans femmes. not a 501(c)(3).">
-          <div class="row">
-            <a class="name" href="https://transdefensefundla.org/" target="_blank" rel="noopener noreferrer">Trans Defense Fund LA <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">transdefensefundla.org</span>
-          </div>
+          <a class="row" href="https://transdefensefundla.org/" target="_blank" rel="noopener noreferrer"><span class="name">Trans Defense Fund LA</span><span class="dots" aria-hidden="true"></span><span class="host">transdefensefundla.org</span></a>
           <p class="desc">Los Angeles mutual aid project that gives free self-defense kits and classes to queer and trans BIPOC, prioritizing Black trans femmes. Not a 501(c)(3).</p>
         </li>
         <li data-name="gender justice la" data-desc="trans-led group in los angeles that organizes with transgender and gender non-conforming people, especially low-income trans people of color. runs a community center in lincoln heights.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/genderjusticela/" target="_blank" rel="noopener noreferrer">Gender Justice LA <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/genderjusticela/" target="_blank" rel="noopener noreferrer"><span class="name">Gender Justice LA</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Trans-led group in Los Angeles that organizes with transgender and gender non-conforming people, especially low-income trans people of color. Runs a community center in Lincoln Heights.</p>
         </li>
       </ol>
     </section>
 
-    <section id="anti-racism" class="group-section" data-section="anti-racism">
-      <h2 class="section-title">Racial Justice</h2>
+    <section id="anti-racism" class="group-section" data-section="anti-racism" data-title="Racial Justice">
+      <h2 class="hd"><span>Racial Justice</span><span class="k" aria-hidden="true">4</span></h2>
       <ol class="groups">
         <li data-name="alliance of white anti-racists everywhere - los angeles
                 (aware-la)" data-desc="we take collective action to build white anti-racist and multiracial alliances to contribute to a broad-based, social justice movement.">
-          <div class="row">
-            <a class="name" href="https://www.awarela.org/home" target="_blank" rel="noopener noreferrer">Alliance of White Anti-Racists Everywhere - Los Angeles
-                (AWARE-LA) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">awarela.org</span>
-          </div>
+          <a class="row" href="https://www.awarela.org/home" target="_blank" rel="noopener noreferrer"><span class="name">Alliance of White Anti-Racists Everywhere - Los Angeles
+                (AWARE-LA)</span><span class="dots" aria-hidden="true"></span><span class="host">awarela.org</span></a>
           <p class="desc">We take collective action to build white anti-racist and multiracial alliances to contribute to a broad-based, social justice movement.</p>
         </li>
         <li data-name="surj pasadena" data-desc="white people created white supremacy; it's our job to end it.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/surjdena/" target="_blank" rel="noopener noreferrer">SURJ Pasadena <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/surjdena/" target="_blank" rel="noopener noreferrer"><span class="name">SURJ Pasadena</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">White people created white supremacy; it's our job to end it.</p>
         </li>
         <li data-name="white people 4 black lives" data-desc="a los angeles-based collective of white folks organizing for racial justice in solidarity with @blmlosangeles. chapter of @showingupforracialjustice.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/wp4bl/" target="_blank" rel="noopener noreferrer">White People 4 Black Lives <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/wp4bl/" target="_blank" rel="noopener noreferrer"><span class="name">White People 4 Black Lives</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">a Los Angeles-based collective of white folks organizing for racial justice in solidarity with @blmlosangeles. Chapter of @showingupforracialjustice.</p>
         </li>
         <li data-name="black lives matter los angeles" data-desc="official #blacklivesmatter los angeles chapter. est. 7/13/13 to end state-sanctioned violence against black people.">
-          <div class="row">
-            <a class="name" href="https://www.blmla.org/" target="_blank" rel="noopener noreferrer">Black Lives Matter Los Angeles <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">blmla.org</span>
-          </div>
+          <a class="row" href="https://www.blmla.org/" target="_blank" rel="noopener noreferrer"><span class="name">Black Lives Matter Los Angeles</span><span class="dots" aria-hidden="true"></span><span class="host">blmla.org</span></a>
           <p class="desc">Official #BlackLivesMatter Los Angeles chapter. Est. 7/13/13 to end state-sanctioned violence against Black people.</p>
         </li>
       </ol>
     </section>
 
-    <section id="prison" class="group-section" data-section="prison">
-      <h2 class="section-title">Prison Abolition and Prisoner Solidarity</h2>
+    <section id="prison" class="group-section" data-section="prison" data-title="Prison Abolition and Prisoner Solidarity">
+      <h2 class="hd"><span>Prison Abolition and Prisoner Solidarity</span><span class="k" aria-hidden="true">4</span></h2>
       <ol class="groups">
         <li data-name="jail support la" data-desc="we're a grassroots collective dedicated to supporting anti-repression work in los angeles">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/jailsupportla/" target="_blank" rel="noopener noreferrer">Jail Support LA <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/jailsupportla/" target="_blank" rel="noopener noreferrer"><span class="name">Jail Support LA</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">We're a grassroots collective dedicated to supporting anti-repression work in Los Angeles</p>
         </li>
         <li data-name="la anarchist black cross" data-desc="los angeles chapter of the anarchist black cross federation (est. 1998). we support anarchist, anti-imperialist, &amp; class war political prisoners.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/laabcf/" target="_blank" rel="noopener noreferrer">LA Anarchist Black Cross <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/laabcf/" target="_blank" rel="noopener noreferrer"><span class="name">LA Anarchist Black Cross</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Los Angeles chapter of the Anarchist Black Cross Federation (Est. 1998). We support anarchist, anti-imperialist, &amp; class war political prisoners.</p>
         </li>
         <li data-name="coalition for humane immigrant rights (chirla)" data-desc="ca's largest immigrant rights organization. founded in 1986.">
-          <div class="row">
-            <a class="name" href="https://www.chirla.org/" target="_blank" rel="noopener noreferrer">Coalition for Humane Immigrant Rights (CHIRLA) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">chirla.org</span>
-          </div>
+          <a class="row" href="https://www.chirla.org/" target="_blank" rel="noopener noreferrer"><span class="name">Coalition for Humane Immigrant Rights (CHIRLA)</span><span class="dots" aria-hidden="true"></span><span class="host">chirla.org</span></a>
           <p class="desc">CA's largest immigrant rights organization. Founded in 1986.</p>
         </li>
         <li data-name="stop lapd spying coalition" data-desc="we are a community group working to build community power toward abolishing police surveillance.">
-          <div class="row">
-            <a class="name" href="https://stoplapdspying.org/" target="_blank" rel="noopener noreferrer">Stop LAPD Spying Coalition <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">stoplapdspying.org</span>
-          </div>
+          <a class="row" href="https://stoplapdspying.org/" target="_blank" rel="noopener noreferrer"><span class="name">Stop LAPD Spying Coalition</span><span class="dots" aria-hidden="true"></span><span class="host">stoplapdspying.org</span></a>
           <p class="desc">We are a community group working to build community power toward abolishing police surveillance.</p>
         </li>
       </ol>
     </section>
 
-    <section id="specific-communities" class="group-section" data-section="specific-communities">
-      <h2 class="section-title">Specific Communities Support</h2>
+    <section id="specific-communities" class="group-section" data-section="specific-communities" data-title="Specific Communities Support">
+      <h2 class="hd"><span>Specific Communities Support</span><span class="k" aria-hidden="true">8</span></h2>
       <ol class="groups">
         <li data-name="garment worker center" data-desc="a worker rights center founded in 2001 that organizes low-wage garment workers in los angeles. it runs wage clinics and youth organizing, and campaigns on labor law enforcement, including the fabric act.">
-          <div class="row">
-            <a class="name" href="https://garmentworkercenter.org/" target="_blank" rel="noopener noreferrer">Garment Worker Center <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">garmentworkercenter.org</span>
-          </div>
+          <a class="row" href="https://garmentworkercenter.org/" target="_blank" rel="noopener noreferrer"><span class="name">Garment Worker Center</span><span class="dots" aria-hidden="true"></span><span class="host">garmentworkercenter.org</span></a>
           <p class="desc">A worker rights center founded in 2001 that organizes low-wage garment workers in Los Angeles. It runs wage clinics and youth organizing, and campaigns on labor law enforcement, including the Fabric Act.</p>
         </li>
         <li data-name="westside pacific villages" data-desc="member-run village for older adults on the westside of los angeles. volunteers provide rides, household help, companionship and social events.">
-          <div class="row">
-            <a class="name" href="https://thewpv.org/" target="_blank" rel="noopener noreferrer">Westside Pacific Villages <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">thewpv.org</span>
-          </div>
+          <a class="row" href="https://thewpv.org/" target="_blank" rel="noopener noreferrer"><span class="name">Westside Pacific Villages</span><span class="dots" aria-hidden="true"></span><span class="host">thewpv.org</span></a>
           <p class="desc">Member-run village for older adults on the Westside of Los Angeles. Volunteers provide rides, household help, companionship and social events.</p>
         </li>
         <li data-name="whittier for social justice" data-desc="w4sj is an autonomous radical collective committed to grassroots community support and social action in so-called whittier, ca">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/whittierfor/" target="_blank" rel="noopener noreferrer">Whittier For Social Justice <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/whittierfor/" target="_blank" rel="noopener noreferrer"><span class="name">Whittier For Social Justice</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">W4SJ is an autonomous radical collective committed to grassroots community support and social action in so-called Whittier, CA</p>
         </li>
         <li data-name="cielo (comunidades indígenas en liderazgo)" data-desc="indigenous women-led nonprofit in los angeles serving migrant indigenous communities with interpretation, language revitalization, cultural programs, and food and outreach.">
-          <div class="row">
-            <a class="name" href="https://mycielo.org/" target="_blank" rel="noopener noreferrer">CIELO (Comunidades Indígenas en Liderazgo) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">mycielo.org</span>
-          </div>
+          <a class="row" href="https://mycielo.org/" target="_blank" rel="noopener noreferrer"><span class="name">CIELO (Comunidades Indígenas en Liderazgo)</span><span class="dots" aria-hidden="true"></span><span class="host">mycielo.org</span></a>
           <p class="desc">Indigenous women-led nonprofit in Los Angeles serving migrant Indigenous communities with interpretation, language revitalization, cultural programs, and food and outreach.</p>
         </li>
         <li data-name="youth justice la" data-desc="youth-led group in south los angeles organizing to end youth incarceration. runs a charter high school, a legal clinic, a health program and a community center.">
-          <div class="row">
-            <a class="name" href="https://youthjusticela.org/" target="_blank" rel="noopener noreferrer">Youth Justice LA <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">youthjusticela.org</span>
-          </div>
+          <a class="row" href="https://youthjusticela.org/" target="_blank" rel="noopener noreferrer"><span class="name">Youth Justice LA</span><span class="dots" aria-hidden="true"></span><span class="host">youthjusticela.org</span></a>
           <p class="desc">Youth-led group in South Los Angeles organizing to end youth incarceration. Runs a charter high school, a legal clinic, a health program and a community center.</p>
         </li>
         <li data-name="centro cso" data-desc="independent grassroots group in boyle heights and east la organizing on immigrant rights, public education and police accountability. meets on the third wednesday of each month.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/centrocso/" target="_blank" rel="noopener noreferrer">Centro CSO <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/centrocso/" target="_blank" rel="noopener noreferrer"><span class="name">Centro CSO</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Independent grassroots group in Boyle Heights and East LA organizing on immigrant rights, public education and police accountability. Meets on the third Wednesday of each month.</p>
         </li>
         <li data-name="nolympics la" data-desc="olympics always accelerate displacement &amp; militarization. cancel #la28">
-          <div class="row">
-            <a class="name" href="https://nolympicsla.com/" target="_blank" rel="noopener noreferrer">NOlympics LA <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">nolympicsla.com</span>
-          </div>
+          <a class="row" href="https://nolympicsla.com/" target="_blank" rel="noopener noreferrer"><span class="name">NOlympics LA</span><span class="dots" aria-hidden="true"></span><span class="host">nolympicsla.com</span></a>
           <p class="desc">Olympics always accelerate displacement &amp; militarization. Cancel #LA28</p>
         </li>
         <li data-name="community economic survival (ces)" data-desc="ces works to empower, educate and organize tenants living in private and government subsidized housing to fight to ensure tenants' rights and preserve quality and safe affordable housing">
-          <div class="row">
-            <a class="name" href="https://www.cesinaction.org/" target="_blank" rel="noopener noreferrer">Community Economic Survival (CES) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">cesinaction.org</span>
-          </div>
+          <a class="row" href="https://www.cesinaction.org/" target="_blank" rel="noopener noreferrer"><span class="name">Community Economic Survival (CES)</span><span class="dots" aria-hidden="true"></span><span class="host">cesinaction.org</span></a>
           <p class="desc">CES works to empower, educate and organize tenants living in private and government subsidized housing to fight to ensure tenants' rights and preserve quality and safe affordable housing</p>
         </li>
       </ol>
     </section>
 
-    <section id="other-groups" class="group-section" data-section="other-groups">
-      <h2 class="section-title">Other Groups</h2>
+    <section id="other-groups" class="group-section" data-section="other-groups" data-title="Other Groups">
+      <h2 class="hd"><span>Other Groups</span><span class="k" aria-hidden="true">17</span></h2>
       <ol class="groups">
         <li data-name="cmb x los angeles" data-desc="los angeles branch of @communitymovementbuilders we are fighting for the total liberation and self-determination of all oppressed people">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/cmb.losangeles" target="_blank" rel="noopener noreferrer">CMB x Los Angeles <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/cmb.losangeles" target="_blank" rel="noopener noreferrer"><span class="name">CMB x Los Angeles</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Los Angeles branch of @communitymovementbuilders We are fighting for the total liberation and self-determination of all oppressed people</p>
         </li>
         <li data-name="free store 161" data-desc="autonomous antifascist angry, loving, dykes.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/freestore161/" target="_blank" rel="noopener noreferrer">Free Store 161 <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/freestore161/" target="_blank" rel="noopener noreferrer"><span class="name">Free Store 161</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Autonomous Antifascist angry, loving, dykes.</p>
         </li>
         <li data-name="gabriela los angeles" data-desc="fighting for filipina women/lgbtq+/gnc &amp; children's rights &amp; dismantling imperialism as part of the national democratic movement. dm to join!">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/gabrielalosangeles/" target="_blank" rel="noopener noreferrer">GABRIELA Los Angeles <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/gabrielalosangeles/" target="_blank" rel="noopener noreferrer"><span class="name">GABRIELA Los Angeles</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Fighting for Filipina women/LGBTQ+/GNC &amp; children's rights &amp; dismantling imperialism as part of the National Democratic movement. DM to join!</p>
         </li>
         <li data-name="the lavender collective" data-desc="a coalition of dykes and queers focused on mutual aid and community care">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/the.lavender.collective.la" target="_blank" rel="noopener noreferrer">the lavender collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/the.lavender.collective.la" target="_blank" rel="noopener noreferrer"><span class="name">the lavender collective</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">a coalition of dykes and queers focused on mutual aid and community care</p>
         </li>
         <li data-name="los angeles poverty department (lapd)" data-desc="lapd performances connect lived experience to the social forces that shape the lives and communities of people living in poverty.">
-          <div class="row">
-            <a class="name" href="https://www.lapovertydept.org/" target="_blank" rel="noopener noreferrer">Los Angeles Poverty Department (LAPD) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">lapovertydept.org</span>
-          </div>
+          <a class="row" href="https://www.lapovertydept.org/" target="_blank" rel="noopener noreferrer"><span class="name">Los Angeles Poverty Department (LAPD)</span><span class="dots" aria-hidden="true"></span><span class="host">lapovertydept.org</span></a>
           <p class="desc">LAPD performances connect lived experience to the social forces that shape the lives and communities of people living in poverty.</p>
         </li>
         <li data-name="los angeles sra" data-desc="socialist rifle assembly chapter for the greater los angeles area. dedicated to community defense education and mutual aid.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/losangelessra/" target="_blank" rel="noopener noreferrer">Los Angeles SRA <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/losangelessra/" target="_blank" rel="noopener noreferrer"><span class="name">Los Angeles SRA</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Socialist Rifle Assembly chapter for the greater Los Angeles area. Dedicated to community defense education and mutual aid.</p>
         </li>
         <li data-name="la street care &amp; mutual aid" data-desc="abolitionist mutual aid collective organizing in los feliz, echo park, atwater, historic filipinotown, silver lake, and rampart.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/lastreetcare/" target="_blank" rel="noopener noreferrer">LA Street Care &amp; Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/lastreetcare/" target="_blank" rel="noopener noreferrer"><span class="name">LA Street Care &amp; Mutual Aid</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Abolitionist mutual aid collective organizing in Los Feliz, Echo Park, Atwater, Historic Filipinotown, Silver Lake, and Rampart.</p>
         </li>
         <li data-name="jewish voice for peace los angeles" data-desc="@jewishvoiceforpeace on tongva and chumash land. anti-zionist jews and allies for a free palestine">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/jvp.la/" target="_blank" rel="noopener noreferrer">Jewish Voice for Peace Los Angeles <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/jvp.la/" target="_blank" rel="noopener noreferrer"><span class="name">Jewish Voice for Peace Los Angeles</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">@jewishvoiceforpeace on Tongva and Chumash land. Anti-Zionist Jews and allies for a free Palestine</p>
         </li>
         <li data-name="jtown action" data-desc="grassroots collective dedicated to revolutionary organizing &amp; building community power in little tokyo — weekly mutual aid">
-          <div class="row">
-            <a class="name" href="https://jtownaction.com/" target="_blank" rel="noopener noreferrer">Jtown Action <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">jtownaction.com</span>
-          </div>
+          <a class="row" href="https://jtownaction.com/" target="_blank" rel="noopener noreferrer"><span class="name">Jtown Action</span><span class="dots" aria-hidden="true"></span><span class="host">jtownaction.com</span></a>
           <p class="desc">Grassroots collective dedicated to revolutionary organizing &amp; building community power in Little Tokyo — Weekly mutual aid</p>
         </li>
         <li data-name="la anarchists in solidarity" data-desc="study group + produce distro 4/27 sunday @ 11am, sycamore grove park">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/la_anarchistsinsolidarity/" target="_blank" rel="noopener noreferrer">LA Anarchists in Solidarity <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/la_anarchistsinsolidarity/" target="_blank" rel="noopener noreferrer"><span class="name">LA Anarchists in Solidarity</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Study group + Produce Distro 4/27 Sunday @ 11AM, Sycamore Grove Park</p>
         </li>
         <li data-name="no canyon hills" data-desc="grassroots campaign in tujunga opposing the canyon hills luxury housing development and working to conserve 300+ acres of wildlife habitat in the verdugo mountains.">
-          <div class="row">
-            <a class="name" href="https://nocanyonhills.org/" target="_blank" rel="noopener noreferrer">No Canyon Hills <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">nocanyonhills.org</span>
-          </div>
+          <a class="row" href="https://nocanyonhills.org/" target="_blank" rel="noopener noreferrer"><span class="name">No Canyon Hills</span><span class="dots" aria-hidden="true"></span><span class="host">nocanyonhills.org</span></a>
           <p class="desc">Grassroots campaign in Tujunga opposing the Canyon Hills luxury housing development and working to conserve 300+ acres of wildlife habitat in the Verdugo Mountains.</p>
         </li>
         <li data-name="queers for palestine los angeles" data-desc="we’re queer! we’re trans! free palestine is our demand! there’s no lgbtqia+ pride in genocide, apartheid, imperialism, &amp; occupation!">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/queersforpalestinela/" target="_blank" rel="noopener noreferrer">Queers for Palestine Los Angeles <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/queersforpalestinela/" target="_blank" rel="noopener noreferrer"><span class="name">Queers for Palestine Los Angeles</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">We’re Queer! We’re Trans! Free Palestine is our demand! There’s No LGBTQIA+ Pride in Genocide, Apartheid, Imperialism, &amp; Occupation!</p>
         </li>
         <li data-name="people's cafe" data-desc="free soup for the family. native foods, zapatista coffee, yerbería, community arts. opening soon!">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/peoplescafe.la/" target="_blank" rel="noopener noreferrer">People's Cafe <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/peoplescafe.la/" target="_blank" rel="noopener noreferrer"><span class="name">People's Cafe</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">free soup for the family. native foods, zapatista coffee, yerbería, community arts. opening soon!</p>
         </li>
         <li data-name="swop los angeles" data-desc="swopla is a peer support organization, run by sex workers and for sex workers.">
-          <div class="row">
-            <a class="name" href="https://swoplosangeles.org/" target="_blank" rel="noopener noreferrer">SWOP Los Angeles <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">swoplosangeles.org</span>
-          </div>
+          <a class="row" href="https://swoplosangeles.org/" target="_blank" rel="noopener noreferrer"><span class="name">SWOP Los Angeles</span><span class="dots" aria-hidden="true"></span><span class="host">swoplosangeles.org</span></a>
           <p class="desc">SWOPLA is a peer support organization, run by sex workers and for sex workers.</p>
         </li>
         <li data-name="venice justice" data-desc="documenting human &amp; civil rights violations since 2001, managing the free venice justice citation clinic since sept 2014. tweets @venicejustice1">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/venicejustice1/" target="_blank" rel="noopener noreferrer">Venice Justice <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/venicejustice1/" target="_blank" rel="noopener noreferrer"><span class="name">Venice Justice</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Documenting human &amp; civil rights violations since 2001, managing the free Venice Justice Citation Clinic since Sept 2014. Tweets @VeniceJustice1</p>
         </li>
         <li data-name="westwood mutual aid" data-desc="every friday 2pm-5pm on westwood blvd &amp; le conte ave. building solidarity with the palestinian resistance and all oppressed people globally.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/westwoodmutualaid/" target="_blank" rel="noopener noreferrer">Westwood Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/westwoodmutualaid/" target="_blank" rel="noopener noreferrer"><span class="name">Westwood Mutual Aid</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Every Friday 2pm-5pm on Westwood Blvd &amp; Le Conte Ave. Building solidarity with the Palestinian resistance and all oppressed people globally.</p>
         </li>
         <li data-name="say their names la" data-desc="a family-led network of support and mutual aid for people affected by state-sanctioned violence.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/saytheirnamesla/" target="_blank" rel="noopener noreferrer">Say Their Names LA <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/saytheirnamesla/" target="_blank" rel="noopener noreferrer"><span class="name">Say Their Names LA</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">A family-led network of support and mutual aid for people affected by state-sanctioned violence.</p>
         </li>
       </ol>
@@ -686,14 +437,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -705,8 +452,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

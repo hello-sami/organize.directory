@@ -7,8 +7,7 @@
   <title>Ohio — Organize Directory</title>
   <meta name="description" content="Cities and statewide organizations in Ohio.">
   <link rel="canonical" href="https://organize.directory/ohio">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Ohio — Organize Directory">
@@ -19,209 +18,135 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>Places – Statewide Organizations</span>
+  <span class="c">White Pages</span>
+  <span class="r">Ohio</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Ohio</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Ohio</h1>
-    <p class="meta">
-      <b>16</b> statewide groups
-    </p>
-  </div>
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter Ohio</label>
-    <input id="page-filter" type="search" placeholder="Filter Ohio…" autocomplete="off">
-  </div>
-
-  <div class="layout">
-  <nav class="toc" aria-label="Sections on this page">
-    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
-      <span class="current">
-        <span class="current-label">Section ·</span>
-        <span class="current-name">Places</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div id="toc-panel" class="toc-scroll">
-      <a href="#places" data-section="places"><span class="label">Places</span></a>
-      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="label">Statewide Organizations</span> <span class="count">16</span></a>
+    <p class="meta"><b>16</b> statewide groups</p>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter Ohio</label>
+      <input id="page-filter" type="search" placeholder="Filter Ohio" autocomplete="off">
     </div>
-  </nav>
-    <div class="main-col">
+  </div>
 
+  <div class="spread">
+    <nav class="thumbs" aria-label="Sections on this page">
+      <a href="#places" data-section="places"><span class="notch" aria-hidden="true"></span><span class="lbl">Places</span></a>
+      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="notch" aria-hidden="true"></span><span class="lbl">Statewide Organizations</span><span class="k">16</span></a>
+    </nav>
+    <div class="main-col">
       <div id="sections-root">
-    <section id="places" class="group-section" data-section="places">
-      <h2 class="section-title">Places</h2>
-      <ol class="groups children-list">
-        <li data-name="akron, oh" data-desc=""><a class="name" href="/akron">Akron, OH</a></li>
-        <li data-name="athens, oh" data-desc=""><a class="name" href="/athens">Athens, OH</a></li>
-        <li data-name="cincinnati" data-desc=""><a class="name" href="/cincinnati">Cincinnati</a></li>
-        <li data-name="cleveland" data-desc=""><a class="name" href="/cleveland">Cleveland</a></li>
-        <li data-name="columbus, oh" data-desc=""><a class="name" href="/columbus">Columbus, OH</a></li>
-        <li data-name="dayton" data-desc=""><a class="name" href="/dayton">Dayton</a></li>
-        <li data-name="dayton-springfield, ohio" data-desc=""><a class="name" href="/dayton-springfield">Dayton-Springfield, Ohio</a></li>
-        <li data-name="toledo" data-desc=""><a class="name" href="/toledo">Toledo</a></li>
-        <li data-name="youngstown" data-desc=""><a class="name" href="/youngstown">Youngstown</a></li>
+    <section id="places" class="group-section" data-section="places" data-title="Places">
+      <h2 class="hd"><span>Places</span></h2>
+      <ol class="index-list">
+        <li data-name="akron, oh" data-desc=""><a href="/akron"><span class="n">Akron, OH</span></a></li>
+        <li data-name="athens, oh" data-desc=""><a href="/athens"><span class="n">Athens, OH</span></a></li>
+        <li data-name="cincinnati" data-desc=""><a href="/cincinnati"><span class="n">Cincinnati</span></a></li>
+        <li data-name="cleveland" data-desc=""><a href="/cleveland"><span class="n">Cleveland</span></a></li>
+        <li data-name="columbus, oh" data-desc=""><a href="/columbus"><span class="n">Columbus, OH</span></a></li>
+        <li data-name="dayton" data-desc=""><a href="/dayton"><span class="n">Dayton</span></a></li>
+        <li data-name="dayton-springfield, ohio" data-desc=""><a href="/dayton-springfield"><span class="n">Dayton-Springfield, Ohio</span></a></li>
+        <li data-name="toledo" data-desc=""><a href="/toledo"><span class="n">Toledo</span></a></li>
+        <li data-name="youngstown" data-desc=""><a href="/youngstown"><span class="n">Youngstown</span></a></li>
       </ol>
     </section>
 
-    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations">
-      <h2 class="section-title">Statewide Organizations</h2>
+    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations" data-title="Statewide Organizations">
+      <h2 class="hd"><span>Statewide Organizations</span><span class="k" aria-hidden="true">16</span></h2>
       <ol class="groups">
         <li data-name="central ohio freedom fund" data-desc="community bail fund in columbus and franklin county, ohio, started in 2020. pays bail, advocates to end money bail, and runs a monthly commissary support program.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/centralohfreedomfund/" target="_blank" rel="noopener noreferrer">Central Ohio Freedom Fund <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/centralohfreedomfund/" target="_blank" rel="noopener noreferrer"><span class="name">Central Ohio Freedom Fund</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Community bail fund in Columbus and Franklin County, Ohio, started in 2020. Pays bail, advocates to end money bail, and runs a monthly commissary support program.</p>
         </li>
         <li data-name="ohio families unite against police brutality" data-desc="ohio nonprofit founded by sabrina jordan that supports families of people killed by police and campaigns against police brutality through events and advocacy.">
-          <div class="row">
-            <a class="name" href="https://www.ofuapolicebrutality.com/" target="_blank" rel="noopener noreferrer">Ohio Families Unite Against Police Brutality <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">ofuapolicebrutality.com</span>
-          </div>
+          <a class="row" href="https://www.ofuapolicebrutality.com/" target="_blank" rel="noopener noreferrer"><span class="name">Ohio Families Unite Against Police Brutality</span><span class="dots" aria-hidden="true"></span><span class="host">ofuapolicebrutality.com</span></a>
           <p class="desc">Ohio nonprofit founded by Sabrina Jordan that supports families of people killed by police and campaigns against police brutality through events and advocacy.</p>
         </li>
         <li data-name="ohio families unite pac" data-desc="ohio group, the advocacy arm of ohio families unite against police brutality, that organizes around police violence, gun violence and the carceral system and publishes resources for survivors.">
-          <div class="row">
-            <a class="name" href="https://www.ofupac.org/" target="_blank" rel="noopener noreferrer">Ohio Families Unite PAC <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">ofupac.org</span>
-          </div>
+          <a class="row" href="https://www.ofupac.org/" target="_blank" rel="noopener noreferrer"><span class="name">Ohio Families Unite PAC</span><span class="dots" aria-hidden="true"></span><span class="host">ofupac.org</span></a>
           <p class="desc">Ohio group, the advocacy arm of Ohio Families Unite Against Police Brutality, that organizes around police violence, gun violence and the carceral system and publishes resources for survivors.</p>
         </li>
         <li data-name="surj ohio" data-desc="ohio hub of showing up for racial justice, a national network organizing white people against white supremacy. connects local chapters such as columbus, northeast ohio and dayton.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/SURJOHIO/" target="_blank" rel="noopener noreferrer">SURJ Ohio <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/SURJOHIO/" target="_blank" rel="noopener noreferrer"><span class="name">SURJ Ohio</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">Ohio hub of Showing Up for Racial Justice, a national network organizing white people against white supremacy. Connects local chapters such as Columbus, Northeast Ohio and Dayton.</p>
         </li>
         <li data-name="trans ohio" data-desc="transohio is dedicated to protecting and advancing the rights of trans, nonbinary, intersex, and gender nonconforming people in ohio.">
-          <div class="row">
-            <a class="name" href="https://www.transohio.org/" target="_blank" rel="noopener noreferrer">Trans Ohio <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">transohio.org</span>
-          </div>
+          <a class="row" href="https://www.transohio.org/" target="_blank" rel="noopener noreferrer"><span class="name">Trans Ohio</span><span class="dots" aria-hidden="true"></span><span class="host">transohio.org</span></a>
           <p class="desc">TransOhio is dedicated to protecting and advancing the rights of trans, nonbinary, intersex, and gender nonconforming people in Ohio.</p>
         </li>
         <li data-name="black transmen of ohio" data-desc="runs support groups, wellness retreats, and gender-affirming resources for black transgender men and transmasculine and nonbinary people across ohio.">
-          <div class="row">
-            <a class="name" href="https://www.btmohio.org/" target="_blank" rel="noopener noreferrer">Black Transmen of Ohio <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">btmohio.org</span>
-          </div>
+          <a class="row" href="https://www.btmohio.org/" target="_blank" rel="noopener noreferrer"><span class="name">Black Transmen of Ohio</span><span class="dots" aria-hidden="true"></span><span class="host">btmohio.org</span></a>
           <p class="desc">Runs support groups, wellness retreats, and gender-affirming resources for Black transgender men and transmasculine and nonbinary people across Ohio.</p>
         </li>
         <li data-name="black queer &amp; intersectional collective" data-desc="black-led group in columbus that organizes events and direct action for black lgbtqia+ people, runs an emergency fund for black lgbtqia+ columbus residents, and helps run columbus community pride.">
-          <div class="row">
-            <a class="name" href="https://bqic.net/" target="_blank" rel="noopener noreferrer">Black Queer &amp; Intersectional Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">bqic.net</span>
-          </div>
+          <a class="row" href="https://bqic.net/" target="_blank" rel="noopener noreferrer"><span class="name">Black Queer &amp; Intersectional Collective</span><span class="dots" aria-hidden="true"></span><span class="host">bqic.net</span></a>
           <p class="desc">Black-led group in Columbus that organizes events and direct action for Black LGBTQIA+ people, runs an emergency fund for Black LGBTQIA+ Columbus residents, and helps run Columbus Community Pride.</p>
         </li>
         <li data-name="trans allies ohio" data-desc="we are a grassroots coalition of transgender youth, their families, and allies who advocate for equality for ohio's trans and non-binary people.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/TransAlliesOhio/" target="_blank" rel="noopener noreferrer">Trans Allies Ohio <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/TransAlliesOhio/" target="_blank" rel="noopener noreferrer"><span class="name">Trans Allies Ohio</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">We are a grassroots coalition of transgender youth, their families, and allies who advocate for equality for Ohio's trans and non-binary people.</p>
         </li>
         <li data-name="northeast ohio socialist rifle association" data-desc="northeast ohio chapter of the socialist rifle association. offers firearms, medical and survival-skills training and mutual aid for working-class people.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/neo_sra/" target="_blank" rel="noopener noreferrer">Northeast Ohio Socialist Rifle Association <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/neo_sra/" target="_blank" rel="noopener noreferrer"><span class="name">Northeast Ohio Socialist Rifle Association</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Northeast Ohio chapter of the Socialist Rifle Association. Offers firearms, medical and survival-skills training and mutual aid for working-class people.</p>
         </li>
         <li data-name="فكر بغيرك" data-desc="">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/neoh_too/" target="_blank" rel="noopener noreferrer">فكر بغيرك <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/neoh_too/" target="_blank" rel="noopener noreferrer"><span class="name">فكر بغيرك</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
         </li>
         <li data-name="ohio immigrant alliance" data-desc="cleveland-based group of immigrants and citizens working on immigrant rights in ohio. publishes research on immigration courts and runs the ohio is home resource site and podcast.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/ohioimmigrantalliance/" target="_blank" rel="noopener noreferrer">Ohio Immigrant Alliance <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/ohioimmigrantalliance/" target="_blank" rel="noopener noreferrer"><span class="name">Ohio Immigrant Alliance</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Cleveland-based group of immigrants and citizens working on immigrant rights in Ohio. Publishes research on immigration courts and runs the Ohio Is Home resource site and podcast.</p>
         </li>
         <li data-name="central ohio revolutionary socialists (cors)" data-desc="membership-based socialist organization in and around columbus, ohio. publishes the columbus worker and organizes on labor and campus issues.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/corsrev/" target="_blank" rel="noopener noreferrer">Central Ohio Revolutionary Socialists (CORS) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/corsrev/" target="_blank" rel="noopener noreferrer"><span class="name">Central Ohio Revolutionary Socialists (CORS)</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Membership-based socialist organization in and around Columbus, Ohio. Publishes The Columbus Worker and organizes on labor and campus issues.</p>
         </li>
         <li data-name="central ohio sra" data-desc="central ohio chapter of the socialist rifle association, a group that teaches firearm skills and community defense to working-class and marginalized people.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/central_ohio_sra/" target="_blank" rel="noopener noreferrer">Central Ohio SRA <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/central_ohio_sra/" target="_blank" rel="noopener noreferrer"><span class="name">Central Ohio SRA</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Central Ohio chapter of the Socialist Rifle Association, a group that teaches firearm skills and community defense to working-class and marginalized people.</p>
         </li>
         <li data-name="abortion fund of ohio" data-desc="statewide fund that gives ohioans financial help and practical support to get abortion care, and runs a legal information helpline.">
-          <div class="row">
-            <a class="name" href="https://abortionfundofohio.org/" target="_blank" rel="noopener noreferrer">Abortion Fund of Ohio <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">abortionfundofohio.org</span>
-          </div>
+          <a class="row" href="https://abortionfundofohio.org/" target="_blank" rel="noopener noreferrer"><span class="name">Abortion Fund of Ohio</span><span class="dots" aria-hidden="true"></span><span class="host">abortionfundofohio.org</span></a>
           <p class="desc">Statewide fund that gives Ohioans financial help and practical support to get abortion care, and runs a legal information helpline.</p>
         </li>
         <li data-name="ohio divest coalition" data-desc="coalition of ohio organizers and groups pushing public funds to divest from israel bonds. it reports over $27 million in divestment commitments, including $11 million from franklin county.">
-          <div class="row">
-            <a class="name" href="https://www.ohiodivest.org/" target="_blank" rel="noopener noreferrer">Ohio Divest Coalition <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">ohiodivest.org</span>
-          </div>
+          <a class="row" href="https://www.ohiodivest.org/" target="_blank" rel="noopener noreferrer"><span class="name">Ohio Divest Coalition</span><span class="dots" aria-hidden="true"></span><span class="host">ohiodivest.org</span></a>
           <p class="desc">Coalition of Ohio organizers and groups pushing public funds to divest from Israel Bonds. It reports over $27 million in divestment commitments, including $11 million from Franklin County.</p>
         </li>
         <li data-name="surj northeast ohio" data-desc="cleveland-based northeast ohio chapter of showing up for racial justice, founded in 2015. it organizes white people against white supremacy through local campaigns in the cleveland area and nelsonville.">
-          <div class="row">
-            <a class="name" href="https://www.surjneo.org/" target="_blank" rel="noopener noreferrer">SURJ Northeast Ohio <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">surjneo.org</span>
-          </div>
+          <a class="row" href="https://www.surjneo.org/" target="_blank" rel="noopener noreferrer"><span class="name">SURJ Northeast Ohio</span><span class="dots" aria-hidden="true"></span><span class="host">surjneo.org</span></a>
           <p class="desc">Cleveland-based Northeast Ohio chapter of Showing Up for Racial Justice, founded in 2015. It organizes white people against white supremacy through local campaigns in the Cleveland area and Nelsonville.</p>
         </li>
       </ol>
@@ -229,14 +154,10 @@
         <p class="empty" id="empty-state" hidden>No places or groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -248,8 +169,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

@@ -7,8 +7,7 @@
   <title>Phoenix Metro — Organize Directory</title>
   <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Phoenix Metro.">
   <link rel="canonical" href="https://organize.directory/phoenix">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Phoenix Metro — Organize Directory">
@@ -19,177 +18,106 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>Local Organizations</span>
+  <span class="c">White Pages</span>
+  <span class="r">Phoenix Metro, Arizona</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/arizona">Arizona</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Phoenix Metro</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Phoenix Metro</h1>
-    <p class="meta">
-      <b>13</b> groups
-      <span class="sep" aria-hidden="true">·</span>
-      Arizona
-    </p>
-  </div>
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Phoenix Metro</label>
-    <input id="page-filter" type="search" placeholder="Filter groups in Phoenix Metro…" autocomplete="off">
-  </div>
-
-  <div class="layout">
-  <nav class="toc" aria-label="Sections on this page">
-    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
-      <span class="current">
-        <span class="current-label">Section ·</span>
-        <span class="current-name">Local Organizations</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div id="toc-panel" class="toc-scroll">
-      <a href="#section-0" data-section="section-0"><span class="label">Local Organizations</span> <span class="count">13</span></a>
+    <div class="meta"><b>13</b> groups. <nav aria-label="Breadcrumb">Part of <a href="/arizona">Arizona</a>.</nav></div>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Phoenix Metro</label>
+      <input id="page-filter" type="search" placeholder="Filter groups in Phoenix Metro" autocomplete="off">
     </div>
-  </nav>
-    <div class="main-col">
+  </div>
 
+  <div class="spread">
+
+    <div class="main-col">
       <div id="sections-root">
-    <section id="section-0" class="group-section" data-section="section-0">
-      <h2 class="section-title">Local Organizations</h2>
+    <section id="section-0" class="group-section" data-section="section-0" data-title="Local Organizations">
+      <h2 class="hd"><span>Local Organizations</span><span class="k" aria-hidden="true">13</span></h2>
       <ol class="groups">
         <li data-name="phx really really free market" data-desc="free market in the phoenix area where people give and take goods and services at no cost.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/phxrrfm/" target="_blank" rel="noopener noreferrer">Phx Really Really Free Market <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/phxrrfm/" target="_blank" rel="noopener noreferrer"><span class="name">Phx Really Really Free Market</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Free market in the Phoenix area where people give and take goods and services at no cost.</p>
         </li>
         <li data-name="mutual aid phoenix" data-desc="a community network providing direct support and resources to phoenix residents through mutual aid initiatives.">
-          <div class="row">
-            <a class="name" href="https://mutualaidphx.com/" target="_blank" rel="noopener noreferrer">Mutual Aid Phoenix <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">mutualaidphx.com</span>
-          </div>
+          <a class="row" href="https://mutualaidphx.com/" target="_blank" rel="noopener noreferrer"><span class="name">Mutual Aid Phoenix</span><span class="dots" aria-hidden="true"></span><span class="host">mutualaidphx.com</span></a>
           <p class="desc">A community network providing direct support and resources to Phoenix residents through mutual aid initiatives.</p>
         </li>
         <li data-name="azpach" data-desc="arizona palestine community health provides mutual aid and healthcare support to palestinians and other marginalized communities in arizona through direct assistance, resource sharing, and community solidarity.">
-          <div class="row">
-            <a class="name" href="https://azpach.org/" target="_blank" rel="noopener noreferrer">AZPACH <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">azpach.org</span>
-          </div>
+          <a class="row" href="https://azpach.org/" target="_blank" rel="noopener noreferrer"><span class="name">AZPACH</span><span class="dots" aria-hidden="true"></span><span class="host">azpach.org</span></a>
           <p class="desc">Arizona Palestine Community Health provides mutual aid and healthcare support to Palestinians and other marginalized communities in Arizona through direct assistance, resource sharing, and community solidarity.</p>
         </li>
         <li data-name="palabras bookstore" data-desc="independent bilingual bookstore at 906 w. roosevelt st in phoenix, focused on bipoc authors. hosts readings, workshops and community events, and runs a books for incarcerated youth program.">
-          <div class="row">
-            <a class="name" href="https://palabrasbookstore.com/" target="_blank" rel="noopener noreferrer">Palabras Bookstore <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">palabrasbookstore.com</span>
-          </div>
+          <a class="row" href="https://palabrasbookstore.com/" target="_blank" rel="noopener noreferrer"><span class="name">Palabras Bookstore</span><span class="dots" aria-hidden="true"></span><span class="host">palabrasbookstore.com</span></a>
           <p class="desc">Independent bilingual bookstore at 906 W. Roosevelt St in Phoenix, focused on BIPOC authors. Hosts readings, workshops and community events, and runs a Books for Incarcerated Youth program.</p>
         </li>
         <li data-name="trans queer pueblo" data-desc="migrant lgbtq+ people of color-led group in phoenix that meets basic community needs, develops leaders, and advocates for social justice. also runs a theater troupe, las desmadrosas.">
-          <div class="row">
-            <a class="name" href="https://www.tqpueblo.org/" target="_blank" rel="noopener noreferrer">Trans Queer Pueblo <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">tqpueblo.org</span>
-          </div>
+          <a class="row" href="https://www.tqpueblo.org/" target="_blank" rel="noopener noreferrer"><span class="name">Trans Queer Pueblo</span><span class="dots" aria-hidden="true"></span><span class="host">tqpueblo.org</span></a>
           <p class="desc">Migrant LGBTQ+ people of color-led group in Phoenix that meets basic community needs, develops leaders, and advocates for social justice. Also runs a theater troupe, Las DesmadrOSAS.</p>
         </li>
         <li data-name="one-n-ten" data-desc="a nonprofit organization providing mutual aid and support services for lgbtq+ youth and young adults ages 11-24 across arizona. they coordinate direct assistance, housing support, health resources, and community care while building safe spaces for queer youth to thrive through peer support networks, educational programs, and identity-affirming initiatives.">
-          <div class="row">
-            <a class="name" href="https://onenten.org/" target="_blank" rel="noopener noreferrer">one-n-ten <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">onenten.org</span>
-          </div>
+          <a class="row" href="https://onenten.org/" target="_blank" rel="noopener noreferrer"><span class="name">one-n-ten</span><span class="dots" aria-hidden="true"></span><span class="host">onenten.org</span></a>
           <p class="desc">A nonprofit organization providing mutual aid and support services for LGBTQ+ youth and young adults ages 11-24 across Arizona. They coordinate direct assistance, housing support, health resources, and community care while building safe spaces for queer youth to thrive through peer support networks, educational programs, and identity-affirming initiatives.</p>
         </li>
         <li data-name="black lives matter phoenix metro" data-desc="black, queer and femme-led abolitionist group in phoenix, now part of build love advocacy center. supports people affected by police violence and runs mutual aid and education programs.">
-          <div class="row">
-            <a class="name" href="https://www.buildloveac.org/advocacy/blm-phoenix-metro" target="_blank" rel="noopener noreferrer">Black Lives Matter Phoenix Metro <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">buildloveac.org</span>
-          </div>
+          <a class="row" href="https://www.buildloveac.org/advocacy/blm-phoenix-metro" target="_blank" rel="noopener noreferrer"><span class="name">Black Lives Matter Phoenix Metro</span><span class="dots" aria-hidden="true"></span><span class="host">buildloveac.org</span></a>
           <p class="desc">Black, queer and femme-led abolitionist group in Phoenix, now part of Build Love Advocacy Center. Supports people affected by police violence and runs mutual aid and education programs.</p>
         </li>
         <li data-name="o'odham solidarity across borders collective" data-desc="collective of akimel o'odham and tohono o'odham youth opposing border militarization and defending o'odham land, sovereignty and traditional ways of life.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/oodhamsolidarity/" target="_blank" rel="noopener noreferrer">O'odham Solidarity Across Borders Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/oodhamsolidarity/" target="_blank" rel="noopener noreferrer"><span class="name">O'odham Solidarity Across Borders Collective</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Collective of Akimel O'odham and Tohono O'odham youth opposing border militarization and defending O'odham land, sovereignty and traditional ways of life.</p>
         </li>
         <li data-name="phoenix community resilience and education" data-desc="a grassroots collective fostering mutual aid and community resilience through education and skill-sharing in phoenix. they coordinate workshops, resource sharing, and solidarity networks while building power through community education, disaster preparedness, and creating pathways for collective resilience.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/phxcre/" target="_blank" rel="noopener noreferrer">Phoenix Community Resilience and Education <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/phxcre/" target="_blank" rel="noopener noreferrer"><span class="name">Phoenix Community Resilience and Education</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">A grassroots collective fostering mutual aid and community resilience through education and skill-sharing in Phoenix. They coordinate workshops, resource sharing, and solidarity networks while building power through community education, disaster preparedness, and creating pathways for collective resilience.</p>
         </li>
         <li data-name="unsheltered phx street watch" data-desc="volunteer group in phoenix that raises awareness of homelessness and brings aid to people living in encampments such as the zone.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/unshelteredphx/" target="_blank" rel="noopener noreferrer">Unsheltered PHX Street Watch <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/unshelteredphx/" target="_blank" rel="noopener noreferrer"><span class="name">Unsheltered PHX Street Watch</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Volunteer group in Phoenix that raises awareness of homelessness and brings aid to people living in encampments such as The Zone.</p>
         </li>
         <li data-name="valley tenants" data-desc="valley tenants union (vtu) is an autonomous union of tenants in the phoenix-metro area.">
-          <div class="row">
-            <a class="name" href="https://www.valleytenants.org/" target="_blank" rel="noopener noreferrer">Valley Tenants <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">valleytenants.org</span>
-          </div>
+          <a class="row" href="https://www.valleytenants.org/" target="_blank" rel="noopener noreferrer"><span class="name">Valley Tenants</span><span class="dots" aria-hidden="true"></span><span class="host">valleytenants.org</span></a>
           <p class="desc">Valley Tenants Union (VTU) is an autonomous union of tenants in the Phoenix-Metro area.</p>
         </li>
         <li data-name="riot phx" data-desc="we love, respect &amp; support people who use drugs through harm reduction.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/RIOTphx" target="_blank" rel="noopener noreferrer">Riot PHX <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/RIOTphx" target="_blank" rel="noopener noreferrer"><span class="name">Riot PHX</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">We love, respect &amp; support people who use drugs through harm reduction.</p>
         </li>
         <li data-name="creosote collective" data-desc="we are a local organization passionately dedicated to building meaningful connections between our community and the environment in phoenix, arizona.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/creosote_collective/" target="_blank" rel="noopener noreferrer">Creosote Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/creosote_collective/" target="_blank" rel="noopener noreferrer"><span class="name">Creosote Collective</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">We are a local organization passionately dedicated to building meaningful connections between our community and the environment in Phoenix, Arizona.</p>
         </li>
       </ol>
@@ -197,14 +125,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -216,8 +140,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

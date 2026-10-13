@@ -7,8 +7,7 @@
   <title>Albany, NY — Organize Directory</title>
   <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Albany, NY.">
   <link rel="canonical" href="https://organize.directory/albany">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Albany, NY — Organize Directory">
@@ -19,213 +18,132 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide></span>
+  <span class="c">White Pages</span>
+  <span class="r">Albany, NY, New York</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/new-york">New York</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Albany, NY</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Albany, NY</h1>
-    <p class="meta">
-      <b>20</b> groups
-      <span class="sep" aria-hidden="true">·</span>
-      New York
-    </p>
+    <div class="meta"><b>20</b> groups. <nav aria-label="Breadcrumb">Part of <a href="/new-york">New York</a>.</nav></div>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Albany, NY</label>
+      <input id="page-filter" type="search" placeholder="Filter groups in Albany, NY" autocomplete="off">
+    </div>
   </div>
 
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Albany, NY</label>
-    <input id="page-filter" type="search" placeholder="Filter groups in Albany, NY…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="section-0" class="group-section" data-section="section-0">
+    <section id="section-0" class="group-section" data-section="section-0" data-title="">
       <ol class="groups">
         <li data-name="albany social justice center" data-desc="meeting and office space at 33 central ave in albany, founded in 1982. hosts member groups like albany food not bombs, and offers office rentals, mailboxes, and fiscal sponsorship.">
-          <div class="row">
-            <a class="name" href="https://albanysjc.org/" target="_blank" rel="noopener noreferrer">Albany Social Justice Center <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">albanysjc.org</span>
-          </div>
+          <a class="row" href="https://albanysjc.org/" target="_blank" rel="noopener noreferrer"><span class="name">Albany Social Justice Center</span><span class="dots" aria-hidden="true"></span><span class="host">albanysjc.org</span></a>
           <p class="desc">Meeting and office space at 33 Central Ave in Albany, founded in 1982. Hosts member groups like Albany Food Not Bombs, and offers office rentals, mailboxes, and fiscal sponsorship.</p>
         </li>
         <li data-name="food not bombs albany" data-desc="volunteer-run group that serves free vegan meals, produce, bread, and health supplies every monday at 5pm at the albany social justice center, 33 central ave.">
-          <div class="row">
-            <a class="name" href="https://albanyfnb.wordpress.com/" target="_blank" rel="noopener noreferrer">Food Not Bombs Albany <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">albanyfnb.wordpress.com</span>
-          </div>
+          <a class="row" href="https://albanyfnb.wordpress.com/" target="_blank" rel="noopener noreferrer"><span class="name">Food Not Bombs Albany</span><span class="dots" aria-hidden="true"></span><span class="host">albanyfnb.wordpress.com</span></a>
           <p class="desc">Volunteer-run group that serves free vegan meals, produce, bread, and health supplies every Monday at 5pm at the Albany Social Justice Center, 33 Central Ave.</p>
         </li>
         <li data-name="albany free store" data-desc="every 3rd saturday of the month. a mutual aid event for collecting and distributing clothing, home goods, and hygiene products.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/albanyfreestore/" target="_blank" rel="noopener noreferrer">Albany Free Store <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/albanyfreestore/" target="_blank" rel="noopener noreferrer"><span class="name">Albany Free Store</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Every 3rd Saturday of the month. A mutual aid event for collecting and distributing clothing, home goods, and hygiene products.</p>
         </li>
         <li data-name="palestinian rights committee albany" data-desc="supporting palestinian liberation in the capital region of ny for over 40 years.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/prcalbany/" target="_blank" rel="noopener noreferrer">Palestinian Rights Committee Albany <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/prcalbany/" target="_blank" rel="noopener noreferrer"><span class="name">Palestinian Rights Committee Albany</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Supporting Palestinian liberation in the Capital Region of NY for over 40 years.</p>
         </li>
         <li data-name="healthcare workers for palestine - albany" data-desc="we are a collective of healthcare workers and students in albany, ny, demanding acknowledgment and solidarity from our health systems and hospitals">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/hcw4palestine_albany/" target="_blank" rel="noopener noreferrer">Healthcare Workers for Palestine - Albany <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/hcw4palestine_albany/" target="_blank" rel="noopener noreferrer"><span class="name">Healthcare Workers for Palestine - Albany</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">We are a collective of healthcare workers and students in Albany, NY, demanding acknowledgment and solidarity from our health systems and hospitals</p>
         </li>
         <li data-name="jewish voice for peace - albany" data-desc="capital region ny jews organizing toward palestinian liberation and judaism beyond zionism.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/jvpalbany/" target="_blank" rel="noopener noreferrer">Jewish Voice for Peace - Albany <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/jvpalbany/" target="_blank" rel="noopener noreferrer"><span class="name">Jewish Voice for Peace - Albany</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Capital Region NY Jews organizing toward Palestinian liberation and Judaism beyond Zionism.</p>
         </li>
         <li data-name="united tenants of albany" data-desc="the mission of uta is to protect tenants' rights to safe, decent and affordable housing">
-          <div class="row">
-            <a class="name" href="https://utalbany.org/" target="_blank" rel="noopener noreferrer">United Tenants of Albany <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">utalbany.org</span>
-          </div>
+          <a class="row" href="https://utalbany.org/" target="_blank" rel="noopener noreferrer"><span class="name">United Tenants of Albany</span><span class="dots" aria-hidden="true"></span><span class="host">utalbany.org</span></a>
           <p class="desc">The mission of UTA is to protect tenants' rights to safe, decent and affordable housing</p>
         </li>
         <li data-name="refugee and immigrant support services of emmaus" data-desc="supporting refugees and immigrants to build new lives and thrive in the capital region.">
-          <div class="row">
-            <a class="name" href="https://www.risse-albany.org/" target="_blank" rel="noopener noreferrer">Refugee and Immigrant Support Services of Emmaus <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">risse-albany.org</span>
-          </div>
+          <a class="row" href="https://www.risse-albany.org/" target="_blank" rel="noopener noreferrer"><span class="name">Refugee and Immigrant Support Services of Emmaus</span><span class="dots" aria-hidden="true"></span><span class="host">risse-albany.org</span></a>
           <p class="desc">Supporting refugees and immigrants to build new lives and thrive in the Capital Region.</p>
         </li>
         <li data-name="capital district dsa" data-desc="the capital region chapter of democratic socialists of america, covering albany and nearby counties, with committees on housing, labor, electoral work, palestine and ecosocialism.">
-          <div class="row">
-            <a class="name" href="https://capitaldistrictdsa.org/" target="_blank" rel="noopener noreferrer">Capital District DSA <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">capitaldistrictdsa.org</span>
-          </div>
+          <a class="row" href="https://capitaldistrictdsa.org/" target="_blank" rel="noopener noreferrer"><span class="name">Capital District DSA</span><span class="dots" aria-hidden="true"></span><span class="host">capitaldistrictdsa.org</span></a>
           <p class="desc">The Capital Region chapter of Democratic Socialists of America, covering Albany and nearby counties, with committees on housing, labor, electoral work, Palestine and ecosocialism.</p>
         </li>
         <li data-name="capital district socialist party" data-desc="a local chapter of the socialist party organizing for social and economic justice.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/capitaldistrictsocialistparty" target="_blank" rel="noopener noreferrer">Capital District Socialist Party <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/capitaldistrictsocialistparty" target="_blank" rel="noopener noreferrer"><span class="name">Capital District Socialist Party</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">A local chapter of the Socialist Party organizing for social and economic justice.</p>
         </li>
         <li data-name="free food fridge albany" data-desc="creating a program to fight food insecurity">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/freefoodfridgealbany/" target="_blank" rel="noopener noreferrer">Free Food Fridge Albany <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/freefoodfridgealbany/" target="_blank" rel="noopener noreferrer"><span class="name">Free Food Fridge Albany</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Creating a program to fight food insecurity</p>
         </li>
         <li data-name="518 free store" data-desc="schenectady's 518 free store is a grassroots effort dedicated to bridging the gap between need and aid in local bipoc communities.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/518freestore" target="_blank" rel="noopener noreferrer">518 Free Store <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/518freestore" target="_blank" rel="noopener noreferrer"><span class="name">518 Free Store</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Schenectady's 518 Free Store is a grassroots effort dedicated to bridging the gap between NEED and AID in local BIPOC communities.</p>
         </li>
         <li data-name="albany food not bombs" data-desc="volunteers cook and serve free vegan meals, produce, bread, and personal care supplies in albany on mondays, 5 to 7 pm, at the albany social justice center.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/albanyfoodnotbombs/" target="_blank" rel="noopener noreferrer">Albany Food Not Bombs <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/albanyfoodnotbombs/" target="_blank" rel="noopener noreferrer"><span class="name">Albany Food Not Bombs</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Volunteers cook and serve free vegan meals, produce, bread, and personal care supplies in Albany on Mondays, 5 to 7 pm, at the Albany Social Justice Center.</p>
         </li>
         <li data-name="circus albany" data-desc="community print shop at 46 n. swan st. in albany offering screen printing and block printing classes, open-shop sessions, and bring your own shirt events.">
-          <div class="row">
-            <a class="name" href="https://www.thecircusfamily.com" target="_blank" rel="noopener noreferrer">Circus Albany <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">thecircusfamily.com</span>
-          </div>
+          <a class="row" href="https://www.thecircusfamily.com" target="_blank" rel="noopener noreferrer"><span class="name">Circus Albany</span><span class="dots" aria-hidden="true"></span><span class="host">thecircusfamily.com</span></a>
           <p class="desc">Community print shop at 46 N. Swan St. in Albany offering screen printing and block printing classes, open-shop sessions, and Bring Your Own Shirt events.</p>
         </li>
         <li data-name="albany muslim advocacy coalition" data-desc="volunteer-led muslim advocacy group in albany, formed in 2024 after the push for the state's first ceasefire resolution. works on representation and community organizing.">
-          <div class="row">
-            <a class="name" href="https://www.albanymac.org" target="_blank" rel="noopener noreferrer">Albany Muslim Advocacy Coalition <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">albanymac.org</span>
-          </div>
+          <a class="row" href="https://www.albanymac.org" target="_blank" rel="noopener noreferrer"><span class="name">Albany Muslim Advocacy Coalition</span><span class="dots" aria-hidden="true"></span><span class="host">albanymac.org</span></a>
           <p class="desc">Volunteer-led Muslim advocacy group in Albany, formed in 2024 after the push for the state's first ceasefire resolution. Works on representation and community organizing.</p>
         </li>
         <li data-name="albany radical zine collective" data-desc="">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/arzcollective/" target="_blank" rel="noopener noreferrer">Albany Radical Zine Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/arzcollective/" target="_blank" rel="noopener noreferrer"><span class="name">Albany Radical Zine Collective</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
         </li>
         <li data-name="vocal-albany" data-desc="albany chapter of vocal-ny, a member-led group organizing on homelessness and housing, drug policy and overdose response, hiv/aids, and mass incarceration.">
-          <div class="row">
-            <a class="name" href="https://vocal-ny.org/chapter/albany/" target="_blank" rel="noopener noreferrer">VOCAL-Albany <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">vocal-ny.org</span>
-          </div>
+          <a class="row" href="https://vocal-ny.org/chapter/albany/" target="_blank" rel="noopener noreferrer"><span class="name">VOCAL-Albany</span><span class="dots" aria-hidden="true"></span><span class="host">vocal-ny.org</span></a>
           <p class="desc">Albany chapter of VOCAL-NY, a member-led group organizing on homelessness and housing, drug policy and overdose response, HIV/AIDS, and mass incarceration.</p>
         </li>
         <li data-name="capital region sanctuary coalition" data-desc="volunteer-led network in the capital region that responds to ice activity, with ice sighting alerts, know-your-rights and family preparedness resources, and a mutual aid fund.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/518crsc/" target="_blank" rel="noopener noreferrer">Capital Region Sanctuary Coalition <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/518crsc/" target="_blank" rel="noopener noreferrer"><span class="name">Capital Region Sanctuary Coalition</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Volunteer-led network in the Capital Region that responds to ICE activity, with ICE sighting alerts, know-your-rights and family preparedness resources, and a mutual aid fund.</p>
         </li>
         <li data-name="deflock518" data-desc="local campaign against flock license plate reader cameras in the albany area, part of the national deflock effort.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/deflock518/" target="_blank" rel="noopener noreferrer">deflock518 <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/deflock518/" target="_blank" rel="noopener noreferrer"><span class="name">deflock518</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Local campaign against Flock license plate reader cameras in the Albany area, part of the national DeFlock effort.</p>
         </li>
         <li data-name="radix ecological sustainability center" data-desc="urban farm and environmental education center in albany's south end with gardens, composting, youth programs, and a community forest.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/radixcenter/" target="_blank" rel="noopener noreferrer">Radix Ecological Sustainability Center <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/radixcenter/" target="_blank" rel="noopener noreferrer"><span class="name">Radix Ecological Sustainability Center</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Urban farm and environmental education center in Albany's South End with gardens, composting, youth programs, and a community forest.</p>
         </li>
       </ol>
@@ -233,14 +151,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -252,8 +166,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

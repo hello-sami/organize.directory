@@ -7,8 +7,7 @@
   <title>Rio Grande Valley — Organize Directory</title>
   <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Rio Grande Valley.">
   <link rel="canonical" href="https://organize.directory/rio-grande-valley">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Rio Grande Valley — Organize Directory">
@@ -19,137 +18,89 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide></span>
+  <span class="c">White Pages</span>
+  <span class="r">Rio Grande Valley, Texas</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/texas">Texas</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Rio Grande Valley</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Rio Grande Valley</h1>
-    <p class="meta">
-      <b>9</b> groups
-      <span class="sep" aria-hidden="true">·</span>
-      Texas
-    </p>
+    <div class="meta"><b>9</b> groups. <nav aria-label="Breadcrumb">Part of <a href="/texas">Texas</a>.</nav></div>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Rio Grande Valley</label>
+      <input id="page-filter" type="search" placeholder="Filter groups in Rio Grande Valley" autocomplete="off">
+    </div>
   </div>
 
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Rio Grande Valley</label>
-    <input id="page-filter" type="search" placeholder="Filter groups in Rio Grande Valley…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="section-0" class="group-section" data-section="section-0">
+    <section id="section-0" class="group-section" data-section="section-0" data-title="">
       <ol class="groups">
         <li data-name="rio grande valley harm reduction" data-desc="harm reduction group in the rio grande valley that gives out free naloxone, fentanyl test strips, and plan b, including from a vending machine in mcallen.">
-          <div class="row">
-            <a class="name" href="https://www.rgvharmreduction.org/" target="_blank" rel="noopener noreferrer">Rio Grande Valley Harm Reduction <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">rgvharmreduction.org</span>
-          </div>
+          <a class="row" href="https://www.rgvharmreduction.org/" target="_blank" rel="noopener noreferrer"><span class="name">Rio Grande Valley Harm Reduction</span><span class="dots" aria-hidden="true"></span><span class="host">rgvharmreduction.org</span></a>
           <p class="desc">Harm reduction group in the Rio Grande Valley that gives out free naloxone, fentanyl test strips, and Plan B, including from a vending machine in McAllen.</p>
         </li>
         <li data-name="food not bombs rgv" data-desc="monthly foodshare. bring what you can, take what you need.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/foodnotbombsrgv/" target="_blank" rel="noopener noreferrer">Food Not Bombs RGV <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/foodnotbombsrgv/" target="_blank" rel="noopener noreferrer"><span class="name">Food Not Bombs RGV</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Monthly foodshare. Bring what you can, take what you need.</p>
         </li>
         <li data-name="dsa rio grande valley" data-desc="democratic socialists of america - rio grande valley chapter.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/dsa_rgv/" target="_blank" rel="noopener noreferrer">DSA Rio Grande Valley <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/dsa_rgv/" target="_blank" rel="noopener noreferrer"><span class="name">DSA Rio Grande Valley</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Democratic Socialists of America - Rio Grande Valley Chapter.</p>
         </li>
         <li data-name="la unión del pueblo entero (lupe)" data-desc="from fighting deportations, to providing social services and english classes, to organizing for streetlights and drainage, lupe responds to the needs of the community,">
-          <div class="row">
-            <a class="name" href="https://lupenet.org/en/" target="_blank" rel="noopener noreferrer">La Unión del Pueblo Entero (LUPE) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">lupenet.org</span>
-          </div>
+          <a class="row" href="https://lupenet.org/en/" target="_blank" rel="noopener noreferrer"><span class="name">La Unión del Pueblo Entero (LUPE)</span><span class="dots" aria-hidden="true"></span><span class="host">lupenet.org</span></a>
           <p class="desc">From fighting deportations, to providing social services and English classes, to organizing for streetlights and drainage, LUPE responds to the needs of the community,</p>
         </li>
         <li data-name="rgv trans closet" data-desc="nonprofit from the rio grande valley in texas, run by trans folks. we provide free gender affirming clothing for all ages!">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/rgvtranscloset/" target="_blank" rel="noopener noreferrer">RGV Trans Closet <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/rgvtranscloset/" target="_blank" rel="noopener noreferrer"><span class="name">RGV Trans Closet</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Nonprofit from the Rio Grande Valley in Texas, run by trans folks. We provide FREE gender affirming clothing for all ages!</p>
         </li>
         <li data-name="under the umbrella rgv" data-desc="empowering trans resilience growth and visibility in the riograndevalley">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/undertheumbrellargv/" target="_blank" rel="noopener noreferrer">Under the Umbrella RGV <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/undertheumbrellargv/" target="_blank" rel="noopener noreferrer"><span class="name">Under the Umbrella RGV</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Empowering Trans Resilience Growth and Visibility in the RioGrandeValley</p>
         </li>
         <li data-name="south texas environmental justice network" data-desc="a network of directly impacted people of color working towards environmental justice in south texas' rio grande valley!">
-          <div class="row">
-            <a class="name" href="https://sotxejn.org/" target="_blank" rel="noopener noreferrer">South Texas Environmental Justice Network <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">sotxejn.org</span>
-          </div>
+          <a class="row" href="https://sotxejn.org/" target="_blank" rel="noopener noreferrer"><span class="name">South Texas Environmental Justice Network</span><span class="dots" aria-hidden="true"></span><span class="host">sotxejn.org</span></a>
           <p class="desc">A network of directly impacted people of color working towards environmental justice in South Texas' Rio Grande Valley!</p>
         </li>
         <li data-name="frontera fund rgv" data-desc="an abortion fund for the rio grande valley. fighting for abortion access for everyone who needs it">
-          <div class="row">
-            <a class="name" href="https://fronterafundrgv.org/" target="_blank" rel="noopener noreferrer">Frontera Fund RGV <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">fronterafundrgv.org</span>
-          </div>
+          <a class="row" href="https://fronterafundrgv.org/" target="_blank" rel="noopener noreferrer"><span class="name">Frontera Fund RGV</span><span class="dots" aria-hidden="true"></span><span class="host">fronterafundrgv.org</span></a>
           <p class="desc">An abortion fund for the Rio Grande Valley. Fighting for abortion access for everyone who needs it</p>
         </li>
         <li data-name="red star texas" data-desc="mutual aid and harm reduction efforts in south texas">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/redstar_tx" target="_blank" rel="noopener noreferrer">Red Star Texas <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/redstar_tx" target="_blank" rel="noopener noreferrer"><span class="name">Red Star Texas</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Mutual aid and harm reduction efforts in South Texas</p>
         </li>
       </ol>
@@ -157,14 +108,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -176,8 +123,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

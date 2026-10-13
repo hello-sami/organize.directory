@@ -8,8 +8,7 @@
   <meta name="description" content="Organizations and resources focused on addressing police violence, supporting
                     affected families, and building community safety alternatives through mutual aid and solidarity.">
   <link rel="canonical" href="https://organize.directory/topics/police-brutality">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Police Brutality Resources &amp; Support — Organize Directory">
@@ -21,102 +20,71 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="yellow">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location">White Pages</a><a href="/topics" aria-current="page">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location">White Pages</a><a href="/topics" aria-current="page">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>Community Support &amp; Action</span>
+  <span class="c">Yellow Pages</span>
+  <span class="r">Police Brutality Resources &amp; Support</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/topics">Topics</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Police Brutality Resources &amp; Support</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Police Brutality Resources &amp; Support</h1>
     <p class="meta"><b>4</b> groups</p>
+    <p class="lede">Organizations and resources focused on addressing police violence, supporting affected families, and building community safety alternatives through mutual aid and solidarity.</p>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Police Brutality Resources &amp; Support</label>
+      <input id="page-filter" type="search" placeholder="Filter groups" autocomplete="off">
+    </div>
   </div>
 
-  <p class="topic-lede">Organizations and resources focused on addressing police violence, supporting
-                    affected families, and building community safety alternatives through mutual aid and solidarity.</p>
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Police Brutality Resources &amp; Support</label>
-    <input id="page-filter" type="search" placeholder="Filter groups…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="community-support-action" class="group-section" data-section="community-support-action">
-      <h2 class="section-title">Community Support &amp; Action</h2>
+    <section id="community-support-action" class="group-section" data-section="community-support-action" data-title="Community Support &amp; Action">
+      <h2 class="hd"><span>Community Support &amp; Action</span><span class="k" aria-hidden="true">4</span></h2>
       <ol class="groups">
         <li data-name="families united 4 justice group" data-desc="network of families affected by police violence, founded in oakland in 2014. it supports newly impacted families, advocates for police accountability and holds national gatherings.">
-          <div class="row">
-            <a class="name" href="https://fu4jgroup.website/index.html#/" target="_blank" rel="noopener noreferrer">Families United 4 Justice Group <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">fu4jgroup.website</span>
-          </div>
+          <a class="row" href="https://fu4jgroup.website/index.html#/" target="_blank" rel="noopener noreferrer"><span class="name">Families United 4 Justice Group</span><span class="dots" aria-hidden="true"></span><span class="host">fu4jgroup.website</span></a>
           <p class="desc">Network of families affected by police violence, founded in Oakland in 2014. It supports newly impacted families, advocates for police accountability and holds national gatherings.</p>
         </li>
         <li data-name="families demanding justice" data-desc="a national network of families impacted by police brutality demanding justice">
-          <div class="row">
-            <a class="name" href="https://familiesdemandingjustice.org/" target="_blank" rel="noopener noreferrer">Families Demanding Justice <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">familiesdemandingjustice.org</span>
-          </div>
+          <a class="row" href="https://familiesdemandingjustice.org/" target="_blank" rel="noopener noreferrer"><span class="name">Families Demanding Justice</span><span class="dots" aria-hidden="true"></span><span class="host">familiesdemandingjustice.org</span></a>
           <p class="desc">A national network of families impacted by police brutality demanding justice</p>
         </li>
         <li data-name="mothers against police brutality" data-desc="a multi-racial, multi-ethnic coalition uniting mothers who have lost children to police violence. through mutual aid and advocacy, they work to support affected families, reform deadly force policies, and create positive changes in their communities.">
-          <div class="row">
-            <a class="name" href="https://mothersagainstpolicebrutality.org/" target="_blank" rel="noopener noreferrer">Mothers Against Police Brutality <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">mothersagainstpolicebrutality.org</span>
-          </div>
+          <a class="row" href="https://mothersagainstpolicebrutality.org/" target="_blank" rel="noopener noreferrer"><span class="name">Mothers Against Police Brutality</span><span class="dots" aria-hidden="true"></span><span class="host">mothersagainstpolicebrutality.org</span></a>
           <p class="desc">A multi-racial, multi-ethnic coalition uniting mothers who have lost children to police violence. Through mutual aid and advocacy, they work to support affected families, reform deadly force policies, and create positive changes in their communities.</p>
         </li>
         <li data-name="justice for skinny blak" data-desc="a community-driven initiative focused on seeking justice and raising awareness about police violence. through mutual aid and advocacy, they work to support families affected by police brutality and promote accountability in law enforcement.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/justice.for.skinnyblak" target="_blank" rel="noopener noreferrer">Justice for Skinny Blak <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/justice.for.skinnyblak" target="_blank" rel="noopener noreferrer"><span class="name">Justice for Skinny Blak</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">A community-driven initiative focused on seeking justice and raising awareness about police violence. Through mutual aid and advocacy, they work to support families affected by police brutality and promote accountability in law enforcement.</p>
         </li>
       </ol>
@@ -124,14 +92,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -143,8 +107,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

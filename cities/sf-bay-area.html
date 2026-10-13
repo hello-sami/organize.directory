@@ -7,8 +7,7 @@
   <title>Bay Area — Organize Directory</title>
   <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Bay Area.">
   <link rel="canonical" href="https://organize.directory/sf-bay-area">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Bay Area — Organize Directory">
@@ -19,394 +18,257 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>Neighborhoods – Anti-Repression &amp; Prison Abolition</span>
+  <span class="c">White Pages</span>
+  <span class="r">Bay Area, California</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/california">California</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/norcal">Northern California</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Bay Area</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Bay Area</h1>
-    <p class="meta">
-      <b>35</b> groups
-      <span class="sep" aria-hidden="true">·</span>
-      California
-    </p>
-  </div>
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Bay Area</label>
-    <input id="page-filter" type="search" placeholder="Filter groups in Bay Area…" autocomplete="off">
-  </div>
-
-  <div class="layout">
-  <nav class="toc" aria-label="Sections on this page">
-    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
-      <span class="current">
-        <span class="current-label">Section ·</span>
-        <span class="current-name">Neighborhoods</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div id="toc-panel" class="toc-scroll">
-      <a href="#neighborhoods" data-section="neighborhoods"><span class="label">Neighborhoods</span></a>
-      <a href="#international-solidarity" data-section="international-solidarity"><span class="label">International Solidarity</span> <span class="count">5</span></a>
-      <a href="#indigenous" data-section="indigenous"><span class="label">Indigenous Sovereignty</span> <span class="count">4</span></a>
-      <a href="#climate" data-section="climate"><span class="label">Climate &amp; Environmental Justice</span> <span class="count">4</span></a>
-      <a href="#community-support" data-section="community-support"><span class="label">Community Support &amp; Mutual Aid</span> <span class="count">5</span></a>
-      <a href="#media-education" data-section="media-education"><span class="label">Media &amp; Educational Resources</span> <span class="count">5</span></a>
-      <a href="#economic-justice" data-section="economic-justice"><span class="label">Economic &amp; Worker Justice</span> <span class="count">4</span></a>
-      <a href="#racial-justice" data-section="racial-justice"><span class="label">Racial Justice</span> <span class="count">1</span></a>
-      <a href="#anti-repression" data-section="anti-repression"><span class="label">Anti-Repression &amp; Prison Abolition</span> <span class="count">7</span></a>
+    <div class="meta"><b>35</b> groups. <nav aria-label="Breadcrumb">Part of <a href="/norcal">Northern California</a>, <a href="/california">California</a>.</nav></div>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Bay Area</label>
+      <input id="page-filter" type="search" placeholder="Filter groups in Bay Area" autocomplete="off">
     </div>
-  </nav>
-    <div class="main-col">
+  </div>
 
+  <div class="spread">
+    <nav class="thumbs" aria-label="Sections on this page">
+      <a href="#neighborhoods" data-section="neighborhoods"><span class="notch" aria-hidden="true"></span><span class="lbl">Neighborhoods</span></a>
+      <a href="#international-solidarity" data-section="international-solidarity"><span class="notch" aria-hidden="true"></span><span class="lbl">International Solidarity</span><span class="k">5</span></a>
+      <a href="#indigenous" data-section="indigenous"><span class="notch" aria-hidden="true"></span><span class="lbl">Indigenous Sovereignty</span><span class="k">4</span></a>
+      <a href="#climate" data-section="climate"><span class="notch" aria-hidden="true"></span><span class="lbl">Climate &amp; Environmental Justice</span><span class="k">4</span></a>
+      <a href="#community-support" data-section="community-support"><span class="notch" aria-hidden="true"></span><span class="lbl">Community Support &amp; Mutual Aid</span><span class="k">5</span></a>
+      <a href="#media-education" data-section="media-education"><span class="notch" aria-hidden="true"></span><span class="lbl">Media &amp; Educational Resources</span><span class="k">5</span></a>
+      <a href="#economic-justice" data-section="economic-justice"><span class="notch" aria-hidden="true"></span><span class="lbl">Economic &amp; Worker Justice</span><span class="k">4</span></a>
+      <a href="#racial-justice" data-section="racial-justice"><span class="notch" aria-hidden="true"></span><span class="lbl">Racial Justice</span><span class="k">1</span></a>
+      <a href="#anti-repression" data-section="anti-repression"><span class="notch" aria-hidden="true"></span><span class="lbl">Anti-Repression &amp; Prison Abolition</span><span class="k">7</span></a>
+    </nav>
+    <div class="main-col">
       <div id="sections-root">
-    <section id="neighborhoods" class="group-section" data-section="neighborhoods">
-      <h2 class="section-title">Neighborhoods</h2>
-      <ol class="groups children-list">
-        <li data-name="east bay" data-desc=""><a class="name" href="/east-bay">East Bay</a></li>
-        <li data-name="north bay" data-desc=""><a class="name" href="/north-bay">North Bay</a></li>
-        <li data-name="san francisco" data-desc=""><a class="name" href="/san-francisco">San Francisco</a></li>
-        <li data-name="san mateo" data-desc=""><a class="name" href="/san-mateo">San Mateo</a></li>
-        <li data-name="south bay" data-desc=""><a class="name" href="/south-bay">South Bay</a></li>
+    <section id="neighborhoods" class="group-section" data-section="neighborhoods" data-title="Neighborhoods">
+      <h2 class="hd"><span>Neighborhoods</span></h2>
+      <ol class="index-list">
+        <li data-name="east bay" data-desc=""><a href="/east-bay"><span class="n">East Bay</span></a></li>
+        <li data-name="north bay" data-desc=""><a href="/north-bay"><span class="n">North Bay</span></a></li>
+        <li data-name="san francisco" data-desc=""><a href="/san-francisco"><span class="n">San Francisco</span></a></li>
+        <li data-name="san mateo" data-desc=""><a href="/san-mateo"><span class="n">San Mateo</span></a></li>
+        <li data-name="south bay" data-desc=""><a href="/south-bay"><span class="n">South Bay</span></a></li>
       </ol>
     </section>
 
-    <section id="international-solidarity" class="group-section" data-section="international-solidarity">
-      <h2 class="section-title">International Solidarity</h2>
+    <section id="international-solidarity" class="group-section" data-section="international-solidarity" data-title="International Solidarity">
+      <h2 class="hd"><span>International Solidarity</span><span class="k" aria-hidden="true">5</span></h2>
       <ol class="groups">
         <li data-name="bay area for palestine" data-desc="follow for action alerts, info, and safety tips. #palestinewillbefree">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/bayarea4palestine/" target="_blank" rel="noopener noreferrer">Bay Area for Palestine <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/bayarea4palestine/" target="_blank" rel="noopener noreferrer"><span class="name">Bay Area for Palestine</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Follow for action alerts, info, and safety tips. #PalestineWillBeFree</p>
         </li>
         <li data-name="arab resource &amp; organizing center (aroc)" data-desc="provides legal, language-access, and case management services to low-income arab and muslim immigrants in the sf bay area, and organizes campaigns including for palestine.">
-          <div class="row">
-            <a class="name" href="https://www.araborganizing.org/" target="_blank" rel="noopener noreferrer">Arab Resource &amp; Organizing Center (AROC) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">araborganizing.org</span>
-          </div>
+          <a class="row" href="https://www.araborganizing.org/" target="_blank" rel="noopener noreferrer"><span class="name">Arab Resource &amp; Organizing Center (AROC)</span><span class="dots" aria-hidden="true"></span><span class="host">araborganizing.org</span></a>
           <p class="desc">Provides legal, language-access, and case management services to low-income Arab and Muslim immigrants in the SF Bay Area, and organizes campaigns including for Palestine.</p>
         </li>
         <li data-name="queers undermining israeli terrorism (quit!)" data-desc="bay area queer group, founded in 2001, that organizes pickets, boycott (bds) actions and protests against israeli pinkwashing in support of palestinian liberation.">
-          <div class="row">
-            <a class="name" href="https://quitpalestine.org/" target="_blank" rel="noopener noreferrer">Queers Undermining Israeli Terrorism (QUIT!) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">quitpalestine.org</span>
-          </div>
+          <a class="row" href="https://quitpalestine.org/" target="_blank" rel="noopener noreferrer"><span class="name">Queers Undermining Israeli Terrorism (QUIT!)</span><span class="dots" aria-hidden="true"></span><span class="host">quitpalestine.org</span></a>
           <p class="desc">Bay Area queer group, founded in 2001, that organizes pickets, boycott (BDS) actions and protests against Israeli pinkwashing in support of Palestinian liberation.</p>
         </li>
         <li data-name="bay area pym" data-desc="bay area chapter of the @palestinianyouthmovement">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/bayareapym/" target="_blank" rel="noopener noreferrer">Bay Area PYM <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/bayareapym/" target="_blank" rel="noopener noreferrer"><span class="name">Bay Area PYM</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Bay Area chapter of the @palestinianyouthmovement</p>
         </li>
         <li data-name="bay area united against war (bauaw)" data-desc="san francisco-based anti-war newsletter and coalition covering dockworker actions against weapons shipments, drone warfare, and campaigns for political prisoners.">
-          <div class="row">
-            <a class="name" href="https://www.bauaw.org/" target="_blank" rel="noopener noreferrer">Bay Area United Against War (BAUAW) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">bauaw.org</span>
-          </div>
+          <a class="row" href="https://www.bauaw.org/" target="_blank" rel="noopener noreferrer"><span class="name">Bay Area United Against War (BAUAW)</span><span class="dots" aria-hidden="true"></span><span class="host">bauaw.org</span></a>
           <p class="desc">San Francisco-based anti-war newsletter and coalition covering dockworker actions against weapons shipments, drone warfare, and campaigns for political prisoners.</p>
         </li>
       </ol>
     </section>
 
-    <section id="indigenous" class="group-section" data-section="indigenous">
-      <h2 class="section-title">Indigenous Sovereignty</h2>
+    <section id="indigenous" class="group-section" data-section="indigenous" data-title="Indigenous Sovereignty">
+      <h2 class="hd"><span>Indigenous Sovereignty</span><span class="k" aria-hidden="true">4</span></h2>
       <ol class="groups">
         <li data-name="native american health center" data-desc="federally qualified community health center serving native americans, with medical, dental, behavioral health and wic services at clinics in san francisco and oakland since 1972.">
-          <div class="row">
-            <a class="name" href="https://www.nativehealth.org/" target="_blank" rel="noopener noreferrer">Native American Health Center <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">nativehealth.org</span>
-          </div>
+          <a class="row" href="https://www.nativehealth.org/" target="_blank" rel="noopener noreferrer"><span class="name">Native American Health Center</span><span class="dots" aria-hidden="true"></span><span class="host">nativehealth.org</span></a>
           <p class="desc">Federally qualified community health center serving Native Americans, with medical, dental, behavioral health and WIC services at clinics in San Francisco and Oakland since 1972.</p>
         </li>
         <li data-name="sogorea te land trust" data-desc="urban indigenous women-led land trust in the east bay that returns land to indigenous people, runs the voluntary shuumi land tax, and manages sacred sites.">
-          <div class="row">
-            <a class="name" href="https://sogoreaTe-landtrust.org/" target="_blank" rel="noopener noreferrer">Sogorea Te Land Trust <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">sogoreate-landtrust.org</span>
-          </div>
+          <a class="row" href="https://sogoreaTe-landtrust.org/" target="_blank" rel="noopener noreferrer"><span class="name">Sogorea Te Land Trust</span><span class="dots" aria-hidden="true"></span><span class="host">sogoreate-landtrust.org</span></a>
           <p class="desc">Urban Indigenous women-led land trust in the East Bay that returns land to Indigenous people, runs the voluntary Shuumi Land Tax, and manages sacred sites.</p>
         </li>
         <li data-name="idle no more sf bay" data-desc="indigenous women-led volunteer group, founded in 2013, that organizes healing walks, marches and actions against the bay area's oil refineries, especially in the richmond-to-rodeo refinery corridor.">
-          <div class="row">
-            <a class="name" href="http://www.idlenomoresfbay.org/" target="_blank" rel="noopener noreferrer">Idle No More SF Bay <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">idlenomoresfbay.org</span>
-          </div>
+          <a class="row" href="http://www.idlenomoresfbay.org/" target="_blank" rel="noopener noreferrer"><span class="name">Idle No More SF Bay</span><span class="dots" aria-hidden="true"></span><span class="host">idlenomoresfbay.org</span></a>
           <p class="desc">Indigenous women-led volunteer group, founded in 2013, that organizes healing walks, marches and actions against the Bay Area's oil refineries, especially in the Richmond-to-Rodeo refinery corridor.</p>
         </li>
         <li data-name="indigenous anarchist federation" data-desc="online platform sharing indigenous anarchist ideas and struggles across the americas, active on bluesky.">
-          <div class="row">
-            <a class="name" href="https://bsky.app/profile/iaf-fai.bsky.social" target="_blank" rel="noopener noreferrer">Indigenous Anarchist Federation <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">bsky.app</span>
-          </div>
+          <a class="row" href="https://bsky.app/profile/iaf-fai.bsky.social" target="_blank" rel="noopener noreferrer"><span class="name">Indigenous Anarchist Federation</span><span class="dots" aria-hidden="true"></span><span class="host">bsky.app</span></a>
           <p class="desc">Online platform sharing Indigenous anarchist ideas and struggles across the Americas, active on Bluesky.</p>
         </li>
       </ol>
     </section>
 
-    <section id="climate" class="group-section" data-section="climate">
-      <h2 class="section-title">Climate &amp; Environmental Justice</h2>
+    <section id="climate" class="group-section" data-section="climate" data-title="Climate &amp; Environmental Justice">
+      <h2 class="hd"><span>Climate &amp; Environmental Justice</span><span class="k" aria-hidden="true">4</span></h2>
       <ol class="groups">
         <li data-name="asian pacific environmental network (apen)" data-desc="oakland-based environmental justice group organizing asian immigrant and refugee communities in oakland chinatown, richmond and carson against polluters.">
-          <div class="row">
-            <a class="name" href="https://apen4ej.org/" target="_blank" rel="noopener noreferrer">Asian Pacific Environmental Network (APEN) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">apen4ej.org</span>
-          </div>
+          <a class="row" href="https://apen4ej.org/" target="_blank" rel="noopener noreferrer"><span class="name">Asian Pacific Environmental Network (APEN)</span><span class="dots" aria-hidden="true"></span><span class="host">apen4ej.org</span></a>
           <p class="desc">Oakland-based environmental justice group organizing Asian immigrant and refugee communities in Oakland Chinatown, Richmond and Carson against polluters.</p>
         </li>
         <li data-name="urban habitat" data-desc="oakland nonprofit that trains low-income residents and residents of color for bay area boards and commissions, and does research and advocacy on transportation, housing, land use and climate policy.">
-          <div class="row">
-            <a class="name" href="https://urbanhabitat.org/" target="_blank" rel="noopener noreferrer">Urban Habitat <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">urbanhabitat.org</span>
-          </div>
+          <a class="row" href="https://urbanhabitat.org/" target="_blank" rel="noopener noreferrer"><span class="name">Urban Habitat</span><span class="dots" aria-hidden="true"></span><span class="host">urbanhabitat.org</span></a>
           <p class="desc">Oakland nonprofit that trains low-income residents and residents of color for Bay Area boards and commissions, and does research and advocacy on transportation, housing, land use and climate policy.</p>
         </li>
         <li data-name="1000 grandmothers for future generations" data-desc="group of elder women and allies in the bay area, based in berkeley, doing nonviolent climate justice actions and supporting indigenous and frontline communities.">
-          <div class="row">
-            <a class="name" href="https://www.1000grandmothers.com/" target="_blank" rel="noopener noreferrer">1000 Grandmothers for Future Generations <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">1000grandmothers.com</span>
-          </div>
+          <a class="row" href="https://www.1000grandmothers.com/" target="_blank" rel="noopener noreferrer"><span class="name">1000 Grandmothers for Future Generations</span><span class="dots" aria-hidden="true"></span><span class="host">1000grandmothers.com</span></a>
           <p class="desc">Group of elder women and allies in the Bay Area, based in Berkeley, doing nonviolent climate justice actions and supporting Indigenous and frontline communities.</p>
         </li>
         <li data-name="350 bay area" data-desc="regional grassroots climate group in the bay area, headquartered in oakland, with local chapters in marin, sonoma, napa, san francisco, contra costa and the east bay.">
-          <div class="row">
-            <a class="name" href="https://350bayarea.org/" target="_blank" rel="noopener noreferrer">350 Bay Area <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">350bayarea.org</span>
-          </div>
+          <a class="row" href="https://350bayarea.org/" target="_blank" rel="noopener noreferrer"><span class="name">350 Bay Area</span><span class="dots" aria-hidden="true"></span><span class="host">350bayarea.org</span></a>
           <p class="desc">Regional grassroots climate group in the Bay Area, headquartered in Oakland, with local chapters in Marin, Sonoma, Napa, San Francisco, Contra Costa and the East Bay.</p>
         </li>
       </ol>
     </section>
 
-    <section id="community-support" class="group-section" data-section="community-support">
-      <h2 class="section-title">Community Support &amp; Mutual Aid</h2>
+    <section id="community-support" class="group-section" data-section="community-support" data-title="Community Support &amp; Mutual Aid">
+      <h2 class="hd"><span>Community Support &amp; Mutual Aid</span><span class="k" aria-hidden="true">5</span></h2>
       <ol class="groups">
         <li data-name="homecooked care for liberation" data-desc="bay area group that provides homemade meals to people organizing for palestinian liberation.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/homecooked_care_for_liberation/" target="_blank" rel="noopener noreferrer">Homecooked Care for Liberation <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/homecooked_care_for_liberation/" target="_blank" rel="noopener noreferrer"><span class="name">Homecooked Care for Liberation</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Bay Area group that provides homemade meals to people organizing for Palestinian liberation.</p>
         </li>
         <li data-name="common humanity collective" data-desc="bay area mutual aid group that builds diy air purifiers and distributes them free, along with masks and other supplies, through volunteer community builds.">
-          <div class="row">
-            <a class="name" href="https://www.commonhumanitycollective.org/" target="_blank" rel="noopener noreferrer">Common Humanity Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">commonhumanitycollective.org</span>
-          </div>
+          <a class="row" href="https://www.commonhumanitycollective.org/" target="_blank" rel="noopener noreferrer"><span class="name">Common Humanity Collective</span><span class="dots" aria-hidden="true"></span><span class="host">commonhumanitycollective.org</span></a>
           <p class="desc">Bay Area mutual aid group that builds DIY air purifiers and distributes them free, along with masks and other supplies, through volunteer community builds.</p>
         </li>
         <li data-name="bay area anarchist coffeehouse" data-desc="bay area group that hosts open-mic style potlucks bringing together anarchists and collectives from around the region.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/anarchistcoffeehouse/" target="_blank" rel="noopener noreferrer">Bay Area Anarchist Coffeehouse <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/anarchistcoffeehouse/" target="_blank" rel="noopener noreferrer"><span class="name">Bay Area Anarchist Coffeehouse</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Bay Area group that hosts open-mic style potlucks bringing together anarchists and collectives from around the region.</p>
         </li>
         <li data-name="bay area tenant and neighborhood councils" data-desc="member-run tenant union with locals in oakland, berkeley, san francisco and the south bay, organizing renters and unhoused people against evictions, rent hikes and bad conditions.">
-          <div class="row">
-            <a class="name" href="https://baytanc.com/" target="_blank" rel="noopener noreferrer">Bay Area Tenant and Neighborhood Councils <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">baytanc.com</span>
-          </div>
+          <a class="row" href="https://baytanc.com/" target="_blank" rel="noopener noreferrer"><span class="name">Bay Area Tenant and Neighborhood Councils</span><span class="dots" aria-hidden="true"></span><span class="host">baytanc.com</span></a>
           <p class="desc">Member-run tenant union with locals in Oakland, Berkeley, San Francisco and the South Bay, organizing renters and unhoused people against evictions, rent hikes and bad conditions.</p>
         </li>
         <li data-name="bay resistance" data-desc="network of bay area community groups, unions and neighborhood groups. sends rapid response alerts on immigration raids and other threats, runs neighborhood pods, trainings and street campaigns.">
-          <div class="row">
-            <a class="name" href="https://www.bayresistance.org/" target="_blank" rel="noopener noreferrer">Bay Resistance <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">bayresistance.org</span>
-          </div>
+          <a class="row" href="https://www.bayresistance.org/" target="_blank" rel="noopener noreferrer"><span class="name">Bay Resistance</span><span class="dots" aria-hidden="true"></span><span class="host">bayresistance.org</span></a>
           <p class="desc">Network of Bay Area community groups, unions and neighborhood groups. Sends rapid response alerts on immigration raids and other threats, runs neighborhood pods, trainings and street campaigns.</p>
         </li>
       </ol>
     </section>
 
-    <section id="media-education" class="group-section" data-section="media-education">
-      <h2 class="section-title">Media &amp; Educational Resources</h2>
+    <section id="media-education" class="group-section" data-section="media-education" data-title="Media &amp; Educational Resources">
+      <h2 class="hd"><span>Media &amp; Educational Resources</span><span class="k" aria-hidden="true">5</span></h2>
       <ol class="groups">
         <li data-name="san francisco bay view national black newspaper" data-desc="independent black newspaper founded in 1976, serving thought-provoking stories and commentary on the full range of black trials and triumphs, with a focus on prison abolition, mutual aid, and community empowerment through grassroots journalism.">
-          <div class="row">
-            <a class="name" href="https://sfbayview.com/" target="_blank" rel="noopener noreferrer">San Francisco Bay View National Black Newspaper <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">sfbayview.com</span>
-          </div>
+          <a class="row" href="https://sfbayview.com/" target="_blank" rel="noopener noreferrer"><span class="name">San Francisco Bay View National Black Newspaper</span><span class="dots" aria-hidden="true"></span><span class="host">sfbayview.com</span></a>
           <p class="desc">Independent Black newspaper founded in 1976, serving thought-provoking stories and commentary on the full range of Black trials and triumphs, with a focus on prison abolition, mutual aid, and community empowerment through grassroots journalism.</p>
         </li>
         <li data-name="indybay - sf bay area independent media center" data-desc="volunteer-run open-publishing news site where people post reports, photos, video and event listings about protests, labor, housing and other social movements in the bay area.">
-          <div class="row">
-            <a class="name" href="https://indybay.org/" target="_blank" rel="noopener noreferrer">Indybay - SF Bay Area Independent Media Center <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">indybay.org</span>
-          </div>
+          <a class="row" href="https://indybay.org/" target="_blank" rel="noopener noreferrer"><span class="name">Indybay - SF Bay Area Independent Media Center</span><span class="dots" aria-hidden="true"></span><span class="host">indybay.org</span></a>
           <p class="desc">Volunteer-run open-publishing news site where people post reports, photos, video and event listings about protests, labor, housing and other social movements in the Bay Area.</p>
         </li>
         <li data-name="free speech tv" data-desc="national nonprofit progressive news and opinion tv network covering social, economic and environmental justice. based in colorado; broadcasts nationally and streams online.">
-          <div class="row">
-            <a class="name" href="https://freespeech.org/" target="_blank" rel="noopener noreferrer">Free Speech TV <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">freespeech.org</span>
-          </div>
+          <a class="row" href="https://freespeech.org/" target="_blank" rel="noopener noreferrer"><span class="name">Free Speech TV</span><span class="dots" aria-hidden="true"></span><span class="host">freespeech.org</span></a>
           <p class="desc">National nonprofit progressive news and opinion TV network covering social, economic and environmental justice. Based in Colorado; broadcasts nationally and streams online.</p>
         </li>
         <li data-name="crimethinc." data-desc="anarchist collective and publisher producing articles, books, zines, posters and podcasts on anti-authoritarian organizing. operates as a decentralized network, not a local group.">
-          <div class="row">
-            <a class="name" href="https://crimethinc.com/" target="_blank" rel="noopener noreferrer">CrimethInc. <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">crimethinc.com</span>
-          </div>
+          <a class="row" href="https://crimethinc.com/" target="_blank" rel="noopener noreferrer"><span class="name">CrimethInc.</span><span class="dots" aria-hidden="true"></span><span class="host">crimethinc.com</span></a>
           <p class="desc">Anarchist collective and publisher producing articles, books, zines, posters and podcasts on anti-authoritarian organizing. Operates as a decentralized network, not a local group.</p>
         </li>
         <li data-name="ak press" data-desc="worker-run collective that publishes and distributes anarchist and radical-left books, based in chico, california.">
-          <div class="row">
-            <a class="name" href="https://www.akpress.org/" target="_blank" rel="noopener noreferrer">AK Press <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">akpress.org</span>
-          </div>
+          <a class="row" href="https://www.akpress.org/" target="_blank" rel="noopener noreferrer"><span class="name">AK Press</span><span class="dots" aria-hidden="true"></span><span class="host">akpress.org</span></a>
           <p class="desc">Worker-run collective that publishes and distributes anarchist and radical-left books, based in Chico, California.</p>
         </li>
       </ol>
     </section>
 
-    <section id="economic-justice" class="group-section" data-section="economic-justice">
-      <h2 class="section-title">Economic &amp; Worker Justice</h2>
+    <section id="economic-justice" class="group-section" data-section="economic-justice" data-title="Economic &amp; Worker Justice">
+      <h2 class="hd"><span>Economic &amp; Worker Justice</span><span class="k" aria-hidden="true">4</span></h2>
       <ol class="groups">
         <li data-name="mujeres unidas y activas (mua)" data-desc="organization of latina and indigenous immigrant women in san francisco, oakland and union city offering workshops, counseling and support, and campaigning for immigrant and domestic worker rights.">
-          <div class="row">
-            <a class="name" href="https://mujeresunidas.net/" target="_blank" rel="noopener noreferrer">Mujeres Unidas y Activas (MUA) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">mujeresunidas.net</span>
-          </div>
+          <a class="row" href="https://mujeresunidas.net/" target="_blank" rel="noopener noreferrer"><span class="name">Mujeres Unidas y Activas (MUA)</span><span class="dots" aria-hidden="true"></span><span class="host">mujeresunidas.net</span></a>
           <p class="desc">Organization of Latina and Indigenous immigrant women in San Francisco, Oakland and Union City offering workshops, counseling and support, and campaigning for immigrant and domestic worker rights.</p>
         </li>
         <li data-name="filipino advocates for justice" data-desc="filipino community organization in the east bay, founded 1973. runs youth programs, immigration services, worker rights support and civic engagement from offices in oakland and union city.">
-          <div class="row">
-            <a class="name" href="https://filipinos4justice.org/" target="_blank" rel="noopener noreferrer">Filipino Advocates for Justice <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">filipinos4justice.org</span>
-          </div>
+          <a class="row" href="https://filipinos4justice.org/" target="_blank" rel="noopener noreferrer"><span class="name">Filipino Advocates for Justice</span><span class="dots" aria-hidden="true"></span><span class="host">filipinos4justice.org</span></a>
           <p class="desc">Filipino community organization in the East Bay, founded 1973. Runs youth programs, immigration services, worker rights support and civic engagement from offices in Oakland and Union City.</p>
         </li>
         <li data-name="bay area workers support (baws)" data-desc="sex worker-led group in the bay area offering mutual aid grants, a bad date list, resource guides, and community events like an annual resource fair in oakland.">
-          <div class="row">
-            <a class="name" href="https://bayareaworkerssupport.org/" target="_blank" rel="noopener noreferrer">Bay Area Workers Support (BAWS) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">bayareaworkerssupport.org</span>
-          </div>
+          <a class="row" href="https://bayareaworkerssupport.org/" target="_blank" rel="noopener noreferrer"><span class="name">Bay Area Workers Support (BAWS)</span><span class="dots" aria-hidden="true"></span><span class="host">bayareaworkerssupport.org</span></a>
           <p class="desc">Sex worker-led group in the Bay Area offering mutual aid grants, a bad date list, resource guides, and community events like an annual resource fair in Oakland.</p>
         </li>
         <li data-name="alliance of south asians taking action (asata)" data-desc="the alliance of south asians taking action empowers south asians to end violence, oppression, and exploitation within and against our communities.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/asata_bayarea/" target="_blank" rel="noopener noreferrer">Alliance of South Asians Taking Action (ASATA) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/asata_bayarea/" target="_blank" rel="noopener noreferrer"><span class="name">Alliance of South Asians Taking Action (ASATA)</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">The Alliance of South Asians Taking Action empowers South Asians to end violence, oppression, and exploitation within and against our communities.</p>
         </li>
       </ol>
     </section>
 
-    <section id="racial-justice" class="group-section" data-section="racial-justice">
-      <h2 class="section-title">Racial Justice</h2>
+    <section id="racial-justice" class="group-section" data-section="racial-justice" data-title="Racial Justice">
+      <h2 class="hd"><span>Racial Justice</span><span class="k" aria-hidden="true">1</span></h2>
       <ol class="groups">
         <li data-name="surj bay area" data-desc="bay area chapter of showing up for racial justice, organizing white people around racial justice. current campaigns cover oakland budget and community safety funding, and palestine solidarity.">
-          <div class="row">
-            <a class="name" href="https://www.surjbayarea.org/" target="_blank" rel="noopener noreferrer">SURJ Bay Area <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">surjbayarea.org</span>
-          </div>
+          <a class="row" href="https://www.surjbayarea.org/" target="_blank" rel="noopener noreferrer"><span class="name">SURJ Bay Area</span><span class="dots" aria-hidden="true"></span><span class="host">surjbayarea.org</span></a>
           <p class="desc">Bay Area chapter of Showing Up for Racial Justice, organizing white people around racial justice. Current campaigns cover Oakland budget and community safety funding, and Palestine solidarity.</p>
         </li>
       </ol>
     </section>
 
-    <section id="anti-repression" class="group-section" data-section="anti-repression">
-      <h2 class="section-title">Anti-Repression &amp; Prison Abolition</h2>
+    <section id="anti-repression" class="group-section" data-section="anti-repression" data-title="Anti-Repression &amp; Prison Abolition">
+      <h2 class="hd"><span>Anti-Repression &amp; Prison Abolition</span><span class="k" aria-hidden="true">7</span></h2>
       <ol class="groups">
         <li data-name="anti-repression bay area" data-desc="providing protest support and bail funds for demonstrators through mutual aid networks.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/antirepression_bayarea/" target="_blank" rel="noopener noreferrer">Anti-Repression Bay Area <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/antirepression_bayarea/" target="_blank" rel="noopener noreferrer"><span class="name">Anti-Repression Bay Area</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Providing protest support and bail funds for demonstrators through mutual aid networks.</p>
         </li>
         <li data-name="community works west" data-desc="transforming justice through restorative practices, reentry support, and youth empowerment programs across the bay area, with a focus on healing and community-led solutions to incarceration.">
-          <div class="row">
-            <a class="name" href="https://communityworkswest.org/" target="_blank" rel="noopener noreferrer">Community Works West <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">communityworkswest.org</span>
-          </div>
+          <a class="row" href="https://communityworkswest.org/" target="_blank" rel="noopener noreferrer"><span class="name">Community Works West</span><span class="dots" aria-hidden="true"></span><span class="host">communityworkswest.org</span></a>
           <p class="desc">Transforming justice through restorative practices, reentry support, and youth empowerment programs across the Bay Area, with a focus on healing and community-led solutions to incarceration.</p>
         </li>
         <li data-name="flying over walls" data-desc="san francisco-based queer and trans prisoner solidarity project that matches outside pen pals with incarcerated lgbtq+ people and supports ongoing letter-writing.">
-          <div class="row">
-            <a class="name" href="https://flyingoverwalls.org/" target="_blank" rel="noopener noreferrer">Flying Over Walls <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">flyingoverwalls.org</span>
-          </div>
+          <a class="row" href="https://flyingoverwalls.org/" target="_blank" rel="noopener noreferrer"><span class="name">Flying Over Walls</span><span class="dots" aria-hidden="true"></span><span class="host">flyingoverwalls.org</span></a>
           <p class="desc">San Francisco-based queer and trans prisoner solidarity project that matches outside pen pals with incarcerated LGBTQ+ people and supports ongoing letter-writing.</p>
         </li>
         <li data-name="prison literature project" data-desc="by sending free reading materials to those behind bars, plp aims to foster learning and critical thinking and help prepare people to lead successful lives after incarceration.">
-          <div class="row">
-            <a class="name" href="https://www.prisonlit.org/" target="_blank" rel="noopener noreferrer">Prison Literature Project <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">prisonlit.org</span>
-          </div>
+          <a class="row" href="https://www.prisonlit.org/" target="_blank" rel="noopener noreferrer"><span class="name">Prison Literature Project</span><span class="dots" aria-hidden="true"></span><span class="host">prisonlit.org</span></a>
           <p class="desc">By sending free reading materials to those behind bars, PLP aims to foster learning and critical thinking and help prepare people to lead successful lives after incarceration.</p>
         </li>
         <li data-name="seeing red events" data-desc="a communist lecture and party series in the bay area.">
-          <div class="row">
-            <a class="name" href="https://seeingredevents.com/" target="_blank" rel="noopener noreferrer">Seeing Red Events <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">seeingredevents.com</span>
-          </div>
+          <a class="row" href="https://seeingredevents.com/" target="_blank" rel="noopener noreferrer"><span class="name">Seeing Red Events</span><span class="dots" aria-hidden="true"></span><span class="host">seeingredevents.com</span></a>
           <p class="desc">A communist lecture and party series in the Bay Area.</p>
         </li>
         <li data-name="lavender phoenix" data-desc="bay area organization (formerly apienc) of transgender, non-binary, and queer asian and pacific islander people that trains grassroots leaders and runs member organizing programs.">
-          <div class="row">
-            <a class="name" href="https://lavenderphoenix.org/" target="_blank" rel="noopener noreferrer">Lavender Phoenix <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">lavenderphoenix.org</span>
-          </div>
+          <a class="row" href="https://lavenderphoenix.org/" target="_blank" rel="noopener noreferrer"><span class="name">Lavender Phoenix</span><span class="dots" aria-hidden="true"></span><span class="host">lavenderphoenix.org</span></a>
           <p class="desc">Bay Area organization (formerly APIENC) of transgender, non-binary, and queer Asian and Pacific Islander people that trains grassroots leaders and runs member organizing programs.</p>
         </li>
         <li data-name="bay area transformative justice collective" data-desc="oakland-based collective that runs trainings and support for transformative justice responses to harm, especially child sexual abuse.">
-          <div class="row">
-            <a class="name" href="https://batjc.org/" target="_blank" rel="noopener noreferrer">Bay Area Transformative Justice Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">batjc.org</span>
-          </div>
+          <a class="row" href="https://batjc.org/" target="_blank" rel="noopener noreferrer"><span class="name">Bay Area Transformative Justice Collective</span><span class="dots" aria-hidden="true"></span><span class="host">batjc.org</span></a>
           <p class="desc">Oakland-based collective that runs trainings and support for transformative justice responses to harm, especially child sexual abuse.</p>
         </li>
       </ol>
@@ -414,14 +276,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -433,8 +291,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

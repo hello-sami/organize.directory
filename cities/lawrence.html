@@ -7,8 +7,7 @@
   <title>Lawrence, KS — Organize Directory</title>
   <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Lawrence, KS.">
   <link rel="canonical" href="https://organize.directory/lawrence">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Lawrence, KS — Organize Directory">
@@ -19,109 +18,73 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide></span>
+  <span class="c">White Pages</span>
+  <span class="r">Lawrence, KS, Kansas</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/kansas">Kansas</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Lawrence, KS</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Lawrence, KS</h1>
-    <p class="meta">
-      <b>5</b> groups
-      <span class="sep" aria-hidden="true">·</span>
-      Kansas
-    </p>
+    <div class="meta"><b>5</b> groups. <nav aria-label="Breadcrumb">Part of <a href="/kansas">Kansas</a>.</nav></div>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Lawrence, KS</label>
+      <input id="page-filter" type="search" placeholder="Filter groups in Lawrence, KS" autocomplete="off">
+    </div>
   </div>
 
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Lawrence, KS</label>
-    <input id="page-filter" type="search" placeholder="Filter groups in Lawrence, KS…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="section-0" class="group-section" data-section="section-0">
+    <section id="section-0" class="group-section" data-section="section-0" data-title="">
       <ol class="groups">
         <li data-name="lfk mutual aid" data-desc="lawrence, kansas mutual aid network formed in 2020 during covid-19. coordinates volunteers and has pushed for housing security and homelessness prevention.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/lfkmutual/" target="_blank" rel="noopener noreferrer">LFK Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/lfkmutual/" target="_blank" rel="noopener noreferrer"><span class="name">LFK Mutual Aid</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">Lawrence, Kansas mutual aid network formed in 2020 during COVID-19. Coordinates volunteers and has pushed for housing security and homelessness prevention.</p>
         </li>
         <li data-name="ecm ku solidarity library" data-desc="volunteer-run library of over 4,000 radical books plus zines, pamphlets and periodicals, in the ecm building at 1204 oread ave, lawrence. open thursdays during veggie lunch.">
-          <div class="row">
-            <a class="name" href="https://www.ecmku.org/solidarity-library-1" target="_blank" rel="noopener noreferrer">ECM KU Solidarity Library <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">ecmku.org</span>
-          </div>
+          <a class="row" href="https://www.ecmku.org/solidarity-library-1" target="_blank" rel="noopener noreferrer"><span class="name">ECM KU Solidarity Library</span><span class="dots" aria-hidden="true"></span><span class="host">ecmku.org</span></a>
           <p class="desc">Volunteer-run library of over 4,000 radical books plus zines, pamphlets and periodicals, in the ECM building at 1204 Oread Ave, Lawrence. Open Thursdays during Veggie Lunch.</p>
         </li>
         <li data-name="lawrence food not bombs" data-desc="lawrence food not bombs cooks and serves free vegetarian or vegan meals on sundays in lawrence, ks. volunteers source food from local farms and other volunteers.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/lfkfnb/" target="_blank" rel="noopener noreferrer">Lawrence Food Not Bombs <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/lfkfnb/" target="_blank" rel="noopener noreferrer"><span class="name">Lawrence Food Not Bombs</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">Lawrence Food Not Bombs cooks and serves free vegetarian or vegan meals on Sundays in Lawrence, KS. Volunteers source food from local farms and other volunteers.</p>
         </li>
         <li data-name="lawrence tenants" data-desc="tenants organizing to make it easier to rent in lawrence. we are currently organizing for right to counsel for tenants facing eviction">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/lawrencetenants/" target="_blank" rel="noopener noreferrer">Lawrence Tenants <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/lawrencetenants/" target="_blank" rel="noopener noreferrer"><span class="name">Lawrence Tenants</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Tenants organizing to make it easier to rent in Lawrence. We are currently organizing for right to counsel for tenants facing eviction</p>
         </li>
         <li data-name="trans lawrence coalition" data-desc="trans lawrence coalition is a trans-led organization seeking to protect &amp; expand the social and political well-being of trans people in lawrence, ks.">
-          <div class="row">
-            <a class="name" href="https://tlcks.org/" target="_blank" rel="noopener noreferrer">Trans Lawrence Coalition <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">tlcks.org</span>
-          </div>
+          <a class="row" href="https://tlcks.org/" target="_blank" rel="noopener noreferrer"><span class="name">Trans Lawrence Coalition</span><span class="dots" aria-hidden="true"></span><span class="host">tlcks.org</span></a>
           <p class="desc">Trans Lawrence Coalition is a trans-led organization seeking to protect &amp; expand the social and political well-being of trans people in Lawrence, KS.</p>
         </li>
       </ol>
@@ -129,14 +92,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -148,8 +107,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

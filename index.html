@@ -7,8 +7,7 @@
   <title>Organize Directory</title>
   <meta name="description" content="An (incomplete) list of leftist and grassroots groups in the US. Find your people and get to work.">
   <link rel="canonical" href="https://organize.directory/">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Organize Directory">
@@ -19,71 +18,114 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="yellow">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
 
-<main id="main" class="hero">
-  <div class="hero-inner">
-    <h1 class="hl">Don't <span class="soft">despair.</span><br><span class="warm">Organize.<svg class="underline" viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M4 10 C 60 2, 120 14, 180 6 S 280 10, 296 8" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg></span></h1>
-    <p class="sub">An (incomplete) list of leftist and grassroots groups in the US. Find your people and get to work.</p>
+<main id="main">
 
-    <div class="doors">
-      <form class="search" role="search" action="/search" method="get" onsubmit="event.preventDefault()">
-        <label class="skip" for="site-search">Search the directory</label>
-        <input id="site-search" name="q" type="search" placeholder="Search city, state, issue, or group…" autocomplete="off">
-        <button type="submit" aria-label="Search">Go <span aria-hidden="true">→</span></button>
-      </form>
-
-      <div class="cta-row">
-        <a href="/location" class="btn primary">
-          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Find Local Groups
-        </a>
-        <a href="/topics" class="btn ghost">
-          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          Browse by Issue
-        </a>
-      </div>
+  <div class="cover-top">
+    <div>
+      <div class="cover-title"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg><h1>Organize<br>Directory</h1></div>
+      <p class="edition"><span>United States</span><span>Updated October 12, 2026</span><span>2,625 listings</span></p>
     </div>
-
-    <p class="stats"><b>2,625</b> groups<span class="sep" aria-hidden="true">·</span><b>337</b> cities<span class="sep" aria-hidden="true">·</span><b>41</b> topics</p>
+    <div>
+      <p class="tagline">Don't despair. Organize.</p>
+      <p class="cover-sub">An (incomplete) list of leftist and grassroots groups in the US. Find your people and get to work.</p>
+      <form class="lookup" role="search" action="/search" method="get" onsubmit="event.preventDefault()">
+        <label class="skip" for="site-search">Search the directory</label>
+        <input id="site-search" name="q" type="search" placeholder="Search city, state, issue, or group" autocomplete="off">
+        <button type="submit">Look up</button>
+      </form>
+    </div>
   </div>
+
+  <nav class="contents" aria-label="Contents">
+    <a class="row" href="/location"><span class="name">White Pages: groups by place</span><span class="dots" aria-hidden="true"></span><span class="host">337 cities</span></a>
+    <a class="row" href="/topics"><span class="name">Yellow Pages: groups by issue</span><span class="dots" aria-hidden="true"></span><span class="host">41 issues</span></a>
+  </nav>
+
+  <section class="state-index" aria-labelledby="states-heading">
+    <h2 class="hd" id="states-heading"><span>States</span><span class="k">Groups</span></h2>
+    <ol class="index-list">
+      <li><a href="/alabama"><span class="n">Alabama</span><span class="c">34</span></a></li>
+      <li><a href="/alaska"><span class="n">Alaska</span><span class="c">14</span></a></li>
+      <li><a href="/arizona"><span class="n">Arizona</span><span class="c">61</span></a></li>
+      <li><a href="/arkansas"><span class="n">Arkansas</span><span class="c">30</span></a></li>
+      <li><a href="/california"><span class="n">California</span><span class="c">347</span></a></li>
+      <li><a href="/colorado"><span class="n">Colorado</span><span class="c">39</span></a></li>
+      <li><a href="/connecticut"><span class="n">Connecticut</span><span class="c">5</span></a></li>
+      <li><a href="/delaware"><span class="n">Delaware</span><span class="c">1</span></a></li>
+      <li><a href="/district-of-columbia"><span class="n">District of Columbia</span><span class="c">15</span></a></li>
+      <li><a href="/florida"><span class="n">Florida</span><span class="c">99</span></a></li>
+      <li><a href="/georgia"><span class="n">Georgia</span><span class="c">57</span></a></li>
+      <li><a href="/hawaii"><span class="n">Hawaii</span><span class="c">6</span></a></li>
+      <li><a href="/idaho"><span class="n">Idaho</span><span class="c">10</span></a></li>
+      <li><a href="/illinois"><span class="n">Illinois</span><span class="c">76</span></a></li>
+      <li><a href="/indiana"><span class="n">Indiana</span><span class="c">36</span></a></li>
+      <li><a href="/iowa"><span class="n">Iowa</span><span class="c">19</span></a></li>
+      <li><a href="/kansas"><span class="n">Kansas</span><span class="c">8</span></a></li>
+      <li><a href="/kentucky"><span class="n">Kentucky</span><span class="c">14</span></a></li>
+      <li><a href="/louisiana"><span class="n">Louisiana</span><span class="c">13</span></a></li>
+      <li><a href="/maine"><span class="n">Maine</span><span class="c">16</span></a></li>
+      <li><a href="/maryland"><span class="n">Maryland</span><span class="c">18</span></a></li>
+      <li><a href="/massachusetts"><span class="n">Massachusetts</span><span class="c">47</span></a></li>
+      <li><a href="/michigan"><span class="n">Michigan</span><span class="c">63</span></a></li>
+      <li><a href="/minnesota"><span class="n">Minnesota</span><span class="c">63</span></a></li>
+      <li><a href="/mississippi"><span class="n">Mississippi</span><span class="c">7</span></a></li>
+      <li><a href="/missouri"><span class="n">Missouri</span><span class="c">23</span></a></li>
+      <li><a href="/montana"><span class="n">Montana</span><span class="c">20</span></a></li>
+      <li><a href="/nebraska"><span class="n">Nebraska</span><span class="c">23</span></a></li>
+      <li><a href="/nevada"><span class="n">Nevada</span><span class="c">16</span></a></li>
+      <li><a href="/new-hampshire"><span class="n">New Hampshire</span><span class="c">17</span></a></li>
+      <li><a href="/new-jersey"><span class="n">New Jersey</span><span class="c">22</span></a></li>
+      <li><a href="/new-mexico"><span class="n">New Mexico</span><span class="c">29</span></a></li>
+      <li><a href="/new-york"><span class="n">New York</span><span class="c">440</span></a></li>
+      <li><a href="/north-carolina"><span class="n">North Carolina</span><span class="c">75</span></a></li>
+      <li><a href="/north-dakota"><span class="n">North Dakota</span><span class="c">6</span></a></li>
+      <li><a href="/ohio"><span class="n">Ohio</span><span class="c">90</span></a></li>
+      <li><a href="/oklahoma"><span class="n">Oklahoma</span><span class="c">21</span></a></li>
+      <li><a href="/oregon"><span class="n">Oregon</span><span class="c">87</span></a></li>
+      <li><a href="/pennsylvania"><span class="n">Pennsylvania</span><span class="c">55</span></a></li>
+      <li><a href="/rhode-island"><span class="n">Rhode Island</span><span class="c">15</span></a></li>
+      <li><a href="/south-carolina"><span class="n">South Carolina</span><span class="c">26</span></a></li>
+      <li><a href="/south-dakota"><span class="n">South Dakota</span><span class="c">1</span></a></li>
+      <li><a href="/tennessee"><span class="n">Tennessee</span><span class="c">35</span></a></li>
+      <li><a href="/territories"><span class="n">Territories Statewide Initiatives</span><span class="c">1</span></a></li>
+      <li><a href="/texas"><span class="n">Texas</span><span class="c">128</span></a></li>
+      <li><a href="/utah"><span class="n">Utah</span><span class="c">11</span></a></li>
+      <li><a href="/vermont"><span class="n">Vermont</span><span class="c">16</span></a></li>
+      <li><a href="/virginia"><span class="n">Virginia</span><span class="c">38</span></a></li>
+      <li><a href="/washington"><span class="n">Washington</span><span class="c">77</span></a></li>
+      <li><a href="/west-virginia"><span class="n">West Virginia</span><span class="c">8</span></a></li>
+      <li><a href="/wisconsin"><span class="n">Wisconsin</span><span class="c">41</span></a></li>
+      <li><a href="/wyoming"><span class="n">Wyoming</span><span class="c">8</span></a></li>
+    </ol>
+  </section>
+
 </main>
 
 <footer>
@@ -92,7 +134,6 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/js/title-search.js?v=a3e2f56b" defer></script>
+<script src="/js/title-search.js?v=27e49e84" defer></script>
 </body>
 </html>

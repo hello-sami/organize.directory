@@ -7,8 +7,7 @@
   <title>Find a group by location — Organize Directory</title>
   <meta name="description" content="Find mutual aid networks, support initiatives, and community resources by city or state.">
   <link rel="canonical" href="https://organize.directory/location">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Find a group by location — Organize Directory">
@@ -19,114 +18,104 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
   <!-- Fonts -->
 
   <!-- Styles -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l">Alabama – Wyoming</span>
+  <span class="c">White Pages</span>
+  <span class="r"></span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Location</span>
-  </nav>
 
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Find your people.</h1>
     <p class="meta">Search by city — or pick a state.</p>
   </div>
 
-  <!-- Title-search widget (populated by /js/title-search.js?v=a3e2f56b) -->
+  <div class="page-body">
+  <!-- Title-search widget (populated by /js/title-search.js?v=27e49e84) -->
   <div id="location-search-section" class="title-search-wrapper" role="search"></div>
 
-  <h2 class="section-title" style="margin-top:2.5rem">States</h2>
-  <ol class="index-grid">
-    <li><a href="/alabama">Alabama</a></li>
-    <li><a href="/alaska">Alaska</a></li>
-    <li><a href="/arizona">Arizona</a></li>
-    <li><a href="/arkansas">Arkansas</a></li>
-    <li><a href="/california">California</a></li>
-    <li><a href="/colorado">Colorado</a></li>
-    <li><a href="/connecticut">Connecticut</a></li>
-    <li><a href="/delaware">Delaware</a></li>
-    <li><a href="/district-of-columbia">District of Columbia</a></li>
-    <li><a href="/florida">Florida</a></li>
-    <li><a href="/georgia">Georgia</a></li>
-    <li><a href="/hawaii">Hawaii</a></li>
-    <li><a href="/idaho">Idaho</a></li>
-    <li><a href="/illinois">Illinois</a></li>
-    <li><a href="/indiana">Indiana</a></li>
-    <li><a href="/iowa">Iowa</a></li>
-    <li><a href="/kansas">Kansas</a></li>
-    <li><a href="/kentucky">Kentucky</a></li>
-    <li><a href="/louisiana">Louisiana</a></li>
-    <li><a href="/maine">Maine</a></li>
-    <li><a href="/maryland">Maryland</a></li>
-    <li><a href="/massachusetts">Massachusetts</a></li>
-    <li><a href="/michigan">Michigan</a></li>
-    <li><a href="/minnesota">Minnesota</a></li>
-    <li><a href="/mississippi">Mississippi</a></li>
-    <li><a href="/missouri">Missouri</a></li>
-    <li><a href="/montana">Montana</a></li>
-    <li><a href="/nebraska">Nebraska</a></li>
-    <li><a href="/nevada">Nevada</a></li>
-    <li><a href="/new-hampshire">New Hampshire</a></li>
-    <li><a href="/new-jersey">New Jersey</a></li>
-    <li><a href="/new-mexico">New Mexico</a></li>
-    <li><a href="/new-york">New York</a></li>
-    <li><a href="/north-carolina">North Carolina</a></li>
-    <li><a href="/north-dakota">North Dakota</a></li>
-    <li><a href="/ohio">Ohio</a></li>
-    <li><a href="/oklahoma">Oklahoma</a></li>
-    <li><a href="/oregon">Oregon</a></li>
-    <li><a href="/pennsylvania">Pennsylvania</a></li>
-    <li><a href="/rhode-island">Rhode Island</a></li>
-    <li><a href="/south-carolina">South Carolina</a></li>
-    <li><a href="/south-dakota">South Dakota</a></li>
-    <li><a href="/tennessee">Tennessee</a></li>
-    <li><a href="/texas">Texas</a></li>
-    <li><a href="/utah">Utah</a></li>
-    <li><a href="/vermont">Vermont</a></li>
-    <li><a href="/virginia">Virginia</a></li>
-    <li><a href="/washington">Washington</a></li>
-    <li><a href="/west-virginia">West Virginia</a></li>
-    <li><a href="/wisconsin">Wisconsin</a></li>
-    <li><a href="/wyoming">Wyoming</a></li>
+  <h2 class="hd" style="margin-top:2rem"><span>States</span></h2>
+  <ol class="index-list wide">
+    <li><a href="/alabama"><span class="n">Alabama</span></a></li>
+    <li><a href="/alaska"><span class="n">Alaska</span></a></li>
+    <li><a href="/arizona"><span class="n">Arizona</span></a></li>
+    <li><a href="/arkansas"><span class="n">Arkansas</span></a></li>
+    <li><a href="/california"><span class="n">California</span></a></li>
+    <li><a href="/colorado"><span class="n">Colorado</span></a></li>
+    <li><a href="/connecticut"><span class="n">Connecticut</span></a></li>
+    <li><a href="/delaware"><span class="n">Delaware</span></a></li>
+    <li><a href="/district-of-columbia"><span class="n">District of Columbia</span></a></li>
+    <li><a href="/florida"><span class="n">Florida</span></a></li>
+    <li><a href="/georgia"><span class="n">Georgia</span></a></li>
+    <li><a href="/hawaii"><span class="n">Hawaii</span></a></li>
+    <li><a href="/idaho"><span class="n">Idaho</span></a></li>
+    <li><a href="/illinois"><span class="n">Illinois</span></a></li>
+    <li><a href="/indiana"><span class="n">Indiana</span></a></li>
+    <li><a href="/iowa"><span class="n">Iowa</span></a></li>
+    <li><a href="/kansas"><span class="n">Kansas</span></a></li>
+    <li><a href="/kentucky"><span class="n">Kentucky</span></a></li>
+    <li><a href="/louisiana"><span class="n">Louisiana</span></a></li>
+    <li><a href="/maine"><span class="n">Maine</span></a></li>
+    <li><a href="/maryland"><span class="n">Maryland</span></a></li>
+    <li><a href="/massachusetts"><span class="n">Massachusetts</span></a></li>
+    <li><a href="/michigan"><span class="n">Michigan</span></a></li>
+    <li><a href="/minnesota"><span class="n">Minnesota</span></a></li>
+    <li><a href="/mississippi"><span class="n">Mississippi</span></a></li>
+    <li><a href="/missouri"><span class="n">Missouri</span></a></li>
+    <li><a href="/montana"><span class="n">Montana</span></a></li>
+    <li><a href="/nebraska"><span class="n">Nebraska</span></a></li>
+    <li><a href="/nevada"><span class="n">Nevada</span></a></li>
+    <li><a href="/new-hampshire"><span class="n">New Hampshire</span></a></li>
+    <li><a href="/new-jersey"><span class="n">New Jersey</span></a></li>
+    <li><a href="/new-mexico"><span class="n">New Mexico</span></a></li>
+    <li><a href="/new-york"><span class="n">New York</span></a></li>
+    <li><a href="/north-carolina"><span class="n">North Carolina</span></a></li>
+    <li><a href="/north-dakota"><span class="n">North Dakota</span></a></li>
+    <li><a href="/ohio"><span class="n">Ohio</span></a></li>
+    <li><a href="/oklahoma"><span class="n">Oklahoma</span></a></li>
+    <li><a href="/oregon"><span class="n">Oregon</span></a></li>
+    <li><a href="/pennsylvania"><span class="n">Pennsylvania</span></a></li>
+    <li><a href="/rhode-island"><span class="n">Rhode Island</span></a></li>
+    <li><a href="/south-carolina"><span class="n">South Carolina</span></a></li>
+    <li><a href="/south-dakota"><span class="n">South Dakota</span></a></li>
+    <li><a href="/tennessee"><span class="n">Tennessee</span></a></li>
+    <li><a href="/texas"><span class="n">Texas</span></a></li>
+    <li><a href="/utah"><span class="n">Utah</span></a></li>
+    <li><a href="/vermont"><span class="n">Vermont</span></a></li>
+    <li><a href="/virginia"><span class="n">Virginia</span></a></li>
+    <li><a href="/washington"><span class="n">Washington</span></a></li>
+    <li><a href="/west-virginia"><span class="n">West Virginia</span></a></li>
+    <li><a href="/wisconsin"><span class="n">Wisconsin</span></a></li>
+    <li><a href="/wyoming"><span class="n">Wyoming</span></a></li>
   </ol>
+  </div>
 
 </main>
 
@@ -136,8 +125,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/js/title-search.js?v=a3e2f56b" defer></script>
+<script src="/js/title-search.js?v=27e49e84" defer></script>
 
 </body>
 </html>

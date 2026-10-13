@@ -7,8 +7,7 @@
   <title>Indigenous Solidarity — Organize Directory</title>
   <meta name="description" content="Organizations and initiatives focused on Indigenous Solidarity.">
   <link rel="canonical" href="https://organize.directory/topics/indigenous-solidarity">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Indigenous Solidarity — Organize Directory">
@@ -19,107 +18,73 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="yellow">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location">White Pages</a><a href="/topics" aria-current="page">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location">White Pages</a><a href="/topics" aria-current="page">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide></span>
+  <span class="c">Yellow Pages</span>
+  <span class="r">Indigenous Solidarity</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/topics">Topics</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Indigenous Solidarity</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Indigenous Solidarity</h1>
     <p class="meta"><b>5</b> groups</p>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Indigenous Solidarity</label>
+      <input id="page-filter" type="search" placeholder="Filter groups" autocomplete="off">
+    </div>
   </div>
 
-
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Indigenous Solidarity</label>
-    <input id="page-filter" type="search" placeholder="Filter groups…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="section-0" class="group-section" data-section="section-0">
+    <section id="section-0" class="group-section" data-section="section-0" data-title="">
       <ol class="groups">
         <li data-name="indigenous environmental network (ien)" data-desc="alliance of indigenous peoples protecting earth mother from contamination and exploitation through grassroots organizing, direct action, and building just transition initiatives. leading campaigns against fossil fuel projects, carbon trading, and false climate solutions while advancing indigenous knowledge and sovereignty.">
-          <div class="row">
-            <a class="name" href="https://www.ienearth.org/" target="_blank" rel="noopener noreferrer">Indigenous Environmental Network (IEN) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">ienearth.org</span>
-          </div>
+          <a class="row" href="https://www.ienearth.org/" target="_blank" rel="noopener noreferrer"><span class="name">Indigenous Environmental Network (IEN)</span><span class="dots" aria-hidden="true"></span><span class="host">ienearth.org</span></a>
           <p class="desc">Alliance of Indigenous Peoples protecting Earth Mother from contamination and exploitation through grassroots organizing, direct action, and building just transition initiatives. Leading campaigns against fossil fuel projects, carbon trading, and false climate solutions while advancing Indigenous knowledge and sovereignty.</p>
         </li>
         <li data-name="indigenous anarchist federation (iaf)" data-desc="federation of indigenous anarchists in the americas that shares writing, ideas, and struggles on indigenous anarchist thought. not a mutual aid group; it is a discussion and publishing platform.">
-          <div class="row">
-            <a class="name" href="https://bsky.app/profile/iaf-fai.bsky.social" target="_blank" rel="noopener noreferrer">Indigenous Anarchist Federation (IAF) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">bsky.app</span>
-          </div>
+          <a class="row" href="https://bsky.app/profile/iaf-fai.bsky.social" target="_blank" rel="noopener noreferrer"><span class="name">Indigenous Anarchist Federation (IAF)</span><span class="dots" aria-hidden="true"></span><span class="host">bsky.app</span></a>
           <p class="desc">Federation of Indigenous anarchists in the Americas that shares writing, ideas, and struggles on Indigenous anarchist thought. Not a mutual aid group; it is a discussion and publishing platform.</p>
         </li>
         <li data-name="native lives matter" data-desc="facebook-based grassroots group run by indigenous justice families that raises awareness of missing and murdered indigenous people and shares vigils and justice campaigns.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/nativelivesmatter1" target="_blank" rel="noopener noreferrer">Native Lives Matter <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/nativelivesmatter1" target="_blank" rel="noopener noreferrer"><span class="name">Native Lives Matter</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">Facebook-based grassroots group run by Indigenous Justice Families that raises awareness of missing and murdered Indigenous people and shares vigils and justice campaigns.</p>
         </li>
         <li data-name="great plains action" data-desc="we are a small society of indigenous folks living in the great plains region, resisting colonization and re-indigenizing the land and the world around us.">
-          <div class="row">
-            <a class="name" href="https://www.greatplainsaction.org/" target="_blank" rel="noopener noreferrer">Great Plains Action <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">greatplainsaction.org</span>
-          </div>
+          <a class="row" href="https://www.greatplainsaction.org/" target="_blank" rel="noopener noreferrer"><span class="name">Great Plains Action</span><span class="dots" aria-hidden="true"></span><span class="host">greatplainsaction.org</span></a>
           <p class="desc">We are a small society of Indigenous Folks living in the Great Plains region, resisting colonization and re-Indigenizing the land and the world around us.</p>
         </li>
         <li data-name="the water protector legal collective" data-desc="an indigenous-led legal nonprofit that provides support and advocacy for indigenous peoples and original nations, the earth, and climate justice movements.">
-          <div class="row">
-            <a class="name" href="https://www.waterprotectorlegal.org/" target="_blank" rel="noopener noreferrer">The Water Protector Legal Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">waterprotectorlegal.org</span>
-          </div>
+          <a class="row" href="https://www.waterprotectorlegal.org/" target="_blank" rel="noopener noreferrer"><span class="name">The Water Protector Legal Collective</span><span class="dots" aria-hidden="true"></span><span class="host">waterprotectorlegal.org</span></a>
           <p class="desc">An Indigenous-led legal nonprofit that provides support and advocacy for Indigenous peoples and Original Nations, the Earth, and climate justice movements.</p>
         </li>
       </ol>
@@ -127,14 +92,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -146,8 +107,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

@@ -7,8 +7,7 @@
   <title>Stop Cop City Resources &amp; Support — Organize Directory</title>
   <meta name="description" content="Organizations and initiatives focused on Stop Cop City Resources &amp; Support.">
   <link rel="canonical" href="https://organize.directory/topics/stop-cop-city">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Stop Cop City Resources &amp; Support — Organize Directory">
@@ -19,147 +18,98 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="yellow">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location">White Pages</a><a href="/topics" aria-current="page">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location">White Pages</a><a href="/topics" aria-current="page">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>Primary Organizing &amp; Resources – Environmental Justice &amp; Land Defense</span>
+  <span class="c">Yellow Pages</span>
+  <span class="r">Stop Cop City Resources &amp; Support</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/topics">Topics</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Stop Cop City Resources &amp; Support</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Stop Cop City Resources &amp; Support</h1>
     <p class="meta"><b>7</b> groups</p>
-  </div>
-
-
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Stop Cop City Resources &amp; Support</label>
-    <input id="page-filter" type="search" placeholder="Filter groups…" autocomplete="off">
-  </div>
-
-  <div class="layout">
-  <nav class="toc" aria-label="Sections on this page">
-    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
-      <span class="current">
-        <span class="current-label">Section ·</span>
-        <span class="current-name">Primary Organizing &amp; Resources</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div id="toc-panel" class="toc-scroll">
-      <a href="#primary-organizing-resources" data-section="primary-organizing-resources"><span class="label">Primary Organizing &amp; Resources</span> <span class="count">3</span></a>
-      <a href="#legal-support-solidarity" data-section="legal-support-solidarity"><span class="label">Legal Support &amp; Solidarity</span> <span class="count">2</span></a>
-      <a href="#environmental-justice-land-defense" data-section="environmental-justice-land-defense"><span class="label">Environmental Justice &amp; Land Defense</span> <span class="count">2</span></a>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Stop Cop City Resources &amp; Support</label>
+      <input id="page-filter" type="search" placeholder="Filter groups" autocomplete="off">
     </div>
-  </nav>
-    <div class="main-col">
+  </div>
 
+  <div class="spread">
+    <nav class="thumbs" aria-label="Sections on this page">
+      <a href="#primary-organizing-resources" data-section="primary-organizing-resources"><span class="notch" aria-hidden="true"></span><span class="lbl">Primary Organizing &amp; Resources</span><span class="k">3</span></a>
+      <a href="#legal-support-solidarity" data-section="legal-support-solidarity"><span class="notch" aria-hidden="true"></span><span class="lbl">Legal Support &amp; Solidarity</span><span class="k">2</span></a>
+      <a href="#environmental-justice-land-defense" data-section="environmental-justice-land-defense"><span class="notch" aria-hidden="true"></span><span class="lbl">Environmental Justice &amp; Land Defense</span><span class="k">2</span></a>
+    </nav>
+    <div class="main-col">
       <div id="sections-root">
-    <section id="primary-organizing-resources" class="group-section" data-section="primary-organizing-resources">
-      <h2 class="section-title">Primary Organizing &amp; Resources</h2>
+    <section id="primary-organizing-resources" class="group-section" data-section="primary-organizing-resources" data-title="Primary Organizing &amp; Resources">
+      <h2 class="hd"><span>Primary Organizing &amp; Resources</span><span class="k" aria-hidden="true">3</span></h2>
       <ol class="groups">
         <li data-name="stop cop city network" data-desc="a coalition of community members and organizations working to prevent the construction of a militarized police training facility in atlanta's south river forest. through direct action, mutual aid, and community organizing, they advocate for environmental justice and community-centered alternatives to policing.">
-          <div class="row">
-            <a class="name" href="https://stopcopcity.org/" target="_blank" rel="noopener noreferrer">Stop Cop City Network <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">stopcopcity.org</span>
-          </div>
+          <a class="row" href="https://stopcopcity.org/" target="_blank" rel="noopener noreferrer"><span class="name">Stop Cop City Network</span><span class="dots" aria-hidden="true"></span><span class="host">stopcopcity.org</span></a>
           <p class="desc">A coalition of community members and organizations working to prevent the construction of a militarized police training facility in Atlanta's South River Forest. Through direct action, mutual aid, and community organizing, they advocate for environmental justice and community-centered alternatives to policing.</p>
         </li>
         <li data-name="defend the atlanta forest" data-desc="a decentralized movement dedicated to protecting the atlanta forest and stopping the construction of cop city. they coordinate mutual aid efforts, forest defense actions, and educational initiatives about the environmental and social impact of the proposed facility.">
-          <div class="row">
-            <a class="name" href="https://defendtheatlantaforest.org/" target="_blank" rel="noopener noreferrer">Defend the Atlanta Forest <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">defendtheatlantaforest.org</span>
-          </div>
+          <a class="row" href="https://defendtheatlantaforest.org/" target="_blank" rel="noopener noreferrer"><span class="name">Defend the Atlanta Forest</span><span class="dots" aria-hidden="true"></span><span class="host">defendtheatlantaforest.org</span></a>
           <p class="desc">A decentralized movement dedicated to protecting the Atlanta Forest and stopping the construction of Cop City. They coordinate mutual aid efforts, forest defense actions, and educational initiatives about the environmental and social impact of the proposed facility.</p>
         </li>
         <li data-name="stop cop city!" data-desc="abolitionist campaign page about the movement to resist cop city, the atlanta police and fire training compound in the south river (weelaunee) forest.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/stopcopcity/" target="_blank" rel="noopener noreferrer">STOP COP CITY! <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/stopcopcity/" target="_blank" rel="noopener noreferrer"><span class="name">STOP COP CITY!</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Abolitionist campaign page about the movement to resist Cop City, the Atlanta police and fire training compound in the South River (Weelaunee) Forest.</p>
         </li>
       </ol>
     </section>
 
-    <section id="legal-support-solidarity" class="group-section" data-section="legal-support-solidarity">
-      <h2 class="section-title">Legal Support &amp; Solidarity</h2>
+    <section id="legal-support-solidarity" class="group-section" data-section="legal-support-solidarity" data-title="Legal Support &amp; Solidarity">
+      <h2 class="hd"><span>Legal Support &amp; Solidarity</span><span class="k" aria-hidden="true">2</span></h2>
       <ol class="groups">
         <li data-name="atlanta solidarity fund" data-desc="provides support for people arrested for participating in social movements, including those protesting cop city. their mutual aid efforts include bail funds, legal assistance, and court support for activists and community defenders.">
-          <div class="row">
-            <a class="name" href="https://atlsolidarity.org/" target="_blank" rel="noopener noreferrer">Atlanta Solidarity Fund <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">atlsolidarity.org</span>
-          </div>
+          <a class="row" href="https://atlsolidarity.org/" target="_blank" rel="noopener noreferrer"><span class="name">Atlanta Solidarity Fund</span><span class="dots" aria-hidden="true"></span><span class="host">atlsolidarity.org</span></a>
           <p class="desc">Provides support for people arrested for participating in social movements, including those protesting Cop City. Their mutual aid efforts include bail funds, legal assistance, and court support for activists and community defenders.</p>
         </li>
         <li data-name="national lawyers guild mass defense" data-desc="offers legal support for protesters and activists, including those involved in the stop cop city movement. through mutual aid organizing, they provide legal observers, know-your-rights trainings, and coordinate defense for those facing charges.">
-          <div class="row">
-            <a class="name" href="https://www.nlg.org/massdefenseprogram/" target="_blank" rel="noopener noreferrer">National Lawyers Guild Mass Defense <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">nlg.org</span>
-          </div>
+          <a class="row" href="https://www.nlg.org/massdefenseprogram/" target="_blank" rel="noopener noreferrer"><span class="name">National Lawyers Guild Mass Defense</span><span class="dots" aria-hidden="true"></span><span class="host">nlg.org</span></a>
           <p class="desc">Offers legal support for protesters and activists, including those involved in the Stop Cop City movement. Through mutual aid organizing, they provide legal observers, know-your-rights trainings, and coordinate defense for those facing charges.</p>
         </li>
       </ol>
     </section>
 
-    <section id="environmental-justice-land-defense" class="group-section" data-section="environmental-justice-land-defense">
-      <h2 class="section-title">Environmental Justice &amp; Land Defense</h2>
+    <section id="environmental-justice-land-defense" class="group-section" data-section="environmental-justice-land-defense" data-title="Environmental Justice &amp; Land Defense">
+      <h2 class="hd"><span>Environmental Justice &amp; Land Defense</span><span class="k" aria-hidden="true">2</span></h2>
       <ol class="groups">
         <li data-name="sierra club georgia chapter" data-desc="georgia chapter of the sierra club, founded in 1983, working on clean and affordable electricity, protecting wild places and outdoor programs across the state.">
-          <div class="row">
-            <a class="name" href="https://www.sierraclub.org/georgia" target="_blank" rel="noopener noreferrer">Sierra Club Georgia Chapter <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">sierraclub.org</span>
-          </div>
+          <a class="row" href="https://www.sierraclub.org/georgia" target="_blank" rel="noopener noreferrer"><span class="name">Sierra Club Georgia Chapter</span><span class="dots" aria-hidden="true"></span><span class="host">sierraclub.org</span></a>
           <p class="desc">Georgia chapter of the Sierra Club, founded in 1983, working on clean and affordable electricity, protecting wild places and outdoor programs across the state.</p>
         </li>
         <li data-name="south river watershed alliance" data-desc="nonprofit protecting the south river watershed in metro atlanta. it has sued over dekalb county sewage spills and the intrenchment creek park land swap next to the cop city site.">
-          <div class="row">
-            <a class="name" href="https://www.southriverga.org/" target="_blank" rel="noopener noreferrer">South River Watershed Alliance <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">southriverga.org</span>
-          </div>
+          <a class="row" href="https://www.southriverga.org/" target="_blank" rel="noopener noreferrer"><span class="name">South River Watershed Alliance</span><span class="dots" aria-hidden="true"></span><span class="host">southriverga.org</span></a>
           <p class="desc">Nonprofit protecting the South River watershed in metro Atlanta. It has sued over DeKalb County sewage spills and the Intrenchment Creek Park land swap next to the Cop City site.</p>
         </li>
       </ol>
@@ -167,14 +117,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -186,8 +132,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

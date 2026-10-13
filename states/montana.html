@@ -7,8 +7,7 @@
   <title>Montana — Organize Directory</title>
   <meta name="description" content="Cities and statewide organizations in Montana.">
   <link rel="canonical" href="https://organize.directory/montana">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Montana — Organize Directory">
@@ -19,143 +18,96 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>Places – Statewide Organizations</span>
+  <span class="c">White Pages</span>
+  <span class="r">Montana</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Montana</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Montana</h1>
-    <p class="meta">
-      <b>7</b> statewide groups
-    </p>
-  </div>
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter Montana</label>
-    <input id="page-filter" type="search" placeholder="Filter Montana…" autocomplete="off">
-  </div>
-
-  <div class="layout">
-  <nav class="toc" aria-label="Sections on this page">
-    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
-      <span class="current">
-        <span class="current-label">Section ·</span>
-        <span class="current-name">Places</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div id="toc-panel" class="toc-scroll">
-      <a href="#places" data-section="places"><span class="label">Places</span></a>
-      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="label">Statewide Organizations</span> <span class="count">7</span></a>
+    <p class="meta"><b>7</b> statewide groups</p>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter Montana</label>
+      <input id="page-filter" type="search" placeholder="Filter Montana" autocomplete="off">
     </div>
-  </nav>
-    <div class="main-col">
+  </div>
 
+  <div class="spread">
+    <nav class="thumbs" aria-label="Sections on this page">
+      <a href="#places" data-section="places"><span class="notch" aria-hidden="true"></span><span class="lbl">Places</span></a>
+      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="notch" aria-hidden="true"></span><span class="lbl">Statewide Organizations</span><span class="k">7</span></a>
+    </nav>
+    <div class="main-col">
       <div id="sections-root">
-    <section id="places" class="group-section" data-section="places">
-      <h2 class="section-title">Places</h2>
-      <ol class="groups children-list">
-        <li data-name="billings" data-desc=""><a class="name" href="/billings">Billings</a></li>
-        <li data-name="bozeman" data-desc=""><a class="name" href="/bozeman">Bozeman</a></li>
-        <li data-name="butte" data-desc=""><a class="name" href="/butte">Butte</a></li>
-        <li data-name="great falls" data-desc=""><a class="name" href="/great-falls">Great Falls</a></li>
-        <li data-name="missoula" data-desc=""><a class="name" href="/missoula">Missoula</a></li>
+    <section id="places" class="group-section" data-section="places" data-title="Places">
+      <h2 class="hd"><span>Places</span></h2>
+      <ol class="index-list">
+        <li data-name="billings" data-desc=""><a href="/billings"><span class="n">Billings</span></a></li>
+        <li data-name="bozeman" data-desc=""><a href="/bozeman"><span class="n">Bozeman</span></a></li>
+        <li data-name="butte" data-desc=""><a href="/butte"><span class="n">Butte</span></a></li>
+        <li data-name="great falls" data-desc=""><a href="/great-falls"><span class="n">Great Falls</span></a></li>
+        <li data-name="missoula" data-desc=""><a href="/missoula"><span class="n">Missoula</span></a></li>
       </ol>
     </section>
 
-    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations">
-      <h2 class="section-title">Statewide Organizations</h2>
+    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations" data-title="Statewide Organizations">
+      <h2 class="hd"><span>Statewide Organizations</span><span class="k" aria-hidden="true">7</span></h2>
       <ol class="groups">
         <li data-name="montana two spirit society" data-desc="missoula-based nonprofit for native and indigenous two-spirit people in montana, holding gatherings, cultural education workshops, and an annual two-spirit powwow.">
-          <div class="row">
-            <a class="name" href="https://www.mttwospirit.org/" target="_blank" rel="noopener noreferrer">Montana Two Spirit Society <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">mttwospirit.org</span>
-          </div>
+          <a class="row" href="https://www.mttwospirit.org/" target="_blank" rel="noopener noreferrer"><span class="name">Montana Two Spirit Society</span><span class="dots" aria-hidden="true"></span><span class="host">mttwospirit.org</span></a>
           <p class="desc">Missoula-based nonprofit for Native and Indigenous Two-Spirit people in Montana, holding gatherings, cultural education workshops, and an annual Two-Spirit powwow.</p>
         </li>
         <li data-name="glacier queer alliance" data-desc="providing positive, safe, community resources, events, and spaces for people of all gender identities and sexual orientations in the flathead valley.">
-          <div class="row">
-            <a class="name" href="https://www.glacierqueeralliance.org/" target="_blank" rel="noopener noreferrer">Glacier Queer Alliance <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">glacierqueeralliance.org</span>
-          </div>
+          <a class="row" href="https://www.glacierqueeralliance.org/" target="_blank" rel="noopener noreferrer"><span class="name">Glacier Queer Alliance</span><span class="dots" aria-hidden="true"></span><span class="host">glacierqueeralliance.org</span></a>
           <p class="desc">Providing positive, safe, community resources, events, and spaces for people of all gender identities and sexual orientations in the Flathead Valley.</p>
         </li>
         <li data-name="transvisible montana" data-desc="a coalition of transgender, non-binary, and two spirit individuals and organizations throughout the state of montana. we provide workshops, leadership opportunities, education, and more to the people of montana.">
-          <div class="row">
-            <a class="name" href="https://transvisiblemontana.wordpress.com/" target="_blank" rel="noopener noreferrer">Transvisible Montana <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">transvisiblemontana.wordpress.com</span>
-          </div>
+          <a class="row" href="https://transvisiblemontana.wordpress.com/" target="_blank" rel="noopener noreferrer"><span class="name">Transvisible Montana</span><span class="dots" aria-hidden="true"></span><span class="host">transvisiblemontana.wordpress.com</span></a>
           <p class="desc">A coalition of transgender, non-binary, and two spirit individuals and organizations throughout the state of Montana. We provide workshops, leadership opportunities, education, and more to the people of Montana.</p>
         </li>
         <li data-name="montanans for choice" data-desc="montanans for choice works to advance gender equity, sexual health, and reproductive freedom through public education, communications, and advocacy.">
-          <div class="row">
-            <a class="name" href="https://mtchoice.org/" target="_blank" rel="noopener noreferrer">Montanans for Choice <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">mtchoice.org</span>
-          </div>
+          <a class="row" href="https://mtchoice.org/" target="_blank" rel="noopener noreferrer"><span class="name">Montanans for Choice</span><span class="dots" aria-hidden="true"></span><span class="host">mtchoice.org</span></a>
           <p class="desc">Montanans for Choice works to advance gender equity, sexual health, and reproductive freedom through public education, communications, and advocacy.</p>
         </li>
         <li data-name="montana for palestine" data-desc="we are montanans proud to stand in solidarity with the palestinian people in their quest for justice">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/mt4palestine/" target="_blank" rel="noopener noreferrer">Montana For Palestine <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/mt4palestine/" target="_blank" rel="noopener noreferrer"><span class="name">Montana For Palestine</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">We are Montanans proud to stand in solidarity with the Palestinian people in their quest for justice</p>
         </li>
         <li data-name="montana sexual and reproductive health collective" data-desc="we are a group of organizations and individuals committed to protecting and progressing sexual and reproductive health care in montana.">
-          <div class="row">
-            <a class="name" href="https://www.mtsrhc.org/" target="_blank" rel="noopener noreferrer">Montana Sexual and Reproductive Health Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">mtsrhc.org</span>
-          </div>
+          <a class="row" href="https://www.mtsrhc.org/" target="_blank" rel="noopener noreferrer"><span class="name">Montana Sexual and Reproductive Health Collective</span><span class="dots" aria-hidden="true"></span><span class="host">mtsrhc.org</span></a>
           <p class="desc">We are a group of organizations and individuals committed to protecting and progressing sexual and reproductive health care in Montana.</p>
         </li>
         <li data-name="montana abortion access program" data-desc="montana's statewide abortion fund exists to bridge the gap between our fundamental right to access abortion care and our actual ability to access this care.">
-          <div class="row">
-            <a class="name" href="https://mtabortion.org/" target="_blank" rel="noopener noreferrer">Montana Abortion Access Program <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">mtabortion.org</span>
-          </div>
+          <a class="row" href="https://mtabortion.org/" target="_blank" rel="noopener noreferrer"><span class="name">Montana Abortion Access Program</span><span class="dots" aria-hidden="true"></span><span class="host">mtabortion.org</span></a>
           <p class="desc">Montana's statewide abortion fund exists to bridge the gap between our fundamental right to access abortion care and our actual ability to access this care.</p>
         </li>
       </ol>
@@ -163,14 +115,10 @@
         <p class="empty" id="empty-state" hidden>No places or groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -182,8 +130,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

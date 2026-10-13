@@ -7,8 +7,7 @@
   <title>Dallas-Fort Worth — Organize Directory</title>
   <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Dallas-Fort Worth.">
   <link rel="canonical" href="https://organize.directory/dallas-fort-worth">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Dallas-Fort Worth — Organize Directory">
@@ -19,181 +18,115 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide></span>
+  <span class="c">White Pages</span>
+  <span class="r">Dallas-Fort Worth, Texas</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/texas">Texas</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Dallas-Fort Worth</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Dallas-Fort Worth</h1>
-    <p class="meta">
-      <b>15</b> groups
-      <span class="sep" aria-hidden="true">·</span>
-      Texas
-    </p>
+    <div class="meta"><b>15</b> groups. <nav aria-label="Breadcrumb">Part of <a href="/texas">Texas</a>.</nav></div>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Dallas-Fort Worth</label>
+      <input id="page-filter" type="search" placeholder="Filter groups in Dallas-Fort Worth" autocomplete="off">
+    </div>
   </div>
 
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Dallas-Fort Worth</label>
-    <input id="page-filter" type="search" placeholder="Filter groups in Dallas-Fort Worth…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="section-0" class="group-section" data-section="section-0">
+    <section id="section-0" class="group-section" data-section="section-0" data-title="">
       <ol class="groups">
         <li data-name="surj dfw" data-desc="dallas-fort worth chapter of showing up for racial justice, a national network that organizes white people for racial justice.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/SURJDFW/" target="_blank" rel="noopener noreferrer">SURJ DFW <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/SURJDFW/" target="_blank" rel="noopener noreferrer"><span class="name">SURJ DFW</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">Dallas-Fort Worth chapter of Showing Up for Racial Justice, a national network that organizes white people for racial justice.</p>
         </li>
         <li data-name="dfw anti-war committee" data-desc="a grassroots organization in dfw working to end our country's many wars.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/dfwantiwarcommittee/" target="_blank" rel="noopener noreferrer">DFW Anti-War Committee <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/dfwantiwarcommittee/" target="_blank" rel="noopener noreferrer"><span class="name">DFW Anti-War Committee</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">A grassroots organization in DFW working to end our country's many wars.</p>
         </li>
         <li data-name="trans pride initiative" data-desc="a community organization providing mutual aid and support for transgender and gender diverse persons in areas of healthcare, housing, employment, education, and public accommodations. they focus on prisoner support for texas trans and queer prisoners, healthcare access, housing assistance, and community empowerment through various action committees and resource programs.">
-          <div class="row">
-            <a class="name" href="https://tpride.org/" target="_blank" rel="noopener noreferrer">Trans Pride Initiative <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">tpride.org</span>
-          </div>
+          <a class="row" href="https://tpride.org/" target="_blank" rel="noopener noreferrer"><span class="name">Trans Pride Initiative</span><span class="dots" aria-hidden="true"></span><span class="host">tpride.org</span></a>
           <p class="desc">A community organization providing mutual aid and support for transgender and gender diverse persons in areas of healthcare, housing, employment, education, and public accommodations. They focus on prisoner support for Texas trans and queer prisoners, healthcare access, housing assistance, and community empowerment through various action committees and resource programs.</p>
         </li>
         <li data-name="community movement builders" data-desc="dallas chapter of community movement builders, a black-led member collective. it runs community gardens and installs solar street lights in south dallas neighborhoods like highland hills.">
-          <div class="row">
-            <a class="name" href="https://communitymovementbuilders.org/chapters/dallas" target="_blank" rel="noopener noreferrer">Community Movement Builders <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">communitymovementbuilders.org</span>
-          </div>
+          <a class="row" href="https://communitymovementbuilders.org/chapters/dallas" target="_blank" rel="noopener noreferrer"><span class="name">Community Movement Builders</span><span class="dots" aria-hidden="true"></span><span class="host">communitymovementbuilders.org</span></a>
           <p class="desc">Dallas chapter of Community Movement Builders, a Black-led member collective. It runs community gardens and installs solar street lights in South Dallas neighborhoods like Highland Hills.</p>
         </li>
         <li data-name="southern sector rising" data-desc="south dallas group working on environmental justice, climate resilience, food sovereignty and labor issues through education, policy advocacy, coalition work and mutual aid.">
-          <div class="row">
-            <a class="name" href="https://southernsectorrising.org/" target="_blank" rel="noopener noreferrer">Southern Sector Rising <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">southernsectorrising.org</span>
-          </div>
+          <a class="row" href="https://southernsectorrising.org/" target="_blank" rel="noopener noreferrer"><span class="name">Southern Sector Rising</span><span class="dots" aria-hidden="true"></span><span class="host">southernsectorrising.org</span></a>
           <p class="desc">South Dallas group working on environmental justice, climate resilience, food sovereignty and labor issues through education, policy advocacy, coalition work and mutual aid.</p>
         </li>
         <li data-name="stop cop city dallas" data-desc="north texas coalition to stop the realization of the militarized police compound planned to be built on the unt dallas campus, oak cliff, district 8.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/stopcopcitydtx/" target="_blank" rel="noopener noreferrer">Stop Cop City Dallas <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/stopcopcitydtx/" target="_blank" rel="noopener noreferrer"><span class="name">Stop Cop City Dallas</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">North Texas coalition to stop the realization of the militarized police compound planned to be built on the UNT Dallas campus, Oak Cliff, District 8.</p>
         </li>
         <li data-name="dfw palestine protest updates" data-desc="centralized updates for dfw area palestine protests and actions.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/dalpalaction/" target="_blank" rel="noopener noreferrer">DFW Palestine Protest Updates <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/dalpalaction/" target="_blank" rel="noopener noreferrer"><span class="name">DFW Palestine Protest Updates</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Centralized updates for DFW area Palestine protests and actions.</p>
         </li>
         <li data-name="la fronteranos cruzo" data-desc="fighting for immigrant rights and chicano liberation in dfw.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/lafronteranoscruzo/" target="_blank" rel="noopener noreferrer">La Fronteranos Cruzo <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/lafronteranoscruzo/" target="_blank" rel="noopener noreferrer"><span class="name">La Fronteranos Cruzo</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Fighting for immigrant rights and Chicano liberation in DFW.</p>
         </li>
         <li data-name="fort worth food not bombs" data-desc="food not bombs is working to address food insecurity in our community.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/fortworthfoodnotbombs/" target="_blank" rel="noopener noreferrer">Fort Worth Food Not Bombs <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/fortworthfoodnotbombs/" target="_blank" rel="noopener noreferrer"><span class="name">Fort Worth Food Not Bombs</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Food Not Bombs is working to address food insecurity in our community.</p>
         </li>
         <li data-name="y'all dfw" data-desc="building a #youthlabormovement in dfw">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/yalldfw/" target="_blank" rel="noopener noreferrer">Y'all DFW <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/yalldfw/" target="_blank" rel="noopener noreferrer"><span class="name">Y'all DFW</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Building a #youthlabormovement in DFW</p>
         </li>
         <li data-name="food not bombs dtx" data-desc="providing meals to the houseless and food insecure in dallas tx">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/foodnotbombsdtx/" target="_blank" rel="noopener noreferrer">Food Not Bombs DTX <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/foodnotbombsdtx/" target="_blank" rel="noopener noreferrer"><span class="name">Food Not Bombs DTX</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Providing meals to the houseless and food insecure in Dallas TX</p>
         </li>
         <li data-name="dallas sandwich sunday" data-desc="providing food and supplies to the dallas houseless communities.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/dallassandwichsunday/" target="_blank" rel="noopener noreferrer">Dallas Sandwich Sunday <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/dallassandwichsunday/" target="_blank" rel="noopener noreferrer"><span class="name">Dallas Sandwich Sunday</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Providing food and supplies to the Dallas houseless communities.</p>
         </li>
         <li data-name="north texas risk reduction" data-desc="dfw/ntx. queer &amp; texan. pwud. harm redux hotties. free safe use supplies. no requirements.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/ntrr4yall/" target="_blank" rel="noopener noreferrer">North Texas Risk Reduction <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/ntrr4yall/" target="_blank" rel="noopener noreferrer"><span class="name">North Texas Risk Reduction</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">DFW/NTX. Queer &amp; Texan. PWUD. Harm Redux Hotties. Free Safe Use Supplies. No Requirements.</p>
         </li>
         <li data-name="dhream (dfw harm reduction education access
               movement" data-desc="harm reduction organization that provides education, supplies and support in dfw.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/dfwharmredux/" target="_blank" rel="noopener noreferrer">DHREAM (DFW Harm Reduction Education Access
-              Movement <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/dfwharmredux/" target="_blank" rel="noopener noreferrer"><span class="name">DHREAM (DFW Harm Reduction Education Access
+              Movement</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Harm Reduction organization that provides education, supplies and support in DFW.</p>
         </li>
         <li data-name="funky town fridge" data-desc="runs five community fridges in fort worth neighborhoods (poly, stop six, northside, westside, southside), open 24/7 with free food. founded by kendra richardson.">
-          <div class="row">
-            <a class="name" href="https://www.funkytownfridge.org/" target="_blank" rel="noopener noreferrer">Funky Town Fridge <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">funkytownfridge.org</span>
-          </div>
+          <a class="row" href="https://www.funkytownfridge.org/" target="_blank" rel="noopener noreferrer"><span class="name">Funky Town Fridge</span><span class="dots" aria-hidden="true"></span><span class="host">funkytownfridge.org</span></a>
           <p class="desc">Runs five community fridges in Fort Worth neighborhoods (Poly, Stop Six, Northside, Westside, Southside), open 24/7 with free food. Founded by Kendra Richardson.</p>
         </li>
       </ol>
@@ -201,14 +134,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -220,8 +149,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

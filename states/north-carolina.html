@@ -7,8 +7,7 @@
   <title>North Carolina — Organize Directory</title>
   <meta name="description" content="Cities and statewide organizations in North Carolina.">
   <link rel="canonical" href="https://organize.directory/north-carolina">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="North Carolina — Organize Directory">
@@ -19,204 +18,133 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>Places – Statewide Organizations</span>
+  <span class="c">White Pages</span>
+  <span class="r">North Carolina</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">North Carolina</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">North Carolina</h1>
-    <p class="meta">
-      <b>15</b> statewide groups
-    </p>
-  </div>
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter North Carolina</label>
-    <input id="page-filter" type="search" placeholder="Filter North Carolina…" autocomplete="off">
-  </div>
-
-  <div class="layout">
-  <nav class="toc" aria-label="Sections on this page">
-    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
-      <span class="current">
-        <span class="current-label">Section ·</span>
-        <span class="current-name">Places</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div id="toc-panel" class="toc-scroll">
-      <a href="#places" data-section="places"><span class="label">Places</span></a>
-      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="label">Statewide Organizations</span> <span class="count">15</span></a>
+    <p class="meta"><b>15</b> statewide groups</p>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter North Carolina</label>
+      <input id="page-filter" type="search" placeholder="Filter North Carolina" autocomplete="off">
     </div>
-  </nav>
-    <div class="main-col">
+  </div>
 
+  <div class="spread">
+    <nav class="thumbs" aria-label="Sections on this page">
+      <a href="#places" data-section="places"><span class="notch" aria-hidden="true"></span><span class="lbl">Places</span></a>
+      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="notch" aria-hidden="true"></span><span class="lbl">Statewide Organizations</span><span class="k">15</span></a>
+    </nav>
+    <div class="main-col">
       <div id="sections-root">
-    <section id="places" class="group-section" data-section="places">
-      <h2 class="section-title">Places</h2>
-      <ol class="groups children-list">
-        <li data-name="asheville, nc" data-desc=""><a class="name" href="/asheville">Asheville, NC</a></li>
-        <li data-name="boone" data-desc=""><a class="name" href="/boone">Boone</a></li>
-        <li data-name="charlotte" data-desc=""><a class="name" href="/charlotte">Charlotte</a></li>
-        <li data-name="durham" data-desc=""><a class="name" href="/durham">Durham</a></li>
-        <li data-name="greensboro" data-desc=""><a class="name" href="/greensboro">Greensboro</a></li>
-        <li data-name="hillsborough, north carolina" data-desc=""><a class="name" href="/hillsborough">Hillsborough, North Carolina</a></li>
-        <li data-name="raleigh" data-desc=""><a class="name" href="/raleigh">Raleigh</a></li>
-        <li data-name="triangle area" data-desc=""><a class="name" href="/raleigh-durham-ch">Triangle Area</a></li>
-        <li data-name="wilmington, nc" data-desc=""><a class="name" href="/wilmington-nc">Wilmington, NC</a></li>
-        <li data-name="winston-salem, nc" data-desc=""><a class="name" href="/winston-salem">Winston-Salem, NC</a></li>
+    <section id="places" class="group-section" data-section="places" data-title="Places">
+      <h2 class="hd"><span>Places</span></h2>
+      <ol class="index-list">
+        <li data-name="asheville, nc" data-desc=""><a href="/asheville"><span class="n">Asheville, NC</span></a></li>
+        <li data-name="boone" data-desc=""><a href="/boone"><span class="n">Boone</span></a></li>
+        <li data-name="charlotte" data-desc=""><a href="/charlotte"><span class="n">Charlotte</span></a></li>
+        <li data-name="durham" data-desc=""><a href="/durham"><span class="n">Durham</span></a></li>
+        <li data-name="greensboro" data-desc=""><a href="/greensboro"><span class="n">Greensboro</span></a></li>
+        <li data-name="hillsborough, north carolina" data-desc=""><a href="/hillsborough"><span class="n">Hillsborough, North Carolina</span></a></li>
+        <li data-name="raleigh" data-desc=""><a href="/raleigh"><span class="n">Raleigh</span></a></li>
+        <li data-name="triangle area" data-desc=""><a href="/raleigh-durham-ch"><span class="n">Triangle Area</span></a></li>
+        <li data-name="wilmington, nc" data-desc=""><a href="/wilmington-nc"><span class="n">Wilmington, NC</span></a></li>
+        <li data-name="winston-salem, nc" data-desc=""><a href="/winston-salem"><span class="n">Winston-Salem, NC</span></a></li>
       </ol>
     </section>
 
-    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations">
-      <h2 class="section-title">Statewide Organizations</h2>
+    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations" data-title="Statewide Organizations">
+      <h2 class="hd"><span>Statewide Organizations</span><span class="k" aria-hidden="true">15</span></h2>
       <ol class="groups">
         <li data-name="carolina abortion fund" data-desc="runs a toll-free helpline giving financial, practical and emotional support to people seeking abortions in north and south carolina.">
-          <div class="row">
-            <a class="name" href="https://www.carolinaabortionfund.org/" target="_blank" rel="noopener noreferrer">Carolina Abortion Fund <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">carolinaabortionfund.org</span>
-          </div>
+          <a class="row" href="https://www.carolinaabortionfund.org/" target="_blank" rel="noopener noreferrer"><span class="name">Carolina Abortion Fund</span><span class="dots" aria-hidden="true"></span><span class="host">carolinaabortionfund.org</span></a>
           <p class="desc">Runs a toll-free helpline giving financial, practical and emotional support to people seeking abortions in North and South Carolina.</p>
         </li>
         <li data-name="kiran" data-desc="a community-based organization providing crisis intervention, support services, and mutual aid to south asian and middle eastern survivors of domestic violence across north carolina. through culturally-specific services, advocacy, and community organizing, they work to build safety and empowerment.">
-          <div class="row">
-            <a class="name" href="https://kiraninc.org/" target="_blank" rel="noopener noreferrer">Kiran <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">kiraninc.org</span>
-          </div>
+          <a class="row" href="https://kiraninc.org/" target="_blank" rel="noopener noreferrer"><span class="name">Kiran</span><span class="dots" aria-hidden="true"></span><span class="host">kiraninc.org</span></a>
           <p class="desc">A community-based organization providing crisis intervention, support services, and mutual aid to South Asian and Middle Eastern survivors of domestic violence across North Carolina. Through culturally-specific services, advocacy, and community organizing, they work to build safety and empowerment.</p>
         </li>
         <li data-name="nc harm reduction coalition" data-desc="statewide harm reduction nonprofit running syringe services, overdose prevention, and law enforcement assisted diversion (lead) programs across north carolina.">
-          <div class="row">
-            <a class="name" href="https://www.nchrc.org/" target="_blank" rel="noopener noreferrer">NC Harm Reduction Coalition <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">nchrc.org</span>
-          </div>
+          <a class="row" href="https://www.nchrc.org/" target="_blank" rel="noopener noreferrer"><span class="name">NC Harm Reduction Coalition</span><span class="dots" aria-hidden="true"></span><span class="host">nchrc.org</span></a>
           <p class="desc">Statewide harm reduction nonprofit running syringe services, overdose prevention, and Law Enforcement Assisted Diversion (LEAD) programs across North Carolina.</p>
         </li>
         <li data-name="nc women's prison book project" data-desc="all-volunteer collective in durham that mails books and letters to people in nc women's prisons and the durham county jail, about 15-25 packages a week.">
-          <div class="row">
-            <a class="name" href="https://ncwpb.org/" target="_blank" rel="noopener noreferrer">NC Women's Prison Book Project <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">ncwpb.org</span>
-          </div>
+          <a class="row" href="https://ncwpb.org/" target="_blank" rel="noopener noreferrer"><span class="name">NC Women's Prison Book Project</span><span class="dots" aria-hidden="true"></span><span class="host">ncwpb.org</span></a>
           <p class="desc">All-volunteer collective in Durham that mails books and letters to people in NC women's prisons and the Durham County Jail, about 15-25 packages a week.</p>
         </li>
         <li data-name="nc tree" data-desc="a community-run calendar of diy and radical events in north carolina's triangle area (raleigh, durham, chapel hill), where anyone can submit events.">
-          <div class="row">
-            <a class="name" href="https://nctree.xyz/" target="_blank" rel="noopener noreferrer">NC Tree <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">nctree.xyz</span>
-          </div>
+          <a class="row" href="https://nctree.xyz/" target="_blank" rel="noopener noreferrer"><span class="name">NC Tree</span><span class="dots" aria-hidden="true"></span><span class="host">nctree.xyz</span></a>
           <p class="desc">A community-run calendar of DIY and radical events in North Carolina's Triangle area (Raleigh, Durham, Chapel Hill), where anyone can submit events.</p>
         </li>
         <li data-name="operation stop cps" data-desc="durham group led by former cps caseworker amanda wallace that campaigns against the child welfare system, offers education and family support, and pushes durham county to fund family preservation.">
-          <div class="row">
-            <a class="name" href="https://www.operationstopcps.com/" target="_blank" rel="noopener noreferrer">Operation Stop CPS <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">operationstopcps.com</span>
-          </div>
+          <a class="row" href="https://www.operationstopcps.com/" target="_blank" rel="noopener noreferrer"><span class="name">Operation Stop CPS</span><span class="dots" aria-hidden="true"></span><span class="host">operationstopcps.com</span></a>
           <p class="desc">Durham group led by former CPS caseworker Amanda Wallace that campaigns against the child welfare system, offers education and family support, and pushes Durham County to fund family preservation.</p>
         </li>
         <li data-name="cypress fund" data-desc="funder that gives multi-year general operating grants to grassroots social justice groups led by affected communities in north and south carolina, and organizes donors.">
-          <div class="row">
-            <a class="name" href="https://www.cypressfund.org/" target="_blank" rel="noopener noreferrer">Cypress Fund <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">cypressfund.org</span>
-          </div>
+          <a class="row" href="https://www.cypressfund.org/" target="_blank" rel="noopener noreferrer"><span class="name">Cypress Fund</span><span class="dots" aria-hidden="true"></span><span class="host">cypressfund.org</span></a>
           <p class="desc">Funder that gives multi-year general operating grants to grassroots social justice groups led by affected communities in North and South Carolina, and organizes donors.</p>
         </li>
         <li data-name="siembra nc" data-desc="a latinx organization providing mutual aid and organizing support to immigrant communities across north carolina. they coordinate direct support through wage theft recovery, workers' rights education, and rapid response networks while building community power through solidarity initiatives and collective action.">
-          <div class="row">
-            <a class="name" href="https://www.siembranc.org/" target="_blank" rel="noopener noreferrer">Siembra NC <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">siembranc.org</span>
-          </div>
+          <a class="row" href="https://www.siembranc.org/" target="_blank" rel="noopener noreferrer"><span class="name">Siembra NC</span><span class="dots" aria-hidden="true"></span><span class="host">siembranc.org</span></a>
           <p class="desc">A Latinx organization providing mutual aid and organizing support to immigrant communities across North Carolina. They coordinate direct support through wage theft recovery, workers' rights education, and rapid response networks while building community power through solidarity initiatives and collective action.</p>
         </li>
         <li data-name="triangle copwatch" data-desc="a mutual aid collective organizing community defense and police accountability initiatives across north carolina. they coordinate direct support, resource sharing, and community education while building networks of solidarity to protect communities and advocate for transformative justice solutions.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/trianglecopwatch/" target="_blank" rel="noopener noreferrer">Triangle Copwatch <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/trianglecopwatch/" target="_blank" rel="noopener noreferrer"><span class="name">Triangle Copwatch</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">A mutual aid collective organizing community defense and police accountability initiatives across North Carolina. They coordinate direct support, resource sharing, and community education while building networks of solidarity to protect communities and advocate for transformative justice solutions.</p>
         </li>
         <li data-name="cooperate wnc" data-desc="western north carolina nonprofit that convenes mutual aid and co-op projects, funds relief groups after hurricane helene, and trains local leaders in cooperative skills.">
-          <div class="row">
-            <a class="name" href="https://cooperatewnc.org/" target="_blank" rel="noopener noreferrer">Cooperate WNC <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">cooperatewnc.org</span>
-          </div>
+          <a class="row" href="https://cooperatewnc.org/" target="_blank" rel="noopener noreferrer"><span class="name">Cooperate WNC</span><span class="dots" aria-hidden="true"></span><span class="host">cooperatewnc.org</span></a>
           <p class="desc">Western North Carolina nonprofit that convenes mutual aid and co-op projects, funds relief groups after Hurricane Helene, and trains local leaders in cooperative skills.</p>
         </li>
         <li data-name="roar (rural organizing and resistance)" data-desc="hurricane helene mutual aid hub based out of western north carolina.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/_roar_wnc/" target="_blank" rel="noopener noreferrer">ROAR (Rural Organizing and Resistance) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/_roar_wnc/" target="_blank" rel="noopener noreferrer"><span class="name">ROAR (Rural Organizing and Resistance)</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Hurricane Helene mutual aid hub based out of Western North Carolina.</p>
         </li>
         <li data-name="holler harm reduction" data-desc="a free and confidential service that provides delivery of harm reduction supplies and overdose prevention materials to folks using drugs in madison county, north carolina.">
-          <div class="row">
-            <a class="name" href="https://www.hollerharmreduction.org/" target="_blank" rel="noopener noreferrer">Holler Harm Reduction <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">hollerharmreduction.org</span>
-          </div>
+          <a class="row" href="https://www.hollerharmreduction.org/" target="_blank" rel="noopener noreferrer"><span class="name">Holler Harm Reduction</span><span class="dots" aria-hidden="true"></span><span class="host">hollerharmreduction.org</span></a>
           <p class="desc">A free and confidential service that provides delivery of Harm Reduction supplies and overdose prevention materials to folks using drugs in Madison County, North Carolina.</p>
         </li>
         <li data-name="down home nc" data-desc="rural membership organization with chapters in north carolina small towns that organizes low-income and working-class people around local campaigns, voter registration, and issues like labor, food, water and land.">
-          <div class="row">
-            <a class="name" href="https://downhomenc.org/" target="_blank" rel="noopener noreferrer">Down Home NC <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">downhomenc.org</span>
-          </div>
+          <a class="row" href="https://downhomenc.org/" target="_blank" rel="noopener noreferrer"><span class="name">Down Home NC</span><span class="dots" aria-hidden="true"></span><span class="host">downhomenc.org</span></a>
           <p class="desc">Rural membership organization with chapters in North Carolina small towns that organizes low-income and working-class people around local campaigns, voter registration, and issues like labor, food, water and land.</p>
         </li>
         <li data-name="carolina migrant network" data-desc="cmn offers free represent for people in nc/sc detention and removal proceedings.">
-          <div class="row">
-            <a class="name" href="https://carolinamigrantnetwork.org/" target="_blank" rel="noopener noreferrer">Carolina Migrant Network <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">carolinamigrantnetwork.org</span>
-          </div>
+          <a class="row" href="https://carolinamigrantnetwork.org/" target="_blank" rel="noopener noreferrer"><span class="name">Carolina Migrant Network</span><span class="dots" aria-hidden="true"></span><span class="host">carolinamigrantnetwork.org</span></a>
           <p class="desc">CMN offers free represent for people in NC/SC detention and removal proceedings.</p>
         </li>
         <li data-name="wayward" data-desc="arts and politics collective that screens films, publishes zines and books, hosts tabletop gaming events, and offers short residencies focused on land care.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/awaywardspace/" target="_blank" rel="noopener noreferrer">wayward <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/awaywardspace/" target="_blank" rel="noopener noreferrer"><span class="name">wayward</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Arts and politics collective that screens films, publishes zines and books, hosts tabletop gaming events, and offers short residencies focused on land care.</p>
         </li>
       </ol>
@@ -224,14 +152,10 @@
         <p class="empty" id="empty-state" hidden>No places or groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -243,8 +167,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

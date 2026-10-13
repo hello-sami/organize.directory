@@ -7,8 +7,7 @@
   <title>Arizona — Organize Directory</title>
   <meta name="description" content="Cities and statewide organizations in Arizona.">
   <link rel="canonical" href="https://organize.directory/arizona">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Arizona — Organize Directory">
@@ -19,195 +18,127 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>Places – Statewide Organizations</span>
+  <span class="c">White Pages</span>
+  <span class="r">Arizona</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Arizona</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Arizona</h1>
-    <p class="meta">
-      <b>14</b> statewide groups
-    </p>
-  </div>
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter Arizona</label>
-    <input id="page-filter" type="search" placeholder="Filter Arizona…" autocomplete="off">
-  </div>
-
-  <div class="layout">
-  <nav class="toc" aria-label="Sections on this page">
-    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
-      <span class="current">
-        <span class="current-label">Section ·</span>
-        <span class="current-name">Places</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div id="toc-panel" class="toc-scroll">
-      <a href="#places" data-section="places"><span class="label">Places</span></a>
-      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="label">Statewide Organizations</span> <span class="count">14</span></a>
+    <p class="meta"><b>14</b> statewide groups</p>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter Arizona</label>
+      <input id="page-filter" type="search" placeholder="Filter Arizona" autocomplete="off">
     </div>
-  </nav>
-    <div class="main-col">
+  </div>
 
+  <div class="spread">
+    <nav class="thumbs" aria-label="Sections on this page">
+      <a href="#places" data-section="places"><span class="notch" aria-hidden="true"></span><span class="lbl">Places</span></a>
+      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="notch" aria-hidden="true"></span><span class="lbl">Statewide Organizations</span><span class="k">14</span></a>
+    </nav>
+    <div class="main-col">
       <div id="sections-root">
-    <section id="places" class="group-section" data-section="places">
-      <h2 class="section-title">Places</h2>
-      <ol class="groups children-list">
-        <li data-name="flagstaff-sedona" data-desc=""><a class="name" href="/flagstaff-sedona">Flagstaff-Sedona</a></li>
-        <li data-name="phoenix metro" data-desc=""><a class="name" href="/phoenix">Phoenix Metro</a></li>
-        <li data-name="sierra vista" data-desc=""><a class="name" href="/sierra-vista">Sierra Vista</a></li>
-        <li data-name="tempe" data-desc=""><a class="name" href="/tempe">Tempe</a></li>
-        <li data-name="tucson" data-desc=""><a class="name" href="/tucson">Tucson</a></li>
-        <li data-name="yuma, az" data-desc=""><a class="name" href="/yuma">Yuma, AZ</a></li>
+    <section id="places" class="group-section" data-section="places" data-title="Places">
+      <h2 class="hd"><span>Places</span></h2>
+      <ol class="index-list">
+        <li data-name="flagstaff-sedona" data-desc=""><a href="/flagstaff-sedona"><span class="n">Flagstaff-Sedona</span></a></li>
+        <li data-name="phoenix metro" data-desc=""><a href="/phoenix"><span class="n">Phoenix Metro</span></a></li>
+        <li data-name="sierra vista" data-desc=""><a href="/sierra-vista"><span class="n">Sierra Vista</span></a></li>
+        <li data-name="tempe" data-desc=""><a href="/tempe"><span class="n">Tempe</span></a></li>
+        <li data-name="tucson" data-desc=""><a href="/tucson"><span class="n">Tucson</span></a></li>
+        <li data-name="yuma, az" data-desc=""><a href="/yuma"><span class="n">Yuma, AZ</span></a></li>
       </ol>
     </section>
 
-    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations">
-      <h2 class="section-title">Statewide Organizations</h2>
+    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations" data-title="Statewide Organizations">
+      <h2 class="hd"><span>Statewide Organizations</span><span class="k" aria-hidden="true">14</span></h2>
       <ol class="groups">
         <li data-name="no more deaths / no más
                             muertes" data-desc="volunteer group in southern arizona that leaves water and food for migrants in the desert, runs an aid camp near arivaca, and documents abuses and deaths at the border.">
-          <div class="row">
-            <a class="name" href="https://nomoredeaths.org/en/" target="_blank" rel="noopener noreferrer">No More Deaths / No Más
-                            Muertes <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">nomoredeaths.org</span>
-          </div>
+          <a class="row" href="https://nomoredeaths.org/en/" target="_blank" rel="noopener noreferrer"><span class="name">No More Deaths / No Más
+                            Muertes</span><span class="dots" aria-hidden="true"></span><span class="host">nomoredeaths.org</span></a>
           <p class="desc">Volunteer group in southern Arizona that leaves water and food for migrants in the desert, runs an aid camp near Arivaca, and documents abuses and deaths at the border.</p>
         </li>
         <li data-name="aliento" data-desc="phoenix nonprofit led by undocumented and daca youth. runs education, arts and healing programs, a scholarship, and know-your-rights workshops for immigrant students and families.">
-          <div class="row">
-            <a class="name" href="https://alientoaz.org/" target="_blank" rel="noopener noreferrer">Aliento <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">alientoaz.org</span>
-          </div>
+          <a class="row" href="https://alientoaz.org/" target="_blank" rel="noopener noreferrer"><span class="name">Aliento</span><span class="dots" aria-hidden="true"></span><span class="host">alientoaz.org</span></a>
           <p class="desc">Phoenix nonprofit led by undocumented and DACA youth. Runs education, arts and healing programs, a scholarship, and know-your-rights workshops for immigrant students and families.</p>
         </li>
         <li data-name="trans queer pueblo" data-desc="a safe space for lgbt+ migrants of color in arizona.">
-          <div class="row">
-            <a class="name" href="https://www.tqpueblo.org/" target="_blank" rel="noopener noreferrer">Trans Queer Pueblo <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">tqpueblo.org</span>
-          </div>
+          <a class="row" href="https://www.tqpueblo.org/" target="_blank" rel="noopener noreferrer"><span class="name">Trans Queer Pueblo</span><span class="dots" aria-hidden="true"></span><span class="host">tqpueblo.org</span></a>
           <p class="desc">A safe space for LGBT+ migrants of color in Arizona.</p>
         </li>
         <li data-name="ajo samaritans" data-desc="volunteer group in ajo, arizona that provides water and humanitarian aid in the borderlands and runs an aid office open fridays and saturdays.">
-          <div class="row">
-            <a class="name" href="https://www.ajosamaritans.com/" target="_blank" rel="noopener noreferrer">Ajo Samaritans <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">ajosamaritans.com</span>
-          </div>
+          <a class="row" href="https://www.ajosamaritans.com/" target="_blank" rel="noopener noreferrer"><span class="name">Ajo Samaritans</span><span class="dots" aria-hidden="true"></span><span class="host">ajosamaritans.com</span></a>
           <p class="desc">Volunteer group in Ajo, Arizona that provides water and humanitarian aid in the borderlands and runs an aid office open Fridays and Saturdays.</p>
         </li>
         <li data-name="mass liberation arizona" data-desc="directly impacted people's organization in south phoenix working to end mass incarceration in arizona through organizing, police accountability, and decarceral legislation.">
-          <div class="row">
-            <a class="name" href="https://masslibaz.org/" target="_blank" rel="noopener noreferrer">Mass Liberation Arizona <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">masslibaz.org</span>
-          </div>
+          <a class="row" href="https://masslibaz.org/" target="_blank" rel="noopener noreferrer"><span class="name">Mass Liberation Arizona</span><span class="dots" aria-hidden="true"></span><span class="host">masslibaz.org</span></a>
           <p class="desc">Directly impacted people's organization in South Phoenix working to end mass incarceration in Arizona through organizing, police accountability, and decarceral legislation.</p>
         </li>
         <li data-name="death penalty alternatives for arizona" data-desc="statewide volunteer group that educates the public about the death penalty and campaigns for abolition and policy reform in arizona, including documentary screenings and events.">
-          <div class="row">
-            <a class="name" href="https://www.azdeathpenalty.org/" target="_blank" rel="noopener noreferrer">Death Penalty Alternatives for Arizona <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">azdeathpenalty.org</span>
-          </div>
+          <a class="row" href="https://www.azdeathpenalty.org/" target="_blank" rel="noopener noreferrer"><span class="name">Death Penalty Alternatives for Arizona</span><span class="dots" aria-hidden="true"></span><span class="host">azdeathpenalty.org</span></a>
           <p class="desc">Statewide volunteer group that educates the public about the death penalty and campaigns for abolition and policy reform in Arizona, including documentary screenings and events.</p>
         </li>
         <li data-name="equality arizona" data-desc="arizona lgbtq+ civil rights group that lobbies at the legislature, tracks anti-lgbtq bills, and runs voter education and endorsements.">
-          <div class="row">
-            <a class="name" href="https://www.equalityarizona.org/" target="_blank" rel="noopener noreferrer">Equality Arizona <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">equalityarizona.org</span>
-          </div>
+          <a class="row" href="https://www.equalityarizona.org/" target="_blank" rel="noopener noreferrer"><span class="name">Equality Arizona</span><span class="dots" aria-hidden="true"></span><span class="host">equalityarizona.org</span></a>
           <p class="desc">Arizona LGBTQ+ civil rights group that lobbies at the legislature, tracks anti-LGBTQ bills, and runs voter education and endorsements.</p>
         </li>
         <li data-name="sonoran prevention works" data-desc="tempe-based harm reduction group doing street outreach, naloxone distribution, overdose prevention training, and hiv/hcv testing across arizona, and advocating for drug policy reform.">
-          <div class="row">
-            <a class="name" href="https://spwaz.org/" target="_blank" rel="noopener noreferrer">Sonoran Prevention Works <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">spwaz.org</span>
-          </div>
+          <a class="row" href="https://spwaz.org/" target="_blank" rel="noopener noreferrer"><span class="name">Sonoran Prevention Works</span><span class="dots" aria-hidden="true"></span><span class="host">spwaz.org</span></a>
           <p class="desc">Tempe-based harm reduction group doing street outreach, naloxone distribution, overdose prevention training, and HIV/HCV testing across Arizona, and advocating for drug policy reform.</p>
         </li>
         <li data-name="o'odham piipaash alliance" data-desc="an indigenous-led collective fostering mutual aid and solidarity through cultural preservation and land defense in o'odham and piipaash territories. they coordinate community support, traditional knowledge sharing, and solidarity networks while building power through indigenous sovereignty and creating pathways for cultural resurgence.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/oodhampiipaashalliance/" target="_blank" rel="noopener noreferrer">O'odham Piipaash Alliance <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/oodhampiipaashalliance/" target="_blank" rel="noopener noreferrer"><span class="name">O'odham Piipaash Alliance</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">An Indigenous-led collective fostering mutual aid and solidarity through cultural preservation and land defense in O'odham and Piipaash territories. They coordinate community support, traditional knowledge sharing, and solidarity networks while building power through Indigenous sovereignty and creating pathways for cultural resurgence.</p>
         </li>
         <li data-name="save oak flat" data-desc="apache-led group working to stop resolution copper's mine and protect oak flat, a sacred apache site in tonto national forest, arizona, through prayer runs, rallies and lawsuits.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/SaveOakFlatArizona" target="_blank" rel="noopener noreferrer">Save Oak Flat <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/SaveOakFlatArizona" target="_blank" rel="noopener noreferrer"><span class="name">Save Oak Flat</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">Apache-led group working to stop Resolution Copper's mine and protect Oak Flat, a sacred Apache site in Tonto National Forest, Arizona, through prayer runs, rallies and lawsuits.</p>
         </li>
         <li data-name="k'é infoshop" data-desc="anti-colonial, anti-heteropatriarchy, and anti-capitalist with indigenous feminism as our guiding principles. we're a collective of diné uniting to liberate nihi k'ei/our relatives.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/keinfoshop" target="_blank" rel="noopener noreferrer">K'é Infoshop <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/keinfoshop" target="_blank" rel="noopener noreferrer"><span class="name">K'é Infoshop</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Anti-colonial, anti-heteropatriarchy, and anti-capitalist with indigenous feminism as our guiding principles. We're a collective of Diné uniting to liberate nihi k'ei/our relatives.</p>
         </li>
         <li data-name="az comm-unity" data-desc="central hub for all people and groups within all of arizona who are taking a stand against the rising wave of authoritarianism and fascism to come together to meet and coordinate with their local communities as well as communicate with the rest of the movement around the state.">
-          <div class="row">
-            <a class="name" href="https://discord.gg/xUK6Qkeb" target="_blank" rel="noopener noreferrer">AZ Comm-Unity <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">discord.gg</span>
-          </div>
+          <a class="row" href="https://discord.gg/xUK6Qkeb" target="_blank" rel="noopener noreferrer"><span class="name">AZ Comm-Unity</span><span class="dots" aria-hidden="true"></span><span class="host">discord.gg</span></a>
           <p class="desc">central hub for all people and groups within all of Arizona who are taking a stand against the rising wave of authoritarianism and fascism to come together to meet and coordinate with their local communities as well as communicate with the rest of the movement around the state.</p>
         </li>
         <li data-name="az50501 discord server" data-desc="get the latest updates on the 50501 movement and connect with other arizonans">
-          <div class="row">
-            <a class="name" href="https://discord.gg/yEQTkC3Dmx" target="_blank" rel="noopener noreferrer">AZ50501 Discord Server <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">discord.gg</span>
-          </div>
+          <a class="row" href="https://discord.gg/yEQTkC3Dmx" target="_blank" rel="noopener noreferrer"><span class="name">AZ50501 Discord Server</span><span class="dots" aria-hidden="true"></span><span class="host">discord.gg</span></a>
           <p class="desc">Get the latest updates on the 50501 movement and connect with other Arizonans</p>
         </li>
         <li data-name="haul no" data-desc="a diné-led group in northern arizona that opposes uranium mining at the pinyon plain mine near the grand canyon and the hauling of its ore across navajo and havasupai land.">
-          <div class="row">
-            <a class="name" href="https://haulno.com/" target="_blank" rel="noopener noreferrer">Haul No <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">haulno.com</span>
-          </div>
+          <a class="row" href="https://haulno.com/" target="_blank" rel="noopener noreferrer"><span class="name">Haul No</span><span class="dots" aria-hidden="true"></span><span class="host">haulno.com</span></a>
           <p class="desc">A Diné-led group in northern Arizona that opposes uranium mining at the Pinyon Plain mine near the Grand Canyon and the hauling of its ore across Navajo and Havasupai land.</p>
         </li>
       </ol>
@@ -215,14 +146,10 @@
         <p class="empty" id="empty-state" hidden>No places or groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -234,8 +161,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

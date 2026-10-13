@@ -7,8 +7,7 @@
   <title>Pennsylvania — Organize Directory</title>
   <meta name="description" content="Cities and statewide organizations in Pennsylvania.">
   <link rel="canonical" href="https://organize.directory/pennsylvania">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Pennsylvania — Organize Directory">
@@ -19,152 +18,102 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>Places – Statewide Organizations</span>
+  <span class="c">White Pages</span>
+  <span class="r">Pennsylvania</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Pennsylvania</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Pennsylvania</h1>
-    <p class="meta">
-      <b>8</b> statewide groups
-    </p>
-  </div>
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter Pennsylvania</label>
-    <input id="page-filter" type="search" placeholder="Filter Pennsylvania…" autocomplete="off">
-  </div>
-
-  <div class="layout">
-  <nav class="toc" aria-label="Sections on this page">
-    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
-      <span class="current">
-        <span class="current-label">Section ·</span>
-        <span class="current-name">Places</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div id="toc-panel" class="toc-scroll">
-      <a href="#places" data-section="places"><span class="label">Places</span></a>
-      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="label">Statewide Organizations</span> <span class="count">8</span></a>
+    <p class="meta"><b>8</b> statewide groups</p>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter Pennsylvania</label>
+      <input id="page-filter" type="search" placeholder="Filter Pennsylvania" autocomplete="off">
     </div>
-  </nav>
-    <div class="main-col">
+  </div>
 
+  <div class="spread">
+    <nav class="thumbs" aria-label="Sections on this page">
+      <a href="#places" data-section="places"><span class="notch" aria-hidden="true"></span><span class="lbl">Places</span></a>
+      <a href="#statewide-organizations" data-section="statewide-organizations"><span class="notch" aria-hidden="true"></span><span class="lbl">Statewide Organizations</span><span class="k">8</span></a>
+    </nav>
+    <div class="main-col">
       <div id="sections-root">
-    <section id="places" class="group-section" data-section="places">
-      <h2 class="section-title">Places</h2>
-      <ol class="groups children-list">
-        <li data-name="harrisburg" data-desc=""><a class="name" href="/harrisburg">Harrisburg</a></li>
-        <li data-name="homer city, pa" data-desc=""><a class="name" href="/homer-city">Homer City, PA</a></li>
-        <li data-name="lancaster, pa" data-desc=""><a class="name" href="/lancaster">Lancaster, PA</a></li>
-        <li data-name="lehigh valley" data-desc=""><a class="name" href="/lehigh-valley">Lehigh Valley</a></li>
-        <li data-name="philadelphia" data-desc=""><a class="name" href="/philadelphia">Philadelphia</a></li>
-        <li data-name="pittsburgh" data-desc=""><a class="name" href="/pittsburgh">Pittsburgh</a></li>
-        <li data-name="reading, pa" data-desc=""><a class="name" href="/reading">Reading, PA</a></li>
+    <section id="places" class="group-section" data-section="places" data-title="Places">
+      <h2 class="hd"><span>Places</span></h2>
+      <ol class="index-list">
+        <li data-name="harrisburg" data-desc=""><a href="/harrisburg"><span class="n">Harrisburg</span></a></li>
+        <li data-name="homer city, pa" data-desc=""><a href="/homer-city"><span class="n">Homer City, PA</span></a></li>
+        <li data-name="lancaster, pa" data-desc=""><a href="/lancaster"><span class="n">Lancaster, PA</span></a></li>
+        <li data-name="lehigh valley" data-desc=""><a href="/lehigh-valley"><span class="n">Lehigh Valley</span></a></li>
+        <li data-name="philadelphia" data-desc=""><a href="/philadelphia"><span class="n">Philadelphia</span></a></li>
+        <li data-name="pittsburgh" data-desc=""><a href="/pittsburgh"><span class="n">Pittsburgh</span></a></li>
+        <li data-name="reading, pa" data-desc=""><a href="/reading"><span class="n">Reading, PA</span></a></li>
       </ol>
     </section>
 
-    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations">
-      <h2 class="section-title">Statewide Organizations</h2>
+    <section id="statewide-organizations" class="group-section" data-section="statewide-organizations" data-title="Statewide Organizations">
+      <h2 class="hd"><span>Statewide Organizations</span><span class="k" aria-hidden="true">8</span></h2>
       <ol class="groups">
         <li data-name="hearts on a wire" data-desc="philadelphia collective supporting incarcerated transgender and nonbinary people in pennsylvania prisons through correspondence and community organizing. holds open weekly meetings.">
-          <div class="row">
-            <a class="name" href="https://www.heartsonawire.org/" target="_blank" rel="noopener noreferrer">Hearts on a Wire <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">heartsonawire.org</span>
-          </div>
+          <a class="row" href="https://www.heartsonawire.org/" target="_blank" rel="noopener noreferrer"><span class="name">Hearts on a Wire</span><span class="dots" aria-hidden="true"></span><span class="host">heartsonawire.org</span></a>
           <p class="desc">Philadelphia collective supporting incarcerated transgender and nonbinary people in Pennsylvania prisons through correspondence and community organizing. Holds open weekly meetings.</p>
         </li>
         <li data-name="let's get free: the women and trans prisoner defense committee" data-desc="pittsburgh-based group led by incarcerated women and trans people. campaigns for commutation reform and against life sentences, and runs virtual healing therapy and daughters magazine.">
-          <div class="row">
-            <a class="name" href="https://letsgetfree.info/" target="_blank" rel="noopener noreferrer">Let's Get Free: The Women and Trans Prisoner Defense Committee <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">letsgetfree.info</span>
-          </div>
+          <a class="row" href="https://letsgetfree.info/" target="_blank" rel="noopener noreferrer"><span class="name">Let's Get Free: The Women and Trans Prisoner Defense Committee</span><span class="dots" aria-hidden="true"></span><span class="host">letsgetfree.info</span></a>
           <p class="desc">Pittsburgh-based group led by incarcerated women and trans people. Campaigns for commutation reform and against life sentences, and runs Virtual Healing therapy and Daughters Magazine.</p>
         </li>
         <li data-name="pennsylvania institutional law project (pilp)" data-desc="free legal help and litigation for people incarcerated in pennsylvania, focused on constitutional and civil rights. has offices in the eastern, central and western parts of the state.">
-          <div class="row">
-            <a class="name" href="https://pilp.org/" target="_blank" rel="noopener noreferrer">Pennsylvania Institutional Law Project (PILP) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">pilp.org</span>
-          </div>
+          <a class="row" href="https://pilp.org/" target="_blank" rel="noopener noreferrer"><span class="name">Pennsylvania Institutional Law Project (PILP)</span><span class="dots" aria-hidden="true"></span><span class="host">pilp.org</span></a>
           <p class="desc">Free legal help and litigation for people incarcerated in Pennsylvania, focused on constitutional and civil rights. Has offices in the eastern, central and western parts of the state.</p>
         </li>
         <li data-name="commutation in pa now!" data-desc="pennsylvania campaign pushing the state board of pardons to be more transparent, including keeping cameras on during online clemency and commutation hearings.">
-          <div class="row">
-            <a class="name" href="https://commutationnow.com/" target="_blank" rel="noopener noreferrer">Commutation in PA Now! <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">commutationnow.com</span>
-          </div>
+          <a class="row" href="https://commutationnow.com/" target="_blank" rel="noopener noreferrer"><span class="name">Commutation in PA Now!</span><span class="dots" aria-hidden="true"></span><span class="host">commutationnow.com</span></a>
           <p class="desc">Pennsylvania campaign pushing the state Board of Pardons to be more transparent, including keeping cameras on during online clemency and commutation hearings.</p>
         </li>
         <li data-name="montgomery county food not bombs" data-desc="food not bombs chapter in montgomery county, pa, started by upper dublin high school students in 2021. serves free vegetarian meals and groceries in norristown and pottstown.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/montcofnb/" target="_blank" rel="noopener noreferrer">Montgomery County Food Not Bombs <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/montcofnb/" target="_blank" rel="noopener noreferrer"><span class="name">Montgomery County Food Not Bombs</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Food Not Bombs chapter in Montgomery County, PA, started by Upper Dublin high school students in 2021. Serves free vegetarian meals and groceries in Norristown and Pottstown.</p>
         </li>
         <li data-name="eastern pa trans equity project" data-desc="eptep provides direct services to transgender and gender-diverse pennsylvanians in a thirty-three county region in eastern pa.">
-          <div class="row">
-            <a class="name" href="https://www.patransequity.org/" target="_blank" rel="noopener noreferrer">Eastern PA Trans Equity Project <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">patransequity.org</span>
-          </div>
+          <a class="row" href="https://www.patransequity.org/" target="_blank" rel="noopener noreferrer"><span class="name">Eastern PA Trans Equity Project</span><span class="dots" aria-hidden="true"></span><span class="host">patransequity.org</span></a>
           <p class="desc">EPTEP provides direct services to transgender and gender-diverse Pennsylvanians in a thirty-three county region in Eastern PA.</p>
         </li>
         <li data-name="trans minors rights" data-desc="our goal is to empower transgender youth by educating our communities on issues facing young transgender people and providing youth with the knowledge and tools they need to combat gender dysphoria. operating out of lancaster.">
-          <div class="row">
-            <a class="name" href="https://transminorsrights.org/" target="_blank" rel="noopener noreferrer">Trans Minors Rights <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">transminorsrights.org</span>
-          </div>
+          <a class="row" href="https://transminorsrights.org/" target="_blank" rel="noopener noreferrer"><span class="name">Trans Minors Rights</span><span class="dots" aria-hidden="true"></span><span class="host">transminorsrights.org</span></a>
           <p class="desc">Our goal is to empower transgender youth by educating our communities on issues facing young transgender people and providing youth with the knowledge and tools they need to combat gender dysphoria. Operating out of Lancaster.</p>
         </li>
         <li data-name="transfamily of nw pennsylvania" data-desc="transfamily of nwpa is an organization created to serve the transgender community of northwestern pennsylvania serving erie, crawford, and warren counties.">
-          <div class="row">
-            <a class="name" href="https://transfamilynwpa.org/" target="_blank" rel="noopener noreferrer">TransFamily of NW Pennsylvania <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">transfamilynwpa.org</span>
-          </div>
+          <a class="row" href="https://transfamilynwpa.org/" target="_blank" rel="noopener noreferrer"><span class="name">TransFamily of NW Pennsylvania</span><span class="dots" aria-hidden="true"></span><span class="host">transfamilynwpa.org</span></a>
           <p class="desc">TransFamily of NWPA is an organization created to serve the transgender community of Northwestern Pennsylvania serving Erie, Crawford, and Warren counties.</p>
         </li>
       </ol>
@@ -172,14 +121,10 @@
         <p class="empty" id="empty-state" hidden>No places or groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -191,8 +136,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

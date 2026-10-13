@@ -7,8 +7,7 @@
   <title>Palestinian Solidarity — Organize Directory</title>
   <meta name="description" content="Organizations and initiatives focused on Palestinian Solidarity.">
   <link rel="canonical" href="https://organize.directory/topics/palestinian-solidarity">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Palestinian Solidarity — Organize Directory">
@@ -19,248 +18,154 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="yellow">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location">White Pages</a><a href="/topics" aria-current="page">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location">White Pages</a><a href="/topics" aria-current="page">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>National Initiatives</span>
+  <span class="c">Yellow Pages</span>
+  <span class="r">Palestinian Solidarity</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/topics">Topics</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Palestinian Solidarity</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Palestinian Solidarity</h1>
     <p class="meta"><b>25</b> groups</p>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Palestinian Solidarity</label>
+      <input id="page-filter" type="search" placeholder="Filter groups" autocomplete="off">
+    </div>
   </div>
 
-
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Palestinian Solidarity</label>
-    <input id="page-filter" type="search" placeholder="Filter groups…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="national-initiatives" class="group-section" data-section="national-initiatives">
-      <h2 class="section-title">National Initiatives</h2>
+    <section id="national-initiatives" class="group-section" data-section="national-initiatives" data-title="National Initiatives">
+      <h2 class="hd"><span>National Initiatives</span><span class="k" aria-hidden="true">25</span></h2>
       <ol class="groups">
         <li data-name="palestinian youth movement" data-desc="transnational, independent, grassroots movement of young palestinians organizing for the liberation of palestine and the return of all palestinian refugees.">
-          <div class="row">
-            <a class="name" href="https://palestinianyouthmovement.com/" target="_blank" rel="noopener noreferrer">Palestinian Youth Movement <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">palestinianyouthmovement.com</span>
-          </div>
+          <a class="row" href="https://palestinianyouthmovement.com/" target="_blank" rel="noopener noreferrer"><span class="name">Palestinian Youth Movement</span><span class="dots" aria-hidden="true"></span><span class="host">palestinianyouthmovement.com</span></a>
           <p class="desc">Transnational, independent, grassroots movement of young Palestinians organizing for the liberation of Palestine and the return of all Palestinian refugees.</p>
         </li>
         <li data-name="international solidarity movement (ism)" data-desc="a palestinian-led movement committed to resisting the israeli occupation of palestinian land using nonviolent, direct-action methods and principles. ism provides on-the-ground international presence and witnesses human rights violations while supporting palestinian-led nonviolent resistance.">
-          <div class="row">
-            <a class="name" href="https://palsolidarity.org/" target="_blank" rel="noopener noreferrer">International Solidarity Movement (ISM) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">palsolidarity.org</span>
-          </div>
+          <a class="row" href="https://palsolidarity.org/" target="_blank" rel="noopener noreferrer"><span class="name">International Solidarity Movement (ISM)</span><span class="dots" aria-hidden="true"></span><span class="host">palsolidarity.org</span></a>
           <p class="desc">A Palestinian-led movement committed to resisting the Israeli occupation of Palestinian land using nonviolent, direct-action methods and principles. ISM provides on-the-ground international presence and witnesses human rights violations while supporting Palestinian-led nonviolent resistance.</p>
         </li>
         <li data-name="us campaign for palestinian rights (uscpr)" data-desc="national coalition supporting the palestine solidarity movement, providing resources and strategy to local organizers. formerly the us campaign to end the israeli occupation.">
-          <div class="row">
-            <a class="name" href="https://uscpr.org/" target="_blank" rel="noopener noreferrer">US Campaign for Palestinian Rights (USCPR) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">uscpr.org</span>
-          </div>
+          <a class="row" href="https://uscpr.org/" target="_blank" rel="noopener noreferrer"><span class="name">US Campaign for Palestinian Rights (USCPR)</span><span class="dots" aria-hidden="true"></span><span class="host">uscpr.org</span></a>
           <p class="desc">National coalition supporting the Palestine solidarity movement, providing resources and strategy to local organizers. Formerly the US Campaign to End the Israeli Occupation.</p>
         </li>
         <li data-name="mennonite action" data-desc="a movement of mennonites organizing mutual aid and direct action for palestine solidarity. they coordinate resources, organize nonviolent actions, and build interfaith coalitions while providing material support and advocating for peace and justice through their faith-based approach.">
-          <div class="row">
-            <a class="name" href="https://www.mennoniteaction.org/" target="_blank" rel="noopener noreferrer">Mennonite Action <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">mennoniteaction.org</span>
-          </div>
+          <a class="row" href="https://www.mennoniteaction.org/" target="_blank" rel="noopener noreferrer"><span class="name">Mennonite Action</span><span class="dots" aria-hidden="true"></span><span class="host">mennoniteaction.org</span></a>
           <p class="desc">A movement of Mennonites organizing mutual aid and direct action for Palestine solidarity. They coordinate resources, organize nonviolent actions, and build interfaith coalitions while providing material support and advocating for peace and justice through their faith-based approach.</p>
         </li>
         <li data-name="friends of sabeel north america (fosna)" data-desc="an interdenominational christian organization providing mutual aid and solidarity through education, advocacy, and nonviolent action for palestine. they amplify palestinian voices and coordinate support through church networks, community organizing, and direct action campaigns.">
-          <div class="row">
-            <a class="name" href="https://www.fosna.org/" target="_blank" rel="noopener noreferrer">Friends of Sabeel North America (FOSNA) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">fosna.org</span>
-          </div>
+          <a class="row" href="https://www.fosna.org/" target="_blank" rel="noopener noreferrer"><span class="name">Friends of Sabeel North America (FOSNA)</span><span class="dots" aria-hidden="true"></span><span class="host">fosna.org</span></a>
           <p class="desc">An interdenominational Christian organization providing mutual aid and solidarity through education, advocacy, and nonviolent action for Palestine. They amplify Palestinian voices and coordinate support through church networks, community organizing, and direct action campaigns.</p>
         </li>
         <li data-name="adalah justice project" data-desc="palestinian advocacy organization based in the u.s., aiming to shift policy &amp; public discourse on palestine + organizing for collective liberation">
-          <div class="row">
-            <a class="name" href="https://www.adalahjusticeproject.org/" target="_blank" rel="noopener noreferrer">Adalah Justice Project <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">adalahjusticeproject.org</span>
-          </div>
+          <a class="row" href="https://www.adalahjusticeproject.org/" target="_blank" rel="noopener noreferrer"><span class="name">Adalah Justice Project</span><span class="dots" aria-hidden="true"></span><span class="host">adalahjusticeproject.org</span></a>
           <p class="desc">Palestinian Advocacy Organization based in the U.S., aiming to shift policy &amp; public discourse on Palestine + Organizing for collective liberation</p>
         </li>
         <li data-name="friends of palestinian medical relief society (fpmrs)" data-desc="us nonprofit, founded in atlanta, that raises money for the palestinian medical relief society's clinics, mobile clinics, and emergency care in gaza and the west bank.">
-          <div class="row">
-            <a class="name" href="https://friendsofpmrs.org/" target="_blank" rel="noopener noreferrer">Friends of Palestinian Medical Relief Society (FPMRS) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">friendsofpmrs.org</span>
-          </div>
+          <a class="row" href="https://friendsofpmrs.org/" target="_blank" rel="noopener noreferrer"><span class="name">Friends of Palestinian Medical Relief Society (FPMRS)</span><span class="dots" aria-hidden="true"></span><span class="host">friendsofpmrs.org</span></a>
           <p class="desc">US nonprofit, founded in Atlanta, that raises money for the Palestinian Medical Relief Society's clinics, mobile clinics, and emergency care in Gaza and the West Bank.</p>
         </li>
         <li data-name="cpt palestine" data-desc="community peacemaker teams' palestine program, based in al-khalil/hebron. it accompanies palestinians, monitors checkpoints, documents abuses, and supports nonviolent resistance to the occupation.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/cpt.palestine/" target="_blank" rel="noopener noreferrer">CPT Palestine <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/cpt.palestine/" target="_blank" rel="noopener noreferrer"><span class="name">CPT Palestine</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Community Peacemaker Teams' Palestine program, based in Al-Khalil/Hebron. It accompanies Palestinians, monitors checkpoints, documents abuses, and supports nonviolent resistance to the occupation.</p>
         </li>
         <li data-name="international jewish anti-zionist network (ijan)" data-desc="international network of jewish antizionist activists with us and other national chapters, running campaigns such as stop the jewish national fund.">
-          <div class="row">
-            <a class="name" href="https://ijan.org/" target="_blank" rel="noopener noreferrer">International Jewish Anti-Zionist Network (IJAN) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">ijan.org</span>
-          </div>
+          <a class="row" href="https://ijan.org/" target="_blank" rel="noopener noreferrer"><span class="name">International Jewish Anti-Zionist Network (IJAN)</span><span class="dots" aria-hidden="true"></span><span class="host">ijan.org</span></a>
           <p class="desc">International network of Jewish antizionist activists with US and other national chapters, running campaigns such as Stop the Jewish National Fund.</p>
         </li>
         <li data-name="rebuilding alliance" data-desc="redwood city, ca nonprofit supporting palestinian families with aid, construction and education projects, mainly in gaza, and advocating for palestinian rights.">
-          <div class="row">
-            <a class="name" href="https://www.rebuildingalliance.org/" target="_blank" rel="noopener noreferrer">Rebuilding Alliance <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">rebuildingalliance.org</span>
-          </div>
+          <a class="row" href="https://www.rebuildingalliance.org/" target="_blank" rel="noopener noreferrer"><span class="name">Rebuilding Alliance</span><span class="dots" aria-hidden="true"></span><span class="host">rebuildingalliance.org</span></a>
           <p class="desc">Redwood City, CA nonprofit supporting Palestinian families with aid, construction and education projects, mainly in Gaza, and advocating for Palestinian rights.</p>
         </li>
         <li data-name="bds movement" data-desc="palestinian-led global campaign, coordinated by the palestinian bds national committee, calling for boycotts, divestment and sanctions against israel.">
-          <div class="row">
-            <a class="name" href="https://bdsmovement.net/" target="_blank" rel="noopener noreferrer">BDS Movement <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">bdsmovement.net</span>
-          </div>
+          <a class="row" href="https://bdsmovement.net/" target="_blank" rel="noopener noreferrer"><span class="name">BDS Movement</span><span class="dots" aria-hidden="true"></span><span class="host">bdsmovement.net</span></a>
           <p class="desc">Palestinian-led global campaign, coordinated by the Palestinian BDS National Committee, calling for boycotts, divestment and sanctions against Israel.</p>
         </li>
         <li data-name="decolonize this place" data-desc="new york city activist and art collective that organizes around palestine, indigenous struggle, black liberation, wage workers and de-gentrification. known for the 2019 whitney museum protests.">
-          <div class="row">
-            <a class="name" href="https://x.com/decolonize_this" target="_blank" rel="noopener noreferrer">Decolonize This Place <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">x.com</span>
-          </div>
+          <a class="row" href="https://x.com/decolonize_this" target="_blank" rel="noopener noreferrer"><span class="name">Decolonize This Place</span><span class="dots" aria-hidden="true"></span><span class="host">x.com</span></a>
           <p class="desc">New York City activist and art collective that organizes around Palestine, Indigenous struggle, Black liberation, wage workers and de-gentrification. Known for the 2019 Whitney Museum protests.</p>
         </li>
         <li data-name="refuser solidarity network" data-desc="nonprofit founded in 2003 that supports israeli war resisters and conscientious objectors, including legal fees, mental health support and press campaigns for refusing youth and soldiers.">
-          <div class="row">
-            <a class="name" href="https://www.refuser.org/" target="_blank" rel="noopener noreferrer">Refuser Solidarity Network <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">refuser.org</span>
-          </div>
+          <a class="row" href="https://www.refuser.org/" target="_blank" rel="noopener noreferrer"><span class="name">Refuser Solidarity Network</span><span class="dots" aria-hidden="true"></span><span class="host">refuser.org</span></a>
           <p class="desc">Nonprofit founded in 2003 that supports Israeli war resisters and conscientious objectors, including legal fees, mental health support and press campaigns for refusing youth and soldiers.</p>
         </li>
         <li data-name="palestinian feminist collective" data-desc="collective of palestinian and arab feminists that publishes reports and resources on gendered and colonial violence, including the 'a predatory state' report with progressive international.">
-          <div class="row">
-            <a class="name" href="https://palestinianfeministcollective.org/" target="_blank" rel="noopener noreferrer">Palestinian Feminist Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">palestinianfeministcollective.org</span>
-          </div>
+          <a class="row" href="https://palestinianfeministcollective.org/" target="_blank" rel="noopener noreferrer"><span class="name">Palestinian Feminist Collective</span><span class="dots" aria-hidden="true"></span><span class="host">palestinianfeministcollective.org</span></a>
           <p class="desc">Collective of Palestinian and Arab feminists that publishes reports and resources on gendered and colonial violence, including the 'A Predatory State' report with Progressive International.</p>
         </li>
         <li data-name="al-awda: the palestine right to return coalition" data-desc="coalition based in coral springs, florida that advocates for palestinian refugees' right of return, holds demonstrations and cultural programs, and runs a refugee education fund.">
-          <div class="row">
-            <a class="name" href="https://al-awdapalestine.org/" target="_blank" rel="noopener noreferrer">Al-Awda: The Palestine Right to Return Coalition <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">al-awdapalestine.org</span>
-          </div>
+          <a class="row" href="https://al-awdapalestine.org/" target="_blank" rel="noopener noreferrer"><span class="name">Al-Awda: The Palestine Right to Return Coalition</span><span class="dots" aria-hidden="true"></span><span class="host">al-awdapalestine.org</span></a>
           <p class="desc">Coalition based in Coral Springs, Florida that advocates for Palestinian refugees' right of return, holds demonstrations and cultural programs, and runs a refugee education fund.</p>
         </li>
         <li data-name="badil resource center for palestinian residency and refugee rights" data-desc="bethlehem-based human rights organization working on palestinian refugee and residency rights through legal advocacy, community and international mobilization, and training programs.">
-          <div class="row">
-            <a class="name" href="https://badil.org/" target="_blank" rel="noopener noreferrer">BADIL Resource Center for Palestinian Residency and Refugee Rights <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">badil.org</span>
-          </div>
+          <a class="row" href="https://badil.org/" target="_blank" rel="noopener noreferrer"><span class="name">BADIL Resource Center for Palestinian Residency and Refugee Rights</span><span class="dots" aria-hidden="true"></span><span class="host">badil.org</span></a>
           <p class="desc">Bethlehem-based human rights organization working on Palestinian refugee and residency rights through legal advocacy, community and international mobilization, and training programs.</p>
         </li>
         <li data-name="al-shabaka: the palestinian policy network" data-desc="global network of palestinian analysts that publishes policy briefs, commentaries, and roundtables on palestinian politics, economics, civil society, and refugees.">
-          <div class="row">
-            <a class="name" href="https://al-shabaka.org/" target="_blank" rel="noopener noreferrer">Al-Shabaka: The Palestinian Policy Network <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">al-shabaka.org</span>
-          </div>
+          <a class="row" href="https://al-shabaka.org/" target="_blank" rel="noopener noreferrer"><span class="name">Al-Shabaka: The Palestinian Policy Network</span><span class="dots" aria-hidden="true"></span><span class="host">al-shabaka.org</span></a>
           <p class="desc">Global network of Palestinian analysts that publishes policy briefs, commentaries, and roundtables on Palestinian politics, economics, civil society, and refugees.</p>
         </li>
         <li data-name="samidoun: palestinian prisoner solidarity network" data-desc="international network of organizers and activists working to build solidarity with palestinian prisoners in their struggle for freedom.">
-          <div class="row">
-            <a class="name" href="https://samidoun.net/" target="_blank" rel="noopener noreferrer">Samidoun: Palestinian Prisoner Solidarity Network <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">samidoun.net</span>
-          </div>
+          <a class="row" href="https://samidoun.net/" target="_blank" rel="noopener noreferrer"><span class="name">Samidoun: Palestinian Prisoner Solidarity Network</span><span class="dots" aria-hidden="true"></span><span class="host">samidoun.net</span></a>
           <p class="desc">international network of organizers and activists working to build solidarity with Palestinian prisoners in their struggle for freedom.</p>
         </li>
         <li data-name="theater workers for a ceasefire" data-desc="us-based theater workers demand a ceasefire in palestine.">
-          <div class="row">
-            <a class="name" href="https://theaterworkersforaceasefire.com/" target="_blank" rel="noopener noreferrer">Theater Workers for a Ceasefire <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">theaterworkersforaceasefire.com</span>
-          </div>
+          <a class="row" href="https://theaterworkersforaceasefire.com/" target="_blank" rel="noopener noreferrer"><span class="name">Theater Workers for a Ceasefire</span><span class="dots" aria-hidden="true"></span><span class="host">theaterworkersforaceasefire.com</span></a>
           <p class="desc">US-based theater workers demand a ceasefire in Palestine.</p>
         </li>
         <li data-name="writers against the war on gaza" data-desc="building a cultural front for a free palestine. they write and publish the new york war crimes.">
-          <div class="row">
-            <a class="name" href="https://www.writersagainstthewarongaza.com/" target="_blank" rel="noopener noreferrer">Writers Against the War on Gaza <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">writersagainstthewarongaza.com</span>
-          </div>
+          <a class="row" href="https://www.writersagainstthewarongaza.com/" target="_blank" rel="noopener noreferrer"><span class="name">Writers Against the War on Gaza</span><span class="dots" aria-hidden="true"></span><span class="host">writersagainstthewarongaza.com</span></a>
           <p class="desc">Building a cultural front for a free Palestine. They write and publish the New York War Crimes.</p>
         </li>
         <li data-name="pal shield" data-desc="american - palestinian led organization providing life-saving supplies to protect palestinian farmers and communities.">
-          <div class="row">
-            <a class="name" href="https://palshield.org/" target="_blank" rel="noopener noreferrer">Pal Shield <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">palshield.org</span>
-          </div>
+          <a class="row" href="https://palshield.org/" target="_blank" rel="noopener noreferrer"><span class="name">Pal Shield</span><span class="dots" aria-hidden="true"></span><span class="host">palshield.org</span></a>
           <p class="desc">American - Palestinian led organization providing life-saving supplies to protect Palestinian farmers and communities.</p>
         </li>
         <li data-name="jewish voice for peace" data-desc="national jewish organization based in berkeley, ca that organizes for palestinian liberation, supports bds, and runs campaigns and local chapters across the us.">
-          <div class="row">
-            <a class="name" href="https://www.jewishvoiceforpeace.org/" target="_blank" rel="noopener noreferrer">Jewish Voice for Peace <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">jewishvoiceforpeace.org</span>
-          </div>
+          <a class="row" href="https://www.jewishvoiceforpeace.org/" target="_blank" rel="noopener noreferrer"><span class="name">Jewish Voice for Peace</span><span class="dots" aria-hidden="true"></span><span class="host">jewishvoiceforpeace.org</span></a>
           <p class="desc">National Jewish organization based in Berkeley, CA that organizes for Palestinian liberation, supports BDS, and runs campaigns and local chapters across the US.</p>
         </li>
         <li data-name="global sumud flotilla" data-desc="international civilian flotilla that sails boats with aid to gaza to challenge the blockade. its 2026 mission set out in april from several countries and was intercepted by israeli forces.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/globalsumudflotilla/" target="_blank" rel="noopener noreferrer">Global Sumud Flotilla <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/globalsumudflotilla/" target="_blank" rel="noopener noreferrer"><span class="name">Global Sumud Flotilla</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">International civilian flotilla that sails boats with aid to Gaza to challenge the blockade. Its 2026 mission set out in April from several countries and was intercepted by Israeli forces.</p>
         </li>
         <li data-name="national sjp" data-desc="student-run network that supports students for justice in palestine chapters on north american campuses, with campaigns, statements and an annual national conference.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/nationalsjp/" target="_blank" rel="noopener noreferrer">National SJP <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/nationalsjp/" target="_blank" rel="noopener noreferrer"><span class="name">National SJP</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Student-run network that supports Students for Justice in Palestine chapters on North American campuses, with campaigns, statements and an annual national conference.</p>
         </li>
         <li data-name="artists against apartheid" data-desc="network of artists and cultural workers, with 15,000+ signatories, who make and share art and posters in support of palestinian liberation.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/againstapartheid.art/" target="_blank" rel="noopener noreferrer">Artists Against Apartheid <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/againstapartheid.art/" target="_blank" rel="noopener noreferrer"><span class="name">Artists Against Apartheid</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Network of artists and cultural workers, with 15,000+ signatories, who make and share art and posters in support of Palestinian liberation.</p>
         </li>
       </ol>
@@ -268,14 +173,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -287,8 +188,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

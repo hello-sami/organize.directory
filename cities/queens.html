@@ -7,8 +7,7 @@
   <title>Queens — Organize Directory</title>
   <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Queens.">
   <link rel="canonical" href="https://organize.directory/queens">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Queens — Organize Directory">
@@ -19,294 +18,192 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>Astoria – Other</span>
+  <span class="c">White Pages</span>
+  <span class="r">Queens, New York</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/new-york">New York</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/nyc">New York City</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Queens</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Queens</h1>
-    <p class="meta">
-      <b>22</b> groups
-      <span class="sep" aria-hidden="true">·</span>
-      New York
-    </p>
-  </div>
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Queens</label>
-    <input id="page-filter" type="search" placeholder="Filter groups in Queens…" autocomplete="off">
-  </div>
-
-  <div class="layout">
-  <nav class="toc" aria-label="Sections on this page">
-    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
-      <span class="current">
-        <span class="current-label">Section ·</span>
-        <span class="current-name">Astoria</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div id="toc-panel" class="toc-scroll">
-      <a href="#astoria" data-section="astoria"><span class="label">Astoria</span> <span class="count">7</span></a>
-      <a href="#flushing" data-section="flushing"><span class="label">Flushing</span> <span class="count">1</span></a>
-      <a href="#jackson-heights" data-section="jackson-heights"><span class="label">Jackson Heights</span> <span class="count">1</span></a>
-      <a href="#ridgewood" data-section="ridgewood"><span class="label">Ridgewood</span> <span class="count">3</span></a>
-      <a href="#woodside" data-section="woodside"><span class="label">Woodside</span> <span class="count">2</span></a>
-      <a href="#other" data-section="other"><span class="label">Other</span> <span class="count">8</span></a>
+    <div class="meta"><b>22</b> groups. <nav aria-label="Breadcrumb">Part of <a href="/nyc">New York City</a>, <a href="/new-york">New York</a>.</nav></div>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Queens</label>
+      <input id="page-filter" type="search" placeholder="Filter groups in Queens" autocomplete="off">
     </div>
-  </nav>
-    <div class="main-col">
+  </div>
 
+  <div class="spread">
+    <nav class="thumbs" aria-label="Sections on this page">
+      <a href="#astoria" data-section="astoria"><span class="notch" aria-hidden="true"></span><span class="lbl">Astoria</span><span class="k">7</span></a>
+      <a href="#flushing" data-section="flushing"><span class="notch" aria-hidden="true"></span><span class="lbl">Flushing</span><span class="k">1</span></a>
+      <a href="#jackson-heights" data-section="jackson-heights"><span class="notch" aria-hidden="true"></span><span class="lbl">Jackson Heights</span><span class="k">1</span></a>
+      <a href="#ridgewood" data-section="ridgewood"><span class="notch" aria-hidden="true"></span><span class="lbl">Ridgewood</span><span class="k">3</span></a>
+      <a href="#woodside" data-section="woodside"><span class="notch" aria-hidden="true"></span><span class="lbl">Woodside</span><span class="k">2</span></a>
+      <a href="#other" data-section="other"><span class="notch" aria-hidden="true"></span><span class="lbl">Other</span><span class="k">8</span></a>
+    </nav>
+    <div class="main-col">
       <div id="sections-root">
-    <section id="astoria" class="group-section" data-section="astoria">
-      <h2 class="section-title">Astoria</h2>
+    <section id="astoria" class="group-section" data-section="astoria" data-title="Astoria">
+      <h2 class="hd"><span>Astoria</span><span class="k" aria-hidden="true">7</span></h2>
       <ol class="groups">
         <li data-name="astoria food pantry" data-desc="food pantry, free library, free store, and diaper distributions in astoria.">
-          <div class="row">
-            <a class="name" href="https://www.astoriafoodpantry.com/" target="_blank" rel="noopener noreferrer">Astoria Food Pantry <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">astoriafoodpantry.com</span>
-          </div>
+          <a class="row" href="https://www.astoriafoodpantry.com/" target="_blank" rel="noopener noreferrer"><span class="name">Astoria Food Pantry</span><span class="dots" aria-hidden="true"></span><span class="host">astoriafoodpantry.com</span></a>
           <p class="desc">Food pantry, free library, free store, and diaper distributions in Astoria.</p>
         </li>
         <li data-name="astoria tenant union" data-desc="we provide organizing resources, plan canvasses and tenants' rights training, and host monthly meetings to retake control of our homes.">
-          <div class="row">
-            <a class="name" href="https://www.astoriatenantunion.org/" target="_blank" rel="noopener noreferrer">Astoria Tenant Union <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">astoriatenantunion.org</span>
-          </div>
+          <a class="row" href="https://www.astoriatenantunion.org/" target="_blank" rel="noopener noreferrer"><span class="name">Astoria Tenant Union</span><span class="dots" aria-hidden="true"></span><span class="host">astoriatenantunion.org</span></a>
           <p class="desc">We provide organizing resources, plan canvasses and tenants' rights training, and host monthly meetings to retake control of our homes.</p>
         </li>
         <li data-name="astoria trans collective" data-desc="astoria-based network of trans queers engaging in community support and mutual aid. dm for discord link (for trans folks). allies welcome to events!">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/astoriatranscollective/" target="_blank" rel="noopener noreferrer">Astoria Trans Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/astoriatranscollective/" target="_blank" rel="noopener noreferrer"><span class="name">Astoria Trans Collective</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Astoria-based network of trans queers engaging in community support and mutual aid. DM for Discord link (for trans folks). Allies welcome to events!</p>
         </li>
         <li data-name="caaav: organizing asian communities" data-desc="asian immigrant organizing group in chinatown and astoria. runs the chinatown tenants union and astoria tenants union, fighting landlord harassment and displacement, and organizes youth.">
-          <div class="row">
-            <a class="name" href="https://caaav.org/" target="_blank" rel="noopener noreferrer">CAAAV: Organizing Asian Communities <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">caaav.org</span>
-          </div>
+          <a class="row" href="https://caaav.org/" target="_blank" rel="noopener noreferrer"><span class="name">CAAAV: Organizing Asian Communities</span><span class="dots" aria-hidden="true"></span><span class="host">caaav.org</span></a>
           <p class="desc">Asian immigrant organizing group in Chinatown and Astoria. Runs the Chinatown Tenants Union and Astoria Tenants Union, fighting landlord harassment and displacement, and organizes youth.</p>
         </li>
         <li data-name="the rolling library" data-desc="volunteer-run group giving away free books in nyc from a monday-evening shop at 25-82 steinway st in astoria, plus a monthly queer book club and pop-up book fairs.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/therollinglibrary/" target="_blank" rel="noopener noreferrer">The Rolling Library <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/therollinglibrary/" target="_blank" rel="noopener noreferrer"><span class="name">The Rolling Library</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Volunteer-run group giving away free books in NYC from a Monday-evening shop at 25-82 Steinway St in Astoria, plus a monthly queer book club and pop-up book fairs.</p>
         </li>
         <li data-name="astoria mutual aid network" data-desc="volunteer neighbors in astoria and western queens who give free, no-questions-asked help such as grocery deliveries and food, run out of a shared community center on steinway st.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/astoria_mutual_aid/" target="_blank" rel="noopener noreferrer">Astoria Mutual Aid Network <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/astoria_mutual_aid/" target="_blank" rel="noopener noreferrer"><span class="name">Astoria Mutual Aid Network</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Volunteer neighbors in Astoria and western Queens who give free, no-questions-asked help such as grocery deliveries and food, run out of a shared community center on Steinway St.</p>
         </li>
         <li data-name="queens jail support" data-desc="">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/queensjailsupport/" target="_blank" rel="noopener noreferrer">Queens Jail Support <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/queensjailsupport/" target="_blank" rel="noopener noreferrer"><span class="name">Queens Jail Support</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
         </li>
       </ol>
     </section>
 
-    <section id="flushing" class="group-section" data-section="flushing">
-      <h2 class="section-title">Flushing</h2>
+    <section id="flushing" class="group-section" data-section="flushing" data-title="Flushing">
+      <h2 class="hd"><span>Flushing</span><span class="k" aria-hidden="true">1</span></h2>
       <ol class="groups">
         <li data-name="flushing bennington tenants" data-desc="local tenant union in #flushingqueens people over profit">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/tenants_benn/" target="_blank" rel="noopener noreferrer">Flushing Bennington Tenants <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/tenants_benn/" target="_blank" rel="noopener noreferrer"><span class="name">Flushing Bennington Tenants</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Local Tenant Union in #flushingqueens People over Profit</p>
         </li>
       </ol>
     </section>
 
-    <section id="jackson-heights" class="group-section" data-section="jackson-heights">
-      <h2 class="section-title">Jackson Heights</h2>
+    <section id="jackson-heights" class="group-section" data-section="jackson-heights" data-title="Jackson Heights">
+      <h2 class="hd"><span>Jackson Heights</span><span class="k" aria-hidden="true">1</span></h2>
       <ol class="groups">
         <li data-name="89th street tenants unidos" data-desc="tenants association of 500+ residents at the 89th street and 34th avenue building complex in jackson heights, organizing on housing conditions, accessibility and anti-displacement.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/89sttenantsunidos" target="_blank" rel="noopener noreferrer">89th Street Tenants Unidos <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/89sttenantsunidos" target="_blank" rel="noopener noreferrer"><span class="name">89th Street Tenants Unidos</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Tenants association of 500+ residents at the 89th Street and 34th Avenue building complex in Jackson Heights, organizing on housing conditions, accessibility and anti-displacement.</p>
         </li>
       </ol>
     </section>
 
-    <section id="ridgewood" class="group-section" data-section="ridgewood">
-      <h2 class="section-title">Ridgewood</h2>
+    <section id="ridgewood" class="group-section" data-section="ridgewood" data-title="Ridgewood">
+      <h2 class="hd"><span>Ridgewood</span><span class="k" aria-hidden="true">3</span></h2>
       <ol class="groups">
         <li data-name="fenix community fridge" data-desc="free food distribution for those in need every friday 5pm">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/fenixcommunityfridge" target="_blank" rel="noopener noreferrer">Fenix Community Fridge <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/fenixcommunityfridge" target="_blank" rel="noopener noreferrer"><span class="name">Fenix Community Fridge</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Free food distribution for those in need every Friday 5pm</p>
         </li>
         <li data-name="ridgewood tenants union" data-desc="tenant-led housing rights group formed in 2014 that organizes tenants against displacement and landlord abuse in ridgewood, maspeth, glendale, and middle village. not a nonprofit.">
-          <div class="row">
-            <a class="name" href="https://ridgewoodtenantsunion.org/" target="_blank" rel="noopener noreferrer">Ridgewood Tenants Union <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">ridgewoodtenantsunion.org</span>
-          </div>
+          <a class="row" href="https://ridgewoodtenantsunion.org/" target="_blank" rel="noopener noreferrer"><span class="name">Ridgewood Tenants Union</span><span class="dots" aria-hidden="true"></span><span class="host">ridgewoodtenantsunion.org</span></a>
           <p class="desc">Tenant-led housing rights group formed in 2014 that organizes tenants against displacement and landlord abuse in Ridgewood, Maspeth, Glendale, and Middle Village. Not a nonprofit.</p>
         </li>
         <li data-name="ridgewood commons" data-desc="collectively run community space at 585 woodward ave in ridgewood with a food pantry, sunday dinners, film screenings, a community gym and workshops.">
-          <div class="row">
-            <a class="name" href="https://ridgewoodcommons.nyc/" target="_blank" rel="noopener noreferrer">Ridgewood Commons <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">ridgewoodcommons.nyc</span>
-          </div>
+          <a class="row" href="https://ridgewoodcommons.nyc/" target="_blank" rel="noopener noreferrer"><span class="name">Ridgewood Commons</span><span class="dots" aria-hidden="true"></span><span class="host">ridgewoodcommons.nyc</span></a>
           <p class="desc">Collectively run community space at 585 Woodward Ave in Ridgewood with a food pantry, Sunday dinners, film screenings, a community gym and workshops.</p>
         </li>
       </ol>
     </section>
 
-    <section id="woodside" class="group-section" data-section="woodside">
-      <h2 class="section-title">Woodside</h2>
+    <section id="woodside" class="group-section" data-section="woodside" data-title="Woodside">
+      <h2 class="hd"><span>Woodside</span><span class="k" aria-hidden="true">2</span></h2>
       <ol class="groups">
         <li data-name="gratis grove" data-desc="24/7 free accessible community fridge in woodside">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/gratisgrove/" target="_blank" rel="noopener noreferrer">Gratis Grove <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/gratisgrove/" target="_blank" rel="noopener noreferrer"><span class="name">Gratis Grove</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">24/7 free accessible community fridge in Woodside</p>
         </li>
         <li data-name="sunnyside and woodside mutual aid" data-desc="neighbors helping neighbors in woodside with food distribution, resource sharing, and community support.">
-          <div class="row">
-            <a class="name" href="https://swma.nyc/" target="_blank" rel="noopener noreferrer">Sunnyside and Woodside Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">swma.nyc</span>
-          </div>
+          <a class="row" href="https://swma.nyc/" target="_blank" rel="noopener noreferrer"><span class="name">Sunnyside and Woodside Mutual Aid</span><span class="dots" aria-hidden="true"></span><span class="host">swma.nyc</span></a>
           <p class="desc">Neighbors helping neighbors in Woodside with food distribution, resource sharing, and community support.</p>
         </li>
       </ol>
     </section>
 
-    <section id="other" class="group-section" data-section="other">
-      <h2 class="section-title">Other</h2>
+    <section id="other" class="group-section" data-section="other" data-title="Other">
+      <h2 class="hd"><span>Other</span><span class="k" aria-hidden="true">8</span></h2>
       <ol class="groups">
         <li data-name="anakbayan queens" data-desc="community-based in queens, ny // mass org of youth + students fighting for national democracy in philippines with a socialist perspective">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/anakbayanqueens" target="_blank" rel="noopener noreferrer">Anakbayan Queens <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/anakbayanqueens" target="_blank" rel="noopener noreferrer"><span class="name">Anakbayan Queens</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Community-based in Queens, NY // Mass org of youth + students fighting for national democracy in Philippines with a socialist perspective</p>
         </li>
         <li data-name="centro corona" data-desc="we are an intergenerational community space born from the practices, conscientization, and knowledge of working-class and immigrant communities seeking to build autonomy and a collectively-imagined future.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/centrocorona/" target="_blank" rel="noopener noreferrer">Centro Corona <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/centrocorona/" target="_blank" rel="noopener noreferrer"><span class="name">Centro Corona</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">We are an intergenerational community space born from the practices, conscientization, and knowledge of working-class and immigrant communities seeking to build autonomy and a collectively-imagined future.</p>
         </li>
         <li data-name="chhaya cdc" data-desc="community development group in jackson heights and richmond hill, queens, working on housing, economic justice, and immigrant rights for south asian and indo-caribbean residents.">
-          <div class="row">
-            <a class="name" href="https://chhayacdc.org/" target="_blank" rel="noopener noreferrer">Chhaya CDC <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">chhayacdc.org</span>
-          </div>
+          <a class="row" href="https://chhayacdc.org/" target="_blank" rel="noopener noreferrer"><span class="name">Chhaya CDC</span><span class="dots" aria-hidden="true"></span><span class="host">chhayacdc.org</span></a>
           <p class="desc">Community development group in Jackson Heights and Richmond Hill, Queens, working on housing, economic justice, and immigrant rights for South Asian and Indo-Caribbean residents.</p>
         </li>
         <li data-name="el cafe mundial" data-desc="free breakfast and information, every tues 6:30-8:30am, 69th st &amp; roosevelt av.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/elcafemundialnyc/" target="_blank" rel="noopener noreferrer">El Cafe Mundial <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/elcafemundialnyc/" target="_blank" rel="noopener noreferrer"><span class="name">El Cafe Mundial</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Free breakfast and information, Every Tues 6:30-8:30am, 69th St &amp; Roosevelt Av.</p>
         </li>
         <li data-name="queens collective 4
                                 palestine" data-desc="a collective of queens-based groups and individuals working for a free palestine.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/queens_collective_4_pal" target="_blank" rel="noopener noreferrer">Queens Collective 4
-                                Palestine <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/queens_collective_4_pal" target="_blank" rel="noopener noreferrer"><span class="name">Queens Collective 4
+                                Palestine</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">A collective of Queens-based groups and individuals working for a free Palestine.</p>
         </li>
         <li data-name="queens neighborhoods
                                 united" data-desc="anti-bid collective of community folks in corona, elmhurst, &amp; jackson heights fighting criminalization &amp; displacement in our communities since 2014.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/queensneighborhoodsunited" target="_blank" rel="noopener noreferrer">Queens Neighborhoods
-                                United <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/queensneighborhoodsunited" target="_blank" rel="noopener noreferrer"><span class="name">Queens Neighborhoods
+                                United</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Anti-BID collective of community folks in Corona, Elmhurst, &amp; Jackson Heights fighting criminalization &amp; displacement in our communities since 2014.</p>
         </li>
         <li data-name="woodbine" data-desc="woodbine is an experimental hub building autonomy in ridgewood, queens. 585 woodward ave.">
-          <div class="row">
-            <a class="name" href="https://www.woodbine.nyc/" target="_blank" rel="noopener noreferrer">Woodbine <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">woodbine.nyc</span>
-          </div>
+          <a class="row" href="https://www.woodbine.nyc/" target="_blank" rel="noopener noreferrer"><span class="name">Woodbine</span><span class="dots" aria-hidden="true"></span><span class="host">woodbine.nyc</span></a>
           <p class="desc">Woodbine is an experimental hub building autonomy in Ridgewood, Queens. 585 Woodward Ave.</p>
         </li>
         <li data-name="jamaica center distro" data-desc="">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/jcdqueens/" target="_blank" rel="noopener noreferrer">Jamaica Center Distro <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/jcdqueens/" target="_blank" rel="noopener noreferrer"><span class="name">Jamaica Center Distro</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
         </li>
       </ol>
     </section>
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -318,8 +215,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

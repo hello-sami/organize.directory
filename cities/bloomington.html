@@ -7,8 +7,7 @@
   <title>Bloomington, IN — Organize Directory</title>
   <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Bloomington, IN.">
   <link rel="canonical" href="https://organize.directory/bloomington">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Bloomington, IN — Organize Directory">
@@ -19,171 +18,110 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide></span>
+  <span class="c">White Pages</span>
+  <span class="r">Bloomington, IN, Indiana</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/indiana">Indiana</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Bloomington, IN</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Bloomington, IN</h1>
-    <p class="meta">
-      <b>12</b> groups
-      <span class="sep" aria-hidden="true">·</span>
-      Indiana
-    </p>
+    <div class="meta"><b>12</b> groups. <nav aria-label="Breadcrumb">Part of <a href="/indiana">Indiana</a>.</nav></div>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Bloomington, IN</label>
+      <input id="page-filter" type="search" placeholder="Filter groups in Bloomington, IN" autocomplete="off">
+    </div>
   </div>
 
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Bloomington, IN</label>
-    <input id="page-filter" type="search" placeholder="Filter groups in Bloomington, IN…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="section-0" class="group-section" data-section="section-0">
+    <section id="section-0" class="group-section" data-section="section-0" data-title="">
       <ol class="groups">
         <li data-name="really really free market" data-desc="a grassroots organization fostering mutual aid and community support through free markets and resource sharing in bloomington. they coordinate direct assistance, free item distribution, and solidarity networks while building power through community organizing and creating spaces for gift economy and collective care.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/reallyreallyfree/" target="_blank" rel="noopener noreferrer">Really Really Free Market <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/reallyreallyfree/" target="_blank" rel="noopener noreferrer"><span class="name">Really Really Free Market</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">A grassroots organization fostering mutual aid and community support through free markets and resource sharing in Bloomington. They coordinate direct assistance, free item distribution, and solidarity networks while building power through community organizing and creating spaces for gift economy and collective care.</p>
         </li>
         <li data-name="foster closet of monroe county" data-desc="free clothing, toys, books and supplies for foster and kinship families, families in shelters, and other children in need in monroe county, indiana. a project of the center for sustainable living.">
-          <div class="row">
-            <a class="name" href="https://mcfostercloset.org/" target="_blank" rel="noopener noreferrer">Foster Closet of Monroe County <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">mcfostercloset.org</span>
-          </div>
+          <a class="row" href="https://mcfostercloset.org/" target="_blank" rel="noopener noreferrer"><span class="name">Foster Closet of Monroe County</span><span class="dots" aria-hidden="true"></span><span class="host">mcfostercloset.org</span></a>
           <p class="desc">Free clothing, toys, books and supplies for foster and kinship families, families in shelters, and other children in need in Monroe County, Indiana. A project of the Center for Sustainable Living.</p>
         </li>
         <li data-name="lunch for peace" data-desc="project of the center for sustainable living that runs outdoor little free pantry boxes in bloomington, indiana, where anyone can leave or take food and hygiene items.">
-          <div class="row">
-            <a class="name" href="https://lfpbloomington.org/" target="_blank" rel="noopener noreferrer">Lunch for Peace <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">lfpbloomington.org</span>
-          </div>
+          <a class="row" href="https://lfpbloomington.org/" target="_blank" rel="noopener noreferrer"><span class="name">Lunch for Peace</span><span class="dots" aria-hidden="true"></span><span class="host">lfpbloomington.org</span></a>
           <p class="desc">Project of the Center for Sustainable Living that runs outdoor Little Free Pantry boxes in Bloomington, Indiana, where anyone can leave or take food and hygiene items.</p>
         </li>
         <li data-name="center for sustainable living" data-desc="bloomington nonprofit that runs community projects including a bike co-op, tool library, little free pantry, redbud books, and solar programs.">
-          <div class="row">
-            <a class="name" href="https://simplycsl.org/" target="_blank" rel="noopener noreferrer">Center for Sustainable Living <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">simplycsl.org</span>
-          </div>
+          <a class="row" href="https://simplycsl.org/" target="_blank" rel="noopener noreferrer"><span class="name">Center for Sustainable Living</span><span class="dots" aria-hidden="true"></span><span class="host">simplycsl.org</span></a>
           <p class="desc">Bloomington nonprofit that runs community projects including a bike co-op, tool library, Little Free Pantry, Redbud Books, and solar programs.</p>
         </li>
         <li data-name="midwest pages to prisoners project" data-desc="all-volunteer group in bloomington, indiana that sends free books to people in prison on request and holds letter-writing sessions in indiana and kentucky.">
-          <div class="row">
-            <a class="name" href="https://pagestoprisoners.org/" target="_blank" rel="noopener noreferrer">Midwest Pages to Prisoners Project <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">pagestoprisoners.org</span>
-          </div>
+          <a class="row" href="https://pagestoprisoners.org/" target="_blank" rel="noopener noreferrer"><span class="name">Midwest Pages to Prisoners Project</span><span class="dots" aria-hidden="true"></span><span class="host">pagestoprisoners.org</span></a>
           <p class="desc">All-volunteer group in Bloomington, Indiana that sends free books to people in prison on request and holds letter-writing sessions in Indiana and Kentucky.</p>
         </li>
         <li data-name="indiana recovery alliance" data-desc="bloomington harm reduction group offering syringe access, naloxone, hiv/hcv testing, wound care, and street outreach for people who use drugs.">
-          <div class="row">
-            <a class="name" href="https://indianarecoveryalliance.org/" target="_blank" rel="noopener noreferrer">Indiana Recovery Alliance <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">indianarecoveryalliance.org</span>
-          </div>
+          <a class="row" href="https://indianarecoveryalliance.org/" target="_blank" rel="noopener noreferrer"><span class="name">Indiana Recovery Alliance</span><span class="dots" aria-hidden="true"></span><span class="host">indianarecoveryalliance.org</span></a>
           <p class="desc">Bloomington harm reduction group offering syringe access, naloxone, HIV/HCV testing, wound care, and street outreach for people who use drugs.</p>
         </li>
         <li data-name="bloomington anarchist black cross" data-desc="an anarchist group focusing on solidarity with anarchist prisoners, prisoners of other liberatory struggles, and individuals engaged in prison rebellion.">
-          <div class="row">
-            <a class="name" href="https://bloomingtonabc.noblogs.org/" target="_blank" rel="noopener noreferrer">Bloomington Anarchist Black Cross <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">bloomingtonabc.noblogs.org</span>
-          </div>
+          <a class="row" href="https://bloomingtonabc.noblogs.org/" target="_blank" rel="noopener noreferrer"><span class="name">Bloomington Anarchist Black Cross</span><span class="dots" aria-hidden="true"></span><span class="host">bloomingtonabc.noblogs.org</span></a>
           <p class="desc">An anarchist group focusing on solidarity with anarchist prisoners, prisoners of other liberatory struggles, and individuals engaged in prison rebellion.</p>
         </li>
         <li data-name="bloomington abc" data-desc="anarchist black cross chapter in bloomington, indiana. sends monthly funds to anarchist prisoners, holds letter-writing nights, and runs the annual bamf alternative media fest as a fundraiser.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/bloomingtonabc/" target="_blank" rel="noopener noreferrer">Bloomington ABC <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/bloomingtonabc/" target="_blank" rel="noopener noreferrer"><span class="name">Bloomington ABC</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Anarchist Black Cross chapter in Bloomington, Indiana. Sends monthly funds to anarchist prisoners, holds letter-writing nights, and runs the annual BAMF alternative media fest as a fundraiser.</p>
         </li>
         <li data-name="bloomington dsa" data-desc="bloomington, indiana chapter of the democratic socialists of america. runs housing, anti-surveillance and know-your-rights work, and hosts candidate forums.">
-          <div class="row">
-            <a class="name" href="https://bloomingtondsa.org/" target="_blank" rel="noopener noreferrer">Bloomington DSA <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">bloomingtondsa.org</span>
-          </div>
+          <a class="row" href="https://bloomingtondsa.org/" target="_blank" rel="noopener noreferrer"><span class="name">Bloomington DSA</span><span class="dots" aria-hidden="true"></span><span class="host">bloomingtondsa.org</span></a>
           <p class="desc">Bloomington, Indiana chapter of the Democratic Socialists of America. Runs housing, anti-surveillance and know-your-rights work, and hosts candidate forums.</p>
         </li>
         <li data-name="exodus refugee immigration bloomington" data-desc="bloomington office of exodus refugee immigration, an indiana refugee resettlement agency. helps newly arrived refugees find housing and jobs and learn english.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/exodus_bloomington/" target="_blank" rel="noopener noreferrer">Exodus Refugee Immigration Bloomington <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/exodus_bloomington/" target="_blank" rel="noopener noreferrer"><span class="name">Exodus Refugee Immigration Bloomington</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Bloomington office of Exodus Refugee Immigration, an Indiana refugee resettlement agency. Helps newly arrived refugees find housing and jobs and learn English.</p>
         </li>
         <li data-name="bloomington wds" data-desc="">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/bton_wds/" target="_blank" rel="noopener noreferrer">Bloomington WDS <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/bton_wds/" target="_blank" rel="noopener noreferrer"><span class="name">Bloomington WDS</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
         </li>
         <li data-name="bloomington not bombs" data-desc="">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/bloomnotbombs/" target="_blank" rel="noopener noreferrer">Bloomington Not Bombs <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/bloomnotbombs/" target="_blank" rel="noopener noreferrer"><span class="name">Bloomington Not Bombs</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
         </li>
       </ol>
     </section>
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -195,8 +133,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

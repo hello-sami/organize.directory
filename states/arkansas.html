@@ -7,8 +7,7 @@
   <title>Arkansas — Organize Directory</title>
   <meta name="description" content="Cities and statewide organizations in Arkansas.">
   <link rel="canonical" href="https://organize.directory/arkansas">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Arkansas — Organize Directory">
@@ -19,171 +18,112 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>Places – Statewide Initiatives</span>
+  <span class="c">White Pages</span>
+  <span class="r">Arkansas</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Arkansas</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Arkansas</h1>
-    <p class="meta">
-      <b>11</b> statewide groups
-    </p>
-  </div>
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter Arkansas</label>
-    <input id="page-filter" type="search" placeholder="Filter Arkansas…" autocomplete="off">
-  </div>
-
-  <div class="layout">
-  <nav class="toc" aria-label="Sections on this page">
-    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
-      <span class="current">
-        <span class="current-label">Section ·</span>
-        <span class="current-name">Places</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div id="toc-panel" class="toc-scroll">
-      <a href="#places" data-section="places"><span class="label">Places</span></a>
-      <a href="#statewide-initiatives" data-section="statewide-initiatives"><span class="label">Statewide Initiatives</span> <span class="count">11</span></a>
+    <p class="meta"><b>11</b> statewide groups</p>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter Arkansas</label>
+      <input id="page-filter" type="search" placeholder="Filter Arkansas" autocomplete="off">
     </div>
-  </nav>
-    <div class="main-col">
+  </div>
 
+  <div class="spread">
+    <nav class="thumbs" aria-label="Sections on this page">
+      <a href="#places" data-section="places"><span class="notch" aria-hidden="true"></span><span class="lbl">Places</span></a>
+      <a href="#statewide-initiatives" data-section="statewide-initiatives"><span class="notch" aria-hidden="true"></span><span class="lbl">Statewide Initiatives</span><span class="k">11</span></a>
+    </nav>
+    <div class="main-col">
       <div id="sections-root">
-    <section id="places" class="group-section" data-section="places">
-      <h2 class="section-title">Places</h2>
-      <ol class="groups children-list">
-        <li data-name="central arkansas" data-desc=""><a class="name" href="/central-ar">Central Arkansas</a></li>
-        <li data-name="hot springs" data-desc=""><a class="name" href="/hot-springs">Hot Springs</a></li>
-        <li data-name="little rock" data-desc=""><a class="name" href="/little-rock">Little Rock</a></li>
-        <li data-name="northeast arkansas" data-desc=""><a class="name" href="/ne-ar">Northeast Arkansas</a></li>
-        <li data-name="northwest arkansas" data-desc=""><a class="name" href="/nw-ar">Northwest Arkansas</a></li>
+    <section id="places" class="group-section" data-section="places" data-title="Places">
+      <h2 class="hd"><span>Places</span></h2>
+      <ol class="index-list">
+        <li data-name="central arkansas" data-desc=""><a href="/central-ar"><span class="n">Central Arkansas</span></a></li>
+        <li data-name="hot springs" data-desc=""><a href="/hot-springs"><span class="n">Hot Springs</span></a></li>
+        <li data-name="little rock" data-desc=""><a href="/little-rock"><span class="n">Little Rock</span></a></li>
+        <li data-name="northeast arkansas" data-desc=""><a href="/ne-ar"><span class="n">Northeast Arkansas</span></a></li>
+        <li data-name="northwest arkansas" data-desc=""><a href="/nw-ar"><span class="n">Northwest Arkansas</span></a></li>
       </ol>
     </section>
 
-    <section id="statewide-initiatives" class="group-section" data-section="statewide-initiatives">
-      <h2 class="section-title">Statewide Initiatives</h2>
+    <section id="statewide-initiatives" class="group-section" data-section="statewide-initiatives" data-title="Statewide Initiatives">
+      <h2 class="hd"><span>Statewide Initiatives</span><span class="k" aria-hidden="true">11</span></h2>
       <ol class="groups">
         <li data-name="arkansas community advocates" data-desc="a grassroots collective building mutual aid networks and community power across arkansas. they coordinate direct support, resource sharing, and solidarity initiatives while advocating for social justice and community care.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/arkansascommunityadvocates" target="_blank" rel="noopener noreferrer">Arkansas Community Advocates <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/arkansascommunityadvocates" target="_blank" rel="noopener noreferrer"><span class="name">Arkansas Community Advocates</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">A grassroots collective building mutual aid networks and community power across Arkansas. They coordinate direct support, resource sharing, and solidarity initiatives while advocating for social justice and community care.</p>
         </li>
         <li data-name="arkansas justice reform coalition" data-desc="fayetteville-based nonprofit working to end mass incarceration. runs court monitoring, a legal clinic, parole support groups, and the hummingbird project bail fund.">
-          <div class="row">
-            <a class="name" href="https://www.arjusticereform.org/" target="_blank" rel="noopener noreferrer">Arkansas Justice Reform Coalition <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">arjusticereform.org</span>
-          </div>
+          <a class="row" href="https://www.arjusticereform.org/" target="_blank" rel="noopener noreferrer"><span class="name">Arkansas Justice Reform Coalition</span><span class="dots" aria-hidden="true"></span><span class="host">arjusticereform.org</span></a>
           <p class="desc">Fayetteville-based nonprofit working to end mass incarceration. Runs court monitoring, a legal clinic, parole support groups, and the Hummingbird Project bail fund.</p>
         </li>
         <li data-name="taste of olam haba" data-desc="jewish, queer, disabled, feminist collective in little rock, arkansas, that hosts holiday and community events for jewish people in central arkansas.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/tasteofolamhaba" target="_blank" rel="noopener noreferrer">Taste of Olam Haba <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/tasteofolamhaba" target="_blank" rel="noopener noreferrer"><span class="name">Taste of Olam Haba</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Jewish, queer, disabled, feminist collective in Little Rock, Arkansas, that hosts holiday and community events for Jewish people in Central Arkansas.</p>
         </li>
         <li data-name="arkansas community organization" data-desc="a membership group of low- and moderate-income arkansans in little rock and pine bluff that campaigns on healthcare, housing, and wages, and offers eviction defense and free tax prep.">
-          <div class="row">
-            <a class="name" href="https://www.arkansascommunity.org/" target="_blank" rel="noopener noreferrer">Arkansas Community Organization <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">arkansascommunity.org</span>
-          </div>
+          <a class="row" href="https://www.arkansascommunity.org/" target="_blank" rel="noopener noreferrer"><span class="name">Arkansas Community Organization</span><span class="dots" aria-hidden="true"></span><span class="host">arkansascommunity.org</span></a>
           <p class="desc">A membership group of low- and moderate-income Arkansans in Little Rock and Pine Bluff that campaigns on healthcare, housing, and wages, and offers eviction defense and free tax prep.</p>
         </li>
         <li data-name="arkansas disability coalition" data-desc="statewide nonprofit in arkansas giving information, peer support and health-care navigation to people with disabilities and families of children with special health care needs.">
-          <div class="row">
-            <a class="name" href="https://ardisabilitycoalition.org/" target="_blank" rel="noopener noreferrer">Arkansas Disability Coalition <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">ardisabilitycoalition.org</span>
-          </div>
+          <a class="row" href="https://ardisabilitycoalition.org/" target="_blank" rel="noopener noreferrer"><span class="name">Arkansas Disability Coalition</span><span class="dots" aria-hidden="true"></span><span class="host">ardisabilitycoalition.org</span></a>
           <p class="desc">Statewide nonprofit in Arkansas giving information, peer support and health-care navigation to people with disabilities and families of children with special health care needs.</p>
         </li>
         <li data-name="arkansas abortion support network" data-desc="little rock nonprofit that funds abortion care for arkansans traveling out of state, gives out free emergency contraception, and runs the y.o.u. center resource center.">
-          <div class="row">
-            <a class="name" href="https://www.arabortionsupport.org/" target="_blank" rel="noopener noreferrer">Arkansas Abortion Support Network <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">arabortionsupport.org</span>
-          </div>
+          <a class="row" href="https://www.arabortionsupport.org/" target="_blank" rel="noopener noreferrer"><span class="name">Arkansas Abortion Support Network</span><span class="dots" aria-hidden="true"></span><span class="host">arabortionsupport.org</span></a>
           <p class="desc">Little Rock nonprofit that funds abortion care for Arkansans traveling out of state, gives out free emergency contraception, and runs the Y.O.U. Center resource center.</p>
         </li>
         <li data-name="arkansas rapps" data-desc="little rock nonprofit working to end new hiv infections in arkansas, offering prep, at-home testing, telehealth and outreach on sexual health and harm reduction.">
-          <div class="row">
-            <a class="name" href="https://www.arrapps.org/" target="_blank" rel="noopener noreferrer">Arkansas RAPPS <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">arrapps.org</span>
-          </div>
+          <a class="row" href="https://www.arrapps.org/" target="_blank" rel="noopener noreferrer"><span class="name">Arkansas RAPPS</span><span class="dots" aria-hidden="true"></span><span class="host">arrapps.org</span></a>
           <p class="desc">Little Rock nonprofit working to end new HIV infections in Arkansas, offering PrEP, at-home testing, telehealth and outreach on sexual health and harm reduction.</p>
         </li>
         <li data-name="intransitive" data-desc="trans-led advocacy group in arkansas offering voting guidance, protest-rights education and a migra watch program for trans arkansans.">
-          <div class="row">
-            <a class="name" href="https://www.intransitive.org/" target="_blank" rel="noopener noreferrer">Intransitive <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">intransitive.org</span>
-          </div>
+          <a class="row" href="https://www.intransitive.org/" target="_blank" rel="noopener noreferrer"><span class="name">Intransitive</span><span class="dots" aria-hidden="true"></span><span class="host">intransitive.org</span></a>
           <p class="desc">Trans-led advocacy group in Arkansas offering voting guidance, protest-rights education and a Migra Watch program for trans Arkansans.</p>
         </li>
         <li data-name="queer collective of central arkansas" data-desc="queer families and individuals in central arkansas gather through potlucks, support groups, game nights and other social events. membership is by application; based in little rock.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/queercollectivear" target="_blank" rel="noopener noreferrer">Queer Collective of Central Arkansas <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/queercollectivear" target="_blank" rel="noopener noreferrer"><span class="name">Queer Collective of Central Arkansas</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Queer families and individuals in Central Arkansas gather through potlucks, support groups, game nights and other social events. Membership is by application; based in Little Rock.</p>
         </li>
         <li data-name="legal aid of arkansas" data-desc="a non-profit organization providing free legal services to low-income arkansans. they offer legal assistance in civil matters including housing, family law, consumer protection, and public benefits, while working to ensure equal access to justice through advocacy and community education.">
-          <div class="row">
-            <a class="name" href="https://arlegalaid.org/" target="_blank" rel="noopener noreferrer">Legal Aid of Arkansas <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">arlegalaid.org</span>
-          </div>
+          <a class="row" href="https://arlegalaid.org/" target="_blank" rel="noopener noreferrer"><span class="name">Legal Aid of Arkansas</span><span class="dots" aria-hidden="true"></span><span class="host">arlegalaid.org</span></a>
           <p class="desc">A non-profit organization providing free legal services to low-income Arkansans. They offer legal assistance in civil matters including housing, family law, consumer protection, and public benefits, while working to ensure equal access to justice through advocacy and community education.</p>
         </li>
         <li data-name="decarcerate" data-desc="working to affirm human dignity by confronting unjust systems.">
-          <div class="row">
-            <a class="name" href="https://www.decarceratear.org/" target="_blank" rel="noopener noreferrer">DecARcerate <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">decarceratear.org</span>
-          </div>
+          <a class="row" href="https://www.decarceratear.org/" target="_blank" rel="noopener noreferrer"><span class="name">DecARcerate</span><span class="dots" aria-hidden="true"></span><span class="host">decarceratear.org</span></a>
           <p class="desc">Working to affirm human dignity by confronting unjust systems.</p>
         </li>
       </ol>
@@ -191,14 +131,10 @@
         <p class="empty" id="empty-state" hidden>No places or groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -210,8 +146,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

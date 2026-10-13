@@ -8,8 +8,7 @@
   <meta name="description" content="Organizations and resources working to advance tenant rights, affordable housing,
                     and community-controlled housing solutions through collective action and solidarity.">
   <link rel="canonical" href="https://organize.directory/topics/housing-justice">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Housing Justice &amp; Tenant Rights — Organize Directory">
@@ -21,141 +20,95 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="yellow">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location">White Pages</a><a href="/topics" aria-current="page">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location">White Pages</a><a href="/topics" aria-current="page">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>Tenant Rights Organizations – Research &amp; Resources</span>
+  <span class="c">Yellow Pages</span>
+  <span class="r">Housing Justice &amp; Tenant Rights</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/topics">Topics</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Housing Justice &amp; Tenant Rights</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Housing Justice &amp; Tenant Rights</h1>
     <p class="meta"><b>6</b> groups</p>
-  </div>
-
-  <p class="topic-lede">Organizations and resources working to advance tenant rights, affordable housing,
-                    and community-controlled housing solutions through collective action and solidarity.</p>
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Housing Justice &amp; Tenant Rights</label>
-    <input id="page-filter" type="search" placeholder="Filter groups…" autocomplete="off">
-  </div>
-
-  <div class="layout">
-  <nav class="toc" aria-label="Sections on this page">
-    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-panel">
-      <span class="current">
-        <span class="current-label">Section ·</span>
-        <span class="current-name">Tenant Rights Organizations</span>
-      </span>
-      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div id="toc-panel" class="toc-scroll">
-      <a href="#tenant-rights-organizations" data-section="tenant-rights-organizations"><span class="label">Tenant Rights Organizations</span> <span class="count">4</span></a>
-      <a href="#community-controlled-housing-initiatives" data-section="community-controlled-housing-initiatives"><span class="label">Community-Controlled Housing Initiatives</span> <span class="count">1</span></a>
-      <a href="#research-resources" data-section="research-resources"><span class="label">Research &amp; Resources</span> <span class="count">1</span></a>
+    <p class="lede">Organizations and resources working to advance tenant rights, affordable housing, and community-controlled housing solutions through collective action and solidarity.</p>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Housing Justice &amp; Tenant Rights</label>
+      <input id="page-filter" type="search" placeholder="Filter groups" autocomplete="off">
     </div>
-  </nav>
-    <div class="main-col">
+  </div>
 
+  <div class="spread">
+    <nav class="thumbs" aria-label="Sections on this page">
+      <a href="#tenant-rights-organizations" data-section="tenant-rights-organizations"><span class="notch" aria-hidden="true"></span><span class="lbl">Tenant Rights Organizations</span><span class="k">4</span></a>
+      <a href="#community-controlled-housing-initiatives" data-section="community-controlled-housing-initiatives"><span class="notch" aria-hidden="true"></span><span class="lbl">Community-Controlled Housing Initiatives</span><span class="k">1</span></a>
+      <a href="#research-resources" data-section="research-resources"><span class="notch" aria-hidden="true"></span><span class="lbl">Research &amp; Resources</span><span class="k">1</span></a>
+    </nav>
+    <div class="main-col">
       <div id="sections-root">
-    <section id="tenant-rights-organizations" class="group-section" data-section="tenant-rights-organizations">
-      <h2 class="section-title">Tenant Rights Organizations</h2>
+    <section id="tenant-rights-organizations" class="group-section" data-section="tenant-rights-organizations" data-title="Tenant Rights Organizations">
+      <h2 class="hd"><span>Tenant Rights Organizations</span><span class="k" aria-hidden="true">4</span></h2>
       <ol class="groups">
         <li data-name="tenants together" data-desc="statewide coalition of local tenant organizations dedicated to defending and advancing the rights of california tenants through education, organizing, and advocacy.">
-          <div class="row">
-            <a class="name" href="https://www.tenantstogether.org/" target="_blank" rel="noopener noreferrer">Tenants Together <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">tenantstogether.org</span>
-          </div>
+          <a class="row" href="https://www.tenantstogether.org/" target="_blank" rel="noopener noreferrer"><span class="name">Tenants Together</span><span class="dots" aria-hidden="true"></span><span class="host">tenantstogether.org</span></a>
           <p class="desc">Statewide coalition of local tenant organizations dedicated to defending and advancing the rights of California tenants through education, organizing, and advocacy.</p>
         </li>
         <li data-name="right to counsel nyc" data-desc="coalition that won the first right to counsel for tenants facing eviction in the nation, ensuring legal representation for low-income tenants in housing court.">
-          <div class="row">
-            <a class="name" href="https://www.righttocounselnyc.org/" target="_blank" rel="noopener noreferrer">Right to Counsel NYC <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">righttocounselnyc.org</span>
-          </div>
+          <a class="row" href="https://www.righttocounselnyc.org/" target="_blank" rel="noopener noreferrer"><span class="name">Right to Counsel NYC</span><span class="dots" aria-hidden="true"></span><span class="host">righttocounselnyc.org</span></a>
           <p class="desc">Coalition that won the first right to counsel for tenants facing eviction in the nation, ensuring legal representation for low-income tenants in housing court.</p>
         </li>
         <li data-name="autonomous tenants union network" data-desc="a north american collaborative of tenant unions committed to building tenant power through direct action, mutual support, and democratic organizing principles.">
-          <div class="row">
-            <a class="name" href="https://atun-rsia.org/" target="_blank" rel="noopener noreferrer">Autonomous Tenants Union Network <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">atun-rsia.org</span>
-          </div>
+          <a class="row" href="https://atun-rsia.org/" target="_blank" rel="noopener noreferrer"><span class="name">Autonomous Tenants Union Network</span><span class="dots" aria-hidden="true"></span><span class="host">atun-rsia.org</span></a>
           <p class="desc">A North American collaborative of tenant unions committed to building tenant power through direct action, mutual support, and democratic organizing principles.</p>
         </li>
         <li data-name="renters rising" data-desc="a national alliance of renters working to shift the balance of power between renters and corporate landlords to guarantee that renters are able to live with dignity and security in their homes.">
-          <div class="row">
-            <a class="name" href="https://www.renters-rising.org/" target="_blank" rel="noopener noreferrer">Renters Rising <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">renters-rising.org</span>
-          </div>
+          <a class="row" href="https://www.renters-rising.org/" target="_blank" rel="noopener noreferrer"><span class="name">Renters Rising</span><span class="dots" aria-hidden="true"></span><span class="host">renters-rising.org</span></a>
           <p class="desc">A national alliance of renters working to shift the balance of power between renters and corporate landlords to guarantee that renters are able to live with dignity and security in their homes.</p>
         </li>
       </ol>
     </section>
 
-    <section id="community-controlled-housing-initiatives" class="group-section" data-section="community-controlled-housing-initiatives">
-      <h2 class="section-title">Community-Controlled Housing Initiatives</h2>
+    <section id="community-controlled-housing-initiatives" class="group-section" data-section="community-controlled-housing-initiatives" data-title="Community-Controlled Housing Initiatives">
+      <h2 class="hd"><span>Community-Controlled Housing Initiatives</span><span class="k" aria-hidden="true">1</span></h2>
       <ol class="groups">
         <li data-name="housing not profit" data-desc="coalition working to keep housing in community hands through community land trusts and housing cooperatives, building alternatives to the for-profit housing model.">
-          <div class="row">
-            <a class="name" href="https://housingnotprofit.org/" target="_blank" rel="noopener noreferrer">Housing Not Profit <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">housingnotprofit.org</span>
-          </div>
+          <a class="row" href="https://housingnotprofit.org/" target="_blank" rel="noopener noreferrer"><span class="name">Housing Not Profit</span><span class="dots" aria-hidden="true"></span><span class="host">housingnotprofit.org</span></a>
           <p class="desc">Coalition working to keep housing in community hands through community land trusts and housing cooperatives, building alternatives to the for-profit housing model.</p>
         </li>
       </ol>
     </section>
 
-    <section id="research-resources" class="group-section" data-section="research-resources">
-      <h2 class="section-title">Research &amp; Resources</h2>
+    <section id="research-resources" class="group-section" data-section="research-resources" data-title="Research &amp; Resources">
+      <h2 class="hd"><span>Research &amp; Resources</span><span class="k" aria-hidden="true">1</span></h2>
       <ol class="groups">
         <li data-name="urban displacement project" data-desc="a uc berkeley and university of toronto research project that maps gentrification, displacement and eviction risk and studies which anti-displacement policies work.">
-          <div class="row">
-            <a class="name" href="https://www.urbandisplacement.org/" target="_blank" rel="noopener noreferrer">Urban Displacement Project <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">urbandisplacement.org</span>
-          </div>
+          <a class="row" href="https://www.urbandisplacement.org/" target="_blank" rel="noopener noreferrer"><span class="name">Urban Displacement Project</span><span class="dots" aria-hidden="true"></span><span class="host">urbandisplacement.org</span></a>
           <p class="desc">A UC Berkeley and University of Toronto research project that maps gentrification, displacement and eviction risk and studies which anti-displacement policies work.</p>
         </li>
       </ol>
@@ -163,14 +116,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -182,8 +131,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

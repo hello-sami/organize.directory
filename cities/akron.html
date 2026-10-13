@@ -7,8 +7,7 @@
   <title>Akron, OH — Organize Directory</title>
   <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Akron, OH.">
   <link rel="canonical" href="https://organize.directory/akron">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Akron, OH — Organize Directory">
@@ -19,236 +18,146 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide></span>
+  <span class="c">White Pages</span>
+  <span class="r">Akron, OH, Ohio</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/ohio">Ohio</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Akron, OH</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Akron, OH</h1>
-    <p class="meta">
-      <b>23</b> groups
-      <span class="sep" aria-hidden="true">·</span>
-      Ohio
-    </p>
+    <div class="meta"><b>23</b> groups. <nav aria-label="Breadcrumb">Part of <a href="/ohio">Ohio</a>.</nav></div>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Akron, OH</label>
+      <input id="page-filter" type="search" placeholder="Filter groups in Akron, OH" autocomplete="off">
+    </div>
   </div>
 
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Akron, OH</label>
-    <input id="page-filter" type="search" placeholder="Filter groups in Akron, OH…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="section-0" class="group-section" data-section="section-0">
+    <section id="section-0" class="group-section" data-section="section-0" data-title="">
       <ol class="groups">
         <li data-name="margie's hope" data-desc="margie's hope assists transgender, non-binary and gender expansive individuals in need.">
-          <div class="row">
-            <a class="name" href="https://www.margieshope.org/" target="_blank" rel="noopener noreferrer">Margie's Hope <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">margieshope.org</span>
-          </div>
+          <a class="row" href="https://www.margieshope.org/" target="_blank" rel="noopener noreferrer"><span class="name">Margie's Hope</span><span class="dots" aria-hidden="true"></span><span class="host">margieshope.org</span></a>
           <p class="desc">Margie's Hope assists transgender, non-binary and gender expansive individuals in need.</p>
         </li>
         <li data-name="meta center" data-desc="meta center inc. is an akron-based 501(3) organization that creates regular programming for transgender and gender non-conforming youth ages 7-19.">
-          <div class="row">
-            <a class="name" href="https://metacenterinc.org/" target="_blank" rel="noopener noreferrer">Meta Center <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">metacenterinc.org</span>
-          </div>
+          <a class="row" href="https://metacenterinc.org/" target="_blank" rel="noopener noreferrer"><span class="name">Meta Center</span><span class="dots" aria-hidden="true"></span><span class="host">metacenterinc.org</span></a>
           <p class="desc">META Center Inc. is an Akron-based 501(3) organization that creates regular programming for transgender and gender non-conforming youth ages 7-19.</p>
         </li>
         <li data-name="akron food not bombs" data-desc="we distribute meals every sunday to those who need them. currently serving at grace park in akron.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/FNBAkron/" target="_blank" rel="noopener noreferrer">Akron Food Not Bombs <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/FNBAkron/" target="_blank" rel="noopener noreferrer"><span class="name">Akron Food Not Bombs</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">We distribute meals every Sunday to those who need them. Currently serving at Grace Park in Akron.</p>
         </li>
         <li data-name="canton food not bombs" data-desc="food not bombs is an organization that shares food with those who need it.">
-          <div class="row">
-            <a class="name" href="https://cantonfnb.com/" target="_blank" rel="noopener noreferrer">Canton Food Not Bombs <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">cantonfnb.com</span>
-          </div>
+          <a class="row" href="https://cantonfnb.com/" target="_blank" rel="noopener noreferrer"><span class="name">Canton Food Not Bombs</span><span class="dots" aria-hidden="true"></span><span class="host">cantonfnb.com</span></a>
           <p class="desc">Food Not Bombs is an organization that shares food with those who need it.</p>
         </li>
         <li data-name="everyone deserves to eat" data-desc="mutual aid and food distros in akron and loveland">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/EveryoneDeserves2Eat/" target="_blank" rel="noopener noreferrer">Everyone Deserves to Eat <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/EveryoneDeserves2Eat/" target="_blank" rel="noopener noreferrer"><span class="name">Everyone Deserves to Eat</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">Mutual aid and food distros in Akron and Loveland</p>
         </li>
         <li data-name="freedom taillight
               project" data-desc="freedom taillight project hosts monthly taillight repair/replacement clinics in akron, oh.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/people/Freedom-Taillight-Project/100084313103423/" target="_blank" rel="noopener noreferrer">Freedom Taillight
-              Project <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/people/Freedom-Taillight-Project/100084313103423/" target="_blank" rel="noopener noreferrer"><span class="name">Freedom Taillight
+              Project</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">Freedom Taillight Project hosts monthly taillight repair/replacement clinics in Akron, OH.</p>
         </li>
         <li data-name="trans joy akron" data-desc="all-volunteer nonprofit in akron, oh that hosts monthly meetups, events like trans day of visibility and trans pride at the park, and educational programs for the trans+ community.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/transjoyakron/" target="_blank" rel="noopener noreferrer">Trans Joy Akron <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/transjoyakron/" target="_blank" rel="noopener noreferrer"><span class="name">Trans Joy Akron</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">All-volunteer nonprofit in Akron, OH that hosts monthly meetups, events like Trans Day of Visibility and Trans Pride at the Park, and educational programs for the trans+ community.</p>
         </li>
         <li data-name="akron palestine solidarity collective" data-desc="akron, oh coalition of groups that pushes summit county to end investments in israel bonds, and holds protests and a lecture series on palestine.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/akron.palestine/" target="_blank" rel="noopener noreferrer">Akron Palestine Solidarity Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/akron.palestine/" target="_blank" rel="noopener noreferrer"><span class="name">Akron Palestine Solidarity Collective</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Akron, OH coalition of groups that pushes Summit County to end investments in Israel Bonds, and holds protests and a lecture series on Palestine.</p>
         </li>
         <li data-name="akron ice watch" data-desc="coalition of akron groups, including local dsa, psl and indivisible members, that runs know-your-rights trainings, hands out whistle kits and runs a hotline for reporting ice sightings.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/akronicewatch/" target="_blank" rel="noopener noreferrer">Akron ICE Watch <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/akronicewatch/" target="_blank" rel="noopener noreferrer"><span class="name">Akron ICE Watch</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Coalition of Akron groups, including local DSA, PSL and Indivisible members, that runs know-your-rights trainings, hands out whistle kits and runs a hotline for reporting ICE sightings.</p>
         </li>
         <li data-name="akron bail fund" data-desc="abolitionist bail fund in akron, formed in 2022 after jayland walker protest arrests. pays bail, runs a court watch, and won a 2024 settlement on police handling of protests.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/akron_bail_fund/" target="_blank" rel="noopener noreferrer">Akron Bail Fund <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/akron_bail_fund/" target="_blank" rel="noopener noreferrer"><span class="name">Akron Bail Fund</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Abolitionist bail fund in Akron, formed in 2022 after Jayland Walker protest arrests. Pays bail, runs a court watch, and won a 2024 settlement on police handling of protests.</p>
         </li>
         <li data-name="the big love network" data-desc="akron network of organizers, artists and health practitioners working on environmental justice, neighbor-led placemaking and sustainability. produces the annual big love festival and akron city repair.">
-          <div class="row">
-            <a class="name" href="https://biglovenetwork.us/" target="_blank" rel="noopener noreferrer">The Big Love Network <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">biglovenetwork.us</span>
-          </div>
+          <a class="row" href="https://biglovenetwork.us/" target="_blank" rel="noopener noreferrer"><span class="name">The Big Love Network</span><span class="dots" aria-hidden="true"></span><span class="host">biglovenetwork.us</span></a>
           <p class="desc">Akron network of organizers, artists and health practitioners working on environmental justice, neighbor-led placemaking and sustainability. Produces the annual Big Love festival and Akron City Repair.</p>
         </li>
         <li data-name="serve the people akron" data-desc="mutual aid group in akron that supports unhoused people and other struggling residents, and takes mutual aid requests through the ice coalition form.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/servethepeopleakron/" target="_blank" rel="noopener noreferrer">Serve The People Akron <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/servethepeopleakron/" target="_blank" rel="noopener noreferrer"><span class="name">Serve The People Akron</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Mutual aid group in Akron that supports unhoused people and other struggling residents, and takes mutual aid requests through the ICE coalition form.</p>
         </li>
         <li data-name="psl akron" data-desc="akron unit of the party for socialism and liberation northeast ohio, a socialist party. organizes local campaigns and protests.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/pslakron/" target="_blank" rel="noopener noreferrer">PSL Akron <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/pslakron/" target="_blank" rel="noopener noreferrer"><span class="name">PSL Akron</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Akron unit of the Party for Socialism and Liberation Northeast Ohio, a socialist party. Organizes local campaigns and protests.</p>
         </li>
         <li data-name="people feeding people" data-desc="free mobile grocery distribution from a box truck every other wednesday around akron and summit county, working with the akron-canton regional foodbank. started after 2022 protests.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/pfpakron/" target="_blank" rel="noopener noreferrer">People Feeding People <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/pfpakron/" target="_blank" rel="noopener noreferrer"><span class="name">People Feeding People</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Free mobile grocery distribution from a box truck every other Wednesday around Akron and Summit County, working with the Akron-Canton Regional Foodbank. Started after 2022 protests.</p>
         </li>
         <li data-name="pink pistol akron" data-desc="akron chapter of the pink pistols, an lgbtq gun-rights group. holds firearm safety and range meetups for lgbtq people.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/pinkpistolakron/" target="_blank" rel="noopener noreferrer">Pink Pistol Akron <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/pinkpistolakron/" target="_blank" rel="noopener noreferrer"><span class="name">Pink Pistol Akron</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Akron chapter of the Pink Pistols, an LGBTQ gun-rights group. Holds firearm safety and range meetups for LGBTQ people.</p>
         </li>
         <li data-name="civic saturday akron" data-desc="neighborhood gatherings in akron, started in 2024 in highland square, that focus on civic life and local democracy. based on the citizen university civic saturday model, with music and local organizations.">
-          <div class="row">
-            <a class="name" href="https://civicsaturdayakron.org/" target="_blank" rel="noopener noreferrer">Civic Saturday Akron <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">civicsaturdayakron.org</span>
-          </div>
+          <a class="row" href="https://civicsaturdayakron.org/" target="_blank" rel="noopener noreferrer"><span class="name">Civic Saturday Akron</span><span class="dots" aria-hidden="true"></span><span class="host">civicsaturdayakron.org</span></a>
           <p class="desc">Neighborhood gatherings in Akron, started in 2024 in Highland Square, that focus on civic life and local democracy. Based on the Citizen University Civic Saturday model, with music and local organizations.</p>
         </li>
         <li data-name="akron dsa" data-desc="local akron chapter of the democratic socialists of america, with nearly 200 members. does political education and local campaign work, such as opposing a fracking proposal.">
-          <div class="row">
-            <a class="name" href="https://www.akrondsa.org/" target="_blank" rel="noopener noreferrer">Akron DSA <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">akrondsa.org</span>
-          </div>
+          <a class="row" href="https://www.akrondsa.org/" target="_blank" rel="noopener noreferrer"><span class="name">Akron DSA</span><span class="dots" aria-hidden="true"></span><span class="host">akrondsa.org</span></a>
           <p class="desc">Local Akron chapter of the Democratic Socialists of America, with nearly 200 members. Does political education and local campaign work, such as opposing a fracking proposal.</p>
         </li>
         <li data-name="akron aids collaborative" data-desc="akron nonprofit, formed in 2000, that works on hiv/aids prevention and services for people of color. it runs the bayard rustin lgbtq+ resource center.">
-          <div class="row">
-            <a class="name" href="https://ohioaac.org" target="_blank" rel="noopener noreferrer">Akron AIDS Collaborative <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">ohioaac.org</span>
-          </div>
+          <a class="row" href="https://ohioaac.org" target="_blank" rel="noopener noreferrer"><span class="name">Akron AIDS Collaborative</span><span class="dots" aria-hidden="true"></span><span class="host">ohioaac.org</span></a>
           <p class="desc">Akron nonprofit, formed in 2000, that works on HIV/AIDS prevention and services for people of color. It runs the Bayard Rustin LGBTQ+ Resource Center.</p>
         </li>
         <li data-name="akron 50501" data-desc="akron chapter of the 50501 movement, which organizes protests against the trump administration in akron, including local hands off and no kings rallies.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/akron_50501/" target="_blank" rel="noopener noreferrer">Akron 50501 <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/akron_50501/" target="_blank" rel="noopener noreferrer"><span class="name">Akron 50501</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Akron chapter of the 50501 movement, which organizes protests against the Trump administration in Akron, including local Hands Off and No Kings rallies.</p>
         </li>
         <li data-name="ua students for justice in palestine" data-desc="student group at the university of akron that advocates for palestinian freedom and equality and holds events such as a palestinian culture night.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/sjpakron/" target="_blank" rel="noopener noreferrer">UA Students for Justice in Palestine <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/sjpakron/" target="_blank" rel="noopener noreferrer"><span class="name">UA Students for Justice in Palestine</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Student group at the University of Akron that advocates for Palestinian freedom and equality and holds events such as a Palestinian Culture Night.</p>
         </li>
         <li data-name="indivisible akron" data-desc="volunteer-run indivisible group in akron that holds monthly meetings, canvasses voters, and holds elected officials accountable.">
-          <div class="row">
-            <a class="name" href="https://indivisibleakron.org/" target="_blank" rel="noopener noreferrer">Indivisible Akron <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">indivisibleakron.org</span>
-          </div>
+          <a class="row" href="https://indivisibleakron.org/" target="_blank" rel="noopener noreferrer"><span class="name">Indivisible Akron</span><span class="dots" aria-hidden="true"></span><span class="host">indivisibleakron.org</span></a>
           <p class="desc">Volunteer-run Indivisible group in Akron that holds monthly meetings, canvasses voters, and holds elected officials accountable.</p>
         </li>
         <li data-name="indigenous akron" data-desc="">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/indigenous_akron/" target="_blank" rel="noopener noreferrer">Indigenous Akron <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/indigenous_akron/" target="_blank" rel="noopener noreferrer"><span class="name">Indigenous Akron</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
         </li>
         <li data-name="stow collaboration for change" data-desc="advocacy group founded in 2020 in stow and munroe falls, oh (near akron), working on public schools, local politics, racial equity and lgbtq+ rights.">
-          <div class="row">
-            <a class="name" href="https://sc4c.org/" target="_blank" rel="noopener noreferrer">Stow Collaboration for Change <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">sc4c.org</span>
-          </div>
+          <a class="row" href="https://sc4c.org/" target="_blank" rel="noopener noreferrer"><span class="name">Stow Collaboration for Change</span><span class="dots" aria-hidden="true"></span><span class="host">sc4c.org</span></a>
           <p class="desc">Advocacy group founded in 2020 in Stow and Munroe Falls, OH (near Akron), working on public schools, local politics, racial equity and LGBTQ+ rights.</p>
         </li>
       </ol>
@@ -256,14 +165,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -275,8 +180,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

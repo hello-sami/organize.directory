@@ -8,8 +8,7 @@
   <meta name="description" content="Organizations and resources focused on racial equity, anti-racism, and supporting
                     communities of color through mutual aid, solidarity, and collective action.">
   <link rel="canonical" href="https://organize.directory/topics/racial-justice">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Racial Justice Resources &amp; Support — Organize Directory">
@@ -21,146 +20,97 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="yellow">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location">White Pages</a><a href="/topics" aria-current="page">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location">White Pages</a><a href="/topics" aria-current="page">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide>National Organizations</span>
+  <span class="c">Yellow Pages</span>
+  <span class="r">Racial Justice Resources &amp; Support</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/topics">Topics</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Racial Justice Resources &amp; Support</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Racial Justice Resources &amp; Support</h1>
     <p class="meta"><b>10</b> groups</p>
+    <p class="lede">Organizations and resources focused on racial equity, anti-racism, and supporting communities of color through mutual aid, solidarity, and collective action.</p>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Racial Justice Resources &amp; Support</label>
+      <input id="page-filter" type="search" placeholder="Filter groups" autocomplete="off">
+    </div>
   </div>
 
-  <p class="topic-lede">Organizations and resources focused on racial equity, anti-racism, and supporting
-                    communities of color through mutual aid, solidarity, and collective action.</p>
-
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Racial Justice Resources &amp; Support</label>
-    <input id="page-filter" type="search" placeholder="Filter groups…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="national-organizations" class="group-section" data-section="national-organizations">
-      <h2 class="section-title">National Organizations</h2>
+    <section id="national-organizations" class="group-section" data-section="national-organizations" data-title="National Organizations">
+      <h2 class="hd"><span>National Organizations</span><span class="k" aria-hidden="true">10</span></h2>
       <ol class="groups">
         <li data-name="spirit of mandela" data-desc="coalition founded in 2018 by black liberation organizers and former political prisoners. it documents us human rights abuses, held a 2021 international tribunal, and runs the peoples' senate network.">
-          <div class="row">
-            <a class="name" href="https://spiritofmandela.org/" target="_blank" rel="noopener noreferrer">Spirit of Mandela <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">spiritofmandela.org</span>
-          </div>
+          <a class="row" href="https://spiritofmandela.org/" target="_blank" rel="noopener noreferrer"><span class="name">Spirit of Mandela</span><span class="dots" aria-hidden="true"></span><span class="host">spiritofmandela.org</span></a>
           <p class="desc">Coalition founded in 2018 by Black liberation organizers and former political prisoners. It documents US human rights abuses, held a 2021 international tribunal, and runs the Peoples' Senate network.</p>
         </li>
         <li data-name="showing up for racial justice (surj)" data-desc="national network of white people organizing for racial and economic justice through local chapters, campaigns, trainings and webinars.">
-          <div class="row">
-            <a class="name" href="https://surj.org/" target="_blank" rel="noopener noreferrer">Showing Up for Racial Justice (SURJ) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">surj.org</span>
-          </div>
+          <a class="row" href="https://surj.org/" target="_blank" rel="noopener noreferrer"><span class="name">Showing Up for Racial Justice (SURJ)</span><span class="dots" aria-hidden="true"></span><span class="host">surj.org</span></a>
           <p class="desc">National network of white people organizing for racial and economic justice through local chapters, campaigns, trainings and webinars.</p>
         </li>
         <li data-name="catalyst project" data-desc="trains and mentors white activists and majority-white groups to do anti-racist organizing, including through its anne braden program. started in the bay area.">
-          <div class="row">
-            <a class="name" href="https://collectiveliberation.org/" target="_blank" rel="noopener noreferrer">Catalyst Project <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">collectiveliberation.org</span>
-          </div>
+          <a class="row" href="https://collectiveliberation.org/" target="_blank" rel="noopener noreferrer"><span class="name">Catalyst Project</span><span class="dots" aria-hidden="true"></span><span class="host">collectiveliberation.org</span></a>
           <p class="desc">Trains and mentors white activists and majority-white groups to do anti-racist organizing, including through its Anne Braden Program. Started in the Bay Area.</p>
         </li>
         <li data-name="white coats 4 black lives" data-desc="a national network of medical students and healthcare workers, with chapters at health-sciences schools, that organizes against racism in medicine and healthcare.">
-          <div class="row">
-            <a class="name" href="https://whitecoats4blacklives.org/" target="_blank" rel="noopener noreferrer">White Coats 4 Black Lives <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">whitecoats4blacklives.org</span>
-          </div>
+          <a class="row" href="https://whitecoats4blacklives.org/" target="_blank" rel="noopener noreferrer"><span class="name">White Coats 4 Black Lives</span><span class="dots" aria-hidden="true"></span><span class="host">whitecoats4blacklives.org</span></a>
           <p class="desc">A national network of medical students and healthcare workers, with chapters at health-sciences schools, that organizes against racism in medicine and healthcare.</p>
         </li>
         <li data-name="black alliance for peace" data-desc="anti-war, anti-imperialist organization rooted in the black radical tradition. it campaigns against us militarization, including africom, and publishes news bulletins.">
-          <div class="row">
-            <a class="name" href="https://blackallianceforpeace.com/" target="_blank" rel="noopener noreferrer">Black Alliance for Peace <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">blackallianceforpeace.com</span>
-          </div>
+          <a class="row" href="https://blackallianceforpeace.com/" target="_blank" rel="noopener noreferrer"><span class="name">Black Alliance for Peace</span><span class="dots" aria-hidden="true"></span><span class="host">blackallianceforpeace.com</span></a>
           <p class="desc">Anti-war, anti-imperialist organization rooted in the Black radical tradition. It campaigns against US militarization, including AFRICOM, and publishes news bulletins.</p>
         </li>
         <li data-name="presente.org" data-desc="national online organizing group for latinx communities. runs petitions and campaigns on immigration, climate, policing, and demilitarization of the border.">
-          <div class="row">
-            <a class="name" href="https://presente.org/" target="_blank" rel="noopener noreferrer">Presente.org <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">presente.org</span>
-          </div>
+          <a class="row" href="https://presente.org/" target="_blank" rel="noopener noreferrer"><span class="name">Presente.org</span><span class="dots" aria-hidden="true"></span><span class="host">presente.org</span></a>
           <p class="desc">National online organizing group for Latinx communities. Runs petitions and campaigns on immigration, climate, policing, and demilitarization of the border.</p>
         </li>
         <li data-name="american-arab anti-discrimination committee (adc)" data-desc="national arab american civil rights organization based in washington, dc. provides legal assistance and advocates against discrimination.">
-          <div class="row">
-            <a class="name" href="https://adc.org/" target="_blank" rel="noopener noreferrer">American-Arab Anti-Discrimination Committee (ADC) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">adc.org</span>
-          </div>
+          <a class="row" href="https://adc.org/" target="_blank" rel="noopener noreferrer"><span class="name">American-Arab Anti-Discrimination Committee (ADC)</span><span class="dots" aria-hidden="true"></span><span class="host">adc.org</span></a>
           <p class="desc">National Arab American civil rights organization based in Washington, DC. Provides legal assistance and advocates against discrimination.</p>
         </li>
         <li data-name="national alliance against racist &amp; political repression
                             (naarpr)" data-desc="founded in 1973 in chicago to mount organized action against unjust treatment of individuals because of race or political beliefs. has multiple chapters across the us.">
-          <div class="row">
-            <a class="name" href="https://naarpr.org/" target="_blank" rel="noopener noreferrer">National Alliance Against Racist &amp; Political Repression
-                            (NAARPR) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">naarpr.org</span>
-          </div>
+          <a class="row" href="https://naarpr.org/" target="_blank" rel="noopener noreferrer"><span class="name">National Alliance Against Racist &amp; Political Repression
+                            (NAARPR)</span><span class="dots" aria-hidden="true"></span><span class="host">naarpr.org</span></a>
           <p class="desc">Founded in 1973 in Chicago to mount organized action against unjust treatment of individuals because of race or political beliefs. Has multiple chapters across the US.</p>
         </li>
         <li data-name="byp100" data-desc="byp100 is national, member-based organization of black 18-35 year old activists and organizers, dedicated to creating justice and freedom for all black people. we do this through building a network focused on transformative leadership development, direct action organizing, advocacy, and political education using a black queer feminist lens.">
-          <div class="row">
-            <a class="name" href="https://www.byp100.org/" target="_blank" rel="noopener noreferrer">BYP100 <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">byp100.org</span>
-          </div>
+          <a class="row" href="https://www.byp100.org/" target="_blank" rel="noopener noreferrer"><span class="name">BYP100</span><span class="dots" aria-hidden="true"></span><span class="host">byp100.org</span></a>
           <p class="desc">BYP100 is National, member-based organization of Black 18-35 year old activists and organizers, dedicated to creating justice and freedom for all Black people. We do this through building a network focused on transformative leadership development, direct action organizing, advocacy, and political education using a Black queer feminist lens.</p>
         </li>
         <li data-name="turpin cares" data-desc="runs a twice-monthly free store, a pantry box and care packages with food and hygiene supplies for people in need in beverly/morgan park on chicago's south side.">
-          <div class="row">
-            <a class="name" href="https://www.turpincares.org/" target="_blank" rel="noopener noreferrer">Turpin Cares <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">turpincares.org</span>
-          </div>
+          <a class="row" href="https://www.turpincares.org/" target="_blank" rel="noopener noreferrer"><span class="name">Turpin Cares</span><span class="dots" aria-hidden="true"></span><span class="host">turpincares.org</span></a>
           <p class="desc">Runs a twice-monthly free store, a pantry box and care packages with food and hygiene supplies for people in need in Beverly/Morgan Park on Chicago's south side.</p>
         </li>
       </ol>
@@ -168,14 +118,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -187,8 +133,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

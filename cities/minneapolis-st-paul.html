@@ -7,8 +7,7 @@
   <title>Minneapolis / St. Paul — Organize Directory</title>
   <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Minneapolis / St. Paul.">
   <link rel="canonical" href="https://organize.directory/minneapolis-st-paul">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Minneapolis / St. Paul — Organize Directory">
@@ -19,337 +18,205 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide></span>
+  <span class="c">White Pages</span>
+  <span class="r">Minneapolis / St. Paul, Minnesota</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/minnesota">Minnesota</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Minneapolis / St. Paul</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Minneapolis / St. Paul</h1>
-    <p class="meta">
-      <b>37</b> groups
-      <span class="sep" aria-hidden="true">·</span>
-      Minnesota
-    </p>
+    <div class="meta"><b>37</b> groups. <nav aria-label="Breadcrumb">Part of <a href="/minnesota">Minnesota</a>.</nav></div>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Minneapolis / St. Paul</label>
+      <input id="page-filter" type="search" placeholder="Filter groups in Minneapolis / St. Paul" autocomplete="off">
+    </div>
   </div>
 
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Minneapolis / St. Paul</label>
-    <input id="page-filter" type="search" placeholder="Filter groups in Minneapolis / St. Paul…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="section-0" class="group-section" data-section="section-0">
+    <section id="section-0" class="group-section" data-section="section-0" data-title="">
       <ol class="groups">
         <li data-name="communities united against police brutality (cuapb)" data-desc="minneapolis group that supports survivors and families of police violence, runs copwatch and a hotline, raises legal defense funds for activists, and pushes for police accountability.">
-          <div class="row">
-            <a class="name" href="https://www.cuapb.org/" target="_blank" rel="noopener noreferrer">Communities United Against Police Brutality (CUAPB) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">cuapb.org</span>
-          </div>
+          <a class="row" href="https://www.cuapb.org/" target="_blank" rel="noopener noreferrer"><span class="name">Communities United Against Police Brutality (CUAPB)</span><span class="dots" aria-hidden="true"></span><span class="host">cuapb.org</span></a>
           <p class="desc">Minneapolis group that supports survivors and families of police violence, runs copwatch and a hotline, raises legal defense funds for activists, and pushes for police accountability.</p>
         </li>
         <li data-name="families supporting families against police violence" data-desc="support group founded in 2019 by toshira garraway for families who lost loved ones to police violence. organizes marches and events and advocates for policy change in minnesota.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/fsfapv" target="_blank" rel="noopener noreferrer">Families Supporting Families Against Police Violence <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/fsfapv" target="_blank" rel="noopener noreferrer"><span class="name">Families Supporting Families Against Police Violence</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">Support group founded in 2019 by Toshira Garraway for families who lost loved ones to police violence. Organizes marches and events and advocates for policy change in Minnesota.</p>
         </li>
         <li data-name="minnesota justice coalition" data-desc="bloomington, mn nonprofit that helps families affected by police misconduct, runs an expungement clinic, drafts criminal justice legislation, and holds a holiday toy drive.">
-          <div class="row">
-            <a class="name" href="https://www.themjc.org/" target="_blank" rel="noopener noreferrer">Minnesota Justice Coalition <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">themjc.org</span>
-          </div>
+          <a class="row" href="https://www.themjc.org/" target="_blank" rel="noopener noreferrer"><span class="name">Minnesota Justice Coalition</span><span class="dots" aria-hidden="true"></span><span class="host">themjc.org</span></a>
           <p class="desc">Bloomington, MN nonprofit that helps families affected by police misconduct, runs an expungement clinic, drafts criminal justice legislation, and holds a holiday toy drive.</p>
         </li>
         <li data-name="cordale q handy in remembrance of me
               foundation" data-desc="foundation started by kimberly handy-jones after st. paul police killed her son cordale. it pays for headstones and supports families who lost children to police and community violence.">
-          <div class="row">
-            <a class="name" href="https://www.cordaleqhandyinremembranceofme.org/" target="_blank" rel="noopener noreferrer">Cordale Q Handy In Remembrance of Me
-              Foundation <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">cordaleqhandyinremembranceofme.org</span>
-          </div>
+          <a class="row" href="https://www.cordaleqhandyinremembranceofme.org/" target="_blank" rel="noopener noreferrer"><span class="name">Cordale Q Handy In Remembrance of Me
+              Foundation</span><span class="dots" aria-hidden="true"></span><span class="host">cordaleqhandyinremembranceofme.org</span></a>
           <p class="desc">Foundation started by Kimberly Handy-Jones after St. Paul police killed her son Cordale. It pays for headstones and supports families who lost children to police and community violence.</p>
         </li>
         <li data-name="east side freedom library" data-desc="community library and event space at 1105 greenbrier st in st. paul's east side, with programs on labor history, immigrant history, and social justice, plus walking tours and community events.">
-          <div class="row">
-            <a class="name" href="https://eastsidefreedomlibrary.org/" target="_blank" rel="noopener noreferrer">East Side Freedom Library <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">eastsidefreedomlibrary.org</span>
-          </div>
+          <a class="row" href="https://eastsidefreedomlibrary.org/" target="_blank" rel="noopener noreferrer"><span class="name">East Side Freedom Library</span><span class="dots" aria-hidden="true"></span><span class="host">eastsidefreedomlibrary.org</span></a>
           <p class="desc">Community library and event space at 1105 Greenbrier St in St. Paul's East Side, with programs on labor history, immigrant history, and social justice, plus walking tours and community events.</p>
         </li>
         <li data-name="may day books" data-desc="volunteer-run nonprofit leftist bookstore at 301 cedar ave in minneapolis's west bank, open since 1975. it hosts readings, film screenings, and organizing meetings.">
-          <div class="row">
-            <a class="name" href="https://maydaybookstore.org/" target="_blank" rel="noopener noreferrer">May Day Books <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">maydaybookstore.org</span>
-          </div>
+          <a class="row" href="https://maydaybookstore.org/" target="_blank" rel="noopener noreferrer"><span class="name">May Day Books</span><span class="dots" aria-hidden="true"></span><span class="host">maydaybookstore.org</span></a>
           <p class="desc">Volunteer-run nonprofit leftist bookstore at 301 Cedar Ave in Minneapolis's West Bank, open since 1975. It hosts readings, film screenings, and organizing meetings.</p>
         </li>
         <li data-name="birch bark books" data-desc="independent native-owned bookstore in minneapolis's kenwood neighborhood selling indigenous literature, native art, and books on tribal nations and language revitalization.">
-          <div class="row">
-            <a class="name" href="https://birchbarkbooks.com/" target="_blank" rel="noopener noreferrer">Birch Bark Books <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">birchbarkbooks.com</span>
-          </div>
+          <a class="row" href="https://birchbarkbooks.com/" target="_blank" rel="noopener noreferrer"><span class="name">Birch Bark Books</span><span class="dots" aria-hidden="true"></span><span class="host">birchbarkbooks.com</span></a>
           <p class="desc">Independent Native-owned bookstore in Minneapolis's Kenwood neighborhood selling Indigenous literature, Native art, and books on tribal nations and language revitalization.</p>
         </li>
         <li data-name="twin cities encampment responders" data-desc="we are individuals coming together to organize eviction defense, cop watch, &amp; mutual aid for the twin cities encampments">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/tcencampmentresponder/" target="_blank" rel="noopener noreferrer">Twin Cities Encampment Responders <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/tcencampmentresponder/" target="_blank" rel="noopener noreferrer"><span class="name">Twin Cities Encampment Responders</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">We are individuals coming together to organize eviction defense, cop watch, &amp; mutual aid for the Twin Cities encampments</p>
         </li>
         <li data-name="black and pink mpls" data-desc="black &amp; pink mpls works towards prison abolition in mn by providing pen pal matching to lgbtqia2s+ folks on the inside.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/blackandpinkmpls/" target="_blank" rel="noopener noreferrer">Black and Pink MPLS <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/blackandpinkmpls/" target="_blank" rel="noopener noreferrer"><span class="name">Black and Pink MPLS</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Black &amp; Pink MPLS works towards prison abolition in MN by providing pen pal matching to LGBTQIA2S+ folks on the inside.</p>
         </li>
         <li data-name="black garnet books" data-desc="black-owned bookstore on university ave in st. paul's midway area, stocking adult and ya fiction by black and other authors of color, and hosting author and community events.">
-          <div class="row">
-            <a class="name" href="https://www.blackgarnetbooks.com/" target="_blank" rel="noopener noreferrer">Black Garnet Books <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">blackgarnetbooks.com</span>
-          </div>
+          <a class="row" href="https://www.blackgarnetbooks.com/" target="_blank" rel="noopener noreferrer"><span class="name">Black Garnet Books</span><span class="dots" aria-hidden="true"></span><span class="host">blackgarnetbooks.com</span></a>
           <p class="desc">Black-owned bookstore on University Ave in St. Paul's Midway area, stocking adult and YA fiction by Black and other authors of color, and hosting author and community events.</p>
         </li>
         <li data-name="boneshaker books" data-desc="volunteer-run radical bookstore in the wedge/lynlake area of minneapolis, selling leftist books and hosting events. moved to 708 w 26th st in late 2025.">
-          <div class="row">
-            <a class="name" href="https://www.boneshakerbooks.com/" target="_blank" rel="noopener noreferrer">Boneshaker Books <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">boneshakerbooks.com</span>
-          </div>
+          <a class="row" href="https://www.boneshakerbooks.com/" target="_blank" rel="noopener noreferrer"><span class="name">Boneshaker Books</span><span class="dots" aria-hidden="true"></span><span class="host">boneshakerbooks.com</span></a>
           <p class="desc">Volunteer-run radical bookstore in the Wedge/LynLake area of Minneapolis, selling leftist books and hosting events. Moved to 708 W 26th St in late 2025.</p>
         </li>
         <li data-name="blackbird revolt" data-desc="black-owned abolitionist design and video studio in the twin cities that makes graphics for social justice groups and runs its own community projects and shop.">
-          <div class="row">
-            <a class="name" href="https://blackbirdrevolt.com/" target="_blank" rel="noopener noreferrer">Blackbird Revolt <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">blackbirdrevolt.com</span>
-          </div>
+          <a class="row" href="https://blackbirdrevolt.com/" target="_blank" rel="noopener noreferrer"><span class="name">Blackbird Revolt</span><span class="dots" aria-hidden="true"></span><span class="host">blackbirdrevolt.com</span></a>
           <p class="desc">Black-owned abolitionist design and video studio in the Twin Cities that makes graphics for social justice groups and runs its own community projects and shop.</p>
         </li>
         <li data-name="rainbow collective for change" data-desc="twin cities group for lgbtqia+ families with kids ages 0-12. runs playdates, meetups, a summer camp, free inclusive book giveaways, a book bus, and educator training.">
-          <div class="row">
-            <a class="name" href="https://www.rainbowcollectiveforchange.org/" target="_blank" rel="noopener noreferrer">Rainbow Collective for Change <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">rainbowcollectiveforchange.org</span>
-          </div>
+          <a class="row" href="https://www.rainbowcollectiveforchange.org/" target="_blank" rel="noopener noreferrer"><span class="name">Rainbow Collective for Change</span><span class="dots" aria-hidden="true"></span><span class="host">rainbowcollectiveforchange.org</span></a>
           <p class="desc">Twin Cities group for LGBTQIA+ families with kids ages 0-12. Runs playdates, meetups, a summer camp, free inclusive book giveaways, a book bus, and educator training.</p>
         </li>
         <li data-name="tigerrs (transgender, intersex, gender-expansive revolutionary
               resources &amp; services)" data-desc="tigerrs is a nonhierarchical collective dedicated to delivering programs and resources that build solidarity and safety among transgender, intersex and gender-expansive minnesotans.">
-          <div class="row">
-            <a class="name" href="https://tigerrs.org/" target="_blank" rel="noopener noreferrer">TIGERRS (Transgender, Intersex, Gender-Expansive Revolutionary
-              Resources &amp; Services) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">tigerrs.org</span>
-          </div>
+          <a class="row" href="https://tigerrs.org/" target="_blank" rel="noopener noreferrer"><span class="name">TIGERRS (Transgender, Intersex, Gender-Expansive Revolutionary
+              Resources &amp; Services)</span><span class="dots" aria-hidden="true"></span><span class="host">tigerrs.org</span></a>
           <p class="desc">TIGERRS is a nonhierarchical collective dedicated to delivering programs and resources that build solidarity and safety among transgender, intersex and gender-expansive Minnesotans.</p>
         </li>
         <li data-name="minnesot transgender health coalition" data-desc="the minnesota transgender health coalition is committed to improving health care access and the quality of health care received by trans and gender non-conforming people through education, resources, and advocacy.">
-          <div class="row">
-            <a class="name" href="https://www.mntransgenderhealth.org/" target="_blank" rel="noopener noreferrer">Minnesot Transgender Health Coalition <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">mntransgenderhealth.org</span>
-          </div>
+          <a class="row" href="https://www.mntransgenderhealth.org/" target="_blank" rel="noopener noreferrer"><span class="name">Minnesot Transgender Health Coalition</span><span class="dots" aria-hidden="true"></span><span class="host">mntransgenderhealth.org</span></a>
           <p class="desc">The Minnesota Transgender Health Coalition is committed to improving health care access and the quality of health care received by trans and gender non-conforming people through education, resources, and advocacy.</p>
         </li>
         <li data-name="indigenous peoples task force" data-desc="we were founded in 1987 to develop and implement culturally appropriate hiv education and direct services to the native community in minnesota.">
-          <div class="row">
-            <a class="name" href="https://indigenouspeoplestf.org/" target="_blank" rel="noopener noreferrer">Indigenous Peoples Task Force <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">indigenouspeoplestf.org</span>
-          </div>
+          <a class="row" href="https://indigenouspeoplestf.org/" target="_blank" rel="noopener noreferrer"><span class="name">Indigenous Peoples Task Force</span><span class="dots" aria-hidden="true"></span><span class="host">indigenouspeoplestf.org</span></a>
           <p class="desc">We were founded in 1987 to develop and implement culturally appropriate HIV education and direct services to the Native community in Minnesota.</p>
         </li>
         <li data-name="women against military madness (wamm)" data-desc="member-based minneapolis group that opposes u.s. militarism and war. runs campaigns on weapons makers, nuclear weapons and military spending, and holds an annual walk against weapons.">
-          <div class="row">
-            <a class="name" href="https://womenagainstmilitarymadness.org/" target="_blank" rel="noopener noreferrer">Women Against Military Madness (WAMM) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">womenagainstmilitarymadness.org</span>
-          </div>
+          <a class="row" href="https://womenagainstmilitarymadness.org/" target="_blank" rel="noopener noreferrer"><span class="name">Women Against Military Madness (WAMM)</span><span class="dots" aria-hidden="true"></span><span class="host">womenagainstmilitarymadness.org</span></a>
           <p class="desc">Member-based Minneapolis group that opposes U.S. militarism and war. Runs campaigns on weapons makers, nuclear weapons and military spending, and holds an annual Walk Against Weapons.</p>
         </li>
         <li data-name="southside harm reduction services" data-desc="south minneapolis harm reduction group offering naloxone, syringe and safer-use supply delivery, street outreach, and a drop-in center on e franklin ave.">
-          <div class="row">
-            <a class="name" href="https://shrs.org/" target="_blank" rel="noopener noreferrer">Southside Harm Reduction Services <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">shrs.org</span>
-          </div>
+          <a class="row" href="https://shrs.org/" target="_blank" rel="noopener noreferrer"><span class="name">Southside Harm Reduction Services</span><span class="dots" aria-hidden="true"></span><span class="host">shrs.org</span></a>
           <p class="desc">South Minneapolis harm reduction group offering naloxone, syringe and safer-use supply delivery, street outreach, and a drop-in center on E Franklin Ave.</p>
         </li>
         <li data-name="sex workers outreach project (swop) minneapolis" data-desc="volunteer-run, peer-led sex worker collective in minneapolis–st. paul doing outreach with safer-sex supplies and narcan, plus decriminalization advocacy.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/swopmpls/" target="_blank" rel="noopener noreferrer">Sex Workers Outreach Project (SWOP) Minneapolis <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/swopmpls/" target="_blank" rel="noopener noreferrer"><span class="name">Sex Workers Outreach Project (SWOP) Minneapolis</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Volunteer-run, peer-led sex worker collective in Minneapolis–St. Paul doing outreach with safer-sex supplies and Narcan, plus decriminalization advocacy.</p>
         </li>
         <li data-name="racial justice network (rjn)" data-desc="multi-racial twin cities group led by nekima levy-armstrong, with committees on economic justice, criminal justice reform and education justice. does outreach, direct action and press advocacy.">
-          <div class="row">
-            <a class="name" href="https://racialjusticenetwork.com/" target="_blank" rel="noopener noreferrer">Racial Justice Network (RJN) <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">racialjusticenetwork.com</span>
-          </div>
+          <a class="row" href="https://racialjusticenetwork.com/" target="_blank" rel="noopener noreferrer"><span class="name">Racial Justice Network (RJN)</span><span class="dots" aria-hidden="true"></span><span class="host">racialjusticenetwork.com</span></a>
           <p class="desc">Multi-racial Twin Cities group led by Nekima Levy-Armstrong, with committees on economic justice, criminal justice reform and education justice. Does outreach, direct action and press advocacy.</p>
         </li>
         <li data-name="showing up for racial justice (surj) - twin cities" data-desc="twin cities chapter of surj that organizes white people around racial and economic justice. recent work includes ice observation and boycotts of target and home depot.">
-          <div class="row">
-            <a class="name" href="https://www.surjtc.org/" target="_blank" rel="noopener noreferrer">Showing Up for Racial Justice (SURJ) - Twin Cities <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">surjtc.org</span>
-          </div>
+          <a class="row" href="https://www.surjtc.org/" target="_blank" rel="noopener noreferrer"><span class="name">Showing Up for Racial Justice (SURJ) - Twin Cities</span><span class="dots" aria-hidden="true"></span><span class="host">surjtc.org</span></a>
           <p class="desc">Twin Cities chapter of SURJ that organizes white people around racial and economic justice. Recent work includes ICE observation and boycotts of Target and Home Depot.</p>
         </li>
         <li data-name="library patrons union" data-desc="community-run union of hennepin county library patrons that organizes for more just public libraries, including protests over library policing and trespass policies.">
-          <div class="row">
-            <a class="name" href="https://librarypatronsunion.com/" target="_blank" rel="noopener noreferrer">Library Patrons Union <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">librarypatronsunion.com</span>
-          </div>
+          <a class="row" href="https://librarypatronsunion.com/" target="_blank" rel="noopener noreferrer"><span class="name">Library Patrons Union</span><span class="dots" aria-hidden="true"></span><span class="host">librarypatronsunion.com</span></a>
           <p class="desc">Community-run union of Hennepin County Library patrons that organizes for more just public libraries, including protests over library policing and trespass policies.</p>
         </li>
         <li data-name="st. paul mutual aid" data-desc="public facebook group where midway neighbors in st. paul coordinate non-police, non-governmental mutual aid and care. started after george floyd's murder in 2020.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/groups/275202273670126/" target="_blank" rel="noopener noreferrer">St. Paul Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/groups/275202273670126/" target="_blank" rel="noopener noreferrer"><span class="name">St. Paul Mutual Aid</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">Public Facebook group where Midway neighbors in St. Paul coordinate non-police, non-governmental mutual aid and care. Started after George Floyd's murder in 2020.</p>
         </li>
         <li data-name="sanctuary supply depot" data-desc="we are a central hub aimed at facilitating the collection and distribution of basic survival supplies for our unhoused neighbors.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/sanctuarysupplydepot" target="_blank" rel="noopener noreferrer">Sanctuary Supply Depot <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/sanctuarysupplydepot" target="_blank" rel="noopener noreferrer"><span class="name">Sanctuary Supply Depot</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">We are a central hub aimed at facilitating the collection and distribution of basic survival supplies for our unhoused neighbors.</p>
         </li>
         <li data-name="gertrude brown community land trust" data-desc="minneapolis community land trust run by formerly and currently unhoused people, working to buy land for cooperatively run micro-homes for unhoused neighbors.">
-          <div class="row">
-            <a class="name" href="https://gbclt.org/" target="_blank" rel="noopener noreferrer">Gertrude Brown Community Land Trust <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">gbclt.org</span>
-          </div>
+          <a class="row" href="https://gbclt.org/" target="_blank" rel="noopener noreferrer"><span class="name">Gertrude Brown Community Land Trust</span><span class="dots" aria-hidden="true"></span><span class="host">gbclt.org</span></a>
           <p class="desc">Minneapolis community land trust run by formerly and currently unhoused people, working to buy land for cooperatively run micro-homes for unhoused neighbors.</p>
         </li>
         <li data-name="community kitchen mpls" data-desc="minneapolis mutual aid group that cooks and delivers several hundred hot meals a week to unhoused neighbors. volunteers cook on sundays and deliver mondays and tuesdays.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/communitykitchenmpls/" target="_blank" rel="noopener noreferrer">Community Kitchen MPLS <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/communitykitchenmpls/" target="_blank" rel="noopener noreferrer"><span class="name">Community Kitchen MPLS</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Minneapolis mutual aid group that cooks and delivers several hundred hot meals a week to unhoused neighbors. Volunteers cook on Sundays and deliver Mondays and Tuesdays.</p>
         </li>
         <li data-name="spiral collective" data-desc="raising money for lyft rides for abortions and virtual trainings for abortion doulas">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/SPIRAL_MN/" target="_blank" rel="noopener noreferrer">SPIRAL Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/SPIRAL_MN/" target="_blank" rel="noopener noreferrer"><span class="name">SPIRAL Collective</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Raising money for Lyft rides for abortions and virtual trainings for abortion doulas</p>
         </li>
         <li data-name="people's anti-imperialist study &amp; action" data-desc="third-world diasporas in 'mpls/stp' building support for revolutionary struggles/liberation movements in &amp; beyond amerika. hosts film screenings, teach-ins, and art builds against imperialism.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/thirdworldpaisa/" target="_blank" rel="noopener noreferrer">People's Anti-Imperialist Study &amp; Action <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/thirdworldpaisa/" target="_blank" rel="noopener noreferrer"><span class="name">People's Anti-Imperialist Study &amp; Action</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Third-World diasporas in 'mpls/stp' building support for revolutionary struggles/liberation movements in &amp; beyond amerika. Hosts film screenings, teach-ins, and art builds against imperialism.</p>
         </li>
         <li data-name="camp nenookaasi" data-desc="a community based healing camp rooted in native practices &amp; inclusive of all unsheltered relatives">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/campnenookaasi/" target="_blank" rel="noopener noreferrer">Camp Nenookaasi <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/campnenookaasi/" target="_blank" rel="noopener noreferrer"><span class="name">Camp Nenookaasi</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">A community based healing camp rooted in native practices &amp; inclusive of all unsheltered relatives</p>
         </li>
         <li data-name="north star health collective" data-desc="north star is a community health collective focused on providing first aid and emergency care at protests, direct actions, and in moments of general upheaval around the twin cities.">
-          <div class="row">
-            <a class="name" href="https://www.northstarhealthcollective.org/" target="_blank" rel="noopener noreferrer">North Star Health Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">northstarhealthcollective.org</span>
-          </div>
+          <a class="row" href="https://www.northstarhealthcollective.org/" target="_blank" rel="noopener noreferrer"><span class="name">North Star Health Collective</span><span class="dots" aria-hidden="true"></span><span class="host">northstarhealthcollective.org</span></a>
           <p class="desc">North Star is a community health collective focused on providing first aid and emergency care at protests, direct actions, and in moments of general upheaval around the Twin Cities.</p>
         </li>
         <li data-name="twin cities logistics collective" data-desc="tlc currently works in collaboration with multiple community garden and food distribution projects, as well as home gardeners towards building food resiliency in south minneapolis.">
-          <div class="row">
-            <a class="name" href="https://www.twincitieslogistics.org/" target="_blank" rel="noopener noreferrer">Twin Cities Logistics Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">twincitieslogistics.org</span>
-          </div>
+          <a class="row" href="https://www.twincitieslogistics.org/" target="_blank" rel="noopener noreferrer"><span class="name">Twin Cities Logistics Collective</span><span class="dots" aria-hidden="true"></span><span class="host">twincitieslogistics.org</span></a>
           <p class="desc">TLC currently works in collaboration with multiple community garden and food distribution projects, as well as home gardeners towards building food resiliency in South Minneapolis.</p>
         </li>
         <li data-name="southside kwes" data-desc="native women and two-spirit led community based outreach team stoodis">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/southsidekwes/" target="_blank" rel="noopener noreferrer">Southside Kwes <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/southsidekwes/" target="_blank" rel="noopener noreferrer"><span class="name">Southside Kwes</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Native Women and Two-Spirit led community based Outreach team STOODIS</p>
         </li>
         <li data-name="autonomous yurt union - minneapolis" data-desc="autonomous yurt-inspired design builds &amp; deploys in support of unhoused neighbors in the twin cities area">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/ayu_mpls/" target="_blank" rel="noopener noreferrer">Autonomous Yurt Union - Minneapolis <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/ayu_mpls/" target="_blank" rel="noopener noreferrer"><span class="name">Autonomous Yurt Union - Minneapolis</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">Autonomous yurt-inspired design builds &amp; deploys in support of unhoused neighbors in the Twin Cities area</p>
         </li>
         <li data-name="grapevine collective" data-desc="we’re transforming a church building into a healing justice center, supporting survival programs and revolutionary life in south minneapolis.">
-          <div class="row">
-            <a class="name" href="https://grapevinecollective.org/" target="_blank" rel="noopener noreferrer">Grapevine Collective <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">grapevinecollective.org</span>
-          </div>
+          <a class="row" href="https://grapevinecollective.org/" target="_blank" rel="noopener noreferrer"><span class="name">Grapevine Collective</span><span class="dots" aria-hidden="true"></span><span class="host">grapevinecollective.org</span></a>
           <p class="desc">We’re transforming a church building into a healing justice center, supporting survival programs and revolutionary life in South Minneapolis.</p>
         </li>
         <li data-name="autonomous yurt union st. paul" data-desc="autonomous yurt-inspired design builds &amp; deploys in support of unhoused neighbors in st paul">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/ayu_stpaul/" target="_blank" rel="noopener noreferrer">Autonomous Yurt Union St. Paul <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/ayu_stpaul/" target="_blank" rel="noopener noreferrer"><span class="name">Autonomous Yurt Union St. Paul</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">autonomous yurt-inspired design builds &amp; deploys in support of unhoused neighbors in St Paul</p>
         </li>
         <li data-name="north country food alliance" data-desc="worker-run nonprofit in the twin cities that rescues surplus food from farms and grocers for free distribution, and runs community gardens.">
-          <div class="row">
-            <a class="name" href="https://www.ncfa-mn.org/" target="_blank" rel="noopener noreferrer">North Country Food Alliance <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">ncfa-mn.org</span>
-          </div>
+          <a class="row" href="https://www.ncfa-mn.org/" target="_blank" rel="noopener noreferrer"><span class="name">North Country Food Alliance</span><span class="dots" aria-hidden="true"></span><span class="host">ncfa-mn.org</span></a>
           <p class="desc">Worker-run nonprofit in the Twin Cities that rescues surplus food from farms and grocers for free distribution, and runs community gardens.</p>
         </li>
         <li data-name="home base central" data-desc="a collective dedicated to housing justice, support for the unhoused, and mutual aid.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/ThisIsHomeBase/" target="_blank" rel="noopener noreferrer">Home Base Central <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/ThisIsHomeBase/" target="_blank" rel="noopener noreferrer"><span class="name">Home Base Central</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">A collective dedicated to housing justice, support for the unhoused, and mutual aid.</p>
         </li>
       </ol>
@@ -357,14 +224,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -376,8 +239,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>

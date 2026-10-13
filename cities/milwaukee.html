@@ -7,8 +7,7 @@
   <title>Milwaukee, WI — Organize Directory</title>
   <meta name="description" content="Leftist, grassroots, and mutual aid organizations in Milwaukee, WI.">
   <link rel="canonical" href="https://organize.directory/milwaukee">
-  <meta name="theme-color" content="#fce0c8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#15100d" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f1e49b">
 
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="Milwaukee, WI — Organize Directory">
@@ -19,130 +18,85 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Pre-paint theme init (must run before any stylesheet paints) -->
-  <script>
-    (function(){
-      try {
-        var stored = localStorage.getItem('theme');
-        var dark = stored ? stored === 'dark'
-                 : window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.documentElement.classList.add(dark ? 'dark' : 'light');
-      } catch(e) { document.documentElement.classList.add('light'); }
-    })();
-  </script>
-
-  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the primary
-       body weight so text doesn't flash late. -->
-  <link rel="preload" href="/assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- Fonts (self-hosted — see @font-face in system.css). Preload the body
+       weight so text doesn't flash late. -->
+  <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/assets/styles/system.css?v=562718be">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=c74a1e4f">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
 </head>
-<body>
+<body class="white">
 <a href="#main" class="skip">Skip to content</a>
-<header class="mast">
-  <a href="/" class="wordmark" aria-label="Organize.Directory — home">Organize<span class="dot" aria-hidden="true">.</span>Directory</a>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-    </button>
-  </div>
+<header class="bar">
+  <a href="/" class="logo" aria-label="Organize Directory, home"><svg viewBox="0 0 50 100" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M0 0A50 50 0 0 1 0 100Z M20 34a16 16 0 1 0 .001 0Z"/></svg>Organize Directory</a>
+  <nav class="bar-nav" aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a></nav>
+  <details class="menu">
+    <summary>Menu</summary>
+    <nav aria-label="Main"><a href="/location" aria-current="page">White Pages</a><a href="/topics">Yellow Pages</a><a href="/add">Add a group</a><a href="/subscribe">Subscribe</a><a href="/contact">Contact</a></nav>
+  </details>
 </header>
+<div class="runhead">
+  <span class="l" data-guide></span>
+  <span class="c">White Pages</span>
+  <span class="r">Milwaukee, WI, Wisconsin</span>
+</div>
 
 <main id="main">
 
-  <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="/">Home</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <a href="/wisconsin">Wisconsin</a>
-    <span class="sep" aria-hidden="true">/</span>
-    <span aria-current="page">Milwaukee, WI</span>
-  </nav>
-
-  <div class="page-head">
+  <div class="opener">
     <h1 class="title">Milwaukee, WI</h1>
-    <p class="meta">
-      <b>8</b> groups
-      <span class="sep" aria-hidden="true">·</span>
-      Wisconsin
-    </p>
+    <div class="meta"><b>8</b> groups. <nav aria-label="Breadcrumb">Part of <a href="/wisconsin">Wisconsin</a>.</nav></div>
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">Filter groups in Milwaukee, WI</label>
+      <input id="page-filter" type="search" placeholder="Filter groups in Milwaukee, WI" autocomplete="off">
+    </div>
   </div>
 
-  <div class="filter" role="search">
-    <label class="skip" for="page-filter">Filter groups in Milwaukee, WI</label>
-    <input id="page-filter" type="search" placeholder="Filter groups in Milwaukee, WI…" autocomplete="off">
-  </div>
-
-  <div class="layout">
+  <div class="spread">
 
     <div class="main-col">
-
       <div id="sections-root">
-    <section id="section-0" class="group-section" data-section="section-0">
+    <section id="section-0" class="group-section" data-section="section-0" data-title="">
       <ol class="groups">
         <li data-name="milwaukee mutual aid" data-desc="a grassroots network coordinating mutual aid and community support initiatives in milwaukee. they organize direct assistance, resource sharing, and neighborhood solidarity while building sustainable networks of care and support through community organizing and collective action.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/MKEMutualAid" target="_blank" rel="noopener noreferrer">Milwaukee Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/MKEMutualAid" target="_blank" rel="noopener noreferrer"><span class="name">Milwaukee Mutual Aid</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">A grassroots network coordinating mutual aid and community support initiatives in Milwaukee. They organize direct assistance, resource sharing, and neighborhood solidarity while building sustainable networks of care and support through community organizing and collective action.</p>
         </li>
         <li data-name="milwaukee community fridge" data-desc="community fridge project started in 2020 by sarah tramonte and hataya johnson. it stocks free public fridges in milwaukee food deserts, starting at the tandem on fond du lac ave.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/MKEFridges" target="_blank" rel="noopener noreferrer">Milwaukee Community Fridge <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/MKEFridges" target="_blank" rel="noopener noreferrer"><span class="name">Milwaukee Community Fridge</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">Community fridge project started in 2020 by Sarah Tramonte and Hataya Johnson. It stocks free public fridges in Milwaukee food deserts, starting at The Tandem on Fond du Lac Ave.</p>
         </li>
         <li data-name="milwaukee mutual aid" data-desc="a grassroots network fostering community solidarity and direct support across milwaukee through mutual aid organizing. they coordinate resource sharing, emergency assistance, and community care while building networks of support through local organizing and collective action.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/groups/460812344093736/" target="_blank" rel="noopener noreferrer">Milwaukee Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/groups/460812344093736/" target="_blank" rel="noopener noreferrer"><span class="name">Milwaukee Mutual Aid</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">A grassroots network fostering community solidarity and direct support across Milwaukee through mutual aid organizing. They coordinate resource sharing, emergency assistance, and community care while building networks of support through local organizing and collective action.</p>
         </li>
         <li data-name="milwaukee community care and mutual aid" data-desc="milwaukee community care and mutual aid was organized to provide collaborative care and information to community members who may be most affected during these uncertain times.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/MCCMutualAid/" target="_blank" rel="noopener noreferrer">Milwaukee Community Care and Mutual Aid <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/MCCMutualAid/" target="_blank" rel="noopener noreferrer"><span class="name">Milwaukee Community Care and Mutual Aid</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">Milwaukee Community Care and Mutual Aid was organized to provide collaborative care and information to community members who may be most affected during these uncertain times.</p>
         </li>
         <li data-name="black and pink milwaukee" data-desc="milwaukee collective supporting lgbtq+ people and people living with hiv who are or were incarcerated in wisconsin, with pen pals, a newsletter, and workshops.">
-          <div class="row">
-            <a class="name" href="https://www.facebook.com/MKEBlackandPink/" target="_blank" rel="noopener noreferrer">Black and Pink Milwaukee <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">facebook.com</span>
-          </div>
+          <a class="row" href="https://www.facebook.com/MKEBlackandPink/" target="_blank" rel="noopener noreferrer"><span class="name">Black and Pink Milwaukee</span><span class="dots" aria-hidden="true"></span><span class="host">facebook.com</span></a>
           <p class="desc">Milwaukee collective supporting LGBTQ+ people and people living with HIV who are or were incarcerated in Wisconsin, with pen pals, a newsletter, and workshops.</p>
         </li>
         <li data-name="sun-seeker mke" data-desc="a black &amp; trans abolitionist collective co-conspiring to build holistic safety &amp; security for black communities, trans comrades &amp; m.a.g.e.s.">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/sun__seekermke/" target="_blank" rel="noopener noreferrer">Sun-Seeker MKE <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/sun__seekermke/" target="_blank" rel="noopener noreferrer"><span class="name">Sun-Seeker MKE</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">A Black &amp; Trans abolitionist collective co-conspiring to build holistic safety &amp; security for Black communities, Trans comrades &amp; M.A.G.E.S.</p>
         </li>
         <li data-name="butterfly collective mke" data-desc="a platform that seeks to uplift and support black and brown trans &amp; gender nonconforming folks in milwaukee, wi">
-          <div class="row">
-            <a class="name" href="https://www.instagram.com/butterflycollectivemke/" target="_blank" rel="noopener noreferrer">Butterfly Collective MKE <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">instagram.com</span>
-          </div>
+          <a class="row" href="https://www.instagram.com/butterflycollectivemke/" target="_blank" rel="noopener noreferrer"><span class="name">Butterfly Collective MKE</span><span class="dots" aria-hidden="true"></span><span class="host">instagram.com</span></a>
           <p class="desc">A platform that seeks to uplift and support Black and Brown Trans &amp; Gender nonconforming folks in Milwaukee, WI</p>
         </li>
         <li data-name="milwaukee autonomous tenants union" data-desc="fighting for the human right to housing and defending tenants' right to dignified and safe homes.">
-          <div class="row">
-            <a class="name" href="https://matunion.org/" target="_blank" rel="noopener noreferrer">Milwaukee Autonomous Tenants Union <span class="ext" aria-hidden="true">↗</span></a>
-            <span class="host">matunion.org</span>
-          </div>
+          <a class="row" href="https://matunion.org/" target="_blank" rel="noopener noreferrer"><span class="name">Milwaukee Autonomous Tenants Union</span><span class="dots" aria-hidden="true"></span><span class="host">matunion.org</span></a>
           <p class="desc">Fighting for the human right to housing and defending tenants' right to dignified and safe homes.</p>
         </li>
       </ol>
@@ -150,14 +104,10 @@
         <p class="empty" id="empty-state" hidden>No groups match <b id="empty-query"></b>. Try a different search.</p>
       </div>
 
-      <aside class="suggest">
-    <p><b>Know a group we're missing?</b> This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
-    <a href="/add" class="btn">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-      Suggest a group
-    </a>
-  </aside>
-
+      <aside class="ad">
+        <p><b>Know a group we're missing?</b>This directory grows through community contributions. Add the organizers doing the work in your neighborhood.</p>
+        <a href="/add" class="go">Suggest a group →</a>
+      </aside>
     </div>
   </div>
 
@@ -169,8 +119,7 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script src="/assets/scripts/theme-toggle.js?v=f4171ff9" defer></script>
-<script src="/assets/scripts/city-page.js?v=d88b3099" defer></script>
+<script src="/assets/scripts/city-page.js?v=0a2cd167" defer></script>
 
 </body>
 </html>
