@@ -273,8 +273,11 @@ function handleSearchInput(event) {
 
                const typeDiv = document.createElement("div");
                typeDiv.className = "result-type";
+               // Topic pages are called "issues" on the site.
+               const TYPE_LABELS = { topic: "Issue", location: "City" };
                const typeLabel = result.type || "Page";
                typeDiv.textContent =
+                    TYPE_LABELS[typeLabel] ||
                     typeLabel.charAt(0).toUpperCase() + typeLabel.slice(1);
 
                resultItem.append(titleDiv, typeDiv);
