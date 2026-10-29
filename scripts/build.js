@@ -387,7 +387,6 @@ function renderCity(data, { breadcrumbs, children }) {
   const description = `Leftist, grassroots, and mutual aid organizations in ${data.title}.`;
 
   const sections = data.sections.filter(s => s.initiatives && s.initiatives.length > 0);
-  const totalGroups = sections.reduce((sum, s) => sum + s.initiatives.length, 0);
 
   // Parent chain, outermost first (New York → New York City). Skip the
   // synthetic "States" root.
@@ -406,12 +405,11 @@ function renderCity(data, { breadcrumbs, children }) {
     ...sections.map(s => ({ id: s.id, title: s.title, count: s.initiatives.length })),
   ];
 
-  // "60 groups. Part of New York City, New York." — nearest parent first.
+  // "Part of New York City, New York." — nearest parent first.
   const parents = realCrumbs.slice().reverse();
   const partOf = parents.length
-    ? ` <nav aria-label="Breadcrumb">Part of ${parents.map(c => `<a href="/${esc(c.slug)}">${esc(c.title)}</a>`).join(', ')}.</nav>`
+    ? `\n    <div class="meta"><nav aria-label="Breadcrumb">Part of ${parents.map(c => `<a href="/${esc(c.slug)}">${esc(c.title)}</a>`).join(', ')}.</nav></div>`
     : '';
-  const count = totalGroups ? `<b>${fmt(totalGroups)}</b> ${totalGroups === 1 ? 'group' : 'groups'}.` : '';
   const placeLabel = stateName && stateName !== data.title ? `${data.title}, ${stateName}` : data.title;
 
   return `<!DOCTYPE html>
@@ -423,8 +421,7 @@ ${renderListPage({
     bodyClass: 'white',
     current: '/location',
     runhead: { book: 'Local Listings', right: placeLabel },
-    opener: `    <h1 class="title">${esc(data.title)}</h1>
-    <div class="meta">${count}${partOf}</div>`,
+    opener: `    <h1 class="title">${esc(data.title)}</h1>${partOf}`,
     entries,
     sectionsHtml,
     filterLabel: `Filter groups in ${data.title}`,
@@ -440,7 +437,6 @@ function renderStateHub(data, { children }) {
   const description = `Cities and statewide organizations in ${data.title}.`;
 
   const sections = (data.sections || []).filter(s => s.initiatives && s.initiatives.length > 0);
-  const totalStatewide = sections.reduce((s, sec) => s + sec.initiatives.length, 0);
 
   // A state's direct children mix cities, counties, and regions, so "Places".
   const hasChildren = children.length > 0;
@@ -455,10 +451,6 @@ function renderStateHub(data, { children }) {
     ...sections.map(s => ({ id: s.id, title: s.title, count: s.initiatives.length })),
   ];
 
-  const meta = totalStatewide
-    ? `    <p class="meta"><b>${fmt(totalStatewide)}</b> statewide ${totalStatewide === 1 ? 'group' : 'groups'}</p>`
-    : '';
-
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -468,8 +460,7 @@ ${renderListPage({
     bodyClass: 'white',
     current: '/location',
     runhead: { book: 'Local Listings', right: data.title },
-    opener: `    <h1 class="title">${esc(data.title)}</h1>
-${meta}`,
+    opener: `    <h1 class="title">${esc(data.title)}</h1>`,
     entries,
     sectionsHtml,
     filterLabel: `Filter ${data.title}`,
@@ -485,7 +476,6 @@ function renderTopicPage(data) {
   const description = data.subtitle || `Organizations and initiatives focused on ${data.title}.`;
 
   const sections = data.sections.filter(s => s.initiatives && s.initiatives.length > 0);
-  const totalGroups = sections.reduce((s, sec) => s + sec.initiatives.length, 0);
   const sectionsHtml = sections.map(renderGroupSection).join('\n\n');
   const entries = sections.map(s => ({ id: s.id, title: s.title, count: s.initiatives.length }));
 
@@ -501,7 +491,7 @@ ${renderListPage({
     current: '/topics',
     runhead: { book: 'Issue Listings', right: data.title },
     opener: `    <h1 class="title">${esc(data.title)}</h1>
-    <p class="meta"><b>${fmt(totalGroups)}</b> ${totalGroups === 1 ? 'group' : 'groups'}</p>${lede}`,
+${lede}`,
     entries,
     sectionsHtml,
     filterLabel: `Filter groups in ${data.title}`,
