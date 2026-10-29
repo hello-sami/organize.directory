@@ -514,7 +514,7 @@ function stateGroupCounts(locationIndex, stateIndex) {
   return totals;
 }
 
-// The homepage is the phone book's cover: title, edition line, tagline and
+// The homepage is the phone book's cover: title, tagline and
 // search, a two-line contents list, and every state.
 function renderHome(stats, { locationIndex, stateIndex }) {
   const titleTag = 'Organize Directory';
@@ -540,7 +540,6 @@ ${renderMast('/')}
   <div class="cover-top">
     <div>
       <div class="cover-title">${notchSvg()}<h1>Organize<br>Directory</h1></div>
-      <p class="edition"><span>United States</span><span>${fmt(stats.groups)} listings</span></p>
     </div>
     <div>
       <p class="tagline">Don't despair. Organize.</p>
