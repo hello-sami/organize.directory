@@ -242,7 +242,7 @@ function navLinks(items, current) {
 
 function renderMast(current = '') {
   return `<header class="bar">
-  <a href="/" class="logo" aria-label="Organize Directory, home">${notchSvg()}Organize Directory</a>
+  <a href="/" class="logo">Organize Directory</a>
   <nav class="bar-nav" aria-label="Main">${navLinks(NAV_PRIMARY, current)}</nav>
   <details class="menu">
     <summary>Menu</summary>

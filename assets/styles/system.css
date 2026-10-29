@@ -188,26 +188,17 @@ a.skip:focus{
   z-index: 30;
 }
 
-/* The notch is cut into the left edge of the page: it sits in the gutter,
-   flush with the edge, and the words line up with the text column. */
+/* Just the name: the notch lives on the cover, not in the bar. The words line
+   up with the text column. */
 .logo{
   display: inline-flex;
   align-items: center;
-  gap: calc(var(--gutter) - var(--notch));
-  margin-left: calc(var(--gutter) * -1);
   min-height: 44px;
   font-weight: 700;
   font-size: 21px;
   letter-spacing: -.01em;
   line-height: 1;
   white-space: nowrap;
-}
-.logo svg{
-  display: block;
-  flex: none;
-  width: var(--notch);
-  height: calc(var(--notch) * 2);
-  fill: var(--ink);
 }
 
 .bar-nav{
