@@ -29,9 +29,8 @@
     12. Cover (homepage)
     13. Search dropdown (title-search.js)
     14. Static pages: prose, buttons
-    15. Footer
-    16. Small screens
-    17. Motion + contrast preferences
+    15. Small screens
+    16. Motion + contrast preferences
 ============================================================================ */
 
 /* ---------------------------------------------------------------------------
@@ -685,21 +684,7 @@ body.yellow .ad{ background: var(--pure); }
 
 
 /* ---------------------------------------------------------------------------
-   15. FOOTER
---------------------------------------------------------------------------- */
-footer{
-  border-top: 1px solid var(--ink);
-  padding: 8px var(--gutter);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 1.6rem;
-  font-weight: 500;
-}
-footer a{ display: inline-flex; align-items: center; min-height: 44px; }
-footer a:hover{ text-decoration: underline; text-underline-offset: 4px; }
-
-/* ---------------------------------------------------------------------------
-   16. SMALL SCREENS
+   15. SMALL SCREENS
 --------------------------------------------------------------------------- */
 @media (max-width: 899px){
   :root{ --gutter: 20px; --notch: 15px; }
@@ -758,7 +743,7 @@ footer a:hover{ text-decoration: underline; text-underline-offset: 4px; }
 }
 
 /* ---------------------------------------------------------------------------
-   17. MOTION + CONTRAST PREFERENCES
+   16. MOTION + CONTRAST PREFERENCES
 --------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior: auto; }

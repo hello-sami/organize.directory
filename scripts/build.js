@@ -63,8 +63,8 @@ function escapeRegExp(s) {
 
 // Hand-maintained pages (location.html, add.html, …) carry their own static
 // <head> and body rather than going through the renderers. This keeps their
-// shared parts in step with generated pages: the header bar and footer are
-// re-rendered from renderMast()/renderFooter(), the head gets the same font
+// shared parts in step with generated pages: the header bar is re-rendered
+// from renderMast(), any leftover footer is stripped, the head gets the same font
 // preload, favicons and browser tint, and assets get the same ?v=<hash>
 // cache-busting. Idempotent — re-running with nothing changed is a no-op, so
 // it only churns these files when something they share actually changed.
@@ -117,9 +117,9 @@ function processStaticHead(html, file = '') {
     '$1summary_large_image$2',
   );
 
-  // 7. Shared header bar and footer.
+  // 7. Shared header bar; the footer is gone (Add a group lives in the bar).
   html = html.replace(/<header class="(?:mast|bar)">[\s\S]*?<\/header>/, renderMast(STATIC_CURRENT[file] || ''));
-  html = html.replace(/<footer>[\s\S]*?<\/footer>/, renderFooter());
+  html = html.replace(/\n*<footer>[\s\S]*?<\/footer>\n*/, '\n\n');
 
   // 8. Apply ?v=<hash> to every known asset (stripping any prior ?v=…).
   for (const a of VERSIONED_ASSETS) {
@@ -251,12 +251,6 @@ function renderMast(current = '') {
 </header>`;
 }
 
-function renderFooter() {
-  return `<footer>
-  <a href="/add">Add a group</a>
-</footer>`;
-}
-
 // Running head: guide words left (first – last section; city-page.js keeps
 // it in step with what's on screen), which book in the middle, place right.
 function renderRunhead({ guide = '', book, right = '' }) {
@@ -381,8 +375,6 @@ ${sectionsHtml}
   </div>
 
 </main>
-
-${renderFooter()}
 
 <script src="${assetUrl('/assets/scripts/city-page.js')}" defer></script>
 
@@ -589,8 +581,6 @@ ${stateItems}
   </section>
 
 </main>
-
-${renderFooter()}
 
 <script src="${assetUrl('/js/title-search.js')}" defer></script>
 </body>
