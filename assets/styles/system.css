@@ -11,7 +11,7 @@
      - Thin paper: a faint mirrored page shows through, plus paper grain.
      - The thumb notch (a D with a punched O) is the logo, the favicon, and
        the "you are here" marker in each page's section navigation.
-     - Listings: name · leader dots · website, description hanging below.
+     - Listings: name, website under it, description hanging below.
 
    Organization:
      0. Fonts
@@ -441,23 +441,12 @@ body.yellow .hd{
   break-inside: avoid;
   padding: 5px 0 8px;
 }
-.groups .row{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: last baseline;
-  column-gap: 4px;
-}
-.groups .name{ font-weight: 700; }
-.groups .dots{
-  flex: 1 1 1.5em;
-  min-width: 1.5em;
-  border-bottom: 2px dotted color-mix(in srgb, var(--ink) 55%, transparent);
-  transform: translateY(-.3em);
-}
+.groups .row{ display: block; }
+.groups .name{ display: block; font-weight: 700; }
 .groups .host{
-  white-space: nowrap;
+  display: block;
   font-weight: 500;
-  margin-left: auto;
+  overflow-wrap: anywhere;
 }
 .groups a.row:hover .name,
 .groups a.row:focus-visible .name{
@@ -752,5 +741,5 @@ body.yellow .ad{ background: var(--pure); }
 /* Asked for more contrast? Plain paper: no grain, no show-through. */
 @media (prefers-contrast: more){
   body, body.yellow, .runhead, .thumbs{ background-image: none; }
-  .groups .dots, .contents .dots{ border-bottom-color: var(--ink); }
+  .contents .dots{ border-bottom-color: var(--ink); }
 }

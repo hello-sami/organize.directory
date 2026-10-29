@@ -276,8 +276,8 @@ function renderSuggest() {
       </aside>`;
 }
 
-// One listing: name · leader dots · website, description hanging below,
-// the way a phone book lines up a name with its number.
+// One listing, stacked and left-aligned: name, website under it, description
+// hanging below.
 function renderGroupItem(init) {
   const url = String(init.url || '');
   const external = /^https?:\/\//i.test(url);
@@ -286,7 +286,7 @@ function renderGroupItem(init) {
   const name = String(init.name || '');
   const desc = String(init.description || '');
   const hostHtml = host
-    ? `<span class="dots" aria-hidden="true"></span><span class="host">${esc(host)}</span>`
+    ? `<span class="host">${esc(host)}</span>`
     : '';
   const descHtml = desc ? `\n          <p class="desc">${esc(desc)}</p>` : '';
   return `        <li data-name="${esc(name.toLowerCase())}" data-desc="${esc(desc.toLowerCase())}">
