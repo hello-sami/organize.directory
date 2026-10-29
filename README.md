@@ -35,8 +35,9 @@ edited asset is re-fetched while unchanged ones stay cached.
 ## Design
 
 The site is built like a phone book. Place pages (cities, states, `/location`)
-are the **White Pages**, on grey newsprint; issue pages (topics, `/topics`) and
-the homepage cover are the **Yellow Pages**, on faded yellow. A body class
+are the **Local Listings**, on grey newsprint (a phone book's white pages);
+issue pages (topics, `/topics`) and the homepage cover are the **Issue
+Listings**, on faded yellow (its yellow pages). A body class
 (`white` / `yellow`) picks the paper. Every page has faint paper grain and a
 mirrored page of listings showing through, both dropped for visitors whose
 system asks for more contrast. The logo is a thumb notch (a D) with a punched

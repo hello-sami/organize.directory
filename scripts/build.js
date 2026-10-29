@@ -229,8 +229,8 @@ function systemHead({ title, description, canonicalPath, ogImage = '/preview.png
 // disclosure on phones. `current` is the path of the page being rendered,
 // so its link gets aria-current.
 const NAV_PRIMARY = [
-  ['/location', 'White Pages'],
-  ['/topics', 'Yellow Pages'],
+  ['/location', 'Local Listings'],
+  ['/topics', 'Issue Listings'],
   ['/add', 'Add a group'],
 ];
 const NAV_MENU = [...NAV_PRIMARY, ['/subscribe', 'Subscribe'], ['/contact', 'Contact']];
@@ -432,7 +432,7 @@ ${systemHead({ title: titleTag, description, canonicalPath: `/${data.slug}` })}
 ${renderListPage({
     bodyClass: 'white',
     current: '/location',
-    runhead: { book: 'White Pages', right: placeLabel },
+    runhead: { book: 'Local Listings', right: placeLabel },
     opener: `    <h1 class="title">${esc(data.title)}</h1>
     <div class="meta">${count}${partOf}</div>`,
     entries,
@@ -477,7 +477,7 @@ ${systemHead({ title: titleTag, description, canonicalPath: `/${data.slug}` })}
 ${renderListPage({
     bodyClass: 'white',
     current: '/location',
-    runhead: { book: 'White Pages', right: data.title },
+    runhead: { book: 'Local Listings', right: data.title },
     opener: `    <h1 class="title">${esc(data.title)}</h1>
 ${meta}`,
     entries,
@@ -509,7 +509,7 @@ ${systemHead({ title: titleTag, description, canonicalPath: `/topics/${data.slug
 ${renderListPage({
     bodyClass: 'yellow',
     current: '/topics',
-    runhead: { book: 'Yellow Pages', right: data.title },
+    runhead: { book: 'Issue Listings', right: data.title },
     opener: `    <h1 class="title">${esc(data.title)}</h1>
     <p class="meta"><b>${fmt(totalGroups)}</b> ${totalGroups === 1 ? 'group' : 'groups'}</p>${lede}`,
     entries,
@@ -580,8 +580,8 @@ ${renderMast('/')}
   </div>
 
   <nav class="contents" aria-label="Contents">
-    <a class="row" href="/location"><span class="name">White Pages: groups by place</span><span class="dots" aria-hidden="true"></span><span class="host">${fmt(stats.cities)} cities</span></a>
-    <a class="row" href="/topics"><span class="name">Yellow Pages: groups by issue</span><span class="dots" aria-hidden="true"></span><span class="host">${fmt(stats.categories)} issues</span></a>
+    <a class="row" href="/location"><span class="name">Local Listings: groups by place</span><span class="dots" aria-hidden="true"></span><span class="host">${fmt(stats.cities)} cities</span></a>
+    <a class="row" href="/topics"><span class="name">Issue Listings: groups by issue</span><span class="dots" aria-hidden="true"></span><span class="host">${fmt(stats.categories)} issues</span></a>
   </nav>
 
   <section class="state-index" aria-labelledby="states-heading">
