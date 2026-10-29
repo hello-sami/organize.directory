@@ -578,8 +578,8 @@ ${renderMast('/')}
   </div>
 
   <nav class="contents" aria-label="Contents">
-    <a class="row" href="/location"><span class="name">Local Listings: groups by place</span><span class="dots" aria-hidden="true"></span><span class="host">${fmt(stats.cities)} cities</span></a>
-    <a class="row" href="/topics"><span class="name">Issue Listings: groups by issue</span><span class="dots" aria-hidden="true"></span><span class="host">${fmt(stats.categories)} issues</span></a>
+    <a class="row" href="/location"><span class="name">Local Listings</span><span class="dots" aria-hidden="true"></span><span class="host">${fmt(stats.cities)} cities</span></a>
+    <a class="row" href="/topics"><span class="name">Issue Listings</span><span class="dots" aria-hidden="true"></span><span class="host">${fmt(stats.categories)} issues</span></a>
   </nav>
 
   <section class="state-index" aria-labelledby="states-heading">
