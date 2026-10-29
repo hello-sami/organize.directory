@@ -61,7 +61,7 @@ function escapeRegExp(s) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-// Hand-maintained pages (location.html, contact.html, …) carry their own static
+// Hand-maintained pages (location.html, add.html, …) carry their own static
 // <head> and body rather than going through the renderers. This keeps their
 // shared parts in step with generated pages: the header bar and footer are
 // re-rendered from renderMast()/renderFooter(), the head gets the same font
@@ -69,7 +69,7 @@ function escapeRegExp(s) {
 // cache-busting. Idempotent — re-running with nothing changed is a no-op, so
 // it only churns these files when something they share actually changed.
 const STATIC_PAGES = [
-  'location.html', 'topics.html', 'guides.html', 'contact.html',
+  'location.html', 'topics.html', 'guides.html',
   'add.html', '404.html',
 ];
 
@@ -232,7 +232,7 @@ const NAV_PRIMARY = [
   ['/topics', 'Issue Listings'],
   ['/add', 'Add a group'],
 ];
-const NAV_MENU = [...NAV_PRIMARY, ['/contact', 'Contact']];
+const NAV_MENU = NAV_PRIMARY;
 
 function navLinks(items, current) {
   return items
@@ -254,7 +254,6 @@ function renderMast(current = '') {
 function renderFooter() {
   return `<footer>
   <a href="/add">Add a group</a>
-  <a href="/contact">Contact</a>
 </footer>`;
 }
 
@@ -716,6 +715,9 @@ function buildRedirects(locationIndex, stateIndex) {
     '/subscribe.html\t/\t301',
     '/thank-you\t/\t301',
     '/thank-you.html\t/\t301',
+    '# Contact page removed: the add-a-group page has the email address',
+    '/contact\t/add\t301',
+    '/contact.html\t/add\t301',
     '',
     '# States',
     ...sortedStates.map(slug => `/${slug}\t/states/${slug}.html\t200`),
@@ -732,7 +734,7 @@ function buildRedirects(locationIndex, stateIndex) {
 function buildSitemap(sortedStates, sortedLocations, topicIndex) {
   const today = new Date().toISOString().split('T')[0];
   const SITE = 'https://organize.directory';
-  const STATIC_PAGES = ['/', '/location', '/topics', '/guides', '/contact', '/add'];
+  const STATIC_PAGES = ['/', '/location', '/topics', '/guides', '/add'];
   const sitemapUrls = [
     ...STATIC_PAGES.map(p => ({ loc: SITE + p, priority: p === '/' ? '1.0' : '0.8' })),
     ...sortedStates.map(slug => ({ loc: `${SITE}/${slug}`, priority: '0.7' })),
@@ -805,11 +807,10 @@ async function copyPreviewAssets(previewRoot) {
   await copyIfExists(path.join(ROOT, 'js'), path.join(previewRoot, 'js'));
 
   // Hand-maintained static pages on the new design system. Copied in so the nav
-  // (`/location`, `/topics`, `/contact`) doesn't 404 locally.
+  // (`/location`, `/topics`, `/add`) doesn't 404 locally.
   for (const f of [
     'location.html',
     'topics.html',
-    'contact.html',
     'guides.html',
     'add.html',
     '404.html',

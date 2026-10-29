@@ -44,7 +44,7 @@ system asks for more contrast. The logo is a thumb notch (a D) with a punched
 hole (an O); the same notch marks the section you're reading down the left
 edge of list pages. There is no dark mode.
 
-Hand-maintained pages: `location.html`, `topics.html`, `guides.html`, `contact.html`, `add.html`, `404.html`. (`index.html` is generated.)
+Hand-maintained pages: `location.html`, `topics.html`, `guides.html`, `add.html`, `404.html`. (`index.html` is generated.)
 
 ## Local development
 
@@ -66,7 +66,7 @@ There is no separate dev server — `wrangler pages dev` serves the static files
 
 ## Contact
 
-There's no contact form or newsletter (both removed 2026-10-29). The contact and add-a-group pages just give an email address; `/subscribe` and `/thank-you` redirect home.
+There's no contact page, contact form or newsletter (all removed 2026-10-29). The add-a-group page gives an email address, and `/contact` redirects there; `/subscribe` and `/thank-you` redirect home.
 
 ## Deployment
 
