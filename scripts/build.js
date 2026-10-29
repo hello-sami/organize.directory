@@ -276,8 +276,8 @@ function renderSuggest() {
       </aside>`;
 }
 
-// One listing, stacked and left-aligned: name, website under it, description
-// hanging below.
+// One listing: the name with leader dots running out after it, the website
+// under it (left-aligned; it's the link), the description hanging below.
 function renderGroupItem(init) {
   const url = String(init.url || '');
   const external = /^https?:\/\//i.test(url);
@@ -285,12 +285,13 @@ function renderGroupItem(init) {
   const host = external ? hostFromUrl(url) : '';
   const name = String(init.name || '');
   const desc = String(init.description || '');
-  const hostHtml = host
-    ? `<span class="host">${esc(host)}</span>`
-    : '';
+  const nameHtml = host
+    ? `<span class="line"><span class="name">${esc(name)}</span><span class="dots" aria-hidden="true"></span></span>`
+    : `<span class="name">${esc(name)}</span>`;
+  const hostHtml = host ? `<a class="host" href="${esc(url)}"${extAttrs}>${esc(host)}</a>` : '';
   const descHtml = desc ? `\n          <p class="desc">${esc(desc)}</p>` : '';
   return `        <li data-name="${esc(name.toLowerCase())}" data-desc="${esc(desc.toLowerCase())}">
-          <a class="row" href="${esc(url)}"${extAttrs}><span class="name">${esc(name)}</span>${hostHtml}</a>${descHtml}
+          <div class="row">${nameHtml}${hostHtml}</div>${descHtml}
         </li>`;
 }
 

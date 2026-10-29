@@ -11,7 +11,7 @@
      - Thin paper: a faint mirrored page shows through, plus paper grain.
      - The thumb notch (a D with a punched O) is the logo, the favicon, and
        the "you are here" marker in each page's section navigation.
-     - Listings: name, website under it, description hanging below.
+     - Listings: name · leader dots, website under it, description hanging below.
 
    Organization:
      0. Fonts
@@ -443,13 +443,31 @@ body.yellow .hd{
 }
 .groups .row{ display: block; }
 .groups .name{ display: block; font-weight: 700; }
+/* Name, then dots filling the rest of its line. The name shrinks and wraps
+   before the dots are squeezed out, and the dots sit by its last line. */
+.groups .line{
+  display: flex;
+  align-items: last baseline;
+  column-gap: 4px;
+}
+.groups .line .name{ flex: 0 1 auto; min-width: 0; }
+.groups .dots{
+  flex: 1 1 1.5em;
+  min-width: 1.5em;
+  border-bottom: 2px dotted color-mix(in srgb, var(--ink) 55%, transparent);
+  transform: translateY(-.3em);
+}
+/* The website is the link. Inline-block so only the address itself is
+   clickable, with a little padding for a bigger tap target. */
 .groups .host{
-  display: block;
+  display: inline-block;
+  max-width: 100%;
+  padding: 2px 0;
   font-weight: 500;
   overflow-wrap: anywhere;
 }
-.groups a.row:hover .name,
-.groups a.row:focus-visible .name{
+.groups a.host:hover,
+.groups a.host:focus-visible{
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
@@ -741,5 +759,5 @@ body.yellow .ad{ background: var(--pure); }
 /* Asked for more contrast? Plain paper: no grain, no show-through. */
 @media (prefers-contrast: more){
   body, body.yellow, .runhead, .thumbs{ background-image: none; }
-  .contents .dots{ border-bottom-color: var(--ink); }
+  .groups .dots, .contents .dots{ border-bottom-color: var(--ink); }
 }
