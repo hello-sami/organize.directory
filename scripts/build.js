@@ -37,7 +37,6 @@ const VERSIONED_ASSETS = [
   '/assets/scripts/city-page.js',
   '/js/title-search.js',
   '/js/analytics.js',
-  '/js/newsletter-form.js',
 ];
 const ASSET_HASHES = {};
 
@@ -71,7 +70,7 @@ function escapeRegExp(s) {
 // it only churns these files when something they share actually changed.
 const STATIC_PAGES = [
   'location.html', 'topics.html', 'guides.html', 'contact.html',
-  'subscribe.html', 'thank-you.html', 'add.html', '404.html',
+  'add.html', '404.html',
 ];
 
 // Which nav link each static page counts as "current" (aria-current).
@@ -233,9 +232,6 @@ const NAV_PRIMARY = [
   ['/topics', 'Issue Listings'],
   ['/add', 'Add a group'],
 ];
-// Subscribe is paused (2026-10-29): subscribe.html stays in the repo but isn't
-// linked, and /subscribe redirects home. To bring it back, restore its entries
-// here, in renderFooter(), in the sitemap list, and drop the redirect.
 const NAV_MENU = [...NAV_PRIMARY, ['/contact', 'Contact']];
 
 function navLinks(items, current) {
@@ -715,9 +711,11 @@ function buildRedirects(locationIndex, stateIndex) {
     '# the correct HTML file without a Cloudflare Worker in the hot path.',
     '# States are listed first so they win on slug collisions.',
     '',
-    '# Subscribe is paused: send old links home (302, temporary)',
-    '/subscribe\t/\t302',
-    '/subscribe.html\t/\t302',
+    '# Retired pages (newsletter and contact-form thank-you): send old links home',
+    '/subscribe\t/\t301',
+    '/subscribe.html\t/\t301',
+    '/thank-you\t/\t301',
+    '/thank-you.html\t/\t301',
     '',
     '# States',
     ...sortedStates.map(slug => `/${slug}\t/states/${slug}.html\t200`),
@@ -803,24 +801,18 @@ async function copyPreviewAssets(previewRoot) {
   await copyIfExists(path.join(ROOT, 'assets'), path.join(previewRoot, 'assets'));
 
   // Shared /js/ utilities referenced by the new design
-  // (analytics, title-search, title-index, newsletter-form, generate-titles-index)
+  // (analytics, title-search, title-index, generate-titles-index)
   await copyIfExists(path.join(ROOT, 'js'), path.join(previewRoot, 'js'));
 
-  // Form validation helper used by contact.js and newsletter-form.js
-  await copyIfExists(path.join(ROOT, 'utils'), path.join(previewRoot, 'utils'));
-
   // Hand-maintained static pages on the new design system. Copied in so the nav
-  // (`/location`, `/topics`, `/contact`, `/subscribe`) doesn't 404 locally.
+  // (`/location`, `/topics`, `/contact`) doesn't 404 locally.
   for (const f of [
     'location.html',
     'topics.html',
     'contact.html',
-    'subscribe.html',
-    'thank-you.html',
     'guides.html',
     'add.html',
     '404.html',
-    'contact.js',
   ]) {
     await copyIfExists(path.join(ROOT, f), path.join(previewRoot, f));
   }

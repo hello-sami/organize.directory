@@ -3,9 +3,11 @@
 # the correct HTML file without a Cloudflare Worker in the hot path.
 # States are listed first so they win on slug collisions.
 
-# Subscribe is paused: send old links home (302, temporary)
-/subscribe	/	302
-/subscribe.html	/	302
+# Retired pages (newsletter and contact-form thank-you): send old links home
+/subscribe	/	301
+/subscribe.html	/	301
+/thank-you	/	301
+/thank-you.html	/	301
 
 # States
 /alabama	/states/alabama.html	200

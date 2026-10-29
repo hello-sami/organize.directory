@@ -25,12 +25,10 @@
   <link rel="manifest" href="/site.webmanifest">
 
   <!-- Fonts -->
-  <link rel="dns-prefetch" href="https://api.web3forms.com">
-  <link rel="preconnect" href="https://api.web3forms.com">
 
   <!-- Styles -->
   <link rel="preload" href="/assets/fonts/plex-sans-condensed-400-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/styles/system.css?v=ff0d7913">
+  <link rel="stylesheet" href="/assets/styles/system.css?v=99d41e54">
 
   <!-- Analytics -->
   <script src="/js/analytics.js?v=a7e2757c" defer></script>
@@ -51,71 +49,16 @@
 
   <div class="opener">
     <h1 class="title">Contact</h1>
-    <p class="meta">Questions, suggestions, broken links, groups to add — send them all here.</p>
+    <p class="meta">Questions, suggestions, broken links, groups to add.</p>
   </div>
 
   <div class="page-body">
   <div class="prose">
-    <p>Prefer email? Reach us at <strong>sami(at)samismith.com</strong>.</p>
+    <p>Send them all to <a href="mailto:sami@samismith.com">sami(at)samismith.com</a>.</p>
   </div>
 
-  <form class="form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-    <!-- Web3Forms API key -->
-    <input type="hidden" name="access_key" value="66d4bcac-1c6a-4c7c-b544-c5b2a4c51f4f">
-    <input type="hidden" name="redirect" value="https://organize.directory/contact?success=true">
-    <input type="hidden" name="subject" value="New Contact Form Submission - Organize Directory">
-    <input type="hidden" name="from_name" value="Organize Directory Contact Form">
 
-    <!-- Web3Forms built-in honeypot (server-side reject if checked) -->
-    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" aria-hidden="true">
 
-    <!-- Off-screen text honeypot: bots fill every text field; we abort client-side if non-empty -->
-    <div class="hp-field" aria-hidden="true">
-      <label for="website">Leave this field empty</label>
-      <input type="text" id="website" name="website" autocomplete="off" tabindex="-1">
-    </div>
-
-    <div class="field">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required autocomplete="name">
-      <div class="error-text" id="nameError">Please enter your name</div>
-    </div>
-
-    <div class="field">
-      <label for="email">Email <span class="optional">(optional)</span></label>
-      <input type="email" id="email" name="email" autocomplete="email">
-      <small class="helper">Leave blank to submit anonymously.</small>
-      <div class="error-text" id="emailError">Please enter a valid email address</div>
-    </div>
-
-    <div class="field">
-      <label for="inquiry">Type of inquiry</label>
-      <select id="inquiry" name="inquiry" required>
-        <option value="">Select a type…</option>
-        <option value="add-network">Add a group</option>
-        <option value="update-info">Update existing info</option>
-        <option value="suggestion">Suggestion</option>
-        <option value="question">General question</option>
-        <option value="other">Other</option>
-      </select>
-      <div class="error-text" id="inquiryError">Please select an inquiry type</div>
-    </div>
-
-    <div class="field">
-      <label for="message">Message</label>
-      <textarea id="message" name="message" required></textarea>
-      <div class="error-text" id="messageError">Please enter your message</div>
-    </div>
-
-    <button type="submit" class="btn primary" id="submitButton">Send message</button>
-  </form>
-
-  <div class="form-status" id="statusMessage" role="status" aria-live="polite"></div>
-
-  <div class="form-failure-help" id="formFailureHelp">
-    <p><strong>Having trouble with the form?</strong></p>
-    <p>You can email us directly at <a href="mailto:sami@samismith.com">sami(at)samismith.com</a>.</p>
-  </div>
   </div>
 
 </main>
@@ -125,7 +68,6 @@
   <a href="/contact">Contact</a>
 </footer>
 
-<script type="module" src="/contact.js"></script>
 
 </body>
 </html>
