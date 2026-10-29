@@ -233,7 +233,10 @@ const NAV_PRIMARY = [
   ['/topics', 'Issue Listings'],
   ['/add', 'Add a group'],
 ];
-const NAV_MENU = [...NAV_PRIMARY, ['/subscribe', 'Subscribe'], ['/contact', 'Contact']];
+// Subscribe is paused (2026-10-29): subscribe.html stays in the repo but isn't
+// linked, and /subscribe redirects home. To bring it back, restore its entries
+// here, in renderFooter(), in the sitemap list, and drop the redirect.
+const NAV_MENU = [...NAV_PRIMARY, ['/contact', 'Contact']];
 
 function navLinks(items, current) {
   return items
@@ -255,7 +258,6 @@ function renderMast(current = '') {
 function renderFooter() {
   return `<footer>
   <a href="/add">Add a group</a>
-  <a href="/subscribe">Subscribe</a>
   <a href="/contact">Contact</a>
 </footer>`;
 }
@@ -713,6 +715,10 @@ function buildRedirects(locationIndex, stateIndex) {
     '# the correct HTML file without a Cloudflare Worker in the hot path.',
     '# States are listed first so they win on slug collisions.',
     '',
+    '# Subscribe is paused: send old links home (302, temporary)',
+    '/subscribe\t/\t302',
+    '/subscribe.html\t/\t302',
+    '',
     '# States',
     ...sortedStates.map(slug => `/${slug}\t/states/${slug}.html\t200`),
     '',
@@ -728,7 +734,7 @@ function buildRedirects(locationIndex, stateIndex) {
 function buildSitemap(sortedStates, sortedLocations, topicIndex) {
   const today = new Date().toISOString().split('T')[0];
   const SITE = 'https://organize.directory';
-  const STATIC_PAGES = ['/', '/location', '/topics', '/guides', '/contact', '/subscribe', '/add'];
+  const STATIC_PAGES = ['/', '/location', '/topics', '/guides', '/contact', '/add'];
   const sitemapUrls = [
     ...STATIC_PAGES.map(p => ({ loc: SITE + p, priority: p === '/' ? '1.0' : '0.8' })),
     ...sortedStates.map(slug => ({ loc: `${SITE}/${slug}`, priority: '0.7' })),

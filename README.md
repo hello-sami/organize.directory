@@ -45,6 +45,9 @@ hole (an O); the same notch marks the section you're reading down the left
 edge of list pages. There is no dark mode.
 
 Hand-maintained pages: `location.html`, `topics.html`, `guides.html`, `contact.html`, `subscribe.html`, `thank-you.html`, `add.html`, `404.html`. (`index.html` is generated.)
+Subscribe is paused for now: `subscribe.html` stays in the repo but nothing
+links to it, and `/subscribe` redirects home (see the note above `NAV_MENU` in
+`scripts/build.js` for how to bring it back).
 
 ## Local development
 
