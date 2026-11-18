@@ -116,6 +116,9 @@ body.yellow{
 html{
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  /* Room for the sticky running head, so a link you Tab or Shift+Tab to is
+     never left hidden underneath it. (Phones: see section 15.) */
+  scroll-padding-top: var(--rh);
 }
 
 body{
@@ -401,7 +404,7 @@ h1.title{
    9. SECTIONS, HEADINGS, LISTINGS
 --------------------------------------------------------------------------- */
 section.group-section{
-  scroll-margin-top: calc(var(--rh) + 12px);
+  scroll-margin-top: 12px;   /* on top of html's scroll-padding-top */
 }
 section.group-section + section.group-section{ margin-top: 26px; }
 section.group-section.hidden{ display: none; }
@@ -639,6 +642,7 @@ body.yellow .ad{ background: var(--pure); }
 .title-search-result + .title-search-result{ border-top: 1px solid var(--ink); }
 .title-search-result:hover,
 .title-search-result:focus-visible{ background: var(--band); }
+.title-search-result:focus-visible{ outline-offset: -3px; }  /* the list scrolls, so keep the ring inside the row */
 .result-title{ font-weight: 700; }
 .result-type{ font-weight: 400; flex: none; }
 .title-search-results .highlight{ text-decoration: underline; text-decoration-thickness: 2px; }
@@ -729,7 +733,9 @@ body.yellow .ad{ background: var(--pure); }
   .thumbs a + a{ padding-left: 0; }
   .thumbs .notch{ width: 12px; height: 24px; border-radius: 0 12px 12px 0; }
 
-  section.group-section{ scroll-margin-top: 60px; }
+  /* The sticky notch strip (48px + its rule) is what covers things now. */
+  html{ scroll-padding-top: 49px; }
+  section.group-section{ scroll-margin-top: 11px; }
   .main-col{ padding-top: 16px; }
 
   .cover-top{ grid-template-columns: minmax(0, 1fr); padding-top: 28px; }
