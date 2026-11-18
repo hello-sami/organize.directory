@@ -83,7 +83,12 @@
     sections.forEach(function(s){ io.observe(s); });
 
     links.forEach(function(a){
-      a.addEventListener('click', function(){ setActive(a.dataset.section); });
+      a.addEventListener('click', function(e){
+        // A notch dimmed by the filter points at a hidden section: there's
+        // nothing to jump to, so don't light it up.
+        if (a.classList.contains('dim')) { e.preventDefault(); return; }
+        setActive(a.dataset.section);
+      });
     });
   })();
 
@@ -94,6 +99,21 @@
     var emptyQ = document.getElementById('empty-query');
     if (!input) return;
 
+    // Screen-reader announcement of what the filter did. Sighted users see the
+    // list change; this says it aloud ("12 groups shown"). Visually hidden
+    // (the .skip class), polite, and updated a moment after typing stops.
+    var status = document.createElement('div');
+    status.className = 'skip';
+    status.setAttribute('role', 'status');
+    input.parentNode.appendChild(status);
+    var statusTimer;
+    function announce(n, q){
+      clearTimeout(statusTimer);
+      statusTimer = setTimeout(function(){
+        status.textContent = !q ? '' : n === 0 ? 'No groups match.' : n + (n === 1 ? ' result shown.' : ' results shown.');
+      }, 500);
+    }
+
     // Remember each count's full total the first time we touch it, and put
     // it back when the filter is cleared.
     function setCount(el, n){
@@ -103,7 +123,9 @@
     }
 
     function apply(){
-      var q = input.value.trim().toLowerCase();
+      // Runs of spaces count as one: the listings' names are stored that way,
+      // so "books  through" (two spaces) should still find "Books Through Bars".
+      var q = input.value.trim().toLowerCase().replace(/\s+/g, ' ');
       var visibleTotal = 0;
       var sectionCounts = {};
 
@@ -127,8 +149,12 @@
       links.forEach(function(a){
         var n = sectionCounts[a.dataset.section] || 0;
         a.classList.toggle('dim', !n);
+        // A dimmed notch does nothing when clicked; say so to screen readers.
+        if (n) a.removeAttribute('aria-disabled');
+        else a.setAttribute('aria-disabled', 'true');
         setCount(a.querySelector('.k'), n);
       });
+      announce(visibleTotal, q);
 
       if (empty) {
         empty.hidden = !(visibleTotal === 0 && q);
@@ -137,5 +163,8 @@
     }
 
     input.addEventListener('input', apply);
+    // A browser can put back the old filter text (back button, reload) without
+    // firing an input event; filter the list to match what the box shows.
+    if (input.value.trim()) apply();
   })();
 })();
