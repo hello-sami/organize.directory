@@ -130,6 +130,45 @@ function setupSearchUI() {
                searchResults.style.display = "none";
           }
      });
+
+     // Keyboard: Down from the box moves into the results, Up/Down move through
+     // them (Down from the last wraps to the first), Up from the first goes back
+     // to the box, Escape closes the list.
+     // The results stay ordinary links, so Enter on one opens it.
+     const isOpen = () => searchResults.style.display === "block";
+     const links = () =>
+          Array.from(searchResults.querySelectorAll("a.title-search-result"));
+     const close = () => {
+          searchResults.style.display = "none";
+          searchStatus.textContent = "";
+          searchInput.focus();
+     };
+
+     searchInput.addEventListener("keydown", function (event) {
+          if (event.key === "ArrowDown" && isOpen() && links().length) {
+               event.preventDefault();
+               links()[0].focus();
+          } else if (event.key === "Escape" && isOpen()) {
+               // Close the list first; a second Escape clears a type=search box.
+               event.preventDefault();
+               close();
+          }
+     });
+
+     searchResults.addEventListener("keydown", function (event) {
+          const all = links();
+          const i = all.indexOf(document.activeElement);
+          if (event.key === "Escape") {
+               event.preventDefault();
+               close();
+          } else if (event.key === "ArrowDown" && i !== -1) {
+               event.preventDefault();
+               all[(i + 1) % all.length].focus(); // wraps: last goes to first
+          } else if (event.key === "ArrowUp" && i !== -1) {
+               event.preventDefault();
+               (i > 0 ? all[i - 1] : searchInput).focus();
+          }
+     });
 }
 
 // Load the title index from the JSON file the build writes (npm run build)
@@ -340,6 +379,12 @@ function handleSearchInput(event) {
           const noResults = document.createElement("div");
           noResults.className = "no-results";
           noResults.textContent = "No matches found";
+          // On the short fallback list, "no match" may just mean "not in the
+          // short list", so don't let it read as "not in the directory".
+          if (indexStatus === "limited") {
+               noResults.textContent +=
+                    ". Search isn't fully available right now. Try browsing by state.";
+          }
           resultsContainer.appendChild(noResults);
      }
      resultsContainer.style.display = "block";
@@ -348,8 +393,8 @@ function handleSearchInput(event) {
                results.length === 0
                     ? "No matches found."
                     : results.length === 1
-                      ? "1 match."
-                      : results.length + " matches.";
+                      ? "1 match. Press down arrow to move to it."
+                      : results.length + " matches. Press down arrow to move through them.";
      }
 }
 
