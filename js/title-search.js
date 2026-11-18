@@ -93,8 +93,8 @@ function setupSearchUI() {
           searchInput.type = "text";
           searchInput.id = "title-search-input";
           searchInput.className = "title-search-input";
-          searchInput.placeholder = "Search states, cities...";
-          searchInput.setAttribute("aria-label", "Search states, cities, regions");
+          searchInput.placeholder = "Search states, cities, or issues";
+          searchInput.setAttribute("aria-label", "Search states, cities, or issues");
 
           searchResults = document.createElement("div");
           searchResults.id = "title-search-results";
