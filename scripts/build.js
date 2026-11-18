@@ -259,7 +259,9 @@ function renderMast(current = '') {
 // Running head: guide words left (first – last section; city-page.js keeps
 // it in step with what's on screen), which book in the middle, place right.
 function renderRunhead({ guide = '', book, right = '' }) {
-  return `<div class="runhead">
+  // aria-hidden: it only repeats the page heading and breadcrumb as a visual
+  // guide, and sits outside every landmark, so screen readers skip it.
+  return `<div class="runhead" aria-hidden="true">
   <span class="l" data-guide>${esc(guide)}</span>
   <span class="c">${esc(book)}</span>
   <span class="r">${esc(right)}</span>
@@ -284,12 +286,16 @@ function renderSuggest() {
 // One listing: the name with leader dots running out after it, the website
 // under it (left-aligned; it's the link), the description hanging below.
 function renderGroupItem(init) {
-  const url = String(init.url || '');
+  const url = String(init.url || '').trim();
   const external = /^https?:\/\//i.test(url);
   const extAttrs = external ? ' target="_blank" rel="noopener noreferrer"' : '';
   const host = external ? hostFromUrl(url) : '';
-  const name = String(init.name || '');
-  const desc = String(init.description || '');
+  // Some entries carry line breaks and runs of spaces from hand-pasted HTML.
+  // The page collapses them, but the filter matches against data-name/data-desc,
+  // so "freedom taillight project" would miss "Freedom Taillight\n   Project".
+  const tidy = v => String(v || '').replace(/\s+/g, ' ').trim();
+  const name = tidy(init.name);
+  const desc = tidy(init.description);
   const nameHtml = host
     ? `<span class="line"><span class="name">${esc(name)}</span><span class="dots" aria-hidden="true"></span></span>`
     : `<span class="name">${esc(name)}</span>`;
@@ -310,7 +316,11 @@ function renderGroupSection(section) {
   const hasTitle = section.title && section.title.trim();
   const titleBlock = hasTitle ? renderHeading(section.title, section.initiatives.length) : '';
   const sectionKey = section.id || 'section';
-  return `    <section id="${esc(sectionKey)}" class="group-section" data-section="${esc(sectionKey)}" data-title="${esc(hasTitle ? section.title : '')}">
+  // An untitled section gets no thumb notch, so nothing links to it, and its id
+  // (the CMS names it "main") would repeat the <main id="main"> on the page.
+  // Duplicate ids are invalid HTML, so leave the id off; data-section still keys it.
+  const idAttr = hasTitle ? `id="${esc(sectionKey)}" ` : '';
+  return `    <section ${idAttr}class="group-section" data-section="${esc(sectionKey)}" data-title="${esc(hasTitle ? section.title : '')}">
 ${titleBlock}      <ol class="groups">
 ${items}
       </ol>
@@ -555,7 +565,7 @@ ${renderMast('/')}
     <div>
       <p class="tagline">Don't despair. Organize.</p>
       <p class="cover-sub">An (incomplete) list of leftist and grassroots groups in the US. Find your people and get to work.</p>
-      <form class="lookup" role="search" action="/search" method="get" onsubmit="event.preventDefault()">
+      <form class="lookup" role="search" onsubmit="event.preventDefault()">
         <label class="skip" for="site-search">Search the directory</label>
         <input id="site-search" name="q" type="search" placeholder="Search city, state, or issue" autocomplete="off">
         <button type="submit">Look up</button>
@@ -591,7 +601,12 @@ async function loadDir(dir) {
   const files = (await fs.readdir(dir)).filter(f => f.endsWith('.json'));
   const entries = await Promise.all(
     files.map(async f => {
-      const data = JSON.parse(await fs.readFile(path.join(dir, f), 'utf-8'));
+      let data;
+      try {
+        data = JSON.parse(await fs.readFile(path.join(dir, f), 'utf-8'));
+      } catch (err) {
+        throw new Error(`${path.join(dir, f)} is not valid JSON: ${err.message}`);
+      }
       if (!data.slug) throw new Error(`${path.join(dir, f)} has no "slug"`);
       // The slug becomes a file name, a URL and a line in _redirects, so keep it
       // to plain lowercase letters, digits and hyphens (every current slug is).
@@ -649,12 +664,19 @@ function computeStats(locationIndex, stateIndex, topicIndex) {
   };
 }
 
+// The list the header search box reads (data/title-index.json). `url` is the
+// page's normal address, the one in _redirects and the sitemap. States come
+// first, then places, then issues, each A–Z: the search keeps this order among
+// equally good matches.
 function buildTitleIndex(locationIndex, stateIndex, topicIndex) {
+  const entries = (index, type, urlFor) => Object.values(index)
+    .map(d => ({ slug: d.slug, title: d.title, type, url: urlFor(d.slug) }))
+    .sort((a, b) => a.title.localeCompare(b.title));
   return [
-    ...Object.values(locationIndex).map(d => ({ slug: d.slug, title: d.title, type: 'location' })),
-    ...Object.values(stateIndex).map(d => ({ slug: d.slug, title: d.title, type: 'state' })),
-    ...Object.values(topicIndex).map(d => ({ slug: d.slug, title: d.title, type: 'topic' })),
-  ].sort((a, b) => a.title.localeCompare(b.title));
+    ...entries(stateIndex, 'state', slug => `/${slug}`),
+    ...entries(locationIndex, 'location', slug => `/${slug}`),
+    ...entries(topicIndex, 'topic', slug => `/topics/${slug}`),
+  ];
 }
 
 // data/redirects.json maps the slug of a retired/merged page to the slug it
@@ -663,7 +685,12 @@ function buildTitleIndex(locationIndex, stateIndex, topicIndex) {
 function retiredRedirects(sortedLocations, sortedStates) {
   const file = path.join(ROOT, 'data', 'redirects.json');
   if (!existsSync(file)) return [];
-  const map = JSON.parse(readFileSync(file, 'utf-8'));
+  let map;
+  try {
+    map = JSON.parse(readFileSync(file, 'utf-8'));
+  } catch (err) {
+    throw new Error(`data/redirects.json is not valid JSON: ${err.message}`);
+  }
   const live = new Set([...sortedLocations, ...sortedStates]);
   const rules = Object.entries(map)
     .filter(([from]) => !live.has(from))
@@ -703,11 +730,14 @@ function buildRedirects(locationIndex, stateIndex) {
     '/contact\t/add\t301',
     '/contact.html\t/add\t301',
     '',
+    // Rewrite targets have no .html on purpose. Pages answers a 200 rewrite to a
+    // ".html" file with a 308 to the clean URL, so every visit paid an extra
+    // round trip (and landed on /cities/x, not the canonical /x).
     '# States',
-    ...sortedStates.map(slug => `/${slug}\t/states/${slug}.html\t200`),
+    ...sortedStates.map(slug => `/${slug}\t/states/${slug}\t200`),
     '',
     '# Cities',
-    ...sortedLocations.map(slug => `/${slug}\t/cities/${slug}.html\t200`),
+    ...sortedLocations.map(slug => `/${slug}\t/cities/${slug}\t200`),
     '',
     ...retiredRedirects(sortedLocations, sortedStates),
   ].join('\n');
@@ -787,7 +817,7 @@ async function copyPreviewAssets(previewRoot) {
   await copyIfExists(path.join(ROOT, 'assets'), path.join(previewRoot, 'assets'));
 
   // Shared /js/ utilities referenced by the new design
-  // (analytics, title-search, title-index, generate-titles-index)
+  // (analytics, title-search)
   await copyIfExists(path.join(ROOT, 'js'), path.join(previewRoot, 'js'));
 
   // Hand-maintained static pages on the new design system. Copied in so the nav
@@ -870,6 +900,9 @@ async function runLiveBuild({ locationIndex, stateIndex, topicIndex, childrenOf,
   const { xml: sitemapXml, robots: robotsText, count: sitemapCount } = buildSitemap(sortedStates, sortedLocations, topicIndex);
 
   if (DRY_RUN) return { locationPairs, statePairs, topicPairs, sitemapCount };
+
+  // A fresh clone has no cities/ states/ topics/ folders until something is written.
+  for (const d of ['cities', 'states', 'topics']) await ensureDir(path.join(ROOT, d));
 
   console.log('Writing cities...');
   await writeBatch(locationPairs);
