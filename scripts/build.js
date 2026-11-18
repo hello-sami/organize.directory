@@ -26,6 +26,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const DRY_RUN = process.argv.includes('--dry-run');
 const PREVIEW = process.argv.includes('--preview');
+let renderErrors = 0; // pages that threw while rendering; any makes the build exit 1
 
 // ─── Asset cache-busting ────────────────────────────────────────────────────
 // CSS/JS are served `immutable, max-age=1yr` (see _headers). Without a per-
@@ -164,8 +165,13 @@ function fmt(n) {
   return n.toLocaleString('en-US');
 }
 
-function pluralize(n, singular, plural) {
-  return `${n} ${n === 1 ? singular : plural}`;
+// Number of listings on a page's data, and its sections that have any.
+function groupCount(data) {
+  return (data.sections || []).reduce((n, s) => n + (s.initiatives ? s.initiatives.length : 0), 0);
+}
+
+function nonEmptySections(data) {
+  return (data.sections || []).filter(s => s.initiatives && s.initiatives.length > 0);
 }
 
 function hostFromUrl(url) {
@@ -232,7 +238,6 @@ const NAV_PRIMARY = [
   ['/topics', 'Issue Listings'],
   ['/add', 'Add a group'],
 ];
-const NAV_MENU = NAV_PRIMARY;
 
 function navLinks(items, current) {
   return items
@@ -246,7 +251,7 @@ function renderMast(current = '') {
   <nav class="bar-nav" aria-label="Main">${navLinks(NAV_PRIMARY, current)}</nav>
   <details class="menu">
     <summary>Menu</summary>
-    <nav aria-label="Main">${navLinks(NAV_MENU, current)}</nav>
+    <nav aria-label="Main">${navLinks(NAV_PRIMARY, current)}</nav>
   </details>
 </header>`;
 }
@@ -348,6 +353,19 @@ ${items}
 // The shared body of every list page: opener, then thumbs + sections.
 function renderListPage({ bodyClass, current, runhead, opener, entries, sectionsHtml, filterLabel, filterPlaceholder, emptyText }) {
   const thumbsHtml = renderThumbs(entries);
+  // A page with nothing on it (a city with no groups yet) gets a plain note
+  // instead of a filter box that filters nothing.
+  const isEmpty = !sectionsHtml.trim();
+  const filterHtml = isEmpty
+    ? ''
+    : `
+    <div class="filter" role="search">
+      <label class="skip" for="page-filter">${esc(filterLabel)}</label>
+      <input id="page-filter" type="search" placeholder="${esc(filterPlaceholder)}" autocomplete="off">
+    </div>`;
+  const noGroupsHtml = isEmpty
+    ? '        <p class="empty">No groups are listed here yet.</p>\n'
+    : '';
   return `<body class="${bodyClass}">
 <a href="#main" class="skip">Skip to content</a>
 ${renderMast(current)}
@@ -356,11 +374,7 @@ ${renderRunhead({ ...runhead, guide: guideWords(entries) })}
 <main id="main">
 
   <div class="opener">
-${opener}
-    <div class="filter" role="search">
-      <label class="skip" for="page-filter">${esc(filterLabel)}</label>
-      <input id="page-filter" type="search" placeholder="${esc(filterPlaceholder)}" autocomplete="off">
-    </div>
+${opener}${filterHtml}
   </div>
 
   <div class="spread">
@@ -368,7 +382,7 @@ ${thumbsHtml}
     <div class="main-col">
       <div id="sections-root">
 ${sectionsHtml}
-        <p class="empty" id="empty-state" hidden>${emptyText}</p>
+${noGroupsHtml}        <p class="empty" id="empty-state" hidden>${emptyText}</p>
       </div>
 
       ${renderSuggest()}
@@ -386,12 +400,10 @@ function renderCity(data, { breadcrumbs, children }) {
   const titleTag = `${data.title} — Organize Directory`;
   const description = `Leftist, grassroots, and mutual aid organizations in ${data.title}.`;
 
-  const sections = data.sections.filter(s => s.initiatives && s.initiatives.length > 0);
+  const sections = nonEmptySections(data);
 
-  // Parent chain, outermost first (New York → New York City). Skip the
-  // synthetic "States" root.
-  const realCrumbs = breadcrumbs.filter(c => c.slug !== 'location');
-  const stateName = realCrumbs.length ? realCrumbs[0].title : '';
+  // Parent chain, outermost first (New York → New York City).
+  const stateName = breadcrumbs.length ? breadcrumbs[0].title : '';
 
   const hasChildren = children.length > 0;
   const childrenLabel = 'Neighborhoods';
@@ -406,7 +418,7 @@ function renderCity(data, { breadcrumbs, children }) {
   ];
 
   // "Part of New York City, New York." — nearest parent first.
-  const parents = realCrumbs.slice().reverse();
+  const parents = breadcrumbs.slice().reverse();
   const partOf = parents.length
     ? `\n    <div class="meta"><nav aria-label="Breadcrumb">Part of ${parents.map(c => `<a href="/${esc(c.slug)}">${esc(c.title)}</a>`).join(', ')}.</nav></div>`
     : '';
@@ -436,7 +448,7 @@ function renderStateHub(data, { children }) {
   const titleTag = `${data.title} — Organize Directory`;
   const description = `Cities and statewide organizations in ${data.title}.`;
 
-  const sections = (data.sections || []).filter(s => s.initiatives && s.initiatives.length > 0);
+  const sections = nonEmptySections(data);
 
   // A state's direct children mix cities, counties, and regions, so "Places".
   const hasChildren = children.length > 0;
@@ -475,7 +487,7 @@ function renderTopicPage(data) {
   const titleTag = `${data.title} — Organize Directory`;
   const description = data.subtitle || `Organizations and initiatives focused on ${data.title}.`;
 
-  const sections = data.sections.filter(s => s.initiatives && s.initiatives.length > 0);
+  const sections = nonEmptySections(data);
   const sectionsHtml = sections.map(renderGroupSection).join('\n\n');
   const entries = sections.map(s => ({ id: s.id, title: s.title, count: s.initiatives.length }));
 
@@ -504,12 +516,11 @@ ${lede}`,
 
 // Groups per state, counting statewide groups plus every place in the state.
 function stateGroupCounts(locationIndex, stateIndex) {
-  const count = d => (d.sections || []).reduce((n, s) => n + (s.initiatives ? s.initiatives.length : 0), 0);
   const totals = {};
-  for (const st of Object.values(stateIndex)) totals[st.slug] = count(st);
+  for (const st of Object.values(stateIndex)) totals[st.slug] = groupCount(st);
   for (const loc of Object.values(locationIndex)) {
     const st = String(loc.state || '').trim();
-    if (st in totals) totals[st] += count(loc);
+    if (st in totals) totals[st] += groupCount(loc);
   }
   return totals;
 }
@@ -546,7 +557,7 @@ ${renderMast('/')}
       <p class="cover-sub">An (incomplete) list of leftist and grassroots groups in the US. Find your people and get to work.</p>
       <form class="lookup" role="search" action="/search" method="get" onsubmit="event.preventDefault()">
         <label class="skip" for="site-search">Search the directory</label>
-        <input id="site-search" name="q" type="search" placeholder="Search city, state, issue, or group" autocomplete="off">
+        <input id="site-search" name="q" type="search" placeholder="Search city, state, or issue" autocomplete="off">
         <button type="submit">Look up</button>
       </form>
     </div>
@@ -581,10 +592,21 @@ async function loadDir(dir) {
   const entries = await Promise.all(
     files.map(async f => {
       const data = JSON.parse(await fs.readFile(path.join(dir, f), 'utf-8'));
-      return [data.slug, data];
+      if (!data.slug) throw new Error(`${path.join(dir, f)} has no "slug"`);
+      // The slug becomes a file name, a URL and a line in _redirects, so keep it
+      // to plain lowercase letters, digits and hyphens (every current slug is).
+      if (!/^[a-z0-9-]+$/.test(data.slug)) throw new Error(`${path.join(dir, f)} has an unsafe slug ${JSON.stringify(data.slug)} (use a-z, 0-9 and "-" only)`);
+      return [data.slug, data, f];
     }),
   );
-  return Object.fromEntries(entries);
+  // Two files with the same slug would silently overwrite each other (one page
+  // would vanish from the build), so stop and say which files.
+  const seen = new Map();
+  for (const [slug, , f] of entries) {
+    if (seen.has(slug)) throw new Error(`Duplicate slug "${slug}" in ${path.join(dir, seen.get(slug))} and ${path.join(dir, f)}`);
+    seen.set(slug, f);
+  }
+  return Object.fromEntries(entries.map(([slug, data]) => [slug, data]));
 }
 
 function buildBreadcrumbs(slug, locationIndex, stateIndex) {
@@ -599,12 +621,6 @@ function buildBreadcrumbs(slug, locationIndex, stateIndex) {
     if (!parentData) break;
     crumbs.unshift({ slug: parentSlug, title: parentData.title });
     parentSlug = parentData.parent || null;
-  }
-
-  // If first crumb is a state, prepend the "States" root for the legacy design.
-  // The system renderer filters this out in renderBreadcrumb.
-  if (crumbs.length && stateIndex[crumbs[0].slug]) {
-    crumbs.unshift({ slug: 'location', title: 'States' });
   }
 
   return crumbs;
@@ -624,15 +640,9 @@ async function ensureDir(dirPath) {
 }
 
 function computeStats(locationIndex, stateIndex, topicIndex) {
-  const count = data => data.sections.reduce(
-    (sum, s) => sum + (s.initiatives ? s.initiatives.length : 0),
-    0,
-  );
+  const total = index => Object.values(index).reduce((sum, d) => sum + groupCount(d), 0);
   return {
-    groups:
-      Object.values(locationIndex).reduce((s, d) => s + count(d), 0) +
-      Object.values(stateIndex).reduce((s, d) => s + count(d), 0) +
-      Object.values(topicIndex).reduce((s, d) => s + count(d), 0),
+    groups: total(locationIndex) + total(stateIndex) + total(topicIndex),
     cities: Object.keys(locationIndex).length,
     categories: Object.keys(topicIndex).length,
     generatedAt: new Date().toISOString(),
@@ -782,13 +792,7 @@ async function copyPreviewAssets(previewRoot) {
 
   // Hand-maintained static pages on the new design system. Copied in so the nav
   // (`/location`, `/topics`, `/add`) doesn't 404 locally.
-  for (const f of [
-    'location.html',
-    'topics.html',
-    'guides.html',
-    'add.html',
-    '404.html',
-  ]) {
+  for (const f of STATIC_PAGES) {
     await copyIfExists(path.join(ROOT, f), path.join(previewRoot, f));
   }
 
@@ -828,6 +832,7 @@ async function runLiveBuild({ locationIndex, stateIndex, topicIndex, childrenOf,
       locationPairs.push([path.join(ROOT, 'cities', `${data.slug}.html`), html]);
     } catch (err) {
       process.stderr.write(`ERROR rendering location ${data.slug}: ${err.message}\n`);
+      renderErrors++;
     }
   }
   console.log(`Rendered ${locationPairs.length} cities`);
@@ -840,6 +845,7 @@ async function runLiveBuild({ locationIndex, stateIndex, topicIndex, childrenOf,
       statePairs.push([path.join(ROOT, 'states', `${data.slug}.html`), html]);
     } catch (err) {
       process.stderr.write(`ERROR rendering state ${data.slug}: ${err.message}\n`);
+      renderErrors++;
     }
   }
   console.log(`Rendered ${statePairs.length} states`);
@@ -851,6 +857,7 @@ async function runLiveBuild({ locationIndex, stateIndex, topicIndex, childrenOf,
       topicPairs.push([path.join(ROOT, 'topics', `${data.slug}.html`), html]);
     } catch (err) {
       process.stderr.write(`ERROR rendering topic ${data.slug}: ${err.message}\n`);
+      renderErrors++;
     }
   }
   console.log(`Rendered ${topicPairs.length} topics`);
@@ -908,6 +915,7 @@ async function runPreviewBuild({ locationIndex, stateIndex, topicIndex, children
       locationPairs.push([path.join(PREVIEW_ROOT, `${data.slug}.html`), html]);
     } catch (err) {
       process.stderr.write(`PREVIEW: error rendering location ${data.slug}: ${err.message}\n`);
+      renderErrors++;
     }
   }
   console.log(`Rendered ${locationPairs.length} cities (preview)`);
@@ -920,6 +928,7 @@ async function runPreviewBuild({ locationIndex, stateIndex, topicIndex, children
       statePairs.push([path.join(PREVIEW_ROOT, `${data.slug}.html`), html]);
     } catch (err) {
       process.stderr.write(`PREVIEW: error rendering state ${data.slug}: ${err.message}\n`);
+      renderErrors++;
     }
   }
   console.log(`Rendered ${statePairs.length} states (preview)`);
@@ -931,6 +940,7 @@ async function runPreviewBuild({ locationIndex, stateIndex, topicIndex, children
       topicPairs.push([path.join(PREVIEW_ROOT, 'topics', `${data.slug}.html`), html]);
     } catch (err) {
       process.stderr.write(`PREVIEW: error rendering topic ${data.slug}: ${err.message}\n`);
+      renderErrors++;
     }
   }
   console.log(`Rendered ${topicPairs.length} topics (preview)`);
@@ -1020,6 +1030,11 @@ async function run() {
   Groups    : ${stats.groups}
   Written   : ${DRY_RUN ? '(dry run)' : total + 5}
 `);
+
+  if (renderErrors) {
+    console.error(`\n${renderErrors} page(s) failed to render (see ERROR lines above); their old HTML was left as it was.`);
+    process.exitCode = 1;
+  }
 
   if (PREVIEW && !DRY_RUN) {
     console.log('To view the preview:');
