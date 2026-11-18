@@ -6,7 +6,8 @@
      "scripts": {
           "build": "node scripts/build.js",
           "dev": "wrangler pages dev --compatibility-date=2023-06-21 .",
-          "generate-title-index": "node js/generate-titles-index.js"
+          "dist": "node scripts/make-dist.js",
+          "preview": "node scripts/make-dist.js && wrangler pages dev --compatibility-date=2023-06-21 dist"
      },
      "devDependencies": {
           "cheerio": "^1.0.0-rc.12",
