@@ -6,34 +6,55 @@ document.addEventListener("DOMContentLoaded", function () {
 // Title search index - will hold all searchable titles
 let titleIndex = [];
 
+// "loading" until the index has been fetched (or given up on), then "ready"
+// (the real index) or "limited" (the short built-in fallback list).
+let indexStatus = "loading";
+let indexLoaded = Promise.resolve(); // settles once the index is in place
+let activeInput = null; // the search box on this page
+let searchStatus = null; // visually hidden live region that says what the dropdown shows
+
 // Initialize the title search functionality
 function initTitleSearch() {
      // Setup the search UI
      setupSearchUI();
 
-     // Load the search index
-     loadSearchIndex();
+     // Load the search index. Whatever was typed while it loaded gets searched
+     // as soon as it arrives, instead of staying on "No matches found".
+     indexLoaded = loadSearchIndex().then(function () {
+          if (activeInput && activeInput.value.trim()) {
+               handleSearchInput({ target: activeInput });
+          }
+     });
+}
+
+// Jump to the top result for whatever is typed right now.
+async function openTopResult(searchInput, searchResults) {
+     // Wait for the index if it's still loading, so a quick Enter works.
+     await indexLoaded;
+     // Results are debounced; refresh them for what's typed right now so a
+     // quick Enter doesn't open the top hit for an earlier query.
+     handleSearchInput({ target: searchInput });
+     // One letter matches almost anything ("x" would open New Mexico), so Enter
+     // only jumps once there are at least two; before that the list just shows.
+     if (searchInput.value.trim().length < 2) return;
+     const first = searchResults.querySelector("a.title-search-result");
+     if (first) window.location.href = first.getAttribute("href");
 }
 
 // Setup the search UI elements
 function setupSearchUI() {
      // Detect the page by which mount point is present rather than a body
-     // class (the location page doesn't reliably carry a `location-page`
-     // class). The location page provides an empty #location-search-section
+     // class. The location page provides an empty #location-search-section
      // for us to fill; the homepage ships a static #site-search form we wire
      // onto directly.
      const locationMount = document.getElementById("location-search-section");
      const existingInput = document.getElementById("site-search");
-     const isLocationPage = !!locationMount;
 
      let searchContainer, searchInput, searchResults;
 
-     if (existingInput && !isLocationPage) {
+     if (existingInput && !locationMount) {
           // Avoid double-initialization
-          if (document.getElementById("title-search-results")) {
-               addSearchStyles();
-               return;
-          }
+          if (document.getElementById("title-search-results")) return;
 
           searchInput = existingInput;
           const form = existingInput.closest("form") || existingInput;
@@ -57,20 +78,12 @@ function setupSearchUI() {
           // Submitting (Enter or the "Go" button) jumps to the top result.
           form.addEventListener("submit", function (event) {
                event.preventDefault();
-               const first = searchResults.querySelector("a.title-search-result");
-               if (first) window.location.href = first.getAttribute("href");
+               openTopResult(searchInput, searchResults);
           });
      } else {
-          // Location page (and any legacy .homepage-content layout): inject our
-          // own input/results into the designated container.
-          const targetContainer =
-               locationMount || document.querySelector(".homepage-content");
-
-          if (!targetContainer) return;
-          if (document.getElementById("title-search-container")) {
-               addSearchStyles();
-               return;
-          }
+          // Location page: inject our own input/results into its mount point.
+          if (!locationMount) return;
+          if (document.getElementById("title-search-container")) return;
 
           searchContainer = document.createElement("div");
           searchContainer.id = "title-search-container";
@@ -80,9 +93,7 @@ function setupSearchUI() {
           searchInput.type = "text";
           searchInput.id = "title-search-input";
           searchInput.className = "title-search-input";
-          searchInput.placeholder = isLocationPage
-               ? "Search states, cities..."
-               : "Search states, cities, regions...";
+          searchInput.placeholder = "Search states, cities...";
           searchInput.setAttribute("aria-label", "Search states, cities, regions");
 
           searchResults = document.createElement("div");
@@ -92,15 +103,24 @@ function setupSearchUI() {
           searchContainer.appendChild(searchInput);
           searchContainer.appendChild(searchResults);
 
-          if (isLocationPage) {
-               targetContainer.appendChild(searchContainer);
-          } else {
-               targetContainer.insertBefore(
-                    searchContainer,
-                    targetContainer.firstChild
-               );
-          }
+          locationMount.appendChild(searchContainer);
+
+          // No form here, so Enter needs its own handler (same as the homepage).
+          searchInput.addEventListener("keydown", function (event) {
+               if (event.key !== "Enter") return;
+               event.preventDefault();
+               openTopResult(searchInput, searchResults);
+          });
      }
+
+     activeInput = searchInput;
+
+     // The dropdown appears visually, but a screen reader isn't told about it.
+     // This hidden polite status says how many matches there are.
+     searchStatus = document.createElement("div");
+     searchStatus.className = "skip";
+     searchStatus.setAttribute("role", "status");
+     searchContainer.appendChild(searchStatus);
 
      // Shared wiring for whichever input/results we ended up with
      searchInput.addEventListener("input", debounce(handleSearchInput, 300));
@@ -110,32 +130,39 @@ function setupSearchUI() {
                searchResults.style.display = "none";
           }
      });
-
-     addSearchStyles();
 }
 
-// Load the title index from the JSON file
+// Load the title index from the JSON file the build writes (npm run build)
 async function loadSearchIndex() {
      try {
-          // Try to load the generated JSON index
-          const response = await fetch("/js/title-index.json");
+          const response = await fetch("/data/title-index.json");
 
-          // If the file exists and the response is OK, use it
+          // Use it only if it really is a list of { title, url } entries.
           if (response.ok) {
-               titleIndex = await response.json();
-               return;
+               const data = await response.json();
+               const usable = Array.isArray(data)
+                    ? data.filter(
+                           (item) =>
+                                item &&
+                                typeof item.title === "string" &&
+                                typeof item.url === "string",
+                      )
+                    : [];
+               if (usable.length) {
+                    titleIndex = usable;
+                    indexStatus = "ready";
+                    return;
+               }
           }
-
-          titleIndex = [
-               ...(await getFallbackStatesIndex()),
-               ...(await getFallbackCitiesIndex()),
-          ];
      } catch {
-          titleIndex = [
-               ...(await getFallbackStatesIndex()),
-               ...(await getFallbackCitiesIndex()),
-          ];
+          // Offline or unreadable: fall through to the built-in list.
      }
+
+     titleIndex = [
+          ...(await getFallbackStatesIndex()),
+          ...(await getFallbackCitiesIndex()),
+     ];
+     indexStatus = "limited";
 }
 
 // Fallback states index if JSON file is not available
@@ -246,17 +273,41 @@ async function getFallbackCitiesIndex() {
 function handleSearchInput(event) {
      const query = event.target.value.trim().toLowerCase();
      const resultsContainer = document.getElementById("title-search-results");
-     const isLocationPage = document.body.classList.contains("location-page");
 
      // Clear results if query is empty
      if (query.length === 0) {
           resultsContainer.style.display = "none";
+          if (searchStatus) searchStatus.textContent = "";
           return;
      }
 
-     // Filter titles based on query
+     // Index still on its way: say so rather than claiming there are no matches.
+     if (indexStatus === "loading") {
+          resultsContainer.replaceChildren();
+          const loading = document.createElement("div");
+          loading.className = "no-results";
+          loading.textContent = "Loading…";
+          resultsContainer.appendChild(loading);
+          resultsContainer.style.display = "block";
+          if (searchStatus) searchStatus.textContent = "Loading results.";
+          return;
+     }
+
+     // Filter titles based on query. Names that start with the query come
+     // first, then names with a word that starts with it ("Portland" before
+     // "Shreveport"), then anything else that merely contains it. Within each
+     // group the index order (states, cities, issues) is kept.
+     const wordStart = new RegExp("(^|[^a-z0-9])" + escapeRegExp(query));
+     const rank = (title) => {
+          const t = title.toLowerCase();
+          if (t.startsWith(query)) return 0;
+          return wordStart.test(t) ? 1 : 2;
+     };
      const results = titleIndex
           .filter((item) => item.title.toLowerCase().includes(query))
+          .map((item, i) => ({ item, i, r: rank(item.title) }))
+          .sort((a, b) => a.r - b.r || a.i - b.i)
+          .map((x) => x.item)
           .slice(0, 10); // Limit to 10 results for performance
 
      // Display results
@@ -264,7 +315,9 @@ function handleSearchInput(event) {
      if (results.length > 0) {
           results.forEach((result) => {
                const resultItem = document.createElement("a");
-               resultItem.href = result.url;
+               // Link to the clean URL: Pages answers "/cities/x.html" with a 308
+               // to "/cities/x", so the .html form costs an extra round trip.
+               resultItem.href = result.url.replace(/\.html$/, "");
                resultItem.className = "title-search-result";
 
                const titleDiv = document.createElement("div");
@@ -290,6 +343,14 @@ function handleSearchInput(event) {
           resultsContainer.appendChild(noResults);
      }
      resultsContainer.style.display = "block";
+     if (searchStatus) {
+          searchStatus.textContent =
+               results.length === 0
+                    ? "No matches found."
+                    : results.length === 1
+                      ? "1 match."
+                      : results.length + " matches.";
+     }
 }
 
 // Escape regex metacharacters in user-supplied query
@@ -329,7 +390,3 @@ function debounce(func, delay) {
           timeout = setTimeout(() => func.apply(context, args), delay);
      };
 }
-
-// The search UI is styled in /assets/styles/system.css (section 13). This used
-// to inject its own <style> block; it's kept as a no-op so callers don't change.
-function addSearchStyles() {}
